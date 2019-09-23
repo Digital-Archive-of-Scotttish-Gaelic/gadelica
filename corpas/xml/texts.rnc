@@ -1,0 +1,21 @@
+datatypes xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
+default namespace = "https://dasg.ac.uk/corpus/"
+
+start = Text
+
+Text = element text {
+  attribute ref { xsd:anyURI } ,
+  ( Paragraph | Heading | Verse | Text | Page )+
+}
+
+Paragraph = element p { (Token | Page)+ }
+Heading = element h { Token+ }
+Verse = element lg { element l { Token+ }+ }
+Page = element pb {attribute n { text } }
+
+Token = ( 
+            element w { attribute pos {text}?, attribute lemma {text}?, attribute ref {text}?, text } 
+          | element pc {attribute join {"no"|"left"|"right"|"both"}, text} 
+          | element o {text} 
+        )
+
