@@ -44,7 +44,97 @@ n:inbhe
   a :FeminineNoun ;
   rdfs:label "inbhe" .
 
+n:aon
+  a :Numeral ;
+  rdfs:label "aon" .
+
+n:aithne
+  a :FeminineNoun ;
+  rdfs:label "aithne" .
+
+v:deean
+  a :Verb ;
+  rdfs:label "dèan" .
+
+n:diicheall
+  a :MasculineNoun ;
+  rdfs:label "dìcheall" .
+
+n:obair
+  a :FeminineNoun ;
+  rdfs:label "obair" .
+
+n:taalant
+  a :MasculineNoun ;
+  rdfs:label "tàlant" .
+
+n:malairt
+  a :FeminineNoun ;
+  rdfs:label "malairt" .
+
+a:gnaathach
+  a :Adjective ;
+  rdfs:label "gnàthach" .
+
+n:companaidh
+  a :FeminineNoun ;
+  rdfs:label "companaidh" .
+
+n:Gaaidhealtachd
+  a :FeminineNoun ;
+  rdfs:label "Gàidhealtachd" .
+
+n:ainm
+  a :MasculineNoun ;
+  rdfs:label "ainm" .
+
+n:teaghlach
+  a :MasculineNoun ;
+  rdfs:label "teaghlach" .
+
+n:mac
+  a :MasculineNoun ;
+  rdfs:label "mac" .
+
+n:fear
+  a :MasculineNoun ;
+  rdfs:label "fear" .
+
+n:tee
+  a :FeminineNoun ;
+  rdfs:label "tè" .
+
 <http://faclair.ac.uk/sources/personal> {
+
+  n:tee :sense "woman" .
+
+  n:fear :sense "man" .
+
+  n:mac :sense "son" .
+
+  n:teaghlach :sense "family" .
+
+  n:ainm :sense "name" .
+
+  n:Gaaidhealtachd :sense "Gaelic-speaking area" .
+
+  n:companaidh :sense "company" .
+
+  a:gnaathach :sense "conventional" , "routine" , "habitual" , "orthodox" .
+
+  n:malairt :sense "trade" , "commerce" , "business" .
+
+  n:taalant :sense "talent" .
+
+  n:obair :sense "work" .
+
+  n:diicheall :sense "determination" , "diligence" , "effort" .
+
+  v:deean :sense "do", "make" .
+
+  n:aithne :sense "acquaintance" .
+
+  n:aon :sense "one" .
 
   n:inbhe :sense "status" .
 
@@ -72,3 +162,4 @@ n:inbhe
 :Verb rdfs:label "verb" .
 :MasculineProperNoun rdfs:label "masculine proper noun" .
 :FeminineProperNoun rdfs:label "feminine proper noun" .
+:Numeral rdfs:label "numeral" .
