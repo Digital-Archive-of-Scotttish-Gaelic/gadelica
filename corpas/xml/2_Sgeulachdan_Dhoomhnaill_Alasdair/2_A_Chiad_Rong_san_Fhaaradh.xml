@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../texts.rnc" schematypens="https://relaxng.org/ns/structure/1.0?>
-<text xml:id="https://dasg.ac.uk/corpus/_2-2" xmlns="https://dasg.ac.uk/corpus/">
+<text ref="https://dasg.ac.uk/corpus/_2-2" xmlns="https://dasg.ac.uk/corpus/">
   <pb n="9"/>
   <h>
     <w pos="" lemma="A">A</w>
     <pc join="left">’</pc>
     <w pos="" lemma="ciad">Chiad</w>
-    <w pos="" lemma="rong">Rong</w>
+    <w pos="" lemma="rong" ref="nouns/rong">Rong</w>
     <w pos="" lemma="san">san</w>
-    <w pos="" lemma="fàradh">Fhàradh</w>
+    <w pos="" lemma="fàradh" ref="nouns/faaradh">Fhàradh</w>
   </h>
   <p>
     <pc join="right">’</pc>

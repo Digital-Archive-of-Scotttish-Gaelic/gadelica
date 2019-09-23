@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <?xml-model href="../texts.rnc" schematypens="https://relaxng.org/ns/structure/1.0?>
-<text xml:id="https://dasg.ac.uk/corpus/_2-10" xmlns="https://dasg.ac.uk/corpus/">
+<text ref="https://dasg.ac.uk/corpus/_2-10" xmlns="https://dasg.ac.uk/corpus/">
   <pb n="48"/>
   <h>
-    <w pos="" lemma="cruaidh">Cruaidh</w>
+    <w pos="" lemma="cruaidh" ref="adjectives/cruaidh">Cruaidh</w>
     <pc join="both">-</pc>
-    <w pos="" lemma="fortan">fhortan</w>
-    <w pos="" lemma="Briain">Bhriain</w>
+    <w pos="" lemma="fortan" ref="nouns/fortan">fhortan</w>
+    <w pos="" lemma="Briain" ref="nouns/Brian">Bhriain</w>
   </h>
   <p>
     <w pos="v" lemma="bi">Bha</w>

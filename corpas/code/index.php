@@ -15,8 +15,25 @@
     <div class="container-fluid">
       <h1>Corpas na Gàidhlig</h1>
       <div class="list-group list-group-flush">
-        <div class="list-group-item list-group-item-action">#1: Somhairle MacGill-Eain: Dàin do Eimhir – <a href="viewText.php?t=1_Daain_do_Eimhir/I">I</a></div>
-        <div class="list-group-item list-group-item-action">#2: Sgeulachdan Dhòmhnaill Alasdair – <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/1_A_Chaora_Dhubh">A’ Chaora Dhubh</a></div>
+        <div class="list-group-item list-group-item-action">#1: Somhairle MacGill-Eain: Dàin do Eimhir – 
+          <a href="viewText.php?t=1_Daain_do_Eimhir/I">I</a>, 
+          <a href="viewText.php?t=1_Daain_do_Eimhir/II_A_Chiall_s_a_Ghraaidh">II: A’ Chiall ’s a’ Ghràidh</a>, 
+          <a href="viewText.php?t=1_Daain_do_Eimhir/III">III</a>, 
+          <a href="viewText.php?t=1_Daain_do_Eimhir/IV">IV</a>, 
+          <a href="viewText.php?t=1_Daain_do_Eimhir/V">V</a>
+        </div>
+        <div class="list-group-item list-group-item-action">#2: Sgeulachdan Dhòmhnaill Alasdair – 
+          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/1_A_Chaora_Dhubh">A’ Chaora Dhubh</a>, 
+          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/2_A_Chiad_Rong_san_Fhaaradh">A’ Chiad Rong san Fhàradh</a>, 
+          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/3_Am_Preas_Aodaich">Am Preas Aodaich</a>, 
+          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/4_An_Cooirneal">An Còirneal</a>, 
+          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/5_An_Dalta">An Dalta</a>,
+          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/6_An_Lannsair_Chraobhan">An Lannsair Chraobhan</a>, 
+          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/7_Aonghas_Thuilm">Aonghas Thuilm</a>, 
+          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/8_Ciste_a_Chaiptein">Ciste a’ Chaiptein</a>, 
+          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/9_Cogais_Ghoirt">Cogais Ghoirt</a>, 
+          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/10_Cruaidh-fhortan_Bhriain">Cruaidh-fhortan Bhriain</a>,
+        </div>
       </div>
     </div>
   </body>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../texts.rnc" schematypens="https://relaxng.org/ns/structure/1.0?>
-<text xml:id="https://dasg.ac.uk/corpus/_2-6" xmlns="https://dasg.ac.uk/corpus/">
+<text ref="https://dasg.ac.uk/corpus/_2-6" xmlns="https://dasg.ac.uk/corpus/">
   <pb n="25"/>
   <h>
     <w pos="" lemma="An">An</w>
-    <w pos="" lemma="Lannsair">Lannsair</w>
-    <w pos="" lemma="Chraobhan">Chraobhan</w>
+    <w pos="" lemma="Lannsair" ref="nouns/lannsair">Lannsair</w>
+    <w pos="" lemma="Chraobhan" ref="nouns/craobh">Chraobhan</w>
   </h>
   <p>
     <pc join="right">’</pc>
