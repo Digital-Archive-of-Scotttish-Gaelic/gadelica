@@ -1,0 +1,1040 @@
+@prefix n: <http://faclair.ac.uk/nouns/> .
+@prefix a: <http://faclair.ac.uk/adjectives/> .
+@prefix v: <http://faclair.ac.uk/verbs/> .
+@prefix o: <http://faclair.ac.uk/other/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://faclair.ac.uk/meta/> .
+
+<http://faclair.ac.uk/sources/Owen1993>
+  rdfs:label "Owen" .
+
+<http://faclair.ac.uk/sources/Owen1993> {
+
+  o:a_bhos
+    a :Adverb ;
+    rdfs:label "a-bhos" ;
+    :sense "this side" .
+
+  o:thall_agus_a_bhos
+    rdfs:label "thall ’s abhos" ;
+    :part o:a_bhos ;
+    :sense "here and there" , "hither and thither" .
+
+  o:a_chum
+    a :Conjunction ;
+    rdfs:label "a-chum" ;
+    :sense "for the purpose of" , "in order to" .
+
+  o:a_chum_an_obair_a_dheeanamh
+    rdfs:label "a-chum an obair a dhèanamh" ;
+    :part o:a_chum ;
+    :sense "in order to do the work" .
+
+  o:a_ghnaath
+    a :Adverb ;
+    rdfs:label "a-ghnàth" ;
+    :sense "continually" , "habitually" .
+
+  o:a_mach
+    a :Adverb ;
+    rdfs:label "a-mach" ;
+    :sense "out (motion)" .
+
+  v:rach_a_mach
+    rdfs:label "rach a-mach" ;
+    :part o:a_mach ;
+    :sense "go out" .
+
+  o:bho_seo_a_mach
+    rdfs:label "o seo a-mach" ;
+    :part o:a_mach ;
+    :sense "henceforward" , "from now on" .
+
+  o:a_mach_air
+    rdfs:label "a-mach air" ;
+    :part o:a_mach ;
+    :sense "apart from" .
+
+  o:a_maaireach
+    a :Adverb ;
+    rdfs:label "a-màireach" ;
+    :sense "tomorrow" .
+
+  o:a_mhaain
+    a :Adverb ;
+    rdfs:label "a-mhàin" ;
+    :sense "only" .
+
+  o:chan_e_a_mhaain_na_fir_ach_na_boireannaich_cuideachd
+    rdfs:label "chan e a-mhàin na fir ach na boireannaich cuideachd" ;
+    :part o:a_mhaain ;
+    :sense "not only the men but the women also" .
+
+  o:a_muigh
+    a :Adverb ;
+    rdfs:label "a-muigh" ;
+    :sense "outside" , "out (place)" .
+
+  o:tha_e_a_muigh_air_a%27_mhoointich
+    rdfs:label "tha e a-muigh air a’ mhòintich" ;
+    :part o:a_muigh ;
+    :sense "he is out on the moor" .
+
+  o:a_nall
+    a :Adverb ;
+    rdfs:label "a-nall" ;
+    :sense "to the other side" , "across" .
+
+  o:a_niios
+    a :Adverb ;
+    rdfs:label "a-nìos" ;
+    :sense "up" , "upwards (from below)" .
+
+  o:tha_e_a%27_tighinn_a_niios
+    rdfs:label "tha e a’ tighinn a-nìos" ;
+    :part v:a_niios ;
+    :sense "he is coming up" .
+
+  o:a_nis
+    a :Adverb ;
+    rdfs:label "a-nis" ;
+    :sense "now" .
+
+  o:a_nochd
+    a :Adverb ;
+    rdfs:label "a-nochd" ;
+    :sense "tonight" .
+
+  o:a_nuas
+    a :Adverb ;
+    rdfs:label "a-nuas" ;
+    :sense "down" , "downwards (from above)" .
+
+  o:tha_e_a%27_tighinn_a_nuas
+    rdfs:label "tha e a’ tighinn a-nuas" ;
+    :part v:a_nuas ;
+    :sense "he is coming down" .
+
+  o:a_null
+    a :Adverb ;
+    rdfs:label "a-null" ;
+    :sense "to this side" .
+
+  o:a_null_agus_a_nall
+    rdfs:label "a-null ’s a-nall" ;
+    :part o:a_null , o:a_nall ;
+    :sense "this way and that" , "hither and thither" .
+
+  o:a_raoir
+    a :Adverb ;
+    rdfs:label "a-raoir" ;
+    :sense "last night" .
+
+  o:a_reeir
+    a :PrepositionGenitive ;
+    rdfs:label "a-rèir" ;
+    :sense "according to" .
+
+  o:a_riamh
+    a :Adverb ;
+    rdfs:label "a-riamh" ;
+    :sense "ever" , "never" .
+
+  o:bha_e_a_riamh_mar_sin
+    rdfs:label "bha e riamh mar sin" ;
+    :part o:a_riamh ;
+    :sense "he was ever thus" .
+
+  o:chan_fhaca_mi_a_riamh_e
+    rdfs:label "chan fhaca mi riamh e" ;
+    :part o:a_riamh ;
+    :sense "I never saw him" .
+
+  o:a_rithist
+    a :Adverb ;
+    rdfs:label "a-rithist" ;
+    :sense "again" .
+
+  o:a_staigh
+    a :Adverb ;
+    rdfs:label "a-staigh" ;
+    :sense "in (at rest)" .
+
+  o:a_steach
+    a :Adverb ;
+    rdfs:label "a-steach" ;
+    :sense "in (motion)" .
+
+  v:thig_a_steach
+    rdfs:label "thig a-steach" ;
+    :part o:a_steach ;
+    :sense "come in" .
+
+  o:thàinig_e_a_steach_air
+    rdfs:label "thàinig e a-steach air" ;
+    :part o:a_steach ;
+    :sense "it occurred to him" .
+
+  o:chaidh_e_a_steach_don_taigh
+    rdfs:label "chaidh e a-steach don taigh" ;
+    :part o:a_steach ;
+    :sense "he went into the house" .
+
+  o:a_thaobh
+    a :PrepositionGenitive ;
+    rdfs:label "a-thaobh" ;
+    :sense "regarding" , "as regards" , "concerning" .
+
+  n:aba
+    a :Noun ;
+    rdfs:label "ab" ;
+    :sense "abbot" ;
+    :gensg "aba" ;
+    :nompl "abachan" .
+
+  v:abaich
+    a :Verb ;
+    rdfs:label "abaich" ;
+    :sense "ripen" ;
+    :vn "abachadh" .
+
+  a:abaich
+    a :Adjective ;
+    rdfs:label "abaich" ;
+    :sense "ripe" .
+
+  n:abaid
+    a :FeminineNoun ;
+    rdfs:label "abaid" ;
+    :sense "abbey" ;
+    :gensg "abaide" ;
+    :nompl "abaidean" .
+
+  v:abair
+    a :Verb ;
+    rdfs:label "abair (ri)" ;
+    :sense "say" , "tell" .
+
+  o:abair_abair_caisteal%21
+    rdfs:label "abair abair caisteal!" ;
+    :part v:abair ;
+    :sense "what a castle!" .
+
+  o:abair_gun_robh_i_toilichte%21
+    rdfs:label "abair gun robh i toilichte!" ;
+    :part v:abair ;
+    :sense "how pleased she was!" .
+
+  n:aabhachd
+    a :FeminineNoun ;
+    rdfs:label "àbhachd" ;
+    :sense "humour" .
+
+  a:aabhachdach
+    a :Adjective ;
+    rdfs:label "àbhachdach" ;
+    :sense "humourous" .
+
+  n:abhag
+    a :MasculineNoun ;
+    rdfs:label "abhag" ;
+    :sense "terrier" ;
+    :gensg "abhaig" ;
+    :nompl "abhagan" .
+
+  n:abhainn
+    a :FeminineNoun ;
+    rdfs:label "abhainn" ;
+    :sense "river" ;
+    :gensg "aibhne" ;
+    :nompl "aibhnichean" .
+
+  n:aabhaist
+    a :FeminineNoun ;
+    rdfs:label "àbhaist" ;
+    :sense "custom" , "habit" ;
+    :gensg "àbhaiste" ;
+    :nompl "àbhaistean" .
+
+  o:mar_as_aabhaist
+    rdfs:label "mar as àbhaist" ;
+    :part n:aabhaist ;
+    :sense "as usual" .
+
+  a:aabhaisteach
+    a :Adjective ;
+    rdfs:label "àbhaisteach" ;
+    :part n:aabhaist ;
+    :sense "customary" , "normal" .
+
+  n:abharsaic
+    a :FeminineNoun ;
+    rdfs:label "abharsaic" ;
+    :sense "haversack" ;
+    :nompl "abharsaicean" .
+
+  n:abhcaid
+    a :FeminineNoun ;
+    rdfs:label "abhcaid" ;
+    :sense "joke" ;
+    :gensg "abhcaide" ;
+    :nompl "abhcaidean" .
+
+  a:abhcaideach
+    a :Adjective ;
+    rdfs:label "abhcaideach" ;
+    :sense "humorous" , "jocular" .
+
+  n:abhlan
+    a :MasculineNoun ;
+    rdfs:label "abhlan" ;
+    :sense "wafer" ;
+    :gensg "abhlain" ;
+    :nompl "abhlain" .
+
+  n:ablach
+    a :MasculineNoun ;
+    rdfs:label "ablach" ;
+    :sense "carrion" ;
+    :gensg "ablaich" .
+
+  n:abstol
+    a :MasculineNoun ;
+    rdfs:label "abstol" ;
+    :sense "apostle" ;
+    :gensg "abstoil" ;
+    :nompl "abstolan" .
+
+  n:acadamh
+    a :FeminineNoun ;
+    rdfs:label "Acadamh" ;
+    :sense "National Academy" ;
+    :gensg "Acadaimh" ;
+    :nompl "Acadamhan" .
+
+  n:acair
+    a :FeminineNoun ;
+    rdfs:label "acair" ;
+    :sense "anchor" ;
+    :gensg "acrach" ;
+    :nompl "acraichean" .
+
+  n:acaire
+    a :FeminineNoun ;
+    rdfs:label "acaire" ;
+    :sense "acre" ;
+    :nompl "acairean" .
+
+  n:acarsaid
+    a :FeminineNoun ;
+    rdfs:label "acarsaid" ;
+    :sense "anchorage" .
+
+  n:acfhainn
+    a :FeminineNoun ;
+    rdfs:label "acainn" ;
+    :sense "tools" , "equipment" .
+
+  n:acfhuinn
+    a :FeminineNoun ;
+    rdfs:label "acfhuinn" ;
+    :sense "ointment" ;
+    :gensg "acfhuinne" ;
+    :nompl "acfhuinnean" .
+
+  n:achadh
+    a :MasculineNoun ;
+    rdfs:label "achadh" ;
+    :sense "field" ;
+    :gensg "achaidh" ;
+    :nompl "achaidhean" .
+
+  n:achd
+    a :FeminineNoun ;
+    rdfs:label "achd" ;
+    :sense "act (legal)" ;
+    :nompl "achdan" .
+
+  n:achlais
+    a :FeminineNoun ;
+    rdfs:label "achlais" ;
+    :sense "armpit" ;
+    :gensg "achlaise" ;
+    :nompl "achlaisean" .
+
+  o:le_leabhar_fo_a_achlais
+    rdfs:label "le leabhar fo achlais" ;
+    :part n:achlais ;
+    :sense "with a book under his arm" .
+
+  n:achlasan
+    a :MasculineNoun ;
+    rdfs:label "achlasan" ;
+    :sense "armful" ;
+    :gensg "achlasain" ;
+    :nompl "achlasain" .
+
+  n:achmhasan
+    a :MasculineNoun ;
+    rdfs:label "achmhasan" ;
+    :sense "rebuke" ;
+    :gensg "achmhasain" .
+
+  v:thoir_achmhasan_do
+    rdfs:label "thoir achmhasan do" ;
+    :part n:achmhasan ;
+    :sense "rebuke" .
+
+  a:acrach
+    a :Adjective ;
+    rdfs:label "acrach" ;
+    :sense "hungry" .
+
+  n:acras
+    a :MasculineNoun;
+    rdfs:label "acras" ;
+    :sense "hunger" ;
+    :gensg "acrais" .
+
+  o:tha_an_t_acras_orm
+    rdfs:label "tha an t-acras orm" ;
+    :part n:acras ;
+    :sense "I am hungry" .
+
+  n:actair
+    a :MasculineNoun;
+    rdfs:label "actair" ;
+    :sense "actor" ;
+    :nompl "actairean" .
+
+  n:ad
+    a :FeminineNoun;
+    rdfs:label "ad" ;
+    :sense "hat" ;
+    :gensg "aide" ;
+    :nompl "adaichean" .
+
+  n:adag
+    a :FeminineNoun;
+    rdfs:label "adag" ;
+    :sense "haddock" , "shock of corn" ;
+    :gensg "adaige" ;
+    :nompl "adagan" .
+
+  n:adha
+    a :MasculineNoun ;
+    rdfs:label "adha" ;
+    :sense "liver" .
+
+  n:adha_agus_aairne
+    rdfs:label "adha ’s àirne" ;
+    :part n:adha ;
+    :sense "offal" .
+
+  n:adhaltraiche
+    a :MasculineNoun ;
+    rdfs:label "adhaltraiche" ;
+    :sense "adulterer" ;
+    :nompl "adhaltraichean" .
+
+  n:adhaltranas
+    a :MasculineNoun ;
+    rdfs:label "adhaltranas" ;
+    :sense "adultery" ;
+    :gensg "adhaltranais" .
+
+  n:adhar
+    a :MasculineNoun ;
+    rdfs:label "adhar" ;
+    :sense "sky" ;
+    :gensg "adhair" .
+
+  n:Adhar_Luingeas_Bhreatainn
+    rdfs:label "Adhar Luingeas Bhreatainn" ;
+    :part n:adhar ;
+    :sense "British Airways" .
+
+  n:adharc
+    a :FeminineNoun ;
+    rdfs:label "adharc" ;
+    :sense "horn" ;
+    :gensg "adhairce" ;
+    :nompl "adharcan" .
+
+  a:adharcach
+    a :Adjective ;
+    rdfs:label "adharcach" ;
+    :sense "horned" .
+
+  n:adharcan_luachrach
+    a :MasculineNoun ;
+    rdfs:label "adharcan-luachrach" ;
+    :sense "lapwing" ;
+    :gensg "adharcain-luachrach" ;
+    :nompl "adharcain-luachrach" .
+
+  n:adhart
+    a :MasculineNoun ;
+    rdfs:label "adhart" ;
+    :sense "progress" ;
+    :gensg "adhairt" .
+
+  o:air_adhart
+    rdfs:label "air adhart" ;
+    :part n:adhart ;
+    :sense "forward" .
+
+  v:tighinn_air_adhart
+    rdfs:label "tighinn air adhart" ;
+    :part o:air_adhart ;
+    :sense "coming on" .
+
+  n:adhartas
+    a :MasculineNoun ;
+    rdfs:label "adhartas" ;
+    :sense "progress" , "improvement" ;
+    :gensg "adhartais" .
+
+  a:adhartach
+    a :Adjective ;
+    rdfs:label "adhartach" ;
+    :sense "progressive" , "advanced" .
+
+  n:adhbhar
+    a :MasculineNoun ;
+    rdfs:label "adhbhar" ;
+    :sense "reason" , "cause" , "issue" , "material" ;
+    :gensg "adhbhair" ;
+    :nompl "adhbharan" .
+
+  o:air_an_adhbhar_seo
+    rdfs:label "air an adhbhar seo" ;
+    :part n:adhbhar ;
+    :sense "for this reason" .
+
+  a:adhbharach
+    a :Adjective ;
+    rdfs:label "adhbharach" ;
+    :sense "causal" .
+
+  n:adhbrann
+    a :FeminineNoun ;
+    rdfs:label "adhbrann" ;
+    :sense "ankle" ;
+    :gensg "adhbrainne" ;
+    :nompl "adhbrannan" .
+
+  v:adhlaic
+    a :Verb ;
+    rdfs:label "adhlaic" ;
+    :sense "bury" ;
+    :vn "adhlacadh" .
+
+  n:adhnadh
+    a :MasculineNoun;
+    rdfs:label "adhnadh" ;
+    :sense "ignition (car)" ;
+    :gensg "adhnaidh" .
+
+  n:adhradh
+    a :MasculineNoun ;
+    rdfs:label "adhradh" ;
+    :sense "worship" ;
+    :gensg "adhraidh" .
+
+  v:deean_adhradh
+    rdfs:label "dèan adhradh" ;
+    :part n:adhradh ;
+    :sense "worship" .
+
+  n:aer_ghath
+    a :MasculineNoun ;
+    rdfs:label "aer-ghath" ;
+    :sense "aerial" ;
+    :gensg "aer-ghatha" ;
+    :nompl "aer-ghathan" .
+
+  v:agair
+    a :Verb ;
+    rdfs:label "agair (air)" ;
+    :sense "claim" ;
+    :vn "agairt" .
+
+  v:agallaich
+    a :Verb ;
+    rdfs:label "agallaich" ;
+    :sense "interview" ;
+    :vn "agallachadh" .
+
+  n:agallamh
+    a :MasculineNoun ;
+    rdfs:label "agallamh" ;
+    :sense "interview" ;
+    :gensg "agallaimh" ;
+    :nompl "agallamhan" .
+
+  n:agh
+    a :MasculineNoun ;
+    rdfs:label "agh" ;
+    :sense "heifer" ;
+    :nompl "aighean" .
+
+  n:aagh
+    a :MasculineNoun ;
+    rdfs:label "àgh" ;
+    :sense "happiness" , "fortune" ;
+    :gensg "àigh" .
+
+  n:aghaidh
+    a :FeminineNoun ;
+    rdfs:label "aghaidh" ;
+    :sense "face" , "facing" , "façade" ;
+    :gensg "aghaidhe" ;
+    :nompl "aghaidhean" .
+
+  o:air_aghaidh
+    rdfs:label "air aghaidh" ;
+    :part n:aghaidh ;
+    :sense "forward" .
+
+  o:an_aghaidh
+    a :PrepositionGenitive ;
+    rdfs:label "an aghaidh" ;
+    :part n:aghaidh ;
+    :sense "against" .
+
+  o:chuir_iad_an_aghaidh_air_Glaschu
+    rdfs:label "chuir iad an aghaidh air Glaschu" ;
+    :part v:aghaidh ;
+    :sense "they made for Glasgow" .
+
+  o:chuir_iad_an_aghaidh_oirnn
+    rdfs:label "chuir iad an aghaidh oirnn" ;
+    :part v:aghaidh ;
+    :sense "they opposed us" .
+
+  o:nam_aghaidh
+    rdfs:label "’nam aghaidh" ;
+    :part o:an_aghaidh ;
+    :sense "against me" .
+
+  o:nad_aghaidh
+    rdfs:label "nad aghaidh" ;
+    :part o:an_aghaidh ;
+    :sense "against you" .
+
+  o:nar_n_aghaidh
+    rdfs:label "nar n-aghaidh" ;
+    :part o:an_aghaidh ;
+    :sense "against us" .
+
+  o:nur_n_aghaidh
+    rdfs:label "nur n-aghaidh" ;
+    :part o:an_aghaidh ;
+    :sense "against you" .
+
+  o:na_aghaidh
+    rdfs:label "’na aghaidh" ;
+    :part o:an_aghaidh ;
+    :sense "against him" .
+
+  o:na_h_aghaidh
+    rdfs:label "’na h-aghaidh" ;
+    :part o:an_aghaidh ;
+    :sense "against her" .
+
+  o:nan_aghaidh
+    rdfs:label "’nan aghaidh" ;
+    :part o:an_aghaidh ;
+    :sense "against them" .
+
+  n:aghann
+    a :FeminineNoun ;
+    rdfs:label "aghann" ;
+    :sense "pan" , "frying pan" ;
+    :gensg "aighne" ;
+    :nompl "aighnean" .
+
+  a:aaghmhor
+    a :Adjective ;
+    rdfs:label "àghmhor" ;
+    :sense "happy" .
+
+  n:aibheis
+    a :FeminineNoun ;
+    rdfs:label "àibheis" ;
+    :sense "abyss" ;
+    :gensg "àibheise" ;
+    :nompl "àibheisean" .
+
+  n:aibhseachadh
+    a :MasculineNoun ;
+    rdfs:label "àibhseachadh" ;
+    :sense "hyperbole" ;
+    :gensg "àibheiseachaidh" .
+
+  a:aibhseach
+    a :Adjective ;
+    rdfs:label "àibhseach" ;
+    :sense "vast" .
+
+  n:aibidil
+    a :FeminineNoun ;
+    rdfs:label "aibidil" ;
+    :sense "alphabet" ;
+    :gensg "aibideile" .
+
+  v:aaich
+    a :Verb ;
+    rdfs:label "àicheidh" ;
+    :sense "deny" , "disown" , "recant" ;
+    :vn "àicheadh" .
+
+  v:aidich
+    a :Verb ;
+    rdfs:label "aidich" ;
+    :sense "admit" , "confess" , "acknowledge" ;
+    :vn "aideachadh" .
+
+  n:aidmheil
+    a :FeminineNoun ;
+    rdfs:label "aidmheil" ;
+    :sense "confession" ;
+    :gensg "aidmheile" ;
+    :nompl "aidmheilean" .
+
+  n:aifreann
+    a :MasculineNoun ;
+    rdfs:label "aifreann" ;
+    :sense "mass (religion)" ;
+    :gensg "aifrinn" .
+
+  n:aaigeach
+    a :MasculineNoun ;
+    rdfs:label "àigeach" ;
+    :sense "stallion" ;
+    :gensg "àigich" ;
+    :nompl "àigich" .
+
+  n:aighear
+    a :MasculineNoun ;
+    rdfs:label "aighear" ;
+    :sense "merriment" , "joy" , "delight" ;
+    :gensg "aighir" .
+
+  a:aighearach
+    a :Adjective ;
+    rdfs:label "aighearach" ;
+    :sense "merry" , "joyful" , "cheerful" .
+
+  n:aighneas
+    a :MasculineNoun ;
+    rdfs:label "aighneas" ;
+    :sense "dispute" ;
+    :gensg "aighneis" ;
+    :nompl "aighneasan" .
+
+  n:aigne
+    a :FeminineNoun ;
+    rdfs:label "aigne" ;
+    :sense "disposition" , "character" .
+
+  a:aigneach
+    a :Adjective ;
+    rdfs:label "aigneach" ;
+    :sense "spirited" , "lively" .
+
+  n:ailbhean
+    a :MasculineNoun ;
+    rdfs:label "ailbhean" ;
+    :sense "elephant" ;
+    :gensg "ailbhein" ;
+    :nompl "ailbheanan" .
+
+  n:ailbhinn
+    a :FeminineNoun ;
+    rdfs:label "ailbhinn" ;
+    :sense "flint" ;
+    :gensg "ailbhinne" .
+
+  a:ailbhinneach
+    a :Adjective ;
+    rdfs:label "ailbhinneach" ;
+    :sense "flinty" .
+
+  n:ailbineachd
+    a :FeminineNoun ;
+    rdfs:label "ailbineachd" ;
+    :sense "albinism" .
+
+  n:aaile
+    a :MasculineNoun ;
+    rdfs:label "àile" ;
+    :sense "air" , "atmosphere" .
+
+  v:leig_an_t_aaile_air
+    rdfs:label "leig an t-àile air" ;
+    :part n:aaile ;
+    :sense "air" .
+
+  n:aileag
+    a :FeminineNoun ;
+    rdfs:label "aileag" ;
+    :sense "hiccup" ;
+    :gensg "aileige" ;
+    :nompl "aileagan" .
+
+  n:aailean
+    a :MasculineNoun ;
+    rdfs:label "àilean" ;
+    :sense "meadow" ;
+    :gensg "àilein" ;
+    :nompl "àilein" .
+
+  n:aaille
+    a :FeminineNoun ;
+    rdfs:label "àille" ;
+    :sense "beauty" .
+
+  a:aailleasach
+    a :Adjective ;
+    rdfs:label "àilleasach" ;
+    :sense "fastidious" .
+
+  a:aaillidh
+    a :Adjective ;
+    rdfs:label "àillidh" ;
+    :sense "lovely" .
+
+  n:aillse
+    a :FeminineNoun ;
+    rdfs:label "aillse" ;
+    :sense "cancer" .
+
+  n:ailtire
+    a :MasculineNoun ;
+    rdfs:label "ailtire" ;
+    :sense "architect" ;
+    :nompl "ailtirean" .
+
+  n:ailtireachd
+    a :FeminineNoun ;
+    rdfs:label "ailtireachd" ;
+    :sense "architecture" .
+
+  n:aimhleas
+    a :MasculineNoun ;
+    rdfs:label "aimhleas" ;
+    :sense "mischief" ;
+    :gensg "aimhleis" .
+
+  a:aimhleasach
+    a :Adjective ;
+    rdfs:label "aimhleasach" ;
+    :sense "mischievous" .
+
+  n:aimhreit
+    a :FeminineNoun ;
+    rdfs:label "aimhreit" ;
+    :sense "disturbance" , "quarrel" , "unrest" , "discord" ;
+    :gensg "aimhreite" ;
+    :nompl "aimhreitean" .
+
+  n:aimsir
+    a :FeminineNoun ;
+    rdfs:label "aimsir" ;
+    :sense "season" , "time" ;
+    :gensg "aimsire" ;
+    :nompl "aimsirean" .
+
+  a:aimsireil
+    a :Adjective ;
+    rdfs:label "aimsireil" ;
+    :sense "temporal" .
+
+  n:aindeoin
+    a :FeminineNoun ;
+    rdfs:label "aindeòin" ;
+    :sense "reluctance" .
+
+  o:a_dh%27aindeoin
+    rdfs:label "a dh’aindeoin" ;
+    :part n:aindeoin ;
+    :sense "in spite of" .
+
+  o:a_dheooin_no_dh%27aindeoin
+    rdfs:label "a dheòin no dh’aindeoin" ;
+    :part n:aindeoin ;
+    :sense "willy-nilly." .
+
+  a:aindeonach
+    a :Adjective ;
+    rdfs:label "aindeonach" ;
+    :sense "reluctant" .
+
+  a:aindiadhaidh
+    a :Adjective ;
+    rdfs:label "aindiadhaidh" ;
+    :sense "impious" , "ungodly".
+
+  n:aindlighe
+    a :FeminineNoun ;
+    rdfs:label "aindlighe" ;
+    :sense "injustice" .
+
+  a:aineolaach
+    a :Adjective ;
+    rdfs:label "aineolach" ;
+    :sense "ignorant" .
+
+  n:aineolas
+    a :MasculineNoun ;
+    rdfs:label "aineolas" ;
+    :sense "ignorance" ;
+    :gensg "aineolais" .
+
+  n:ainfhios
+    a :MasculineNoun ;
+    rdfs:label "ainfhios" ;
+    :sense "ignorance" ;
+    :gensg "ainfhiosa" .
+
+  n:aingeal
+    a :MasculineNoun ;
+    rdfs:label "aingeal" ;
+    :sense "angel" ;
+    :gensg "aingeil" ;
+    :nompl "ainglean" .
+
+  a:aingidh
+    a :Adjective ;
+    rdfs:label "aingidh" ;
+    :sense "wicked" .
+
+  n:aingidheachd
+    a :FeminineNoun ;
+    rdfs:label "aingidheachd" ;
+    :sense "wickedness" .
+
+  n:ainm
+    a :MasculineNoun ;
+    rdfs:label "ainm" ;
+    :sense "name" , "signature" , "fame" ;
+    :nompl "ainmean" .
+
+  n:ainm_chlaar
+    rdfs:label "ainm-chlàr" ;
+    :part n:ainm ;
+    :sense "catalogue" ;
+    :gensg "ainm-chlàir" ;
+    :nompl "ainm-chlàran" .
+
+  n:ainmear
+    a :MasculineNoun ;
+    rdfs:label "ainmear" ;
+    :sense "noun" ;
+    :nompl "ainmearan" .
+
+  a:ainmeil
+    a :Adjective ;
+    rdfs:label "ainmeil" ;
+    :sense "famous" .
+
+  v:ainmich
+    a :Verb ;
+    rdfs:label "ainmich" ;
+    :sense "name" , "nominate" ;
+    :vn "ainmeachadh" .
+
+  a:ainmh_chruthach
+    a :Adjective ;
+    rdfs:label "ainmh-chruthach" ;
+    :sense "zoomorphic" .
+
+  a:ainmh_eoolach
+    a :Adjective ;
+    rdfs:label "ainmh-eòlach" ;
+    :sense "zoological" .
+
+  n:ainmh_eoolaiche
+    a :MasculineNoun ;
+    rdfs:label "ainmh-eòlaiche" ;
+    :sense "zoologist" ;
+    :nompl "ainmh-eòlaichean" .
+
+  n:ainmh_eoolas
+    a :MasculineNoun ;
+    rdfs:label "ainmh-eòlas" ;
+    :sense "zoology" ;
+    :gensg "ainmh-eòlais" .
+
+  n:ainmhidh
+    a :MasculineNoun ;
+    rdfs:label "ainmhidh" ;
+    :sense "animal" ;
+    :gensg "ainmhidhe" ;
+    :nompl "ainmhidhean" .
+
+  a:ainmig
+    a :Adjective ;
+    rdfs:label "ainmig" ;
+    :sense "rare" .
+
+  a:ainneamh
+    a :Adjective ;
+    rdfs:label "ainneamh" ;
+    :sense "scarce" .
+
+  n:ainneart
+    a :MasculineNoun ;
+    rdfs:label "ainneart" ;
+    :sense "violence" ;
+    :gensg "ainneirt" .
+
+  a:ainneartach
+    a :Adjective ;
+    rdfs:label "ainneartach" ;
+    :sense "violent" .
+
+  a:ainniseach
+    a :Adjective ;
+    rdfs:label "ainniseach" ;
+    :sense "needy" .
+
+  n:aintighearna
+    a :MasculineNoun ;
+    rdfs:label "aintighearna" ;
+    :sense "tyrant" ;
+    :nompl "aintighearnan" .
+
+  a:aintighearnail
+    a :Adjective ;
+    rdfs:label "aintighearnail" ;
+    :sense "tyrannical" .
+
+  n:aintighearnas
+    a :MasculineNoun ;
+    rdfs:label "aintighearnas" ;
+    :sense "tyranny" ;
+    :gensg "aintighearnais" .
+
+  n:air_letheachas
+    rdfs:label "air-letheachas" ;
+    :sense "individuality" ;
+    :gensg "air-letheachais" .
+
+  n:aairc
+    a :FeminineNoun ;
+    rdfs:label "àirc" ;
+    :sense "ark" ;
+    :gensg "àirce" ;
+    :nompl "àircean" .
+
+  n:airchealladh
+    a :MasculineNoun ;
+    rdfs:label "airchealladh" ;
+    :sense "sacrilege" ;
+    :gensg "aircheallaidh" ;
+    :nompl "aircheallaidhean" .
+
+}

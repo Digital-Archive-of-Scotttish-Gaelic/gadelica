@@ -1,0 +1,248 @@
+  n:aairde
+    a :FeminineNoun ;
+    rdfs:label "àirde" ;
+    :part a:aard ;
+
+              :sense "height" , "highness" , "eminence" , "climax" ;
+              rdfs:comment "feminine noun" ] .
+
+  n:sia_troighean_a_dh_aairde
+    rdfs:label "sia troighean a dh’àirde" ;
+    :part n:aairde , n:troigh ;
+
+              :sense "six feet high" ] .
+
+  o:an_aairde
+    rdfs:label "an àirde" ;
+    :part n:aairde ;
+
+              :sense "up" ] .
+
+  v:deean_an_aairde_inntinn
+    rdfs:label "dèan an àirde [...] inntinn" ;
+    :part v:deean , o:an_aairde , n:inntinn ;
+
+              :sense "make one’s mind up" ] .
+
+  o:rinn_e_an_aairde_a_inntinn
+    rdfs:label "rinn e an àirde (a) inntinn" ;
+    :part v:deean_an_aairde_inntinn ;
+
+              :sense "he made up his mind" ] .
+
+  n:aire
+    a :FeminineNoun ;
+    rdfs:label "aire" ;
+
+              :sense "attention" ;
+              rdfs:comment "feminine noun" ] .
+
+  v:thoir_an_aire_do
+    rdfs:label "thoir an aire do" ;
+    :part v:thoir , n:aire ;
+
+              :sense "pay attention to" , "notice" , "observe" ] .
+
+  o:thoir_an_aire
+    rdfs:label "thoir an aire!" ;
+    :part v:thoir_an_aire_do ;
+
+              :sense "take care!" ] .
+
+  a:aireachail
+    a :Adjective ;
+    rdfs:label "aireachail" ;
+    :part n:aire ;
+
+              :sense "attentive" , "watchful" ;
+              rdfs:comment "adjective" ] .
+
+
+
+  n:aaireamh
+    a :FeminineNoun ;
+    rdfs:label "àireamh" ;
+
+              :sense "number" ;
+              :gensg "àireimhe" ;
+              :nompl "àireamhan" ;
+              rdfs:comment "feminine noun" ] .
+
+  a:aaireamh_oileanaichte
+    rdfs:label "àireamh oileanaichte" ;
+    :part n:aaireamh , a:oileanaichte ;
+
+              :gd "àireamh-oileanaichte" ;
+              :sense "numerate" ;
+              rdfs:comment "adjective" ] .
+
+  a:aaireamhach
+    a :Adjective ;
+    rdfs:label "àireamhach" ;
+    :part n:aaireamh ;
+
+              :sense "numeral" ;
+              rdfs:comment "adjective" ] .
+
+  n:aaireamhachadh
+    a :MasculineNoun ;
+    rdfs:label "àireamhachadh" ;
+    :part n:aaireamh ;
+
+              :sense "numeration" ;
+              :gensg "àireamhachaidh" ;
+              rdfs:comment "masculine noun" ] .
+
+  a:aaireamhail
+    a :Adjective ;
+    rdfs:label "àireamhail" ;
+    :part n:aaireamh ;
+
+              :sense "numerical" ;
+              rdfs:comment "adjective" ] .
+
+  n:aaireamhair
+    a :MasculineNoun ;
+    rdfs:label "àireamhair" ;
+    :part n:aaireamh ;
+
+              :sense "calculator" ;
+              :nompl "àireamhairean" ;
+              rdfs:comment "masculine noun" ] .
+
+  n:airgead
+    a :MasculineNoun ;
+    rdfs:label "airgead" ;
+
+              :sense "money" , "silver" ;
+              :gensg "airgid" ;
+              rdfs:comment "masculine noun" ] .
+
+  n:airgead_beoo
+    rdfs:label "airgead beò" ;
+    :part n:airgead , a:beoo ;
+
+              :gd "airead-beò" ;
+              :sense "quicksilver" ;
+              rdfs:comment "masculine noun" ] .
+
+  n:airgead_seilbh
+    rdfs:label "airgead seilbh" ;
+    :part n:airgead ;
+
+              :sense "investment" ;
+              :gd "airgead-seilbh" ;
+              rdfs:comment "masculine noun" ] .
+
+  n:airgead_tasgaidh
+    rdfs:label "airgead tasgaidh" ;
+    :part n:airgead , n:tasgadh ;
+
+              :sense "investment" ;
+              :gd "airgead-tasgaidh" ;
+              rdfs:comment "masculine noun" ] .
+
+  n:airgead_urrais
+    rdfs:label "airgead urrais" ;
+    :part n:airgead , n:urras ;
+
+              :sense "insurance" ;
+              :gd "airgead-urrais" ;
+              rdfs:comment "masculine noun" ] .
+
+  n:airgead_urrais_beatha
+    rdfs:label "airgead urrais beatha" ;
+    :part n:airgead_urrais , n:beatha ;
+
+              :sense "life insurance" ;
+              :gd "airgead-urrais beatha" ] .
+
+  n:airgead_urrais_caair
+    rdfs:label "airgead urrais càir" ;
+    :part n:airgead_urrais , n:caar ;
+
+              :sense "car insurance" ;
+              :gd "airgead-urrais càir" ] .
+
+  a:airgeadach
+    a :Adjective ;
+    rdfs:label "airgeadach" ;
+    :part n:airgead ;
+
+              :sense "moneyed" , "well off" ;
+              rdfs:comment "adjective" ] .
+
+  a:airgeadaichte
+    a :Adjective ;
+    rdfs:label "airgeadaichte" ;
+    :part n:airgead ;
+
+              :sense "silver-plated" ;
+              rdfs:comment "adjective" ] .
+
+  n:airgeadas
+    a :MasculineNoun ;
+    rdfs:label "airgeadas" ;
+    :part n:airgead ;
+
+              :sense "finance" ;
+              :gensg "airgeadais" ;
+              rdfs:comment "masculine noun" ] .
+
+  a:airidh
+    a :Adjective ;
+    rdfs:label "airidh" ;
+
+              :sense "worthy" , "deserving" ;
+              rdfs:comment "adjective" ] .
+
+  a:airidh_air
+    rdfs:label "airidh air ..." ;
+    :part a:airidh ;
+
+              :sense "worthy of" , "deserving of" ] .
+
+  n:aairigh
+    a :FeminineNoun ;
+    rdfs:label "àirigh" ;
+
+              :sense "shieling" , "summer pasture" ;
+              :gensg "àirighe" ;
+              :nompl "àirighean" ;
+              rdfs:comment "feminine noun" ] .
+
+  a:aairmheachail
+    a :Adjective ;
+    rdfs:label "àirmheachail" ;
+    :part n:aaireamh ;
+
+              :sense "quantitative" ;
+              rdfs:comment "adjective" ] .
+
+  n:aairne
+    a :FeminineNoun ;
+    rdfs:label "àirne" ;
+
+              :sense "sloe" ;
+              :nompl "àirnean" ;
+              rdfs:comment "feminine noun" ] .
+
+  a:aairneach
+    a :Adjective ;
+    rdfs:label "àirneach" ;
+
+              :sense "renal" ;
+              rdfs:comment "adjective" ] .
+
+  n:aairneis
+    a :FeminineNoun ;
+    rdfs:label "àirneis" ;
+
+              :sense "furniture" ;
+              rdfs:comment "feminine noun" ] .
+
+  n:ball_aairneis
+    rdfs:label "ball àirneis" ;
+    :part n:ball , n:aairneis ;
+
+              :sense "piece of furniture" ] .

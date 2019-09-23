@@ -1,0 +1,74 @@
+@prefix n: <http://faclair.ac.uk/nouns/> .
+@prefix a: <http://faclair.ac.uk/adjectives/> .
+@prefix v: <http://faclair.ac.uk/verbs/> .
+@prefix o: <http://faclair.ac.uk/other/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://faclair.ac.uk/meta/> .
+
+<http://faclair.ac.uk/sources/personal>
+  rdfs:label "Conmaol" .
+
+n:nighean
+  a :FeminineNoun ;
+  rdfs:label "nighean" .
+
+n:cuul
+  a :MasculineNoun ;
+  rdfs:label "cùl" .
+
+a:ruadh
+  a :Adjective ;
+  rdfs:label "ruadh" .
+
+a:dubh
+  a :Adjective ;
+  rdfs:label "dubh" .
+
+n:Toomas
+  a :MasculineProperNoun ;
+  rdfs:label "Tòmas" .
+
+n:croitear
+  a :MasculineNoun ;
+  rdfs:label "croitear" .
+
+n:taidhcuun
+  a :MasculineNoun ;
+  rdfs:label "taidhcùn" .
+
+v:eeirich
+  a :Verb ;
+  rdfs:label "èirich" .
+
+n:inbhe
+  a :FeminineNoun ;
+  rdfs:label "inbhe" .
+
+<http://faclair.ac.uk/sources/personal> {
+
+  n:inbhe :sense "status" .
+
+  v:eeirich :sense "rise" .
+
+  n:taidhcuun :sense "tycoon" .
+
+  n:croitear :sense "crofter" .
+
+  n:Toomas :sense "Thomas" .
+
+  a:dubh :sense "black" .
+
+  n:nighean :sense "girl" .
+
+  n:cuul :sense "back" .
+
+  a:ruadh :sense "red" .
+
+}
+
+:MasculineNoun rdfs:label "masculine noun" .
+:FeminineNoun rdfs:label "feminine noun" .
+:Adjective rdfs:label "adjective" .
+:Verb rdfs:label "verb" .
+:MasculineProperNoun rdfs:label "masculine proper noun" .
+:FeminineProperNoun rdfs:label "feminine proper noun" .
