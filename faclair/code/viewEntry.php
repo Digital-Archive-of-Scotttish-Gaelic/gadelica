@@ -28,7 +28,7 @@ WHERE
 }
 SPQR;
 $query = urlencode($query);
-$url = 'http://pluto.arts.gla.ac.uk:8080/fuseki/storas-b?output=json&query=' . $query;
+$url = 'http://daerg.arts.gla.ac.uk:8080/fuseki/Faclair?output=json&query=' . $query;
 $json = file_get_contents($url);
 $data = json_decode($json,false)->results->bindings;
 echo '<div class="card"><div class="card-body">';
@@ -137,7 +137,9 @@ echo '</div></div>';
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-           <!-- <a class="nav-item nav-link" href="gaelic.php" data-toggle="tooltip" title="Switch to Gaelic-to-English search">Gàidhlig gu Beurla</a>-->
+          <a class="nav-item nav-link" href="about.html" data-toggle="tooltip" title="About this site">fios</a>
+          <a class="nav-item nav-link" href="gaelicIndex.php" data-toggle="tooltip" title="View Gaelic index">indeacs</a>
+          <a class="nav-item nav-link" href="random.php" data-toggle="tooltip" title="View random entry">iongnadh</a>
         </div>
       </div>
     </nav>

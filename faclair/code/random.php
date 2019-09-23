@@ -21,7 +21,7 @@ WHERE
 }
 SPQR;
 $query = urlencode($query);
-$url = 'http://daerg.arts.gla.ac.uk:8080/fuseki/co-aite?output=json&query=' . $query;
+$url = 'http://daerg.arts.gla.ac.uk:8080/fuseki/Faclair?output=json&query=' . $query;
 $json = file_get_contents($url);
 $data = json_decode($json,false)->results->bindings;
 $ids = [];
@@ -43,7 +43,7 @@ WHERE
 }
 SPQR;
 $query = urlencode($query);
-$url = 'http://daerg.arts.gla.ac.uk:8080/fuseki/co-aite?output=json&query=' . $query;
+$url = 'http://daerg.arts.gla.ac.uk:8080/fuseki/Faclair?output=json&query=' . $query;
 $json = file_get_contents($url);
 $data = json_decode($json,false)->results->bindings;
 echo '<div class="card"><div class="card-body">';
@@ -56,13 +56,13 @@ echo '</ul>';
 echo '</div></div>';
 ?>
       <nav class="navbar navbar-dark bg-primary fixed-bottom navbar-expand-lg">
-        <a class="navbar-brand" href="englishSearch.php">Co-àite Briathrachais</a>
+        <a class="navbar-brand" href="index.php">Stòras-B</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-             <a class="nav-item nav-link" href="about.html" data-toggle="tooltip" title="About this site">mu dheidhinn</a>
+             <a class="nav-item nav-link" href="about.html" data-toggle="tooltip" title="About this site">fios</a>
              <a class="nav-item nav-link" href="gaelicIndex.php" data-toggle="tooltip" title="View Gaelic index">indeacs</a>
              <a class="nav-item nav-link" href="random.php" data-toggle="tooltip" title="View random entry">iongnadh</a>
           </div>

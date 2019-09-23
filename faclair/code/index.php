@@ -59,9 +59,7 @@ WHERE
 }
 ORDER BY strlen(str(?gd))
 SPQR;
-  $url = 'http://pluto.arts.gla.ac.uk:8080/fuseki/storas-b?output=json&query=' . urlencode($query);
-  //echo $url;
-  //echo file_get_contents($url);
+  $url = 'http://daerg.arts.gla.ac.uk:8080/fuseki/Faclair?output=json&query=' . urlencode($query);
   $results = json_decode(file_get_contents($url),false)->results->bindings;
   echo '<div class="list-group list-group-flush">'; // display list of search results
   foreach ($results as $result) {
@@ -81,6 +79,8 @@ else {
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
              <a class="nav-item nav-link" href="about.html" data-toggle="tooltip" title="About this site">fios</a>
+             <a class="nav-item nav-link" href="gaelicIndex.php" data-toggle="tooltip" title="About this site">indeacs</a>
+             <a class="nav-item nav-link" href="random.php" data-toggle="tooltip" title="View random entry">iongnadh</a>
           </div>
         </div>
       </nav>
