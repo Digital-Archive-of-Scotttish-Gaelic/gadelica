@@ -20,7 +20,11 @@
           <a href="viewText.php?t=1_Daain_do_Eimhir/II_A_Chiall_s_a_Ghraaidh">II: A’ Chiall ’s a’ Ghràidh</a>, 
           <a href="viewText.php?t=1_Daain_do_Eimhir/III">III</a>, 
           <a href="viewText.php?t=1_Daain_do_Eimhir/IV">IV</a>, 
-          <a href="viewText.php?t=1_Daain_do_Eimhir/V">V</a>
+          <a href="viewText.php?t=1_Daain_do_Eimhir/V">V</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/VI">VI</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/VIII">VIII</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/IX">IX</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/X">X</a>
         </div>
         <div class="list-group-item list-group-item-action">#2: Sgeulachdan Dhòmhnaill Alasdair – 
           <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/1_A_Chaora_Dhubh">A’ Chaora Dhubh</a>, 
@@ -33,6 +37,11 @@
           <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/8_Ciste_a_Chaiptein">Ciste a’ Chaiptein</a>, 
           <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/9_Cogais_Ghoirt">Cogais Ghoirt</a>, 
           <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/10_Cruaidh-fhortan_Bhriain">Cruaidh-fhortan Bhriain</a>,
+          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/11_Daa_Chaora_Dhubh">Dà Chaora Dhubh</a>,
+          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/12_Diioghaltas_Syd_Scot">Dìoghaltas Syd Scot</a>,
+          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/13_Diiomhaireachd_nan_Dotairean">Dìomhaireachd nan Dotairean</a>,
+          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/14_Droch_Bhliadhna_san_Sgoil">Droch Bhliadhna san Sgoil</a>,
+          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/15_Eucoir_agus_Peanasachadh">Eucoir agus Peanasachadh</a>,
         </div>
       </div>
     </div>
