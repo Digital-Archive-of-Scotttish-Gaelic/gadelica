@@ -29,7 +29,12 @@
           <a href="viewText.php?t=1_Daain_do_Eimhir/XII">XII</a>, 
           <a href="viewText.php?t=1_Daain_do_Eimhir/XIII">XIII</a>, 
           <a href="viewText.php?t=1_Daain_do_Eimhir/XIV_Reic_Anama">XIV: Reic Anama</a>, 
-          <a href="viewText.php?t=1_Daain_do_Eimhir/XV_Trii_Slighean">XV: Trì Slighean</a>
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XV_Trii_Slighean">XV: Trì Slighean</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XVI">XVI</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XVII">XVII</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XVIII_UUrnaigh">XVIII: Ùrnaigh</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XIX">XIX</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XX">XX</a>
         </div>
         <div class="list-group-item list-group-item-action">#2: Sgeulachdan Dhòmhnaill Alasdair – 
           <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/1_A_Chaora_Dhubh">A’ Chaora Dhubh</a>, 
@@ -48,11 +53,29 @@
           <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/14_Droch_Bhliadhna_san_Sgoil">Droch Bhliadhna san Sgoil</a>,
           <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/15_Eucoir_agus_Peanasachadh">Eucoir agus Peanasachadh</a>,
           <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/16_Eudach">Eudach</a>, 
-          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/17_Fear_na_Bainnse">Fear_na_Bainnse</a>, 
-          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/18_Gaisgeach_Duuthchail">Gaisgeach_Duuthchail</a>, 
-          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/19_Iasgach_nan_Giomach">Iasgach_nan_Giomach</a>, 
-          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/20_Mata_agus_Lucas">Mata_agus_Lucas</a>
+          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/17_Fear_na_Bainnse">Fear na Bainnse</a>, 
+          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/18_Gaisgeach_Duuthchail">Gaisgeach Dùthchail</a>, 
+          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/19_Iasgach_nan_Giomach">Iasgach nan Giomach</a>, 
+          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/20_Mata_agus_Lucas">Mata agus Lucas</a>,
+          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/21_Poosadh_Smart_Ailig">Pòsadh ‘Smart Ailig’</a>,
+          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/22_Rob_an_Deucoin">Rob an Deucoin</a>,
+          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/23_Saighead_an_Tighearna">Saighead an Tighearna</a>,
+          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/24_Toiseach_a_Shoolais">Toiseach a’ Shòlais</a>
         </div>
+        <div class="list-group-item list-group-item-action">#3: Smuaintean fo Éiseabhal – 
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Am_Baard">Am Bàrd</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/An_Rocaid">An Rocaid</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/An_t-Eun_Fuadain">An t-Eun Fuadain</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Cha_Mhoor_tha_ri_AAireamh">Cha Mhór tha ri Àireamh</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Caochladh">Caochladh</a> 
+        </div>
+        <div class="list-group-item list-group-item-action">#4: Bàrdachd Dhòmhnaill Alasdair – </div>
+        <div class="list-group-item list-group-item-action">#5: Inbhe Theàrainte dhan Ghàidhlig – </div>
+        <div class="list-group-item list-group-item-action">#6: Tasgadh anns an Ùine Romhainn – </div>
+        <div class="list-group-item list-group-item-action">#7: Moch is Anmoch: the Gaelic poetry of Donald A. MacNeill and other Colonsay bards – </div>
+        <div class="list-group-item list-group-item-action">#8: Hiort: Far na Laigh a’ Ghrian – </div>
+        <div class="list-group-item list-group-item-action">#9: Sùil air Meanbh-bhiastagan</div>
+        <div class="list-group-item list-group-item-action">#10: Coimhead air an Taigh-dubh ann an Arnol</div>
       </div>
     </div>
   </body>
