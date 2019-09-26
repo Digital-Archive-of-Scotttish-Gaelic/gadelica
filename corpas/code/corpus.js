@@ -9,7 +9,8 @@ $(function() {
     $('.word').css('background-color', 'inherit');
     $(this).css('background-color', 'yellow');
     var ref = 'http://faclair.ac.uk/' + $(this).attr('data-ref');
-    var url = "http://daerg.arts.gla.ac.uk:8080/fuseki/Faclair?output=json&query=";
+    var url = "https://pluto.arts.gla.ac.uk/fuseki/Faclair?output=json&query=";
+    alert(url);
     var query = 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> \
 SELECT ?h ?pos ?en \
 WHERE \
