@@ -72,9 +72,18 @@
         <div class="list-group-item list-group-item-action">#4: Bàrdachd Dhòmhnaill Alasdair – </div>
         <div class="list-group-item list-group-item-action">#5: Inbhe Theàrainte dhan Ghàidhlig – </div>
         <div class="list-group-item list-group-item-action">#6: Tasgadh anns an Ùine Romhainn – </div>
-        <div class="list-group-item list-group-item-action">#7: Moch is Anmoch: the Gaelic poetry of Donald A. MacNeill and other Colonsay bards – </div>
+        <div class="list-group-item list-group-item-action">#7: Moch is Anmoch: the Gaelic poetry of Donald A. MacNeill and other Colonsay bards – 
+          <a href="viewText.php?t=7_Moch_is_Anmoch/S_Fhada_Thall_tha_Mise">’S Fhada Thall Tha Mise</a>,
+          <a href="viewText.php?t=7_Moch_is_Anmoch/Laaithean_m_OOige_le_m_Athair">Làithean m’Òige le m’Athair</a>,
+          <a href="viewText.php?t=7_Moch_is_Anmoch/Mo_Charaid_Balbh">Mo Charaid Balbh</a>,
+          <a href="viewText.php?t=7_Moch_is_Anmoch/Sruthan_Teampull_A_Ghlinne">Sruthan Teampull A’ Ghlinne</a>,
+          <a href="viewText.php?t=7_Moch_is_Anmoch/An_t-Iasgair">An t-Iasgair</a>,
+          <a href="viewText.php?t=7_Moch_is_Anmoch/An_Ceardaman">An Ceardaman</a>
+        </div>
         <div class="list-group-item list-group-item-action">#8: Hiort: Far na Laigh a’ Ghrian – </div>
-        <div class="list-group-item list-group-item-action">#9: Sùil air Meanbh-bhiastagan</div>
+        <div class="list-group-item list-group-item-action">#9: 
+          <a href="viewText.php?t=9_Suuil_air_Meanbh-bhiastagan">Sùil air Meanbh-bhiastagan</a>
+        </div>
         <div class="list-group-item list-group-item-action">#10: Coimhead air an Taigh-dubh ann an Arnol</div>
       </div>
     </div>

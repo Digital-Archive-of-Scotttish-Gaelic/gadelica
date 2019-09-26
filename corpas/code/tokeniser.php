@@ -1,6 +1,6 @@
 <?php
 
-$input = file_get_contents($argv[1]);
+$input = file_get_contents('../txt/9_Suuil_air_Meanbh-bhiastagan.txt');
 
 // punctuation
 $input = preg_replace("/([.,;:?!’‘”“'\"\)\(-\/–])/u", "<pc>$1</pc>", $input);
@@ -31,9 +31,6 @@ $input = preg_replace("/ </u", "<", $input);
 $input = preg_replace("/<w>(\w+)/u", "<w pos=\"\" lemma=\"$1\">$1", $input);
 
 $input .= "\n";
-if ($argv[2]) {
-    file_put_contents($argv[2], $input);
-}
-else {
-    echo $input;
-}
+
+echo $input;
+
