@@ -59,7 +59,8 @@ WHERE
 }
 ORDER BY strlen(str(?gd))
 SPQR;
-  $url = 'http://daerg.arts.gla.ac.uk:8080/fuseki/Faclair?output=json&query=' . urlencode($query);
+  $url = 'https://pluto.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
+  echo $url;
   $results = json_decode(file_get_contents($url),false)->results->bindings;
   echo '<div class="list-group list-group-flush">'; // display list of search results
   foreach ($results as $result) {
