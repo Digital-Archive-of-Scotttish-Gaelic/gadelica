@@ -24,7 +24,12 @@
           <a href="viewText.php?t=1_Daain_do_Eimhir/VI">VI</a>,
           <a href="viewText.php?t=1_Daain_do_Eimhir/VIII">VIII</a>,
           <a href="viewText.php?t=1_Daain_do_Eimhir/IX">IX</a>,
-          <a href="viewText.php?t=1_Daain_do_Eimhir/X">X</a>
+          <a href="viewText.php?t=1_Daain_do_Eimhir/X">X</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XI">XI</a>, 
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XII">XII</a>, 
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XIII">XIII</a>, 
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XIV_Reic_Anama">XIV: Reic Anama</a>, 
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XV_Trii_Slighean">XV: Trì Slighean</a>
         </div>
         <div class="list-group-item list-group-item-action">#2: Sgeulachdan Dhòmhnaill Alasdair – 
           <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/1_A_Chaora_Dhubh">A’ Chaora Dhubh</a>, 
@@ -42,6 +47,11 @@
           <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/13_Diiomhaireachd_nan_Dotairean">Dìomhaireachd nan Dotairean</a>,
           <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/14_Droch_Bhliadhna_san_Sgoil">Droch Bhliadhna san Sgoil</a>,
           <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/15_Eucoir_agus_Peanasachadh">Eucoir agus Peanasachadh</a>,
+          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/16_Eudach">Eudach</a>, 
+          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/17_Fear_na_Bainnse">Fear_na_Bainnse</a>, 
+          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/18_Gaisgeach_Duuthchail">Gaisgeach_Duuthchail</a>, 
+          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/19_Iasgach_nan_Giomach">Iasgach_nan_Giomach</a>, 
+          <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/20_Mata_agus_Lucas">Mata_agus_Lucas</a>
         </div>
       </div>
     </div>
