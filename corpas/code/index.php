@@ -34,7 +34,17 @@
           <a href="viewText.php?t=1_Daain_do_Eimhir/XVII">XVII</a>,
           <a href="viewText.php?t=1_Daain_do_Eimhir/XVIII_UUrnaigh">XVIII: Ùrnaigh</a>,
           <a href="viewText.php?t=1_Daain_do_Eimhir/XIX">XIX</a>,
-          <a href="viewText.php?t=1_Daain_do_Eimhir/XX">XX</a>
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XX">XX</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XXI">XXI</a>, 
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XXII">XXII</a>, 
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XXIII">XXIII</a>, 
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XXIV">XXIV</a>, 
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XXV">XXV</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XXVI">XXVI</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XXVII">XXVII</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XXVIII_Na_Samhlaidhean">XXVIII: Na Samhlaidhean</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XXIX_Coin_is_Madaidhean-allaidh">XXIX: Coin is Madaidhean-allaidh</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XXX">XXX</a>
         </div>
         <div class="list-group-item list-group-item-action">#2: Sgeulachdan Dhòmhnaill Alasdair – 
           <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/1_A_Chaora_Dhubh">A’ Chaora Dhubh</a>, 
@@ -67,11 +77,16 @@
           <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/An_Rocaid">An Rocaid</a>,
           <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/An_t-Eun_Fuadain">An t-Eun Fuadain</a>,
           <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Cha_Mhoor_tha_ri_AAireamh">Cha Mhór tha ri Àireamh</a>,
-          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Caochladh">Caochladh</a> 
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Caochladh">Caochladh</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Cha_Till_an_OOige">Cha Till an Òige</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Baagh_Hartabhagh">Bàgh Hartabhagh</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Coomhradh_an_Eilthirich_ris_an_Stuaidh">Còmhradh an Eilthirich ris an Stuaidh</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Cumha">Cumha</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Dealbh_Camilla">Dealbh Camilla</a>
         </div>
         <div class="list-group-item list-group-item-action">#4: Bàrdachd Dhòmhnaill Alasdair – </div>
         <div class="list-group-item list-group-item-action">#5: Inbhe Theàrainte dhan Ghàidhlig – </div>
-        <div class="list-group-item list-group-item-action">#6: Tasgadh anns an Ùine Romhainn – </div>
+        <div class="list-group-item list-group-item-action">#6: <a href="viewText.php?t=6_Tasgadh_anns_an_UUine_Romhainn">Tasgadh anns an Ùine Romhainn</a></div>
         <div class="list-group-item list-group-item-action">#7: Moch is Anmoch: the Gaelic poetry of Donald A. MacNeill and other Colonsay bards – 
           <a href="viewText.php?t=7_Moch_is_Anmoch/S_Fhada_Thall_tha_Mise">’S Fhada Thall Tha Mise</a>,
           <a href="viewText.php?t=7_Moch_is_Anmoch/Laaithean_m_OOige_le_m_Athair">Làithean m’Òige le m’Athair</a>,

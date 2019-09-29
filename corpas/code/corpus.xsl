@@ -8,20 +8,23 @@
   <xsl:strip-space elements="*"/>
   <xsl:output encoding="UTF-8" method="html"/>
   
-  <!--
   <xsl:template match="/">
     <xsl:apply-templates/>
   </xsl:template>
-  -->
-  <!--
+
   <xsl:template match="dasg:text">
-    <p style="color:gray;">
-      [Start of text: 
-      <xsl:value-of select="@xml:id"/>]
+    <p>
+      <a href="#">
+        <xsl:attribute name="onclick">
+          <xsl:text>showMeta('</xsl:text>
+          <xsl:value-of select="@ref"/>
+          <xsl:text>');</xsl:text>
+        </xsl:attribute>
+        [meta]
+      </a>
     </p>
     <xsl:apply-templates/>
   </xsl:template>
-  -->
   
   <xsl:template match="dasg:h">
     <h1>

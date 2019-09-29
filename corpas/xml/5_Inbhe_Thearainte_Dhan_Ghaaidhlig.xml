@@ -1,5 +1,6 @@
-<text xml:lang="gd" ref="https://dasg.ac.uk/encyclopedia/bibliography/Inbhe_Thèarainte_dhan_Ghàidhlig_1999">
-  <front>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="texts.rnc" schematypens="https://relaxng.org/ns/structure/1.0?>
+<text ref="https://dasg.ac.uk/corpus/_5" xmlns="https://dasg.ac.uk/corpus/">
     <pb n="1"/>
     <h>
       <w pos="N" lemma="inbhe">INBHE</w>
@@ -8,11 +9,8 @@
       <w pos="P" lemma="do">DHAN</w>
       <w pos="N" lemma="Gàidhlig">GHAIDHLIG</w>
     </h>
-    <h xml:lang="en">
-      <w>Secure</w>
-      <w>Status</w>
-      <w>for</w>
-      <w>Gaelic</w>
+    <h>
+      <o>Secure Status for Gaelic</o>
     </h>
     <h>
       <pc join="right">“</pc>
@@ -43,7 +41,7 @@
     </h>
     <h>
       <w pos="N" lemma="Iuchar">Iuchar</w>
-      <w>1999</w>
+      <o>1999</o>
     </h>
     <pb n="2"/>
     <pb n="3"/>
@@ -327,9 +325,9 @@
       <w pos="N" lemma="Gàidhlig Gàidheal">Gàidhlig</w>
     </h>
     <h>
-      <w>25</w>
+      <o>25</o>
       <w pos="" lemma="Ògmhios òg mìos">Ogmhios</w>
-      <w>1999</w>
+      <o>1999</o>
     </h>
     <h>
       <w pos="P" lemma="le">le</w>
@@ -341,8 +339,7 @@
       <w pos="N" lemma="Gàidhealtachd Gàidheal">Gaidhealtachd</w>
       <pc join="left">.</pc>
     </h>
-  </front>
-  <body>
+  
     <h>
       <w pos="N" lemma="comann">Comunn</w>
       <w pos="" lemma="the">na</w>
@@ -367,7 +364,7 @@
     <p>
       <w pos="" lemma="ann">San</w>
       <w pos="N" lemma="Dùbhlachd">Dùbhlachd</w>
-      <w>1997</w>
+      <o>1997</o>
       <pc join="left">,</pc>
       <w pos="" lemma="lìbhrig">lìbhrig</w>
       <w pos="" lemma="comann">Comunn</w>
@@ -867,9 +864,8 @@
       <w pos="" lemma="fèin">fhèin</w>
       <pc join="left">.</pc>
     </p>
-    <div n="A">
       <h>
-        <w pos="" lemma="foghlam foghlaim">Foghlam</w>
+        <w pos="" lemma="foghlam foghlaim">A. Foghlam</w>
       </h>
       <p>
         <w pos="" lemma="a">A</w>
@@ -1082,7 +1078,9 @@
         <w pos="" lemma="iarr">iarraidh</w>
         <pc join="left">:</pc>
       </p>
-      <div n="1">
+      <h>
+        <o>1</o>
+      </h>
         <p>
           <w pos="" lemma="ùghdarras ùghdar">Ughdarrasan</w>
           <w pos="" lemma="foghlam foghlaim">Foghlaim</w>
@@ -1130,7 +1128,7 @@
           <w pos="" lemma="iarrtas iarr">iarrtas</w>
           <w pos="" lemma="à">às</w>
           <w pos="" lemma="leth">leth</w>
-          <num>5</num>
+          <o>5</o>
           <w pos="" lemma="sgoilear sgoil">sgoilear</w>
           <w pos="" lemma="no">no</w>
           <w pos="" lemma="còrr">còrr</w>
@@ -1255,8 +1253,9 @@
           <w pos="" lemma="fèin">fhèin</w>
           <pc join="left">.</pc>
         </p>
-      </div>
-      <div n="2">
+        <h>
+          <o>2</o>
+        </h>
         <p>
           <w pos="" lemma="bi">Tha</w>
           <w pos="" lemma="sinn">sinn</w>
@@ -1471,8 +1470,9 @@
           <w pos="" lemma="sàs">sàs</w>
           <pc join="left">.</pc>
         </p>
-      </div>
-      <div n="3">
+  <h>
+    <o>3</o>
+  </h>
         <p>
           <w pos="" lemma="is">Bu</w>
           <w pos="" lemma="còir">chòir</w>
@@ -1542,8 +1542,9 @@
           <w pos="" lemma="sgoil">sgoile</w>
           <pc join="left">.</pc>
         </p>
-      </div>
-      <div n="4">
+  <h>
+    <o>4</o>
+  </h>
         <p>
           <w pos="" lemma="gus">Gus</w>
           <w pos="" lemma="ionnsachadh ionnsaich">ionnsachadh</w>
@@ -1660,8 +1661,9 @@
           <!-- legislation -->
           <pc join="left">:</pc>
         </p>
-      </div>
-      <div n="5">
+  <h>
+    <o>5</o>
+  </h>
         <p>
           <w pos="" lemma="is">Bu</w>
           <w pos="" lemma="còir">chòir</w>
@@ -1772,7 +1774,7 @@
           <pc join="right">(</pc>
           <w pos="" lemma="Alba">Alba</w>
           <pc join="left">)</pc>
-          <date>1986</date>
+          <o>1986</o>
           <pc join="left">,</pc>
           <w pos="" lemma="agus">agus</w>
           <w pos="" lemma="is">bu</w>
@@ -1866,8 +1868,9 @@
           <w pos="" lemma="foghlam foghlaim">Foghlaim</w>
           <pc join="left">.</pc>
         </p>
-      </div>
-      <div n="6">
+  <h>
+    <o>6</o>
+  </h>
         <p>
           <w pos="" lemma="feum">Feumar</w>
           <w pos="" lemma="dèilig">dèiligeadh</w>
@@ -1951,8 +1954,9 @@
           <!-- balanced -->
           <pc join="left">.</pc>
         </p>
-      </div>
-      <div n="7">
+  <h>
+    <o>7</o>
+  </h>
         <p>
           <w pos="" lemma="dh">Dh</w>
           <pc join="both">’</pc>
@@ -2022,8 +2026,9 @@
           <w pos="" lemma="nàiseanta nàisean">nàiseanta</w>
           <pc join="left">.</pc>
         </p>
-      </div>
-      <div n="8">
+  <h>
+    <o>8</o>
+  </h>
         <p>
           <w pos="" lemma="is">Is</w>
           <w pos="" lemma="e">e</w>
@@ -2140,10 +2145,8 @@
           <w pos="" lemma="freagarrach freagair">fregarrach</w>
           <pc join="left">.</pc>
         </p>
-      </div>
-    </div>
-    <div n="B">
       <h>
+        <o>B. </o>
         <w pos="" lemma="Gàidhlig Gàidheal">Gàidhlig</w>
         <w pos="" lemma="agus">agus</w>
         <w pos="" lemma="buidheann">Buidhnean</w>
@@ -2160,7 +2163,9 @@
         <w pos="" lemma="Alba">Alba</w>
         <pc join="left">)</pc>
       </h>
-      <div n="1">
+  <h>
+    <o>1</o>
+  </h>
         <h>
           <w pos="" lemma="poileasaidh">Poileasadhean</w>
           <w pos="" lemma="Gàidhlig Gàidheal">Gàidhlig</w>
@@ -3275,8 +3280,9 @@
           <w pos="" lemma="cruthaich cruth">chruthachadh</w>
           <pc join="left">.</pc>
         </p>
-      </div>
-      <div n="2">
+  <h>
+    <o>2</o>
+  </h>
         <h>
           <w pos="" lemma="Gàidhlig Gàidheal">Gàidhlig</w>
           <w pos="" lemma="ann the">sa</w>
@@ -3394,7 +3400,9 @@
           <w pos="" lemma="CSG">CSG</w>
           <pc join="left">:</pc>
         </p>
-        <div n="1">
+  <h>
+    <o>1</o>
+  </h>
           <p>
             <pc join="right">“</pc>
             <w pos="" lemma="gum">Gum</w>
@@ -3482,8 +3490,9 @@
             <w pos="" lemma="buan">bhuan</w>
             <pc join="left">.</pc>
           </p>
-        </div>
-        <div n="2">
+  <h>
+    <o>2</o>
+  </h>
           <p>
             <pc join="right">“</pc>
             <w pos="" lemma="gu">Gu</w>
@@ -3863,8 +3872,9 @@
             <w pos="" lemma="fastaidh">fhasdadh</w>
             <pc join="left">.</pc>
           </p>
-        </div>
-        <div n="3">
+  <h>
+    <o>3</o>
+  </h>
           <p>
             <pc join="right">“</pc>
             <w pos="" lemma="nach">Nach</w>
@@ -3947,8 +3957,9 @@
             <w pos="" lemma="Alba">Alba</w>
             <pc join="left">.</pc>
           </p>
-        </div>
-        <div n="4">
+  <h>
+    <o>4</o>
+  </h>
           <p>
             <pc join="right">“</pc>
             <w pos="" lemma="gun">Gum</w>
@@ -4159,8 +4170,9 @@
             <w pos="" lemma="làidir">làidir</w>
             <pc join="left">.</pc>
           </p>
-        </div>
-        <div n="5">
+  <h>
+    <o>5</o>
+  </h>
           <p>
             <pc join="right">“</pc>
             <w pos="" lemma="gun">Gum</w>
@@ -4414,8 +4426,9 @@
             <w pos="" lemma="ùine">ùine</w>
             <pc join="left">.</pc>
           </p>
-        </div>
-        <div n="6">
+  <h>
+    <o>6</o>
+  </h>
           <p>
             <pc join="right">“</pc>
             <w pos="" lemma="gum">Gum</w>
@@ -4570,9 +4583,9 @@
             <w pos="" lemma="sgrìobh">sgrìobhadh</w>
             <pc join="left">.</pc>
           </p>
-        </div>
-      </div>
-      <div n="3">
+  <h>
+    <o>3</o>
+  </h>
         <p>
           <w pos="" lemma="bi">Bha</w>
           <w pos="" lemma="grunn">grunn</w>
@@ -4589,7 +4602,9 @@
           <w pos="" lemma="CSG">CSG</w>
           <pc join="left">:</pc>
         </p>
-        <div n="1">
+  <h>
+    <o>1</o>
+  </h>
           <!-- start here -->
           <p>
             <w pos="" lemma="cleachdadh">Cleachdadh</w>
@@ -4695,9 +4710,10 @@
             <w pos="" lemma="ìnnleach">ìnnleachadh</w>
             <pc join="left">.</pc>
           </p>
-        </div>
         <pb n="7"/>
-        <div n="2">
+  <h>
+    <o>2</o>
+  </h>
           <p>
             <w pos="" lemma="còir">Còir</w>
             <w pos="" lemma="luchd">luchd</w>
@@ -4794,8 +4810,9 @@
             <w pos="" lemma="pàrlamaid">Pàrlamaid</w>
             <pc join="left">.</pc>
           </p>
-        </div>
-        <div n="3">
+  <h>
+    <o>3</o>
+  </h>
           <p>
             <w pos="" lemma="luchd">Luchd</w>
             <pc join="both">-</pc>
@@ -4961,8 +4978,9 @@
             <pc join="both">)</pc>
             <pc join="left">.</pc>
           </p>
-        </div>
-        <div n="4">
+  <h>
+    <o>4</o>
+  </h>
           <p>
             <w pos="" lemma="Eadar">Eadar</w>
             <pc join="both">-</pc>
@@ -5094,8 +5112,9 @@
             <w pos="" lemma="fastaichte">fasdaichte</w>
             <pc join="left">.</pc>
           </p>
-        </div>
-        <div n="5">
+  <h>
+    <o>5</o>
+  </h>
           <p>
             <w pos="" lemma="mu">Mu</w>
             <w pos="" lemma="deireadh">dheireadh</w>
@@ -5236,18 +5255,15 @@
             <w pos="" lemma="Alba">Alba</w>
             <pc join="left">.</pc>
           </p>
-        </div>
-      </div>
-    </div>
-    <div n="C">
       <h>
+        <o>C</o>
         <w pos="" lemma="Gàidhlig">Gàidhlig</w>
         <w pos="" lemma="agus">agus</w>
         <w pos="" lemma="an">an</w>
         <w pos="" lemma="lagh">Lagh</w>
       </h>
-      <div n="1">
         <h>
+          <o>1</o>
           <w pos="" lemma="na">Na</w>
           <w pos="" lemma="cùirtean">Cùirtean</w>
           <pc join="left">:</pc>
@@ -5778,7 +5794,7 @@
           <w pos="" lemma="lorg">lorg</w>
           <pc join="left">.</pc>
         </p>
-      </div>
+      
       <div n="2">
         <h>
           <w pos="" lemma="Gàidhlig">Gàidhlig</w>
@@ -7470,7 +7486,7 @@
         <pc join="left">.</pc>
       </p>
     </div>
-  </body>
+  
   <back>
     <h>
       <w pos="" lemma="comann">Comunn</w>
