@@ -54,7 +54,17 @@
           <a href="viewText.php?t=1_Daain_do_Eimhir/XXXVII">XXXVII</a>,
           <a href="viewText.php?t=1_Daain_do_Eimhir/XXXVIII">XXXVIII</a>,
           <a href="viewText.php?t=1_Daain_do_Eimhir/XXXIX">XXXIX</a>,
-          <a href="viewText.php?t=1_Daain_do_Eimhir/XL">XL</a>
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XL">XL</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XLI">XLI</a>, 
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XLII_Traaighean">XLII: Tràighean</a>, 
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XLIII">XLIII</a>, 
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XLIV">XLIV</a>, 
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XLV">XLV</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XLVI">XLVI</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XLVII">XLVII</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XLVIII">XLVIII</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XLIX">XLIX</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/L">L</a>
         </div>
         <div class="list-group-item list-group-item-action">#2: Sgeulachdan Dhòmhnaill Alasdair – 
           <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/1_A_Chaora_Dhubh">A’ Chaora Dhubh</a>, 
@@ -97,7 +107,12 @@
           <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Do_Mhaairi_NicillEathain_Griomsaigh">Do Mhàiri NicillEathain Griomsaigh</a>,
           <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Faailt_an_t-Sagairt_OOig">Fàilt an t-Sagairt Òig</a>,
           <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Don_Tee_Rinn_Tighinn">Don Té Rinn Tighinn gam Fheòraich Dhachaigh</a>,
-          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Eich_EEirisgeigh">Eich Éirisgeigh</a>
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Eich_EEirisgeigh">Eich Éirisgeigh</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/EEiseabhal">Éiseabhal</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Eilean_Uibhist">Eilean Uibhist</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/EEiseabhal_Stuucach">Éiseabhal Stùcach</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Tiir_nan_Raon">Tìr nan Raon</a>,
+          Mìosan na Bliadhna ()
         </div>
         <div class="list-group-item list-group-item-action">#4: Bàrdachd Dhòmhnaill Alasdair – </div>
         <div class="list-group-item list-group-item-action">#5: Inbhe Theàrainte dhan Ghàidhlig – </div>
