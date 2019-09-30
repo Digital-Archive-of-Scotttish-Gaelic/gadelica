@@ -44,7 +44,17 @@
           <a href="viewText.php?t=1_Daain_do_Eimhir/XXVII">XXVII</a>,
           <a href="viewText.php?t=1_Daain_do_Eimhir/XXVIII_Na_Samhlaidhean">XXVIII: Na Samhlaidhean</a>,
           <a href="viewText.php?t=1_Daain_do_Eimhir/XXIX_Coin_is_Madaidhean-allaidh">XXIX: Coin is Madaidhean-allaidh</a>,
-          <a href="viewText.php?t=1_Daain_do_Eimhir/XXX">XXX</a>
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XXX">XXX</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XXXI">XXXI</a>, 
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XXXII">XXXII</a>, 
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XXXIII">XXXIII</a>, 
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XXXIV">XXXIV</a>, 
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XXXV">XXXV</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XXXVI">XXXVI</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XXXVII">XXXVII</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XXXVIII">XXXVIII</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XXXIX">XXXIX</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/XL">XL</a>
         </div>
         <div class="list-group-item list-group-item-action">#2: Sgeulachdan Dhòmhnaill Alasdair – 
           <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/1_A_Chaora_Dhubh">A’ Chaora Dhubh</a>, 
@@ -82,7 +92,12 @@
           <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Baagh_Hartabhagh">Bàgh Hartabhagh</a>,
           <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Coomhradh_an_Eilthirich_ris_an_Stuaidh">Còmhradh an Eilthirich ris an Stuaidh</a>,
           <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Cumha">Cumha</a>,
-          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Dealbh_Camilla">Dealbh Camilla</a>
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Dealbh_Camilla">Dealbh Camilla</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Don_Bhean_Phoosta_Jacqueline_Marsh">Don Bhean Phòsta Jacqueline Marsh</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Do_Mhaairi_NicillEathain_Griomsaigh">Do Mhàiri NicillEathain Griomsaigh</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Faailt_an_t-Sagairt_OOig">Fàilt an t-Sagairt Òig</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Don_Tee_Rinn_Tighinn">Don Té Rinn Tighinn gam Fheòraich Dhachaigh</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Eich_EEirisgeigh">Eich Éirisgeigh</a>
         </div>
         <div class="list-group-item list-group-item-action">#4: Bàrdachd Dhòmhnaill Alasdair – </div>
         <div class="list-group-item list-group-item-action">#5: Inbhe Theàrainte dhan Ghàidhlig – </div>

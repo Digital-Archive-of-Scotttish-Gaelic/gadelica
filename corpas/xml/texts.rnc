@@ -16,6 +16,7 @@ Page = element pb {attribute n { text } }
 Token = ( 
             element w { attribute pos {text}?, attribute lemma {text}?, attribute ref {text}?, text } 
           | element pc {attribute join {"no"|"left"|"right"|"both"}, text} 
-          | element o {text} 
+          | element o { text } 
+          | element t { text }
         )
 
