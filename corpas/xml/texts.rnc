@@ -5,12 +5,13 @@ start = Text
 
 Text = element text {
   attribute ref { xsd:anyURI } ,
-  ( Paragraph | Heading | Verse | Text | Page )+
+  ( Paragraph | Heading | Verse | Utterance | Text | Page )+
 }
 
 Paragraph = element p { (Token | Page)+ }
 Heading = element h { Token+ }
 Verse = element lg { element l { Token+ }+ }
+Utterance = element u { attribute ref { xsd:anyURI }, Token+ }
 Page = element pb {attribute n { text } }
 
 Token = ( 
@@ -18,5 +19,6 @@ Token = (
           | element pc {attribute join {"no"|"left"|"right"|"both"}, text} 
           | element o { text } 
           | element t { text }
+          | element pause { text }
         )
 

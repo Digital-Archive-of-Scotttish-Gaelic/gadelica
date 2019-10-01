@@ -38,6 +38,14 @@
     </p>
   </xsl:template>
   
+  <xsl:template match="dasg:u">
+    <p>
+      <small class="text-muted">[<xsl:value-of select="@ref"/>]</small>
+      <br/>
+      <xsl:apply-templates/>  
+    </p>
+  </xsl:template>
+  
   <xsl:template match="dasg:lg">
     <p>
       <xsl:apply-templates/>  
@@ -49,14 +57,26 @@
     <br/>
   </xsl:template>
   
+  <xsl:template match="dasg:o[name(following-sibling::*[1])='w']">
+    <span class="text-muted">
+      <xsl:apply-templates/>
+    </span>
+    <xsl:text> </xsl:text>
+  </xsl:template>
+  
   <xsl:template match="dasg:o">
-    <span style="color:gray">
+    <span class="text-muted">
       <xsl:apply-templates/>
     </span>
   </xsl:template>
 
-  <xsl:template match="dasg:w[name(following-sibling::*[1])='w']">
+  <xsl:template match="dasg:w[name(following-sibling::*[1])='w' or name(following-sibling::*[1])='o']">
     <span class="word">
+      <xsl:attribute name="title">
+        <xsl:value-of select="@lemma"/>
+        <xsl:text>.</xsl:text>
+        <xsl:value-of select="@pos"/>
+      </xsl:attribute>
       <xsl:attribute name="data-ref">
         <xsl:value-of select="@ref"/>
       </xsl:attribute>
@@ -67,6 +87,11 @@
   
   <xsl:template match="dasg:w">
     <span class="word">
+      <xsl:attribute name="title">
+        <xsl:value-of select="@lemma"/>
+        <xsl:text>.</xsl:text>
+        <xsl:value-of select="@pos"/>
+      </xsl:attribute>
       <xsl:attribute name="data-ref">
         <xsl:value-of select="@ref"/>
       </xsl:attribute>
@@ -84,7 +109,7 @@
     <xsl:text> </xsl:text>
   </xsl:template>
   
-  <xsl:template match="dasg:pc[@join='none']">
+  <xsl:template match="dasg:pc[@join='no']">
     <xsl:text> </xsl:text>
     <xsl:apply-templates/>
     <xsl:text> </xsl:text>
@@ -94,6 +119,19 @@
     <xsl:apply-templates/>
   </xsl:template>
   
+  <xsl:template match="dasg:t">
+    <small>
+      <a href="#">
+        <xsl:attribute name="title">
+          <xsl:value-of select="."/>
+        </xsl:attribute>
+        <xsl:text>[en]</xsl:text>
+      </a>
+    </small>
+  </xsl:template>
   
+  <xsl:template match="dasg:pause">
+    <p> </p>
+  </xsl:template>
   
 </xsl:stylesheet>
