@@ -1,6 +1,6 @@
 <?php
 
-$input = file_get_contents('../txt/9_Suuil_air_Meanbh-bhiastagan.txt');
+$input = file_get_contents('../txt/tmp.txt');
 
 // punctuation
 $input = preg_replace("/([.,;:?!’‘”“'\"\)\(-\/–])/u", "<pc>$1</pc>", $input);

@@ -1,31 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="texts.rnc" schematypens="https://relaxng.org/ns/structure/1.0?>
 <?xml-stylesheet type="text/xsl" href="../../code/corpus.xsl"?>
-<!--  19/9/19: this file needs to have the front and end matter reinserted in some way -->
 <text ref="https://dasg.ac.uk/corpus/_1" xmlns="https://dasg.ac.uk/corpus/" xmlns:xi="http://www.w3.org/2001/XInclude">
   <h>
     <w pos="" lemma="Somhairle">SOMHAIRLE</w> 
     <w pos="" lemma="MacGille">MACGILL</w>
     <pc join="both">-</pc>
     <w pos="" lemma="Eain">EAIN</w>
+    <t>SORLEY MACLEAN</t>
   </h>
   <h>
     <w pos="" lemma="dàn">DÀIN</w>
     <w pos="" lemma="do">DO</w>
     <w pos="" lemma="Eimhir">EIMHIR</w>
+    <t>POEMS TO EIMHIR</t>
   </h>
-  <h>
-    <o>SORLEY MACLEAN</o>
-  </h>
-  <h>
-    <o>POEMS TO EIMHIR</o>
-  </h>
-  <p>
-    <o>Edited by Christopher Whyte GLASGOW 2002</o>
-  </p>
-  <p>
-    <o>[English front matter, including contents, foreword and introduction]</o>
-  </p>
   <pb n="45"/>
   <xi:include href="1_Daain_do_Eimhir/I.xml" parse="xml"/>
   <xi:include href="1_Daain_do_Eimhir/II_A_Chiall_s_a_ghraaidh.xml" parse="xml"/>
@@ -105,7 +94,4 @@
   <pb n="123"/>
   <xi:include href="1_Daain_do_Eimhir/LX.xml" parse="xml"/>
   <xi:include href="1_Daain_do_Eimhir/Dimitto.xml" parse="xml"/>
-  <p>
-    <o>[Back matter: notes etc. Will need to be included in some way]</o>
-  </p>
 </text>
