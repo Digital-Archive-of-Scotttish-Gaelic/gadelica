@@ -64,7 +64,18 @@
           <a href="viewText.php?t=1_Daain_do_Eimhir/XLVII">XLVII</a>,
           <a href="viewText.php?t=1_Daain_do_Eimhir/XLVIII">XLVIII</a>,
           <a href="viewText.php?t=1_Daain_do_Eimhir/XLIX">XLIX</a>,
-          <a href="viewText.php?t=1_Daain_do_Eimhir/L">L</a>
+          <a href="viewText.php?t=1_Daain_do_Eimhir/L">L</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/LI">LI</a>, 
+          <a href="viewText.php?t=1_Daain_do_Eimhir/LII">LII</a>, 
+          <a href="viewText.php?t=1_Daain_do_Eimhir/LIII">LIII</a>, 
+          <a href="viewText.php?t=1_Daain_do_Eimhir/LIV">LIV</a>, 
+          <a href="viewText.php?t=1_Daain_do_Eimhir/LV">LV</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/LVI">LVI</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/LVII">LVII</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/LVIII">LVIII</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/LIX">LIX</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/LX">LX</a>,
+          <a href="viewText.php?t=1_Daain_do_Eimhir/Dimitto">Dimitto</a>
         </div>
         <div class="list-group-item list-group-item-action">#2: Sgeulachdan Dhòmhnaill Alasdair – 
           <a href="viewText.php?t=2_Sgeulachdan_Dhoomhnaill_Alasdair/1_A_Chaora_Dhubh">A’ Chaora Dhubh</a>, 
@@ -112,7 +123,19 @@
           <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Eilean_Uibhist">Eilean Uibhist</a>,
           <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/EEiseabhal_Stuucach">Éiseabhal Stùcach</a>,
           <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Tiir_nan_Raon">Tìr nan Raon</a>,
-          Mìosan na Bliadhna ()
+          Mìosan na Bliadhna 
+          (<a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Am_Faoilteach">Am Faoilteach</a>, 
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/An_Gearran">An Gearran</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Am_Maart">Am Màrt</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/A_Ghiblin">A’ Ghiblin</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Am_Maaigh">Am Màigh</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/An_t-OOgmhios">An t-Ògmhios</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/An_t-Iuchar">An t-Iuchar</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/An_Luunastal">An Lùnastal</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/An_t-Sultuine">An t-Sultuine</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/An_Daamhair">An Dàmhair</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/An_t-Samhain">An t-Samhain</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/An_Duubhlachd">An Dùbhlachd</a>)
         </div>
         <div class="list-group-item list-group-item-action">#4: Bàrdachd Dhòmhnaill Alasdair – </div>
         <div class="list-group-item list-group-item-action">#5: Inbhe Theàrainte dhan Ghàidhlig – </div>
