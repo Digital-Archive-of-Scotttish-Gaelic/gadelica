@@ -135,7 +135,12 @@
           <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/An_t-Sultuine">An t-Sultuine</a>,
           <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/An_Daamhair">An Dàmhair</a>,
           <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/An_t-Samhain">An t-Samhain</a>,
-          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/An_Duubhlachd">An Dùbhlachd</a>)
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/An_Duubhlachd">An Dùbhlachd</a>),
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Mo_Reul_Iuuil">Mo Reul Iùil</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/OOran_Step">Òran Step</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Freagairt_Raonaid">Freagairt Raonaid</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/An_Co-dhuunadh">An Co-dhùnadh</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Triall_na_h-UUine">Triall na h-Ùine</a>,
         </div>
         <div class="list-group-item list-group-item-action">#4: Bàrdachd Dhòmhnaill Alasdair – </div>
         <div class="list-group-item list-group-item-action">#5: Inbhe Theàrainte dhan Ghàidhlig – </div>
