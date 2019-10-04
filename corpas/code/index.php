@@ -141,6 +141,11 @@
           <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Freagairt_Raonaid">Freagairt Raonaid</a>,
           <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/An_Co-dhuunadh">An Co-dhùnadh</a>,
           <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Triall_na_h-UUine">Triall na h-Ùine</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Sgeulachdan_nan_Taighean-ceeilidh">Sgeulachdan nan Taighean-céilidh</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Taigh_Tasgaidh_Chill_Donnain">Taigh Tasgaidh Chill Donnain</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/Seann_Taigh-Solais_Chalbhaigh">Seann Taigh-Solais Chalbhaigh</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/A_Ghaaidhlig">A’ Ghàidhlig</a>,
+          <a href="viewText.php?t=3_Smuaintean_fo_EEiseabhal/A_Ghaoth_an-Iar">A’ Ghaoth an-Iar tha Séideadh thar na Mara</a>
         </div>
         <div class="list-group-item list-group-item-action">#4: Bàrdachd Dhòmhnaill Alasdair – </div>
         <div class="list-group-item list-group-item-action">#5: Inbhe Theàrainte dhan Ghàidhlig – </div>
