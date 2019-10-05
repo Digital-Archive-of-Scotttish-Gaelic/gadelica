@@ -1,264 +1,265 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../texts.rnc" schematypens="https://relaxng.org/ns/structure/1.0?>
+<!-- MM: lemmatised and tagged 5/10/19 -->
 <text ref="https://dasg.ac.uk/corpus/_1-1" xmlns="https://dasg.ac.uk/corpus/">
   <h>
     <o>I</o>
   </h>
   <lg>
     <l>
-      <w pos="" lemma="a">A</w>
-      <w pos="" lemma="nighean" ref="nouns/nighean">nighean</w>
-      <w pos="" lemma="d-an*">a</w>
+      <w pos="h" lemma="a">A</w>
+      <w pos="n" lemma="nighean" ref="nouns/nighean">nighean</w>
+      <w pos="d" lemma="the">a</w>
       <pc join="left">’</pc>
-      <w pos="" lemma="cùl" ref="nouns/cuul">chùil</w>
-      <w pos="" lemma="ruadh" ref="adjectives/ruadh">ruaidh</w>
-      <w pos="" lemma="òr" ref="nouns/oor">òir</w>
+      <w pos="ng" lemma="cùl" ref="nouns/cuul">chùil</w>
+      <w pos="ag" lemma="ruadh" ref="adjectives/ruadh">ruaidh</w>
+      <w pos="ng" lemma="òr" ref="nouns/oor">òir</w>
       <pc join="left">,</pc>
       <t>Girl of the red-gold hair,</t>
     </l>
     <l>
-      <w pos="" lemma="fada" ref="adjectives/fada">fada</w>
-      <w pos="" lemma="bhuat" ref="prepositions/bho">bhuat</w>
+      <w pos="a" lemma="fada" ref="adjectives/fada">fada</w>
+      <w pos="p+D" lemma="bho+thu" ref="prepositions/bho">bhuat</w>
       <pc join="left">,</pc>
-      <w pos="" lemma="a">a</w>
-      <w pos="" lemma="luaidh" ref="nouns/luadh">luaidh</w>
+      <w pos="h" lemma="a">a</w>
+      <w pos="n" lemma="luadh" ref="nouns/luadh">luaidh</w> <!-- inflected -->
       <pc join="left">,</pc>
-      <w pos="" lemma="mo">mo</w>
-      <w pos="" lemma="thoir" ref="nouns/tooir">thòir</w>
+      <w pos="d" lemma="mo">mo</w>
+      <w pos="n" lemma="tòir" ref="nouns/tooir">thòir</w>
       <pc join="left">;</pc>
       <t>far from you, o love, my aim;</t>
     </l>
     <l>
-      <w pos="" lemma="a">a</w>
-      <w pos="" lemma="nighean" ref="nouns/nighean">nighean</w>
-      <w pos="" lemma="a">a</w>
+      <w pos="h" lemma="a">a</w>
+      <w pos="n" lemma="nighean" ref="nouns/nighean">nighean</w>
+      <w pos="d" lemma="the">a</w>
       <pc join="left">’</pc>
-      <w pos="" lemma="chùil" ref="nouns/cuul">chùil</w>
-      <w pos="" lemma="ruaidh" ref="adjectives/ruadh">ruaidh</w>
-      <w pos="" lemma="òir" ref="nouns/oor">òir</w>
+      <w pos="ng" lemma="cùl" ref="nouns/cuul">chùil</w>
+      <w pos="ag" lemma="ruadh" ref="adjectives/ruadh">ruaidh</w>
+      <w pos="ng" lemma="òr" ref="nouns/oor">òir</w>
       <pc join="left">,</pc>
       <t>girl of the red gold hair</t>
     </l>
     <l>
-      <w pos="" lemma="gur">gur</w>
-      <w pos="" lemma="fada" ref="adjectives/fada">fada</w>
-      <w pos="" lemma="bhuatsa" ref="prepositions/bho">bhuatsa</w>
-      <w pos="" lemma="mo">mo</w>
-      <w pos="" lemma="bhròn" ref="nouns/broon">bhròn</w>
+      <w pos="P+v" lemma="gun+is">gur</w>
+      <w pos="a" lemma="fada" ref="adjectives/fada">fada</w>
+      <w pos="p+D+X" lemma="bho+thu+sa" ref="prepositions/bho">bhuatsa</w>
+      <w pos="d" lemma="mo">mo</w>
+      <w pos="n" lemma="bròn" ref="nouns/broon">bhròn</w>
       <pc join="left">.</pc>
       <t>far from you my sorrow.</t>
     </l>
   </lg>
   <lg>
     <l>
-      <w pos="" lemma="Mi">Mi</w>
-      <w pos="" lemma="verbs/nochd">nochd</w>
-      <w pos="" lemma="prepositions/air">air</w>
-      <w pos="" lemma="nouns/linne">linne</w>
-      <w pos="" lemma="nouns/Ratharsair">Ratharsair</w>
+      <w pos="D" lemma="mi">Mi</w>
+      <w pos="n" lemma="nochd">nochd</w>
+      <w pos="p" lemma="air">air</w>
+      <w pos="n" lemma="linne">linne</w>
+      <w pos="N" lemma="Ratharsair">Ratharsair</w>
       <t>Tonight on the Sound of Raasay</t>
     </l>
     <l>
       <pc join="right">’</pc>
-      <w pos="" lemma="s">s</w>
-      <w pos="" lemma="mo">mo</w>
-      <w pos="" lemma="làmh" ref="nouns/laamh">làmh</w>
-      <w pos="" lemma="prepositions/air">air</w>
-      <w pos="" lemma="an">an</w>
-      <w pos="" lemma="nouns/stiùir">stiùir</w>
+      <w pos="X" lemma="agus">s</w>
+      <w pos="d" lemma="mo">mo</w>
+      <w pos="n" lemma="làmh" ref="nouns/laamh">làmh</w>
+      <w pos="p" lemma="air">air</w>
+      <w pos="d" lemma="the">an</w>
+      <w pos="n" lemma="stiùir">stiùir</w>
       <pc join="left">,</pc>
       <t>my hand is on the helm,</t>
     </l>
     <l>
-      <w pos="" lemma="a">a</w>
+      <w pos="d" lemma="the">a</w>
       <pc join="left">’</pc>
-      <w pos="" lemma="ghaoth">ghaoth</w>
-      <w pos="" lemma="gu">gu</w>
-      <w pos="" lemma="neo">neo</w>
+      <w pos="n" lemma="gaoth">ghaoth</w>
+      <w pos="p" lemma="gu">gu</w>
+      <w pos="px" lemma="neo">neo</w>
       <pc join="both">-</pc>
-      <w pos="" lemma="airstealach">airstealach</w>
-      <w pos="" lemma="a">a</w>
+      <w pos="a" lemma="airstealach">airstealach</w>
+      <w pos="p" lemma="ag">a</w>
       <pc join="left">’</pc>
-      <w pos="" lemma="crathadh">crathadh</w>
-      <w pos="" lemma="an">an</w>
-      <w pos="" lemma="t">t</w>
+      <w pos="vn" lemma="crath">crathadh</w>
+      <w pos="the" lemma="the">an</w>
+      <w pos="m" lemma="t">t</w>
       <pc join="both">-</pc>
-      <w pos="" lemma="siùil">siùil</w>
+      <w pos="ng" lemma="sèol">siùil</w>
       <pc join="left">,</pc>
       <t>listlessly the wind shakes the sail,</t>
     </l>
     <l>
-      <w pos="" lemma="mo">mo</w>
-      <w pos="" lemma="chridhe">chridhe</w>
-      <w pos="" lemma="gu">gu</w>
-      <w pos="" lemma="balbh">balbh</w>
+      <w pos="d" lemma="mo">mo</w>
+      <w pos="n" lemma="cridhe">chridhe</w>
+      <w pos="p" lemma="gu">gu</w>
+      <w pos="a" lemma="balbh">balbh</w>
       <pc join="left">,</pc>
-      <w pos="" lemma="cràiteach">cràiteach</w>
-      <w pos="" lemma="an">an</w>
-      <w pos="" lemma="dèidh">dèidh</w>
-      <w pos="" lemma="do">do</w>
-      <w pos="" lemma="chiùil">chiùil</w>
+      <w pos="a" lemma="cràiteach">cràiteach</w>
+      <w pos="p" lemma="ann">an</w>
+      <w pos="n" lemma="dèidh">dèidh</w>
+      <w pos="d" lemma="do">do</w>
+      <w pos="ng" lemma="ceòl">chiùil</w>
       <pc join="left">,</pc>
       <t>my heart is dumb, aching for your music,</t>
     </l>
     <l>
-      <w pos="" lemma="an">an</w>
-      <w pos="" lemma="là">là</w>
-      <w pos="" lemma="an">an</w>
+      <w pos="d" lemma="the">an</w>
+      <w pos="n" lemma="latha">là</w>
+      <w pos="p+d" lemma="ann+the">an</w>
       <pc join="both">-</pc>
-      <w pos="" lemma="diugh">diugh</w>
+      <w pos="n" lemma="diugh">diugh</w>
       <pc join="right">’</pc>
-      <w pos="" lemma="s">s</w>
-      <w pos="" lemma="a">a</w>
+      <w pos="X" lemma="agus">s</w>
+      <w pos="p+d" lemma="ann+the">a</w>
       <pc join="both">-</pc>
-      <w pos="" lemma="màireach">màireach</w>
-      <w pos="" lemma="coingeis">coingeis</w>
-      <w pos="" lemma="ri">ri</w>
-      <w pos="" lemma="mo">mo</w>
-      <w pos="" lemma="dhùil">dhùil</w>
+      <w pos="n" lemma="màireach">màireach</w>
+      <w pos="a" lemma="coingeis">coingeis</w>
+      <w pos="p" lemma="ri">ri</w>
+      <w pos="d" lemma="mo">mo</w>
+      <w pos="n" lemma="dùil">dhùil</w>
       <pc join="left">.</pc>
       <t>today and tomorrow indifferent to my expectation.</t>
     </l>
   </lg>
   <lg>
     <l>
-      <w pos="" lemma="Ciar">Ciar</w>
-      <w pos="" lemma="an">an</w>
-      <w pos="" lemma="ceò">ceò</w>
-      <w pos="" lemma="èalaidh">èalaidh</w>
-      <w pos="" lemma="air">air</w>
-      <w pos="" lemma="Dùn">Dùn</w>
-      <w pos="" lemma="Cana">Cana</w>
+      <w pos="a" lemma="ciar">Ciar</w>
+      <w pos="d" lemma="the">an</w>
+      <w pos="n" lemma="ceò">ceò</w>
+      <w pos="vn" lemma="èalaidh">èalaidh</w>
+      <w pos="p" lemma="air">air</w>
+      <w pos="n" lemma="dùn">Dùn</w>
+      <w pos="N" lemma="Cana">Cana</w>
       <pc join="left">,</pc>
       <t>Grey is the mist that creeps over Dun Caan,</t>
     </l>
     <l>
-      <w pos="" lemma="frionasach">frionasach</w>
-      <w pos="" lemma="garbh">garbh</w>
+      <w pos="a" lemma="frionasach">frionasach</w>
+      <w pos="a" lemma="garbh">garbh</w>
       <pc join="both">-</pc>
-      <w pos="" lemma="shliabh">shliabh</w>
-      <w pos="" lemma="is">is</w>
-      <w pos="" lemma="canach">canach</w>
+      <w pos="n" lemma="sliabh">shliabh</w>
+      <w pos="X" lemma="agus">is</w>
+      <w pos="n" lemma="canach">canach</w>
       <pc join="left">,</pc>
       <t>fretful the coarse moor grass and bog cotton,</t>
     </l>
     <l>
-      <w pos="" lemma="a">a</w>
+      <w pos="d" lemma="the">a</w>
       <pc join="left">’</pc>
-      <w pos="" lemma="ghaoth">ghaoth</w>
-      <w pos="" lemma="an">an</w>
-      <w pos="" lemma="iar">iar</w>
-      <w pos="" lemma="air">air</w>
-      <w pos="" lemma="aghaidh">aghaidh</w>
-      <w pos="" lemma="mara">mara</w>
+      <w pos="n" lemma="gaoth">ghaoth</w>
+      <w pos="p+d" lemma="ann+the">an</w>
+      <w pos="n" lemma="iar">iar</w>
+      <w pos="p" lemma="air">air</w>
+      <w pos="n" lemma="aghaidh">aghaidh</w>
+      <w pos="ng" lemma="muir">mara</w>
       <pc join="left">,</pc>
       <t>the west wind touches the surface of the sea,</t>
     </l>
     <l>
-      <w pos="" lemma="dh">dh</w>
+      <w pos="m" lemma="dh">dh</w>
       <pc join="both">’</pc>
-      <w pos="" lemma="fhalbh">fhalbh</w>
-      <w pos="" lemma="mo">mo</w>
-      <w pos="" lemma="dhùil">dhùil</w>
-      <w pos="" lemma="is">is</w>
-      <w pos="" lemma="dùiseal">dùiseal</w>
-      <w pos="" lemma="tharam">tharam</w>
+      <w pos="v" lemma="falbh">fhalbh</w>
+      <w pos="d" lemma="mo">mo</w>
+      <w pos="n" lemma="dùil">dhùil</w>
+      <w pos="X" lemma="agus">is</w>
+      <w pos="n" lemma="dùiseal">dùiseal</w>
+      <w pos="p+D" lemma="thar+mi">tharam</w>
       <pc join="left">.</pc>
       <t>my hopes are gone, gloom overshadows me.</t>
     </l>
   </lg>
   <lg>
     <l>
-      <w pos="" lemma="Am">Am</w>
-      <w pos="" lemma="bristeadh">bristeadh</w>
-      <w pos="" lemma="geal">geal</w>
-      <w pos="" lemma="gu">gu</w>
-      <w pos="" lemma="làr">làr</w>
-      <w pos="" lemma="an">an</w>
-      <w pos="" lemma="tuinn">tuinn</w>
+      <w pos="d" lemma="the">Am</w>
+      <w pos="vn" lemma="bristeadh">bristeadh</w>
+      <w pos="a" lemma="geal">geal</w>
+      <w pos="p" lemma="gu">gu</w>
+      <w pos="n" lemma="làr">làr</w>
+      <w pos="d" lemma="the">an</w>
+      <w pos="ng" lemma="tuinn">tuinn</w>
       <pc join="left">,</pc>
       <t>A white cleft to the bottom of the wave,</t>
     </l>
     <l>
-      <w pos="" lemma="a">a</w>
+      <w pos="d" lemma="the">a</w>
       <pc join="left">’</pc>
-      <w pos="" lemma="ghaoth">ghaoth</w>
+      <w pos="n" lemma="gaoth">ghaoth</w>
       <pc join="right">’</pc>
-      <w pos="" lemma="na">na</w>
-      <w pos="" lemma="sgal">sgal</w>
-      <w pos="" lemma="mu">mu</w>
-      <w pos="" lemma="bhàrr">bhàrr</w>
-      <w pos="" lemma="a">a</w>
+      <w pos="p+d" lemma="ann+a">na</w>
+      <w pos="vn" lemma="sgal">sgal</w>
+      <w pos="p" lemma="mu">mu</w>
+      <w pos="n" lemma="bàrr">bhàrr</w>
+      <w pos="d" lemma="the">a</w>
       <pc join="left">’</pc>
-      <w pos="" lemma="chroinn">chroinn</w>
+      <w pos="ng" lemma="crann">chroinn</w>
       <pc join="left">,</pc>
       <t>the wind skirls round the tip of the mast,</t>
     </l>
     <l>
-      <w pos="" lemma="ach">ach</w>
-      <w pos="" lemma="sèideadh">sèideadh</w>
-      <w pos="" lemma="sgal">sgal</w>
+      <w pos="X" lemma="ach">ach</w>
+      <w pos="v" lemma="sèid">sèideadh</w>
+      <w pos="vn" lemma="sgal">sgal</w>
       <pc join="left">,</pc>
-      <w pos="" lemma="chan">chan</w>
-      <w pos="" lemma="eil">eil</w>
-      <w pos="" lemma="mo">mo</w>
-      <w pos="" lemma="shuim">shuim</w>
+      <w pos="P" lemma="cha">chan</w>
+      <w pos="v" lemma="bi">eil</w>
+      <w pos="d" lemma="mo">mo</w>
+      <w pos="n" lemma="suim">shuim</w>
       <t>but let it blow, I am indifferent</t>
     </l>
     <l>
-      <w pos="" lemma="ri">ri</w>
-      <w pos="" lemma="cath">cath</w>
-      <w pos="" lemma="a">a</w>
-      <w pos="" lemma="dhùisgeas">dhùisgeas</w>
-      <w pos="" lemma="air">air</w>
-      <w pos="" lemma="muir">muir</w>
-      <w pos="" lemma="luim">luim</w>
+      <w pos="p" lemma="ri">ri</w>
+      <w pos="n" lemma="cath">cath</w>
+      <w pos="r" lemma="a">a</w>
+      <w pos="V" lemma="dùisg">dhùisgeas</w>
+      <w pos="p" lemma="air">air</w>
+      <w pos="n" lemma="muir">muir</w>
+      <w pos="a" lemma="lom">luim</w> <!-- dative -->
       <pc join="left">.</pc>
       <t>to a battle awakening on a bare sea.</t>
     </l>
   </lg>
   <lg>
     <l>
-      <w pos="" lemma="A">A</w>
-      <w pos="" lemma="nighean">nighean</w>
-      <w pos="" lemma="a">a</w>
+      <w pos="h" lemma="a">A</w>
+      <w pos="n" lemma="nighean">nighean</w>
+      <w pos="d" lemma="the">a</w>
       <pc join="left">’</pc>
-      <w pos="" lemma="chùil">chùil</w>
-      <w pos="" lemma="ruaidh">ruaidh</w>
-      <w pos="" lemma="òir">òir</w>
+      <w pos="ng" lemma="cùl">chùil</w>
+      <w pos="ag" lemma="ruadh">ruaidh</w>
+      <w pos="ng" lemma="òr">òir</w>
       <pc join="left">,</pc>
       <t>Girl of the red-gold hair,</t>
     </l>
     <l>
-      <w pos="" lemma="fada">fada</w>
-      <w pos="" lemma="bhuat">bhuat</w>
+      <w pos="a" lemma="fada">fada</w>
+      <w pos="p+D" lemma="bho+thu">bhuat</w>
       <pc join="left">,</pc>
-      <w pos="" lemma="a">a</w>
-      <w pos="" lemma="luaidh">luaidh</w>
+      <w pos="h" lemma="a">a</w>
+      <w pos="n" lemma="luadh">luaidh</w> <!-- vocative -->
       <pc join="left">,</pc>
-      <w pos="" lemma="mo">mo</w>
-      <w pos="" lemma="thòir">thòir</w>
+      <w pos="d" lemma="mo">mo</w>
+      <w pos="n" lemma="tòir">thòir</w>
       <pc join="left">;</pc>
       <t>far from you, o love, my aim;</t>
     </l>
     <l>
-      <w pos="" lemma="a">a</w>
-      <w pos="" lemma="nighean">nighean</w>
-      <w pos="" lemma="a">a</w>
+      <w pos="h" lemma="a">a</w>
+      <w pos="n" lemma="nighean">nighean</w>
+      <w pos="d" lemma="the">a</w>
       <pc join="left">’</pc>
-      <w pos="" lemma="chùil">chùil</w>
-      <w pos="" lemma="ruaidh">ruaidh</w>
-      <w pos="" lemma="òir">òir</w>
+      <w pos="ng" lemma="cùl">chùil</w>
+      <w pos="ag" lemma="ruadh">ruaidh</w>
+      <w pos="ng" lemma="òr">òir</w>
       <pc join="left">,</pc>
       <t>girl of the red gold hair</t>
     </l>
     <l>
-      <w pos="" lemma="gur">gur</w>
-      <w pos="" lemma="glè">glè</w>
-      <w pos="" lemma="fhada">fhada</w>
-      <w pos="" lemma="bhuat">bhuat</w>
-      <w pos="" lemma="mo">mo</w>
-      <w pos="" lemma="bhròn">bhròn</w>
+      <w pos="P+v" lemma="gun+is">gur</w>
+      <w pos="ax" lemma="glè">glè</w>
+      <w pos="a" lemma="fada">fhada</w>
+      <w pos="p+D" lemma="bho+thu">bhuat</w>
+      <w pos="d" lemma="mo">mo</w>
+      <w pos="n" lemma="bròn">bhròn</w>
       <pc join="left">.</pc>
       <t>very far from you my sorrow.</t>
     </l>
