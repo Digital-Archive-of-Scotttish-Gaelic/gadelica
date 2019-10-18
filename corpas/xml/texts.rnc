@@ -15,7 +15,7 @@ Utterance = element u { attribute ref { xsd:anyURI }?, Token+ }
 Page = element pb {attribute n { text } }
 
 Token = ( 
-            element w { attribute pos {text}, attribute lemma {text}, attribute ref {text}?, text } 
+            element w { attribute pos {text}?, attribute ana {text}?, attribute lemma {text}, attribute ref {text}?, text } 
           | element pc {attribute join {"no"|"left"|"right"|"both"}, text} 
           | element o { text } 
           | element t { text }
