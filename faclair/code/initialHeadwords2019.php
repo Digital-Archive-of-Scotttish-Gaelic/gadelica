@@ -32,7 +32,7 @@ foreach ($results as $result) {
 }
 $ids = array_unique($ids);
 ?>
-      <table class="table">
+      <table class="table table-hover">
         <thead>
           <tr><th scope="col">headword</th><th scope="col">ID</th><th scope="col">English</th><th scope="col">source</th></tr>
         </thead>

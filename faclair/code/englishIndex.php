@@ -23,34 +23,25 @@ WHERE
 SPQR;
 $url = 'http://daerg.arts.gla.ac.uk:8080/fuseki/Faclair?output=json&query=' . urlencode($query);
 $results = json_decode(file_get_contents($url),false)->results->bindings;
-$hws = [];
+$ens = [];
 foreach ($results as $nextResult) {
-  $pair = array($nextResult->gd->value, $nextResult->id->value);
-  $hws[] = implode("|", $pair);
+  $ens[] = $nextResult->en->value;
 }
-$hws = array_unique($hws);
-usort($hws,'gdCompare');
-function gdCompare($s, $t) {
-  $accentedvowels = array('à','è','ì','ò','ù','À','È','Ì','Ò','Ù');
-  $unaccentedvowels = array('a','e','i','o','u','A','E','I','O','U');
-  $str3 = str_replace($accentedvowels,$unaccentedvowels,$s);
-  $str4 = str_replace($accentedvowels,$unaccentedvowels,$t);
-  return strcasecmp($str3,$str4);
-}
+$ens = array_unique($ens);
+natcasesort($ens);
 ?>
       <table class="table table-hover">
         <tbody>
 <?php
-foreach ($hws as $nextHw) {
-  $pair = explode("|", $nextHw);
-  echo '<tr><td>' . $pair[0] . '</td><td><small>';
-  $enstr = '';
+foreach ($ens as $nextEn) {
+  echo '<tr><td>' . $nextEn . '</td><td>';
+  $hwStr = '';
   foreach ($results as $nextResult) {
-    if ($nextResult->id->value == $pair[1]) {
-      $enstr .= $nextResult->en->value . ', ';
+    if ($nextResult->en->value == $nextEn) {
+      $hwStr .= $nextResult->gd->value . ', ';
     }
   }
-  echo trim($enstr,' ,') . '</small></td></tr>';
+  echo trim($hwStr,' ,') . '</td></tr>';
 }
 ?>
         </tbody>
