@@ -3273,6 +3273,8 @@ n:raineach_chooinnich_MhicUilleim
 n:raineach_Chill_Airne
   rdfs:label "raineach Chill Airne" .
 
+# STARTING HERE NEXT
+
 n:clach_raineach
   rdfs:label "clach-raineach" .
 
@@ -3285,48 +3287,121 @@ n:clach_raineach_mheadhanach
 n:clach_raineach_chaol
   rdfs:label "clach-raineach chaol" .
 
+# CLEANED EVERYTHING BELOW HERE
+
 n:sealg_raineach
-  rdfs:label "sealg-raineach" .
+  rdfs:label "sealg-raineach" ;
+  :part n:raineach , n:sealg .
+
+n:sealg
+  a :MasculineNoun ;
+  rdfs:label "sealg" .
 
 n:sealg_raineach_uaine
-  rdfs:label "sealg-raineach uaine" .
+  rdfs:label "sealg-raineach uaine" ;
+  :part n:sealg_raineach , a:uaine .
 
 n:sealg_raineach_ruadh
-  rdfs:label "sealg-raineach ruadh" .
+  rdfs:label "sealg-raineach ruadh" ;
+  :part n:sealg_raineach , a:ruadh .
 
 n:sealg_raineach_mhara
-  rdfs:label "sealg-raineach mhara" .
+  rdfs:label "sealg-raineach mhara" ;
+  :part n:sealg_raineach , n:muir .
+
+n:muir
+  a :Noun ;
+  rdfs:label "muir" ;
+  :gen "mara" .
 
 n:sealg_raineach_shleaghach
-  rdfs:label "sealg-raineach shleaghach" .
+  rdfs:label "sealg-raineach shleaghach" ;
+  :part n:sealg_raineach , a:sleaghach.
+
+a:sleaghach
+  a :Adjective ;
+  rdfs:label "sleaghach" ;
+  :part n:sleagh .
+
+n:sleagh
+  a :FeminineNoun ;
+  rdfs:label "sleagh" ;
+  :gen "sleigh" ;
+  :pl "sleaghan" .
 
 n:ruu_a%27_bhalla
-  rdfs:label "rù a’ bhalla" .
+  rdfs:label "rù a’ bhalla" ;
+  :part n:ruu , n:balla .
+
+n:ruu
+  a :MasculineNoun ;
+  rdfs:label "rù" .
+
+n:balla
+  a :MasculineNoun ;
+  rdfs:label "balla" .
 
 n:teanga_an_fheeidh
-  rdfs:label "teanga an fhèidh" .
+  rdfs:label "teanga an fhèidh" ;
+  :part n:teanga , n:fiadh .
+
+n:teanga
+  a :FeminineNoun ;
+  rdfs:label "teanga" .
+
+n:fiadh
+  a :MasculineNoun ;
+  rdfs:label "fiadh" ;
+  :gen "fèidh" ;
+  :pl "fèidh" .
 
 n:sealg_raineach_ghobhlach
-  rdfs:label "sealg-raineach ghobhlach" .
+  rdfs:label "sealg-raineach ghobhlach" ;
+  :part n:sealg_raineach , a:gobhlach .
+
+a:gobhlach
+  a :Adjective ;
+  rdfs:label "gobhlach" ;
+  :part n:gobhal .
+
+n:gobhal
+  a :MasculineNoun ;
+  rdfs:label "gobhal" .
 
 n:sealg_raineach_dhubh_ghasach
-  rdfs:label "sealg-raineach dhubh-ghasach" .
+  rdfs:label "sealg-raineach dhubh-ghasach" ;
+  :part n:sealg_raineach , a:dubh_ghasach .
 
 n:sealg_raineach_uaine_ghasach
-  rdfs:label "sealg-raineach uaine-ghasach" .
+  rdfs:label "sealg-raineach uaine-ghasach" ;
+  :part n:sealg_raineach , a:uaine_ghasach .
 
-# STARTING HERE NEXT
+a:dubh_ghasach
+  a :Adjective ;
+  rdfs:label "dubh-ghasach" ;
+  :part a:dubh , n:gas .
+
+a:uaine_ghasach
+  a :Adjective ;
+  rdfs:label "uaine-ghasach" ;
+  :part a:uaine , n:gas .
 
 n:raineach_Moire
-  rdfs:label "raineach Moire" .
+  rdfs:label "raineach Moire" ;
+  :part n:raineach , n:Moire ;
+  :pl "rainich Moire" .
+
+n:Moire
+  a :FeminineNoun ;
+  rdfs:label "Moire" .
 
 n:raineach_Moire_ailpeach
-  rdfs:label "raineach Moire ailpeach" .
+  rdfs:label "raineach Moire ailpeach" ;
+  :part n:raineach_Moire , a:ailpeach .
 
 n:raineach_Moire_chumanta
-  rdfs:label "raineach Moire chumanta" .
-
-# CLEANED EVERYTHING BELOW HERE
+  rdfs:label "raineach Moire chumanta" ;
+  :part n:raineach_Moire , a:cumanta .
 
 n:raineach_dharaich
   rdfs:label "raineach dharaich" ;
