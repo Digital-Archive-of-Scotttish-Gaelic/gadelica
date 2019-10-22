@@ -43,7 +43,7 @@ function gdCompare($s, $t) {
 <?php
 foreach ($hws as $nextHw) {
   $pair = explode("|", $nextHw);
-  echo '<tr><td>' . $pair[0] . '</td><td><small>';
+  echo '<tr onclick="window.location.href = \'viewEntry.php?id=' . $pair[1] . '\';"><td>' . $pair[0] . '</td><td><small>';
   $enstr = '';
   foreach ($results as $nextResult) {
     if ($nextResult->id->value == $pair[1]) {

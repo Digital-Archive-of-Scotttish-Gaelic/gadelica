@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Stòras-B</title>
+    <title>Stòras-Brì</title>
   </head>
   <body style="padding-top: 20px;">
     <div class="container-fluid">
@@ -13,7 +13,7 @@ $id = $_GET['id'];
 $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
-SELECT DISTINCT ?hw ?pid ?phw ?en ?lex
+SELECT DISTINCT ?hw ?pid ?phw ?en ?lex ?lhw ?cid ?chw
 WHERE
 {
   <{$id}> rdfs:label ?hw .
@@ -21,117 +21,105 @@ WHERE
     <{$id}> :part ?pid .
     ?pid rdfs:label ?phw .
   }
-  GRAPH ?g {
-    <{$id}> :sense ?en .
+  OPTIONAL {
+    ?cid :part <{$id}> .
+    ?cid rdfs:label ?chw .
   }
-  ?g rdfs:label ?lex .
+  OPTIONAL {
+    GRAPH ?g {
+      <{$id}> rdfs:label ?lhw .
+      <{$id}> :sense ?en .
+    }
+    ?g rdfs:label ?lex .
+  }
 }
 SPQR;
 $query = urlencode($query);
 $url = 'http://daerg.arts.gla.ac.uk:8080/fuseki/Faclair?output=json&query=' . $query;
 $json = file_get_contents($url);
-$data = json_decode($json,false)->results->bindings;
+$results = json_decode($json,false)->results->bindings;
 echo '<div class="card"><div class="card-body">';
-echo '<h1 class="card-title">' . $data[0]->hw->value . '</h1>';
-$ens = [];
-foreach($data as $next) {
-  $ens[] = $next->en->value;
-}
-$ens = array_unique($ens);
-foreach ($ens as $next) {
-  echo '<div class="list-group list-group-flush">';
-  echo '<div class="list-group-item">' . $next . ' (';
-  $sources = [];
-  foreach ($data as $next2) {
-    if ($next2->en->value==$next) {
-      $sources[] = $next2->lex->value;
-    }
+echo '<h1 class="card-title">' . $results[0]->hw->value . '</h1>';
+$sources = [];
+foreach($results as $nextResult) {
+  $lex = $nextResult->lex->value;
+  if ($lex!='') {
+    $sources[] = $lex;
   }
-  $sources = array_unique($sources);
-  foreach ($sources as $next2) {
-    echo $next2;
-    if ($next2 != end($sources)) {
-      echo ', ';
-    }
-  }
-  echo ')</div>';
-  echo '</div>';
 }
-
-/*
+$sources = array_unique($sources);
 echo '<div class="list-group list-group-flush">';
-foreach($data as $next) {
-  echo '<a href="viewEntry.php?id=' . urlencode($next->pid->value) . '" class="list-group-item list-group-item-action">' . $next->phw->value . '</a>';
-}
-echo '</div>';
-
-$query = <<<SPQR
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX : <http://faclair.ac.uk/meta/>
-SELECT DISTINCT ?pid ?phw
-WHERE
-{
-  ?pid :part <{$id}> .
-  ?pid rdfs:label ?phw .
-}
-SPQR;
-$query = urlencode($query);
-$url = 'http://daerg.arts.gla.ac.uk:8080/fuseki/co-aite?output=json&query=' . $query;
-$json = file_get_contents($url);
-$data = json_decode($json,false)->results->bindings;
-echo '<div class="list-group list-group-flush">';
-foreach($data as $next) {
-  echo '<a href="viewEntry.php?id=' . urlencode($next->pid->value) . '" class="list-group-item list-group-item-action">' . $next->phw->value . '</a>';
-}
-echo '</div>';
-
-$query = <<<SPQR
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX : <http://faclair.ac.uk/meta/>
-SELECT DISTINCT ?lexicon ?hw ?en
-WHERE
-{
-  GRAPH ?lexicon {
-    <{$id}> rdfs:label ?hw .
-    <{$id}> :sense ?en .
-  }
-}
-SPQR;
-$query = urlencode($query);
-$url = 'http://daerg.arts.gla.ac.uk:8080/fuseki/co-aite?output=json&query=' . $query;
-$json = file_get_contents($url);
-$data = json_decode($json,false)->results->bindings;
-$entries = [];
-foreach($data as $next) {
-  $entries[] = $next->lexicon->value;
-}
-$entries = array_unique($entries);
-foreach($entries as $next) {
-  echo '<div class="card"><div class="card-body">';
-  foreach($data as $next2) {
-    if($next2->lexicon->value==$next) {
-      echo '<h4 class="card-title">' . $next2->hw->value . '</h4>';
+foreach ($sources as $nextSource) {
+  echo '<div class="list-group-item">';
+  echo $nextSource . ': ';
+  foreach($results as $nextResult) {
+    if ($nextResult->lex->value==$nextSource) {
+      echo '<strong>' . $nextResult->lhw->value . '</strong> ';
       break;
     }
   }
-  echo '<div class="list-group list-group-flush">';
-  foreach($data as $next2) {
-    if($next2->lexicon->value==$next) {
-      echo '<div class="list-group-item">' . $next2->en->value . '</div>';
+  $ens = [];
+  foreach($results as $nextResult) {
+    if ($nextResult->lex->value==$nextSource) {
+      $en = $nextResult->en->value;
+      if ($en!='') {
+        $ens[] = $en;
+      }
+    }
+  }
+  $ens = array_unique($ens);
+  echo '<small class="text-muted">';
+  foreach ($ens as $nextEn) {
+    echo $nextEn;
+    if ($nextEn != end($ens)) {
+      echo ', ';
+    }
+  }
+  echo '</small></div>';
+}
+$parts = [];
+foreach($results as $nextResult) {
+  $pid = $nextResult->pid->value;
+  if ($pid!='') {
+    $parts[$pid] = $nextResult->phw->value;
+  }
+}
+$parts = array_unique($parts);
+if (count($parts)>0) {
+  echo '<div class="list-group-item">See: ';
+  foreach ($parts as $nextId=>$nextHw) {
+    echo '<a href="viewEntry?id=' . $nextId . '">';
+    echo $nextHw . '</a>';
+    if ($nextHw != end($parts)) {
+      echo ', ';
     }
   }
   echo '</div>';
-
-
-  echo '</div></div>';
 }
-*/
+$compounds = [];
+foreach($results as $nextResult) {
+  $cid = $nextResult->cid->value;
+  if ($cid!='') {
+     $compounds[$cid]= $nextResult->chw->value;
+  }
+}
+$compounds = array_unique($compounds);
+if (count($compounds)>0) {
+  echo '<div class="list-group-item">Also: ';
+  foreach ($compounds as $nextId=>$nextHw) {
+    echo '<a href="viewEntry?id=' . $nextId . '">';
+    echo $nextHw . '</a>';
+    if ($nextHw != end($compounds)) {
+      echo ', ';
+    }
+  }
+  echo '</div>';
+}
+echo '</div>';
 echo '</div></div>';
-
-
 ?>
     <nav class="navbar navbar-dark bg-primary fixed-bottom navbar-expand-lg">
-      <a class="navbar-brand" href="index.php">Stòras-B</a>
+      <a class="navbar-brand" href="index.php">Stòras-Brì</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

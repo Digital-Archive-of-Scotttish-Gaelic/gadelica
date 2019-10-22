@@ -3255,39 +3255,81 @@ n:raineach_fhaidhbhile
 n:raineach_an_fhaaile
   rdfs:label "raineach an fhàile" .
 
+# STARTING HERE NEXT
+# CLEANED EVERYTHING BELOW HERE
+
 n:raineach_uisge
-  rdfs:label "raineach uisge" .
+  rdfs:label "raineach uisge" ;
+  :part n:raineach , n:uisge .
 
 n:raineach_ruadh
-  rdfs:label "raineach ruadh" .
+  rdfs:label "raineach ruadh" ;
+  :part n:raineach , a:ruadh .
 
 n:raineach_chooinnich
-  rdfs:label "raineach chòinnich" .
+  rdfs:label "raineach chòinnich" ;
+  :pl "rainich chòinnich" ;
+  :part n:raineach , n:cooinneach .
 
 n:raineach_chooinnich_Tunbridge
-  rdfs:label "raineach chòinnich Tunbridge" .
+  rdfs:label "raineach chòinnich Tunbridge" ;
+  :part n:raineach_chooinnich .
 
 n:raineach_chooinnich_MhicUilleim
-  rdfs:label "raineach chòinnich MhicUilleim" .
+  rdfs:label "raineach chòinnich MhicUilleim" ;
+  :part n:raineach_chooinnich , n:MacUilleim .
+
+n:MacUilleim
+  a :MasculineNoun ;
+  rdfs:label "MacUilleim" ;
+  :part n:mac , n:Uilleam .
+
+n:mac
+  a :MasculineNoun ;
+  rdfs:label "mac" .
+
+n:Uilleam
+  a :MasculineNoun ;
+  rdfs:label "Uilleam" ;
+  :gen "Uilleim" .
 
 n:raineach_Chill_Airne
-  rdfs:label "raineach Chill Airne" .
-
-# STARTING HERE NEXT
+  rdfs:label "raineach Chill Airne" ;
+  :part n:raineach_chooinnich .
 
 n:clach_raineach
-  rdfs:label "clach-raineach" .
+  rdfs:label "clach-raineach" ;
+  :pl "clach-rainich" ;
+  :part n:clach , n:raineach .
+
+n:clach
+  a :FeminineNoun ;
+  rdfs:label "clach" .
 
 n:clach_raineach_leathann
-  rdfs:label "clach-raineach leathann" .
+  rdfs:label "clach-raineach leathann" ;
+  :part n:clach_raineach , a:leathann .
+
+a:leathann
+  a :Adjective ;
+  rdfs:label "leathann" .
 
 n:clach_raineach_mheadhanach
-  rdfs:label "clach-raineach mheadhanach" .
+  rdfs:label "clach-raineach mheadhanach" ;
+  :part n:clach_raineach , a:meadhanach .
+
+a:meadhanach
+  a :Adjective ;
+  rdfs:label "meadhanach" ;
+  :part n:meadhan .
+
+n:meadhan
+  a :MasculineNoun ;
+  rdfs:label "meadhan" .
 
 n:clach_raineach_chaol
-  rdfs:label "clach-raineach chaol" .
-
-# CLEANED EVERYTHING BELOW HERE
+  rdfs:label "clach-raineach chaol" ;
+  :part n:clach_raineach , a:caol .
 
 n:sealg_raineach
   rdfs:label "sealg-raineach" ;
