@@ -3158,69 +3158,104 @@ n:maoim_sneachda
 n:monadh
   rdfs:label "monadh" .
 
+# STARTING HERE NEXT
+
 n:garbhag
   a :FeminineNoun ;
-  rdfs:label "garbhag" .
+  rdfs:label "garbhag" ;
+  :pl "garbhagan" ;
+  :part a:garbh .
+
+a:garbh
+  a :Adjective ;
+  rdfs:label "garbh" .
 
 n:garbhag_an_t_sleeibhe
-  rdfs:label "garbhag an t-slèibhe" .
+  rdfs:label "garbhag an t-slèibhe" ;
+  :part n:garbhag , n:sliabh .
 
 n:garbhag_a%27_mhadaidh_ruaidh
-  rdfs:label "garbhag a’ mhadaidh ruaidh" .
+  rdfs:label "garbhag a’ mhadaidh ruaidh" ;
+  :part n:garbhag , n:madadh_ruadh .
+
+n:madadh_ruadh
+  rdfs:label "madadh ruadh" ;
+  :gen "madaidh ruaidh" ;
+  :part n:madadh , a:ruadh .
+
+n:madadh
+  rdfs:label "madadh" ;
+  :gen "madaidh" .
 
 n:garbhag_shlabhraidheach
-  rdfs:label "garbhag shlabhraidheach" .
+  rdfs:label "garbhag shlabhraidheach" ;
+  :part n:garbhag .
 
 n:garbhag_na_coise_maighiche
-  rdfs:label "garbhag na coise maighiche" .
+  rdfs:label "garbhag na coise maighiche" ;
+  :part n:garbhag .
 
 n:garbhag_leeana
-  rdfs:label "garbhag lèana" .
+  rdfs:label "garbhag lèana" ;
+  :part n:garbhag .
 
 n:garbhag_ailpeach
-  rdfs:label "garbhag ailpeach" .
+  rdfs:label "garbhag ailpeach" ;
+  :part n:garbhag .
 
 n:garbhag_Issler
-  rdfs:label "garbhag Issler" .
+  rdfs:label "garbhag Issler" ;
+  :part n:garbhag .
 
 n:garbhag_bheag
-  rdfs:label "garbhag bheag" .
+  rdfs:label "garbhag bheag" ;
+  :part n:garbhag .
 
 n:luibh_cleite
   rdfs:label "luibh cleite" .
 
 n:luibh_cleite_bog
-  rdfs:label "luibh cleite bog" .
+  rdfs:label "luibh cleite bog" ;
+  :part n:luibh_cleite .
 
 n:luibh_cleite_cruaidh
-  rdfs:label "luibh cleite cruaidh" .
+  rdfs:label "luibh cleite cruaidh" ;
+  :part n:luibh_cleite .
 
 n:earball_eich
   rdfs:label "earball eich" .
 
 n:earball_eich_cumanta
-  rdfs:label "earball eich cumanta" .
+  rdfs:label "earball eich cumanta" ;
+  :part n:earball_eich .
 
 n:earball_eich_uisge
-  rdfs:label "earball eich uisge" .
+  rdfs:label "earball eich uisge" ;
+  :part n:earball_eich .
 
 n:earball_eich_garbh
-  rdfs:label "earball eich garbh" .
+  rdfs:label "earball eich garbh" ;
+  :part n:earball_eich .
 
 n:earball_eich_leeana
-  rdfs:label "earball eich lèana" .
+  rdfs:label "earball eich lèana" ;
+  :part n:earball_eich .
 
 n:earball_eich_dubharach
-  rdfs:label "earball eich dubharach" .
+  rdfs:label "earball eich dubharach" ;
+  :part n:earball_eich .
 
 n:earball_eich_coille
-  rdfs:label "earball eich coille" .
+  rdfs:label "earball eich coille" ;
+  :part n:earball_eich .
 
 n:earball_eich_moor
-  rdfs:label "earball eich mòr" .
+  rdfs:label "earball eich mòr" ;
+  :part n:earball_eich .
 
 n:earball_eich_caol
-  rdfs:label "earball eich caol" .
+  rdfs:label "earball eich caol" ;
+  :part n:earball_eich .
 
 n:teanga_nathrach_bheag
   rdfs:label "teanga nathrach bheag" .
@@ -3229,13 +3264,15 @@ n:teanga_nathrach_chumanta
   rdfs:label "teanga nathrach chumanta" .
 
 n:raineach_riioghail
-  rdfs:label "raineach rìoghail" .
+  rdfs:label "raineach rìoghail" ;
+  :part n:raineach .
 
 n:lus_nam_miios
   rdfs:label "lus nam mìos" .
 
 n:raineach_pheirsill
-  rdfs:label "raineach pheirsill" .
+  rdfs:label "raineach pheirsill" ;
+  :part n:raineach .
 
 n:failtean_fionn
   rdfs:label "failtean fionn" .
@@ -3244,18 +3281,21 @@ n:feur_a%27_phiobair
   rdfs:label "feur a’ phiobair" .
 
 n:raineach_leeana
-  rdfs:label "raineach lèana" .
+  rdfs:label "raineach lèana" ;
+  :part n:raineach .
 
 n:raineach_mhoor
-  rdfs:label "raineach mhòr" .
+  rdfs:label "raineach mhòr" ;
+  :part n:raineach .
 
 n:raineach_fhaidhbhile
-  rdfs:label "raineach fhaidhbhile" .
+  rdfs:label "raineach fhaidhbhile" ;
+  :part n:raineach .
 
 n:raineach_an_fhaaile
-  rdfs:label "raineach an fhàile" .
+  rdfs:label "raineach an fhàile" ;
+  :part n:raineach .
 
-# STARTING HERE NEXT
 # CLEANED EVERYTHING BELOW HERE
 
 n:raineach_uisge
