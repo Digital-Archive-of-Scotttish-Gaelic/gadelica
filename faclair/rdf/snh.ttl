@@ -2911,10 +2911,6 @@ n:traaigh
   a :FeminineNoun ;
   rdfs:label "tràigh" .
 
-n:coille
-  a :FeminineNoun ;
-  rdfs:label "coille" .
-
 n:beinn
   a :FeminineNoun ;
   rdfs:label "beinn" .
@@ -3189,19 +3185,46 @@ n:madadh
 
 n:garbhag_shlabhraidheach
   rdfs:label "garbhag shlabhraidheach" ;
-  :part n:garbhag .
+  :part n:garbhag , a:slabhraidheach .
+
+a:slabhraidheach
+  a :Adjective ;
+  rdfs:label "slabhraidheach" ;
+  :part n:slabhraidh .
+
+n:slabhraidh
+  a :FeminineNoun ;
+  rdfs:label "slabhraidh" ;
+  :gen "slabhraidhe" ;
+  :pl "slabhraidhean" .
 
 n:garbhag_na_coise_maighiche
   rdfs:label "garbhag na coise maighiche" ;
-  :part n:garbhag .
+  :part n:garbhag , n:cas , n:maigheach .
+
+n:cas
+  a :FeminineNoun ;
+  rdfs:label "cas" ;
+  :gen "coise" ;
+  :pl "casan" .
+
+n:maigheach
+  a :FeminineNoun ;
+  rdfs:label "maigheach" ;
+  :gen "maighich" ;
+  :pl "maighichean" .
 
 n:garbhag_leeana
   rdfs:label "garbhag lèana" ;
-  :part n:garbhag .
+  :part n:garbhag , n:leeana .
+
+n:leeana
+  a :MasculineNoun ;
+  rdfs:label "lèana" .
 
 n:garbhag_ailpeach
   rdfs:label "garbhag ailpeach" ;
-  :part n:garbhag .
+  :part n:garbhag , n:ailpeach .
 
 n:garbhag_Issler
   rdfs:label "garbhag Issler" ;
@@ -3209,56 +3232,78 @@ n:garbhag_Issler
 
 n:garbhag_bheag
   rdfs:label "garbhag bheag" ;
-  :part n:garbhag .
+  :part n:garbhag a:beag .
+
+a:beag
+  a :Adjective ;
+  rdfs:label "beag" .
 
 n:luibh_cleite
-  rdfs:label "luibh cleite" .
+  rdfs:label "luibh cleite" ;
+  :part n:luibh , n:cleit.
 
 n:luibh_cleite_bog
   rdfs:label "luibh cleite bog" ;
-  :part n:luibh_cleite .
+  :part n:luibh_cleite , a:bog .
 
 n:luibh_cleite_cruaidh
   rdfs:label "luibh cleite cruaidh" ;
-  :part n:luibh_cleite .
+  :part n:luibh_cleite , a:cruaidh .
 
 n:earball_eich
-  rdfs:label "earball eich" .
+  rdfs:label "earball eich" ;
+  :part n:earball , n:each .
+
+n:earball
+  a :MasculineNoun ;
+  rdfs:label "earball" .
 
 n:earball_eich_cumanta
   rdfs:label "earball eich cumanta" ;
-  :part n:earball_eich .
+  :part n:earball_eich , a:cumanta .
 
 n:earball_eich_uisge
   rdfs:label "earball eich uisge" ;
-  :part n:earball_eich .
+  :part n:earball_eich , n:uisge .
 
 n:earball_eich_garbh
   rdfs:label "earball eich garbh" ;
-  :part n:earball_eich .
+  :part n:earball_eich , a:garbh .
 
 n:earball_eich_leeana
   rdfs:label "earball eich lèana" ;
-  :part n:earball_eich .
+  :part n:earball_eich , n:leeana .
 
 n:earball_eich_dubharach
   rdfs:label "earball eich dubharach" ;
-  :part n:earball_eich .
+  :part n:earball_eich , a:dubharach .
+
+a:dubharach
+  a :Adjective ;
+  rdfs:label "dubharach" ;
+  :part n:dubhar .
+
+n:dubhar
+  a :MasculineNoun ;
+  rdfs:label "dubhar" ;
+  :part a:dubh .
 
 n:earball_eich_coille
   rdfs:label "earball eich coille" ;
-  :part n:earball_eich .
+  :part n:earball_eich , n:coille .
 
 n:earball_eich_moor
   rdfs:label "earball eich mòr" ;
-  :part n:earball_eich .
+  :part n:earball_eich , a:moor .
 
 n:earball_eich_caol
   rdfs:label "earball eich caol" ;
-  :part n:earball_eich .
+  :part n:earball_eich , a:caol .
 
 n:teanga_nathrach_bheag
   rdfs:label "teanga nathrach bheag" .
+
+#START HERE
 
 n:teanga_nathrach_chumanta
   rdfs:label "teanga nathrach chumanta" .
