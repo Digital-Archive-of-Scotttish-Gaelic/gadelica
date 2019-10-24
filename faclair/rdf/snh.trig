@@ -8444,31 +8444,46 @@
     rdfs:comment "SNH ID: 1233" ;
     rdfs:comment "SNH category: invertebrates" .
 
+# STARTING HERE NEXT
+# CLEANED EVERYTHING BELOW HERE
+
   n:geaarr_a%27_mhonaidh
     a :FeminineNoun ;
-    rdfs:label "geàrr a' mhonaidh" ;
+    rdfs:label "geàrr a’ mhonaidh" ;
     :sense "mountain hare" ;
-    :pl "geàrran a' mhonaidh" ;
+    :pl "geàrran a’ mhonaidh" ;
     rdfs:comment "SNH ID: 1234" ;
-    rdfs:comment "SNH other: maigheach bhàn (f)" ;
-    rdfs:comment "SNH category: maighichean bàna" .
+    rdfs:comment "SNH category: mammals" .
+
+  n:maigheach_bhaan
+    a :FeminineNoun ;
+    rdfs:label "maigheach bhàn" ;
+    :sense "mountain hare" ;
+    :pl "maighichean bàna" ;
+    rdfs:comment "SNH ID: 1234" ;
+    rdfs:comment "SNH category: mammals" .
 
   n:giomach_Lochlannach
     a :MasculineNoun ;
     rdfs:label "giomach Lochlannach" ;
-    :sense "Norway lobster" ;
+    :sense "Norway lobster" , "Nephrops norvegicus" ;
     :pl "giomaich Lochlannach" ;
     rdfs:comment "SNH ID: 1235" ;
-    rdfs:comment "SNH other: giomach Nirribheach (m)" ;
-    rdfs:comment "SNH Latin: Nephrops norvegicus" ;
-    rdfs:comment "SNH category: giomaich Nirribheach" .
+    rdfs:comment "SNH category: under the sea" .
+
+  n:giomach_Nirribheach
+    a :MasculineNoun ;
+    rdfs:label "giomach Nirribheach" ;
+    :sense "Norway lobster" , "Nephrops norvegicus" ;
+    :pl "giomaich Nirribheach" ;
+    rdfs:comment "SNH ID: 1235" ;
+    rdfs:comment "SNH category: under the sea" .
 
   n:fraoch_Frangach
     a :MasculineNoun ;
     rdfs:label "fraoch Frangach" ;
-    :sense "cross-leaved heather" ;
+    :sense "cross-leaved heather" , "Enca tetralix" ;
     rdfs:comment "SNH ID: 1236" ;
-    rdfs:comment "SNH Latin: Enca tetralix" ;
     rdfs:comment "SNH category: plants" .
 
   n:clach_aoil
@@ -8484,12 +8499,19 @@
     :sense "continent" ;
     :pl "mòr-roinnean" ;
     rdfs:comment "SNH ID: 1238" ;
-    rdfs:comment "SNH other: mòr-thìr (f)" ;
-    rdfs:comment "SNH category: mòr-thìrean" .
+    rdfs:comment "SNH category: landscapes" .
+
+  n:moor_thiir
+    a :FeminineNoun ;
+    rdfs:label "mòr-roinn" ;
+    :sense "continent" ;
+    :pl "mòr-thìrean" ;
+    rdfs:comment "SNH ID: 1238a" ;
+    rdfs:comment "SNH category: landscapes" .
 
   n:Urras_Fiadh_bheatha_na_h_Alba
     rdfs:label "Urras Fiadh-bheatha na h-Alba" ;
-    :sense "Scottish Wildlife Trust (SWT)" ;
+    :sense "Scottish Wildlife Trust" , "SWT" ;
     rdfs:comment "SNH ID: 1239" ;
     rdfs:comment "SNH category: organisations" .
 
@@ -8504,7 +8526,7 @@
   n:moor_ghil
     a :FeminineNoun ;
     rdfs:label "mòr-ghil" ;
-    :sense "gorge / ravine" ;
+    :sense "gorge" , "ravine" ;
     :pl "mòr-ghilean" ;
     rdfs:comment "SNH ID: 1242" ;
     rdfs:comment "SNH category: landscapes" .
@@ -8526,10 +8548,9 @@
   n:laghairt
     a :MasculineNoun ;
     rdfs:label "laghairt" ;
-    :sense "lizard" ;
+    :sense "lizard" , "Lacertilia" ;
     :pl "laghairtean" ;
     rdfs:comment "SNH ID: 1245" ;
-    rdfs:comment "SNH Latin: Lacertilia" ;
     rdfs:comment "SNH category: amphibians and reptiles" .
 
   n:meanbh_fhriide
@@ -8539,14 +8560,28 @@
     :pl "meanbh-fhrìdean" ;
     rdfs:comment "SNH ID: 1246" ;
     rdfs:comment "SNH other: biastag" ;
-    rdfs:comment "SNH category: biastagan" .
+    rdfs:comment "SNH category: invertebrates" .
+
+  n:biastag
+    a :FeminineNoun ;
+    rdfs:label "biastag" ;
+    :sense "insect" ;
+    :pl "biastagan" ;
+    rdfs:comment "SNH ID: 1246a" ;
+    rdfs:comment "SNH category: invertebrates" .
 
   n:ceann_dearg
     a :MasculineNoun ;
     rdfs:label "ceann dearg" ;
     :sense "redstart" ;
     rdfs:comment "SNH ID: 1247" ;
-    rdfs:comment "SNH other: eàrr dhearg (f)" ;
+    rdfs:comment "SNH category: birds" .
+
+  n:eaarr_dhearg
+    a :FeminineNoun ;
+    rdfs:label "eàrr dhearg" ;
+    :sense "redstart" ;
+    rdfs:comment "SNH ID: 1247a" ;
     rdfs:comment "SNH category: birds" .
 
   n:lachair
@@ -8555,24 +8590,29 @@
     :sense "diver" ;
     :pl "lachairean" ;
     rdfs:comment "SNH ID: 1248" ;
-    rdfs:comment "SNH other: lachadair (m)" ;
-    rdfs:comment "SNH category: lachadairean" .
+    rdfs:comment "SNH category: birds" .
+
+  n:lachadair
+    a :MasculineNoun ;
+    rdfs:label "lachadair" ;
+    :sense "diver" ;
+    :pl "lachadairean" ;
+    rdfs:comment "SNH ID: 1248a" ;
+    rdfs:comment "SNH category: birds" .
 
   n:speeirlinn
     a :MasculineNoun ;
     rdfs:label "spèirlinn" ;
-    :sense "sparling" ;
+    :sense "sparling" , "Osperus eperlanus" ;
     rdfs:comment "SNH ID: 1249" ;
-    rdfs:comment "SNH Latin: Osperus eperlanus" ;
     rdfs:comment "SNH category: under the sea" .
 
   n:easgann_Eoorpach
     a :FeminineNoun ;
     rdfs:label "easgann Eòrpach" ;
-    :sense "European eel" ;
+    :sense "European eel" , "Anguilla anguilla" ;
     :pl "easgannan Eòrpach" ;
     rdfs:comment "SNH ID: 1250" ;
-    rdfs:comment "SNH Latin: Anguilla anguilla" ;
     rdfs:comment "SNH category: under the sea" .
 
   n:gabhar
@@ -8593,18 +8633,16 @@
   n:taarr_Artaigeach
     a :MasculineNoun ;
     rdfs:label "tàrr Artaigeach" ;
-    :sense "Arctic charr" ;
+    :sense "Arctic charr" , "Salvelinus alpinus" ;
     rdfs:comment "SNH ID: 1253" ;
-    rdfs:comment "SNH Latin: Salvelinus alpinus" ;
     rdfs:comment "SNH category: under the sea" .
 
   n:stangar
     a :MasculineNoun ;
     rdfs:label "stangar" ;
-    :sense "stickleback" ;
+    :sense "stickleback" , "gasterosteidae" ;
     :pl "stangaran" ;
     rdfs:comment "SNH ID: 1254" ;
-    rdfs:comment "SNH Latin: gasterosteidae" ;
     rdfs:comment "SNH category: under the sea" .
 
   n:pollag
@@ -8617,70 +8655,73 @@
   n:ailbean
     a :MasculineNoun ;
     rdfs:label "ailbean" ;
-    :sense "eelgrass" ;
+    :sense "eelgrass" , "zostera marina" ;
     rdfs:comment "SNH ID: 1256" ;
-    rdfs:comment "SNH other: bilearach" ;
-    rdfs:comment "SNH Latin: zostera marina" ;
+    rdfs:comment "SNH category: plants" .
+
+  n:bilearach
+    a :MasculineNoun ;
+    rdfs:label "bilearach" ;
+    :sense "eelgrass" , "zostera marina" ;
+    rdfs:comment "SNH ID: 1256a" ;
     rdfs:comment "SNH category: plants" .
 
   n:carbon
+    a :MasculineNoun ;
     rdfs:label "carbon" ;
     :sense "carbon" ;
-    :pl "M" ;
-    rdfs:comment "SNH ID: 1259" ;
-    rdfs:comment "SNH other: gualan" ;
-    rdfs:comment "SNH category: carbonan" .
+    :pl "carbonan" ;
+    rdfs:comment "SNH ID: 1259" .
+
+  n:gualan
+    a :MasculineNoun ;
+    rdfs:label "gualan" ;
+    :sense "carbon" ;
+    :gen "gualain" ;
+    rdfs:comment "SNH ID: 1259a" .
 
   n:clamhan_looin
     a :MasculineNoun ;
     rdfs:label "clamhan-lòin" ;
-    :sense "marsh harrier" ;
+    :sense "marsh harrier" , "Circus aeruginosus" ;
     :pl "clamhain-lòin" ;
     rdfs:comment "SNH ID: 1260" ;
-    rdfs:comment "SNH Latin: Circus aeruginosus" ;
     rdfs:comment "SNH category: birds" .
 
   n:Cood_Slighean_Duuthchail_na_h_Alba
     a :MasculineNoun ;
     rdfs:label "Còd Slighean Dùthchail na h-Alba" ;
-    :sense "Scottish Outdoor access Code" ;
-    rdfs:comment "SNH ID: 1261" ;
-    rdfs:comment "SNH category: " .
+    :sense "Scottish Outdoor Access Code" ;
+    rdfs:comment "SNH ID: 1261" .
 
   n:snagan_daraich_beag
     a :MasculineNoun ;
     rdfs:label "snagan-daraich beag" ;
-    :sense "lesser spotted woodpecker" ;
+    :sense "lesser spotted woodpecker" , "Dendrocopus minor" ;
     rdfs:comment "SNH ID: 1262" ;
-    rdfs:comment "SNH Latin: Dendrocopus minor" ;
     rdfs:comment "SNH category: birds" .
 
   n:fleogan
     a :MasculineNoun ;
     rdfs:label "fleogan" ;
     :sense "flatfish" ;
-    :pl "fleogain " ;
-    rdfs:comment "SNH ID: 1264" ;
-    rdfs:comment "SNH category: " .
+    :pl "fleogain" ;
+    rdfs:comment "SNH ID: 1264" .
 
   n:mial_uisge
     a :FeminineNoun ;
     rdfs:label "mial-uisge" ;
     :sense "water louse" ;
-    :pl "mialan-uisge " ;
-    rdfs:comment "SNH ID: 1265" ;
-    rdfs:comment "SNH category: " .
+    :pl "mialan-uisge" ;
+    rdfs:comment "SNH ID: 1265" .
 
   n:Roinn_Diion_Mara
     a :FeminineNoun ;
     rdfs:label "Roinn Dìon Mara" ;
-    :sense "Marine Protected Area (MPA)" ;
+    :sense "Marine Protected Area" , "MPA" ;
     :pl "Roinnean Dìon Mara" ;
     rdfs:comment "SNH ID: 1266" ;
     rdfs:comment "SNH category: under the sea" .
-
-    # STARTING HERE NEXT
-    # CLEANED EVERYTHING BELOW HERE
 
   n:craobh_shirist
     a :FeminineNoun ;

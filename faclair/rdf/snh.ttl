@@ -3046,58 +3046,198 @@ n:cuileag_iadhach
 n:cuileag_iadhach_a%27_chrithinn
   rdfs:label "cuileag iadhach a’ chrithinn" .
 
+# STARTING HERE NEXT
+# CLEANED EVERYTHING BELOW HERE
+
+n:maigheach_bhaan
+  rdfs:label "maigheach bhàn" ;
+  :pl "maighichean bàna" ;
+  :part n:maigheach , a:baan .
+
+a:baan
+  a :Adjective ;
+  rdfs:label "bàn" .
+
 n:geaarr_a%27_mhonaidh
-  rdfs:label "geàrr a’ mhonaidh" .
+  rdfs:label "geàrr a’ mhonaidh"
+  :pl "geàrran a’ mhonaidh" ;
+  :part n:monadh , n:geaarr .
 
 n:giomach_Lochlannach
-  rdfs:label "giomach Lochlannach" .
+  rdfs:label "giomach Lochlannach" ;
+  :pl "giomaich Lochlannach" ;
+  :part n:giomach , a:Lochlannach .
+
+a:Lochlannach
+  a :Adjective ;
+  rdfs:label "Lochlannach" ;
+  :part n:Lochlann .
+
+n:Lochlann
+  a :FeminineNoun ;
+  rdfs:label "Lochlann" .
+
+n:giomach_Nirribheach
+  rdfs:label "giomach Nirribheach" ;
+  :pl "giomaich Nirribheach" ;
+  :part n:giomach , a:Nirribheach .
+
+a:Nirribheach
+  a :Adjective ;
+  rdfs:label "Nirribheach" ;
+  :part n:Nirribhidh .
+
+n:Nirribhidh
+  a :FeminineNoun ;
+  rdfs:label "Nirribhidh" .
 
 n:fraoch_Frangach
-  rdfs:label "fraoch Frangach" .
+  rdfs:label "fraoch Frangach" ;
+  :part n:fraoch , a:Frangach .
+
+a:Frangach
+  a :Adjective ;
+  rdfs:label "Frangach" ;
+  :part n:Fraing .
+
+n:Fraing
+  a :FeminineNoun ;
+  rdfs:label "Fraing" .
 
 n:clach_aoil
-  rdfs:label "clach-aoil" .
+  rdfs:label "clach aoil" ;
+  :part n:clach , n:aol .
+
+n:aol
+  a :MasculineNoun ;
+  rdfs:label "aol" ;
+  :gen "aoil" .
 
 n:moor_roinn
-  rdfs:label "mòr-roinn" .
+  rdfs:label "mòr-roinn" ;
+  :pl "mòr-roinnean" ;
+  :part a:moor , n:roinn .
+
+n:moor_thiir
+  rdfs:label "mòr-thìr" ;
+  :pl "mòr-thìrean" ;
+  :part a:moor , n:tiir .
+
+n:tiir
+  a :FeminineNoun ;
+  rdfs:label "tìr" ;
+  :pl "tìrean" .
 
 n:Urras_Fiadh_bheatha_na_h_Alba
-  rdfs:label "Urras Fiadh-bheatha na h-Alba" .
+  rdfs:label "Urras Fiadh-bheatha na h-Alba" ;
+  :part n:urras , n:Alba , n:fiadh_bheatha .
+
+n:urras
+  a :MasculineNoun ;
+  rdfs:label "urras" .
 
 n:each
   a :MasculineNoun ;
-  rdfs:label "each" .
+  rdfs:label "each" ;
+  :gen "eich" ;
+  :pl "eich" .
 
 n:moor_ghil
-  rdfs:label "mòr-ghil" .
+  rdfs:label "mòr-ghil" ;
+  :pl "mòr-ghilean" ;
+  :part a:moor , n:gil .
+
+n:gil
+  a :FeminineNoun ;
+  rdfs:label "gil" ;
+  :gen "gile" ;
+  :pl "gilean" .
 
 n:morghan
   a :MasculineNoun ;
   rdfs:label "morghan" .
 
 n:tiiodhlac_na_mara
-  rdfs:label "tìodhlac na mara" .
+  rdfs:label "tìodhlac na mara" ;
+  :part n:tiiodhlac , n:muir .
+
+n:tiiodhlac
+  a :MasculineNoun ;
+  rdfs:label "tìodhlac" ;
+  :gen "tìodhlaic" ;
+  :pl "tìodhlaicean" .
 
 n:laghairt
   a :MasculineNoun ;
-  rdfs:label "laghairt" .
+  rdfs:label "laghairt" ;
+  :pl "laghairtean" .
 
 n:meanbh_fhriide
-  rdfs:label "meanbh-fhrìde" .
+  rdfs:label "meanbh-fhrìde" ;
+  :pl "meanbh-fhrìdean" ;
+  :part a:meanbh , n:friide .
+
+n:friide
+  a :FeminineNoun ;
+  rdfs:label "frìde" ;
+  :pl "frìdean" .
+
+a:meanbh
+  a :Adjective ;
+  rdfs:label "meanbh" .
+
+n:biastag
+  a :FeminineNoun ;
+  rdfs:label "biastag" ;
+  :pl "biastagan" .
 
 n:ceann_dearg
-  rdfs:label "ceann dearg" .
+  rdfs:label "ceann dearg" ;
+  :part n:ceann , a:dearg .
+
+n:ceann
+  a :MasculineNoun ;
+  rdfs:label "ceann" ;
+  :pl "cinn" ;
+  :gen "cinn" .
+
+n:eaarr_dhearg
+  rdfs:label "eàrr dhearg" ;
+  :part n:earr , a:dearg .
+
+n:eaarr
+  a :Noun ;
+  rdfs:label "eàrr" ;
+  :pl "earra" ;
+  :gen "earran" .
 
 n:lachair
   a :FeminineNoun ;
-  rdfs:label "lachair" .
+  rdfs:label "lachair" ;
+  :pl "lachairean" .
+
+n:lachadair
+  a :MasculineNoun ;
+  rdfs:label "lachadair" ;
+  :pl "lachadairean" .
 
 n:speeirlinn
   a :MasculineNoun ;
   rdfs:label "spèirlinn" .
 
 n:easgann_Eoorpach
-  rdfs:label "easgann Eòrpach" .
+  rdfs:label "easgann Eòrpach" ;
+  :pl "easgannan Eòrpach" ;
+  :part n:easgann , a:Eoorpach .
+
+a:Eoorpach
+  a :Adjective ;
+  rdfs:label "Eòrpach" ;
+  :part n:Eoorpa .
+
+n:Eoorpa
+  a :FeminineNoun ;
+  rdfs:label "Eòrpa" .
 
 n:gabhar
   a :FeminineNoun ;
@@ -3105,14 +3245,30 @@ n:gabhar
 
 n:easgann
   a :FeminineNoun ;
-  rdfs:label "easgann" .
+  rdfs:label "easgann" ;
+  :pl "easgannan" .
 
 n:taarr_Artaigeach
-  rdfs:label "tàrr Artaigeach" .
+  rdfs:label "tàrr Artaigeach" ;
+  :part n:taarr , a:Artaigeach .
+
+n:taarr
+  a :MasculineNoun ;
+  rdfs:label "tàrr" ;
+
+a:Artaigeach
+  a :Adjective ;
+  rdfs:label "Artaigeach" ;
+  :part n:Artaig .
+
+n:Artaig
+  a :FeminineNoun ;
+  rdfs:label "Artaig" .
 
 n:stangar
   a :MasculineNoun ;
-  rdfs:label "stangar" .
+  rdfs:label "stangar" ;
+  :pl "stangaran" .
 
 n:pollag
   a :FeminineNoun ;
@@ -3122,28 +3278,60 @@ n:ailbean
   a :MasculineNoun ;
   rdfs:label "ailbean" .
 
+n:bilearach
+  a :MasculineNoun ;
+  rdfs:label "bilearach" .
+
 n:carbon
   a :MasculineNoun ;
-  rdfs:label "carbon" .
+  rdfs:label "carbon" ;
+  :pl "carbonan" .
+
+n:gualan
+  a :MasculineNoun ;
+  rdfs:label "gualan" ;
+  :gen "gualain" ;
+  :part n:gual .
+
+n:gual
+  a :MasculineNoun ;
+  rdfs:label "gual" .
 
 n:clamhan_looin
-  rdfs:label "clamhan-lòin" .
+  rdfs:label "clamhan lòin" ;
+  :part n:clamhan , n:loon .
+
+n:loon
+  a :MasculineNoun ;
+  rdfs:label "lòn" ;
+  :gen "lòin" .
 
 n:Cood_Slighean_Duuthchail_na_h_Alba
-  rdfs:label "Còd Slighean Dùthchail na h-Alba" .
+  rdfs:label "Còd Slighean Dùthchail na h-Alba" ;
+  :part n:cood , n:slighe , a:duuthchail , n:Alba .
+
+n:cood
+  a :MasculineNoun ;
+  rdfs:label "còd" .
+
+n:slighe
+  a :FeminineNoun ;
+  rdfs:label "slighe" ;
+  :pl "slighean" .
 
 n:snagan_daraich_beag
-  rdfs:label "snagan-daraich beag" .
+  rdfs:label "snagan daraich beag" ;
+  :part n:snagan_daraich , a:beag .
 
 n:fleogan
   a :MasculineNoun ;
-  rdfs:label "fleogan" .
+  rdfs:label "fleogan" ;
+  :pl "fleogain" ;
+  :gen "fleogain" .
 
 n:mial_uisge
-  rdfs:label "mial-uisge" .
-
-  # STARTING HERE NEXT
-  # CLEANED EVERYTHING BELOW HERE
+  rdfs:label "mial uisge" ;
+  :part n:mial , n:uisge .
 
 n:Roinn_Diion_Mara
   rdfs:label "Roinn Dìon Mara" ;
