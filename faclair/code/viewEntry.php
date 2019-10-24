@@ -13,7 +13,7 @@ $id = $_GET['id'];
 $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
-SELECT DISTINCT ?hw ?pid ?phw ?en ?lex ?lhw ?cid ?chw
+SELECT DISTINCT ?hw ?pid ?phw ?en ?lex ?lhw ?cid ?chw ?pos
 WHERE
 {
   <{$id}> rdfs:label ?hw .
@@ -29,6 +29,10 @@ WHERE
     GRAPH ?g {
       <{$id}> rdfs:label ?lhw .
       <{$id}> :sense ?en .
+      OPTIONAL {
+        <{$id}> a ?posid .
+        ?posid rdfs:label ?pos .
+      }
     }
     ?g rdfs:label ?lex .
   }
@@ -55,6 +59,14 @@ foreach ($sources as $nextSource) {
   foreach($results as $nextResult) {
     if ($nextResult->lex->value==$nextSource) {
       echo '<strong>' . $nextResult->lhw->value . '</strong> ';
+      break;
+    }
+  }
+  foreach($results as $nextResult) {
+    if ($nextResult->lex->value==$nextSource) {
+      if ($nextResult->pos->value!='') {
+        echo ' (' . $nextResult->pos->value . ') ';
+      }
       break;
     }
   }

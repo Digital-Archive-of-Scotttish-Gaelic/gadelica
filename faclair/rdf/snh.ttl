@@ -3142,19 +3142,45 @@ n:fleogan
 n:mial_uisge
   rdfs:label "mial-uisge" .
 
+  # STARTING HERE NEXT
+  # CLEANED EVERYTHING BELOW HERE
+
 n:Roinn_Diion_Mara
-  rdfs:label "Roinn Dìon Mara" .
+  rdfs:label "Roinn Dìon Mara" ;
+  :part n:roinn , n:diion , n:muir .
+
+n:roinn
+  a :FeminineNoun ;
+  rdfs:label "roinn" .
+
+n:diion
+  a :MasculineNoun ;
+  rdfs:label "dìon" .
 
 n:craobh_shirist
-  rdfs:label "craobh-shirist" .
+  rdfs:label "craobh shirist" ;
+  :part n:craobh , n:sirist .
 
 n:maoim_sneachda
-  rdfs:label "maoim-sneachda" .
+  rdfs:label "maoim sneachda" ;
+  :pl "maoimean" ;
+  :part n:maoim , n:sneachda .
+
+n:sneachd
+  a :MasculineNoun ;
+  rdfs:label "sneachd" ;
+  :gen "sneachdan" .
+
+n:maoim
+  a :FeminineNoun ;
+  rdfs:label "maoim" ;
+  :pl "maoimean" .
 
 n:monadh
-  rdfs:label "monadh" .
-
-# STARTING HERE NEXT
+  a :MasculineNoun ;
+  rdfs:label "monadh" ;
+  :pl "monaidhean" ;
+  :gen "monaidh" .
 
 n:garbhag
   a :FeminineNoun ;
@@ -3232,7 +3258,7 @@ n:garbhag_Issler
 
 n:garbhag_bheag
   rdfs:label "garbhag bheag" ;
-  :part n:garbhag a:beag .
+  :part n:garbhag , a:beag .
 
 a:beag
   a :Adjective ;
@@ -3301,47 +3327,91 @@ n:earball_eich_caol
   :part n:earball_eich , a:caol .
 
 n:teanga_nathrach_bheag
-  rdfs:label "teanga nathrach bheag" .
+  rdfs:label "teanga nathrach bheag" ;
+  :part n:teanga_nathrach , a:beag .
 
-#START HERE
+n:teanga_nathrach
+  rdfs:label "teanga nathrach" ;
+  :part n:teanga , n:nathair .
 
 n:teanga_nathrach_chumanta
-  rdfs:label "teanga nathrach chumanta" .
+  rdfs:label "teanga nathrach chumanta" ;
+  :part n:teanga_nathrach a:cumanta .
 
 n:raineach_riioghail
   rdfs:label "raineach rìoghail" ;
-  :part n:raineach .
+  :part n:raineach , a:riioghail .
+
+a:riioghail
+  a :Adjective ;
+  rdfs:label "rìoghail" ;
+  :part n:riigh .
+
+n:riigh
+  a :MasculineNoun ;
+  rdfs:label "rìgh" .
 
 n:lus_nam_miios
-  rdfs:label "lus nam mìos" .
+  rdfs:label "lus nam mìos" ;
+  :part n:lus , n:miios .
+
+n:miios
+  a :MasculineNoun ;
+  rdfs:label "mìos" ;
+  :gen "mìosa" ;
+  :pl "mìosan" .
 
 n:raineach_pheirsill
   rdfs:label "raineach pheirsill" ;
-  :part n:raineach .
+  :part n:raineach , n:peirsill .
+
+n:peirsill
+  a :FeminineNoun ;
+  rdfs:label "peirsill" .
 
 n:failtean_fionn
-  rdfs:label "failtean fionn" .
+  rdfs:label "failtean fionn" ;
+  :part n:failtean , a:fionn .
+
+n:failtean
+  a :MasculineNoun ;
+  rdfs:label "failtean" .
+
+a:fionn
+  a :Adjective ;
+  rdfs:label "fionn" .
 
 n:feur_a%27_phiobair
-  rdfs:label "feur a’ phiobair" .
+  rdfs:label "feur a’ phiobair" ;
+  :part n:feur , n:piobar .
+
+n:piobar
+  a :MasculineNoun ;
+  rdfs:label "piobar" .
 
 n:raineach_leeana
   rdfs:label "raineach lèana" ;
-  :part n:raineach .
+  :part n:raineach , n:leeana .
 
 n:raineach_mhoor
   rdfs:label "raineach mhòr" ;
-  :part n:raineach .
+  :part n:raineach , a:moor .
+
+a:moor
+  a :Adjective ;
+  rdfs:label "mòr" .
 
 n:raineach_fhaidhbhile
   rdfs:label "raineach fhaidhbhile" ;
-  :part n:raineach .
+  :part n:raineach , n:faidhbhile .
 
 n:raineach_an_fhaaile
   rdfs:label "raineach an fhàile" ;
-  :part n:raineach .
+  :part n:raineach , n:faaile .
 
-# CLEANED EVERYTHING BELOW HERE
+n:faaile
+  a :MasculineNoun ;
+  rdfs:label "fàile" .
 
 n:raineach_uisge
   rdfs:label "raineach uisge" ;
@@ -3437,7 +3507,7 @@ n:sealg_raineach_mhara
   :part n:sealg_raineach , n:muir .
 
 n:muir
-  a :Noun ;
+  a :MasculineNoun ;
   rdfs:label "muir" ;
   :gen "mara" .
 

@@ -8679,6 +8679,9 @@
     rdfs:comment "SNH ID: 1266" ;
     rdfs:comment "SNH category: under the sea" .
 
+    # STARTING HERE NEXT
+    # CLEANED EVERYTHING BELOW HERE
+
   n:craobh_shirist
     a :FeminineNoun ;
     rdfs:label "craobh-shirist" ;
@@ -8687,24 +8690,22 @@
     rdfs:comment "SNH category: trees" .
 
   n:maoim_sneachda
+    a :FeminineNoun ;
     rdfs:label "maoim-sneachda" ;
     :sense "avalanche" ;
-    :pl "F" ;
+    :pl "maoimean-sneachda" ;
     rdfs:comment "SNH ID: 1269" ;
-    rdfs:comment "SNH info: Whereas English adopted a French word  'avalanche'" ;
-    rdfs:comment "SNH audio:  there is a native Gaelic word for the same phenomenon - maoim-sneachda 'gushing forth of snow' - reflecting the fact that avalanches have always been part of life in the Scottish mountains." ;
-    rdfs:comment "SNH category: maoimean-sneachda" .
+    rdfs:comment "SNH info: Whereas English adopted a French word  'avalanche', there is a native Gaelic word for the same phenomenon - maoim-sneachda 'gushing forth of snow' - reflecting the fact that avalanches have always been part of life in the Scottish mountains." ;
+    rdfs:comment "SNH category: landscapes" .
 
   n:monadh
+    a :MasculineNoun ;
     rdfs:label "monadh" ;
-    :sense "mountain" ;
+    :pl "monaidhean" ;
+    :sense "mountain" , "range", "high lying moorland" ;
     rdfs:comment "SNH ID: 1270" ;
-    rdfs:comment "SNH other:  range" ;
-    rdfs:comment "SNH Latin: The common Gaelic word monadh 'mountain" ;
-    rdfs:comment "SNH category: " .
-
-# STARTING HERE NEXT
-# CLEANED EVERYTHING BELOW HERE
+    rdfs:comment "SNH info: The common Gaelic word monadh 'mountain, range' originated in Pictish. It has a cognate in the Welsh mynydd." ;
+    rdfs:comment "SNH category: landscapes" .
 
   n:garbhag
     a :FeminineNoun ;
