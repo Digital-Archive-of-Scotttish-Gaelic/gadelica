@@ -1,0 +1,5694 @@
+@prefix n: <http://faclair.ac.uk/nouns/> .
+@prefix a: <http://faclair.ac.uk/adjectives/> .
+@prefix v: <http://faclair.ac.uk/verbs/> .
+@prefix o: <http://faclair.ac.uk/other/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://faclair.ac.uk/meta/> .
+
+<http://faclair.ac.uk/sources/Seotal>
+  rdfs:label "Seotal" .
+
+<http://faclair.ac.uk/sources/Seotal> {
+
+:MasculineNoun rdfs:label "n(m)" .
+:FeminineNoun rdfs:label "n(f)" .
+:Adjective rdfs:label "adj" .
+:Verb rdfs:label "vb" .
+
+a:acadaimigeach
+  a :Adjective ;
+  rdfs:label "acadaimigeach" ;
+  :sense "academic" .
+
+n:cunntasair
+  a :MasculineNoun ;
+  rdfs:label "cunntasair" ;
+  :sense "accountant" ;
+  :gen "cunntasair" ;
+  :pl "cunntasairean" .
+
+n:coileanadh
+  a :MasculineNoun ;
+  rdfs:label "coileanadh" ;
+  :sense "achievement" ;
+  :gen "coileanaidh" ;
+  :pl "coileanaidhean" .
+
+n:gniiomh
+  a :MasculineNoun ;
+  rdfs:label "gnìomh" ;
+  :sense "act" ;
+  :gen "gnìomh" ;
+  :pl "gnìomhan" ;
+  :pl "gnìomharan" .
+
+a:an_gniiomh
+  a :Adjective ;
+  rdfs:label "an-gnìomh" ;
+  :sense "acting" .
+
+a:gniiomhach
+  a :Adjective ;
+  rdfs:label "gnìomhach" ;
+  :sense "active" .
+
+n:gniiomh
+  a :MasculineNoun ;
+  rdfs:label "gnìomh" ;
+  :sense "activity" ;
+  :gen "gnìomha" ;
+  :pl "gnìomhan" .
+
+n:rianachd
+  a :FeminineNoun ;
+  rdfs:label "rianachd" ;
+  :sense "administration" ;
+  :gen "rianachd" .
+
+n:inbheach
+  a :MasculineNoun ;
+  rdfs:label "inbheach" ;
+  :sense "adult" ;
+  :gen "inbhich" ;
+  :pl "inbhich" .
+
+n:sanas
+  a :MasculineNoun ;
+  rdfs:label "sanas" ;
+  :sense "advert" ;
+  :gen "sanais" ;
+  :pl "sanasan" .
+
+v:sanasaich
+  a :Verb ;
+  rdfs:label "sanasaich" ;
+  :sense "advertise" .
+
+n:sanasachd
+  a :MasculineNoun ;
+  rdfs:label "sanasachd" ;
+  :sense "advertising" ;
+  :gen "sanasachd" .
+
+n:neach_comhairle
+  a :MasculineNoun ;
+  rdfs:label "neach-comhairle" ;
+  :sense "adviser" ;
+  :gen "neach-comhairle" ;
+  :pl "luchd-comhairle" .
+
+n:tuathanachas
+  a :MasculineNoun ;
+  rdfs:label "tuathanachas" ;
+  :sense "agriculture" ;
+  :gen "tuathanachais" .
+
+n:adhar
+  a :MasculineNoun ;
+  rdfs:label "adhar" ;
+  :sense "air" ;
+  :gen "adhair" .
+
+n:port_adhair
+  a :MasculineNoun ;
+  rdfs:label "port-adhair" ;
+  :sense "airport" ;
+  :gen "puirt-adhair" ;
+  :pl "puirt-adhair" .
+
+n:alibi
+  a :noun ;
+  rdfs:label "alibi" ;
+  :sense "alibi" ;
+  :gen "alibi" ;
+  :pl "alibis" .
+
+n:cosamhlachd
+  a :FeminineNoun ;
+  rdfs:label "cosamhlachd" ;
+  :sense "allegory" ;
+  :gen "cosamhlachd" ;
+  :pl "cosamhlachdan" .
+
+a:co_cheangailte
+  a :Adjective ;
+  rdfs:label "co-cheangailte" ;
+  :sense "allied" .
+
+n:aibidil
+  a :FeminineNoun ;
+  rdfs:label "aibidil" ;
+  :sense "alphabet" ;
+  :gen "aibidil" ;
+  :pl "aibidilean" .
+
+a:aibidileach
+  a :Adjective ;
+  rdfs:label "aibidileach" ;
+  :sense "alphabetical" .
+
+a:Ameireaganach
+  a :Adjective ;
+  rdfs:label "Ameireaganach" ;
+  :sense "American" .
+
+n:dibhearsain
+  a :MasculineNoun ;
+  rdfs:label "dibhearsain" ;
+  :sense "amusement" ;
+  :gen "dibhearsain" ;
+  :pl "dibhearsain" .
+
+n:samhlachas
+  a :MasculineNoun ;
+  rdfs:label "samhlachas" ;
+  :sense "analogy" ;
+  :gen "samhlachais" ;
+  :pl "samhlachasan" .
+
+n:anailis
+  a :FeminineNoun ;
+  rdfs:label "anailis" ;
+  :sense "analysis" ;
+  :gen "anailis" ;
+  :pl "anailisean" .
+
+n:neach_anailis
+  a :MasculineNoun ;
+  rdfs:label "neach-anailis" ;
+  :sense "analyst" ;
+  :gen "neach-anailis" ;
+  :pl "luchd-anailis" .
+
+a:anailiseach
+  a :Adjective ;
+  rdfs:label "anailiseach" ;
+  :sense "analytical" .
+
+a:aarsaidh
+  a :Adjective ;
+  rdfs:label "àrsaidh" ;
+  :sense "ancient" .
+
+a:beothaichte
+  a :Adjective ;
+  rdfs:label "beothaichte" ;
+  :sense "animated" .
+
+n:beothachadh
+  a :MasculineNoun ;
+  rdfs:label "beothachadh" ;
+  :sense "animation" ;
+  :gen "beothachaidh" ;
+  :pl "beothachaidhean" .
+
+n:daonn_eoolas
+  a :MasculineNoun ;
+  rdfs:label "daonn-eòlas" ;
+  :sense "anthropology" ;
+  :gen "daonn-eòlais" .
+
+n:uidheam
+  a :FeminineNoun ;
+  rdfs:label "uidheam" ;
+  :sense "apparatus" ;
+  :gen "uidheim" ;
+  :pl "uidheaman" .
+
+n:coltas
+  a :MasculineNoun ;
+  rdfs:label "coltas" ;
+  :sense "appearance" ;
+  :gen "coltais" ;
+  :pl "coltasan" .
+
+n:tagraiche
+  a :MasculineNoun ;
+  rdfs:label "tagraiche" ;
+  :sense "applicant" ;
+  :gen "tagraiche" ;
+  :pl "tagraichean" .
+
+a:gniiomhach
+  a :Adjective ;
+  rdfs:label "gnìomhach" ;
+  :sense "applied" .
+
+n:Giblean
+  a :MasculineNoun ;
+  rdfs:label "Giblean" ;
+  :sense "April" ;
+  :gen "Giblein" .
+
+n:ailtireachd
+  a :FeminineNoun ;
+  rdfs:label "ailtireachd" ;
+  :sense "architecture" ;
+  :gen "ailtireachd" .
+
+n:argamaid
+  a :FeminineNoun ;
+  rdfs:label "argamaid" ;
+  :sense "argument" ;
+  :gen "argamaid(e)" ;
+  :pl "argamaidean" .
+
+a:Arastotalach
+  a :Adjective ;
+  rdfs:label "Arastotalach" ;
+  :sense "Aristotelian" .
+
+n:arm
+  a :MasculineNoun ;
+  rdfs:label "arm" ;
+  :sense "army" ;
+  :gen "airm" ;
+  :pl "airm" .
+
+n:armailt
+  a :MasculineNoun ;
+  rdfs:label "armailt" ;
+  :sense "army" ;
+  :gen "armailt(e)" ;
+  :pl "armailtean" .
+
+n:acfhainn
+  a :FeminineNoun ;
+  rdfs:label "acfhainn" ;
+  :sense "article" ;
+  :gen "acfhainn(e)" ;
+  :pl "acfhainnean" .
+
+n:co_thional
+  a :MasculineNoun ;
+  rdfs:label "co-thional" ;
+  :sense "assembly" ;
+  :gen "co-thionail" ;
+  :pl "co-thionalan" .
+
+n:measadh
+  a :MasculineNoun ;
+  rdfs:label "measadh" ;
+  :sense "assessment" ;
+  :gen "measaidh" ;
+  :pl "measaidhean" .
+
+n:neach_taice
+  a :MasculineNoun ;
+  rdfs:label "neach-taice" ;
+  :sense "assistant" ;
+  :gen "neach-taice" ;
+  :pl "luchd-taice" .
+
+n:comann
+  a :MasculineNoun ;
+  rdfs:label "comann" ;
+  :sense "association" ;
+  :gen "comainn" ;
+  :pl "comainn" .
+
+n:buileachadh
+  a :MasculineNoun ;
+  rdfs:label "buileachadh" ;
+  :sense "attainment" ;
+  :gen "buileachaidh" ;
+  :pl "buileachaidhean" .
+
+n:Luunastal
+  a :MasculineNoun ;
+  rdfs:label "Lùnastal" ;
+  :sense "August" ;
+  :gen "Lùnastail" .
+
+n:uughdar
+  a :MasculineNoun ;
+  rdfs:label "ùghdar" ;
+  :sense "author" ;
+  :gen "ùghdair" ;
+  :pl "ùghdaran" .
+
+n:uughdarras
+  a :MasculineNoun ;
+  rdfs:label "ùghdarras" ;
+  :sense "authority" ;
+  :gen "ùghdarrais" ;
+  :pl "ùghdarrasan" .
+
+n:foghar
+  a :MasculineNoun ;
+  rdfs:label "foghar" ;
+  :sense "autumn" ;
+  :gen "foghair" ;
+  :pl "foghair" .
+
+a:taice
+  a :Adjective ;
+  rdfs:label "taice" ;
+  :sense "auxiliary" .
+
+n:duais
+  a :FeminineNoun ;
+  rdfs:label "duais" ;
+  :sense "award" ;
+  :gen "duaise" ;
+  :pl "duaisean" .
+
+n:mothachadh
+  a :MasculineNoun ;
+  rdfs:label "mothachadh" ;
+  :sense "awareness" ;
+  :gen "mothachaidh" ;
+  :pl "mothachaidhean" .
+
+n:cuul_raon
+  a :MasculineNoun ;
+  rdfs:label "cùl-raon" ;
+  :sense "background" .
+
+n:bailiuun
+  a :MasculineNoun ;
+  rdfs:label "bailiùn" ;
+  :sense "balloon" ;
+  :gen "bailiùn" ;
+  :pl "bailiùnaichean" .
+
+n:batal
+  a :MasculineNoun ;
+  rdfs:label "batal" ;
+  :sense "battle" ;
+  :gen "batail" ;
+  :pl "batail" .
+
+n:blaar
+  a :MasculineNoun ;
+  rdfs:label "blàr" ;
+  :sense "battle" ;
+  :gen "blàir" ;
+  :pl "blàran" .
+
+n:cath
+  a :MasculineNoun ;
+  rdfs:label "cath" ;
+  :sense "battle" ;
+  :gen "catha" ;
+  :pl "cathan" ;
+  :pl "cathannan" .
+
+n:dol_a_mach
+  a :MasculineNoun ;
+  rdfs:label "dol a-mach" ;
+  :sense "behaviour" .
+
+n:giuulan
+  a :MasculineNoun ;
+  rdfs:label "giùlan" ;
+  :sense "behaviour" ;
+  :gen "giùlain" ;
+  :pl "giùlanan" .
+
+n:buannachd
+  a :FeminineNoun ;
+  rdfs:label "buannachd" ;
+  :sense "benefit" ;
+  :gen "buannachd" ;
+  :pl "buannachdan" .
+
+n:sochair
+  a :FeminineNoun ;
+  rdfs:label "sochair" ;
+  :sense "benefit" ;
+  :gen "sochair(e)" ;
+  :pl "sochairean" .
+
+a:coibhneil
+  a :Adjective ;
+  rdfs:label "coibhneil" ;
+  :sense "benevolent" .
+
+a:baaigheil
+  a :Adjective ;
+  rdfs:label "bàigheil" ;
+  :sense "benevolent" .
+
+a:fialaidh
+  a :Adjective ;
+  rdfs:label "fialaidh" ;
+  :sense "benevolent" .
+
+a:carthannach
+  a :Adjective ;
+  rdfs:label "carthannach" ;
+  :sense "benevolent" .
+
+a:mathanasach
+  a :Adjective ;
+  rdfs:label "mathanasach" ;
+  :sense "benevolent" .
+
+a:maitheasach
+  a :Adjective ;
+  rdfs:label "maitheasach" ;
+  :sense "benevolent" .
+
+a:cooir
+  a :Adjective ;
+  rdfs:label "còir" ;
+  :sense "benevolent" .
+
+o:feallsanachd_Bhergson
+  a :NounPhrase ;
+  rdfs:label "feallsanachd Bhergson" ;
+  :sense "Bergsonism" .
+
+n:claar_leabhraichean
+  a :MasculineNoun ;
+  rdfs:label "clàr-leabhraichean" ;
+  :sense "bibliography" ;
+  :gen "clàir-leabhraichean" ;
+  :pl "clàran-leabhraichean" .
+
+n:coomhdach
+  a :MasculineNoun ;
+  rdfs:label "còmhdach" ;
+  :sense "binding" ;
+  :gen "còmhdaich" ;
+  :pl "còmhdaich" .
+
+n:eachdraidh_beatha
+  a :FeminineNoun ;
+  rdfs:label "eachdraidh-beatha" ;
+  :sense "biography" ;
+  :gen "eachdraidh-beatha" ;
+  :pl "eachdraidhean-beatha" .
+
+n:ceann_bliadhna
+  a :MasculineNoun ;
+  rdfs:label "ceann-bliadhna" ;
+  :sense "birthday" ;
+  :gen "cinn-bliadhna" ;
+  :pl "cinn-bliadhna" .
+
+n:co_laa_breith
+  a :MasculineNoun ;
+  rdfs:label "co-là-breith" ;
+  :sense "birthday" ;
+  :gen "co-là-breith" ;
+  :pl "co-làithean-breith" ;
+  :pl "co-lathaichean-breith" .
+
+n:dubhadh
+  a :MasculineNoun ;
+  rdfs:label "dubhadh" ;
+  :sense "blackout" ;
+  :gen "dubhaidh" ;
+  :pl "dubhaidhean" .
+
+n:gobha
+  a :MasculineNoun ;
+  rdfs:label "gobha" ;
+  :sense "blacksmith" ;
+  :gen "gobhann" ;
+  :gen "gobhainn" ;
+  :pl "goibhnean" .
+
+n:goibhneachd
+  a :FeminineNoun ;
+  rdfs:label "goibhneachd" ;
+  :sense "blacksmithing" ;
+  :gen "goibhneachd" .
+
+n:gaiseadh
+  a :MasculineNoun ;
+  rdfs:label "gaiseadh" ;
+  :sense "blight" ;
+  :gen "gaisidh" .
+
+n:boma_
+  a :MasculineNoun ;
+  rdfs:label "boma " ;
+  :sense "bomb" ;
+  :gen "boma" ;
+  :pl "bomaichean" .
+
+n:leabhar
+  a :MasculineNoun ;
+  rdfs:label "leabhar" ;
+  :sense "book" ;
+  :gen "leabhair" ;
+  :pl "leabhraichean" .
+
+n:criioch
+  a :FeminineNoun ;
+  rdfs:label "crìoch" ;
+  :sense "boundary" ;
+  :gen "crìche" ;
+  :pl "crìochan" .
+
+n:meur
+  a :FeminineNoun ;
+  rdfs:label "meur" ;
+  :sense "branch" ;
+  :gen "meòir" ;
+  :pl "meuran" ;
+  :pl "meòir" ;
+  :pl "meòirean" .
+
+n:farsaingeachd
+  a :FeminineNoun ;
+  rdfs:label "farsaingeachd" ;
+  :sense "breadth" ;
+  :gen "farsaingeachd" ;
+  :pl "farsaingeachdan" .
+
+n:togail
+  a :FeminineNoun ;
+  rdfs:label "togail" ;
+  :sense "building" ;
+  :gen "togail" .
+
+o:a'_togail
+  a :verbal noun ;
+  rdfs:label "a' togail" ;
+  :sense "building" .
+
+n:togalach
+  a :MasculineNoun ;
+  rdfs:label "togalach" ;
+  :sense "building" ;
+  :gen "togalaich" ;
+  :pl "togalaichean" .
+
+n:miiosachan
+  a :MasculineNoun ;
+  rdfs:label "mìosachan" ;
+  :sense "calendar" ;
+  :gen "mìosachain" ;
+  :pl "mìosachain" .
+
+n:iomairt
+  a :FeminineNoun ;
+  rdfs:label "iomairt" ;
+  :sense "campaign" ;
+  :gen "iomairt(e)" ;
+  :pl "iomairtean" .
+
+n:comas
+  a :MasculineNoun ;
+  rdfs:label "comas" ;
+  :sense "capacity" ;
+  :gen "comais" ;
+  :pl "comasan" .
+
+n:cuuram
+  a :MasculineNoun ;
+  rdfs:label "cùram" ;
+  :sense "care" ;
+  :gen "cùraim" .
+
+n:cuursa_beatha
+  a :MasculineNoun ;
+  rdfs:label "cùrsa-beatha" ;
+  :sense "career" ;
+  :gen "cùrsa-beatha" ;
+  :pl "cùrsaichean-beatha" .
+
+n:cuursa_dreuchd
+  a :FeminineNoun ;
+  rdfs:label "cùrsa-dreuchd" ;
+  :sense "career" ;
+  :gen "cùrsa-dreuchd" ;
+  :pl "cùrsaichean-dreuchd" .
+
+n:cartuun
+  a :MasculineNoun ;
+  rdfs:label "cartùn" ;
+  :sense "cartoon" ;
+  :gen "cartùn" ;
+  :pl "cartùnaichean" .
+
+n:cuuis
+  a :FeminineNoun ;
+  rdfs:label "cùis" ;
+  :sense "case" ;
+  :gen "cùise" ;
+  :pl "cùisean" .
+
+n:catalog
+  a :MasculineNoun ;
+  rdfs:label "catalog" ;
+  :sense "catalogue" ;
+  :gen "catalog" ;
+  :pl "catalogan" .
+
+o:Catriona
+  a : ;
+  rdfs:label "Catriona" ;
+  :sense "Catherine" .
+
+n:adhbharachadh
+  a :MasculineNoun ;
+  rdfs:label "adhbharachadh" ;
+  :sense "causation" ;
+  :gen "adhbharachaidh" .
+
+o:fois_fooirneirt
+  a : ;
+  rdfs:label "fois-fòirneirt" ;
+  :sense "ceasefire" ;
+  :gen "fois-fòirneirt" .
+
+n:cladh
+  a :MasculineNoun ;
+  rdfs:label "cladh" ;
+  :sense "cemetry" ;
+  :gen "cladha" ;
+  :gen "claidh" ;
+  :pl "cladhan" ;
+  :pl "cladhannan" .
+
+n:searamaig
+  a :MasculineNoun ;
+  rdfs:label "searamaig" ;
+  :sense "ceramic" ;
+  :gen "searamaig" ;
+  :pl "searamaigean" .
+
+a:searamaig
+  a :Adjective ;
+  rdfs:label "searamaig" ;
+  :sense "ceramic" .
+
+n:maailleach
+  a :FeminineNoun ;
+  rdfs:label "màilleach" ;
+  :sense "chain mail" ;
+  :gen "màillich" .
+
+n:cathair
+  a :FeminineNoun ;
+  rdfs:label "cathair" ;
+  :sense "chair" ;
+  :gen "cathrach" ;
+  :pl "cathraichean" .
+
+n:duubhlan
+  a :MasculineNoun ;
+  rdfs:label "dùbhlan" ;
+  :sense "challenge" ;
+  :gen "dùbhlain" ;
+  :pl "dùbhlain" .
+
+n:turchairt
+  a :MasculineNoun ;
+  rdfs:label "turchairt" ;
+  :sense "chance" ;
+  :gen "turchairt" ;
+  :pl "turchairtean" .
+
+n:atharrachadh
+  a :MasculineNoun ;
+  rdfs:label "atharrachadh" ;
+  :sense "change" ;
+  :gen "atharrachaidh" ;
+  :pl "atharrachaidhean" ;
+  :pl "atharraichean" .
+
+n:feart
+  a :MasculineNoun ;
+  rdfs:label "feart" ;
+  :sense "characteristic" ;
+  :gen "feart" ;
+  :pl "feartan" .
+
+n:taaileasg
+  a :MasculineNoun ;
+  rdfs:label "tàileasg" ;
+  :sense "chess" ;
+  :gen "tàileisg" .
+
+n:paaiste
+  a :MasculineNoun ;
+  rdfs:label "pàiste" ;
+  :sense "child" ;
+  :gen "pàiste" ;
+  :pl "pàistean" .
+
+n:leanabh
+  a :MasculineNoun ;
+  rdfs:label "leanabh" ;
+  :sense "child" ;
+  :gen "leanaibh" ;
+  :pl "leanaban" ;
+  :pl "leanabhan" .
+
+n:cuuram_cloinne
+  a :MasculineNoun ;
+  rdfs:label "cùram-cloinne" ;
+  :sense "childcare" ;
+  :gen "cùram-cloinne" .
+
+n:clann
+  a :FeminineNoun ;
+  rdfs:label "clann" ;
+  :sense "children" ;
+  :gen "cloinne" .
+
+n:roghainn
+  a :noun ;
+  rdfs:label "roghainn" ;
+  :sense "choice" ;
+  :gen "roghainn" ;
+  :pl "roghainnean" .
+
+n:Nollaig
+  a :FeminineNoun ;
+  rdfs:label "Nollaig" ;
+  :sense "Christmas" ;
+  :gen "Nollaig(e)" ;
+  :pl "Nollaigean" .
+
+n:saoranach
+  a :MasculineNoun ;
+  rdfs:label "saoranach" ;
+  :sense "citizen" ;
+  :gen "saoranaich" ;
+  :pl "saoranaich" .
+
+n:saoranachd
+  a :FeminineNoun ;
+  rdfs:label "saoranachd" ;
+  :sense "citizenship" ;
+  :gen "saoranachd" ;
+  :pl "saoranachdan" .
+
+a:bailteil
+  a :Adjective ;
+  rdfs:label "bailteil" ;
+  :sense "civic" .
+
+n:clas
+  a :MasculineNoun ;
+  rdfs:label "clas" ;
+  :sense "class" ;
+  :gen "clas" ;
+  :pl "clasaichean" .
+
+a:clasaigeach
+  a :Adjective ;
+  rdfs:label "clasaigeach" ;
+  :sense "classical" .
+
+n:claas
+  a :MasculineNoun ;
+  rdfs:label "clàs" ;
+  :sense "clause" ;
+  :gen "clàs" ;
+  :pl "clàsaichean" .
+
+n:glanadh
+  a :MasculineNoun ;
+  rdfs:label "glanadh" ;
+  :sense "cleaning" ;
+  :gen "glanaidh" .
+
+a:clionaigeach
+  a :Adjective ;
+  rdfs:label "clionaigeach" ;
+  :sense "clinical" .
+
+n:club
+  a :MasculineNoun ;
+  rdfs:label "club" ;
+  :sense "club" ;
+  :gen "club" ;
+  :pl "clubaichean" .
+
+a:co_obrachail
+  a :Adjective ;
+  rdfs:label "co-obrachail" ;
+  :sense "co-operative" .
+
+n:co_chomann
+  a :MasculineNoun ;
+  rdfs:label "co-chomann" ;
+  :sense "co-operative" ;
+  :gen "co-chomainn" ;
+  :pl "co-chomainn" .
+
+n:co_oordanaiche
+  a :MasculineNoun ;
+  rdfs:label "co-òrdanaiche" ;
+  :sense "co-ordinator" ;
+  :gen "co-òrdanaiche" ;
+  :pl "co-òrdanaichean" .
+
+v:coomhdaich
+  a :Verb ;
+  rdfs:label "còmhdaich" ;
+  :sense "coat" .
+
+n:coomhdach
+  a :MasculineNoun ;
+  rdfs:label "còmhdach" ;
+  :sense "coating" ;
+  :gen "còmhdaich" .
+
+n:co_leanailteas
+  a :FeminineNoun ;
+  rdfs:label "co-leanailteas" ;
+  :sense "coherence" ;
+  :gen "co-leanailteis" .
+
+o:Cailean
+  a : ;
+  rdfs:label "Cailean" ;
+  :sense "Colin" .
+
+v:cruinnich
+  a :Verb ;
+  rdfs:label "cruinnich" ;
+  :sense "collect" .
+
+a:cruinnichte
+  a :Adjective ;
+  rdfs:label "cruinnichte" ;
+  :sense "collected" .
+
+o:a'_cruinneachadh
+  a :verbal noun ;
+  rdfs:label "a' cruinneachadh" ;
+  :sense "collecting" .
+
+n:cruinneachadh
+  a :MasculineNoun ;
+  rdfs:label "cruinneachadh" ;
+  :sense "collection" ;
+  :gen "cruinneachaidh" ;
+  :pl "cruinneachaidhean" .
+
+a:coomhragach
+  a :Adjective ;
+  rdfs:label "còmhragach" ;
+  :sense "combatant" .
+
+n:coomhragaiche_
+  a :MasculineNoun ;
+  rdfs:label "còmhragaiche " ;
+  :sense "combatant" ;
+  :gen "còmhragaiche" ;
+  :pl "còmhragaichean" .
+
+n:malairt
+  a :FeminineNoun ;
+  rdfs:label "malairt" ;
+  :sense "commerce" ;
+  :gen "malairt" .
+
+n:conaltradh
+  a :MasculineNoun ;
+  rdfs:label "conaltradh" ;
+  :sense "communication" ;
+  :gen "conaltraidh" ;
+  :pl "conaltradh" .
+
+n:coimhearsnachd
+  a :FeminineNoun ;
+  rdfs:label "coimhearsnachd" ;
+  :sense "community" ;
+  :gen "coimhearsnachd" ;
+  :pl "coimhearsnachdan" .
+
+n:co_fhaireachdainn
+  a :FeminineNoun ;
+  rdfs:label "co-fhaireachdainn" ;
+  :sense "compassion" ;
+  :gen "co-fhaireachdainn" .
+
+n:freagarrachd
+  a :FeminineNoun ;
+  rdfs:label "freagarrachd" ;
+  :sense "compliance" ;
+  :gen "freagarrachd" .
+
+n:coimpiutair
+  a :MasculineNoun ;
+  rdfs:label "coimpiutair" ;
+  :sense "computer" ;
+  :gen "coimpiutair" ;
+  :pl "coimpiutairean" .
+
+n:bun_bheachd
+  a :MasculineNoun ;
+  rdfs:label "bun-bheachd" ;
+  :sense "concept" ;
+  :gen "bun-bheachd" ;
+  :pl "bun-bheachdan" .
+
+n:co_labhairt
+  a :FeminineNoun ;
+  rdfs:label "co-labhairt" ;
+  :sense "conference" ;
+  :gen "co-labhairt" ;
+  :pl "co-labhairtean" .
+
+n:misneachd
+  a :FeminineNoun ;
+  rdfs:label "misneachd" ;
+  :sense "confidence" .
+
+a:misneachail
+  a :Adjective ;
+  rdfs:label "misneachail" ;
+  :sense "confident" .
+
+a:co_cheangailte
+  a :Adjective ;
+  rdfs:label "co-cheangailte" ;
+  :sense "connected" .
+
+o:neach_diuultaidh_cogaiseach
+  a :noun phrase ;
+  rdfs:label "neach-diùltaidh cogaiseach" ;
+  :sense "conscientious objector" .
+
+n:gleeidhteachas
+  a :MasculineNoun ;
+  rdfs:label "glèidhteachas" ;
+  :sense "conservation" ;
+  :gen "glèidhteachais" .
+
+n:neach_gleeidhteachais
+  a :MasculineNoun ;
+  rdfs:label "neach-glèidhteachais" ;
+  :sense "conservationist" ;
+  :gen "neach-glèidhteachais" ;
+  :pl "" .
+
+n:obair_togail
+  a :FeminineNoun ;
+  rdfs:label "obair-togail" ;
+  :sense "construction" ;
+  :gen "obair-togail" .
+
+n:caitheamh
+  a :noun ;
+  rdfs:label "caitheamh" ;
+  :sense "consumption" ;
+  :gen "caitheimh" .
+
+a:leantainneach
+  a :Adjective ;
+  rdfs:label "leantainneach" ;
+  :sense "continuing" .
+
+o:cuumhnant
+  a : ;
+  rdfs:label "cùmhnant" ;
+  :sense "contract" ;
+  :gen "cùmhnaint" ;
+  :pl "cùmhnantan" .
+
+n:com_paairtiche
+  a :MasculineNoun ;
+  rdfs:label "com-pàirtiche" ;
+  :sense "contributor" ;
+  :gen "com-pàirtiche" ;
+  :pl "com-pàirtichean" .
+
+n:connspaid
+  a :FeminineNoun ;
+  rdfs:label "connspaid" ;
+  :sense "controversy" ;
+  :gen "connspaid(e)" ;
+  :pl "connspaidean" .
+
+a:cosmeoolasach
+  a :Adjective ;
+  rdfs:label "cosmeòlasach" ;
+  :sense "cosmological" .
+
+n:cosmeoolas
+  a :MasculineNoun ;
+  rdfs:label "cosmeòlas" ;
+  :sense "cosmology" ;
+  :gen "cosmeòlas" .
+
+n:comhairliche
+  a :MasculineNoun ;
+  rdfs:label "comhairliche" ;
+  :sense "councillor" ;
+  :gen "comhairliche" ;
+  :pl "comhairlichean" .
+
+n:cuuirt
+  a :FeminineNoun ;
+  rdfs:label "cùirt" ;
+  :sense "court" ;
+  :gen "cùirte" ;
+  :gen "cùrtach" ;
+  :pl "cùirtean" .
+
+n:coomhdach
+  a :MasculineNoun ;
+  rdfs:label "còmhdach" ;
+  :sense "covering" ;
+  :gen "còmhdaich" ;
+  :pl "còmhdaichean" .
+
+n:gealtaire
+  a :MasculineNoun ;
+  rdfs:label "gealtaire" ;
+  :sense "coward" ;
+  :gen "gealtaire" ;
+  :pl "gealtairean" .
+
+n:ceaaird
+  a :FeminineNoun ;
+  rdfs:label "ceàird" ;
+  :sense "craft" ;
+  :gen "ceàirde" ;
+  :pl "ceàirdean" .
+
+a:cruthachail
+  a :Adjective ;
+  rdfs:label "cruthachail" ;
+  :sense "creative" .
+
+n:cairt_creideis
+  a :FeminineNoun ;
+  rdfs:label "cairt-creideis" ;
+  :sense "credit card" ;
+  :gen "cairt-creideis" ;
+  :pl "cairtean-creideis" .
+
+a:eucorach
+  a :Adjective ;
+  rdfs:label "eucorach" ;
+  :sense "criminal" .
+
+n:eucorach
+  a :MasculineNoun ;
+  rdfs:label "eucorach" ;
+  :sense "criminal" ;
+  :gen "eucoraich" ;
+  :pl "eucoraich" .
+
+n:eucoir_eoolas
+  a :MasculineNoun ;
+  rdfs:label "eucoir-eòlas" ;
+  :sense "criminology" ;
+  :gen "eucoir-eòlais" .
+
+n:slat_tomhais_
+  a :FeminineNoun ;
+  rdfs:label "slat-tomhais " ;
+  :sense "criterion" ;
+  :gen "slait-thomhais" ;
+  :pl "slatan-tomhais" .
+
+o:breithneachadh
+  a :noun/adjective ;
+  rdfs:label "breithneachadh" ;
+  :sense "critical thinking" .
+
+n:leeirmheas
+  a :MasculineNoun ;
+  rdfs:label "lèirmheas" ;
+  :sense "critique" ;
+  :gen "lèirmheis" ;
+  :pl "lèirmheasan" .
+
+v:deean_leeirmheas_air
+  a :Verb ;
+  rdfs:label "dèan lèirmheas air" ;
+  :sense "critique" .
+
+n:croit
+  a :FeminineNoun ;
+  rdfs:label "croit" ;
+  :sense "croft" ;
+  :gen "croite" ;
+  :pl "croitean" .
+
+n:lot(a)
+  a :MasculineNoun ;
+  rdfs:label "lot(a)" ;
+  :sense "croft" ;
+  :gen "lota" ;
+  :pl "lotaichean" .
+
+n:croitear
+  a :MasculineNoun ;
+  rdfs:label "croitear" ;
+  :sense "crofter" ;
+  :gen "croiteir" ;
+  :pl "croitearan" .
+
+n:croitearachd
+  a :FeminineNoun ;
+  rdfs:label "croitearachd" ;
+  :sense "crofting" ;
+  :gen "croitearachd" .
+
+n:crois
+  a :FeminineNoun ;
+  rdfs:label "crois" ;
+  :sense "cross" ;
+  :gen "croise" ;
+  :pl "croisean" .
+
+a:tar_churraicealam
+  a :Adjective ;
+  rdfs:label "tar-churraicealam" ;
+  :sense "cross-curricular" .
+
+a:cultarach
+  a :Adjective ;
+  rdfs:label "cultarach" ;
+  :sense "cultural" .
+
+n:cultar
+  a :MasculineNoun ;
+  rdfs:label "cultar" ;
+  :sense "culture" ;
+  :gen "cultair" ;
+  :pl "cultaran" .
+
+o:Conaigean
+  a : ;
+  rdfs:label "Conaigean" ;
+  :sense "Cunningham" .
+
+n:curraicealam
+  a :MasculineNoun ;
+  rdfs:label "curraicealam" ;
+  :sense "curriculum" ;
+  :gen "curraicealaim" ;
+  :pl "curraicealaman" .
+
+n:cleachdadh
+  a :MasculineNoun ;
+  rdfs:label "cleachdadh" ;
+  :sense "custom" ;
+  :gen "cleachdaidh" ;
+  :pl "cleachdaidhean" .
+
+n:neach_cleachdaidh
+  a :MasculineNoun ;
+  rdfs:label "neach-cleachdaidh" ;
+  :sense "customer" ;
+  :gen "neach-cleachdaidh" ;
+  :pl "luchd-cleachdaidh" .
+
+n:neach_ceannaich
+  a :MasculineNoun ;
+  rdfs:label "neach-ceannaich" ;
+  :sense "customer" ;
+  :gen "neach-ceannaich" ;
+  :pl "luchd-ceannaich" .
+
+n:gearradh
+  a :MasculineNoun ;
+  rdfs:label "gearradh" ;
+  :sense "cut" ;
+  :gen "gearraidh" ;
+  :pl "gearraidhean" .
+
+n:stoor_daata
+  a :MasculineNoun ;
+  rdfs:label "stòr-dàta" ;
+  :sense "database" ;
+  :gen "stòr-dàta" ;
+  :pl "stòran-dàta" .
+
+n:deit
+  a :FeminineNoun ;
+  rdfs:label "deit" ;
+  :sense "date" ;
+  :gen "deit" ;
+  :pl "deitichean" .
+
+n:latha
+  a :MasculineNoun ;
+  rdfs:label "latha" ;
+  :sense "date" ;
+  :gen "latha" ;
+  :pl "lathaichean" ;
+  :pl "làithean" .
+
+n:ceann_latha
+  a :MasculineNoun ;
+  rdfs:label "ceann-latha" ;
+  :sense "date" ;
+  :gen "cinn-latha" ;
+  :pl "cinn-latha" .
+
+n:Daibhidh
+  a :MasculineNoun ;
+  rdfs:label "Daibhidh" ;
+  :sense "David" ;
+  :gen "Dhaibhidh" .
+
+o:what_now
+  a :noun phrase ;
+  rdfs:label "what now" ;
+  :sense "dè a-nis" .
+
+n:deadhan_
+  a :MasculineNoun ;
+  rdfs:label "deadhan " ;
+  :sense "dean" ;
+  :gen "deadhain" ;
+  :pl "deadhain" .
+
+n:baas
+  a :MasculineNoun ;
+  rdfs:label "bàs" ;
+  :sense "death" ;
+  :gen "bàis" ;
+  :pl "bàsan" .
+
+n:deasbad
+  a :noun ;
+  rdfs:label "deasbad" ;
+  :sense "debate" ;
+  :gen "deasbaid" ;
+  :pl "deasbadan" .
+
+o:a'_deasbad
+  a :verbal noun ;
+  rdfs:label "a' deasbad" ;
+  :sense "debating" .
+
+n:Duubhlachd
+  a :FeminineNoun ;
+  rdfs:label "Dùbhlachd" ;
+  :sense "December" ;
+  :gen "Dùbhlachd" .
+
+v:maisich
+  a :Verb ;
+  rdfs:label "maisich" ;
+  :sense "decorate" .
+
+n:maiseachadh
+  a :MasculineNoun ;
+  rdfs:label "maiseachadh" ;
+  :sense "decoration" ;
+  :gen "maiseachaidh" ;
+  :pl "maiseachaidhean" .
+
+a:maiseachaidh
+  a :Adjective ;
+  rdfs:label "maiseachaidh" ;
+  :sense "decorative" .
+
+o:feallsanachd_tuigse
+  a :noun phrase ;
+  rdfs:label "feallsanachd tuigse" ;
+  :sense "deduction" .
+
+a:claon
+  a :Adjective ;
+  rdfs:label "claon" ;
+  :sense "dense" .
+
+a:maol
+  a :Adjective ;
+  rdfs:label "maol" ;
+  :sense "dense" .
+
+a:roinneil
+  a :Adjective ;
+  rdfs:label "roinneil" ;
+  :sense "departmental" .
+
+n:doimhneachd
+  a :FeminineNoun ;
+  rdfs:label "doimhneachd" ;
+  :sense "depth" ;
+  :gen "doimhneachd" ;
+  :pl "doimhneachdan" .
+
+n:iomradh
+  a :MasculineNoun ;
+  rdfs:label "iomradh" ;
+  :sense "description" ;
+  :gen "iomraidh" ;
+  :pl "iomraidhean" .
+
+n:deilbh
+  a :FeminineNoun ;
+  rdfs:label "deilbh" ;
+  :sense "design" ;
+  :gen "deilbhe" ;
+  :pl "deilbhean" .
+
+n:dealbhaiche_
+  a :MasculineNoun ;
+  rdfs:label "dealbhaiche " ;
+  :sense "designer" ;
+  :gen "dealbhaiche" ;
+  :pl "dealbhaichean" .
+
+n:cinnteachas
+  a :MasculineNoun ;
+  rdfs:label "cinnteachas" ;
+  :sense "determinism" ;
+  :gen "cinnteachais" .
+
+n:neach_leasachaidh
+  a :MasculineNoun ;
+  rdfs:label "neach-leasachaidh" ;
+  :sense "developer" ;
+  :gen "neach-leasachaidh" ;
+  :pl "luchd-leasachaidh" .
+
+n:leasachadh
+  a :MasculineNoun ;
+  rdfs:label "leasachadh" ;
+  :sense "development" ;
+  :gen "leasachaidh" ;
+  :pl "leasachaidhean" .
+
+a:leasachail
+  a :Adjective ;
+  rdfs:label "leasachail" ;
+  :sense "developmental" .
+
+n:inneal
+  a :MasculineNoun ;
+  rdfs:label "inneal" ;
+  :sense "device" ;
+  :gen "inneil" ;
+  :pl "innealan" .
+
+n:daibiiotas
+  a :MasculineNoun ;
+  rdfs:label "daibìotas" ;
+  :sense "diabetes" ;
+  :gen "daibìotas" .
+
+n:tinneas_an_t_siuucair
+  a :MasculineNoun ;
+  rdfs:label "tinneas an t-siùcair" ;
+  :sense "diabetes" ;
+  :gen "tinneas an t-siùcair" .
+
+n:dualchainnt
+  a :FeminineNoun ;
+  rdfs:label "dualchainnt" ;
+  :sense "dialect" ;
+  :gen "dualchainnt(e)" ;
+  :pl "dualchainntean" .
+
+n:faclair
+  a :MasculineNoun ;
+  rdfs:label "faclair" ;
+  :sense "dictionary" ;
+  :gen "faclair" ;
+  :pl "faclairean" .
+
+a:diuubhrasach
+  a :Adjective ;
+  rdfs:label "diùbhrasach" ;
+  :sense "differential" .
+
+a:didseatach
+  a :Adjective ;
+  rdfs:label "didseatach" ;
+  :sense "digital" .
+
+n:dioplooma
+  a :MasculineNoun ;
+  rdfs:label "dioplòma" ;
+  :sense "diploma" ;
+  :gen "dioplòma" ;
+  :pl "dioplòmathan" .
+
+n:dioploomasaidh
+  a :MasculineNoun ;
+  rdfs:label "dioplòmasaidh" ;
+  :sense "diplomacy" ;
+  :gen "dioplòmasaidh" ;
+  :pl "dioplòmasaidhean" .
+
+a:dioploomasach
+  a :Adjective ;
+  rdfs:label "dioplòmasach" ;
+  :sense "diplomatic" .
+
+n:stiuuiriche_
+  a :MasculineNoun ;
+  rdfs:label "stiùiriche " ;
+  :sense "director" ;
+  :gen "stiùiriche" ;
+  :pl "stiùirichean" .
+
+n:ciorram
+  a :MasculineNoun ;
+  rdfs:label "ciorram" ;
+  :sense "disability" ;
+  :gen "ciorraim" ;
+  :pl "ciorram" .
+
+n:leth_bhreith
+  a :FeminineNoun ;
+  rdfs:label "leth-bhreith" ;
+  :sense "discrimination" ;
+  :gen "leth-bhreith" .
+
+n:galar
+  a :MasculineNoun ;
+  rdfs:label "galar" ;
+  :sense "disease" ;
+  :gen "galair" ;
+  :pl "galaran" .
+
+n:gaiseadh
+  a :MasculineNoun ;
+  rdfs:label "gaiseadh" ;
+  :sense "disease" ;
+  :gen "gaisidh" ;
+  :pl "gaisidhean" .
+
+n:iomadachd
+  a :FeminineNoun ;
+  rdfs:label "iomadachd" ;
+  :sense "diversity" ;
+  :gen "iomadachd" ;
+  :pl "iomadachdan" .
+
+a:faaisneachail
+  a :Adjective ;
+  rdfs:label "fàisneachail" ;
+  :sense "divinatory" .
+
+n:sgriiobhainn
+  a :FeminineNoun ;
+  rdfs:label "sgrìobhainn" ;
+  :sense "document" ;
+  :gen "sgrìobhainn(e)" ;
+  :pl "sgrìobhainnean" .
+
+n:draama
+  a :FeminineNoun ;
+  rdfs:label "dràma" ;
+  :sense "drama" ;
+  :gen "dràma" ;
+  :pl "dràmathan" .
+
+a:dramataigeach
+  a :Adjective ;
+  rdfs:label "dramataigeach" ;
+  :sense "dramatic" .
+
+n:dealas
+  a :MasculineNoun ;
+  rdfs:label "dealas" ;
+  :sense "drive" ;
+  :gen "dealais" .
+
+n:draaibhear
+  a :MasculineNoun ;
+  rdfs:label "dràibhear" ;
+  :sense "driver" ;
+  :gen "dràibheir" ;
+  :pl "dràibhearan" .
+
+n:coomhrag_dithis
+  a :FeminineNoun ;
+  rdfs:label "còmhrag-dithis" ;
+  :sense "duel" ;
+  :gen "còmhraig-dithis" ;
+  :pl "còmhragan-dithis" .
+
+n:diuuc
+  a :MasculineNoun ;
+  rdfs:label "diùc" ;
+  :sense "duke" ;
+  :gen "diùc" ;
+  :pl "diùcan" .
+
+n:toll_dubh
+  a :MasculineNoun ;
+  rdfs:label "toll-dubh" ;
+  :sense "dungeon" ;
+  :gen "tuill-dhuibh" ;
+  :pl "tollan-dubha" .
+
+n:dust
+  a :MasculineNoun ;
+  rdfs:label "dust" ;
+  :sense "dust" ;
+  :gen "dust" .
+
+n:ionnsachadh_d
+  a :MasculineNoun ;
+  rdfs:label "ionnsachadh-d" ;
+  :sense "e-learning" ;
+  :gen "ionnsachadh-d" .
+
+a:traath
+  a :Adjective ;
+  rdfs:label "tràth" ;
+  :sense "early" .
+
+n:traath_thaic
+  a :FeminineNoun ;
+  rdfs:label "tràth-thaic" ;
+  :sense "early intervention" ;
+  :gen "tràth-thaic(e)" .
+
+n:roghainneachd
+  a :FeminineNoun ;
+  rdfs:label "roghainneachd" ;
+  :sense "eclecticism" .
+
+n:Eag_sgoil
+  a :FeminineNoun ;
+  rdfs:label "Eag-sgoil" ;
+  :sense "Eco School" ;
+  :gen "Eag-sgoile" ;
+  :pl "Eag-sgoiltean" .
+
+a:eaconamach
+  a :Adjective ;
+  rdfs:label "eaconamach" ;
+  :sense "economic" .
+
+n:eaconomas
+  a :MasculineNoun ;
+  rdfs:label "eaconomas" ;
+  :sense "economics" ;
+  :gen "eaconomais" ;
+  :pl "eaconomas" .
+
+n:eaconamaidh
+  a :noun ;
+  rdfs:label "eaconamaidh" ;
+  :sense "economy" ;
+  :gen "eaconamaidh" ;
+  :pl "eaconamaidhean" .
+
+n:deasaiche
+  a :MasculineNoun ;
+  rdfs:label "deasaiche" ;
+  :sense "editor" ;
+  :gen "deasaiche" ;
+  :pl "deasaichean" .
+
+n:foghlam
+  a :MasculineNoun ;
+  rdfs:label "foghlam" ;
+  :sense "education" ;
+  :gen "foghlaim" .
+
+a:foghlaim
+  a :Adjective ;
+  rdfs:label "foghlaim" ;
+  :sense "educational" .
+
+o:Eideard
+  a : ;
+  rdfs:label "Eideard" ;
+  :sense "Edward" .
+
+n:maaileachan
+  a :MasculineNoun ;
+  rdfs:label "màileachan" ;
+  :sense "elf" ;
+  :gen "màileachain" ;
+  :pl "màileachain" .
+
+o:Ealasaid
+  a : ;
+  rdfs:label "Ealasaid" ;
+  :sense "Elizabeth" .
+
+n:saoradh
+  a :MasculineNoun ;
+  rdfs:label "saoradh" ;
+  :sense "emancipation" ;
+  :gen "saoraidh" .
+
+n:faireachdainn
+  a :FeminineNoun ;
+  rdfs:label "faireachdainn" ;
+  :sense "emotion" ;
+  :gen "faireachdainn" ;
+  :pl "faireachdainnean" .
+
+n:comas_obrach
+  a :MasculineNoun ;
+  rdfs:label "comas-obrach" ;
+  :sense "employability" ;
+  :gen "comais-obrach" .
+
+n:neach_fastaidh
+  a :MasculineNoun ;
+  rdfs:label "neach-fastaidh" ;
+  :sense "employer" ;
+  :gen "neach-fastaidh" ;
+  :pl "luchd-fastaidh" .
+
+o:leabhar_moor_eoolais
+  a :noun phrase ;
+  rdfs:label "leabhar mòr-eòlais" ;
+  :sense "encyclopedia" ;
+  :pl "leabhraichean mòr-eòlais" .
+
+o:fo_ghealladh_poosaidh
+  a :noun phrase ;
+  rdfs:label "fo ghealladh-pòsaidh" ;
+  :sense "engaged" .
+
+n:gealladh_poosaidh
+  a :MasculineNoun ;
+  rdfs:label "gealladh-pòsaidh" ;
+  :sense "engagement" .
+
+a:Sassanach
+  a :Adjective ;
+  rdfs:label "Sassanach" ;
+  :sense "English" .
+
+n:tlachd
+  a :FeminineNoun ;
+  rdfs:label "tlachd" ;
+  :sense "enjoyment" ;
+  :gen "tlachd" ;
+  :pl "tlachd" .
+
+n:iomairt
+  a :FeminineNoun ;
+  rdfs:label "iomairt" ;
+  :sense "enterprise" ;
+  :gen "iomairt(e)" ;
+  :pl "iomairtean" .
+
+n:dibhearsain
+  a :MasculineNoun ;
+  rdfs:label "dibhearsain" ;
+  :sense "entertainment" ;
+  :gen "dibhearsain" .
+
+n:neach_tionnsgain
+  a :MasculineNoun ;
+  rdfs:label "neach-tionnsgain" ;
+  :sense "entrepreneur" ;
+  :gen "neach-tionnsgain" ;
+  :pl "luchd-tionnsgain" .
+
+a:tionnsgaineach
+  a :Adjective ;
+  rdfs:label "tionnsgaineach" ;
+  :sense "entrepreneurial" .
+
+n:ceeis
+  a :FeminineNoun ;
+  rdfs:label "cèis" ;
+  :sense "envelope" ;
+  :gen "cèise" ;
+  :pl "cèisean" .
+
+a:eapaig
+  a :Adjective ;
+  rdfs:label "eapaig" ;
+  :sense "epic" .
+
+a:Epicuurach
+  a :Adjective ;
+  rdfs:label "Epicùrach" ;
+  :sense "Epicurean" .
+
+n:aithne_eoolas
+  a :MasculineNoun ;
+  rdfs:label "aithne-eòlas" ;
+  :sense "epistemology" ;
+  :gen "aithne-eòlais" .
+
+n:co_ionannachd
+  a :FeminineNoun ;
+  rdfs:label "co-ionannachd" ;
+  :sense "equality" ;
+  :gen "co-ionannachd" ;
+  :pl "co-ionannachdan" .
+
+n:uidheam
+  a :FeminineNoun ;
+  rdfs:label "uidheam" ;
+  :sense "equipment" ;
+  :gen "uidheim" ;
+  :pl "uidheaman" .
+
+n:uidheamachd
+  a :FeminineNoun ;
+  rdfs:label "uidheamachd" ;
+  :sense "equipment" ;
+  :gen "uidheamachd" ;
+  :pl "uidheamachdan" .
+
+n:linn
+  a :noun ;
+  rdfs:label "linn" ;
+  :sense "era" ;
+  :gen "linne" ;
+  :pl "linntean" .
+
+n:beus
+  a :FeminineNoun ;
+  rdfs:label "beus" ;
+  :sense "ethic" ;
+  :gen "beusa" ;
+  :pl "beusan" .
+
+a:beusail
+  a :Adjective ;
+  rdfs:label "beusail" ;
+  :sense "ethical" .
+
+n:beus_eoolas
+  a :MasculineNoun ;
+  rdfs:label "beus-eòlas" ;
+  :sense "ethics" ;
+  :gen "beus-eòlais" ;
+  :pl "beus-eòlasan" .
+
+a:cinnidheach
+  a :Adjective ;
+  rdfs:label "cinnidheach" ;
+  :sense "ethnic" .
+
+n:cinnidheachd
+  a :FeminineNoun ;
+  rdfs:label "cinnidheachd" ;
+  :sense "ethnicity" ;
+  :gen "cinnidheachd" ;
+  :pl "cinnidheachdan" .
+
+n:eitneografaidh
+  a :MasculineNoun ;
+  rdfs:label "eitneografaidh" ;
+  :sense "ethnography" ;
+  :gen "eitneografaidh" .
+
+n:eitneoolaiche
+  a :MasculineNoun ;
+  rdfs:label "eitneòlaiche" ;
+  :sense "ethnologist" ;
+  :gen "eitneòlaiche" ;
+  :pl "eitneòlaichean" .
+
+n:eitneoolas
+  a :MasculineNoun ;
+  rdfs:label "eitneòlas" ;
+  :sense "ethnology" ;
+  :gen "eitneòlais" ;
+  :pl "eitneòlasan" .
+
+n:modhan
+  a :MasculineNoun ;
+  rdfs:label "modhan" ;
+  :sense "etiquette" ;
+  :gen "modhan" ;
+  :pl "modhan" ;
+  :pl "modhannan" .
+
+a:Etruscanach
+  a :Adjective ;
+  rdfs:label "Etruscanach" ;
+  :sense "Etruscan" .
+
+o:paaiste_air_foogradh
+  a :noun phrase ;
+  rdfs:label "pàiste air fògradh" ;
+  :sense "evacuee" .
+
+o:a'_luachadh
+  a :verbal noun ;
+  rdfs:label "a' luachadh" ;
+  :sense "evaluating" .
+
+n:tachartas
+  a :MasculineNoun ;
+  rdfs:label "tachartas" ;
+  :sense "event" ;
+  :gen "tachartais" ;
+  :pl "tachartasan" .
+
+n:olc
+  a :MasculineNoun ;
+  rdfs:label "olc" ;
+  :sense "evil" ;
+  :gen "uilc" .
+
+n:aingidheachd
+  a :FeminineNoun ;
+  rdfs:label "aingidheachd" ;
+  :sense "evil" ;
+  :gen "aingidheachd" .
+
+n:deuchainn
+  a :FeminineNoun ;
+  rdfs:label "deuchainn" ;
+  :sense "exam" ;
+  :gen "deuchainn(e)" ;
+  :pl "deuchainnean" .
+
+n:deuchainn
+  a :FeminineNoun ;
+  rdfs:label "deuchainn" ;
+  :sense "examination" ;
+  :gen "deuchainn(e)" ;
+  :pl "deuchainnean" .
+
+n:saar_mhathas
+  a :MasculineNoun ;
+  rdfs:label "sàr-mhathas" ;
+  :sense "excellence" ;
+  :gen "sàr-mhathais" .
+
+a:saar_mhath
+  a :Adjective ;
+  rdfs:label "sàr-mhath" ;
+  :sense "excellent" .
+
+n:eoolas
+  a :MasculineNoun ;
+  rdfs:label "eòlas" ;
+  :sense "experience" ;
+  :gen "eòlais" ;
+  :pl "eòlasan" .
+
+n:eoolaiche
+  a :MasculineNoun ;
+  rdfs:label "eòlaiche" ;
+  :sense "expert" ;
+  :gen "eòlaiche" ;
+  :pl "eòlaichean" .
+
+a:gabh_brath_air
+  a :Adjective ;
+  rdfs:label "gabh brath air" ;
+  :sense "exploit" .
+
+o:gabhail_brath_air
+  a :noun phrase ;
+  rdfs:label "gabhail brath air" ;
+  :sense "exploitation" .
+
+o:cleachdadh_airson_buannachd_
+  a :noun phrase ;
+  rdfs:label "cleachdadh airson buannachd " ;
+  :sense "exploitation" .
+
+n:stuth_spreadhaidh
+  a :MasculineNoun ;
+  rdfs:label "stuth-spreadhaidh" ;
+  :sense "explosive" ;
+  :gen "stuth-spreadhaidh" ;
+  :pl "stuthan-spreadhaidh" .
+
+a:neo_thalmhaidh
+  a :Adjective ;
+  rdfs:label "neo-thalmhaidh" ;
+  :sense "extraterrestrial" .
+
+n:goireas
+  a :MasculineNoun ;
+  rdfs:label "goireas" ;
+  :sense "facility" ;
+  :gen "goireis" ;
+  :pl "goireasan" .
+
+n:facaltaidh
+  a :FeminineNoun ;
+  rdfs:label "facaltaidh" ;
+  :sense "faculty" ;
+  :gen "facaltaidh" ;
+  :pl "facaltaidhean" .
+
+n:Fairtrade
+  a :FeminineNoun ;
+  rdfs:label "Fairtrade" ;
+  :sense "Fairtrade" .
+
+n:breug_bheachd
+  a :FeminineNoun ;
+  rdfs:label "breug-bheachd" ;
+  :sense "fallacy" ;
+  :gen "breug-bheachd" ;
+  :pl "breug-bheachdan" .
+
+n:teaghlach
+  a :MasculineNoun ;
+  rdfs:label "teaghlach" ;
+  :sense "family" ;
+  :gen "teaghlaich" ;
+  :pl "teaghlaichean" .
+
+n:tuathanachas
+  a :MasculineNoun ;
+  rdfs:label "tuathanachas" ;
+  :sense "farming" ;
+  :gen "tuathanachais" .
+
+n:athair
+  a :MasculineNoun ;
+  rdfs:label "athair" ;
+  :sense "father" .
+
+n:feart
+  a :MasculineNoun ;
+  rdfs:label "feart" ;
+  :sense "feature" ;
+  :gen "fearta" ;
+  :pl "feartan" .
+
+o:priiomh_artaigil
+  a :noun phrase ;
+  rdfs:label "prìomh artaigil" ;
+  :sense "feature" .
+
+n:Gearran
+  a :MasculineNoun ;
+  rdfs:label "Gearran" ;
+  :sense "February" ;
+  :gen "Gearrain" .
+
+n:fios_air_ais
+  a :MasculineNoun ;
+  rdfs:label "fios air ais" ;
+  :sense "feedback" ;
+  :gen "fios air ais" .
+
+n:co_eoolaiche_
+  a :MasculineNoun ;
+  rdfs:label "co-eòlaiche " ;
+  :sense "fellow" ;
+  :gen "co-eòlaiche" ;
+  :pl "co-eòlaichean" .
+
+n:feamainist
+  a :MasculineNoun ;
+  rdfs:label "feamainist" ;
+  :sense "feminist" ;
+  :gen "feamainist" ;
+  :pl "feamainistean" .
+
+n:feeis
+  a :FeminineNoun ;
+  rdfs:label "fèis" ;
+  :sense "festival" ;
+  :gen "fèise" ;
+  :pl "fèisean" .
+
+n:feeill
+  a :FeminineNoun ;
+  rdfs:label "fèill" ;
+  :sense "festival" ;
+  :gen "fèille" ;
+  :pl "fèilltean" .
+
+n:raon
+  a :MasculineNoun ;
+  rdfs:label "raon" ;
+  :sense "field" ;
+  :gen "raoin" ;
+  :pl "raointean" .
+
+n:ionmhas
+  a :MasculineNoun ;
+  rdfs:label "ionmhas" ;
+  :sense "finance" ;
+  :gen "ionmhais" ;
+  :pl "ionmhas" .
+
+a:ionmhasail
+  a :Adjective ;
+  rdfs:label "ionmhasail" ;
+  :sense "financial" .
+
+a:ionmhais
+  a :Adjective ;
+  rdfs:label "ionmhais" ;
+  :sense "financial" .
+
+n:criiochnachadh_
+  a :MasculineNoun ;
+  rdfs:label "crìochnachadh " ;
+  :sense "finishing" ;
+  :gen "crìochnachaidh" .
+
+v:iasgaich
+  a :Verb ;
+  rdfs:label "iasgaich" ;
+  :sense "fish" .
+
+n:iasgach
+  a :MasculineNoun ;
+  rdfs:label "iasgach" ;
+  :sense "fishing" ;
+  :gen "iasgaich" .
+
+o:ag_iasgach
+  a :verbal noun ;
+  rdfs:label "ag iasgach" ;
+  :sense "fishing" .
+
+n:bratach
+  a :FeminineNoun ;
+  rdfs:label "bratach" ;
+  :sense "flag" ;
+  :gen "brataich" ;
+  :pl "brataichean" .
+
+n:beul_aithris
+  a :FeminineNoun ;
+  rdfs:label "beul-aithris" ;
+  :sense "folklore" ;
+  :gen "beòil-aithris" .
+
+n:lorg
+  a :FeminineNoun ;
+  rdfs:label "lorg" ;
+  :sense "footprint" ;
+  :gen "luirge" ;
+  :pl "lorgan" .
+
+n:feachd
+  a :noun ;
+  rdfs:label "feachd" ;
+  :sense "force" ;
+  :gen "feachd" ;
+  :pl "feachdan" .
+
+n:coilltearachd
+  a :FeminineNoun ;
+  rdfs:label "coilltearachd" ;
+  :sense "forestry" ;
+  :gen "coilltearachd" .
+
+n:teallach
+  a :MasculineNoun ;
+  rdfs:label "teallach" ;
+  :sense "forge" ;
+  :gen "teallaich" ;
+  :pl "teallaichean" .
+
+n:freeam
+  a :MasculineNoun ;
+  rdfs:label "frèam" ;
+  :sense "framework" ;
+  :gen "frèama" ;
+  :pl "frèamaichean" ;
+  :pl "frèaman" .
+
+n:Dihaoine
+  a :MasculineNoun ;
+  rdfs:label "Dihaoine" ;
+  :sense "Friday" ;
+  :gen "Dihaoine" .
+
+n:faailteachas
+  a :MasculineNoun ;
+  rdfs:label "fàilteachas" ;
+  :sense "front of house" ;
+  :gen "fàilteachais" .
+
+n:meas
+  a :MasculineNoun ;
+  rdfs:label "meas" ;
+  :sense "fruit" ;
+  :gen "measa" ;
+  :pl "measan" .
+
+n:bian
+  a :MasculineNoun ;
+  rdfs:label "bian" ;
+  :sense "fur" ;
+  :gen "bèine" ;
+  :pl "bèin" .
+
+n:aairneis
+  a :FeminineNoun ;
+  rdfs:label "àirneis" ;
+  :sense "furnishing" ;
+  :gen "àirneis" ;
+  :pl "àirneis" .
+
+n:aairneis_
+  a :FeminineNoun ;
+  rdfs:label "àirneis " ;
+  :sense "furniture" ;
+  :gen "àirneis" .
+
+n:gailearaidh
+  a :MasculineNoun ;
+  rdfs:label "gailearaidh" ;
+  :sense "gallery" ;
+  :gen "gailearaidh" ;
+  :pl "gailearaidhean" .
+
+n:gaarradh
+  a :MasculineNoun ;
+  rdfs:label "gàrradh" ;
+  :sense "garden" ;
+  :gen "gàrraidh" ;
+  :pl "gàrraidhean" .
+
+n:sloinntearachd
+  a :FeminineNoun ;
+  rdfs:label "sloinntearachd" ;
+  :sense "genealogy" ;
+  :gen "sloinntearachd" .
+
+a:coitcheann
+  a :Adjective ;
+  rdfs:label "coitcheann" ;
+  :sense "general" .
+
+n:Seooras
+  a :MasculineNoun ;
+  rdfs:label "Seòras" ;
+  :sense "George" ;
+  :gen "Sheòrais" .
+
+n:Deoorsa
+  a :MasculineNoun ;
+  rdfs:label "Deòrsa" ;
+  :sense "George" ;
+  :gen "Dheòrsa" .
+
+n:glainne
+  a :FeminineNoun ;
+  rdfs:label "glainne" ;
+  :sense "glass" ;
+  :gen "glainne" ;
+  :pl "glainneachan" ;
+  :pl "glainnichean" .
+
+n:glooir_
+  a :FeminineNoun ;
+  rdfs:label "glòir " ;
+  :sense "glory" ;
+  :gen "glòire" ;
+  :gen "glòrach" .
+
+n:beag_fhaclair
+  a :MasculineNoun ;
+  rdfs:label "beag-fhaclair" ;
+  :sense "glossary" ;
+  :gen "beag-fhaclair" ;
+  :pl "beag-fhaclairean" .
+
+n:Glow
+  a :MasculineNoun ;
+  rdfs:label "Glow" ;
+  :sense "Glow" .
+
+n:math
+  a :MasculineNoun ;
+  rdfs:label "math" ;
+  :sense "good" ;
+  :gen "maith" .
+
+a:math
+  a :Adjective ;
+  rdfs:label "math" ;
+  :sense "good" .
+
+n:riaghladh
+  a :MasculineNoun ;
+  rdfs:label "riaghladh" ;
+  :sense "governance" ;
+  :gen "riaghlaidh" .
+
+n:seanair
+  a :MasculineNoun ;
+  rdfs:label "seanair" ;
+  :sense "grandfather" ;
+  :gen "seanar" ;
+  :pl "seanairean" .
+
+n:seanmhair
+  a :FeminineNoun ;
+  rdfs:label "seanmhair" ;
+  :sense "grandmother" ;
+  :gen "seanmhar" ;
+  :pl "seanmhairean" .
+
+n:tabhartas
+  a :MasculineNoun ;
+  rdfs:label "tabhartas" ;
+  :sense "grant" ;
+  :gen "tabhartais" ;
+  :pl "tabhartasan" .
+
+a:grafaigeach
+  a :Adjective ;
+  rdfs:label "grafaigeach" ;
+  :sense "graphic" .
+
+n:grafaigs
+  a :noun ;
+  rdfs:label "grafaigs" ;
+  :sense "graphics" ;
+  :gen "grafaigs" .
+
+n:eoolas_sgriiobhaidh
+  a :MasculineNoun ;
+  rdfs:label "eòlas-sgrìobhaidh" ;
+  :sense "graphology" ;
+  :gen "eòlais-sgrìobhaidh" .
+
+n:leeanag
+  a :FeminineNoun ;
+  rdfs:label "lèanag" ;
+  :sense "green" ;
+  :gen "lèanaig(e)" ;
+  :pl "lèanagan" .
+
+a:Gregorian
+  a :Adjective ;
+  rdfs:label "Gregorian" ;
+  :sense "Gregorian" .
+
+n:buidheann
+  a :noun ;
+  rdfs:label "buidheann" ;
+  :sense "group" ;
+  :gen "buidhne" ;
+  :gen "buidhinn" ;
+  :pl "buidhnean" .
+
+n:stiuuir
+  a :MasculineNoun ;
+  rdfs:label "stiùir" ;
+  :sense "guide" ;
+  :gen "stiùir" ;
+  :pl "stiùiridhean" .
+
+n:acfhainn_
+  a :FeminineNoun ;
+  rdfs:label "acfhainn " ;
+  :sense "hardware" ;
+  :gen "acfhainn(e)" .
+
+n:ceannard
+  a :MasculineNoun ;
+  rdfs:label "ceannard" ;
+  :sense "head" ;
+  :gen "ceannaird" ;
+  :pl "ceannardan" .
+
+o:Eachann
+  a : ;
+  rdfs:label "Eachann" ;
+  :sense "Hector" .
+
+o:seirbheis_taice
+  a :noun phrase ;
+  rdfs:label "seirbheis taice" ;
+  :sense "helpdesk" ;
+  :gen "seirbheis taice" .
+
+a:luibheach
+  a :Adjective ;
+  rdfs:label "luibheach" ;
+  :sense "herbaceous" .
+
+n:dualchas
+  a :MasculineNoun ;
+  rdfs:label "dualchas" ;
+  :sense "heritage" .
+
+a:eachdraidheil
+  a :Adjective ;
+  rdfs:label "eachdraidheil" ;
+  :sense "historical" .
+
+n:holografaidh
+  a :MasculineNoun ;
+  rdfs:label "holografaidh" ;
+  :sense "holography" .
+
+n:dachaigh
+  a :FeminineNoun ;
+  rdfs:label "dachaigh" ;
+  :sense "home" ;
+  :gen "dachaigh(e)" ;
+  :pl "dachaighean" .
+
+n:obair_dachaigh
+  a :FeminineNoun ;
+  rdfs:label "obair-dachaigh" ;
+  :sense "homework" ;
+  :gen "obair-dachaigh" .
+
+n:adharc
+  a :FeminineNoun ;
+  rdfs:label "adharc" ;
+  :sense "horn" ;
+  :gen "adhairc(e)" ;
+  :pl "adharcan" ;
+  :pl "adhaircean" .
+
+n:gaarradaireachd
+  a :FeminineNoun ;
+  rdfs:label "gàrradaireachd" ;
+  :sense "horticulture" ;
+  :gen "gàrradaireachd" .
+
+n:aoigheachd
+  a :FeminineNoun ;
+  rdfs:label "aoigheachd" ;
+  :sense "hospitality" ;
+  :gen "aoigheachd" .
+
+n:taigh
+  a :MasculineNoun ;
+  rdfs:label "taigh" ;
+  :sense "house" ;
+  :gen "taighe" ;
+  :pl "taighean" .
+
+n:taigheadas_
+  a :MasculineNoun ;
+  rdfs:label "taigheadas " ;
+  :sense "housing" ;
+  :gen "taigheadais" .
+
+o:ciamar_a_tha_thu?
+  a : ;
+  rdfs:label "ciamar a tha thu?" ;
+  :sense "how are you" .
+
+a:daonna
+  a :Adjective ;
+  rdfs:label "daonna" ;
+  :sense "human" .
+
+n:daonnachas
+  a :MasculineNoun ;
+  rdfs:label "daonnachas" ;
+  :sense "humanism" ;
+  :gen "daonnachais" .
+
+n:daonnachd
+  a :FeminineNoun ;
+  rdfs:label "daonnachd" ;
+  :sense "humankind" ;
+  :gen "daonnachd" .
+
+n:cinne_daonna
+  a :MasculineNoun ;
+  rdfs:label "cinne-daonna" ;
+  :sense "humankind" ;
+  :gen "cinne-daonna" .
+
+n:aabhachdas_
+  a :MasculineNoun ;
+  rdfs:label "àbhachdas " ;
+  :sense "humour" ;
+  :gen "àbhachdais" .
+
+n:sealg
+  a :FeminineNoun ;
+  rdfs:label "sealg" ;
+  :sense "hunting" ;
+  :gen "seilge" .
+
+o:a'_sealg
+  a :verbal noun ;
+  rdfs:label "a' sealg" ;
+  :sense "hunting" .
+
+a:haidreolaig
+  a :Adjective ;
+  rdfs:label "haidreolaig" ;
+  :sense "hydraulic" .
+
+n:beachd_bharail
+  a :FeminineNoun ;
+  rdfs:label "beachd-bharail" ;
+  :sense "hypothesis" ;
+  :gen "beachd-bharail" ;
+  :pl "beachd-bharailean" .
+
+n:idealism
+  a :MasculineNoun ;
+  rdfs:label "idealism" ;
+  :sense "idealism" ;
+  :gen "idealism" .
+
+v:aithnich
+  a :Verb ;
+  rdfs:label "aithnich" ;
+  :sense "identify" .
+
+n:dearbh_aithne
+  a :FeminineNoun ;
+  rdfs:label "dearbh-aithne" ;
+  :sense "identity" ;
+  :gen "dearbh-aithne" .
+
+n:soillseachadh
+  a :MasculineNoun ;
+  rdfs:label "soillseachadh" ;
+  :sense "illumination" ;
+  :gen "soillseachaidh" ;
+  :pl "soillseachaidhean" .
+
+n:soillseachadh
+  a :MasculineNoun ;
+  rdfs:label "soillseachadh" ;
+  :sense "illustration" ;
+  :gen "soillseachaidh" ;
+  :pl "soillseachaidhean" .
+
+o:an_laarach_nam_bonn
+  a :adverbial phrase ;
+  rdfs:label "an làrach nam bonn" ;
+  :sense "impromptu" .
+
+n:saor_chluiche
+  a :noun ;
+  rdfs:label "saor-chluiche" ;
+  :sense "improvisation" ;
+  :gen "saor-chluich(e)" ;
+  :pl "saor-chluichean" .
+
+n:tricead_
+  a :MasculineNoun ;
+  rdfs:label "tricead " ;
+  :sense "incidence" ;
+  :gen "triceid" ;
+  :pl "triceadan" .
+
+o:incunabula
+  a :plural noun ;
+  rdfs:label "incunabula" ;
+  :sense "incunabula" .
+
+n:neo_chinnteachas
+  a :MasculineNoun ;
+  rdfs:label "neo-chinnteachas" ;
+  :sense "indeterminism" ;
+  :gen "neo-chinnteachais" .
+
+n:claar_amais_
+  a :MasculineNoun ;
+  rdfs:label "clàr-amais " ;
+  :sense "index" ;
+  :gen "clàir-amais" ;
+  :pl "clàran-amais" .
+
+a:a_staigh
+  a :Adjective ;
+  rdfs:label "a-staigh" ;
+  :sense "indoor" .
+
+o:feallsanachd_co_dhuunaidh
+  a :noun phrase ;
+  rdfs:label "feallsanachd co-dhùnaidh" ;
+  :sense "induction" .
+
+a:gniiomhachais
+  a :Adjective ;
+  rdfs:label "gnìomhachais" ;
+  :sense "industrial" .
+
+n:coisridh
+  a :FeminineNoun ;
+  rdfs:label "coisridh" ;
+  :sense "infantry" ;
+  :gen "coisridh" .
+
+n:fiosrachadh
+  a :MasculineNoun ;
+  rdfs:label "fiosrachadh" ;
+  :sense "information" ;
+  :gen "fiosrachaidh" .
+
+n:leoon
+  a :MasculineNoun ;
+  rdfs:label "leòn" ;
+  :sense "injury" ;
+  :gen "leòin" ;
+  :pl "leòin" ;
+  :pl "leòntan" .
+
+n:suaicheantas
+  a :MasculineNoun ;
+  rdfs:label "suaicheantas" ;
+  :sense "insignia" ;
+  :gen "suaicheantais" ;
+  :pl "suaicheantais" .
+
+n:ionad
+  a :MasculineNoun ;
+  rdfs:label "ionad" ;
+  :sense "institution" ;
+  :gen "ionaid" ;
+  :pl "ionadan" .
+
+n:ionnsramaid
+  a :FeminineNoun ;
+  rdfs:label "ionnsramaid" ;
+  :sense "instrument" ;
+  :gen "ionnsramaid(e)" ;
+  :pl "ionnsramaidean" .
+
+n:aarachas
+  a :MasculineNoun ;
+  rdfs:label "àrachas" ;
+  :sense "insurance" ;
+  :gen "àrachais" .
+
+a:aonaichte
+  a :Adjective ;
+  rdfs:label "aonaichte" ;
+  :sense "integrated" .
+
+a:amalaichte
+  a :Adjective ;
+  rdfs:label "amalaichte" ;
+  :sense "integrated" .
+
+n:treibhdhireas
+  a :MasculineNoun ;
+  rdfs:label "treibhdhireas" ;
+  :sense "integrity" ;
+  :gen "treibhdhireis" .
+
+n:iomlanachd
+  a :FeminineNoun ;
+  rdfs:label "iomlanachd" ;
+  :sense "integrity" ;
+  :gen "iomlanachd" .
+
+n:tuur
+  a :MasculineNoun ;
+  rdfs:label "tùr" ;
+  :sense "intelligence" ;
+  :gen "tùir" .
+
+a:tuurail
+  a :Adjective ;
+  rdfs:label "tùrail" ;
+  :sense "intelligent" .
+
+a:innleachdach
+  a :Adjective ;
+  rdfs:label "innleachdach" ;
+  :sense "intelligent" .
+
+a:toinisgeil
+  a :Adjective ;
+  rdfs:label "toinisgeil" ;
+  :sense "intelligent" .
+
+a:tuigseach
+  a :Adjective ;
+  rdfs:label "tuigseach" ;
+  :sense "intelligent" .
+
+a:tulchuiseach_
+  a :Adjective ;
+  rdfs:label "tulchuiseach " ;
+  :sense "intelligent" .
+
+n:eadar_obair
+  a :FeminineNoun ;
+  rdfs:label "eadar-obair" ;
+  :sense "interaction" ;
+  :gen "eadar-obair" .
+
+a:eadar_chuspaireil
+  a :Adjective ;
+  rdfs:label "eadar-chuspaireil" ;
+  :sense "interdisciplinary" .
+
+o:taobh_a_staigh
+  a :noun phrase ;
+  rdfs:label "taobh-a-staigh" ;
+  :sense "interior" .
+
+n:inteearnach
+  a :MasculineNoun ;
+  rdfs:label "intèarnach" ;
+  :sense "intern" ;
+  :gen "intèarnaich" ;
+  :pl "intèarnaich" .
+
+a:a_staigh
+  a :Adjective ;
+  rdfs:label "a-staigh" ;
+  :sense "internal" .
+
+a:eadar_naaiseanta
+  a :Adjective ;
+  rdfs:label "eadar-nàiseanta" ;
+  :sense "international" .
+
+n:inteearnas
+  a :MasculineNoun ;
+  rdfs:label "intèarnas" ;
+  :sense "internship" ;
+  :gen "intèarnais" ;
+  :pl "intèarnasan" .
+
+n:toinisg
+  a :FeminineNoun ;
+  rdfs:label "toinisg" ;
+  :sense "intuitionism" ;
+  :gen "toinisg(e)" .
+
+v:innlich
+  a :Verb ;
+  rdfs:label "innlich" ;
+  :sense "invent" .
+
+n:nuadh_innleachd
+  a :MasculineNoun ;
+  rdfs:label "nuadh-innleachd" ;
+  :sense "invention" ;
+  :gen "nuadh-innleachd" ;
+  :pl "nuadh-innleachdan" .
+
+a:innleachdach
+  a :Adjective ;
+  rdfs:label "innleachdach" ;
+  :sense "inventive" .
+
+n:Faoilleach
+  a :MasculineNoun ;
+  rdfs:label "Faoilleach" ;
+  :sense "January" ;
+  :gen "Faoillich" .
+
+n:Faoilteach
+  a :MasculineNoun ;
+  rdfs:label "Faoilteach" ;
+  :sense "January" ;
+  :gen "Faoiltich" .
+
+n:abhcaid
+  a :FeminineNoun ;
+  rdfs:label "abhcaid" ;
+  :sense "joke" ;
+  :gen "abhcaid(e)" ;
+  :pl "abhcaidean" .
+
+a:abhcaideach
+  a :Adjective ;
+  rdfs:label "abhcaideach" ;
+  :sense "jokey" .
+
+n:iris
+  a :FeminineNoun ;
+  rdfs:label "iris" ;
+  :sense "journal" ;
+  :gen "iris(e)" ;
+  :pl "irisean" .
+
+n:obair_naidheachd
+  a :FeminineNoun ;
+  rdfs:label "obair-naidheachd" ;
+  :sense "journalism" ;
+  :gen "obair-naidheachd" .
+
+n:Iuchar
+  a :MasculineNoun ;
+  rdfs:label "Iuchar" ;
+  :sense "July" ;
+  :gen "Iuchair" .
+
+n:Ògmhios
+  a :MasculineNoun ;
+  rdfs:label "Ògmhios" ;
+  :sense "June" ;
+  :gen "Ògmhios(a)" .
+
+n:uachdranas
+  a :MasculineNoun ;
+  rdfs:label "uachdranas" ;
+  :sense "jurisdiction" ;
+  :gen "uachdranais" ;
+  :pl "uachdranasan" .
+
+a:dligheach
+  a :Adjective ;
+  rdfs:label "dligheach" ;
+  :sense "just" .
+
+n:ceartas
+  a :MasculineNoun ;
+  rdfs:label "ceartas" ;
+  :sense "justice" ;
+  :gen "ceartais" .
+
+n:seoorsa
+  a :MasculineNoun ;
+  rdfs:label "seòrsa" ;
+  :sense "kind" ;
+  :gen "seòrsa" ;
+  :pl "seòrsaichean" ;
+  :pl "seòrsachan" .
+
+n:eoolas
+  a :MasculineNoun ;
+  rdfs:label "eòlas" ;
+  :sense "knowledge" ;
+  :gen "eòlais" ;
+  :pl "eòlasan" .
+
+n:leubail
+  a :FeminineNoun ;
+  rdfs:label "leubail" ;
+  :sense "label" ;
+  :gen "leubail(e)" ;
+  :pl "leubailean" .
+
+n:obair
+  a :FeminineNoun ;
+  rdfs:label "obair" ;
+  :sense "labour" ;
+  :gen "obrach" ;
+  :gen "oibre" ;
+  :pl "obraichean" ;
+  :pl "oibrichean" .
+
+n:aaradh
+  a :MasculineNoun ;
+  rdfs:label "àradh" ;
+  :sense "ladder" ;
+  :gen "àraidh" ;
+  :pl "àraidhean" .
+
+n:dealbh_tiire
+  a :noun ;
+  rdfs:label "dealbh-tìre" ;
+  :sense "landscape" ;
+  :gen "deilbh-tìre" ;
+  :pl "dealbhan-tìre" .
+
+n:deilbh_tiire
+  a :FeminineNoun ;
+  rdfs:label "deilbh-tìre" ;
+  :sense "landscape" .
+
+n:deilbh_tiire
+  a :FeminineNoun ;
+  rdfs:label "deilbh-tìre" ;
+  :sense "landscaping" .
+
+n:deilbh_tiire
+  a :FeminineNoun ;
+  rdfs:label "deilbh-tìre" ;
+  :sense "landscaping" .
+
+n:lagh
+  a :MasculineNoun ;
+  rdfs:label "lagh" ;
+  :sense "law" ;
+  :gen "lagha" ;
+  :pl "laghannan" .
+
+n:ceannard
+  a :MasculineNoun ;
+  rdfs:label "ceannard" ;
+  :sense "leader" ;
+  :gen "ceannaird" ;
+  :pl "ceannardan" .
+
+v:ionnsaich
+  a :Verb ;
+  rdfs:label "ionnsaich" ;
+  :sense "learn" .
+
+n:neach_ionnsachaidh
+  a :MasculineNoun ;
+  rdfs:label "neach-ionnsachaidh" ;
+  :sense "learner" ;
+  :gen "neach-ionnsachaidh" ;
+  :pl "luchd-ionnsachaidh" .
+
+n:ionnsachadh
+  a :MasculineNoun ;
+  rdfs:label "ionnsachadh" ;
+  :sense "learning" ;
+  :gen "ionnsachaidh" .
+
+n:leathar
+  a :MasculineNoun ;
+  rdfs:label "leathar" ;
+  :sense "leather" ;
+  :gen "leathair" .
+
+a:clii
+  a :Adjective ;
+  rdfs:label "clì" ;
+  :sense "left" .
+
+n:uirsgeul
+  a :noun ;
+  rdfs:label "uirsgeul" ;
+  :sense "legend" ;
+  :gen "uirsgeil" ;
+  :gen "uirsgeòil" ;
+  :pl "uirsgeulan" .
+
+n:saor_uuine
+  a :FeminineNoun ;
+  rdfs:label "saor-ùine" ;
+  :sense "leisure" ;
+  :gen "saor-ùine" .
+
+n:cur_seachad
+  a :MasculineNoun ;
+  rdfs:label "cur-seachad" ;
+  :sense "leisure" ;
+  :gen "cur-seachad" ;
+  :pl "cur-seachadan" .
+
+n:libearalachd
+  a :FeminineNoun ;
+  rdfs:label "libearalachd" ;
+  :sense "liberalism" ;
+  :gen "libearalachd" .
+
+n:leabharlann
+  a :noun ;
+  rdfs:label "leabharlann" ;
+  :sense "library" ;
+  :gen "leabharlainn" ;
+  :pl "leabharlainn" ;
+  :pl "leabharlannan" .
+
+a:fad_bheatha
+  a :Adjective ;
+  rdfs:label "fad-bheatha" ;
+  :sense "lifelong" .
+
+n:solas
+  a :MasculineNoun ;
+  rdfs:label "solas" ;
+  :sense "light" ;
+  :gen "solais" ;
+  :pl "solais" .
+
+n:caananachas
+  a :MasculineNoun ;
+  rdfs:label "cànanachas" ;
+  :sense "linguistics" ;
+  :gen "cànanachais" .
+
+a:liopadomaig
+  a :Adjective ;
+  rdfs:label "liopadomaig" ;
+  :sense "lipidomic" .
+
+n:liopadomaigs
+  a :FeminineNoun ;
+  rdfs:label "liopadomaigs" ;
+  :sense "lipidomics" ;
+  :gen "liopadomaigs" .
+
+n:eeisteachd
+  a :FeminineNoun ;
+  rdfs:label "èisteachd" ;
+  :sense "listening" ;
+  :gen "èisteachd" .
+
+n:litearrachd
+  a :FeminineNoun ;
+  rdfs:label "litearrachd" ;
+  :sense "literacy" ;
+  :gen "litearrachd" .
+
+n:loidsig
+  a :FeminineNoun ;
+  rdfs:label "loidsig" ;
+  :sense "logic" ;
+  :gen "loidsig" .
+
+a:leantainneach
+  a :Adjective ;
+  rdfs:label "leantainneach" ;
+  :sense "longitudinal" .
+
+n:gaol
+  a :MasculineNoun ;
+  rdfs:label "gaol" ;
+  :sense "love" ;
+  :gen "gaoil" .
+
+o:Doomhnallach
+  a : ;
+  rdfs:label "Dòmhnallach" ;
+  :sense "MacDonald" .
+
+o:MacDhoomhnaill
+  a : ;
+  rdfs:label "MacDhòmhnaill" ;
+  :sense "MacDonald" .
+
+n:uidheam
+  a :FeminineNoun ;
+  rdfs:label "uidheam" ;
+  :sense "machine" ;
+  :gen "uidheim" ;
+  :pl "uidheaman" .
+
+o:MacIllFhinnein
+  a : ;
+  rdfs:label "MacIllFhinnein" ;
+  :sense "MacLennan" .
+
+n:macro_eaconamas
+  a :MasculineNoun ;
+  rdfs:label "macro-eaconamas" ;
+  :sense "macroeconomics" ;
+  :gen "macro-eaconamais" .
+
+n:iris
+  a :FeminineNoun ;
+  rdfs:label "iris" ;
+  :sense "magazine" ;
+  :gen "iris(e)" ;
+  :pl "irisean" .
+
+n:stiuuireadh
+  a :MasculineNoun ;
+  rdfs:label "stiùireadh" ;
+  :sense "management" ;
+  :gen "stiùiridh" .
+
+n:manaidsear_
+  a :MasculineNoun ;
+  rdfs:label "manaidsear " ;
+  :sense "manager" ;
+  :gen "manaidseir" ;
+  :pl "manaidsearan" .
+
+n:deeanamh
+  a :MasculineNoun ;
+  rdfs:label "dèanamh" ;
+  :sense "manufacture" ;
+  :gen "dèanaimh" .
+
+n:obair_deeanaimh_
+  a :FeminineNoun ;
+  rdfs:label "obair-dèanaimh " ;
+  :sense "manufacture" ;
+  :gen "obair-dèanaimh" .
+
+n:obair_deeanaimh
+  a :FeminineNoun ;
+  rdfs:label "obair-dèanaimh" ;
+  :sense "manufacturing" ;
+  :gen "obair-dèanaimh" .
+
+n:laamh_sgriiobhainn
+  a :FeminineNoun ;
+  rdfs:label "làmh-sgrìobhainn" ;
+  :sense "manuscript" ;
+  :gen "làmh-sgrìobhainn(e)" ;
+  :pl "làmh-sgrìobhainnean" .
+
+n:Maart
+  a :MasculineNoun ;
+  rdfs:label "Màrt" ;
+  :sense "March" ;
+  :gen "Màirt" .
+
+n:margaidheachd
+  a :FeminineNoun ;
+  rdfs:label "margaidheachd" ;
+  :sense "marketing" ;
+  :gen "margaidheachd" .
+
+n:masg
+  a :MasculineNoun ;
+  rdfs:label "masg" ;
+  :sense "mask" ;
+  :gen "masg" ;
+  :pl "masgaichean" ;
+  :pl "masgan" .
+
+n:stuth
+  a :MasculineNoun ;
+  rdfs:label "stuth" ;
+  :sense "material" ;
+  :gen "stutha" ;
+  :pl "stuthan" .
+
+n:Ceeitean
+  a :MasculineNoun ;
+  rdfs:label "Cèitean" ;
+  :sense "May" ;
+  :gen "Cèitein" .
+
+n:Maaigh
+  a :FeminineNoun ;
+  rdfs:label "Màigh" ;
+  :sense "May" ;
+  :gen "Màighe" .
+
+o:meacanaigs
+  a :plural noun ;
+  rdfs:label "meacanaigs" ;
+  :sense "mechanics" .
+
+n:bonn
+  a :MasculineNoun ;
+  rdfs:label "bonn" ;
+  :sense "medal" ;
+  :gen "buinn" ;
+  :pl "buinn" .
+
+n:meadail
+  a :MasculineNoun ;
+  rdfs:label "meadail" ;
+  :sense "medal" ;
+  :gen "meadail" ;
+  :pl "meadailean" .
+
+o:meadhanan
+  a :plural noun ;
+  rdfs:label "meadhanan" ;
+  :sense "media" ;
+  :gen "nam meadhanan" .
+
+a:meidigeach
+  a :Adjective ;
+  rdfs:label "meidigeach" ;
+  :sense "medical" .
+
+a:meadhan_aoiseach
+  a :Adjective ;
+  rdfs:label "meadhan-aoiseach" ;
+  :sense "medieval" .
+
+n:megafoon
+  a :MasculineNoun ;
+  rdfs:label "megafòn" ;
+  :sense "megaphone" ;
+  :gen "megafòn" ;
+  :pl "megafònaichean" .
+
+a:inntinneil
+  a :Adjective ;
+  rdfs:label "inntinneil" ;
+  :sense "mental" .
+
+n:treeoraiche
+  a :MasculineNoun ;
+  rdfs:label "trèoraiche" ;
+  :sense "mentor" ;
+  :gen "treòraiche" ;
+  :pl "treòraichean" .
+
+n:claar_biidh
+  a :MasculineNoun ;
+  rdfs:label "clàr-bìdh" ;
+  :sense "menu" ;
+  :gen "clàir-bìdh" ;
+  :pl "clàran-bìdh" .
+
+n:teachdaire
+  a :MasculineNoun ;
+  rdfs:label "teachdaire" ;
+  :sense "messenger" ;
+  :gen "teachdaire" ;
+  :pl "teachdairean" .
+
+n:meatafiosaigs
+  a :noun ;
+  rdfs:label "meatafiosaigs" ;
+  :sense "metaphysics" ;
+  :gen "meatafiosaigs" .
+
+n:dooigh
+  a :MasculineNoun ;
+  rdfs:label "dòigh" ;
+  :sense "method" ;
+  :gen "dòigh" ;
+  :pl "dòighean" .
+
+n:eoolas_tomhais
+  a :MasculineNoun ;
+  rdfs:label "eòlas-tomhais" ;
+  :sense "metrology" ;
+  :gen "eòlas-tomhais" .
+
+a:armailteach
+  a :Adjective ;
+  rdfs:label "armailteach" ;
+  :sense "military" .
+
+n:inntinn
+  a :FeminineNoun ;
+  rdfs:label "inntinn" ;
+  :sense "mind" ;
+  :gen "inntinn(e)" ;
+  :pl "inntinnean" .
+
+a:measgaichte
+  a :Adjective ;
+  rdfs:label "measgaichte" ;
+  :sense "miscellaneous" .
+
+n:measgachadh
+  a :MasculineNoun ;
+  rdfs:label "measgachadh" ;
+  :sense "miscellany" ;
+  :gen "measgachaidh" ;
+  :pl "measgachaidhean" .
+
+a:measgaichte
+  a :Adjective ;
+  rdfs:label "measgaichte" ;
+  :sense "miscelleneous" .
+
+n:modal
+  a :MasculineNoun ;
+  rdfs:label "modal" ;
+  :sense "module" ;
+  :gen "modail" ;
+  :pl "modalan" .
+
+n:Diluain
+  a :MasculineNoun ;
+  rdfs:label "Diluain" ;
+  :sense "Monday" ;
+  :gen "Diluain" .
+
+o:MacGumaraid
+  a : ;
+  rdfs:label "MacGumaraid" ;
+  :sense "Montgomery" .
+
+n:moor_rathad
+  a :MasculineNoun ;
+  rdfs:label "mòr-rathad" ;
+  :sense "motorway" ;
+  :gen "mòr-rathaid" ;
+  :gen "mòr-rothaid" ;
+  :pl "mòr-rathaidean" ;
+  :pl "mòr-ròidean" .
+
+a:eachraidh
+  a :Adjective ;
+  rdfs:label "eachraidh" ;
+  :sense "mounted" .
+
+n:gluasad
+  a :MasculineNoun ;
+  rdfs:label "gluasad" ;
+  :sense "movement" ;
+  :gen "gluasaid" ;
+  :pl "gluasadan" .
+
+n:mumaidh
+  a :MasculineNoun ;
+  rdfs:label "mumaidh" ;
+  :sense "mummy" ;
+  :gen "mumaidh" ;
+  :pl "mumaidhean" .
+
+o:Moireach
+  a : ;
+  rdfs:label "Moireach" ;
+  :sense "Murray" .
+
+o:Maoileas
+  a : ;
+  rdfs:label "Maoileas" ;
+  :sense "Myles" .
+
+n:diiomhaireachd
+  a :FeminineNoun ;
+  rdfs:label "dìomhaireachd" ;
+  :sense "mystery" ;
+  :gen "dìomhaireachd" .
+
+n:miotas
+  a :MasculineNoun ;
+  rdfs:label "miotas" ;
+  :sense "myth" ;
+  :gen "miotais" ;
+  :pl "miotasan" .
+
+a:miotasach
+  a :Adjective ;
+  rdfs:label "miotasach" ;
+  :sense "mythical" .
+
+n:miotas_eoolas
+  a :MasculineNoun ;
+  rdfs:label "miotas-eòlas" ;
+  :sense "mythology" ;
+  :gen "miotas-eòlais" .
+
+n:ainm
+  a :MasculineNoun ;
+  rdfs:label "ainm" ;
+  :sense "name" ;
+  :gen "ainm(e)" ;
+  :pl "ainmean" ;
+  :pl "ainmeannan" .
+
+o:gun_ainm
+  a :noun phrase ;
+  rdfs:label "gun ainm" ;
+  :sense "nameless" .
+
+a:naaiseanta
+  a :Adjective ;
+  rdfs:label "nàiseanta" ;
+  :sense "national" .
+
+o:Breith_Chriiosd
+  a :noun phrase ;
+  rdfs:label "Breith Chrìosd" ;
+  :sense "Nativity" .
+
+a:naadarrach
+  a :Adjective ;
+  rdfs:label "nàdarrach" ;
+  :sense "natural" .
+
+o:feallsanachd_naadair
+  a :noun phrase ;
+  rdfs:label "feallsanachd nàdair" ;
+  :sense "naturalism" .
+
+a:seoolaidh
+  a :Adjective ;
+  rdfs:label "seòlaidh" ;
+  :sense "nautical" .
+
+n:Naasach
+  a :MasculineNoun ;
+  rdfs:label "Nàsach" ;
+  :sense "Nazi" ;
+  :gen "Nàsaich" ;
+  :pl "Nàsaich" .
+
+a:Naasach
+  a :Adjective ;
+  rdfs:label "Nàsach" ;
+  :sense "Nazi" .
+
+a:nuadh_chlasaigeach
+  a :Adjective ;
+  rdfs:label "nuadh-chlasaigeach" ;
+  :sense "neoclassical" .
+
+a:Nuadh_phlatonach
+  a :Adjective ;
+  rdfs:label "Nuadh-phlatonach" ;
+  :sense "Neoplatonic" .
+
+n:liionrachadh
+  a :MasculineNoun ;
+  rdfs:label "lìonrachadh" ;
+  :sense "networking" .
+
+n:naidheachd
+  a :FeminineNoun ;
+  rdfs:label "naidheachd" ;
+  :sense "news" ;
+  :gen "naidheachd" ;
+  :pl "naidheachdan" .
+
+n:paaipear_naidheachd
+  a :MasculineNoun ;
+  rdfs:label "pàipear-naidheachd" ;
+  :sense "newspaper" ;
+  :gen "pàipeir-naidheachd" ;
+  :pl "pàipearan-naidheachd" .
+
+n:oidhche
+  a :FeminineNoun ;
+  rdfs:label "oidhche" ;
+  :sense "night" ;
+  :gen "oidhche" ;
+  :pl "oidhcheannan" .
+
+a:neo_choomhragach
+  a :Adjective ;
+  rdfs:label "neo-chòmhragach" ;
+  :sense "non-combatant" .
+
+n:neo_choomhragaiche_
+  a :MasculineNoun ;
+  rdfs:label "neo-chòmhragaiche " ;
+  :sense "non-combatant" ;
+  :gen "neo-chòmhragaiche" ;
+  :pl "neo-chòmhragaichean" .
+
+n:neo_ainneart
+  a :MasculineNoun ;
+  rdfs:label "neo-ainneart" ;
+  :sense "non-violence" ;
+  :gen "neo-ainneirt" .
+
+n:gnaathas
+  a :MasculineNoun ;
+  rdfs:label "gnàthas" ;
+  :sense "norm" ;
+  :gen "gnàthais" ;
+  :pl "gnàthasan" .
+
+a:comharraichte
+  a :Adjective ;
+  rdfs:label "comharraichte" ;
+  :sense "notable" .
+
+a:comharraichte
+  a :Adjective ;
+  rdfs:label "comharraichte" ;
+  :sense "noted" .
+
+n:nobhail
+  a :FeminineNoun ;
+  rdfs:label "nobhail" ;
+  :sense "novel" ;
+  :gen "nobhail(e)" ;
+  :pl "nobhailean" .
+
+n:Samhain
+  a :FeminineNoun ;
+  rdfs:label "Samhain" ;
+  :sense "November" ;
+  :gen "Samhna" .
+
+n:aaireamhachd
+  a :FeminineNoun ;
+  rdfs:label "àireamhachd" ;
+  :sense "numeracy" ;
+  :gen "àireamhachd" .
+
+n:buinn_eoolas_
+  a :MasculineNoun ;
+  rdfs:label "buinn-eòlas " ;
+  :sense "numismatics" ;
+  :gen "buinn-eòlais" .
+
+n:os_naadarrachd
+  a :FeminineNoun ;
+  rdfs:label "os-nàdarrachd" ;
+  :sense "occult" ;
+  :gen "os-nàdarrachd" .
+
+n:os_naadarrachd
+  a :FeminineNoun ;
+  rdfs:label "os-nàdarrachd" ;
+  :sense "occultism" ;
+  :gen "os-nàdarrachd" .
+
+n:cosnadh
+  a :MasculineNoun ;
+  rdfs:label "cosnadh" ;
+  :sense "occupation" ;
+  :gen "cosnaidh" ;
+  :pl "cosnaidhean" .
+
+n:Daamhair
+  a :FeminineNoun ;
+  rdfs:label "Dàmhair" ;
+  :sense "October" ;
+  :gen "Dàmhair" .
+
+n:oifis
+  a :FeminineNoun ;
+  rdfs:label "oifis" ;
+  :sense "office" ;
+  :gen "oifis(e)" ;
+  :pl "oifisean" .
+
+n:oifigear
+  a :MasculineNoun ;
+  rdfs:label "oifigear" ;
+  :sense "officer" ;
+  :gen "oifigeir" ;
+  :pl "oifigearan" .
+
+n:ola_
+  a :MasculineNoun ;
+  rdfs:label "ola " ;
+  :sense "oil" ;
+  :gen "ola" ;
+  :pl "olaichean" .
+
+n:onteoolas
+  a :MasculineNoun ;
+  rdfs:label "onteòlas" ;
+  :sense "ontology" ;
+  :gen "onteòlais" .
+
+n:obrachadh
+  a :MasculineNoun ;
+  rdfs:label "obrachadh" ;
+  :sense "operation" ;
+  :gen "obrachaidh" ;
+  :pl "obrachaidhean" .
+
+a:roghainneil
+  a :Adjective ;
+  rdfs:label "roghainneil" ;
+  :sense "optional" .
+
+a:beooil
+  a :Adjective ;
+  rdfs:label "beòil" ;
+  :sense "oral" .
+
+n:ubhalghort
+  a :MasculineNoun ;
+  rdfs:label "ubhalghort" ;
+  :sense "orchard" ;
+  :gen "ubhalghoirt" ;
+  :pl "ubhalghortan" .
+
+n:buidheann
+  a :noun ;
+  rdfs:label "buidheann" ;
+  :sense "organisation" ;
+  :gen "buidhne" ;
+  :gen "buidhinn" ;
+  :pl "buidhnean" .
+
+v:eagraich
+  a :Verb ;
+  rdfs:label "eagraich" ;
+  :sense "organise" .
+
+n:neach_eagrachaidh
+  a :MasculineNoun ;
+  rdfs:label "neach-eagrachaidh" ;
+  :sense "organiser" ;
+  :gen "neach-eagrachaidh" ;
+  :pl "luchd-eagrachaidh" .
+
+n:tuus
+  a :MasculineNoun ;
+  rdfs:label "tùs" ;
+  :sense "origin" ;
+  :gen "tùis" ;
+  :pl "tùsan" .
+
+n:buil
+  a :FeminineNoun ;
+  rdfs:label "buil" ;
+  :sense "outcome" ;
+  :gen "buil(e)" ;
+  :pl "builean" .
+
+n:toradh
+  a :MasculineNoun ;
+  rdfs:label "toradh" ;
+  :sense "outcome" ;
+  :gen "toraidh" ;
+  :pl "toraidhean" .
+
+o:blaar_a_muigh
+  a :adverb ;
+  rdfs:label "blàr a-muigh" ;
+  :sense "outdoors" .
+
+n:siiochantas
+  a :MasculineNoun ;
+  rdfs:label "sìochantas" ;
+  :sense "pacifism" .
+
+n:siiochantach
+  a :MasculineNoun ;
+  rdfs:label "sìochantach" ;
+  :sense "pacifist" ;
+  :gen "sìochantaich" ;
+  :pl "sìochantaich" .
+
+n:pacadh
+  a :MasculineNoun ;
+  rdfs:label "pacadh" ;
+  :sense "packaging" ;
+  :gen "pacaidh" .
+
+v:peant_
+  a :Verb ;
+  rdfs:label "peant " ;
+  :sense "paint" .
+
+n:peantair
+  a :MasculineNoun ;
+  rdfs:label "peantair" ;
+  :sense "painter" ;
+  :gen "peantair" ;
+  :pl "peantairean" .
+
+n:iom_dhiadhachd
+  a :FeminineNoun ;
+  rdfs:label "iom-dhiadhachd" ;
+  :sense "pantheism" .
+
+a:iom_dhiathach
+  a :Adjective ;
+  rdfs:label "iom-dhiathach" ;
+  :sense "pantheistic" .
+
+n:paaipear
+  a :MasculineNoun ;
+  rdfs:label "pàipear" ;
+  :sense "paper" ;
+  :gen "pàipeir" ;
+  :pl "pàipearan" .
+
+a:para_saidhceoolach
+  a :Adjective ;
+  rdfs:label "para-saidhceòlach" ;
+  :sense "parapsychological" .
+
+n:para_saidhceoolas
+  a :MasculineNoun ;
+  rdfs:label "para-saidhceòlas" ;
+  :sense "parapsychology" ;
+  :gen "para-saidhceòlais" .
+
+n:paarant
+  a :MasculineNoun ;
+  rdfs:label "pàrant" ;
+  :sense "parent" ;
+  :gen "pàrant" ;
+  :pl "pàrantan" .
+
+n:paarantachd
+  a :FeminineNoun ;
+  rdfs:label "pàrantachd" ;
+  :sense "parenthood" .
+
+n:paarantachadh
+  a :MasculineNoun ;
+  rdfs:label "pàrantachadh" ;
+  :sense "parenting" .
+
+n:paraiste
+  a :FeminineNoun ;
+  rdfs:label "paraiste" ;
+  :sense "parish" ;
+  :gen "paraiste" ;
+  :pl "paraistean" .
+
+v:compaairtich
+  a :Verb ;
+  rdfs:label "compàirtich" ;
+  :sense "participate" .
+
+n:compaairteachadh
+  a :MasculineNoun ;
+  rdfs:label "compàirteachadh" ;
+  :sense "participation" ;
+  :gen "compàirteachaidh" .
+
+n:compaairteachas
+  a :MasculineNoun ;
+  rdfs:label "compàirteachas" ;
+  :sense "partnership" ;
+  :gen "compàirteachais" ;
+  :pl "compàirteachasan" .
+
+n:partaidh_
+  a :noun ;
+  rdfs:label "partaidh " ;
+  :sense "party" ;
+  :gen "partaidh" ;
+  :pl "partaidhean" .
+
+a:aoghaireil
+  a :Adjective ;
+  rdfs:label "aoghaireil" ;
+  :sense "pastoral" .
+
+n:peutant
+  a :MasculineNoun ;
+  rdfs:label "peutant" ;
+  :sense "patent" ;
+  :gen "peutant" ;
+  :pl "peutantan" .
+
+n:slighe
+  a :FeminineNoun ;
+  rdfs:label "slighe" ;
+  :sense "path" ;
+  :gen "slighe" ;
+  :pl "slighean" .
+
+o:Pool
+  a : ;
+  rdfs:label "Pòl" ;
+  :sense "Paul" .
+
+n:paan
+  a :MasculineNoun ;
+  rdfs:label "pàn" ;
+  :sense "pawn" ;
+  :gen "pàin" ;
+  :pl "pànaichean" .
+
+o:feallsanachd_teagaisg
+  a :noun phrase ;
+  rdfs:label "feallsanachd teagaisg" ;
+  :sense "pedagogy" .
+
+a:peanasachaidh
+  a :Adjective ;
+  rdfs:label "peanasachaidh" ;
+  :sense "penal" .
+
+n:leeirsinn
+  a :FeminineNoun ;
+  rdfs:label "lèirsinn" ;
+  :sense "perception" ;
+  :gen "lèirsinn(e)" .
+
+n:taisbeanadh
+  a :MasculineNoun ;
+  rdfs:label "taisbeanadh" ;
+  :sense "performance" ;
+  :gen "taisbeanaidh" ;
+  :pl "taisbeanaidhean" .
+
+a:taisbeanail
+  a :Adjective ;
+  rdfs:label "taisbeanail" ;
+  :sense "performing" .
+
+n:traath
+  a :MasculineNoun ;
+  rdfs:label "tràth" ;
+  :sense "period" ;
+  :gen "tràtha" ;
+  :gen "tràith" ;
+  :pl "tràthan" .
+
+n:geur_leanmhainn
+  a :MasculineNoun ;
+  rdfs:label "geur-leanmhainn" ;
+  :sense "persecution" ;
+  :gen "geur-leanmhainn" ;
+  :pl "geur-leanmhainnean" .
+
+n:pearsa
+  a :MasculineNoun ;
+  rdfs:label "pearsa" ;
+  :sense "person" ;
+  :gen "pearsa" ;
+  :pl "pearsachan" .
+
+a:pearsanta
+  a :Adjective ;
+  rdfs:label "pearsanta" ;
+  :sense "personal" .
+
+n:pearsanachadh
+  a :MasculineNoun ;
+  rdfs:label "pearsanachadh" ;
+  :sense "personalisation" .
+
+n:luchd_obrach
+  a :MasculineNoun ;
+  rdfs:label "luchd-obrach" ;
+  :sense "personnel" ;
+  :gen "luchd-obrach" .
+
+n:iimpidheachd
+  a :FeminineNoun ;
+  rdfs:label "ìmpidheachd" ;
+  :sense "persuasion" ;
+  :gen "ìmpidheachd" .
+
+n:plaaigh
+  a :FeminineNoun ;
+  rdfs:label "plàigh" ;
+  :sense "pest" ;
+  :gen "plàighe" ;
+  :pl "plàighean" .
+
+a:feallsanachdail
+  a :Adjective ;
+  rdfs:label "feallsanachdail" ;
+  :sense "philosophical" .
+
+n:feallsanachd
+  a :FeminineNoun ;
+  rdfs:label "feallsanachd" ;
+  :sense "philosophy" ;
+  :gen "feallsanachd" ;
+  :pl "feallsanachdan" .
+
+n:dealbh_camara
+  a :noun ;
+  rdfs:label "dealbh-camara" ;
+  :sense "photo" ;
+  :gen "dealbh-camara" ;
+  :gen "deilbh-camara" ;
+  :pl "dealbhan-camara" .
+
+n:togail_dhealbhan
+  a :MasculineNoun ;
+  rdfs:label "togail dhealbhan" ;
+  :sense "photography" ;
+  :gen "togail dhealbhan" .
+
+n:claigeann_eoolas
+  a :MasculineNoun ;
+  rdfs:label "claigeann-eòlas" ;
+  :sense "phrenology" ;
+  :gen "claigeann-eòlais" .
+
+n:gnuuis_eoolas
+  a :MasculineNoun ;
+  rdfs:label "gnùis-eòlas" ;
+  :sense "physiognomy" .
+
+n:carragh
+  a :FeminineNoun ;
+  rdfs:label "carragh" ;
+  :sense "pillar" ;
+  :gen "carraigh" ;
+  :pl "carraighean" .
+
+n:aaite
+  a :MasculineNoun ;
+  rdfs:label "àite" ;
+  :sense "place" ;
+  :gen "àite" ;
+  :pl "àiteachan" .
+
+n:planadh
+  a :MasculineNoun ;
+  rdfs:label "planadh" ;
+  :sense "planning" ;
+  :gen "planaidh" .
+
+n:uidheam
+  a :FeminineNoun ;
+  rdfs:label "uidheam" ;
+  :sense "plant" ;
+  :gen "uidheim" ;
+  :pl "uidheaman" .
+
+n:planntachas
+  a :MasculineNoun ;
+  rdfs:label "planntachas" ;
+  :sense "plantation" ;
+  :gen "planntachais" ;
+  :pl "planntachasan" .
+
+a:plastaig
+  a :Adjective ;
+  rdfs:label "plastaig" ;
+  :sense "plastic" .
+
+n:plastaig
+  a :MasculineNoun ;
+  rdfs:label "plastaig" ;
+  :sense "plastic" ;
+  :gen "plastaig" ;
+  :pl "plastaigean" .
+
+n:plastaigheachd
+  a :FeminineNoun ;
+  rdfs:label "plastaigheachd" ;
+  :sense "plasticity" ;
+  :gen "plastaigheachd" .
+
+a:platanum
+  a :Adjective ;
+  rdfs:label "platanum" ;
+  :sense "platinum" .
+
+a:Platonach
+  a :Adjective ;
+  rdfs:label "Platonach" ;
+  :sense "Platonic" .
+
+o:baard
+  a : ;
+  rdfs:label "bàrd" ;
+  :sense "poet" ;
+  :gen "bàird" ;
+  :pl "bàird" .
+
+n:beachd
+  a :MasculineNoun ;
+  rdfs:label "beachd" ;
+  :sense "point of view" ;
+  :gen "beachda" ;
+  :pl "beachdan" .
+
+n:poileasaidh
+  a :MasculineNoun ;
+  rdfs:label "poileasaidh" ;
+  :sense "policy" ;
+  :gen "poileasaidh" ;
+  :pl "poileasaidhean" .
+
+n:post
+  a :MasculineNoun ;
+  rdfs:label "post" ;
+  :sense "post" ;
+  :gen "puist" .
+
+v:cuir_sa_phost
+  a :Verb ;
+  rdfs:label "cuir sa phost" ;
+  :sense "post" .
+
+n:comas
+  a :MasculineNoun ;
+  rdfs:label "comas" ;
+  :sense "potential" ;
+  :gen "comais" .
+
+n:bristeal
+  a :MasculineNoun ;
+  rdfs:label "bristeal" ;
+  :sense "potshard" ;
+  :gen "bristeil" ;
+  :pl "bristeal" .
+
+n:bristeal
+  a :MasculineNoun ;
+  rdfs:label "bristeal" ;
+  :sense "potsherd" ;
+  :gen "bristeil" ;
+  :pl "bristeal" .
+
+n:cleachdadh
+  a :MasculineNoun ;
+  rdfs:label "cleachdadh" ;
+  :sense "practice" ;
+  :gen "cleachdaidh" ;
+  :pl "cleachdaidhean" .
+
+n:gnaathas
+  a :MasculineNoun ;
+  rdfs:label "gnàthas" ;
+  :sense "practice" ;
+  :gen "gnàthais" ;
+  :pl "gnàthasan" .
+
+n:reachd
+  a :MasculineNoun ;
+  rdfs:label "reachd" ;
+  :sense "precept" ;
+  :gen "reachd" ;
+  :pl "reachdan" .
+
+n:mean_thomhais
+  a :MasculineNoun ;
+  rdfs:label "mean-thomhais" ;
+  :sense "precision" .
+
+a:ro_eachdraidheil
+  a :Adjective ;
+  rdfs:label "ro-eachdraidheil" ;
+  :sense "prehistoric" .
+
+n:claon_bhreith
+  a :FeminineNoun ;
+  rdfs:label "claon-bhreith" ;
+  :sense "prejudice" ;
+  :gen "claon-bhreith" ;
+  :pl "claon-bhreithean" .
+
+a:claon_bhreitheach_
+  a :Adjective ;
+  rdfs:label "claon-bhreitheach " ;
+  :sense "prejudiced" .
+
+n:ullachadh
+  a :MasculineNoun ;
+  rdfs:label "ullachadh" ;
+  :sense "preparation" ;
+  :gen "ullachaidh" ;
+  :pl "ullachadh" .
+
+n:taisbeanadh
+  a :MasculineNoun ;
+  rdfs:label "taisbeanadh" ;
+  :sense "presentation" ;
+  :gen "taisbeanaidh" ;
+  :pl "taisbeanaidhean" .
+
+n:bacadh
+  a :MasculineNoun ;
+  rdfs:label "bacadh" ;
+  :sense "prevention" ;
+  :gen "bacaidh" ;
+  :pl "bacaidhean" .
+
+n:bun_sgoil
+  a :FeminineNoun ;
+  rdfs:label "bun-sgoil" ;
+  :sense "primary" ;
+  :gen "bun-sgoile" ;
+  :pl "bun-sgoiltean" .
+
+o:bun_
+  a :prefix ;
+  rdfs:label "bun-" ;
+  :sense "primary" .
+
+a:priiomh
+  a :Adjective ;
+  rdfs:label "prìomh" ;
+  :sense "primary" .
+
+a:tuusach
+  a :Adjective ;
+  rdfs:label "tùsach" ;
+  :sense "primitive" .
+
+n:prionnsapal
+  a :MasculineNoun ;
+  rdfs:label "prionnsapal" ;
+  :sense "principal" ;
+  :gen "prionnsapail" ;
+  :pl "prionnsapail" ;
+  :pl "prionnsapalan" .
+
+n:prionnsapal
+  a :MasculineNoun ;
+  rdfs:label "prionnsapal" ;
+  :sense "principle" ;
+  :gen "prionnsapail" ;
+  :pl "prionnsapalan" .
+
+a:cloo_bhuailte
+  a :Adjective ;
+  rdfs:label "clò-bhuailte" ;
+  :sense "printed" .
+
+n:priiomhachas
+  a :MasculineNoun ;
+  rdfs:label "prìomhachas" ;
+  :sense "priority" ;
+  :gen "prìomhachais" ;
+  :pl "prìomhachasan" .
+
+n:priiosanach_
+  a :MasculineNoun ;
+  rdfs:label "prìosanach " ;
+  :sense "prisoner" ;
+  :gen "prìosanaich" ;
+  :pl "prìosanaich" .
+
+n:duilgheadas
+  a :MasculineNoun ;
+  rdfs:label "duilgheadas" ;
+  :sense "problem" ;
+  :gen "duilgheadais" ;
+  :pl "duilgheadasan" .
+
+n:modh_obrach
+  a :noun ;
+  rdfs:label "modh-obrach" ;
+  :sense "procedure" ;
+  :gen "modh-obrach" ;
+  :pl "modhan-obrach" .
+
+n:giullachd
+  a :FeminineNoun ;
+  rdfs:label "giullachd" ;
+  :sense "process" .
+
+n:giullachd_
+  a :FeminineNoun ;
+  rdfs:label "giullachd " ;
+  :sense "processing" ;
+  :gen "giullachd" .
+
+n:bathar
+  a :MasculineNoun ;
+  rdfs:label "bathar" ;
+  :sense "product" ;
+  :gen "bathair" .
+
+n:deeanamh
+  a :MasculineNoun ;
+  rdfs:label "dèanamh" ;
+  :sense "production" ;
+  :gen "dèanaimh" .
+
+a:proifeiseanta
+  a :Adjective ;
+  rdfs:label "proifeiseanta" ;
+  :sense "professional" .
+
+n:adhartas
+  a :MasculineNoun ;
+  rdfs:label "adhartas" ;
+  :sense "progression" ;
+  :gen "adhartais" .
+
+a:toirmisgte
+  a :Adjective ;
+  rdfs:label "toirmisgte" ;
+  :sense "prohibited" .
+
+n:prooiseact
+  a :noun ;
+  rdfs:label "pròiseact" ;
+  :sense "project" ;
+  :gen "pròiseict" ;
+  :pl "pròiseactan" .
+
+n:feart
+  a :MasculineNoun ;
+  rdfs:label "feart" ;
+  :sense "property" ;
+  :gen "fearta" ;
+  :pl "feartan" .
+
+n:neach_diion
+  a :MasculineNoun ;
+  rdfs:label "neach-dìon" ;
+  :sense "protector" ;
+  :gen "neach-dìon" ;
+  :pl "luchd-dìon" .
+
+n:diionadair
+  a :MasculineNoun ;
+  rdfs:label "dìonadair" ;
+  :sense "protector" ;
+  :gen "dìonadair" ;
+  :pl "dìonadairean" .
+
+n:ainm_pinn
+  a :MasculineNoun ;
+  rdfs:label "ainm-pinn" ;
+  :sense "pseudonymous" ;
+  :gen "ainm-pinn" .
+
+n:saidhceoolas
+  a :MasculineNoun ;
+  rdfs:label "saidhceòlas" ;
+  :sense "psychology" ;
+  :gen "saidhceòlais" .
+
+a:poblach
+  a :Adjective ;
+  rdfs:label "poblach" ;
+  :sense "public" .
+
+n:poball
+  a :MasculineNoun ;
+  rdfs:label "poball" ;
+  :sense "public" ;
+  :gen "pobaill" .
+
+n:foillseachadh
+  a :MasculineNoun ;
+  rdfs:label "foillseachadh" ;
+  :sense "publishing" ;
+  :gen "foillseachaidh" .
+
+n:glaodhan
+  a :MasculineNoun ;
+  rdfs:label "glaodhan" ;
+  :sense "pulp" ;
+  :gen "glaodhain" .
+
+n:peanas_
+  a :MasculineNoun ;
+  rdfs:label "peanas " ;
+  :sense "punishment" ;
+  :gen "peanais" ;
+  :pl "peanasan" .
+
+n:adhbhar
+  a :MasculineNoun ;
+  rdfs:label "adhbhar" ;
+  :sense "purpose" ;
+  :gen "adhbhair" ;
+  :pl "adhbharan" ;
+  :pl "adhbhair" .
+
+n:teisteanas
+  a :MasculineNoun ;
+  rdfs:label "teisteanas" ;
+  :sense "qualification" ;
+  :gen "teisteanais" ;
+  :pl "teisteanasan" ;
+  :pl "teisteanais" .
+
+n:deagh_ghnee
+  a :MasculineNoun ;
+  rdfs:label "deagh-ghnè" ;
+  :sense "quality" ;
+  :gen "deagh-ghnè" .
+
+n:caaileachd
+  a :FeminineNoun ;
+  rdfs:label "càileachd" ;
+  :sense "quality" ;
+  :gen "càileachd" .
+
+n:ceist
+  a :FeminineNoun ;
+  rdfs:label "ceist" ;
+  :sense "query" ;
+  :gen "ceiste" ;
+  :pl "ceistean" .
+
+n:ceist
+  a :FeminineNoun ;
+  rdfs:label "ceist" ;
+  :sense "question" ;
+  :gen "ceistean" ;
+  :pl "ceistean" .
+
+n:abairt
+  a :FeminineNoun ;
+  rdfs:label "abairt" ;
+  :sense "quotation" ;
+  :gen "abairt(e)" ;
+  :pl "abairtean" .
+
+n:cinneadh
+  a :MasculineNoun ;
+  rdfs:label "cinneadh" ;
+  :sense "race" ;
+  :gen "cinnidh" ;
+  :pl "cinnidhean" .
+
+a:cinneadail
+  a :Adjective ;
+  rdfs:label "cinneadail" ;
+  :sense "racial" .
+
+n:graain_cinnidh
+  a :FeminineNoun ;
+  rdfs:label "gràin-cinnidh" ;
+  :sense "racism" ;
+  :gen "gràin-cinnidh" .
+
+n:ionnsaigh
+  a :noun ;
+  rdfs:label "ionnsaigh" ;
+  :sense "raid" ;
+  :gen "ionnsaigh" ;
+  :pl "ionnsaighean" .
+
+n:reeile
+  a :noun ;
+  rdfs:label "rèile" ;
+  :sense "railroad" ;
+  :gen "rèile" ;
+  :pl "rèilichean" .
+
+n:reeile
+  a :FeminineNoun ;
+  rdfs:label "rèile" ;
+  :sense "railway" ;
+  :gen "rèile" ;
+  :pl "rèilichean" .
+
+a:tearc
+  a :Adjective ;
+  rdfs:label "tearc" ;
+  :sense "rare" .
+
+n:raisean
+  a :MasculineNoun ;
+  rdfs:label "raisean" ;
+  :sense "ration" ;
+  :gen "raisein" ;
+  :pl "raiseans" ;
+  :pl "raiseanan" .
+
+n:raiseanadh
+  a :MasculineNoun ;
+  rdfs:label "raiseanadh" ;
+  :sense "rationing" ;
+  :gen "raiseanaidh" .
+
+o:a'_raiseanadh
+  a :verbal noun ;
+  rdfs:label "a' raiseanadh" ;
+  :sense "rationing" .
+
+n:leughadh
+  a :MasculineNoun ;
+  rdfs:label "leughadh" ;
+  :sense "reading" ;
+  :gen "leughaidh" ;
+  :pl "leughaidhean" .
+
+a:reusanta
+  a :Adjective ;
+  rdfs:label "reusanta" ;
+  :sense "reasonable" .
+
+n:ath_bhreith
+  a :FeminineNoun ;
+  rdfs:label "ath-bhreith" ;
+  :sense "rebirth" ;
+  :gen "ath-bhreith" .
+
+v:claaraich
+  a :Verb ;
+  rdfs:label "clàraich" ;
+  :sense "record" .
+
+v:claar
+  a :Verb ;
+  rdfs:label "clàr" ;
+  :sense "record" .
+
+n:claar
+  a :MasculineNoun ;
+  rdfs:label "clàr" ;
+  :sense "record" ;
+  :gen "clàir" ;
+  :pl "clàir" ;
+  :pl "clàran" .
+
+n:claaradh
+  a :MasculineNoun ;
+  rdfs:label "clàradh" ;
+  :sense "recording" ;
+  :gen "clàraidh" ;
+  :pl "clàraidhean" .
+
+o:a'_claaradh
+  a :verbal noun ;
+  rdfs:label "a' clàradh" ;
+  :sense "recording" .
+
+o:cur_seachadan
+  a :plural noun ;
+  rdfs:label "cur-seachadan" ;
+  :sense "recreation" ;
+  :gen "cur-seachadan" .
+
+n:meoorachadh
+  a :MasculineNoun ;
+  rdfs:label "meòrachadh" ;
+  :sense "reflection" ;
+  :gen "meòrachaidh" .
+
+a:ath_leasachail
+  a :Adjective ;
+  rdfs:label "ath-leasachail" ;
+  :sense "reform" .
+
+v:claaraich
+  a :Verb ;
+  rdfs:label "clàraich" ;
+  :sense "register" .
+
+a:claaraichte
+  a :Adjective ;
+  rdfs:label "clàraichte" ;
+  :sense "registered" .
+
+n:neach_claaraidh
+  a :MasculineNoun ;
+  rdfs:label "neach-clàraidh" ;
+  :sense "registrar" ;
+  :gen "neach-clàraidh" ;
+  :pl "luchd-clàraidh" .
+
+n:claarachadh
+  a :MasculineNoun ;
+  rdfs:label "clàrachadh" ;
+  :sense "registration" ;
+  :gen "clàrachaidh" .
+
+n:aithreachas
+  a :MasculineNoun ;
+  rdfs:label "aithreachas" ;
+  :sense "regret" ;
+  :gen "aithreachais" .
+
+n:riaghailt
+  a :FeminineNoun ;
+  rdfs:label "riaghailt" ;
+  :sense "regulation" ;
+  :gen "riaghailt(e)" ;
+  :pl "riaghailtean" .
+
+a:co_cheangailte
+  a :Adjective ;
+  rdfs:label "co-cheangailte" ;
+  :sense "related" .
+
+n:daaimh
+  a :noun ;
+  rdfs:label "dàimh" ;
+  :sense "relation" ;
+  :gen "dàimhe" ;
+  :pl "dàimhean" .
+
+n:daaimh
+  a :noun ;
+  rdfs:label "dàimh" ;
+  :sense "relationship" ;
+  :gen "dàimhe" ;
+  :pl "dàimhean" .
+
+n:buntanas
+  a :MasculineNoun ;
+  rdfs:label "buntanas" ;
+  :sense "relevance" ;
+  :gen "buntanas" ;
+  :pl "buntanasan" .
+
+n:ath_nuadhachadh
+  a :MasculineNoun ;
+  rdfs:label "ath-nuadhachadh" ;
+  :sense "renewal" ;
+  :gen "ath-nuadhachaidh" .
+
+n:rannsachadh
+  a :MasculineNoun ;
+  rdfs:label "rannsachadh" ;
+  :sense "research" ;
+  :gen "rannsachaidh" ;
+  :pl "rannsachaidhean" .
+
+a:coomhnaidheach
+  a :Adjective ;
+  rdfs:label "còmhnaidheach" ;
+  :sense "residential" .
+
+n:rooiseid
+  a :FeminineNoun ;
+  rdfs:label "ròiseid" ;
+  :sense "resin" ;
+  :gen "ròiseid(e)" ;
+  :pl "ròiseidean" .
+
+n:goireas
+  a :MasculineNoun ;
+  rdfs:label "goireas" ;
+  :sense "resource" ;
+  :gen "goireis" ;
+  :pl "goireasan" .
+
+n:stooras
+  a :MasculineNoun ;
+  rdfs:label "stòras" ;
+  :sense "resource" ;
+  :gen "stòrais" ;
+  :pl "stòrasan" ;
+  :pl "stòrais" .
+
+n:dleastanas
+  a :MasculineNoun ;
+  rdfs:label "dleastanas" ;
+  :sense "responsibility" ;
+  :gen "dleastanais" ;
+  :pl "dleastanasan" .
+
+n:ar_a_mach
+  a :MasculineNoun ;
+  rdfs:label "ar-a-mach" ;
+  :sense "revolution" ;
+  :gen "ar-a-mach" ;
+  :pl "ar-a-mach" .
+
+n:moor_chaochladh
+  a :MasculineNoun ;
+  rdfs:label "mòr-chaochladh" ;
+  :sense "revolution" ;
+  :gen "mòr-chaochlaidh" ;
+  :pl "mòr-chaochlaidhean" .
+
+n:tionndadh
+  a :MasculineNoun ;
+  rdfs:label "tionndadh" ;
+  :sense "revolution" ;
+  :gen "tionndaidh" ;
+  :pl "tionndaidhean" .
+
+n:raidhfil
+  a :MasculineNoun ;
+  rdfs:label "raidhfil" ;
+  :sense "rifle" ;
+  :gen "raidhfil" ;
+  :pl "raidhfilean" .
+
+a:deas
+  a :Adjective ;
+  rdfs:label "deas" ;
+  :sense "right" .
+
+n:rathad
+  a :MasculineNoun ;
+  rdfs:label "rathad" ;
+  :sense "road" ;
+  :gen "rathaid" ;
+  :gen "rothaid" ;
+  :pl "rathaidean" ;
+  :pl "ròidean" .
+
+n:roobot
+  a :MasculineNoun ;
+  rdfs:label "ròbot" ;
+  :sense "robot" ;
+  :gen "ròbot" ;
+  :pl "ròbotan" .
+
+n:eisimpleir
+  a :noun ;
+  rdfs:label "eisimpleir" ;
+  :sense "role model" ;
+  :gen "eisimpleir" ;
+  :pl "eisimpleirean" .
+
+n:roile
+  a :noun ;
+  rdfs:label "roile" ;
+  :sense "roll" ;
+  :gen "roile" ;
+  :pl "roilichean" .
+
+a:Roomanach
+  a :Adjective ;
+  rdfs:label "Ròmanach" ;
+  :sense "Roman" .
+
+n:tuur
+  a :MasculineNoun ;
+  rdfs:label "tùr" ;
+  :sense "rook" ;
+  :gen "tùir" ;
+  :pl "tùir" .
+
+n:slighe
+  a :FeminineNoun ;
+  rdfs:label "slighe" ;
+  :sense "route" ;
+  :gen "slighe" ;
+  :pl "slighean" .
+
+a:duuthchail
+  a :Adjective ;
+  rdfs:label "dùthchail" ;
+  :sense "rural" .
+
+n:Saabaid
+  a :FeminineNoun ;
+  rdfs:label "Sàbaid" ;
+  :sense "Sabbath" ;
+  :gen "Sàbaid" ;
+  :pl "Sàbaidean" .
+
+n:saabhailteachd
+  a :FeminineNoun ;
+  rdfs:label "sàbhailteachd" ;
+  :sense "safety" ;
+  :gen "sàbhailteachd" .
+
+a:slaainteil
+  a :Adjective ;
+  rdfs:label "slàinteil" ;
+  :sense "sanitary" .
+
+n:aoireadh
+  a :FeminineNoun ;
+  rdfs:label "aoireadh" ;
+  :sense "satire" ;
+  :gen "aoiridh" .
+
+n:aoir
+  a :FeminineNoun ;
+  rdfs:label "aoir" ;
+  :sense "satire" ;
+  :gen "aoir(e)" ;
+  :pl "aoirean" .
+
+n:Disathairne
+  a :MasculineNoun ;
+  rdfs:label "Disathairne" ;
+  :sense "Saturday" ;
+  :gen "Disathairne" .
+
+n:Sagson
+  a :MasculineNoun ;
+  rdfs:label "Sagson" ;
+  :sense "Saxon" ;
+  :gen "Sagson" ;
+  :pl "Sagsonaich" .
+
+a:Sagsonach
+  a :Adjective ;
+  rdfs:label "Sagsonach" ;
+  :sense "Saxon" .
+
+n:sganair
+  a :MasculineNoun ;
+  rdfs:label "sganair" ;
+  :sense "scanner" ;
+  :gen "sganair" ;
+  :pl "sganairean" .
+
+n:sgoil
+  a :FeminineNoun ;
+  rdfs:label "sgoil" ;
+  :sense "school" ;
+  :gen "sgoile" ;
+  :pl "sgoiltean" .
+
+n:leughadair_sgrion
+  a :MasculineNoun ;
+  rdfs:label "leughadair sgrion" ;
+  :sense "screen reader" ;
+  :gen "leughadair sgrion" ;
+  :pl "leughadairean sgrion
+         " .
+
+n:snaigheadh
+  a :MasculineNoun ;
+  rdfs:label "snaigheadh" ;
+  :sense "sculpture" ;
+  :gen "snaighidh" ;
+  :pl "snaighidhean" .
+
+n:muir
+  a :noun ;
+  rdfs:label "muir" ;
+  :sense "sea" ;
+  :gen "mara" ;
+  :pl "marannan" .
+
+n:aard_sgoil
+  a :FeminineNoun ;
+  rdfs:label "àrd-sgoil" ;
+  :sense "secondary" ;
+  :gen "àrd-sgoile" ;
+  :pl "àrd-sgoiltean" .
+
+n:ruunaire
+  a :MasculineNoun ;
+  rdfs:label "rùnaire" ;
+  :sense "secretary" ;
+  :gen "rùnaire" ;
+  :pl "rùnairean" .
+
+n:roinn
+  a :FeminineNoun ;
+  rdfs:label "roinn" ;
+  :sense "section" ;
+  :gen "roinne" ;
+  :pl "roinnean" .
+
+n:sgaradh
+  a :MasculineNoun ;
+  rdfs:label "sgaradh" ;
+  :sense "segregation" ;
+  :gen "sgaraidh" .
+
+o:feein
+  a :pronoun ;
+  rdfs:label "fèin" ;
+  :sense "self" .
+
+o:feallsanachd_mothachaidh
+  a :noun phrase ;
+  rdfs:label "feallsanachd mothachaidh" ;
+  :sense "sensationalism" .
+
+n:ciad_faath
+  a :FeminineNoun ;
+  rdfs:label "ciad-fàth" ;
+  :sense "sense" ;
+  :gen "ciad-fàth" ;
+  :pl "ciad-fàthan" .
+
+n:Sultain
+  a :FeminineNoun ;
+  rdfs:label "Sultain" ;
+  :sense "September" ;
+  :gen "Sultain(e)" .
+
+n:iris
+  a :FeminineNoun ;
+  rdfs:label "iris" ;
+  :sense "serial" ;
+  :gen "iris(e)" ;
+  :pl "irisean" .
+
+n:seirbheis
+  a :FeminineNoun ;
+  rdfs:label "seirbheis" ;
+  :sense "service" ;
+  :gen "seirbheis" ;
+  :pl "seirbheisean" .
+
+n:faileas
+  a :MasculineNoun ;
+  rdfs:label "faileas" ;
+  :sense "shadow" ;
+  :gen "faileis" ;
+  :pl "faileasan" .
+
+n:fasgadh
+  a :MasculineNoun ;
+  rdfs:label "fasgadh" ;
+  :sense "shelter" ;
+  :gen "fasgaidh" ;
+  :pl "fasgaidhean" .
+
+n:ciiobair
+  a :MasculineNoun ;
+  rdfs:label "cìobair" ;
+  :sense "shepherd" ;
+  :gen "cìobair" ;
+  :pl "cìobairean" .
+
+v:loisg
+  a :Verb ;
+  rdfs:label "loisg" ;
+  :sense "shoot" .
+
+o:sealg_ghunnaichean
+  a :noun phrase ;
+  rdfs:label "sealg ghunnaichean" ;
+  :sense "shooting" .
+
+n:losgadh
+  a :MasculineNoun ;
+  rdfs:label "losgadh" ;
+  :sense "shooting" ;
+  :gen "losgaidh" ;
+  :pl "losgaidhean" .
+
+n:geaarr_sgriiobhadh
+  a :MasculineNoun ;
+  rdfs:label "geàrr-sgrìobhadh" ;
+  :sense "shorthand" ;
+  :gen "geàrr-sgrìobhaidh" .
+
+n:fras
+  a :FeminineNoun ;
+  rdfs:label "fras" ;
+  :sense "shower" ;
+  :gen "froise" ;
+  :pl "frasan" .
+
+n:frasair
+  a :MasculineNoun ;
+  rdfs:label "frasair" ;
+  :sense "shower" ;
+  :gen "frasair" ;
+  :pl "frasairean" .
+
+n:seula_eoolas
+  a :MasculineNoun ;
+  rdfs:label "seula-eòlas" ;
+  :sense "sigillography" ;
+  :gen "seula-eòlais" .
+
+n:suidheachadh
+  a :MasculineNoun ;
+  rdfs:label "suidheachadh" ;
+  :sense "situation" ;
+  :gen "suidheachaidh" ;
+  :pl "suidheachaidhean" .
+
+a:Skeptic
+  a :Adjective ;
+  rdfs:label "Skeptic" ;
+  :sense "Skeptic" .
+
+n:sgil
+  a :noun ;
+  rdfs:label "sgil" ;
+  :sense "skill" ;
+  :gen "sgil" ;
+  :pl "sgilean" .
+
+n:adhar
+  a :MasculineNoun ;
+  rdfs:label "adhar" ;
+  :sense "sky" ;
+  :gen "adhair" .
+
+n:traaillealachd
+  a :FeminineNoun ;
+  rdfs:label "tràillealachd" ;
+  :sense "slavery" ;
+  :gen "tràillealachd" .
+
+n:gobha
+  a :MasculineNoun ;
+  rdfs:label "gobha" ;
+  :sense "smith" ;
+  :gen "gobhann" ;
+  :gen "gobhainn" ;
+  :pl "goibhnean" .
+
+a:sooisealta
+  a :Adjective ;
+  rdfs:label "sòisealta" ;
+  :sense "social" .
+
+o:eoolas_sooisealta
+  a :noun phrase ;
+  rdfs:label "eòlas sòisealta" ;
+  :sense "social studies" .
+
+n:co_chomann
+  a :MasculineNoun ;
+  rdfs:label "co-chomann" ;
+  :sense "society" ;
+  :gen "co-chomainn" ;
+  :pl "co-chomainn" .
+
+n:soiseoolas
+  a :FeminineNoun ;
+  rdfs:label "soiseòlas" ;
+  :sense "sociology" ;
+  :gen "soiseòlais" .
+
+a:Socratach
+  a :Adjective ;
+  rdfs:label "Socratach" ;
+  :sense "Socratic" .
+
+n:saighdear_
+  a :MasculineNoun ;
+  rdfs:label "saighdear " ;
+  :sense "soldier" ;
+  :gen "saighdeir" ;
+  :pl "saighdearan" .
+
+n:anam
+  a :MasculineNoun ;
+  rdfs:label "anam" ;
+  :sense "soul" ;
+  :gen "anama" ;
+  :pl "anaman" ;
+  :pl "anamannan" .
+
+n:freumh
+  a :MasculineNoun ;
+  rdfs:label "freumh" ;
+  :sense "source" ;
+  :gen "freumh(a)" ;
+  :pl "freumhan" ;
+  :pl "freumhaichean" .
+
+n:ooraidiche
+  a :MasculineNoun ;
+  rdfs:label "òraidiche" ;
+  :sense "speaker" ;
+  :gen "òraidiche" ;
+  :pl "òraidichean" .
+
+a:soonraichte
+  a :Adjective ;
+  rdfs:label "sònraichte" ;
+  :sense "special" .
+
+a:speisealta
+  a :Adjective ;
+  rdfs:label "speisealta" ;
+  :sense "specialised" .
+
+n:eoolaiche
+  a :MasculineNoun ;
+  rdfs:label "eòlaiche" ;
+  :sense "specialist" ;
+  :gen "eòlaiche" ;
+  :pl "eòlaichean" .
+
+a:soonraichte
+  a :Adjective ;
+  rdfs:label "sònraichte" ;
+  :sense "specific" .
+
+n:earrach
+  a :MasculineNoun ;
+  rdfs:label "earrach" ;
+  :sense "spring" ;
+  :gen "earraich" ;
+  :pl "earraich" .
+
+n:luchd_obrach
+  a :MasculineNoun ;
+  rdfs:label "luchd-obrach" ;
+  :sense "staff" ;
+  :gen "luchd-obrach" .
+
+n:iire
+  a :FeminineNoun ;
+  rdfs:label "ìre" ;
+  :sense "stage" ;
+  :gen "ìre" ;
+  :pl "ìrean" .
+
+n:aard_uurlar
+  a :MasculineNoun ;
+  rdfs:label "àrd-ùrlar" ;
+  :sense "stage" ;
+  :gen "àrd-ùrlair" ;
+  :pl "àrd-ùrlair" .
+
+n:bun_thomhas
+  a :MasculineNoun ;
+  rdfs:label "bun-thomhas" ;
+  :sense "standardisation" ;
+  :gen "bun-thomhais" ;
+  :pl "bun-thomhasan" .
+
+n:staid
+  a :FeminineNoun ;
+  rdfs:label "staid" ;
+  :sense "state" ;
+  :gen "staide" ;
+  :pl "staidean" .
+
+n:staitistig
+  a :FeminineNoun ;
+  rdfs:label "staitistig" ;
+  :sense "statistic" ;
+  :gen "staitistig" ;
+  :pl "staitistigs" .
+
+n:staitistigs
+  a :FeminineNoun ;
+  rdfs:label "staitistigs" ;
+  :sense "statistics" ;
+  :gen "staitistigs" .
+
+n:gnaath_iiomhaigh
+  a :FeminineNoun ;
+  rdfs:label "gnàth-ìomhaigh" ;
+  :sense "stereotype" ;
+  :gen "gnàth-ìomhaigh" ;
+  :pl "gnàth-ìomhaighean" .
+
+n:teip_steigeach
+  a :FeminineNoun ;
+  rdfs:label "teip steigeach" ;
+  :sense "sticky tape" ;
+  :gen "teip steigich" ;
+  :pl "teipichean steigeach" .
+
+a:Stoiceach
+  a :Adjective ;
+  rdfs:label "Stoiceach" ;
+  :sense "Stoic" .
+
+n:sgeulaiche
+  a :MasculineNoun ;
+  rdfs:label "sgeulaiche" ;
+  :sense "storyteller" ;
+  :gen "sgeulaiche" ;
+  :pl "sgeulaichean" .
+
+n:iall
+  a :FeminineNoun ;
+  rdfs:label "iall" ;
+  :sense "strand" ;
+  :gen "èill" ;
+  :pl "iallan" .
+
+n:ro_innleachd
+  a :FeminineNoun ;
+  rdfs:label "ro-innleachd" ;
+  :sense "strategy" ;
+  :gen "ro-innleachd" ;
+  :pl "ro-innleachdan" .
+
+n:striioch
+  a :FeminineNoun ;
+  rdfs:label "strìoch" ;
+  :sense "streak" ;
+  :gen "strìoch" ;
+  :pl "strìochan" .
+
+n:neart
+  a :MasculineNoun ;
+  rdfs:label "neart" ;
+  :sense "strength" ;
+  :gen "neirt" ;
+  :pl "neartan" .
+
+n:structar
+  a :MasculineNoun ;
+  rdfs:label "structar" ;
+  :sense "structure" ;
+  :gen "structair" ;
+  :pl "structaran" .
+
+n:fo_mhothachadh
+  a :MasculineNoun ;
+  rdfs:label "fo-mhothachadh" ;
+  :sense "subconscious" ;
+  :gen "fo-mhothachaidh" .
+
+a:fo_mhothachail
+  a :Adjective ;
+  rdfs:label "fo-mhothachail" ;
+  :sense "subconscious" .
+
+n:cuspair
+  a :MasculineNoun ;
+  rdfs:label "cuspair" ;
+  :sense "subject" ;
+  :gen "cuspair" ;
+  :pl "cuspairean" .
+
+n:stuth
+  a :MasculineNoun ;
+  rdfs:label "stuth" ;
+  :sense "substance" ;
+  :gen "stutha" ;
+  :pl "stuthan" .
+
+v:soirbhich
+  a :Verb ;
+  rdfs:label "soirbhich" ;
+  :sense "succeed" .
+
+n:geaarr_chunntas
+  a :MasculineNoun ;
+  rdfs:label "geàrr-chunntas" ;
+  :sense "summary" ;
+  :gen "geàrr-chunntais" ;
+  :pl "geàrr-chunntasan" .
+
+n:samhradh
+  a :MasculineNoun ;
+  rdfs:label "samhradh" ;
+  :sense "summer" ;
+  :gen "samhraidh" ;
+  :pl "samhraidhean" .
+
+o:Laa_na_Saabaid
+  a :noun phrase ;
+  rdfs:label "Là na Sàbaid" ;
+  :sense "Sunday" .
+
+n:Didoomhnaich
+  a :MasculineNoun ;
+  rdfs:label "Didòmhnaich" ;
+  :sense "Sunday" ;
+  :gen "Didòmhnaich" .
+
+n:taic
+  a :FeminineNoun ;
+  rdfs:label "taic" ;
+  :sense "support" ;
+  :gen "taice" .
+
+n:lannsaireachd
+  a :FeminineNoun ;
+  rdfs:label "lannsaireachd" ;
+  :sense "surgery" ;
+  :gen "lannsaireachd" .
+
+n:sloinneadh
+  a :MasculineNoun ;
+  rdfs:label "sloinneadh" ;
+  :sense "surname" ;
+  :gen "sloinnidh" ;
+  :pl "sloinnidhean" .
+
+n:cinneadh
+  a :MasculineNoun ;
+  rdfs:label "cinneadh" ;
+  :sense "surname" ;
+  :gen "cinnidh" ;
+  :pl "cinnidhean" .
+
+a:seasmhach
+  a :Adjective ;
+  rdfs:label "seasmhach" ;
+  :sense "sustainable" .
+
+n:suap
+  a :MasculineNoun ;
+  rdfs:label "suap" ;
+  :sense "swap" ;
+  :gen "suap" ;
+  :pl "suapan" .
+
+n:syllogism
+  a :MasculineNoun ;
+  rdfs:label "syllogism" ;
+  :sense "syllogism" ;
+  :gen "syllogism" ;
+  :pl "syllogisms" .
+
+n:comharra
+  a :MasculineNoun ;
+  rdfs:label "comharra" ;
+  :sense "symbol" ;
+  :gen "comharra" ;
+  :pl "comharran" .
+
+n:samhla(dh)
+  a :MasculineNoun ;
+  rdfs:label "samhla(dh)" ;
+  :sense "symbol" ;
+  :gen "samhlaidh" ;
+  :pl "samhlaidhean" .
+
+a:samhlachail
+  a :Adjective ;
+  rdfs:label "samhlachail" ;
+  :sense "symbolic(al)" .
+
+n:samhlachadh
+  a :MasculineNoun ;
+  rdfs:label "samhlachadh" ;
+  :sense "symbolisation" ;
+  :gen "samhlachaidh" .
+
+v:samhlaich
+  a :Verb ;
+  rdfs:label "samhlaich" ;
+  :sense "symbolise" .
+
+n:samhlachas
+  a :MasculineNoun ;
+  rdfs:label "samhlachas" ;
+  :sense "symbolism" ;
+  :gen "samhlachais" .
+
+n:samhlaiche
+  a :MasculineNoun ;
+  rdfs:label "samhlaiche" ;
+  :sense "symbolist" ;
+  :gen "samhlaiche" ;
+  :pl "samhlaichean" .
+
+n:siostam
+  a :MasculineNoun ;
+  rdfs:label "siostam" ;
+  :sense "system" ;
+  :gen "siostaim" ;
+  :pl "siostaman" .
+
+o:(gu)_rianail
+  a :adverb ;
+  rdfs:label "(gu) rianail" ;
+  :sense "systematically" .
+
+n:labhairt
+  a :FeminineNoun ;
+  rdfs:label "labhairt" ;
+  :sense "talking" ;
+  :gen "labhairt" .
+
+n:tatuu
+  a :MasculineNoun ;
+  rdfs:label "tatù" ;
+  :sense "tattoo" ;
+  :gen "tatù" ;
+  :pl "tatùthan" .
+
+n:tidsear
+  a :noun ;
+  rdfs:label "tidsear" ;
+  :sense "teacher" ;
+  :gen "tidseir" ;
+  :pl "tidsearan" .
+
+n:neach_teagaisg
+  a :noun ;
+  rdfs:label "neach-teagaisg" ;
+  :sense "teacher" ;
+  :gen "neach-teagaisg" ;
+  :pl "luchd-teagaisg" .
+
+a:teicnigeach
+  a :Adjective ;
+  rdfs:label "teicnigeach" ;
+  :sense "technical" .
+
+n:dooigh
+  a :FeminineNoun ;
+  rdfs:label "dòigh" ;
+  :sense "technique" ;
+  :gen "dòigh" ;
+  :pl "dòighean" .
+
+n:teicneoolas
+  a :MasculineNoun ;
+  rdfs:label "teicneòlas" ;
+  :sense "technological studies" ;
+  :gen "teicneòlais" .
+
+n:teicneoolaiche
+  a :MasculineNoun ;
+  rdfs:label "teicneòlaiche" ;
+  :sense "technologist" ;
+  :gen "teicneòlaiche" ;
+  :pl "teicneòlaichean" .
+
+n:teicneoolas
+  a :MasculineNoun ;
+  rdfs:label "teicneòlas" ;
+  :sense "technology" ;
+  :gen "teicneòlais" ;
+  :pl "teicneòlasan" .
+
+n:tele_chonaltradh
+  a :MasculineNoun ;
+  rdfs:label "tele-chonaltradh" ;
+  :sense "telecommunication" .
+
+a:tele_eoolasach
+  a :Adjective ;
+  rdfs:label "tele-eòlasach" ;
+  :sense "teleological" .
+
+n:tele_eoolas
+  a :MasculineNoun ;
+  rdfs:label "tele-eòlas" ;
+  :sense "teleology" ;
+  :gen "tele-eòlais" .
+
+v:inns
+  a :Verb ;
+  rdfs:label "inns" ;
+  :sense "tell" .
+
+n:teanamaint
+  a :MasculineNoun ;
+  rdfs:label "teanamaint" ;
+  :sense "tenement" ;
+  :gen "teanamaint" ;
+  :pl "teanamaintean" .
+
+n:teacsa
+  a :noun ;
+  rdfs:label "teacsa" ;
+  :sense "text" ;
+  :gen "teacsa" ;
+  :pl "teacsaichean" .
+
+o:tapadh_leat_/_leibh
+  a :noun phrase ;
+  rdfs:label "tapadh leat / leibh" ;
+  :sense "thank you" .
+
+n:taing
+  a :FeminineNoun ;
+  rdfs:label "taing" ;
+  :sense "thanks" ;
+  :gen "tainge" .
+
+o:Gambit_na_Banrigh
+  a :noun phrase ;
+  rdfs:label "Gambit na Banrigh" ;
+  :sense "The Queen's Gambit" .
+
+n:teooiridh
+  a :FeminineNoun ;
+  rdfs:label "teòiridh" ;
+  :sense "theory" ;
+  :gen "teòiridh" ;
+  :pl "teòiridhean" .
+
+n:Diardaoin
+  a :MasculineNoun ;
+  rdfs:label "Diardaoin" ;
+  :sense "Thursday" ;
+  :gen "Diardaoin" .
+
+n:tiim
+  a :FeminineNoun ;
+  rdfs:label "tìm" ;
+  :sense "time" ;
+  :gen "tìme" ;
+  :pl "tìmean" .
+
+n:loidhne_tiime
+  a :FeminineNoun ;
+  rdfs:label "loidhne-tìme" ;
+  :sense "timeline" ;
+  :gen "loidhne-tìme" ;
+  :pl "loidhnichean-tìme" .
+
+n:inneal
+  a :MasculineNoun ;
+  rdfs:label "inneal" ;
+  :sense "tool" ;
+  :gen "inneal" ;
+  :pl "innealan" .
+
+n:cuspair
+  a :MasculineNoun ;
+  rdfs:label "cuspair" ;
+  :sense "topic" ;
+  :gen "cuspair" ;
+  :pl "cuspairean" .
+
+n:topeoolas
+  a :FeminineNoun ;
+  rdfs:label "topeòlas" ;
+  :sense "topology" ;
+  :gen "topeòlais" .
+
+n:ceatharnach
+  a :MasculineNoun ;
+  rdfs:label "ceatharnach" ;
+  :sense "tough guy" ;
+  :gen "ceatharnaich" ;
+  :pl "ceatharnaich" .
+
+n:turasachd
+  a :FeminineNoun ;
+  rdfs:label "turasachd" ;
+  :sense "tourism" ;
+  :gen "turasachd" .
+
+n:malairt
+  a :FeminineNoun ;
+  rdfs:label "malairt" ;
+  :sense "trade" ;
+  :gen "malairt" .
+
+n:ceaaird
+  a :FeminineNoun ;
+  rdfs:label "ceàird" ;
+  :sense "trade" ;
+  :gen "ceàirde" ;
+  :pl "ceàirdean" .
+
+n:traidiseantalachd
+  a :FeminineNoun ;
+  rdfs:label "traidiseantalachd" ;
+  :sense "traditionalism" ;
+  :gen "traidiseantalachd" .
+
+n:trafaig
+  a :FeminineNoun ;
+  rdfs:label "trafaig" ;
+  :sense "traffic" ;
+  :gen "trafaige" .
+
+n:slighe_trafaig
+  a :FeminineNoun ;
+  rdfs:label "slighe-trafaig" ;
+  :sense "trafficway" ;
+  :gen "slighe-trafaig" ;
+  :pl "slighean-trafaig" .
+
+n:treeanadh
+  a :MasculineNoun ;
+  rdfs:label "trèanadh" ;
+  :sense "training" ;
+  :gen "trèanaidh" .
+
+n:aiseag_
+  a :MasculineNoun ;
+  rdfs:label "aiseag " ;
+  :sense "transfer" ;
+  :gen "aiseig" ;
+  :gen "aisig" ;
+  :pl "aiseagan" .
+
+v:aisig
+  a :Verb ;
+  rdfs:label "aisig" ;
+  :sense "transfer" .
+
+o:ag_aiseag
+  a :verbal noun ;
+  rdfs:label "ag aiseag" ;
+  :sense "transferring" .
+
+n:cruth_atharrachadh
+  a :MasculineNoun ;
+  rdfs:label "cruth-atharrachadh" ;
+  :sense "transformation" ;
+  :gen "cruth-atharrachaidh" ;
+  :pl "" .
+
+n:coomhdhail
+  a :FeminineNoun ;
+  rdfs:label "còmhdhail" ;
+  :sense "transportation" ;
+  :gen "còmhdhala" ;
+  :gen "còmhdhalach" .
+
+n:siubhal
+  a :MasculineNoun ;
+  rdfs:label "siubhal" ;
+  :sense "travel" ;
+  :gen "siubhail" .
+
+n:laaimhseachadh
+  a :MasculineNoun ;
+  rdfs:label "làimhseachadh" ;
+  :sense "treatment" ;
+  :gen "làimhseachaidh" .
+
+n:cupa
+  a :MasculineNoun ;
+  rdfs:label "cupa" ;
+  :sense "trophy" ;
+  :gen "cupa" ;
+  :pl "cupannan" .
+
+n:Diimaairt
+  a :MasculineNoun ;
+  rdfs:label "Dìmàirt" ;
+  :sense "Tuesday" ;
+  :gen "Dìmàirt" .
+
+n:taoitear
+  a :MasculineNoun ;
+  rdfs:label "taoitear" ;
+  :sense "tutor" ;
+  :gen "taoiteir" ;
+  :pl "taoitearan" .
+
+n:oide
+  a :MasculineNoun ;
+  rdfs:label "oide" ;
+  :sense "tutor" ;
+  :gen "oide" ;
+  :pl "oidean" .
+
+n:leasan
+  a :MasculineNoun ;
+  rdfs:label "leasan" ;
+  :sense "tutorial" ;
+  :gen "leasain" ;
+  :pl "leasanan" .
+
+n:traath_oideachaidh
+  a :MasculineNoun ;
+  rdfs:label "tràth-oideachaidh" ;
+  :sense "tutorial" ;
+  :gen "tràth-oideachaidh" ;
+  :pl "tràthan-oideachaidh" .
+
+a:baan
+  a :Adjective ;
+  rdfs:label "bàn" ;
+  :sense "unassigned" .
+
+n:mii_chinnt
+  a :FeminineNoun ;
+  rdfs:label "mì-chinnt" ;
+  :sense "uncertainty" ;
+  :gen "mì-chinnt" ;
+  :pl "mì-chinntean" .
+
+n:neo_mhothachadh
+  a :MasculineNoun ;
+  rdfs:label "neo-mhothachadh" ;
+  :sense "unconscious" ;
+  :gen "neo-mhothachaidh" .
+
+a:do_smaoineachail
+  a :Adjective ;
+  rdfs:label "do-smaoineachail" ;
+  :sense "unimaginable" .
+
+a:aonaichte
+  a :Adjective ;
+  rdfs:label "aonaichte" ;
+  :sense "united" .
+
+a:coitcheann
+  a :Adjective ;
+  rdfs:label "coitcheann" ;
+  :sense "universal" .
+
+a:ain_dligheach
+  a :Adjective ;
+  rdfs:label "ain-dligheach" ;
+  :sense "unjust" .
+
+n:cleachdadh
+  a :MasculineNoun ;
+  rdfs:label "cleachdadh" ;
+  :sense "usage" ;
+  :gen "cleachdaidh" ;
+  :pl "cleachdaidhean" .
+
+n:feum
+  a :noun ;
+  rdfs:label "feum" ;
+  :sense "use" ;
+  :gen "feuma" ;
+  :pl "feuman" .
+
+n:goireas_
+  a :MasculineNoun ;
+  rdfs:label "goireas " ;
+  :sense "utility" ;
+  :gen "goireis" ;
+  :pl "goireasan" .
+
+n:dreuchd_bhaan
+  a :FeminineNoun ;
+  rdfs:label "dreuchd bhàn" ;
+  :sense "vacancy" ;
+  :gen "dreuchd bhàin" ;
+  :pl "dreuchdan bàna" .
+
+n:aaite_falamh
+  a :MasculineNoun ;
+  rdfs:label "àite falamh" ;
+  :sense "vacancy" ;
+  :gen "àite fhalaimh" ;
+  :pl "àitean falamh" .
+
+a:baan
+  a :Adjective ;
+  rdfs:label "bàn" ;
+  :sense "vacant" .
+
+a:falamh
+  a :Adjective ;
+  rdfs:label "falamh" ;
+  :sense "vacant" .
+
+a:saor
+  a :Adjective ;
+  rdfs:label "saor" ;
+  :sense "vacant" .
+
+n:luach
+  a :MasculineNoun ;
+  rdfs:label "luach" ;
+  :sense "value" ;
+  :gen "luach" ;
+  :pl "luachan" .
+
+n:Bhictoria
+  a :FeminineNoun ;
+  rdfs:label "Bhictoria" ;
+  :sense "Victoria" ;
+  :gen "Bhictoria" .
+
+n:bhidio
+  a :noun ;
+  rdfs:label "bhidio" ;
+  :sense "video" ;
+  :gen "bhidio" ;
+  :pl "bhidiothan" .
+
+n:ainneart
+  a :MasculineNoun ;
+  rdfs:label "ainneart" ;
+  :sense "violence" ;
+  :gen "ainneirt" .
+
+a:ainneartach
+  a :Adjective ;
+  rdfs:label "ainneartach" ;
+  :sense "violent" .
+
+n:cogadh
+  a :MasculineNoun ;
+  rdfs:label "cogadh" ;
+  :sense "war" ;
+  :gen "cogaidh" ;
+  :pl "cogaidhean" .
+
+n:cogadh
+  a :MasculineNoun ;
+  rdfs:label "cogadh" ;
+  :sense "warfare" ;
+  :gen "cogaidh" .
+
+n:laoch
+  a :MasculineNoun ;
+  rdfs:label "laoch" ;
+  :sense "warrior" ;
+  :gen "laoich" ;
+  :pl "laoich" .
+
+n:gaisgeach
+  a :MasculineNoun ;
+  rdfs:label "gaisgeach" ;
+  :sense "warrior" ;
+  :gen "gaisgich" ;
+  :pl "gaisgich" .
+
+n:curaidh
+  a :MasculineNoun ;
+  rdfs:label "curaidh" ;
+  :sense "warrior" ;
+  :gen "curaidh" ;
+  :pl "curaidhean" .
+
+n:smeeideadh
+  a :MasculineNoun ;
+  rdfs:label "smèideadh" ;
+  :sense "wave" ;
+  :gen "smèididh" .
+
+n:ceeir
+  a :FeminineNoun ;
+  rdfs:label "cèir" ;
+  :sense "wax" ;
+  :gen "cèire" .
+
+n:armachd
+  a :FeminineNoun ;
+  rdfs:label "armachd " ;
+  :sense "weaponry" ;
+  :gen "armachd" .
+
+n:Diciadain
+  a :MasculineNoun ;
+  rdfs:label "Diciadain" ;
+  :sense "Wednesday" ;
+  :gen "Diciadain" .
+
+o:sochairean
+  a :plural noun ;
+  rdfs:label "sochairean" ;
+  :sense "welfare" .
+
+n:uisge_beatha
+  a :MasculineNoun ;
+  rdfs:label "uisge-beatha" ;
+  :sense "whisky" ;
+  :gen "uisge-beatha" .
+
+n:boord_geal
+  a :MasculineNoun ;
+  rdfs:label "bòrd-geal" ;
+  :sense "whiteboard" ;
+  :gen "bùird-gheal" ;
+  :pl "bùird-gheala" .
+
+n:geamhradh
+  a :MasculineNoun ;
+  rdfs:label "geamhradh" ;
+  :sense "winter" ;
+  :gen "geamhraidh" ;
+  :pl "geamhraidhean" .
+
+v:geamhraich
+  a :Verb ;
+  rdfs:label "geamhraich" ;
+  :sense "winter" .
+
+o:a_geamhrachadh
+  a :verbal noun ;
+  rdfs:label "a' geamhrachadh" ;
+  :sense "wintering" .
+
+n:gliocas
+  a :MasculineNoun ;
+  rdfs:label "gliocas" ;
+  :sense "wisdom" ;
+  :gen "gliocais" .
+
+n:bana_bhuidseach
+  a :FeminineNoun ;
+  rdfs:label "bana-bhuidseach" ;
+  :sense "witch" ;
+  :gen "bana-bhuidsich" ;
+  :pl "bana-bhuidsichean" .
+
+a:fiodhach
+  a :Adjective ;
+  rdfs:label "fiodhach" ;
+  :sense "woody" .
+
+n:obair
+  a :FeminineNoun ;
+  rdfs:label "obair" ;
+  :sense "work" ;
+  :gen "obrach" ;
+  :gen "oibre" ;
+  :pl "obraichean" ;
+  :pl "oibrichean" .
+
+n:duilleag_obrach
+  a :FeminineNoun ;
+  rdfs:label "duilleag-obrach" ;
+  :sense "worksheet" ;
+  :gen "duilleig-obrach" ;
+  :pl "duilleagan-obrach" .
+
+n:buuth_obrach
+  a :FeminineNoun ;
+  rdfs:label "bùth-obrach" ;
+  :sense "workshop" ;
+  :gen "bùth-obrach" ;
+  :pl "bùthan-obrach" ;
+  :pl "bùithtean-obrach" ;
+  :pl "bùithean-obrach" .
+
+n:sgriiobhadair
+  a :MasculineNoun ;
+  rdfs:label "sgrìobhadair" ;
+  :sense "writer" ;
+  :gen "sgrìobhadair" ;
+  :pl "sgrìobhadairean" .
+
+n:sgriiobhaiche
+  a :MasculineNoun ;
+  rdfs:label "sgrìobhaiche" ;
+  :sense "writer" ;
+  :gen "sgrìobhaiche" ;
+  :pl "sgrìobhaichean" .
+
+n:sgriiobhadh
+  a :MasculineNoun ;
+  rdfs:label "sgrìobhadh" ;
+  :sense "writing" ;
+  :gen "sgrìobhaidh" ;
+  :pl "sgrìobhaidhean" .
+
+n:Sombaidh
+  a :MasculineNoun ;
+  rdfs:label "Sombaidh" ;
+  :sense "Zombie" ;
+  :gen "Sombaidh" ;
+  :pl "Sombaidhean" .
+
+n:aarainn
+  a :FeminineNoun ;
+  rdfs:label "àrainn" ;
+  :sense "zone" ;
+  :gen "àrainn(e)" ;
+  :pl "àrainnean" .
+
+}

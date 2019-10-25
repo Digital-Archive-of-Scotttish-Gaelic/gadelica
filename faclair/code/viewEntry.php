@@ -13,7 +13,7 @@ $id = $_GET['id'];
 $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
-SELECT DISTINCT ?hw ?pid ?phw ?en ?lex ?lhw ?cid ?chw ?pos
+SELECT DISTINCT ?hw ?pid ?phw ?en ?lex ?lhw ?cid ?chw ?pos ?pl ?gen ?comment
 WHERE
 {
   <{$id}> rdfs:label ?hw .
@@ -32,6 +32,15 @@ WHERE
       OPTIONAL {
         <{$id}> a ?posid .
         ?posid rdfs:label ?pos .
+      }
+      OPTIONAL {
+        <{$id}> :pl ?pl .
+      }
+      OPTIONAL {
+        <{$id}> :gen ?gen .
+      }
+      OPTIONAL {
+        <{$id}> rdfs:comment ?comment .
       }
     }
     ?g rdfs:label ?lex .
@@ -65,10 +74,42 @@ foreach ($sources as $nextSource) {
   foreach($results as $nextResult) {
     if ($nextResult->lex->value==$nextSource) {
       if ($nextResult->pos->value!='') {
-        echo ' (' . $nextResult->pos->value . ') ';
+        echo ' <em>(' . $nextResult->pos->value . ')</em> ';
       }
       break;
     }
+  }
+  $pls = [];
+  foreach($results as $nextResult) {
+    if ($nextResult->lex->value==$nextSource) {
+      $pl = $nextResult->pl->value;
+      if ($pl!='') {
+        $pls[] = $pl;
+      }
+    }
+  }
+  $pls = array_unique($pls);
+  if (count($pls)>0) {
+    foreach ($pls as $nextPl) {
+      echo $nextPl; // what if multi plurals?
+    }
+    echo ' <em>(pl)</em> ';
+  }
+  $gens = [];
+  foreach($results as $nextResult) {
+    if ($nextResult->lex->value==$nextSource) {
+      $gen = $nextResult->gen->value;
+      if ($gen!='') {
+        $gens[] = $gen;
+      }
+    }
+  }
+  $gens = array_unique($gens);
+  if (count($gens)>0) {
+    foreach ($gens as $nextGen) {
+      echo $nextGen; // what if multi plurals?
+    }
+    echo ' <em>(gen)</em> ';
   }
   $ens = [];
   foreach($results as $nextResult) {
@@ -80,14 +121,33 @@ foreach ($sources as $nextSource) {
     }
   }
   $ens = array_unique($ens);
-  echo '<small class="text-muted">';
+  echo '<span class="text-muted">';
   foreach ($ens as $nextEn) {
     echo $nextEn;
     if ($nextEn != end($ens)) {
       echo ', ';
     }
   }
-  echo '</small></div>';
+  echo '</span> ';
+  $comments = [];
+  foreach($results as $nextResult) {
+    if ($nextResult->lex->value==$nextSource) {
+      $comment = $nextResult->comment->value;
+      if ($comment!='') {
+        $comments[] = $comment;
+      }
+    }
+  }
+  $comments = array_unique($comments);
+  echo '<small class="text-muted">[';
+  foreach ($comments as $nextComment) {
+    echo $nextComment;
+    if ($nextComment != end($comments)) {
+      echo '; ';
+    }
+  }
+  echo ']</small> ';
+  echo '</div>';
 }
 $parts = [];
 foreach($results as $nextResult) {
