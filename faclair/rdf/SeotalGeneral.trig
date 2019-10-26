@@ -5,6 +5,8 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix : <http://faclair.ac.uk/meta/> .
 
+#needs to be checked thoroughly by hand
+
 <http://faclair.ac.uk/sources/Seotal>
   rdfs:label "Seotal" .
 
@@ -14,6 +16,7 @@
 :FeminineNoun rdfs:label "n(f)" .
 :Adjective rdfs:label "adj" .
 :Verb rdfs:label "vb" .
+:VerbalNoun rdfs:label "vn" .
 
 a:acadaimigeach
   a :Adjective ;
@@ -37,12 +40,12 @@ n:coileanadh
 n:gniiomh
   a :MasculineNoun ;
   rdfs:label "gnìomh" ;
-  :sense "act" ;
+  :sense "act" , "activity" ;
   :gen "gnìomh" ;
   :pl "gnìomhan" ;
   :pl "gnìomharan" .
 
-a:an_gniiomh
+o:an_gniiomh
   a :Adjective ;
   rdfs:label "an-gnìomh" ;
   :sense "acting" .
@@ -51,13 +54,6 @@ a:gniiomhach
   a :Adjective ;
   rdfs:label "gnìomhach" ;
   :sense "active" .
-
-n:gniiomh
-  a :MasculineNoun ;
-  rdfs:label "gnìomh" ;
-  :sense "activity" ;
-  :gen "gnìomha" ;
-  :pl "gnìomhan" .
 
 n:rianachd
   a :FeminineNoun ;
@@ -115,13 +111,6 @@ n:port_adhair
   :sense "airport" ;
   :gen "puirt-adhair" ;
   :pl "puirt-adhair" .
-
-n:alibi
-  a :noun ;
-  rdfs:label "alibi" ;
-  :sense "alibi" ;
-  :gen "alibi" ;
-  :pl "alibis" .
 
 n:cosamhlachd
   a :FeminineNoun ;
@@ -455,7 +444,7 @@ a:cooir
   rdfs:label "còir" ;
   :sense "benevolent" .
 
-o:feallsanachd_Bhergson
+n:feallsanachd_Bhergson
   a :NounPhrase ;
   rdfs:label "feallsanachd Bhergson" ;
   :sense "Bergsonism" .
@@ -488,7 +477,7 @@ n:ceann_bliadhna
   :gen "cinn-bliadhna" ;
   :pl "cinn-bliadhna" .
 
-n:co_laa_breith
+n:co_latha_breith
   a :MasculineNoun ;
   rdfs:label "co-là-breith" ;
   :sense "birthday" ;
@@ -523,9 +512,9 @@ n:gaiseadh
   :sense "blight" ;
   :gen "gaisidh" .
 
-n:boma_
+n:boma
   a :MasculineNoun ;
-  rdfs:label "boma " ;
+  rdfs:label "boma" ;
   :sense "bomb" ;
   :gen "boma" ;
   :pl "bomaichean" .
@@ -565,11 +554,6 @@ n:togail
   rdfs:label "togail" ;
   :sense "building" ;
   :gen "togail" .
-
-o:a'_togail
-  a :verbal noun ;
-  rdfs:label "a' togail" ;
-  :sense "building" .
 
 n:togalach
   a :MasculineNoun ;
@@ -640,8 +624,7 @@ n:catalog
   :gen "catalog" ;
   :pl "catalogan" .
 
-o:Catriona
-  a : ;
+n:Catriona
   rdfs:label "Catriona" ;
   :sense "Catherine" .
 
@@ -651,8 +634,7 @@ n:adhbharachadh
   :sense "causation" ;
   :gen "adhbharachaidh" .
 
-o:fois_fooirneirt
-  a : ;
+n:fois_fooirneirt
   rdfs:label "fois-fòirneirt" ;
   :sense "ceasefire" ;
   :gen "fois-fòirneirt" .
@@ -660,7 +642,7 @@ o:fois_fooirneirt
 n:cladh
   a :MasculineNoun ;
   rdfs:label "cladh" ;
-  :sense "cemetry" ;
+  :sense "cemetery" ;
   :gen "cladha" ;
   :gen "claidh" ;
   :pl "cladhan" ;
@@ -754,7 +736,7 @@ n:clann
   :gen "cloinne" .
 
 n:roghainn
-  a :noun ;
+  a :Noun ;
   rdfs:label "roghainn" ;
   :sense "choice" ;
   :gen "roghainn" ;
@@ -859,8 +841,7 @@ n:co_leanailteas
   :sense "coherence" ;
   :gen "co-leanailteis" .
 
-o:Cailean
-  a : ;
+n:Cailean
   rdfs:label "Cailean" ;
   :sense "Colin" .
 
@@ -874,11 +855,6 @@ a:cruinnichte
   rdfs:label "cruinnichte" ;
   :sense "collected" .
 
-o:a'_cruinneachadh
-  a :verbal noun ;
-  rdfs:label "a' cruinneachadh" ;
-  :sense "collecting" .
-
 n:cruinneachadh
   a :MasculineNoun ;
   rdfs:label "cruinneachadh" ;
@@ -891,9 +867,9 @@ a:coomhragach
   rdfs:label "còmhragach" ;
   :sense "combatant" .
 
-n:coomhragaiche_
+n:coomhragaiche
   a :MasculineNoun ;
-  rdfs:label "còmhragaiche " ;
+  rdfs:label "còmhragaiche" ;
   :sense "combatant" ;
   :gen "còmhragaiche" ;
   :pl "còmhragaichean" .
@@ -966,8 +942,8 @@ a:co_cheangailte
   rdfs:label "co-cheangailte" ;
   :sense "connected" .
 
-o:neach_diuultaidh_cogaiseach
-  a :noun phrase ;
+n:neach_diuultaidh_cogaiseach
+  a :NounPhrase ;
   rdfs:label "neach-diùltaidh cogaiseach" ;
   :sense "conscientious objector" .
 
@@ -981,8 +957,7 @@ n:neach_gleeidhteachais
   a :MasculineNoun ;
   rdfs:label "neach-glèidhteachais" ;
   :sense "conservationist" ;
-  :gen "neach-glèidhteachais" ;
-  :pl "" .
+  :gen "neach-glèidhteachais" .
 
 n:obair_togail
   a :FeminineNoun ;
@@ -991,7 +966,7 @@ n:obair_togail
   :gen "obair-togail" .
 
 n:caitheamh
-  a :noun ;
+  a :Noun ;
   rdfs:label "caitheamh" ;
   :sense "consumption" ;
   :gen "caitheimh" .
@@ -1001,8 +976,7 @@ a:leantainneach
   rdfs:label "leantainneach" ;
   :sense "continuing" .
 
-o:cuumhnant
-  a : ;
+n:cuumhnant
   rdfs:label "cùmhnant" ;
   :sense "contract" ;
   :gen "cùmhnaint" ;
@@ -1099,15 +1073,15 @@ n:eucoir_eoolas
   :sense "criminology" ;
   :gen "eucoir-eòlais" .
 
-n:slat_tomhais_
+n:slat_tomhais
   a :FeminineNoun ;
-  rdfs:label "slat-tomhais " ;
+  rdfs:label "slat-tomhais" ;
   :sense "criterion" ;
   :gen "slait-thomhais" ;
   :pl "slatan-tomhais" .
 
-o:breithneachadh
-  a :noun/adjective ;
+n:breithneachadh
+  a :MasculineNoun ;
   rdfs:label "breithneachadh" ;
   :sense "critical thinking" .
 
@@ -1130,7 +1104,7 @@ n:croit
   :gen "croite" ;
   :pl "croitean" .
 
-n:lot(a)
+n:lota
   a :MasculineNoun ;
   rdfs:label "lot(a)" ;
   :sense "croft" ;
@@ -1157,7 +1131,7 @@ n:crois
   :gen "croise" ;
   :pl "croisean" .
 
-a:tar_churraicealam
+n:tar_churraicealam
   a :Adjective ;
   rdfs:label "tar-churraicealam" ;
   :sense "cross-curricular" .
@@ -1174,8 +1148,7 @@ n:cultar
   :gen "cultair" ;
   :pl "cultaran" .
 
-o:Conaigean
-  a : ;
+n:Conaigean
   rdfs:label "Conaigean" ;
   :sense "Cunningham" .
 
@@ -1249,14 +1222,9 @@ n:Daibhidh
   :sense "David" ;
   :gen "Dhaibhidh" .
 
-o:what_now
-  a :noun phrase ;
-  rdfs:label "what now" ;
-  :sense "dè a-nis" .
-
-n:deadhan_
+n:deadhan
   a :MasculineNoun ;
-  rdfs:label "deadhan " ;
+  rdfs:label "deadhan" ;
   :sense "dean" ;
   :gen "deadhain" ;
   :pl "deadhain" .
@@ -1275,11 +1243,6 @@ n:deasbad
   :gen "deasbaid" ;
   :pl "deasbadan" .
 
-o:a'_deasbad
-  a :verbal noun ;
-  rdfs:label "a' deasbad" ;
-  :sense "debating" .
-
 n:Duubhlachd
   a :FeminineNoun ;
   rdfs:label "Dùbhlachd" ;
@@ -1294,17 +1257,12 @@ v:maisich
 n:maiseachadh
   a :MasculineNoun ;
   rdfs:label "maiseachadh" ;
-  :sense "decoration" ;
+  :sense "decoration" , "decorative" ;
   :gen "maiseachaidh" ;
   :pl "maiseachaidhean" .
 
-a:maiseachaidh
-  a :Adjective ;
-  rdfs:label "maiseachaidh" ;
-  :sense "decorative" .
-
-o:feallsanachd_tuigse
-  a :noun phrase ;
+n:feallsanachd_tuigse
+  a :NounPhrase ;
   rdfs:label "feallsanachd tuigse" ;
   :sense "deduction" .
 
@@ -1330,6 +1288,8 @@ n:doimhneachd
   :gen "doimhneachd" ;
   :pl "doimhneachdan" .
 
+#START HERE
+
 n:iomradh
   a :MasculineNoun ;
   rdfs:label "iomradh" ;
@@ -1344,9 +1304,9 @@ n:deilbh
   :gen "deilbhe" ;
   :pl "deilbhean" .
 
-n:dealbhaiche_
+n:dealbhaiche
   a :MasculineNoun ;
-  rdfs:label "dealbhaiche " ;
+  rdfs:label "dealbhaiche" ;
   :sense "designer" ;
   :gen "dealbhaiche" ;
   :pl "dealbhaichean" .
@@ -1653,13 +1613,13 @@ n:neach_fastaidh
   :pl "luchd-fastaidh" .
 
 o:leabhar_moor_eoolais
-  a :noun phrase ;
+  a :NounPhrase ;
   rdfs:label "leabhar mòr-eòlais" ;
   :sense "encyclopedia" ;
   :pl "leabhraichean mòr-eòlais" .
 
 o:fo_ghealladh_poosaidh
-  a :noun phrase ;
+  a :NounPhrase ;
   rdfs:label "fo ghealladh-pòsaidh" ;
   :sense "engaged" .
 
@@ -1821,7 +1781,7 @@ a:Etruscanach
   :sense "Etruscan" .
 
 o:paaiste_air_foogradh
-  a :noun phrase ;
+  a :NounPhrase ;
   rdfs:label "pàiste air fògradh" ;
   :sense "evacuee" .
 
@@ -1894,12 +1854,12 @@ a:gabh_brath_air
   :sense "exploit" .
 
 o:gabhail_brath_air
-  a :noun phrase ;
+  a :NounPhrase ;
   rdfs:label "gabhail brath air" ;
   :sense "exploitation" .
 
 o:cleachdadh_airson_buannachd_
-  a :noun phrase ;
+  a :NounPhrase ;
   rdfs:label "cleachdadh airson buannachd " ;
   :sense "exploitation" .
 
@@ -1967,7 +1927,7 @@ n:feart
   :pl "feartan" .
 
 o:priiomh_artaigil
-  a :noun phrase ;
+  a :NounPhrase ;
   rdfs:label "prìomh artaigil" ;
   :sense "feature" .
 
@@ -2309,7 +2269,7 @@ o:Eachann
   :sense "Hector" .
 
 o:seirbheis_taice
-  a :noun phrase ;
+  a :NounPhrase ;
   rdfs:label "seirbheis taice" ;
   :sense "helpdesk" ;
   :gen "seirbheis taice" .
@@ -2511,7 +2471,7 @@ a:a_staigh
   :sense "indoor" .
 
 o:feallsanachd_co_dhuunaidh
-  a :noun phrase ;
+  a :NounPhrase ;
   rdfs:label "feallsanachd co-dhùnaidh" ;
   :sense "induction" .
 
@@ -2632,7 +2592,7 @@ a:eadar_chuspaireil
   :sense "interdisciplinary" .
 
 o:taobh_a_staigh
-  a :noun phrase ;
+  a :NounPhrase ;
   rdfs:label "taobh-a-staigh" ;
   :sense "interior" .
 
@@ -3263,7 +3223,7 @@ n:ainm
   :pl "ainmeannan" .
 
 o:gun_ainm
-  a :noun phrase ;
+  a :NounPhrase ;
   rdfs:label "gun ainm" ;
   :sense "nameless" .
 
@@ -3273,7 +3233,7 @@ a:naaiseanta
   :sense "national" .
 
 o:Breith_Chriiosd
-  a :noun phrase ;
+  a :NounPhrase ;
   rdfs:label "Breith Chrìosd" ;
   :sense "Nativity" .
 
@@ -3283,7 +3243,7 @@ a:naadarrach
   :sense "natural" .
 
 o:feallsanachd_naadair
-  a :noun phrase ;
+  a :NounPhrase ;
   rdfs:label "feallsanachd nàdair" ;
   :sense "naturalism" .
 
@@ -3661,7 +3621,7 @@ n:paan
   :pl "pànaichean" .
 
 o:feallsanachd_teagaisg
-  a :noun phrase ;
+  a :NounPhrase ;
   rdfs:label "feallsanachd teagaisg" ;
   :sense "pedagogy" .
 
@@ -4624,7 +4584,7 @@ o:feein
   :sense "self" .
 
 o:feallsanachd_mothachaidh
-  a :noun phrase ;
+  a :NounPhrase ;
   rdfs:label "feallsanachd mothachaidh" ;
   :sense "sensationalism" .
 
@@ -4682,7 +4642,7 @@ v:loisg
   :sense "shoot" .
 
 o:sealg_ghunnaichean
-  a :noun phrase ;
+  a :NounPhrase ;
   rdfs:label "sealg ghunnaichean" ;
   :sense "shooting" .
 
@@ -4764,7 +4724,7 @@ a:sooisealta
   :sense "social" .
 
 o:eoolas_sooisealta
-  a :noun phrase ;
+  a :NounPhrase ;
   rdfs:label "eòlas sòisealta" ;
   :sense "social studies" .
 
@@ -4998,7 +4958,7 @@ n:samhradh
   :pl "samhraidhean" .
 
 o:Laa_na_Saabaid
-  a :noun phrase ;
+  a :NounPhrase ;
   rdfs:label "Là na Sàbaid" ;
   :sense "Sunday" .
 
@@ -5203,7 +5163,7 @@ n:teacsa
   :pl "teacsaichean" .
 
 o:tapadh_leat_/_leibh
-  a :noun phrase ;
+  a :NounPhrase ;
   rdfs:label "tapadh leat / leibh" ;
   :sense "thank you" .
 
@@ -5214,7 +5174,7 @@ n:taing
   :gen "tainge" .
 
 o:Gambit_na_Banrigh
-  a :noun phrase ;
+  a :NounPhrase ;
   rdfs:label "Gambit na Banrigh" ;
   :sense "The Queen's Gambit" .
 

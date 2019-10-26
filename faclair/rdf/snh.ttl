@@ -1664,8 +1664,9 @@ n:speireag
   a :FeminineNoun ;
   rdfs:label "speireag" .
 
-n:eigh_shruth
-  rdfs:label "eigh-shruth" .
+n:abhainn_deighe
+  rdfs:label "abhainn-deighe" ;
+  :pl "aibhnichean-deighe" .
 
 n:ceilp
   a :FeminineNoun ;
@@ -2982,54 +2983,182 @@ n:glas_luibh_chuubhraidh
 n:lus_linneuis
   rdfs:label "lus linneuis" .
 
+  # STARTING HERE NEXT
+  # CLEANED EVERYTHING BELOW HERE
+
 n:Coimisean_na_Coilltearachd_Alba
-  rdfs:label "Coimisean na Coilltearachd Alba" .
+  rdfs:label "Coimisean na Coilltearachd Alba" ;
+  :part n:coimisean , n:coilltearachd , n:Alba .
+
+n:coimisean
+  a :MasculineNoun ;
+  rdfs:label "coimisean" .
+
+n:coilltearachd
+  a :FeminineNoun ;
+  rdfs:label "coilltearachd" ;
+  :part n:coille .
 
 n:Urras_nan_Coilltean
-  rdfs:label "Urras nan Coilltean" .
+  rdfs:label "Urras nan Coilltean" ;
+  :part n:urras , n:coille .
 
 n:anemone_tiuuba
-  rdfs:label "anemone tiùba" .
+  rdfs:label "anemone tiùba" ;
+  :part n:tiuuba .
 
-n:anemone_driilseanach
-  rdfs:label "anemone drìlseanach" .
+n:tiuuba
+  a :MasculineNoun ;
+  rdfs:label "tiùba" .
+
+n:anemone_drithleannach
+  rdfs:label "anemone drithleannach" ;
+  :part a:drithleannach .
+
+a:drithleannach
+  a :Adjective ;
+  rdfs:label "drithleannach" .
+
+n:ciioch_dhealrach_na_maighdinn_mhara
+  rdfs:label "cìoch dhealrach na maighdinn mhara" ;
+  :pl "cìochan dealrach na maighdinn mhara" ;
+  :part n:ciioch_na_maighdinn_mara , a:dealrach .
+
+a:dealrach
+  a :Adjective ;
+  rdfs:label "dealrach" .
 
 n:anemone_cladhaich
-  rdfs:label "anemone cladhaich" .
+  rdfs:label "anemone cladhaich" ;
+  :part a:cladhach .
+
+n:cladhach
+  a :MasculineNoun ;
+  rdfs:label "cladhach" ;
+  :gen "cladhaich" ;
+  :part v:cladhaich .
+
+v:cladhaich
+  a :Verb ;
+  rdfs:label "cladhaich" ;
+  :part n:cladh .
+
+n:cladh
+  a :MasculineNoun ;
+  rdfs:label "cladh" ;
+  :gen "cladha" ;
+  :pl "cladhan" .
 
 n:feusgan_gobhlach
-  rdfs:label "feusgan gobhlach" .
+  rdfs:label "feusgan gobhlach" ;
+  :part n:feusgan , a:gobhlach .
 
 n:feusgan_nan_each
-  rdfs:label "feusgan nan each" .
+  rdfs:label "feusgan nan each" ;
+  :part n:feusgan , n:each .
+
+n:clab_dubh
+  rdfs:label "clab dubh" ;
+  :pl "claban dubha" ;
+  :part n:clab , a:dubh .
+
+n:clab
+  a :MasculineNoun ;
+  rdfs:label "clab" ;
+  :pl "claban" .
 
 n:iasg
   a :MasculineNoun ;
-  rdfs:label "iasg" .
+  rdfs:label "iasg" ;
+  :pl "èisg" ;
+  :gen "èisg" .
 
 n:muc_mhara
-  rdfs:label "muc-mhara" .
+  rdfs:label "muc mhara" ;
+  :pl "mucan mara" ;
+  :part n:muc , n:muir .
+
+n:muc
+  a :FeminineNoun ;
+  rdfs:label "muc" ;
+  :pl "mucan" ;
+  :gen "muice" .
 
 n:feusgan
   a :MasculineNoun ;
-  rdfs:label "feusgan" .
+  rdfs:label "feusgan" ;
+  :pl "feusgain" .
 
-n:crios_na_Cruinne
-  rdfs:label "crios na Cruinne" .
+n:crios_na_cruinne
+  rdfs:label "crios na cruinne" ;
+  :part n:crios , n:cruinne .
+
+n:cruinne
+  a :MasculineNoun ;
+  rdfs:label "cruinne" ;
+  :part a:cruinn .
+
+a:cruinn
+  a :Adjective ;
+  rdfs:label "cruinn" .
+
+n:crios_a_mheadhain
+  rdfs:label "crios a’ mheadhain" ;
+  :part n:crios , n:meadhan .
+
+n:crios_meadhain
+  rdfs:label "crios meadhain" ;
+  :pl "criosan meadhain" ;
+  :part n:crios , n:meadhan .
+
+n:crios
+  a :MasculineNoun ;
+  rdfs:label "crios" .
 
 n:eigh_sruth
-  rdfs:label "eigh-sruth" .
+  rdfs:label "eigh-sruth" ;
+  :part n:eigh , n:sruth .
+
+n:eigh
+  a :FeminineNoun ;
+  rdfs:label "eigh" .
 
 n:moireean
   a :MasculineNoun ;
+  :pl "moirèanan" ;
   rdfs:label "moirèan" .
 
 n:faasmhorachd
   a :FeminineNoun ;
-  rdfs:label "fàsmhorachd" .
+  rdfs:label "fàsmhorachd" ;
+  :part a:faasmhor .
 
-# STARTING HERE NEXT
-# CLEANED EVERYTHING BELOW HERE
+a:faasmhor
+  a :Adjective ;
+  rdfs:label "fàsmhor" ;
+  :part n:faas .
+
+n:faas
+  a :MasculineNoun ;
+  rdfs:label "fàs" ;
+  :part v:faas .
+
+v:faas
+  a :Verb ;
+  rdfs:label "fàs" .
+
+n:faas_bheatha
+  rdfs:label "fàs-bheatha" ;
+  :part n:faas , n:beatha .
+
+n:beatha
+  a :FeminineNoun ;
+  rdfs:label "beatha" ;
+  :part a:beoo .
+
+a:beoo
+  a :Adjective ;
+  rdfs:label "beò" .
 
 n:broc_lann
   rdfs:label "broc-lann" ;

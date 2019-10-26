@@ -4788,14 +4788,13 @@
     rdfs:comment "SNH Latin: Accipiter nisus" ;
     rdfs:comment "SNH category: birds" .
 
-  n:eigh_shruth
+  n:abhainn_deighe
     a :FeminineNoun ;
-    rdfs:label "eigh-shruth" ;
+    rdfs:label "abhainn-deighe" ;
     :sense "glacier" ;
-    :pl "eigh-shruthan" ;
+    :pl "aibhnichean-deighe" ;
     rdfs:comment "SNH ID: 650" ;
-    rdfs:comment "SNH other: abhainn-deighe <em>f</em>" ;
-    rdfs:comment "SNH category: aibhnichean-deighe" .
+    rdfs:comment "SNH category: landscapes" .
 
   n:ceilp
     a :FeminineNoun ;
@@ -8282,10 +8281,13 @@
     rdfs:comment "SNH Latin: Linnaea borealis" ;
     rdfs:comment "SNH category: plants" .
 
+# STARTING HERE NEXT
+# CLEANED EVERYTHING BELOW HERE
+
   n:Coimisean_na_Coilltearachd_Alba
     a :MasculineNoun ;
     rdfs:label "Coimisean na Coilltearachd Alba" ;
-    :sense "Forestry Commission Scotland " ;
+    :sense "Forestry Commission Scotland" ;
     rdfs:comment "SNH ID: 1209" ;
     rdfs:comment "SNH category: organisations" .
 
@@ -8300,48 +8302,58 @@
     a :MasculineNoun ;
     rdfs:label "anemone tiùba" ;
     :sense "tube anemone" ;
-    :pl "anemonaidhean tiùba " ;
+    :pl "anemonaidhean tiùba" ;
     rdfs:comment "SNH ID: 1211" ;
     rdfs:comment "SNH info: Tha a dhà dhe na trì anemonaidhean tiùba ann am Breatainn sònraichte do dh'Alba. Two of the three tube anemones found in Britain are special to Scotland. " ;
     rdfs:comment "SNH category: invertebrates" .
 
-  n:anemone_driilseanach
+  n:anemone_drithleannach
     a :MasculineNoun ;
     rdfs:label "anemone drìlseanach" ;
-    :sense "fireworks anemone" ;
+    :sense "fireworks anemone" , "Pachycerianthus multiplicatus" ;
     :pl "anemonaidhean drìlseanach" ;
     rdfs:comment "SNH ID: 1212" ;
-    rdfs:comment "SNH other: cìoch dheàlrach na maighdinn-mhara <em>f</em>" ;
-    rdfs:comment "SNH Latin: Pachycerianthus multiplicatus" ;
-    rdfs:comment "SNH category: cìochan deàlrach na maighdinn-mhara" .
+    rdfs:comment "SNH category: invertebrates" .
+
+  n:ciioch_dhealrach_na_maighdinn_mhara
+    a :FeminineNoun ;
+    rdfs:label "cìoch dheàlrach na maighdinn-mhara" ;
+    :sense "fireworks anemone" , "Pachycerianthus multiplicatus" ;
+    :pl "cìochan deàlrach na maighdinn-mhara" ;
+    rdfs:comment "SNH ID: 1212a" ;
+    rdfs:comment "SNH category: invertebrates" .
 
   n:anemone_cladhaich
     a :MasculineNoun ;
     rdfs:label "anemone cladhaich" ;
-    :sense "burrowing anemone" ;
+    :sense "burrowing anemone" , "Cerianthus lloydii" ;
     :pl "anemonaidhean cladhaich" ;
     rdfs:comment "SNH ID: 1213" ;
-    rdfs:comment "SNH Latin: Cerianthus lloydii" ;
     rdfs:comment "SNH category: invertebrates" .
 
   n:feusgan_gobhlach
     a :MasculineNoun ;
     rdfs:label "feusgan gobhlach" ;
-    :sense "fan mussel" ;
+    :sense "fan mussel" , "Atrina pectinata (fragilis)" ;
     :pl "feusgain ghobhlach " ;
     rdfs:comment "SNH ID: 1214" ;
-    rdfs:comment "SNH Latin:  Atrina pectinata (fragilis)" ;
     rdfs:comment "SNH category: invertebrates" .
 
   n:feusgan_nan_each
     a :MasculineNoun ;
     rdfs:label "feusgan nan each" ;
-    :sense "horse mussel" ;
+    :sense "horse mussel" , "Modiolus modiolus" ;
     :pl "feusgain nan each" ;
     rdfs:comment "SNH ID: 1215" ;
-    rdfs:comment "SNH other: clab-dhubh" ;
-    rdfs:comment "SNH Latin: Modiolus modiolus" ;
-    rdfs:comment "SNH category: claban-dubhaidh " .
+    rdfs:comment "SNH category: invertebrates" .
+
+  n:clab_dubh
+    a :MasculineNoun ;
+    rdfs:label "clab-dhubh" ;
+    :sense "horse mussel" , "Modiolus modiolus" ;
+    :pl "claban-dubhaidh" ;
+    rdfs:comment "SNH ID: 1215a" ;
+    rdfs:comment "SNH category: invertebrates" .
 
   n:iasg
     a :MasculineNoun ;
@@ -8364,25 +8376,37 @@
     a :MasculineNoun ;
     rdfs:label "feusgan" ;
     :sense "mussel" ;
-    :pl " feusgain" ;
+    :pl "feusgain" ;
     rdfs:comment "SNH ID: 1223" ;
-    rdfs:comment "SNH other:  " ;
-    rdfs:comment "SNH info:  " ;
-    rdfs:comment "SNH audio:  " ;
-    rdfs:comment "SNH Latin:  " ;
     rdfs:comment "SNH category: invertebrates" .
 
-  n:crios_na_Cruinne
+  n:crios_na_cruinne
+    a :MasculineNoun ;
     rdfs:label "crios na Cruinne" ;
     :sense "equator" ;
-    :pl "M" ;
+    :pl "criosan na Cruinne" ;
     rdfs:comment "SNH ID: 1224" ;
-    rdfs:comment "SNH other: crios a' mheadhain (masc)" ;
-    rdfs:comment "SNH category: criosan na Cruinne" .
+    rdfs:comment "SNH category: landscapes" .
 
-  n:eigh_sruth
+  n:crios_a_mheadhain
     a :MasculineNoun ;
-    rdfs:label "eigh-sruth" ;
+    rdfs:label "crios a’ mheadhain" ;
+    :sense "equator" ;
+    :pl "criosan a’ mheadhain" ;
+    rdfs:comment "SNH ID: 1224a" ;
+    rdfs:comment "SNH category: landscapes" .
+
+  n:crios_meadhain
+    a :MasculineNoun ;
+    rdfs:label "crios-meadhain" ;
+    :sense "equator" ;
+    :pl "criosan-meadhain" ;
+    rdfs:comment "SNH ID: 1224b" ;
+    rdfs:comment "SNH category: landscapes" .
+
+  n:eigh_shruth
+    a :MasculineNoun ;
+    rdfs:label "eigh-shruth" ;
     :sense "glacier" ;
     :pl "eigh-shruthan" ;
     rdfs:comment "SNH ID: 1225" ;
@@ -8401,11 +8425,14 @@
     rdfs:label "fàsmhorachd" ;
     :sense "vegetation" ;
     rdfs:comment "SNH ID: 1227" ;
-    rdfs:comment "SNH other: fàs-bheatha" ;
     rdfs:comment "SNH category: plants" .
 
-# STARTING HERE NEXT
-# CLEANED EVERYTHING BELOW HERE
+  n:faas_bheatha
+    a :FeminineNoun ;
+    rdfs:label "fàs-bheatha" ;
+    :sense "vegetation" ;
+    rdfs:comment "SNH ID: 1227a" ;
+    rdfs:comment "SNH category: plants" .
 
   n:broc_lann
     a :FeminineNoun ;
