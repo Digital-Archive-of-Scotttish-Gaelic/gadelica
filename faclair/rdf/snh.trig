@@ -2793,7 +2793,7 @@
   n:coille
     a :FeminineNoun ;
     rdfs:label "coille" ;
-    :sense "woodland" ;
+    :sense "woodland" , "forest" ;
     :pl "coilltean" ;
     rdfs:comment "SNH ID: 357" ;
     rdfs:comment "SNH other: fearann coillteach" ;
@@ -8067,16 +8067,26 @@
     rdfs:comment "SNH ID: 1180" ;
     rdfs:comment "SNH category: landscapes" .
 
+# STARTING HERE NEXT
+# CLEANED EVERYTHING BELOW HERE
+
   n:deigh
     a :FeminineNoun ;
     rdfs:label "deigh" ;
     :sense "ice" ;
     :pl "deighean" ;
     rdfs:comment "SNH ID: 1181" ;
-    rdfs:comment "SNH other: eigh <em>f</em>" ;
-    rdfs:comment "SNH category: eighean" .
+    rdfs:comment "SNH category: landscapes" .
 
-  n:Linn_na_Deighe
+  n:eigh
+    a :FeminineNoun ;
+    rdfs:label "eigh" ;
+    :sense "ice" ;
+    :pl "eighean" ;
+    rdfs:comment "SNH ID: 1181a" ;
+    rdfs:comment "SNH category: landscapes" .
+
+  n:linn_na_deighe
     rdfs:label "Linn na Deighe" ;
     :sense "Ice Age" ;
     rdfs:comment "SNH ID: 1182" ;
@@ -8085,7 +8095,7 @@
   n:cladach
     a :MasculineNoun ;
     rdfs:label "cladach" ;
-    :sense "shore / stony beach" ;
+    :sense "shore" , "stony beach" ;
     :pl "cladaichean" ;
     rdfs:comment "SNH ID: 1183" ;
     rdfs:comment "SNH category: landscapes" .
@@ -8112,14 +8122,6 @@
     rdfs:comment "SNH ID: 1186" ;
     rdfs:comment "SNH category: landscapes" .
 
-  n:coille
-    a :FeminineNoun ;
-    rdfs:label "coille" ;
-    :sense "forest" ;
-    :pl "coilltean" ;
-    rdfs:comment "SNH ID: 1187" ;
-    rdfs:comment "SNH category: landscapes" .
-
   n:beinn
     a :FeminineNoun ;
     rdfs:label "beinn" ;
@@ -8129,12 +8131,12 @@
     rdfs:comment "SNH category: landscapes" .
 
   n:moointeach
+    a :FeminineNoun ;
     rdfs:label "mòinteach" ;
-    :sense "moor" ;
-    :pl "F" ;
+    :sense "moor" , "heath" ;
+    :pl "mòintichean" ;
     rdfs:comment "SNH ID: 1189" ;
-    rdfs:comment "SNH other:  heath" ;
-    rdfs:comment "SNH category: mòintichean" .
+    rdfs:comment "SNH category: landscapes" .
 
   n:mooine
     a :FeminineNoun ;
@@ -8152,12 +8154,11 @@
     rdfs:comment "SNH category: landscapes" .
 
   n:feur
+    a :MasculineNoun ;
     rdfs:label "feur" ;
-    :sense "grass" ;
-    :pl "M" ;
+    :sense "grass" , "hay" ;
     rdfs:comment "SNH ID: 1192" ;
-    rdfs:comment "SNH other:  hay" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH category: plants" .
 
   n:talamh_feooir
     a :MasculineNoun ;
@@ -8167,12 +8168,11 @@
     rdfs:comment "SNH category: landscapes" .
 
   n:talamh_aaitich
+    a :MasculineNoun ;
     rdfs:label "talamh-àitich" ;
-    :sense "arable land" ;
-    :pl "M" ;
+    :sense "arable land" , "cultivated land" ;
     rdfs:comment "SNH ID: 1194" ;
-    rdfs:comment "SNH other:  cultivated land" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH category: landscapes" .
 
   n:preaslach_seilich
     a :MasculineNoun ;
@@ -8182,11 +8182,11 @@
     rdfs:comment "SNH category: plants" .
 
   n:preas
+    a :MasculineNoun ;
     rdfs:label "preas" ;
-    :sense "bush" ;
+    :sense "bush" , "shrub" ;
     rdfs:comment "SNH ID: 1196" ;
-    rdfs:comment "SNH other:  shrub" ;
-    rdfs:comment "SNH category: M" .
+    rdfs:comment "SNH category: plants" .
 
   n:preaslach
     a :MasculineNoun ;
@@ -8218,12 +8218,12 @@
     rdfs:comment "SNH category: landscapes" .
 
   n:sruth
+    a :MasculineNoun ;
     rdfs:label "sruth" ;
-    :sense "stream" ;
-    :pl "M" ;
+    :sense "stream" , "current" ;
+    :pl "sruthan" ;
     rdfs:comment "SNH ID: 1201" ;
-    rdfs:comment "SNH other:  current" ;
-    rdfs:comment "SNH category: sruthan" .
+    rdfs:comment "SNH category: landscapes" .
 
   n:tuus_uisge
     a :MasculineNoun ;
@@ -8237,8 +8237,7 @@
     a :MasculineNoun ;
     rdfs:label "Còd Faire Fiadh-bheatha Mara na h-Alba" ;
     :sense "Scottish Marine Wildlife Watching Code" ;
-    rdfs:comment "SNH ID: 1203" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1203" .
 
   n:cuileag_aibhne
     a :FeminineNoun ;
@@ -8251,38 +8250,31 @@
   n:daa_dhuilleach_monaidh
     a :MasculineNoun ;
     rdfs:label "dà-dhuilleach monaidh" ;
-    :sense "lesser twayblade" ;
+    :sense "lesser twayblade" , "Listera cordata" ;
     rdfs:comment "SNH ID: 1205" ;
     rdfs:comment "SNH info: Gaelic meaning is two leaved plant of the moor" ;
-    rdfs:comment "SNH Latin: Listera cordata" ;
     rdfs:comment "SNH category: plants" .
 
-  n:mogairlean_ealaidheach
+  n:mogairlean_eealaidheach
     a :MasculineNoun ;
     rdfs:label "mogairlean ealaidheach" ;
-    :sense "creeping lady's tresses" ;
+    :sense "creeping lady’s tresses" , "Goodyera repens" ;
     rdfs:comment "SNH ID: 1206" ;
-    rdfs:comment "SNH Latin: Goodyera repens" ;
     rdfs:comment "SNH category: plants" .
 
   n:glas_luibh_chuubhraidh
     a :FeminineNoun ;
     rdfs:label "glas-luibh chùbhraidh" ;
-    :sense "one flowered wintergreen" ;
+    :sense "one flowered wintergreen" , "Moneses uniflora" ;
     rdfs:comment "SNH ID: 1207" ;
-    rdfs:comment "SNH Latin: Moneses uniflora" ;
     rdfs:comment "SNH category: plants" .
 
   n:lus_linneuis
     a :MasculineNoun ;
     rdfs:label "lus linneuis" ;
-    :sense "twinflower" ;
+    :sense "twinflower", "Linnaea borealis" ;
     rdfs:comment "SNH ID: 1208" ;
-    rdfs:comment "SNH Latin: Linnaea borealis" ;
     rdfs:comment "SNH category: plants" .
-
-# STARTING HERE NEXT
-# CLEANED EVERYTHING BELOW HERE
 
   n:Coimisean_na_Coilltearachd_Alba
     a :MasculineNoun ;

@@ -2890,12 +2890,21 @@ n:meeinnear
   a :MasculineNoun ;
   rdfs:label "mèinnear" .
 
+# STARTING HERE NEXT
+# CLEANED EVERYTHING BELOW HERE
+
 n:deigh
   a :FeminineNoun ;
-  rdfs:label "deigh" .
+  rdfs:label "deigh" ;
+  :gen "deighe" .
 
-n:Linn_na_Deighe
-  rdfs:label "Linn na Deighe" .
+n:linn_na_deighe
+  rdfs:label "linn na deighe" ;
+  :part n:linn , n:deigh .
+
+n:linn
+  a :MasculineNoun ;
+  rdfs:label "linn" .
 
 n:cladach
   a :MasculineNoun ;
@@ -2906,7 +2915,13 @@ n:uuir
   rdfs:label "ùir" .
 
 n:uisge_aiteimh
-  rdfs:label "uisge-aiteimh" .
+  rdfs:label "uisge aiteimh" ;
+  :part n:uisge , n:aiteamh .
+
+n:aiteamh
+  a :FeminineNoun ;
+  rdfs:label "aiteamh" ;
+  :gen "aiteimh" .
 
 n:traaigh
   a :FeminineNoun ;
@@ -2914,7 +2929,8 @@ n:traaigh
 
 n:beinn
   a :FeminineNoun ;
-  rdfs:label "beinn" .
+  rdfs:label "beinn" ;
+  :pl "beanntan" .
 
 n:moointeach
   a :FeminineNoun ;
@@ -2925,20 +2941,43 @@ n:mooine
   rdfs:label "mòine" .
 
 n:poll_moonach
-  rdfs:label "poll-mònach" .
+  rdfs:label "poll mònach" ;
+  :part n:poll , n:mooine .
 
 n:feur
   a :MasculineNoun ;
-  rdfs:label "feur" .
+  rdfs:label "feur" ;
+  :gen "feòir" .
 
 n:talamh_feooir
-  rdfs:label "talamh-feòir" .
+  rdfs:label "talamh feòir" ;
+  :part n:talamh , n:feur .
 
 n:talamh_aaitich
-  rdfs:label "talamh-àitich" .
+  rdfs:label "talamh àitich" ;
+  :part n:talamh , n:aaiteach .
+
+n:aaiteach
+  a :MasculineNoun ;
+  rdfs:label "àiteach" ;
+  :part v:aaitich .
+
+v:aaitich
+  a :Verb ;
+  rdfs:label "àitich" ;
+  :part n:aaite .
+
+n:aaite
+  a :MasculineNoun ;
+  rdfs:label "àite" .
+
+n:talamh
+  a :MasculineNoun ;
+  rdfs:label "talamh" .
 
 n:preaslach_seilich
-  rdfs:label "preaslach seilich" .
+  rdfs:label "preaslach seilich" ;
+  :part n:preaslach , n:seileach .
 
 n:preas
   a :MasculineNoun ;
@@ -2946,45 +2985,127 @@ n:preas
 
 n:preaslach
   a :MasculineNoun ;
-  rdfs:label "preaslach" .
+  rdfs:label "preaslach" ;
+  :part n:preas .
 
 n:loch_fiior_uisge
-  rdfs:label "loch fìor-uisge" .
+  rdfs:label "loch fìor-uisge" ;
+  :part n:loch , n:fiior_uisge .
+
+n:loch
+  a :MasculineNoun ;
+  rdfs:label "loch" .
+
+n:fiior_uisge
+  rdfs:label "fìor-uisge" ;
+  :part a:fiior , n:uisge .
+
+a:fiior
+  a :Adjective ;
+  rdfs:label "fìor" .
 
 n:talamh_fluich_iiosal
-  rdfs:label "talamh fluich ìosal" .
+  rdfs:label "talamh fluich ìosal" ;
+  :part n:talamh_fliuch , a:iiosal .
+
+a:iiosal
+  a :Adjective ;
+  rdfs:label "ìosal" .
 
 n:pollag
   a :FeminineNoun ;
-  rdfs:label "pollag" .
+  rdfs:label "pollag" ;
+  :part n:poll .
+
+n:poll
+  a :MasculineNoun ;
+  rdfs:label "poll" .
 
 n:sruth
   a :MasculineNoun ;
-  rdfs:label "sruth" .
+  rdfs:label "sruth" ;
+  :pl "sruthan" .
 
 n:tuus_uisge
-  rdfs:label "tùs-uisge" .
+  rdfs:label "tùs uisge" ;
+  :part n:tuus , n:uisge .
+
+n:tuus
+  a :MasculineNoun ;
+  rdfs:label "tùs" .
 
 n:Cood_Faire_Fiadh_bheatha_Mara_na_h_Alba
-  rdfs:label "Còd Faire Fiadh-bheatha Mara na h-Alba" .
+  rdfs:label "Còd Faire Fiadh-bheatha Mara na h-Alba" ;
+  :part n:cood , n:Alba , n:faire , n:fiadh_bheatha_mara .
+
+n:fiadh_bheatha_mara
+  rdfs:label "fiadh-bheatha mara" ;
+  :part n:fiadh_bheatha , n:muir .
+
+n:faire
+  a :FeminineNoun ;
+  rdfs:label "faire" .
 
 n:cuileag_aibhne
-  rdfs:label "cuileag aibhne" .
+  rdfs:label "cuileag aibhne" ;
+  :part n:cuilleag , n:abhainn .
 
 n:daa_dhuilleach_monaidh
-  rdfs:label "dà-dhuilleach monaidh" .
+  rdfs:label "dà-dhuilleach monaidh" ;
+  :part n:daa_dhuilleach , n:monadh .
+
+n:daa_dhuilleach
+  rdfs:label "dà-dhuilleach" ;
+  :part n:daa , n:duille .
+
+n:duille
+  a :FeminineNoun ;
+  rdfs:label "duille" .
+
+n:daa
+  rdfs:label "dà" .
 
 n:mogairlean_ealaidheach
-  rdfs:label "mogairlean ealaidheach" .
+  rdfs:label "mogairlean ealaidheach" ;
+  :part n:mogairlean , a:ealaidheach .
+
+n:mogairlean
+  a :MasculineNoun ;
+  rdfs:label "mogairlean" .
+
+a:eealaidheach
+  a :Adjective ;
+  rdfs:label "èalaidheach" ;
+  :part n:eealaidh .
+
+n:eealaidh
+  a :FeminineNoun ;
+  rdfs:label "èalaidh" ;
+  :part v:eealaidh .
+
+v:eealaidh
+  a :Verb ;
+  rdfs:label "èalaidh" .
 
 n:glas_luibh_chuubhraidh
-  rdfs:label "glas-luibh chùbhraidh" .
+  rdfs:label "glas-luibh chùbhraidh" ;
+  :part n:glas_luibh , a:cuubhraidh .
+
+n:glas_luibh
+  rdfs:label "glas-luibh" ;
+  :part a:glas , n:luibh .
+
+a:glas
+  a :Adjective ;
+  rdfs:label "glas" .
+
+a:cuubhraidh
+  a :Adjective ;
+  rdfs:label "cùbhraidh" .
 
 n:lus_linneuis
-  rdfs:label "lus linneuis" .
-
-  # STARTING HERE NEXT
-  # CLEANED EVERYTHING BELOW HERE
+  rdfs:label "lus linneuis" ;
+  :part n:lus .
 
 n:Coimisean_na_Coilltearachd_Alba
   rdfs:label "Coimisean na Coilltearachd Alba" ;
@@ -3419,10 +3540,6 @@ n:stangar
   a :MasculineNoun ;
   rdfs:label "stangar" ;
   :pl "stangaran" .
-
-n:pollag
-  a :FeminineNoun ;
-  rdfs:label "pollag" .
 
 n:ailbean
   a :MasculineNoun ;
