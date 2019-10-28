@@ -7591,34 +7591,47 @@
     rdfs:comment "SNH Latin: Lagenorhynchus acutus" ;
     rdfs:comment "SNH category: mammals" .
 
+# STARTING HERE NEXT
+# CLEANED EVERYTHING BELOW HERE
+
   n:losgann_dubh
     a :FeminineNoun ;
     rdfs:label "losgann dubh" ;
-    :sense "toad" ;
-    :pl "muileacha-màgach" ;
+    :sense "toad" , "Bufo bufo" ;
+    :pl "losgannan dubha" ;
     rdfs:comment "SNH ID: 1122" ;
-    rdfs:comment "SNH other: muile-mhàg <em>f</em>muile-mhàgach <em>f</em>" ;
-    rdfs:comment "SNH Latin: Bufo bufo" ;
-    rdfs:comment "SNH category: losgannan dubha" .
+    rdfs:comment "SNH category: amphibians and reptiles" .
+
+  n:muile_mhàgag
+    a :FeminineNoun ;
+    rdfs:label "muile-mhàg" ;
+    :sense "toad" , "Bufo bufo" ;
+    :pl "muileacha-màg" ;
+    rdfs:comment "SNH ID: 1122a" ;
+    rdfs:comment "SNH category: amphibians and reptiles" .
+
+  n:muile-mhàgag
+    a :FeminineNoun ;
+    rdfs:label "muile-mhàgach" ;
+    :sense "toad" , "Bufo bufo" ;
+    :pl "muileacha-màgach" ;
+    rdfs:comment "SNH ID: 1122b" ;
+    rdfs:comment "SNH category: amphibians and reptiles" .
 
   n:meanbh_sheileach
     a :MasculineNoun ;
     rdfs:label "meanbh-sheileach" ;
-    :sense "dwarf willow" ;
+    :sense "dwarf willow" , "Salix herbacea" ;
     :pl "meanbh-sheileach" ;
-    rdfs:comment "SNH ID: 1123" ;
-    rdfs:comment "SNH Latin: Salix herbacea" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1123" .
 
   n:miotagan_calltainn
     a :FeminineNoun ;
     rdfs:label "miotagan calltainn" ;
-    :sense "hazel gloves" ;
-    rdfs:comment "SNH ID: 1124" ;
-    rdfs:comment "SNH Latin: Hypocreopsis rhododendri " ;
-    rdfs:comment "SNH category: " .
+    :sense "hazel gloves" , "Hypocreopsis rhododendri" ;
+    rdfs:comment "SNH ID: 1124" .
 
-  n:mucan_mara_bailiin
+  n:muc_mhara_bailiin
     a :FeminineNoun ;
     rdfs:label "mucan-mara bailìn" ;
     :sense "baleen whales" ;
@@ -7628,29 +7641,32 @@
   n:muc_creige
     a :FeminineNoun ;
     rdfs:label "muc-creige" ;
-    :sense "wrasse" ;
+    :sense "wrasse" , "Labridae" ;
     :pl "mucan-creige" ;
-    rdfs:comment "SNH ID: 1126" ;
-    rdfs:comment "SNH Latin: Labridae" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1126" .
 
   n:muc_creige_cuthaige
     a :FeminineNoun ;
     rdfs:label "muc-creige cuthaige" ;
-    :sense "cuckoo wrasse" ;
+    :sense "cuckoo wrasse" , "Labrus mixtus" ;
     :pl "mucan-creige cuthaige" ;
-    rdfs:comment "SNH ID: 1127" ;
-    rdfs:comment "SNH Latin: Labrus mixtus" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1127" .
 
   n:muc_mhara_chrotach
     a :FeminineNoun ;
     rdfs:label "muc-mhara chrotach" ;
-    :sense "humpback whale" ;
+    :sense "humpback whale" , "Megaptera novaeangliae" ;
     :pl "mucan-mara crotach" ;
     rdfs:comment "SNH ID: 1128" ;
     rdfs:comment "SNH other: muc-chrotach" ;
-    rdfs:comment "SNH Latin: Megaptera novaeangliae" ;
+    rdfs:comment "SNH category: mammals" .
+
+  n:muc_chrotach
+    a :FeminineNoun ;
+    rdfs:label "muc chrotach" ;
+    :sense "humpback whale" , "Megaptera novaeangliae" ;
+    :pl "mucan crotach" ;
+    rdfs:comment "SNH ID: 1128a" ;
     rdfs:comment "SNH category: mammals" .
 
   n:muc_mhara_fhiaclach
@@ -7664,97 +7680,83 @@
   n:muc_mhara_ghobach
     a :FeminineNoun ;
     rdfs:label "muc-mhara ghobach" ;
-    :sense "beaked whale" ;
+    :sense "beaked whale" , "Ziphiidae (Family) spp." ;
     :pl "mucan-mara gobach" ;
     rdfs:comment "SNH ID: 1130" ;
-    rdfs:comment "SNH Latin: Ziphiidae (Family) spp." ;
     rdfs:comment "SNH category: mammals" .
 
   n:muc_mhara_Sei
     a :FeminineNoun ;
     rdfs:label "muc-mhara Sei" ;
-    :sense "Sei whale" ;
+    :sense "Sei whale" , "Balaenoptera borealis" ;
     :pl "mucan-mara Sei" ;
     rdfs:comment "SNH ID: 1131" ;
-    rdfs:comment "SNH Latin: Balaenoptera borealis" ;
     rdfs:comment "SNH category: mammals" .
 
-  n:muile_mhaagach_an_druim_bhuidhe
+  n:muile_mhaagag_an_druim_bhuidhe
     a :FeminineNoun ;
     rdfs:label "muile-mhàgach an druim bhuidhe" ;
-    :sense "natterjack toad" ;
+    :sense "natterjack toad" , "Bufo calamita" ;
     :pl "muileacha-màgach an druim bhuidhe" ;
     rdfs:comment "SNH ID: 1132" ;
-    rdfs:comment "SNH Latin: Bufo calamita" ;
     rdfs:comment "SNH category: amphibians and reptiles" .
 
   n:na_solais_bhoocain_annasach
     a :MasculineNoun ;
     rdfs:label "na solais bhòcain annasach" ;
-    :sense "goblin lights" ;
-    :pl "na solais bhòcain annasach" ;
-    rdfs:comment "SNH ID: 1133" ;
-    rdfs:comment "SNH Latin: Catolechia wahlenbergii" ;
-    rdfs:comment "SNH category: " .
+    :sense "goblin lights" , "Catolechia wahlenbergii" ;
+    rdfs:comment "SNH ID: 1133" .
 
   n:nathair_feooir
     a :FeminineNoun ;
     rdfs:label "nathair feòir" ;
-    :sense "grass-snake" ;
+    :sense "grass-snake" , "Natrix natrix" ;
     :pl "nathraichean feòir" ;
-    rdfs:comment "SNH ID: 1134" ;
-    rdfs:comment "SNH Latin: Natrix natrix" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1134" .
 
   n:partan_tuathal
     a :MasculineNoun ;
     rdfs:label "partan tuathal" ;
     :sense "hermit crab" ;
     :pl "partain tuathail" ;
-    rdfs:comment "SNH ID: 1135" ;
-    rdfs:comment "SNH Latin: Hermit crab" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1135" .
 
   n:peann_cleite
     a :MasculineNoun ;
     rdfs:label "peann cleite" ;
     :sense "pen quill" ;
-    rdfs:comment "SNH ID: 1136" ;
-    rdfs:comment "SNH Latin: pinn chleite" ;
-    rdfs:comment "SNH category: " .
+    :pl "pinn chleite" ;
+    rdfs:comment "SNH ID: 1136" .
 
   n:peann_mara
     a :MasculineNoun ;
     rdfs:label "peann-mara" ;
     :sense "sea pen" ;
     :pl "pinn-mhara" ;
-    rdfs:comment "SNH ID: 1137" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1137" .
 
   n:rionnag_na_talmhainn
     a :FeminineNoun ;
     rdfs:label "rionnag na talmhainn" ;
-    :sense "collared earthstar" ;
+    :sense "collared earthstar" , "Geastrum triplex" ;
     :pl "rionnagan na talmhainn" ;
-    rdfs:comment "SNH ID: 1139" ;
-    rdfs:comment "SNH Latin: Geastrum triplex" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1139" .
 
-  n:rooin_Artach
+  n:roon_Artach
     a :FeminineNoun ;
     rdfs:label "ròin Artach" ;
     :sense "Arctic seals" ;
     rdfs:comment "SNH ID: 1140" ;
     rdfs:comment "SNH category: mammals" .
 
-  n:rooin_beeine
+  n:roon_beeine
     a :FeminineNoun ;
     rdfs:label "ròin bèine" ;
     :sense "fur seals" ;
     rdfs:comment "SNH ID: 1141" ;
     rdfs:comment "SNH category: mammals" .
 
-  n:rooin_chluasach
+  n:roon_chluasach
     a :FeminineNoun ;
     rdfs:label "ròin chluasach" ;
     :sense "eared seals" ;
@@ -7764,146 +7766,137 @@
   n:roon_calaidh
     a :FeminineNoun ;
     rdfs:label "ròn calaidh" ;
-    :sense "harbour seal / common seal" ;
+    :sense "harbour seal" , "common seal" , "Phoca vitulina" ;
     :pl "ròin-chalaidh" ;
     rdfs:comment "SNH ID: 1143" ;
-    rdfs:comment "SNH other: ròn cumanta" ;
-    rdfs:comment "SNH Latin: Phoca vitulina" ;
-    rdfs:comment "SNH category: ròin chumanta" .
+    rdfs:comment "SNH category: mammals" .
+
+n:roon_cumanta
+    a :FeminineNoun ;
+    rdfs:label "ròn cumanta" ;
+    :sense "harbour seal" , "common seal" , "Phoca vitulina" ;
+    :pl "ròin-chumanta" ;
+    rdfs:comment "SNH ID: 1143a" ;
+    rdfs:comment "SNH category: mammals" .
 
   n:roon_claarsaich
     a :FeminineNoun ;
     rdfs:label "ròn clàrsaich" ;
-    :sense "harp seal" ;
+    :sense "harp seal" , "Phoca groenlandica" ;
     :pl "ròin chlàrsaich" ;
     rdfs:comment "SNH ID: 1144" ;
-    rdfs:comment "SNH Latin: Phoca groenlandica" ;
     rdfs:comment "SNH category: mammals" .
 
   n:roon_curracach
     a :FeminineNoun ;
     rdfs:label "ròn curracach" ;
-    :sense "hooded seal" ;
+    :sense "hooded seal" , "Cystophora cristata" ;
     :pl "ròin churracach" ;
     rdfs:comment "SNH ID: 1145" ;
-    rdfs:comment "SNH Latin: Cystophora cristata" ;
     rdfs:comment "SNH category: mammals" .
 
   n:roon_feusagach
     a :FeminineNoun ;
     rdfs:label "ròn feusagach" ;
-    :sense "bearded seal" ;
+    :sense "bearded seal" , "Erignathus barbatus" ;
     :pl "ròin fheusagach" ;
     rdfs:comment "SNH ID: 1146" ;
-    rdfs:comment "SNH Latin: Erignathus barbatus" ;
     rdfs:comment "SNH category: mammals" .
 
   n:roon_ailbhein_a_chinn_a_deas
     a :FeminineNoun ;
-    rdfs:label "ròn-ailbhein a' chinn a deas" ;
-    :sense "southern elephant seal" ;
-    :pl "ròin-ailbhein a' chinn a deas" ;
+    rdfs:label "ròn-ailbhein a’ chinn a deas" ;
+    :sense "southern elephant seal" , "Mirounga leonina" ;
+    :pl "ròin-ailbhein a’ chinn a deas" ;
     rdfs:comment "SNH ID: 1147" ;
-    rdfs:comment "SNH Latin: Mirounga leonina" ;
     rdfs:comment "SNH category: mammals" .
 
   n:seillean_moor_a_bhlaair_fhraoich
     a :MasculineNoun ;
-    rdfs:label "seillean-mòr a' bhlàir-fhraoich" ;
-    :sense "heath bumblebee" ;
-    :pl "seilleanan-mòra a' bhlàir-fhraoich" ;
+    rdfs:label "seillean-mòr a’ bhlàir-fhraoich" ;
+    :sense "heath bumblebee" , "Bombus jonellus" ;
+    :pl "seilleanan-mòra a’ bhlàir-fhraoich" ;
     rdfs:comment "SNH ID: 1148" ;
-    rdfs:comment "SNH Latin: Bombus jonellus" ;
     rdfs:comment "SNH category: invertebrates" .
 
   n:seillean_caardair_cumanta
     a :MasculineNoun ;
     rdfs:label "seillean càrdair cumanta" ;
-    :sense "common carder bee" ;
+    :sense "common carder bee" , "Bombus pascuorum" ;
     :pl "seilleanan càrdair cumanta" ;
     rdfs:comment "SNH ID: 1149" ;
-    rdfs:comment "SNH Latin: Bombus pascuorum" ;
     rdfs:comment "SNH category: invertebrates" .
 
   n:seillean_caardair_nan_lurgann_dearg
     a :MasculineNoun ;
     rdfs:label "seillean càrdair nan lurgann dearg" ;
-    :sense "red-shanked carder bee" ;
+    :sense "red-shanked carder bee" , "Bombus ruderarius" ;
     :pl "seilleanan càrdair nan lurgann dearg" ;
     rdfs:comment "SNH ID: 1150" ;
-    rdfs:comment "SNH Latin: Bombus ruderarius" ;
     rdfs:comment "SNH category: invertebrates" .
 
   n:seillean_moor_an_earbaill_dheirg
     a :MasculineNoun ;
     rdfs:label "seillean-mòr an earbaill dheirg" ;
-    :sense "red-tailed bumblebee" ;
+    :sense "red-tailed bumblebee" , "Bombus lapidarius" ;
     :pl "seilleanan-mòra an earbaill dheirg" ;
     rdfs:comment "SNH ID: 1152" ;
-    rdfs:comment "SNH Latin: Bombus lapidarius" ;
     rdfs:comment "SNH category: invertebrates" .
 
-  n:seillean_moor_cuthaig_bharbut
+  n:seillean_moor_cuthaige_bharbut
     a :MasculineNoun ;
     rdfs:label "seillean-mòr cuthaig bharbut" ;
-    :sense "barbut's cuckoo bumblebee" ;
+    :sense "barbut's cuckoo bumblebee" , "Bombus (Psithyrus) barbutellus" ;
     :pl "seilleanan-mòra cuthaig bharbut" ;
     rdfs:comment "SNH ID: 1153" ;
-    rdfs:comment "SNH Latin: Bombus (Psithyrus) barbutellus" ;
     rdfs:comment "SNH category: invertebrates" .
 
-  n:seillean_moor_na_cuthaig_achaidh
+  n:seillean_moor_cuthaige_an_achaidh
     a :MasculineNoun ;
     rdfs:label "seillean-mòr na cuthaig achaidh" ;
-    :sense "field cuckoo bumblebee" ;
+    :sense "field cuckoo bumblebee" , "Bombus (Psithyrus) campestris" ;
     :pl "seilleanan-mòra na cuthaig achaidh" ;
     rdfs:comment "SNH ID: 1154" ;
-    rdfs:comment "SNH Latin: Bombus (Psithyrus) campestris" ;
     rdfs:comment "SNH category: invertebrates" .
 
-  n:seillean_moor_na_cuthaig_coille
+  n:seillean_moor_cuthaige_na_coille
     a :MasculineNoun ;
     rdfs:label "seillean-mòr na cuthaig coille" ;
-    :sense "forest cuckoo bumblebee" ;
+    :sense "forest cuckoo bumblebee" , "Bombus (Psithyrus) sylvestris" ;
     :pl "seilleanan-mòra na cuthaig coille" ;
     rdfs:comment "SNH ID: 1155" ;
-    rdfs:comment "SNH Latin: Bombus (Psithyrus) sylvestris" ;
     rdfs:comment "SNH category: invertebrates" .
 
-  n:seillean_moor_na_cuthaig_shiopsaich
+  n:seillean_moor_cuthaige_nan_siopsach
     a :MasculineNoun ;
     rdfs:label "seillean-mòr na cuthaig shiopsaich" ;
-    :sense "gypsy cuckoo bumblebee" ;
+    :sense "gypsy cuckoo bumblebee" , "Bombus (Psithyrus) bohemicus" ;
     :pl "seilleanan-mòra na cuthaig shiopsaich" ;
     rdfs:comment "SNH ID: 1156" ;
-    rdfs:comment "SNH Latin: Bombus (Psithyrus) bohemicus" ;
     rdfs:comment "SNH category: invertebrates" .
 
   n:seillean_moor_nan_dearcan_fraoich
     a :MasculineNoun ;
     rdfs:label "seillean-mòr nan dearcan-fraoich" ;
-    :sense "bilberry bumblebee" ;
+    :sense "bilberry bumblebee" , "Bombus monticola" ;
     :pl "seilleanan-mòra nan dearcan-fraoich" ;
     rdfs:comment "SNH ID: 1157" ;
-    rdfs:comment "SNH Latin: Bombus monticola" ;
     rdfs:comment "SNH category: invertebrates" .
 
   n:seillean_moor_traath
     a :MasculineNoun ;
     rdfs:label "seillean-mòr tràth" ;
-    :sense "early bumblebee" ;
+    :sense "early bumblebee" , "Bombus pratorum" ;
     :pl "seilleanan-mòra tràtha" ;
     rdfs:comment "SNH ID: 1158" ;
-    rdfs:comment "SNH Latin: Bombus pratorum" ;
     rdfs:comment "SNH category: invertebrates" .
 
   n:seoc_sleamhainn_na_learaig
     a :MasculineNoun ;
     rdfs:label "seoc sleamhainn na learaig" ;
-    :sense "larch slippery jack" ;
+    :sense "larch slippery jack" , "Suillus grevillei" ;
     :pl "seocan sleamhainn na learaig" ;
     rdfs:comment "SNH ID: 1159" ;
-    rdfs:comment "SNH Latin: Suillus grevillei" ;
     rdfs:comment "SNH category: " .
 
   n:siiolag
@@ -7912,34 +7905,37 @@
     :sense "sandeel" ;
     :pl "sìolagan" ;
     rdfs:comment "SNH ID: 1160" ;
-    rdfs:comment "SNH other: sìol-gainmhich <em>m</em>" ;
-    rdfs:comment "SNH category: sìol-gainmhich" .
+    rdfs:comment "SNH category: under the sea" .
+
+  n:siiol_gainmhich
+    a :MasculineNoun ;
+    rdfs:label "sìol-gainmhich" ;
+    :sense "sandeel" ;
+    rdfs:comment "SNH ID: 1160a" ;
+    rdfs:comment "SNH category: under the sea" .
 
   n:slige_lasrach
     a :FeminineNoun ;
     rdfs:label "slige lasrach" ;
-    :sense "flameshell" ;
+    :sense "flameshell" , "Limaria hians" ;
     :pl "sligean lasrach" ;
     rdfs:comment "SNH ID: 1161" ;
-    rdfs:comment "SNH Latin: Limaria hians" ;
     rdfs:comment "SNH category: invertebrates" .
 
   n:snaagair
     a :MasculineNoun ;
     rdfs:label "snàgair" ;
-    :sense "reptile" ;
+    :sense "reptile" , "Reptilia" ;
     :pl "snàgairean" ;
     rdfs:comment "SNH ID: 1162" ;
-    rdfs:comment "SNH Latin: Reptilia" ;
     rdfs:comment "SNH category: amphibians and reptiles" .
 
   n:suurdagan_breac
     a :FeminineNoun ;
     rdfs:label "sùrdagan breac" ;
-    :sense "chequered skipper butterfly" ;
+    :sense "chequered skipper butterfly" , "Carterocephalus palaemon" ;
     :pl "sùrdagain breaca" ;
     rdfs:comment "SNH ID: 1163" ;
-    rdfs:comment "SNH Latin: Carterocephalus palaemon" ;
     rdfs:comment "SNH category: invertebrates" .
 
   n:siamarlan
@@ -7947,45 +7943,46 @@
     rdfs:label "siamarlan" ;
     :sense "land agent" ;
     :pl "siamarlain" ;
-    rdfs:comment "SNH ID: 1165" ;
-    rdfs:comment "SNH other: àidseant fearainn <em>m</em>" ;
-    rdfs:comment "SNH category: àidseantan fearainn" .
+    rdfs:comment "SNH ID: 1165" .
+
+  n:aaidseant_fearainn
+    a :MasculineNoun ;
+    rdfs:label "àidseant fearainn" ;
+    :sense "land agent" ;
+    :pl "àidseantan fearainn" ;
+    rdfs:comment "SNH ID: 1165a" .
 
   n:turtar
     a :FeminineNoun ;
     rdfs:label "turtar" ;
-    :sense "turtle" ;
+    :sense "turtle" , "Chelonioidea (Superfamily) spp." ;
     :pl "turtaran" ;
     rdfs:comment "SNH ID: 1166" ;
     rdfs:comment "SNH audio: turtur.mp3" ;
-    rdfs:comment "SNH Latin: Chelonioidea (Superfamily) spp." ;
     rdfs:comment "SNH category: amphibians and reptiles" .
 
   n:turtar_a_chinn_mhooir
     a :FeminineNoun ;
-    rdfs:label "turtar a' chinn mhòir" ;
-    :sense "loggerhead turtle" ;
-    :pl "turtaran cinn-mhòir " ;
+    rdfs:label "turtar a’ chinn mhòir" ;
+    :sense "loggerhead turtle" , "Caretta caretta" ;
+    :pl "turtaran cinn-mhòir" ;
     rdfs:comment "SNH ID: 1167" ;
-    rdfs:comment "SNH Latin: Caretta caretta" ;
     rdfs:comment "SNH category: amphibians and reptiles" .
 
   n:turtar_druim_leathair
     a :MasculineNoun ;
     rdfs:label "turtar druim-leathair" ;
-    :sense "leatherback turtle" ;
+    :sense "leatherback turtle" , "Dermochelys coriacea" ;
     :pl "turtaran druim-leathair" ;
     rdfs:comment "SNH ID: 1168" ;
-    rdfs:comment "SNH Latin: Dermochelys coriacea" ;
     rdfs:comment "SNH category: amphibians and reptiles" .
 
   n:turtar_Kemps_Ridley
     a :MasculineNoun ;
     rdfs:label "turtar Kemp's Ridley" ;
-    :sense "Kemp's Ridley turtle" ;
-    :pl "turtaran Kemp's Ridley " ;
+    :sense "Kemp's Ridley turtle" , "Lepidochelys kempii" ;
+    :pl "turtaran Kemp's Ridley" ;
     rdfs:comment "SNH ID: 1169" ;
-    rdfs:comment "SNH Latin: Lepidochelys kempii" ;
     rdfs:comment "SNH category: amphibians and reptiles" .
 
   n:tunnag
@@ -8048,8 +8045,7 @@
     a :MasculineNoun ;
     rdfs:label "geo-iomadachd" ;
     :sense "geodiversity" ;
-    rdfs:comment "SNH ID: 1178" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1178" .
 
   n:creag
     a :FeminineNoun ;
@@ -8066,9 +8062,6 @@
     :pl "mèinnirean" ;
     rdfs:comment "SNH ID: 1180" ;
     rdfs:comment "SNH category: landscapes" .
-
-# STARTING HERE NEXT
-# CLEANED EVERYTHING BELOW HERE
 
   n:deigh
     a :FeminineNoun ;

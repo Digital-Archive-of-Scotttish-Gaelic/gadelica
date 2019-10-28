@@ -1603,7 +1603,8 @@ n:seillean
   rdfs:label "seillean" .
 
 n:seillean_moor
-  rdfs:label "seillean-mòr" .
+  rdfs:label "seillean mòr" ;
+  :part n:seillean , n:moor .
 
 n:connspeach
   a :MasculineNoun ;
@@ -2712,146 +2713,423 @@ n:leptonia_purpaidh
   rdfs:label "leptonia purpaidh" .
 
 n:leumadair_cliathaich_bhaan_a_Chuain_Siar
-  rdfs:label "leumadair cliathaich-bhàn a' Chuain Siar" .
+  rdfs:label "leumadair cliathaich-bhàn a’ Chuain Siar" .
+
+# STARTING HERE NEXT
+# CLEANED EVERYTHING BELOW HERE
 
 n:losgann_dubh
-  rdfs:label "losgann dubh" .
+  rdfs:label "losgann dubh" ;
+  :part n:losgann , a:dubh .
 
 n:meanbh_sheileach
-  rdfs:label "meanbh-sheileach" .
+  rdfs:label "meanbh-sheileach" ;
+  :part a:meanbh , n:seileach .
 
 n:miotagan_calltainn
-  rdfs:label "miotagan calltainn" .
+  rdfs:label "miotagan calltainn" ;
+  :part n:miotag , n:calltainn .
 
-n:mucan_mara_bailiin
-  rdfs:label "mucan-mara bailìn" .
+n:miotag
+  a :FeminineNoun ;
+  rdfs:label "miotag" .
+
+n:muc_mara_bailiin
+  rdfs:label "muc mhara bailìn" ;
+  :part n:muc_mhara .
 
 n:muc_creige
-  rdfs:label "muc-creige" .
+  rdfs:label "muc creige" ;
+  :part n:muc , n:creag .
 
 n:muc_creige_cuthaige
-  rdfs:label "muc-creige cuthaige" .
+  rdfs:label "muc creige cuthaige" ;
+  :part n:muc_creige , n:cuthag .
 
 n:muc_mhara_chrotach
-  rdfs:label "muc-mhara chrotach" .
+  rdfs:label "muc mhara chrotach" ;
+  :part n:muc_mhara , a:crotach .
+
+a:crotach
+  a :Adjective ;
+  rdfs:label "crotach" .
+
+n:muc_chrotach
+  rdfs:label "muc chrotach" ;
+  :part n:muc , a:crotach .
 
 n:muc_mhara_fhiaclach
-  rdfs:label "muc-mhara fhiaclach" .
+  rdfs:label "muc mhara fhiaclach" ;
+  :part n:muc_mhara , a:fiaclach .
+
+a:fiaclach
+  a :Adjective ;
+  rdfs:label "fiaclach" ;
+  :part n:fiacaill .
+
+n:fiacaill
+  a :FeminineNoun ;
+  rdfs:label "fiacaill" .
 
 n:muc_mhara_ghobach
-  rdfs:label "muc-mhara ghobach" .
+  rdfs:label "muc mhara ghobach" ;
+  :part n:muc_mhara , a:gobach .
+
+a:gobach
+  a :Adjective ;
+  rdfs:label "gobach" ;
+  :part n:gob .
 
 n:muc_mhara_Sei
-  rdfs:label "muc-mhara Sei" .
+  rdfs:label "muc-mhara Sei" ;
+  :part n:muc_mhara.
 
-n:muile_mhaagach_an_druim_bhuidhe
-  rdfs:label "muile-mhàgach an druim bhuidhe" .
+n:muile_mhaagag_an_druim_bhuidhe
+  rdfs:label "muile-mhàgag an druim bhuidhe" ;
+  :part n:muile-mhaagag , n:druim , a:buidhe .
+
+n:muile_mhaagag
+  rdfs:label "muile-mhàgag" .
 
 n:na_solais_bhoocain_annasach
-  rdfs:label "na solais bhòcain annasach" .
+  rdfs:label "na solais bhòcain annasach" ;
+  :part n:solas , n:boocan , a:annasach .
+
+n:solas
+  a :MasculineNoun ;
+  rdfs:label "solas" ;
+  :pl "solais" .
+
+n:boocan
+  a :MasculineNoun ;
+  rdfs:label "bòcan" ;
+  :gen "bòcain" .
 
 n:nathair_feooir
-  rdfs:label "nathair feòir" .
+  rdfs:label "nathair feòir" ;
+  :part n:nathair , n:feur .
 
 n:partan_tuathal
-  rdfs:label "partan tuathal" .
+  rdfs:label "partan tuathal" ;
+  :part n:partan , a:tuathal .
+
+a:tuathal
+  a :Adjective ;
+  rdfs:label "tuathal" ;
+  :part n:tuath .
+
+n:partan
+  a :MasculineNoun ;
+  rdfs:label "partan" .
 
 n:peann_cleite
-  rdfs:label "peann cleite" .
+  rdfs:label "peann cleite" ;
+  :part n:peann , n:cleit .
 
 n:peann_mara
-  rdfs:label "peann-mara" .
+  rdfs:label "peann-mara" ;
+  :part n:peann , n:muir .
+
+n:peann
+  a :MasculineNoun ;
+  rdfs:label "peann" ;
+  :pl "pinn" .
 
 n:rionnag_na_talmhainn
-  rdfs:label "rionnag na talmhainn" .
+  rdfs:label "rionnag na talmhainn" ;
+  :part n:rionnag , n:talamh .
 
-n:rooin_Artach
-  rdfs:label "ròin Artach" .
+n:rionnag
+  a :FeminineNoun ;
+  rdfs:label "rionnag" .
 
-n:rooin_beeine
-  rdfs:label "ròin bèine" .
+n:roon_Artach
+  rdfs:label "ròn Artach" ;
+  :part n:roon , a:Artach .
 
-n:rooin_chluasach
-  rdfs:label "ròin chluasach" .
+a:Artach
+  a :Adjective ;
+  rdfs:label "Artach" ;
+  :part n:Artaig .
+
+n:roon_beeine
+  rdfs:label "ròn bèine" ;
+  :part n:roon , n:bian .
+
+n:bian
+  a :MasculineNoun ;
+  rdfs:label "bian" .
+
+n:roon_cluasach
+  rdfs:label "ròn cluasach" ;
+  :part n:roon , a:cluasach .
+
+a:cluasach
+  a :Adjective ;
+  rdfs:label "cluasach" ;
+  :part n:cluas .
+
+n:cluas
+  a :FeminineNoun ;
+  rdfs:label "cluas" .
 
 n:roon_calaidh
-  rdfs:label "ròn calaidh" .
+  rdfs:label "ròn calaidh" ;
+  :part n:roon , n:caladh .
+
+n:caladh
+  a :MasculineNoun ;
+  rdfs:label "caladh" .
+
+n:roon_cumanta
+  rdfs:label "ròn cumanta" ;
+  :part n:roon , n:cumanta .
 
 n:roon_claarsaich
-  rdfs:label "ròn clàrsaich" .
+  rdfs:label "ròn clàrsaich" ;
+  :part n:roon , n:claarsach .
+
+n:claarsach
+  a :FeminineNoun ;
+  rdfs:label "clàrsach" ;
+  :gen "clàrsaich" .
 
 n:roon_curracach
-  rdfs:label "ròn curracach" .
+  rdfs:label "ròn curracach" ;
+  :part n:roon , a:curracach .
+
+a:curracach
+  a :Adjective ;
+  rdfs:label "curracach" ;
+  :part n:currac .
+
+n:currac
+  a :MasculineNoun ;
+  rdfs:label "currac" .
 
 n:roon_feusagach
-  rdfs:label "ròn feusagach" .
+  rdfs:label "ròn feusagach" ;
+  :part n:roon , a:feusagach .
+
+a:feusagach
+  a :Adjective ;
+  rdfs:label "feusagach" ;
+  :part "feusag" .
+
+n:feusag
+  a :FeminineNoun ;
+  rdfs:label "feusag" .
 
 n:roon_ailbhein_a_chinn_a_deas
-  rdfs:label "ròn-ailbhein a’ chinn a deas" .
+  rdfs:label "ròn ailbhein a’ chinn a deas" ;
+  :part n:roon_ailbhein n:an_ceann_a_deas .
+
+n:roon_ailbhein
+  rdfs:label "ròn ailbhein" ;
+  :part n:roon , n:ailbhean .
+
+n:ailbhean
+  a :MasculineNoun ;
+  rdfs:label "ailbhean" ;
+  :gen "ailbhein" .
+
+n:an_ceann_a_deas
+  rdfs:label "an ceann a deas" ;
+  :gen "a’ chinn a deas" ;
+  :part n:ceann , n:deas .
+
+n:deas
+  rdfs:label "deas" .
 
 n:seillean_moor_a_bhlaair_fhraoich
-  rdfs:label "seillean-mòr a’ bhlàir-fhraoich" .
+  rdfs:label "seillean mòr a’ bhlàir fhraoich" ;
+  :part n:seillean_moor , n:blaar_fraoich .
+
+n:blaar_fraoich
+  rdfs:label "blàr fraoich" ;
+  :part n:blaar , n:fraoch .
+
+n:blaar
+  a :MasculineNoun ;
+  rdfs:label "blàr" .
 
 n:seillean_caardair_cumanta
-  rdfs:label "seillean càrdair cumanta" .
+  rdfs:label "seillean càrdair cumanta" ;
+  :part n:seillean_caardair , a:cumanta.
 
 n:seillean_caardair_nan_lurgann_dearg
-  rdfs:label "seillean càrdair nan lurgann dearg" .
+  rdfs:label "seillean càrdair nan lurgann dearg" ;
+  :part n:seillean_caardair , n:lurgann , a:dearg .
+
+n:lurgann
+  a :FeminineNoun ;
+  rdfs:label "lurgann" .
+
+n:seillean_caardair
+  rdfs:label "seillean càrdair" ;
+  :part n:seillean , n:caardair .
+
+n:cardair
+  a :MasculineNoun ;
+  rdfs:label "càrdair" .
 
 n:seillean_moor_an_earbaill_dheirg
-  rdfs:label "seillean-mòr an earbaill dheirg" .
+  rdfs:label "seillean mòr an earbaill dheirg" ;
+  :part n:seillean_moor , n:earball , a:dearg .
 
-n:seillean_moor_cuthaig_bharbut
-  rdfs:label "seillean-mòr cuthaig bharbut" .
+n:seillean_moor_cuthaige_bharbut
+  rdfs:label "seillean mòr cuthaige bharbut" ;
+  :part n:seillean_moor_cuthaige .
 
-n:seillean_moor_na_cuthaig_achaidh
-  rdfs:label "seillean-mòr na cuthaig achaidh" .
+n:seillean_moor_cuthaige_an_achaidh
+  rdfs:label "seillean mòr cuthaige an achaidh" ;
+  :part n:seillean_moor_cuthaige , n:achadh .
 
-n:seillean_moor_na_cuthaig_coille
-  rdfs:label "seillean-mòr na cuthaig coille" .
+n:achadh
+  a :MasculineNoun ;
+  rdfs:label "achadh" ;
+  :gen "achadh" .
 
-n:seillean_moor_na_cuthaig_shiopsaich
-  rdfs:label "seillean-mòr na cuthaig shiopsaich" .
+n:seillean_moor_cuthaige_na_coille
+  rdfs:label "seillean mòr cuthaige na coille" ;
+  :part n:seillean_moor_cuthaige , n:coille .
+
+n:seillean_moor_cuthaige_nan_siopsach
+  rdfs:label "seillean mòr cuthaige nan siopsach" ;
+  :part n:seillean_moor_cuthaige , n:siopsach .
+
+n:siopsach
+  a :MasculineNoun ;
+  rdfs:label "siopsach" .
+
+n:seillean_moor_cuthaige
+  rdfs:label "seillean mòr cuthaige" ;
+  :part n:seillean_moor , a:cuthag.
 
 n:seillean_moor_nan_dearcan_fraoich
-  rdfs:label "seillean-mòr nan dearcan-fraoich" .
+  rdfs:label "seillean mòr nan dearcan fraoich" ;
+  :part n:seillean_moor , n:dearc_fhraoich .
+
+n:dearc_fhraoich
+  :rdfs:label "dearc fhraoich" ;
+  :part n:dearc , n:fraoch .
 
 n:seillean_moor_traath
-  rdfs:label "seillean-mòr tràth" .
+  rdfs:label "seillean mòr tràth" ;
+  :part n:seillean_moor , a:traath .
+
+a:traath
+  a :Adjective ;
+  rdfs:label "tràth" .
 
 n:seoc_sleamhainn_na_learaig
-  rdfs:label "seoc sleamhainn na learaig" .
+  rdfs:label "seoc sleamhainn na learaig" ;
+  :part n:learag , a:sleamhainn .
 
 n:siiolag
   a :FeminineNoun ;
-  rdfs:label "sìolag" .
+  rdfs:label "sìolag" ;
+  :part n:siiol .
+
+a:sleamhainn
+  a :Adjective ;
+  rdfs:label "sleamhainn" .
+
+n:siiol_gainmhich
+  rdfs:label "sìol gainmhich" ;
+  :part n:siiol , n:gainmheach .
+
+n:siiol
+  a :MasculineNoun ;
+  rdfs:label "sìol" .
+
+n:gainmheach
+  a :FeminineNoun ;
+  rdfs:label "gainmheach" ;
+  :gen "gainmhich" .
 
 n:slige_lasrach
-  rdfs:label "slige lasrach" .
+  rdfs:label "slige lasrach" ;
+  :part n:slige , a:lasrach .
+
+a:lasrach
+  a :Adjective ;
+  rdfs:label "lasrach" ;
+  :part n:lasair .
+
+n:lasair
+  a :FeminineNoun ;
+  rdfs:label "lasair" .
 
 n:snaagair
   a :MasculineNoun ;
-  rdfs:label "snàgair" .
+  rdfs:label "snàgair" ;
+  :part v:snaag .
+
+v:snaag
+  a :Verb ;
+  rdfs:label "snàg" .
 
 n:suurdagan_breac
-  rdfs:label "sùrdagan breac" .
+  rdfs:label "sùrdagan breac" ;
+  :part n:suurdagan , a:breac .
+
+n:suurdagan
+  a :MasculineNoun ;
+  rdfs:label "sùrdagan" ;
+  :part n:suurdag .
+
+n:suurdag
+  a :FeminineNoun ;
+  rdfs:label "sùrdag" ;
+  :part n:suurd .
+
+n:suurd
+  a :MasculineNoun ;
+  rdfs:label "sùrd" .
+
+a:breac
+  a :Adjective ;
+  rdfs:label "breac" .
 
 n:siamarlan
   a :MasculineNoun ;
   rdfs:label "siamarlan" .
+
+n:aaidseant_fearainn
+  rdfs:label "àidseant fearainn" ;
+  :pl "àidseantan fearainn" ;
+  :part n:aaidseant , n:fearann .
+
+n:aaidseant
+  a :MasculineNoun ;
+  rdfs:label "àidseant" ;
+  :pl "àidseantan" .
 
 n:turtar
   a :FeminineNoun ;
   rdfs:label "turtar" .
 
 n:turtar_a_chinn_mhooir
-  rdfs:label "turtar a’ chinn mhòir" .
+  rdfs:label "turtar a’ chinn mhòir" ;
+  :part n:turtar , n:ceann , a:moor .
 
 n:turtar_druim_leathair
-  rdfs:label "turtar druim-leathair" .
+  rdfs:label "turtar druim-leathair" ;
+  :part n:turtar , n:druim , n:leathar .
+
+n:druim
+  a :FeminineNoun ;
+  rdfs:label "druim" .
+
+n:leathar
+  a :MasculineNoun ;
+  rdfs:label "leathar" ;
+  :gen "leathair" .
 
 n:turtar_Kemps_Ridley
-  rdfs:label "turtar Kemp’s Ridley" .
+  rdfs:label "turtar Kemp’s Ridley" ;
+  :part n:turtar .
 
 n:tunnag
   a :FeminineNoun ;
@@ -2862,14 +3140,20 @@ n:lach
   rdfs:label "lach" .
 
 n:cearc_Fhrangach
-  rdfs:label "cearc Fhrangach" .
+  rdfs:label "cearc Fhrangach" ;
+  :part n:cearc , a:Frangach .
+
+n:cearc
+  a :FeminineNoun ;
+  rdfs:label "cearc" .
 
 n:sgadan
   a :MasculineNoun ;
   rdfs:label "sgadan" .
 
 n:maoim_sleeibhe
-  rdfs:label "maoim-slèibhe" .
+  rdfs:label "maoim slèibhe" ;
+  :part n:maoim , n:sliabh .
 
 n:uamh
   a :FeminineNoun ;
@@ -2889,9 +3173,6 @@ n:creag
 n:meeinnear
   a :MasculineNoun ;
   rdfs:label "mèinnear" .
-
-# STARTING HERE NEXT
-# CLEANED EVERYTHING BELOW HERE
 
 n:deigh
   a :FeminineNoun ;
