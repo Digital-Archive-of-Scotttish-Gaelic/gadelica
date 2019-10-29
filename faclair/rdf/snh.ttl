@@ -2653,36 +2653,90 @@ n:cupa_dearg_a_mhaaileachain
 n:cupa_ceeireach_dearg
   rdfs:label "cupa-cèireach dearg" .
 
-n:dearc_luachrach_Ailpeach
-  rdfs:label "dearc-luachrach Ailpeach" .
+# STARTING HERE NEXT
+# CLEANED EVERYTHING BELOW HERE
+
+n:dearc_luachrach_ailpeach
+  rdfs:label "dearc luachrach ailpeach" ;
+  :part n:dearc_luachrach , a:ailpeach .
 
 n:dearc_luachrach_boiseach
-  rdfs:label "dearc-luachrach boiseach" .
+  rdfs:label "dearc luachrach boiseach" ;
+  :part n:dearc_luachrach , a:boiseach .
+
+a:boiseach
+  a :Adjective ;
+  rdfs:label "boiseach" ;
+  :part n:bos .
+
+n:bos
+  a :FeminineNoun ;
+  rdfs:label "bos" .
 
 n:donnag_bhallach
-  rdfs:label "donnag bhallach" .
+  rdfs:label "donnag bhallach" ;
+  :part n:donnag , a:ballach .
+
+n:donnag
+  a :FeminineNoun ;
+  rdfs:label "donnag" ;
+  :part a:donn .
+
+a:ballach
+  a :Adjective ;
+  rdfs:label "ballach" ;
+  :part n:balla .
+
+n:donnag_a_bhalla
+  rdfs:label "donnag a’ bhalla" ;
+  :part n:donnag , n:balla .
 
 n:each_mara
-  rdfs:label "each mara" .
+  rdfs:label "each mara" ;
+  :part n:each , n:muir .
 
 n:faoileann
   a :FeminineNoun ;
   rdfs:label "faoileann" .
 
 n:feusag_nan_creag
-  rdfs:label "feusag nan creag" .
+  rdfs:label "feusag nan creag" ;
+  :part n:feusag , n:creag .
 
-n:fiacail_lannach
-  rdfs:label "fiacail lannach" .
+n:fiacaill_lannach
+  rdfs:label "fiacaill lannach" ;
+  :part n:fiacaill , a:lannach .
 
-n:fiior_rooin
-  rdfs:label "fìor ròin" .
+a:lannach
+  a :Adjective ;
+  rdfs:label "lannach" ;
+  :part n:lann .
+
+n:fiior_roon
+  rdfs:label "fìor ròn" ;
+  :part a:fiior , n:roon .
 
 n:fooman_chritheannan
-  rdfs:label "fòman chritheannan" .
+  rdfs:label "fòman chritheannan" ;
+  :part n:fooman , n:critheann .
+
+n:fooman
+  a :MasculineNoun ;
+  rdfs:label "fòman" .
 
 n:fungas_mealach
-  rdfs:label "fungas mealach" .
+  rdfs:label "fungas mealach" ;
+  :part n:fungas , a:mealach .
+
+a:mealach
+  a :Adjective ;
+  rdfs:label "mealach" ;
+  :part n:mil .
+
+n:mil
+  a :FeminineNoun ;
+  rdfs:label "mil" ;
+  :gen "meala" .
 
 n:giuuran
   a :MasculineNoun ;
@@ -2697,26 +2751,49 @@ n:gnee
   rdfs:label "gnè" .
 
 n:gob_leathann
-  rdfs:label "gob-leathann" .
+  rdfs:label "gob leathann" ;
+  :part n:gob , a:leathann .
 
 n:groomag
   a :FeminineNoun ;
   rdfs:label "gròmag" .
 
 n:gruag_na_bana_bhuidsich
-  rdfs:label "gruag na bana-bhuidsich" .
+  rdfs:label "gruag na bana-bhuidsich" ;
+  :part n:gruag , n:bana_bhuidseach .
+
+n:bana_bhuidseach
+  a :FeminineNoun ;
+  rdfs:label "bana-bhuidseach" ;
+  :part n:bean , n:buidseach .
+
+n:bean
+  a :FeminineNoun ;
+  rdfs:label "bean" .
+
+n:buidseach
+  a :MasculineNoun ;
+  rdfs:label "buidseach" .
+
+n:gruag
+  a :FeminineNoun ;
+  rdfs:label "gruag" .
 
 n:leoomhann_mara
-  rdfs:label "leòmhann-mara" .
+  rdfs:label "leòmhann mara" ;
+  :part n:leoomhann , n:muir .
+
+n:leoomhann
+  a :MasculineNoun ;
+  rdfs:label "leòmhann" .
 
 n:leptonia_purpaidh
-  rdfs:label "leptonia purpaidh" .
+  rdfs:label "leptonia purpaidh" ;
+  :part a:purpaidh .
 
 n:leumadair_cliathaich_bhaan_a_Chuain_Siar
-  rdfs:label "leumadair cliathaich-bhàn a’ Chuain Siar" .
-
-# STARTING HERE NEXT
-# CLEANED EVERYTHING BELOW HERE
+  rdfs:label "leumadair cliathaich-bhàn a’ Chuain Siar" ;
+  :part n:leumadair_cliathaich_bhaain , n:an_Cuan_Siar .
 
 n:losgann_dubh
   rdfs:label "losgann dubh" ;
@@ -2922,7 +2999,7 @@ n:feusag
 
 n:roon_ailbhein_a_chinn_a_deas
   rdfs:label "ròn ailbhein a’ chinn a deas" ;
-  :part n:roon_ailbhein n:an_ceann_a_deas .
+  :part n:roon_ailbhein , n:an_ceann_a_deas .
 
 n:roon_ailbhein
   rdfs:label "ròn ailbhein" ;

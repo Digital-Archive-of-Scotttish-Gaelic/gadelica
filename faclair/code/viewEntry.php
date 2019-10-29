@@ -48,7 +48,7 @@ WHERE
 }
 SPQR;
 $query = urlencode($query);
-$url = 'http://daerg.arts.gla.ac.uk:8080/fuseki/Faclair?output=json&query=' . $query;
+$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . $query;
 $json = file_get_contents($url);
 $results = json_decode($json,false)->results->bindings;
 echo '<div class="card"><div class="card-body">';

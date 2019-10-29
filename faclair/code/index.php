@@ -8,9 +8,9 @@
 $result = '';
 if (isset($_GET['searchTerm'])) { // check for search term in URL
   $result = $_GET['searchTerm'];
-  echo '<title>Stòras-B – ' . $result . '</title>';
+  echo '<title>Stòras-Brì – ' . $result . '</title>';
 }
-else echo '<title>Stòras-B</title>';
+else echo '<title>Stòras-Brì</title>';
 ?>
   </head>
   <body style="padding-top: 20px;">
@@ -59,8 +59,7 @@ WHERE
 }
 ORDER BY strlen(str(?gd))
 SPQR;
-  $url = 'http://daerg.arts.gla.ac.uk:8080/fuseki/Faclair?output=json&query=' . urlencode($query);
-  echo $url;
+  $url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
   $results = json_decode(file_get_contents($url),false)->results->bindings;
   echo '<div class="list-group list-group-flush">'; // display list of search results
   foreach ($results as $result) {
@@ -73,7 +72,7 @@ else {
 }
 ?>
       <nav class="navbar navbar-dark bg-primary fixed-bottom navbar-expand-lg">
-        <a class="navbar-brand" href="index.php">Stòras-B</a>
+        <a class="navbar-brand" href="index.php">Stòras-Brì</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>

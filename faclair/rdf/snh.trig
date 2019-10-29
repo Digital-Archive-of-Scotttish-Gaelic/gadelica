@@ -7424,71 +7424,69 @@
     rdfs:comment "SNH Latin: Hygrocybe punicea" ;
     rdfs:comment "SNH category: " .
 
-  n:dearc_luachrach_Ailpeach
+# STARTING HERE NEXT
+# CLEANED EVERYTHING BELOW HERE
+
+  n:dearc_luachrach_ailpeach
     a :FeminineNoun ;
     rdfs:label "dearc-luachrach Ailpeach" ;
-    :sense "Alpine newt" ;
+    :sense "Alpine newt" , "Ichthyosaura alpestris" ;
     :pl "dearcan-luachrach Ailpeach" ;
     rdfs:comment "SNH ID: 1103" ;
-    rdfs:comment "SNH Latin: Ichthyosaura alpestris" ;
     rdfs:comment "SNH category: amphibians and reptiles" .
 
   n:dearc_luachrach_boiseach
     a :FeminineNoun ;
     rdfs:label "dearc-luachrach boiseach" ;
-    :sense "palmate newt" ;
+    :sense "palmate newt" , "Triturus helveticus" ;
     :pl "dearcan-luachrach boiseach" ;
     rdfs:comment "SNH ID: 1104" ;
-    rdfs:comment "SNH Latin: Triturus helveticus" ;
     rdfs:comment "SNH category: amphibians and reptiles" .
 
   n:donnag_bhallach
     a :FeminineNoun ;
     rdfs:label "donnag bhallach" ;
-    :sense "wall butterfly" ;
+    :sense "wall butterfly" , "Lasiommata megera" ;
     :pl "donnagan ballach" ;
-    rdfs:comment "SNH ID: 1105" ;
-    rdfs:comment "SNH other: donnag a' bhalla <em>f</em>" ;
-    rdfs:comment "SNH Latin: Lasiommata megera" ;
-    rdfs:comment "SNH category: donnagan a' bhalla" .
+    rdfs:comment "SNH ID: 1105" .
+
+  n:donnag_a_bhalla
+    a :FeminineNoun ;
+    rdfs:label "donnag a’ bhalla" ;
+    :sense "wall butterfly" , "Lasiommata megera" ;
+    :pl "donnagan a’ bhalla" ;
+    rdfs:comment "SNH ID: 1105a" .
 
   n:each_mara
     a :FeminineNoun ;
     rdfs:label "each-mara" ;
-    :sense "walrus" ;
+    :sense "walrus" , "Odobenus rosmarus" ;
     :pl "eich-mhara" ;
-    rdfs:comment "SNH ID: 1106" ;
-    rdfs:comment "SNH Latin: Odobenus rosmarus" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1106" .
 
   n:faoileann
     a :FeminineNoun ;
     rdfs:label "faoileann" ;
-    :sense "common gull" ;
+    :sense "common gull" , "Larus canus" ;
     :pl "faoileannan" ;
     rdfs:comment "SNH ID: 1107" ;
-    rdfs:comment "SNH Latin: Larus canus" ;
     rdfs:comment "SNH category: birds" .
 
   n:feusag_nan_creag
     a :FeminineNoun ;
     rdfs:label "feusag nan creag" ;
-    :sense "sea ivory " ;
+    :sense "sea ivory" , "Ramalina siliquosa" ;
     :pl "feusagan nan creag" ;
-    rdfs:comment "SNH ID: 1108" ;
-    rdfs:comment "SNH Latin: Ramalina siliquosa" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1108" .
 
-  n:fiacail_lannach
+  n:fiacaill_lannach
     a :FeminineNoun ;
     rdfs:label "fiacail lannach" ;
-    :sense "scaly tooth" ;
+    :sense "scaly tooth" , "Sarcodon imbricatus" ;
     :pl "fiaclan lannach" ;
-    rdfs:comment "SNH ID: 1109" ;
-    rdfs:comment "SNH Latin: Sarcodon imbricatus" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1109" .
 
-  n:fiior_rooin
+  n:fiior_roon
     a :FeminineNoun ;
     rdfs:label "fìor ròin" ;
     :sense "true seals" ;
@@ -7498,36 +7496,30 @@
   n:fooman_chritheannan
     a :MasculineNoun ;
     rdfs:label "fòman chritheannan" ;
-    :sense "aspen fomes" ;
-    rdfs:comment "SNH ID: 1111" ;
-    rdfs:comment "SNH Latin: Phellinus tremulae" ;
-    rdfs:comment "SNH category: " .
+    :sense "aspen fomes" , "Phellinus tremulae" ;
+    rdfs:comment "SNH ID: 1111" .
 
   n:fungas_mealach
     a :MasculineNoun ;
     rdfs:label "fungas mealach" ;
-    :sense "honey fungus" ;
+    :sense "honey fungus" , "Armillaria ostoyae" ;
     :pl "fungasan mealach" ;
     rdfs:comment "SNH ID: 1112" ;
-    rdfs:comment "SNH Latin: Armillaria ostoyae" ;
     rdfs:comment "SNH category: fungus and lichen" .
 
   n:giuuran
     a :MasculineNoun ;
     rdfs:label "giùran" ;
-    :sense "barnacle" ;
+    :sense "barnacle" , "Cirripedia (Infraclass) spp." ;
     :pl "giùranan" ;
-    rdfs:comment "SNH ID: 1113" ;
-    rdfs:comment "SNH Latin: Cirripedia (Infraclass) spp." ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1113" .
 
   n:glothagach
     a :MasculineNoun ;
     rdfs:label "glothagach" ;
     :sense "frogspawn" ;
     :pl "glothagaich" ;
-    rdfs:comment "SNH ID: 1114" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1114" .
 
   n:gnee
     a :FeminineNoun ;
@@ -7535,64 +7527,50 @@
     :sense "species " ;
     :pl "gnèithean" ;
     rdfs:comment "SNH ID: 1115" ;
-    rdfs:comment "SNH info: Gnè can also be used as the term for gender." ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH info: Gnè can also be used as the term for gender." .
 
   n:gob_leathann
     a :MasculineNoun ;
     rdfs:label "gob-leathann" ;
-    :sense "shoveler" ;
+    :sense "shoveler" , "Anas clypeata" ;
     :pl "guib-leathann" ;
-    rdfs:comment "SNH ID: 1116" ;
-    rdfs:comment "SNH Latin: Anas clypeata" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1116" .
 
   n:groomag
     a :FeminineNoun ;
     rdfs:label "gròmag" ;
     :sense "blenny" ;
     :pl "gròmagan" ;
-    rdfs:comment "SNH ID: 1117" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1117" .
 
   n:gruag_na_bana_bhuidsich
     a :FeminineNoun ;
     rdfs:label "gruag na bana-bhuidsich" ;
-    :sense "witches' hair" ;
+    :sense "witches’ hair" , "Alectoria sarmentosa" ;
     :pl "gruagan na bana-bhuidsich" ;
-    rdfs:comment "SNH ID: 1118" ;
-    rdfs:comment "SNH Latin: Alectoria sarmentosa" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1118" .
 
   n:leoomhann_mara
     a :FeminineNoun ;
     rdfs:label "leòmhann-mara" ;
-    :sense "sea lion" ;
+    :sense "sea lion" , "Eumetopias jubatus" ;
     :pl "leòmhainn-mhara" ;
-    rdfs:comment "SNH ID: 1119" ;
-    rdfs:comment "SNH Latin: Eumetopias jubatus" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1119" .
 
   n:leptonia_purpaidh
     a :MasculineNoun ;
     rdfs:label "leptonia purpaidh" ;
-    :sense "dark purple leptonia" ;
+    :sense "dark purple leptonia" , "Leptonia nigroviolacea" ;
     :pl "leptonia purpaidh" ;
-    rdfs:comment "SNH ID: 1120" ;
-    rdfs:comment "SNH Latin: Leptonia nigroviolacea" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1120" .
 
   n:leumadair_cliathaich_bhaan_a_Chuain_Siar
     a :MasculineNoun ;
-    rdfs:label "leumadair cliathaich-bhàn a' Chuain Siar" ;
-    :sense "Atlantic white-sided dolphin" ;
-    :pl "leumadairean cliathaich-bhàn a' Chuain Siar" ;
+    rdfs:label "leumadair cliathaich-bhàn a’ Chuain Siar" ;
+    :sense "Atlantic white-sided dolphin" , "Lagenorhynchus acutus" ;
+    :pl "leumadairean cliathaich-bhàn a’ Chuain Siar" ;
     rdfs:comment "SNH ID: 1121" ;
-    rdfs:comment "SNH Latin: Lagenorhynchus acutus" ;
     rdfs:comment "SNH category: mammals" .
-
-# STARTING HERE NEXT
-# CLEANED EVERYTHING BELOW HERE
 
   n:losgann_dubh
     a :FeminineNoun ;

@@ -21,7 +21,7 @@ WHERE
 }
 SPQR;
 $query = urlencode($query);
-$url = 'http://daerg.arts.gla.ac.uk:8080/fuseki/Faclair?output=json&query=' . $query;
+$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . $query;
 $json = file_get_contents($url);
 $data = json_decode($json,false)->results->bindings;
 $ids = [];
@@ -43,7 +43,7 @@ WHERE
 }
 SPQR;
 $query = urlencode($query);
-$url = 'http://daerg.arts.gla.ac.uk:8080/fuseki/Faclair?output=json&query=' . $query;
+$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . $query;
 $json = file_get_contents($url);
 $data = json_decode($json,false)->results->bindings;
 echo '<div class="card"><div class="card-body">';
@@ -56,7 +56,7 @@ echo '</ul>';
 echo '</div></div>';
 ?>
       <nav class="navbar navbar-dark bg-primary fixed-bottom navbar-expand-lg">
-        <a class="navbar-brand" href="index.php">Stòras-B</a>
+        <a class="navbar-brand" href="index.php">Stòras-Brì</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>

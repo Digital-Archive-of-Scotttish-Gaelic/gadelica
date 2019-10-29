@@ -21,7 +21,7 @@ WHERE
   }
 }
 SPQR;
-$url = 'http://daerg.arts.gla.ac.uk:8080/fuseki/Faclair?output=json&query=' . urlencode($query);
+$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
 $results = json_decode(file_get_contents($url),false)->results->bindings;
 $hws = [];
 foreach ($results as $nextResult) {
