@@ -2599,18 +2599,39 @@ n:crooch_na_beinne
   rdfs:label "cròch na beinne" .
 
 # STARTING HERE NEXT
+# CLEANED EVERYTHING BELOW HERE
 
 n:crosgag
   a :FeminineNoun ;
   rdfs:label "crosgag" .
 
+n:crois_na_traaghad
+  rdfs:label "crois na tràghad" ;
+  :part n:crois , n:traaigh .
+
+n:crois
+  a :FeminineNoun ;
+  rdfs:label "crois" .
+
 n:crosgag_bhrisg
-  rdfs:label "crosgag bhrisg" .
+  rdfs:label "crosgag bhrisg" ;
+  :part n:crosgag , a:brisg .
+
+a:brisg
+  a :Adjective ;
+  rdfs:label "brisg" .
 
 n:crosgag_iteach
-  rdfs:label "crosgag iteach" .
+  rdfs:label "crosgag iteach" ;
+  :part n:crosgag , a:iteach .
 
-# CLEANED EVERYTHING BELOW HERE
+a:iteach
+  a :Adjective ;
+  rdfs:label "iteach" .
+
+n:lus_iteach_tuathach
+  rdfs:label "lus iteach tuathach" ;
+  :part n:lus , a:iteach , a:tuathach .
 
 n:crotal_socaid
   rdfs:label "crotal socaid" ;

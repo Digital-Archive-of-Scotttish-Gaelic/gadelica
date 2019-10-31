@@ -7264,6 +7264,7 @@
     rdfs:comment "SNH category: " .
 
 # STARTING HERE NEXT
+# CLEANED EVERYTHING BELOW HERE
 
   n:crosgag
     a :FeminineNoun ;
@@ -7271,7 +7272,13 @@
     :sense "starfish" ;
     :pl "crosgagan" ;
     rdfs:comment "SNH ID: 1084" ;
-    rdfs:comment "SNH other: croise na tràghad" ;
+    rdfs:comment "SNH category: under the sea" .
+
+  n:crois_na_traaghad
+    a :FeminineNoun ;
+    rdfs:label "croise na tràghad" ;
+    :sense "starfish" ;
+    rdfs:comment "SNH ID: 1084a" ;
     rdfs:comment "SNH category: under the sea" .
 
   n:crosgag_bhrisg
@@ -7279,20 +7286,22 @@
     rdfs:label "crosgag bhrisg" ;
     :sense "brittle star" ;
     :pl "crosgagan brisge" ;
-    rdfs:comment "SNH ID: 1085" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1085" .
 
   n:crosgag_iteach
     a :FeminineNoun ;
     rdfs:label "crosgag iteach" ;
-    :sense "northern feather star" ;
+    :sense "northern feather star" , "Leptometra celtica" ;
     :pl "crosgagan iteach" ;
     rdfs:comment "SNH ID: 1086" ;
-    rdfs:comment "SNH other: lus-iteach thuathach <em>m</em>" ;
-    rdfs:comment "SNH Latin: Leptometra celtica" ;
     rdfs:comment "SNH category: invertebrates" .
 
-# CLEANED EVERYTHING BELOW HERE
+  n:lus_iteach_tuathach
+    a :MasculineNoun ;
+    rdfs:label "lus-iteach thuathach" ;
+    :sense "northern feather star" , "Leptometra celtica" ;
+    rdfs:comment "SNH ID: 1086a" ;
+    rdfs:comment "SNH category: invertebrates" .
 
   n:crotal_socaid
     a :MasculineNoun ;
