@@ -7263,6 +7263,8 @@
     rdfs:comment "SNH Latin: Solorina crocea" ;
     rdfs:comment "SNH category: " .
 
+# STARTING HERE NEXT
+
   n:crosgag
     a :FeminineNoun ;
     rdfs:label "crosgag" ;
@@ -7290,93 +7292,86 @@
     rdfs:comment "SNH Latin: Leptometra celtica" ;
     rdfs:comment "SNH category: invertebrates" .
 
+# CLEANED EVERYTHING BELOW HERE
+
   n:crotal_socaid
+    a :MasculineNoun ;
     rdfs:label "crotal socaid" ;
-    :sense "socket lichen" ;
-    :pl "M" ;
+    :sense "socket lichen" , "Solorina saccata" ;
+    :pl "crotail socaid" ;
     rdfs:comment "SNH ID: 1087" ;
-    rdfs:comment "SNH Latin: Solorina saccata" ;
-    rdfs:comment "SNH category: crotail socaid" .
+    rdfs:comment "SNH category: fungus and lichen" .
 
   n:crotal_ceann_phriine
     a :MasculineNoun ;
     rdfs:label "crotal ceann-phrìne" ;
-    :sense "pinhead lichen" ;
+    :sense "pinhead lichen" , "Chaenotheca brunneola" ;
     :pl "crotail cheann-phrìne" ;
     rdfs:comment "SNH ID: 1088" ;
-    rdfs:comment "SNH Latin: Chaenotheca brunneola" ;
     rdfs:comment "SNH category: fungus and lichen" .
 
   n:crotal_coille
     a :MasculineNoun ;
     rdfs:label "crotal coille" ;
-    :sense "tree lungwort " ;
-    :pl "crotail choille " ;
+    :sense "tree lungwort" , "Lobaria pulmonaria" ;
+    :pl "crotail choille" ;
     rdfs:comment "SNH ID: 1089" ;
-    rdfs:comment "SNH Latin: Lobaria pulmonaria" ;
     rdfs:comment "SNH category: fungus and lichen" .
 
   n:crotal_corcra_cupanach
     a :MasculineNoun ;
     rdfs:label "crotal corcra cupanach" ;
-    :sense "scarlet-cup lichen" ;
+    :sense "scarlet-cup lichen" , "Cladonia coccifera" ;
     :pl "crotail chorcra chupanach" ;
     rdfs:comment "SNH ID: 1090" ;
-    rdfs:comment "SNH Latin: Cladonia coccifera" ;
     rdfs:comment "SNH category: fungus and lichen" .
 
   n:crotal_litreach
     a :MasculineNoun ;
     rdfs:label "crotal litreach" ;
-    :sense "script lichen" ;
+    :sense "script lichen" , "Graphis scripta" ;
     :pl "crotail litreach" ;
     rdfs:comment "SNH ID: 1091" ;
-    rdfs:comment "SNH Latin: Graphis scripta" ;
     rdfs:comment "SNH category: fungus and lichen" .
 
   n:crotal_mall_fhaais
     a :MasculineNoun ;
     rdfs:label "crotal mall-fhàis" ;
-    :sense "slow-growing lichen" ;
+    :sense "slow-growing lichen" , "Lecanora rupicola" ;
     :pl "crotail mhall-fhàis" ;
     rdfs:comment "SNH ID: 1092" ;
-    rdfs:comment "SNH Latin: Lecanora rupicola" ;
     rdfs:comment "SNH category: fungus and lichen" .
 
   n:crotal_oir_bhuidhe_bruu_bhreac
     a :MasculineNoun ;
     rdfs:label "crotal oir-bhuidhe brù-bhreac" ;
-    :sense "golden-edged specklebelly" ;
+    :sense "golden-edged specklebelly" , "Pseudocyphellaria crocata" ;
     :pl "crotail oir-bhuidhe brù-bhreac" ;
     rdfs:comment "SNH ID: 1093" ;
-    rdfs:comment "SNH Latin: Pseudocyphellaria crocata" ;
     rdfs:comment "SNH category: fungus and lichen" .
 
   n:crotal_reein_fheeidh
     a :MasculineNoun ;
     rdfs:label "crotal rèin-fhèidh" ;
-    :sense "crotal rèin-fhèidh" ;
+    :sense "reindeer lichen" , "Cladonia portentosa" ;
     :pl "crotail rèin-fhèidh" ;
     rdfs:comment "SNH ID: 1094" ;
-    rdfs:comment "SNH Latin: Cladonia portentosa" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH category: fungus and lichen" .
 
   n:crotal_sgeeithe_mogalach
     a :MasculineNoun ;
     rdfs:label "crotal sgèithe mogalach" ;
-    :sense "netted shield lichen " ;
+    :sense "netted shield lichen" , "Parmelia sulcata" ;
     :pl "crotail sgèithe mhogalach" ;
     rdfs:comment "SNH ID: 1096" ;
-    rdfs:comment "SNH Latin: Parmelia sulcata" ;
     rdfs:comment "SNH category: fungus and lichen" .
 
   n:crotal_stuic
     a :MasculineNoun ;
     rdfs:label "crotal stuic" ;
-    :sense "stump lichen" ;
+    :sense "stump lichen" , "Cladonia botrytes" ;
     :pl "crotail stuic" ;
     rdfs:comment "SNH ID: 1097" ;
-    rdfs:comment "SNH Latin: Cladonia botrytes" ;
     rdfs:comment "SNH category: fungus and lichen" .
 
   n:cruubag
@@ -7385,47 +7380,35 @@
     :sense "crab" ;
     :pl "crùbagan" ;
     rdfs:comment "SNH ID: 1098" ;
-    rdfs:comment "SNH Latin: Crab" ;
     rdfs:comment "SNH category: under the sea" .
 
   n:cruubag_ghiomaich
     a :FeminineNoun ;
     rdfs:label "crùbag ghiomaich" ;
-    :sense "squat lobster" ;
+    :sense "squat lobster" , "Munida rugosa" ;
     :pl "crùbagan giomaich" ;
-    rdfs:comment "SNH ID: 1099" ;
-    rdfs:comment "SNH Latin: Munida rugosa" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1099" .
 
   n:cupa_baais
     a :MasculineNoun ;
     rdfs:label "cupa bàis" ;
-    :sense "the death cap" ;
+    :sense "the death cap" , "Amanita phalloides" ;
     :pl "cupannan bàis" ;
-    rdfs:comment "SNH ID: 1100" ;
-    rdfs:comment "SNH Latin: Amanita phalloides" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1100" .
 
   n:cupa_dearg_a_mhaaileachain
     a :MasculineNoun ;
-    rdfs:label "cupa dearg a' mhàileachain" ;
-    :sense "scarlet elf cup" ;
-    :pl "cupannan dearg a' mhàileachain" ;
-    rdfs:comment "SNH ID: 1101" ;
-    rdfs:comment "SNH Latin: Sarcoscypha coccinea" ;
-    rdfs:comment "SNH category: " .
+    rdfs:label "cupa dearg a’ mhàileachain" ;
+    :sense "scarlet elf cup" , "Sarcoscypha coccinea" ;
+    :pl "cupannan dearg a’ mhàileachain" ;
+    rdfs:comment "SNH ID: 1101" .
 
   n:cupa_ceeireach_dearg
     a :MasculineNoun ;
     rdfs:label "cupa-cèireach dearg" ;
-    :sense "crimson wax cap" ;
+    :sense "crimson wax cap" , "Hygrocybe punicea" ;
     :pl "cupannan-cèireach dearg" ;
-    rdfs:comment "SNH ID: 1102" ;
-    rdfs:comment "SNH Latin: Hygrocybe punicea" ;
-    rdfs:comment "SNH category: " .
-
-# STARTING HERE NEXT
-# CLEANED EVERYTHING BELOW HERE
+    rdfs:comment "SNH ID: 1102" .
 
   n:dearc_luachrach_ailpeach
     a :FeminineNoun ;

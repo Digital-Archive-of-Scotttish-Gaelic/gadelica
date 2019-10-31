@@ -2341,6 +2341,7 @@ n:beachlann
   rdfs:label "beachlann" .
 
 n:sgiath
+  a :FeminineNoun ;
   rdfs:label "sgiath" .
 
 n:seillean_meala
@@ -2597,6 +2598,8 @@ n:creachan_banrigh
 n:crooch_na_beinne
   rdfs:label "cròch na beinne" .
 
+# STARTING HERE NEXT
+
 n:crosgag
   a :FeminineNoun ;
   rdfs:label "crosgag" .
@@ -2607,54 +2610,147 @@ n:crosgag_bhrisg
 n:crosgag_iteach
   rdfs:label "crosgag iteach" .
 
+# CLEANED EVERYTHING BELOW HERE
+
 n:crotal_socaid
-  rdfs:label "crotal socaid" .
+  rdfs:label "crotal socaid" ;
+  :part n:crotal , n:socaid .
+
+n:socaid
+  a :FeminineNoun ;
+  rdfs:label "socaid" .
 
 n:crotal_ceann_phriine
-  rdfs:label "crotal ceann-phrìne" .
+  rdfs:label "crotal ceann-phrìne" ;
+  :part n:crotal , n:ceann , n:priine .
+
+n:priine
+  a :MasculineNoun ;
+  rdfs:label "prìne" .
 
 n:crotal_coille
-  rdfs:label "crotal coille" .
+  rdfs:label "crotal coille" ;
+  :part n:crotal , n:coille .
 
 n:crotal_corcra_cupanach
-  rdfs:label "crotal corcra cupanach" .
+  rdfs:label "crotal corcra cupanach" ;
+  :part n:crotal , a:corcra , a:cupanach .
+
+a:corcra
+  a :Adjective ;
+  rdfs:label "corcra" .
+
+a:cupanach
+  a :Adjective ;
+  rdfs:label "cupanach" ;
+  :part n:cupa .
 
 n:crotal_litreach
-  rdfs:label "crotal litreach" .
+  rdfs:label "crotal litreach" ;
+  :part n:crotal , n:litir .
+
+n:litir
+  a :FeminineNoun ;
+  rdfs:label "litir" ;
+  :gen "litreach" .
 
 n:crotal_mall_fhaais
-  rdfs:label "crotal mall-fhàis" .
+  rdfs:label "crotal mall-fhàis" ;
+  :part n:crotal , n:faas , a:mall .
+
+a:mall
+  a :Adjective ;
+  rdfs:label "mall" .
 
 n:crotal_oir_bhuidhe_bruu_bhreac
-  rdfs:label "crotal oir-bhuidhe brù-bhreac" .
+  rdfs:label "crotal oir-bhuidhe brù-bhreac" ;
+  :part n:crotal , n:oir , a:buidhe , n:bruu_bhreac .
+
+n:bruu_bhreac
+  rdfs:label "brù bhreac" ;
+  :part n:bruu , a:breac .
+
+n:bruu
+  a :FeminineNoun ;
+  rdfs:label "brù" .
+
+n:oir
+  a :FeminineNoun ;
+  rdfs:label "oir" .
 
 n:crotal_reein_fheeidh
-  rdfs:label "crotal rèin-fhèidh" .
+  rdfs:label "crotal rèin-fhèidh" ;
+  :part n:crotal , n:reein_fhiadh .
+
+n:reein_fhiadh
+  rdfs:label "rèin-fhiadh" ;
+  :part n:fiadh ;
+  :gen "rèin-fhèidh" .
 
 n:crotal_sgeeithe_mogalach
-  rdfs:label "crotal sgèithe mogalach" .
+  rdfs:label "crotal sgèithe mogalach" ;
+  :part n:crotal , n:sgiath , a:mogalach .
+
+a:mogalach
+  a :Adjective ;
+  rdfs:label "mogalach" ;
+  :part n:mogal .
+
+n:mogal
+  a :MasculineNoun ;
+  rdfs:label "mogal" ;
 
 n:crotal_stuic
-  rdfs:label "crotal stuic" .
+  rdfs:label "crotal stuic" ;
+  :part n:crotal , n:stoc .
+
+n:stoc
+  a :MasculineNoun ;
+  rdfs:label "stoc" ;
+  :gen "stuic" .
 
 n:cruubag
   a :FeminineNoun ;
   rdfs:label "crùbag" .
 
 n:cruubag_ghiomaich
-  rdfs:label "crùbag ghiomaich" .
+  rdfs:label "crùbag ghiomaich" ;
+  :part n:cruubag , n:giomach .
 
 n:cupa_baais
-  rdfs:label "cupa bàis" .
+  rdfs:label "cupa bàis" ;
+  :part n:cupa , n:baas .
+
+n:cupa
+  a :MasculineNoun ;
+  rdfs:label "cupa" .
+
+n:baas
+  a :MasculineNoun ;
+  rdfs:label "bàs" ;
+  :gen "bàis" .
 
 n:cupa_dearg_a_mhaaileachain
-  rdfs:label "cupa dearg a' mhàileachain" .
+  rdfs:label "cupa dearg a’ mhàileachain" ;
+  :part n:cupa , a:dearg , n:maaileachan .
+
+n:maaileachan
+  a :MasculineNoun ;
+  rdfs:label "màileachan" ;
+  :gen "màileachain" .
 
 n:cupa_ceeireach_dearg
-  rdfs:label "cupa-cèireach dearg" .
+  rdfs:label "cupa cèireach dearg" ;
+  :part n:cupa , a:ceeireach , a:dearg .
 
-# STARTING HERE NEXT
-# CLEANED EVERYTHING BELOW HERE
+a:ceeireach
+  a :Adjective ;
+  rdfs:label "cèireach" l
+  :part n:ceeir .
+
+n:ceeir
+  a :FeminineNoun ;
+  rdfs:label "cèir" .
 
 n:dearc_luachrach_ailpeach
   rdfs:label "dearc luachrach ailpeach" ;
