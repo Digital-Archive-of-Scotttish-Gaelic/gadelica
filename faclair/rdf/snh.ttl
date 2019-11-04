@@ -2432,9 +2432,27 @@ n:taaladh
   rdfs:label "tàladh" ;
     :sense "attracting" .
 
+# STARTING HERE NEXT
+
 n:abhainn
   a :FeminineNoun ;
   rdfs:label "abhainn" .
+
+n:sruth
+    :MasculineNoun ;
+    rdfs:label "sruth" ;
+    :sense "river" ;
+    :pl "sruthan" ;
+    rdfs:comment "SNH ID: 1032a" ;
+    rdfs:comment "SNH category: landscapes" .
+
+  n:allt
+    :MasculineNoun ;
+    rdfs:label "allt" ;
+    :sense "river" ;
+    :pl "uillt" ;
+    rdfs:comment "SNH ID: 1032b" ;
+    rdfs:comment "SNH category: landscapes" .
 
 n:adag
   a :FeminineNoun ;
@@ -2456,13 +2474,37 @@ n:ainle
   a :FeminineNoun ;
   rdfs:label "ainle" .
 
+n:cuileag_ghlas
+    a :FeminineNoun ;
+    rdfs:label "cuileag ghlas" ;
+    :sense "greenfly" ;
+    :pl "cuileagan glasa" ;
+    rdfs:comment "SNH ID: 1038a" ;
+    rdfs:comment "SNH audio: cuileag ghlas.mp3" .
+
 n:ainmhidh
   a :MasculineNoun ;
   rdfs:label "ainmhidh" .
 
+n:beathach
+    a :MasculineNoun ;
+    rdfs:label "beathach" ;
+    :sense "animal" ;
+    :pl "beathaichean" ;
+    rdfs:comment "SNH ID: 1039a" .
+
 n:aairneag
   a :FeminineNoun ;
   rdfs:label "àirneag" .
+
+n:droigheann_dubh
+    a :MasculineNoun ;
+    rdfs:label "droigheann dubh" ;
+    :sense "sloe berry" , "Prunus spinosa" ;
+    :pl "droighinn dubha" ;
+    rdfs:comment "SNH ID: 1040a" ;
+    rdfs:comment "SNH info: Traditionally used to treat fevers." ;
+    rdfs:comment "SNH category: plants" .
 
 n:aaiteachas
   a :MasculineNoun ;
@@ -2472,16 +2514,47 @@ n:aiteann
   a :MasculineNoun ;
   rdfs:label "aiteann" .
 
-n:algach
-  a :FeminineNoun ;
+n:staoin
+    a :FeminineNoun ;
+    rdfs:label "staoin" ;
+    :sense "juniper" , "Juniperus communis" ;
+    rdfs:comment "SNH ID: 1042a" ;
+    rdfs:comment "SNH category: trees" .
+
+  n:iubhar_beinne
+    a :MasculineNoun ;
+    rdfs:label "iubar-beinne" ;
+    :sense "juniper" , "Juniperus communis" ;
+    rdfs:comment "SNH ID: 1042b" ;
+    rdfs:comment "SNH category: trees" .
+
+a:algach
+  a :Adjective ;
   rdfs:label "algach" .
 
-n:algaich
-  a :FeminineNoun ;
-  rdfs:label "algaich" .
+n:liirean
+    a :MasculineNoun ;
+    rdfs:label "lìrean" ;
+    :sense "algae" , "Eukaryota (Division) spp." ;
+    rdfs:comment "SNH ID: 1044a" .
+
+  n:taachair
+    a :MasculineNoun ;
+    rdfs:label "tàchair" ;
+    :sense "algae" , "Eukaryota (Division) spp." ;
+    rdfs:comment "SNH ID: 1044b" .
 
 n:amadan_moointich
   rdfs:label "amadan-mòintich" .
+
+n:gurraiceach
+    a :MasculineNoun ;
+    rdfs:label "gurraiceach" ;
+    :sense "dotterel" , "Charadrius morinellus" ;
+    :pl "gurraicich" ;
+    rdfs:comment "SNH ID: 1045a" ;
+    rdfs:comment "SNH category: birds" .
+
 
 n:amanita_sneachda
   rdfs:label "amanita sneachda" .
@@ -2507,31 +2580,156 @@ n:argas_donn_tuathach
 n:atharrachadh_gnaath_shiide
   rdfs:label "atharrachadh gnàth-shìde" .
 
+n:atharrachadh_siide
+    a :MasculineNoun ;
+    rdfs:label "atharrachadh sìde" ;
+    :sense "climate change" ;
+    rdfs:comment "SNH ID: 1053a" .
+
+# CLEANED EVERYTHING BELOW HERE
+
 n:ath_bheothachadh
-  rdfs:label "ath-bheothachadh" .
+  rdfs:label "ath-bheothachadh" ;
+  :part v:ath_bheothaich .
+
+v:ath_bheothaich
+  rdfs:label "ath-bheothaich" ;
+  :part a:ath , v:beothaich .
+
+v:beothaich
+  rdfs:label "beothaich" ;
+  :part a:beoo .
+
+v:rach_am_feabhas
+  rdfs:label "rach am feabhas" ;
+  :part v:rach , n:feabhas .
+
+v:rach
+  a :Verb ;
+  rdfs:label "rach" .
+
+n:feabhas
+  a :MasculineNoun ;
+  rdfs:label "feabhas" .
 
 a:ath_nuadhachail
   a :Adjective ;
-  rdfs:label "ath-nuadhachail" .
+  rdfs:label "ath-nuadhachail" ;
+  :part v:ath_nuadhaich.
+
+v:ath_nuadhaich
+  rdfs:label "ath-nuadhaich" ;
+  :part a:ath , v:nuadhaich .
+
+v:nuadhaich
+  a :Verb ;
+  rdfs:label "nuadhaich" ;
+  :part a:nuadh .
+
+a:ath
+  a :Adjective ;
+  rdfs:label "ath" .
+
+a:leantainneach
+  rdfs:label "leantainneach" ;
+  :part n:leantainn .
+
+n:leantainn
+  a :MasculineNoun ;
+  rdfs:label "leantainn" ;
+  :part v:lean .
+
+v:lean
+  a :Verb ;
+  rdfs:label "lean" .
+
+a:so_uurachadh
+  rdfs:label "so-ùrachadh" ;
+  :part v:uuraich .
+
+v:uuraich
+  a :Verb ;
+  rdfs:label "ùraich" ;
+  :vn "ùrachadh" ;
+  :part a:uur .
+
+a:uur
+  a :Adjective ;
+  rdfs:label "ùr" .
 
 n:balgan_ceann_phinc
-  rdfs:label "balgan ceann-phinc" .
+  rdfs:label "balgan ceann-phinc" ;
+  :part n:balgan , n:ceann , a:pinc .
+
+n:balgan
+  a :MasculineNoun ;
+  rdfs:label "balgan" ;
+  :part n:balg .
+
+n:balg
+  a :MasculineNoun ;
+  rdfs:label "balg" .
 
 n:balgan_buachair_cupa_ceeireach
-  rdfs:label "balgan-buachair cupa-cèireach" .
+  rdfs:label "balgan buachair cupa-cèireach" ;
+  :part n:balgan_buachair , n:cupa_ceeireach .
 
 n:balg_losgainn_Hart
-  rdfs:label "balg-losgainn Hart" ;
-    :sense "harts truffle" .
+  rdfs:label "balg losgainn Hart" ;
+  :part n:balg_losgainn .
 
-n:balg_losgainn_Sealain_Nuadh
-  rdfs:label "balg-losgainn Sealain Nuadh" .
+n:balg_losgainn
+  rdfs:label "balg losgainn" ;
+  :part n:balg , n:losgann .
+
+n:balg_losgainn_Sealainn_Nuadh
+  rdfs:label "balg-losgainn Sealainn Nuadh" ;
+  :part n:balg_losgainn , n:Sealainn_Nuadh .
+
+n:Sealainn_Nuadh
+  rdfs:label "Sealainn Nuadh" ;
+  :part n:Sealainn , a:nuadh .
+
+n:Sealainn
+  a :FeminineNoun ;
+  rdfs:label "Sealainn" .
+
+a:nuadh
+  a:Adjective ;
+  rdfs:label "nuadh" .
 
 n:ball_osaig_cas_gheal
-  rdfs:label "ball-osaig cas-gheal" .
+  rdfs:label "ball osaig cas-gheal" ;
+  :part n:ball_osaig , n:cas , a:geal .
+
+n:ball_osaig
+  rdfs:label "ball osaig" ;
+  :part n:ball , n:osag .
+
+n:ball
+  a :MasculineNoun ;
+  rdfs:label "ball" .
+
+n:osag
+  a :FeminineNoun ;
+  rdfs:label "osag" .
 
 n:baarr_claigeannach
-  rdfs:label "bàrr claigeannach" .
+  rdfs:label "bàrr claigeannach" ;
+  :part n:baarr , a:claigeannach .
+
+n:baarr
+  a :MasculineNoun ;
+  rdfs:label "bàrr" .
+
+a:claigeannach
+  a :Adjective ;
+  rdfs:label "claigeannach" ;
+  :part n:claigeann .
+
+n:claigeann
+  a :MasculineNoun ;
+  rdfs:label "claigeann" .
 
 n:biorach
   a :FeminineNoun ;
@@ -2542,21 +2740,25 @@ n:bliochan
   rdfs:label "bliochan" .
 
 n:bliochan_Albannach
-  rdfs:label "bliochan Albannach" .
+  rdfs:label "bliochan Albannach" ;
+  :part n:bliochan , a:Albannach .
+
+n:lus_a_chrodain
+  rdfs:label "lus a’ chrodain" ;
+  :pl "lusan a’ chrodain" ;
+  :part n:lus .
 
 n:bogha
   a :MasculineNoun ;
   rdfs:label "bogha" .
 
 n:bruu_bhreac_Lochlannach
-  rdfs:label "brù-bhreac Lochlannach" .
+  rdfs:label "brù-bhreac Lochlannach" ;
+  :part n:bruu_bhreac , a:Lochlannach .
 
 n:buidhleis
   a :FeminineNoun ;
   rdfs:label "buidhleis" .
-
-# STARTING HERE NEXT
-# CLEANED EVERYTHING BELOW HERE
 
 n:Caidreachas_Croitearachd_na_h_Alba
   rdfs:label "Caidreachas Croitearachd na h-Alba" ;
@@ -2882,7 +3084,11 @@ n:maaileachan
 
 n:cupa_ceeireach_dearg
   rdfs:label "cupa cèireach dearg" ;
-  :part n:cupa , a:ceeireach , a:dearg .
+  :part n:cupa_ceeireach , a:dearg .
+
+n:cupa_ceeireach
+  rdfs:label "cupa cèireach " ;
+  :part n:cupa , a:ceeireach .
 
 a:ceeireach
   a :Adjective ;

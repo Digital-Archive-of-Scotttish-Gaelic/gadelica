@@ -6836,159 +6836,212 @@
     rdfs:comment "SNH audio: a taladh.mp3" ;
     rdfs:comment "SNH category: " .
 
+# STARTING HERE NEXT
+# CLEANED EVERYTHING BELOW HERE
+
   n:abhainn
+    :FeminineNoun ;
     rdfs:label "abhainn" ;
     :sense "river" ;
-    :pl "F" ;
+    :pl "aibhnichean" ;
     rdfs:comment "SNH ID: 1032" ;
-    rdfs:comment "SNH other: sruth <em>m</em>" ;
-    rdfs:comment "SNH category: aibhnichean" .
+    rdfs:comment "SNH category: landscapes" .
+
+  n:sruth
+    :MasculineNoun ;
+    rdfs:label "sruth" ;
+    :sense "river" ;
+    :pl "sruthan" ;
+    rdfs:comment "SNH ID: 1032a" ;
+    rdfs:comment "SNH category: landscapes" .
+
+  n:allt
+    :MasculineNoun ;
+    rdfs:label "allt" ;
+    :sense "river" ;
+    :pl "uillt" ;
+    rdfs:comment "SNH ID: 1032b" ;
+    rdfs:comment "SNH category: landscapes" .
 
   n:adag
     a :FeminineNoun ;
     rdfs:label "adag" ;
-    :sense "haddock" ;
+    :sense "haddock" , "Melanogrammus aeglefinus" ;
     :pl "adagan" ;
     rdfs:comment "SNH ID: 1033" ;
-    rdfs:comment "SNH Latin: Melanogrammus aeglefinus" ;
     rdfs:comment "SNH category: under the sea" .
 
   n:adharc_bhreein_chumanta
     a :FeminineNoun ;
     rdfs:label "adharc-bhrèin chumanta" ;
-    :sense "common stinkhorn" ;
+    :sense "common stinkhorn" , "Phallus impudicus" ;
     :pl "adharcan-brèin cumanta" ;
-    rdfs:comment "SNH ID: 1034" ;
-    rdfs:comment "SNH Latin: Phallus impudicus" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1034" .
 
   n:agaraig_cuileig
     a :FeminineNoun ;
     rdfs:label "agaraig cuileig" ;
-    :sense "fly agaric" ;
+    :sense "fly agaric" , "Amanita muscaria" ;
     :pl "agaraigean cuileig" ;
-    rdfs:comment "SNH ID: 1035" ;
-    rdfs:comment "SNH Latin: Amanita muscaria" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1035" .
 
   n:agh_feeidh
     a :FeminineNoun ;
     rdfs:label "agh-fèidh" ;
-    :sense "red deer (female)" ;
+    :sense "red deer (female)" , "Cervus elaphus" ;
     :pl "aighean-fèidh" ;
     rdfs:comment "SNH ID: 1036" ;
     rdfs:comment "SNH info: eilid used after first year" ;
     rdfs:comment "SNH audio: agh feidh.mp3" ;
-    rdfs:comment "SNH Latin: Cervus elaphus" ;
     rdfs:comment "SNH category: mammals" .
 
   n:ailean_donn
     a :MasculineNoun ;
     rdfs:label "ailean donn" ;
-    :sense "meadow brown butterfly" ;
+    :sense "meadow brown butterfly" , "Maniola jurtina" ;
     :pl "aileanan donna" ;
     rdfs:comment "SNH ID: 1037" ;
-    rdfs:comment "SNH Latin: Maniola jurtina" ;
     rdfs:comment "SNH category: invertebrates" .
 
   n:ainle
+    a :FeminineNoun ;
     rdfs:label "ainle" ;
-    :sense "greenfly" ;
-    :pl "F" ;
+    :sense "greenfly" , "Aphididae (Family) spp." ;
+    :pl "ainlean" ;
     rdfs:comment "SNH ID: 1038" ;
-    rdfs:comment "SNH other: cuileag ghlas <em>f</em>" ;
-    rdfs:comment "SNH audio: ainle.mp3" ;
-    rdfs:comment "SNH Latin:  cuileag ghlas.mp3" ;
-    rdfs:comment "SNH category: ainlean" .
+    rdfs:comment "SNH audio: ainle.mp3" .
+
+  n:cuileag_ghlas
+    a :FeminineNoun ;
+    rdfs:label "cuileag ghlas" ;
+    :sense "greenfly" ;
+    :pl "cuileagan glasa" ;
+    rdfs:comment "SNH ID: 1038a" ;
+    rdfs:comment "SNH audio: cuileag ghlas.mp3" .
 
   n:ainmhidh
     a :MasculineNoun ;
     rdfs:label "ainmhidh" ;
     :sense "animal" ;
     :pl "ainmhidhean" ;
-    rdfs:comment "SNH ID: 1039" ;
-    rdfs:comment "SNH other: beathach <em>m</em>" ;
-    rdfs:comment "SNH category: beathaichean" .
+    rdfs:comment "SNH ID: 1039" .
+
+  n:beathach
+    a :MasculineNoun ;
+    rdfs:label "beathach" ;
+    :sense "animal" ;
+    :pl "beathaichean" ;
+    rdfs:comment "SNH ID: 1039a" .
 
   n:aairneag
     a :FeminineNoun ;
     rdfs:label "àirneag" ;
-    :sense "sloe berry" ;
+    :sense "sloe berry" , "Prunus spinosa" ;
     :pl "àirneagan" ;
     rdfs:comment "SNH ID: 1040" ;
-    rdfs:comment "SNH other: droigheann dubh <em>m</em>" ;
     rdfs:comment "SNH info: Traditionally used to treat fevers." ;
-    rdfs:comment "SNH Latin: Prunus spinosa" ;
-    rdfs:comment "SNH category: droighinn dubha" .
+    rdfs:comment "SNH category: plants" .
+
+  n:droigheann_dubh
+    a :MasculineNoun ;
+    rdfs:label "droigheann dubh" ;
+    :sense "sloe berry" , "Prunus spinosa" ;
+    :pl "droighinn dubha" ;
+    rdfs:comment "SNH ID: 1040a" ;
+    rdfs:comment "SNH info: Traditionally used to treat fevers." ;
+    rdfs:comment "SNH category: plants" .
 
   n:aaiteachas
     a :MasculineNoun ;
     rdfs:label "àiteachas" ;
     :sense "agriculture" ;
-    rdfs:comment "SNH ID: 1041" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1041" .
 
   n:aiteann
+    a :MasculineNoun ;
     rdfs:label "aiteann" ;
-    :sense "juniper" ;
-    :pl "M" ;
+    :sense "juniper" , "Juniperus communis" ;
+    :pl "aitinn" ;
     rdfs:comment "SNH ID: 1042" ;
-    rdfs:comment "SNH other: staoin <em>f</em>" ;
-    rdfs:comment "SNH category: aitinn" .
+    rdfs:comment "SNH category: trees" .
 
-  n:algach
+  n:staoin
+    a :FeminineNoun ;
+    rdfs:label "staoin" ;
+    :sense "juniper" , "Juniperus communis" ;
+    rdfs:comment "SNH ID: 1042a" ;
+    rdfs:comment "SNH category: trees" .
+
+  n:iubhar_beinne
+    a :MasculineNoun ;
+    rdfs:label "iubar-beinne" ;
+    :sense "juniper" , "Juniperus communis" ;
+    rdfs:comment "SNH ID: 1042b" ;
+    rdfs:comment "SNH category: trees" .
+
+  a:algach
     a :FeminineNoun ;
     rdfs:label "algach" ;
-    :sense "algal" ;
-    rdfs:comment "SNH ID: 1043" ;
-    rdfs:comment "SNH Latin: Eukaryota (Domain) spp." ;
-    rdfs:comment "SNH category: " .
+    :sense "algal" , "Eukaryota (Domain) spp." ;
+    rdfs:comment "SNH ID: 1043" .
 
-  n:algaich
+  a:algach
+    a :FeminineNoun ;
     rdfs:label "algaich" ;
-    :sense "algae" ;
-    :pl "F" ;
-    rdfs:comment "SNH ID: 1044" ;
-    rdfs:comment "SNH other: lìrean <em>m</em>" ;
-    rdfs:comment "SNH category: " .
+    :sense "algae" , "Eukaryota (Division) spp." ;
+    rdfs:comment "SNH ID: 1044" .
+
+  n:liirean
+    a :MasculineNoun ;
+    rdfs:label "lìrean" ;
+    :sense "algae" , "Eukaryota (Division) spp." ;
+    rdfs:comment "SNH ID: 1044a" .
+
+  n:taachair
+    a :MasculineNoun ;
+    rdfs:label "tachair" ;
+    :sense "algae" , "Eukaryota (Division) spp." ;
+    rdfs:comment "SNH ID: 1044b" .
 
   n:amadan_moointich
     a :MasculineNoun ;
     rdfs:label "amadan-mòintich" ;
-    :sense "dotterel" ;
+    :sense "dotterel" , "Charadrius morinellus" ;
     :pl "amadain-mhòintich" ;
     rdfs:comment "SNH ID: 1045" ;
-    rdfs:comment "SNH other: gurraiceach <em>m</em>" ;
     rdfs:comment "SNH info: The name 'amadan-mòintich' means the fool of the moor because it is so easy to hunt and because it hangs its wing in a strange manner to attract people away from its ground-nest" ;
     rdfs:comment "SNH audio: amadan-mointich.mp3" ;
-    rdfs:comment "SNH Latin: Charadrius morinellus" ;
-    rdfs:comment "SNH category: gurraicich" .
+    rdfs:comment "SNH category: birds" .
+
+  n:gurraiceach
+    a :MasculineNoun ;
+    rdfs:label "gurraiceach" ;
+    :sense "dotterel" , "Charadrius morinellus" ;
+    :pl "gurraicich" ;
+    rdfs:comment "SNH ID: 1045a" ;
+    rdfs:comment "SNH category: birds" .
 
   n:amanita_sneachda
     a :MasculineNoun ;
     rdfs:label "amanita sneachda" ;
-    :sense "snowbed amanita" ;
+    :sense "snowbed amanita" , "Amanita nivalis" ;
     :pl "amanitannan sneachda" ;
-    rdfs:comment "SNH ID: 1046" ;
-    rdfs:comment "SNH Latin: Amanita nivalis" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1046" .
 
-  n:an_t_umhach_beag
+  n:umhach_beag
     a :MasculineNoun ;
     rdfs:label "an t-umhach beag" ;
-    :sense "small copper butterfly" ;
+    :sense "small copper butterfly" , "Lycaena phlaeas" ;
     :pl "umhachan beaga" ;
     rdfs:comment "SNH ID: 1047" ;
-    rdfs:comment "SNH Latin: Lycaena phlaeas" ;
     rdfs:comment "SNH category: invertebrates" .
 
   n:anamoin_baan_badanach
     a :MasculineNoun ;
     rdfs:label "anamoin bàn badanach" ;
-    :sense "white cluster anemone" ;
+    :sense "white cluster anemone" , "Parazoanthus anguicomus" ;
     :pl "anamoinean bàna badanach" ;
     rdfs:comment "SNH ID: 1048" ;
-    rdfs:comment "SNH Latin: Parazoanthus anguicomus" ;
     rdfs:comment "SNH category: under the sea" .
 
   n:aarainn
@@ -6997,8 +7050,7 @@
     :sense "habitat" ;
     :pl "àrainnean" ;
     rdfs:comment "SNH ID: 1049" ;
-    rdfs:comment "SNH audio: arainn.mp3" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH audio: arainn.mp3" .
 
   n:aarainneachd
     a :FeminineNoun ;
@@ -7006,152 +7058,151 @@
     :sense "environment " ;
     :pl "àrainneachdan" ;
     rdfs:comment "SNH ID: 1051" ;
-    rdfs:comment "SNH audio: arainneachd.mp3" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH audio: arainneachd.mp3" .
 
   n:argas_donn_tuathach
     a :MasculineNoun ;
     rdfs:label "argas donn tuathach" ;
-    :sense "Northern Brown Argus butterfly" ;
+    :sense "Northern Brown Argus butterfly" , "Aricia artaxerxes" ;
     :pl "argasan donna" ;
     rdfs:comment "SNH ID: 1052" ;
-    rdfs:comment "SNH Latin: Aricia artaxerxes" ;
     rdfs:comment "SNH category: invertebrates" .
 
   n:atharrachadh_gnaath_shiide
     a :MasculineNoun ;
     rdfs:label "atharrachadh gnàth-shìde" ;
     :sense "climate change" ;
-    rdfs:comment "SNH ID: 1053" ;
-    rdfs:comment "SNH other: atharrachadh-sìde <em>m</em>" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1053" .
+
+  n:atharrachadh_siide
+    a :MasculineNoun ;
+    rdfs:label "atharrachadh sìde" ;
+    :sense "climate change" ;
+    rdfs:comment "SNH ID: 1053a" .
 
   n:ath_bheothachadh
     a :MasculineNoun ;
     rdfs:label "ath-bheothachadh" ;
-    :sense "recovery " ;
+    :sense "recovery" ;
     :pl "ath-bheothachaidhean" ;
     rdfs:comment "SNH ID: 1054" ;
-    rdfs:comment "SNH other: a' dol am feabhas (recovering)" ;
-    rdfs:comment "SNH audio: ath-beothachadh.mp3" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH audio: ath-beothachadh.mp3" .
 
-  n:ath_nuadhachail
+  v:rach_am_feabhas
+    a :Verb ;
+    rdfs:label "a’ dol am feabhas" ;
+    :sense "recovery" ;
+    rdfs:comment "SNH ID: 1054a" .
+
+  a:ath_nuadhachail
     rdfs:label "ath-nuadhachail" ;
     :sense "renewable" ;
-    rdfs:comment "SNH ID: 1056" ;
-    rdfs:comment "SNH other: leantainneach" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1056" .
+
+  a:leantainneach
+    rdfs:label "leantainneach" ;
+    :sense "renewable" ;
+    rdfs:comment "SNH ID: 1056a" .
+
+  a:so_uurachadh
+    rdfs:label "so-ùrachaidh" ;
+    :sense "renewable" ;
+    rdfs:comment "SNH ID: 1056b" .
 
   n:balgan_ceann_phinc
     a :MasculineNoun ;
     rdfs:label "balgan ceann-phinc" ;
-    :sense "pink ballerina or pink meadow-cap" ;
+    :sense "pink ballerina" , "pink meadow-cap" , "Hygrocybe calyptriformis" ;
     :pl "balgain cheann-phinc" ;
-    rdfs:comment "SNH ID: 1058" ;
-    rdfs:comment "SNH Latin: Hygrocybe calyptriformis" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1058" .
 
   n:balgan_buachair_cupa_ceeireach
     a :MasculineNoun ;
     rdfs:label "balgan-buachair cupa-cèireach" ;
-    :sense "waxcap mushroom" ;
+    :sense "waxcap mushroom" , "Hygrocybe" ;
     :pl "balgan-buachair cupa-cèireach" ;
     rdfs:comment "SNH ID: 1059" ;
-    rdfs:comment "SNH Latin: Hygrocybe" ;
     rdfs:comment "SNH category: fungus and lichen" .
 
   n:balg_losgainn_Hart
     a :MasculineNoun ;
     rdfs:label "balg-losgainn Hart" ;
-    :sense "harts truffle" ;
+    :sense "harts truffle" , "Elaphomyces granulatus" ;
     :pl "balgan-losgainn Hart" ;
     rdfs:comment "SNH ID: 1060" ;
-    rdfs:comment "SNH Latin: Elaphomyces granulatus" ;
     rdfs:comment "SNH category: fungus and lichen" .
 
-  n:balg_losgainn_Sealain_Nuadh
+  n:balg_losgainn_Sealainn_Nuadh
     a :MasculineNoun ;
     rdfs:label "balg-losgainn Sealain Nuadh" ;
-    :sense "New Zealand truffle" ;
+    :sense "New Zealand truffle" , "Paurocotylis pila" ;
     :pl "balgan-losgainn Sealain Nuadh" ;
     rdfs:comment "SNH ID: 1061" ;
-    rdfs:comment "SNH Latin: Paurocotylis pila" ;
     rdfs:comment "SNH category: fungus and lichen" .
 
   n:ball_osaig_cas_gheal
     a :MasculineNoun ;
     rdfs:label "ball-osaig cas-gheal" ;
-    :sense "white stalk puffball" ;
+    :sense "white stalk puffball" , "Tulostoma niveum" ;
     :pl "buill-osaig chas-gheal" ;
-    rdfs:comment "SNH ID: 1062" ;
-    rdfs:comment "SNH Latin: Tulostoma niveum" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1062" .
 
   n:baarr_claigeannach
+    a :MasculineNoun ;
     rdfs:label "bàrr claigeannach" ;
     :sense "bellflower" ;
-    :pl "M" ;
-    rdfs:comment "SNH ID: 1063" ;
-    rdfs:comment "SNH info: For a list of all the plant names" ;
-    rdfs:comment "SNH audio:  search 'plant'." ;
-    rdfs:comment "SNH category: bàrr claigeannaich" .
+    :pl "bàrr claigeannaich" ;
+    rdfs:comment "SNH ID: 1063" .
 
   n:biorach
     a :FeminineNoun ;
     rdfs:label "biorach" ;
-    :sense "dogfish" ;
+    :sense "dogfish" , "Scyliorhinus canicula" ;
     :pl "bioraich" ;
     rdfs:comment "SNH ID: 1064" ;
-    rdfs:comment "SNH Latin: Scyliorhinus canicula" ;
     rdfs:comment "SNH category: under the sea" .
 
   n:bliochan
     a :MasculineNoun ;
     rdfs:label "bliochan" ;
-    :sense "asphodel" ;
+    :sense "asphodel" , "Narthecium ossifragum" ;
     :pl "bliochan" ;
-    rdfs:comment "SNH ID: 1065" ;
-    rdfs:comment "SNH Latin: Narthecium ossifragum" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1065" .
 
   n:bliochan_Albannach
     a :MasculineNoun ;
     rdfs:label "bliochan Albannach" ;
-    :sense "Scottish asphodel" ;
+    :sense "Scottish asphodel", "Tofieldia pusilla" ;
     :pl "bliochan Albannach" ;
-    rdfs:comment "SNH ID: 1066" ;
-    rdfs:comment "SNH other: lus a' chrodain <em>m</em>" ;
-    rdfs:comment "SNH Latin: Tofieldia pusilla" ;
-    rdfs:comment "SNH category: lusan a' chrodain" .
+    rdfs:comment "SNH ID: 1066" .
+
+  n:lus_a_chrodain
+    a :MasculineNoun ;
+    rdfs:label "lus a’ chrodain" ;
+    :sense "Scottish asphodel", "Tofieldia pusilla" ;
+    :pl "lusan a’ chrodain" ;
+    rdfs:comment "SNH ID: 1066a" .
 
   n:bogha
+    a :MasculineNoun ;
     rdfs:label "bogha" ;
-    :sense "reef" ;
-    :pl "M" ;
-    rdfs:comment "SNH ID: 1067" ;
-    rdfs:comment "SNH other:  submerged rock" ;
-    rdfs:comment "SNH category: boghachan" .
+    :sense "reef" , "submerged rock" ;
+    :pl "boghachan" ;
+    rdfs:comment "SNH ID: 1067" .
 
   n:bruu_bhreac_Lochlannach
     a :FeminineNoun ;
     rdfs:label "brù-bhreac Lochlannach" ;
-    :sense "Norwegian specklebelly" ;
+    :sense "Norwegian specklebelly" , "Pseudocyphellaria norvegica" ;
     :pl "brùthan-breac Lochlannach" ;
-    rdfs:comment "SNH ID: 1068" ;
-    rdfs:comment "SNH Latin: Pseudocyphellaria norvegica" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1068" .
 
   n:buidhleis
     a :FeminineNoun ;
     rdfs:label "buidhleis" ;
     :sense "goby" ;
     :pl "buidhleisean" ;
-    rdfs:comment "SNH ID: 1069" ;
-    rdfs:comment "SNH category: " .
-
-# STARTING HERE NEXT
-# CLEANED EVERYTHING BELOW HERE
+    rdfs:comment "SNH ID: 1069" .
 
   n:Caidreachas_Croitearachd_na_h_Alba
     rdfs:label "Caidreachas Croitearachd na h-Alba" ;
