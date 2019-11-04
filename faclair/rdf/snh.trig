@@ -7150,9 +7150,12 @@
     rdfs:comment "SNH ID: 1069" ;
     rdfs:comment "SNH category: " .
 
+# STARTING HERE NEXT
+# CLEANED EVERYTHING BELOW HERE
+
   n:Caidreachas_Croitearachd_na_h_Alba
     rdfs:label "Caidreachas Croitearachd na h-Alba" ;
-    :sense "Scottish Crofting Federation (SCF)" ;
+    :sense "Scottish Crofting Federation" , "SCF" ;
     rdfs:comment "SNH ID: 1070" ;
     rdfs:comment "SNH info: Formerly Scottish Crofters' Union (SCU) / Aonadh nan Croitearan" ;
     rdfs:comment "SNH category: organisations" .
@@ -7162,109 +7165,99 @@
     rdfs:label "ceann-phollan" ;
     :sense "tadpole" ;
     :pl "ceann-phollain" ;
-    rdfs:comment "SNH ID: 1071" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1071" .
 
   n:cleit
     a :FeminineNoun ;
     rdfs:label "cleit" ;
     :sense "quill" ;
     :pl "cleitean" ;
-    rdfs:comment "SNH ID: 1073" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1073" .
 
-  n:clitocybe_sgaaineach
+  n:clitocybe_sgaainteach
     a :FeminineNoun ;
     rdfs:label "clitocybe sgàineach" ;
-    :sense "cracking clitocybe" ;
+    :sense "cracking clitocybe" , "Clitocybe rivulosa" ;
     :pl "clitocybean sgàineach" ;
-    rdfs:comment "SNH ID: 1074" ;
-    rdfs:comment "SNH Latin: Clitocybe rivulosa" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1074" .
 
   n:cnag_traaghad
     a :MasculineNoun ;
     rdfs:label "cnag-tràghad" ;
     :sense "urchin" ;
     :pl "cnagan-tràghad" ;
-    rdfs:comment "SNH ID: 1075" ;
-    rdfs:comment "SNH other: cònan mara <em>m</em>" ;
-    rdfs:comment "SNH category: cònain mhara" .
+    rdfs:comment "SNH ID: 1075" .
+
+  n:coonan_mara
+    a :MasculineNoun ;
+    rdfs:label "cònan mara" ;
+    :sense "urchin" ;
+    :pl "cònain mhara" ;
+    rdfs:comment "SNH ID: 1075a" .
 
   n:coileach_fraoich
     a :MasculineNoun ;
     rdfs:label "coileach-fraoich" ;
-    :sense "red grouse (male)" ;
+    :sense "red grouse (male)" , "Lagopus lagopus" ;
     :pl "coilich-fhraoich" ;
     rdfs:comment "SNH ID: 1076" ;
-    rdfs:comment "SNH other: eun-ruadh <em>m</em>" ;
-    rdfs:comment "SNH Latin: Lagopus lagopus" ;
-    rdfs:comment "SNH category: eòin-ruadh" .
+    rdfs:comment "SNH category: birds" .
 
   n:cooinneach_boglaich
     a :FeminineNoun ;
     rdfs:label "còinneach boglaich" ;
-    :sense "bog moss" ;
+    :sense "bog moss" , "Sphagnum";
     :pl "còinnich bhoglaich" ;
-    rdfs:comment "SNH ID: 1077" ;
-    rdfs:comment "SNH Latin: Sphagnum" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1077" .
 
   n:cooinneach_gruaig_chlooimhe
     a :FeminineNoun ;
     rdfs:label "còinneach gruaig chlòimhe" ;
-    :sense "woolly hair moss" ;
+    :sense "woolly hair moss" , "Racomitrium lanuginosum" ;
     :pl "còinnich gruaig chlòimhe" ;
-    rdfs:comment "SNH ID: 1078" ;
-    rdfs:comment "SNH Latin: Racomitrium lanuginosum" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1078" .
 
   n:corail_baan_dhearg
     a :MasculineNoun ;
     rdfs:label "corail bàn-dhearg" ;
-    :sense "violaceous fairy club" ;
+    :sense "violaceous fairy club" , "Clavaria zollingeri" ;
     :pl "corailean bàn-dhearg" ;
-    rdfs:comment "SNH ID: 1079" ;
-    rdfs:comment "SNH Latin: Clavaria zollingeri" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1079" .
 
   n:corail_cupanach
     a :MasculineNoun ;
     rdfs:label "corail cupanach" ;
     :sense "cup coral" ;
     :pl "corailean cupanach" ;
-    rdfs:comment "SNH ID: 1080" ;
-    rdfs:comment "SNH other: gròm cupanach <em>m</em>" ;
-    rdfs:comment "SNH category: gròman cupanach" .
+    rdfs:comment "SNH ID: 1080" .
+
+  n:groom_cupanach
+    a :MasculineNoun ;
+    rdfs:label "gròm cupanach" ;
+    :sense "cup coral" ;
+    :pl "gròman cupanach" ;
+    rdfs:comment "SNH ID: 1080a" .
 
   n:corra_chagailte
     a :FeminineNoun ;
     rdfs:label "corra-chagailte" ;
-    :sense "salamander" ;
+    :sense "salamander" , "Caudata" ;
     :pl "corran-cagailte" ;
-    rdfs:comment "SNH ID: 1081" ;
-    rdfs:comment "SNH Latin: Caudata" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1081" .
 
-  n:creachan_banrigh
+  n:creachann_banrigh
     a :FeminineNoun ;
     rdfs:label "creachan banrigh" ;
     :sense "queen scallop" ;
     :pl "creachain bhanrigh" ;
-    rdfs:comment "SNH ID: 1082" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1082" .
 
   n:crooch_na_beinne
     a :MasculineNoun ;
     rdfs:label "cròch na beinne" ;
-    :sense "mountain saffron" ;
+    :sense "mountain saffron" , "Solorina crocea" ;
     :pl "cròchan na beinne" ;
-    rdfs:comment "SNH ID: 1083" ;
-    rdfs:comment "SNH Latin: Solorina crocea" ;
-    rdfs:comment "SNH category: " .
-
-# STARTING HERE NEXT
-# CLEANED EVERYTHING BELOW HERE
+    rdfs:comment "SNH ID: 1083" .
 
   n:crosgag
     a :FeminineNoun ;

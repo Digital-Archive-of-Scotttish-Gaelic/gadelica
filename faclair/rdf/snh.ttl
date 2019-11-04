@@ -497,9 +497,6 @@ n:cearc_coille
 n:cearc_fhraoich
   rdfs:label "cearc-fhraoich" .
 
-n:eun_ruadh
-  rdfs:label "eun ruadh" .
-
 n:cearc_thomain
   rdfs:label "cearc-thomain" .
 
@@ -2558,48 +2555,171 @@ n:buidhleis
   a :FeminineNoun ;
   rdfs:label "buidhleis" .
 
+# STARTING HERE NEXT
+# CLEANED EVERYTHING BELOW HERE
+
 n:Caidreachas_Croitearachd_na_h_Alba
-  rdfs:label "Caidreachas Croitearachd na h-Alba" .
+  rdfs:label "Caidreachas Croitearachd na h-Alba" ;
+  :part n:caidreachas , n:croitearachd , n:Alba .
+
+n:caidreachas
+  a :MasculineNoun ;
+  rdfs:label "caidreachas" ;
+  :part a:caidreach .
+
+a:caidreach
+  a :Adjective ;
+  rdfs:label "caidreach" .
+
+n:croitearachd
+  a :FeminineNoun ;
+  rdfs:label "croitearachd" ;
+  :part n:croitear .
+
+n:croitear
+  a :MasculineNoun ;
+  rdfs:label "croitear" ;
+  :part n:croit .
+
+n:croit
+  a :FeminineNoun ;
+  rdfs:label "croit" .
 
 n:ceann_phollan
-  rdfs:label "ceann-phollan" .
+  rdfs:label "ceann-phollan" ;
+  :part n:ceann , n:pollan .
+
+n:pollan
+  a :MasculineNoun ;
+  rdfs:label "pollan" ;
+  :part n:poll .
 
 n:cleit
   a :FeminineNoun ;
   rdfs:label "cleit" .
 
-n:clitocybe_sgaaineach
-  rdfs:label "clitocybe sgàineach" .
+n:clitocybe_sgaainteach
+  rdfs:label "clitocybe sgàinteach" ;
+  :part a:sgaainteach .
+
+a:sgaainteach
+  a :Adjective ;
+  rdfs:label "sgàinteach" ;
+  :part v:sgaain .
+
+v:sgaain
+  a :Verb ;
+  rdfs:label "sgàin" .
 
 n:cnag_traaghad
-  rdfs:label "cnag-tràghad" .
+  rdfs:label "cnag tràghad" ;
+  :part n:cnag , n:traaigh .
+
+n:cnag
+  a :MasculineNoun ;
+  rdfs:label "cnag" .
+
+n:coonan_mara
+  rdfs:label "cònan mara" ;
+  :pl "cònain mhara" ;
+  :part n:coonan , n:muir .
+
+n:coonan
+  a :MasculineNoun ;
+  rdfs:label "cònan" ;
+  :pl "cònain" ;
+  :part n:coon .
+
+n:coon
+  a :MasculineNoun ;
+  rdfs:label "còn" .
 
 n:coileach_fraoich
-  rdfs:label "coileach fraoich" .
+  rdfs:label "coileach fraoich" ;
+  :part n:coileach , n:fraoch .
+
+n:coileach
+  :part :MasculineNoun ;
+  rdfs:label "coileach" .
+
+n:eun_ruadh
+  rdfs:label "eun ruadh" ;
+  :pl "eòin ruadh" ;
+  :part n:eun , n:ruadh .
 
 n:cooinneach_boglaich
-  rdfs:label "còinneach boglaich" .
+  rdfs:label "còinneach boglaich" ;
+  :part n:cooineach , n:boglach .
+
+n:boglach
+  a :FeminineNoun ;
+  rdfs:label "boglach" ;
+  :gen "boglaich" ;
+  :part a:bog .
 
 n:cooinneach_gruaig_chlooimhe
-  rdfs:label "còinneach gruaig chlòimhe" .
+  rdfs:label "còinneach gruaig chlòimhe" ;
+  :part n:cooineach , n:gruag , n:clooimh .
+
+n:clooimh
+  a :FeminineNoun ;
+  rdfs:label "clòimh" ;
+  :gen "clòimhe" .
 
 n:corail_baan_dhearg
-  rdfs:label "corail bàn-dhearg" .
+  rdfs:label "corail bàn-dhearg" ;
+  :part n:corail , a:baan_dhearg .
+
+a:baan_dhearg
+  rdfs:label "bàn-dhearg" ;
+  :part a:baan , a:dearg .
 
 n:corail_cupanach
-  rdfs:label "corail cupanach" .
+  rdfs:label "corail cupanach" ;
+  :part n:corail , a:cupanach .
+
+n:groom_cupanach
+  rdfs:label "gròm cupanach" ;
+  :pl "gròman cupanach" ;
+  :part n:groom , a:cupanach .
+
+n:groom
+  a :MasculineNoun ;
+  rdfs:label "gròm" .
 
 n:corra_chagailte
-  rdfs:label "corra-chagailte" .
+  rdfs:label "corra-chagailte" ;
+  :part n:corra , n:cagailt .
 
-n:creachan_banrigh
-  rdfs:label "creachan banrigh" .
+n:corra
+  a :FeminineNoun ;
+  :part "corra" .
+
+n:cagailt
+  a :FeminineNoun ;
+  rdfs:label "cagailt" ;
+  :gen "cagailte" .
+
+n:creachann_banrigh
+  rdfs:label "creachann banrigh" ;
+  :part n:creachann , n:banrigh .
+
+n:creachann
+  a :MasculineNoun ;
+  rdfs:label "creachann" .
+
+n:banrigh
+  a :FeminineNoun ;
+  rdfs:label "banrigh" ;
+  :part n:bean , n:riigh .
 
 n:crooch_na_beinne
-  rdfs:label "cròch na beinne" .
+  rdfs:label "cròch na beinne" ;
+  :part n:crooch , n:beinn .
 
-# STARTING HERE NEXT
-# CLEANED EVERYTHING BELOW HERE
+n:crooch
+  a :FeminineNoun ;
+  rdfs:label "cròch" .
 
 n:crosgag
   a :FeminineNoun ;
