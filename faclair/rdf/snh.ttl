@@ -869,9 +869,6 @@ n:droigheann
   a :MasculineNoun ;
   rdfs:label "droigheann" .
 
-n:droigheann_dubh
-  rdfs:label "droigheann dubh" .
-
 n:traon
   rdfs:label "traon" .
 
@@ -2306,17 +2303,36 @@ n:daair
   a :FeminineNoun ;
   rdfs:label "dàir" .
 
+# STARTING HERE NEXT
+
 a:fiadhaich
   a :Adjective ;
   rdfs:label "fiadhaich" .
+
+a:allaidh
+  a :Adjective ;
+  rdfs:label "allaidh" .
 
 n:uisge
   a :MasculineNoun ;
   rdfs:label "uisge" .
 
+n:buurn
+  a :MasculineNoun ;
+  rdfs:label "bùrn" .
+
 n:sgait
   a :FeminineNoun ;
   rdfs:label "sgait" .
+
+n:sgarrag
+    a :FeminineNoun ;
+    rdfs:label "sgarrag" .
+
+n:sgaiteag
+  a :FeminineNoun ;
+  rdfs:label "sgaiteag" ;
+  :part n:sgait .
 
 n:pobhlar
   a :MasculineNoun ;
@@ -2390,49 +2406,105 @@ n:moothan
   a :MasculineNoun ;
   rdfs:label "mòthan" .
 
+# CLEANED EVERYTHING BELOW HERE
+
 n:giomach
   a :MasculineNoun ;
   rdfs:label "giomach" .
 
 n:seillean_moor_an_earbaill_bhaain
-  rdfs:label "seillean-mòr an earbaill bhàin" .
+  rdfs:label "seillean mòr an earbaill bhàin" ;
+  :part n:seillean_moor , n:earball , a:baan .
 
 n:seillean_moor_earball_baan_a_Chinn_a_Tuath
-  rdfs:label "seillean-mòr earball-bàn a' Chinn a Tuath" .
+  rdfs:label "seillean mòr earball-bàn a’ Chinn a Tuath" ;
+  :part n:seillean_moor_an_earbaill_bhaain , n:an_ceann_a_tuath .
 
 n:seillean_moor_a_chrios_bhriste
-  rdfs:label "seillean-mòr a' chrios bhriste" .
+  rdfs:label "seillean mòr a’ chrios bhriste" ;
+  :part n:seillean_moor , n:crios , a:briste .
+
+a:briste
+  a :Adjective ;
+  rdfs:label "briste" ;
+  :part v:bris .
+
+v:bris
+  a :Verb ;
+  rdfs:label "bris" .
 
 n:seillean_moor_an_earbaill_bhuidhe_bhaan
-  rdfs:label "seillean-mòr an earbaill bhuidhe-bhàn" .
+  rdfs:label "seillean mòr an earbaill bhuidhe-bhàn" ;
+  :part n:seillean_moor . n:earball , a:buidhe , a:baan .
 
 n:seillean_moor_gaarraidh
-  rdfs:label "seillean-mòr gàrraidh" .
+  rdfs:label "seillean mòr gàrraidh" ;
+  :part n:seillean_moor , n:gaarradh .
+
+n:gaarradh
+  a :MasculineNoun ;
+  rdfs:label "gàrradh" ;
+  :gen "gàrraidh" .
 
 n:giomach_Spaainnteach
   rdfs:label "giomach Spàinnteach" .
 
-n:briodadh
-  rdfs:label "briodadh" .
+n:giomach_creige
+    rdfs:label "giomach creige" ;
+    :pl "giomaich creige" ;
+    :part n:giomach , n:creag .
+
+v:briod
+  a :Verb ;
+  rdfs:label "briod" .
+
+v:briodaich
+  rdfs:label "briodaich" ;
+  :part v:briod .
 
 v:rach_aa_bith
-  rdfs:label "rach à bith" .
+  rdfs:label "rach à bith" ;
+  :part v:rach , o:aa_bith .
 
-n:gintinn
-  rdfs:label "gintinn" .
+o:aa_bith
+  rdfs:label "à bith" ;
+  :part a:aa , n:bith .
 
-n:bagairt
-  rdfs:label "bagairt" .
+o:aa
+  rdfs:label "à" .
 
-n:soirbheachadh
-  rdfs:label "soirbheachadh" ;
-    :sense "thriving" .
+n:bith
+  rdfs:label "bith" ;
+  :part v:bi .
 
-n:taaladh
-  rdfs:label "tàladh" ;
-    :sense "attracting" .
+v:bi
+  a :Verb ;
+  rdfs:label "bi" .
 
-# STARTING HERE NEXT
+v:gin
+  a :Verb ;
+  rdfs:label "gin" .
+
+v:bagair
+  a :Verb ;
+  rdfs:label "bagair" .
+
+v:soirbhich
+  a :Verb ;
+  rdfs:label "soirbhich" ;
+  :part a:soirbh .
+
+a:soirbh
+  a :Adjective ;
+  rdfs:label "soirbh" ;
+
+v:taalaidh
+  a :Verb ;
+  rdfs:label "tàlaidh" .
+
+v:tarraing
+  a :Verb ;
+  rdfs:label "tarraing" .
 
 n:abhainn
   a :FeminineNoun ;
@@ -2441,130 +2513,172 @@ n:abhainn
 n:sruth
     :MasculineNoun ;
     rdfs:label "sruth" ;
-    :sense "river" ;
-    :pl "sruthan" ;
-    rdfs:comment "SNH ID: 1032a" ;
-    rdfs:comment "SNH category: landscapes" .
+    :pl "sruthan" .
 
-  n:allt
-    :MasculineNoun ;
+n:allt
     rdfs:label "allt" ;
-    :sense "river" ;
     :pl "uillt" ;
-    rdfs:comment "SNH ID: 1032b" ;
-    rdfs:comment "SNH category: landscapes" .
+    :gen "uillt" .
 
 n:adag
   a :FeminineNoun ;
   rdfs:label "adag" .
 
 n:adharc_bhreein_chumanta
-  rdfs:label "adharc-bhrèin chumanta" .
+  rdfs:label "adharc bhrèin chumanta" ;
+  :part n:adharc_bhreein , a:cumanta .
+
+n:adharc_bhreein
+  rdfs:label "adharc bhrèin" ;
+  :part n:adharc , n:breun .
+
+n:breun
+  a :MasculineNoun ;
+  rdfs:label "breun" ;
+  :gen "brèin" .
 
 n:agaraig_cuileig
-  rdfs:label "agaraig cuileig" .
+  rdfs:label "agaraig cuileig" ;
+  :part n:agaraig , n:cuileag .
+
+n:agaraig
+  a :FeminineNoun ;
+  rdfs:label "agaraig" .
 
 n:agh_feeidh
-  rdfs:label "agh fèidh" .
+  rdfs:label "agh fèidh" ;
+  :part n:agh , n:fiadh .
 
-n:ailean_donn
-  rdfs:label "ailean donn" .
+n:agh
+  a :FeminineNoun ;
+  rdfs:label "agh" .
+
+n:aailean_donn
+  rdfs:label "àilean donn" ;
+  :part n:aailean , a:donn .
+
+n:aailean
+  a :MasculineNoun ;
+  rdfs:label "àilean" .
 
 n:ainle
   a :FeminineNoun ;
   rdfs:label "ainle" .
 
 n:cuileag_ghlas
-    a :FeminineNoun ;
-    rdfs:label "cuileag ghlas" ;
-    :sense "greenfly" ;
-    :pl "cuileagan glasa" ;
-    rdfs:comment "SNH ID: 1038a" ;
-    rdfs:comment "SNH audio: cuileag ghlas.mp3" .
+  rdfs:label "cuileag ghlas" ;
+  :pl "cuileagan glasa" ;
+  :part n:cuileag , a:glas .
 
 n:ainmhidh
   a :MasculineNoun ;
   rdfs:label "ainmhidh" .
 
 n:beathach
-    a :MasculineNoun ;
-    rdfs:label "beathach" ;
-    :sense "animal" ;
-    :pl "beathaichean" ;
-    rdfs:comment "SNH ID: 1039a" .
+  a :MasculineNoun ;
+  rdfs:label "beathach" ;
+  :pl "beathaichean" ;
+  :part n:beatha .
 
 n:aairneag
   a :FeminineNoun ;
-  rdfs:label "àirneag" .
+  rdfs:label "àirneag" ;
+  :part n:aairne .
+
+n:aairne
+  a :FeminineNoun ;
+  rdfs:label "àirne" .
 
 n:droigheann_dubh
-    a :MasculineNoun ;
-    rdfs:label "droigheann dubh" ;
-    :sense "sloe berry" , "Prunus spinosa" ;
-    :pl "droighinn dubha" ;
-    rdfs:comment "SNH ID: 1040a" ;
-    rdfs:comment "SNH info: Traditionally used to treat fevers." ;
-    rdfs:comment "SNH category: plants" .
+  rdfs:label "droigheann dubh" ;
+  :pl "droighinn dubha" ;
+  :part n:droigheann , a:dubh .
 
 n:aaiteachas
   a :MasculineNoun ;
-  rdfs:label "àiteachas" .
+  rdfs:label "àiteachas" ;
+  :part n:aaiteach .
 
 n:aiteann
   a :MasculineNoun ;
   rdfs:label "aiteann" .
 
 n:staoin
-    a :FeminineNoun ;
-    rdfs:label "staoin" ;
-    :sense "juniper" , "Juniperus communis" ;
-    rdfs:comment "SNH ID: 1042a" ;
-    rdfs:comment "SNH category: trees" .
+  a :FeminineNoun ;
+  rdfs:label "staoin" .
 
-  n:iubhar_beinne
-    a :MasculineNoun ;
-    rdfs:label "iubar-beinne" ;
-    :sense "juniper" , "Juniperus communis" ;
-    rdfs:comment "SNH ID: 1042b" ;
-    rdfs:comment "SNH category: trees" .
+n:iubhar_beinne
+  rdfs:label "iubar beinne" ;
+  :part n:iubhar , n:beinn .
 
 a:algach
   a :Adjective ;
   rdfs:label "algach" .
 
 n:liirean
-    a :MasculineNoun ;
-    rdfs:label "lìrean" ;
-    :sense "algae" , "Eukaryota (Division) spp." ;
-    rdfs:comment "SNH ID: 1044a" .
+  a :MasculineNoun ;
+  rdfs:label "lìrean" .
 
-  n:taachair
-    a :MasculineNoun ;
-    rdfs:label "tàchair" ;
-    :sense "algae" , "Eukaryota (Division) spp." ;
-    rdfs:comment "SNH ID: 1044b" .
+n:taachair
+  a :MasculineNoun ;
+  rdfs:label "tàchair" .
 
 n:amadan_moointich
-  rdfs:label "amadan-mòintich" .
+  rdfs:label "amadan mòintich" ;
+  :part n:amadan , n:moointeach .
+
+n:amadan
+  a:MasculineNoun ;
+  rdfs:label "amadan" .
 
 n:gurraiceach
-    a :MasculineNoun ;
-    rdfs:label "gurraiceach" ;
-    :sense "dotterel" , "Charadrius morinellus" ;
-    :pl "gurraicich" ;
-    rdfs:comment "SNH ID: 1045a" ;
-    rdfs:comment "SNH category: birds" .
-
+  a :MasculineNoun ;
+  rdfs:label "gurraiceach" ;
+  :pl "gurraicich" .
 
 n:amanita_sneachda
-  rdfs:label "amanita sneachda" .
+  rdfs:label "amanita sneachda" ;
+  :part n:sneachd .
 
 n:umhach_beag
   rdfs:label "umhach beag" ;
-    :sense "small copper butterfly" .
+  :part n:umhach , a:beag .
+
+n:umhach
+  a :MasculineNoun ;
+  rdfs:label "umhach" ;
+  :part a:umhach .
+
+a:umha
+  a :Adjective ;
+  rdfs:label "umhach" ;
+  :part n:umha .
+
+n:umha
+  a :MasculineNoun ;
+  rdfs:label "umha" .
 
 n:anamoin_baan_badanach
-  rdfs:label "anamoin bàn badanach" .
+  rdfs:label "anamoin bàn badanach" ;
+  :part n:anamoin , a:baan , a:badanach .
+
+n:anamoin
+  a :MasculineNoun ;
+  rdfs:label "anamoin" .
+
+a:badanach
+  a :Adjective ;
+  rdfs:label "badanach" ;
+  :part n:badan .
+
+n:badan
+  a :MasculineNoun ;
+  rdfs:label "badan" ;
+  :part n:bad .
+
+n:bad
+  a :MasculineNoun ;
+  rdfs:label "bad" .
 
 n:aarainn
   a :FeminineNoun ;
@@ -2572,21 +2686,41 @@ n:aarainn
 
 n:aarainneachd
   a :FeminineNoun ;
-  rdfs:label "àrainneachd" .
+  rdfs:label "àrainneachd" ;
+  :part n:aarainn .
 
 n:argas_donn_tuathach
-  rdfs:label "argas donn tuathach" .
+  rdfs:label "argas donn tuathach" ;
+  :part n:argas , a:donn , a:tuathach .
 
 n:atharrachadh_gnaath_shiide
-  rdfs:label "atharrachadh gnàth-shìde" .
+  rdfs:label "atharrachadh gnàth-shìde" ;
+  :part n:atharrachadh , n:gnaath_shiide .
+
+n:gnaath_shiide
+  rdfs:label "gnàth-shìde" ;
+  :part a:gnaath , n:siide .
+
+a:gnaath
+  a :Adjective ;
+  rdfs:label "gnàth" .
 
 n:atharrachadh_siide
-    a :MasculineNoun ;
-    rdfs:label "atharrachadh sìde" ;
-    :sense "climate change" ;
-    rdfs:comment "SNH ID: 1053a" .
+  rdfs:label "atharrachadh sìde" ;
+  :part n:atharrachadh , n:siide .
 
-# CLEANED EVERYTHING BELOW HERE
+n:atharrachadh
+  a :MasculineNoun ;
+  rdfs:label "atharrachadh" ;
+  :part v:atharraich .
+
+v:atharraich
+  a :Verb ;
+  rdfs:label "atharraich" .
+
+n:siide
+  a :FeminineNoun ;
+  rdfs:label "sìde" .
 
 n:ath_bheothachadh
   rdfs:label "ath-bheothachadh" ;
@@ -3457,6 +3591,10 @@ n:an_ceann_a_deas
   rdfs:label "an ceann a deas" ;
   :gen "a’ chinn a deas" ;
   :part n:ceann , n:deas .
+
+n:an_ceann_a_tuath
+  rdfs:label "an ceann a tuath" ;
+  :part n:ceann , n:tuath .
 
 n:deas
   rdfs:label "deas" .

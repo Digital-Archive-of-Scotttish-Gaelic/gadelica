@@ -6522,29 +6522,55 @@
     rdfs:comment "SNH ID: 898" ;
     rdfs:comment "SNH category: " .
 
-  n:fiadhaich
+# STARTING HERE NEXT
+
+  a:fiadhaich
+    a :Adjective ;
     rdfs:label "fiadhaich" ;
     :sense "wild" ;
-    rdfs:comment "SNH ID: 900" ;
-    rdfs:comment "SNH other: allaidh" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 900" .
+
+  a:allaidh
+    a :Adjective ;
+    rdfs:label "allaidh" ;
+    :sense "wild" ;
+    rdfs:comment "SNH ID: 900a" .
 
   n:uisge
     a :MasculineNoun ;
     rdfs:label "uisge" ;
     :sense "water" ;
     rdfs:comment "SNH ID: 902" ;
-    rdfs:comment "SNH other: bùrn <em>m</em>" ;
-    rdfs:comment "SNH info: 'Bùrn' is used in Lewis and some other places." ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH info: 'Bùrn' is used in Lewis and some other places." .
+
+  n:buurn
+    a :MasculineNoun ;
+    rdfs:label "bùrn" ;
+    :sense "water" ;
+    rdfs:comment "SNH ID: 902a" ;
+    rdfs:comment "SNH info: 'Bùrn' is used in Lewis and some other places." .
 
   n:sgait
+    a :FeminineNoun ;
     rdfs:label "sgait" ;
     :sense "skate" ;
-    :pl "F" ;
+    :pl "sgaitean" ;
     rdfs:comment "SNH ID: 903" ;
-    rdfs:comment "SNH othersgarrag" ;
-    rdfs:comment "SNH category: sgaitean" .
+    rdfs:comment "SNH category: under the sea" .
+
+  n:sgarrag
+    a :FeminineNoun ;
+    rdfs:label "sgarrag" ;
+    :sense "skate" ;
+    rdfs:comment "SNH ID: 903a" ;
+    rdfs:comment "SNH category: under the sea" .
+
+  n:sgaiteag
+    a :FeminineNoun ;
+    rdfs:label "sgaiteag" ;
+    :sense "skate" ;
+    rdfs:comment "SNH ID: 903b" ;
+    rdfs:comment "SNH category: under the sea" .
 
   n:pobhlar
     a :MasculineNoun ;
@@ -6728,116 +6754,114 @@
     rdfs:comment "SNH Latin: Pinguicula vulgaris" ;
     rdfs:comment "SNH category: plants" .
 
+
+# CLEANED EVERYTHING BELOW HERE
+
   n:giomach
     a :MasculineNoun ;
     rdfs:label "giomach" ;
-    :sense "lobster" ;
+    :sense "lobster" , "Homarus gammarus" ;
     :pl "giomaich" ;
-    rdfs:comment "SNH ID: 1012" ;
-    rdfs:comment "SNH Latin: Homarus gammarus" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1012" .
 
   n:seillean_moor_an_earbaill_bhaain
     a :MasculineNoun ;
     rdfs:label "seillean-mòr an earbaill bhàin" ;
-    :sense "white tailed bumblebee" ;
+    :sense "white tailed bumblebee" , "Bombus lucorum" ;
     :pl "seilleanan-mòra an earbaill bhàin" ;
     rdfs:comment "SNH ID: 1014" ;
-    rdfs:comment "SNH Latin: Bombus lucorum" ;
     rdfs:comment "SNH category: invertebrates" .
 
   n:seillean_moor_earball_baan_a_Chinn_a_Tuath
     a :MasculineNoun ;
-    rdfs:label "seillean-mòr earball-bàn a' Chinn a Tuath" ;
-    :sense "northern white-tailed bumblebee" ;
-    :pl "seilleanan-mòra earball-bàn a' Chinn a Tuath" ;
+    rdfs:label "seillean-mòr earball-bàn a’ Chinn a Tuath" ;
+    :sense "northern white-tailed bumblebee" , "Bombus magnus" ;
+    :pl "seilleanan-mòra earball-bàn a’ Chinn a Tuath" ;
     rdfs:comment "SNH ID: 1015" ;
-    rdfs:comment "SNH Latin: Bombus magnus" ;
     rdfs:comment "SNH category: invertebrates" .
 
   n:seillean_moor_a_chrios_bhriste
     a :MasculineNoun ;
-    rdfs:label "seillean-mòr a' chrios bhriste" ;
-    :sense "broken belted bumblebee" ;
-    :pl "seilleanan-mòra a' chrios bhriste" ;
+    rdfs:label "seillean-mòr a’ chrios bhriste" ;
+    :sense "broken belted bumblebee" , "Bombus soroeensis" ;
+    :pl "seilleanan-mòra a’ chrios bhriste" ;
     rdfs:comment "SNH ID: 1016" ;
-    rdfs:comment "SNH Latin: Bombus soroeensis" ;
     rdfs:comment "SNH category: invertebrates" .
 
   n:seillean_moor_an_earbaill_bhuidhe_bhaan
     a :MasculineNoun ;
     rdfs:label "seillean-mòr an earbaill bhuidhe-bhàn" ;
-    :sense "buff-tailed bumblebee" ;
+    :sense "buff-tailed bumblebee" , "Bombus terrestris" ;
     :pl "seilleanan-mòra an earbaill bhuidhe-bhàn" ;
     rdfs:comment "SNH ID: 1017" ;
-    rdfs:comment "SNH Latin: Bombus terrestris" ;
     rdfs:comment "SNH category: invertebrates" .
 
   n:seillean_moor_gaarraidh
     a :MasculineNoun ;
     rdfs:label "seillean-mòr gàrraidh" ;
-    :sense "garden bumblebee" ;
+    :sense "garden bumblebee" , "Bombus hortorum" ;
     :pl "seilleanan-mòra gàrraidh" ;
     rdfs:comment "SNH ID: 1018" ;
-    rdfs:comment "SNH Latin: Bombus hortorum" ;
     rdfs:comment "SNH category: invertebrates" .
 
   n:giomach_Spaainnteach
     a :MasculineNoun ;
     rdfs:label "giomach Spàinnteach" ;
-    :sense "crayfish" ;
+    :sense "crayfish" , "Palinurus elephas" ;
     :pl "giomaich Spàinnteach" ;
-    rdfs:comment "SNH ID: 1021" ;
-    rdfs:comment "SNH other: giomach creige" ;
-    rdfs:comment "SNH Latin: Palinurus elephas " ;
-    rdfs:comment "SNH category: giomaich creige" .
+    rdfs:comment "SNH ID: 1021" .
 
-  n:a_briodadh
+  n:giomach_creige
+    a :MasculineNoun ;
+    rdfs:label "giomach creige" ;
+    :sense "crayfish" , "Palinurus elephas" ;
+    :pl "giomaich creige" ;
+    rdfs:comment "SNH ID: 1021a" .
+
+  v:briod
     rdfs:label "a' briodadh" ;
-    :sense "mating / breeding" ;
-    rdfs:comment "SNH ID: 1024" ;
-    rdfs:comment "SNH other: a' briodachadh" ;
-    rdfs:comment "SNH category: " .
+    :sense "mating" , "breeding" ;
+    rdfs:comment "SNH ID: 1024" .
 
-  n:a_dol_aa_bith
+  v:briodaich
+    rdfs:label "a' briodachadh" ;
+    :sense "mating" , "breeding" ;
+    rdfs:comment "SNH ID: 1024a" .
+
+  v:rach_aa_bith
     rdfs:label "a' dol à bith" ;
-    :sense "facing extinction " ;
+    :sense "facing extinction" ;
     rdfs:comment "SNH ID: 1026" ;
-    rdfs:comment "SNH info: extinct = à bith" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH info: extinct = à bith" .
 
-  n:a_gintinn
+  v:gin
     rdfs:label "a' gintinn" ;
     :sense "breeding" ;
-    rdfs:comment "SNH ID: 1028" ;
-    rdfs:comment "SNH other: a' briodadh" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 1028" .
 
-  n:a_bagairt
+  v:bagair
     rdfs:label "a' bagairt" ;
     :sense "threatening" ;
     rdfs:comment "SNH ID: 1029" ;
-    rdfs:comment "SNH audio: a bagairt.mp3" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH audio: a bagairt.mp3" .
 
-  n:a_soirbheachadh
+  v:soirbhich
     rdfs:label "a' soirbheachadh" ;
-    :sense "thriving " ;
+    :sense "thriving" ;
     rdfs:comment "SNH ID: 1030" ;
-    rdfs:comment "SNH info: normally used as a' soirbheachadh le " ;
-    rdfs:comment "SNH audio: a soirbheachadh.mp3" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH info: normally used as a' soirbheachadh le" ;
+    rdfs:comment "SNH audio: a soirbheachadh.mp3" .
 
-  n:a_taaladh
+  v:taalaidh
     rdfs:label "a' tàladh" ;
     :sense "attracting" ;
     rdfs:comment "SNH ID: 1031" ;
-    rdfs:comment "SNH other: a' tarraing" ;
-    rdfs:comment "SNH audio: a taladh.mp3" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH audio: a taladh.mp3" .
 
-# STARTING HERE NEXT
-# CLEANED EVERYTHING BELOW HERE
+  v:tarraing
+    rdfs:label "a' tarraing" ;
+    :sense "attracting" ;
+    rdfs:comment "SNH ID: 1031a" .
 
   n:abhainn
     :FeminineNoun ;
@@ -6895,7 +6919,7 @@
     rdfs:comment "SNH audio: agh feidh.mp3" ;
     rdfs:comment "SNH category: mammals" .
 
-  n:ailean_donn
+  n:aailean_donn
     a :MasculineNoun ;
     rdfs:label "ailean donn" ;
     :sense "meadow brown butterfly" , "Maniola jurtina" ;
