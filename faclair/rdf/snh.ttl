@@ -2435,7 +2435,7 @@ v:bris
 
 n:seillean_moor_an_earbaill_bhuidhe_bhaan
   rdfs:label "seillean mòr an earbaill bhuidhe-bhàn" ;
-  :part n:seillean_moor . n:earball , a:buidhe , a:baan .
+  :part n:seillean_moor , n:earball , a:buidhe , a:baan .
 
 n:seillean_moor_gaarraidh
   rdfs:label "seillean mòr gàrraidh" ;
@@ -2496,7 +2496,7 @@ v:soirbhich
 
 a:soirbh
   a :Adjective ;
-  rdfs:label "soirbh" ;
+  rdfs:label "soirbh" .
 
 v:taalaidh
   a :Verb ;
@@ -2511,14 +2511,15 @@ n:abhainn
   rdfs:label "abhainn" .
 
 n:sruth
-    :MasculineNoun ;
-    rdfs:label "sruth" ;
-    :pl "sruthan" .
+  a :MasculineNoun ;
+  rdfs:label "sruth" ;
+  :pl "sruthan" .
 
 n:allt
-    rdfs:label "allt" ;
-    :pl "uillt" ;
-    :gen "uillt" .
+  a :MasculineNoun ;
+  rdfs:label "allt" ;
+  :pl "uillt" ;
+  :gen "uillt" .
 
 n:adag
   a :FeminineNoun ;
@@ -2628,7 +2629,7 @@ n:amadan_moointich
   :part n:amadan , n:moointeach .
 
 n:amadan
-  a:MasculineNoun ;
+  a :MasculineNoun ;
   rdfs:label "amadan" .
 
 n:gurraiceach
@@ -2829,7 +2830,7 @@ n:Sealainn
   rdfs:label "Sealainn" .
 
 a:nuadh
-  a:Adjective ;
+  a :Adjective ;
   rdfs:label "nuadh" .
 
 n:ball_osaig_cas_gheal
@@ -3175,7 +3176,7 @@ a:mogalach
 
 n:mogal
   a :MasculineNoun ;
-  rdfs:label "mogal" ;
+  rdfs:label "mogal" .
 
 n:crotal_stuic
   rdfs:label "crotal stuic" ;
@@ -3226,7 +3227,7 @@ n:cupa_ceeireach
 
 a:ceeireach
   a :Adjective ;
-  rdfs:label "cèireach" l
+  rdfs:label "cèireach" ;
   :part n:ceeir .
 
 n:ceeir

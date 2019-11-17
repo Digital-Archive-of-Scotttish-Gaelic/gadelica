@@ -2490,7 +2490,7 @@ n:Maaigh
   :gen "Màighe" .
 
 o:meacanaigs
-  a :plural noun ;
+  a :PluralNoun ;
   rdfs:label "meacanaigs" .
 
 n:bonn
@@ -3509,12 +3509,12 @@ n:claaradh
   :gen "clàraidh" ;
   :pl "clàraidhean" .
 
-o:a'_claaradh
-  a :verbal noun ;
-  rdfs:label "a' clàradh" .
+o:a_claaradh
+  a :VerbalNoun ;
+  rdfs:label "a’ clàradh" .
 
 o:cur_seachadan
-  a :plural noun ;
+  a :PluralNoun ;
   rdfs:label "cur-seachadan" ;
   :gen "cur-seachadan" .
 
@@ -4160,7 +4160,7 @@ n:comharra
   :gen "comharra" ;
   :pl "comharran" .
 
-n:samhla(dh)
+n:samhladh
   a :MasculineNoun ;
   rdfs:label "samhla(dh)" ;
   :gen "samhlaidh" ;
@@ -4196,8 +4196,8 @@ n:siostam
   :gen "siostaim" ;
   :pl "siostaman" .
 
-o:(gu)_rianail
-  a :adverb ;
+a:rianail
+  a :Adjective ;
   rdfs:label "(gu) rianail" .
 
 n:labhairt
@@ -4279,7 +4279,7 @@ n:teacsa
   :gen "teacsa" ;
   :pl "teacsaichean" .
 
-o:tapadh_leat_/_leibh
+o:tapadh_leat
   a :NounPhrase ;
   rdfs:label "tapadh leat / leibh" .
 
@@ -4387,14 +4387,13 @@ v:aisig
   rdfs:label "aisig" .
 
 o:ag_aiseag
-  a :verbal noun ;
+  a :VerbalNoun ;
   rdfs:label "ag aiseag" .
 
 n:cruth_atharrachadh
   a :MasculineNoun ;
   rdfs:label "cruth-atharrachadh" ;
-  :gen "cruth-atharrachaidh" ;
-  :pl "" .
+  :gen "cruth-atharrachaidh" .
 
 n:coomhdhail
   a :FeminineNoun ;

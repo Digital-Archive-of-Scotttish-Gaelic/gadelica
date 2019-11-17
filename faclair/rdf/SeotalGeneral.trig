@@ -1785,9 +1785,9 @@ o:paaiste_air_foogradh
   rdfs:label "pàiste air fògradh" ;
   :sense "evacuee" .
 
-o:a'_luachadh
-  a :verbal noun ;
-  rdfs:label "a' luachadh" ;
+o:a_luachadh
+  a :VerbalNoun ;
+  rdfs:label "a’ luachadh" ;
   :sense "evaluating" .
 
 n:tachartas
@@ -2013,7 +2013,7 @@ n:iasgach
   :gen "iasgaich" .
 
 o:ag_iasgach
-  a :verbal noun ;
+  a :VerbalNoun ;
   rdfs:label "ag iasgach" ;
   :sense "fishing" .
 
@@ -2334,14 +2334,13 @@ n:taigh
   :gen "taighe" ;
   :pl "taighean" .
 
-n:taigheadas_
+n:taigheadas
   a :MasculineNoun ;
-  rdfs:label "taigheadas " ;
+  rdfs:label "taigheadas" ;
   :sense "housing" ;
   :gen "taigheadais" .
 
-o:ciamar_a_tha_thu?
-  a : ;
+o:ciamar_a_tha_thu
   rdfs:label "ciamar a tha thu?" ;
   :sense "how are you" .
 
@@ -2380,8 +2379,8 @@ n:sealg
   :sense "hunting" ;
   :gen "seilge" .
 
-o:a'_sealg
-  a :verbal noun ;
+o:a_sealg
+  a :VerbalNoun ;
   rdfs:label "a' sealg" ;
   :sense "hunting" .
 
@@ -2429,7 +2428,6 @@ n:soillseachadh
   :pl "soillseachaidhean" .
 
 o:an_laarach_nam_bonn
-  a :adverbial phrase ;
   rdfs:label "an làrach nam bonn" ;
   :sense "impromptu" .
 
@@ -2446,11 +2444,6 @@ n:tricead_
   :sense "incidence" ;
   :gen "triceid" ;
   :pl "triceadan" .
-
-o:incunabula
-  a :plural noun ;
-  rdfs:label "incunabula" ;
-  :sense "incunabula" .
 
 n:neo_chinnteachas
   a :MasculineNoun ;
@@ -3019,7 +3012,7 @@ n:Maaigh
   :gen "Màighe" .
 
 o:meacanaigs
-  a :plural noun ;
+  a :PluralNoun ;
   rdfs:label "meacanaigs" ;
   :sense "mechanics" .
 
@@ -3038,7 +3031,7 @@ n:meadail
   :pl "meadailean" .
 
 o:meadhanan
-  a :plural noun ;
+  a :PluralNoun ;
   rdfs:label "meadhanan" ;
   :sense "media" ;
   :gen "nam meadhanan" .
@@ -4200,9 +4193,9 @@ n:raiseanadh
   :sense "rationing" ;
   :gen "raiseanaidh" .
 
-o:a'_raiseanadh
-  a :verbal noun ;
-  rdfs:label "a' raiseanadh" ;
+o:a_raiseanadh
+  a :VerbalNoun ;
+  rdfs:label "a’ raiseanadh" ;
   :sense "rationing" .
 
 n:leughadh
@@ -4248,13 +4241,13 @@ n:claaradh
   :gen "clàraidh" ;
   :pl "clàraidhean" .
 
-o:a'_claaradh
-  a :verbal noun ;
-  rdfs:label "a' clàradh" ;
+o:a_claaradh
+  a :VerbalNoun ;
+  rdfs:label "a’ clàradh" ;
   :sense "recording" .
 
 o:cur_seachadan
-  a :plural noun ;
+  a :PluralNoun ;
   rdfs:label "cur-seachadan" ;
   :sense "recreation" ;
   :gen "cur-seachadan" .
@@ -4534,8 +4527,7 @@ n:leughadair_sgrion
   rdfs:label "leughadair sgrion" ;
   :sense "screen reader" ;
   :gen "leughadair sgrion" ;
-  :pl "leughadairean sgrion
-         " .
+  :pl "leughadairean sgrion" .
 
 n:snaigheadh
   a :MasculineNoun ;
@@ -5020,7 +5012,7 @@ n:comharra
   :gen "comharra" ;
   :pl "comharran" .
 
-n:samhla(dh)
+n:samhladh
   a :MasculineNoun ;
   rdfs:label "samhla(dh)" ;
   :sense "symbol" ;
@@ -5063,7 +5055,7 @@ n:siostam
   :gen "siostaim" ;
   :pl "siostaman" .
 
-o:(gu)_rianail
+a:rianail
   a :adverb ;
   rdfs:label "(gu) rianail" ;
   :sense "systematically" .
@@ -5162,7 +5154,7 @@ n:teacsa
   :gen "teacsa" ;
   :pl "teacsaichean" .
 
-o:tapadh_leat_/_leibh
+o:tapadh_leat
   a :NounPhrase ;
   rdfs:label "tapadh leat / leibh" ;
   :sense "thank you" .
@@ -5290,7 +5282,7 @@ v:aisig
   :sense "transfer" .
 
 o:ag_aiseag
-  a :verbal noun ;
+  a :VerbalNoun ;
   rdfs:label "ag aiseag" ;
   :sense "transferring" .
 
@@ -5298,8 +5290,7 @@ n:cruth_atharrachadh
   a :MasculineNoun ;
   rdfs:label "cruth-atharrachadh" ;
   :sense "transformation" ;
-  :gen "cruth-atharrachaidh" ;
-  :pl "" .
+  :gen "cruth-atharrachaidh" .
 
 n:coomhdhail
   a :FeminineNoun ;
@@ -5539,7 +5530,7 @@ n:Diciadain
   :gen "Diciadain" .
 
 o:sochairean
-  a :plural noun ;
+  a :PluralNoun ;
   rdfs:label "sochairean" ;
   :sense "welfare" .
 
@@ -5569,8 +5560,8 @@ v:geamhraich
   :sense "winter" .
 
 o:a_geamhrachadh
-  a :verbal noun ;
-  rdfs:label "a' geamhrachadh" ;
+  a :VerbalNoun ;
+  rdfs:label "a’ geamhrachadh" ;
   :sense "wintering" .
 
 n:gliocas
