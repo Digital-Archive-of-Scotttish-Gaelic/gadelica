@@ -2338,8 +2338,30 @@ n:pobhlar
   a :MasculineNoun ;
   rdfs:label "pobhlar" .
 
+n:poibleag
+    a :FeminineNoun ;
+    rdfs:label "poibleag" ;
+    :sense "poplar", "Populus spp." ;
+    rdfs:comment "SNH ID: 904a" ;
+    rdfs:comment "SNH category: trees" .
+
 n:conan_mara
   rdfs:label "conan mara" .
+
+  n:cnagan_traghad
+    a :MasculineNoun ;
+    rdfs:label "cnagan-traghad" ;
+    :sense "sea urchin", "Echinoidea spp." ;
+    :pl "cnaganan-traghad" ;
+    rdfs:comment "SNH ID: 905a" ;
+    rdfs:comment "SNH note: Crogan-tràghad' means 'beach-jar'." .
+
+  n:cnagan_faoileig
+    a :MasculineNoun ;
+    rdfs:label "cnagan faoileig" ;
+    :sense "sea urchin", "Echinoidea spp." ;
+    :pl "cnaganan faoileig" ;
+    rdfs:comment "SNH ID: 905b" .
 
 n:slige
   a :FeminineNoun ;
@@ -2352,6 +2374,20 @@ n:maorach
 n:beachlann
   a :FeminineNoun ;
   rdfs:label "beachlann" .
+
+  n:sgeap
+    a :FeminineNoun ;
+    rdfs:label "sgeap" ;
+    :sense "beehive" ;
+    :pl "sgeapan" ;
+    rdfs:comment "SNH ID: 910a" .
+
+  n:sgiop
+    a :FeminineNoun ;
+    rdfs:label "sgiop" ;
+    :sense "beehive" ;
+    :pl "sgiopan" ;
+    rdfs:comment "SNH ID: 910b" .
 
 n:sgiath
   a :FeminineNoun ;
@@ -2366,47 +2402,156 @@ n:basgaid_poilein
 n:lus_ola
   rdfs:label "lus ola" .
 
+  n:lus_na_h_ola
+    a :MasculineNoun ;
+    rdfs:label "lus na h-ola" ;
+    :sense "oil seed rape" , "Brassica napus subsp. oleifera" ;
+    rdfs:comment "SNH ID: 918a" .
+
+# CLEANED EVERYTHING BELOW HERE
+
+n:reip
+  a :Noun ;
+  rdfs:label "reip" .
+
 n:eag_siostam
-  rdfs:label "eag-siostam" .
+  rdfs:label "eag-siostam" ;
+  :part n:siostam .
+
+n:eaco_siostam
+  rdfs:label "eaco-siostam" ;
+  :part n:siostam .
+
+n:siostam
+  a :MasculineNoun ;
+  rdfs:label "siostam" ;
+  :pl "siostaman" ;
+  :gen "siostaim" .
 
 n:searbhachadh_a_chuain
-  rdfs:label "searbhachadh a’ chuain" .
+  rdfs:label "searbhachadh a’ chuain" ;
+  :part n:searbhachadh , n:cuan .
+
+n:searbhachadh
+  a :MasculineNoun ;
+  rdfs:label "searbhachadh" ;
+  :part v:searbhaich .
+
+v:searbhaich
+  a :Verb ;
+  rdfs:label "searbhaich" ;
+  :part a:searbh .
+
+a:searbh
+  a :Adjective ;
+  rdfs:label "searbh" .
+
+n:cuan
+  a :MasculineNoun ;
+  rdfs:label "cuan" ;
+  :gen "cuain" .
 
 n:leabaidh_shneachda
-  rdfs:label "leabaidh-shneachda" .
+  rdfs:label "leabaidh shneachda" ;
+  :part n:leabaidh , n:sneachd .
+
+n:leabaidh
+  a :FeminineNoun ;
+  rdfs:label "leabaidh" .
 
 n:corail
   a :MasculineNoun ;
   rdfs:label "corail" .
 
 n:costag_fhiadhain
-  rdfs:label "costag fhiadhain" .
+  rdfs:label "costag fhiadhain" ;
+  :part n:costag , a:fiadhain .
+
+n:costag
+  a :FeminineNoun ;
+  rdfs:label "costag" .
+
+a:fiadhain
+  a :Adjective ;
+  rdfs:label "fiadhain" .
 
 n:seilcheag_eadar_thraaghaidh
-  rdfs:label "seilcheag eadar-thràghaidh" .
+  rdfs:label "seilcheag eadar-thràghaidh" ;
+  :part n:seilcheag , n:traaghadh .
+
+n:traaghadh
+  a :MasculineNoun ;
+  rdfs:label "tràghadh" .
 
 n:gnee_neo_dhuuthchasach_ionnsaigheach
-  rdfs:label "gnè neo-dhùthchasach ionnsaigheach" .
+  rdfs:label "gnè neo-dhùthchasach ionnsaigheach" ;
+  :part n:gnee , a:neo_dhuuthchasach , a:ionnsaigheach .
+
+a:neo_dhuuthchasach
+  a :Adjective ;
+  rdfs:label "neo-dhùthchasach" ;
+  :part a:duuthchasach .
+
+a:ionnsaigheach
+  a :Adjective ;
+  rdfs:label "ionnsaigheach" ;
+  :part n:ionnsaigh .
+
+n:ionnsaigh
+  a :FeminineNoun ;
+  rdfs:label "ionnsaigh" .
 
 n:costa
   a :MasculineNoun ;
-  rdfs:label "costa" .
+  rdfs:label "costa" ;
+  :pl "costachan" .
+
+n:oirthir
+  a :FeminineNoun ;
+  rdfs:label "oirthir" ;
+  :pl "oirthirean" .
+
+n:cladach
+  a :MasculineNoun ;
+  rdfs:label "cladach" ;
+  :pl "cladaichean" .
 
 n:bith_chonnadh
-  rdfs:label "bith-chonnadh" .
+  rdfs:label "bith-chonnadh" ;
+  :part n:bith , n:connadh .
+
+n:connadh
+  a :MasculineNoun ;
+  rdfs:label "connadh" .
 
 n:stuagh
   a :FeminineNoun ;
   rdfs:label "stuagh" .
 
+n:tonn
+  a :MasculineNoun ;
+  rdfs:label "tonn" ;
+  :pl "tuinn" , "tonnan" .
+
 n:duun_gainmhich
-  rdfs:label "dùn-gainmhich" .
+  rdfs:label "dùn gainmhich" ;
+  :part n:duun , n:gainmheach .
+
+n:docan_gainmhich
+  rdfs:label "docan gainmhich" ;
+  :part n:docan , n:gainmheach .
+
+n:docan
+  a :MasculineNoun ;
+  rdfs:label "docan" .
+
+n:duun
+  a :MasculineNoun ;
+  rdfs:label "dùn" .
 
 n:moothan
   a :MasculineNoun ;
   rdfs:label "mòthan" .
-
-# CLEANED EVERYTHING BELOW HERE
 
 n:giomach
   a :MasculineNoun ;
@@ -3022,7 +3167,8 @@ n:groom_cupanach
 
 n:groom
   a :MasculineNoun ;
-  rdfs:label "gròm" .
+  rdfs:label "gròm" ;
+  :pl "gròman" .
 
 n:corra_chagailte
   rdfs:label "corra-chagailte" ;

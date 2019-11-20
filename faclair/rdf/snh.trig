@@ -6523,6 +6523,7 @@
     rdfs:comment "SNH category: " .
 
 # STARTING HERE NEXT
+# CLEANED EVERYTHING BELOW HERE
 
   a:fiadhaich
     a :Adjective ;
@@ -6575,22 +6576,39 @@
   n:pobhlar
     a :MasculineNoun ;
     rdfs:label "pobhlar" ;
-    :sense "poplar" ;
+    :sense "poplar" , "Populus spp." ;
     :pl "pobhlaran" ;
     rdfs:comment "SNH ID: 904" ;
-    rdfs:comment "SNH other: poibleag <em>f</em>" ;
-    rdfs:comment "SNH Latin: Populus spp." ;
+    rdfs:comment "SNH category: trees" .
+
+  n:poibleag
+    a :FeminineNoun ;
+    rdfs:label "poibleag" ;
+    :sense "poplar", "Populus spp." ;
+    rdfs:comment "SNH ID: 904a" ;
     rdfs:comment "SNH category: trees" .
 
   n:conan_mara
+    a :MasculineNoun ;
     rdfs:label "conan mara" ;
-    :sense "sea urchin" ;
-    :pl "Echinoidea (Class) spp." ;
-    rdfs:comment "SNH ID: 905" ;
-    rdfs:comment "SNH othercnagan-traghad <em>m</em>" ;
-    rdfs:comment "SNH audio'Crogan-tràghad' means 'beach-jar'" ;
-    rdfs:comment "SNH Latin" ;
-    rdfs:comment "SNH category: M" .
+    :sense "sea urchin", "Echinoidea spp." ;
+    :pl "conain mhara" ;
+    rdfs:comment "SNH ID: 905" .
+
+  n:cnagan_traghad
+    a :MasculineNoun ;
+    rdfs:label "cnagan-traghad" ;
+    :sense "sea urchin", "Echinoidea spp." ;
+    :pl "cnaganan-traghad" ;
+    rdfs:comment "SNH ID: 905a" ;
+    rdfs:comment "SNH note: Crogan-tràghad' means 'beach-jar'." .
+
+  n:cnagan_faoileig
+    a :MasculineNoun ;
+    rdfs:label "cnagan faoileig" ;
+    :sense "sea urchin", "Echinoidea spp." ;
+    :pl "cnaganan faoileig" ;
+    rdfs:comment "SNH ID: 905b" .
 
   n:slige
     a :FeminineNoun ;
@@ -6609,12 +6627,25 @@
     rdfs:comment "SNH category: " .
 
   n:beachlann
+    a :FeminineNoun ;
     rdfs:label "beachlann" ;
     :sense "beehive" ;
-    :pl "F" ;
-    rdfs:comment "SNH ID: 910" ;
-    rdfs:comment "SNH othersgeap <em>f</em>" ;
-    rdfs:comment "SNH categorybeachlannan" .
+    :pl "beachlannan" ;
+    rdfs:comment "SNH ID: 910" .
+
+  n:sgeap
+    a :FeminineNoun ;
+    rdfs:label "sgeap" ;
+    :sense "beehive" ;
+    :pl "sgeapan" ;
+    rdfs:comment "SNH ID: 910a" .
+
+  n:sgiop
+    a :FeminineNoun ;
+    rdfs:label "sgiop" ;
+    :sense "beehive" ;
+    :pl "sgiopan" ;
+    rdfs:comment "SNH ID: 910b" .
 
   n:sgiath
     rdfs:label "sgiath" ;
@@ -6625,10 +6656,9 @@
   n:seillean_meala
     a :MasculineNoun ;
     rdfs:label "seillean-meala" ;
-    :sense "honeybee" ;
+    :sense "honeybee" , "Apis mellifera" ;
     :pl "seilleanan-meala" ;
     rdfs:comment "SNH ID: 914" ;
-    rdfs:comment "SNH Latin: Apis mellifera" ;
     rdfs:comment "SNH category: invertebrates" .
 
   n:basgaid_poilein
@@ -6636,29 +6666,44 @@
     rdfs:label "basgaid poilein" ;
     :sense "pollen basket (of a bee)" ;
     :pl "basgaidean poilein" ;
-    rdfs:comment "SNH ID: 917" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 917" .
 
   n:lus_ola
+    a :MasculineNoun ;
     rdfs:label "lus-ola" ;
-    :sense "oil seed rape" ;
-    :pl "M" ;
-    rdfs:comment "SNH ID: 918" ;
-    rdfs:comment "SNH other: lus na h-ola <em>m</em>" ;
-    rdfs:comment "SNH category: lusan-ola" .
+    :sense "oil seed rape" , "Brassica napus subsp. oleifera" ;
+    :pl "lusan-ola" ;
+    rdfs:comment "SNH ID: 918" .
+
+  n:lus_na_h_ola
+    a :MasculineNoun ;
+    rdfs:label "lus na h-ola" ;
+    :sense "oil seed rape" , "Brassica napus subsp. oleifera" ;
+    rdfs:comment "SNH ID: 918a" .
+
+  n:reip
+    a :Noun ;
+    rdfs:label "reip" ;
+    :sense "oil seed rape" , "Brassica napus subsp. oleifera" ;
+    rdfs:comment "SNH ID: 918b" .
 
   n:eag_siostam
     a :MasculineNoun ;
     rdfs:label "eag-siostam" ;
     :sense "ecosystem" ;
     :pl "eag-siostaman" ;
-    rdfs:comment "SNH ID: 920" ;
-    rdfs:comment "SNH other: eaco-siostam <em>m</em>" ;
-    rdfs:comment "SNH category: eaco-siostaman" .
+    rdfs:comment "SNH ID: 920" .
+
+  n:eaco_siostam
+    a :MasculineNoun ;
+    rdfs:label "eaco-siostam" ;
+    :sense "ecosystem" ;
+    :pl "eaco-siostaman" ;
+    rdfs:comment "SNH ID: 920a" .
 
   n:searbhachadh_a_chuain
     a :MasculineNoun ;
-    rdfs:label "searbhachadh a' chuain" ;
+    rdfs:label "searbhachadh a’ chuain" ;
     :sense "ocean acidification" ;
     rdfs:comment "SNH ID: 923" ;
     rdfs:comment "SNH category: landscapes" .
@@ -6669,36 +6714,36 @@
     :sense "snowbed" ;
     :pl "leabannan-sneachda" ;
     rdfs:comment "SNH ID: 925" ;
-    rdfs:comment "SNH info: An area of late lying snow on mountains." ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH info: An area of late lying snow on mountains." .
 
   n:corail
     a :MasculineNoun ;
     rdfs:label "corail" ;
-    :sense "coral" ;
+    :sense "coral" , "Anthozoa" ;
     :pl "corailean" ;
-    rdfs:comment "SNH ID: 927" ;
-    rdfs:comment "SNH other: gròm <em>m</em>" ;
-    rdfs:comment "SNH Latin: Anthozoa" ;
-    rdfs:comment "SNH category: gròman" .
+    rdfs:comment "SNH ID: 927" .
+
+  n:groom
+    a :MasculineNoun ;
+    rdfs:label "gròm" ;
+    :sense "coral" , "Anthozoa" ;
+    :pl "gròman" ;
+    rdfs:comment "SNH ID: 927a" .
 
   n:costag_fhiadhain
     a :FeminineNoun ;
     rdfs:label "costag fhiadhain" ;
-    :sense "cow parsley" ;
+    :sense "cow parsley" , "Anthriscus sylvestris" ;
     :pl "costagan fiadhain" ;
     rdfs:comment "SNH ID: 928" ;
-    rdfs:comment "SNH info: Names means 'wild little aromatic one'." ;
-    rdfs:comment "SNH Latin: Anthriscus sylvestris" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH info: Names means 'wild little aromatic one'." .
 
   n:seilcheag_eadar_thraaghaidh
     a :FeminineNoun ;
     rdfs:label "seilcheag eadar-thràghaidh" ;
-    :sense "intertidal snail" ;
+    :sense "intertidal snail" , "Gastropoda spp." ;
     :pl "seilcheagan eadar-thràghaidh" ;
     rdfs:comment "SNH ID: 930" ;
-    rdfs:comment "SNH Latin: Gastropoda (Class) spp." ;
     rdfs:comment "SNH category: invertebrates" .
 
   n:gnee_neo_dhuuthchasach_ionnsaigheach
@@ -6706,34 +6751,50 @@
     rdfs:label "gnè neo-dhùthchasach ionnsaigheach" ;
     :sense "invasive non-native species" ;
     :pl "gnèithean neo-dhùthchasach ionnsaigheach" ;
-    rdfs:comment "SNH ID: 931" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 931" .
 
   n:costa
+    a :MasculineNoun ;
     rdfs:label "costa" ;
     :sense "coast" ;
-    :pl "M" ;
-    rdfs:comment "SNH ID: 932" ;
-    rdfs:comment "SNH other: oirthir <em>f</em>" ;
-    rdfs:comment "SNH Latin: cladach.mp3" ;
-    rdfs:comment "SNH category: costachan" .
+    :pl "costachan" ;
+    rdfs:comment "SNH ID: 932" .
+
+  n:oirthir
+    a :FeminineNoun ;
+    rdfs:label "oirthir" ;
+    :sense "coast" ;
+    :pl "oirthirean" ;
+    rdfs:comment "SNH ID: 932a" .
+
+  n:cladach
+    a :MasculineNoun ;
+    rdfs:label "cladach" ;
+    :sense "coast" ;
+    :pl "cladaichean" ;
+    rdfs:comment "SNH ID: 932b" ;
+    rdfs:comment "SNH audio: cladach.mp3" .
 
   n:bith_chonnadh
     a :MasculineNoun ;
     rdfs:label "bith-chonnadh" ;
     :sense "biofuel" ;
     :pl "bith-chonnaidhean" ;
-    rdfs:comment "SNH ID: 933" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 933" .
 
   n:stuagh
     a :FeminineNoun ;
     rdfs:label "stuagh" ;
     :sense "wave" ;
     :pl "stuaghan" ;
-    rdfs:comment "SNH ID: 934" ;
-    rdfs:comment "SNH other: tonn <em>m</em>" ;
-    rdfs:comment "SNH category: tuinn/tonnan" .
+    rdfs:comment "SNH ID: 934" .
+
+  n:tonn
+    a :MasculineNoun ;
+    rdfs:label "tonn" ;
+    :sense "wave" ;
+    :pl "tuinn" , "tonnan" ;
+    rdfs:comment "SNH ID: 934a" .
 
   n:duun_gainmhich
     a :MasculineNoun ;
@@ -6741,21 +6802,23 @@
     :sense "sand dune" ;
     :pl "dùin-ghainmhich" ;
     rdfs:comment "SNH ID: 936" ;
-    rdfs:comment "SNH other: docan gàinmhiche" ;
+    rdfs:comment "SNH category: landscapes" .
+
+  n:docan_gainmhich
+    a :MasculineNoun ;
+    rdfs:label "docan gainmhiche" ;
+    :sense "sand dune" ;
+    rdfs:comment "SNH ID: 936a" ;
     rdfs:comment "SNH category: landscapes" .
 
   n:moothan
     a :MasculineNoun ;
     rdfs:label "mòthan" ;
-    :sense "common butterwort" ;
+    :sense "common butterwort" , "Pinguicula vulgaris" ;
     :pl "mòthain" ;
     rdfs:comment "SNH ID: 937" ;
     rdfs:comment "SNH info: This plant traps and digests insects through it's leaves. Gaelic name means 'bog violet'." ;
-    rdfs:comment "SNH Latin: Pinguicula vulgaris" ;
     rdfs:comment "SNH category: plants" .
-
-
-# CLEANED EVERYTHING BELOW HERE
 
   n:giomach
     a :MasculineNoun ;
