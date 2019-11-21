@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <?php
-$result = '';
+$search = '';
 if (isset($_GET['searchTerm'])) { // check for search term in URL
-  $result = $_GET['searchTerm'];
-  echo '<title>Stòras-Brì – ' . $result . '</title>';
+  $search = $_GET['searchTerm'];
+  echo '<title>Stòras Brì – ' . $search . '</title>';
 }
 else echo '<title>Stòras-Brì</title>';
 ?>
@@ -20,8 +20,8 @@ else echo '<title>Stòras-Brì</title>';
           <div class="input-group">
 <?php
 echo '<input type="text" class="form-control active" name="searchTerm"  data-toggle="tooltip" title="Enter search term here" ';
-if ($result != '') { // display search term inside search box
-  echo 'value="' . $result . '"/>';
+if ($search != '') { // display search term inside search box
+  echo 'value="' . $search . '"/>';
 }
 else { echo 'autofocus="autofocus"/>'; }
 ?>
@@ -32,47 +32,164 @@ else { echo 'autofocus="autofocus"/>'; }
         </div>
       </form>
 <?php
-if ($result != '') {
+if ($search != '') {
+  echo '<table class="table table-hover"><tbody>';
+  // exact English/Gaelic search (case insensitive):
   $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
-SELECT DISTINCT ?gd ?id ?en ?lex
+SELECT DISTINCT ?id ?gd ?en
 WHERE
 {
   {
-    GRAPH ?lexicon {
-      ?id rdfs:label ?gd .
+    ?id rdfs:label ?gd .
+    GRAPH ?lex {
       ?id :sense ?en .
-      FILTER regex(?en, "{$_GET['searchTerm']}", "i") .
     }
-    ?lexicon rdfs:label ?lex .
+    FILTER regex(?en, "^{$search}$", "i") .
   }
   UNION
   {
-    GRAPH ?lexicon {
-      ?id rdfs:label ?gd .
+    ?id rdfs:label ?gd .
+    GRAPH ?lex {
       ?id :sense ?en .
-      FILTER regex(?gd, "{$_GET['searchTerm']}", "i") .
     }
-    ?lexicon rdfs:label ?lex .
+    FILTER regex(?gd, "^{$search}$", "i") .
+  }
+}
+SPQR;
+  //$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
+  $url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+  $results = json_decode(file_get_contents($url),false)->results->bindings;
+  function showResults($rs) {
+    $ids = [];
+    foreach ($rs as $nextResult) {
+      $ids[] = $nextResult->id->value;
+    }
+    $ids = array_unique($ids);
+    foreach ($ids as $nextid) {
+      $hw = '';
+      $ens = [];
+      foreach ($rs as $nextResult) {
+        if ($nextResult->id->value == $nextid) {
+          $hw = $nextResult->gd->value;
+          $ens[] = $nextResult->en->value;
+        }
+      }
+      echo '<tr><td><a href="viewEntry.php?id=' . urlencode($nextid) . '">' . $hw . '</a></td>';
+      echo '<td>';
+      $enstr = '';
+      foreach ($ens as $nexten) {
+        $enstr .= $nexten . ', ';
+      }
+      $enstr = trim($enstr, ', ');
+      echo $enstr;
+      echo '</td></tr>';
+    }
+  }
+  showResults($results);
+  // prefix match:
+  $query = <<<SPQR
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX : <http://faclair.ac.uk/meta/>
+SELECT DISTINCT ?id ?gd ?en
+WHERE
+{
+  {
+    ?id rdfs:label ?gd .
+    GRAPH ?lex {
+      ?id :sense ?en .
+    }
+    FILTER (regex(?en, "^{$search}", "i") && !(regex(?en, "{$search}$", "i"))) .
+  }
+  UNION
+  {
+    ?id rdfs:label ?gd .
+    GRAPH ?lex {
+      ?id :sense ?en .
+    }
+    FILTER (regex(?gd, "^{$search}", "i") && !(regex(?gd, "{$search}$", "i"))).
   }
 }
 ORDER BY strlen(str(?gd))
 SPQR;
-  $url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
+  //$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
+  $url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
   $results = json_decode(file_get_contents($url),false)->results->bindings;
-  echo '<div class="list-group list-group-flush">'; // display list of search results
-  foreach ($results as $result) {
-    echo '<a href="viewEntry.php?id=' . urlencode($result->id->value) . '" class="list-group-item list-group-item-action">' . $result->gd->value . ' <small>' . $result->en->value . ' (' . $result->lex->value . ')</small></a>';
+  showResults($results);
+
+  /*
+  //suffix match:
+  $query = <<<SPQR
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX : <http://faclair.ac.uk/meta/>
+SELECT DISTINCT ?id ?gd ?en
+WHERE
+{
+  {
+    ?id rdfs:label ?gd .
+    GRAPH ?lex {
+      ?id :sense ?en .
+    }
+    FILTER (regex(?en, "{$search}$", "i") && !(regex(?en, "^{$search}", "i"))) .
   }
-  echo '</div>';
+  UNION
+  {
+    ?id rdfs:label ?gd .
+    GRAPH ?lex {
+      ?id :sense ?en .
+    }
+    FILTER (regex(?gd, "{$search}$", "i") && !(regex(?gd, "^{$search}", "i"))).
+  }
+}
+ORDER BY strlen(str(?gd))
+SPQR;
+  //$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
+  $url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+  $results = json_decode(file_get_contents($url),false)->results->bindings;
+  foreach ($results as $nextResult) {
+    echo '<a href="viewEntry.php?id=' . urlencode($nextResult->id->value) . '" class="list-group-item list-group-item-action">' . $nextResult->gd->value . ' <small>' . $nextResult->en->value . '</small></a>';
+  }
+  // substring match:
+  $query = <<<SPQR
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX : <http://faclair.ac.uk/meta/>
+SELECT DISTINCT ?id ?gd ?en
+WHERE
+{
+  {
+    ?id rdfs:label ?gd .
+    GRAPH ?lex {
+      ?id :sense ?en .
+    }
+    FILTER (regex(?en, "{$search}", "i") && !(regex(?en, "^{$search}", "i")) && !(regex(?en, "{$search}$", "i"))) .
+  }
+  UNION
+  {
+    ?id rdfs:label ?gd .
+    GRAPH ?lex {
+      ?id :sense ?en .
+    }
+    FILTER (regex(?gd, "{$search}", "i") && !(regex(?gd, "^{$search}", "i")) && !(regex(?gd, "{$search}$", "i"))).
+  }
+}
+ORDER BY strlen(str(?gd))
+SPQR;
+  //$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
+  $url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+  $results = json_decode(file_get_contents($url),false)->results->bindings;
+  foreach ($results as $nextResult) {
+    echo '<a href="viewEntry.php?id=' . urlencode($nextResult->id->value) . '" class="list-group-item list-group-item-action">' . $nextResult->gd->value . ' <small>' . $nextResult->en->value . '</small></a>';
+  }
+  */
+  echo '</tbody></table>';
 }
 else {
   echo 'Cuiribh rud dhan bhocsa-luirg seo.';
 }
 ?>
       <nav class="navbar navbar-dark bg-primary fixed-bottom navbar-expand-lg">
-        <a class="navbar-brand" href="index.php">Stòras-Brì</a>
+        <a class="navbar-brand" href="index.php">Stòras Brì</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>

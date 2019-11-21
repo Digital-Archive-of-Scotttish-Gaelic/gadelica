@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Stòras-Brì</title>
+    <title>Stòras Brì</title>
   </head>
   <body style="padding-top: 20px;">
     <div class="container-fluid">
@@ -47,8 +47,9 @@ WHERE
   }
 }
 SPQR;
-$query = urlencode($query);
-$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . $query;
+//$query = urlencode($query);
+//$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . $query;
+$url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
 $json = file_get_contents($url);
 $results = json_decode($json,false)->results->bindings;
 echo '<div class="card"><div class="card-body">';
@@ -191,7 +192,7 @@ echo '</div>';
 echo '</div></div>';
 ?>
     <nav class="navbar navbar-dark bg-primary fixed-bottom navbar-expand-lg">
-      <a class="navbar-brand" href="index.php">Stòras-Brì</a>
+      <a class="navbar-brand" href="index.php">Stòras Brì</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
