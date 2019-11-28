@@ -5,72 +5,125 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix : <http://faclair.ac.uk/meta/> .
 
+# all cleaned.
+# needs to have parts added for most
 
 n:athair
   a :MasculineNoun ;
-  rdfs:label "athair" .
+  rdfs:label "athair" ;
+  :gen "athar" ;
+  :pl "athraichean" .
 
 n:maathair
   a :FeminineNoun ;
-  rdfs:label "màthair" .
+  rdfs:label "màthair" ;
+  :gen "màthar" ;
+  :pl "màthraichean" .
 
 n:piuthar
   a :FeminineNoun ;
-  rdfs:label "piuthar" .
+  rdfs:label "piuthar" ;
+  :gen "peathar" ;
+  :pl "peathraichean" .
 
 n:braathair
   a :MasculineNoun ;
-  rdfs:label "bràthair" .
+  rdfs:label "bràthair" ;
+  :gen "bràthar" ;
+  :pl "bràithrean" .
 
 n:seanmhair
   a :FeminineNoun ;
-  rdfs:label "seanmhair" .
+  rdfs:label "seanmhair" ;
+  :part a:sean , n:maathair ;
+  :gen "seanmhar" ;
+  :pl "seanmhairean" .
+
+a:sean
+  a :Adjective ;
+  rdfs:label "sean" ;
+  :comp "sìne" .
 
 n:seanair
   a :MasculineNoun ;
-  rdfs:label "seanair" .
+  rdfs:label "seanair" ;
+  :part a:sean , n:athair ;
+  :gen "seannar" ;
+  :pl "seanairean" .
 
-n:sean_seanair
-  a :MasculineNoun ;
-  rdfs:label "sean-seanair" .
+n:seann_seanair
+  rdfs:label "seann seanair" ;
+  :part a:sean , n:seanair ;
+  :pl "seann seanairean" ;
+  :gen "seann seannar" .
 
-n:sean_seanmhair
+n:seann_seanmhair
   a :FeminineNoun ;
-  rdfs:label "sean-seanmhair" .
+  rdfs:label "seann seanmhair" ;
+  :part a:sean , n:seanmhair ;
+  :pl "seann seanmhairean" ;
+  :gen "seann seanmhar" .
 
 n:oide
   a :MasculineNoun ;
-  rdfs:label "oide" .
+  rdfs:label "oide" ;
+  :gen "oide" ;
+  :pl "oidean" .
 
 n:uncail
   a :MasculineNoun ;
-  rdfs:label "uncail" .
+  rdfs:label "uncail" ;
+  :gen "uncail" ;
+  :pl "uncailean" .
 
 n:antaidh
   a :FeminineNoun ;
-  rdfs:label "antaidh" .
+  rdfs:label "antaidh" ;
+  :gen "antaidh(e)" ;
+  :pl "antaidhean" .
 
 n:caraid_as_fheaarr
-  rdfs:label "caraid as fheàrr" .
+  rdfs:label "caraid as fheàrr" ;
+  :part n:caraid , a:math ;
+  :pl "càirdean as fheàrr" ;
+  :gen "caraid as fheàrr" .
 
 n:leth_bhraathair
-  a :MasculineNoun ;
-  rdfs:label "leth-bhràthair" .
+  rdfs:label "leth-bhràthair" ;
+  :part n:leth , n:braathair ;
+  :gen "leth-bhràthar" ;
+  :pl "leth-bhràithrean" .
 
 n:leth_phiuthar
   a :FeminineNoun ;
-  rdfs:label "leth-phiuthar" .
+  rdfs:label "leth-phiuthar" ;
+  :part n:leth , n:piuthair ;
+  :gen "leth-pheathar" ;
+  :pl "leth-pheathraichean" .
+
+n:co_ogha
+  rdfs:label "co-ogha" ;
+  :gen "co-ogha" ;
+  :pl "co-oghaichean" ;
+  :part n:ogha .
 
 n:co_ogha
   a :MasculineNoun ;
-  rdfs:label "co-ogha" .
+  rdfs:label "ogha" ;
+  :gen "ogha" ;
+  :pl "oghaichean" .
 
 n:caraid
   a :MasculineNoun ;
-  rdfs:label "caraidean" .
+  rdfs:label "caraid" ;
+  :gen "caraid" ;
+  :pl "càirdean" .
 
 n:teaghlach
-  rdfs:label "teaghlach" .
+  a :MasculineNoun ;
+  rdfs:label "teaghlach" ;
+  :gen "teaghlaich" ;
+  :pl "teaghlaichean" .
 
 n:teaghlach_farsaing
   rdfs:label "teaghlach farsaing" .
@@ -1109,7 +1162,7 @@ n:aaireamhair
   rdfs:label "àireamhair" .
 
 n:leabhar_eacarsaichean
-    rdfs:label "leabhar eacarsaichean" .
+  rdfs:label "leabhar eacarsaichean" .
 
 n:leabhar_teacs
   rdfs:label "leabhar teacs" .
@@ -1283,1193 +1336,835 @@ n:daaibhear
 n:ad_chruaidh
   rdfs:label "ad chruaidh" .
 
-  n:sgriubhaire
-    a :MasculineNoun ;
-    rdfs:label "sgriubhaire" ;
-    :sense "screwdriver" .
-
-  n:oord
-    a :MasculineNoun ;
-    rdfs:label "òrd" ;
-    :sense "hammer" .
-
-  n:drile_dealain
-    a :FeminineNoun ;
-    rdfs:label "drile dealain" ;
-    :sense "electric drill" .
-
-  n:saabh
-    a :MasculineNoun ;
-    rdfs:label "sàbh" ;
-    :sense "saw" .
-
-  n:spanair
-    a :MasculineNoun ;
-    rdfs:label "spanair" ;
-    :sense "spanner" .
-
-  n:crios_innealan
-    a :MasculineNoun ;
-    rdfs:label "crios innealan" ;
-    :sense "tool belt" .
-
-  n:neach_togail
-    a :MasculineNoun ;
-    rdfs:label "neach-togail" ;
-    :sense "builder" .
-
-  n:cidhis
-    a :FeminineNoun ;
-    rdfs:label "cidhis" ;
-    :sense "visor" .
-
-  n:clogaid
-    a :FeminineNoun ;
-    rdfs:label "clogaid" ;
-    :sense "helmet" .
-
-  n:uidheam_analach
-    a :MasculineNoun ;
-    rdfs:label "uidheam analach" ;
-    :sense "breathing apparatus" .
-
-  n:piiob_uisge
-    a :FeminineNoun ;
-    rdfs:label "pìob-uisge" ;
-    :sense "hose" .
-
-  n:deise_diion_teine
-    a :FeminineNoun ;
-    rdfs:label "deise dìon-teine" ;
-    :sense "fireproof suit" .
-
-  n:laamh_thuadh
-    a :FeminineNoun ;
-    rdfs:label "làmh thuadh" ;
-    :sense "axe" .
-
-  n:broogan_diion_teine
-    a :FeminineNoun ;
-    rdfs:label "brògan dìon-teine" ;
-    :sense "fireproof boots" .
-
-  n:smaaladair
-    a :MasculineNoun ;
-    rdfs:label "smàladair" ;
-    :sense "firefighter" .
-
-  n:spoors
-    rdfs:label "spòrs" ;
-    :sense "sports" , "sport" .
-
-  n:ball_coise
-    a :MasculineNoun ;
-    rdfs:label "ball-coise" ;
-    :sense "football" .
-
-  n:teanas
-    a :MasculineNoun ;
-    rdfs:label "teanas" ;
-    :sense "tennis" .
-
-  n:ball_beusa
-    a :MasculineNoun ;
-    rdfs:label "ball-beusa" ;
-    :sense "baseball" .
-
-  n:rugbaidh
-    a :MasculineNoun ;
-    rdfs:label "rugbaidh" ;
-    :sense "rugby" .
-
-  n:luuth_chleasachd
-    rdfs:label "lùth-chleasachd" ;
-    :sense "gymnastics" .
-
-  n:ball_laamhaich
-    a :MasculineNoun ;
-    rdfs:label "ball-làmhaich" ;
-    :sense "volleyball" .
-
-  n:boghadaireachd
-    a :FeminineNoun ;
-    rdfs:label "boghadaireachd" ;
-    :sense "archery" .
-
-  n:rothadaireachd
-    a :FeminineNoun ;
-    rdfs:label "rothadaireachd" ;
-    :sense "cycling" .
-
-  n:luuth_chleasachd
-    a :FeminineNoun ;
-    rdfs:label "lùth-chleasachd" ;
-    :sense "athletics" .
-
-  n:reeitire
-    a :MasculineNoun ;
-    rdfs:label "rèitire" ;
-    :sense "referee" .
-
-  v:saabhaladh
-    a :Verb ;
-    rdfs:label "sàbhaladh" ;
-    :sense "to save" .
-
-  v:cuir_tadhal
-    a :Verb ;
-    rdfs:label "a' cur tadhal" ;
-    :sense "to score" .
-
-  n:tadhal
-    a :MasculineNoun ;
-    rdfs:label "tadhal" ;
-    :sense "goal" .
-
-  n:breab_shaor
-    a :FeminineNoun ;
-    rdfs:label "breab shaor" ;
-    :sense "free kick" .
-
-  n:breab_peanais
-    a :FeminineNoun ;
-    rdfs:label "breab peanais" ;
-    :sense "penalty" .
-
-  n:cluicheadair_diion
-    a :MasculineNoun ;
-    rdfs:label "cluicheadair dìon" ;
-    :sense "defender" .
-
-  n:neach_gleidhidh
-    a :MasculineNoun ;
-    rdfs:label "neach-gleidhidh" ;
-    :sense "goalkeeper" .
-
-  n:cluicheadair_aghaidh
-    a :MasculineNoun ;
-    rdfs:label "cluicheadair aghaidh" ;
-    :sense "striker" .
-
-  n:ball_basgaid
-    a :MasculineNoun ;
-    rdfs:label "ball-basgaid" ;
-    :sense "basketball" .
-
-  n:diuudo
-    a :MasculineNoun ;
-    rdfs:label "diùdo" ;
-    :sense "judo" .
-
-  n:criogaid
-    a :MasculineNoun ;
-    rdfs:label "criogaid" ;
-    :sense "cricket" .
-
-  n:goilf
-    a :MasculineNoun ;
-    rdfs:label "goilf" ;
-    :sense "golf" .
-
-  n:snaamh
-    a :MasculineNoun ;
-    rdfs:label "snàmh" ;
-    :sense "swimming" .
-
-  n:hocaidh_deighe
-    a :MasculineNoun ;
-    rdfs:label "hocaidh deighe" ;
-    :sense "ice hockey" .
-
-  n:luuth_chleasaiche
-    rdfs:label "luuth chleasaichean" ;
-    :sense "athletes" .
-
-  n:Geamannan_Oilimpigeach
-    rdfs:label "Geamannan Oilimpigeach" ;
-    :sense "Olympic Games" .
-
-  v:breab
-    a :Verb ;
-    rdfs:label "breab" ;
-    :sense "kick" .
-
-  v:buail
-    a :Verb ;
-    rdfs:label "buail" ;
-    :sense "hit" .
-
-  v:daaibhig
-    a :Verb ;
-    rdfs:label "dàibhig" ;
-    :sense "diver" .
-
-  v:tilg
-    a :Verb ;
-    rdfs:label "tilg" ;
-    :sense "throw" .
-
-  v:boobhlaig
-    a :Verb ;
-    rdfs:label "bòbhlaig" ;
-    :sense "bowl" .
-
-  v:stob
-    a :Verb ;
-    rdfs:label "stob" ;
-    :sense "lunge" .
-
-  v:glac
-    a :Verb ;
-    rdfs:label "glac" ;
-    :sense "catch" .
-
-  v:leum
-    a :Verb ;
-    rdfs:label "leum" ;
-    :sense "jump" .
-
-  v:amais
-    a :Verb ;
-    rdfs:label "amais air" ;
-    :sense "shoot" .
-
-  v:glaidhd
-    a :Verb ;
-    rdfs:label "glaidhd" ;
-    :sense "glide" .
-
-  v:speeil
-    a :Verb ;
-    rdfs:label "spèil" ;
-    :sense "skate" .
-
-  v:marcaich
-    a :Verb ;
-    rdfs:label "marcaich" ;
-    :sense "ride" .
-
-  v:plubraich
-    a :Verb ;
-    rdfs:label "plubraich" ;
-    :sense "paddle" .
-
-  n:geama
-    rdfs:label "geamannan" ;
-    :sense "games" .
-
-  n:cur_seachad
-    rdfs:label "cur-seachadan" ;
-    :sense "leisure" .
-
-  n:boord_speeilidh
-    a :MasculineNoun ;
-    rdfs:label "bòrd-spèilidh" ;
-    :sense "skateboard" .
-
-  n:roilearan
-    a :MasculineNoun ;
-    rdfs:label "roilearan" ;
-    :sense "rollerblades" .
-
-  n:ball_coise
-    a :MasculineNoun ;
-    rdfs:label "ball-coise" ;
-    :sense "football" .
-
-  n:racaid
-    a :FeminineNoun ;
-    rdfs:label "racaid" ;
-    :sense "racket" .
-
-  n:gleicean
-    a :MasculineNoun ;
-    rdfs:label "gleicean" ;
-    :sense "shuttlecock" .
-
-  n:slacan
-    a :MasculineNoun ;
-    rdfs:label "slacan" ;
-    :sense "bat" .
-
-  n:ioo_ioo
-    a :MasculineNoun ;
-    rdfs:label "iò-iò" ;
-    :sense "yo-yo" .
-
-  n:iteileag
-    a :FeminineNoun ;
-    rdfs:label "iteileag" ;
-    :sense "kite" .
-
-  n:buill_laamh_chleasachd
-    a :MasculineNoun ;
-    rdfs:label "buill làmh-chleasachd" ;
-    :sense "juggling balls" .
-
-  n:boord_taaileisg
-    a :MasculineNoun ;
-    rdfs:label "bòrd-tàileisg" ;
-    :sense "chessboard" .
-
-  n:fear_taaileisg
-    a :MasculineNoun ;
-    rdfs:label "fear-tàileisg" ;
-    :sense "chess pieces" .
-
-  n:cluasanan
-    a :MasculineNoun ;
-    rdfs:label "cluasanan" ;
-    :sense "earphones" .
-
-  n:miirean_measgaichte
-    rdfs:label "mìrean-measgaichte" ;
-    :sense "jigsaw puzzle" .
-
-  n:geeam_buuird
-    a :MasculineNoun ;
-    rdfs:label "gèam bùird" ;
-    :sense "board game" .
-
-  n:iris
-    a :FeminineNoun ;
-    rdfs:label "iris" ;
-    :sense "magazine" .
-
-  n:nobhail
-    a :FeminineNoun ;
-    rdfs:label "nobhail" ;
-    :sense "novel" .
-
-  n:claar_DVD
-    a :MasculineNoun ;
-    rdfs:label "clàr DVD" ;
-    :sense "DVD" .
-
-  n:cluicheadair_ciuuil
-    a :MasculineNoun ;
-    rdfs:label "cluicheadair ciùil" ;
-    :sense "music player" .
-
-  n:consoil_gheamannan
-    a :FeminineNoun ;
-    rdfs:label "consoil gheamannan" ;
-    :sense "games console" .
-
-  n:modal
-    a :MasculineNoun ;
-    rdfs:label "modal" ;
-    :sense "model" .
-
-  n:dibhearsain
-    rdfs:label "dibhearsain" ;
-    :sense "entertainment" .
-
-  n:dealbh
-    a :FeminineNoun ;
-    rdfs:label "dealbh" ;
-    :sense "portrait" .
-
-  n:sgeidse
-    a :FeminineNoun ;
-    rdfs:label "sgeidse" ;
-    :sense "sketch" .
-
-  n:dealbh_camara
-    a :FeminineNoun ;
-    rdfs:label "dealbh-camara" ;
-    :sense "photograph" .
-
-  n:dealbh_neo_bheoo
-    a :FeminineNoun ;
-    rdfs:label "dealbh neo-bheò" ;
-    :sense "still life" .
-
-  n:dealbh_tire_dath_uisge
-    a :FeminineNoun ;
-    rdfs:label "dealbh-tire dath-uisge" ;
-    :sense "watercolour landscape" .
-
-  n:cartuun
-    a :MasculineNoun ;
-    rdfs:label "cartùn" ;
-    :sense "cartoon" .
-
-  n:pailead
-    a :MasculineNoun ;
-    rdfs:label "pailead" ;
-    :sense "palette" .
-
-  n:creeadh_modailidh
-    a :FeminineNoun ;
-    rdfs:label "crèadh modailidh" ;
-    :sense "modelling clay" .
-
-  n:peant_ola
-    a :MasculineNoun ;
-    rdfs:label "peant ola" ;
-    :sense "oil paints" .
-
-  n:bruis_pheantaidh
-    a :FeminineNoun ;
-    rdfs:label "bruis-pheantaidh" ;
-    :sense "paintbrush" .
-
-  n:gual_fiodha
-    a :MasculineNoun ;
-    rdfs:label "gual-fiodha" ;
-    :sense "charcoal" .
-
-  n:dathan_pastail
-    a :MasculineNoun ;
-    rdfs:label "dathan pastail" ;
-    :sense "pastels" .
-
-  n:cailc
-    a :FeminineNoun ;
-    rdfs:label "cailc" ;
-    :sense "chalk" .
-
-  n:pada_sgeidsidh
-    a :MasculineNoun ;
-    rdfs:label "pada sgeidsidh" ;
-    :sense "sketch pad" .
-
-  n:dathan_uisge
-    a :MasculineNoun ;
-    rdfs:label "dathan-uisge" ;
-    :sense "watercolours" .
-
-  n:glainne_dhathte
-    a :FeminineNoun ;
-    rdfs:label "glainne dhathte" ;
-    :sense "stained glass" .
-
-  n:greeis_bhrat
-    a :MasculineNoun ;
-    rdfs:label "grèis-bhrat" ;
-    :sense "tapestry" .
-
-  n:graifitidh
-    a :MasculineNoun ;
-    rdfs:label "graifitidh" ;
-    :sense "graffiti" .
-
-  n:snaigheadh
-    a :MasculineNoun ;
-    rdfs:label "snaigheadh" ;
-    :sense "sculpture" .
-
-  n:uidheam_neach_ealain
-    a :FeminineNoun ;
-    rdfs:label "uidheam neach-ealain" ;
-    :sense "artist’s equipment" .
-
-  n:inneal_ciuuil
-    rdfs:label "innealan ciùil" ;
-    :sense "musical instruments" .
-
-  n:ionnsramaid_analach
-    a :FeminineNoun ;
-    rdfs:label "ionnsramaidean analach" ;
-    :sense "wind instruments" .
-
-  n:ionnsramaid_meur_chlaar
-    a :FeminineNoun ;
-    rdfs:label "ionnsramaidean meur-chlàr" ;
-    :sense "keyboard instruments" .
-
-  n:trombaid
-    a :FeminineNoun ;
-    rdfs:label "trombaid" ;
-    :sense "trumpet" .
-
-  n:piioban_pana
-    a :FeminineNoun ;
-    rdfs:label "pìoban-pana" ;
-    :sense "panpipes" .
-
-  n:oorgan
-    a :MasculineNoun ;
-    rdfs:label "òrgan" ;
-    :sense "organ" .
-
-  n:duiseal
-    a :FeminineNoun ;
-    rdfs:label "duiseal" ;
-    :sense "slute" .
-
-  n:claairnead
-    a :FeminineNoun ;
-    rdfs:label "clàirnead" ;
-    :sense "clarinet" .
-
-  n:sagsafoon
-    a :MasculineNoun ;
-    rdfs:label "sagsafòn" ;
-    :sense "saxophone" .
-
-  n:piaana
-    a :MasculineNoun ;
-    rdfs:label "piàna" ;
-    :sense "piano" .
-
-  n:co_thaathadair
-    a :MasculineNoun ;
-    rdfs:label "co-thàthadair" ;
-    :sense "synthesiser" .
-
-  n:ionnsramaid_teudach
-    a :FeminineNoun ;
-    rdfs:label "ionnsramaidean teudach" ;
-    :sense "stringed instruments" .
-
-  n:sitaar
-    a :MasculineNoun ;
-    rdfs:label "sitàr" ;
-    :sense "sitar" .
-
-  n:bogha
-    a :MasculineNoun ;
-    rdfs:label "bogha" ;
-    :sense "bow" .
-
-  n:beus_duubailte
-    a :MasculineNoun ;
-    rdfs:label "beus dùbailte" ;
-    :sense "double-bass" .
-
-  n:beus_fhidheall
-    a :FeminineNoun ;
-    rdfs:label "beus-fhidheall" ;
-    :sense "cello" .
-
-  n:fidheall
-    a :FeminineNoun ;
-    rdfs:label "fidheall" ;
-    :sense "violin" .
-
-  n:claarsach
-    a :FeminineNoun ;
-    rdfs:label "clàrsach" ;
-    :sense "harp" .
-
-  n:giotaar
-    a :MasculineNoun ;
-    rdfs:label "giotàr" ;
-    :sense "guitar" .
-
-  n:ionsramaid_faraim
-    a :FeminineNoun ;
-    rdfs:label "ionsramaidean faraim" ;
-    :sense "percussion instruments" .
-
-  n:maracathan
-    a :MasculineNoun ;
-    rdfs:label "maracathan" ;
-    :sense "maracas" .
-
-  n:tambairin
-    a :MasculineNoun ;
-    rdfs:label "tambairin" ;
-    :sense "tambourine" .
-
-  n:tiompanan
-    a :MasculineNoun ;
-    rdfs:label "tiompanan" ;
-    :sense "cymbals" .
-
-  n:druma
-    a :FeminineNoun ;
-    rdfs:label "drumaichean" ;
-    :sense "drums" .
-
-  n:drumaichean_laaimhe
-    a :FeminineNoun ;
-    rdfs:label "drumaichean-làimhe" ;
-    :sense "tabla" .
-
-  n:dannsa
-    rdfs:label "dannsa" ;
-    :sense "dance" .
-
-  a:clasaigeach
-    a :Adjective ;
-    rdfs:label "clasaigeach" ;
-    :sense "classical" .
-
-  n:ceool_pop
-    a :MasculineNoun ;
-    rdfs:label "ceòl pop" ;
-    :sense "pop" .
-
-  n:diaas
-    a :MasculineNoun ;
-    rdfs:label "diàs" ;
-    :sense "jazz" .
-
-  n:roc
-    a :MasculineNoun ;
-    rdfs:label "roc" ;
-    :sense "rock" .
-
-  n:tuath_cheool
-    a :MasculineNoun ;
-    rdfs:label "tuath-cheòl" ;
-    :sense "folk" .
-
-  n:ceool_reigidh
-    a :MasculineNoun ;
-    rdfs:label "ceòl reigidh" ;
-    :sense "reggae" .
-
-  n:ceool_rap
-    a :MasculineNoun ;
-    rdfs:label "ceòl rap" ;
-    :sense "rap" .
-
-  n:ceool_anaim
-    a :MasculineNoun ;
-    rdfs:label "ceòl anaim" ;
-    :sense "soul" .
-
-  n:ceool_cruinne
-    a :MasculineNoun ;
-    rdfs:label "ceòl cruinne" ;
-    :sense "world music" .
-
-  n:dannsa_tap
-    a :MasculineNoun ;
-    rdfs:label "dannsa tap" ;
-    :sense "tap dancing" .
-
-  n:bris_dannsa
-    a :MasculineNoun ;
-    rdfs:label "bris-dannsa" ;
-    :sense "breakdancing" .
-
-  n:dannsa_baail
-    a :MasculineNoun ;
-    rdfs:label "dannsa-bàil" ;
-    :sense "ballroom dancing" .
-
-  n:bailidh
-    a :FeminineNoun ;
-    rdfs:label "bailidh" ;
-    :sense "ballet" .
-
-  n:TBh
-    rdfs:label "TBh" ;
-    :sense "TV" .
-
-  n:fiolm
-    rdfs:label "fiolm" ;
-    :sense "film" .
-
-  n:theatar
-    rdfs:label "theatar" ;
-    :sense "theatre" .
-
-  n:neach_camara
-    a :MasculineNoun ;
-    rdfs:label "neach-camara" ;
-    :sense "camera operator" .
-
-  n:innleadair_fuaim
-    a :MasculineNoun ;
-    rdfs:label "innleadair fuaim" ;
-    :sense "sound enginner" .
-
-  n:stiuiriche
-    a :MasculineNoun ;
-    rdfs:label "stiuiriche" ;
-    :sense "director" .
-
-  n:camara
-    a :MasculineNoun ;
-    rdfs:label "camara" ;
-    :sense "camera" .
-
-  n:aard_uurlar
-    a :MasculineNoun ;
-    rdfs:label "àrd-ùrlar" ;
-    :sense "stage" .
-
-  n:solas
-    a :MasculineNoun ;
-    rdfs:label "solas" ;
-    :sense "spotlight" .
-
-  n:maicreafoon
-    a :MasculineNoun ;
-    rdfs:label "maicreafòn" ;
-    :sense "microphone" .
-
-  n:seinneadair
-    a :MasculineNoun ;
-    rdfs:label "seinneadair" ;
+n:sgriubhaire
+  a :MasculineNoun ;
+  rdfs:label "sgriubhaire" .
+
+n:oord
+  a :MasculineNoun ;
+  rdfs:label "òrd" .
+
+n:drile_dealain
+  rdfs:label "drile dealain" .
+
+n:saabh
+  a :MasculineNoun ;
+  rdfs:label "sàbh" .
+
+n:spanair
+  a :MasculineNoun ;
+  rdfs:label "spanair" .
+
+n:crios_innealan
+  rdfs:label "crios innealan" .
+
+n:neach_togail
+  rdfs:label "neach togail" .
+
+n:cidhis
+  a :FeminineNoun ;
+  rdfs:label "cidhis" .
+
+n:uidheam_analach
+  rdfs:label "uidheam analach" .
+
+n:piiob_uisge
+  rdfs:label "pìob uisge" .
+
+n:deise_diion_teine
+  rdfs:label "deise dìon-teine" .
+
+n:laamh_thuadh
+  rdfs:label "làmh thuadh" .
+
+n:broogan_diion_teine
+  rdfs:label "brògan dìon-teine" .
+
+n:smaaladair
+  a :MasculineNoun ;
+  rdfs:label "smàladair" .
+
+n:spoors
+  rdfs:label "spòrs" .
+
+n:ball_coise
+  rdfs:label "ball coise" .
+
+n:teanas
+  a :MasculineNoun ;
+  rdfs:label "teanas" .
+
+n:ball_beusa
+  rdfs:label "ball beusa" .
+
+n:rugbaidh
+  a :MasculineNoun ;
+  rdfs:label "rugbaidh" .
+
+n:luuth_chleasachd
+  rdfs:label "lùth-chleasachd" .
+
+n:ball_laamhaich
+  rdfs:label "ball làmhaich" .
+
+n:boghadaireachd
+  a :FeminineNoun ;
+  rdfs:label "boghadaireachd" .
+
+n:rothadaireachd
+  a :FeminineNoun ;
+  rdfs:label "rothadaireachd" .
+
+n:luuth_chleasachd
+  a :FeminineNoun ;
+  rdfs:label "lùth-chleasachd" .
+
+n:reeitire
+  a :MasculineNoun ;
+  rdfs:label "rèitire" .
+
+v:saabhail
+  a :Verb ;
+  rdfs:label "sàbhail" .
+
+v:cuir_tadhal
+  rdfs:label "cuir tadhal" .
+
+n:tadhal
+  a :MasculineNoun ;
+  rdfs:label "tadhal" .
+
+n:breab_shaor
+  rdfs:label "breab shaor" .
+
+n:breab_peanais
+  rdfs:label "breab peanais" .
+
+n:cluicheadair_diion
+  rdfs:label "cluicheadair dìon" .
+
+n:neach_gleidhidh
+  rdfs:label "neach gleidhidh" .
+
+n:cluicheadair_aghaidh
+  rdfs:label "cluicheadair aghaidh" .
+
+n:ball_basgaid
+  rdfs:label "ball basgaid" .
+
+n:diuudo
+  a :MasculineNoun ;
+  rdfs:label "diùdo" .
+
+n:criogaid
+  a :MasculineNoun ;
+  rdfs:label "criogaid" .
+
+n:goilf
+  a :MasculineNoun ;
+  rdfs:label "goilf" .
+
+n:snaamh
+  a :MasculineNoun ;
+  rdfs:label "snàmh" .
+
+n:hocaidh_deighe
+  rdfs:label "hocaidh deighe" .
+
+n:luuth_chleasaiche
+  rdfs:label "luuth chleasaiche" .
+
+n:Geamannan_Oilimpigeach
+  rdfs:label "Geamannan Oilimpigeach" .
+
+v:breab
+  a :Verb ;
+  rdfs:label "breab" .
+
+v:buail
+  a :Verb ;
+  rdfs:label "buail" .
+
+v:daaibhig
+  a :Verb ;
+  rdfs:label "dàibhig" .
+
+v:tilg
+  a :Verb ;
+  rdfs:label "tilg" .
+
+v:boobhlaig
+  a :Verb ;
+  rdfs:label "bòbhlaig" .
+
+v:stob
+  a :Verb ;
+  rdfs:label "stob" .
+
+v:glac
+  a :Verb ;
+  rdfs:label "glac" .
+
+v:leum
+  a :Verb ;
+  rdfs:label "leum" .
+
+v:amais
+  a :Verb ;
+  rdfs:label "amais" .
+
+v:glaidhd
+  a :Verb ;
+  rdfs:label "glaidhd" .
+
+v:speeil
+  a :Verb ;
+  rdfs:label "spèil" .
+
+v:marcaich
+  a :Verb ;
+  rdfs:label "marcaich" .
+
+v:plubraich
+  a :Verb ;
+  rdfs:label "plubraich" .
+
+n:geama
+  rdfs:label "geama" .
+
+n:cur_seachad
+  rdfs:label "cur-seachad" .
+
+n:boord_speeilidh
+  rdfs:label "bòrd spèilidh" .
+
+n:roilear
+  a :MasculineNoun ;
+  rdfs:label "roilear" .
+
+n:ball_coise
+  rdfs:label "ball coise" .
+
+n:racaid
+  a :FeminineNoun ;
+  rdfs:label "racaid" .
+
+n:gleicean
+  a :MasculineNoun ;
+  rdfs:label "gleicean" .
+
+n:slacan
+  a :MasculineNoun ;
+  rdfs:label "slacan" .
+
+n:ioo_ioo
+  a :MasculineNoun ;
+  rdfs:label "iò-iò" .
+
+n:iteileag
+  a :FeminineNoun ;
+  rdfs:label "iteileag" .
+
+n:buill_laamh_chleasachd
+  rdfs:label "buill làmh-chleasachd" .
+
+n:boord_taaileisg
+  rdfs:label "bòrd tàileisg" .
+
+n:fear_taaileisg
+  rdfs:label "fear tàileisg" .
+
+n:cluasan
+  a :MasculineNoun ;
+  rdfs:label "cluasan" .
+
+n:miirean_measgaichte
+  rdfs:label "mìrean measgaichte" .
+
+n:geeam_buuird
+  rdfs:label "gèam bùird" .
+
+n:iris
+  a :FeminineNoun ;
+  rdfs:label "iris" .
+
+n:nobhail
+  a :FeminineNoun ;
+  rdfs:label "nobhail" .
+
+n:claar_DVD
+  a :MasculineNoun ;
+  rdfs:label "clàr DVD" .
+
+n:cluicheadair_ciuuil
+  rdfs:label "cluicheadair ciùil" .
+
+n:consoil_gheamannan
+  rdfs:label "consoil gheamannan" .
+
+n:modal
+  a :MasculineNoun ;
+  rdfs:label "modal" .
+
+n:dibhearsain
+  rdfs:label "dibhearsain" .
+
+n:dealbh
+  a :Noun ;
+  rdfs:label "dealbh" .
+
+n:sgeidse
+  a :FeminineNoun ;
+  rdfs:label "sgeidse" .
+
+n:dealbh_camara
+  rdfs:label "dealbh camara" .
+
+n:dealbh_neo_bheoo
+  rdfs:label "dealbh neo-bheò" .
+
+n:dealbh_tire_dath_uisge
+  rdfs:label "dealbh tire dath-uisge" .
+
+n:cartuun
+  a :MasculineNoun ;
+  rdfs:label "cartùn" .
+
+n:pailead
+  a :MasculineNoun ;
+  rdfs:label "pailead" .
+
+n:creeadh_modailidh
+  rdfs:label "crèadh modailidh" .
+
+n:peant_ola
+  rdfs:label "peant ola" .
+
+n:bruis_pheantaidh
+  rdfs:label "bruis pheantaidh" .
+
+n:gual_fiodha
+  rdfs:label "gual fiodha" .
+
+n:dathan_pastail
+  rdfs:label "dathan pastail" .
+
+n:cailc
+  a :FeminineNoun ;
+  rdfs:label "cailc" .
+
+n:pada_sgeidsidh
+  rdfs:label "pada sgeidsidh" .
+
+n:dathan_uisge
+  rdfs:label "dathan uisge" .
+
+n:glainne_dhathte
+  rdfs:label "glainne dhathte" .
+
+n:greeis_bhrat
+  rdfs:label "grèis-bhrat" .
+
+n:graifitidh
+  a :MasculineNoun ;
+  rdfs:label "graifitidh" .
+
+n:snaigheadh
+  a :MasculineNoun ;
+  rdfs:label "snaigheadh" .
+
+n:uidheam_neach_ealain
+  rdfs:label "uidheam neach-ealain" .
+
+n:inneal_ciuuil
+  rdfs:label "inneal ciùil" .
+
+n:ionnsramaid_analach
+  rdfs:label "ionnsramaidean analach" .
+
+n:ionnsramaid_meur_chlaar
+  rdfs:label "ionnsramaid meur-chlàr" .
+
+n:trombaid
+  a :FeminineNoun ;
+  rdfs:label "trombaid" .
+
+n:piioban_pana
+  rdfs:label "pìoban pana" .
+
+n:oorgan
+  a :MasculineNoun ;
+  rdfs:label "òrgan" .
+
+n:duiseal
+  a :FeminineNoun ;
+  rdfs:label "duiseal" .
+
+n:claairnead
+  a :FeminineNoun ;
+  rdfs:label "clàirnead" .
+
+n:sagsafoon
+  a :MasculineNoun ;
+  rdfs:label "sagsafòn" .
+
+n:piaana
+  a :MasculineNoun ;
+  rdfs:label "piàna" .
+
+n:co_thaathadair
+  a :MasculineNoun ;
+  rdfs:label "co-thàthadair" .
+
+n:ionnsramaid_teudach
+  rdfs:label "ionnsramaid teudach" .
+
+n:sitaar
+  a :MasculineNoun ;
+  rdfs:label "sitàr" .
+
+n:bogha
+  a :MasculineNoun ;
+  rdfs:label "bogha" .
+
+n:beus_duubailte
+  rdfs:label "beus dùbailte" .
+
+n:beus_fhidheall
+  rdfs:label "beus-fhidheall" .
+
+n:fidheall
+  a :FeminineNoun ;
+  rdfs:label "fidheall" .
+
+n:claarsach
+  a :FeminineNoun ;
+  rdfs:label "clàrsach" .
+
+n:giotaar
+  a :MasculineNoun ;
+  rdfs:label "giotàr" .
+
+n:ionsramaid_faraim
+  rdfs:label "ionsramaidean faraim" .
+
+n:maraca
+  a :MasculineNoun ;
+  rdfs:label "maraca" .
+
+n:tambairin
+  a :MasculineNoun ;
+  rdfs:label "tambairin" .
+
+n:tiompan
+  a :MasculineNoun ;
+  rdfs:label "tiompan" .
+
+n:druma
+  a :FeminineNoun ;
+  rdfs:label "druma" .
+
+n:druma_laaimhe
+  rdfs:label "druma làimhe" .
+
+n:dannsa
+  rdfs:label "dannsa" .
+
+a:clasaigeach
+  a :Adjective ;
+  rdfs:label "clasaigeach" .
+
+n:ceool_pop
+  rdfs:label "ceòl pop" .
+
+n:diaas
+  a :MasculineNoun ;
+  rdfs:label "diàs" .
+
+n:roc
+  a :MasculineNoun ;
+  rdfs:label "roc" .
+
+n:tuath_cheool
+  rdfs:label "tuath-cheòl" .
+
+n:ceool_reigidh
+  rdfs:label "ceòl reigidh" .
+
+n:ceool_rap
+  rdfs:label "ceòl rap" .
+
+n:ceool_anaim
+  rdfs:label "ceòl anaim" .
+
+n:ceool_cruinne
+  rdfs:label "ceòl cruinne" .
+
+n:dannsa_tap
+  rdfs:label "dannsa tap" .
+
+n:bris_dannsa
+  rdfs:label "bris-dannsa" .
+
+n:dannsa_baail
+  rdfs:label "dannsa bàil" .
+
+n:bailidh
+  a :FeminineNoun ;
+  rdfs:label "bailidh" .
+
+n:TBh
+  rdfs:label "TBh" .
+
+n:fiolm
+  rdfs:label "fiolm" .
+
+n:theatar
+  rdfs:label "theatar" .
+
+n:neach_camara
+  rdfs:label "neach camara" .
+
+n:innleadair_fuaim
+  rdfs:label "innleadair fuaim" .
+
+n:stiuiriche
+  a :MasculineNoun ;
+  rdfs:label "stiuiriche" .
+
+n:camara
+  a :MasculineNoun ;
+  rdfs:label "camara" .
+
+n:aard_uurlar
+  a :MasculineNoun ;
+  rdfs:label "àrd-ùrlar" .
+
+n:solas
+  a :MasculineNoun ;
+  rdfs:label "solas" .
+
+n:maicreafoon
+  a :MasculineNoun ;
+  rdfs:label "maicreafòn" .
+
+n:seinneadair
+  a :MasculineNoun ;
+  rdfs:label "seinneadair" ;
     :sense "singer" .
 
-  n:dannsair
-    a :MasculineNoun ;
-    rdfs:label "dannsair" ;
-    :sense "dancer" .
-
-  n:cleasaiche
-    a :MasculineNoun ;
-    rdfs:label "cleasaiche" ;
-    :sense "actor" .
-
-  n:culaidh
-    a :FeminineNoun ;
-    rdfs:label "culaidh" ;
-    :sense "costume" .
-
-  n:sealladh
-    a :MasculineNoun ;
-    rdfs:label "sealladh" ;
-    :sense "scenery" .
-
-  n:manaidsear_steeidse
-    a :MasculineNoun ;
-    rdfs:label "manaidsear stèidse" ;
-    :sense "stage manager" .
-
-  n:sgrion
-    a :MasculineNoun ;
-    rdfs:label "sgrion" ;
-    :sense "monitor screen" .
-
-  n:boord_clapaidh
-    a :MasculineNoun ;
-    rdfs:label "bòrd-clapaidh" ;
-    :sense "clapperboard" .
-
-  n:cuuirtearan
-    a :MasculineNoun ;
-    rdfs:label "cùirtearan" ;
-    :sense "curtains" .
-
-  n:riochdaire
-    a :MasculineNoun ;
-    rdfs:label "riochdaire" ;
-    :sense "producer" .
-
-  n:luchd_eeisteachd
-    a :MasculineNoun ;
-    rdfs:label "luchd-èisteachd" ;
-    :sense "audience" .
-
-  n:proogram_TBh
-    rdfs:label "prògraman TBh" ;
-    :sense "TV shows" .
-
-  n:proogram_oillte
-    a :MasculineNoun ;
-    rdfs:label "prògram oillte" ;
-    :sense "horror" .
-
-  n:ficsean_saidheans_agus_sgeul_mhiiorbhail
-    rdfs:label "ficsean saidheans is sgeul-mhìorbhail" ;
-    :sense "science fiction and fantasy" .
-
-  n:gniiomh_agus_daanachd
-    a :FeminineNoun ;
-    rdfs:label "gnìomh (m) is dànachd (f)" ;
-    :sense "action and adventure" .
-
-  n:comadaidh
-    a :MasculineNoun ;
-    rdfs:label "comadaidh" ;
-    :sense "comedy" .
-
-  n:cartuun
-    a :MasculineNoun ;
-    rdfs:label "cartùn" ;
-    :sense "cartoon" .
-
-  n:proogram_naidheachdan
-    a :MasculineNoun ;
-    rdfs:label "prògram naidheachdan" ;
-    :sense "news programme" .
-
-  n:proogram_spoors
-    a :MasculineNoun ;
-    rdfs:label "prògram spòrs" ;
-    :sense "sports programme" .
-
-  n:proogram_coomhraidh
-    a :MasculineNoun ;
-    rdfs:label "prògram còmhraidh" ;
-    :sense "talk show" .
-
-  n:aithriseachd_naadair
-    a :FeminineNoun ;
-    rdfs:label "aithriseachd nàdair" ;
-    :sense "nature documentary" .
-
-  n:proogram_chleasan
-    a :MasculineNoun ;
-    rdfs:label "prògram chleasan" ;
-    :sense "game show" .
-
-  n:carbadan_luchd_siubhail
-    rdfs:label "carbadan luchd-siubhail" ;
-    :sense "passenger vehicles" .
-
-  n:uinneag_toisich
-    a :FeminineNoun ;
-    rdfs:label "uinneag toisich" ;
-    :sense "windscreen" .
-
-  n:suathair
-    a :MasculineNoun ;
-    rdfs:label "suathair" ;
-    :sense "windscreen wiper" .
-
-  n:bonaid
-    a :MasculineNoun ;
-    rdfs:label "bonaid" ;
-    :sense "bonnet" .
-
-  n:solas_moor
-    a :MasculineNoun ;
-    rdfs:label "solas mòr" ;
-    :sense "headlight" .
-
-  n:gril_reeididheator
-    a :FeminineNoun ;
-    rdfs:label "gril rèididheator" ;
-    :sense "radiator grille" .
-
-  n:pleit_aaireimh
-    a :FeminineNoun ;
-    rdfs:label "pleit àireimh" ;
-    :sense "number plate" .
-
-  n:bumpar
-    a :MasculineNoun ;
-    rdfs:label "bumpar" ;
-    :sense "bumper" .
-
-  n:but
-    a :MasculineNoun ;
-    rdfs:label "but" ;
-    :sense "boot" .
-
-  n:sgaathan_cliathaich
-    a :MasculineNoun ;
-    rdfs:label "sgàthan cliathaich" ;
-    :sense "wing mirror" .
-
-  n:taidhear
-    a :FeminineNoun ;
-    rdfs:label "taidhear" ;
-    :sense "tyre" .
-
-  n:motair_rothair
-    a :MasculineNoun ;
-    rdfs:label "motair-rothair" ;
-    :sense "motorbike" .
-
-  n:bhana_campachaidh
-    a :FeminineNoun ;
-    rdfs:label "bhana-campachaidh" ;
-    :sense "campervan" .
-
-  n:caar_spoors
-    a :MasculineNoun ;
-    rdfs:label "càr-spòrs" ;
-    :sense "sports car" .
-
-  n:caar_oighreachd
-    a :MasculineNoun ;
-    rdfs:label "càr-oighreachd" ;
-    :sense "estate car" .
-
-  v:rach_suas
-    rdfs:label "a’ dol suas!" ;
-    :sense "Going up!" .
-
-  n:reeile_bruthaich
-    a :FeminineNoun ;
-    rdfs:label "rèile-bruthaich" ;
-    :sense "funicular railway" .
-
-  n:carbad_caabaill
-    a :MasculineNoun ;
-    rdfs:label "carbad-càbaill" ;
-    :sense "cable car" .
-
-  n:aardaichear_sgithidh
-    a :MasculineNoun ;
-    rdfs:label "àrdaichear sgithidh" ;
-    :sense "ski lift" .
-
-  n:treeana
-    a :FeminineNoun ;
-    rdfs:label "trèana" ;
-    :sense "train" .
-
-  n:coidse
-    a :FeminineNoun ;
-    rdfs:label "coidse" ;
-    :sense "coach" .
-
-  n:carbad_spoors_uidheamaichte
-    rdfs:label "carbad-spòrs uidheamaichte" ;
-    :sense "SUV" .
-
-  n:rothair_cumhachd
-    a :MasculineNoun ;
-    rdfs:label "rothair-cumhachd" ;
-    :sense "moped" .
-
-  n:tacsaidh
-    a :FeminineNoun ;
-    rdfs:label "tacsaidh" ;
-    :sense "taxi" .
-
-  n:rothair
-    a :MasculineNoun ;
-    rdfs:label "rothair" ;
-    :sense "bicycle" .
-
-  n:carbadan_obrach
-    rdfs:label "carbadan obrach" ;
-    :sense "working vehicles" .
-
-  n:luchdair_cladhaich
-    a :MasculineNoun ;
-    rdfs:label "luchdair cladhaich" ;
-    :sense "backhoe loader" .
-
-  n:roilear
-    a :MasculineNoun ;
-    rdfs:label "roilear" ;
-    :sense "roller" .
-
-  n:toglaiche_aairde
-    a :MasculineNoun ;
-    rdfs:label "toglaiche àirde" ;
-    :sense "cherry picker" .
-
-  n:truga_forca
-    a :FeminineNoun ;
-    rdfs:label "truga forca" ;
-    :sense "forklift truck" .
-
-  n:ruamhair
-    a :MasculineNoun ;
-    rdfs:label "ruamhair" ;
-    :sense "excavator" .
-
-  n:tarbh_chrann
-    a :MasculineNoun ;
-    rdfs:label "tarbh-chrann" ;
-    :sense "bulldozer" .
-
-  n:truga_dumpair
-    a :FeminineNoun ;
-    rdfs:label "truga dumpair" ;
-    :sense "dumper truck" .
-
-  n:crann
-    a :MasculineNoun ;
-    rdfs:label "crann" ;
-    :sense "crane" .
-
-  n:carbad_eiridinn
-    a :MasculineNoun ;
-    rdfs:label "carbad-eiridinn" ;
-    :sense "ambulance" .
-
-  n:einnsean_smaalaidh
-    a :FeminineNoun ;
-    rdfs:label "einnsean smàlaidh" ;
-    :sense "fire engine" .
-
-  n:carbad_muir_thiireach
-    a :MasculineNoun ;
-    rdfs:label "carbad muir-thìreach" ;
-    :sense "amphibious vehicle" .
-
-  n:carbad_sneachda
-    a :FeminineNoun ;
-    rdfs:label "carbad-sneachda" ;
-    :sense "snowmobile" .
-
-  n:bhana_liubhairt
-    a :FeminineNoun ;
-    rdfs:label "bhana liubhairt" ;
-    :sense "delivery van" .
-
-  n:carbad_poilis
-    a :MasculineNoun ;
-    rdfs:label "carbad poilis" ;
-    :sense "police car" .
-
-  n:laaraidh_tasgain
-    a :FeminineNoun ;
-    rdfs:label "làraidh tasgain" ;
-    :sense "skip truck" .
-
-  n:crann_sneachda
-    a :MasculineNoun ;
-    rdfs:label "crann sneachda" ;
-    :sense "snow plough" .
-
-  n:giuulanair_charbadan
-    a :MasculineNoun ;
-    rdfs:label "giùlanair charbadan" ;
-    :sense "car transporter" .
-
-  n:truga_measgachaidh
-    a :FeminineNoun ;
-    rdfs:label "truga measgachaidh" ;
-    :sense "mixer truck" .
-
-  n:carbad_trom_bhathar
-    a :MasculineNoun ;
-    rdfs:label "carbad trom-bhathar" ;
-    :sense "heavy goods vehicle" .
-
-  n:siubhal
-    rdfs:label "siubhal" ;
-    :sense "travel" .
-
-  n:coomhdail
-    rdfs:label "còmhdail" ;
-    :sense "transport" .
-
-  n:carbadan_adhair
-    rdfs:label "carbadan adhair" ;
-    :sense "aircraft" .
-
-  n:baar_smachd
-    a :MasculineNoun ;
-    rdfs:label "bàr smachd" ;
-    :sense "control bar" .
-
-  n:seool
-    a :MasculineNoun ;
-    rdfs:label "seòl" ;
-    :sense "sail" .
-
-  n:liagh_cuairteachaidh
-    a :FeminineNoun ;
-    rdfs:label "liagh cuairteachaidh" ;
-    :sense "rotor blade" .
-
-  n:heileacoptair
-    a :MasculineNoun ;
-    rdfs:label "heileacoptair" ;
-    :sense "helicopter" .
-
-  n:pleeana_seoolaidh
-    a :MasculineNoun ;
-    rdfs:label "plèana-seòlaidh" ;
-    :sense "hang-glider" .
-
-  n:uidheam_laighe
-    a :FeminineNoun ;
-    rdfs:label "uidheam-laighe" ;
-    :sense "landing skid" .
-
-  n:pleeana_daa_sgiathach
-    a :MasculineNoun ;
-    rdfs:label "plèana dà-sgiathach" ;
-    :sense "biplane" .
-
-  n:itealan_mara
-    a :MasculineNoun ;
-    rdfs:label "itealan-mara" ;
-    :sense "seaplane" .
-
-  n:slige
-    a :FeminineNoun ;
-    rdfs:label "slige" ;
-    :sense "hull" .
-
-  n:fleoodragan
-    a :MasculineNoun ;
-    rdfs:label "fleòdragan" ;
-    :sense "float" .
-
-  n:proipeilear
-    a :MasculineNoun ;
-    rdfs:label "proipeilear" ;
-    :sense "propeller" .
-
-  n:uidheam_laighe
-    a :MasculineNoun ;
-    rdfs:label "uidheam laighe" ;
-    :sense "landing gear" .
-
-  n:sgiath
-    a :FeminineNoun ;
-    rdfs:label "sgiath" ;
-    :sense "wing" .
-
-  n:glaidhdear
-    a :MasculineNoun ;
-    rdfs:label "glaidhdear" ;
-    :sense "glider" .
-
-  n:ceeis
-    a :FeminineNoun ;
-    rdfs:label "cèis" ;
-    :sense "envelope" .
-
-  n:basgaid
-    a :FeminineNoun ;
-    rdfs:label "basgaid" ;
-    :sense "basket" .
-
-  n:bailiuun_eeadhair_theth
-    a :MasculineNoun ;
-    rdfs:label "bailiùn èadhair theth" ;
-    :sense "hot air balloon" .
-
-  n:meanbh_phleeana
-    a :MasculineNoun ;
-    rdfs:label "meanbh-phlèana" ;
-    :sense "microlight" .
-
-  n:uidheam_taic
-    a :FeminineNoun ;
-    rdfs:label "uidheam-taic" ;
-    :sense "strut" .
-
-  n:trii_rothach
-    a :MasculineNoun ;
-    rdfs:label "trì-rothach" ;
-    :sense "trike" .
-
-  n:ite_earbaill
-    a :FeminineNoun ;
-    rdfs:label "ite earbaill" ;
-    :sense "tail fin" .
-
-  n:falmadair
-    a :MasculineNoun ;
-    rdfs:label "falmadair" ;
-    :sense "rudder" .
-
-  n:einnsean_diet
-    a :MasculineNoun ;
-    rdfs:label "einnsean diet" ;
-    :sense "jet engine" .
-
-  n:itealan_moor
-    a :MasculineNoun ;
-    rdfs:label "itealan mòr" ;
-    :sense "passenger jet" .
-
-  n:aarainn_stiuuiridh
-    a :MasculineNoun ;
-    rdfs:label "àrainn stiùiridh" ;
-    :sense "cockpit" .
+n:dannsair
+  a :MasculineNoun ;
+  rdfs:label "dannsair" .
+
+n:cleasaiche
+  a :MasculineNoun ;
+  rdfs:label "cleasaiche" .
+
+n:culaidh
+  a :FeminineNoun ;
+  rdfs:label "culaidh" .
+
+n:sealladh
+  a :MasculineNoun ;
+  rdfs:label "sealladh" .
+
+n:manaidsear_steeidse
+  rdfs:label "manaidsear stèidse" .
+
+n:sgrion
+  a :MasculineNoun ;
+  rdfs:label "sgrion" .
+
+n:boord_clapaidh
+  rdfs:label "bòrd clapaidh" .
+
+n:cuuirtear
+  a :MasculineNoun ;
+  rdfs:label "cùirtear" .
+
+n:riochdaire
+  a :MasculineNoun ;
+  rdfs:label "riochdaire" .
+
+n:luchd_eeisteachd
+  rdfs:label "luchd èisteachd" .
+
+n:proogram_TBh
+  rdfs:label "prògram TBh" .
+
+n:proogram_oillte
+  rdfs:label "prògram oillte" .
+
+n:ficsean_saidheans_agus_sgeul_mhiiorbhail
+  rdfs:label "ficsean saidheans agus sgeul-mhìorbhail" .
+
+n:gniiomh_agus_daanachd
+  rdfs:label "gnìomh agus dànachd" .
+
+n:comadaidh
+  a :MasculineNoun ;
+  rdfs:label "comadaidh" .
+
+n:cartuun
+  a :MasculineNoun ;
+  rdfs:label "cartùn" .
+
+n:proogram_naidheachdan
+  rdfs:label "prògram naidheachdan" .
+
+n:proogram_spoors
+  rdfs:label "prògram spòrs" .
+
+n:proogram_coomhraidh
+  rdfs:label "prògram còmhraidh" .
+
+n:aithriseachd_naadair
+  rdfs:label "aithriseachd nàdair" .
+
+n:proogram_chleasan
+  rdfs:label "prògram chleasan" .
+
+n:carbadan_luchd_siubhail
+  rdfs:label "carbadan luchd-siubhail" .
+
+n:uinneag_toisich
+  rdfs:label "uinneag toisich" .
+
+n:suathair
+  a :MasculineNoun ;
+  rdfs:label "suathair" .
+
+n:bonaid
+  a :MasculineNoun ;
+  rdfs:label "bonaid" .
+
+n:solas_moor
+  rdfs:label "solas mòr" .
+
+n:gril_reeididheator
+  rdfs:label "gril rèididheator" .
+
+n:pleit_aaireimh
+  rdfs:label "pleit àireimh" .
+
+n:bumpar
+  a :MasculineNoun ;
+  rdfs:label "bumpar" .
+
+n:but
+  a :MasculineNoun ;
+  rdfs:label "but" .
+
+n:sgaathan_cliathaich
+  rdfs:label "sgàthan cliathaich" .
+
+n:taidhear
+  a :FeminineNoun ;
+  rdfs:label "taidhear" .
+
+n:motair_rothair
+  rdfs:label "motair-rothair" .
+
+n:bhana_campachaidh
+  rdfs:label "bhana campachaidh" .
+
+n:caar_spoors
+  rdfs:label "càr spòrs" .
+
+n:caar_oighreachd
+  rdfs:label "càr oighreachd" .
+
+v:rach_suas
+  rdfs:label "rach suas" .
+
+n:reeile_bruthaich
+  rdfs:label "rèile bruthaich" .
+
+n:carbad_caabaill
+  rdfs:label "carbad càbaill" .
+
+n:aardaichear_sgithidh
+  rdfs:label "àrdaichear sgithidh" .
+
+n:treeana
+  a :FeminineNoun ;
+  rdfs:label "trèana" .
+
+n:coidse
+  a :FeminineNoun ;
+  rdfs:label "coidse" .
+
+n:carbad_spoors_uidheamaichte
+  rdfs:label "carbad spòrs uidheamaichte" .
+
+n:rothair_cumhachd
+  rdfs:label "rothair cumhachd" .
+
+n:tacsaidh
+  a :FeminineNoun ;
+  rdfs:label "tacsaidh" .
+
+n:rothair
+  a :MasculineNoun ;
+  rdfs:label "rothair" .
+
+n:carbadan_obrach
+  rdfs:label "carbadan obrach" .
+
+n:luchdair_cladhaich
+  rdfs:label "luchdair cladhaich" .
+
+n:roilear
+  a :MasculineNoun ;
+  rdfs:label "roilear" .
+
+n:toglaiche_aairde
+  rdfs:label "toglaiche àirde" .
+
+n:truga_forca
+  rdfs:label "truga forca" .
+
+n:ruamhair
+  a :MasculineNoun ;
+  rdfs:label "ruamhair" .
+
+n:tarbh_chrann
+  rdfs:label "tarbh-chrann" .
+
+n:truga_dumpair
+  rdfs:label "truga dumpair" .
+
+n:crann
+  a :MasculineNoun ;
+  rdfs:label "crann" .
+
+n:carbad_eiridinn
+  rdfs:label "carbad eiridinn" .
+
+n:einnsean_smaalaidh
+  rdfs:label "einnsean smàlaidh" .
+
+n:carbad_muir_thiireach
+  rdfs:label "carbad muir-thìreach" .
+
+n:carbad_sneachda
+  rdfs:label "carbad sneachda" .
+
+n:bhana_liubhairt
+  rdfs:label "bhana liubhairt" .
+
+n:carbad_poilis
+  rdfs:label "carbad poilis" .
+
+n:laaraidh_tasgain
+  rdfs:label "làraidh tasgain" .
+
+n:crann_sneachda
+  rdfs:label "crann sneachda" .
+
+n:giuulanair_charbadan
+  rdfs:label "giùlanair charbadan" .
+
+n:truga_measgachaidh
+  rdfs:label "truga measgachaidh" .
+
+n:carbad_trom_bhathar
+  rdfs:label "carbad trom-bhathar" .
+
+n:siubhal
+  rdfs:label "siubhal" .
+
+n:coomhdail
+  rdfs:label "còmhdail" .
+
+n:carbadan_adhair
+  rdfs:label "carbadan adhair" .
+
+n:baar_smachd
+  rdfs:label "bàr smachd" .
+
+n:seool
+  a :MasculineNoun ;
+  rdfs:label "seòl" .
+
+n:liagh_cuairteachaidh
+  rdfs:label "liagh cuairteachaidh" .
+
+n:heileacoptair
+  a :MasculineNoun ;
+  rdfs:label "heileacoptair" .
+
+n:pleeana_seoolaidh
+  rdfs:label "plèana seòlaidh" .
+
+n:uidheam_laighe
+  rdfs:label "uidheam laighe" .
+
+n:pleeana_daa_sgiathach
+  rdfs:label "plèana dà-sgiathach" .
+
+n:itealan_mara
+  rdfs:label "itealan mara" .
+
+n:slige
+  a :FeminineNoun ;
+  rdfs:label "slige" .
+
+n:fleoodragan
+  a :MasculineNoun ;
+  rdfs:label "fleòdragan" .
+
+n:proipeilear
+  a :MasculineNoun ;
+  rdfs:label "proipeilear" .
+
+n:uidheam_laighe
+  rdfs:label "uidheam laighe" .
+
+n:sgiath
+  a :FeminineNoun ;
+  rdfs:label "sgiath" .
+
+n:glaidhdear
+  a :MasculineNoun ;
+  rdfs:label "glaidhdear" .
+
+n:ceeis
+  a :FeminineNoun ;
+  rdfs:label "cèis" .
+
+n:basgaid
+  a :FeminineNoun ;
+  rdfs:label "basgaid" .
+
+n:bailiuun_eeadhair_theth
+  rdfs:label "bailiùn èadhair theth" .
+
+n:meanbh_phleeana
+  rdfs:label "meanbh-phlèana" .
+
+n:uidheam_taic
+  rdfs:label "uidheam taic" .
+
+n:trii_rothach
+  rdfs:label "trì-rothach" .
+
+n:ite_earbaill
+  rdfs:label "ite earbaill" .
+
+n:falmadair
+  a :MasculineNoun ;
+  rdfs:label "falmadair" .
+
+n:einnsean_diet
+  rdfs:label "einnsean diet" .
+
+n:itealan_moor
+  rdfs:label "itealan mòr" .
+
+n:aarainn_stiuuiridh
+  rdfs:label "àrainn stiùiridh" .
 
 n:soitheach
   a :MasculineNoun ;
@@ -2651,399 +2346,300 @@ n:pleadhag
   a :FeminineNoun ;
   rdfs:label "pleadhag" .
 
+n:luuth
+  rdfs:label "lùth" .
 
-  n:luuth
-    rdfs:label "lùth" ;
-    :sense "energy" .
-
-  n:cumhachd
-    rdfs:label "cumhachd" ;
-    :sense "power" .
-
-  n:luuth_greeine
-    a :MasculineNoun ;
-    rdfs:label "lùth grèine" ;
-    :sense "solar energy" .
-
-  n:cumhachd_uisge_dealain
-    a :MasculineNoun ;
-    rdfs:label "cumhachd uisge-dealain" ;
-    :sense "hydroelectric power" .
-
-  n:bith_luuth
-    a :MasculineNoun ;
-    rdfs:label "bith-lùth" ;
-    :sense "bioenergy" .
-
-  n:luuth_geo_theasach
-    a :MasculineNoun ;
-    rdfs:label "lùth geo-theasach" ;
-    :sense "geothermal energy" .
-
-  n:luuth_laain_mhara
-    a :MasculineNoun ;
-    rdfs:label "lùth làin-mhara" ;
-    :sense "tidal energy" .
-
-  n:cumhachd_gaoithe
-    a :MasculineNoun ;
-    rdfs:label "cumhachd gaoithe" ;
-    :sense "wind power" .
-
-  n:ola
-    a :FeminineNoun ;
-    rdfs:label "ola" ;
-    :sense "oil" .
-
-  n:gual
-    a :MasculineNoun ;
-    rdfs:label "gual" ;
-    :sense "coal" .
-
-  n:gas_naadarrach
-    a :MasculineNoun ;
-    rdfs:label "gas nàdarrach" ;
-    :sense "natural gas" .
-
-  n:cumhachd_niuuclasach
-    a :MasculineNoun ;
-    rdfs:label "cumhachd niùclasach" ;
-    :sense "nuclear energy" .
-
-  n:cuairt_dealain
-    rdfs:label "cuairt-dealain" ;
-    :sense "electrical circuit" .
-
-  n:diagram_cuairt_dealain
-    a :MasculineNoun ;
-    rdfs:label "diagram cuairt-dealain" ;
-    :sense "circuit diagram" .
-
-  n:bataraidh
-    a :FeminineNoun ;
-    rdfs:label "bataraidh" ;
-    :sense "battery" .
-
-  n:ueeir
-    a :FeminineNoun ;
-    rdfs:label "uèir" ;
-    :sense "wire" .
-
-  n:bolgan
-    a :MasculineNoun ;
-    rdfs:label "bolgan" ;
-    :sense "bulb" .
-
-  n:srannadair
-    a :MasculineNoun ;
-    rdfs:label "srannadair" ;
-    :sense "buzzer" .
-
-  n:motair
-    a :MasculineNoun ;
-    rdfs:label "motair" ;
-    :sense "motor" .
-
-  n:suidse
-    a :FeminineNoun ;
-    rdfs:label "suidse" ;
-    :sense "switch" .
-
-  n:stuth
-    rdfs:label "stuth" ;
-    :sense "material" .
-
-  n:glainne
-    a :FeminineNoun ;
-    rdfs:label "glainne" ;
-    :sense "glass" .
-
-  n:leathar
-    a :MasculineNoun ;
-    rdfs:label "leathar" ;
-    :sense "leather" .
-
-  n:paaipear
-    a :MasculineNoun ;
-    rdfs:label "pàipear" ;
-    :sense "paper" .
-
-  n:plastaig
-    a :MasculineNoun ;
-    rdfs:label "plastaig" ;
-    :sense "plastic" .
-
-  n:rubair
-    a :MasculineNoun ;
-    rdfs:label "rubair" ;
-    :sense "rubber" .
-
-  n:poorsalan
-    a :MasculineNoun ;
-    rdfs:label "pòrsalan" ;
-    :sense "china" .
-
-  n:fiodh
-    a :MasculineNoun ;
-    rdfs:label "fiodh" ;
-    :sense "wood" .
-
-  n:ceeir
-    a :MasculineNoun ;
-    rdfs:label "cèir" ;
-    :sense "wax" .
-
-  n:clooimh
-    a :MasculineNoun ;
-    rdfs:label "clòimh" ;
-    :sense "wool" .
-
-  n:cotan
-    a :MasculineNoun ;
-    rdfs:label "cotan" ;
-    :sense "cotton" .
-
-  n:gneeithean_stuthan
-    rdfs:label "gnèithean stuthan" ;
-    :sense "properties of materials" .
-
-  a:cruaidh
-    a :Adjective ;
-    rdfs:label "cruaidh" ;
-    :sense "hard" .
-
-  a:bog
-    a :Adjective ;
-    rdfs:label "bog" ;
-    :sense "soft" .
-
-  a:triid_shoilleireachd
-    a :Adjective ;
-    rdfs:label "trìd-shoilleireachd" ;
-    :sense "transparent" .
-
-  a:doilleir
-    a :Adjective ;
-    rdfs:label "doilleir" ;
-    :sense "opaque" .
-
-  a:garbh
-    a :Adjective ;
-    rdfs:label "garbh" ;
-    :sense "rough" .
-
-  a:gleansach
-    a :Adjective ;
-    rdfs:label "gleansach" ;
-    :sense "shiny" .
-
-  a:reeidh
-    a :Adjective ;
-    rdfs:label "rèidh" ;
-    :sense "smooth" .
-
-  a:magnaiteach
-    a :Adjective ;
-    rdfs:label "magnaiteach" ;
-    :sense "magnetic" .
-
-  a:dorch
-    a :Adjective ;
-    rdfs:label "dorch" ;
-    :sense "dull" .
-
-  a:diionach
-    a :Adjective ;
-    rdfs:label "dìonach" ;
-    :sense "waterproof" .
-
-  a:suuigheach
-    a :Adjective ;
-    rdfs:label "sùigheach" ;
-    :sense "absorbant" .
-
-  n:oor
-    a :MasculineNoun ;
-    rdfs:label "òr" ;
-    :sense "gold" .
-
-  n:airgead
-    a :MasculineNoun ;
-    rdfs:label "airgead" ;
-    :sense "silver" .
-
-  n:umha
-    a :MasculineNoun ;
-    rdfs:label "umha" ;
-    :sense "bronze" .
-
-  n:clach
-    a :FeminineNoun ;
-    rdfs:label "clach" ;
-    :sense "stone" .
-
-  n:praais
-    a :MasculineNoun ;
-    rdfs:label "pràis" ;
-    :sense "brass" .
-
-  n:iarann
-    a :MasculineNoun ;
-    rdfs:label "iarann" ;
-    :sense "iron" .
-
-  n:staailinn
-    a :FeminineNoun ;
-    rdfs:label "stàilinn" ;
-    :sense "steel" .
-
-  n:copar
-    a :MasculineNoun ;
-    rdfs:label "copar" ;
-    :sense "copper" .
-
-  n:togalach
-    rdfs:label "togalaichean" ;
-    :sense "buildings" .
-
-  n:structar
-    rdfs:label "structaran" ;
-    :sense "structures" .
-
-  n:crann_conaltraidh
-    a :MasculineNoun ;
-    rdfs:label "crann conaltraidh" ;
-    :sense "communications mast" .
-
-  n:soitheach_saideil
-    a :FeminineNoun ;
-    rdfs:label "soitheach saideil" ;
-    :sense "satellite dish" .
-
-  n:snaighidhean
-    a :MasculineNoun ;
-    rdfs:label "snaighidhean" ;
-    :sense "carvings" .
-
-  n:mullach
-    a :MasculineNoun ;
-    rdfs:label "mullach" ;
-    :sense "roof" .
-
-  n:turaid
-    a :FeminineNoun ;
-    rdfs:label "turaid" ;
-    :sense "turret" .
-
-  n:baarr_bhalla
-    a :MasculineNoun ;
-    rdfs:label "bàrr-bhalla" ;
-    :sense "parapet" .
-
-  n:caisteal
-    a :MasculineNoun ;
-    rdfs:label "caisteal" ;
-    :sense "castle" .
-
-  n:teampall
-    a :FeminineNoun ;
-    rdfs:label "teampall" ;
-    :sense "temple" .
-
-  n:pagooda
-    a :MasculineNoun ;
-    rdfs:label "pagòda" ;
-    :sense "pagoda" .
-
-  n:sinagog
-    a :FeminineNoun ;
-    rdfs:label "sinagog" ;
-    :sense "synagogue" .
-
-  n:drochaid_chrochte
-    a :FeminineNoun ;
-    rdfs:label "drochaid-chrochte" ;
-    :sense "suspension bridge" .
-
-  n:tuur
-    a :MasculineNoun ;
-    rdfs:label "tùr" ;
-    :sense "tower" .
-
-  n:caaball_buulais
-    a :MasculineNoun ;
-    rdfs:label "càball bùlais" ;
-    :sense "suspender cable" .
-
-  n:priiomh_chaaball
-    a :MasculineNoun ;
-    rdfs:label "prìomh chàball" ;
-    :sense "main cable" .
-
-  n:deic
-    a :FeminineNoun ;
-    rdfs:label "deic" ;
-    :sense "deck" .
-
-  n:cidhe
-    a :MasculineNoun ;
-    rdfs:label "cidhe" ;
-    :sense "pier" .
-
-  n:flataichean_aarda
-    a :FeminineNoun ;
-    rdfs:label "flataichean àrda" ;
-    :sense "skyscraper" .
-
-  n:crann_reeidio
-    a :MasculineNoun ;
-    rdfs:label "crann rèidio" ;
-    :sense "radio mast" .
-
-  n:mionaraid
-    a :FeminineNoun ;
-    rdfs:label "mionaraid" ;
-    :sense "minaret" .
-
-  n:cuach_mhullaich
-    a :FeminineNoun ;
-    rdfs:label "cuach-mhullaich" ;
-    :sense "dome" .
-
-  n:eaglais
-    a :FeminineNoun ;
-    rdfs:label "eaglais" ;
-    :sense "church" .
-
-  n:stiiopall
-    a :MasculineNoun ;
-    rdfs:label "stìopall" ;
-    :sense "spire" .
-
-  n:colbh
-    a :MasculineNoun ;
-    rdfs:label "colbh" ;
-    :sense "column" .
-
-  n:uinneag
-    a :FeminineNoun ;
-    rdfs:label "uinneag" ;
-    :sense "window" .
-
-  n:mosg
-    a :MasculineNoun ;
-    rdfs:label "mosg" ;
-    :sense "mosque" .
-
-  n:for_uinneag
-    a :FeminineNoun ;
-    rdfs:label "for-uinneag" ;
-    :sense "balcony" .
-
-  n:luuchairt
-    a :FeminineNoun ;
-    rdfs:label "lùchairt" ;
-    :sense "palace" .
+n:cumhachd
+  rdfs:label "cumhachd" .
+
+n:luuth_greeine
+  rdfs:label "lùth grèine" .
+
+n:cumhachd_uisge_dealain
+  rdfs:label "cumhachd uisge-dealain" .
+
+n:bith_luuth
+  rdfs:label "bith-lùth" .
+
+n:luuth_geo_theasach
+  rdfs:label "lùth geo-theasach" .
+
+n:luuth_laain_mhara
+  rdfs:label "lùth làin-mhara" .
+
+n:cumhachd_gaoithe
+  rdfs:label "cumhachd gaoithe" .
+
+n:ola
+  a :FeminineNoun ;
+  rdfs:label "ola" .
+
+n:gual
+  a :MasculineNoun ;
+  rdfs:label "gual" .
+
+n:gas_naadarrach
+  rdfs:label "gas nàdarrach" .
+
+n:cumhachd_niuuclasach
+  rdfs:label "cumhachd niùclasach" .
+
+n:cuairt_dealain
+  rdfs:label "cuairt dealain" .
+
+n:diagram_cuairt_dealain
+  rdfs:label "diagram cuairt-dealain" .
+
+n:bataraidh
+  a :FeminineNoun ;
+  rdfs:label "bataraidh" .
+
+n:ueeir
+  a :FeminineNoun ;
+  rdfs:label "uèir" .
+
+n:bolgan
+  a :MasculineNoun ;
+  rdfs:label "bolgan" .
+
+n:srannadair
+  a :MasculineNoun ;
+  rdfs:label "srannadair" .
+
+n:motair
+  a :MasculineNoun ;
+  rdfs:label "motair" .
+
+n:suidse
+  a :FeminineNoun ;
+  rdfs:label "suidse" .
+
+n:stuth
+  rdfs:label "stuth" .
+
+n:glainne
+  a :FeminineNoun ;
+  rdfs:label "glainne" .
+
+n:leathar
+  a :MasculineNoun ;
+  rdfs:label "leathar" .
+
+n:paaipear
+  a :MasculineNoun ;
+  rdfs:label "pàipear" .
+
+n:plastaig
+  a :MasculineNoun ;
+  rdfs:label "plastaig" .
+
+n:rubair
+  a :MasculineNoun ;
+  rdfs:label "rubair" .
+
+n:poorsalan
+  a :MasculineNoun ;
+  rdfs:label "pòrsalan" .
+
+n:fiodh
+  a :MasculineNoun ;
+  rdfs:label "fiodh" .
+
+n:ceeir
+  a :MasculineNoun ;
+  rdfs:label "cèir" .
+
+n:clooimh
+  a :MasculineNoun ;
+  rdfs:label "clòimh" .
+
+n:cotan
+  a :MasculineNoun ;
+  rdfs:label "cotan" .
+
+n:gneeithean_stuthan
+  rdfs:label "gnèithean stuthan" .
+
+a:cruaidh
+  a :Adjective ;
+  rdfs:label "cruaidh" .
+
+a:bog
+  a :Adjective ;
+  rdfs:label "bog" .
+
+a:triid_shoilleireachd
+  rdfs:label "trìd-shoilleireachd" .
+
+a:doilleir
+  a :Adjective ;
+  rdfs:label "doilleir" .
+
+a:garbh
+  a :Adjective ;
+  rdfs:label "garbh" .
+
+a:gleansach
+  a :Adjective ;
+  rdfs:label "gleansach" .
+
+a:reeidh
+  a :Adjective ;
+  rdfs:label "rèidh" .
+
+a:magnaiteach
+  a :Adjective ;
+  rdfs:label "magnaiteach" .
+
+a:dorch
+  a :Adjective ;
+  rdfs:label "dorch" .
+
+a:diionach
+  a :Adjective ;
+  rdfs:label "dìonach" .
+
+a:suuigheach
+  a :Adjective ;
+  rdfs:label "sùigheach" .
+
+n:oor
+  a :MasculineNoun ;
+  rdfs:label "òr" .
+
+n:airgead
+  a :MasculineNoun ;
+  rdfs:label "airgead" .
+
+n:umha
+  a :MasculineNoun ;
+  rdfs:label "umha" .
+
+n:clach
+  a :FeminineNoun ;
+  rdfs:label "clach" .
+
+n:praais
+  a :MasculineNoun ;
+  rdfs:label "pràis" .
+
+n:iarann
+  a :MasculineNoun ;
+  rdfs:label "iarann" .
+
+n:staailinn
+  a :FeminineNoun ;
+  rdfs:label "stàilinn" .
+
+n:copar
+  a :MasculineNoun ;
+  rdfs:label "copar" .
+
+n:togalach
+  rdfs:label "togalach" .
+
+n:structar
+  rdfs:label "structar" .
+
+n:crann_conaltraidh
+  rdfs:label "crann conaltraidh" .
+
+n:soitheach_saideil
+  rdfs:label "soitheach saideil" .
+
+n:snaighidh
+  a :MasculineNoun ;
+  rdfs:label "snaighidhean" .
+
+n:mullach
+  a :MasculineNoun ;
+  rdfs:label "mullach" .
+
+n:turaid
+  a :FeminineNoun ;
+  rdfs:label "turaid" .
+
+n:baarr_bhalla
+  rdfs:label "bàrr-bhalla" .
+
+n:caisteal
+  a :MasculineNoun ;
+  rdfs:label "caisteal" .
+
+n:teampall
+  a :FeminineNoun ;
+  rdfs:label "teampall" .
+
+n:pagooda
+  a :MasculineNoun ;
+  rdfs:label "pagòda" .
+
+n:sinagog
+  a :FeminineNoun ;
+  rdfs:label "sinagog" .
+
+n:drochaid_chrochte
+  rdfs:label "drochaid chrochte" .
+
+n:tuur
+  a :MasculineNoun ;
+  rdfs:label "tùr" .
+
+n:caaball_buulais
+  rdfs:label "càball bùlais" .
+
+n:priiomh_chaaball
+  rdfs:label "prìomh chàball" .
+
+n:deic
+  a :FeminineNoun ;
+  rdfs:label "deic" .
+
+n:cidhe
+  a :MasculineNoun ;
+  rdfs:label "cidhe" .
+
+n:flataichean_aarda
+  rdfs:label "flataichean àrda" .
+
+n:crann_reeidio
+  rdfs:label "crann rèidio" .
+
+n:mionaraid
+  a :FeminineNoun ;
+  rdfs:label "mionaraid" .
+
+n:cuach_mhullaich
+  a :FeminineNoun ;
+  rdfs:label "cuach mhullaich" .
+
+n:eaglais
+  a :FeminineNoun ;
+  rdfs:label "eaglais" .
+
+n:stiiopall
+  a :MasculineNoun ;
+  rdfs:label "stìopall" .
+
+n:colbh
+  a :MasculineNoun ;
+  rdfs:label "colbh" .
+
+n:uinneag
+  a :FeminineNoun ;
+  rdfs:label "uinneag" .
+
+n:mosg
+  a :MasculineNoun ;
+  rdfs:label "mosg" .
+
+n:for_uinneag
+  a :FeminineNoun ;
+  rdfs:label "for-uinneag" .
+
+n:luuchairt
+  a :FeminineNoun ;
+  rdfs:label "lùchairt" .
 
 n:cumhachd
   rdfs:label "cumhachd" .
@@ -3140,1094 +2736,779 @@ n:laamh
   a :FeminineNoun ;
   rdfs:label "làmh" .
 
-  n:coimpiutair
-    rdfs:label "coimpiutairean" ;
-    :sense "computers" .
-
-  n:innleachd_eileagtronaigeach
-    rdfs:label "innleachdan eileagtronaigeach" ;
-    :sense "electronic devices" .
-
-  n:ceanglachan
-    a :MasculineNoun ;
-    rdfs:label "ceanglachan" ;
-    :sense "attachment" .
-
-  n:duilleag_dachaigh
-    a :FeminineNoun ;
-    rdfs:label "duilleag-dachaigh" ;
-    :sense "home page" .
-
-  v:cabadaich
-    rdfs:label "cabadaich" ;
-    :sense "chat" .
-
-  v:ceangail
-    rdfs:label "ceangail" ;
-    :sense "connect" .
-
-  n:post_d
-    a :MasculineNoun ;
-    rdfs:label "post-d" ;
-    :sense "email" .
-
-  n:tuuit
-    a :MasculineNoun ;
-    rdfs:label "tùit" ;
-    :sense "tweet" .
-
-  v:lorg
-    a :Verb ;
-    rdfs:label "lorg" ;
-    :sense "search" .
-
-  v:brobhsaich
-    a :Verb ;
-    rdfs:label "brobhsaich" ;
-    :sense "browse" .
-
-  v:traal
-    a :Verb ;
-    rdfs:label "tràl" ;
-    :sense "surf" .
-
-  v:luchdaich_siios
-    a :Verb ;
-    rdfs:label "luchdaich sìos" ;
-    :sense "download" .
-
-  v:luchdaich_suas
-    a :Verb ;
-    rdfs:label "luchdaich suas" ;
-    :sense "upload" .
-
-  n:ui_fi
-    a :MasculineNoun ;
-    rdfs:label "ui-fi" ;
-    :sense "wi-fi" .
-
-  n:sgrion
-    a :MasculineNoun ;
-    rdfs:label "sgrion" ;
-    :sense "screen" .
-
-  n:coimpiutair
-    a :MasculineNoun ;
-    rdfs:label "coimpiutair" ;
-    :sense "computer" .
-
-  n:meur_chlaar
-    a :MasculineNoun ;
-    rdfs:label "meur-chlàr" ;
-    :sense "keyboard" .
-
-  n:cloo_bhualadair
-    a :MasculineNoun ;
-    rdfs:label "clò-bhualadair" ;
-    :sense "printer" .
-
-  n:luch
-    a :FeminineNoun ;
-    rdfs:label "luch" ;
-    :sense "mouse" .
-
-  n:cluicheadair_MP3
-    a :MasculineNoun ;
-    rdfs:label "cluicheadair MP3" ;
-    :sense "MP3 player" .
-
-  n:foon_laaimhe
-    a :FeminineNoun ;
-    rdfs:label "fòn-làimhe" ;
-    :sense "mobile phone" .
-
-  n:bioran_cuimhne
-    a :MasculineNoun ;
-    rdfs:label "bioran-cuimhne" ;
-    :sense "memory stick" .
-
-  n:camara_didseatach
-    a :MasculineNoun ;
-    rdfs:label "camara didseatach" ;
-    :sense "digital camera" .
-
-  n:tablaid
-    a :FeminineNoun ;
-    rdfs:label "tablaid" ;
-    :sense "tablet" .
-
-  n:coimpiutair_gluuine
-    a :MasculineNoun ;
-    rdfs:label "coimpiutair-glùine" ;
-    :sense "laptop" .
-
-  n:e_leughadair
-    a :MasculineNoun ;
-    rdfs:label "e-leughadair" ;
-    :sense "e-reader" .
-
-  v:ceangail
-    a :Verb ;
-    rdfs:label "ceangail" ;
-    :sense "connect" .
-
-  v:log_air
-    a :Verb ;
-    rdfs:label "log air" ;
-    :sense "log on" .
-
-  v:log_dheth
-    a :Verb ;
-    rdfs:label "log dheth" ;
-    :sense "log off" .
-
-  v:cloo_sgriiobh
-    a :Verb ;
-    rdfs:label "clò-sgrìobh" ;
-    :sense "type" .
-
-  v:sgrolaig
-    a :Verb ;
-    rdfs:label "sgrolaig" ;
-    :sense "scroll" .
-
-  v:gliog
-    a :Verb ;
-    rdfs:label "gliog" ;
-    :sense "click" .
-
-  v:slaod
-    a :Verb ;
-    rdfs:label "slaod" ;
-    :sense "drag" .
-
-  v:geaarr
-    a :Verb ;
-    rdfs:label "geàrr" ;
-    :sense "cut" .
-
-  v:cuir_ann
-    a :Verb ;
-    rdfs:label "cuir ann" ;
-    :sense "paste" .
-
-  v:cuir_a_steach
-    a :Verb ;
-    rdfs:label "cuir a-steach" ;
-    :sense "insert" .
-
-  v:dubh_aas
-    a :Verb ;
-    rdfs:label "dubh às" ;
-    :sense "delete" .
-
-  v:cruthaich
-    a :Verb ;
-    rdfs:label "cruthaich" ;
-    :sense "format" .
-
-  v:deasaich
-    a :Verb ;
-    rdfs:label "deasaich" ;
-    :sense "edit" .
-
-  v:dearbh_litreachadh
-    a :Verb ;
-    rdfs:label "dearbh litreachadh" ;
-    :sense "spell check" .
-
-  v:cloo_bhuail
-    a :Verb ;
-    rdfs:label "clò-bhuail" ;
-    :sense "print" .
-
-  v:sgruud
-    a :Verb ;
-    rdfs:label "sgrùd" ;
-    :sense "scan" .
-
-  v:saabhail
-    a :Verb ;
-    rdfs:label "sàbhail" ;
-    :sense "save" .
-
-  v:deean_lethbhreac_gleidhidh
-    a :Verb ;
-    rdfs:label "dèan lethbhreac-gleidhidh" ;
-    :sense "back up" .
-
-  n:beathach
-    rdfs:label "beathaichean" ;
-    :sense "animals" .
-
-  n:planntrais
-    rdfs:label "planntrais" ;
-    :sense "plants" .
-
-  n:uuthach
-    rdfs:label "ùthaichean" ;
-    :sense "mammals" .
-
-  n:sioraf
-    a :MasculineNoun ;
-    rdfs:label "sioraf" ;
-    :sense "giraffe" .
-
-  n:ailbhean
-    a :MasculineNoun ;
-    rdfs:label "ailbhean" ;
-    :sense "elephant" .
-
-  n:caamhal
-    a :MasculineNoun ;
-    rdfs:label "càmhal" ;
-    :sense "camel" .
-
-  n:muncaidh
-    a :MasculineNoun ;
-    rdfs:label "muncaidh" ;
-    :sense "monkey" .
-
-  n:sroon_adharcach
-    a :MasculineNoun ;
-    rdfs:label "sròn-adhairceach" ;
-    :sense "rhinocerous" .
-
-  n:mathan_geal
-    a :MasculineNoun ;
-    rdfs:label "mathan geal" ;
-    :sense "polar bear" .
-
-  n:each_aibhne
-    a :MasculineNoun ;
-    rdfs:label "each-aibhne" ;
-    :sense "hippopotamous" .
-
-  n:liopard
-    a :MasculineNoun ;
-    rdfs:label "liopard" ;
-    :sense "leopard" .
-
-  n:famh_sroon_rionnaig
-    a :FeminineNoun ;
-    rdfs:label "famh sròn-rionnaig" ;
-    :sense "star-nosed mole" .
-
-  n:platapas_gob_tuinneige
-    a :MasculineNoun ;
-    rdfs:label "platapas gob-tuinneige" ;
-    :sense "duck-billed platypus" .
-
-  n:pangailin
-    a :MasculineNoun ;
-    rdfs:label "pangailin" ;
-    :sense "pangolin" .
-
-  n:leisgeag
-    a :FeminineNoun ;
-    rdfs:label "leisgeag" ;
-    :sense "sloth" .
-
-  n:seabra
-    a :MasculineNoun ;
-    rdfs:label "seabra" ;
-    :sense "zebra" .
-
-  n:laama
-    a :MasculineNoun ;
-    rdfs:label "làma" ;
-    :sense "llama" .
-
-  n:fiadh
-    a :MasculineNoun ;
-    rdfs:label "fiadh" ;
-    :sense "deer" .
-
-  n:feoorag
-    a :FeminineNoun ;
-    rdfs:label "feòrag" ;
-    :sense "squirrel" .
-
-  n:siopmunc
-    a :MasculineNoun ;
-    rdfs:label "siopmunc" ;
-    :sense "chipmunk" .
-
-  n:goiriola
-    a :MasculineNoun ;
-    rdfs:label "goiriola" ;
-    :sense "gorilla" .
-
-  n:pantar
-    a :MasculineNoun ;
-    rdfs:label "pantar" ;
-    :sense "panther" .
-
-  n:cangaruu
-    a :MasculineNoun ;
-    rdfs:label "cangarù" ;
-    :sense "kangaroo" .
-
-  n:siota
-    a :MasculineNoun ;
-    rdfs:label "siota" ;
-    :sense "cheetah" .
-
-  n:leoomhann
-    a :MasculineNoun ;
-    rdfs:label "leòmhann" ;
-    :sense "lion" .
-
-  n:beathach_obrach
-    rdfs:label "beathaichean obrach" ;
-    :sense "working animals" .
-
-  n:buabhall_uisge
-    a :MasculineNoun ;
-    rdfs:label "buabhall uisge" ;
-    :sense "water buffalo" .
-
-  n:each
-    a :MasculineNoun ;
-    rdfs:label "each" ;
-    :sense "horse" .
-
-  n:gobhar
-    a :MasculineNoun ;
-    rdfs:label "gobhar" ;
-    :sense "goat" .
-
-  n:cuu_chaorach
-    a :MasculineNoun ;
-    rdfs:label "cù chaorach" ;
-    :sense "sheepdog" .
-
-  n:caora
-    a :FeminineNoun ;
-    rdfs:label "caora" ;
-    :sense "sheep" .
-
-  n:luchag
-    a :FeminineNoun ;
-    rdfs:label "luchag" ;
-    :sense "mouse" .
-
-  n:hamstair
-    a :MasculineNoun ;
-    rdfs:label "hamstair" ;
-    :sense "hamster" .
-
-  n:gearra_mhuc
-    a :FeminineNoun ;
-    rdfs:label "gearra-mhuc" ;
-    :sense "guinea pig" .
-
-  n:buidsidh
-    a :MasculineNoun ;
-    rdfs:label "buidsidh" ;
-    :sense "budgerigar" .
-
-  n:pitheid
-    a :FeminineNoun ;
-    rdfs:label "pitheid" ;
-    :sense "parrot" .
-
-  n:boo
-    a :FeminineNoun ;
-    rdfs:label "bò" ;
-    :sense "cow" .
-
-  n:asal
-    a :MasculineNoun ;
-    rdfs:label "asal" ;
-    :sense "donkey" .
-
-  n:tunnag
-    a :FeminineNoun ;
-    rdfs:label "tunnag" ;
-    :sense "duck" .
-
-  n:geeadh
-    a :FeminineNoun ;
-    rdfs:label "gèadh" ;
-    :sense "goose" .
-
-  n:cearc_Fhrangach
-    a :FeminineNoun ;
-    rdfs:label "cearc Fhrangach" ;
-    :sense "turkey" .
-
-  n:cuu_teasairginn_nam_beann
-    a :MasculineNoun ;
-    rdfs:label "cù teasairginn nam beann" ;
-    :sense "mountain-rescue dog" .
-
-  n:cat
-    a :MasculineNoun ;
-    rdfs:label "cat" ;
-    :sense "cat" .
-
-  n:cearc
-    a :FeminineNoun ;
-    rdfs:label "cearc" ;
-    :sense "hen" .
-
-  n:coileach
-    a :MasculineNoun ;
-    rdfs:label "coileach" ;
-    :sense "cockeral" .
-
-  n:snaagair
-    rdfs:label "snàgairean" ;
-    :sense "reptiles" .
-
-  n:muir_thiireach
-    rdfs:label "muir-thìrich" ;
-    :sense "amphibians" .
-
-  n:turtar
-    a :FeminineNoun ;
-    rdfs:label "turtar" ;
-    :sense "turtle" .
-
-  n:sligeachan
-    a :MasculineNoun ;
-    rdfs:label "sligeachan" ;
-    :sense "tortoise" .
-
-  n:caimileon
-    a :MasculineNoun ;
-    rdfs:label "caimileon" ;
-    :sense "chameleon" .
-
-  n:ioguaana
-    a :MasculineNoun ;
-    rdfs:label "ioguàna" ;
-    :sense "iguana" .
-
-  n:laghairt
-    a :MasculineNoun ;
-    rdfs:label "laghairt" ;
-    :sense "lizard" .
-
-  n:draagan_Comoodo
-    a :MasculineNoun ;
-    rdfs:label "dràgan Comòdo" ;
-    :sense "Komodo dragon" .
-
-  n:corra_chagailte
-    a :FeminineNoun ;
-    rdfs:label "corra-chagailte" ;
-    :sense "salamander" .
-
-  n:nathair
-    a :FeminineNoun ;
-    rdfs:label "nathraichean" ;
-    :sense "snakes" .
-
-  n:mamba_uaine
-    a :MasculineNoun ;
-    rdfs:label "mamba uaine" ;
-    :sense "green mamba" .
-
-  n:nathair_corail
-    a :FeminineNoun ;
-    rdfs:label "nathair corail" ;
-    :sense "coral snake" .
-
-  n:nathair_nimhe
-    a :FeminineNoun ;
-    rdfs:label "nathair-nimhe" ;
-    :sense "puff adder" .
-
-  n:paidhtean
-    a :MasculineNoun ;
-    rdfs:label "paidhtean" ;
-    :sense "python" .
-
-  n:cobra_EEipheiteach
-    a :MasculineNoun ;
-    rdfs:label "cobra Èipheiteach" ;
-    :sense "Egyptian cobra" .
-
-  n:losgann_nan_gath_puinnseanta
-    a :MasculineNoun ;
-    rdfs:label "losgann nan gath puinnseanta" ;
-    :sense "poison dart frog" .
-
-  n:muile_mhaagag
-    a :FeminineNoun ;
-    rdfs:label "muile-mhàgag" ;
-    :sense "toad" .
-
-  n:dearc_luachrach
-    a :FeminineNoun ;
-    rdfs:label "dearc-luachrach" ;
-    :sense "newt" .
-
-  n:ailigeutair
-    a :MasculineNoun ;
-    rdfs:label "ailigeutair" ;
-    :sense "alligator" .
-
-  n:crogall
-    a :MasculineNoun ;
-    rdfs:label "crogall" ;
-    :sense "crocodile" .
-
-  n:iasg
-    rdfs:label "iasg" ;
-    :sense "fish" .
-
-  n:cearban_moor_geal
-    a :MasculineNoun ;
-    rdfs:label "cearban mòr geal" ;
-    :sense "great white shark" .
-
-  n:bior_iasg
-    a :MasculineNoun ;
-    rdfs:label "bior-iasg" ;
-    :sense "swordfish" .
-
-  n:gath_manta
-    a :MasculineNoun ;
-    rdfs:label "gath manta" ;
-    :sense "manta ray" .
-
-  n:tiuuna
-    a :MasculineNoun ;
-    rdfs:label "tiùna" ;
-    :sense "tuna" .
-
-  n:easgann
-    a :FeminineNoun ;
-    rdfs:label "easgann" ;
-    :sense "eel" .
-
-  n:maarlain_gorm
-    a :MasculineNoun ;
-    rdfs:label "màrlain gorm" ;
-    :sense "blue marlin" .
-
-  n:ite
-    a :FeminineNoun ;
-    rdfs:label "ite" ;
-    :sense "fin" .
-
-  n:lannan
-    a :FeminineNoun ;
-    rdfs:label "lannan" ;
-    :sense "scales" .
-
-  n:coomhdach_giuurain
-    a :MasculineNoun ;
-    rdfs:label "còmhdach giùrain" ;
-    :sense "gill cover" .
-
-  n:breac
-    a :FeminineNoun ;
-    rdfs:label "breac" ;
-    :sense "trout" .
-
-  n:ite_earbaill
-    a :FeminineNoun ;
-    rdfs:label "ite earbaill" ;
-    :sense "tail fin" .
-
-  n:biorach
-    a :FeminineNoun ;
-    rdfs:label "biorach" ;
-    :sense "dogfish" .
-
-  n:leeabag_bhreac
-    a :FeminineNoun ;
-    rdfs:label "lèabag bhreac" ;
-    :sense "plaice" .
-
-  n:pioraana
-    a :MasculineNoun ;
-    rdfs:label "pioràna" ;
-    :sense "piranha" .
-
-  n:coi_charbhan
-    a :MasculineNoun ;
-    rdfs:label "coi-charbhan" ;
-    :sense "koi" .
-
-  n:rionnach
-    a :MasculineNoun ;
-    rdfs:label "rionnach" ;
-    :sense "mackeral" .
-
-  n:manach
-    a :MasculineNoun ;
-    rdfs:label "manach" ;
-    :sense "angelfish" .
-
-  n:bradan
-    a :MasculineNoun ;
-    rdfs:label "bradan" ;
-    :sense "salmon" .
-
-  n:saardan
-    a :MasculineNoun ;
-    rdfs:label "sàrdan" ;
-    :sense "sardine" .
-
-  n:doirbeag
-    a :FeminineNoun ;
-    rdfs:label "doirbeag" ;
-    :sense "minnow" .
-
-  n:iasg_dathtach_tropaigeach
-    a :MasculineNoun ;
-    rdfs:label "iasg dathtach tropaigeach" ;
-    :sense "neon tetra" .
-
-  n:trosg
-    a :FeminineNoun ;
-    rdfs:label "trosg" ;
-    :sense "cod" .
-
-  n:geastag
-    a :FeminineNoun ;
-    rdfs:label "geastag" ;
-    :sense "pike" .
-
-  n:creutairean_mara
-    rdfs:label "creutairean mara" ;
-    :sense "sea creatures" .
-
-  n:iasg_itealaich
-    a :MasculineNoun ;
-    rdfs:label "iasg itealaich" ;
-    :sense "flying fish" .
-
-  n:bun_duun_na_mara
-    a :MasculineNoun ;
-    rdfs:label "bun-dùn na mara" ;
-    :sense "anemone" .
-
-  n:roon
-    a :MasculineNoun ;
-    rdfs:label "ròn" ;
-    :sense "seal" .
-
-  n:muc_mhara_ghorm
-    a :FeminineNoun ;
-    rdfs:label "muc-mhara ghorm" ;
-    :sense "blue whale" .
-
-  n:ochd_chasach_dumbo
-    a :MasculineNoun ;
-    rdfs:label "ochd-chasach dumbo" ;
-    :sense "dumbo octopus" .
-
-  n:carran_mantais
-    a :MasculineNoun ;
-    rdfs:label "carran mantais" ;
-    :sense "mantis shrimp" .
-
-  n:breabadair_mara
-    a :MasculineNoun ;
-    rdfs:label "breabadair mara" ;
-    :sense "sea spider" .
-
-  n:leumadair_mara
-    a :MasculineNoun ;
-    rdfs:label "leumadair-mara" ;
-    :sense "dolphin" .
-
-  n:each_mara
-    a :MasculineNoun ;
-    rdfs:label "each-mara" ;
-    :sense "walrus" .
-
-  n:turtar_mara
-    a :FeminineNoun ;
-    rdfs:label "turtar mara" ;
-    :sense "sea turtle" .
-
-  n:nathair_mara
-    a :FeminineNoun ;
-    rdfs:label "nathair mara" ;
-    :sense "sea snake" .
-
-  n:ochd_chasach
-    a :MasculineNoun ;
-    rdfs:label "ochd-chasach" ;
-    :sense "octopus" .
-
-  n:giomach
-    a :MasculineNoun ;
-    rdfs:label "giomach" ;
-    :sense "lobster" .
-
-  n:each_uisge
-    a :MasculineNoun ;
-    rdfs:label "each-uisge" ;
-    :sense "seahorse" .
-
-  n:greimiche_sligeach
-    a :MasculineNoun ;
-    rdfs:label "greimiche sligeach" ;
-    :sense "nautilus" .
-
-  n:cearban_muic_mhara
-    a :MasculineNoun ;
-    rdfs:label "cearban muic-mhara" ;
-    :sense "whale shark" .
-
-  n:gibearnach_moor
-    a :FeminineNoun ;
-    rdfs:label "gibearnach mòr" ;
-    :sense "giant squid" .
-
-  n:muir_tiachd_mhoor
-    a :FeminineNoun ;
-    rdfs:label "muir-tiachd mhòr" ;
-    :sense "giant jellyfish" .
-
-  n:cearban_Ghronnlainn
-    a :MasculineNoun ;
-    rdfs:label "cearban Ghronnlainn" ;
-    :sense "Greenland shark" .
-
-  n:cularan_mara
-    a :MasculineNoun ;
-    rdfs:label "cularan mara" ;
-    :sense "sea cucumber" .
-
-  n:sligeach_moor
-    a :MasculineNoun ;
-    rdfs:label "sligeach mòr" ;
-    :sense "giant isopod" .
-
-  n:meanbh_fhriide
-    rdfs:label "meanbh-fhrìdean" ;
-    :sense "insects" .
-
-  n:mion_bhiastag
-    rdfs:label "mion-bhiastagan" ;
-    :sense "mini-beasts" .
-
-  n:speach
-    a :FeminineNoun ;
-    rdfs:label "speach" ;
-    :sense "wasp" .
-
-  n:daolag_adhrach
-    a :FeminineNoun ;
-    rdfs:label "daolag-adhrach" ;
-    :sense "praying mantis" .
-
-  n:gath
-    a :MasculineNoun ;
-    rdfs:label "gath" ;
-    :sense "sting" .
-
-  n:breabadair_ladhrach
-    a :MasculineNoun ;
-    rdfs:label "breabadair ladhrach" ;
-    :sense "daddy long legs" .
-
-  n:iadhaire
-    a :MasculineNoun ;
-    rdfs:label "iadhaire" ;
-    :sense "antenna" .
-
-  n:meanbh_fhriide_gheugach
-    a :FeminineNoun ;
-    rdfs:label "meanbh-fhrìde gheugach" ;
-    :sense "stick insect" .
-
-  n:leoomann
-    a :MasculineNoun ;
-    rdfs:label "leòmann" ;
-    :sense "moth" .
-
-  n:speeileadair_looin
-    a :MasculineNoun ;
-    rdfs:label "spèileadair lòin" ;
-    :sense "pond skater" .
-
-  n:suuil_fhillte
-    a :FeminineNoun ;
-    rdfs:label "sùil fhillte" ;
-    :sense "compound eye" .
-
-  n:cuileag
-    a :FeminineNoun ;
-    rdfs:label "cuileag" ;
-    :sense "housefly" .
-
-  n:tarbhan_nathrach
-    a :MasculineNoun ;
-    rdfs:label "tarbhan-nathrach" ;
-    :sense "dragonfly" .
-
-  n:goobhlag
-    a :FeminineNoun ;
-    rdfs:label "gòbhlag" ;
-    :sense "earwig" .
-
-  n:biastag_leapa
-    a :FeminineNoun ;
-    rdfs:label "biastag leapa" ;
-    :sense "bedbug" .
-
-  n:ceaarnan
-    a :MasculineNoun ;
-    rdfs:label "ceàrnan" ;
-    :sense "cockroach" .
-
-  n:deargann
-    a :FeminineNoun ;
-    rdfs:label "deargann" ;
-    :sense "flea" .
-
-  n:mosgiioto
-    a :FeminineNoun ;
-    rdfs:label "mosgìoto" ;
-    :sense "mosquito" .
-
-  n:bratag
-    a :FeminineNoun ;
-    rdfs:label "bratag" ;
-    :sense "caterpillar" .
-
-  n:dealan_dee
-    a :MasculineNoun ;
-    rdfs:label "dealan-dè" ;
-    :sense "butterfly" .
-
-  n:ceann
-    a :MasculineNoun ;
-    rdfs:label "ceann" ;
-    :sense "headlight" .
-
-  n:uchd
-    a :FeminineNoun ;
-    rdfs:label "uchd" ;
-    :sense "thorax" .
-
-  n:bruu
-    a :FeminineNoun ;
-    rdfs:label "brù" ;
-    :sense "abdomen" .
-
-  n:seangan
-    a :MasculineNoun ;
-    rdfs:label "seangan" ;
-    :sense "ant" .
-
-  n:ainle
-    a :FeminineNoun ;
-    rdfs:label "ainle" ;
-    :sense "aphid" .
-
-  n:daolag_dhearg_bhreac
-    a :FeminineNoun ;
-    rdfs:label "daolag dhearg-bhreac" ;
-    :sense "ladybird" .
-
-  n:fionnan_feooir
-    a :MasculineNoun ;
-    rdfs:label "fionnan-feòir" ;
-    :sense "grasshopper" .
-
-  n:creutair_oidhche
-    rdfs:label "creutairean oidhche" ;
-    :sense "nocturnal creatures" .
-
-  n:broc
-    a :MasculineNoun ;
-    rdfs:label "broc" ;
-    :sense "badger" .
-
-  n:leoomann_gealaich
-    a :MasculineNoun ;
-    rdfs:label "leòmann gealaich" ;
-    :sense "luna moth" .
-
-  n:liiomar
-    a :MasculineNoun ;
-    rdfs:label "lìomar" ;
-    :sense "lemur" .
-
-  n:seilcheag
-    a :FeminineNoun ;
-    rdfs:label "seilcheag" ;
-    :sense "leopard slug" .
-
-  n:madadh_allaidh
-    a :MasculineNoun ;
-    rdfs:label "madadh-allaidh" ;
-    :sense "grey wolf" .
-
-  n:graaineag
-    a :FeminineNoun ;
-    rdfs:label "gràineag" ;
-    :sense "hedgehog" .
-
-  n:sgairp
-    a :FeminineNoun ;
-    rdfs:label "sgairp" ;
-    :sense "scorpian" .
-
-  n:scunc
-    a :FeminineNoun ;
-    rdfs:label "scunc" ;
-    :sense "skunk" .
-
-  n:ialtag_fala
-    a :FeminineNoun ;
-    rdfs:label "ialtag-fala" ;
-    :sense "bat" .
-
-  n:racuun
-    a :MasculineNoun ;
-    rdfs:label "racùn" ;
-    :sense "raccoon" .
-
-  n:feothan
-    a :MasculineNoun ;
-    rdfs:label "feothan" ;
-    :sense "dormouse" .
-
-  n:priiomhaid_cnuimh_itheach
-    a :MasculineNoun ;
-    rdfs:label "prìomhaid cnuimh-itheach" ;
-    :sense "tarsier" .
-
-  n:sionnach
-    a :MasculineNoun ;
-    rdfs:label "sionnach" ;
-    :sense "fox" .
-
-  n:graaineas
-    a :MasculineNoun ;
-    rdfs:label "gràineas" ;
-    :sense "porcupine" .
-
-  n:partan_tuathail
-    a :MasculineNoun ;
-    rdfs:label "partan-tuathail" ;
-    :sense "hermit crab" .
-
-  n:posam
-    a :MasculineNoun ;
-    rdfs:label "posam" ;
-    :sense "possum" .
-
-  n:aarmaidile
-    a :MasculineNoun ;
-    rdfs:label "àrmaidile" ;
-    :sense "armadillo" .
-
-  n:comhachag
-    a :FeminineNoun ;
-    rdfs:label "comhachag" ;
-    :sense "barn owl" .
-
-  n:eun
-    rdfs:label "eòin" ;
-    :sense "birds" .
-
-  n:biorra_cruuidein
-    a :MasculineNoun ;
-    rdfs:label "biorra-crùidein" ;
+n:coimpiutair
+  rdfs:label "coimpiutair" .
+
+n:innleachd_eileagtronaigeach
+  rdfs:label "innleachd eileagtronaigeach" .
+
+n:ceanglachan
+  a :MasculineNoun ;
+  rdfs:label "ceanglachan" .
+
+n:duilleag_dachaigh
+  rdfs:label "duilleag dachaigh" .
+
+v:cabadaich
+  a :Verb ;
+  rdfs:label "cabadaich" .
+
+v:ceangail
+  a :Verb ;
+  rdfs:label "ceangail" .
+
+n:post_d
+  a :MasculineNoun ;
+  rdfs:label "post-d" .
+
+n:tuuit
+  a :MasculineNoun ;
+  rdfs:label "tùit" .
+
+v:lorg
+  a :Verb ;
+  rdfs:label "lorg" .
+
+v:brobhsaich
+  a :Verb ;
+  rdfs:label "brobhsaich" .
+
+v:traal
+  a :Verb ;
+  rdfs:label "tràl" .
+
+v:luchdaich_siios
+  rdfs:label "luchdaich sìos" .
+
+v:luchdaich_suas
+  rdfs:label "luchdaich suas" .
+
+n:ui_fi
+  a :MasculineNoun ;
+  rdfs:label "ui-fi" .
+
+n:sgrion
+  a :MasculineNoun ;
+  rdfs:label "sgrion" .
+
+n:coimpiutair
+  a :MasculineNoun ;
+  rdfs:label "coimpiutair" .
+
+n:meur_chlaar
+  rdfs:label "meur-chlàr" .
+
+n:cloo_bhualadair
+  rdfs:label "clò-bhualadair" .
+
+n:luch
+  a :FeminineNoun ;
+  rdfs:label "luch" .
+
+n:cluicheadair_MP3
+  rdfs:label "cluicheadair MP3" .
+
+n:foon_laaimhe
+  rdfs:label "fòn làimhe" .
+
+n:bioran_cuimhne
+  rdfs:label "bioran cuimhne" .
+
+n:camara_didseatach
+  rdfs:label "camara didseatach" .
+
+n:tablaid
+  a :FeminineNoun ;
+  rdfs:label "tablaid" .
+
+n:coimpiutair_gluuine
+  rdfs:label "coimpiutair glùine" .
+
+n:e_leughadair
+  a :MasculineNoun ;
+  rdfs:label "e-leughadair" .
+
+v:ceangail
+  a :Verb ;
+  rdfs:label "ceangail" .
+
+v:log_air
+  rdfs:label "log air" .
+
+v:log_dheth
+  rdfs:label "log dheth" .
+
+v:cloo_sgriiobh
+  rdfs:label "clò-sgrìobh" .
+
+v:sgrolaig
+  a :Verb ;
+  rdfs:label "sgrolaig" .
+
+v:gliog
+  a :Verb ;
+  rdfs:label "gliog" .
+
+v:slaod
+  a :Verb ;
+  rdfs:label "slaod" .
+
+v:geaarr
+  a :Verb ;
+  rdfs:label "geàrr" .
+
+v:cuir_ann
+  rdfs:label "cuir ann" .
+
+v:cuir_a_steach
+  rdfs:label "cuir a-steach" .
+
+v:dubh_aas
+  rdfs:label "dubh às" .
+
+v:cruthaich
+  a :Verb ;
+  rdfs:label "cruthaich" .
+
+v:deasaich
+  a :Verb ;
+  rdfs:label "deasaich" .
+
+v:dearbh_litreachadh
+  rdfs:label "dearbh litreachadh" .
+
+v:cloo_bhuail
+  rdfs:label "clò-bhuail" .
+
+v:sgruud
+  a :Verb ;
+  rdfs:label "sgrùd" .
+
+v:saabhail
+  a :Verb ;
+  rdfs:label "sàbhail" .
+
+v:deean_lethbhreac_gleidhidh
+  rdfs:label "dèan lethbhreac gleidhidh" .
+
+n:beathach
+  rdfs:label "beathach" .
+
+n:planntrais
+  rdfs:label "planntrais" .
+
+n:uuthach
+  rdfs:label "ùthach" .
+
+n:sioraf
+  a :MasculineNoun ;
+  rdfs:label "sioraf" .
+
+n:ailbhean
+  a :MasculineNoun ;
+  rdfs:label "ailbhean" .
+
+n:caamhal
+  a :MasculineNoun ;
+  rdfs:label "càmhal" .
+
+n:muncaidh
+  a :MasculineNoun ;
+  rdfs:label "muncaidh" .
+
+n:sroon_adharcach
+  rdfs:label "sròn adharcach" .
+
+n:mathan_geal
+  rdfs:label "mathan geal" .
+
+n:each_aibhne
+  rdfs:label "each aibhne" .
+
+n:liopard
+  a :MasculineNoun ;
+  rdfs:label "liopard" .
+
+n:famh_sroon_rionnaig
+  rdfs:label "famh sròn-rionnaig" .
+
+n:platapas_gob_tuinneige
+  rdfs:label "platapas gob-tuinneige" .
+
+n:pangailin
+  a :MasculineNoun ;
+  rdfs:label "pangailin" .
+
+n:leisgeag
+  a :FeminineNoun ;
+  rdfs:label "leisgeag" .
+
+n:seabra
+  a :MasculineNoun ;
+  rdfs:label "seabra" .
+
+n:laama
+  a :MasculineNoun ;
+  rdfs:label "làma" .
+
+n:fiadh
+  a :MasculineNoun ;
+  rdfs:label "fiadh" .
+
+n:feoorag
+  a :FeminineNoun ;
+  rdfs:label "feòrag" .
+
+n:siopmunc
+  a :MasculineNoun ;
+  rdfs:label "siopmunc" .
+
+n:goiriola
+  a :MasculineNoun ;
+  rdfs:label "goiriola" .
+
+n:pantar
+  a :MasculineNoun ;
+  rdfs:label "pantar" .
+
+n:cangaruu
+  a :MasculineNoun ;
+  rdfs:label "cangarù" .
+
+n:siota
+  a :MasculineNoun ;
+  rdfs:label "siota" .
+
+n:leoomhann
+  a :MasculineNoun ;
+  rdfs:label "leòmhann" .
+
+n:beathach_obrach
+  rdfs:label "beathaichean obrach" .
+
+n:buabhall_uisge
+  rdfs:label "buabhall uisge" .
+
+n:each
+  a :MasculineNoun ;
+  rdfs:label "each" .
+
+n:gobhar
+  a :MasculineNoun ;
+  rdfs:label "gobhar" .
+
+n:cuu_chaorach
+  rdfs:label "cù chaorach" .
+
+n:caora
+  a :FeminineNoun ;
+  rdfs:label "caora" .
+
+n:luchag
+  a :FeminineNoun ;
+  rdfs:label "luchag" .
+
+n:hamstair
+  a :MasculineNoun ;
+  rdfs:label "hamstair" .
+
+n:gearra_mhuc
+  rdfs:label "gearra-mhuc" .
+
+n:buidsidh
+  a :MasculineNoun ;
+  rdfs:label "buidsidh" .
+
+n:pitheid
+  a :FeminineNoun ;
+  rdfs:label "pitheid" .
+
+n:boo
+  a :FeminineNoun ;
+  rdfs:label "bò" .
+
+n:asal
+  a :MasculineNoun ;
+  rdfs:label "asal" .
+
+n:tunnag
+  a :FeminineNoun ;
+  rdfs:label "tunnag" .
+
+n:geeadh
+  a :FeminineNoun ;
+  rdfs:label "gèadh" .
+
+n:cearc_Fhrangach
+  rdfs:label "cearc Fhrangach" .
+
+n:cuu_teasairginn_nam_beann
+  rdfs:label "cù teasairginn nam beann" .
+
+n:cat
+  a :MasculineNoun ;
+  rdfs:label "cat" .
+
+n:cearc
+  a :FeminineNoun ;
+  rdfs:label "cearc" .
+
+n:coileach
+  a :MasculineNoun ;
+  rdfs:label "coileach" .
+
+n:snaagair
+  rdfs:label "snàgair" .
+
+n:muir_thiireach
+  rdfs:label "muir-thìreach" .
+
+n:turtar
+  a :FeminineNoun ;
+  rdfs:label "turtar" .
+
+n:sligeachan
+  a :MasculineNoun ;
+  rdfs:label "sligeachan" .
+
+n:caimileon
+  a :MasculineNoun ;
+  rdfs:label "caimileon" .
+
+n:ioguaana
+  a :MasculineNoun ;
+  rdfs:label "ioguàna" .
+
+n:laghairt
+  a :MasculineNoun ;
+  rdfs:label "laghairt" .
+
+n:draagan_Comoodo
+  rdfs:label "dràgan Comòdo" .
+
+n:corra_chagailte
+  a :FeminineNoun ;
+  rdfs:label "corra chagailte" .
+
+n:nathair
+  a :FeminineNoun ;
+  rdfs:label "nathair" .
+
+n:mamba_uaine
+  rdfs:label "mamba uaine" .
+
+n:nathair_corail
+  rdfs:label "nathair corail" .
+
+n:nathair_nimhe
+  rdfs:label "nathair nimhe" .
+
+n:paidhtean
+  a :MasculineNoun ;
+  rdfs:label "paidhtean" .
+
+n:cobra_EEipheiteach
+  rdfs:label "cobra Èipheiteach" .
+
+n:losgann_nan_gath_puinnseanta
+  rdfs:label "losgann nan gath puinnseanta" .
+
+n:ailigeutair
+  a :MasculineNoun ;
+  rdfs:label "ailigeutair" .
+
+n:crogall
+  a :MasculineNoun ;
+  rdfs:label "crogall" .
+
+n:iasg
+  rdfs:label "iasg" .
+
+n:cearban_moor_geal
+  rdfs:label "cearban mòr geal" .
+
+n:bior_iasg
+  a :MasculineNoun ;
+  rdfs:label "bior-iasg" .
+
+n:gath_manta
+  rdfs:label "gath manta" .
+
+n:tiuuna
+  a :MasculineNoun ;
+  rdfs:label "tiùna" .
+
+n:easgann
+  a :FeminineNoun ;
+  rdfs:label "easgann" .
+
+n:maarlain_gorm
+  rdfs:label "màrlain gorm" .
+
+n:ite
+  a :FeminineNoun ;
+  rdfs:label "ite" .
+
+n:lann
+  a :FeminineNoun ;
+  rdfs:label "lann" .
+
+n:coomhdach_giuurain
+  rdfs:label "còmhdach giùrain" .
+
+n:breac
+  rdfs:label "breac" .
+
+n:ite_earbaill
+  rdfs:label "ite earbaill" .
+
+n:biorach
+  a :FeminineNoun ;
+  rdfs:label "biorach" .
+
+n:leeabag_bhreac
+  rdfs:label "lèabag bhreac" .
+
+n:pioraana
+  a :MasculineNoun ;
+  rdfs:label "pioràna" .
+
+n:coi_charbhan
+  a :MasculineNoun ;
+  rdfs:label "coi-charbhan" .
+
+n:rionnach
+  a :MasculineNoun ;
+  rdfs:label "rionnach" .
+
+n:manach
+  a :MasculineNoun ;
+  rdfs:label "manach" .
+
+n:bradan
+  a :MasculineNoun ;
+  rdfs:label "bradan" .
+
+n:saardan
+  a :MasculineNoun ;
+  rdfs:label "sàrdan" .
+
+n:doirbeag
+  a :FeminineNoun ;
+  rdfs:label "doirbeag" .
+
+n:iasg_dathtach_tropaigeach
+  rdfs:label "iasg dathtach tropaigeach" .
+
+n:trosg
+  rdfs:label "trosg" .
+
+n:geastag
+  a :FeminineNoun ;
+  rdfs:label "geastag" .
+
+n:creutairean_mara
+  rdfs:label "creutairean mara" .
+
+n:iasg_itealaich
+  rdfs:label "iasg itealaich" .
+
+n:bun_duun_na_mara
+  rdfs:label "bun-dùn na mara" .
+
+n:roon
+  a :MasculineNoun ;
+  rdfs:label "ròn" .
+
+n:muc_mhara_ghorm
+  rdfs:label "muc mhara ghorm" .
+
+n:ochd_chasach_dumbo
+  rdfs:label "ochd-chasach dumbo" .
+
+n:carran_mantais
+  rdfs:label "carran mantais" .
+
+n:breabadair_mara
+  rdfs:label "breabadair mara" .
+
+n:leumadair_mara
+  rdfs:label "leumadair mara" .
+
+n:each_mara
+  rdfs:label "each mara" .
+
+n:turtar_mara
+  rdfs:label "turtar mara" .
+
+n:nathair_mara
+  rdfs:label "nathair mara" .
+
+n:ochd_chasach
+  a :MasculineNoun ;
+  rdfs:label "ochd-chasach" .
+
+n:giomach
+  a :MasculineNoun ;
+  rdfs:label "giomach" .
+
+n:each_uisge
+  rdfs:label "each uisge" .
+
+n:greimiche_sligeach
+  rdfs:label "greimiche sligeach" .
+
+n:cearban_muic_mhara
+  rdfs:label "cearban muic-mhara" .
+
+n:gibearnach_moor
+  rdfs:label "gibearnach mòr" .
+
+n:muir_tiachd_mhoor
+  rdfs:label "muir-tiachd mhòr" .
+
+n:cearban_Ghronnlainn
+  rdfs:label "cearban Ghronnlainn" .
+
+n:cularan_mara
+  rdfs:label "cularan mara" .
+
+n:sligeach_moor
+  rdfs:label "sligeach mòr" .
+
+n:meanbh_fhriide
+  rdfs:label "meanbh-fhrìde" .
+
+n:mion_bhiastag
+  rdfs:label "mion-bhiastag" .
+
+n:speach
+  a :FeminineNoun ;
+  rdfs:label "speach" .
+
+n:daolag_adhrach
+  rdfs:label "daolag adhrach" .
+
+n:gath
+  a :MasculineNoun ;
+  rdfs:label "gath" .
+
+n:breabadair_ladhrach
+  rdfs:label "breabadair ladhrach" .
+
+n:iadhaire
+  a :MasculineNoun ;
+  rdfs:label "iadhaire" .
+
+n:meanbh_fhriide_gheugach
+  rdfs:label "meanbh-fhrìde gheugach" .
+
+n:leoomann
+  a :MasculineNoun ;
+  rdfs:label "leòmann" .
+
+n:speeileadair_looin
+  rdfs:label "spèileadair lòin" .
+
+n:suuil_fhillte
+  rdfs:label "sùil fhillte" .
+
+n:cuileag
+  a :FeminineNoun ;
+  rdfs:label "cuileag" .
+
+n:tarbhan_nathrach
+  rdfs:label "tarbhan nathrach" .
+
+n:goobhlag
+  a :FeminineNoun ;
+  rdfs:label "gòbhlag" .
+
+n:biastag_leapa
+  rdfs:label "biastag leapa" .
+
+n:ceaarnan
+  a :MasculineNoun ;
+  rdfs:label "ceàrnan" .
+
+n:deargann
+  a :FeminineNoun ;
+  rdfs:label "deargann" .
+
+n:mosgiioto
+  a :FeminineNoun ;
+  rdfs:label "mosgìoto" .
+
+n:bratag
+  a :FeminineNoun ;
+  rdfs:label "bratag" .
+
+n:ceann
+  a :MasculineNoun ;
+  rdfs:label "ceann" .
+
+n:uchd
+  a :FeminineNoun ;
+  rdfs:label "uchd" .
+
+n:bruu
+  a :FeminineNoun ;
+  rdfs:label "brù" .
+
+n:seangan
+  a :MasculineNoun ;
+  rdfs:label "seangan" .
+
+n:ainle
+  a :FeminineNoun ;
+  rdfs:label "ainle" .
+
+n:daolag_dhearg_bhreac
+  rdfs:label "daolag dhearg-bhreac" .
+
+n:fionnan_feooir
+  rdfs:label "fionnan feòir" .
+
+n:creutair_oidhche
+  rdfs:label "creutair oidhche" .
+
+n:broc
+  a :MasculineNoun ;
+  rdfs:label "broc" .
+
+n:leoomann_gealaich
+  rdfs:label "leòmann gealaich" .
+
+n:liiomar
+  a :MasculineNoun ;
+  rdfs:label "lìomar" .
+
+n:seilcheag
+  a :FeminineNoun ;
+  rdfs:label "seilcheag" .
+
+n:madadh_allaidh
+  rdfs:label "madadh allaidh" .
+
+n:graaineag
+  a :FeminineNoun ;
+  rdfs:label "gràineag" .
+
+n:sgairp
+  a :FeminineNoun ;
+  rdfs:label "sgairp" .
+
+n:scunc
+  a :FeminineNoun ;
+  rdfs:label "scunc" .
+
+n:ialtag_fala
+  rdfs:label "ialtag fala" .
+
+n:racuun
+  a :MasculineNoun ;
+  rdfs:label "racùn" .
+
+n:feothan
+  a :MasculineNoun ;
+  rdfs:label "feothan" .
+
+n:priiomhaid_cnuimh_itheach
+  rdfs:label "prìomhaid cnuimh-itheach" .
+
+n:sionnach
+  a :MasculineNoun ;
+  rdfs:label "sionnach" .
+
+n:graaineas
+  a :MasculineNoun ;
+  rdfs:label "gràineas" .
+
+n:partan_tuathail
+  rdfs:label "partan tuathail" .
+
+n:posam
+  a :MasculineNoun ;
+  rdfs:label "posam" .
+
+n:aarmaidile
+  a :MasculineNoun ;
+  rdfs:label "àrmaidile" .
+
+n:comhachag
+  a :FeminineNoun ;
+  rdfs:label "comhachag" .
+
+n:eun
+  rdfs:label "eun" .
+
+n:biorra_cruuidein
+  a :MasculineNoun ;
+  rdfs:label "biorra-crùidein" ;
     :sense "kingfisher" .
 
-  n:bruu_dhearg
-    a :MasculineNoun ;
-    rdfs:label "brù-dhearg" ;
-    :sense "robin" .
+n:bruu_dhearg
+  a :MasculineNoun ;
+  rdfs:label "brù dhearg" .
 
-  n:goobhlan_gaoithe
-    a :MasculineNoun ;
-    rdfs:label "gòbhlan-gaoithe" ;
-    :sense "swallow" .
+n:goobhlan_gaoithe
+  rdfs:label "gòbhlan gaoithe" .
 
-  n:snagan_daraich
-    a :MasculineNoun ;
-    rdfs:label "snagan-daraich" ;
-    :sense "woodpecker" .
+n:snagan_daraich
+  rdfs:label "snagan daraich" .
 
-  n:cuthag
-    a :FeminineNoun ;
-    rdfs:label "cuthag" ;
-    :sense "cuckoo" .
+n:cuthag
+  a :FeminineNoun ;
+  rdfs:label "cuthag" .
 
-  n:corra_ghritheach
-    a :FeminineNoun ;
-    rdfs:label "corra-ghritheach" ;
-    :sense "heron" .
+n:corra_ghritheach
+  rdfs:label "corra ghritheach" .
 
-  n:loon_dubh
-    a :MasculineNoun ;
-    rdfs:label "lòn-dubh" ;
-    :sense "blackbird" .
+n:loon_dubh
+  rdfs:label "lòn dubh" .
 
-  n:peucag
-    a :FeminineNoun ;
-    rdfs:label "peucag" ;
-    :sense "peacock" .
+n:peucag
+  a :FeminineNoun ;
+  rdfs:label "peucag" .
 
-  n:gob_leathan_uisge
-    a :MasculineNoun ;
-    rdfs:label "gob-leathan uisge" ;
-    :sense "roseate spoonbill" .
+n:gob_leathan_uisge
+  rdfs:label "gob leathan uisge" .
 
-  n:gob_adhairc_clogaideach
-    a :MasculineNoun ;
-    rdfs:label "gob-adhairc clogaideach" ;
-    :sense "helmeted hornbill" .
+n:gob_adhairc_clogaideach
+  rdfs:label "gob adhairc clogaideach" .
 
-  n:eun_frigeid
-    a :MasculineNoun ;
-    rdfs:label "eun frigeid" ;
-    :sense "frigate bird" .
+n:eun_frigeid
+  rdfs:label "eun frigeid" .
 
-  n:fang
-    a :FeminineNoun ;
-    rdfs:label "fang" ;
-    :sense "vulture" .
+n:fang
+  a :FeminineNoun ;
+  rdfs:label "fang" .
 
-  n:peileagan
-    a :MasculineNoun ;
-    rdfs:label "peileagan" ;
-    :sense "pelican" .
+n:peileagan
+  a :MasculineNoun ;
+  rdfs:label "peileagan" .
 
-  n:iolair
-    a :MasculineNoun ;
-    rdfs:label "iolair" ;
-    :sense "eagle" .
+n:iolaire
+  rdfs:label "iolaire" .
 
-  n:struth
-    a :MasculineNoun ;
-    rdfs:label "struth" ;
-    :sense "ostrich" .
+n:struth
+  a :MasculineNoun ;
+  rdfs:label "struth" .
 
-  n:flamainge
-    a :MasculineNoun ;
-    rdfs:label "flamainge" ;
-    :sense "flamingo" .
+n:flamainge
+  a :MasculineNoun ;
+  rdfs:label "flamainge" .
 
-  n:ceann_fionn
-    a :MasculineNoun ;
-    rdfs:label "ceann-fionn" ;
-    :sense "penguin" .
+n:ceann_fionn
+  rdfs:label "ceann fionn" .
 
-  n:buthaid
-    a :FeminineNoun ;
-    rdfs:label "buthaid" ;
-    :sense "puffin" .
+n:buthaid
+  a :FeminineNoun ;
+  rdfs:label "buthaid" .
 
-  n:drannd_eun
-    a :MasculineNoun ;
-    rdfs:label "drannd-eun" ;
-    :sense "hummingbird" .
+n:drannd_eun
+  a :MasculineNoun ;
+  rdfs:label "drannd-eun" .
 
 n:craobh
   a :FeminineNoun ;
@@ -4237,233 +3518,166 @@ n:preas
   a :MasculineNoun ;
   rdfs:label "preas" .
 
-  n:ruadh_fhiodh
-    a :MasculineNoun ;
-    rdfs:label "ruadh-fhiodh" ;
-    :sense "redwood" .
+n:ruadh_fhiodh
+  rdfs:label "ruadh-fhiodh" .
 
-  n:giuthas
-    a :MasculineNoun ;
-    rdfs:label "giuthas" ;
-    :sense "pine" .
+n:giuthas
+  a :MasculineNoun ;
+  rdfs:label "giuthas" .
 
-  n:iubhar
-    a :MasculineNoun ;
-    rdfs:label "iubhar" ;
-    :sense "yew" .
+n:iubhar
+  a :MasculineNoun ;
+  rdfs:label "iubhar" .
 
-  n:baodhbab
-    a :FeminineNoun ;
-    rdfs:label "baodhbab" ;
-    :sense "baobab" .
+n:baodhbab
+  a :FeminineNoun ;
+  rdfs:label "baodhbab" .
 
-  n:giuthas
-    a :MasculineNoun ;
-    rdfs:label "giuthas" ;
-    :sense "fir" .
+n:geanm_chnoo
+  a :FeminineNoun ;
+  rdfs:label "geanm-chnò" .
 
-  n:geanm_chnoo
-    a :FeminineNoun ;
-    rdfs:label "geanm-chnò" ;
-    :sense "horse chestnut" .
+n:craobh_pailm
+  rdfs:label "craobh pailm" .
 
-  n:craobh_pailm
-    a :FeminineNoun ;
-    rdfs:label "craobh-pailm" ;
-    :sense "palm" .
+n:darach
+  a :MasculineNoun ;
+  rdfs:label "darach" .
 
-  n:darach
-    a :MasculineNoun ;
-    rdfs:label "darach" ;
-    :sense "oak" .
+n:faidhbhile
+  a :FeminineNoun ;
+  rdfs:label "faidhbhile" .
 
-  n:faidhbhile
-    a :FeminineNoun ;
-    rdfs:label "faidhbhile" ;
-    :sense "beech" .
+n:cuileann
+  a :MasculineNoun ;
+  rdfs:label "cuileann" .
 
-  n:cuileann
-    a :MasculineNoun ;
-    rdfs:label "cuileann" ;
-    :sense "holly" .
+n:crann_ola
+  rdfs:label "crann ola" .
 
-  n:crann_ola
-    a :MasculineNoun ;
-    rdfs:label "crann-ola" ;
-    :sense "olive" .
+n:sirist
+  a :FeminineNoun ;
+  rdfs:label "sirist" .
 
-  n:sirist
-    a :FeminineNoun ;
-    rdfs:label "sirist" ;
-    :sense "cherry" .
+n:ubhal
+  a :MasculineNoun ;
+  rdfs:label "ubhal" .
 
-  n:ubhal
-    a :MasculineNoun ;
-    rdfs:label "ubhal" ;
-    :sense "apple" .
+n:miomoosa
+  a :MasculineNoun ;
+  rdfs:label "miomòsa" .
 
-  n:miomoosa
-    a :MasculineNoun ;
-    rdfs:label "miomòsa" ;
-    :sense "mimosa" .
+n:liomaid
+  a :FeminineNoun ;
+  rdfs:label "liomaid" .
 
-  n:liomaid
-    a :FeminineNoun ;
-    rdfs:label "liomaid" ;
-    :sense "lemon" .
+n:roos_Moire
+  rdfs:label "ròs Moire" .
 
-  n:roos_Moire
-    a :MasculineNoun ;
-    rdfs:label "ròs-Moire" ;
-    :sense "rosemary" .
+n:lus_na_tuuise
+  rdfs:label "lus na tùise" .
 
-  n:lus_na_tuuise
-    a :MasculineNoun ;
-    rdfs:label "lus-na-tùise" ;
-    :sense "lavender" .
-
-  n:iuucailioptas
-    a :MasculineNoun ;
-    rdfs:label "iùcailioptas" ;
-    :sense "eucalyptas" .
+n:iuucailioptas
+  a :MasculineNoun ;
+  rdfs:label "iùcailioptas" .
 
 n:craobh_shice
   rdfs:label "craobh shice" .
 
-  n:duilleag
-    a :FeminineNoun ;
-    rdfs:label "duilleagan" ;
-    :sense "leaves" .
+n:duilleag
+  a :FeminineNoun ;
+  rdfs:label "duilleagan" .
 
-  n:geug
-    a :MasculineNoun ;
-    rdfs:label "geug" ;
-    :sense "branch" .
+n:geug
+  a :MasculineNoun ;
+  rdfs:label "geug" .
 
-  n:freumh
-    a :FeminineNoun ;
-    rdfs:label "freumh" ;
-    :sense "root" .
+n:freumh
+  a :FeminineNoun ;
+  rdfs:label "freumh" .
 
-  n:stoc
-    a :MasculineNoun ;
-    rdfs:label "stoc" ;
-    :sense "trunk" .
+n:stoc
+  a :MasculineNoun ;
+  rdfs:label "stoc" .
 
-  n:ruusg
-    a :MasculineNoun ;
-    rdfs:label "rùsg" ;
-    :sense "bark" .
+n:ruusg
+  a :MasculineNoun ;
+  rdfs:label "rùsg" .
 
-  n:roos
-    a :MasculineNoun ;
-    rdfs:label "ròs" ;
-    :sense "rose" .
+n:roos
+  a :MasculineNoun ;
+  rdfs:label "ròs" .
 
-  n:lus_a%27_chrom_chinn
-    a :MasculineNoun ;
-    rdfs:label "lus a' chrom-chinn" ;
-    :sense "daffodil" .
+n:lus_a_chrom_chinn
+  rdfs:label "lus a’ chrom-chinn" .
 
-  n:broog_na_cuthaig
-    a :FeminineNoun ;
-    rdfs:label "bròg na cuthaig" ;
-    :sense "pansy" .
+n:broog_na_cuthaig
+  rdfs:label "bròg na cuthaig" .
 
-  n:mogairle
-    a :FeminineNoun ;
-    rdfs:label "mogairle" ;
-    :sense "orchid" .
+n:mogairle
+  a :FeminineNoun ;
+  rdfs:label "mogairle" .
 
-  n:tuiliop
-    a :FeminineNoun ;
-    rdfs:label "tuiliop" ;
-    :sense "tulip" .
+n:tuiliop
+  a :FeminineNoun ;
+  rdfs:label "tuiliop" .
 
-  n:lilidh
-    a :FeminineNoun ;
-    rdfs:label "lilidh" ;
-    :sense "lily" .
+n:lilidh
+  a :FeminineNoun ;
+  rdfs:label "lilidh" .
 
-  n:neooinean_greeine
-    a :MasculineNoun ;
-    rdfs:label "neòinean-grèine" ;
-    :sense "sunflower" .
+n:neooinean_greeine
+  rdfs:label "neòinean grèine" .
 
-  n:crom_lus
-    a :MasculineNoun ;
-    rdfs:label "crom-lus" ;
-    :sense "poppy" .
+n:crom_lus
+  rdfs:label "crom-lus" .
 
-  n:lilidh_uisge
-    a :FeminineNoun ;
-    rdfs:label "lilidh uisge" ;
-    :sense "water lily" .
+n:lilidh_uisge
+  rdfs:label "lilidh uisge" .
 
-  n:fluur_bhileag
-    a :FeminineNoun ;
-    rdfs:label "flùr-bhileag" ;
-    :sense "petal" .
+n:fluur_bhileag
+  rdfs:label "flùr-bhileag" .
 
-  n:gucag
-    a :FeminineNoun ;
-    rdfs:label "gucag" ;
-    :sense "bud" .
+n:gucag
+  a :FeminineNoun ;
+  rdfs:label "gucag" .
 
-  n:fluur
-    a :MasculineNoun ;
-    rdfs:label "flùr" ;
-    :sense "flower" .
+n:fluur
+  a :MasculineNoun ;
+  rdfs:label "flùr" .
 
-  n:gas_duilleig
-    a :MasculineNoun ;
-    rdfs:label "gas duilleig" ;
-    :sense "leaf stalk" .
+n:gas_duilleig
+  rdfs:label "gas duilleig" .
 
-  n:duilleag
-    a :FeminineNoun ;
-    rdfs:label "duilleag" ;
-    :sense "leaf" .
+n:duilleag
+  a :FeminineNoun ;
+  rdfs:label "duilleag" .
 
-  n:gas
-    a :MasculineNoun ;
-    rdfs:label "gas" ;
-    :sense "stem" .
+n:gas
+  a :MasculineNoun ;
+  rdfs:label "gas" .
 
-  n:neooinean
-    a :MasculineNoun ;
-    rdfs:label "neòinean" ;
-    :sense "daisy" .
+n:neooinean
+  a :MasculineNoun ;
+  rdfs:label "neòinean" .
 
-  n:beaarnan_briide
-    a :MasculineNoun ;
-    rdfs:label "beàrnan-brìde" ;
-    :sense "dandelion" .
+n:beaarnan_briide
+  rdfs:label "beàrnan brìde" .
 
-  n:feur_pampas
-    a :MasculineNoun ;
-    rdfs:label "feur pampas" ;
-    :sense "pampas grass" .
+n:feur_pampas
+  rdfs:label "feur pampas" .
 
-  n:cooinneach
-    a :FeminineNoun ;
-    rdfs:label "còinneach" ;
-    :sense "moss" .
+n:cooinneach
+  a :FeminineNoun ;
+  rdfs:label "còinneach" .
 
-  n:raineach
-    a :FeminineNoun ;
-    rdfs:label "raineach" ;
-    :sense "fern" .
+n:bambuu
+  a :MasculineNoun ;
+  rdfs:label "bambù" .
 
-  n:bambuu
-    a :MasculineNoun ;
-    rdfs:label "bambù" ;
-    :sense "bamboo" .
-
-  n:cactas
-    a :MasculineNoun ;
-    rdfs:label "cactas" ;
-    :sense "cactus" .
+n:cactas
+  a :MasculineNoun ;
+  rdfs:label "cactas" .
 
 n:baile
   a :MasculineNoun ;
@@ -4472,646 +3686,444 @@ n:baile
 n:baile_moor
   rdfs:label "baile mòr" .
 
-  n:oifis
-    a :FeminineNoun ;
-    rdfs:label "oifis" ;
-    :sense "office" .
-
-  n:stad_bus
-    a :MasculineNoun ;
-    rdfs:label "stad-bus" ;
-    :sense "bus station" .
-
-  n:ospadal
-    a :MasculineNoun ;
-    rdfs:label "ospadal" ;
-    :sense "hospital" .
-
-  n:taigh_tasgaidh
-    a :MasculineNoun ;
-    rdfs:label "taigh-tasgaidh" ;
-    :sense "museum" .
-
-  n:steeisean_smaalaidh
-    a :MasculineNoun ;
-    rdfs:label "stèisean smàlaidh" ;
-    :sense "fire station" .
-
-  n:sgoil
-    a :FeminineNoun ;
-    rdfs:label "sgoil" ;
-    :sense "school" .
-
-  n:paairc_chaaraichean
-    a :FeminineNoun ;
-    rdfs:label "pàirc chàraichean" ;
-    :sense "car park" .
-
-  n:moor_bhuuth
-    a :FeminineNoun ;
-    rdfs:label "mòr-bhùth" ;
-    :sense "supermarket" .
-
-  n:lann_cluiche
-    a :FeminineNoun ;
-    rdfs:label "lann-cluiche" ;
-    :sense "stadium" .
-
-  n:taigh_oosta
-    a :MasculineNoun ;
-    rdfs:label "taigh-òsta" ;
-    :sense "hotel" .
-
-  n:talla_bhaile
-    a :FeminineNoun ;
-    rdfs:label "talla bhaile" ;
-    :sense "city hall" .
-
-  n:taigh_biidh
-    a :MasculineNoun ;
-    rdfs:label "taigh-bìdh" ;
-    :sense "restaurant" .
-
-  n:taigh_dhealbh
-    a :MasculineNoun ;
-    rdfs:label "taigh-dhealbh" ;
-    :sense "cinema" .
-
-  n:cafaidh
-    a :MasculineNoun ;
-    rdfs:label "cafaidh" ;
-    :sense "café" .
-
-  n:ionad_phaaipearan
-    a :MasculineNoun ;
-    rdfs:label "ionad-phàipearan" ;
-    :sense "news stand" .
-
-  n:buuth_ghoireasan
-    a :FeminineNoun ;
-    rdfs:label "bùth ghoireasan" ;
-    :sense "convenience store" .
-
-  n:banca
-    a :MasculineNoun ;
-    rdfs:label "banca" ;
-    :sense "bank" .
-
-  n:oifis_puist
-    a :FeminineNoun ;
-    rdfs:label "oifis puist" ;
-    :sense "post office" .
-
-  n:bogsa_puist
-    a :MasculineNoun ;
-    rdfs:label "bogsa puist" ;
-    :sense "post box" .
-
-  n:stad_bus
-    a :MasculineNoun ;
-    rdfs:label "stad bus" ;
-    :sense "bus stop" .
-
-  n:rathad
-    a :MasculineNoun ;
-    rdfs:label "rathad" ;
-    :sense "road" .
-
-  n:cabhsair
-    a :MasculineNoun ;
-    rdfs:label "cabhsair" ;
-    :sense "pavement" .
-
-  n:solas_sraaide
-    a :MasculineNoun ;
-    rdfs:label "solas sràide" ;
-    :sense "street light" .
-
-  n:meatair_parcaidh
-    a :MasculineNoun ;
-    rdfs:label "meatair parcaidh" ;
-    :sense "parking meter" .
-
-  n:bine_sgudail
-    a :MasculineNoun ;
-    rdfs:label "bine sgudail" ;
-    :sense "litter bin" .
-
-  n:ceannaiche_glasraich
-    a :MasculineNoun ;
-    rdfs:label "ceannaiche-glasraich" ;
-    :sense "greengrocer" .
-
-  n:buuth_leabhraichean
-    a :FeminineNoun ;
-    rdfs:label "bùth-leabhraichean" ;
-    :sense "book shop" .
-
-  n:buuth_dheeideagan
-    a :FeminineNoun ;
-    rdfs:label "bùth dhèideagan" ;
-    :sense "toy shop" .
-
-  n:beeicear
-    a :MasculineNoun ;
-    rdfs:label "bèicear" ;
-    :sense "baker" .
-
-  n:buuidsear
-    a :MasculineNoun ;
-    rdfs:label "bùidsear" ;
-    :sense "butcher" .
-
-  n:ceimigear
-    a :MasculineNoun ;
-    rdfs:label "ceimigear" ;
-    :sense "chemist" .
-
-  n:buuth_aodaich
-    a :FeminineNoun ;
-    rdfs:label "bùth aodaich" ;
-    :sense "clothes shop" .
-
-  n:buuth_shiuucaran
-    a :FeminineNoun ;
-    rdfs:label "bùth shiùcaran" ;
-    :sense "sweet shop" .
-
-  n:buuth_fhluuraichean
-    a :FeminineNoun ;
-    rdfs:label "bùth-fhlùraichean" ;
-    :sense "florist" .
-
-  n:buuth_ghibhtean
-    a :FeminineNoun ;
-    rdfs:label "bùth ghibhtean" ;
-    :sense "gift shop" .
-
-  n:buuth_phaaipearan
-    a :FeminineNoun ;
-    rdfs:label "bùth-phàipearan" ;
-    :sense "newsagent" .
-
-  n:buuth_pheataichean
-    a :FeminineNoun ;
-    rdfs:label "bùth pheataichean" ;
-    :sense "pet shop" .
-
-  n:buuth_bhroogan
-    a :FeminineNoun ;
-    rdfs:label "bùth bhrògan" ;
-    :sense "shoe shop" .
-
-  n:baarr
-    a :MasculineNoun ;
-    rdfs:label "bàrr" ;
-    :sense "crops" .
-
-  n:meas
-    a :MasculineNoun ;
-    rdfs:label "measan" ;
-    :sense "vegetables" .
-
-  n:cuilc_shiuucair
-    a :FeminineNoun ;
-    rdfs:label "cuilc-shiùcair" ;
-    :sense "sugar cane" .
-
-  n:poonairean_sooighe
-    a :FeminineNoun ;
-    rdfs:label "pònairean-sòighe" ;
-    :sense "soybeans" .
-
-  n:cruithneachd_iinnseanach
-    a :FeminineNoun ;
-    rdfs:label "cruithneachd ìnnseanach" ;
-    :sense "maize" .
-
-  n:cruithneachd
-    a :FeminineNoun ;
-    rdfs:label "cruithneachd" ;
-    :sense "wheat" .
-
-  n:peapagan
-    a :FeminineNoun ;
-    rdfs:label "peapagan" ;
-    :sense "pumpkins" .
-
-  n:buntaata
-    a :MasculineNoun ;
-    rdfs:label "buntàta" ;
-    :sense "potatoes" .
-
-  n:rus
-    a :MasculineNoun ;
-    rdfs:label "rus" ;
-    :sense "rice" .
-
-  n:fiion_dhearcan
-    a :FeminineNoun ;
-    rdfs:label "fìon-dhearcan" ;
-    :sense "grapes" .
-
-  n:inneal_fogharaidh
-    a :MasculineNoun ;
-    rdfs:label "inneal-fogharaidh" ;
-    :sense "combine harvester" .
-
-  n:beeilear
-    a :MasculineNoun ;
-    rdfs:label "bèilear" ;
-    :sense "baler" .
-
-  n:rothair_ceithir_rothach
-    a :MasculineNoun ;
-    rdfs:label "rothair ceithir-rothach" ;
-    :sense "quad bike" .
-
-  n:pic
-    a :MasculineNoun ;
-    rdfs:label "pic" ;
-    :sense "pickaxe" .
-
-  n:bara_cuibhle
-    a :MasculineNoun ;
-    rdfs:label "bara-cuibhle" ;
-    :sense "wheelbarrow" .
-
-  n:spaid
-    a :FeminineNoun ;
-    rdfs:label "spaid" ;
-    :sense "spade" .
-
-  n:raacan
-    a :MasculineNoun ;
-    rdfs:label "ràcan" ;
-    :sense "rake" .
-
-  n:speal
-    a :FeminineNoun ;
-    rdfs:label "speal" ;
-    :sense "scythe" .
-
-  n:tractar
-    a :MasculineNoun ;
-    rdfs:label "tractar" ;
-    :sense "tractor" .
-
-  n:tuur_fodair
-    a :MasculineNoun ;
-    rdfs:label "tùr fodair" ;
-    :sense "silage tower" .
-
-  n:seada_bleoghain
-    a :FeminineNoun ;
-    rdfs:label "seada bleoghain" ;
-    :sense "milking shed" .
-
-  n:staaball
-    a :MasculineNoun ;
-    rdfs:label "stàball" ;
-    :sense "stables" .
-
-  n:croo_bheathaichean
-    a :FeminineNoun ;
-    rdfs:label "crò bheathaichean" ;
-    :sense "animal pen" .
-
-  n:taigh_tuathanais
-    a :MasculineNoun ;
-    rdfs:label "taigh-tuathanais" ;
-    :sense "farm house" .
-
-  n:sabhal
-    a :MasculineNoun ;
-    rdfs:label "sabhal" ;
-    :sense "barn" .
-
-  n:seada_innealan
-    a :FeminineNoun ;
-    rdfs:label "seada innealan" ;
-    :sense "machinery sheds" .
-
-  n:togalach_tuathanais
-    a :MasculineNoun ;
-    rdfs:label "togalaichean tuathanais" ;
-    :sense "farm buildings" .
-
-  n:cuan
-    a :MasculineNoun ;
-    rdfs:label "cuan" ;
-    :sense "ocean" .
-
-  n:cladach
-    a :MasculineNoun ;
-    rdfs:label "cladach" ;
-    :sense "seashore" .
-
-  n:beinn
-    a :FeminineNoun ;
-    rdfs:label "beinn" ;
-    :sense "mountain" .
-
-  n:coille_uisge
-    a :FeminineNoun ;
-    rdfs:label "coille-uisge" ;
-    :sense "rainforest" .
-
-  n:faasach
-    a :FeminineNoun ;
-    rdfs:label "fàsach" ;
-    :sense "desert" .
-
-  n:raointean_feooir
-    rdfs:label "raointean feòir" ;
-    :sense "grasslands" .
-
-  n:eigh_shruth
-    a :MasculineNoun ;
-    rdfs:label "eigh-shruth" ;
-    :sense "glacier" .
-
-  n:coille_sior_ghorm
-    a :FeminineNoun ;
-    rdfs:label "coille sior-ghorm" ;
-    :sense "evergreen forest" .
-
-  n:fearann_coillteach
-    a :MasculineNoun ;
-    rdfs:label "fearann coillteach" ;
-    :sense "woodland" .
-
-  n:loch
-    a :MasculineNoun ;
-    rdfs:label "loch" ;
-    :sense "lake" .
-
-  n:ceaarnaidh_poolarach
-    a :FeminineNoun ;
-    rdfs:label "ceàrnaidh pòlarach" ;
-    :sense "polar region" .
-
-  n:boglach
-    a :FeminineNoun ;
-    rdfs:label "boglach" ;
-    :sense "swamp" .
-
-  n:moointeach
-    a :FeminineNoun ;
-    rdfs:label "mòinteach" ;
-    :sense "moor" .
-
-  n:sruthan
-    a :FeminineNoun ;
-    rdfs:label "sruthan" ;
-    :sense "stream" .
-
-  n:leas_abhainn
-    a :FeminineNoun ;
-    rdfs:label "leas-abhainn" ;
-    :sense "tributary" .
-
-  n:bras_shruthan
-    a :MasculineNoun ;
-    rdfs:label "bras-shruthan" ;
-    :sense "rapids" .
-
-  n:eas
-    a :MasculineNoun ;
-    rdfs:label "eas" ;
-    :sense "waterfall" .
-
-  n:inbhir
-    a :MasculineNoun ;
-    rdfs:label "inbhir" ;
-    :sense "estuary" .
-
-  n:siide
-    rdfs:label "sìde" ;
-    :sense "weather" .
-
-  a:grianach
-    a :Adjective ;
-    rdfs:label "grianach" ;
-    :sense "sunny" .
-
-  a:sgoothach
-    a :Adjective ;
-    rdfs:label "sgòthach" ;
-    :sense "cloudy" .
-
-  a:fliuch
-    a :Adjective ;
-    rdfs:label "fliuch" ;
-    :sense "rainy" .
-
-  a:ceoothach
-    a :Adjective ;
-    rdfs:label "ceòthach" ;
-    :sense "foggy" .
-
-  a:smugach
-    a :Adjective ;
-    rdfs:label "smugach" ;
-    :sense "smoggy" .
-
-  a:sneachdach
-    a :Adjective ;
-    rdfs:label "sneachdach" ;
-    :sense "snowy" .
-
-  a:reoothte
-    a :Adjective ;
-    rdfs:label "reòthte" ;
-    :sense "icy" .
-
-  n:gailleann_duslaich
-    a :FeminineNoun ;
-    rdfs:label "gailleann-duslaich" ;
-    :sense "dust storm" .
-
-  n:gailleann_meallain
-    a :FeminineNoun ;
-    rdfs:label "gailleann-meallain" ;
-    :sense "hailstorm" .
-
-  n:taairneanach
-    a :MasculineNoun ;
-    rdfs:label "tàirneanach" ;
-    :sense "thunderstorm" .
-
-  n:doineann
-    a :FeminineNoun ;
-    rdfs:label "doineann" ;
-    :sense "tornado" .
-
-  a:fionnar
-    a :Adjective ;
-    rdfs:label "fionnar" ;
-    :sense "cool" .
-
-  n:gnaath_shiide_thropaigeach
-    a :FeminineNoun ;
-    rdfs:label "gnàth-shìde thropaigeach" ;
-    :sense "tropical climate" .
-
-  n:crios_meadhain
-    a :MasculineNoun ;
-    rdfs:label "crios-meadhain" ;
-    :sense "equator" .
-
-  n:gnaath_shiide_mheasarra
-    a :FeminineNoun ;
-    rdfs:label "gnàth-shìde mheasarra" ;
-    :sense "temperate climate" .
-
-  n:sgudal_cunnartach
-    a :MasculineNoun ;
-    rdfs:label "sgudal cunnartach" ;
-    :sense "hazardous waste" .
-
-  n:gaanrachadh_uisge
-    a :MasculineNoun ;
-    rdfs:label "gànrachadh uisge" ;
-    :sense "water contamination" .
-
-  n:truailleadh_eeadhair
-    a :MasculineNoun ;
-    rdfs:label "truailleadh èadhair" ;
-    :sense "air pollution" .
-
-  n:puinnseanachadh_puinnsean_bhiastagan
-    a :MasculineNoun ;
-    rdfs:label "puinnseanachadh puinnsean bhiastagan" ;
-    :sense "pesticide poisoning" .
-
-  n:reeididheachd
-    a :FeminineNoun ;
-    rdfs:label "rèididheachd" ;
-    :sense "radiation" .
-
-  n:truailleadh_fuaim
-    a :MasculineNoun ;
-    rdfs:label "truailleadh fuaim" ;
-    :sense "noise pollution" .
-
-  n:uisge_searbhaig
-    a :MasculineNoun ;
-    rdfs:label "uisge searbhaig" ;
-    :sense "acid rain" .
-
-  n:doortadh_ola
-    a :MasculineNoun ;
-    rdfs:label "dòrtadh ola" ;
-    :sense "oil spill" .
-
-  n:truailleadh_solais
-    a :MasculineNoun ;
-    rdfs:label "truailleadh solais" ;
-    :sense "light pollution" .
-
-  n:caomhnadh_cumhachd
-    a :FeminineNoun ;
-    rdfs:label "caomhnadh cumhachd" ;
-    :sense "energy conservation" .
-
-  n:innearadh
-    a :MasculineNoun ;
-    rdfs:label "innearadh" ;
-    :sense "composting" .
-
-  n:ath_chleachdadh
-    a :MasculineNoun ;
-    rdfs:label "ath-chleachdadh" ;
-    :sense "re-use" .
-
-  n:saabhaladh_cumhachd
-    a :FeminineNoun ;
-    rdfs:label "sàbhaladh cumhachd" ;
-    :sense "energy saving" .
-
-  n:ath_chuairteachadh
-    a :MasculineNoun ;
-    rdfs:label "ath-chuairteachadh" ;
-    :sense "recycling" .
-
-  n:an_Talamh
-    rdfs:label "an Talamh" ;
-    :sense "Planet Earth" .
-
-  n:ruusg
-    a :MasculineNoun ;
-    rdfs:label "rùsg" ;
-    :sense "crust" .
-
-  n:fallainn
-    a :FeminineNoun ;
-    rdfs:label "fallainn" ;
-    :sense "mantle" .
-
-  n:eitean_cruaidh_a_staigh
-    a :MasculineNoun ;
-    rdfs:label "eitean cruaidh a-staigh" ;
-    :sense "solid inner core" .
-
-  n:eitean_sruthach_a_muigh
-    a :MasculineNoun ;
-    rdfs:label "eitean sruthach a-muigh" ;
-    :sense "liquid outer core" .
-
-  n:feart_tiire
-    rdfs:label "Feartan tìre" ;
-    :sense "Landscape features" .
-
-  n:faiche
-    a :FeminineNoun ;
-    rdfs:label "faiche" ;
-    :sense "plain" .
-
-  n:aardchlaar
-    a :MasculineNoun ;
-    rdfs:label "àrdchlàr" ;
-    :sense "plateau" .
-
-  n:cnoc
-    a :MasculineNoun ;
-    rdfs:label "cnoc" ;
-    :sense "hill" .
-
-  n:gleann
-    a :MasculineNoun ;
-    rdfs:label "gleann" ;
-    :sense "valley" .
-
-  n:luath
-    a :FeminineNoun ;
-    rdfs:label "luath" ;
-    :sense "ash" .
-
-  n:laabha_chruaidh
-    a :FeminineNoun ;
-    rdfs:label "làbha chruaidh" ;
-    :sense "solid lava" .
-
-  n:cruinn_shloc
-    a :FeminineNoun ;
-    rdfs:label "cruinn-shloc" ;
-    :sense "crater" .
-
-  n:creag
-    a :FeminineNoun ;
-    rdfs:label "creag" ;
-    :sense "cliff" .
-
-  n:laabha_leaghte
-    a :FeminineNoun ;
-    rdfs:label "làbha leaghte" ;
-    :sense "molten lava" .
-
-  n:traaigh
-    a :FeminineNoun ;
-    rdfs:label "tràigh" ;
-    :sense "beach" .
+n:oifis
+  a :FeminineNoun ;
+  rdfs:label "oifis" .
+
+n:stad_bus
+  rdfs:label "stad bus" .
+
+n:ospadal
+  a :MasculineNoun ;
+  rdfs:label "ospadal" .
+
+n:taigh_tasgaidh
+  rdfs:label "taigh tasgaidh" .
+
+n:steeisean_smaalaidh
+  rdfs:label "stèisean smàlaidh" .
+
+n:sgoil
+  a :FeminineNoun ;
+  rdfs:label "sgoil" .
+
+n:paairc_chaaraichean
+  rdfs:label "pàirc chàraichean" .
+
+n:moor_bhuuth
+  rdfs:label "mòr-bhùth" .
+
+n:lann_cluiche
+  rdfs:label "lann cluiche" .
+
+n:taigh_oosta
+  rdfs:label "taigh òsta" .
+
+n:talla_bhaile
+  rdfs:label "talla bhaile" .
+
+n:taigh_biidhe
+  rdfs:label "taigh bìdh" .
+
+n:taigh_dhealbh
+  rdfs:label "taigh dhealbh" .
+
+n:cafaidh
+  a :MasculineNoun ;
+  rdfs:label "cafaidh" .
+
+n:ionad_phaaipearan
+  rdfs:label "ionad phàipearan" .
+
+n:buuth_ghoireasan
+  rdfs:label "bùth ghoireasan" .
+
+n:banca
+  a :MasculineNoun ;
+  rdfs:label "banca" .
+
+n:oifis_puist
+  rdfs:label "oifis puist" .
+
+n:bogsa_puist
+  rdfs:label "bogsa puist" .
+
+n:rathad
+  a :MasculineNoun ;
+  rdfs:label "rathad" .
+
+n:cabhsair
+  a :MasculineNoun ;
+  rdfs:label "cabhsair" .
+
+n:solas_sraaide
+  rdfs:label "solas sràide" .
+
+n:meatair_parcaidh
+  rdfs:label "meatair parcaidh" .
+
+n:bine_sgudail
+  rdfs:label "bine sgudail" .
+
+n:ceannaiche_glasraich
+  rdfs:label "ceannaiche glasraich" .
+
+n:buuth_leabhraichean
+  rdfs:label "bùth leabhraichean" .
+
+n:buuth_dheeideagan
+  rdfs:label "bùth dhèideagan" .
+
+n:beeicear
+  a :MasculineNoun ;
+  rdfs:label "bèicear" .
+
+n:buuidsear
+  a :MasculineNoun ;
+  rdfs:label "bùidsear" .
+
+n:ceimigear
+  a :MasculineNoun ;
+  rdfs:label "ceimigear" .
+
+n:buuth_aodaich
+  rdfs:label "bùth aodaich" .
+
+n:buuth_shiuucaran
+  rdfs:label "bùth shiùcaran" .
+
+n:buuth_fhluuraichean
+  rdfs:label "bùth fhlùraichean" .
+
+n:buuth_ghibhtean
+  rdfs:label "bùth ghibhtean" .
+
+n:buuth_phaaipearan
+  rdfs:label "bùth phàipearan" .
+
+n:buuth_pheataichean
+  rdfs:label "bùth pheataichean" .
+
+n:buuth_bhroogan
+  rdfs:label "bùth bhrògan" .
+
+n:baarr
+  a :MasculineNoun ;
+  rdfs:label "bàrr" .
+
+n:meas
+  a :MasculineNoun ;
+  rdfs:label "meas" .
+
+n:cuilc_shiuucair
+  rdfs:label "cuilc shiùcair" .
+
+n:poonair_sooighe
+  rdfs:label "pònair sòighe" .
+
+n:cruithneachd_iinnseanach
+  rdfs:label "cruithneachd ìnnseanach" .
+
+n:cruithneachd
+  a :FeminineNoun ;
+  rdfs:label "cruithneachd" .
+
+n:peapag
+  a :FeminineNoun ;
+  rdfs:label "peapag" .
+
+n:buntaata
+  a :MasculineNoun ;
+  rdfs:label "buntàta" .
+
+n:rus
+  a :MasculineNoun ;
+  rdfs:label "rus" .
+
+n:fiion_dhearcan
+  rdfs:label "fìon-dhearcan" .
+
+n:inneal_fogharaidh
+  rdfs:label "inneal fogharaidh" .
+
+n:beeilear
+  a :MasculineNoun ;
+  rdfs:label "bèilear" .
+
+n:rothair_ceithir_rothach
+  rdfs:label "rothair ceithir-rothach" .
+
+n:pic
+  a :MasculineNoun ;
+  rdfs:label "pic" .
+
+n:bara_cuibhle
+  rdfs:label "bara cuibhle" .
+
+n:spaid
+  a :FeminineNoun ;
+  rdfs:label "spaid" .
+
+n:raacan
+  a :MasculineNoun ;
+  rdfs:label "ràcan" .
+
+n:speal
+  a :FeminineNoun ;
+  rdfs:label "speal" .
+
+n:tractar
+  a :MasculineNoun ;
+  rdfs:label "tractar" .
+
+n:tuur_fodair
+  rdfs:label "tùr fodair" .
+
+n:seada_bleoghain
+  rdfs:label "seada bleoghain" .
+
+n:staaball
+  a :MasculineNoun ;
+  rdfs:label "stàball" .
+
+n:croo_bheathaichean
+  rdfs:label "crò bheathaichean" .
+
+n:taigh_tuathanais
+  rdfs:label "taigh tuathanais" .
+
+n:sabhal
+  a :MasculineNoun ;
+  rdfs:label "sabhal" .
+
+n:seada_innealan
+  rdfs:label "seada innealan" .
+
+n:togalach_tuathanais
+  rdfs:label "togalaichean tuathanais" .
+
+n:cuan
+  a :MasculineNoun ;
+  rdfs:label "cuan" .
+
+n:cladach
+  a :MasculineNoun ;
+  rdfs:label "cladach" .
+
+n:beinn
+  a :FeminineNoun ;
+  rdfs:label "beinn" .
+
+n:coille_uisge
+  rdfs:label "coille uisge" .
+
+n:faasach
+  a :FeminineNoun ;
+  rdfs:label "fàsach" .
+
+n:raointean_feooir
+  rdfs:label "raointean feòir" .
+
+n:eigh_shruth
+  rdfs:label "eigh-shruth" .
+
+n:coille_sior_ghorm
+  rdfs:label "coille sior-ghorm" .
+
+n:fearann_coillteach
+  rdfs:label "fearann coillteach" .
+
+n:loch
+  a :MasculineNoun ;
+  rdfs:label "loch" .
+
+n:ceaarnaidh_poolarach
+  rdfs:label "ceàrnaidh pòlarach" .
+
+n:boglach
+  a :FeminineNoun ;
+  rdfs:label "boglach" .
+
+n:moointeach
+  a :FeminineNoun ;
+  rdfs:label "mòinteach" .
+
+n:sruthan
+  a :FeminineNoun ;
+  rdfs:label "sruthan" .
+
+n:leas_abhainn
+  a :FeminineNoun ;
+  rdfs:label "leas-abhainn" .
+
+n:bras_shruthan
+  rdfs:label "bras-shruthan" .
+
+n:eas
+  a :MasculineNoun ;
+  rdfs:label "eas" .
+
+n:inbhir
+  a :MasculineNoun ;
+  rdfs:label "inbhir" .
+
+n:siide
+  rdfs:label "sìde" .
+
+a:grianach
+  a :Adjective ;
+  rdfs:label "grianach" .
+
+a:sgoothach
+  a :Adjective ;
+  rdfs:label "sgòthach" .
+
+a:fliuch
+  a :Adjective ;
+  rdfs:label "fliuch" .
+
+a:ceoothach
+  a :Adjective ;
+  rdfs:label "ceòthach" .
+
+a:smugach
+  a :Adjective ;
+  rdfs:label "smugach" .
+
+a:sneachdach
+  a :Adjective ;
+  rdfs:label "sneachdach" .
+
+a:reoothte
+  a :Adjective ;
+  rdfs:label "reòthte" .
+
+n:gailleann_duslaich
+  a :FeminineNoun ;
+  rdfs:label "gailleann duslaich" .
+
+n:gailleann_meallain
+  a :FeminineNoun ;
+  rdfs:label "gailleann meallain" .
+
+n:taairneanach
+  a :MasculineNoun ;
+  rdfs:label "tàirneanach" .
+
+n:doineann
+  a :FeminineNoun ;
+  rdfs:label "doineann" .
+
+a:fionnar
+  a :Adjective ;
+  rdfs:label "fionnar" .
+
+n:gnaath_shiide_thropaigeach
+  rdfs:label "gnàth-shìde thropaigeach" .
+
+n:crios_meadhain
+  rdfs:label "crios meadhain" .
+
+n:gnaath_shiide_mheasarra
+  rdfs:label "gnàth-shìde mheasarra" .
+
+n:sgudal_cunnartach
+  rdfs:label "sgudal cunnartach" .
+
+n:gaanrachadh_uisge
+  rdfs:label "gànrachadh uisge" .
+
+n:truailleadh_eeadhair
+  rdfs:label "truailleadh èadhair" .
+
+n:puinnseanachadh_puinnsean_bhiastagan
+  rdfs:label "puinnseanachadh puinnsean bhiastagan" .
+
+n:reeididheachd
+  a :FeminineNoun ;
+  rdfs:label "rèididheachd" .
+
+n:truailleadh_fuaim
+  rdfs:label "truailleadh fuaim" .
+
+n:uisge_searbhaig
+  rdfs:label "uisge searbhaig" .
+
+n:doortadh_ola
+  rdfs:label "dòrtadh ola" .
+
+n:truailleadh_solais
+  rdfs:label "truailleadh solais" .
+
+n:caomhnadh_cumhachd
+  rdfs:label "caomhnadh cumhachd" .
+
+n:innearadh
+  a :MasculineNoun ;
+  rdfs:label "innearadh" .
+
+n:ath_chleachdadh
+  rdfs:label "ath-chleachdadh" .
+
+n:saabhaladh_cumhachd
+  rdfs:label "sàbhaladh cumhachd" .
+
+n:ath_chuairteachadh
+  rdfs:label "ath-chuairteachadh" .
+
+n:ruusg
+  a :MasculineNoun ;
+  rdfs:label "rùsg" .
+
+n:fallainn
+  a :FeminineNoun ;
+  rdfs:label "fallainn" .
+
+n:eitean_cruaidh_a_staigh
+  rdfs:label "eitean cruaidh a-staigh" .
+
+n:eitean_sruthach_a_muigh
+  rdfs:label "eitean sruthach a-muigh" .
+
+n:feart_tiire
+  rdfs:label "feartan tìre" .
+
+n:faiche
+  a :FeminineNoun ;
+  rdfs:label "faiche" .
+
+n:aardchlaar
+  a :MasculineNoun ;
+  rdfs:label "àrdchlàr" .
+
+n:cnoc
+  a :MasculineNoun ;
+  rdfs:label "cnoc" .
+
+n:gleann
+  a :MasculineNoun ;
+  rdfs:label "gleann" .
+
+n:luath
+  a :FeminineNoun ;
+  rdfs:label "luath" .
+
+n:laabha_chruaidh
+  rdfs:label "làbha chruaidh" .
+
+n:cruinn_shloc
+  rdfs:label "cruinn-shloc" .
+
+n:creag
+  a :FeminineNoun ;
+  rdfs:label "creag" .
+
+n:laabha_leaghte
+  rdfs:label "làbha leaghte" .
+
+n:traaigh
+  a :FeminineNoun ;
+  rdfs:label "tràigh" .
 
 n:cooras_greeine
   rdfs:label "còras grèine" ;
@@ -5121,97 +4133,72 @@ n:cooras
   a :MasculineNoun ;
   rdfs:label "còras" .
 
-
 n:grian
   a :FeminineNoun ;
   rdfs:label "grian" .
 
-  n:Mearcar
-    a :MasculineNoun ;
-    rdfs:label "Mearcar" ;
-    :sense "Mercury" .
+n:Mearcar
+  a :MasculineNoun ;
+  rdfs:label "Mearcar" .
 
-  n:Bheunas
-    a :FeminineNoun ;
-    rdfs:label "Bheunas" ;
-    :sense "Venus" .
+n:Bheunas
+  a :FeminineNoun ;
+  rdfs:label "Bheunas" .
 
-  n:talamh
-    a :MasculineNoun ;
-    rdfs:label "Talamh" ;
-    :sense "Earth" .
+n:Mars
+  a :MasculineNoun ;
+  rdfs:label "Mars" .
 
-  n:Mars
-    a :MasculineNoun ;
-    rdfs:label "Mars" ;
-    :sense "Mars" .
+n:Iupatar
+  a :MasculineNoun ;
+  rdfs:label "Iupatar" .
 
-  n:Iupatar
-    a :MasculineNoun ;
-    rdfs:label "Iupatar" ;
-    :sense "Jupiter" .
+n:Satarn
+  a :MasculineNoun ;
+  rdfs:label "Satarn" .
 
-  n:Satarn
-    a :MasculineNoun ;
-    rdfs:label "Satarn" ;
-    :sense "Saturn" .
+n:Uraanas
+  a :MasculineNoun ;
+  rdfs:label "Urànas" .
 
-  n:Uraanas
-    a :MasculineNoun ;
-    rdfs:label "Urànas" ;
-    :sense "Uranus" .
+n:Neaptun
+  a :MasculineNoun ;
+  rdfs:label "Neaptun" .
 
-  n:Neaptun
-    a :MasculineNoun ;
-    rdfs:label "Neaptun" ;
-    :sense "Neptune" .
+n:reul
+  a :FeminineNoun ;
+  rdfs:label "reul" .
 
-  n:reul
-    a :FeminineNoun ;
-    rdfs:label "reul" ;
-    :sense "star" .
+n:grioglachan
+  a :MasculineNoun ;
+  rdfs:label "grioglachan" .
 
-  n:grioglachan
-    a :MasculineNoun ;
-    rdfs:label "grioglachan" ;
-    :sense "constellation" .
+n:gealach
+  a :FeminineNoun ;
+  rdfs:label "gealach" .
 
-  n:gealach
-    a :FeminineNoun ;
-    rdfs:label "gealach" ;
-    :sense "moon" .
+n:Geal_shruth_nan_Speur
+  rdfs:label "Geal-shruth nan Speur" .
 
-  n:Geal_shruth_nan_Speur
-    a :MasculineNoun ;
-    rdfs:label "Geal-shruth nan Speur" ;
-    :sense "Milky Way" .
+n:reul_chrios
+  a :MasculineNoun ;
+  rdfs:label "reul-chrios" .
 
-  n:reul_chrios
-    a :MasculineNoun ;
-    rdfs:label "reul-chrios" ;
-    :sense "galaxy" .
+n:dreag
+  a :FeminineNoun ;
+  rdfs:label "dreag" .
 
-  n:dreag
-    a :FeminineNoun ;
-    rdfs:label "dreag" ;
-    :sense "meteor" .
-
-  n:toll_dubh
-    a :MasculineNoun ;
-    rdfs:label "toll dubh" ;
-    :sense "black hole" .
+n:toll_dubh
+  rdfs:label "toll dubh" .
 
 n:prosbaig
-  rdfs:label "prosbaig" ;
-  :sense "telescope" .
+  rdfs:label "prosbaig" .
 
 n:reuladair
-  rdfs:label "reuladair" ;
-  :sense "stargazer" .
+  rdfs:label "reuladair" .
 
 n:reul_eoolaiche
-  rdfs:label "reul-eòlaiche" ;
-  :sense "astronomer" .
+  rdfs:label "reul-eòlaiche" .
 
 n:planaid
   rdfs:label "planaid" .
@@ -5624,289 +4611,220 @@ n:suuil
   a :FeminineNoun ;
   rdfs:label "sùil" .
 
+n:dath
+  a :MasculineNoun ;
+  rdfs:label "dath" .
 
+a:dearg
+  rdfs:label "dearg" .
 
+a:gorm
+  rdfs:label "gorm" .
 
-  n:dath
-    a :MasculineNoun ;
-    rdfs:label "dathan" ;
-    :sense "colours" .
+a:uaine
+  rdfs:label "uaine" .
 
-  a:dearg
-    rdfs:label "dearg" ;
-    :sense "red" .
+a:buidhe
+  rdfs:label "buidhe" .
 
-  a:gorm
-    rdfs:label "gorm" ;
-    :sense "blue" .
+a:dubh
+  rdfs:label "dubh" .
 
-  a:uaine
-    rdfs:label "uaine" ;
-    :sense "green" .
+a:glas
+  rdfs:label "glas" .
 
-  a:buidhe
-    rdfs:label "buidhe" ;
-    :sense "yellow" .
+a:orains
+  rdfs:label "orains" .
 
-  a:dubh
-    rdfs:label "dubh" ;
-    :sense "black" .
+a:donn
+  rdfs:label "donn" .
 
-  a:glas
-    rdfs:label "glas" ;
-    :sense "grey" .
+a:pinc
+  rdfs:label "pinc" .
 
-  a:orains
-    rdfs:label "orains" ;
-    :sense "orange" .
+a:purpaidh
+  rdfs:label "purpaidh" .
 
-  a:donn
-    rdfs:label "donn" ;
-    :sense "brown" .
+a:geal
+  rdfs:label "geal" .
 
-  a:pinc
-    rdfs:label "pinc" ;
-    :sense "pink" .
+n:leth_chearcall
+  rdfs:label "leth-chearcall" .
 
-  a:purpaidh
-    rdfs:label "purpaidh" ;
-    :sense "purple" .
+n:ceart_cheaarnach
+  rdfs:label "ceart-cheàrnach" .
 
-  a:geal
-    rdfs:label "geal" ;
-    :sense "white" .
+n:parailealogram
+  a :MasculineNoun ;
+  rdfs:label "parailealogram" .
 
-  n:leth_chearcall
-    a :MasculineNoun ;
-    rdfs:label "leth-chearcall" ;
-    :sense "semi-circle" .
+n:ceithir_cheaarnach
+  rdfs:label "ceithir-cheàrnach" .
 
-  n:ceart_cheaarnach
-    a :MasculineNoun ;
-    rdfs:label "ceart-cheàrnach" ;
-    :sense "rectangle" .
+n:poileagan
+  a :MasculineNoun ;
+  rdfs:label "poileagan" .
 
-  n:parailealogram
-    a :MasculineNoun ;
-    rdfs:label "parailealogram" ;
-    :sense "parallelogram" .
+n:cearcall
+  a :MasculineNoun ;
+  rdfs:label "cearcall" .
 
-  n:ceithir_cheaarnach
-    a :MasculineNoun ;
-    rdfs:label "ceithir-cheàrnach" ;
-    :sense "quadrilateral" .
+n:ceaarnag
+  a :FeminineNoun ;
+  rdfs:label "ceàrnag" .
 
-  n:poileagan
-    a :MasculineNoun ;
-    rdfs:label "poileagan" ;
-    :sense "polygon" .
+n:triantan
+  a :MasculineNoun ;
+  rdfs:label "triantan" .
 
-  n:cearcall
-    a :MasculineNoun ;
-    rdfs:label "cearcall" ;
-    :sense "circle" .
+n:rionnag
+  a :FeminineNoun ;
+  rdfs:label "rionnag" .
 
-  n:ceaarnag
-    a :FeminineNoun ;
-    rdfs:label "ceàrnag" ;
-    :sense "square" .
+n:cooig_cheaarnach
+  rdfs:label "còig-cheàrnach" .
 
-  n:triantan
-    a :MasculineNoun ;
-    rdfs:label "triantan" ;
-    :sense "triangle" .
+n:sia_cheaarnach
+  rdfs:label "sia-cheàrnach" .
 
-  n:rionnag
-    a :FeminineNoun ;
-    rdfs:label "rionnag" ;
-    :sense "star" .
+n:ochd_cheaarnach
+  rdfs:label "ochd-cheàrnach" .
 
-  n:cooig_cheaarnach
-    a :MasculineNoun ;
-    rdfs:label "còig-cheàrnach" ;
-    :sense "pentagon" .
+n:seachd_cheaarnach
+  rdfs:label "seachd-cheàrnach" .
 
-  n:sia_cheaarnach
-    a :MasculineNoun ;
-    rdfs:label "sia-cheàrnach" ;
-    :sense "hexagon" .
+n:daoimean
+  a :MasculineNoun ;
+  rdfs:label "daoimean" .
 
-  n:ochd_cheaarnach
-    a :MasculineNoun ;
-    rdfs:label "ochd-cheàrnach" ;
-    :sense "octagon" .
+n:ciuub
+  a :MasculineNoun ;
+  rdfs:label "ciùb" .
 
-  n:seachd_cheaarnach
-    a :MasculineNoun ;
-    rdfs:label "seachd-cheàrnach" ;
-    :sense "heptagon" .
+n:pioramaid
+  a :FeminineNoun ;
+  rdfs:label "pioramaid" .
 
-  n:daoimean
-    a :MasculineNoun ;
-    rdfs:label "daoimean" ;
-    :sense "diamond" .
+n:cruinne
+  a :FeminineNoun ;
+  rdfs:label "cruinne" .
 
-  n:ciuub
-    a :MasculineNoun ;
-    rdfs:label "ciùb" ;
-    :sense "cube" .
+n:siolandair
+  a :MasculineNoun ;
+  rdfs:label "siolandair" .
 
-  n:pioramaid
-    a :FeminineNoun ;
-    rdfs:label "pioramaid" ;
-    :sense "pyramid" .
+n:coon
+  a :MasculineNoun ;
+  rdfs:label "còn" .
 
-  n:cruinne
-    a :FeminineNoun ;
-    rdfs:label "cruinne" ;
-    :sense "sphere" .
+a:moor
+  a :Adjective ;
+  rdfs:label "mòr" .
 
-  n:siolandair
-    a :MasculineNoun ;
-    rdfs:label "siolandair" ;
-    :sense "cylinder" .
+a:beag
+  a :Adjective ;
+  rdfs:label "beag" .
 
-  n:coon
-    a :MasculineNoun ;
-    rdfs:label "còn" ;
-    :sense "cone" .
+a:glan
+  a :Adjective ;
+  rdfs:label "glan" .
 
-  a:moor
-    a :Adjective ;
-    rdfs:label "mòr" ;
-    :sense "big" .
+a:salach
+  a :Adjective ;
+  rdfs:label "salach" .
 
-  a:beag
-    a :Adjective ;
-    rdfs:label "beag" ;
-    :sense "small" .
+a:tiugh
+  a :Adjective ;
+  rdfs:label "tiugh" .
 
-  a:glan
-    a :Adjective ;
-    rdfs:label "glan" ;
-    :sense "clean" .
+a:tana
+  a :Adjective ;
+  rdfs:label "tana" .
 
-  a:salach
-    a :Adjective ;
-    rdfs:label "salach" ;
-    :sense "dirty" .
+a:laan
+  a :Adjective ;
+  rdfs:label "làn" .
 
-  a:tiugh
-    a :Adjective ;
-    rdfs:label "tiugh" ;
-    :sense "fat" .
+a:falamh
+  a :Adjective ;
+  rdfs:label "falamh" .
 
-  a:tana
-    a :Adjective ;
-    rdfs:label "tana" ;
-    :sense "thin" .
+a:aard
+  a :Adjective ;
+  rdfs:label "àrd" .
 
-  a:laan
-    a :Adjective ;
-    rdfs:label "làn" ;
-    :sense "full" .
+a:iiosal
+  a :Adjective ;
+  rdfs:label "ìosal" .
 
-  a:falamh
-    a :Adjective ;
-    rdfs:label "falamh" ;
-    :sense "empty" .
+a:teth
+  a :Adjective ;
+  rdfs:label "teth" .
 
-  a:aard
-    a :Adjective ;
-    rdfs:label "àrd" ;
-    :sense "high" .
+a:fuar
+  a :Adjective ;
+  rdfs:label "fuar" .
 
-  a:iiosal
-    a :Adjective ;
-    rdfs:label "ìosal" ;
-    :sense "low" .
+a:fosgailte
+  a :Adjective ;
+  rdfs:label "fosgailte" .
 
-  a:teth
-    a :Adjective ;
-    rdfs:label "teth" ;
-    :sense "hot" .
+a:duuinte
+  a :Adjective ;
+  rdfs:label "dùinte" .
 
-  a:fuar
-    a :Adjective ;
-    rdfs:label "fuar" ;
-    :sense "cold" .
+a:trom
+  a :Adjective ;
+  rdfs:label "trom" .
 
-  a:fosgailte
-    a :Adjective ;
-    rdfs:label "fosgailte" ;
-    :sense "open" .
+a:aotrom
+  a :Adjective ;
+  rdfs:label "aotrom" .
 
-  a:duuinte
-    a :Adjective ;
-    rdfs:label "dùinte" ;
-    :sense "closed" .
+a:aard
+  a :Adjective ;
+  rdfs:label "àrd" .
 
-  a:trom
-    a :Adjective ;
-    rdfs:label "trom" ;
-    :sense "heavy" .
+a:saamhach
+  a :Adjective ;
+  rdfs:label "sàmhach" .
 
-  a:aotrom
-    a :Adjective ;
-    rdfs:label "aotrom" ;
-    :sense "light" .
+a:cruaidh
+  a :Adjective ;
+  rdfs:label "cruaidh" .
 
-  a:aard
-    a :Adjective ;
-    rdfs:label "àrd" ;
-    :sense "loud" .
+a:bog
+  a :Adjective ;
+  rdfs:label "bog" .
 
-  a:saamhach
-    a :Adjective ;
-    rdfs:label "sàmhach" ;
-    :sense "quiet" .
+a:fada
+  a :Adjective ;
+  rdfs:label "fada" .
 
-  a:cruaidh
-    a :Adjective ;
-    rdfs:label "cruaidh" ;
-    :sense "hard" .
+a:goirid
+  a :Adjective ;
+  rdfs:label "goirid" .
 
-  a:bog
-    a :Adjective ;
-    rdfs:label "bog" ;
-    :sense "soft" .
+a:soilleir
+  a :Adjective ;
+  rdfs:label "soilleir" .
 
-  a:fada
-    a :Adjective ;
-    rdfs:label "fada" ;
-    :sense "long" .
+a:doilleir
+  a :Adjective ;
+  rdfs:label "doilleir" .
 
-  a:goirid
-    a :Adjective ;
-    rdfs:label "goirid" ;
-    :sense "short" .
+a:tioram
+  a :Adjective ;
+  rdfs:label "tioram" .
 
-  a:soilleir
-    a :Adjective ;
-    rdfs:label "soilleir" ;
-    :sense "light" .
+a:fliuch
+  a :Adjective ;
+  rdfs:label "fliuch" .
 
-  a:doilleir
-    a :Adjective ;
-    rdfs:label "doilleir" ;
-    :sense "dark" .
+a:luath
+  a :Adjective ;
+  rdfs:label "luath" .
 
-  a:tioram
-    a :Adjective ;
-    rdfs:label "tioram" ;
-    :sense "dry" .
-
-  a:fliuch
-    a :Adjective ;
-    rdfs:label "fliuch" ;
-    :sense "wet" .
-
-  a:luath
-    a :Adjective ;
-    rdfs:label "luath" ;
-    :sense "fast" .
-
-  a:mall
-    a :Adjective ;
-    rdfs:label "mall" ;
-    :sense "slow" .
+a:mall
+  a :Adjective ;
+  rdfs:label "mall" .

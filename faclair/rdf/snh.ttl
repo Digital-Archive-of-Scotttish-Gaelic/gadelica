@@ -2057,11 +2057,39 @@ n:eoorna
 n:seillean_caardair_na_cooinnich
   rdfs:label "seillean càrdair na còinnich" .
 
+# STARTING HERE NEXT
+
 n:Achd_Gleeidhteachais
-  rdfs:label "Achd Glèidhteachais" .
+  rdfs:label "Achd Glèidhteachais" ;
+  :part n:achd , n:gleeidhteachas .
+
+n:achd
+  a :FeminineNoun ;
+  rdfs:label "achd" .
+
+n:gleeidhteachas
+  a :MasculineNoun ;
+  rdfs:label "glèidhteachas" ;
+  :gen "glèidhteachais" ;
+  :part a:gleeidhteach .
+
+a:gleeidhteach
+  a :Adjective ;
+  rdfs:label "glèidhteach" ;
+  :part v:gleeidh .
+
+v:gleeidh
+  a :Verb ;
+  rdfs:label "glèidh" .
 
 n:Achd_Fiadh_bheatha_agus_Duuthcha
-  rdfs:label "Achd Fiadh-bheatha agus Dùthcha" .
+  rdfs:label "Achd Fiadh-bheatha agus Dùthcha" ;
+  :part n:achd , n:fiadh_bheatha , n:duuthaich .
+
+n:duuthaich
+  a :FeminineNoun ;
+  rdfs:label "dùthaich" ;
+  :gen "dùthcha" .
 
 n:Achd_Gleeidhteachais_Naadair
   rdfs:label "Achd Glèidhteachais Nàdair" .
@@ -2075,6 +2103,11 @@ n:gorman_beag
 n:dearc
   a :FeminineNoun ;
   rdfs:label "dearc" .
+
+n:dearcag
+    a :FeminineNoun ;
+    rdfs:label "dearcag" ;
+    :pl "dearcagan" .
 
 n:raineach_chruaidh
   rdfs:label "raineach chruaidh" .
@@ -2090,20 +2123,26 @@ n:dail_chuach_leeana
   rdfs:label "dail-chuach lèana" .
 
 n:dealan_dee
-  rdfs:label "dealan-dè" .
+  rdfs:label "dealan dè" .
+
+n:dearbadan_dee
+  rdfs:label "dearbadan dè" .
 
 n:gorman
   a :MasculineNoun ;
   rdfs:label "gorman" .
 
 n:dealan_dee_na_cuilinn
-  rdfs:label "dealan-dè na cuilinn" .
+  rdfs:label "dealan dè na cuilinn" .
 
 n:dealan_dee_na_cluaran
-  rdfs:label "dealan-dè na cluaran" .
+  rdfs:label "dealan dè na cluaran" .
 
 n:dealan_dee_na_deanntaig_beag
-  rdfs:label "dealan-dè na deanntaig beag" .
+  rdfs:label "dealan dè na deanntaig beag" .
+
+n:dealan_dee_na_feanntaig_beag
+  rdfs:label "dealan dè na feanntaig beag" .
 
 a:naadarra
   a :Adjective ;
@@ -2113,25 +2152,30 @@ n:triilleachan_glas
   rdfs:label "trìlleachan glas" .
 
 n:coileach_peucaig
-  rdfs:label "coileach-peucaig" .
+  rdfs:label "coileach peucaig" .
+
+n:peucag
+  a :FeminineNoun ;
+  rdfs:label "peucag"  ;
+  :pl "peucagan" .
 
 n:dealan_dee_na_cromaig_geal
-  rdfs:label "dealan-dè na cromaig geal" .
+  rdfs:label "dealan dè na cromaig geal" .
 
 n:dealbhan_breac_na_coille
   rdfs:label "dealbhan breac na coille" .
 
 n:dealan_dee_nan_oirean_neamhnaid_beag
-  rdfs:label "dealan-dè nan oirean-neamhnaid beag" .
+  rdfs:label "dealan dè nan oirean neamhnaid beag" .
 
 n:dealan_dee_dorch_uaine
-  rdfs:label "dealan-dè dorch-uaine" .
+  rdfs:label "dealan dè dorch-uaine" .
 
 n:dealan_dee_nam_boglaichean
-  rdfs:label "dealan-dè nam boglaichean" .
+  rdfs:label "dealan dè nam boglaichean" .
 
 n:faainneag_a_mhonaidh
-  rdfs:label "fàinneag a' mhonaidh" .
+  rdfs:label "fàinneag a’ mhonaidh" .
 
 n:argas_Albannach
   rdfs:label "argas Albannach" .
@@ -2190,13 +2234,16 @@ n:feamainn
   rdfs:label "feamainn" .
 
 n:cnoo_daraich
-  rdfs:label "cnò-daraich" .
+  rdfs:label "cnò daraich" .
 
 n:moointeach_liath
   rdfs:label "mòinteach liath" .
 
 n:cuisle_aibheach
-  rdfs:label "cuisle-aibheach" .
+  rdfs:label "cuisle aibheach" .
+
+n:duilleagag_a_chruithneachd
+  rdfs:label "duilleagag a’ chruithneachd" .
 
 n:crotal_geal
   rdfs:label "crotal geal" .
@@ -2212,7 +2259,9 @@ n:crotal_cooinnich
   rdfs:label "crotal còinnich" .
 
 n:lus_ghionaich
-  rdfs:label "lus-ghionaich" .
+  rdfs:label "lus ghionaich" .
+
+# CLEANED EVERYTHING BELOW HERE
 
 n:glasag
   a :FeminineNoun ;
@@ -2222,6 +2271,10 @@ n:stamh
   a :MasculineNoun ;
   rdfs:label "stamh" .
 
+n:praablach
+  a :MasculineNoun ;
+  rdfs:label "pràblach" .
+
 n:cairgean
   a :MasculineNoun ;
   rdfs:label "cairgean" .
@@ -2229,9 +2282,6 @@ n:cairgean
 n:duileasg
   a :MasculineNoun ;
   rdfs:label "duileasg" .
-
-# STARTING HERE NEXT
-# CLEANED EVERYTHING BELOW HERE
 
 n:eala
   a :FeminineNoun ;
@@ -3639,7 +3689,7 @@ n:muc_mhara_Sei
 
 n:muile_mhaagag_an_druim_bhuidhe
   rdfs:label "muile-mhàgag an druim bhuidhe" ;
-  :part n:muile-mhaagag , n:druim , a:buidhe .
+  :part n:muile_mhaagag , n:druim , a:buidhe .
 
 n:muile_mhaagag
   rdfs:label "muile-mhàgag" .
