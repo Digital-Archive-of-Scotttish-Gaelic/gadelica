@@ -6,19 +6,25 @@
 @prefix : <http://faclair.ac.uk/meta/> .
 
 # think this file is valid
+# cleaned down to line 330
+
+<http://faclair.ac.uk/sources/Dwelly>
+  rdfs:label "Dwelly" .
+
+<http://faclair.ac.uk/sources/Dwelly> {
 
 n:suugachas
   a :MasculineNoun ;
   rdfs:label "sùgachas" ;
-  :sense "-ais, <i>sm </i>Jocularity, mirth." ;
-  rdfs:comment "-ais, <i>sm </i>Jocularity, mirth." ;
+  :sense "jocularity" , "mirth" ;
+  :gen "sùgachais" ;
   rdfs:comment "ID: 00009C565B1D30FA27AB3B0E7E7EB184." .
 
 n:drabastachd
   a :FeminineNoun ;
   rdfs:label "drabastachd" ;
-  :sense "<i>sf ind </i>Obscenity of language, smuttiness. 2** Uncouthness." ;
-  rdfs:comment "<i>sf ind </i>Obscenity of language, smuttiness. 2** Uncouthness." ;
+  :gen "drabastachd" ;
+  :sense "obscenity of language" , "smuttiness" , "uncouthness" ;
   rdfs:comment "ID: 000817C570A9B23746F94CFDE26893A6." .
 
 o:biacaich
@@ -30,290 +36,296 @@ o:biacaich
 n:colltach
   a :FeminineNoun ;
   rdfs:label "colltach" ;
-  :sense "** -aich, <i>sf</i> Fleet, navy." ;
-  rdfs:comment "** -aich, <i>sf</i> Fleet, navy." ;
+  :gen "colltaich" ;
+  :sense "fleet" , "navy" ;
   rdfs:comment "ID: 00153F997D77037DF4CE1ED039209DBE." .
 
 n:dimhneachd
   a :FeminineNoun ;
   rdfs:label "dimhneachd" ;
-  :sense "&dagger; <i>sf </i>Confidence." ;
-  rdfs:comment "&dagger; <i>sf </i>Confidence." ;
+  :sense "confidence" ;
   rdfs:comment "ID: 001A56C1BE9D65B55657051785D34134." .
 
 a:car_fhaclach
   a :Adjective ;
   rdfs:label "car-fhaclach" ;
-  :sense "<i> a</i> Quibbling. 2 Prevaricating. 3 Antiphrastic. 4 Disposed to quibble, prevaricate or pun." ;
-  rdfs:comment "<i> a</i> Quibbling. 2 Prevaricating. 3 Antiphrastic. 4 Disposed to quibble, prevaricate or pun." ;
+  :sense "quibbling" , "prevaricating" , "antiphrastic" , "disposed to quibble, prevaricate or pun" ;
   rdfs:comment "ID: 001B9C8DFEE0A3BAFA740A17A222273A." .
 
 n:deonachd
   a :FeminineNoun ;
   rdfs:label "deonachd" ;
-  :sense "† <i>sf</i> Pudendum, {female genitals}." ;
-  rdfs:comment "† <i>sf</i> Pudendum, {female genitals}." ;
+  :sense "pudendum" , "female genitals" ;
   rdfs:comment "ID: 001FC8FDC71D30DDA8D0148C43160E9D." .
 
 a:rionnagach
   a :Adjective ;
   rdfs:label "rionnagach" ;
-  :sense "-aiche, <i>a. </i>Starry, studded with stars, spangled. 2 Like a star." ;
-  rdfs:comment "-aiche, <i>a. </i>Starry, studded with stars, spangled. 2 Like a star." ;
+  :comp "rionnagaiche" ;
+  :sense "starry" , "studded with stars" , "spangled" , "like a star" ;
   rdfs:comment "ID: 002B0D846B7A26966093FC1651E4339A." .
 
 n:laisteachd
   a :FeminineNoun ;
   rdfs:label "laisteachd" ;
-  :sense "<i>sf </i>Easiness in circumstances, comfort." ;
-  rdfs:comment "<i>sf </i>Easiness in circumstances, comfort." ;
+  :sense "easiness in circumstances" , "comfort" ;
   rdfs:comment "ID: 002B4A236D09ADBD546C204655F7EB5B." .
 
 n:tur_ooinseach
   a :FeminineNoun ;
   rdfs:label "tur-òinseach" ;
-  :sense "** -ich, <i>sf</i> Mere idiot." ;
-  rdfs:comment "** -ich, <i>sf</i> Mere idiot." ;
+  :gen "tur-òinsich" ;
+  :sense "mere idiot" ;
   rdfs:comment "ID: 002D3C40F4617FB2C35239B036866A85." .
 
 n:fiadh_bheathach
   a :MasculineNoun ;
   rdfs:label "fiadh-bheathach" ;
-  :sense "-aich, -aichean, <i>sm</i> Wild beast." ;
-  rdfs:comment "-aich, -aichean, <i>sm</i> Wild beast." ;
+  :gen "fiadh-bheathaich" ;
+  :pl "fiadh-bheathaichean" ;
+  :sense "wild beast" ;
   rdfs:comment "ID: 0030915E8A0968CC85B3BA959E48DA26." .
 
 n:beathadach
   a :MasculineNoun ;
   rdfs:label "beathadach" ;
-  :sense "** -aich, <i>sm</i> Beaver (<i>castor fiber</i>)." ;
-  rdfs:comment "** -aich, <i>sm</i> Beaver (<i>castor fiber</i>)." ;
+  :gen "beathadaich" ;
+  :sense "beaver" , "castor fiber" ;
   rdfs:comment "ID: 0032E03CB95C42472121FEF346919903." .
 
 a:so_aitreabhach
   a :Adjective ;
   rdfs:label "so-aitreabhach" ;
-  :sense "-aiche, <i>a. </i>Inhabitable." ;
-  rdfs:comment "-aiche, <i>a. </i>Inhabitable." ;
+  :comp "so-aitreabhaiche" ;
+  :sense "inhabitable" ;
   rdfs:comment "ID: 00340267430320F7C38A7718F29E6691." .
 
 n:creodach
   a :MasculineNoun ;
   rdfs:label "creodach" ;
-  :sense "(AC) <i>sm </i>Paralysis of the limbs in horses." ;
-  rdfs:comment "(AC) <i>sm </i>Paralysis of the limbs in horses." ;
+  :sense "paralysis of the limbs in horses" ;
   rdfs:comment "ID: 0035ECF2543DB9B9DC4D634071AA02ED." .
 
 n:feamanach
   a :FeminineNoun ;
   rdfs:label "feamanach" ;
-  :sense "** -aich, <i>sf </i>Quantity of sea-ware sea-ore or dulse. 2** Hind." ;
-  rdfs:comment "** -aich, <i>sf </i>Quantity of sea-ware sea-ore or dulse. 2** Hind." ;
+  :gen "feamanaich" ;
+  :sense "quantity of sea-ware, sea-ore or dulse" , "hind" ;
   rdfs:comment "ID: 0036E70A7A687E91FEECF385A6D258F1." .
 
 a:deeileagach
   a :Adjective ;
   rdfs:label "déileagach" ;
-  :sense "&dagger;&dagger; <i>a.</i> Abounding in little deals." ;
+  :sense "abounding in little deals" ;
   rdfs:comment "&dagger;&dagger; <i>a.</i> Abounding in little deals." ;
   rdfs:comment "ID: 003CF56A0EF6968CADD906568C3A7D40." .
 
 a:braaigheach
   a :Adjective ;
   rdfs:label "bràigheach" ;
-  :sense "** <i>a. </i>Having a long-neck 2 Having a handsome neck. 3 Of, or belonging to, a neck. 4 Uplandish." ;
+  :sense "having a long-neck" , "having a handsome neck" , "of, or belonging to, a neck" , "uplandish" ;
   rdfs:comment "** <i>a. </i>Having a long-neck 2 Having a handsome neck. 3 Of, or belonging to, a neck. 4 Uplandish." ;
   rdfs:comment "ID: 003FA0AB3D8B4E4AC384F1B1B327B4F8." .
 
 n:leabhar_thraath_eachdraidh
   a :MasculineNoun ;
   rdfs:label "leabhar-thràth-eachdraidh" ;
-  :sense "-air-, -bhraichean-, <i>sm </i>Chronicle. 2** Minute book." ;
+  :sense "chronicle" , "minute book" ;
   rdfs:comment "-air-, -bhraichean-, <i>sm </i>Chronicle. 2** Minute book." ;
   rdfs:comment "ID: 003FEF0C5DF58B0912419CAEED61EBE2." .
 
 n:taistealachd
   a :FeminineNoun ;
   rdfs:label "taistealachd" ;
-  :sense "<i>sf ind </i>Pilgrimage, journey. 2 Wandering, sauntering, lounging. 3** Pedestrianism, travelling." ;
+  :sense "pilgrimage" , "journey" , "wandering" , "sauntering" , "lounging" , "pedestrianism" , "travelling" ;
   rdfs:comment "<i>sf ind </i>Pilgrimage, journey. 2 Wandering, sauntering, lounging. 3** Pedestrianism, travelling." ;
   rdfs:comment "ID: 00426D7D3FE6E3E114DC4A2AB8C91262." .
 
 n:beadarachd
   a :FeminineNoun ;
   rdfs:label "beadarachd" ;
-  :sense "<i>sf ind </i>Buxomness, playfulness." ;
+  :sense "buxomness" , "playfulness" ;
   rdfs:comment "<i>sf ind </i>Buxomness, playfulness." ;
   rdfs:comment "ID: 0044323A2D3F537CE53D34CD59455166." .
 
 n:dealg_bhacaidh
   a :FeminineNoun ;
   rdfs:label "dealg-bhacaidh" ;
-  :sense "<i>sf </i>Sny, toggle, see bàta, No.1 p.70." ;
+  :sense "sny" , "toggle" ;
   rdfs:comment "<i>sf </i>Sny, toggle, see bàta, No.1 p.70." ;
   rdfs:comment "ID: 004AA573EEEBA731B68BC8A5D74DB1F5." .
 
 n:searrach
   a :MasculineNoun ;
   rdfs:label "searrach" ;
-  :sense "-aich, <i>sm</i> Foal, colt. 2(DC) Colt till housed &mdash; <i>Uist. </i>3 Filly. [A Gael considers it a bad omen to have a back view of the first foal or young of any grazing quadruped of that season he sees in any year]. Deich searraich, <i>ten foals; </i>càmhail le an searraich, <i>camels with their foals</i><i>;</i> chunnaic mi searrach 's a chùlaibh rium, <i>I saw a foal with its back to me.</i>" ;
+  :gen "searraich" ;
+  :pl "searraich" ;
+  :sense "foal" , "colt" , "colt till housed (Uist)" , "filly" ;
   rdfs:comment "-aich, <i>sm</i> Foal, colt. 2(DC) Colt till housed &mdash; <i>Uist. </i>3 Filly. [A Gael considers it a bad omen to have a back view of the first foal or young of any grazing quadruped of that season he sees in any year]. Deich searraich, <i>ten foals; </i>càmhail le an searraich, <i>camels with their foals</i><i>;</i> chunnaic mi searrach 's a chùlaibh rium, <i>I saw a foal with its back to me.</i>" ;
   rdfs:comment "ID: 004E1D19B3B26CA04E512BDAA7CD25F1." .
 
 a:tairgneach
   a :Adjective ;
   rdfs:label "tairgneach" ;
-  :sense "-eiche, <i>a. </i>Full of nails." ;
+  :comp "tairgneiche" ;
+  :sense "full of nails" ;
   rdfs:comment "-eiche, <i>a. </i>Full of nails." ;
   rdfs:comment "ID: 004FA19DF6B94CEC58B672CA8C742C4E." .
 
 a:iobach
   a :Adjective ;
   rdfs:label "iobach" ;
-  :sense "&dagger;&dagger; <i>a. </i>Full of, or pertaining to lumps of dough or unbaked cakes." ;
+  :sense "full of, or pertaining to lumps of dough or unbaked cakes" ;
   rdfs:comment "&dagger;&dagger; <i>a. </i>Full of, or pertaining to lumps of dough or unbaked cakes." ;
   rdfs:comment "ID: 0050350FDBE278B15A6B04E421ED955E." .
 
 n:baabhan_cabhaig
   a :MasculineNoun ;
   rdfs:label "bàbhan-cabhaig" ;
-  :sense "<i>sm </i>Fortification hastily constructed." ;
+  :sense "fortification hastily constructed" ;
   rdfs:comment "<i>sm </i>Fortification hastily constructed." ;
   rdfs:comment "ID: 005449DCE618B972451CD644D11E69EF." .
 
 a:beartach
   a :Adjective ;
   rdfs:label "beartach" ;
-  :sense "-aiche, <i>a </i>Rich, wealthy. 2 Of, or belonging to, a machine. 3** Sheathed. 4** Like a sheath or scabbard. 5&dagger;&dagger; Too much. Duine beartach,<i> a man of deeds, one rich in works, </i>also <i>a rich man.</i>" ;
+  :comp "beartaiche" ;
+  :sense "rich" , "wealthy" , "of, or belonging to, a machine" , "sheathed" , "like a sheath or scabbard" , "too much" ;
   rdfs:comment "-aiche, <i>a </i>Rich, wealthy. 2 Of, or belonging to, a machine. 3** Sheathed. 4** Like a sheath or scabbard. 5&dagger;&dagger; Too much. Duine beartach,<i> a man of deeds, one rich in works, </i>also <i>a rich man.</i>" ;
   rdfs:comment "ID: 0055EC8B4E0A43A544B61A3075D02190." .
 
 a:siadach
   a :Adjective ;
   rdfs:label "siadach" ;
-  :sense "&dagger;&dagger; -aiche, <i>a.</i> Having a fusty smell." ;
+  :comp "siadaiche" ;
+  :sense "having a fusty smell" ;
   rdfs:comment "&dagger;&dagger; -aiche, <i>a.</i> Having a fusty smell." ;
   rdfs:comment "ID: 005C8F9CEB61805ABC56E20A6781C85B." .
 
 o:saabhaig
   rdfs:label "sàbhaig" ;
-  :sense "<i>v. see </i>sàbh." ;
   rdfs:comment "<i>v. see </i>sàbh." ;
   rdfs:comment "ID: 005F160CC2BB0C735A9C4D3EDAAFA0A7." .
 
 o:ainmach
   rdfs:label "ainmach" ;
-  :sense "see anmoch." ;
   rdfs:comment "see anmoch." ;
   rdfs:comment "ID: 0063A2D2C1F8F9252718C46796A3BD9A." .
 
 a:neo_riantanach
   a :Adjective ;
   rdfs:label "neo-riantanach" ;
-  :sense "(DMC) <i>a. </i>Needless, uncalled for." ;
+  :sense "needless" , "uncalled for" ;
   rdfs:comment "(DMC) <i>a. </i>Needless, uncalled for." ;
   rdfs:comment "ID: 00678B04F574BE8A0536FD8569A9B964." .
 
 n:clach_bhalg
   a :MasculineNoun ;
   rdfs:label "clach-bhalg" ;
-  :sense "-bhuilg, -an. <i>sm</i> Originally a bag with stones in it to scare off birds or horses by rattling. 2 Now applied to any description of rattle, such as those formerly used by the police." ;
+  :gen "clach-bhuilg" ;
+  :pl "clach-bhalgan" ;
+  :sense "a bag with stones in it to scare off birds or horses by rattling" , "any description of rattle, such as those formerly used by the police" ;
   rdfs:comment "-bhuilg, -an. <i>sm</i> Originally a bag with stones in it to scare off birds or horses by rattling. 2 Now applied to any description of rattle, such as those formerly used by the police." ;
   rdfs:comment "ID: 0067FDA46EA77BD33275ED626F440484." .
 
 n:cabais
   a :FeminineNoun ;
   rdfs:label "cabais" ;
-  :sense "<i>sf</i> see cabaireachd." ;
   rdfs:comment "<i>sf</i> see cabaireachd." ;
   rdfs:comment "ID: 00683C82129DCC415FBF6EE2D67043F1." .
 
 n:barantachadh
   a :MasculineNoun ;
   rdfs:label "barantachadh" ;
-  :sense "-aidh, <i>sm </i>Warranting. 2 Warrant. A' barantachadh, <i>pr pt </i>of barantaich." ;
+  :gen "barantachaidh" ;
+  :sense "warranting" , "warrant" ;
   rdfs:comment "-aidh, <i>sm </i>Warranting. 2 Warrant. A' barantachadh, <i>pr pt </i>of barantaich." ;
   rdfs:comment "ID: 0068F9295B49924559F0DBF6F927CB49." .
 
 n:beachd_smuaineachadh
   a :MasculineNoun ;
   rdfs:label "beachd-smuaineachadh" ;
-  :sense "-aidh, <i>sm </i>Meditating, contemplating, musing. A' beachd-smuaineachadh, <i>pr pt </i>of beachd-smuainich." ;
+  :gen "beachd-smuaineachaidh" ;
+  :sense "meditating" , "contemplating" , "musing" ;
   rdfs:comment "-aidh, <i>sm </i>Meditating, contemplating, musing. A' beachd-smuaineachadh, <i>pr pt </i>of beachd-smuainich." ;
   rdfs:comment "ID: 00697D124BB67BC1AA0FBDAD4AC997B9." .
 
 n:tuigsinneachd
   a :FeminineNoun ;
   rdfs:label "tuigsinneachd" ;
-  :sense "<i>sf </i>Deducement." ;
+  :sense "deducement" ;
   rdfs:comment "<i>sf </i>Deducement." ;
   rdfs:comment "ID: 006A176A5979C8A7835EED38D97E245D." .
 
 n:ioma_cheaarnachd
   a :FeminineNoun ;
   rdfs:label "ioma-cheàrnachd" ;
-  :sense "&Dagger;&Dagger; <i>sf </i>Multangularness." ;
+  :sense "multangularness" ;
   rdfs:comment "&Dagger;&Dagger; <i>sf </i>Multangularness." ;
   rdfs:comment "ID: 006C90A8EB78F9AC2004BD430E2C0A5C." .
 
 a:drabhach
   a :Adjective ;
   rdfs:label "drabhach" ;
-  :sense "-aiche,<i> a</i><i> </i>Rifted, fissured. 2 Ill-cemented. 3†† Diverging." ;
+  :comp "drabhaiche" ;
+  :sense "rifted" , "fissured" , "ill-cemented" , "diverging" ;
   rdfs:comment "-aiche,<i> a</i><i> </i>Rifted, fissured. 2 Ill-cemented. 3†† Diverging." ;
   rdfs:comment "ID: 006FB3935B91072B72A461151E5CBCBC." .
 
 o:saibhreachd
   rdfs:label "saibhreachd" ;
-  :sense "see saoibhreas." ;
   rdfs:comment "see saoibhreas." ;
   rdfs:comment "ID: 00772440435A558B70F93A42B9904F5F." .
 
 a:sodrach
   a :Adjective ;
   rdfs:label "sodrach" ;
-  :sense "-aiche, <i>a. </i>Trotting, that trots." ;
+  :comp "sodraiche" ;
+  :sense "trotting" , "that trots" ;
   rdfs:comment "-aiche, <i>a. </i>Trotting, that trots." ;
   rdfs:comment "ID: 007DCCDEC1DB24789BA2D94A36C82951." .
 
 a:gealltanach
   a :Adjective ;
   rdfs:label "gealltanach" ;
-  :sense "-aiche, <i>a. </i>Promising. 2 Hopeful. 3 Auguring well, boding. 4(DMC) Desirous, fond. 5 Promissory. Tha mi glé ghealltanach air, <i>I am very fond of it.</i>" ;
+  :comp "gealltanaiche" ;
+  :sense "promising" , "hopeful" , "auguring well" , "boding" , "desirous" , "fond" , "promissory" ;
   rdfs:comment "-aiche, <i>a. </i>Promising. 2 Hopeful. 3 Auguring well, boding. 4(DMC) Desirous, fond. 5 Promissory. Tha mi glé ghealltanach air, <i>I am very fond of it.</i>" ;
   rdfs:comment "ID: 007F430F27A2328041B38E0E4BD50DCE." .
 
 a:fiarasach
   a :Adjective ;
   rdfs:label "fiarasach" ;
-  :sense "-aiche, <i>a. </i>Crooked, curved, not straight. 2 Curve-necked. Each fiarasach, <i>a curve-necked horse</i>." ;
+  :comp "fiarasaiche" ;
+  :sense "crooked" , "curved" , "not straight" , "curve-necked" ;
   rdfs:comment "-aiche, <i>a. </i>Crooked, curved, not straight. 2 Curve-necked. Each fiarasach, <i>a curve-necked horse</i>." ;
   rdfs:comment "ID: 0087D79573C83ADB0433AF499ECF3C1C." .
 
 n:ababachd
   a :FeminineNoun ;
   rdfs:label "ababachd" ;
-  :sense "* <i>sf </i>Filthiness, dirt." ;
+  :sense "filthiness" , "dirt" ;
   rdfs:comment "* <i>sf </i>Filthiness, dirt." ;
   rdfs:comment "ID: 008B7F9D87EDCA7C2A2A727286F2AF32." .
 
 a:corcarach
   a :Adjective ;
   rdfs:label "corcarach" ;
-  :sense "-aiche,<i> a</i><i> </i>Purple, red, crimson. 2 Of, abounding in, or belonging to, purple or crimson." ;
+  :comp "corcaraiche" ;
+  :sense "purple" , "red" , "crimson" , "of, abounding in, or belonging to, purple or crimson" ;
   rdfs:comment "-aiche,<i> a</i><i> </i>Purple, red, crimson. 2 Of, abounding in, or belonging to, purple or crimson." ;
   rdfs:comment "ID: 008C88BC61E7D11414643D7E9896942F." .
 
 a:plaaigheach
   a :Adjective ;
   rdfs:label "plàigheach" ;
-  :sense "-eiche, <i>a. </i>Plaguy, pestiferous, pestilential." ;
+  :comp "plàigheiche" ;
+  :sense "plaguy" , "pestiferous" , "pestilential" ;
   rdfs:comment "-eiche, <i>a. </i>Plaguy, pestiferous, pestilential." ;
   rdfs:comment "ID: 008D1CF1E1D27FE4210FE809CDBA6CC7." .
 
 o:leanabaidheachd
   rdfs:label "leanabaidheachd" ;
-  :sense "see leanabachd." ;
   rdfs:comment "see leanabachd." ;
   rdfs:comment "ID: 008E11CA9ED4FF9304B113A6E104355E." .
 
@@ -1875,8 +1887,7 @@ n:lastachd
 n:slacan
   a :MasculineNoun ;
   rdfs:label "slacan" ;
-  :sense "<i>sm </i>Circular depression, like a kiln." ;
-  rdfs:comment "<i>sm </i>Circular depression, like a kiln." ;
+  :sense "circular depression, like a kiln" ;
   rdfs:comment "ID: 04A2A698F246B8AD91D7D314F7B2A6F8." .
 
 n:coiriptheachd
@@ -4638,8 +4649,8 @@ a:cabhlachail
 n:beach
   a :MasculineNoun ;
   rdfs:label "beach" ;
-  :sense "-a, -an, <i>sm </i>Bee. 2 Beehive. 3 Wasp (<i>vespidae</i>). 4** Beast. 5** Bird. Mar bheachaibh, <i>as bees; </i>dranndan bheachan an aonaich, <i>the murmur of the mountain bees.</i>" ;
-  rdfs:comment "-a, -an, <i>sm </i>Bee. 2 Beehive. 3 Wasp (<i>vespidae</i>). 4** Beast. 5** Bird. Mar bheachaibh, <i>as bees; </i>dranndan bheachan an aonaich, <i>the murmur of the mountain bees.</i>" ;
+  :sense "bee" , "beehive" , "wasp" , "vespidae" , "beast" , "bird" ;
+  rdfs:comment "Mar bheachaibh, <i>as bees; </i>dranndan bheachan an aonaich, <i>the murmur of the mountain bees.</i>" ;
   rdfs:comment "ID: 0B93D7AF07225F14A2ACDA2D1AC59E52." .
 
 a:beachdail
@@ -26688,8 +26699,10 @@ n:nootachan
 n:slacan
   a :MasculineNoun ;
   rdfs:label "slacan" ;
-  :sense "-ain, -an, <i>sm</i> Beetle, mallet for washing clothes or fulling cloth. 2 Impediment, drawback. 3 Brake of a cycle. 4 Block of wood or any weight tied to an animal to prevent its escape. 5 Bat, as for cricket, rounders &amp;c. 7&dagger;&dagger; Club. Slacan-draoidheachd, <i>a </i><i>magic wand.</i>" ;
-  rdfs:comment "-ain, -an, <i>sm</i> Beetle, mallet for washing clothes or fulling cloth. 2 Impediment, drawback. 3 Brake of a cycle. 4 Block of wood or any weight tied to an animal to prevent its escape. 5 Bat, as for cricket, rounders &amp;c. 7&dagger;&dagger; Club. Slacan-draoidheachd, <i>a </i><i>magic wand.</i>" ;
+  :gen "slacain" ;
+  :pl "slacanan" ;
+  :sense "beetle" , "mallet for washing clothes or fulling cloth" , "impediment" , "drawback" , "brake of a cycle" , "block of wood or any weight tied to an animal to prevent its escape" , "bat, as for cricket, rounders &amp;c" , "club" ;
+  rdfs:comment "Slacan-draoidheachd, <i>a </i><i>magic wand.</i>" ;
   rdfs:comment "ID: 450CB5BA47C5F98F8402D2EB4F1D8E9F." .
 
 n:fiamharach
@@ -32876,8 +32889,10 @@ a:anabarrach
 n:broilleach
   a :MasculineNoun ;
   rdfs:label "broilleach" ;
-  :sense "-lich, -lichean, <i>sm</i> Breast, bosom, front. 2 Brisket of beef. A broilleach mar chobhar nan stuadh, <i>her bosom, like the foam of the waves; </i>an urrainn duine teine a gabhail 'na bhroilleach agus gun a aodach a bhith air a losgadh? <i>can a man take fire in his bosom without burning his clothes? </i>broilleach bàta, <i>the bow or stern of a boat, </i>see bàta, p.76." ;
-  rdfs:comment "-lich, -lichean, <i>sm</i> Breast, bosom, front. 2 Brisket of beef. A broilleach mar chobhar nan stuadh, <i>her bosom, like the foam of the waves; </i>an urrainn duine teine a gabhail 'na bhroilleach agus gun a aodach a bhith air a losgadh? <i>can a man take fire in his bosom without burning his clothes? </i>broilleach bàta, <i>the bow or stern of a boat, </i>see bàta, p.76." ;
+  :sense "breast" , "bosom" , "front" , "brisket of beef" ;
+  :gen "broillich" ;
+  :pl "broillichean" ;
+  rdfs:comment "A broilleach mar chobhar nan stuadh, <i>her bosom, like the foam of the waves; </i>an urrainn duine teine a gabhail 'na bhroilleach agus gun a aodach a bhith air a losgadh? <i>can a man take fire in his bosom without burning his clothes? </i>broilleach bàta, <i>the bow or stern of a boat, </i>see bàta, p.76." ;
   rdfs:comment "ID: 54F45C037D879B3E6D6D82A02A8D830F." .
 
 n:trii_cheaarnach_staabhach
@@ -35891,8 +35906,9 @@ n:riabhach
 n:beach
   a :MasculineNoun ;
   rdfs:label "beach" ;
-  :sense "&sect; -a, -an, <i>sm </i>Devil's snuffbox, fuzzball (<i>langermannia gigantea</i>)." ;
-  rdfs:comment "&sect; -a, -an, <i>sm </i>Devil's snuffbox, fuzzball (<i>langermannia gigantea</i>)." ;
+  :gen "beacha" ;
+  :pl "beachan" ;
+  :sense "devil’s snuffbox" , "fuzzball" , "langermannia gigantea" ;
   rdfs:comment "ID: 5C3F4547BC07C96AFCFAE972E4EEC2B5." .
 
 o:sabhadair
@@ -36457,8 +36473,10 @@ n:eeigheachd
 n:bratach
   a :FeminineNoun ;
   rdfs:label "bratach" ;
-  :sense "-aich, -aichean, <i>sf </i>Banner, flag, colours, ensign. Bratach shìth, <i>the fairy flag, </i>now in Dunvegan Castle and said to have been brought by the parson of Harris from Constantinople at the time of the Crusades; a' bhratach mhór aig rìgh nan lann, <i>the great banner of the king of swords; </i>bratach àlainn rìgh nam magh, <i>the beauteous banner of the king of the plains.</i>" ;
-  rdfs:comment "-aich, -aichean, <i>sf </i>Banner, flag, colours, ensign. Bratach shìth, <i>the fairy flag, </i>now in Dunvegan Castle and said to have been brought by the parson of Harris from Constantinople at the time of the Crusades; a' bhratach mhór aig rìgh nan lann, <i>the great banner of the king of swords; </i>bratach àlainn rìgh nam magh, <i>the beauteous banner of the king of the plains.</i>" ;
+  :gen "brataich" ;
+  :pl "brataichean" ;
+  :sense "banner" , "flag" , "colours" , "ensign" ;
+  rdfs:comment "Bratach shìth, <i>the fairy flag, </i>now in Dunvegan Castle and said to have been brought by the parson of Harris from Constantinople at the time of the Crusades; a' bhratach mhór aig rìgh nan lann, <i>the great banner of the king of swords; </i>bratach àlainn rìgh nam magh, <i>the beauteous banner of the king of the plains.</i>" ;
   rdfs:comment "ID: 5DBB218953FF188C22984734830AC399." .
 
 n:spiiochanach
@@ -46224,12 +46242,6 @@ n:uumhlachd
   rdfs:comment "<i>sf </i>Obedience. 2 Humility, obsequiousness. 3 Meekness. 4 Obeisance, salutation, homage. 5** Submission, submissiveness. 6** Practice of imposing penalties. 7** Taxation. Dèan d' ùmhlachd, <i>make your obeisance; </i>ùmhlachd a' chreidimh, <i>the obeisance of faith; </i>rinn e ùmhlachd dha, <i>he made obeisance to him, sainted him.</i>" ;
   rdfs:comment "ID: 76C47A038B6D6DB41AFB07663DE47DBA." .
 
-o:rach
-  rdfs:label "rach" ;
-  :sense "<i>def. v </i>Go, proceed, move, travel, walk.<i> </i><br><b>Active Voice:</b><br>IND <i>past</i> chaidh mi etc, <i>I et</i><i>c went. </i><br>IND<i> fut </i>théid mi etc, <i>I etc </i><i>will go. </i>[Although commonly given by grammars as the future tense of rach, <i>théid </i>is quite a different word].<i> <br></i>INTERR &amp; NEG <i>past</i> (an? nach? cha) deach <i>or </i>deachaidh mi etc.<i> </i><br>INTERR &amp; NEG <i>f</i><i>ut</i> (an? nach? cha) déid mi etc.<br>SUBJ <i>past</i> (ged) rachainn, <i>(though) I would go</i><i>;</i> (ged) rachadh tu, e, i, <i>(</i><i>though) y</i><i>ou </i><i>would go, he, she would go; </i>(ged) rachamaid, <i>(though) we would go; </i>(ged) rachadh sibh, iad, <i>(</i><i>though) you, they, would go. </i><br>SUBJ <i>f</i><i>ut </i>(ma) théid mi etc, <i>(if) I etc shall go. </i><br>IMP <i>1</i><sup><i>st</i></sup><i> </i><i>pers sing </i>racham, <i>let me go. </i><br>INF a dhol, <i>to go. </i><br>PRES PART a' dol, <i>going. <br></i><b>Used Impersonally thus:</b><i><br></i>IMP rachar, theirigear, na rachar.<i> </i><br>IND <i>past</i> deachas, chaidheas, an deachas? cha deachas.<i> </i><br>IND <i>f</i><i>ut </i>déidear, théidear, an déidear? cha déidear.<i> </i><br>Am fear a théid lideag am mearachd, <i>the </i><i>man </i><i>who goes a syllable, letter, least bit, wrong; </i>chaidh làithean na seachdain iomrall orra, <i>they got confused about (lost count of</i><i>) </i><i>the days of the week</i><i>;</i> chaidh a' chùis sa mhuileann orm, <i>I </i><i>became hopelesely puzzled over the matter; </i>chaidh thu gu Dùn Bheagain orm, <i>you went to the extreme with </i><i>me</i> — lit. <i>to Dunvegan</i>, a Lochaber saying — NGP; chaidh mi 'nam cheò, 'nam bhreislich, <i>I </i><i>became mystified, muddled; </i>chaidh mi bho obair, bho rath, bho fheum, <i>I </i><i>have become very </i><i>useless</i><i>; </i>chaidh mo thoirt ás mo ghabhail, <i>I have been disappointed of my original intention; </i>chaidh mi thar mo shiubhail, thar mo sgeòil, <i>I have deviated from, lost, my road, my story; </i>chaidh sinn thar a chéile, <i>we quarrelled, fell foul of each other; </i>chaidh mi am feirg choimhich, <i>I became transported with </i><i>rage</i><i>; </i>chaidh iad gu bròn 's gu briseadh-cridhe, <i>they gave way to mourning and </i><i>heart-grieving</i><i>; </i>chaidh mi a-rithis gu m' smuaintean, <i>I </i><i>reconsidered things, reviewed matters again; </i>chaidh e gu mór bho 'aire fhéin, <i>he </i><i>was so distraught as to be hardly himself; </i>chaidh am bàta air chrith, <i>the boat began to quiver; </i>cha deach sin gu math dhaibh, <i>that did not suit them at all, it </i><i>upset </i><i>them; </i>ciamar a chaidh dhut? <i>how </i><i>did </i><i>you manage, get on, how did things turn out for you? </i>rach air d' aghaidh, <i>or </i>rach air adhart, <i>proceed; </i>mas tu a tha ann, is tu chaidh ás, <i>if that be you, you have sadly altered, you are merely the shadow of your former self; </i>chaidh e ás orm, <i>he </i><i>escaped from me, evaded me; </i>chaidh an teine ás orm, <i>the fire I kindled </i>(or <i>was tending</i>) <i>went out</i><i>;</i> chaidh ás dhaibh, <i>they died, were killed, their influence ceased; </i>cha déid anam á mac bodaich le mùiseig, <i>threats will not kill a churl's son;</i> is mairg a rachadh fo do mheachannas, <i>pity him who would trust to your discretion </i>or<i> mercies; </i>chaidh Rìgh Lochlainn am meinn na Féinne, <i>the king of Lochlann begged the clemency of the Fingalians; </i>chaidh mi an dail, an ceann, an seilbh <i>no </i>an tarraing na h-oibre, <i>or </i>chaidh mi an sàs anns an obair, <i>I set</i><i> about the work; </i>chaidh agam air, <i>I </i><i>managed it, accomplished it</i> or <i>I </i><i>prevailed over him; </i>cha déid gad air gealladh, <i>you cannot bind a promise with a withy</i><i>;</i> cha déid fiach air beul duinte, <i>a closed mouth does not run into debt; </i>cha déid plàst air bagairt, <i>a threat needs no plaster;</i> chaidh a' bhròg oirre mu a cois, <i>the shoe fitted her foot, slipped on to it; </i>chaidh na geinneagan air a' chòta, <i>the buttons were attached to the coat; </i>chaidh eòin an geall caithream, <i>the birds began chorusing; </i>na h-igheanan is bòidhche a théid air ùrlar, <i>the lasses who dance most elegantly; </i>an nighean as deise a théid fon éideadh, <i>the </i><i>girl who dresses most tastefully; </i>an latha a théid clò ùr air faiche, <i>the day the new cloth </i>or <i>dress is sported in public</i><i>;</i> théid iad air faoigh, <i>they will go on a genteel begging expedition</i><i>;</i> théid iad air a' bhannaig, <i>they will go on a bannock-begging Christmas round; </i>théid iad air an déirc, <i>they will go begging for alms</i><i>;</i> théid iad air chéilidh thuige, <i>they will go on a visit to him; </i>théid iad 'nan deannaibh, <i>they will go, running furiously; </i>rachaibh dhachaigh, <i>go (you pl). home; </i>théid sinn dhachaigh, <i>we will go home; </i>na teirig dhachaigh, <i>don't go home</i><i>;</i> chaidh sinn dhachaigh, <i>we went home; </i>an deachaidh e dhachaigh?<i> did he go home</i><i>?</i>" ;
-  rdfs:comment "<i>def. v </i>Go, proceed, move, travel, walk.<i> </i><br><b>Active Voice:</b><br>IND <i>past</i> chaidh mi etc, <i>I et</i><i>c went. </i><br>IND<i> fut </i>théid mi etc, <i>I etc </i><i>will go. </i>[Although commonly given by grammars as the future tense of rach, <i>théid </i>is quite a different word].<i> <br></i>INTERR &amp; NEG <i>past</i> (an? nach? cha) deach <i>or </i>deachaidh mi etc.<i> </i><br>INTERR &amp; NEG <i>f</i><i>ut</i> (an? nach? cha) déid mi etc.<br>SUBJ <i>past</i> (ged) rachainn, <i>(though) I would go</i><i>;</i> (ged) rachadh tu, e, i, <i>(</i><i>though) y</i><i>ou </i><i>would go, he, she would go; </i>(ged) rachamaid, <i>(though) we would go; </i>(ged) rachadh sibh, iad, <i>(</i><i>though) you, they, would go. </i><br>SUBJ <i>f</i><i>ut </i>(ma) théid mi etc, <i>(if) I etc shall go. </i><br>IMP <i>1</i><sup><i>st</i></sup><i> </i><i>pers sing </i>racham, <i>let me go. </i><br>INF a dhol, <i>to go. </i><br>PRES PART a' dol, <i>going. <br></i><b>Used Impersonally thus:</b><i><br></i>IMP rachar, theirigear, na rachar.<i> </i><br>IND <i>past</i> deachas, chaidheas, an deachas? cha deachas.<i> </i><br>IND <i>f</i><i>ut </i>déidear, théidear, an déidear? cha déidear.<i> </i><br>Am fear a théid lideag am mearachd, <i>the </i><i>man </i><i>who goes a syllable, letter, least bit, wrong; </i>chaidh làithean na seachdain iomrall orra, <i>they got confused about (lost count of</i><i>) </i><i>the days of the week</i><i>;</i> chaidh a' chùis sa mhuileann orm, <i>I </i><i>became hopelesely puzzled over the matter; </i>chaidh thu gu Dùn Bheagain orm, <i>you went to the extreme with </i><i>me</i> — lit. <i>to Dunvegan</i>, a Lochaber saying — NGP; chaidh mi 'nam cheò, 'nam bhreislich, <i>I </i><i>became mystified, muddled; </i>chaidh mi bho obair, bho rath, bho fheum, <i>I </i><i>have become very </i><i>useless</i><i>; </i>chaidh mo thoirt ás mo ghabhail, <i>I have been disappointed of my original intention; </i>chaidh mi thar mo shiubhail, thar mo sgeòil, <i>I have deviated from, lost, my road, my story; </i>chaidh sinn thar a chéile, <i>we quarrelled, fell foul of each other; </i>chaidh mi am feirg choimhich, <i>I became transported with </i><i>rage</i><i>; </i>chaidh iad gu bròn 's gu briseadh-cridhe, <i>they gave way to mourning and </i><i>heart-grieving</i><i>; </i>chaidh mi a-rithis gu m' smuaintean, <i>I </i><i>reconsidered things, reviewed matters again; </i>chaidh e gu mór bho 'aire fhéin, <i>he </i><i>was so distraught as to be hardly himself; </i>chaidh am bàta air chrith, <i>the boat began to quiver; </i>cha deach sin gu math dhaibh, <i>that did not suit them at all, it </i><i>upset </i><i>them; </i>ciamar a chaidh dhut? <i>how </i><i>did </i><i>you manage, get on, how did things turn out for you? </i>rach air d' aghaidh, <i>or </i>rach air adhart, <i>proceed; </i>mas tu a tha ann, is tu chaidh ás, <i>if that be you, you have sadly altered, you are merely the shadow of your former self; </i>chaidh e ás orm, <i>he </i><i>escaped from me, evaded me; </i>chaidh an teine ás orm, <i>the fire I kindled </i>(or <i>was tending</i>) <i>went out</i><i>;</i> chaidh ás dhaibh, <i>they died, were killed, their influence ceased; </i>cha déid anam á mac bodaich le mùiseig, <i>threats will not kill a churl's son;</i> is mairg a rachadh fo do mheachannas, <i>pity him who would trust to your discretion </i>or<i> mercies; </i>chaidh Rìgh Lochlainn am meinn na Féinne, <i>the king of Lochlann begged the clemency of the Fingalians; </i>chaidh mi an dail, an ceann, an seilbh <i>no </i>an tarraing na h-oibre, <i>or </i>chaidh mi an sàs anns an obair, <i>I set</i><i> about the work; </i>chaidh agam air, <i>I </i><i>managed it, accomplished it</i> or <i>I </i><i>prevailed over him; </i>cha déid gad air gealladh, <i>you cannot bind a promise with a withy</i><i>;</i> cha déid fiach air beul duinte, <i>a closed mouth does not run into debt; </i>cha déid plàst air bagairt, <i>a threat needs no plaster;</i> chaidh a' bhròg oirre mu a cois, <i>the shoe fitted her foot, slipped on to it; </i>chaidh na geinneagan air a' chòta, <i>the buttons were attached to the coat; </i>chaidh eòin an geall caithream, <i>the birds began chorusing; </i>na h-igheanan is bòidhche a théid air ùrlar, <i>the lasses who dance most elegantly; </i>an nighean as deise a théid fon éideadh, <i>the </i><i>girl who dresses most tastefully; </i>an latha a théid clò ùr air faiche, <i>the day the new cloth </i>or <i>dress is sported in public</i><i>;</i> théid iad air faoigh, <i>they will go on a genteel begging expedition</i><i>;</i> théid iad air a' bhannaig, <i>they will go on a bannock-begging Christmas round; </i>théid iad air an déirc, <i>they will go begging for alms</i><i>;</i> théid iad air chéilidh thuige, <i>they will go on a visit to him; </i>théid iad 'nan deannaibh, <i>they will go, running furiously; </i>rachaibh dhachaigh, <i>go (you pl). home; </i>théid sinn dhachaigh, <i>we will go home; </i>na teirig dhachaigh, <i>don't go home</i><i>;</i> chaidh sinn dhachaigh, <i>we went home; </i>an deachaidh e dhachaigh?<i> did he go home</i><i>?</i>" ;
-  rdfs:comment "ID: 76C61DED6F3C48B01476D27D738FD039." .
-
 a:boltrach
   a :Adjective ;
   rdfs:label "boltrach" ;
@@ -49658,15 +49670,16 @@ o:barbaireachd
 a:frioghach
   a :Adjective ;
   rdfs:label "frioghach" ;
-  :sense "**<i> a</i><i> </i>Sharp, keen, piercing. 2 Bristly." ;
-  rdfs:comment "**<i> a</i><i> </i>Sharp, keen, piercing. 2 Bristly." ;
+  :sense "sharp" , "keen" , "piercing" , "bristly" ;
   rdfs:comment "ID: 7FA8F29477736BDF99C45BE9D66D6382." .
 
 n:fitheach
   a :MasculineNoun ;
   rdfs:label "fitheach" ;
-  :sense "-thich, <i>sm</i> Raven — <i>corvus corax. </i>Tha fios fithich aige, <i>he has raven's knowledge — </i>supposed to be supernatural; fios fithich gu ròic, <i>raven's knowledge to a feast </i>— said of one arriving accidentally and opportunely; thug na fithich aran ann, <i>the ravens brought bread. </i>[The raven which is the Clan Dougall bird, was considered sacred in Scandinavia and is supposed to have been introduced into the clan by a daughter of Olaf the Red]. [** gives Vulture].<div><img src=/Images/Dwelly/327.jpg></div>" ;
-  rdfs:comment "-thich, <i>sm</i> Raven — <i>corvus corax. </i>Tha fios fithich aige, <i>he has raven's knowledge — </i>supposed to be supernatural; fios fithich gu ròic, <i>raven's knowledge to a feast </i>— said of one arriving accidentally and opportunely; thug na fithich aran ann, <i>the ravens brought bread. </i>[The raven which is the Clan Dougall bird, was considered sacred in Scandinavia and is supposed to have been introduced into the clan by a daughter of Olaf the Red]. [** gives Vulture].<div><img src=/Images/Dwelly/327.jpg></div>" ;
+  :gen "fithich" ;
+  :pl "fithich" ;
+  :sense "raven" , "corvus corax" ;
+  rdfs:comment "Tha fios fithich aige, <i>he has raven's knowledge — </i>supposed to be supernatural; fios fithich gu ròic, <i>raven's knowledge to a feast </i>— said of one arriving accidentally and opportunely; thug na fithich aran ann, <i>the ravens brought bread. </i>[The raven which is the Clan Dougall bird, was considered sacred in Scandinavia and is supposed to have been introduced into the clan by a daughter of Olaf the Red]. [** gives Vulture]." ;
   rdfs:comment "ID: 7FB1E732B98DF82C7886C0492FF576A3." .
 
 n:miosarachd
@@ -72316,9 +72329,14 @@ n:spaidhleireachd
 a:gniiomhach
   a :Adjective ;
   rdfs:label "gnìomhach" ;
-  :sense "-aiche, <i>a. </i>Active, busy. 2 Diligent, industrious. 3 Actual. 4 Laborious. 5 Operative. 6&dagger;&dagger; Thrifty. 7* Making great or good deeds. An seillean gnìomhach,<i> the busy bee.</i>" ;
-  rdfs:comment "-aiche, <i>a. </i>Active, busy. 2 Diligent, industrious. 3 Actual. 4 Laborious. 5 Operative. 6&dagger;&dagger; Thrifty. 7* Making great or good deeds. An seillean gnìomhach,<i> the busy bee.</i>" ;
+  :sense "active" , "busy" , "diligent" , "industrious" , "actual" , "laborious" , "operative" , "thrifty" , "making great or good deeds" ; An seillean gnìomhach,<i> the busy bee.</i>" ;
+  :comp "gnìomhaiche" ;
   rdfs:comment "ID: BA6E57FBEE28396EFD98731B9744D954." .
+
+n:seillean_gniiomhach
+  rdfs:label "an seillean gnìomhach" ;
+  :sense "the busy bee" ;
+  :part a:gniiomhach .
 
 n:eadar_theangachadh
   a :MasculineNoun ;
@@ -75261,8 +75279,10 @@ a:cnocach
 n:fachach
   a :MasculineNoun ;
   rdfs:label "fachach" ;
-  :sense "¶ -aich, <i>sm</i> Puffin, coulterneb, shearwater (<i>fratercula arctica</i>). [A small bird with a yellow beak, which carries sand-eels or small herrings in its mouth to its young every morning, having been gathering them all night. The tails of the fishes are hanging out on both sides of its bill and 20 or 30 of them packed in its mouth]. The young is called “gille bog” <i>soft, fat fellow </i>(DMy). 2(AF) The young of these and other sea-birds. 3(DC) Sand-martin — <i>Argyll. </i>4 Mole. 5 Little, insignificant man - <i>Sàr-Obair.</i><div><img src=/Images/Dwelly/297.jpg width=307 height=408></div>" ;
-  rdfs:comment "¶ -aich, <i>sm</i> Puffin, coulterneb, shearwater (<i>fratercula arctica</i>). [A small bird with a yellow beak, which carries sand-eels or small herrings in its mouth to its young every morning, having been gathering them all night. The tails of the fishes are hanging out on both sides of its bill and 20 or 30 of them packed in its mouth]. The young is called “gille bog” <i>soft, fat fellow </i>(DMy). 2(AF) The young of these and other sea-birds. 3(DC) Sand-martin — <i>Argyll. </i>4 Mole. 5 Little, insignificant man - <i>Sàr-Obair.</i><div><img src=/Images/Dwelly/297.jpg width=307 height=408></div>" ;
+  :gen "fachaich" ;
+  :pl "fachaich" ;
+  :sense "puffin" , "coulterneb" , "shearwater" , "fratercula arctica" , "the young of these and other sea-birds" , "sand-martin (Argyll)" , "mole" , "little, insignificant man" ;
+  rdfs:comment "A small bird with a yellow beak, which carries sand-eels or small herrings in its mouth to its young every morning, having been gathering them all night. The tails of the fishes are hanging out on both sides of its bill and 20 or 30 of them packed in its mouth. The young is called “gille bog” <i>soft, fat fellow </i>" ;
   rdfs:comment "ID: C1E865621AD261780A1B9AB3163D74AF." .
 
 a:luathsachail
@@ -84252,11 +84272,10 @@ n:geurachd
   rdfs:comment "<i>sf </i>Observing, looking at. <i>Islay.</i>" ;
   rdfs:comment "ID: D9E0AB359F692EDD6ADBBDDF17AC0E47." .
 
-n:beach_lann
+n:beachlann
   a :MasculineNoun ;
   rdfs:label "beach-lann" ;
-  :sense "<i>sm </i>Beehive." ;
-  rdfs:comment "<i>sm </i>Beehive." ;
+  :sense "beehive" ;
   rdfs:comment "ID: D9E57BE8C05425A06663EB2051BFD356." .
 
 n:cniomh_chuileag_nan_each
@@ -99150,3 +99169,5 @@ a:maoiseagach
   :sense "-aiche, <i>a. </i>Abounding in small baskets or hampers. 2 Like a basket or hamper. 3 Abounding in does. 4 Like a scolding female. 5 Like a niggardly female. 6 Prone to scold." ;
   rdfs:comment "-aiche, <i>a. </i>Abounding in small baskets or hampers. 2 Like a basket or hamper. 3 Abounding in does. 4 Like a scolding female. 5 Like a niggardly female. 6 Prone to scold." ;
   rdfs:comment "ID: FFFECE5B3657B65AA861B11C3ECCA6ED." .
+
+}

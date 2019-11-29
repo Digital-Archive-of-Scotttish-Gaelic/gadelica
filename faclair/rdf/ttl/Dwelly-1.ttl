@@ -26181,9 +26181,6 @@ n:uumhlachd
   a :FeminineNoun ;
   rdfs:label "ùmhlachd" .
 
-o:rach
-  rdfs:label "rach" .
-
 a:boltrach
   a :Adjective ;
   rdfs:label "boltrach" .
@@ -40971,6 +40968,10 @@ a:gniiomhach
   a :Adjective ;
   rdfs:label "gnìomhach" .
 
+n:seillean_gniiomhach
+  rdfs:label "seillean gnìomhach" ;
+  :part n:seillean , a:gniiomhach .
+
 n:eadar_theangachadh
   a :MasculineNoun ;
   rdfs:label "eadar-theangachadh" .
@@ -47732,10 +47733,6 @@ n:bradach
 n:geurachd
   a :FeminineNoun ;
   rdfs:label "geurachd" .
-
-n:beach_lann
-  a :MasculineNoun ;
-  rdfs:label "beach-lann" .
 
 n:cniomh_chuileag_nan_each
   a :Noun ;
