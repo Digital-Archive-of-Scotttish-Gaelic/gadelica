@@ -1,6 +1,6 @@
 <?php
 
-$file = file_get_contents('../ids-1.txt');
+$file = file_get_contents('../DwellyToDo.txt');
 $ids = explode(PHP_EOL, $file);
 
 foreach ($ids as $nextId) {
@@ -10,7 +10,7 @@ foreach ($ids as $nextId) {
     $id = substr($nextId,28);
     //echo $id . PHP_EOL;
     $html = file_get_contents($url);
-    $fileName = $id . '.html';
+    $fileName = '../html/' . $id . '.html';
     echo $fileName . PHP_EOL;
     file_put_contents($fileName,$html);
   }

@@ -1,9 +1,9 @@
 <?php
 
-$files = scandir('.');
+$files = scandir('../html/');
 foreach ($files as $nextFile) {
   if (strpos($nextFile, '.html')) {
-    $txt = file_get_contents($nextFile);
+    $txt = file_get_contents('../html/' . $nextFile);
     $start = strpos($txt, '<span id="lblGaelic">') + 21;
     $end = strpos($txt, '</span>', $start);
     $hw = substr($txt, $start, $end-$start);
@@ -81,10 +81,10 @@ foreach ($files as $nextFile) {
     if ($pos!=':Undefined') {
       echo '  a ' . $pos . ' ;' . PHP_EOL;
     }
-    echo '  rdfs:label "' . $hw . '" ;' . PHP_EOL ;
-    echo '  :sense "' . $desc . '" ;' . PHP_EOL ;
-    echo '  rdfs:comment "' . $desc . '" ;' . PHP_EOL ;
-    echo '  rdfs:comment "ID: ' . substr($nextFile,0,33) . '" .' . PHP_EOL ;
+    echo '  rdfs:label "' . $hw . '" .' . PHP_EOL ;
+    //echo '  :sense "' . $desc . '" ;' . PHP_EOL ;
+    //echo '  rdfs:comment "' . $desc . '" ;' . PHP_EOL ;
+    //echo '  rdfs:comment "ID: ' . substr($nextFile,0,33) . '" .' . PHP_EOL ;
     echo PHP_EOL;
   }
 }

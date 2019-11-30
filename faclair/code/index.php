@@ -30,6 +30,7 @@ else {
             </div>
           </div>
         </div>
+        <div class="form-group">
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="radio" name="lang" id="enRadio" value="en"<?php if ($lang!='gd') echo ' checked'; ?>>
           <label class="form-check-label" for="enRadio">Beurla</label>
@@ -37,6 +38,25 @@ else {
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="radio" name="lang" id="gdRadio" value="gd"<?php if ($lang=='gd') echo ' checked'; ?>>
           <label class="form-check-label" for="gdRadio">Gàidhlig</label>
+        </div>
+        </div>
+        <div class="form-group">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" name="lexicon" id="snhCheck" value="snh" checked>
+          <label class="form-check-label" for="snhCheck">Faclan Nàdair (SNH)</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" name="lexicon" id="frpCheck" value="frp" checked>
+          <label class="form-check-label" for="frpCheck">Faclair Rianachd Phoblaich</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" name="lexicon" id="dwellyCheck" value="dwelly" checked>
+          <label class="form-check-label" for="dwellyCheck">Dwelly</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" name="lexicon" id="otherCheck" value="other" checked>
+          <label class="form-check-label" for="otherCheck">Eile</label>
+        </div>
         </div>
       </form>
       <table class="table table-hover" id="resultsTable">
