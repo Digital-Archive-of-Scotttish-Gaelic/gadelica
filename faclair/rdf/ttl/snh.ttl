@@ -304,66 +304,205 @@ n:Sasainn
   rdfs:label "Sasainn" .
 
 n:beaarnan_Briide
-  rdfs:label "beàrnan Brìde" .
+  rdfs:label "beàrnan Brìde" ;
+  :gen "beàrnain Bhrìde" ;
+  :pl "beàrnain Bhrìde" ;
+  :part n:beaarnan , n:Briide .
+
+n:Briide
+  a :FeminineNoun ;
+  rdfs:label "Brìde" ;
+  :gen "Brìde" .
+
+n:beaarnan
+  a :MasculineNoun ;
+  rdfs:label "beàrnan" ;
+  :gen "beàrnain" ;
+  :pl "beàrnain" ;
+  :part n:beaarn .
+
+n:beaarn
+  a :FeminineNoun ;
+  rdfs:label "beàrn" ;
+  :gen "beàirna" ;
+  :pl "beàrnan" .
 
 n:beathachadh
   a :MasculineNoun ;
-  rdfs:label "beathachadh" .
+  rdfs:label "beathachadh" ;
+  :gen "beathachaidh" ;
+  :pl "beathachaidhean" ;
+  :part v:beathaich .
+
+v:beathaich
+  a :Verb ;
+  rdfs:label "beathaich" ;
+  :vn "beathachadh" ;
+  :part n:beatha .
 
 n:peileag
   a :FeminineNoun ;
-  rdfs:label "peileag" .
+  rdfs:label "peileag" ;
+  :gen "peileige" ;
+  :pl "peileagan" .
 
 n:cana
   a :MasculineNoun ;
-  rdfs:label "cana" .
+  rdfs:label "cana" ;
+  :gen "cana" ;
+  :pl "canaichean" .
 
 n:beith
   a :FeminineNoun ;
-  rdfs:label "beith" .
+  rdfs:label "beith" ;
+  :gen "beithe" ;
+  :pl "beithean" .
 
-n:muir_tiachd
-  rdfs:label "muir-tiachd" .
+n:muir_teeachd
+  rdfs:label "muir-tèachd" ;
+  :gen "muir-tèachd" ;
+  :pl "muir-tèachdan" ;
+  :part n:muir , n:teeachd .
+
+n:teeachd
+  a :MasculineNoun ;
+  rdfs:label "tèachd" ;
+  :gen "tèachd" ;
+  :pl "tèachdan" .
 
 n:spideag
   a :FeminineNoun ;
-  rdfs:label "spideag" .
+  rdfs:label "spideag" ;
+  :gen "spideige" ;
+  :pl "spideagan" .
 
 n:beul_binn
-  rdfs:label "beul binn" .
+  rdfs:label "beul binn" ;
+  :gen "beòil bhinn" ;
+  :pl "beòil bhinn" ;
+  :part n:beul , a:binn .
+
+n:beul
+  a :MasculineNoun ;
+  rdfs:label "beul" ;
+  :gen "beòil" ;
+  :pl "beòil" .
+
+a:binn
+  a :Adjective ;
+  rdfs:label "binn" ;
+  :comp "binne" .
 
 n:doobhran
   a :MasculineNoun ;
-  rdfs:label "dòbhran" .
+  rdfs:label "dòbhran" ;
+  :gen "dòbhrain" ;
+  :pl "dòbhrain" ;
+  :part n:dobhar .
+
+n:dobhar
+  a :MasculineNoun ;
+  rdfs:label "dobhar" ;
+  :gen "dobhair" .
 
 n:biast_dhubh
-  rdfs:label "biast dhubh" .
+  rdfs:label "biast dhubh" ;
+  :gen "bèiste duibhe" ;
+  :pl "biastan dubha" ;
+  :part n:biast , a:dubh .
+
+n:biast
+  a :FeminineNoun ;
+  rdfs:label "biast" ;
+  :gen "bèiste" ;
+  :pl "biastan" .
 
 n:gealan_beinne
-  rdfs:label "gealan beinne" .
+  rdfs:label "gealan beinne" ;
+  :gen "gealain bheinne" ;
+  :pl "gealain bheinne" ;
+  :part n:gealan , n:beinn .
+
+n:gealan
+  a :MasculineNoun ;
+  rdfs:label "gealan" ;
+  :gen "gealain" ;
+  :pl "gealain" ;
+  :part a:geal .
 
 n:bile_bhuidhe
-  rdfs:label "bile bhuidhe" .
+  rdfs:label "bile bhuidhe" ;
+  :gen "bile buidhe" ;
+  :pl "bilean buidhe" ;
+  :part n:bile , a:buidhe .
+
+n:bile
+  a :FeminineNoun ;
+  rdfs:label "bile" ;
+  :gen "bile" ;
+  :pl "bilean" .
 
 n:biorra_cruuidein
-  rdfs:label "biorra crùidein" .
+  rdfs:label "biorra crùidein" ;
+  :pl "biorrachan crùidein" ;
+  :part n:biorra , n:cruuidean .
+
+n:biorra
+  a :MasculineNoun ;
+  rdfs:label "biorra" ;
+  :gen "biorra" ;
+  :pl "biorrachan" .
+
+n:cruuidean
+  a :MasculineNoun ;
+  rdfs:label "crùidean" ;
+  :gen "crùidein" ;
+  :pl "crùidein" .
 
 n:iasgair_an_riigh
-  rdfs:label "iasgair an rìgh" .
+  rdfs:label "iasgair an rìgh" ;
+  :gen "iasgair an rìgh" ;
+  :pl "iasgairean an rìgh" ;
+  :part n:iasgair , n:riigh .
+
+n:iasgair
+  rdfs:label "iasgair" ;
+  :gen "iasgair" ;
+  :pl "iasgairean" ;
+  :part n:iasg .
 
 n:murlach
   a :MasculineNoun ;
-  rdfs:label "murlach" .
+  rdfs:label "murlach" ;
+  :gen "murlaich" ;
+  :pl "murlaichean" .
 
 n:bith_eoolas
-  rdfs:label "bith-eòlas" .
+  rdfs:label "bith-eòlas" ;
+  :gen "bith-eòlais" ;
+  :part n:bith , n:eoolas .
 
 n:bith_iomadachd
-  rdfs:label "bith-iomadachd"  .
+  rdfs:label "bith-iomadachd" ;
+  :gen "bith-iomadachd" ;
+  :part n:bith , n:iomadachd .
+
+n:iomadachd
+  a :FeminineNoun ;
+  rdfs:label "iomadachd" ;
+  :gen "iomadachd" ;
+  :part n:iomadh .
+
+n:iomadh
+  a :MasculineNoun ;
+  rdfs:label "iomadh" ;
+  :gen "iomaidh" .
 
 n:boc
   a :MasculineNoun ;
-  rdfs:label "boc" .
+  rdfs:label "boc" ;
+  :gen "buic" ;
+  :pl "buic" .
 
 n:boc_earba
   rdfs:label "boc earba" .
@@ -2359,7 +2498,8 @@ a:uaine
 
 a:geal
   a :Adjective ;
-  rdfs:label "geal" .
+  rdfs:label "geal" ;
+  :comp "gile" .
 
 a:dearg
   a :Adjective ;
@@ -2535,7 +2675,8 @@ n:luibh_eoolas
 
 n:eoolas
   a :MasculineNoun ;
-  rdfs:label "eòlas" .
+  rdfs:label "eòlas" ;
+  :gen "eòlais" .
 
 n:lus
   a :MasculineNoun ;
@@ -4267,6 +4408,7 @@ n:traaigh
 n:beinn
   a :FeminineNoun ;
   rdfs:label "beinn" ;
+  :gen "beinne" ;
   :pl "beanntan" .
 
 n:moointeach
@@ -4797,7 +4939,8 @@ a:meanbh
 n:biastag
   a :FeminineNoun ;
   rdfs:label "biastag" ;
-  :pl "biastagan" .
+  :pl "biastagan" ;
+  :part n:biast .
 
 n:ceann_dearg
   rdfs:label "ceann dearg" ;
