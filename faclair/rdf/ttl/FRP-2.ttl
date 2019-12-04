@@ -2198,19 +2198,6 @@ v:labhair
     :part o:le_aonta ;
     :sense "qualified majority voting" .
 
-  o:le_barantas
-    rdfs:label "le barantas" ;
-    :sense "guaranteed" .
-
-  o:le_barantas_daa_bhliadhna
-    rdfs:label "le barantas dà bhliadhna" ;
-    :part n:le_barantas ;
-    :sense "guaranteed for two years" .
-
-  o:le_barantas_lagha
-    rdfs:label "le barantas lagha" ;
-    :sense "legally qualified" .
-
   o:le_ceann
     rdfs:label "le ceann" ;
     :sense "headed" .
@@ -6187,10 +6174,6 @@ n:mach_obair
     rdfs:label "Morair-ionaid a’ Chrùin" ;
     :sense "Lord Lieutenant" .
 
-  n:mooralachd
-    rdfs:label "mòralachd" ;
-    :sense "dignity" .
-
   n:mooralachd_na_Paarlamaid
     rdfs:label "mòralachd na Pàrlamaid" ;
     :part n:mooralachd ;
@@ -7242,6 +7225,9 @@ n:neach_bacaidh
   n:neach_teagaimh
     rdfs:label "neach-teagaimh" ;
     :sense "sceptic" .
+
+  n:neach_teagaisg
+    rdfs:label "neach teagaisg" .
 
   n:neach_teagaisg_%28aard_sgoile%29
     rdfs:label "neach-teagaisg (àrd-sgoile)" ;
@@ -9042,10 +9028,6 @@ n:neach_bacaidh
     rdfs:label "air òrdugh" ;
     :part n:oordugh ;
     :sense "by order of" .
-
-  n:oordugh_a_dh%27aon_ghnothach
-    rdfs:label "òrdugh a dh’aon ghnothach" ;
-    :sense "express instruction" .
 
   n:oordugh_aireachais
     rdfs:label "òrdugh aireachais" ;
@@ -16164,14 +16146,8 @@ n:an_seool_bacaidh_deireannach
     rdfs:label "sitigich" ;
     :sense "tip" .
 
-  n:siubhal
-    rdfs:label "siubhal" ;
-    :sense "travel" .
-
-  n:barantas_siubhail
-    rdfs:label "barantas siubhail" ;
-    :part n:siubhal ;
-    :sense "travel warrant" .
+n:siubhal
+  rdfs:label "siubhal" .
 
   n:cosgaisean_siubhail
     rdfs:label "cosgaisean siubhail" ;

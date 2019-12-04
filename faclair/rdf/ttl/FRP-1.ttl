@@ -7,162 +7,160 @@
 
 # Editable version of Faclair Rianachd Phoblaich A-G
 
-o:a_bhuineas_do
-  rdfs:label "a bhuineas do (rud)" .
+v:buin
+  a :Verb ;
+  rdfs:label "buin" ;
+  :vn "buntainn" .
 
-  o:a_bhuineas_don_argamaid
-    rdfs:label "a bhuineas don argamaid" ;
-    :part o:a_bhuineas_do ;
-    :sense "material to the argument"  .
+v:buin_do
+  rdfs:label "buin do ..." ;
+  :part v:buin .
 
-  o:a_dh%27aon_ghnothach
-    rdfs:label "a dh’aon ghnothach" ;
-    :sense "intentional"  .
+v:buin_don_argamaid
+  rdfs:label "buin don argamaid" ;
+  :part v:buin_do , n:argamaid .
 
-  o:a_ghabhas_a_steach
-    rdfs:label "a ghabhas a-steach" ;
-    :sense "inclusive" ;
-    :sense "inclusiveness" .
+v:buin_ri
+  rdfs:label "buin ri ..." ;
+  :part v:buin .
 
-  n:A_Mhooralachd
-    rdfs:label "a Mhòralachd" ;
-    :sense "Her Majesty" .
+v:buinidh_a_bhreith_ris_an_cuspair_seo_sa_chlaar_ghnothaich
+  rdfs:label "buinidh a’ bhreith ris an cuspair seo sa chlàr ghnothaich" ;
+  :part v:buin_ri , n:breith , n:cuspair , n:claar_gnothaich .
 
-  n:A_Mooralachd
-    rdfs:label "a Mòralachd" ;
-    :sense "His Majesty"  .
+n:buntainn
+  a :FeminineNoun ;
+  rdfs:label "buntainn" ;
+  :part v:buin .
 
-  o:a_reeir
-    rdfs:label "a rèir" ;
-    :sense "according to" ;
-    :sense "in pursuance of" .
+n:buntainneas
+  a :MasculineNoun ;
+  rdfs:label "buntainneas" ;
+  :part n:buntainn .
 
-  o:a_reeir_an_lagha
-    rdfs:label "a rèir an lagha" ;
-    :part o:a_reeir ;
-    :sense "according to law" .
+a:buntainneach
+  a :Adjective ;
+  rdfs:label "buntainneach" ;
+  :part n:buntainn.
+
+
+
+o:de_dh_aon_ghnothach
+  rdfs:label "de dh’aon ghnothach" ;
+  :part n:aon , n:gnothach .
+
+v:gabh_a_steach
+  rdfs:label "gabh a-steach" ;
+  :part v:gabh , o:a_steach .
+
+n:mooralachd
+  a :FeminineNoun ;
+  rdfs:label "mòralachd" ;
+  :part a:moor .
+
+o:de_reeir
+  rdfs:label "a rèir" .
+
+o:de_reeir_an_lagha
+  rdfs:label "a rèir an lagha" ;
+  :part o:de_reeir , n:lagha .
 
   o:a_reeir_a_cheeile
-    rdfs:label "a rèir a chèile" ;
-    :sense "mutually exclusive" .
+    rdfs:label "a rèir a chèile" .
 
   o:cha_tig_na_h_argamaidean_a_reeir_a_cheeile
     rdfs:label "cha tig na h-argamaidean a rèir a chèile" ;
-    :part v:a_reeir_a_cheeile ;
-    :sense "the arguments are mutually exclusive" .
+    :part v:a_reeir_a_cheeile .
 
   o:a_reeir_ceartais
-    rdfs:label "a rèir ceartais" ;
-    :sense "justifiable" .
+    rdfs:label "a rèir ceartais" .
 
   o:a_reeir_solair
-    rdfs:label "a rèir solair" ;
-    :sense "supply-driven" .
+    rdfs:label "a rèir solair" .
 
   n:tionnsgnadh_a_tha_a_reeir_an_t_solair
     rdfs:label "tionnsgnadh a tha a rèir an t-solair" ;
-    :part o:a_reeir_solair ;
-    :sense "supply-driven initiative" .
+    :part o:a_reeir_solair .
 
   o:a_sheasas_na_aonar
-    rdfs:label "a sheasas na aonar" ;
-    :sense "stand-alone" .
+    rdfs:label "a sheasas na aonar" .
 
   n:buidheann_a_sheasas_na_aonar
     rdfs:label "buidheann a sheasas na aonar" ;
-    :part o:a_sheasas_na_aonar ;
-    :sense "stand-alone body" .
+    :part o:a_sheasas_na_aonar .
 
   n:A_Shoillse
-    rdfs:label "A Shoillse" ;
-    :sense "Her Excellency" .
+    rdfs:label "A Shoillse" .
 
   n:A_Soillse
-    rdfs:label "A Soillse" ;
-    :sense "His Excellency" .
+    rdfs:label "A Soillse" .
 
   o:a_tha_a%27_tighinn_a_steach
-    rdfs:label "a tha a’ tighinn a-steach" ;
-    :sense "incoming"  .
+    rdfs:label "a tha a’ tighinn a-steach" .
 
   o:a_thaobh
-    rdfs:label "a thaobh" ;
-    :sense "in pursuance of" .
+    rdfs:label "a thaobh" .
 
   o:a_thogas_meanmna
-    rdfs:label "a thogas meanmna" ;
-    :sense "uplifting" .
+    rdfs:label "a thogas meanmna" .
 
   o:a_thuilleadh
-    rdfs:label "a thuilleadh" ;
-    :sense "further" .
+    rdfs:label "a thuilleadh" .
 
   n:aon_phuing_a_thuilleadh_air_sin
     rdfs:label "aon phuing a thuilleadh air sin" ;
-    :part o:a_thuilleadh ;
-    :sense "one further point" .
+    :part o:a_thuilleadh .
 
   n:a%27_bhuidheann_G8
-    rdfs:label "a’ bhuidheann G8 (de na dùthchannan as beairtiche)" ;
-    :sense "G8 (group of industrialised nations)" .
+    rdfs:label "a’ bhuidheann G8 (de na dùthchannan as beairtiche)" .
 
   n:a%27_bhuidheann_G20
-    rdfs:label "a’ bhuidheann G20" ;
-    :sense "G20" .
+    rdfs:label "a’ bhuidheann G20" .
 
   o:a%27_Chairt_Eoorpach_airson_Chaananan_Roinneil_agus_Mion_Chaananan
-    rdfs:label "A’ Chairt Eòrpach airson Chànanan Roinneil agus Mion-chànanan" ;
-    :sense "European Charter for Regional and Minority Languages" .
+    rdfs:label "A’ Chairt Eòrpach airson Chànanan Roinneil agus Mion-chànanan" .
 
   n:a%27_chiad
-    rdfs:label "a’ chiad" ;
-    :sense "first" .
+    rdfs:label "a’ chiad" .
 
   o:anns_a%27_chiad_aaite
     rdfs:label "sa chiad àite" ;
-    :part n:a%27_chiad ;
-    :sense "first past the post"  .
+    :part n:a%27_chiad .
 
   n:a%27_Choimhearsnachd_Eoorpach
-    rdfs:label "a’ Choimhearsnachd Eòrpach" ;
-    :sense "European Community" .
+    rdfs:label "a’ Choimhearsnachd Eòrpach" .
 
   n:a%27_Chuimrigh
-    rdfs:label "A’ Chuimrigh" ;
-    :sense "Wales" .
+    rdfs:label "A’ Chuimrigh" .
 
   o:a%27_fulang_easbhaidh_shooisealta
-    rdfs:label "a’ fulang easbhaidh shòisealta" ;
-    :sense "socially deprived"  .
+    rdfs:label "a’ fulang easbhaidh shòisealta" .
 
   n:a%27_Ghaaidhealtachd_agus_na_h_Eileanan
-    rdfs:label "A’ Ghàidhealtachd agus na h-Eileanan" ;
-    :sense "Highlands and Islands (region)" .
+    rdfs:label "A’ Ghàidhealtachd agus na h-Eileanan" .
 
   o:a%27_leantainn_air
-    rdfs:label "a’ leantainn air" ;
-    :sense "in pursuance of" .
+    rdfs:label "a’ leantainn air" .
 
   n:a%27_mhionaid_mu_dheireadh
-    rdfs:label "a’ mhionaid mu dheireadh" ;
-    :sense "eleventh hour" .
+    rdfs:label "a’ mhionaid mu dheireadh" .
 
   v:chaidh_an_saabhaladh_aig_a%27_mhionaid_mu_dheireadh
     rdfs:label "chaidh an sàbhaladh aig a’ mhionaid mu dheireadh" ;
-    :part n:a%27_mhionaid_mu_dheireadh ;
-    :sense "they were rescued at the eleventh hour" .
+    :part n:a%27_mhionaid_mu_dheireadh .
 
-  a:abaich
-    rdfs:label "abaich" ;
-    :sense "mature" .
+a:abaich
+  a :Adjective ;
+  rdfs:label "abaich" .
 
-  v:abaich
-    rdfs:label "abaich" ;
-    :sense "mature" .
+v:abaich
+  a :Verb ;
+  rdfs:label "abaich" ;
+  :part a:abaich .
 
-  n:abaichead
-    rdfs:label "abaichead" ;
-    :sense "maturity" .
+n:abaichead
+  rdfs:label "abaichead" ;
+  :part a:abaich .
 
   v:abair
     rdfs:label "abair" ;
@@ -1501,8 +1499,8 @@ a:ailtireil
     :part n:amharas ;
     :sense "his motives were regarded with suspicion" .
 
-  v:chaidh_an_neach_fo_amharas_a_chur_an_greeim
-    rdfs:label "chaidh an neach (a bha) fo amharas a chur an grèim" ;
+  v:chaidh_an_neach_fo_amharas_a_chur_an_greim
+    rdfs:label "chaidh an neach (a bha) fo amharas a chur an greim" ;
     :part n:amharas ;
     :sense "the suspect was arrested" .
 
@@ -2724,9 +2722,8 @@ a:ailtireil
     rdfs:label "às-dùnadh sòisealta" ;
     :sense "social exclusion" .
 
-  n:aas_mhalairt
-    rdfs:label "às-mhalairt" ;
-    :sense "export" .
+n:aas_mhalairt
+  rdfs:label "às-mhalairt" .
 
   n:aas_mhalairtear
     rdfs:label "às-mhalairtear" ;
@@ -3844,113 +3841,130 @@ n:tuil
       rdfs:label "baralachadh" ;
       :sense "hypothesis" .
 
-    n:baranta_creideis_airson_aas_mhalairt
-      rdfs:label "baranta creideis airson às-mhalairt" ;
-      :sense "export credit guarantee" .
+n:barantachadh
+  a :MasculineNoun ;
+  rdfs:label "barantachadh" ;
+  :part v:barantaich .
 
-    n:roinn_barantais_chreideis_airson_aas_mhalairt
-      rdfs:label "roinn barantais chreideis airson às-mhalairt" ;
-      :part n:baranta_creideis_airson_aas_mhalairt ;
-      :sense "export credit guarantee department" .
+v:barantaich
+  a :Verb ;
+  rdfs:label "barantaich" ;
+  :part n:barantas .
 
-    n:barantachadh
-      rdfs:label "barantachadh" ;
-      :sense "accreditation" .
+a:barantaichte
+  a :Adjective ;
+  rdfs:label "barantaichte" ;
+  :part v:barantaich .
 
-    v:barantaich
-      rdfs:label "barantaich" ;
-      :sense "accredit" , "commission" .
+n:neach_ionaid_barantaichte
+  rdfs:label "neach ionaid barantaichte" ;
+  :part n:neach_ionaid , a:barantaichte .
 
-    a:barantaichte
-      rdfs:label "barantaichte" ;
-      :sense "accredited" , "qualified (having gained certification)" .
+n:aaidseant_barantaichte
+  rdfs:label "àidseant barantaichte" ;
+  :part n:aaidseant , a:barantaichte .
 
-    n:neach_ionaid_barantaichte
-      rdfs:label "neach-ionaid barantaichte" ;
-      :part a:barantaichte ;
-      :sense "accredited agent" .
+n:inbhe_neach_theagaisg_bharantaichte
+  rdfs:label "inbhe neach theagaisg bharantaichte" ;
+  :part n:inbhe , n:neach_teagaisg_barantaichte .
 
-    n:aaidseant_barantaichte
-      rdfs:label "àidseant barantaichte" ;
-      :part a:barantaichte ;
-      :sense "accredited agent" .
+n:neach_teagaisg_barantaichte
+  rdfs:label "neach teagaisg barantaichte" ;
+  :part n:neach_teagaisg , a:barantaichte .
 
-    n:inbhe_neach_theagaisg_bharantaichte
-      rdfs:label "inbhe neach-theagaisg bharantaichte" ;
-      :part a:barantaichte ;
-      :sense "qualified teacher status" .
+n:barantas
+  a :MasculineNoun ;
+  rdfs:label "barantas" .
 
-    n:barantas
-      rdfs:label "barantas" ;
-      :sense "certificate" , "assurance" , "guarantee" , "qualification" .
+v:thoir_barantas
+  rdfs:label "thoir barantas" ;
+  :part v:thoir , n:barantas .
 
-    v:thug_e_barantas
-      rdfs:label "thug e barantas" ;
-      :part n:barantas ;
-      :sense "he gave an assurance" .
+o:le_barantas
+  rdfs:label "le barantas" ;
+  :part n:barantas .
 
-    o:le_barantas_daa_bhliadhna
-      rdfs:label "le barantas dà bhliadhna" ;
-      :part n:barantas ;
-      :sense "guaranteed for two years" .
+o:le_barantas_daa_bhliadhna
+  rdfs:label "le barantas dà bhliadhna" ;
+  :part n:barantas_daa_bhliadhna .
 
-    o:le_barantas_lagha
-      rdfs:label "le barantas lagha" ;
-      :part n:barantas ;
-      :sense "legally qualified" .
+n:barantas_daa_bhliadhna
+  rdfs:label "barantas dà bhliadhna" ;
+  :part n:barantas , n:daa , n:bliadhna .
 
-    n:barantas_creideis_airson_aas_mhalairt
-      rdfs:label "barantas creideis airson às-mhalairt" ;
-      :sense "export credit guarantee" .
+o:le_barantas_lagha
+  rdfs:label "le barantas lagha" ;
+  :part o:barantas_lagha .
 
-    n:roinn_barantais_chreideis_airson_aas_mhalairt
-      rdfs:label "roinn barantais chreideis airson às-mhalairt" ;
-      :part n:barantas_creideis_airson_aas_mhalairt ;
-      :sense "export credit guarantee department" .
+n:barantas_lagha
+  rdfs:label "barantas lagha" ;
+  :part n:barantas , n:lagh .
 
-    n:barantas_cuir_an_greim
-      rdfs:label "barantas cuir an greim" ;
-      :sense "arrest warrant" .
+n:barantas_creideis_airson_aas_mhalairt
+  rdfs:label "barantas creideis airson às-mhalairt" ;
+  :part n:barantas_creideis , n:aas_mhalairt .
 
-    n:Barantas_Dreuchdail_Coitcheann_na_h_Alba
-      rdfs:label "Barantas Dreuchdail Coitcheann na h-Alba" ;
-      :sense "General Scottish Vocational Qualification (GSVQ)" .
+n:barantas_creideis
+  rdfs:label "barantas creideis" ;
+  :part n:barantas , n:creideas .
 
-    n:barantas_iasaid
-      rdfs:label "barantas iasaid" ;
-      :sense "loan guarantee" .
+n:roinn_barantais_chreideis_airson_aas_mhalairt
+  rdfs:label "roinn barantais chreideis airson às-mhalairt" ;
+  :part n:roinn , n:barantas_creideis_airson_aas_mhalairt .
 
-    n:barantas_meidigeach
-      rdfs:label "barantas meidigeach" ;
-      :sense "medical insurance" .
+n:barantas_cuir_an_greim
+  rdfs:label "barantas cuir an greim" ;
+  :part n:barantas , v:cuir_an_greim .
 
-    n:Barantas_Proifeiseanta_Naaiseanta_airson_Ceannais_sgoile
-      rdfs:label "Barantas Proifeiseanta Nàiseanta airson Ceannais-sgoile" ;
-      :sense "National Professional Qualification for Headship (NPQH)" .
+n:Barantas_Dreuchdail_Coitcheann_na_h_Alba
+  rdfs:label "Barantas Dreuchdail Coitcheann na h-Alba" ;
+  :part n:barantas , a:dreuchdail , a:coitcheann , n:Alba .
 
-    n:barantas_rannsachaidh
-      rdfs:label "barantas rannsachaidh" ;
-      :sense "search warrant" .
+n:barantas_iasaid
+  rdfs:label "barantas iasaid" ;
+  :part n:barantas , n:iasad .
 
-    n:barantas_siubhail
-      rdfs:label "barantas siubhail" ;
-      :sense "travel warrant" .
+n:barantas_meidigeach
+  rdfs:label "barantas meidigeach" ;
+  :part n:barantas , a:meidigeach .
 
-    n:barantas_togail
-      rdfs:label "barantas togail" ;
-      :sense "building warrant" .
+a:meidigeach
+  a :Adjective ;
+  rdfs:label "meidigeach" .
 
-    n:barantas_diion
-      rdfs:label "barantas-dìon" ;
-      :sense "indemnity" .
+n:Barantas_Proifeiseanta_Naaiseanta_airson_Ceannais_Sgoile
+  rdfs:label "Barantas Proifeiseanta Nàiseanta airson Ceannais Sgoile" ;
+  :part n:barantas , a:proifeiseanta , a:naaiseanta , n:ceannas_sgoile .
 
-    n:barantas_diion_proifeiseanta
-      rdfs:label "barantas-dìon proifeiseanta" ;
-      :sense "professional indemnity" .
+n:ceannas_sgoile
+  rdfs:label "ceannas sgoile" ;
+  :gen "ceannais sgoile" ;
+  :part n:ceannas , n:sgoil .
 
-    n:baardachd
-      rdfs:label "bàrdachd" ;
-      :sense "poetry" .
+n:barantas_rannsachaidh
+  rdfs:label "barantas rannsachaidh" ;
+  :part n:barantas , n:rannsachadh .
+
+n:barantas_siubhail
+  rdfs:label "barantas siubhail" ;
+  :part n:barantas , n:siubhal .
+
+n:barantas_togail
+  rdfs:label "barantas togail" ;
+  :part n:barantas , n:togail .
+
+n:barantas_diion
+  rdfs:label "barantas dìon" ;
+  :part n:barantas , n:diion .
+
+n:barantas_diion_proifeiseanta
+  rdfs:label "barantas dìon proifeiseanta" ;
+  :part n:barantas_diion , a:proifeiseanta .
+
+n:baardachd
+  a :FeminineNoun ;
+  rdfs:label "bàrdachd" ;
+  :part n:baard .
 
     n:barganachadh
       rdfs:label "barganachadh" ;
@@ -6202,23 +6216,6 @@ n:tuil
       rdfs:label "a’ chuibheasachd bhuillean gach latha" ;
       :part n:buille ;
       :sense "average hits per day" .
-
-    v:buin_ri
-      rdfs:label "buin (ri)" ;
-      :sense "apply" , "tamper" , "interfere" .
-
-    v:buinidh_a%27_bhreith_ris_an_cuspair_seo_sa_chlaar_ghnothaich
-      rdfs:label "buinidh a’ bhreith ris an cuspair seo sa chlàr-ghnothaich" ;
-      :part v:buin_ri ;
-      :sense "the ruling applies to this item of business" .
-
-    n:buinteanas
-      rdfs:label "buinteanas" ;
-      :sense "relevance" .
-
-    a:buinteannach
-      rdfs:label "buinteannach" ;
-      :sense "relevant" .
 
     n:bun
       rdfs:label "bun" ;
@@ -13698,9 +13695,8 @@ v:chuireadh_aas_don_Bhile_le_cuilbheartan_bacaidh_na_feadhna_a_bha_na_aghaidh
     :part v:cuir_%28neach%29_an_aghaidh_%28neach_eile%29 ;
     :sense "she has alienated the parties to the agreement" .
 
-  v:cuir_an_greeim
-    rdfs:label "cuir (neach) an grèim" ;
-    :sense "arrest (a suspect)" .
+  v:cuir_an_greim
+    rdfs:label "cuir an greim" .
 
   v:cuir_peanas_air
     rdfs:label "cuir peanas air" ;
@@ -20108,8 +20104,8 @@ n:fa_leth
     rdfs:label "fo pribhleid" ;
     :sense "privileged" .
 
-  o:fo_phribhleid_ro_chur_an_greeim
-    rdfs:label "fo phribhleid ro chur an grèim" ;
+  o:fo_phribhleid_ro_chur_an_greim
+    rdfs:label "fo phribhleid ro chur an greim" ;
     :part o:fo_pribhleid ;
     :sense "privileged from arrest" .
 
@@ -20126,8 +20122,8 @@ n:fa_leth
     rdfs:label "fo shochair" ;
     :sense "privileged" .
 
-  o:fo_shocair_ro_chur_an_greeim
-    rdfs:label "fo shocair ro chur an grèim" ;
+  o:fo_shocair_ro_chur_an_greim
+    rdfs:label "fo shocair ro chur an greim" ;
     :part o:fo_shochair ;
     :sense "privileged from arrest" .
 
@@ -20992,10 +20988,6 @@ o:ga_chur_an_gniiomh
     rdfs:label "gabh aithreachas" ;
     :sense "regret" .
 
-  v:gabh_a_steach
-    rdfs:label "gabh a-steach" ;
-    :sense "accommodate (an idea)" , "embody" , "encompass" .
-
   v:feuchaidh_mi_ris_a_h_uile_beachd_a_ghabhail_a_steach
     rdfs:label "feuchaidh mi ris a h-uile beachd a ghabhail a-steach" ;
     :part v:gabh_a_steach ;
@@ -21040,13 +21032,13 @@ o:ga_chur_an_gniiomh
     rdfs:label "gabh geàrr-chunntas" ;
     :sense "minute" .
 
-  v:gabh_greeim_air
-    rdfs:label "gabh grèim air" ;
+  v:gabh_greim_air
+    rdfs:label "gabh greim air" ;
     :sense "grasp" .
 
-  v:gabh_greeim_air_cothrom
-    rdfs:label "grèim a ghabhail air cothrom" ;
-    :part v:gabh_greeim_air ;
+  v:gabh_greim_air_cothrom
+    rdfs:label "greim a ghabhail air cothrom" ;
+    :part v:gabh_greim_air ;
     :sense "grasp an opportunity" .
 
   v:gabh_moorgaids
@@ -22173,10 +22165,9 @@ n:gnothach
     :part n:gnothach ;
     :sense "take business in private" .
 
-  n:oordugh_a_dh%27aon_ghnothach
-    rdfs:label "òrdugh a dh’aon ghnothach" ;
-    :part n:gnothach ;
-    :sense "express instruction" .
+n:oordugh_de_dh_aon_ghnothach
+  rdfs:label "òrdugh de dh’aon ghnothach" ;
+  :part o:de_dh_aon_ghnothach , n:oordugh .
 
 v:is_e_gnothach_cugallach_a_tha_seo
   rdfs:label "is e gnothach cugallach a tha seo" ;
@@ -22185,11 +22176,6 @@ v:is_e_gnothach_cugallach_a_tha_seo
 n:gnothach_cugallach
   rdfs:label "gnothach cugallach" ;
   :part n:gnothach , a:cugallach .
-
-  o:a_dh%27aon_ghnothach
-    rdfs:label "a dh’aon ghnothach" ;
-    :part n:gnothach ;
-    :sense "with intent" .
 
   n:Gnothach_Iomchaidh_Sam_Bith_Eile_%28GISBE%29
     rdfs:label "Gnothach Iomchaidh Sam Bith Eile (GISBE)" ;
@@ -22389,17 +22375,16 @@ n:gnothach_cugallach
     :part n:greadhnas ;
     :sense "trappings of power" .
 
-  n:greeim
-    rdfs:label "grèim" ;
-    :sense "grasp" .
+  n:greim
+    rdfs:label "greim" .
 
-  o:nar_greeim
-    rdfs:label "nar grèim" ;
-    :part o:nar_greeim ;
+  o:nar_greim
+    rdfs:label "nar greim" ;
+    :part n:greim ;
     :sense "within our grasp" .
 
-  n:greeim_ooigridh
-    rdfs:label "grèim òigridh" ;
+  n:greim_ooigridh
+    rdfs:label "greim òigridh" ;
     :sense "youth custody" .
 
   n:greis_ghniiomhachais

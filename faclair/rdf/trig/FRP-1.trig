@@ -13,41 +13,65 @@
 
 <http://faclair.ac.uk/sources/FRP2013> {
 
-  o:a_bhuineas_do
+  v:buin_do
     rdfs:label "a bhuineas do (rud)" ;
     :sense "material" .
 
-  o:a_bhuineas_don_argamaid
+  v:buin_don_argamaid
     rdfs:label "a bhuineas don argamaid" ;
-    :part o:a_bhuineas_do ;
+    :part v:buin_do ;
     :sense "material to the argument"  .
 
-  o:a_dh%27aon_ghnothach
+  v:buin_ri
+    rdfs:label "buin (ri)" ;
+    :sense "apply" , "tamper" , "interfere" .
+
+  v:buinidh_a_bhreith_ris_an_cuspair_seo_sa_chlaar_ghnothaich
+    rdfs:label "buinidh a’ bhreith ris an cuspair seo sa chlàr-ghnothaich" ;
+    :part v:buin_ri ;
+    :sense "the ruling applies to this item of business" .
+
+  n:buntainneas
+    a :MasculineNoun ;
+    rdfs:label "buinteanas" ;
+    :sense "relevance" .
+
+  a:buntainneach
+    a :Adjective ;
+    rdfs:label "buinteannach" ;
+    :sense "relevant" .
+
+  o:de_dh_aon_ghnothach
     rdfs:label "a dh’aon ghnothach" ;
     :sense "intentional"  .
 
-  o:a_ghabhas_a_steach
+  v:gabh_a_steach
     rdfs:label "a ghabhas a-steach" ;
     :sense "inclusive" ;
     :sense "inclusiveness" .
 
-  n:A_Mhooralachd
+  n:mooralachd
+    a :FeminineNoun ;
     rdfs:label "a Mhòralachd" ;
     :sense "Her Majesty" .
 
-  n:A_Mooralachd
+  n:mooralachd
+    a :MasculineNoun ;
     rdfs:label "a Mòralachd" ;
     :sense "His Majesty"  .
 
-  o:a_reeir
+  o:de_reeir
+    a :Preposition ;
     rdfs:label "a rèir" ;
     :sense "according to" ;
     :sense "in pursuance of" .
 
-  o:a_reeir_an_lagha
+  o:de_reeir_an_lagha
     rdfs:label "a rèir an lagha" ;
     :part o:a_reeir ;
     :sense "according to law" .
+
+# START HERE
 
   o:a_reeir_a_cheeile
     rdfs:label "a rèir a chèile" ;
@@ -1507,7 +1531,7 @@
     :part n:amharas ;
     :sense "his motives were regarded with suspicion" .
 
-  v:chaidh_an_neach_fo_amharas_a_chur_an_greeim
+  v:chaidh_an_neach_fo_amharas_a_chur_an_greim
     rdfs:label "chaidh an neach (a bha) fo amharas a chur an grèim" ;
     :part n:amharas ;
     :sense "the suspect was arrested" .
@@ -3837,26 +3861,20 @@
     rdfs:label "baralachadh" ;
     :sense "hypothesis" .
 
-  n:baranta_creideis_airson_aas_mhalairt
-    rdfs:label "baranta creideis airson às-mhalairt" ;
-    :sense "export credit guarantee" .
-
-  n:roinn_barantais_chreideis_airson_aas_mhalairt
-    rdfs:label "roinn barantais chreideis airson às-mhalairt" ;
-    :part n:baranta_creideis_airson_aas_mhalairt ;
-    :sense "export credit guarantee department" .
-
   n:barantachadh
+    a :MasculineNoun ;
     rdfs:label "barantachadh" ;
     :sense "accreditation" .
 
   v:barantaich
+    a :Verb ;
     rdfs:label "barantaich" ;
     :sense "accredit" , "commission" .
 
   a:barantaichte
+    a :Adjective ;
     rdfs:label "barantaichte" ;
-    :sense "accredited" , "qualified (having gained certification)" .
+    :sense "accredited" , "qualified" , "having gained certification" .
 
   n:neach_ionaid_barantaichte
     rdfs:label "neach-ionaid barantaichte" ;
@@ -3874,10 +3892,11 @@
     :sense "qualified teacher status" .
 
   n:barantas
+    a :MasculineNoun ;
     rdfs:label "barantas" ;
     :sense "certificate" , "assurance" , "guarantee" , "qualification" .
 
-  v:thug_e_barantas
+  v:thoir_barantas
     rdfs:label "thug e barantas" ;
     :part n:barantas ;
     :sense "he gave an assurance" .
@@ -3893,7 +3912,8 @@
     :sense "legally qualified" .
 
   n:barantas_creideis_airson_aas_mhalairt
-    rdfs:label "barantas creideis airson às-mhalairt" ;
+    a :MasculineNoun ;
+    rdfs:label "baranta(s) creideis airson às-mhalairt" ;
     :sense "export credit guarantee" .
 
   n:roinn_barantais_chreideis_airson_aas_mhalairt
@@ -3902,46 +3922,57 @@
     :sense "export credit guarantee department" .
 
   n:barantas_cuir_an_greim
+    a :MasculineNoun ;
     rdfs:label "barantas cuir an greim" ;
     :sense "arrest warrant" .
 
   n:Barantas_Dreuchdail_Coitcheann_na_h_Alba
+    a :MasculineNoun ;
     rdfs:label "Barantas Dreuchdail Coitcheann na h-Alba" ;
-    :sense "General Scottish Vocational Qualification (GSVQ)" .
+    :sense "General Scottish Vocational Qualification" , "GSVQ" .
 
   n:barantas_iasaid
+    a :MasculineNoun ;
     rdfs:label "barantas iasaid" ;
     :sense "loan guarantee" .
 
   n:barantas_meidigeach
+    a :MasculineNoun ;
     rdfs:label "barantas meidigeach" ;
     :sense "medical insurance" .
 
-  n:Barantas_Proifeiseanta_Naaiseanta_airson_Ceannais_sgoile
+  n:Barantas_Proifeiseanta_Naaiseanta_airson_Ceannais_Sgoile
+    a :MasculineNoun ;
     rdfs:label "Barantas Proifeiseanta Nàiseanta airson Ceannais-sgoile" ;
-    :sense "National Professional Qualification for Headship (NPQH)" .
+    :sense "National Professional Qualification for Headship" , "NPQH" .
 
   n:barantas_rannsachaidh
+    a :MasculineNoun ;
     rdfs:label "barantas rannsachaidh" ;
     :sense "search warrant" .
 
   n:barantas_siubhail
+    a :MasculineNoun ;
     rdfs:label "barantas siubhail" ;
     :sense "travel warrant" .
 
   n:barantas_togail
+    a :MasculineNoun ;
     rdfs:label "barantas togail" ;
     :sense "building warrant" .
 
   n:barantas_diion
+    a :MasculineNoun ;
     rdfs:label "barantas-dìon" ;
     :sense "indemnity" .
 
   n:barantas_diion_proifeiseanta
+    a :MasculineNoun ;
     rdfs:label "barantas-dìon proifeiseanta" ;
     :sense "professional indemnity" .
 
   n:baardachd
+    a :FeminineNoun ;
     rdfs:label "bàrdachd" ;
     :sense "poetry" .
 
@@ -6195,23 +6226,6 @@
     rdfs:label "a’ chuibheasachd bhuillean gach latha" ;
     :part n:buille ;
     :sense "average hits per day" .
-
-  v:buin_ri
-    rdfs:label "buin (ri)" ;
-    :sense "apply" , "tamper" , "interfere" .
-
-  v:buinidh_a%27_bhreith_ris_an_cuspair_seo_sa_chlaar_ghnothaich
-    rdfs:label "buinidh a’ bhreith ris an cuspair seo sa chlàr-ghnothaich" ;
-    :part v:buin_ri ;
-    :sense "the ruling applies to this item of business" .
-
-  n:buinteanas
-    rdfs:label "buinteanas" ;
-    :sense "relevance" .
-
-  a:buinteannach
-    rdfs:label "buinteannach" ;
-    :sense "relevant" .
 
   n:bun
     rdfs:label "bun" ;
@@ -13631,7 +13645,7 @@
     :part v:cuir_%28neach%29_an_aghaidh_%28neach_eile%29 ;
     :sense "she has alienated the parties to the agreement" .
 
-  v:cuir_an_greeim
+  v:cuir_an_greim
     rdfs:label "cuir (neach) an grèim" ;
     :sense "arrest (a suspect)" .
 
@@ -20038,7 +20052,7 @@
     rdfs:label "fo pribhleid" ;
     :sense "privileged" .
 
-  o:fo_phribhleid_ro_chur_an_greeim
+  o:fo_phribhleid_ro_chur_an_greim
     rdfs:label "fo phribhleid ro chur an grèim" ;
     :part o:fo_pribhleid ;
     :sense "privileged from arrest" .
@@ -20056,7 +20070,7 @@
     rdfs:label "fo shochair" ;
     :sense "privileged" .
 
-  o:fo_shocair_ro_chur_an_greeim
+  o:fo_shocair_ro_chur_an_greim
     rdfs:label "fo shocair ro chur an grèim" ;
     :part o:fo_shochair ;
     :sense "privileged from arrest" .
@@ -20877,9 +20891,9 @@
       rdfs:label "gabh aithreachas" ;
       :sense "regret" .
 
-    v:gabh_a_steach
-      rdfs:label "gabh a-steach" ;
-      :sense "accommodate (an idea)" , "embody" , "encompass" .
+  v:gabh_a_steach
+    rdfs:label "gabh a-steach" ;
+    :sense "accommodate (an idea)" , "embody" , "encompass" .
 
     v:feuchaidh_mi_ris_a_h_uile_beachd_a_ghabhail_a_steach
       rdfs:label "feuchaidh mi ris a h-uile beachd a ghabhail a-steach" ;
@@ -20925,13 +20939,13 @@
       rdfs:label "gabh geàrr-chunntas" ;
       :sense "minute" .
 
-    v:gabh_greeim_air
+    v:gabh_greim_air
       rdfs:label "gabh grèim air" ;
       :sense "grasp" .
 
-    v:gabh_greeim_air_cothrom
+    v:gabh_greim_air_cothrom
       rdfs:label "grèim a ghabhail air cothrom" ;
-      :part v:gabh_greeim_air ;
+      :part v:gabh_greim_air ;
       :sense "grasp an opportunity" .
 
     v:gabh_moorgaids
@@ -22058,20 +22072,19 @@
       :part n:gnothach ;
       :sense "take business in private" .
 
-    n:oordugh_a_dh%27aon_ghnothach
-      rdfs:label "òrdugh a dh’aon ghnothach" ;
-      :part n:gnothach ;
-      :sense "express instruction" .
+  n:oordugh_de_dh_aon_ghnothach
+    rdfs:label "òrdugh a dh’aon ghnothach" ;
+    :part n:gnothach ;
+    :sense "express instruction" .
 
     v:is_e_gnothach_cugallach_a_tha_seo
       rdfs:label "’s e gnothach cugallach a tha seo" ;
       :part n:gnothach ;
       :sense "this is a risky undertaking" .
 
-    o:a_dh%27aon_ghnothach
-      rdfs:label "a dh’aon ghnothach" ;
-      :part n:gnothach ;
-      :sense "with intent" .
+  o:de_dh_aon_ghnothach
+    :part n:gnothach ;
+    :sense "with intent" .
 
     n:Gnothach_Iomchaidh_Sam_Bith_Eile_%28GISBE%29
       rdfs:label "Gnothach Iomchaidh Sam Bith Eile (GISBE)" ;
@@ -22271,16 +22284,16 @@
       :part n:greadhnas ;
       :sense "trappings of power" .
 
-    n:greeim
+    n:greim
       rdfs:label "grèim" ;
       :sense "grasp" .
 
-    o:nar_greeim
+    o:nar_greim
       rdfs:label "nar grèim" ;
-      :part o:nar_greeim ;
+      :part n:greim ;
       :sense "within our grasp" .
 
-    n:greeim_ooigridh
+    n:greim_ooigridh
       rdfs:label "grèim òigridh" ;
       :sense "youth custody" .
 
