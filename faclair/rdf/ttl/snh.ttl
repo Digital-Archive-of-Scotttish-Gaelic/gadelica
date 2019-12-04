@@ -8,64 +8,173 @@
 # This is an edited version of SNH Faclan Nàdair
 
 n:nathair_nimhe
-  rdfs:label "nathair nimhe" .
+  rdfs:label "nathair nimhe" ;
+  :part n:nathair , n:nimh ;
+  :gen "nathrach nimhe" ;
+  :pl "nathraichean nimhe" .
+
+n:nimh
+  a :MasculineNoun ;
+  rdfs:label "nimh" ;
+  :gen "nimhe" ;
+  :pl "nimhean" .
 
 n:Achd_Fiadh_bheatha_agus_Duuthcha_na_Riioghachd_Aonaichte
-  rdfs:label "Achd Fiadh-bheatha agus Dùthcha na Rìoghachd Aonaichte" .
+  rdfs:label "Achd Fiadh-bheatha agus Dùthcha na Rìoghachd Aonaichte" ;
+  :part n:Achd_Fiadh_bheatha_agus_Duuthcha , n:an_Riioghachd_Aonaichte .
+
+n:an_Riioghachd_Aonaichte
+  rdfs:label "an Rìoghachd Aonaichte" ;
+  :gen "na Rìoghachd Aonaichte" ;
+  :part n:riioghachd , a:aonaichte .
+
+n:riioghachd
+  a :FeminineNoun ;
+  rdfs:label "rìoghachd" ;
+  :part n:riigh .
+
+a:aonaichte
+  a :Adjective ;
+  rdfs:label "aonaichte" ;
+  :part v:aonaich .
+
+v:aonaich
+  a :Verb ;
+  rdfs:label "aonaich" ;
+  :part n:aon .
+
+n:aon
+  rdfs:label "aon" .
 
 n:dearc_luachrach
-  rdfs:label "dearc luachrach" .
+  rdfs:label "dearc luachrach" ;
+  :pl "dearcan luachrach" ;
+  :part n:dearc , a:luachrach .
+
+a:luachrach
+  a :Adjective ;
+  rdfs:label "luachrach" ;
+  :part n:luachair .
 
 n:dearc_luachrach_ghainmhich
-  rdfs:label "dearc luachrach ghainmhich" .
+  rdfs:label "dearc luachrach ghainmhich" ;
+  :pl "dearcan luachrach gainmhich" ;
+  :part n:dearc_luachrach , n:gainmheach .
 
 n:luaireag
   a :FeminineNoun ;
-  rdfs:label "luaireag" .
+  rdfs:label "luaireag" ;
+  :gen "luaireige" ;
+  :pl "luaireagan" .
 
 n:amhlag_mhara
-  rdfs:label "amhlag mhara" .
+  rdfs:label "amhlag mhara" ;
+  :gen "amhlaige mara" ;
+  :pl "amhlagan mara" ;
+  :part n:amhlag , n:muir .
+
+n:amhlag
+  a :FeminineNoun ;
+  rdfs:label "amhlag" ;
+  :gen "amhlaige" ;
+  :pl "amhlagan" .
 
 n:leamhan
   a :MasculineNoun ;
-  rdfs:label "leamhan" .
+  rdfs:label "leamhan" ;
+  :gen "leamhain" ;
+  :pl "leamhain" .
 
 n:ailm
   a :FeminineNoun ;
-  rdfs:label "ailm" .
+  rdfs:label "ailm" ;
+  :gen "ailme" ;
+  :pl "ailmean" .
 
 n:bratag
   a :FeminineNoun ;
-  rdfs:label "bratag" .
+  rdfs:label "bratag" ;
+  :gen "brataige" ;
+  :pl "bratagan" .
 
 n:burras
   a :MasculineNoun ;
-  rdfs:label "burras" .
+  rdfs:label "burras" ;
+  :gen "burrais" ;
+  :pl "burrasan" .
 
 n:goobhlan_dubh
-  rdfs:label "gòbhlan dubh" .
+  rdfs:label "gòbhlan dubh" ;
+  :gen "gòbhlain dhuibh" ;
+  :pl "gòbhlanan dubha" ;
+  :part n:goobhlan , a:dubh .
+
+n:goobhlan
+  a :MasculineNoun ;
+  rdfs:label "gòbhlan" ;
+  :gen "gòbhlain" ;
+  :pl "gòbhlanan" ;
+  :part n:gobhal .
 
 n:ainleag_dhubh
-  rdfs:label "ainleag dhubh" .
+  rdfs:label "ainleag dhubh" ;
+  :gen "ainleige duibhe" ;
+  :pl "ainleagan dubha" ;
+  :part n:ainleag , a:dubh .
+
+n:ainleag
+  a :FeminineNoun ;
+  rdfs:label "ainleag" ;
+  :gen "ainleige" ;
+  :pl "ainleagan" .
 
 n:goobhlan_moor
-  rdfs:label "gòbhlan mòr" .
+  rdfs:label "gòbhlan mòr" ;
+  :gen "gòbhlain mhòir" ;
+  :pl "gòbhlanan mòra" ;
+  :part n:goobhlan , a:moor .
 
 n:daingneach
-  a :MasculineNoun ;
-  rdfs:label "daingneach" .
+  a :Noun ;
+  rdfs:label "daingneach" ;
+  :gen "daingnich" ;
+  :pl "daingnichean" .
+
+a:daingeann
+  a :Adjective ;
+  rdfs:label "daingeann" ;
+  :comp "daingne" .
 
 n:am_Maart
   rdfs:label "am Màrt" .
 
 n:eun_Bealltainn
-  rdfs:label "eun Bealltainn" .
+  rdfs:label "eun Bealltainn" ;
+  :gen "eòin Bhealltainn" ;
+  :pl "eòin Bhealltainn" ;
+  :part n:eun , n:Bealltainn .
+
+n:eun
+  a :MasculineNoun ;
+  rdfs:label "eun" ;
+  :gen "eòin" ;
+  :pl "eòin" .
+
+n:Bealltainn
+  a :FeminineNoun ;
+  rdfs:label "Bealltainn" .
 
 n:amadan_Bealltainn
-  rdfs:label "amadan Bealltainn" .
+  rdfs:label "amadan Bealltainn" ;
+  :gen "amadain Bhealltainn" ;
+  :pl "amadain Bhealltainn" ;
+  :part n:amadan , n:Bealltainn .
 
 n:glas_lach
-  rdfs:label "glas lach" .
+  rdfs:label "glas-lach" ;
+  :gen "glas-lacha" ;
+  :pl "glas-lachan" ;
+  :part a:glas , n:lach .
 
 n:an_Ceeitean
   rdfs:label "an Cèitean" .
@@ -74,10 +183,20 @@ n:a_Mhaaigh
   rdfs:label "a’ Mhàigh" .
 
 n:an_Cuan_Siar
-  rdfs:label "an Cuan Siar" .
+  rdfs:label "an Cuan Siar" ;
+  :part n:cuan , a:siar .
+
+a:siar
+  a :Adjective ;
+  rdfs:label "siar" .
 
 n:an_Cuan_Atlantaig
-  rdfs:label "an Cuan Atlantaig" .
+  rdfs:label "an Cuan Atlantaig" ;
+  :part n:cuan , n:an_Atlantaig .
+
+n:an_Atlantaig
+  rdfs:label "an Atlantaig" ;
+  :gen "na h-Atlantaig" .
 
 n:an_Daamhair
   rdfs:label "an Dàmhair" .
@@ -117,18 +236,22 @@ n:an_t_Sultain
 
 a:tearc
   a :Adjective ;
-  rdfs:label "tearc" .
+  rdfs:label "tearc" ;
+  :comp "teirce" .
 
 a:annasach
   a :Adjective ;
-  rdfs:label "annasach" .
+  rdfs:label "annasach" ;
+  :comp "annasaiche" .
 
 n:feur
   a :MasculineNoun ;
-  rdfs:label "feur" .
+  rdfs:label "feur" ;
+  :gen "feòir" .
 
 n:feur_tioram
-  rdfs:label "feur tioram" .
+  rdfs:label "feur tioram" ;
+  :part n:feur , a:tioram .
 
 n:earrach
   a :MasculineNoun ;
@@ -136,28 +259,49 @@ n:earrach
 
 n:famhalan
   a :MasculineNoun ;
-  rdfs:label "famhalan" .
+  rdfs:label "famhalan" ;
+  :gen "famhalain" ;
+  :pl "famhalain" .
 
-n:lamhallan
+n:lamhalan
   a :MasculineNoun ;
-  rdfs:label "lamhallan" .
+  rdfs:label "lamhalan" ;
+  :gen "lamhalain" ;
+  :pl "lamhalain" .
 
 n:radan_uisge
-  rdfs:label "radan uisge" .
+  rdfs:label "radan uisge" ;
+  :part n:radan , n:uisge ;
+  :gen "radain uisge" ;
+  :pl "radanan uisge" .
 
 n:fearaid
   a :FeminineNoun ;
-  rdfs:label "fearaid" .
+  rdfs:label "fearaid" ;
+  :pl "fearaidean" .
 
 n:bealaidh
   a :MasculineNoun ;
-  rdfs:label "bealaidh" .
+  rdfs:label "bealaidh" ;
+  :gen "bealaidh" ;
+  :pl "bea;aidhean" .
 
 n:bealaidh_Frangach
-  rdfs:label "bealaidh Frangach" .
+  rdfs:label "bealaidh Frangach" ;
+  :part n:bealaidh , a:Frangach .
 
 n:bealaidh_Sasannach
-  rdfs:label "bealaidh Sasannach" .
+  rdfs:label "bealaidh Sasannach" ;
+  :part n:bealaidh , a:Sasannach .
+
+a:Sasannach
+  a :Adjective ;
+  rdfs:label "Sasannach" ;
+  :part n:Sasainn .
+
+n:Sasainn
+  a :FeminineNoun ;
+  rdfs:label "Sasainn" .
 
 n:beaarnan_Briide
   rdfs:label "beàrnan Brìde" .
@@ -1310,7 +1454,9 @@ n:losgann
 
 n:luachair
   a :FeminineNoun ;
-  rdfs:label "luachair" .
+  rdfs:label "luachair" ;
+  :gen "luachrach" ;
+  :pl "luachraichean" .
 
 n:bothag
   a :FeminineNoun ;
@@ -2098,7 +2244,9 @@ n:gorman_beag
 
 n:dearc
   a :FeminineNoun ;
-  rdfs:label "dearc" .
+  rdfs:label "dearc" ;
+  :gen "deirce" ;
+  :pl "dearcan" .
 
 n:dearcag
     a :FeminineNoun ;
@@ -2547,7 +2695,8 @@ a:searbh
 n:cuan
   a :MasculineNoun ;
   rdfs:label "cuan" ;
-  :gen "cuain" .
+  :gen "cuain" ;
+  :pl "cuantan" .
 
 n:leabaidh_shneachda
   rdfs:label "leabaidh shneachda" ;
@@ -2873,7 +3022,9 @@ n:amadan_moointich
 
 n:amadan
   a :MasculineNoun ;
-  rdfs:label "amadan" .
+  rdfs:label "amadan" ;
+  :gen "amadain" ;
+  :pl "amadain" .
 
 n:gurraiceach
   a :MasculineNoun ;
@@ -4039,8 +4190,10 @@ n:tunnag
   rdfs:label "tunnag" .
 
 n:lach
-  a :MasculineNoun ;
-  rdfs:label "lach" .
+  a :Noun ;
+  rdfs:label "lach" ;
+  :gen "lacha" ;
+  :pl "lachan" .
 
 n:cearc_Fhrangach
   rdfs:label "cearc Fhrangach" ;
@@ -5202,7 +5355,9 @@ a:gobhlach
 
 n:gobhal
   a :MasculineNoun ;
-  rdfs:label "gobhal" .
+  rdfs:label "gobhal" ;
+  :gen "gobhail" ;
+  :pl "goibhlean" .
 
 n:sealg_raineach_dhubh_ghasach
   rdfs:label "sealg-raineach dhubh-ghasach" ;
