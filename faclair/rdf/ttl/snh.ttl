@@ -505,86 +505,202 @@ n:boc
   :pl "buic" .
 
 n:boc_earba
-  rdfs:label "boc earba" .
+  rdfs:label "boc earba" ;
+  :gen "buic earba" ;
+  :pl "buic earba" ;
+  :part n:boc , n:earb .
 
 n:bodach_oidhche
-  rdfs:label "bodach oidhche" .
+  rdfs:label "bodach oidhche" ;
+  :gen "bodaich oidhche" ;
+  :pl "bodaich oidhche" ;
+  :part n:bodach , n:oidhche .
+
+n:bodach
+  a :MasculineNoun ;
+  rdfs:label "bodach" ;
+  :gen "bodaich" ;
+  :pl "bodaich" .
+
+n:oidhche
+  a :FeminineNoun ;
+  rdfs:label "oidhche" ;
+  :gen "oidhche" ;
+  :pl "oidhcheannan" .
 
 n:luatharan
   a :MasculineNoun ;
-  rdfs:label "luatharan" .
+  rdfs:label "luatharan" ;
+  :gen "luatharain" ;
+  :pl "luatharanan" .
 
 n:bodhag
   a :FeminineNoun ;
-  rdfs:label "bodhag" .
+  rdfs:label "bodhag" ;
+  :gen "bodhaige" ;
+  :pl "bothagan" .
 
-n:sgrailleag
+n:sgraailleag
   a :FeminineNoun ;
-  rdfs:label "sgrailleag" .
+  rdfs:label "sgràilleag" ;
+  :gen "sgràilleige" ;
+  :pl "sgràilleagan" .
 
 n:fearann_moonach
-  rdfs:label "fearann mònach" .
+  rdfs:label "fearann mònach" ;
+  :part n:fearann , n:mooine .
 
 n:boiteag
   a :FeminineNoun ;
-  rdfs:label "boiteag" .
+  rdfs:label "boiteag" ;
+  :gen "boiteige" ;
+  :pl "boiteagan" .
 
 n:cnuimh
   a :FeminineNoun ;
-  rdfs:label "cnuimh" .
+  rdfs:label "cnuimh" ;
+  :gen "cnuimhe" ;
+  :pl "cnuimhean" .
 
 n:durrag
   a :FeminineNoun ;
-  rdfs:label "durrag" .
+  rdfs:label "durrag" ;
+  :gen "durraige" ;
+  :pl "durragan" .
 
 n:dall_chnuimh
-  rdfs:label "dall-chnuimh" .
+  rdfs:label "dall-chnuimh" ;
+  :gen "dall-chnuimhe" ;
+  :pl "dall-chnuimhean" .
 
 n:nathair_challtainn
-  rdfs:label "nathair-challtainn" .
+  rdfs:label "nathair challtainn" ;
+  :gen "nathrach calltainn" ;
+  :pl "nathraichean calltainn" ;
+  :part n:nathair , n:calltainn .
 
 n:boiteag_shlaodach
-  rdfs:label "boiteag shlaodach" .
+  rdfs:label "boiteag shlaodach" ;
+  :gen "boiteige slaodaiche" ;
+  :pl "boiteagan slaodach" ;
+  :part n:boiteag , a:slaodach .
 
 n:Boord_Iasgaich_an_Spee
-  rdfs:label "Bòrd Iasgaich an Spè" .
+  rdfs:label "Bòrd Iasgaich an Spè" ;
+  :part n:boord , n:iasgach , n:an_Spé .
+
+n:boord
+  a :MasculineNoun ;
+  rdfs:label "bòrd" ;
+  :gen "bùird" ;
+  :pl "bùird" .
+
+n:iasgach
+  a :MasculineNoun ;
+  rdfs:label "iasgach" ;
+  :gen "iasgaich" ;
+  :part n:iasg .
 
 n:bradan
   a :MasculineNoun ;
-  rdfs:label "bradan" .
+  rdfs:label "bradan" ;
+  :gen "bradain" ;
+  :pl "bradain" .
 
 n:breacan_baintighearna
-  rdfs:label "breacan baintighearna" .
+  rdfs:label "breacan baintighearna" ;
+  :gen "breacain baintighearna" ;
+  :pl "breacain baintighearna" ;
+  :part n:breacan , n:baintighearna .
+
+n:baintighearna
+  a :FeminineNoun ;
+  rdfs:label "baintighearna" ;
+  :gen "baintighearna" ;
+  :pl "baintighearnan" ;
+  :part n:bean , n:tighearna .
+
+n:tighearna
+  a :MasculineNoun ;
+  rdfs:label "tighearna" ;
+  :gen "tighearna" ;
+  :pl "tighearnan" .
 
 n:breacan_an_uillt
-  rdfs:label "breacan an uillt" .
+  rdfs:label "breacan an uillt" ;
+  :gen "breacain an uillt" ;
+  :pl "breacain an uillt" ;
+  :part n:breacan , n:allt .
 
 n:breacan_glas
-  rdfs:label "breacan glas" .
+  rdfs:label "breacan glas" ;
+  :gen "breacain ghlais" ;
+  :pl "breacain ghlasa" ;
+  :part n:breacan , a:glas .
 
-n:breacan_sgiobalt
-  rdfs:label "breacan sgiobalt" .
+n:breacan_sgiobalta
+  rdfs:label "breacan sgiobalta" ;
+  :gen "breacain sgiobalta" ;
+  :pl "breacain sgiobalta" ;
+  :part n:breacan , a:sgiobalta .
+
+a:sgiobalta
+  a :Adjective ;
+  rdfs:label "sgiobalta" .
 
 n:glac_nan_cuileag
-  rdfs:label "glac nan cuileag" .
+  rdfs:label "glac nan cuileag" ;
+  :gen "glaice nan cuileag" ;
+  :pl "glacan nan cuileag" ;
+  :part n:glac , n:cuileag .
+
+n:glac
+  a :Noun ;
+  rdfs:label "glac" ;
+  :gen "glaice" ;
+  :pl "glacan" ;
+  :part v:glac .
+
+v:glac
+  a :Verb ;
+  rdfs:label "glac" ;
+  :vn "glacadh" .
 
 n:breacan_beithe
-  rdfs:label "breacan-beithe" .
+  rdfs:label "breacan beithe" ;
+  :gen "breacain bheithe" ;
+  :pl "breacain bheithe" ;
+  :part n:breacan , n:beith .
 
 n:pioghaid
   a :FeminineNoun ;
-  rdfs:label "pioghaid" .
+  rdfs:label "pioghaid" ;
+  :gen "pioghaide" ;
+  :pl "pioghaidean" .
 
 n:fionnan_feooir
-  rdfs:label "fionnan-feòir" .
+  rdfs:label "fionnan feòir" ;
+  :gen "fionnain fheòir" ;
+  :pl "fionnain fheòir" ;
+  :part n:fionnan , n:feur .
+
+n:fionnan
+  a :MasculineNoun ;
+  rdfs:label "fionnan" ;
+  :gen "fionnain" ;
+  :pl "fionnain" .
 
 n:brobhadan
   a :MasculineNoun ;
-  rdfs:label "brobhadan" .
+  rdfs:label "brobhadan" ;
+  :gen "brobhadain" ;
+  :pl "brobhadain" .
 
 n:broc
   a :MasculineNoun ;
-  rdfs:label "broc" .
+  rdfs:label "broc" ;
+  :gen "bruic" ;
+  :pl "bruic" .
 
 n:strianach
   a :MasculineNoun ;
@@ -1172,7 +1288,9 @@ n:gaoth
 
 n:earb
   a :FeminineNoun ;
-  rdfs:label "earb" .
+  rdfs:label "earb" ;
+  :gen "earba" ;
+  :pl "earban" .
 
 n:Roinn_Seallaidheach_Naaiseanta
   rdfs:label "Roinn Seallaidheach Nàiseanta" .
@@ -4417,7 +4535,8 @@ n:moointeach
 
 n:mooine
   a :FeminineNoun ;
-  rdfs:label "mòine" .
+  rdfs:label "mòine" ;
+  :gen "mònach" .
 
 n:poll_moonach
   rdfs:label "poll mònach" ;

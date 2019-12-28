@@ -1,36 +1,53 @@
 <?php
 
+$search = $_GET['searchTerm'];
+$snh = $_GET['snh'];
+$frp = $_GET['frp'];
+
 switch ($_REQUEST["action"]) {
   case "getEnglishResults":
-    $search = $_GET['searchTerm'];
-    $results = getEnglishExact($search);
-    $results = array_merge($results,getEnglishPrefix($search));
-    $results = array_merge($results,getEnglishSuffix($search));
+    $results = getEnglishExact($search,$snh,$frp);
+    $results = array_merge($results,getEnglishPrefix($search,$snh,$frp));
+    $results = array_merge($results,getEnglishSuffix($search,$snh,$frp));
     echo json_encode($results);
     break;
   case "getMoreEnglishResults":
-    $search = $_GET['searchTerm'];
-    $results = getEnglishSubstring($search);
+    $results = getEnglishSubstring($search,$snh,$frp);
     echo json_encode($results);
     break;
   case "getGaelicResults":
-    $search = $_GET['searchTerm'];
     $results = getGaelicExact($search);
-    $results = array_merge($results,getGaelicPrefix($search));
-    $results = array_merge($results,getGaelicSuffix($search));
+    $results = array_merge($results,getGaelicPrefix($search,$snh,$frp));
+    $results = array_merge($results,getGaelicSuffix($search,$snh,$frp));
     echo json_encode($results);
     break;
   case "getMoreGaelicResults":
-    $search = $_GET['searchTerm'];
-    $results = getGaelicSubstring($search);
+    $results = getGaelicSubstring($search,$snh,$frp);
     echo json_encode($results);
     break;
   default:
     break;
 }
 
-function getEnglishExact($en) {
-    $query = <<<SPQR
+function getLex($snh,$frp) {
+  $lex = '';
+  if ($snh=='yes') {
+    if ($frp=='yes') {
+      $lex = 'FILTER (?lex="<http://faclair.ac.uk/sources/SNH>" || ?lex="<http://faclair.ac.uk/sources/FRP2013>") .';
+    }
+    else {
+      $lex = 'FILTER (?lex="<http://faclair.ac.uk/sources/SNH>") .';
+    }
+  }
+  else if ($frp=='yes') {
+    $lex = 'FILTER (?lex="<http://faclair.ac.uk/sources/FRP2013>") .';
+  }
+  return $lex;
+}
+
+function getEnglishExact($en,$snh,$frp) {
+  $lex = getLex($snh,$frp);
+  $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
 SELECT DISTINCT ?id ?gd ?en
@@ -41,15 +58,17 @@ WHERE
     ?id :sense ?en .
   }
   FILTER regex(?en, "^{$en}$", "i") .
+  {$lex}
 }
 SPQR;
-    //$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
-    $url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
-    return json_decode(file_get_contents($url),false)->results->bindings;
+  $url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
+  //$url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+  return json_decode(file_get_contents($url),false)->results->bindings;
 }
 
-function getGaelicExact($gd) {
+function getGaelicExact($gd,$snh,$frp) {
   // convert $gd to accent insensitive RE
+  $lex = getLex($snh,$frp);
     $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
@@ -61,9 +80,9 @@ WHERE
     ?id :sense ?en .
   }
 SPQR;
-    $query .= ' FILTER regex(?gd, "^' . accentInsensitive($gd) . '$", "i") . } ';
-    //$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
-    $url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+    $query .= ' FILTER regex(?gd, "^' . accentInsensitive($gd) . '$", "i") . ' . $lex ' } ';
+    $url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
+    //$url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
     return json_decode(file_get_contents($url),false)->results->bindings;
 }
 
@@ -77,7 +96,8 @@ function accentInsensitive($in) {
   return $rx;
 }
 
-function getEnglishPrefix($en) {
+function getEnglishPrefix($en,$snh,$frp) {
+  $lex = getLex($snh,$frp);
     $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
@@ -89,14 +109,16 @@ WHERE
     ?id :sense ?en .
   }
   FILTER (regex(?en, "^{$en}", "i") && !(regex(?en, "{$en}$", "i"))) .
+  {$lex}
 }
 SPQR;
-    //$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
-    $url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+    $url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
+    //$url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
     return json_decode(file_get_contents($url),false)->results->bindings;
 }
 
-function getGaelicPrefix($gd) {
+function getGaelicPrefix($gd,$snh,$frp) {
+  $lex = getLex($snh,$frp);
     $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
@@ -108,14 +130,16 @@ WHERE
     ?id :sense ?en .
   }
   FILTER (regex(?gd, "^{$gd}", "i") &&  !(regex(?gd, "{$gd}$", "i"))) .
+  {$lex}
 }
 SPQR;
-    //$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
-    $url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+    $url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
+    //$url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
     return json_decode(file_get_contents($url),false)->results->bindings;
 }
 
-function getEnglishSuffix($en) {
+function getEnglishSuffix($en,$snh,$frp) {
+  $lex = getLex($snh,$frp);
     $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
@@ -127,14 +151,16 @@ WHERE
     ?id :sense ?en .
   }
   FILTER (regex(?en, "{$en}$", "i") && !(regex(?en, "^{$en}", "i"))) .
+  {$lex}
 }
 SPQR;
-    //$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
-    $url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+    $url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
+    //$url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
     return json_decode(file_get_contents($url),false)->results->bindings;
 }
 
-function getGaelicSuffix($gd) {
+function getGaelicSuffix($gd,$snh,$frp) {
+  $lex = getLex($snh,$frp);
     $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
@@ -146,14 +172,16 @@ WHERE
     ?id :sense ?en .
   }
   FILTER (regex(?gd, "{$gd}$", "i") &&  !(regex(?gd, "^{$gd}", "i"))) .
+  {$lex}
 }
 SPQR;
-    //$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
-    $url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+    $url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
+    //$url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
     return json_decode(file_get_contents($url),false)->results->bindings;
 }
 
-function getEnglishSubstring($en) {
+function getEnglishSubstring($en,$snh,$frp) {
+  $lex = getLex($snh,$frp);
     $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
@@ -165,14 +193,16 @@ WHERE
     ?id :sense ?en .
   }
   FILTER (regex(?en, "{$en}", "i") && !(regex(?en, "^{$en}", "i")) && !(regex(?en, "{$en}$", "i"))) .
+  {$lex}
 }
 SPQR;
-    //$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
-    $url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+    $url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
+    //$url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
     return json_decode(file_get_contents($url),false)->results->bindings;
 }
 
-function getGaelicSubstring($gd) {
+function getGaelicSubstring($gd,$snh,$frp) {
+  $lex = getLex($snh,$frp);
     $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
@@ -184,10 +214,11 @@ WHERE
     ?id :sense ?en .
   }
   FILTER (regex(?gd, "{$gd}", "i") && !(regex(?gd, "^{$gd}", "i"))  && !(regex(?gd, "{$gd}$", "i"))) .
+  {$lex}
 }
 SPQR;
-    //$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
-    $url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+    $url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
+    //$url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
     return json_decode(file_get_contents($url),false)->results->bindings;
 }
 

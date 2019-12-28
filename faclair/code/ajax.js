@@ -4,24 +4,30 @@ $(function() {
   if (typeof search != 'undefined') {
     $('#searchBox').val(search);
     var lang = $('body').attr('data-lang');
-    if(lang == 'en') {
-      $.getJSON('ajax.php?action=getEnglishResults&searchTerm='+search, function(data) {
+    var snh = $('body').attr('data-snh');
+    var frp = $('body').attr('data-frp');
+    if (lang == 'en') {
+      $.getJSON('ajax.php?action=getEnglishResults&searchTerm='+search+'&snh='+snh+'&frp='+frp, function(data) {
         addData(data);
       }).done(function() {
+        /*
         $('#resultsTable tbody').append('<tr><td>dun</td><td>dun</td></tr>');
         $.getJSON('ajax.php?action=getMoreEnglishResults&searchTerm='+search, function(data) {
           addData(data);
         });
+        */
       });
     }
     else {
-      $.getJSON('ajax.php?action=getGaelicResults&searchTerm='+search, function(data) {
+      $.getJSON('ajax.php?action=getGaelicResults&searchTerm='+search+'&snh='+snh+'&frp='+frp, function(data) {
         addData(data);
       }).done(function() {
+        /*
         $('#resultsTable tbody').append('<tr><td>dun</td><td>dun</td></tr>');
         $.getJSON('ajax.php?action=getMoreGaelicResults&searchTerm='+search, function(data) {
           addData(data);
         });
+        */
       });
     }
   }

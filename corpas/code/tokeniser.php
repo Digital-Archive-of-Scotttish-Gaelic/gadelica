@@ -1,6 +1,6 @@
 <?php
 
-$input = file_get_contents('../txt/tmp.txt');
+$input = file_get_contents('./tmp.txt');
 
 // punctuation
 $input = preg_replace("/([.,;:?!’‘”“'\"\)\(-\/–])/u", "<pc>$1</pc>", $input);
@@ -33,4 +33,3 @@ $input = preg_replace("/<w>(\w+)/u", "<w pos=\"\" lemma=\"$1\">$1", $input);
 $input .= "\n";
 
 echo $input;
-
