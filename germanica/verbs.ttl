@@ -1,0 +1,586 @@
+@prefix n: <http://faclair.ac.uk/nouns/> .
+@prefix a: <http://faclair.ac.uk/adjectives/> .
+@prefix v: <http://faclair.ac.uk/verbs/> .
+@prefix o: <http://faclair.ac.uk/other/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://faclair.ac.uk/meta/> .
+
+a:gedraengt
+  a :Adjective ;
+  rdfs:label "gedrängt" ;
+  :sense "packed" , "terse" ;
+  :part v:draeng_ .
+
+v:draeng_
+  a :Verb ;
+  rdfs:label "drängen" ;
+  :sense "push" , "press" , "push forward" , "press forward" , "be pressing" .
+
+v:draeng_etwas
+  rdfs:label "etwas drängen" ;
+  :sense "push" , "press" , "urge" ;
+  :part v:draeng_ .
+
+v:draeng_sich
+  rdfs:label "sich drängen" ;
+  :sense "throng" , "crowd" ;
+  :part v:draeng_ .
+
+v:tausch_
+  a :Verb ;
+  rdfs:label "tauschen" ;
+  :sense "swap" , "barter" , "exchange presents" .
+
+v:tausch_etwas
+  rdfs:label "etwas tauschen" ;
+  :sense "exchange" , "swap" , "barter" , "change" ;
+  :part v:tausch_ .
+
+v:abtausch_
+  rdfs:label "etwas abtauschen" ;
+  :sense "get something in an exchange" ;
+  :part v:tausch_ .
+
+v:abtausch_jemandem
+  rdfs:label "jemandem etwas abtauschen" ;
+  :sense "get something from someone in an exchange" ;
+  :part v:abtausch_ .
+
+v:raub_
+  a :Verb ;
+  rdfs:label "rauben" ;
+  :sense "rob" , "plunder" , "pillage" .
+
+v:raub_etwas
+  rdfs:label "etwas rauben" ;
+  :sense "steal" , "abduct" , "carry off" ;
+  :part v:raub_ .
+
+v:raub_jemandem
+  rdfs:label "jemandem etwas rauben" ;
+  :sense "rob somebody of something" ;
+  :part v:raub_etwas .
+
+v:abraub_jemandem
+  rdfs:label "jemandem etwas abrauben" ;
+  :sense "rob somebody of something" ;
+  :part v:raub_ .
+
+v:beraub_
+  rdfs:label "jemanden berauben" ;
+  :sense "rob somebody" ;
+  :part v:raub_ .
+
+v:beraub_einer_Sache
+  rdfs:label "jemanden einer Sache (gen.) berauben" ;
+  :sense "rob somebody of something" ;
+  :part v:beraub_ .
+
+v:ausraub_
+  rdfs:label "jemanden ausrauben" ;
+  :sense "rob somebody" ;
+  :part v:raub_ .
+
+
+
+v:erreg_
+  rdfs:label "jemanden/etwas erregen" ;
+  :sense "excite" , "arouse" ;
+  :part v:reg_.
+
+v:reg_
+  a :Verb ;
+  rdfs:label "etwas regen" ;
+  :sense "move" .
+
+v:reg_sich
+  rdfs:label "sich regen" ;
+  :sense "move" , "stir" ;
+  :part v:reg_ .
+
+v:erreg_sich
+  rdfs:label "sich erregen" ;
+  :sense "get worked up" , "get excited" , "get annoyed" ;
+  :part v:erreg_ .
+
+v:erreg_sich_ueber
+  rdfs:label "sich über etwas erregen" ;
+  :sense "get worked up about" , "get excited about" , "get annoyed at" ;
+  :part v:erreg_sich .
+
+n:Flucht
+  a :FeminineNoun ;
+  rdfs:label "Flucht" ;
+  :sense "flight" , "escape" ;
+  :part v:flieh_ .
+
+v:flieh_
+  a :Verb ;
+  rdfs:label "fliehen" ;
+  :sense "flee" , "escape" .
+
+v:flieh_aus
+  rdfs:label "aus einer Sache fliehen" ;
+  :sense "escape from" ;
+  :part v:flieh_ .
+
+v:flieh_aus_dem_Lande
+  rdfs:label "aus dem Lande fliehen" ;
+  :sense "flee the country" ;
+  :part v:flieh_aus , n:Land .
+
+n:Land
+  a :NeuterNoun ;
+  rdfs:label "Land" ;
+  :sense "country" .
+
+v:flieh_vor
+  rdfs:label "vor jemandem oder einer Sache fliehen" ;
+  :sense "flee from" ;
+  :part v:flieh_ .
+
+v:flieh_vor_der_Polizei
+  rdfs:label "vor der Polizei fliehen" ;
+  :sense "flee from the police" ;
+  :part v:flieh_vor , n:Polizei .
+
+n:Polizei
+  a :FeminineNoun ;
+  rdfs:label "Polizei" ;
+  :sense "police" .
+
+v:flieh_vor_einem_Gewitter
+  rdfs:label "vor einem Gewitter fliehen" ;
+  :sense "flee before a storm" ;
+  :part v:flieh_vor , n:Gewitter .
+
+n:Gewitter
+  a :NeuterNoun ;
+  rdfs:label "Gewitter" ;
+  :sense "thunderstorm" , "storm" ;
+  :part n:Wetter .
+
+n:Wetter
+  a :NeuterNoun ;
+  rdfs:label "Wetter" ;
+  :sense "weather" .
+
+v:die_Zeit_flieht
+  rdfs:label "die Zeit flieht" ;
+  :sense "time flies" ;
+  :part v:flieh_ , n:Zeit .
+
+n:Zeit
+  a :FeminineNoun ;
+  rdfs:label "Zeit" ;
+  :sense "time" .
+
+v:die_Jahre_fliehen
+  rdfs:label "die Jahre fliehen" ;
+  :sense "the years fly by" ;
+  :part v:flieh_ , n:Jahr .
+
+n:Jahr
+  a :NeuterNoun ;
+  rdfs:label "Jahr" ;
+  :sense "year" .
+
+v:flieh_etwas
+  rdfs:label "etwas fliehen" ;
+  :sense "shun" , "flee from" ;
+  :part v:flieh_ .
+
+v:flieh_jemands_Gegenwart
+  rdfs:label "jemands Gegenwart fliehen" ;
+  :sense "shun someone’s presence" , "flee someone’s presence" ;
+  :part v:flieh_etwas , n:Gegenwart .
+
+n:Gegenwart
+  a :FeminineNoun ;
+  rdfs:label "Gegenwart" ;
+  :sense "present" , "presence" .
+
+n:Unsterblichkeit
+  a :FeminineNoun ;
+  rdfs:label "Unsterblichkeit" ;
+  :sense "immortality" ;
+  :part a:unsterblich .
+
+n:die_Unsterblichkeit_seiner_Liebe
+  rdfs:label "die Unsterblichkeit seiner Liebe" ;
+  :sense "his undying love" ;
+  :part n:Unsterblichkeit , n:Liebe .
+
+n:Liebe
+  a :FeminineNoun ;
+  rdfs:label "Liebe" ;
+  :sense "love" .
+
+a:unsterblich
+  a :Adjective ;
+  rdfs:label "unsterblich" ;
+  :sense "immortal" , "undying" ;
+  :part a:sterblich .
+
+v:mach_unsterblich
+  rdfs:label "jemanden unsterblich machen" ;
+  :sense "immortalise" ;
+  :part a:unsterblich .
+
+a:sterblich
+  a :Adjective ;
+  rdfs:label "sterblich" ;
+  :sense "mortal" ;
+  :part v:sterb_ .
+
+n:Sterblichkeit
+  a :FeminineNoun ;
+  rdfs:label "Sterblichkeit" ;
+  :sense "mortality" ;
+  :part a:sterblich .
+
+v:sterb_
+  a :Verb ;
+  rdfs:label "sterben" ;
+  :sense "die" .
+
+n:Rueckkehr
+  a :FeminineNoun ;
+  rdfs:label "Rückkehr" ;
+  :sense "return" ;
+  :part n:Ruecken , v:kehr_ .
+
+n:Ruecken
+  a :MasculineNoun ;
+  rdfs:label "Rücken" ;
+  :sense "back" .
+
+v:kehr_
+  a :Verb ;
+  rdfs:label "kehren" ;
+  :sense "turn" , "turn round" .
+
+v:ruest_
+  a :Verb ;
+  rdfs:label "rüsten" ;
+  :sense "arm" .
+
+v:ruest_zu
+  rdfs:label "zu etwas rüsten" ;
+  :sense "arm for" ;
+  :part v:ruest_ .
+
+v:ruest_zum_Krieg
+  rdfs:label "zum Krieg rüsten" ;
+  :sense "arm for war" ;
+  :part v:ruest_zu , n:Krieg .
+
+n:Krieg
+  a :MasculineNoun ;
+  rdfs:label "Krieg" ;
+  :sense "war" , "warfare" .
+
+n:Kampf
+  a :MasculineNoun ;
+  rdfs:label "Kampf" ;
+  :sense "fight" , "struggle" , "combat" , "battle" , "engagement" , "encounter" , "bout" , "contest" .
+
+v:ruest_zum_Kampf
+  rdfs:label "zum Kampf rüsten" ;
+  :sense "arm for battle" ;
+  :part v:ruest_zu , n:Kampf .
+
+v:ruest_um_die_Wette
+  rdfs:label "um die Wette rüsten" ;
+  :sense "be involved in an arms race" , "arm oneself competitively" ;
+  :part v:ruest_ .
+
+v:ruest_sich
+  rdfs:label "sich rüsten" ;
+  :sense "prepare" , "arm oneself" ;
+  :part v:ruest_ .
+
+v:ruest_sich_zu
+  rdfs:label "sich zu etwas rüsten" ;
+  :sense "prepare for" ;
+  :part v:ruest_sich .
+
+v:ruest_sich_zur_Abreise
+  rdfs:label "sich zur Abreise rüsten" ;
+  :sense "get ready to leave" ;
+  :part v:ruest_sich_zu , n:Abreise .
+
+n:Abreise
+  a :FeminineNoun ;
+  rdfs:label "Abreise" ;
+  :sense "departure" .
+
+v:ruest_sich_zum_Fest
+  rdfs:label "sich zum Fest rüsten" ;
+  :sense "prepare for the festival" ;
+  :part v:ruest_sich_zu , n:Fest .
+
+n:Fest
+  a :NeuterNoun ;
+  rdfs:label "Fest" ;
+  :sense "celebration" , "celebrations" , "party" , "feast" , "reception" , "banquet" , "ball" , "carnival" , "festival" .
+
+v:ruest_sich_gegen
+  rdfs:label "sich gegen etwas rüsten" ;
+  :sense "arm oneself for" ;
+  :part v:ruest_sich .
+
+a:geruestet
+  a :Adjective ;
+  rdfs:label "gerüstet" ;
+  :sense "armed" ;
+  :part v:ruest_ .
+
+a:gut_geruestet
+  rdfs:label "gut gerüstet" ;
+  :sense "well armed" ;
+  :part a:geruestet , a:gut .
+
+a:gut
+  a :Adjective ;
+  rdfs:label "gut" ;
+  :sense "good" .
+
+a:schlecht
+  a :Adjective ;
+  rdfs:label "schlecht" ;
+  :sense "bad" .
+
+a:schlecht_geruestet
+  rdfs:label "schlecht gerüstet" ;
+  :sense "badly armed" ;
+  :part a:geruestet , a:schlecht .
+
+n:Ruestkammer
+  rdfs:label "Rüstkammer" ;
+  :sense "armoury" ;
+  :part n:Kammer , v:ruest_ .
+
+n:Kammer
+  a :FeminineNoun ;
+  rdfs:label "Kammer" ;
+  :sense "chamber" , "house" , "professional association" , "ventricle" , "store" , "room" , "boxroom" , "bedroom" .
+
+n:Ruestung
+  a :FeminineNoun ;
+  rdfs:label "Rüstung" ;
+  :sense "armament" , "arms" , "weapons" , "armour" ;
+  :part v:ruest_ .
+
+n:Ritterruestung
+  rdfs:label "Ritterrüstung" ;
+  :sense "armour" ;
+  :part n:Ruestung , n:Ritter .
+
+n:Ritter
+  a :MasculineNoun ;
+  rdfs:label "Ritter" ;
+  :sense "knight" , "cavalier" , "swallowtail" .
+
+n:Ruestungsbeschraenkung
+  rdfs:label "Rüstungsbeschränkung" ;
+  :sense "arms limitation" ;
+  :part n:Beschraenkung , n:Ruestung .
+
+n:Beschraenkung
+  a :FeminineNoun ;
+  rdfs:label "Beschränkung" ;
+  :sense "limitation" , "restriction" , "confinement" .
+
+n:Ruestungsbetrieb
+  rdfs:label "Rüstungsbetrieb" ;
+  :sense "armaments factory" , "ordnance factory" ;
+  :part n:Betrieb , n:Ruestung .
+
+n:Betrieb
+  a :MasculineNoun ;
+  rdfs:label "Betrieb" ;
+  :sense "business" , "concern" , "enterprise" , "factory" , "works" , "place of work" , "working" , "operation" , "running" , "bustle" .
+
+n:Ruestungsfabrik
+  rdfs:label "Rüstungsfabrik" ;
+  :sense "armaments factory" , "ordnance factory" ;
+  :part n:Fabrik , n:Ruestung .
+
+n:Fabrik
+  a :FeminineNoun ;
+  rdfs:label "Fabrik" ;
+  :sense "factory" , "mill" .
+
+n:Ruestungsindustrie
+  rdfs:label "Rüstungsindustrie" ;
+  :sense "armaments industry" ;
+  :part n:Industrie , n:Ruestung .
+
+n:Industrie
+  a :FeminineNoun ;
+  rdfs:label "Industrie" ;
+  :sense "industry" .
+
+n:Ruestungskontrolle
+  rdfs:label "Rüstungskontrolle" ;
+  :sense "arms control" ;
+  :part n:Kontrolle , n:Ruestung .
+
+n:Kontrolle
+  a :FeminineNoun ;
+  rdfs:label "Kontrolle" ;
+  :sense "control" , "check" , "supervision" , "passport control" ,
+  "customs examination" , "inspector" , "passport officer" , "customs officer" ,
+  "security officer" , "traffic police" , "frontier guard" , "person at the check-out desk" ,
+  "checkpoint" , "customs" , "gatehouse" , "border post" , "check-out desk" .
+
+n:Ruestungswettlauf
+  rdfs:label "Rüstungswettlauf" ;
+  :sense "arms race" ;
+  :part n:Wettlauf , n:Ruestung .
+
+n:Wettlauf
+  a :MasculineNoun ;
+  rdfs:label "Wettlauf" ;
+  :sense "race" .
+
+n:Ruestzeug
+  rdfs:label "Rüstzeug" ;
+  :sense "qualifications" ;
+  :part v:ruest_ , n:Zeug .
+
+n:Zeug
+  a :NeuterNoun ;
+  rdfs:label "Zeug" ;
+  :sense "stuff" , "gear" , "clothes" , "things" , "nonsense" , "rubbish" , "material" , "linen" .
+
+v:einruest_
+  rdfs:label "etwas einrüsten" ;
+  :sense "put scaffolding around" ;
+  :part v:ruest_ .
+
+v:einruest_ein_Haus
+  rdfs:label "ein Haus einrüsten" ;
+  :sense "put scaffolding around a house" ;
+  :part v:einruest_ , n:Haus .
+
+n:Haus
+  a :NeuterNoun ;
+  rdfs:label "Haus" ;
+  :sense "house" .
+
+v:ausruest_
+  rdfs:label "etwas ausrüsten" ;
+  :sense "equip" , "fit out" , "treat" ;
+  :part v:ruest_ .
+
+v:ausruest_ein_Fahrzeug
+  rdfs:label "ein Fahrzeug ausrüsten" ;
+  :sense "fit out a car" ;
+  :part v:ausruest_ , n:Fahrzeug .
+
+n:Fahrzeug
+  rdfs:label "Fahrzeug" ;
+  :sense "car" ;
+  :part n:Zeug .
+
+v:ausruest_ein_Schiff
+  rdfs:label "ein Schiff ausrüsten" ;
+  :sense "fit out a boat" ;
+  :part v:ausruest_ , n:Schiff .
+
+n:Schiff
+  a :NeuterNoun ;
+  rdfs:label "Schiff" ;
+  :sense "ship" , "boat" .
+
+v:ausruest_mit
+  rdfs:label "etwas mit einer Sache ausrüsten" ;
+  :sense "fit with" ;
+  :part v:ausruest_ .
+
+v:ausruest_ein_Fahrzeug_mit
+  rdfs:label "ein Fahrzeug mit einer Sache ausrüsten" ;
+  :sense "fit a car with" ;
+  :part v:ausruest_ein_Fahrzeug .
+
+n:Ausruestung
+  a :FeminineNoun ;
+  rdfs:label "Ausrüstung" ;
+  :sense "equipping" , "fitting out" , "equipment" , "outfit" ;
+  :part v:ausruest_ .
+
+n:Ausruestungsgegenstand
+  rdfs:label "Ausrüstungsgegenstand" ;
+  :sense "piece of equipment" ;
+  :part n:Gegenstand , n:Ausruestung .
+
+n:Gegenstand
+  a :MasculineNoun ;
+  rdfs:label "Gegenstand" ;
+  :sense "object" , "thing" , "article" , "subject" , "topic" .
+
+n:Ausruestungsstueck
+  rdfs:label "Ausrüstungsstück" ;
+  :sense "piece of equipment" ;
+  :part n:Stueck , n:Ausruestung .
+
+n:Stueck
+  a :NeuterNoun ;
+  rdfs:label "Stück" ;
+  :sense "piece" , "item" .
+
+# HERE
+
+v:aufruesten
+  rdfs:label "aufrüsten" ;
+  :sense "arm" ;
+  :part v:ruest_ .
+
+v:abruesten
+  rdfs:label "abrüsten" ;
+  :sense "disarm" ;
+  :part v:ruest_ .
+
+v:entruesten
+  rdfs:label "entrüsten" ;
+  :sense "outrage" ;
+  :part v:ruest_ .
+
+v:zuruesten
+  rdfs:label "zurüsten" ;
+  :sense "get ready" ;
+  :part v:ruest_ .
+
+n:Geruest
+  a :NeuterNoun ;
+  rdfs:label "Gerüst" ;
+  :sense "scaffolding" ;
+  :part v:ruest_ .
+
+v:wappnen_sich
+  rdfs:label "sich wappnen" ;
+  :sense "prepare" , "prepare oneself" ;
+  :part n:Wappen .
+
+v:wappnen_sich_gegen
+  rdfs:label "sich gegen etwas wappnen" ;
+  :sense "prepare for" , "prepare oneself for" ;
+  :part v:wappnen_sich .
+
+a:gewappnet
+  a :Adjective ;
+  rdfs:label "gewappnet" ;
+  :sense "prepared" , "forewarned" ;
+  :part v:wappnen_sich .
+
+n:Wappen
+  a :NeuterNoun ;
+  rdfs:label "Wappen" ;
+  :sense "coat of arms" .
+
+n:Waffe
+  a :FeminineNoun ;
+  rdfs:label "Waffe" ;
+  :sense "weapon" , "gun" , "arm" .
