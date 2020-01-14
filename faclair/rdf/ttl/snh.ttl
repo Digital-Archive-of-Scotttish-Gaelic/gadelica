@@ -837,8 +837,6 @@ n:cat_fiadhaich
 n:fiadh_chat
   rdfs:label "fiadh-chat" .
 
-#HERE
-
 n:cathag
   a :FeminineNoun ;
   rdfs:label "cathag" .
@@ -867,7 +865,7 @@ n:lach_sgumanach
   rdfs:label "lach sgumanach" .
 
 n:ceann_dubh
-  rdfs:label "ceann-dubh" .
+  rdfs:label "ceann dubh" .
 
 n:ceann_dubhag
   rdfs:label "ceann-dubhag" .
@@ -879,23 +877,23 @@ n:ceann_dubhan
   rdfs:label "ceann-dubhan" .
 
 n:ceann_ruadh
-  rdfs:label "ceann-ruadh" .
+  rdfs:label "ceann ruadh" .
 
 n:aonsgoch
   a :MasculineNoun ;
   rdfs:label "aonsgoch" .
 
 n:cearc_coille
-  rdfs:label "cearc-coille" .
+  rdfs:label "cearc coille" .
 
 n:cearc_fhraoich
-  rdfs:label "cearc-fhraoich" .
+  rdfs:label "cearc fhraoich" .
 
 n:cearc_thomain
-  rdfs:label "cearc-thomain" .
+  rdfs:label "cearc thomain" .
 
 n:cearc_uisge
-  rdfs:label "cearc-uisge" .
+  rdfs:label "cearc uisge" .
 
 n:daolag
   a :FeminineNoun ;
@@ -908,17 +906,17 @@ n:cearra_ghob
   rdfs:label "cearra-ghob" .
 
 n:ceileiriche_gaaraidh
-  rdfs:label "ceileiriche-gàraidh" .
+  rdfs:label "ceileiriche gàraidh" .
 
 n:ceileiriche
   a :MasculineNoun ;
   rdfs:label "ceileiriche" .
 
 n:ceileiriche_coille
-  rdfs:label "ceileiriche-coille" .
+  rdfs:label "ceileiriche coille" .
 
 n:ceoolan_cuilc
-  rdfs:label "ceòlan-cuilc" .
+  rdfs:label "ceòlan cuilc" .
 
 n:cuilceag
   a :FeminineNoun ;
@@ -927,17 +925,17 @@ n:cuilceag
 n:ceud_chasach
   rdfs:label "ceud-chasach" .
 
-n:fiolanan-fada
-  rdfs:label "fiolanan-fada" .
+n:fiolanan_fada
+  rdfs:label "fiolanan fada" .
 
 n:ciioch_na_maighdinn_mara
-  rdfs:label "cìoch na maighdinn-mara" .
+  rdfs:label "cìoch na maighdinn mara" .
 
 n:ciioch_na_muice_mara
   rdfs:label "cìoch na muice mara" .
 
 n:cìochag_thràghad
-  rdfs:label "cìochag-thràghad" .
+  rdfs:label "cìochag thràghad" .
 
 n:ciirean_coilich
   rdfs:label "cìrean-coilich" .
@@ -954,7 +952,7 @@ n:gocan
   rdfs:label "gocan" .
 
 n:gocan_coonaisg
-  rdfs:label "gocan-cònaisg" .
+  rdfs:label "gocan cònaisg" .
 
 n:ultag
   a :FeminineNoun ;
@@ -970,15 +968,29 @@ n:clamhan_riabhach
 n:clamhan_gobhlach
   rdfs:label "clamhan gobhlach" .
 
+n:preachan_nan_cearc
+  rdfs:label "preachan nan cearc" ;
+  :pl "preachain nan cearc" .
+
 n:clamhan_nan_cearc
   rdfs:label "clamhan nan cearc" .
+
+n:breeid_air_tooin
+    rdfs:label "brèid air tòin" .
 
 n:clamhan_ruadh
   rdfs:label "clamhan ruadh" .
 
+n:speireag_ruadh
+  rdfs:label "speireag ruadh" ;
+  :pl "speireagan ruadh" .
+
 n:creithleag
   a :FeminineNoun ;
   rdfs:label "creithleag" .
+
+n:cloitheag
+  rdfs:label "cloitheag" .
 
 n:creithleag_nan_each
   rdfs:label "creithleag nan each" .
@@ -987,18 +999,33 @@ n:cluaran
   a :MasculineNoun ;
   rdfs:label "cluaran" .
 
+n:fooghnan
+  rdfs:label "fòghnan" ;
+  :pl "fòghnain" .
+
 n:bleitheadh
   rdfs:label "bleitheadh" .
+
+n:creimeadh
+  rdfs:label "creimeadh" .
 
 n:cnuimh
   a :FeminineNoun ;
   rdfs:label "cnuimh" .
 
+n:gith
+  rdfs:label "gith" ;
+  :pl "githean" .
+
 n:co_chomhairleachadh_poblach
   rdfs:label "co-chomhairleachadh poblach" .
 
 n:coileach_coille
-  rdfs:label "coileach-coille" .
+  rdfs:label "coileach coille" .
+
+n:corman_coillteach
+  rdfs:label "corman coillteach" ;
+  :pl "cormain choillteach" .
 
 n:coileach_dubh
   rdfs:label "coileach dubh" .
@@ -1020,6 +1047,10 @@ n:coineanach
   a :MasculineNoun ;
   rdfs:label "coineanach" .
 
+n:rabaid
+  rdfs:label "rabaid" ;
+  :pl "rabaidean" .
+
 n:cooinneach
   a :FeminineNoun ;
   rdfs:label "còinneach" .
@@ -1028,11 +1059,21 @@ n:speach
   a :FeminineNoun ;
   rdfs:label "speach" .
 
+n:connspeach
+  rdfs:label "connspeach" ;
+  :pl "connspeachan" .
+
 n:coirean_baan
   rdfs:label "coirean bàn" .
 
 n:coirean_mara
   rdfs:label "coirean mara" .
+
+n:corragan_an_duine_mhairbh
+  rdfs:label "corragan an duine mhairbh" .
+
+n:ooigh_a_chladaich
+  rdfs:label "òigh a’ chladaich" .
 
 n:Colaiste_AAiteachais_na_h_Alba
   rdfs:label "Colaiste Àiteachais na h-Alba" .
@@ -1047,6 +1088,10 @@ n:laguun
 n:coltraiche
   a :MasculineNoun ;
   rdfs:label "coltraiche" .
+
+n:laamhaidh
+  rdfs:label "làmhaidh" ;
+  :pl "làmhaidhean" .
 
 n:Comann_Riioghail_Diion_nan_Eun
   rdfs:label "Comann Rìoghail Dìon nan Eun" .
@@ -1066,6 +1111,10 @@ n:comhachag_chluasach
 n:comhachag
   a :FeminineNoun ;
   rdfs:label "comhachag" .
+
+n:sgreuchag_oidhche
+  rdfs:label "sgreuchag oidhche" ;
+  :pl "sgreuchagan oidhche" .
 
 n:conasg
   a :MasculineNoun ;
