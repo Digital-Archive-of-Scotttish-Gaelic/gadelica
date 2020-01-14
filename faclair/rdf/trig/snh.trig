@@ -1787,175 +1787,213 @@
     rdfs:comment "SNH info: Sgreuchag-oidhche translates literally as 'night screecher'." ;
     rdfs:comment "SNH category: birds" .
 
-#HERE
-
   n:conasg
     a :MasculineNoun ;
     rdfs:label "conasg" ;
-    :sense "gorse / whin" ;
+    :sense "gorse", "whin" , "Ulex spp." ;
     :pl "conaisg" ;
     rdfs:comment "SNH ID: 224" ;
     rdfs:comment "SNH info: Older name 'onn' stands for 'O' in the Gaelic alphabet. " ;
     rdfs:comment "SNH audio: conasg.mp3" ;
-    rdfs:comment "SNH Latin: Ulex spp." ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH category: plants" .
 
   n:copag
     a :FeminineNoun ;
     rdfs:label "copag" ;
-    :sense "dock" ;
+    :sense "dock" , "Rumex spp." ;
     :pl "copagan" ;
     rdfs:comment "SNH ID: 227" ;
     rdfs:comment "SNH info: Scots term is 'docken'." ;
     rdfs:comment "SNH audio: copag.mp3" ;
-    rdfs:comment "SNH Latin: Rumex spp." ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH category: plants" .
 
   n:mial_choille
+    a :FeminineNoun ;
     rdfs:label "mial-choille" ;
     :sense "woodlouse" ;
-    :pl "F" ;
-    rdfs:comment "SNH ID: 229" ;
-    rdfs:comment "SNH other: corra-chosag <em>f</em>" ;
-    rdfs:comment "SNH Latin: corra-chosag.mp3" ;
-    rdfs:comment "SNH category: mialan-coille" .
+    :pl "mialan-coille" ;
+    rdfs:comment "SNH ID: 229" .
+
+  n:corra_chosag
+    a :FeminineNoun ;
+    rdfs:label "corra-chosag" ;
+    :sense "woodlouse" ;
+    rdfs:comment "SNH ID: 229a" ;
+    rdfs:comment "SNH audio: corra-chosag.mp3" .
 
   n:goobhlag
     a :FeminineNoun ;
     rdfs:label "gòbhlag" ;
-    :sense "earwig" ;
+    :sense "earwig" , "Forficula auricularia" ;
     :pl "gòbhlagan" ;
-    rdfs:comment "SNH ID: 230" ;
-    rdfs:comment "SNH other: fiolan-gòbhlach <em>m</em>" ;
-    rdfs:comment "SNH Latin: Forficula auricularia" ;
-    rdfs:comment "SNH category: fiolanan-gòbhlach" .
+    rdfs:comment "SNH ID: 230" .
+
+  n:fiolan_goobhlach
+    a :MasculineNoun ;
+    rdfs:label "fiolan-gòbhlach" ;
+    :sense "earwig" , "Forficula auricularia" ;
+    :pl "fiolanan-gòbhlach" ;
+    rdfs:comment "SNH ID: 230a" .
 
   n:guilbneach
+    a :FeminineNoun ;
     rdfs:label "guilbneach" ;
-    :sense "curlew" ;
-    :pl "Numenius arquata" ;
+    :sense "curlew" , "Numenius arquata" ;
     rdfs:comment "SNH ID: 233" ;
-    rdfs:comment "SNH other: corra-liod" ;
-    rdfs:comment "SNH Latin: corra liod.mp3" ;
-    rdfs:comment "SNH category: F" .
+    rdfs:comment "SNH category: birds" .
+
+  n:corra_liod
+    rdfs:label "corra-liod" ;
+    :sense "curlew" , "Numenius arquata" ;
+    rdfs:comment "SNH ID: 233a" ;
+    rdfs:comment "SNH category: birds" .
 
   n:corra_mhonaidh
     a :FeminineNoun ;
     rdfs:label "corra-mhonaidh" ;
-    :sense "crane" ;
+    :sense "crane" , "Grus grus" ;
     :pl "corrachan-monaidh" ;
     rdfs:comment "SNH ID: 234" ;
     rdfs:comment "SNH audio: corra mhonaidh.mp3" ;
-    rdfs:comment "SNH Latin: Grus grus" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH category: birds" .
 
   n:craadh_gheeadh
     a :MasculineNoun ;
     rdfs:label "cràdh-ghèadh" ;
-    :sense "shelduck" ;
+    :sense "shelduck" , "Tadorna tadorna" ;
     :pl "cràdh-gheòidh" ;
     rdfs:comment "SNH ID: 236" ;
-    rdfs:comment "SNH Latin: Tadorna tadorna" ;
     rdfs:comment "SNH category: birds" .
 
   n:crann_lach
     a :FeminineNoun ;
     rdfs:label "crann-lach" ;
-    :sense "teal" ;
+    :sense "teal" , "Anas crecca" ;
     :pl "crann-lachan" ;
     rdfs:comment "SNH ID: 237" ;
-    rdfs:comment "SNH other: lach bheag <em>f</em>" ;
     rdfs:comment "SNH audio: crann-lach.mp3" ;
-    rdfs:comment "SNH Latin: Anas crecca" ;
-    rdfs:comment "SNH category: lachan bheaga" .
+    rdfs:comment "SNH category: birds" .
+
+  n:lach_bheag
+    a :FeminineNoun ;
+    rdfs:label "lach bheag" ;
+    :sense "teal" , "Anas crecca" ;
+    :pl "lachan bheaga" ;
+    rdfs:comment "SNH ID: 237a" ;
+    rdfs:comment "SNH category: birds" .
 
   n:craobh_shice
+    a :FeminineNoun ;
     rdfs:label "craobh-shice" ;
-    :sense "sycamore" ;
-    :pl "Acer pseudoplatanus" ;
+    :sense "sycamore" , "Acer pseudoplatanus" ;
+    :pl "craobhan-sice" ;
     rdfs:comment "SNH ID: 238" ;
-    rdfs:comment "SNH other: fìor-chrann <em>f</em>" ;
-    rdfs:comment "SNH info:  sice <em>f</em>" ;
-    rdfs:comment "SNH category: F" .
+    rdfs:comment "SNH category: trees" .
+
+  n:fìor_chrann
+    a :FeminineNoun ;
+    rdfs:label "fìor-chrann" ;
+    :sense "sycamore" , "Acer pseudoplatanus" ;
+    :pl "fìor-chrainn" ;
+    rdfs:comment "SNH ID: 238a" ;
+    rdfs:comment "SNH category: trees" .
+
+  n:craobh_pleantrainn
+    a :FeminineNoun ;
+    rdfs:label "craobh pleantrainn" ;
+    :sense "sycamore" , "Acer pseudoplatanus" ;
+    :pl "craobhan pleantrainn" ;
+    rdfs:comment "SNH ID: 238b" ;
+    rdfs:comment "SNH category: trees" .
+
+  n:sice
+    a :FeminineNoun ;
+    rdfs:label "sice" ;
+    :sense "sycamore" , "Acer pseudoplatanus" ;
+    :pl "sicean" ;
+    rdfs:comment "SNH ID: 238c" ;
+    rdfs:comment "SNH category: trees" .
 
   n:creamh
     a :MasculineNoun ;
     rdfs:label "creamh" ;
-    :sense "garlic" ;
+    :sense "garlic" , "Allium spp." ;
     :pl "creamhan" ;
     rdfs:comment "SNH ID: 239" ;
-    rdfs:comment "SNH audio: creamh.mp3" ;
-    rdfs:comment "SNH Latin: Allium spp." ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH audio: creamh.mp3" .
 
   n:roocais
     a :FeminineNoun ;
     rdfs:label "ròcais" ;
-    :sense "rook" ;
+    :sense "rook" , "Corvus frugilegus" ;
     :pl "ròcaisean" ;
     rdfs:comment "SNH ID: 241" ;
-    rdfs:comment "SNH Latin: Corvus frugilegus" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH category: birds" .
 
   n:criionag_bhuidhe
     a :FeminineNoun ;
     rdfs:label "crìonag bhuidhe" ;
-    :sense "goldcrest" ;
+    :sense "goldcrest" , "Regulus regulus" ;
     :pl "crìonagan buidhe" ;
     rdfs:comment "SNH ID: 243" ;
-    rdfs:comment "SNH other: dreathan a' chinn bhuidhe <em>m</em>" ;
     rdfs:comment "SNH audio: crionag-bhuidhe.mp3" ;
-    rdfs:comment "SNH Latin: Regulus regulus" ;
-    rdfs:comment "SNH category: dreathain a' chinn bhuidhe" .
+    rdfs:comment "SNH category: birds" .
+
+  n:dreathan_a_chinn_bhuidhe
+    a :MasculineNoun ;
+    rdfs:label "dreathan a’ chinn bhuidhe" ;
+    :sense "goldcrest" , "Regulus regulus" ;
+    :pl "dreathain a’ chinn bhuidhe" ;
+    rdfs:comment "SNH ID: 243a" ;
+    rdfs:comment "SNH category: birds" .
 
   n:criionag_ghiuthais
     a :FeminineNoun ;
     rdfs:label "crìonag-ghiuthais" ;
-    :sense "willow warbler" ;
+    :sense "willow warbler" , "Phylloscopus trochilus" ;
     :pl "crìonagan-giuthais" ;
     rdfs:comment "SNH ID: 244" ;
-    rdfs:comment "SNH Latin: Phylloscopus trochilus" ;
     rdfs:comment "SNH category: birds" .
 
   n:criion_mhial
     rdfs:label "crìon-mhial" ;
-    :sense "slater" ;
+    :sense "slater" , "Isopoda spp." ;
     :pl "crìon-mhialan" ;
-    rdfs:comment "SNH ID: 245" ;
-    rdfs:comment "SNH other: sglèatair <em>m</em>" ;
-    rdfs:comment "SNH Latin: Isopoda (Order) spp." ;
-    rdfs:comment "SNH category: sglèatairean" .
+    rdfs:comment "SNH ID: 245" .
+
+  n:sgleeatair
+    rdfs:label "sglèatair" ;
+    :sense "slater" , "Isopoda spp." ;
+    :pl "sglèatairean" ;
+    rdfs:comment "SNH ID: 245a" .
 
   n:crios_Chuu_Chulainn
     a :MasculineNoun ;
     rdfs:label "crios Chù Chulainn" ;
-    :sense "meadowsweet" ;
+    :sense "meadowsweet" , "Filipendula ulmaria" ;
     :pl "criosan Chù Chulainn" ;
     rdfs:comment "SNH ID: 246" ;
     rdfs:comment "SNH other: lit. Cù Chulainn's belt" ;
     rdfs:comment "SNH audio: crois chuchulainn.mp3" ;
-    rdfs:comment "SNH Latin: Filipendula ulmaria" ;
     rdfs:comment "SNH category: plants" .
 
   n:critheann
     a :MasculineNoun ;
     rdfs:label "critheann" ;
-    :sense "aspen" ;
+    :sense "aspen" , "Populus tremula" ;
     :pl "crithinn" ;
     rdfs:comment "SNH ID: 247" ;
     rdfs:comment "SNH info: Literally means 'shaking'." ;
     rdfs:comment "SNH audio: critheann.mp3" ;
-    rdfs:comment "SNH Latin: Populus tremula" ;
     rdfs:comment "SNH category: trees" .
 
   n:crom_lus
     a :MasculineNoun ;
     rdfs:label "crom-lus" ;
-    :sense "poppy" ;
+    :sense "poppy" , "Papaver spp." ;
     :pl "crom-lusan" ;
     rdfs:comment "SNH ID: 249" ;
     rdfs:comment "SNH audio: crom-lus.mp3" ;
-    rdfs:comment "SNH Latin: Papaver spp." ;
     rdfs:comment "SNH category: plants" .
 
   n:crotal
@@ -1966,78 +2004,68 @@
     rdfs:comment "SNH ID: 250" ;
     rdfs:comment "SNH info: Colour used for scarlet dye." ;
     rdfs:comment "SNH audio: crotal.mp3" ;
-    rdfs:comment "SNH Latin: Lichen" ;
     rdfs:comment "SNH category: fungus and lichen" .
 
   n:cuileag
     a :FeminineNoun ;
     rdfs:label "cuileag" ;
-    :sense "fly" ;
+    :sense "fly" , "Dipetera spp." ;
     :pl "cuileagan" ;
     rdfs:comment "SNH ID: 252" ;
     rdfs:comment "SNH audio: cuileag.mp3" ;
-    rdfs:comment "SNH Latin: Dipetera (Order) spp." ;
     rdfs:comment "SNH category: invertebrates" .
 
   n:mialtag
     a :FeminineNoun ;
     rdfs:label "mialtag" ;
-    :sense "gnat" ;
+    :sense "gnat" , "Nematocera spp." ;
     :pl "mialtagan" ;
-    rdfs:comment "SNH ID: 253" ;
-    rdfs:comment "SNH Latin: Nematocera (Suborder) spp." ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 253" .
 
   n:cuileag_mhoor
     a :FeminineNoun ;
     rdfs:label "cuileag mhòr" ;
-    :sense "bluebottle" ;
+    :sense "bluebottle" , "Calliphora vomitoria" ;
     :pl "cuileagan mòra" ;
     rdfs:comment "SNH ID: 254" ;
     rdfs:comment "SNH info: The big fly" ;
-    rdfs:comment "SNH audio: cuileag mhor.mp3" ;
-    rdfs:comment "SNH Latin: Calliphora vomitoria" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH audio: cuileag mhor.mp3" .
 
   n:cuileag_shniiomhain
     a :FeminineNoun ;
     rdfs:label "cuileag-shnìomhain" ;
-    :sense "glow-worm" ;
+    :sense "glow-worm" , "Lampyris noctiluca" ;
     :pl "cuileagan-snìomhain" ;
     rdfs:comment "SNH ID: 255" ;
     rdfs:comment "SNH audio: cuileag-shiomhain.mp3" ;
-    rdfs:comment "SNH Latin: Lampyris noctiluca" ;
     rdfs:comment "SNH category: invertebrates" .
 
   n:cuileag_theallaich
     a :FeminineNoun ;
     rdfs:label "cuileag-theallaich" ;
-    :sense "cricket" ;
+    :sense "cricket" , "Orthoptera spp." ;
     :pl "cuileagan-teallaich" ;
     rdfs:comment "SNH ID: 256" ;
-    rdfs:comment "SNH audio: cuilleag theallaich.mp3" ;
-    rdfs:comment "SNH Latin: Orthoptera (Order) spp." ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH audio: cuilleag theallaich.mp3" .
 
   n:cuileann
     a :MasculineNoun ;
     rdfs:label "cuileann" ;
-    :sense "holly" ;
+    :sense "holly" , "Ilex aquifolium" ;
     :pl "cuilinn" ;
     rdfs:comment "SNH ID: 257" ;
     rdfs:comment "SNH audio: cuileann.mp3" ;
-    rdfs:comment "SNH Latin: Ilex aquifolium" ;
     rdfs:comment "SNH category: trees" .
 
   n:cuileann_traagha
     a :MasculineNoun ;
     rdfs:label "cuileann-tràgha" ;
-    :sense "sea holly" ;
+    :sense "sea holly" , "Eryngium maritimum" ;
     :pl "cuilinn-tràgha" ;
     rdfs:comment "SNH ID: 258" ;
-    rdfs:comment "SNH audio: cuileann tragha.mp3" ;
-    rdfs:comment "SNH Latin: Eryngium maritimum" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH audio: cuileann tragha.mp3" .
+
+#HERE
 
   n:cruth_tiire
     rdfs:label "cruth-tìre" ;
