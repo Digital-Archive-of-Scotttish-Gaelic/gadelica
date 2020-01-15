@@ -2454,147 +2454,184 @@
     rdfs:comment "SNH ID: 298b" ;
     rdfs:comment "SNH category: birds" .
 
-#HERE
-
   n:tuil
     a :FeminineNoun ;
     rdfs:label "tuil" ;
     :sense "flood" ;
     :pl "tuiltean" ;
     rdfs:comment "SNH ID: 303" ;
-    rdfs:comment "SNH other: dìle <em>f</em>" ;
     rdfs:comment "SNH info: This depends on the type of flood. A river which floods and creates areas of still water makes a 'lighe'. The tuil would be a running river in flood." ;
-    rdfs:comment "SNH audio: dile.mp3" ;
-    rdfs:comment "SNH category: dìleann" .
+    rdfs:comment "SNH audio: dile.mp3" .
+
+  n:diile
+    a :FeminineNoun ;
+    rdfs:label "dìle" ;
+    :sense "flood" ;
+    :pl "dìleann" ;
+    rdfs:comment "SNH ID: 303a" .
 
   n:seillean_diiomhain
     a :MasculineNoun ;
     rdfs:label "seillean-dìomhain" ;
-    :sense "drone-bee" ;
+    :sense "drone bee" , "Apis mellifera" ;
     :pl "seilleanan-dìomhain" ;
-    rdfs:comment "SNH ID: 306" ;
-    rdfs:comment "SNH other: seillean-lunndach <em>m</em>" ;
-    rdfs:comment "SNH Latin: Apis mellifera" ;
-    rdfs:comment "SNH category: seilleanan-lunndach" .
+    rdfs:comment "SNH ID: 306" .
+
+  n:seillean_lunndach
+    a :MasculineNoun ;
+    rdfs:label "seillean-lunndach" ;
+    :sense "drone bee" , "Apis mellifera" ;
+    :pl "seilleanan-lunndach" ;
+    rdfs:comment "SNH ID: 306a" .
 
   n:dreathan_donn
     a :MasculineNoun ;
     rdfs:label "dreathan donn" ;
-    :sense "wren" ;
+    :sense "wren" , "Troglodytes troglodytes" ;
     :pl "dreathain-donna" ;
     rdfs:comment "SNH ID: 310" ;
-    rdfs:comment "SNH other: dreòlan" ;
     rdfs:comment "SNH audio: dreathann donn.mp3" ;
-    rdfs:comment "SNH Latin: Troglodytes troglodytes" ;
-    rdfs:comment "SNH category: dreòlain" .
+    rdfs:comment "SNH category: birds" .
+
+  n:dreoolan
+    a :MasculineNoun ;
+    rdfs:label "dreòlan" ;
+    :sense "wren" , "Troglodytes troglodytes" ;
+    :pl "dreòlain" ;
+    rdfs:comment "SNH ID: 310a" ;
+    rdfs:comment "SNH category: birds" .
 
   n:smeur
     a :FeminineNoun ;
     rdfs:label "smeur" ;
-    :sense "blackberry / bramble" ;
+    :sense "blackberry" , "bramble" , "Rubus fruticosus agg." ;
     :pl "smeuran" ;
     rdfs:comment "SNH ID: 311" ;
     rdfs:comment "SNH info: The plant is dris or preas nan smeur." ;
-    rdfs:comment "SNH Latin: Rubus fruticosus agg.   " ;
     rdfs:comment "SNH category: plants" .
 
   n:sgitheach
     a :MasculineNoun ;
     rdfs:label "sgitheach" ;
-    :sense "hawthorn" ;
+    :sense "hawthorn" , "Crataegus monogyna" ;
     :pl "craobhan-sgithich" ;
     rdfs:comment "SNH ID: 313" ;
-    rdfs:comment "SNH info: The old term for hawthorn 'uath' stands for the letter 'h' in the Gaelic alphabet. " ;
-    rdfs:comment "SNH audio: droigheann.mp3" ;
-    rdfs:comment "SNH Latin: Crataegus monogyna" ;
+    rdfs:comment "SNH info: The old term for hawthorn 'uath' stands for the letter 'h' in the Gaelic alphabet." ;
     rdfs:comment "SNH category: trees" .
 
   n:droigheann
     a :MasculineNoun ;
     rdfs:label "droigheann" ;
-    :sense "thorn" ;
+    :sense "thorn" , "Rubus fruticosus agg." ;
     :pl "droighinn" ;
     rdfs:comment "SNH ID: 314" ;
-    rdfs:comment "SNH other: dris <em>f</em>" ;
-    rdfs:comment "SNH audio: droigheann.mp3" ;
-    rdfs:comment "SNH Latin: Rubus fruticosus agg." ;
-    rdfs:comment "SNH category: drisean" .
+    rdfs:comment "SNH audio: droigheann.mp3" .
+
+  n:dris
+    a :FeminineNoun ;
+    rdfs:label "dris" ;
+    :sense "thorn" , "Rubus fruticosus agg." ;
+    :pl "drisean" ;
+    rdfs:comment "SNH ID: 314a" .
 
   n:droigheann_dubh
+    a :MasculineNoun ;
     rdfs:label "droigheann dubh" ;
-    :sense "blackthorn" ;
-    :pl "Prunus spinosa" ;
+    :sense "blackthorn" , "Prunus spinosa" ;
     rdfs:comment "SNH ID: 315" ;
-    rdfs:comment "SNH other: sgitheach dubh <em>m</em>" ;
-    rdfs:comment "SNH info: A Gaelic proverb says: às an dris" ;
-    rdfs:comment "SNH audio:  anns an droigheann 'out of the bramble into the blackthorn'. It's an equivalent of 'out of the frying pan into the fire.'Traditionally" ;
-    rdfs:comment "SNH Latin:  the leaves were used as a laxative." ;
-    rdfs:comment "SNH category: M" .
+    rdfs:comment "SNH info: A Gaelic proverb says: às an dris anns an droigheann 'out of the bramble into the blackthorn'. It's an equivalent of 'out of the frying pan into the fire.'Traditionally the leaves were used as a laxative." ;
+    rdfs:comment "SNH category: plants" .
+
+  n:sgitheach_dubh
+    a :MasculineNoun ;
+    rdfs:label "sgitheach dubh" ;
+    :sense "blackthorn" , "Prunus spinosa" ;
+    rdfs:comment "SNH ID: 315a" ;
+    rdfs:comment "SNH category: plants" .
 
   n:traon
+    a :MasculineNoun ;
     rdfs:label "traon" ;
-    :sense "corncrake" ;
-    :pl "M" ;
+    :sense "corncrake" , "Crex crex" ;
+    :pl "traoin" ;
     rdfs:comment "SNH ID: 316" ;
-    rdfs:comment "SNH other: ràc an arbhair <em>m</em>" ;
-    rdfs:comment "SNH category: traoin" .
+    rdfs:comment "SNH category: birds" .
+
+  n:raac_an_arbhair
+    a :MasculineNoun ;
+    rdfs:label "ràc an arbhair" ;
+    :sense "corncrake" , "Crex crex" ;
+    :pl "ràcan an arbhair" ;
+    rdfs:comment "SNH ID: 316a" ;
+    rdfs:comment "SNH category: birds" .
+
+  n:raac_an_t_siil
+    a :MasculineNoun ;
+    rdfs:label "ràc an t-sìl" ;
+    :sense "corncrake" , "Crex crex" ;
+    :pl "ràcan an t-sìl" ;
+    rdfs:comment "SNH ID: 316b" ;
+    rdfs:comment "SNH category: birds" .
 
   n:druid
     a :FeminineNoun ;
     rdfs:label "druid" ;
-    :sense "starling " ;
+    :sense "starling" , "Sturnus vulgaris" ;
     :pl "druidean" ;
     rdfs:comment "SNH ID: 317" ;
     rdfs:comment "SNH audio: druid.mp3" ;
-    rdfs:comment "SNH Latin: Sturnus vulgaris" ;
     rdfs:comment "SNH category: birds" .
 
   n:lon_monaidh
     a :MasculineNoun ;
     rdfs:label "lon-monaidh" ;
-    :sense "ring ouzel" ;
+    :sense "ring ouzel" , "Turdus torquatus" ;
     :pl "loin-mhonaidh" ;
     rdfs:comment "SNH ID: 318" ;
-    rdfs:comment "SNH Latin: Turdus torquatus" ;
     rdfs:comment "SNH category: birds" .
 
   n:droman
     a :MasculineNoun ;
     rdfs:label "droman" ;
-    :sense "elder" ;
+    :sense "elder" , "Sambucus nigra" ;
     :pl "dromain" ;
     rdfs:comment "SNH ID: 319" ;
-    rdfs:comment "SNH other: ruis <em>f</em>" ;
-    rdfs:comment "SNH info: The old name 'ruis' stands for 'r' in traditional Gaelic alphabet." ;
     rdfs:comment "SNH audio: droman.mp3" ;
-    rdfs:comment "SNH Latin: Sambucus nigra" ;
+    rdfs:comment "SNH category: trees" .
+
+  n:ruis
+    a :FeminineNoun ;
+    rdfs:label "ruis" ;
+    :sense "elder" , "Sambucus nigra" ;
+    rdfs:comment "SNH ID: 319a" ;
+    rdfs:comment "SNH info: The old name 'ruis' stands for 'r' in traditional Gaelic alphabet." ;
     rdfs:comment "SNH category: trees" .
 
   n:duilleag_bhaathte
     a :FeminineNoun ;
     rdfs:label "duilleag-bhàthte" ;
-    :sense "waterlily" ;
+    :sense "waterlily" , "Nymphaea alba" ;
     :pl "duilleagan-bàthte" ;
     rdfs:comment "SNH ID: 320" ;
     rdfs:comment "SNH info: The Gaelic name means 'drowned leaf'." ;
     rdfs:comment "SNH audio: duilleag bhaite.mp3" ;
-    rdfs:comment "SNH Latin: Nymphaea alba" ;
     rdfs:comment "SNH category: plants" .
 
   n:duuthchasach
+    a :Adjective ;
     rdfs:label "dùthchasach" ;
     :sense "native" ;
     rdfs:comment "SNH ID: 321" ;
-    rdfs:comment "SNH audio: duthchasach.mp3" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH audio: duthchasach.mp3" .
 
   n:gaoth
     a :FeminineNoun ;
     rdfs:label "gaoth" ;
     :sense "wind" ;
     :pl "gaothan" ;
-    rdfs:comment "SNH ID: 323" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 323" .
+
+#HERE
 
   n:earb
     a :FeminineNoun ;
