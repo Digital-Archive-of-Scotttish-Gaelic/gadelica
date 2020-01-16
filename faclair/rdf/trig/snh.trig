@@ -3175,19 +3175,24 @@
     rdfs:comment "SNH audio: neabhan.mp3" ;
     rdfs:comment "SNH category: birds" .
 
-#HERE
-
   n:lus_na_gaoithe
     a :MasculineNoun ;
     rdfs:label "lus na gaoithe" ;
-    :sense "wood anemone" ;
+    :sense "wood anemone" , "Anemone nemorosa" ;
     :pl "lusan na gaoithe" ;
     rdfs:comment "SNH ID: 375" ;
-    rdfs:comment "SNH other: flùr na gaoithe <em>m</em>" ;
+    rdfs:comment "SNH info: The Gaelic name means 'Flower of Wind'. Anemone cames from the Greek for wind 'anemos'" ;
+    rdfs:comment "SNH category: plants" .
+
+  n:fluur_na_gaoithe
+    a :MasculineNoun ;
+    rdfs:label "flùr na gaoithe" ;
+    :sense "wood anemone" , "Anemone nemorosa" ;
+    :pl "flùraichean na gaoithe" ;
+    rdfs:comment "SNH ID: 375a" ;
     rdfs:comment "SNH info: The Gaelic name means 'Flower of Wind'. Anemone cames from the Greek for wind 'anemos'" ;
     rdfs:comment "SNH audio: flur na goaithe.mp3" ;
-    rdfs:comment "SNH Latin: Anemone nemorosa" ;
-    rdfs:comment "SNH category: flùraichean na gaoithe" .
+    rdfs:comment "SNH category: plants" .
 
   n:fo_abhainn
     a :FeminineNoun ;
@@ -3195,9 +3200,14 @@
     :sense "tributary" ;
     :pl "fo-aibhnichean" ;
     rdfs:comment "SNH ID: 376" ;
-    rdfs:comment "SNH other: leas-abhainn <em>f</em>" ;
-    rdfs:comment "SNH audio: fo-aibhnichean.mp3" ;
-    rdfs:comment "SNH category: leas-aibhnichean" .
+    rdfs:comment "SNH audio: fo-aibhnichean.mp3" .
+
+  n:leas_abhainn
+    a :FeminineNoun ;
+    rdfs:label "leas-abhainn" ;
+    :sense "tributary" ;
+    :pl "leas-aibhnichean" ;
+    rdfs:comment "SNH ID: 376a" .
 
   n:fodar
     a :MasculineNoun ;
@@ -3205,59 +3215,82 @@
     :sense "silage" ;
     :pl "fodair" ;
     rdfs:comment "SNH ID: 377" ;
-    rdfs:comment "SNH other: feur-tìoraidh <em>m</em>" ;
     rdfs:comment "SNH info: Also general for fodder." ;
-    rdfs:comment "SNH audio: fodair.mp3" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH audio: fodair.mp3" .
+
+  n:feur_tiioraidh
+    a :MasculineNoun ;
+    rdfs:label "feur-tìoraidh" ;
+    :sense "silage" ;
+    rdfs:comment "SNH ID: 377a" .
 
   n:foghar
     a :MasculineNoun ;
     rdfs:label "foghar" ;
-    :sense "autumn (season)" ;
+    :sense "autumn" ;
     rdfs:comment "SNH ID: 378" ;
     rdfs:comment "SNH category: months" .
 
   n:fraoch
     a :MasculineNoun ;
     rdfs:label "fraoch" ;
-    :sense "heather" ;
+    :sense "heather" , "Calluna vulgaris" ;
     :pl "fraoich" ;
     rdfs:comment "SNH ID: 381" ;
     rdfs:comment "SNH info: Traditionally used to make beds - leadaibh-fhraoich." ;
     rdfs:comment "SNH audio: fraoch.mp3" ;
-    rdfs:comment "SNH Latin: Calluna vulgaris" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH category: plants" .
 
   n:fraoch_a_bhadain
     a :MasculineNoun ;
-    rdfs:label "fraoch a' bhadain" ;
-    :sense "bell-heather" ;
+    rdfs:label "fraoch a’ bhadain" ;
+    :sense "bell-heather" , "Erica cinerea" ;
     rdfs:comment "SNH ID: 382" ;
     rdfs:comment "SNH info: Name means heather of the thickets or groves. The word badan is used for tuft or clump also." ;
     rdfs:comment "SNH audio: fraoch a bhadain.mp3" ;
-    rdfs:comment "SNH Latin: Erica cinerea" ;
     rdfs:comment "SNH category: plants" .
 
   n:braoileag
+    a :FeminineNoun ;
     rdfs:label "braoileag" ;
-    :sense "bilberry" ;
-    :pl "Vaccinium myrtillus" ;
+    :sense "bilberry" , "Vaccinium myrtillus" ;
+    :pl "braoileagan" ;
     rdfs:comment "SNH ID: 383" ;
-    rdfs:comment "SNH otherlus nan dearcag <em>m</em>" ;
-    rdfs:comment "SNH audioBraoileag is also used for the Gaelic for Red Whortleberry" ;
-    rdfs:comment "SNH Latin:  Cranberry and Bilberry. " ;
-    rdfs:comment "SNH category: F" .
+    rdfs:comment "SNH info: Braoileag is also used for the Gaelic for Red Whortleberry, Cranberry and Bilberry." ;
+    rdfs:comment "SNH category: plants" .
+
+  n:lus_nan_dearcag
+    a :MasculineNoun ;
+    rdfs:label "lus nan dearcag" ;
+    :sense "bilberry" , "Vaccinium myrtillus" ;
+    :pl "lusan nan dearcag" ;
+    rdfs:comment "SNH ID: 383a" ;
+    rdfs:comment "SNH category: plants" .
+
+  n:dearc_fhraoich
+    a :FeminineNoun ;
+    rdfs:label "dearc-fhraoich" ;
+    :sense "bilberry" , "Vaccinium myrtillus" ;
+    :pl "dearcan-fhraoich" ;
+    rdfs:comment "SNH ID: 383b" ;
+    rdfs:comment "SNH category: plants" .
 
   n:gabhagan
     a :MasculineNoun ;
     rdfs:label "gabhagan" ;
-    :sense "rock pipit" ;
+    :sense "rock pipit" , "Anthus petrosus" ;
     :pl "gabhaganan" ;
     rdfs:comment "SNH ID: 387" ;
-    rdfs:comment "SNH other: glas-eun <em>m</em>" ;
     rdfs:comment "SNH audio: gabhagan.mp3" ;
-    rdfs:comment "SNH Latin: Anthus petrosus" ;
-    rdfs:comment "SNH category: glas-eòin" .
+    rdfs:comment "SNH category: birds" .
+
+  n:glas_eun
+    a :MasculineNoun ;
+    rdfs:label "glas-eun" ;
+    :sense "rock pipit" , "Anthus petrosus" ;
+    :pl "glas-eòin" ;
+    rdfs:comment "SNH ID: 387a" ;
+    rdfs:comment "SNH category: birds" .
 
   n:gairm
     a :FeminineNoun ;
@@ -3271,107 +3304,112 @@
   n:gartan
     a :MasculineNoun ;
     rdfs:label "gartan" ;
-    :sense "tick" ;
+    :sense "tick" , "Ixodes ricinus" ;
     :pl "gartanan" ;
     rdfs:comment "SNH ID: 391" ;
-    rdfs:comment "SNH audio: gartan.mp3" ;
-    rdfs:comment "SNH Latin: Ixodes (Ixodes) ricinus" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH audio: gartan.mp3" .
 
   n:geeadh
     a :MasculineNoun ;
     rdfs:label "gèadh" ;
-    :sense "goose" ;
+    :sense "goose" , "Anser spp." ;
     :pl "geòidh" ;
     rdfs:comment "SNH ID: 392" ;
     rdfs:comment "SNH audio: geadh.mp3" ;
-    rdfs:comment "SNH Latin: Anser spp." ;
     rdfs:comment "SNH category: birds" .
 
   n:geeadh_bhlaar
     a :MasculineNoun ;
     rdfs:label "gèadh-bhlàr" ;
-    :sense "white-fronted goose " ;
+    :sense "white-fronted goose" , "Anser albifrons" ;
     :pl "geòidh-bhlàr" ;
     rdfs:comment "SNH ID: 393" ;
     rdfs:comment "SNH audio: geadh blar.mp3" ;
-    rdfs:comment "SNH Latin: Anser albifrons" ;
     rdfs:comment "SNH category: birds" .
 
   n:geeadh_dearg_chasach
     a :MasculineNoun ;
     rdfs:label "gèadh dearg-chasach" ;
-    :sense "pink-footed goose" ;
+    :sense "pink-footed goose" , "Anser brachyrhynchus" ;
     :pl "geòidh dhearga-chasach" ;
     rdfs:comment "SNH ID: 394" ;
     rdfs:comment "SNH audio: geadh dearg-chasach.mp3" ;
-    rdfs:comment "SNH Latin: Anser brachyrhynchus" ;
     rdfs:comment "SNH category: birds" .
 
   n:geeadh_glas
     a :MasculineNoun ;
     rdfs:label "gèadh glas" ;
-    :sense "greylag goose" ;
+    :sense "greylag goose" , "Anser anser" ;
     :pl "geòidh ghlasa" ;
     rdfs:comment "SNH ID: 395" ;
     rdfs:comment "SNH audio: geadh glas.mp3" ;
-    rdfs:comment "SNH Latin: Anser anser" ;
     rdfs:comment "SNH category: birds" .
 
   n:geeadh_dubh
     a :MasculineNoun ;
     rdfs:label "gèadh dubh" ;
-    :sense "Canada goose" ;
+    :sense "Canada goose" , "Branta canadensis" ;
     :pl "geòidh dhubha" ;
     rdfs:comment "SNH ID: 396" ;
     rdfs:comment "SNH info: The Gaelic name means 'the black goose'." ;
     rdfs:comment "SNH audio: gèadh dhubh.mp3" ;
-    rdfs:comment "SNH Latin: Branta canadensis" ;
     rdfs:comment "SNH category: birds" .
 
   n:geeadh_ghot
     a :MasculineNoun ;
     rdfs:label "gèadh-ghot" ;
-    :sense "brent goose" ;
+    :sense "brent goose" , "Branta bernicla" ;
     :pl "geòidh-ghot" ;
     rdfs:comment "SNH ID: 397" ;
-    rdfs:comment "SNH other: guirnean <em>m</em>" ;
     rdfs:comment "SNH audio: geadh got.mp3" ;
-    rdfs:comment "SNH Latin: Branta bernicla" ;
-    rdfs:comment "SNH category: guirneanan" .
+    rdfs:comment "SNH category: birds" .
+
+  n:guirnean
+    a :MasculineNoun ;
+    rdfs:label "guirnean" ;
+    :sense "brent goose" , "Branta bernicla" ;
+    :pl "guirneanan" ;
+    rdfs:comment "SNH ID: 397a" ;
+    rdfs:comment "SNH category: birds" .
 
   n:gealag_bhuidhe
     a :FeminineNoun ;
     rdfs:label "gealag bhuidhe" ;
-    :sense "siskin" ;
+    :sense "siskin" , "Carduelis spinus" ;
     :pl "gealagan buidhe" ;
     rdfs:comment "SNH ID: 398" ;
     rdfs:comment "SNH info: The Gaelic name means 'yellow bunting'." ;
     rdfs:comment "SNH audio: gealag bhuidhe.mp3" ;
-    rdfs:comment "SNH Latin: Carduelis spinus" ;
     rdfs:comment "SNH category: birds" .
 
   n:gealag_bhuachair
     a :FeminineNoun ;
     rdfs:label "gealag-bhuachair" ;
-    :sense "corn bunting" ;
+    :sense "corn bunting" , "Emberiza calandra" ;
     :pl "gealagan-buachair" ;
     rdfs:comment "SNH ID: 399" ;
     rdfs:comment "SNH audio: gealag-bhuachair.mp3" ;
-    rdfs:comment "SNH Latin: Emberiza calandra" ;
     rdfs:comment "SNH category: birds" .
 
   n:gealag_laair
     a :FeminineNoun ;
     rdfs:label "gealag-làir" ;
-    :sense "snowdrop" ;
+    :sense "snowdrop" , "Galanthus" ;
     :pl "gealagan-làire" ;
     rdfs:comment "SNH ID: 400" ;
-    rdfs:comment "SNH other: boinneag-shneachda <em>f</em>" ;
     rdfs:comment "SNH info: The Gaelic name means 'little white one of the ground'." ;
     rdfs:comment "SNH audio: gealag-lair.mp3" ;
-    rdfs:comment "SNH Latin: Galanthus" ;
-    rdfs:comment "SNH category: boinneagan-sneachda" .
+    rdfs:comment "SNH category: plants" .
+
+  n:boinneag-shneachda
+    a :FeminineNoun ;
+    rdfs:label "boinneag-shneachda" ;
+    :sense "snowdrop" , "Galanthus" ;
+    :pl "boinneagan-sneachda" ;
+    rdfs:comment "SNH ID: 400a" ;
+    rdfs:comment "SNH category: plants" .
+
+#HERE
 
   n:gealag_dhubh_cheannach
     a :FeminineNoun ;
