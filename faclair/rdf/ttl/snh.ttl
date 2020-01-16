@@ -1499,6 +1499,11 @@ n:earb
   :gen "earba" ;
   :pl "earban" .
 
+n:ruadhag
+  a :FeminineNoun ;
+  rdfs:label "ruadhag" ;
+  :pl "ruadhagan" .
+
 n:Roinn_Seallaidheach_Naaiseanta
   rdfs:label "Roinn Seallaidheach Nàiseanta" .
 
@@ -1509,7 +1514,11 @@ n:neas_bheag
   rdfs:label "neas bheag" .
 
 n:easgann_bhreac_na_mara
-  rdfs:label "easgann-bhreac na mara" .
+  rdfs:label "easgann bhreac na mara" .
+
+n:creathall_na_mara
+  rdfs:label "creathall na mara" ;
+  :pl "creathaill na mara" .
 
 n:eilid
   a :FeminineNoun ;
@@ -1517,6 +1526,10 @@ n:eilid
 
 n:eun_cobhartaich
   rdfs:label "eun cobhartaich" .
+
+n:eun_creiche
+  rdfs:label "eun creiche" ;
+  :pl "eòin chreiche" .
 
 n:eun_grunnachaidh
   rdfs:label "eun grunnachaidh" .
@@ -1527,9 +1540,17 @@ n:eun_uisge
 n:eun_an_t_sneachda
   rdfs:label "eun an t-sneachda" .
 
+n:gealag_an_t_sneachda
+  rdfs:label "gealag an t-sneachda" ;
+  :pl "gealagan an t-sneachda" .
+
 n:sgrail
   a :FeminineNoun ;
   rdfs:label "sgrail" .
+
+n:fachach_baan
+  rdfs:label "fachach bàn" ;
+  :pl "fachaich bàn" .
 
 n:faidhbhile
   a :FeminineNoun ;
@@ -1539,23 +1560,51 @@ n:steaarnag_chumanta
   rdfs:label "steàrnag chumanta" .
 
 n:gobhlan_gainmhich
-  rdfs:label "gobhlan-gainmhich" .
+  rdfs:label "gobhlan gainmhich" .
+
+n:fallag
+  a :FeminineNoun ;
+  rdfs:label "fallag" ;
+  :pl "fallagan" .
 
 n:famhalan_arcach
   rdfs:label "famhalan arcach" .
 
+n:famhalan
+  a :MasculineNoun ;
+  rdfs:label "famhalan" ;
+  :pl "famhalain" .
+
 n:famhalan_bruaiche
   rdfs:label "famhalan bruaiche" .
 
+n:famhalan_Breatannach
+  rdfs:label "famhalan Breatannach" ;
+  :pl "famhalain Bhreatannach" .
+
 n:famhalan_feooir
-  rdfs:label "famhalan-feòir" .
+  rdfs:label "famhalan feòir" .
+
+n:feurlagan
+  a :MasculineNoun ;
+  rdfs:label "feurlagan" ;
+  :pl "feurlagain" .
 
 n:faoileag_an_sgadain
   rdfs:label "faoileag an sgadain" .
 
+n:glas_fhaoileag
+  rdfs:label "glas-fhaoileag" ;
+  :pl "glas-fhaoileagan" .
+
 n:farspag
   a :FeminineNoun ;
   rdfs:label "farspag" .
+
+n:farspach
+  a :FeminineNoun ;
+  rdfs:label "farspach" ;
+  :pl "farspaichean" .
 
 n:farachan
   a :MasculineNoun ;
@@ -1564,8 +1613,22 @@ n:farachan
 n:farspag_bheag
   rdfs:label "farspag bheag" .
 
+n:farspach_bheag
+  rdfs:label "farspach bheag" ;
+  :pl "farspaichean beaga" .
+
+n:sgaireag
+  a :FeminineNoun ;
+  rdfs:label "sgaireag" ;
+  :pl "sgaireagean" .
+
 n:fasgadair_moor
   rdfs:label "fasgadair mòr" .
+
+n:tuilleag
+  a :FeminineNoun ;
+  rdfs:label "tuilleag" ;
+  :pl "tuilleagan" .
 
 n:faasmhorachd
   a :FeminineNoun ;
@@ -1584,9 +1647,17 @@ n:feannag
 n:feannag_ghlas
   rdfs:label "feannag ghlas" .
 
+n:starrag_ghlas
+  rdfs:label "starrag ghlas" ;
+  :pl "starragan glasa" .
+
 n:coille
   a :FeminineNoun ;
   rdfs:label "coille" .
+
+n:fearann_coillteach
+  rdfs:label "fearann coillteach" ;
+  :pl "fearainn choillteach" .
 
 n:feaarna
   rdfs:label "feàrna" .
@@ -1595,6 +1666,11 @@ n:fearann
   a :MasculineNoun ;
   rdfs:label "fearann" .
 
+n:talamh
+  a :MasculineNoun ;
+  rdfs:label "talamh" ;
+  :pl "talamhan" .
+
 n:feoorag_ghlas
   rdfs:label "feòrag ghlas" .
 
@@ -1602,10 +1678,19 @@ n:feoorag_ruadh
   rdfs:label "feòrag ruadh" .
 
 n:luch_fheooir
-  rdfs:label "luch-fheòir" .
+  rdfs:label "luch fheòir" .
 
 n:feurach_baile
   rdfs:label "feurach baile" .
+
+n:feurach_coitcheann
+  rdfs:label "feurach coitcheann" ;
+  :pl "feurachan coitcheann" .
+
+n:geaarraidh
+  a :MasculineNoun ;
+  rdfs:label "geàrraidh" ;
+  :pl "geàrraidhean" .
 
 n:feursann
   a :FeminineNoun ;
@@ -1620,15 +1705,31 @@ n:fiadh_bheatha
 n:dathas
   rdfs:label "dathas" .
 
+n:fiadh_breac
+  rdfs:label "fiadh breac" ;
+  :pl "fèidh bhreac" .
+
+n:dais
+  rdfs:label "dais" ;
+  :pl "daiseachan" .
+
 n:fiadh_Seapanach
-  rdfs:label "fiadh-Seapanach" .
+  rdfs:label "fiadh Seapanach" .
 
 n:fionnag_feooir
-  rdfs:label "fionnag-feòir" .
+  rdfs:label "fionnag feòir" .
+
+n:fiolan_feooir
+  rdfs:label "fiolan feòir" ;
+  :pl "fiolanan feòir" .
 
 n:fitheach
   a :MasculineNoun ;
   rdfs:label "fitheach" .
+
+n:neabhan
+  rdfs:label "neabhan" ;
+  :pl "neabhain" .
 
 n:lus_na_gaoithe
   rdfs:label "lus na gaoithe" .
@@ -2384,8 +2485,7 @@ a:Albannach
   rdfs:label "Albannach" .
 
 n:Dualchas_Naadair_na_h_Alba
-  rdfs:label "Dualchas Nàdair na h-Alba" ;
-    :sense "Scottish Natural Heritage" , "SNH" .
+  rdfs:label "Dualchas Nàdair na h-Alba" .
 
 n:broog_na_cuthaige
   rdfs:label "bròg na cuthaige" .

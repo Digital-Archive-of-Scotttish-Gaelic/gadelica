@@ -1,5 +1,9 @@
 <?php
 
+/*
+  This file tokenises a plain text file, outputing each token within either a <w> or a <pc> tag.
+*/
+
 $input = file_get_contents('./tmp.txt');
 
 // punctuation

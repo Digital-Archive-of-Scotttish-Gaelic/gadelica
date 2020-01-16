@@ -10,7 +10,8 @@
     <w pos="a" ana="nf" lemma="dubh" ref="adjectives/dubh">Dhubh</w>
   </h>
   <p>
-    <w lemma="is">’S</w>
+    <pc join="right">’</pc>
+    <w lemma="is">S</w>
     <w pos="D" lemma="e">e</w>
     <w pos="N" ana="nm" lemma="Tòmas">Tòmas</w>
     <w pos="d" ana="nm" lemma="the">an</w>
@@ -20,7 +21,9 @@
     <w pos="n" ana="ns" lemma="aithne">aithne</w>
     <w pos="p+D" lemma="do+mi">dhomh</w>
     <w lemma="rx">a</w>
-    <w pos="v" ana="pi" lemma="èirich">dh’èirich</w>
+    <w pos="" ana="" lemma="">dh</w>
+    <pc join="both">’</pc>
+    <w pos="v" ana="pi" lemma="èirich">èirich</w>
     <w pos="p" lemma="gu">gu</w>
     <w pos="n" ana="df" lemma="inbhe">inbhe</w>
     <w pos="n" ana="gm" lemma="taidhcùn">taidhcùn</w>
@@ -38,11 +41,11 @@
     <w pos="vn" ana="gs" lemma="malairt">malairt</w>
     <w pos="rx" lemma="a">a</w>
     <w pos="v" ana="pi" lemma="bi">bha</w>
-    <w pos="px" lemma="neo">neo</w> <!-- hyphen? -->
+    <w pos="px" lemma="neo">neo</w>
     <pc join="both">-</pc>
     <w pos="a" lemma="gnàthach">ghnàthach</w>
     <pc join="left">.</pc>
-    <w pos="p+d" ana="" lemma="ann+the">An</w> <!-- hyphen? -->
+    <w pos="p+d" ana="" lemma="ann+the">An</w>
     <pc join="both">-</pc>
     <w pos="n" ana="ds" lemma="diugh">diugh</w>
     <w pos="v" ana="fi" lemma="bi">tha</w>
@@ -70,23 +73,28 @@
     <w lemma="agus">agus</w>
     <w pos="v" ana="pi" lemma="bi">bha</w>
     <w pos="d" lemma="gach">a</w>
-    <w lemma="uile">h-uile</w>
+    <w lemma="">h</w>
+    <pc join="both">-</pc>
+    <w lemma="uile">uile</w>
     <w pos="n" ana="nm" lemma="fear">fear</w>
     <w lemma="agus">is</w>
     <w pos="n" ana="nf" lemma="tè">tè</w>
     <w pos="p" lemma="ann">anns</w>
-    <w pos="d" ana="d" lemma="the">a’</w>
+    <w pos="d" ana="d" lemma="the">a</w>
+    <pc join="left">’</pc>
     <w pos="vn" ana="d" lemma="malairt">mhalairt</w>
     <w lemma="ach">ach</w>
     <w pos="N" ana="nm" lemma="Raibeart">Rob</w>
     <pc join="left">.</pc>
   </p>
   <p>
-    <w lemma="bu">B’</w>
+    <w lemma="bu">B</w>
+    <pc join="left">’</pc>
     <w pos="D" ana="" lemma="e">e</w>
     <w pos="N" ana="" lemma="Raibeart">Rob</w>
     <w lemma="rx">a</w>
-    <w lemma="bu">b’</w>
+    <w lemma="bu">b</w>
+    <pc join="left">’</pc>
     <w pos="a" ana="r" lemma="òg">òige</w>
     <w lemma="agus">agus</w>
     <w pos="v" ana="i" lemma="lean">lean</w>
