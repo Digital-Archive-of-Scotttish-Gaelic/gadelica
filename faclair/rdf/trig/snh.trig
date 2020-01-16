@@ -3401,7 +3401,7 @@
     rdfs:comment "SNH audio: gealag-lair.mp3" ;
     rdfs:comment "SNH category: plants" .
 
-  n:boinneag-shneachda
+  n:boinneag_shneachda
     a :FeminineNoun ;
     rdfs:label "boinneag-shneachda" ;
     :sense "snowdrop" , "Galanthus" ;
@@ -3409,64 +3409,78 @@
     rdfs:comment "SNH ID: 400a" ;
     rdfs:comment "SNH category: plants" .
 
-#HERE
-
   n:gealag_dhubh_cheannach
     a :FeminineNoun ;
     rdfs:label "gealag dhubh-cheannach" ;
-    :sense "reed bunting" ;
+    :sense "reed bunting" , "Emberiza schoeniclus" ;
     :pl "gealagan dubh-cheannach" ;
     rdfs:comment "SNH ID: 401" ;
-    rdfs:comment "SNH other: gealag-lòin <em>f</em>" ;
-    rdfs:comment "SNH Latin: Emberiza schoeniclus" ;
-    rdfs:comment "SNH category: gealagan-lòin" .
+    rdfs:comment "SNH category: birds" .
+
+  n:gealag_looin
+    a :FeminineNoun ;
+    rdfs:label "gealag-lòin" ;
+    :sense "reed bunting" , "Emberiza schoeniclus" ;
+    :pl "gealagan-lòin" ;
+    rdfs:comment "SNH ID: 401a" ;
+    rdfs:comment "SNH category: birds" .
 
   n:gealan_coille
     a :MasculineNoun ;
     rdfs:label "gealan-coille" ;
-    :sense "whitethroat" ;
+    :sense "whitethroat" , "Sylvia communis" ;
     :pl "gealanan-coille" ;
     rdfs:comment "SNH ID: 402" ;
     rdfs:comment "SNH audio: gealan-coille.mp3" ;
-    rdfs:comment "SNH Latin: Sylvia communis" ;
     rdfs:comment "SNH category: birds" .
 
   n:gealan_liin
     a :MasculineNoun ;
     rdfs:label "gealan-lìn" ;
-    :sense "linnet" ;
+    :sense "linnet" , "Carduelis cannabina" ;
     :pl "gealanan-lìne" ;
     rdfs:comment "SNH ID: 403" ;
     rdfs:comment "SNH audio: gealan-lin.mp3" ;
-    rdfs:comment "SNH Latin: Carduelis cannabina" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH category: birds" .
 
   n:gealbhonn_gaaraidh
     a :MasculineNoun ;
     rdfs:label "gealbhonn-gàraidh" ;
-    :sense "dunnock (hedge sparrow)" ;
+    :sense "dunnock" , "hedge sparrow" , "Prunella modularis" ;
     :pl "gealbhonnan-gàraidh" ;
     rdfs:comment "SNH ID: 404" ;
-    rdfs:comment "SNH other: gealbhonn nam preas <em>m</em>" ;
     rdfs:comment "SNH audio: gealbhonn-garaidh.mp3" ;
-    rdfs:comment "SNH Latin: Prunella modularis" ;
-    rdfs:comment "SNH category: gealbhonnan nam preas" .
+    rdfs:comment "SNH category: birds" .
+
+  n:gealbhonn_nam_preas
+    a :MasculineNoun ;
+    rdfs:label "gealbhonn nam preas" ;
+    :sense "dunnock" , "hedge sparrow" , "Prunella modularis" ;
+    :pl "gealbhonnan nam preas" ;
+    rdfs:comment "SNH ID: 404a" ;
+    rdfs:comment "SNH category: birds" .
 
   n:gealbh_roc
     a :MasculineNoun ;
     rdfs:label "gealbh-roc" ;
-    :sense "leach's petrel" ;
+    :sense "leach’s petrel" , "Oceanodroma leucorhoa" ;
     :pl "gealbhanan-roc" ;
     rdfs:comment "SNH ID: 405" ;
-    rdfs:comment "SNH other: gobhlan-mara <em>m</em>" ;
     rdfs:comment "SNH audio: gealbh roc.mp3" ;
-    rdfs:comment "SNH Latin: Oceanodroma leucorhoa" ;
-    rdfs:comment "SNH category: gobhlanan-mara" .
+    rdfs:comment "SNH category: birds" .
+
+  n:gobhlan_mara
+    a :MasculineNoun ;
+    rdfs:label "gobhlan-mara" ;
+    :sense "leach’s petrel" , "Oceanodroma leucorhoa" ;
+    :pl "gobhlanan-mara" ;
+    rdfs:comment "SNH ID: 405a" ;
+    rdfs:comment "SNH category: birds" .
 
   n:geamhradh
     a :MasculineNoun ;
     rdfs:label "geamhradh" ;
-    :sense "winter (season)" ;
+    :sense "winter" ;
     :pl "geamhraidhean" ;
     rdfs:comment "SNH ID: 406" ;
     rdfs:comment "SNH audio: Geamhradh.mp3" ;
@@ -3475,61 +3489,75 @@
   n:geanais
     a :MasculineNoun ;
     rdfs:label "geanais" ;
-    :sense "gean" ;
+    :sense "gean" , "Prunus avium" ;
     :pl "geanaisean" ;
     rdfs:comment "SNH ID: 407" ;
-    rdfs:comment "SNH audio: geanais.mp3" ;
-    rdfs:comment "SNH Latin: Prunus avium" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH audio: geanais.mp3" .
 
   n:geanmchno_fhiadhaich
     a :FeminineNoun ;
     rdfs:label "geanmchno-fhiadhaich" ;
-    :sense "horse chestnut" ;
+    :sense "horse chestnut" , "Aesculus hippocastanum" ;
     :pl "geanmchnothan fiadhaich" ;
-    rdfs:comment "SNH ID: 408" ;
-    rdfs:comment "SNH Latin: Aesculus hippocastanum" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH ID: 408" .
 
   n:geaarr
     a :FeminineNoun ;
     rdfs:label "geàrr" ;
-    :sense "brown hare" ;
+    :sense "brown hare" , "Lepus europaeus" ;
     :pl "geàrran" ;
     rdfs:comment "SNH ID: 409" ;
-    rdfs:comment "SNH other: maigheach <em>f</em>" ;
     rdfs:comment "SNH audio: gearr maigheach.mp3" ;
-    rdfs:comment "SNH Latin: Lepus europaeus" ;
-    rdfs:comment "SNH category: maighichean" .
+    rdfs:comment "SNH category: mammals" .
+
+  n:maigheach
+    a :FeminineNoun ;
+    rdfs:label "maigheach" ;
+    :sense "brown hare" , "Lepus europaeus" ;
+    :pl "maighichean" ;
+    rdfs:comment "SNH ID: 409a" ;
+    rdfs:comment "SNH audio: gearr maigheach.mp3" ;
+    rdfs:comment "SNH category: mammals" .
 
   n:gearra_bhall
     a :MasculineNoun ;
     rdfs:label "gearra-bhall" ;
-    :sense "great auk" ;
+    :sense "great auk" , "Pinguinus impennis" ;
     :pl "gearra-bhuill" ;
     rdfs:comment "SNH ID: 410" ;
-    rdfs:comment "SNH other: colcair <em>m</em>" ;
     rdfs:comment "SNH audio: gearra bhall.mp3" ;
-    rdfs:comment "SNH Latin: Pinguinus impennis" ;
-    rdfs:comment "SNH category: colcairean" .
+    rdfs:comment "SNH category: birds" .
+
+  n:colcair
+    a :MasculineNoun ;
+    rdfs:label "colcair" ;
+    :sense "great auk" , "Pinguinus impennis" ;
+    :pl "colcairean" ;
+    rdfs:comment "SNH ID: 410a" ;
+    rdfs:comment "SNH category: birds" .
 
   n:eun_dubh_an_sgadain
     a :MasculineNoun ;
     rdfs:label "eun dubh an sgadain" ;
-    :sense "guillemot" ;
+    :sense "guillemot" , "Uria aalge" ;
     :pl "eòin dubha an sgadain" ;
     rdfs:comment "SNH ID: 411" ;
-    rdfs:comment "SNH other: langach <em>m</em>" ;
-    rdfs:comment "SNH Latin: Uria aalge" ;
-    rdfs:comment "SNH category: langaich" .
+    rdfs:comment "SNH category: birds" .
+
+  n:langach
+    a :MasculineNoun ;
+    rdfs:label "langach" ;
+    :sense "guillemot" , "Uria aalge" ;
+    :pl "langaich" ;
+    rdfs:comment "SNH ID: 411a" ;
+    rdfs:comment "SNH category: birds" .
 
   n:calltag
     a :FeminineNoun ;
     rdfs:label "calltag" ;
-    :sense "black guillemot" ;
+    :sense "black guillemot" , "Cepphus grylle" ;
     :pl "calltagan" ;
     rdfs:comment "SNH ID: 412" ;
-    rdfs:comment "SNH Latin: Cepphus grylle" ;
     rdfs:comment "SNH category: birds" .
 
   n:geoolas
@@ -3537,50 +3565,52 @@
     rdfs:label "geòlas" ;
     :sense "geology" ;
     rdfs:comment "SNH ID: 414" ;
-    rdfs:comment "SNH other: clach-eòlas <em>m</em>" ;
-    rdfs:comment "SNH audio: geolas.mp3" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH audio: geolas.mp3" .
 
-  n:geooidh
-    rdfs:label "geòidh" ;
-    :sense "geese" ;
-    rdfs:comment "SNH ID: 415" ;
-    rdfs:comment "SNH category: " .
+  n:clach_eoolas
+    a :MasculineNoun ;
+    rdfs:label "clach-eòlas" ;
+    :sense "geology" ;
+    rdfs:comment "SNH ID: 414a" .
 
   n:gibeagan
     a :MasculineNoun ;
     rdfs:label "gibeagan" ;
-    :sense "ruff" ;
+    :sense "ruff" , "Philomachus pugnax" ;
     :pl "gibeagain" ;
     rdfs:comment "SNH ID: 416" ;
     rdfs:comment "SNH audio: gibeagan.mp3" ;
-    rdfs:comment "SNH Latin: Philomachus pugnax" ;
     rdfs:comment "SNH category: birds" .
 
   n:gille_Briighde
     a :MasculineNoun ;
     rdfs:label "gille-Brìghde" ;
-    :sense "oystercatcher" ;
+    :sense "oystercatcher" , "Haematopus ostralegus" ;
     :pl "gillean-Brìghde" ;
     rdfs:comment "SNH ID: 417" ;
-    rdfs:comment "SNH other: trìlleachan <em>m</em>" ;
     rdfs:comment "SNH info: In mainland dialects it is brìdean - Brigid's bird." ;
     rdfs:comment "SNH audio: gille-brighde.mp3" ;
-    rdfs:comment "SNH Latin: Haematopus ostralegus" ;
-    rdfs:comment "SNH category: trìlleachain" .
+    rdfs:comment "SNH category: birds" .
+
+  n:triilleachan
+    a :MasculineNoun ;
+    rdfs:label "trìlleachan" ;
+    :sense "oystercatcher" , "Haematopus ostralegus" ;
+    :pl "trìlleachain" ;
+    rdfs:comment "SNH ID: 417a" ;
+    rdfs:comment "SNH category: birds" .
 
   n:giuthas
     a :MasculineNoun ;
     rdfs:label "giuthas" ;
-    :sense "pine" ;
+    :sense "pine" , "Pinus spp." ;
     :pl "giuthais" ;
     rdfs:comment "SNH ID: 419" ;
     rdfs:comment "SNH info: Also commly used for spruce." ;
     rdfs:comment "SNH audio: giuthas.mp3" ;
-    rdfs:comment "SNH Latin: Pinus spp." ;
     rdfs:comment "SNH category: trees" .
 
-  n:giuuthsach_duthchasach_Albannach
+  n:giuuthsach_duuthchasach_Albannach
     a :MasculineNoun ;
     rdfs:label "giùthsach duthchasach Albannach" ;
     :sense "native Scots pinewood" ;
@@ -3591,30 +3621,29 @@
   n:gealbhonn
     a :MasculineNoun ;
     rdfs:label "gealbhonn" ;
-    :sense "house sparrow" ;
+    :sense "house sparrow" , "Passer domesticus" ;
     :pl "gealbhonnan " ;
     rdfs:comment "SNH ID: 421" ;
-    rdfs:comment "SNH Latin: Passer domesticus" ;
     rdfs:comment "SNH category: birds" .
 
   n:glaisean_daraich
     a :MasculineNoun ;
     rdfs:label "glaisean-daraich" ;
-    :sense "greenfinch" ;
+    :sense "greenfinch" , "Carduelis chloris" ;
     :pl "glaiseanan-daraich" ;
     rdfs:comment "SNH ID: 422" ;
     rdfs:comment "SNH audio: glaisean daraich.mp3" ;
-    rdfs:comment "SNH Latin: Carduelis chloris" ;
     rdfs:comment "SNH category: birds" .
 
   n:deoch_bhiugh
     a :MasculineNoun ;
     rdfs:label "deoch-bhiugh" ;
-    :sense "greenshank" ;
+    :sense "greenshank" , "Tringa nebularia" ;
     :pl "deochan-biugh" ;
     rdfs:comment "SNH ID: 423" ;
-    rdfs:comment "SNH Latin: Tringa nebularia" ;
-    rdfs:comment "SNH category: " .
+    rdfs:comment "SNH category: birds" .
+
+# HERE
 
   n:glaisean_seilich
     a :MasculineNoun ;
