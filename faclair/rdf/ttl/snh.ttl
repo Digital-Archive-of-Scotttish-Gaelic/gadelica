@@ -1931,14 +1931,19 @@ n:glaisean_daraich
 n:deoch_bhiugh
   rdfs:label "deoch bhiugh" .
 
-
-
 n:glaisean_seilich
-  rdfs:label "glaisean-seilich" .
+  rdfs:label "glaisean seilich" .
+
+n:breac_an_t_siil
+  rdfs:label "breac an t-sìl" ;
+  :pl "bric an t-sìl" .
 
 n:glasan
   a :MasculineNoun ;
   rdfs:label "glasan" .
+
+n:liathag_allt
+  rdfs:label "liathag allt" .
 
 n:glas_sheabhag
   rdfs:label "glas-sheabhag" .
@@ -1946,8 +1951,16 @@ n:glas_sheabhag
 n:gob_ceaarr
   rdfs:label "gob-ceàrr" .
 
+n:ceaarra_ghob
+  rdfs:label "ceàrra-ghob" ;
+  :pl "ceàrra-ghuib" .
+
 n:gobha_uisge
-  rdfs:label "gobha-uisge" .
+  rdfs:label "gobha uisge" .
+
+n:lon-uisge
+  rdfs:label "lon uisge" ;
+  :pl "loin uisge" ,
 
 n:gobhar_fhiadhaich
   rdfs:label "gobhar-fhiadhaich" .
@@ -1956,19 +1969,30 @@ n:breabadair
   a :MasculineNoun ;
   rdfs:label "breabadair" .
 
+n:fidhleir_nan_casan_fada
+  rdfs:label "fidhleir nan casan fada" ;
+  :pl "fidhlearan nan casan fada" .
+
 n:gobhlachan
   a :MasculineNoun ;
   rdfs:label "gobhlachan" .
 
+n:triilleachan_beag
+  rdfs:label "trìlleachan beag" ;
+  :pl "trìlleachain bheag" .
+
 n:gobhlan_taighe
-  rdfs:label "gobhlan-taighe" .
+  rdfs:label "gobhlan taighe" .
 
 n:gobhlan_gaoithe
-  rdfs:label "gobhlan-gaoithe" .
+  rdfs:label "gobhlan gaoithe" .
 
 n:eidheann
   a :FeminineNoun ;
   rdfs:label "eidheann" .
+
+n:gort
+  rdfs:label "gort" .
 
 n:graaineag
   a :FeminineNoun ;
@@ -1979,7 +2003,7 @@ n:grainnseag
   rdfs:label "grainnseag" .
 
 n:cailleachag_chiireach
-  rdfs:label "cailleachag-chìreach" .
+  rdfs:label "cailleachag chìreach" .
 
 n:ialtag
   a :FeminineNoun ;
@@ -1995,16 +2019,24 @@ n:ialtag_chumanta
   rdfs:label "ialtag chumanta" .
 
 n:iasgair_slaite
-  rdfs:label "iasgair-slaite" .
+  rdfs:label "iasgair slaite" .
 
 n:iolaire_mhara
   rdfs:label "iolaire mhara" .
+
+n:iolaire_suuil_na_greeine
+  rdfs:label "iolaire sùil na grèine" ;
+  :pl "iolairean sùil na grèine" .
 
 n:iolaire_bhuidhe
   rdfs:label "iolaire bhuidhe" .
 
 n:iolaire_uisge
   rdfs:label "iolaire uisge" .
+
+n:iolair_iasgaich
+  rdfs:label "iolair iasgaich" ;
+  :pl "iolairean iasgaich" .
 
 n:impire_corcarach
   rdfs:label "impire corcarach" .
@@ -2019,34 +2051,75 @@ n:iteach
   a :MasculineNoun ;
   rdfs:label "iteach" .
 
+n:clooimh
+  rdfs:label "clòimh" .
+
 n:iubhar
   a :MasculineNoun ;
   rdfs:label "iubhar" .
 
+n:iogh
+  rdfs:label "iogh" .
+
 n:lach_a_bhlaair
-  rdfs:label "lach a' bhlàir" .
+  rdfs:label "lach a’ bhlàir" .
+
+n:gobha_uisge
+  rdfs:label "gobha uisge" ;
+  :pl "gobhachan uisge" .
+
+n:dubh_lach
+  rdfs:label "dubh-lach" .
+
+n:dubh_eun
+  rdfs:label "dubh-eun" ;
+  :pl "dubh-eòin" .
 
 n:lach_dhonn
   rdfs:label "lach dhonn" .
 
+n:lach_ruadh
+  rdfs:label "lach ruadh" ;
+  :pl "lachan ruadha" .
+
+n:lach_Lochlannach
+  rdfs:label "lach Lochlannach" ;
+  :pl "lachan Lochlannach" .
+
 n:lachair
   rdfs:label "lachair" .
 
+n:spaagaire_moor
+  rdfs:label "spàgaire mòr" ;
+  :pl "spàgairean mòra" .
+
+n:gobhlachan
+  a :MasculineNoun ;
+  rdfs:label "gobhlachan" ;
+  :pl "gobhlachain" .
+
+n:gobhachan_moor
+  rdfs:label "gobhachan mòr" ;
+  :pl "gobhachain mhòra" .
+
 n:lach_mhara
-  rdfs:label "lach-mhara" .
+  rdfs:label "lach mhara" .
 
 n:lach_mhaasach
-  rdfs:label "lach-mhàsach" .
+  rdfs:label "lach mhàsach" .
+
+n:lach_dhearg_cheannach
+  rdfs:label "lach dhearg-cheannach" .
 
 n:lach_stiuuireach
-  rdfs:label "lach-stiùireach" .
+  rdfs:label "lach stiùireach" .
 
 n:laogh
   a :MasculineNoun ;
   rdfs:label "laogh" .
 
 n:oirthir_ghaineimh
-  rdfs:label "oirthir-ghaineimh" .
+  rdfs:label "oirthir ghaineimh" .
 
 n:learag
   a :FeminineNoun ;
@@ -2055,8 +2128,25 @@ n:learag
 n:learga_chaol
   rdfs:label "learga chaol" .
 
+n:learga_ruadh
+  rdfs:label "learga ruadh" ;
+  :pl "leargan ruadha" .
+
+n:learga_mhoor
+  rdfs:label "learga mhòr" ;
+  :pl "leargan mòra" .
+
 n:learga_dhubh
   rdfs:label "learga dhubh" .
+
+n:broilleach_bothan
+  rdfs:label "broilleach-bothan" ;
+  :pl "broilleach-bothain" .
+
+n:learga
+  a :FeminineNoun ;
+  rdfs:label "learga" ;
+  :pl "leargan" .
 
 n:leoomann
   a :MasculineNoun ;
