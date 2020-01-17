@@ -1,0 +1,188 @@
+@prefix n: <http://faclair.ac.uk/nouns/> .
+@prefix a: <http://faclair.ac.uk/adjectives/> .
+@prefix v: <http://faclair.ac.uk/verbs/> .
+@prefix o: <http://faclair.ac.uk/other/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://faclair.ac.uk/meta/> .
+
+a:faisg
+  a :Adjective ;
+  rdfs:label "faisg" .
+
+v:faaisg
+  a :Verb ;
+  rdfs:label "fàisg" ;
+  :vn "fàsgadh" ;
+  :vngen "fàsgaidh" .
+
+v:faaisg_putan
+  rdfs:label "fàisg putan" ;
+  :sense "push a button" ;
+  :part v:faaisg , n:putan .
+
+n:putan
+  a :MasculineNoun ;
+  rdfs:label "putan" .
+
+v:faaisg_sgoornan
+  rdfs:label "fàisg (a) sgòrnan" ;
+  :sense "wring (a hen’s) neck" ;
+  :part v:faaisg , n:sgoornan .
+
+n:sgòrnan
+  a :MasculineNoun ;
+  rdfs:label "sgòrnan" .
+
+v:faaisg_aa
+  rdfs:label "fàisg ... à ..." ;
+  :sense "wring something out of someone" ;
+  :part v:faaisg .
+
+n:faisge
+  a :FeminineNoun ;
+  rdfs:label "faisge" ;
+  :part a:faisg .
+
+n:faisgean
+  a :MasculineNoun ;
+  rdfs:label "faisgean" ;
+  :pl "faisgeanan" ;
+  :gen "faisgein" ;
+  :part v:faaisg .
+
+a:faaisgte
+  a :Adjective ;
+  rdfs:label "fàisgte" ;
+  :part v:faaisg .
+
+n:faististeachas
+  a :MasculineNoun ;
+  rdfs:label "faististeachas" ;
+  :gen "faististeachais" .
+
+a:faaisneachail
+  a :Adjective ;
+  rdfs:label "fàisneachail" ;
+  :part v:faaisnich .
+
+n:faaisneachd
+  a :FeminineNoun ;
+  rdfs:label "fàisneachd" ;
+  :pl "fàisneachdan" ;
+  :part v:faaisnich .
+
+n:faaisneachd_fhiior
+  rdfs:label "fàisneachd fhìor" ;
+  :sense "true prophecy" ;
+  :part n:faaisneachd , a:fiior .
+
+v:thig_fiior
+  rdfs:label "thig fìor" ;
+  :sense "come true" ;
+  :part v:thig , a:fiior .
+
+v:thaainig_an_fhaaisneachd_fiior
+  rdfs:label "thig an fhàisneachd fìor" ;
+  rdfs:comment "the prophecy came true" ;
+  :part n:faaisneachd , v:thig_fiior .
+
+v:coilein_faaisneachd
+  rdfs:label "coilein fàisneachd" ;
+  :sense "fulfil a prophecy" ;
+  :part v:coilein , n:faaisneachd .
+
+v:faaisnich
+  a :Verb ;
+  rdfs:label "fàisnich" ;
+  :vn "fàisneachadh" ;
+  :vngen "fàisneachaidh" .
+
+v:faaisnich_rud
+  rdfs:label "fàisnich rud" ;
+  :sense "prophesy something" ;
+  :part v:faaisnich .
+
+n:faite
+  a :FeminineNoun ;
+  rdfs:label "faite" ;
+  :gen "faite" ;
+  :pl "faitichean" .
+
+a:faiteach
+  a :Adjective ;
+  rdfs:label "faiteach" ;
+  :comp "faitiche" ;
+  :part n:faiteas .
+
+n:faite_gaaire
+  a :FeminineNoun ;
+  rdfs:label "faite-gàire" ;
+  :part n:faite , g:gaaire .
+
+n:gaaire
+  rdfs:label "gàire" .
+
+v:deean_faite_gaaire
+  rdfs:label "dèan faite-gàire" ;
+  :part n:faite_gaaire .
+
+v:thoir_faite_gaaire_a_dh_ionnsaigh
+  rdfs:label "thoir faite-gàire a dh’ionnsaigh ..." ;
+  :sense "smiled to/at ..." ;
+  :part n:faite_gaaire .
+
+n:faiteas
+  a :MasculineNoun ;
+  rdfs:label "faiteas" ;
+  :gen "faiteis" .
+
+o:air_faiteas_
+  rdfs:label "air faiteas ..." ;
+  :sense "for fear of" ;
+  :part n:faiteas .
+
+n:faaitheam
+  a :MasculineNoun ;
+  rdfs:label "fàitheam" ;
+  :gen "fàitheim" ;
+  :pl "fàitheaman" .
+
+n:faaitheam_sgiorta
+  rdfs:label "fàitheam sgiorta" ;
+  :part n:faaitheam , n:sgiorta .
+
+n:sgiorta
+  a :MasculineNoun ;
+  rdfs:label "sgiorta" .
+
+v:cuir_faaitheam_air
+  rdfs:label "cuir fàitheam air" ;
+  :part n:faaitheam .
+
+v:cuir_faaitheam_air_a_theanga
+  rdfs:label "cuir fàitheam air (a) t(h)eanga" ;
+  :part n:faaitheam , n:teanga .
+
+n:teanga
+  rdfs:label "teanga" .
+
+n:beul_gun_fhaaitheam
+  rdfs:label "beul gun fhàitheam" ;
+  :part n:faaitheam , n:beul .
+
+v:aithnich
+  a :Verb ;
+  rdfs:label "aithnich" .
+
+v:faitich
+  a :Verb ;
+  rdfs:label "faitich" ;
+  :vn "faiteachadh" ;
+  :vngen "faiteachaidh" ;
+  :part n:faite .
+
+n:faal
+  a :MasculineNoun ;
+  rdfs:label "fàl" ;
+  :gen "fàil" ;
+  :pl "fàil" .

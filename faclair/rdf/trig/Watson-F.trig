@@ -1,0 +1,74 @@
+@prefix n: <http://faclair.ac.uk/nouns/> .
+@prefix a: <http://faclair.ac.uk/adjectives/> .
+@prefix v: <http://faclair.ac.uk/verbs/> .
+@prefix o: <http://faclair.ac.uk/other/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://faclair.ac.uk/meta/> .
+
+<http://faclair.ac.uk/sources/CM2004>
+  rdfs:label "CM" .
+
+<http://faclair.ac.uk/sources/CM2004> {
+
+  #:Adjective rdfs:label "a" .
+  :FeminineNoun rdfs:label "nf" .
+  :IntransitiveVerb
+  :MasculineNoun rdfs:label "nm" .
+  :Verb rdfs:label "v" .
+  #:PastParticiple rdfs:label "pp" .
+
+  n:faisge
+    a :FeminineNoun ;
+    rdfs:label "faisge" ;
+    :sense "nearness" , "closeness" ;
+    :gen "faisge" .
+
+  n:faaisneachd
+    a :FeminineNoun ;
+    rdfs:label "fàisneachd" ;
+    :sense "prophecy" , "a prophecy" ;
+    rdfs:comment "Cf fàidheadaireachd" .
+
+  n:faite
+    a :FeminineNoun ;
+    rdfs:label "faite" ;
+    :sense "a smile" ;
+    :gen "faite" ;
+    :pl "faitichean" .
+
+  n:faite_gaaire
+    a :FeminineNoun ;
+    rdfs:label "faite-gàire" ;
+    :sense "a smile" ;
+    rdfs:comment "Cf. fiamh-gàire, snodha-gàire"
+    :part n:faite .
+
+  v:deean_faite_gaaire
+    a :Verb .
+    rdfs:label "dèan faite-gàire" ;
+    :sense "smile" ;
+    rdfs:comment "Cf faitich" ;
+    :part n:faite_gaaire .
+
+  n:faaitheam
+    a :MasculineNoun ;
+    rdfs:label "fàitheam" ;
+    :sense "hem (on material or garment)" ;
+    :gen "fàitheim" ;
+    :pl "fàitheaman" .
+
+  v:faitich
+    a :IntransitiveVerb ;
+    rdfs:label "faitich" ;
+    :sense "smile" ;
+    :vn "faiteachadh" .
+
+  n:faal
+    a :MasculineNoun ;
+    rdfs:label "fàl" ;
+    :sense "a hedge" , "a turf" , "a sod" , "a divot" ;
+    rdfs:comment "Cf. callaid , fòid" ;
+    :gen "fàil" ;
+    :pl "fàil" .
+
+}

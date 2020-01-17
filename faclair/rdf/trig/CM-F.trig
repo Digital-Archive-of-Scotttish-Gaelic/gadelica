@@ -1,0 +1,197 @@
+@prefix n: <http://faclair.ac.uk/nouns/> .
+@prefix a: <http://faclair.ac.uk/adjectives/> .
+@prefix v: <http://faclair.ac.uk/verbs/> .
+@prefix o: <http://faclair.ac.uk/other/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://faclair.ac.uk/meta/> .
+
+<http://faclair.ac.uk/sources/CM2004>
+  rdfs:label "CM" .
+
+<http://faclair.ac.uk/sources/CM2004> {
+
+  :Adjective rdfs:label "a" .
+  :FeminineNoun rdfs:label "nf" .
+  :MasculineNoun rdfs:label "nm" .
+  :Verb rdfs:label "v" .
+  :PastParticiple rdfs:label "pp" .
+
+  v:faaisg
+    a :Verb ;
+    rdfs:label "fàisg" ;
+    :sense "hug" , "pinch" , "press" , "squeeze" , "wring" ;
+    :vn "fàsgadh" ;
+    :vngen "fàsgaidh" .
+
+  v:dh_fhaaisg_e_am_putan
+    a :Example ;
+    rdfs:label "dh’fhàisg e am putan" ;
+    :sense "he pressed the button" ;
+    :part v:faaisg .
+
+  v:bha_iad_air_am_faasgadh_ri_cheeile
+    a :Example ;
+    rdfs:label "bha iad air am fàsgadh ri chèile" ;
+    :sense "they were squeezed together" ;
+    :part v:faaisg .
+
+  v:ghlac_e_a_chearc_agus_dh_fhaaisg_e_a_sgoornan
+    a :Example ;
+    rdfs:label "ghlac e a’ chearc agus dh’fhàisg e a sgòrnan" ;
+    :sense "he caught the hen and [he] wrung its neck" ;
+    :part v:faaisg .
+
+  v:faaisgidh_sinn_an_coorr_aas_a_dh_aithghearr
+    a :Example ;
+    rdfs:label "fàisgidh sinn an còrr às a dh’aithghearr" ;
+    :sense "we’ll soon wring the rest out of him" ;
+    :part v:faaisg .
+
+  n:faisge
+    a :FeminineNoun ;
+    rdfs:label "faisge" ;
+    :sense "closeness" .
+
+  n:faisgean
+    a :MasculineNoun ;
+    rdfs:label "faisgean" ;
+    :sense "sponge" ;
+    :pl "faisgeanan" ;
+    :gen "faisgein" .
+
+  a:faaisgte
+    a :PastParticiple ;
+    rdfs:label "fàisgte" ;
+    :sense "wrung" .
+
+  n:faististeachas
+    a :MasculineNoun ;
+    rdfs:label "faististeachas" ;
+    :sense "fascism" ;
+    :gen "faististeachais" .
+
+  a:faaisneachail
+    a :Adjective ;
+    rdfs:label "fàisneachail" .
+
+  n:faaisneachd
+    a :FeminineNoun ;
+    rdfs:label "fàisneachd" , "fàistneachd" ;
+    :sense "divination" , "prediction" , "prophecy" ;
+    :pl "fàisneachdan" , "fàistneachdan" .
+
+  v:is_e_faaisneachd_fhiior_a_bha_seo
+    a :Example ;
+    rdfs:label "’s e fàisneachd fhìor a bha seo" ;
+    :sense "this was a true prophecy" ;
+    :part n:faaisneachd .
+
+  v:thaainig_cuid_mhoor_dhen_fhaaisneachd_gu_bhith_fiior
+    a :Example ;
+    rdfs:label "thàinig cuid mhòr dhen fhàisneachd gu bhith fìor" ;
+    :sense "a large proportion of the prophecy came to be true" ;
+    :part n:faaisneachd .
+
+  v:bha_an_fhaaisneachd_air_a_coileanadh
+    a :Example ;
+    rdfs:label "bha an fhàisneachd air a coileanadh" ;
+    :sense "the prophecy wasfulfilled" ;
+    :part n:faaisneachd .
+
+  v:faaisnich
+    a :Verb ;
+    rdfs:label "fàisnich" ;
+    :vn "fàisneachadh" ;
+    :vngen "fàisneachaidh" ;
+    :sense "foretell" , "prophesy" , "vaticanate" .
+
+  v:bha_aon_rud_nach_burrainn_dhaibh_fhaaisneachadh
+    a :Example ;
+    rdfs:label "bha aon rud nach b’urrainn dhaibh fhàisneachadh" ;
+    :sense "there was one thing they couldn’t prophesy" ;
+    :part v:faaisnich .
+
+  a:faiteach
+    a :Adjective ;
+    rdfs:label "faiteach" ;
+    :sense "timid" , "shy" , "fearful" ;
+    :comp "faitiche" .
+
+  n:faite_gaaire
+    a :FeminineNoun ;
+    rdfs:label "faite-gàire" ;
+    :sense "smile" .
+
+  v:deean_faite_gaaire
+    a :Verb .
+    rdfs:label "dèan faite-gàire" ;
+    :sense "smile" ;
+    :part n:faite_gaaire .
+
+  v:thug_i_faite_gaaire_da_ionnsaigh
+    a :Example ;
+    rdfs:label "thug i faite-gàire da ionnsaigh" ;
+    :sense "she smiled to him" , "lit. she gave a smile towards him" ;
+    :part n:faite_gaaire .
+
+  n:faiteas
+    a :MasculineNoun ;
+    rdfs:label "faiteas" ;
+    :sense "fear" , "bashfulness" , "shyness" ;
+    :gen "faiteis" .
+
+  o:air_faiteas_nan_creach
+    a :Example ;
+    rdfs:label "air faiteas nan creach" ;
+    :sense "for fear of raids" ;
+    :part n:faiteas .
+
+  n:faaitheam
+    a :MasculineNoun ;
+    rdfs:label "faitheam" ;
+    :sense "hem" , "seam" , "border (of a garment)" ;
+    :gen "faitheim" ;
+    :pl "faitheaman" .
+
+  n:faaitheam_sgiorta
+    a :Example ;
+    rdfs:label "faitheam sgiorta" ;
+    :sense "the hem of a skirt" ;
+    :part n:faaitheam .
+
+  v:cuir_faaitheam_air
+    a :Example ;
+    rdfs:label "cuir faitheam air" ;
+    :sense "hem" ;
+    :part n:faaitheam .
+
+  v:cuir_faaitheam_air_do_theanga
+    a :Example ;
+    rdfs:label "cuir faitheam air do theanga" ;
+    :sense "be circumspect" ;
+    :part n:faaitheam .
+
+  n:beul_gun_fhaaitheam
+    a :Example ;
+    rdfs:label "beul gun fhaitheam" ;
+    :sense "a garrulous person" ;
+    :part n:faaitheam .
+
+  v:aithnich
+    rdfs:label "faithnich" .
+
+  v:faitich
+    a :Verb ;
+    rdfs:label "faitich" ;
+    :sense "beam (smile)" ;
+    :vn "faiteachadh" ;
+    :vngen "faiteachaidh" .
+
+  n:faal
+    a :MasculineNoun ;
+    rdfs:label "fàl" ;
+    :sense "hedge" , "turf" , "verge (of road)" ;
+    :gen "fàil" ;
+    :pl "fàil" .
+
+}
