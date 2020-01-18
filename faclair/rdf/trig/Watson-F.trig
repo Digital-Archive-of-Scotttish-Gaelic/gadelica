@@ -5,17 +5,17 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix : <http://faclair.ac.uk/meta/> .
 
-<http://faclair.ac.uk/sources/CM2004>
-  rdfs:label "CM" .
+<http://faclair.ac.uk/sources/Watson2001>
+  rdfs:label "Watson 2001" .
 
-<http://faclair.ac.uk/sources/CM2004> {
+<http://faclair.ac.uk/sources/Watson2001> {
 
-  #:Adjective rdfs:label "a" .
+  :Adjective rdfs:label "adj" .
   :FeminineNoun rdfs:label "nf" .
-  :IntransitiveVerb
+  :IntransitiveVerb rdfs:label "vi" .
+  :TransitiveVerb rdfs:label "vt" .
   :MasculineNoun rdfs:label "nm" .
   :Verb rdfs:label "v" .
-  #:PastParticiple rdfs:label "pp" .
 
   n:faisge
     a :FeminineNoun ;
@@ -40,11 +40,11 @@
     a :FeminineNoun ;
     rdfs:label "faite-gàire" ;
     :sense "a smile" ;
-    rdfs:comment "Cf. fiamh-gàire, snodha-gàire"
+    rdfs:comment "Cf. fiamh-gàire, snodha-gàire" ;
     :part n:faite .
 
   v:deean_faite_gaaire
-    a :Verb .
+    a :Verb ;
     rdfs:label "dèan faite-gàire" ;
     :sense "smile" ;
     rdfs:comment "Cf faitich" ;
@@ -70,5 +70,58 @@
     rdfs:comment "Cf. callaid , fòid" ;
     :gen "fàil" ;
     :pl "fàil" .
+
+  n:falachd
+    a :FeminineNoun ;
+    rdfs:label "falachd" ;
+    :sense "a feud" ;
+    :gen "falachd" .
+
+  v:falaich
+    a :IntransitiveVerb , :TransitiveVerb ;
+    rdfs:label "falaich" ;
+    :sense "conceal" , "hide"  , "secrete" ;
+    :vn "falach" , "falachadh" ;
+    :vngen "falaich" ;
+    rdfs:comment "Cf more usually rach / cuir am falach (see falach)" .
+
+  o:am_falach
+    rdfs:label "am falach" ;
+    :sense "in hiding" ;
+    :part v:falaich .
+
+  v:rach_am_falach
+    a :Verb ;
+    rdfs:label "rach am falach" ;
+    :sense "go into hiding" ;
+    :part v:falaich .
+
+  n:aaite_falaich
+    a :MasculineNoun ;
+    rdfs:label "àite-falaich" ;
+    :sense "a hiding place" ;
+    :part v:falaich .
+
+  v:cuiridh_mi_am_falach_thu
+    a :Example ;
+    rdfs:label "cuiridh mi am falach thu" ;
+    :sense "I will hide / conceal you" ;
+    :part v:falaich .
+
+  n:falach_fead
+    a :MasculineNoun ;
+    rdfs:label "falach-fead" ;
+    :sense "hide-and-seek" .
+
+  a:falaichte
+    a :Adjective ;
+    rdfs:label "falaichte" ;
+    :sense "hidden" , "concealed" , "secret" .
+
+  v:chuir_iad_a_ghleann_falaicht_mi
+    a :Example ;
+    rdfs:label "chuir iad a ghleann falaicht’ mi" ;
+    :sense "(song) they sent me to a hidden glen" ;
+    :part a:falaichte .
 
 }

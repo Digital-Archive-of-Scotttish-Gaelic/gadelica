@@ -117,7 +117,7 @@ a:faiteach
 n:faite_gaaire
   a :FeminineNoun ;
   rdfs:label "faite-gàire" ;
-  :part n:faite , g:gaaire .
+  :part n:faite , n:gaaire .
 
 n:gaaire
   rdfs:label "gàire" .
@@ -186,3 +186,158 @@ n:faal
   rdfs:label "fàl" ;
   :gen "fàil" ;
   :pl "fàil" .
+
+o:am_falach
+  rdfs:label "am falach" ;
+  :part v:falaich .
+
+v:rach_am_falach
+  rdfs:label "rach am falach" ;
+  :part o:am_falach , v:rach .
+
+n:aaite_falaich
+  rdfs:label "àite falaich" ;
+  :part v:falaich , n:aaite .
+
+v:cuir_am_falach
+  rdfs:label "cuir am falach" ;
+  :sense "hide something" , "conceal something" ;
+  :part o:am_falach , v:cuir .
+
+v:cuum_am_falach
+  rdfs:label "cùm am falach" ;
+  :sense "keep something hidden" ;
+  :part o:am_falach , v:cuum .
+
+o:air_falach
+  rdfs:label "air falach" ;
+  :part v:falaich .
+
+v:rach_air_falach
+  rdfs:label "rach air falach" ;
+  :sense "hide" ;
+  :part o:air_falach .
+
+v:cuir_air_falach
+  rdfs:label "cuir air falach" ;
+  :sense "hide something" ;
+  :part o:air_falach .
+
+n:falach_fead
+  rdfs:label "falach-fead" ;
+  :part v:falaich , n:fead .
+
+v:cluich_air_falach_fead
+  rdfs:label "cluich air falach-fead" ;
+  :sense "play hide-and-seek" ;
+  :part n:falach_fead , v:cluich_air .
+
+n:falachadh
+  a :MasculineNoun ;
+  rdfs:label "falachadh" ;
+  :gen "falachaidh" ;
+  :pl "falachaidhean" ;
+  :part v:falaich .
+
+a:falachaidh
+  a :Adjective ;
+  rdfs:label "falachaidh" ;
+  :part n:falachadh .
+
+v:teich_gu_falachaidh
+  rdfs:label "teich gu falachaidh" ;
+  :sense "flee in secret" ;
+  :part a:falachaidh , v:teich .
+
+n:falachan
+  a :MasculineNoun ;
+  rdfs:label "falachan" ;
+  :gen "falachain" ;
+  :pl "falachain" ;
+  :part v:falaich .
+
+v:faigh_falachan
+  rdfs:label "faigh falachan" ;
+  :sense "find a hidden object" ;
+  :part v:faigh , n:falachan .
+
+n:falachd
+  a :FeminineNoun ;
+  rdfs:label "falachd" ;
+  :gen "falachd" ;
+  :pl "falachdan" .
+
+n:faaladair
+  a :MasculineNoun ;
+  rdfs:label "fàladair" ;
+  :gen "fàladair" ;
+  :pl "fàladairean" .
+
+v:falaich
+  a :Verb ;
+  rdfs:label "falaich" ;
+  :vn "falach" , "falachadh" ;
+  :vngen "falaich" , "falachaidh" .
+
+n:ionad_falaich
+  rdfs:label "ionad falaich" ;
+  :sense "hiding place" , "place of hiding" ;
+  :part n:ionad , v:falaich .
+
+v:faag_ionad_falaich
+  rdfs:label "fàg (a) ionad falaich" ;
+  :sense "leave one’s hiding place" ;
+  :part v:faag , n:ionad_falaich .
+
+v:falaich_rud_air
+  rdfs:label "falaich rud air ..." ;
+  :sense "hide something from ..." ;
+  :part v:falaich .
+
+o:air_a_falach
+  rdfs:label "air a f(h)alach" ;
+  :sense "hidden" ;
+  :part v:falaich .
+
+o:air_a_deagh_fhalach
+  rdfs:label "air a d(h)eagh fhalach" ;
+  :sense "well hidden" ;
+  :part o:air_a_falach , a:deagh .
+
+a:falaichte
+  a :Adjective ;
+  rdfs:label "falaichte" ;
+  :part v:falaich .
+
+a:falaichte_air
+  rdfs:label "falaichte air ..." ;
+  :sense "hidden from" ;
+  :part v:falaichte .
+
+n:falaid
+  a :MasculineNoun ;
+  rdfs:label "falaid" ;
+  :gen "falaide" .
+
+v:falaidich
+  a :Verb ;
+  rdfs:label "falaidich" ;
+  :vn "falaideachadh" ;
+  :part n:falaid .
+
+v:falaidich_doras
+  rdfs:label "falaidich doras" ;
+  :sense "varnish the door" ;
+  :part v:falaidich .
+
+n:faalaire
+  a :MasculineNoun ;
+  rdfs:label "fàlaire" ;
+  :gen "fàlaire" ;
+  :pl "fàlairean" .
+
+n:falaisg
+  a :FeminineNoun ;
+  rdfs:label "falaisg" ;
+  :gen "falaisge" ;
+  :pl "falaisgean" .

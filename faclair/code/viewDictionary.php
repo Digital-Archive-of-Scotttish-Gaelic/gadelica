@@ -21,7 +21,7 @@ $id = $_GET['id'];
 $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
-SELECT ?name ?id ?hw ?pos ?en
+SELECT ?name ?id ?hw ?pos ?en ?pl ?comm ?gen ?comp ?vn ?vngen
 WHERE
 {
   <{$id}> rdfs:label ?name .
@@ -33,6 +33,24 @@ WHERE
     }
     OPTIONAL {
       ?id :sense ?en .
+    }
+    OPTIONAL {
+      ?id :pl ?pl .
+    }
+    OPTIONAL {
+      ?id :gen ?gen .
+    }
+    OPTIONAL {
+      ?id :comp ?comp .
+    }
+    OPTIONAL {
+      ?id :vn ?vn .
+    }
+    OPTIONAL {
+      ?id :vngen ?vngen .
+    }
+    OPTIONAL {
+      ?id rdfs:comment ?comm .
     }
   }
 }
@@ -82,7 +100,7 @@ foreach($ids as $nextId) {
     }
   }
   $poss = array_unique($poss);
-  echo '<td>' . implode(', ',$poss) . '</td>';
+  echo '<td><small>' . implode(', ',$poss) . '</small></td>';
   $ens = [];
   foreach($results as $nextResult) {
     if ($nextResult->id->value == $nextId) {
@@ -91,22 +109,79 @@ foreach($ids as $nextId) {
   }
   $ens = array_unique($ens);
   echo '<td><small>' . implode(', ',$ens) . '</small></td>';
-  echo '<td>' . 'Plurals' . '</td>';
-  echo '<td>' . 'Comments' . '</td>';
+  $pls = [];
+  foreach($results as $nextResult) {
+    if ($nextResult->id->value == $nextId) {
+      $pls[] = $nextResult->pl->value;
+    }
+  }
+  $pls = array_unique($pls);
+  $gens = [];
+  foreach($results as $nextResult) {
+    if ($nextResult->id->value == $nextId) {
+      $gens[] = $nextResult->gen->value;
+    }
+  }
+  $gens = array_unique($gens);
+  $comps = [];
+  foreach($results as $nextResult) {
+    if ($nextResult->id->value == $nextId) {
+      $comps[] = $nextResult->comp->value;
+    }
+  }
+  $comps = array_unique($comps);
+  $vns = [];
+  foreach($results as $nextResult) {
+    if ($nextResult->id->value == $nextId) {
+      $vns[] = $nextResult->vn->value;
+    }
+  }
+  $vns = array_unique($vns);
+  $vngens = [];
+  foreach($results as $nextResult) {
+    if ($nextResult->id->value == $nextId) {
+      $vngens[] = $nextResult->vngen->value;
+    }
+  }
+  $vngens = array_unique($vngens);
+  echo '<td><small>';
+  if (count($pls) > 0 && $pls[0] != '') {
+    echo 'Pl: ' . implode(', ',$pls) . '<br/>';
+  }
+  if (count($gens) > 0 && $gens[0] != '') {
+    echo 'Gen: ' . implode(', ',$gens) . '<br/>';
+  }
+  if (count($comps) > 0 && $comps[0] != '') {
+    echo 'Comp: ' . implode(', ',$comps) . '<br/>';
+  }
+  if (count($vns) > 0 && $vns[0] != '') {
+    echo 'VN: ' . implode(', ',$vns) . '<br/>';
+  }
+  if (count($vngens) > 0 && $vngens[0] != '') {
+    echo 'VN Gen: ' . implode(', ',$vngens) . '<br/>';
+  }
+  echo '</small></td>';
+  $comments = [];
+  foreach($results as $nextResult) {
+    if ($nextResult->id->value == $nextId) {
+      $comments[] = $nextResult->comm->value;
+    }
+  }
+  $comments = array_unique($comments);
+  echo '<td><small>' . implode('<br/>',$comments) . '</small></td>';
   echo '</tr>';
 }
 ?>
         </tbody>
       </table>
       <nav class="navbar navbar-dark bg-primary fixed-bottom navbar-expand-lg">
-        <a class="navbar-brand" href="index.php">Stòras Brì</a>
+        <a class="navbar-brand" href="index.php">🏛 Stòras Brì</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
              <a class="nav-item nav-link" href="about.html" data-toggle="tooltip" title="About this site">fios</a>
-             <a class="nav-item nav-link" href="gaelicIndex.php" data-toggle="tooltip" title="Index">indeacs</a>
              <a class="nav-item nav-link" href="random.php" data-toggle="tooltip" title="View random entry">iongnadh</a>
           </div>
         </div>

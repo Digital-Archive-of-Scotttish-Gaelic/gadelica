@@ -6,7 +6,7 @@
 @prefix : <http://faclair.ac.uk/meta/> .
 
 <http://faclair.ac.uk/sources/CM2004>
-  rdfs:label "CM" .
+  rdfs:label "CM 2004" .
 
 <http://faclair.ac.uk/sources/CM2004> {
 
@@ -15,6 +15,7 @@
   :MasculineNoun rdfs:label "nm" .
   :Verb rdfs:label "v" .
   :PastParticiple rdfs:label "pp" .
+  :Adverb rdfs:label "adv" .
 
   v:faaisg
     a :Verb ;
@@ -72,7 +73,8 @@
 
   a:faaisneachail
     a :Adjective ;
-    rdfs:label "fàisneachail" .
+    rdfs:label "fàisneachail" ;
+    :sense "prophetic" .
 
   n:faaisneachd
     a :FeminineNoun ;
@@ -123,7 +125,7 @@
     :sense "smile" .
 
   v:deean_faite_gaaire
-    a :Verb .
+    a :Verb ;
     rdfs:label "dèan faite-gàire" ;
     :sense "smile" ;
     :part n:faite_gaaire .
@@ -194,35 +196,156 @@
     :gen "fàil" ;
     :pl "fàil" .
 
+  o:am_falach
+    a :Adverb ;
+    rdfs:label "am falach" ;
+    :sense "in hiding" , "hidden" ;
+    :part v:falaich .
 
+  v:bha_e_am_falach_an_deeidh_a_chatha
+    a :Example ;
+    rdfs:label "bha e am falach an dèidh a’ chatha" ;
+    :sense "he was in hiding after the battle" ;
+    :part v:falaich .
 
+  v:chaidh_e_am_falach_ri_taobh_an_rathaid
+    a :Example ;
+    rdfs:label "chaidh e am falach ri taobh an rathaid" ;
+    :sense "he hid / went into hiding at the side of the road" ;
+    :part v:falaich .
 
+  v:cha_chumadh_sinn_e_am_falach
+    a :Example ;
+    rdfs:label "cha chumadh sinn e am falach" ;
+    :sense "we could not keep it hidden" ;
+    :part v:falaich .
 
+  o:air_falach
+    rdfs:label "air falach" ;
+    :part v:falaich .
 
+  v:chaidh_sinn_gu_luath_air_falach
+    a :Example ;
+    rdfs:label "chaidh sinn gu luath air falach" ;
+    :sense "we hid quickly" ;
+    :part v:falaich .
 
+  v:chuir_e_air_falach_e_ann_am_fear_de_na_tuill
+    a :Example ;
+    rdfs:label "chuir e air falach e ann am fear de na tuill" ;
+    :sense "he hid it in one of the holes" ;
+    :part v:falaich .
 
+  n:falach_fead
+    a :MasculineNoun ;
+    rdfs:label "falach-fead" ;
+    :sense "hide-and-seek" .
 
+  v:bha_a_chlann_a_cluich_air_falach_fead
+    a :Example ;
+    rdfs:label "bha a’ chlann a’ cluich air falach-fead" ;
+    :sense "the children were playing hide-and-seek" ;
+    :part n:falach_fead .
 
+  n:falachadh
+    a :MasculineNoun ;
+    rdfs:label "falachadh" ;
+    :sense "secretion" ;
+    :gen "falachaidh" ;
+    :pl "falachaidhean" .
+
+  a:falachaidh
+    a :Adjective ;
+    rdfs:label "falachaidh" ;
+    :sense "secret" .
+
+  v:theich_e_gu_falachaidh
+    a :Example ;
+    rdfs:label "theich e gu falachaidh" ;
+    :sense "he fled secretly" ;
+    :part a:falachaidh .
+
+  n:falachan
+    a :MasculineNoun ;
+    rdfs:label "falachan" ;
+    :sense "hidden object" , "hidden treasure" ;
+    :gen "falachain" ;
+    :pl "falachain" .
+
+  v:chaidh_iad_uile_air_falbh_feuch_coo_gheibheadh_na_falachain
+    a :Example ;
+    rdfs:label "chaidh iad uile air falbh feuch cò gheibheadh na falachain" ;
+    :sense "they all went off to see who could find the hidden objects" ;
+    :part n:falachan .
+
+  n:falachd
+    a :FeminineNoun ;
+    rdfs:label "falachd" , "folachd" ;
+    :sense "feud" ;
+    :gen "falachd" , "folachd" ;
+    :pl "falachdan" , "folachdan" ;
+    rdfs:comment "also folachd" .
+
+  n:faaladair
+    a :MasculineNoun ;
+    rdfs:label "fàladair" ;
+    :sense "scythe" ;
+    :gen "fàladair" ;
+    :pl "fàladairean" .
 
   v:falaich
     a :Verb ;
     rdfs:label "falaich" ;
     :sense "conceal" , "hide" , "lurk" , "secrete" , "shroud" ;
-    :vn "falach" .
+    :vn "falach" ;
+    :vngen "falaich" .
 
+  v:dh_fhaag_e_ionad_falaich
+    a :Example ;
+    rdfs:label "dh’fhàg e ionad falaich" ;
+    :sense "he left his hiding place / his place of hiding" ;
+    :part v:falaich .
 
+  v:a_bheil_thu_a_feuchainn_ri_rudeigin_fhalach_orm
+    a :Example ;
+    rdfs:label "a bheil thu a’ feuchainn ri rudeigin fhalach orm?" ;
+    :sense "are you trying to hide something from me?" ;
+    :part v:falaich .
 
+  v:bha_iad_air_am_falach
+    a :Example ;
+    rdfs:label "bha iad air am falach" ;
+    :sense "they were hidden" ;
+    :part v:falaich .
+
+  v:fhuair_e_seo_fhalach_air_na_h_Innseanaich
+    a :Example ;
+    rdfs:label "fhuair e seo fhalach air na h-Innseanaich" ;
+    :sense "he managed to hide this from the Indians" ;
+    :part v:falaich .
+
+  v:bha_e_air_a_dheagh_fhalach
+    a :Example ;
+    rdfs:label "bha e air a dheagh fhalach" ;
+    :sense "it was well hidden" ;
+    :part v:falaich .
 
   a:falaichte
     a :PastParticiple ;
     rdfs:label "falaichte" ;
     :sense "hidden" , "latent" , "secret" , "ulterior" .
 
-  falaichte air
-  tha na rudan sin falaichte air a’ chinne-daonna
-  these things are hidden from mankind
-  bha e falaichte am measg nan creag
-  he was hidden among the rocks
+  v:tha_na_rudan_sin_falaichte_air_a_chinne_daonna
+    a :Example ;
+    rdfs:label "tha na rudan sin falaichte air a’ chinne-daonna" ;
+    :sense "these things are hidden from mankind" ;
+    :part n:falaichte .
+
+  v:bha_e_falaichte_am_measg_nan_creag
+    a :Example ;
+    rdfs:label "bha e falaichte am measg nan creag" ;
+    :sense "he was hidden among the rocks" ;
+    :part n:falaichte .
 
   n:falaid
     a :MasculineNoun ;
@@ -230,8 +353,11 @@
     :sense "varnish" ;
     :gen "falaide" .
 
-  bha a’ ghrian a’ boillsgeadh air falaid a’ bhùird
-  the sun was shining on the varnish of the table
+  v:bha_a_ghrian_a_boillsgeadh_air_falaid_a_bhuuird
+    a :Example ;
+    rdfs:label "bha a’ ghrian a’ boillsgeadh air falaid a’ bhùird" ;
+    :sense "the sun was shining on the varnish of the table" ;
+    :part n:falaid .
 
   v:falaidich
     a :Verb ;
@@ -239,8 +365,11 @@
     :sense "varnish" ;
     :vn "falaideachadh" .
 
-  thòisich e air an doras fhalaideachadh
-  he began to varnish the door
+  v:thooisich_e_air_an_doras_fhalaideachadh
+    a :Example ;
+    rdfs:label "thòisich e air an doras fhalaideachadh" ;
+    :sense "he began to varnish the door" ;
+    :part v:falaidich .
 
   n:faalaire
     a :MasculineNoun ;
@@ -256,8 +385,12 @@
     :gen "falaisge" ;
     :pl "falaisgean" .
 
-  bha fàileadh na falaisg làidir na chuinneanan
-  the smell of the moor-burning was string in his nostrils
+  v:bha_faaileadh_na_falaisg_laaidir_na_chuinneanan
+    a :Example ;
+    rdfs:label "bha fàileadh na falaisg làidir na chuinneanan" ;
+    :sense "the smell of the moor-burning was string in his nostrils" ;
+    :part n:falaisg .
+
 
 
 
