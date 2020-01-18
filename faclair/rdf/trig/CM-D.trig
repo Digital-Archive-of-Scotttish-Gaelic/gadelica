@@ -1,0 +1,172 @@
+@prefix n: <http://faclair.ac.uk/nouns/> .
+@prefix a: <http://faclair.ac.uk/adjectives/> .
+@prefix v: <http://faclair.ac.uk/verbs/> .
+@prefix o: <http://faclair.ac.uk/other/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://faclair.ac.uk/meta/> .
+
+<http://faclair.ac.uk/sources/CM2004> {
+
+  n:dual
+    a :MasculineNoun ;
+    rdfs:label "dual" ;
+    :sense "curl" , "lock (or hair)" , "plait" , "strand" ;
+    :gen "duail" ;
+    :pl "duail" , "dualan" .
+
+  v:cuir_an_duail
+    rdfs:label "cuir an duail" , "cuir an dualan" ;
+    :sense "braid" ;
+    :part n:dual .
+
+  v:bha_ceoo_a_tighinn_na_dhualan_dubha_bhon_luaidhear
+    a :Example ;
+    rdfs:label "bha ceò a’ tighinn na dhualan dubha bhon luaidhear" ;
+    :sense "smoke was issuing from the chimney in black curls" ;
+    :part n:dual .
+
+  v:bha_a_falt_a_tuiteam_na_dhuail_air_a_guailnean
+    a :Example ;
+    rdfs:label "bha a falt a’ tuiteam na dhuail air a guailnean" ;
+    :sense "her hair was falling in curls upon her shoulders" ;
+    :part n:dual .
+
+  n:dual
+    a :Adjective ;
+    rdfs:label "dual" ;
+    :sense "hereditary" , "usual" , "natural" , "prone" , "to be expected" .
+
+  o:mar_as_dual
+    rdfs:label "mar as dual" ;
+    :sense "as is common" ;
+    :part n:dual .
+
+  o:mar_bu_dual
+    rdfs:label "mar bu dual (dha)" ;
+    :sense "as you would expect (of him)" , "naturally" , "as was customary with him" ;
+    :part n:dual .
+
+  v:mar_bha_dual_bha_mooran_dhaoine_ooga_a_tadhal_oirre
+    a :Example ;
+    rdfs:label "mar bha dual bha mòran dhaoine òga a’ tadhal oirre" ;
+    :sense "naturally / as one would expect there were many yound men visiting her" ;
+    :part n:dual .
+
+  v:tha_iad_mar_bu_dual_nas_liionmhoire_anns_na_bailtean
+    a :Example ;
+    rdfs:label "tha iad, mar bu dual, nas lìonmhoire anns na bailtean" ;
+    :sense "they are, naturally, more abundant in the towns" ;
+    :part n:dual .
+
+  v:bu_dual_dha_sin
+    a :Example ;
+    rdfs:label "bu dual dha sin" ;
+    :sense "you would expect that of his people" , "it was hereditary to him" ;
+    :part n:dual .
+
+  v:mar_bu_dual_do_na_seann_Hiortaich
+    a :Example ;
+    rdfs:label "mar bu dual do na seann Hiortaich" ;
+    :sense "as was customary to the old St. Kildans" ;
+    :part n:dual .
+
+  v:bu_dual_a_bhith_seinn
+    rdfs:label "bu dual a bhith seinn" ;
+    :sense "born to sing" ;
+    :part n:dual .
+
+  v:bu_dual_do_dh_isean_an_rooin_a_dhol_air_a_thooin_chun_na_mara
+    a :Example ;
+    rdfs:label "bu dual do dh’isean an ròin a dhol air a thòin chun na mara" ;
+    :sense "some people have sea water in their veins i.e. take to the sea naturally" ;
+    :part n:dual .
+
+  n:dual_fhiine
+    a :FeminineNoun ;
+    rdfs:label "dual-fhìne" ;
+    :sense "caste" .
+
+  a:dualach
+    a :Adjective ;
+    rdfs:label "dualach" ;
+    :sense "hereditary" , "inherent" , "native" , "typical" , "usual" ;
+    :comp "dualaiche" .
+
+  v:chan_eil_e_dualach_don_leithid_beatha_shocrach_a_mhealtainn
+    a :Example ;
+    rdfs:label "chan eil e dualach don leithid beatha shocrach a mhealtainn" ;
+    :sense "it isn't usual for the likes of him to enjoy a comfortable life" ;
+    :part a:dualach .
+
+  n:gach_tinneas_a_bhitheas_dualach_do_dhuine
+    a :Example ;
+    rdfs:label "gach tinneas a bhitheas dualach do dhuine" ;
+    :sense "every ailment which is hereditary to man" ;
+    :part a:dualach .
+
+  v:dualaich
+    a :Verb ;
+    rdfs:label "dualaich" ;
+    :sense "braid" , "typify" ;
+    :vn "dualachadh" ;
+    :vngen "dualachaidh" .
+
+  n:dualchainnt
+    a :FeminineNoun ;
+    rdfs:label "dualchainnt" , "dual-chainnt" ;
+    :sense "dialect" , "brogue (of language)" .
+
+  n:dualchas
+    a :MasculineNoun ;
+    rdfs:label "dualchas" , "dualachas" ;
+    :sense "disposition (hereditary)" , "heritage" , "inheritance" , "patrimony" , "tradition" , ""
+    :gen "dualchais" .
+
+  v:theeid_dualchas_an_aghaidh_nan_creag
+    a :Example ;
+    rdfs:label "thèid dualchas an aghaidh nan creag" ;
+    :sense "heritage will out (proverb)" ;
+    :part n:dualchas .
+
+  n:Dualchas_Naadair_na_h_Alba
+    a :FeminineNoun ;
+    rdfs:label "Dualchas Nàdair na h-Alba" ;
+    :sense "Scottish Natural Heritage" ;
+    :part n:dualchas .
+
+  o:a_tarraing_aas_an_tobar_seo_de_dhualchas
+    a :Example ;
+    rdfs:label "a’ tarraing às an tobar seo de dhualchas" ;
+    :sense "drawing from this well-spring of tradition" ;
+    :part n:dualchas .
+
+  v:theeid_duine_ri_a_dhualchas_seachd_uairean_anns_an_latha
+    a :Example ;
+    rdfs:label "thèid duine ri (a) dhualchas seachd uairean anns an latha" ;
+    :sense "a man shows his heredity seven times a day" ;
+    :part n:dualchas .
+
+  a:dualchasach
+    a :Adjective ;
+    rdfs:label "traditional" ;
+    :comp "dualchasaiche" .
+
+  a:dualtach
+    a :Adjective ;
+    rdfs:label "dualtach" ;
+    :sense "likely" , "liable" ;
+    :comp "dualtaiche" .
+
+  v:tha_e_dualtach_do_iomadh_buidheann_a_bhith_ag_iarraidh_cuideachadh_aig_an_aon_aam
+    a :Example ;
+    rdfs:label "tha e dualtach do iomadh buidheann a bhith ag iarraidh cuideachadh aig an aon àm" ;
+    :sense "many groups are liable to be seeking help at the same time" ;
+    :part a:dualtach .
+
+
+
+
+  n:duuthchas
+
+
+}
