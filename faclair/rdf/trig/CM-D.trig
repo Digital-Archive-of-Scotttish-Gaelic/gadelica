@@ -166,7 +166,114 @@
 
 
 
-  n:duuthchas
 
+
+  n:duuth
+    a :Adjective ;
+    rdfs:label "dùth" ;
+    :sense "natural" , "hereditary" , "native" , "fitting" , "proper" .
+
+cha dùth do dhuine a bhith air a chumail a-staigh mar sin
+it isn’t natural for a man to be kept inside like that
+
+is dùth do neach a ghnè fhèin a shireadh
+it’s natural for one to seek one’s own kind
+birds of a feather flock together
+
+agus, mar bu dùth ...
+and, as is fitting ...
+
+is dùth dha gu bheil ...
+it is fitting for him that ...
+
+  n:duuthaich
+    a :FeminineNoun ;
+    rdfs:label "dùthaich" ;
+    :sense "country" , "countryside" , "land" ;
+    :gen "dùthcha" ;
+    :pl "dùthchannan" .
+
+na Dùthchannan Aonaichte
+the United Nations
+
+air an dùthaich
+in the country(side)
+
+cha robh sinn fada anns an dùthaich mun do thachair e rinn
+we weren’t in the country long before we met him
+
+chan eil mòran dhùthchannan eile a tha cho breàgha rithe
+there aren’t many other countries which are as beautiful as it
+
+  a:duuthchail
+    a :Adjective ;
+    rdfs:label "dùthchail" ;
+    :sense "country" , "local" , "rustic" , "rural" ;
+    :comp "dùthchaile" .
+
+  n:baile_duuthchail
+    rdfs:label "na bailtean dùthchail" ;
+    :sense "the rural villages" ;
+    :part n:duuthchail .
+
+  n:duuthchas
+    a :MasculineNoun ;
+    rdfs:label "dùthchas" ;
+    :sense "heredity" , "instinct" , "nationality" ;
+    :gen "dùthchais" .
+
+  v:theeid_duuthchas_an_aghaidh_nan_creag
+    a :Example ;
+    rdfs:label "thèid dùthchas an aghaidh nan creag" ;
+    :sense "heritage tells (proverb)" , "literally, heredity goes against the rocks" ;
+    :part n:duuthchas .
+
+  v:canaidh_daoine_duuthchas_ris_an_rud_do_fhaicsinneach_seo
+    a :Example ;
+    rdfs:label "canaidh daoine dùthchas ris an rud do-fhaicsinneach seo" ;
+    :sense "men call this invisible thing instinct" ;
+    :part n:duuthchas .
+
+  a:duuthchasach
+    a :Adjective ;
+    rdfs:label "dùthchasach" ;
+    :sense "endemic" , "hereditary" , "indigenous" , "instinctive" , "natural" , "native" , "traditional" , "vernacular" ;
+    :comp "dùthchasaiche" .
+
+  v:seo_caanan_a_tha_duuthchasach_do_Alba
+    a :Example ;
+    rdfs:label "seo cànan a tha dùthchasach do Alba" ;
+    :sense "this is a language which is indigenous to Scotland" ;
+    :part a:duuthchasach .
+
+  n:rud_a_tha_duuthchasach_dhomh
+    a :Example ;
+    rdfs:label "rud a tha dùthchasach dhomh" ;
+    :sense "something which is natural to me" ;
+    :part a:duuthchasach .
+
+  v:tha_e_nas_duuthchasaiche_do_dh_Alba_na_ceool_sam_bith_eile
+    a :Example ;
+    rdfs:label "tha e nas dùthchasaiche do dh’ Alba na ceòl sam bith eile" ;
+    :sense "it is more indigenously Scottish than any other music" ;
+    :part a:duuthchasach .
+
+  n:duuthchasach
+    a :MasculineNoun ;
+    rdfs:label "dùthchasach" ;
+    :sense "native" ;
+    :gen "dùthchasaich" ;
+    :pl "dùthchasaich" .
+
+  a:duuthchasail
+    a :Adjective ;
+    rdfs:label "dùthchasail" ;
+    :sense "indigenous" , "national" , "native" .
+
+  v:b_esan_am_fear_labhairt_duuthchasail_mu_dheireadh
+    a :Example ;
+    rdfs:label "b’esan am fear-labhairt dùthchasail mu-dheireadh" ;
+    :sense "he was the last native speaker" ;
+    :part a:duuthchasail .
 
 }
