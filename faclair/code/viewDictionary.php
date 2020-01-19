@@ -21,36 +21,28 @@ $id = $_GET['id'];
 $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
-SELECT ?name ?id ?hw ?pos ?en ?pl ?comm ?gen ?comp ?vn ?vngen
+SELECT ?name ?id ?hw ?pos ?en ?pl ?comm ?gen ?comp ?vn ?vngen ?xid ?xhw ?xen
 WHERE
 {
   <{$id}> rdfs:label ?name .
   GRAPH <{$id}> {
     ?id rdfs:label ?hw .
+    NOT EXISTS { ?id :part ?xid . }
     OPTIONAL {
       ?id a ?posId .
       ?posId rdfs:label ?pos .
     }
+    OPTIONAL { ?id :sense ?en . }
+    OPTIONAL { ?id :pl ?pl . }
+    OPTIONAL { ?id :gen ?gen . }
+    OPTIONAL { ?id :comp ?comp . }
+    OPTIONAL { ?id :vn ?vn . }
+    OPTIONAL { ?id :vngen ?vngen . }
+    OPTIONAL { ?id rdfs:comment ?comm . }
     OPTIONAL {
-      ?id :sense ?en .
-    }
-    OPTIONAL {
-      ?id :pl ?pl .
-    }
-    OPTIONAL {
-      ?id :gen ?gen .
-    }
-    OPTIONAL {
-      ?id :comp ?comp .
-    }
-    OPTIONAL {
-      ?id :vn ?vn .
-    }
-    OPTIONAL {
-      ?id :vngen ?vngen .
-    }
-    OPTIONAL {
-      ?id rdfs:comment ?comm .
+      ?xid :part ?id .
+      ?xid rdfs:label ?xhw .
+      ?xid :sense ?xen .
     }
   }
 }
@@ -146,21 +138,53 @@ foreach($ids as $nextId) {
   $vngens = array_unique($vngens);
   echo '<td><small>';
   if (count($pls) > 0 && $pls[0] != '') {
-    echo 'Pl: ' . implode(', ',$pls) . '<br/>';
+    echo 'pl: ' . implode(', ',$pls) . '<br/>';
   }
   if (count($gens) > 0 && $gens[0] != '') {
-    echo 'Gen: ' . implode(', ',$gens) . '<br/>';
+    echo 'gn: ' . implode(', ',$gens) . '<br/>';
   }
   if (count($comps) > 0 && $comps[0] != '') {
-    echo 'Comp: ' . implode(', ',$comps) . '<br/>';
+    echo 'cmp: ' . implode(', ',$comps) . '<br/>';
   }
   if (count($vns) > 0 && $vns[0] != '') {
-    echo 'VN: ' . implode(', ',$vns) . '<br/>';
+    echo 'vn: ' . implode(', ',$vns) . '<br/>';
   }
   if (count($vngens) > 0 && $vngens[0] != '') {
-    echo 'VN Gen: ' . implode(', ',$vngens) . '<br/>';
+    echo 'vn gn: ' . implode(', ',$vngens) . '<br/>';
   }
   echo '</small></td>';
+
+  $parts = [];
+  foreach($results as $nextResult) {
+    if ($nextResult->id->value == $nextId) {
+      $parts[] = $nextResult->xid->value;
+    }
+  }
+  $parts = array_unique($parts);
+  echo '<td><small>';
+  foreach($parts as $nextPart) {
+    foreach($results as $nextResult) {
+      if ($nextResult->xid->value == $nextPart) {
+
+        $xens = [];
+
+        foreach($results as $nextResult2) {
+          if ($nextResult2->xid->value == $nextPart) {
+            $xens[] = $nextResult2->xen->value;
+          }
+        }
+
+        $xens = array_unique($xens);
+        $tooltip = implode(' | ',$xens);
+
+        //$tooltip = 'boo';
+        echo '<em data-toggle="tooltip" data-placement="top" title="' . $tooltip . '">' . $nextResult->xhw->value . '</em><br/>';
+        break;
+      }
+    }
+  }
+  echo '</small></td>';
+
   $comments = [];
   foreach($results as $nextResult) {
     if ($nextResult->id->value == $nextId) {
