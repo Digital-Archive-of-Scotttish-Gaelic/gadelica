@@ -13,25 +13,95 @@ $id = $_GET['id'];
 $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
-SELECT DISTINCT ?hw ?pid ?phw ?en ?lex ?lhw ?cid ?chw ?pos ?pl ?gen ?comment
+SELECT ?hw ?pid ?phw ?en ?cid ?chw
 WHERE
 {
-  <{$id}> rdfs:label ?hw .
+  OPTIONAL { <{$id}> rdfs:label ?hw . }
   OPTIONAL {
     <{$id}> :part ?pid .
-    ?pid rdfs:label ?phw .
+    OPTIONAL { ?pid rdfs:label ?phw . }
   }
   OPTIONAL {
     ?cid :part <{$id}> .
-    ?cid rdfs:label ?chw .
+    OPTIONAL { ?cid rdfs:label ?chw . }
   }
-  OPTIONAL {
-    GRAPH ?g {
+}
+SPQR;
+//$query = urlencode($query);
+//$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . $query;
+$url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+$json = file_get_contents($url);
+$results = json_decode($json,false)->results->bindings;
+echo '<div class="card"><div class="card-body">';
+$hws = [];
+foreach($results as $nextResult) {
+  $hw = $nextResult->hw->value;
+  if ($hw != '') {
+    $hws[] = $hw;
+  }
+}
+$hws = array_unique($hws);
+echo '<h3 class="card-title">';
+if (count($hws)>0) {
+  echo implode(', ',$hws);
+}
+else { echo $id; }
+echo '</h3>';
+echo '<div class="list-group list-group-flush">';
+$parts = [];
+foreach($results as $nextResult) {
+  $pid = $nextResult->pid->value;
+  if ($pid!='') {
+    $parts[$pid] = $nextResult->phw->value;
+  }
+}
+$parts = array_unique($parts);
+if (count($parts)>0) {
+  echo '<div class="list-group-item">↗️ ';
+  foreach ($parts as $nextId=>$nextHw) {
+    echo '<a href="viewEntry?id=' . $nextId . '">';
+    if ($nextHw != '') { echo $nextHw; }
+    else { echo '<small>' . $nextId . '</small>'; }
+    echo '</a>';
+    if ($nextHw != end($parts)) {
+      echo ', ';
+    }
+  }
+  echo '</div>';
+}
+$compounds = [];
+foreach($results as $nextResult) {
+  $cid = $nextResult->cid->value;
+  if ($cid!='') {
+     $compounds[$cid]= $nextResult->chw->value;
+  }
+}
+$compounds = array_unique($compounds);
+if (count($compounds)>0) {
+  echo '<div class="list-group-item">↘️ ';
+  foreach ($compounds as $nextId=>$nextHw) {
+    echo '<a href="viewEntry?id=' . $nextId . '">';
+    if ($nextHw != '') { echo $nextHw; }
+    else { echo '<small>' . $nextId . '</small>'; }
+    echo '</a>';
+    if ($nextHw != end($compounds)) {
+      echo ', ';
+    }
+  }
+  echo '</div>';
+}
+$query = <<<SPQR
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX : <http://faclair.ac.uk/meta/>
+SELECT DISTINCT ?g ?lex ?lhw ?en ?posid ?pos ?pl ?gen ?comment
+WHERE
+{
+  GRAPH ?g {
       <{$id}> rdfs:label ?lhw .
-      <{$id}> :sense ?en .
+      OPTIONAL { <{$id}> :sense ?en . }
       OPTIONAL {
         <{$id}> a ?posid .
-        ?posid rdfs:label ?pos .
+        OPTIONAL { ?posid rdfs:label ?pos . }
       }
       OPTIONAL {
         <{$id}> :pl ?pl .
@@ -42,9 +112,8 @@ WHERE
       OPTIONAL {
         <{$id}> rdfs:comment ?comment .
       }
-    }
-    ?g rdfs:label ?lex .
   }
+  OPTIONAL { ?g rdfs:label ?lex . }
 }
 SPQR;
 //$query = urlencode($query);
@@ -52,34 +121,79 @@ SPQR;
 $url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
 $json = file_get_contents($url);
 $results = json_decode($json,false)->results->bindings;
-echo '<div class="card"><div class="card-body">';
-echo '<h1 class="card-title">' . $results[0]->hw->value . '</h1>';
+echo '<table class="table table-hover"></tbody>';
 $sources = [];
 foreach($results as $nextResult) {
-  $lex = $nextResult->lex->value;
-  if ($lex!='') {
-    $sources[] = $lex;
+  $g = $nextResult->g->value;
+  if ($g != '') {
+    $sources[] = $g;
   }
 }
 $sources = array_unique($sources);
-echo '<div class="list-group list-group-flush">';
 foreach ($sources as $nextSource) {
-  echo '<div class="list-group-item">';
-  echo $nextSource . ': ';
+  echo '<tr><td>';
+  $name = $nextSource;
   foreach($results as $nextResult) {
-    if ($nextResult->lex->value==$nextSource) {
-      echo '<strong>' . $nextResult->lhw->value . '</strong> ';
-      break;
-    }
-  }
-  foreach($results as $nextResult) {
-    if ($nextResult->lex->value==$nextSource) {
-      if ($nextResult->pos->value!='') {
-        echo ' <em>(' . $nextResult->pos->value . ')</em> ';
+    if ($nextResult->g->value==$nextSource) {
+      $lex = $nextResult->lex->value;
+      if ($lex != '') {
+        $name = $lex;
       }
       break;
     }
   }
+  echo $name;
+  echo '</td><td><strong>';
+  $lhws = [];
+  foreach($results as $nextResult) {
+    if ($nextResult->g->value==$nextSource) {
+      $lhw = $nextResult->lhw->value;
+      if ($lhw != '') {
+        $lhws[] = $lhw;
+      }
+    }
+  }
+  $lhws = array_unique($lhws);
+  if (count($lhws)>0) {
+    echo implode(', ',$lhws);
+  }
+  else { echo $id; }
+  echo '</strong></td><td>';
+  $poss = [];
+  foreach($results as $nextResult) {
+    if ($nextResult->g->value==$nextSource) {
+      $posid = $nextResult->posid->value;
+      if ($posid != '') {
+        $pos = $nextResult->pos->value;
+        if ($pos != '') {
+          $poss[] = $pos;
+        }
+        else { $poss[] = $posid; }
+      }
+    }
+  }
+  $poss = array_unique($poss);
+  if (count($poss)>0) {
+    echo implode(', ',$poss);
+  }
+  echo '</td><td><small class="text-muted">';
+  $ens = [];
+  foreach($results as $nextResult) {
+    if ($nextResult->g->value==$nextSource) {
+      $en = $nextResult->en->value;
+      if ($en!='') {
+        $ens[] = $en;
+      }
+    }
+  }
+  $ens = array_unique($ens);
+  foreach ($ens as $nextEn) {
+    echo $nextEn;
+    if ($nextEn != end($ens)) {
+      echo ', ';
+    }
+  }
+  echo '</small></td><td>';
   $pls = [];
   foreach($results as $nextResult) {
     if ($nextResult->lex->value==$nextSource) {
@@ -112,24 +226,7 @@ foreach ($sources as $nextSource) {
     }
     echo ' <em>(gen)</em> ';
   }
-  $ens = [];
-  foreach($results as $nextResult) {
-    if ($nextResult->lex->value==$nextSource) {
-      $en = $nextResult->en->value;
-      if ($en!='') {
-        $ens[] = $en;
-      }
-    }
-  }
-  $ens = array_unique($ens);
-  echo '<span class="text-muted">';
-  foreach ($ens as $nextEn) {
-    echo $nextEn;
-    if ($nextEn != end($ens)) {
-      echo ', ';
-    }
-  }
-  echo '</span> ';
+
   $comments = [];
   foreach($results as $nextResult) {
     if ($nextResult->lex->value==$nextSource) {
@@ -148,59 +245,23 @@ foreach ($sources as $nextSource) {
     }
   }
   echo ']</small> ';
-  echo '</div>';
+  echo '</td></tr>';
 }
-$parts = [];
-foreach($results as $nextResult) {
-  $pid = $nextResult->pid->value;
-  if ($pid!='') {
-    $parts[$pid] = $nextResult->phw->value;
-  }
-}
-$parts = array_unique($parts);
-if (count($parts)>0) {
-  echo '<div class="list-group-item">See: ';
-  foreach ($parts as $nextId=>$nextHw) {
-    echo '<a href="viewEntry?id=' . $nextId . '">';
-    echo $nextHw . '</a>';
-    if ($nextHw != end($parts)) {
-      echo ', ';
-    }
-  }
-  echo '</div>';
-}
-$compounds = [];
-foreach($results as $nextResult) {
-  $cid = $nextResult->cid->value;
-  if ($cid!='') {
-     $compounds[$cid]= $nextResult->chw->value;
-  }
-}
-$compounds = array_unique($compounds);
-if (count($compounds)>0) {
-  echo '<div class="list-group-item">Also: ';
-  foreach ($compounds as $nextId=>$nextHw) {
-    echo '<a href="viewEntry?id=' . $nextId . '">';
-    echo $nextHw . '</a>';
-    if ($nextHw != end($compounds)) {
-      echo ', ';
-    }
-  }
-  echo '</div>';
-}
+
+echo '</tbody></table>';
+
 echo '</div>';
 echo '</div></div>';
 ?>
     <nav class="navbar navbar-dark bg-primary fixed-bottom navbar-expand-lg">
-      <a class="navbar-brand" href="index.php">Stòras Brì</a>
+      <a class="navbar-brand" href="index.php">🏛 Stòras Brì</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-item nav-link" href="about.html" data-toggle="tooltip" title="About this site">fios</a>
-          <a class="nav-item nav-link" href="gaelicIndex.php" data-toggle="tooltip" title="View Gaelic index">indeacs</a>
-          <a class="nav-item nav-link" href="random.php" data-toggle="tooltip" title="View random entry">iongnadh</a>
+          <a class="nav-item nav-link" href="random.php" data-toggle="tooltip" title="View random entry">sonas</a>
         </div>
       </div>
     </nav>

@@ -86,7 +86,6 @@ foreach($ids as $nextId) {
   $tooltip = str_replace('http://faclair.ac.uk/adjectives/','a:',$tooltip);
   $tooltip = str_replace('http://faclair.ac.uk/verbs/','v:',$tooltip);
   $tooltip = str_replace('http://faclair.ac.uk/other/','o:',$tooltip);
-
   $standards = [];
   foreach($results as $nextResult) {
     if ($nextResult->id->value == $nextId) {
@@ -95,8 +94,7 @@ foreach($ids as $nextId) {
   }
   $standards = array_unique($standards);
   $tooltip = implode(', ',$standards) . ' | '. $tooltip;
-
-  echo '<td data-toggle="tooltip" data-placement="top" title="' . $tooltip . '">' . implode(', ',$hws) . '</td>';
+  echo '<td data-toggle="tooltip" data-placement="top" title="' . $tooltip . '"><a href="viewEntry.php?id=' . $nextId . '">' . implode(', ',$hws) . '</a></td>';
   $poss = [];
   foreach($results as $nextResult) {
     if ($nextResult->id->value == $nextId) {

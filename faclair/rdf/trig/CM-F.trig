@@ -17,9 +17,169 @@
   :PastParticiple rdfs:label "pp" .
   :Adverb rdfs:label "adv" .
 
+#266
 
+# fa – bi fa-near do
 
+  v:faabhair
+    a :Verb ;
+    rdfs:label "fàbhair" ;
+    :sense "favour" ;
+    :vn "fàbharadh" ;
+    :vngen "fàbharaidh" .
 
+  n:fàbhar
+    a :MasculineNoun ;
+    rdfs:label "fàbhar" ;
+    :sense "favour" , "grace (of personal mien)" ;
+    :gen "fàbhair" ;
+    :pl "fàbharan" .
+
+#
+
+  a:fàbharach
+    a :Adjective ;
+    rdfs:label "fàbharach" ;
+    :sense "auspicious" , "favourable" , "preferential" , "propitious" ;
+    :comp "fàbharaiche" .
+
+#
+
+  n:fabhra
+    a :MasculineNoun ;
+    rdfs:label "fabhra" ;
+    :sense "eyelash" , "eyelid" ;
+    :gen "fabhra" ;
+    :pl "fabhran" , "fabhrannan" , "fabhrainean" .
+
+  n:facal
+    a :MasculineNoun ;
+    rdfs:label "facal" ;
+    :sense "word" , "comment" , "phrase" , "remark" , "saying" , "term" , "expression" ;
+    :gen "facail" ;
+    :pl "facail" , "faclan" .
+
+#
+
+#267
+
+  n:facal-faire
+    a :MasculineNoun ;
+    rdfs:label "facal-faire" ;
+    :sense "password" , "watchword" .
+
+  n:facal_fhreumachd
+    a :FeminineNoun ;
+    rdfs:label "facal-fhreumachd" ;
+    :sense "etymology" .
+
+  a:facal_fhreumail
+    a :Adjective ;
+    rdfs:label "facal-fhreumail" ;
+    :sense "etymological" .
+
+  n:facal_iasaid
+    a :MasculineNoun ;
+    rdfs:label "facal-iasaid" ;
+    :sense "loan-word" .
+
+  n:facal_riaghladair
+    a :MasculineNoun ;
+    rdfs:label "facal-riaghladair" ;
+    :sense "word processor" .
+
+  n:facal_suaicheantais
+    a :MasculineNoun ;
+    rdfs:label "facal-suaicheantais" ;
+    :sense "motto" .
+
+  n:fachach
+    a :MasculineNoun ;
+    rdfs:label "fachach" ;
+    :sense "puffin" ;
+    :gen "fachaich" ;
+    :pl "fachaich" .
+
+  a:faclach
+    a :Adjective ;
+    rdfs:label "faclach" ;
+    :sense "verbal" , "wordy" .
+
+  n:facladair
+    a :MasculineNoun ;
+    rdfs:label "facladair" ;
+    :sense "word processor" ;
+    :gen "facladair" ;
+    :pl "facladairean" .
+
+  n:faclair
+    a :MasculineNoun ;
+    rdfs:label "faclair" ;
+    :sense "dictionary" , "glossary" , "lexicon" , "vocabulary (in a book)" ;
+    :gen "faclair" ;
+    :pl "faclairean" .
+
+# anns an fhaclair
+# in the dictionary
+#
+# ann am faclair
+# in a dictionary
+
+  n:faclaireachd
+    a :FeminineNoun ;
+    rdfs:label "faclaireachd" ;
+    :sense "lexicography" ;
+    :gen "faclaireachd" .
+
+  n:faclairiche
+    a :MasculineNoun ;
+    rdfs:label "faclairiche" ;
+    :sense "lexicographer" ;
+    :gen "faclairiche" ;
+    :pl "faclairichean" .
+
+  n:facs
+    a :MasculineNoun ;
+    rdfs:label "facs" ;
+    :sense "facsimile transmission" , "fax" .
+
+  n:factar
+    a :MasculineNoun ;
+    rdfs:label "factar" ;
+    :sense "factor (abstract / maths)" ;
+    :gen "factair" ;
+    :pl "factaran" .
+
+  n:factar_suidheachaidh
+    a :MasculineNoun ;
+    rdfs:label "factar-suidheachaidh" ;
+    :sense "locational factor (geography)" .
+
+  n:factaraidh
+    a :FeminineNoun ;
+    rdfs:label "factaraidh" ;
+    :sense "factory" ;
+    :gen "factaraidh" ;
+    :pl "factaraidhean" .
+
+  n:faad
+    a :MasculineNoun ;
+    rdfs:label "fàd" ;
+    :sense "peat (individual)" ;
+    :gen "fàid" ;
+    :pl "fàid" .
+
+  v:fad
+    a :Verb ;
+    rdfs:label "fad" ;
+    :sense "kindle" , "light" ;
+    :vn "fadaidh" .
+
+  v:fadaidh_iad_teine_fiodha
+    a :Example ;
+    rdfs:label "fadaidh iad teine fiodha" ;
+    :sense "they (will) kindle a wood fire" ;
+    :part v:fad .
 
 # 277
 
