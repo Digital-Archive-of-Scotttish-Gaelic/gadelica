@@ -136,7 +136,6 @@
     :gen "dualchais" .
 
   v:theeid_dualchas_an_aghaidh_nan_creag
-    a :Example ;
     rdfs:label "thèid dualchas an aghaidh nan creag" ;
     :sense "heritage will out (proverb)" ;
     :part n:dualchas .
@@ -154,7 +153,6 @@
     :part n:dualchas .
 
   v:theeid_duine_ri_a_dhualchas_seachd_uairean_anns_an_latha
-    a :Example ;
     rdfs:label "thèid duine ri (a) dhualchas seachd uairean anns an latha" ;
     :sense "a man shows his heredity seven times a day" ;
     :part n:dualchas .
@@ -237,7 +235,7 @@
   n:baile_duuthchail
     rdfs:label "na bailtean dùthchail" ;
     :sense "the rural villages" ;
-    :part n:duuthchail .
+    :part a:duuthchail .
 
   n:duuthchas
     a :MasculineNoun ;
@@ -246,7 +244,6 @@
     :gen "dùthchais" .
 
   v:theeid_duuthchas_an_aghaidh_nan_creag
-    a :Example ;
     rdfs:label "thèid dùthchas an aghaidh nan creag" ;
     :sense "heritage tells (proverb)" , "literally, heredity goes against the rocks" ;
     :part n:duuthchas .

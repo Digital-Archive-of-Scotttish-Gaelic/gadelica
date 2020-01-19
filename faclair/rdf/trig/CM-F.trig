@@ -428,12 +428,12 @@
     a :Example ;
     rdfs:label "bha e air a bhith fineachail ruinn" ;
     :sense "he had been heathenish towards us" ;
-    :part n:fineachail .
+    :part a:fineachail .
 
   n:creideamh_fineachail
     rdfs:label "creideamh fineachail" ;
     :sense "heathenish creed" ;
-    :part n:fineachail .
+    :part a:fineachail .
 
   n:fineachas
     a :MasculineNoun ;
@@ -459,8 +459,7 @@
     :sense "refining" ;
     :gen "fìnidh" .
 
-  o:far_a_bheil_iad_a_fiineadh_na_h_ola
-    a :Example ;
+  v:fiinich_ola
     rdfs:label "far a bheil iad a’ fìneadh na h-ola" ;
     :sense "where they refine the oil" ;
     :part v:fiinich .
@@ -526,8 +525,7 @@
     :sense "bring to an end" , "bring to a close" ;
     :part n:finid .
 
-  o:agus_a_chur_ceann_finid_air_gnothaichean
-    a :Example ;
+  v:cuir_ceann_finid_air_gnothaichean
     rdfs:label "agus a chur ceann finid air gnothaichean" ;
     :sense "and to bring matters to a close" ;
     :part n:finid .

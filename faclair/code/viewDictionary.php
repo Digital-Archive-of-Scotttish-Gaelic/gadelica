@@ -18,6 +18,7 @@
     <div class="container-fluid">
 <?php
 $id = $_GET['id'];
+$prefix = $_GET['p'];
 $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
@@ -45,6 +46,7 @@ WHERE
       ?xid :sense ?xen .
     }
   }
+  FILTER regex(?hw, "^{$prefix}", "i") .
 }
 SPQR;
 //$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
@@ -165,19 +167,14 @@ foreach($ids as $nextId) {
   foreach($parts as $nextPart) {
     foreach($results as $nextResult) {
       if ($nextResult->xid->value == $nextPart) {
-
         $xens = [];
-
         foreach($results as $nextResult2) {
           if ($nextResult2->xid->value == $nextPart) {
             $xens[] = $nextResult2->xen->value;
           }
         }
-
         $xens = array_unique($xens);
         $tooltip = implode(' | ',$xens);
-
-        //$tooltip = 'boo';
         echo '<em data-toggle="tooltip" data-placement="top" title="' . $tooltip . '">' . $nextResult->xhw->value . '</em><br/>';
         break;
       }
