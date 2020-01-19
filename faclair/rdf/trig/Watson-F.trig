@@ -17,6 +17,8 @@
   :MasculineNoun rdfs:label "nm" .
   :Verb rdfs:label "v" .
 
+#175
+
   n:faisge
     a :FeminineNoun ;
     rdfs:label "faisge" ;
@@ -71,6 +73,8 @@
     :gen "fàil" ;
     :pl "fàil" .
 
+#176
+
   n:falachd
     a :FeminineNoun ;
     rdfs:label "falachd" ;
@@ -123,5 +127,26 @@
     rdfs:label "chuir iad a ghleann falaicht’ mi" ;
     :sense "(song) they sent me to a hidden glen" ;
     :part a:falaichte .
+
+
+#189
+
+  n:fine
+    a :FeminineNoun ;
+    rdfs:label "fine" ;
+    :sense "a (Highland) clan" , "a tribe" ;
+    :gen "fine" ;
+    :pl "fineachan" ;
+    rdfs:comment "Cf. cinneadh, clann." .
+
+  n:òran_nam_fineachan_a_fhuair_am_fearann_air_ais
+    a :Example ;
+    rdfs:label "òran nam fineachan a fhuair am fearann air ais" ;
+    :sense "the song of the clans who got their land back" ;
+    :part n:fine .
+
+
+
+
 
 }

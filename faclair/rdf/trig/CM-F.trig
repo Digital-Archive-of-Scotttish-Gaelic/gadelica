@@ -17,6 +17,12 @@
   :PastParticiple rdfs:label "pp" .
   :Adverb rdfs:label "adv" .
 
+
+
+
+
+# 277
+
   v:faaisg
     a :Verb ;
     rdfs:label "fàisg" ;
@@ -100,6 +106,8 @@
     :sense "the prophecy wasfulfilled" ;
     :part n:faaisneachd .
 
+#278
+
   v:faaisnich
     a :Verb ;
     rdfs:label "fàisnich" ;
@@ -174,7 +182,6 @@
     :part n:faaitheam .
 
   n:beul_gun_fhaaitheam
-    a :Example ;
     rdfs:label "beul gun fhaitheam" ;
     :sense "a garrulous person" ;
     :part n:faaitheam .
@@ -390,6 +397,147 @@
     rdfs:label "bha fàileadh na falaisg làidir na chuinneanan" ;
     :sense "the smell of the moor-burning was string in his nostrils" ;
     :part n:falaisg .
+
+
+#302
+
+  n:fine
+    a :FeminineNoun ;
+    rdfs:label "fine" ;
+    :sense "clan" , "race" , "sept" , "tribe" , "heathen" ;
+    :gen "fine" ;
+    :pl "fineachan" .
+
+  n:fine_Gaaidhealach
+    rdfs:label "na fineachan Gaidhealach" ;
+    :sense "the Highland clans" ;
+    :part n:fine .
+
+  v:bha_iad_uile_nam_fineachan_ooga
+    a :Example ;
+    rdfs:label "bha iad uile nam fineachan òga" ;
+    :sense "they were all young heathens" ;
+    :part n:fine .
+
+  a:fineachail
+    a :Adjective ;
+    rdfs:label "fineachail" ;
+    :sense "heathenish" .
+
+  v:bha_e_air_a_bhith_fineachail_ruinn
+    a :Example ;
+    rdfs:label "bha e air a bhith fineachail ruinn" ;
+    :sense "he had been heathenish towards us" ;
+    :part n:fineachail .
+
+  n:creideamh_fineachail
+    rdfs:label "creideamh fineachail" ;
+    :sense "heathenish creed" ;
+    :part n:fineachail .
+
+  n:fineachas
+    a :MasculineNoun ;
+    rdfs:label "fineachas" ;
+    :sense "clanship" ;
+    :gen "fineachais" .
+
+  n:fiineadair
+    a :MasculineNoun ;
+    rdfs:label "fìneadair" ;
+    :sense "refinery" ;
+    :gen "fìneadair" ;
+    :pl "fìneadairean" .
+
+  n:fiineadair_ola
+    a :MasculineNoun ;
+    rdfs:label "fìneadair-ola" ;
+    :sense "oil refinery" .
+
+  v:fiinich
+    a :MasculineNoun ;
+    rdfs:label "fìneadh" ;
+    :sense "refining" ;
+    :gen "fìnidh" .
+
+  o:far_a_bheil_iad_a_fiineadh_na_h_ola
+    a :Example ;
+    rdfs:label "far a bheil iad a’ fìneadh na h-ola" ;
+    :sense "where they refine the oil" ;
+    :part v:fiinich .
+
+  n:fineag
+    a :FeminineNoun ;
+    rdfs:label "fineag" ;
+    :sense "fineag" ;
+    :gen "fineige" ;
+    :pl "fineagan" .
+
+  a:laan_fhineag
+    rdfs:label "làn fhineag" ;
+    :sense "full of mites" ;
+    :part n:fineag .
+
+  n:fineal
+    a :MasculineNoun ;
+    rdfs:label "fineal" ;
+    :sense "fennel" ;
+    :gen "fineil" .
+
+  a:fiinealta
+    a :Adjective ;
+    rdfs:label "fìnealta" ;
+    :sense "fine" , "delicate" , "polished (of manners etc.)" , "sensitive" .
+
+  n:fiinealtachd
+    a :FeminineNoun ;
+    rdfs:label "fiinealtachd" ;
+    :sense "fineness" , "polished manners" , "sensitivity" ;
+    :gen "fìnealtachd" .
+
+  n:fiinealtas
+    a :MasculineNoun ;
+    rdfs:label "fiinealtas" ;
+    :sense "delicacy" ;
+    :gen "fìnealtais" .
+
+  n:fineamhainn
+    a :FeminineNoun ;
+    rdfs:label "fineamhainn" ;
+    :sense "osier willow" .
+
+  n:finic
+    a :FeminineNoun ;
+    rdfs:label "finic" ;
+    :sense "jet" .
+
+  o:cho_dubh_ri_finic
+    rdfs:label "cho dubh ri finic" ;
+    :sense "as black as jet" ;
+    :part n:finic .
+
+  n:finid
+    a :FeminineNoun ;
+    rdfs:label "finid" ;
+    :sense "end" , "close" , "conclusion" ;
+    rdfs:comment "Uncommon" .
+
+  v:cuir_ceann_finid_air
+    rdfs:label "cuir ceann finid air ..." ;
+    :sense "bring to an end" , "bring to a close" ;
+    :part n:finid .
+
+  o:agus_a_chur_ceann_finid_air_gnothaichean
+    a :Example ;
+    rdfs:label "agus a chur ceann finid air gnothaichean" ;
+    :sense "and to bring matters to a close" ;
+    :part n:finid .
+
+  n:fiiobrasas
+    a :MasculineNoun ;
+    rdfs:label "fìobrasas" ;
+    :sense "fibrositis" ;
+    :gen "fìobrasas" .
+
 
 
 
