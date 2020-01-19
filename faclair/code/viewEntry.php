@@ -4,6 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+    </script>
     <title>Stòras Brì</title>
   </head>
   <body style="padding-top: 20px;">
@@ -93,7 +101,7 @@ if (count($compounds)>0) {
 $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
-SELECT DISTINCT ?g ?lex ?lhw ?en ?posid ?pos ?pl ?gen ?comment
+SELECT DISTINCT ?g ?lex ?lhw ?en ?posid ?pos ?pl ?gen ?comp ?vn ?vngen ?comment ?xid ?xhw ?xen
 WHERE
 {
   GRAPH ?g {
@@ -108,6 +116,20 @@ WHERE
       }
       OPTIONAL {
         <{$id}> :gen ?gen .
+      }
+      OPTIONAL {
+        <{$id}> :comp ?comp .
+      }
+      OPTIONAL {
+        <{$id}> :vn ?vn .
+      }
+      OPTIONAL {
+        <{$id}> :vngen ?vngen .
+      }
+      OPTIONAL {
+        ?xid :part <{$id}> .
+        ?xid rdfs:label ?xhw .
+        ?xid :sense ?xen .
       }
       OPTIONAL {
         <{$id}> rdfs:comment ?comment .
@@ -193,10 +215,10 @@ foreach ($sources as $nextSource) {
       echo ', ';
     }
   }
-  echo '</small></td><td>';
+  echo '</small></td><td><small>';
   $pls = [];
   foreach($results as $nextResult) {
-    if ($nextResult->lex->value==$nextSource) {
+    if ($nextResult->g->value == $nextSource) {
       $pl = $nextResult->pl->value;
       if ($pl!='') {
         $pls[] = $pl;
@@ -204,15 +226,9 @@ foreach ($sources as $nextSource) {
     }
   }
   $pls = array_unique($pls);
-  if (count($pls)>0) {
-    foreach ($pls as $nextPl) {
-      echo $nextPl; // what if multi plurals?
-    }
-    echo ' <em>(pl)</em> ';
-  }
   $gens = [];
   foreach($results as $nextResult) {
-    if ($nextResult->lex->value==$nextSource) {
+    if ($nextResult->g->value == $nextSource) {
       $gen = $nextResult->gen->value;
       if ($gen!='') {
         $gens[] = $gen;
@@ -220,16 +236,83 @@ foreach ($sources as $nextSource) {
     }
   }
   $gens = array_unique($gens);
-  if (count($gens)>0) {
-    foreach ($gens as $nextGen) {
-      echo $nextGen; // what if multi plurals?
+  $comps = [];
+  foreach($results as $nextResult) {
+    if ($nextResult->g->value == $nextSource) {
+      $comp = $nextResult->comp->value;
+      if ($comp!='') {
+        $comps[] = $comp;
+      }
     }
-    echo ' <em>(gen)</em> ';
   }
+  $comps = array_unique($comps);
+  $vns = [];
+  foreach($results as $nextResult) {
+    if ($nextResult->g->value == $nextSource) {
+      $vn = $nextResult->vn->value;
+      if ($vn!='') {
+        $vns[] = $vn;
+      }
+    }
+  }
+  $vns = array_unique($vns);
+  $vngens = [];
+  foreach($results as $nextResult) {
+    if ($nextResult->g->value == $nextSource) {
+      $vngen = $nextResult->vngen->value;
+      if ($vngen!='') {
+        $vngens[] = $vngen;
+      }
+    }
+  }
+  $vngens = array_unique($vngens);
+  if (count($pls) > 0) {
+    echo '<span class="text-muted">pl:</span> ' . implode(', ',$pls) . '<br/>';
+  }
+  if (count($gens) > 0) {
+    echo '<span class="text-muted">gn:</span> ' . implode(', ',$gens) . '<br/>';
+  }
+  if (count($comps) > 0) {
+    echo '<span class="text-muted">cmp:</span> ' . implode(', ',$comps) . '<br/>';
+  }
+  if (count($vns) > 0) {
+    echo '<span class="text-muted">vn:</span> ' . implode(', ',$vns) . '<br/>';
+  }
+  if (count($vngens) > 0) {
+    echo '<span class="text-muted">vn gn:</span> ' . implode(', ',$vngens) . '<br/>';
+  }
+  echo '</small></td><td>';
 
+  $parts = [];
+  foreach($results as $nextResult) {
+    if ($nextResult->g->value == $nextSource) {
+      $part = $nextResult->xid->value;
+      if ($part!='') {
+        $parts[] = $nextResult->xid->value;
+      }
+    }
+  }
+  $parts = array_unique($parts);
+  foreach($parts as $nextPart) {
+    foreach($results as $nextResult) {
+      if ($nextResult->g->value == $nextSource && $nextResult->xid->value == $nextPart) {
+        $xens = [];
+        foreach($results as $nextResult2) {
+          if ($nextResult2->xid->value == $nextPart) {
+            $xens[] = $nextResult2->xen->value;
+          }
+        }
+        $xens = array_unique($xens);
+        $tooltip = implode(' | ',$xens);
+        echo '<em data-toggle="tooltip" data-placement="top" title="' . $tooltip . '">' . $nextResult->xhw->value . '</em><br/>';
+        break;
+      }
+    }
+  }
+  echo '</td><td><small class="text-muted">';
   $comments = [];
   foreach($results as $nextResult) {
-    if ($nextResult->lex->value==$nextSource) {
+    if ($nextResult->g->value==$nextSource) {
       $comment = $nextResult->comment->value;
       if ($comment!='') {
         $comments[] = $comment;
@@ -237,15 +320,8 @@ foreach ($sources as $nextSource) {
     }
   }
   $comments = array_unique($comments);
-  echo '<small class="text-muted">[';
-  foreach ($comments as $nextComment) {
-    echo $nextComment;
-    if ($nextComment != end($comments)) {
-      echo '; ';
-    }
-  }
-  echo ']</small> ';
-  echo '</td></tr>';
+  echo implode('<br/>',$comments);
+  echo '</small></td></tr>';
 }
 
 echo '</tbody></table>';
@@ -266,8 +342,5 @@ echo '</div></div>';
       </div>
     </nav>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>

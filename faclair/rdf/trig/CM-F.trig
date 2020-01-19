@@ -6,7 +6,7 @@
 @prefix : <http://faclair.ac.uk/meta/> .
 
 <http://faclair.ac.uk/sources/CM2004>
-  rdfs:label "CM 2004" .
+  rdfs:label "CM" .
 
 <http://faclair.ac.uk/sources/CM2004> {
 
@@ -35,7 +35,33 @@
     :gen "fàbhair" ;
     :pl "fàbharan" .
 
-#
+  v:nochd_faabhar
+    a :Verb ;
+    rdfs:label "nochd fàbhar" ;
+    :sense "favour" ;
+    :part n:fàbhar .
+
+  v:lorg_faabhar
+    rdfs:label "lorg fàbhar" ;
+    :sense "ingratiate" ;
+    :part n:fàbhar .
+
+  o:mar_faabhar
+    rdfs:label "mar fàbhar" ;
+    :sense "as a favour" ;
+    :part n:fàbhar .
+
+  v:bha_fortan_nar_faabhar
+    a :Example ;
+    rdfs:label "bha fortan nar fàbhar" ;
+    :sense "fortune was in our favour" ;
+    :part n:fàbhar .
+
+  v:bha_trii_rudan_am_faabhar_nam_balach
+    a :Example ;
+    rdfs:label "bha trì rudan am fàbhar nam balach" ;
+    :sense "three things were in the boys’ favour" ;
+    :part n:fàbhar .
 
   a:fàbharach
     a :Adjective ;
@@ -43,7 +69,15 @@
     :sense "auspicious" , "favourable" , "preferential" , "propitious" ;
     :comp "fàbharaiche" .
 
-#
+  v:bi_faabharach_do
+    rdfs:label "bi fàbharach do" ;
+    :sense "favour" , "be favourable to" ;
+    :part a:fàbharach .
+
+  v:a_bhitheas_faabharach_dhuinn_fheein
+    rdfs:label "a bhitheas fàbharach dhuinn fhèin" ;
+    :sense "that will be favourable to ourselves" , "that will favour us" ;
+    :part a:fàbharach .
 
   n:fabhra
     a :MasculineNoun ;
@@ -59,7 +93,20 @@
     :gen "facail" ;
     :pl "facail" , "faclan" .
 
+# faclan faid
+# vocabulary / language of length (in school maths)
 #
+# facal air an fhacal
+# word for word, verbatim
+#
+# dè a b’fhasa dhi na facal a ràdh ris an ath thuras a thachradh i ris?
+# what would be easier (for her) than to have a word with (lit. say a word to) him the next time she met (i.e. would meet) him?
+#
+# cùm ri t’ fhacal
+# keep to your word
+#
+# bha aon rud air an robh iad gu lèir air an aon fhacal
+# there was one thing about which they were in complete agreement / agreed completely
 
 #267
 
@@ -119,11 +166,17 @@
     :gen "faclair" ;
     :pl "faclairean" .
 
-# anns an fhaclair
-# in the dictionary
-#
-# ann am faclair
-# in a dictionary
+  o:anns_an_fhaclair
+    a :Example ;
+    rdfs:label "anns an fhaclair" ;
+    :sense "in the dictionary" ;
+    :part n:faclair .
+
+  o:ann_am_faclair
+    a :Example ;
+    rdfs:label "ann am faclair" ;
+    :sense "in a dictionary" ;
+    :part n:faclair .
 
   n:faclaireachd
     a :FeminineNoun ;
