@@ -22,7 +22,7 @@ $prefix = $_GET['p'];
 $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
-SELECT ?name ?id ?hw ?pos ?en ?pl ?comm ?gen ?comp ?vn ?vngen ?xid ?xhw ?xen
+SELECT ?name ?id ?hw ?pos ?en ?pl ?comm ?gen ?comp ?vn ?vngen ?xid ?xhw ?xen ?shw
 WHERE
 {
   <{$id}> rdfs:label ?name .
@@ -46,6 +46,7 @@ WHERE
       ?xid :sense ?xen .
     }
   }
+  OPTIONAL { ?id rdfs:label ?shw . }
   FILTER regex(?hw, "^{$prefix}", "i") .
 }
 SPQR;
@@ -85,7 +86,16 @@ foreach($ids as $nextId) {
   $tooltip = str_replace('http://faclair.ac.uk/adjectives/','a:',$tooltip);
   $tooltip = str_replace('http://faclair.ac.uk/verbs/','v:',$tooltip);
   $tooltip = str_replace('http://faclair.ac.uk/other/','o:',$tooltip);
-  $tooltip = 'standards | '. $tooltip;
+
+  $standards = [];
+  foreach($results as $nextResult) {
+    if ($nextResult->id->value == $nextId) {
+      $standards[] = $nextResult->shw->value;
+    }
+  }
+  $standards = array_unique($standards);
+  $tooltip = implode(', ',$standards) . ' | '. $tooltip;
+
   echo '<td data-toggle="tooltip" data-placement="top" title="' . $tooltip . '">' . implode(', ',$hws) . '</td>';
   $poss = [];
   foreach($results as $nextResult) {

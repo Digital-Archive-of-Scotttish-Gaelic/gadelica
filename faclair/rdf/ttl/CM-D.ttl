@@ -33,7 +33,7 @@ n:dual
 
 v:is_dual_do
   rdfs:label "is/bu dual (do ...) (rud / rud a dhèanamh)" ;
-  :sense "be natural (for someone)" ;
+  :sense "be natural (for someone) (to do something)" ;
   :part n:dual .
 
 v:bu_dual_dha_sin
@@ -129,98 +129,47 @@ n:ceool_dualchasach
   rdfs:label "ceòl dualchasach" ;
   :part a:dualchasach , n:ceool .
 
+n:duuth
+  a :MasculineNoun ;
+  rdfs:label "dùth" .
 
+v:is_duuth_do
+  rdfs:label "is/bu dùth (do ...) (rud / rud a dhèanamh)" ;
+  :sense "be natural (for someone) (to do something)" ;
+  :part n:dual .
 
+o:mar_as_duuth
+  rdfs:label "mar as/bu dùth" ;
+  :sense "as is/was fitting" ;
+  :part v:is_duuth_do .
 
+v:is_duuth_do_gu_
+  rdfs:label "is dùth dha gu (bheil) ..." ;
+  :sense "it is fitting for ... that ..." ;
+  :part v:is_duuth_do .
 
-#   n:duuth
-#     a :Adjective ;
-#     rdfs:label "dùth" ;
-#     :sense "natural" , "hereditary" , "native" , "fitting" , "proper" .
-#
-#   v:cha_duuth_do_dhuine_a_bhith_air_a_chumail_a_staigh_mar_sin
-#     a :Example ;
-#     rdfs:label "cha dùth do dhuine a bhith air a chumail a-staigh mar sin" ;
-#     :sense "it isn’t natural for a man to be kept inside like that" ;
-#     :part n:duuth .
-#
-#   v:is_duuth_do_neach_a_ghnee_fheein_a_shireadh
-#     a :Example ;
-#     rdfs:label "is dùth do neach a ghnè fhèin a shireadh" ;
-#     :sense "it’s natural for one to seek one’s own kind" , "birds of a feather flock together" ;
-#     :part n:duuth .
-#
-#   o:mar_bu_duuth
-#     rdfs:label "agus, mar bu dùth ..." ;
-#     :sense "and, as is fitting ..." ;
-#     :part n:duuth .
-#
-#   v:is_duuth_dha_gu_bheil
-#     a :Example ;
-#     rdfs:label "is dùth dha gu bheil ..." ;
-#     :sense "it is fitting for him that ..." ;
-#     :part n:duuth .
+n:duuthaich
+  a :FeminineNoun ;
+  rdfs:label "dùthaich" ;
+  :gen "dùthcha" ;
+  :pl "dùthchannan" ;
+  :part n:duuth .
 
+n:na_Duuthchannan_Aonaichte
+  rdfs:label "na Dùthchannan Aonaichte" ;
+  :part n:duuthaich , a:aonaichte .
 
+o:air_an_duuthaich
+  rdfs:label "air an dùthaich" ;
+  :part n:duuthaich .
 
+n:duuthaich_MhicAoidh
+  rdfs:label "dùthaich MhicAoidh" ;
+  :part n:duuthaich , n:MacAoidh .
 
-
-
-#   n:duuthaich
-#     a :FeminineNoun ;
-#     rdfs:label "dùthaich" ;
-#     :sense "country" , "countryside" , "land" ;
-#     :gen "dùthcha" ;
-#     :pl "dùthchannan" .
-#
-#   n:na_Duuthchannan_Aonaichte
-#     rdfs:label "na Dùthchannan Aonaichte" ;
-#     :sense "the United Nations" ;
-#     :part n:duuthaich .
-#
-#   o:air_an_duuthaich
-#     rdfs:label "air an dùthaich" ;
-#     :sense "in the country(side)" ;
-#     :part n:duuthaich .
-#
-#   v:cha_robh_sinn_fada_anns_an_duuthaich_mun_do_thachair_e_rinn
-#     a :Example ;
-#     rdfs:label "cha robh sinn fada anns an dùthaich mun do thachair e rinn" ;
-#     :sense "we weren’t in the country long before we met him" ;
-#     :part n:duuthaich .
-#
-#   v:chan_eil_mooran_dhuuthchannan_eile_a_tha_cho_breaagha_rithe
-#     a :Example ;
-#     rdfs:label "chan eil mòran dhùthchannan eile a tha cho breàgha rithe" ;
-#     :sense "there aren’t many other countries which are as beautiful as it" ;
-#     :part n:duuthaich .
-
-#n:duuthaich
-#     a :FeminineNoun ;
-#     rdfs:label "dùthaich" ;
-#     :sense "a country" , "country" , "countryside" , "a land" , "a territory" , "one’s homeland or home district" ;
-#     :gen "dùthcha" ;
-#     :pl "dùthchannan" ;
-#     rdfs:label "Cf. tìr" .
-#
-#   n:duuthaich_MhicAoidh
-#     rdfs:label "dùthaich MhicAoidh" ;
-#     :sense "the Mackay country / lands (in Sutherland)" ;
-#     :part n:duuthaich .
-#
-#   o:O_mo_dhuuthaich_s_tu_th_air_m_aire
-#     a :Example ;
-#     rdfs:label "O mo dhùthaich, ’s tu th’ air m’ aire" ;
-#     :sense "O my homeland, it is you who are on my mind (song)" ;
-#     :part n:duuthaich .
-#
-#   n:UUghdarras_Duuthcha_na_h_Alba
-#     rdfs:label "Ughdarras Dùthcha na h-Alba" ;
-#     :sense "the Countryside Commission for Scotland" ;
-#     :part n:duuthaich .
-
-
-
+n:UUghdarras_Duuthcha_na_h_Alba
+  rdfs:label "Ùghdarras Dùthcha na h-Alba" ;
+  :part n:duuthaich , n:uughdarras , n:Alba .
 
 a:duuthchail
   a :Adjective ;
