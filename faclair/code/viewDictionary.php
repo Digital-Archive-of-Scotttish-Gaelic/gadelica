@@ -163,7 +163,6 @@ foreach($ids as $nextId) {
     echo 'vn gn: ' . implode(', ',$vngens) . '<br/>';
   }
   echo '</small></td>';
-
   $parts = [];
   foreach($results as $nextResult) {
     if ($nextResult->id->value == $nextId) {

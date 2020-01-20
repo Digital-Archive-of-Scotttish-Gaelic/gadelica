@@ -28,7 +28,7 @@
     :vn "fàbharadh" ;
     :vngen "fàbharaidh" .
 
-  n:fàbhar
+  n:faabhar
     a :MasculineNoun ;
     rdfs:label "fàbhar" ;
     :sense "favour" , "grace (of personal mien)" ;
@@ -93,20 +93,33 @@
     :gen "facail" ;
     :pl "facail" , "faclan" .
 
-# faclan faid
-# vocabulary / language of length (in school maths)
-#
-# facal air an fhacal
-# word for word, verbatim
-#
-# dè a b’fhasa dhi na facal a ràdh ris an ath thuras a thachradh i ris?
-# what would be easier (for her) than to have a word with (lit. say a word to) him the next time she met (i.e. would meet) him?
-#
-# cùm ri t’ fhacal
-# keep to your word
-#
-# bha aon rud air an robh iad gu lèir air an aon fhacal
-# there was one thing about which they were in complete agreement / agreed completely
+  n:faclan_faid
+    a :Example ;
+    rdfs:label "faclan faid" ;
+    :sense "vocabulary / language of length (in school maths)" ;
+    :part n:facal .
+
+  n:facal_air_an_fhacal
+    rdfs:label "facal air an fhacal" ;
+    :sense "word for word" , "verbatim" ;
+    :part n:facal .
+
+  v:dee_a_b_fhasa_dhi_na_facal_a_raadh_ris_an_ath_thuras_a_thachradh_i_ris
+    a :Example ;
+    rdfs:label "dè a b’fhasa dhi na facal a ràdh ris an ath thuras a thachradh i ris?" ;
+    :sense "what would be easier (for her) than to have a word with (lit. say a word to) him the next time she met (i.e. would meet) him?" ;
+    :part n:facal .
+
+  v:cuum_ri_a_fhacal
+    rdfs:label "cùm ri t’ fhacal" ;
+    :sense "keep to your word" ;
+    :part n:facal .
+
+  v:bha_aon_rud_air_an_robh_iad_gu_leeir_air_an_aon_fhacal
+    a :Example ;
+    rdfs:label "bha aon rud air an robh iad gu lèir air an aon fhacal" ;
+    :sense "there was one thing about which they were in complete agreement / agreed completely" ;
+    :part n:facal .
 
 #267
 

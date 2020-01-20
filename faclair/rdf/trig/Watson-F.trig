@@ -17,6 +17,123 @@
   :MasculineNoun rdfs:label "nm" .
   :Verb rdfs:label "v" .
 
+#171
+
+  n:faabhar
+    a :MasculineNoun ;
+    rdfs:label "fàbhar" ;
+    :sense "a favour" ;
+    :gen "fàbhair" ;
+    :pl "fàbharan" ;
+    rdfs:comment "Cf. bàidh , seirbheis" .
+
+  v:rinn_e_faabhar_dhut
+    a :Example ;
+    rdfs:label "rinn e fàbhar dhut" ;
+    :sense "he did you a favour" ;
+    :part n:faabhar .
+
+  a:fàbharach
+    a :Adjective ;
+    rdfs:label "fàbharach" ;
+    :sense "favourable" , "propitious" .
+
+  n:fabhra
+    a :MasculineNoun ;
+    rdfs:label "fabhra" ;
+    :sense "an eyelash" , "an eyelid" ;
+    :gen "fabhra" ;
+    :pl "fabhran" ;
+    rdfs:comment "Cf. rosg" .
+
+  n:facal
+    a :MasculineNoun ;
+    rdfs:label "facal" ;
+    :sense "a word (written or spoken)" , "a saying" ;
+    :gen "facail" ;
+    :pl "facail" , "faclan" ;
+    rdfs:comment "Cf. ràdh, seanfhacal" .
+
+# is e facal boireann a tha ann an ‘eaglais’
+# ‘eaglais’ is a feminine word
+#
+# thubhairt i facal no dhà anns a’ Ghàidhlig
+# she said a word or two / a few words in Gaelic
+#
+# cha do bhruidhinn sinn facal Gàidhlig air a’ bhàt’-aiseig
+# we didn’t speak a word of Gaelic on the ferry
+#
+# an toir thu dhomh d’ fhacal (air)?
+# will you give me your word (on it) / swear (to it)?
+#
+# is e facal a th’ ann an ‘is tighe fuil na bùrn’
+# ‘blood is thicker than water’ is a saying
+
+# fa chomhair
+
+  a:faclach
+    a :Adjective ;
+    rdfs:label "faclach" ;
+    :sense "wordy" , "verbose" ;
+    rdfs:comment "Cf. briathrach" .
+
+  n:facladair
+    a :MasculineNoun ;
+    rdfs:label "facladair" ;
+    :sense "a word processor (IT)" ;
+    :gen "facladair" ;
+    :pl "facladairean" .
+
+  n:facladaireachd
+    a :FeminineNoun ;
+    rdfs:label "facladaireachd" ;
+    :sense "word processing (IT)" ;
+    :gen "facladaireachd" .
+
+  n:faclair
+    a :MasculineNoun ;
+    rdfs:label "faclair" ;
+    :sense "a dictionary" ;
+    :gen "faclair" ;
+    :pl "faclairean" .
+
+# am faclair as ainmeile sa Ghàidhlig ’s e am fear aig Dwelly
+# the most famous dictionary in Gaelic is Dwelly’s one
+
+  n:faclaireachd
+    a :FeminineNoun ;
+    rdfs:label "faclaireachd" ;
+    :sense "lexicography" ;
+    :gen "faclaireachd" .
+
+  n:facs
+    a :MasculineNoun ;
+    rdfs:label "facs" ;
+    :sense "a fax (IT)" ;
+    :gen "facsa" ;
+    :pl "facsaichean" .
+
+  n:inneal_facs
+    a :MasculineNoun ;
+    rdfs:label "inneal facs" ;
+    :sense "a fax machine" ;
+    :part n:facs .
+
+#fad
+
+  n:faad
+    a :MasculineNoun ;
+    rdfs:label "fàd" ;
+    :sense "a (single) peat" ;
+    :gen "fàid" ;
+    :pl "fàdan" ;
+    rdfs:comment "Cf. fòid" .
+
+  n:faad_moonach
+    rdfs:label "fàd mònach" ;
+    :sense "a (single) peat" ;
+    :part n:faad .
+
 #175
 
   n:faisge

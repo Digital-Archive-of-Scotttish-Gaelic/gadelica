@@ -1,0 +1,44 @@
+@prefix n: <http://faclair.ac.uk/nouns/> .
+@prefix a: <http://faclair.ac.uk/adjectives/> .
+@prefix v: <http://faclair.ac.uk/verbs/> .
+@prefix o: <http://faclair.ac.uk/other/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://faclair.ac.uk/meta/> .
+
+<http://faclair.ac.uk/sources/Watson2001> {
+
+  n:seilcheag
+    a :FeminineNoun ;
+    rdfs:label "seilcheag" ;
+    :sense "a snail" , "a slug" ;
+    :gen "seilcheig" ;
+    :pl "seilcheagan" .
+
+  n:seile
+    a :MasculineNoun ;
+    rdfs:label "seile" ;
+    :sense "saliva" , "spittle" , "slaver" ;
+    :gen "seile" ;
+    rdfs:comment "Cf ronn" .
+
+  n:seileach
+    a :MasculineNoun ;
+    rdfs:label "seileach" ;
+    :sense "willow" , "a willow" ;
+    :gen "seilich" ;
+    :pl "seileachan" .
+
+  n:seillean
+    a :MasculineNoun ;
+    rdfs:label "seillean" ;
+    :sense "a bee" ;
+    :gen "seillein" ;
+    :pl "seilleanan" , "seillein" ;
+    rdfs:comment "Cf beach" .
+
+  n:seillean_moor
+    rdfs:label "seillean-mòr" ;
+    :sense "a bumble-bee" ;
+    :part n:seillean .
+
+}
