@@ -5,6 +5,220 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix : <http://faclair.ac.uk/meta/> .
 
+v:faabhair
+  a :Verb ;
+  rdfs:label "fàbhair" ;
+  :vn "fàbharadh" ;
+  :vngen "fàbharaidh" ;
+  :part n:faabhar .
+
+n:faabhar
+  a :MasculineNoun ;
+  rdfs:label "fàbhar" ;
+  :gen "fàbhair" ;
+  :pl "fàbharan" .
+
+v:deean_faabhar_do
+  rdfs:label "dèan fàbhar do" ;
+  :sense "do someone a favour" , "do a favour for" ;
+  :part n:faabhar .
+
+v:nochd_faabhar
+  rdfs:label "nochd fàbhar" ;
+  :part n:fàbhar , v:nochd .
+
+v:lorg_faabhar
+  rdfs:label "lorg fàbhar" ;
+  :part n:fàbhar , v:lorg .
+
+o:mar_faabhar
+  rdfs:label "mar fàbhar" ;
+  :part n:fàbhar .
+
+v:bi_na_fhaabhar
+  rdfs:label "bi na f(h)àbhar" ;
+  :sense "be in someone’s favour" , "favour someone" ;
+  :part n:fàbhar .
+
+a:fàbharach
+  a :Adjective ;
+  rdfs:label "fàbharach" ;
+  :comp "fàbharaiche" ;
+  :part n:faabhar .
+
+v:bi_faabharach_do
+  rdfs:label "bi fàbharach do" ;
+  :part a:fàbharach .
+
+n:fabhra
+  a :MasculineNoun ;
+  rdfs:label "fabhra" ;
+  :gen "fabhra" ;
+  :pl "fabhran" , "fabhrannan" .
+
+n:facal
+  a :MasculineNoun ;
+  rdfs:label "facal" ;
+  :gen "facail" ;
+  :pl "facail" , "faclan" .
+
+n:facal_air_an_fhacal
+  rdfs:label "facal air an fhacal" ;
+  :part n:facal .
+
+v:abair_facal_ri
+  rdfs:label "abair facal ri" ;
+  :sense "have a word with" ;
+  :part n:facal , v:abair .
+
+v:cuum_ri_a_fhacal
+  rdfs:label "cùm ri a fhacal" ;
+  :sense "keep to one’s word" ;
+  :part n:facal .
+
+o:air_an_aon_fhacal
+  rdfs:label "air an aon fhacal" ;
+  :sense "in agreement" ;
+  :part n:facal .
+
+n:facal_boireann
+  rdfs:label "facal boireann" ;
+  :sense "feminine word" ;
+  :part n:facal , a:boireann .
+
+v:thoir_a_fhacal_do
+  rdfs:label "thoir a f(h)acal do ... (air)" ;
+  :sense "give someone one’s word (on something)" , "swear (to something)" ;
+  :part n:facal .
+
+  # n:facal-faire
+  #   a :MasculineNoun ;
+  #   rdfs:label "facal-faire" ;
+  #   :sense "password" , "watchword" .
+  #
+  # n:facal_fhreumachd
+  #   a :FeminineNoun ;
+  #   rdfs:label "facal-fhreumachd" ;
+  #   :sense "etymology" .
+  #
+  # a:facal_fhreumail
+  #   a :Adjective ;
+  #   rdfs:label "facal-fhreumail" ;
+  #   :sense "etymological" .
+  #
+  # n:facal_iasaid
+  #   a :MasculineNoun ;
+  #   rdfs:label "facal-iasaid" ;
+  #   :sense "loan-word" .
+  #
+  # n:facal_riaghladair
+  #   a :MasculineNoun ;
+  #   rdfs:label "facal-riaghladair" ;
+  #   :sense "word processor" .
+  #
+  # n:facal_suaicheantais
+  #   a :MasculineNoun ;
+  #   rdfs:label "facal-suaicheantais" ;
+  #   :sense "motto" .
+  #
+
+n:fachach
+  a :MasculineNoun ;
+  rdfs:label "fachach" ;
+  :gen "fachaich" ;
+  :pl "fachaich" .
+
+a:faclach
+  a :Adjective ;
+  rdfs:label "faclach" ;
+  :part n:facal .
+
+n:facladair
+  a :MasculineNoun ;
+  rdfs:label "facladair" ;
+  :gen "facladair" ;
+  :pl "facladairean" ;
+  :part n:facal .
+
+n:facladaireachd
+  a :FeminineNoun ;
+  rdfs:label "facladaireachd" ;
+  :gen "facladaireachd" ;
+  :part n:facladair .
+
+n:faclair
+  a :MasculineNoun ;
+  rdfs:label "faclair" ;
+  :gen "faclair" ;
+  :pl "faclairean" ;
+  :part n:facal .
+
+n:faclaireachd
+  a :FeminineNoun ;
+  rdfs:label "faclaireachd" ;
+  :gen "faclaireachd" ;
+  :part n:faclair .
+
+n:faclairiche
+  a :MasculineNoun ;
+  rdfs:label "faclairiche" ;
+  :gen "faclairiche" ;
+  :pl "faclairichean" ;
+  :part n:faclair .
+
+n:facs
+  a :MasculineNoun ;
+  rdfs:label "facs" ;
+  :gen "facsa" ;
+  :pl "facsaichean" .
+
+n:inneal_facs
+  rdfs:label "inneal facs" ;
+  :part n:facs , n:inneal .
+
+n:factar
+  a :MasculineNoun ;
+  rdfs:label "factar" ;
+  :gen "factair" ;
+  :pl "factaran" .
+
+n:factar_suidheachaidh
+  rdfs:label "factar suidheachaidh" ;
+  :part n:factar , n:suidheachadh .
+
+n:factaraidh
+  a :FeminineNoun ;
+  rdfs:label "factaraidh" ;
+  :gen "factaraidh" ;
+  :pl "factaraidhean" .
+
+n:faad
+  a :MasculineNoun ;
+  rdfs:label "fàd" ;
+  :gen "fàid" ;
+  :pl "fàid" .
+
+n:faad_moonach
+  rdfs:label "fàd mònach" ;
+  :part n:faad , n:mooine .
+
+v:fad
+  a :Verb ;
+  rdfs:label "fad" ;
+  :vn "fadaidh" .
+
+v:fad_teine
+  rdfs:label "fad teine" ;
+  :sense "kindle a fire" ;
+  :part v:fad , n:teine .
+
+
+
+
+
+
+
+
 a:faisg
   a :Adjective ;
   rdfs:label "faisg" .
@@ -341,6 +555,10 @@ n:falaisg
   rdfs:label "falaisg" ;
   :gen "falaisge" ;
   :pl "falaisgean" .
+
+
+
+
 
 n:fine
   a :FeminineNoun ;
