@@ -91,36 +91,36 @@ v:thoir_a_fhacal_do
   :sense "give someone one’s word (on something)" , "swear (to something)" ;
   :part n:facal .
 
-  # n:facal-faire
-  #   a :MasculineNoun ;
-  #   rdfs:label "facal-faire" ;
-  #   :sense "password" , "watchword" .
-  #
-  # n:facal_fhreumachd
-  #   a :FeminineNoun ;
-  #   rdfs:label "facal-fhreumachd" ;
-  #   :sense "etymology" .
-  #
-  # a:facal_fhreumail
-  #   a :Adjective ;
-  #   rdfs:label "facal-fhreumail" ;
-  #   :sense "etymological" .
-  #
-  # n:facal_iasaid
-  #   a :MasculineNoun ;
-  #   rdfs:label "facal-iasaid" ;
-  #   :sense "loan-word" .
-  #
-  # n:facal_riaghladair
-  #   a :MasculineNoun ;
-  #   rdfs:label "facal-riaghladair" ;
-  #   :sense "word processor" .
-  #
-  # n:facal_suaicheantais
-  #   a :MasculineNoun ;
-  #   rdfs:label "facal-suaicheantais" ;
-  #   :sense "motto" .
-  #
+n:facal_faire
+  rdfs:label "facal faire" ;
+  :part n:facal , n:faire .
+
+n:facal_fhreumhachd
+  a :FeminineNoun ;
+  rdfs:label "facal-fhreumhachd" ;
+  :part n:facal_fhreumh .
+
+a:facal_fhreumhail
+  a :Adjective ;
+  rdfs:label "facal-fhreumhail" ;
+  :part n:facal_fhreumh .
+
+n:facal_fhreumh
+  rdfs:label "facal-fhreumh" ;
+  :sense "etymon" ;
+  :part n:facal , n:freumh .
+
+n:facal_iasaid
+  rdfs:label "facal iasaid" ;
+  :part n:facal , n:iasad .
+
+n:facal_riaghladair
+  rdfs:label "facal-riaghladair" ;
+  :part n:facal , n:riaghladair .
+
+n:facal_suaicheantais
+  rdfs:label "facal suaicheantais" ;
+  :part n:facal , n:suaicheantas .
 
 n:fachach
   a :MasculineNoun ;
