@@ -3,6 +3,11 @@
 class Tokeniser
 {
   private $_elems = array(
+    "/([.,;:?!’‘”“'\"\)\(-\/–])/u"      => "<pc>$1</pc>",
+    "/\s<pc>(.)<\/pc>\s/u"              => " <pc join=\"no\">$1</pc> ",
+    "/(\S)<pc>(.)<\/pc>(\S)/u"          => "$1 <pc join=\"both\">$2</pc> $3",
+    "/\s<pc>(.)<\/pc>(\S)/u"            => " <pc join=\"right\">$1</pc> $2",
+    "/<pc>(.)<\/pc>/u"                  => " <pc join=\"left\">$1</pc> ",
     "/(\[TD )(\d+)(\])/u"               => "<pb n=\"$2\"/>",
     "/\R\R/u"                           => "</p><p>",
     "/\R/u"                             => "<lb/>",
@@ -15,13 +20,13 @@ class Tokeniser
     "/(\S) <pc /u"                      => "$1\n<pc ",
     "/<\/pc> (\S)/u"                    => "</pc>\n$1",
     "/\s(\w+)\s/u"                      => " <w>$1</w> ",
-    "/\s(\w+)\s/u"                      => " <w>$1</w> ",
+    " /\s(\w+)\s/u"                      => " <w>$1</w> ",
     "/<w>/u"                            => "\n<w>",
     "/> <pc /u"                         => ">\n<pc ",
     "/(\S) </u"                         => "$1\n<",
     "/ </u"                             => "<",
     "/<w>(\w+)/u"                       => "<w pos=\"n\" lemma=\"$1\">$1",
-    "/<([a-z]{3})>/u"                   => "<$1/>",
+    "/<([a-z]{3})>/u"                   => "<$1/>"
   );
 
   public function run($text)
@@ -33,6 +38,10 @@ class Tokeniser
     return $text;
   }
 
+  /*
+   * Legacy code - retained for reference only
+   */
+  /*
   public function processMark($input)
   {
   // punctuation
@@ -67,5 +76,6 @@ class Tokeniser
     $input .= "\n";
 
     return $input;
-  }
+  } */
+
 }

@@ -21,7 +21,7 @@ class FileHandler
     $fileContents .= $xml->getHeader($this->_textId);
     $text = file_get_contents(INPUT_FILEPATH . $this->_filename);
     $tokeniser = new Tokeniser();
-    $fileContents .= $tokeniser->processMark($text);
+    $fileContents .= $tokeniser->run($text);
     $fileContents .= $xml->getFooter();
     file_put_contents(OUTPUT_FILEPATH . $this->_getOutputFilename(), $fileContents);
   }
