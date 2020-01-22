@@ -12,9 +12,13 @@ class Lemmatiser
     $this->_dbh = Database::getDatabaseHandle(DB_NAME);
   }
 
+  /*
+   * Main proesseor for XML generateion
+   * Can deal with mutiple level texts
+   */
   public function getProcessedXml() {
     $text = new SimpleXMLElement($this->_inputXml);
-    if (isset($text->text)) {             //deal with texts within texts
+    if (isset($text->text)) {             //check texts within texts
       $xml = "";
       foreach ($text->text as $subtext) {
         $xml .= "\n" . $this->_processTextXml($subtext);
@@ -25,6 +29,9 @@ class Lemmatiser
     }
   }
 
+  /*
+   * Private function to process individual text
+   */
   private function _processTextXml($text) {
     foreach ($text->p as $p) {
       if (isset($p->w)) {
@@ -41,7 +48,8 @@ class Lemmatiser
 
   private function _getLemmas($wordform) {
     $lemmas = array();
-    //TODO: ask MM if we want to remove duplicates using DISTINCT
+    //Removes any duplicate lemmas
+    //Searches the multidict DB on MySQL
     $query = <<<SQL
         SELECT DISTINCT lemma FROM lemmas WHERE wordform = :wordform
 SQL;

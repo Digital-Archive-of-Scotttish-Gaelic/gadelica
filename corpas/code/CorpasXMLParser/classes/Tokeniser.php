@@ -3,7 +3,7 @@
 class Tokeniser
 {
   private $_elems = array(
-    "/([.,;:?!–’‘”“'\"\)\(-\/–])/u"      => "<pc>$1</pc>",
+    "/([.,;:?!’‘”“'\"\)\(‒-—―\/])/u"      => "<pc>$1</pc>",
     "/\s<pc>(.)<\/pc>\s/u"              => " <pc join=\"no\">$1</pc> ",
     "/(\S)<pc>(.)<\/pc>(\S)/u"          => "$1 <pc join=\"both\">$2</pc> $3",
     "/\s<pc>(.)<\/pc>(\S)/u"            => " <pc join=\"right\">$1</pc> $2",
