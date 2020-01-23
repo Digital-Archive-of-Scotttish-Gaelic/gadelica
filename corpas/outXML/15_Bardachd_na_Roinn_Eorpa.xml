@@ -18895,9 +18895,7 @@
 <pc join="left">’</pc> 
 <lb/> 
 <w pos="n" lemma="os">os</w> 
-<w pos="n" lemma="Loch">Loch</w> 
-<w pos="n" lemma="Laig">Laig</w>
-<pc join="left">*</pc> 
+<w pos="n" lemma="Loch">Loch</w> Laig*
 <lb/> 
 <w pos="n" lemma="lòn">lòn</w>
 <pc join="both">-</pc> 
@@ -18911,8 +18909,7 @@
 <p>
 
 <lb/>
-<pc join="right">*</pc> 
-<w pos="n" lemma="Loch">Loch</w> 
+*Loch 
 <w pos="n" lemma="Laig">Laig</w> = 
 <w pos="n" lemma="Loch">Loch</w> 
 <w pos="n" lemma="Beul">Beul</w>
@@ -19500,9 +19497,7 @@
 <w pos="n" lemma="là">là</w> 
 <w pos="n" lemma="sin">sin</w> 
 <w pos="n" lemma="gu">gu</w> 
-<w pos="n" lemma="bràth">bràth</w> 
-<w pos="n" lemma="ach">ach</w>
-<pc join="left">*</pc>  
+<w pos="n" lemma="bràth">bràth</w> ach* 
 <w pos="n" lemma="fodhainn">fodhainn</w> 
 <w pos="n" lemma="iad">iad</w>
 <pc join="left">.</pc> 
@@ -19598,8 +19593,7 @@
 <p>
 
 <lb/>
-<pc join="right">*</pc> 
-<w pos="n" lemma="ach">ach</w> = 
+*ach = 
 <w pos="n" lemma="gun">gun</w> 
 <w pos="n" lemma="a">a</w> 
 <w pos="n" lemma="bhith">bhith</w> 
@@ -28299,8 +28293,7 @@
 <w pos="n" lemma="RUISEANAIS">RUISEANAIS</w>
 </p>
 <p>
-<eng/>
-<pc join="left">*</pc> <pc join="no">*</pc> <pc join="left">*</pc> 
+<eng/>* * *
 </p>
 <p> 
 <w pos="n" lemma="Моим">Моим</w> 
@@ -28318,7 +28311,8 @@
 <w pos="n" lemma="я">я</w>
 <pc join="left">,</pc>  
 <w pos="n" lemma="что">что</w> 
-<w pos="n" lemma="я">я</w> — 
+<w pos="n" lemma="я">я</w>
+<pc join="no">—</pc> 
 <w pos="n" lemma="поэт">поэт</w>
 <pc join="left">,</pc> 
 <lb/> 
@@ -28360,10 +28354,10 @@
 <w pos="n" lemma="и">и</w> 
 <w pos="n" lemma="смерти">смерти</w>
 <lb/>
-— 
+<pc join="no">—</pc> 
 <w pos="n" lemma="Нечитанным">Нечитанным</w> 
 <w pos="n" lemma="стихам">стихам</w>
-<pc join="left">!</pc>  —
+<pc join="left">!</pc> <pc join="no">—</pc> 
 </p>
 <p> 
 <w pos="n" lemma="Разбросанным">Разбросанным</w> 
