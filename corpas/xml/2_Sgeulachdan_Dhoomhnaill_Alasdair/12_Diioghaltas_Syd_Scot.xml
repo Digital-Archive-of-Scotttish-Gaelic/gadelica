@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../texts.rnc" schematypens="https://relaxng.org/ns/structure/1.0?>
 <!-- 22/1/20: first pass on lemmas (MM) -->
-<!-- 23/1/20: second pass on POS to 1016 (MM)  -->
+<!-- 23/1/20: second pass on POS (MM)  -->
+<!-- Needs third pass on both, once guidance has been finalised -->
 <text ref="https://dasg.ac.uk/corpus/_2-12" xmlns="https://dasg.ac.uk/corpus/">
   <pb n="59"/>
   <h>
@@ -2054,57 +2055,57 @@
     <pc join="right">’</pc>
     <w lemma="agus">s</w>
     <w pos="" lemma="an">an</w>
-    <w pos="" lemma="rach">deach</w>
-    <w pos="" lemma="e">e</w>
-    <w pos="" lemma="do+the">dhan</w>
-    <w pos="" lemma="prìosan">phrìosan</w>
-    <w pos="" lemma="air+son">airson</w>
-    <w pos="" lemma="a">a</w>
-    <w pos="" lemma="bràthair">bhràthair</w>
-    <w pos="" lemma="ainmeil">ainmeil</w>
-    <w pos="" lemma="x">a</w>
+    <w pos="v" lemma="rach">deach</w>
+    <w pos="D" lemma="e">e</w>
+    <w pos="p+d" lemma="do+the">dhan</w>
+    <w pos="n" lemma="prìosan">phrìosan</w>
+    <w pos="p+n" lemma="air+son">airson</w>
+    <w pos="d" lemma="his">a</w>
+    <w pos="n" lemma="bràthair">bhràthair</w>
+    <w pos="a" lemma="ainmeil">ainmeil</w>
+    <w lemma="x">a</w>
     <w pos="vn" lemma="sàbhail">shàbhaladh</w>
     <pc join="left">?</pc>
     <w pos="" lemma="cha">Cha</w>
-    <w pos="" lemma="bhi">bhi</w>
-    <w pos="" lemma="cinnt">cinnt</w>
-    <w pos="" lemma="aig+mi">agam</w>
-    <w pos="" lemma="a">a</w>
-    <w pos="" lemma="caoidh">chaoidh</w>
+    <w pos="v" lemma="bhi">bhi</w>
+    <w pos="n" lemma="cinnt">cinnt</w>
+    <w pos="p+D" lemma="aig+mi">agam</w>
+    <w pos="p" lemma="a">a</w>
+    <w pos="n" lemma="caoidh">chaoidh</w>
     <w pos="" lemma="gu+is">gur</w>
-    <w pos="" lemma="e">e</w>
-    <w pos="" lemma="the">an</w>
-    <w pos="" lemma="duine">duine</w>
-    <w pos="" lemma="ceart">ceart</w>
+    <w pos="D" lemma="e">e</w>
+    <w pos="d" lemma="the">an</w>
+    <w pos="n" lemma="duine">duine</w>
+    <w pos="a" lemma="ceart">ceart</w>
     <w lemma="rx">a</w>
-    <w pos="" lemma="marbh">mharbh</w>
-    <w pos="" lemma="mi">mi</w>
+    <w pos="V" lemma="marbh">mharbh</w>
+    <w pos="D" lemma="mi">mi</w>
     <pc join="left">.</pc>
-    <w pos="" lemma="ach">Ach</w>
-    <w pos="v" lemma="bi">tha</w>
-    <w pos="" lemma="fios">fios</w>
-    <w pos="" lemma="aig">a</w>
+    <w lemma="ach">Ach</w>
+    <w pos="V" lemma="bi">tha</w>
+    <w pos="n" lemma="fios">fios</w>
+    <w pos="p" lemma="aig">a</w>
     <pc join="both">’</pc>
-    <w pos="" lemma="mi">m</w>
-    <w pos="" lemma="a">a</w>
+    <w pos="D" lemma="mi">m</w>
+    <w pos="p" lemma="a">a</w>
     <pc join="both">-</pc>
-    <w pos="" lemma="nis">nise</w>
+    <w pos="n" lemma="nis">nise</w>
     <w pos="" lemma="gu+is">gur</w>
-    <w pos="" lemma="tric">tric</w>
+    <w pos="a" lemma="tric">tric</w>
     <w lemma="rx">a</w>
-    <w pos="v" lemma="bi">tha</w>
-    <w pos="" lemma="the">an</w>
-    <w pos="" lemma="dìoghaltas">dìoghaltas</w>
+    <w pos="V" lemma="bi">tha</w>
+    <w pos="d" lemma="the">an</w>
+    <w pos="n" lemma="dìoghaltas">dìoghaltas</w>
     <w lemma="ag">a</w>
     <pc join="left">’</pc>
-    <w pos="" lemma="cosg">cosg</w>
-    <w pos="" lemma="barrachd">barrachd</w>
-    <w pos="" lemma="air">air</w>
+    <w pos="vn" lemma="cosg">cosg</w>
+    <w pos="n" lemma="barrachd">barrachd</w>
+    <w pos="p" lemma="air">air</w>
     <w pos="" lemma="na">na</w>
     <pc join="right">’</pc>
-    <w pos="" lemma="is">s</w>
-    <w pos="" lemma="fiach">fhiach</w>
-    <w pos="" lemma="e">e</w>
+    <w pos="V" lemma="is">s</w>
+    <w pos="n" lemma="fiach">fhiach</w>
+    <w pos="D" lemma="e">e</w>
     <pc join="both">.</pc>
     <pc join="left">”</pc>
   </p>
