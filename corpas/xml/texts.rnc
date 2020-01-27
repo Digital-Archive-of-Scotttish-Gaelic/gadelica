@@ -17,7 +17,7 @@ Sentence = element s { (Token | Page)+ }
 Note = element note { text }
 
 Token = ( 
-            element w { attribute id {text}, attribute pos {text}?, attribute ana {text}?, attribute lemma {text}?, attribute ref {text}?, text } 
+            element w { attribute id {text}, attribute pos {text}?, attribute lemma {text}?, attribute spec {text}?, attribute mod {text}?, attribute comp {text}?, text } 
           | element pc {attribute join {"no"|"left"|"right"|"both"}, text} 
           | element o { text } 
           | element t { text }
