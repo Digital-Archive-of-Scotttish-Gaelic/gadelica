@@ -15,12 +15,15 @@ $searchTerm = $_GET['searchTerm'];
 $lang = $_GET['lang'];
 $snh = $_GET['snh'];
 $frp = $_GET['frp'];
+$seotal = $_GET['seotal'];
 if ($searchTerm!='') {
   echo '<body style="padding-top: 20px;" data-searchterm="' . $searchTerm . '" data-lang="' . $lang . '"';
   if ($snh=='yes') { echo ' data-snh="yes"'; }
   else { echo ' data-snh="no"'; }
   if ($frp=='yes') { echo ' data-frp="yes"'; }
   else { echo ' data-frp="no"'; }
+  if ($seotal=='yes') { echo ' data-seotal="yes"'; }
+  else { echo ' data-seotal="no"'; }
   echo '>';
 }
 else {
@@ -55,6 +58,10 @@ else {
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="checkbox" name="frp" id="frpCheck" value="yes"<?php if ($searchTerm=='' || $frp=='yes') echo ' checked'; ?>>
             <label class="form-check-label" for="frpCheck">Faclair Rianachd Phoblaich</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="seotal" id="seotalCheck" value="yes"<?php if ($searchTerm=='' || $seotal=='yes') echo ' checked'; ?>>
+            <label class="form-check-label" for="seotalCheck">Seotal</label>
           </div>
           <!--
           <div class="form-check form-check-inline">

@@ -6,8 +6,10 @@ $(function() {
     var lang = $('body').attr('data-lang');
     var snh = $('body').attr('data-snh');
     var frp = $('body').attr('data-frp');
+    var seotal = $('body').attr('data-seotal');
     if (lang == 'en') {
-      $.getJSON('ajax.php?action=getEnglishResults&searchTerm='+search+'&snh='+snh+'&frp='+frp, function(data) {
+      $.getJSON('ajax.php?action=getEnglishResults&searchTerm='+search+'&snh='+snh+'&frp='+frp+'&seotal='+seotal, function(data) {
+        alert(data);
         addData(data);
       }).done(function() {
         /*
@@ -19,7 +21,7 @@ $(function() {
       });
     }
     else {
-      $.getJSON('ajax.php?action=getGaelicResults&searchTerm='+search+'&snh='+snh+'&frp='+frp, function(data) {
+      $.getJSON('ajax.php?action=getGaelicResults&searchTerm='+search+'&snh='+snh+'&frp='+frp+'&seotal='+seotal, function(data) {
         addData(data);
       }).done(function() {
         /*
