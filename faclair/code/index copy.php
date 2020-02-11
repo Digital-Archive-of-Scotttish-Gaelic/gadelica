@@ -10,9 +10,31 @@
     <script src="ajax.js"></script>
     <title>Stòras Brì</title>
   </head>
+  <!--
+<?php
+$searchTerm = $_GET['searchTerm'];
+$lang = $_GET['lang'];
+$snh = $_GET['snh'];
+$frp = $_GET['frp'];
+$seotal = $_GET['seotal'];
+if ($searchTerm!='') {
+  echo '<body style="padding-top: 20px;" data-searchterm="' . $searchTerm . '" data-lang="' . $lang . '"';
+  if ($snh=='yes') { echo ' data-snh="yes"'; }
+  else { echo ' data-snh="no"'; }
+  if ($frp=='yes') { echo ' data-frp="yes"'; }
+  else { echo ' data-frp="no"'; }
+  if ($seotal=='yes') { echo ' data-seotal="yes"'; }
+  else { echo ' data-seotal="no"'; }
+  echo '>';
+}
+else {
+  echo '<body style="padding-top: 20px;">';
+}
+?>
+-->
   <body style="padding-top: 20px;">
     <div class="container-fluid">
-      <form autocomplete="off" id="searchForm"> <!-- Search box -->
+      <form action="" method="get" autocomplete="off" id="searchForm"> <!-- Search box -->
         <div class="form-group">
           <div class="input-group">
             <input id="searchBox" type="text" class="form-control active" name="searchTerm"  data-toggle="tooltip" title="Enter search term here" autofocus="autofocus"/>
@@ -22,26 +44,26 @@
           </div>
         </div>
         <div class="form-group">
-          <div class="form-check form-check-inline" data-toggle="tooltip" title="English to Gaelic">
-            <input class="form-check-input" type="radio" name="lang" id="enRadio" value="en" checked>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="lang" id="enRadio" value="en"<?php if ($lang!='gd') echo ' checked'; ?>>
             <label class="form-check-label" for="enRadio">Beurla</label>
           </div>
-          <div class="form-check form-check-inline" data-toggle="tooltip" title="Gaelic to English">
-            <input class="form-check-input" type="radio" name="lang" id="gdRadio" value="gd">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="lang" id="gdRadio" value="gd"<?php if ($lang=='gd') echo ' checked'; ?>>
             <label class="form-check-label" for="gdRadio">Gàidhlig</label>
           </div>
         </div>
         <div class="form-group">
-          <div class="form-check form-check-inline" data-toggle="tooltip" title="Search Scottish Natural Heritage nature terms">
-            <input class="form-check-input" type="checkbox" name="snh" id="snhCheck" value="yes" checked>
-            <label class="form-check-label" for="snhCheck">Faclan Nàdair</label>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="snh" id="snhCheck" value="yes"<?php if ($searchTerm=='' || $snh=='yes') echo ' checked'; ?>>
+            <label class="form-check-label" for="snhCheck">Faclan Nàdair (SNH)</label>
           </div>
-          <div class="form-check form-check-inline" data-toggle="tooltip" title="Check the Scottish Parliament dictionary and related resources">
-            <input class="form-check-input" type="checkbox" name="frp" id="frpCheck" value="yes" checked>
-            <label class="form-check-label" for="frpCheck">Faclair na Pàrlamaid</label>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="frp" id="frpCheck" value="yes"<?php if ($searchTerm=='' || $frp=='yes') echo ' checked'; ?>>
+            <label class="form-check-label" for="frpCheck">Faclair Rianachd Phoblaich</label>
           </div>
-          <div class="form-check form-check-inline" data-toggle="tooltip" title="Check Stòrlann’s terms for use in GME">
-            <input class="form-check-input" type="checkbox" name="seotal" id="seotalCheck" value="yes" checked>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="seotal" id="seotalCheck" value="yes"<?php if ($searchTerm=='' || $seotal=='yes') echo ' checked'; ?>>
             <label class="form-check-label" for="seotalCheck">Seotal</label>
           </div>
           <!--

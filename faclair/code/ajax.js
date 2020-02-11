@@ -1,38 +1,69 @@
 $(function() {
 
-  var search = $('body').attr('data-searchterm');
-  if (typeof search != 'undefined') {
-    $('#searchBox').val(search);
-    var lang = $('body').attr('data-lang');
-    var snh = $('body').attr('data-snh');
-    var frp = $('body').attr('data-frp');
-    var seotal = $('body').attr('data-seotal');
+  $('#searchForm').submit(function(e){
+    event.preventDefault();
+    $('#resultsTable tbody').empty();
+    var searchTerm = $('#searchBox').val();
+    var lang = 'en';
+    if ($('#gdRadio:checked').val()=='gd' ) { lang = 'gd'; }
+    var snh = false;
+    var frp = false;
+    var seotal = false;
+    if ($('#snhCheck:checked').val()=='yes' ) { snh = true; }
+    if ($('#frpCheck:checked').val()=='yes' ) { frp = true; }
+    if ($('#seotalCheck:checked').val()=='yes' ) { seotal = true; }
+    if (lang == 'en') {
+      var url = 'ajax.php?action=getEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal;
+      $.getJSON(url, function(data) {
+        addData(data);
+      }).done(function() {
+        $('#resultsTable tbody').append('<tr><td></td><td></td></tr>');
+        var url2 = 'ajax.php?action=getMoreEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal;
+        $.getJSON(url2, function(data2) {
+          addData(data2);
+        });
+      });
+    }
+    else {
+      var url = 'ajax.php?action=getGaelicResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal;
+      alert(url);
+
+    }
+
+
+
+
+  });
+
+/*
+
     if (lang == 'en') {
       $.getJSON('ajax.php?action=getEnglishResults&searchTerm='+search+'&snh='+snh+'&frp='+frp+'&seotal='+seotal, function(data) {
         alert(data);
         addData(data);
       }).done(function() {
-        /*
+
         $('#resultsTable tbody').append('<tr><td>dun</td><td>dun</td></tr>');
         $.getJSON('ajax.php?action=getMoreEnglishResults&searchTerm='+search, function(data) {
           addData(data);
         });
-        */
+
       });
     }
     else {
       $.getJSON('ajax.php?action=getGaelicResults&searchTerm='+search+'&snh='+snh+'&frp='+frp+'&seotal='+seotal, function(data) {
         addData(data);
       }).done(function() {
-        /*
+
         $('#resultsTable tbody').append('<tr><td>dun</td><td>dun</td></tr>');
         $.getJSON('ajax.php?action=getMoreGaelicResults&searchTerm='+search, function(data) {
           addData(data);
         });
-        */
+
       });
     }
   }
+  */
 
 });
 
