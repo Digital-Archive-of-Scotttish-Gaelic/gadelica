@@ -9,47 +9,52 @@ $(function() {
     var snh = false;
     var frp = false;
     var seotal = false;
+    var others = false;
     if ($('#snhCheck:checked').val()=='yes' ) { snh = true; }
     if ($('#frpCheck:checked').val()=='yes' ) { frp = true; }
     if ($('#seotalCheck:checked').val()=='yes' ) { seotal = true; }
+    if ($('#othersCheck:checked').val()=='yes' ) { others = true; }
     if (lang == 'en') {
-      var url = 'ajax.php?action=getEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal;
+      var url = 'ajax.php?action=getEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&others'+others;
       $.getJSON(url, function(data) {
         addData(data);
       }).done(function() {
         $('#resultsTable tbody').append('<tr><td></td><td></td></tr>');
-        var url2 = 'ajax.php?action=getMoreEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal;
+        var url2 = 'ajax.php?action=getMoreEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&others'+others;
         $.getJSON(url2, function(data2) {
           addData(data2);
+        }).done(function() {
+          $('#resultsTable tbody').append('<tr><td></td><td></td></tr>');
+          var url3 = 'ajax.php?action=getEvenMoreEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&others'+others;
+          $.getJSON(url3, function(data3) {
+            addData(data3);
+          }).done(function() {
+            $('#resultsTable tbody').append('<tr><td></td><td></td></tr>');
+            var url4 = 'ajax.php?action=getEvenEvenMoreEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&others'+others;
+            $.getJSON(url4, function(data4) {
+              addData(data4);
+            });
+          });
         });
       });
     }
     else {
       var url = 'ajax.php?action=getGaelicResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal;
-      alert(url);
-
+      $.getJSON(url, function(data) {
+        addData(data);
+      }).done(function() {
+        $('#resultsTable tbody').append('<tr><td></td><td></td></tr>');
+        var url2 = 'ajax.php?action=getMoreGaelicResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal;
+        $.getJSON(url2, function(data) {
+          addData(data);
+        });
+      });
     }
-
-
-
-
   });
 
 /*
 
-    if (lang == 'en') {
-      $.getJSON('ajax.php?action=getEnglishResults&searchTerm='+search+'&snh='+snh+'&frp='+frp+'&seotal='+seotal, function(data) {
-        alert(data);
-        addData(data);
-      }).done(function() {
 
-        $('#resultsTable tbody').append('<tr><td>dun</td><td>dun</td></tr>');
-        $.getJSON('ajax.php?action=getMoreEnglishResults&searchTerm='+search, function(data) {
-          addData(data);
-        });
-
-      });
-    }
     else {
       $.getJSON('ajax.php?action=getGaelicResults&searchTerm='+search+'&snh='+snh+'&frp='+frp+'&seotal='+seotal, function(data) {
         addData(data);

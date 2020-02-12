@@ -36,24 +36,18 @@
             <input class="form-check-input" type="checkbox" name="snh" id="snhCheck" value="yes" checked>
             <label class="form-check-label" for="snhCheck">Faclan Nàdair</label>
           </div>
-          <div class="form-check form-check-inline" data-toggle="tooltip" title="Check the Scottish Parliament dictionary and related resources">
+          <div class="form-check form-check-inline" data-toggle="tooltip" title="Search the Scottish Parliament dictionary and related resources">
             <input class="form-check-input" type="checkbox" name="frp" id="frpCheck" value="yes" checked>
             <label class="form-check-label" for="frpCheck">Faclair na Pàrlamaid</label>
           </div>
-          <div class="form-check form-check-inline" data-toggle="tooltip" title="Check Stòrlann’s terms for use in GME">
+          <div class="form-check form-check-inline" data-toggle="tooltip" title="Search Stòrlann’s terms for use in GME">
             <input class="form-check-input" type="checkbox" name="seotal" id="seotalCheck" value="yes" checked>
             <label class="form-check-label" for="seotalCheck">Seotal</label>
           </div>
-          <!--
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" name="lexicon" id="dwellyCheck" value="dwelly" checked>
-            <label class="form-check-label" for="dwellyCheck">Dwelly</label>
+          <div class="form-check form-check-inline" data-toggle="tooltip" title="Search other resources">
+            <input class="form-check-input" type="checkbox" name="others" id="othersCheck" value="yes" checked>
+            <label class="form-check-label" for="othersCheck">eile</label>
           </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" name="lexicon" id="otherCheck" value="other" checked>
-            <label class="form-check-label" for="otherCheck">Eile</label>
-          </div>
-        -->
         </div>
       </form>
       <table class="table table-hover" id="resultsTable">
