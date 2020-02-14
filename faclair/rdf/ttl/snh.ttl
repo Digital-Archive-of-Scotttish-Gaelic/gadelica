@@ -1421,13 +1421,6 @@ n:diile
   rdfs:label "dìle" ;
   :pl "dìleann" .
 
-n:seillean_diiomhain
-  rdfs:label "seillean dìomhain" .
-
-n:seillean_lunndach
-  rdfs:label "seillean lunndach" ;
-  :pl "seilleanan lunndach" .
-
 n:dreathan_donn
   rdfs:label "dreathan donn" .
 
@@ -2451,14 +2444,6 @@ n:seileachan
 n:seileachan_Frangach
   rdfs:label "seileachan Frangach" .
 
-n:seillean
-  a :MasculineNoun ;
-  rdfs:label "seillean" .
-
-n:seillean_moor
-  rdfs:label "seillean mòr" ;
-  :part n:seillean , n:moor .
-
 n:connspeach
   a :MasculineNoun ;
   rdfs:label "connspeach" .
@@ -2881,9 +2866,6 @@ n:luibh_ueeireach
 n:madadh_allaidh
   rdfs:label "madadh-allaidh" .
 
-n:seillean_moor_buidhe
-  rdfs:label "seillean mòr buidhe" .
-
 n:suubh_craoibh
   rdfs:label "sùbh-craoibh" .
 
@@ -2914,9 +2896,6 @@ n:cnapan_dubh
 n:eoorna
   a :MasculineNoun ;
   rdfs:label "eòrna" .
-
-n:seillean_caardair_na_cooinnich
-  rdfs:label "seillean càrdair na còinnich" .
 
 # STARTING HERE NEXT
 
@@ -3353,10 +3332,6 @@ n:sgiath
   a :FeminineNoun ;
   rdfs:label "sgiath" .
 
-n:seillean_meala
-  rdfs:label "seillean meala" ;
-  :part n:seillean , n:mil .
-
 n:basgaid_poilein
   rdfs:label "basgaid poilein" ;
   :part n:basgaid , n:poilean .
@@ -3525,18 +3500,6 @@ n:giomach
   a :MasculineNoun ;
   rdfs:label "giomach" .
 
-n:seillean_moor_an_earbaill_bhaain
-  rdfs:label "seillean mòr an earbaill bhàin" ;
-  :part n:seillean_moor , n:earball , a:baan .
-
-n:seillean_moor_earball_baan_a_Chinn_a_Tuath
-  rdfs:label "seillean mòr earball-bàn a’ Chinn a Tuath" ;
-  :part n:seillean_moor_an_earbaill_bhaain , n:an_ceann_a_tuath .
-
-n:seillean_moor_a_chrios_bhriste
-  rdfs:label "seillean mòr a’ chrios bhriste" ;
-  :part n:seillean_moor , n:crios , a:briste .
-
 a:briste
   a :Adjective ;
   rdfs:label "briste" ;
@@ -3545,14 +3508,6 @@ a:briste
 v:bris
   a :Verb ;
   rdfs:label "bris" .
-
-n:seillean_moor_an_earbaill_bhuidhe_bhaan
-  rdfs:label "seillean mòr an earbaill bhuidhe-bhàn" ;
-  :part n:seillean_moor , n:earball , a:buidhe , a:baan .
-
-n:seillean_moor_gaarraidh
-  rdfs:label "seillean mòr gàrraidh" ;
-  :part n:seillean_moor , n:gaarradh .
 
 n:gaarradh
   a :MasculineNoun ;
@@ -4716,9 +4671,6 @@ n:an_ceann_a_tuath
 n:deas
   rdfs:label "deas" .
 
-n:seillean_moor_a_bhlaair_fhraoich
-  rdfs:label "seillean mòr a’ bhlàir fhraoich" ;
-  :part n:seillean_moor , n:blaar_fraoich .
 
 n:blaar_fraoich
   rdfs:label "blàr fraoich" ;
@@ -4728,70 +4680,26 @@ n:blaar
   a :MasculineNoun ;
   rdfs:label "blàr" .
 
-n:seillean_caardair_cumanta
-  rdfs:label "seillean càrdair cumanta" ;
-  :part n:seillean_caardair , a:cumanta.
-
-n:seillean_caardair_nan_lurgann_dearg
-  rdfs:label "seillean càrdair nan lurgann dearg" ;
-  :part n:seillean_caardair , n:lurgann , a:dearg .
-
 n:lurgann
   a :FeminineNoun ;
   rdfs:label "lurgann" .
 
-n:seillean_caardair
-  rdfs:label "seillean càrdair" ;
-  :part n:seillean , n:caardair .
-
 n:cardair
   a :MasculineNoun ;
   rdfs:label "càrdair" .
-
-n:seillean_moor_an_earbaill_dheirg
-  rdfs:label "seillean mòr an earbaill dheirg" ;
-  :part n:seillean_moor , n:earball , a:dearg .
-
-n:seillean_moor_cuthaige_bharbut
-  rdfs:label "seillean mòr cuthaige bharbut" ;
-  :part n:seillean_moor_cuthaige .
-
-n:seillean_moor_cuthaige_an_achaidh
-  rdfs:label "seillean mòr cuthaige an achaidh" ;
-  :part n:seillean_moor_cuthaige , n:achadh .
 
 n:achadh
   a :MasculineNoun ;
   rdfs:label "achadh" ;
   :gen "achadh" .
 
-n:seillean_moor_cuthaige_na_coille
-  rdfs:label "seillean mòr cuthaige na coille" ;
-  :part n:seillean_moor_cuthaige , n:coille .
-
-n:seillean_moor_cuthaige_nan_siopsach
-  rdfs:label "seillean mòr cuthaige nan siopsach" ;
-  :part n:seillean_moor_cuthaige , n:siopsach .
-
 n:siopsach
   a :MasculineNoun ;
   rdfs:label "siopsach" .
 
-n:seillean_moor_cuthaige
-  rdfs:label "seillean mòr cuthaige" ;
-  :part n:seillean_moor , a:cuthag.
-
-n:seillean_moor_nan_dearcan_fraoich
-  rdfs:label "seillean mòr nan dearcan fraoich" ;
-  :part n:seillean_moor , n:dearc_fhraoich .
-
 n:dearc_fhraoich
   :rdfs:label "dearc fhraoich" ;
   :part n:dearc , n:fraoch .
-
-n:seillean_moor_traath
-  rdfs:label "seillean mòr tràth" ;
-  :part n:seillean_moor , a:traath .
 
 a:traath
   a :Adjective ;

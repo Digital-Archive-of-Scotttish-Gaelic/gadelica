@@ -58,7 +58,6 @@ if (count($hws)>0) {
 }
 else { echo $id; }
 echo '</h1>';
-
 echo '<div class="list-group list-group-flush">';
 $parts = [];
 foreach($results as $nextResult) {
@@ -148,25 +147,6 @@ SPQR;
 $url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
 $json = file_get_contents($url);
 $results = json_decode($json,false)->results->bindings;
-?>
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-
-    <div class="carousel-item active">
-      poo
-    </div>
-    <div class="carousel-item">
-      boo
-    </div>
-    <div class="carousel-item">
-      doo
-    </div>
-
-
-<?php
-
-
-/*
 $sources = [];
 foreach($results as $nextResult) {
   $g = $nextResult->g->value;
@@ -175,69 +155,82 @@ foreach($results as $nextResult) {
   }
 }
 $sources = array_unique($sources);
-foreach ($sources as $nextSource) {
-      echo '<div class="carousel-item active">';
-      $name = $nextSource;
-      foreach($results as $nextResult) {
-        if ($nextResult->g->value==$nextSource) {
-          $lex = $nextResult->lex->value;
-          if ($lex != '') {
-            $name = $lex;
-          }
-          break;
+echo '<div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="false"><ol class="carousel-indicators">';
+foreach ($sources as $nextIndex=>$nextSource) {
+  if (count($sources)>1) {
+    echo '<li data-target="#carouselExample" data-slide-to="' . $nextIndex . '"';
+    if ($nextIndex == 0) {
+      echo ' class="active"';
+    }
+    echo ' style="filter: invert(50%);"></li>';
+  }
+}
+echo  '</ol><div class="carousel-inner">';
+foreach ($sources as $nextIndex=>$nextSource) {
+  echo '<div class="carousel-item';
+  if ($nextIndex == 0) {
+    echo ' active">';
+  }
+  else { echo '">'; }
+  echo '<div class="card"><div class="card-body">';
+  $name = $nextSource;
+  foreach($results as $nextResult) {
+    if ($nextResult->g->value==$nextSource) {
+      $lex = $nextResult->lex->value;
+      if ($lex != '') {
+        $name = $lex;
+      }
+      break;
+    }
+  }
+  echo '<p>From <em>' . $name . '</em>:</p><h2 class="card-title">';
+  $lhws = [];
+  foreach($results as $nextResult) {
+    if ($nextResult->g->value==$nextSource) {
+      $lhw = $nextResult->lhw->value;
+      if ($lhw != '') {
+        $lhws[] = $lhw;
+      }
+    }
+  }
+  $lhws = array_unique($lhws);
+  if (count($lhws)>0) {
+    echo implode(', ',$lhws);
+  }
+  else { echo $id; }
+  echo '</h2>';
+  $poss = [];
+  foreach($results as $nextResult) {
+    if ($nextResult->g->value==$nextSource) {
+      $posid = $nextResult->posid->value;
+      if ($posid != '') {
+        $pos = $nextResult->pos->value;
+        if ($pos != '') {
+          $poss[] = $pos;
         }
+        else { $poss[] = $posid; }
       }
-      echo $name;
-      echo '</td><td><strong>';
-      $lhws = [];
-      foreach($results as $nextResult) {
-        if ($nextResult->g->value==$nextSource) {
-          $lhw = $nextResult->lhw->value;
-          if ($lhw != '') {
-            $lhws[] = $lhw;
-          }
-        }
+    }
+  }
+  $poss = array_unique($poss);
+  if (count($poss)>0) {
+    echo '<p>' . implode(', ',$poss) . '</p>';
+  }
+  $ens = [];
+  foreach($results as $nextResult) {
+    if ($nextResult->g->value==$nextSource) {
+      $en = $nextResult->en->value;
+      if ($en!='') {
+        $ens[] = $en;
       }
-      $lhws = array_unique($lhws);
-      if (count($lhws)>0) {
-        echo implode(', ',$lhws);
-      }
-      else { echo $id; }
-      echo '</strong></td><td>';
-      $poss = [];
-      foreach($results as $nextResult) {
-        if ($nextResult->g->value==$nextSource) {
-          $posid = $nextResult->posid->value;
-          if ($posid != '') {
-            $pos = $nextResult->pos->value;
-            if ($pos != '') {
-              $poss[] = $pos;
-            }
-            else { $poss[] = $posid; }
-          }
-        }
-      }
-      $poss = array_unique($poss);
-      if (count($poss)>0) {
-        echo implode(', ',$poss);
-      }
-      echo '</td><td><small class="text-muted">';
-      $ens = [];
-      foreach($results as $nextResult) {
-        if ($nextResult->g->value==$nextSource) {
-          $en = $nextResult->en->value;
-          if ($en!='') {
-            $ens[] = $en;
-          }
-        }
-      }
-      $ens = array_unique($ens);
-      foreach ($ens as $nextEn) {
-        echo $nextEn;
-        if ($nextEn != end($ens)) {
-          echo ', ';
-        }
-      }
+    }
+  }
+  $ens = array_unique($ens);
+  if (count($ens)>0) {
+    echo '<p><em>' . implode(', ',$ens) . '</em></p>';
+  }
+
+/*
       echo '</small></td><td><small>';
       $pls = [];
       foreach($results as $nextResult) {
@@ -306,32 +299,40 @@ foreach ($sources as $nextSource) {
       }
       echo '</small></td><td>';
 
-      $parts = [];
-      foreach($results as $nextResult) {
-        if ($nextResult->g->value == $nextSource) {
-          $part = $nextResult->xid->value;
-          if ($part!='') {
-            $parts[] = $nextResult->xid->value;
+*/
+  echo '<p>';
+  $parts = [];
+  foreach($results as $nextResult) {
+    if ($nextResult->g->value == $nextSource) {
+      $part = $nextResult->xid->value;
+      if ($part!='') {
+        $parts[] = $nextResult->xid->value;
+      }
+    }
+  }
+  $parts = array_unique($parts);
+  foreach($parts as $nextPart) {
+    foreach($results as $nextResult) {
+      if ($nextResult->g->value == $nextSource && $nextResult->xid->value == $nextPart) {
+        $xens = [];
+        foreach($results as $nextResult2) {
+          if ($nextResult2->xid->value == $nextPart) {
+            $xens[] = $nextResult2->xen->value;
           }
         }
+        $xens = array_unique($xens);
+        $tooltip = implode(' | ',$xens);
+        echo '<em data-toggle="tooltip" data-placement="top" title="' . $tooltip . '">' . $nextResult->xhw->value . '</em><br/>';
+        break;
       }
-      $parts = array_unique($parts);
-      foreach($parts as $nextPart) {
-        foreach($results as $nextResult) {
-          if ($nextResult->g->value == $nextSource && $nextResult->xid->value == $nextPart) {
-            $xens = [];
-            foreach($results as $nextResult2) {
-              if ($nextResult2->xid->value == $nextPart) {
-                $xens[] = $nextResult2->xen->value;
-              }
-            }
-            $xens = array_unique($xens);
-            $tooltip = implode(' | ',$xens);
-            echo '<em data-toggle="tooltip" data-placement="top" title="' . $tooltip . '">' . $nextResult->xhw->value . '</em><br/>';
-            break;
-          }
-        }
-      }
+    }
+  }
+  echo '</p>';
+
+
+/*
+
+
       echo '</td><td><small class="text-muted">';
       $comments = [];
       foreach($results as $nextResult) {
@@ -345,42 +346,16 @@ foreach ($sources as $nextSource) {
       $comments = array_unique($comments);
       echo implode('<br/>',$comments);
       echo '</small>';
-
-  echo '</div>';
-}
-
-?>
-
-
-
-
-
-
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-<?php
-echo '</div>';
 */
+  echo '</div></div></div>';
+}
+if (count($sources)>1) {
+  echo '<a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">';
+  echo '<span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(50%);"></span>';
+  echo '<span class="sr-only">Next</span></a>';
+}
 ?>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true">N</span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true">P</span>
-              <span class="sr-only">Next</span>
-            </a>
           </div>
         </div>
       </div>

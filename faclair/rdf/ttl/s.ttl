@@ -1,0 +1,103 @@
+@prefix n: <http://faclair.ac.uk/nouns/> .
+@prefix a: <http://faclair.ac.uk/adjectives/> .
+@prefix v: <http://faclair.ac.uk/verbs/> .
+@prefix o: <http://faclair.ac.uk/other/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://faclair.ac.uk/meta/> .
+
+n:seillean
+  a :MasculineNoun ;
+  rdfs:label "seillean" .
+
+n:seillean_caardair
+  rdfs:label "seillean càrdair" ;
+  :part n:seillean , n:caardair .
+
+n:seillean_caardair_cumanta
+  rdfs:label "seillean càrdair cumanta" ;
+  :part n:seillean_caardair , a:cumanta.
+
+n:seillean_caardair_na_cooinnich
+  rdfs:label "seillean càrdair na còinnich" ;
+  :part n:seillean_caardair , n:coinneach .
+
+n:seillean_caardair_nan_lurgann_dearg
+  rdfs:label "seillean càrdair nan lurgann dearg" ;
+  :part n:seillean_caardair , n:lurgann , a:dearg .
+
+n:seillean_diiomhain
+  rdfs:label "seillean dìomhain" ;
+  :part n:seillean , n:diiomhan .
+
+n:seillean_lunndach
+  rdfs:label "seillean lunndach" ;
+  :pl "seilleanan lunndach" ;
+  :part n:seillean , a:lunndach .
+
+n:seillean_meala
+  rdfs:label "seillean meala" ;
+  :part n:seillean , n:mil .
+
+n:seillean_moor
+  rdfs:label "seillean mòr" ;
+  :part n:seillean , n:moor .
+
+n:seillean_moor_a_bhlaair_fhraoich
+  rdfs:label "seillean mòr a’ bhlàir fhraoich" ;
+  :part n:seillean_moor , n:blaar_fraoich .
+
+n:seillean_moor_a_chrios_bhriste
+  rdfs:label "seillean mòr a’ chrios bhriste" ;
+  :part n:seillean_moor , n:crios , a:briste .
+
+n:seillean_moor_an_earbaill_bhaain
+  rdfs:label "seillean mòr an earbaill bhàin" ;
+  :part n:seillean_moor , n:earball , a:baan .
+
+n:seillean_moor_an_earbaill_bhuidhe_bhaan
+  rdfs:label "seillean mòr an earbaill bhuidhe-bhàn" ;
+  :part n:seillean_moor , n:earball , a:buidhe , a:baan .
+
+n:seillean_moor_an_earbaill_dheirg
+  rdfs:label "seillean mòr an earbaill dheirg" ;
+  :part n:seillean_moor , n:earball , a:dearg .
+
+n:seillean_moor_buidhe
+  rdfs:label "seillean mòr buidhe" ;
+  :part n:seillean_moor , a:buidhe .
+
+n:seillean_moor_cuthaige_an_achaidh
+  rdfs:label "seillean mòr cuthaige an achaidh" ;
+  :part n:seillean_moor_na_cuthaige , n:achadh .
+
+n:seillean_moor_cuthaige_bharbut
+  rdfs:label "seillean mòr cuthaige bharbut" ;
+  :part n:seillean_moor_na_cuthaige .
+
+n:seillean_moor_cuthaige_na_coille
+  rdfs:label "seillean mòr cuthaige na coille" ;
+  :part n:seillean_moor_na_cuthaige , n:coille .
+
+n:seillean_moor_cuthaige_nan_siopsach
+  rdfs:label "seillean mòr cuthaige nan siopsach" ;
+  :part n:seillean_moor_na_cuthaige , n:siopsach .
+
+n:seillean_moor_earball_baan_a_Chinn_a_Tuath
+  rdfs:label "seillean mòr earball-bàn a’ Chinn a Tuath" ;
+  :part n:seillean_moor_an_earbaill_bhaain , n:an_ceann_a_tuath .
+
+n:seillean_moor_gaarraidh
+  rdfs:label "seillean mòr gàrraidh" ;
+  :part n:seillean_moor , n:gaarradh .
+
+n:seillean_moor_na_cuthaige
+  rdfs:label "seillean mòr na cuthaige" ;
+  :part n:seillean_moor , n:cuthag.
+
+n:seillean_moor_nan_dearcan_fraoich
+  rdfs:label "seillean mòr nan dearcan fraoich" ;
+  :part n:seillean_moor , n:dearc_fhraoich .
+
+n:seillean_moor_traath
+  rdfs:label "seillean mòr tràth" ;
+  :part n:seillean_moor , a:traath .
