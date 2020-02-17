@@ -21,11 +21,13 @@ $id = $_GET['id'];
 $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
-SELECT ?hw #?pid ?phw ?cid ?chw
+SELECT ?hw ?pos ?en #?pid ?phw ?cid ?chw
 WHERE
 {
   GRAPH <http://faclair.ac.uk/sources/general> {
-    <{$id}> rdfs:label ?hw .
+    OPTIONAL { <{$id}> rdfs:label ?hw . }
+    OPTIONAL { <{$id}> a ?posid . }
+    OPTIONAL { <{$id}> :sense ?en . }
     #OPTIONAL {
     #  <{$id}> :part ?pid .
     #  OPTIONAL { ?pid rdfs:label ?phw . }
@@ -34,6 +36,12 @@ WHERE
     #  ?cid :part <{$id}> .
     #  OPTIONAL { ?cid rdfs:label ?chw . }
     #}
+  }
+  OPTIONAL {
+    GRAPH <http://faclair.ac.uk/sources/general> {
+      <{$id}> a ?posid .
+    }
+    ?posid rdfs:label ?pos .
   }
 }
 SPQR;
@@ -57,6 +65,28 @@ if (count($hws)>0) {
 }
 else { echo $id; }
 echo '</h1>';
+$pos = [];
+foreach($results as $nextResult) {
+  $pos[] = $nextResult->pos->value;
+}
+$pos = array_unique($pos);
+if (count($pos)>0) {
+  echo '<p class="text-muted">';
+  echo implode(', ', $pos);
+  echo '<p>';
+}
+$ens = [];
+foreach($results as $nextResult) {
+  $ens[] = $nextResult->en->value;
+}
+$ens = array_unique($ens);
+if (count($ens)>0) {
+  echo '<p class="text-muted"><em>';
+  echo implode(', ', $ens);
+  echo '</em><p>';
+}
+
+
 echo '<div class="list-group list-group-flush">';
 $parts = [];
 foreach($results as $nextResult) {
@@ -101,6 +131,9 @@ if (count($compounds)>0) {
   echo '</div>';
 }
 echo '</div>';
+
+
+/*
 $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
@@ -229,7 +262,6 @@ foreach ($sources as $nextIndex=>$nextSource) {
     echo '<p><em>' . implode(', ',$ens) . '</em></p>';
   }
 
-/*
       echo '</small></td><td><small>';
       $pls = [];
       foreach($results as $nextResult) {
@@ -298,7 +330,6 @@ foreach ($sources as $nextIndex=>$nextSource) {
       }
       echo '</small></td><td>';
 
-*/
   echo '<p>';
   $parts = [];
   foreach($results as $nextResult) {
@@ -345,7 +376,6 @@ foreach ($sources as $nextIndex=>$nextSource) {
       $comments = array_unique($comments);
       echo implode('<br/>',$comments);
       echo '</small>';
-*/
   echo '</div></div></div>';
 }
 if (count($sources)>1) {
@@ -353,9 +383,11 @@ if (count($sources)>1) {
   echo '<span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(50%);"></span>';
   echo '<span class="sr-only">Next</span></a>';
 }
+*/
 ?>
-            </div>
-          </div>
+          <!--  </div>
+          </div>-->
+
         </div>
       </div>
       <nav class="navbar navbar-dark bg-primary fixed-bottom navbar-expand-lg">
