@@ -5,6 +5,42 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix : <http://faclair.ac.uk/meta/> .
 
+a:sean
+  a :Adjective ;
+  rdfs:label "sean" ;
+  :comp "sìne" .
+
+n:seanair
+  a :MasculineNoun ;
+  rdfs:label "seanair" ;
+  :part a:sean , n:athair ;
+  :gen "seannar" ;
+  :pl "seanairean" .
+
+n:seanmhair
+  a :FeminineNoun ;
+  rdfs:label "seanmhair" ;
+  :part a:sean , n:maathair ;
+  :gen "seanmhar" ;
+  :pl "seanmhairean" .
+
+n:sean_phaarant
+  rdfs:label "sean-phàrant" .
+
+n:seann_seanair
+  rdfs:label "seann seanair" ;
+  :part a:sean , n:seanair ;
+  :pl "seann seanairean" ;
+  :gen "seann seannar" .
+
+n:seann_seanmhair
+  a :FeminineNoun ;
+  rdfs:label "seann seanmhair" ;
+  :part a:sean , n:seanmhair ;
+  :pl "seann seanmhairean" ;
+  :gen "seann seanmhar" .
+
+
 n:seillean
   a :MasculineNoun ;
   rdfs:label "seillean" .

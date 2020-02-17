@@ -5,15 +5,17 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix : <http://faclair.ac.uk/meta/> .
 
+n:leth_bhraathair
+  rdfs:label "leth-bhràthair" ;
+  :part n:leth , n:braathair ;
+  :gen "leth-bhràthar" ;
+  :pl "leth-bhràithrean" .
 
-n:antaidh
+n:leth_phiuthar
   a :FeminineNoun ;
-  rdfs:label "antaidh" ;
-  :gen "antaidh(e)" ;
-  :pl "antaidhean" .
+  rdfs:label "leth-phiuthar" ;
+  :part n:leth , n:piuthair ;
+  :gen "leth-pheathar" ;
+  :pl "leth-pheathraichean" .
 
-n:athair
-  a :MasculineNoun ;
-  rdfs:label "athair" ;
-  :gen "athar" ;
-  :pl "athraichean" .
+  
