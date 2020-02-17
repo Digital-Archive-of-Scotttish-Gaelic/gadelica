@@ -31,25 +31,6 @@
     :gen "seilich" ;
     :pl "seilichean" , "seileachan" .
 
-  n:seillean
-    a :MasculineNoun ;
-    rdfs:label "seillean" ;
-    :sense "a bee" ;
-    :gen "seillein" ;
-    :pl "seilleanan" , "seillein" ;
-    rdfs:comment "Cf beach" .
-
-  n:seillean_moor
-    rdfs:label "seillean-mòr" ;
-    :sense "a bumble-bee" ;
-    :part n:seillean .
-
-
-
-
-
-
-
 # sèileafon
 # seilear
 # seileastair
@@ -61,23 +42,25 @@
 # seilleachan
 # seilleachan-Frangach
 
+
   n:seillean
     a :MasculineNoun ;
     rdfs:label "seillean" ;
     :sense "bee" ;
     :gen "seillein" ;
-    :pl "seilleanan" ;
+    :pl "seilleanan" , "seillein" ;
     rdfs:comment "Cf beach" .
+
+  n:seillean_moor
+    rdfs:label "seillean-mòr" ;
+    :sense "bumble-bee" ;
+    :part n:seillean .
+
 
 # laigh an sgaoth sheillean air preas
 # the swarm of bees landed on a bush
 #
 # sgeap sheillean
 # a beehive
-
-  n:seillean_moor
-    a :MasculineNoun ;
-    rdfs:label "seillean-mòr" ;
-    :sense "bumble-bee" .
 
 }

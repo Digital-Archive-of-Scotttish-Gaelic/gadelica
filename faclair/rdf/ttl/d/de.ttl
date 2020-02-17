@@ -1,0 +1,130 @@
+@prefix n: <http://faclair.ac.uk/nouns/> .
+@prefix a: <http://faclair.ac.uk/adjectives/> .
+@prefix v: <http://faclair.ac.uk/verbs/> .
+@prefix o: <http://faclair.ac.uk/other/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://faclair.ac.uk/meta/> .
+
+n:dealan_dee
+  rdfs:label "dealan dè" ;
+  :sense "butterfly" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:dealbh
+  a :FeminineNoun ;
+  rdfs:label "dealbh" ;
+  :sense "portrait" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:dealbh_camara
+  rdfs:label "dealbh camara" ;
+  :sense "photograph" ;
+  :part n:dealbh ;
+  rdfs:comment "[BMh 2013]" .
+
+n:dealbh_neo_bheoo
+  rdfs:label "dealbh neo-bheò" ;
+  :sense "still life" ;
+  :part n:dealbh ;
+  rdfs:comment "[BMh 2013]" .
+
+n:dealbh_tire_dath_uisge
+  a :FeminineNoun ;
+  rdfs:label "dealbh-tire dath-uisge" ;
+  :sense "watercolour landscape" ;
+  :part n:dealbh , n:dathan_uisge ;
+  rdfs:comment "[BMh 2013]" .
+
+v:deean_lethbhreac_gleidhidh
+  a :Verb ;
+  rdfs:label "dèan lethbhreac-gleidhidh" ;
+  :sense "back up" ;
+  rdfs:comment "[BMh 2013]" .
+
+v:dearbh_litreachadh
+  rdfs:label "dearbh litreachadh" ;
+  :sense "spell check" ;
+  :part v:dearbh , n:litreachadh ;
+  rdfs:comment "[BMh 2013]" .
+
+n:dearc_luachrach
+  rdfs:label "dearc luachrach" ;
+  :sense "newt" ;
+  rdfs:comment "[BMh 2013]" .
+
+a:dearg
+  rdfs:label "dearg" ;
+  :sense "red" ;
+  rdfs:comment "[BMh 2013]" .
+
+v:deasaich
+  a :Verb ;
+  rdfs:label "deasaich" ;
+  :sense "edit" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:deasg
+  a :MasculineNoun ;
+  rdfs:label "deasg" ;
+  :sense "desk" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:deic
+  a :FeminineNoun ;
+  rdfs:label "deic" ;
+  :sense "deck" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:deireadh
+  a :MasculineNoun ;
+  rdfs:label "deireadh" ;
+  :sense "stern" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:deise
+  a :FeminineNoun ;
+  rdfs:label "deise" ;
+  :sense "suit" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:deise_armachd
+  rdfs:label "deise armachd" ;
+  :sense "suit of armour" ;
+  rdfs:comment "[BMh 2013]" ;
+  :part n:deise , n:armachd .
+
+n:deise_diion_teine
+  rdfs:label "deise dìon-teine" ;
+  :sense "fireproof suit" ;
+  :part n:deise , n:diion , n:teine ;
+  rdfs:comment "[BMh 2013]" .
+
+n:deise_faanais
+  rdfs:label "deise fànais" ;
+  :sense "spacesuit" ;
+  :part n:deise , n:faanas ;
+  rdfs:comment "[BMh 2013]" .
+
+n:deise_fhliuch
+  rdfs:label "deise fhliuch" ;
+  :sense "wet suit" ;
+  :part n:deise , a:fliuch ;
+  rdfs:comment "[BMh 2013]" .
+
+n:deoch
+  a :FeminineNoun ;
+  rdfs:label "deoch" ;
+  :sense "drink" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:deoch_ghasach
+  rdfs:label "deoch ghasach" ;
+  :sense "fizzy drink" ;
+  :part n:deoch , a:gasach ;
+  rdfs:comment "[BMh 2013]" .
+
+n:deuchainn
+  a :MasculineNoun ;
+  rdfs:label "deuchainn" ;
+  :sense "exam" ;
+  rdfs:comment "[BMh 2013]" .

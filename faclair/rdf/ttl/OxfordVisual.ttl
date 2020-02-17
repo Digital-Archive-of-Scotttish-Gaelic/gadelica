@@ -5,149 +5,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix : <http://faclair.ac.uk/meta/> .
 
-# all cleaned.
-# needs to have parts added for most
-
-n:athair
-  a :MasculineNoun ;
-  rdfs:label "athair" ;
-  :gen "athar" ;
-  :pl "athraichean" .
-
-n:maathair
-  a :FeminineNoun ;
-  rdfs:label "màthair" ;
-  :gen "màthar" ;
-  :pl "màthraichean" .
-
-n:piuthar
-  a :FeminineNoun ;
-  rdfs:label "piuthar" ;
-  :gen "peathar" ;
-  :pl "peathraichean" .
-
-n:braathair
-  a :MasculineNoun ;
-  rdfs:label "bràthair" ;
-  :gen "bràthar" ;
-  :pl "bràithrean" .
-
-n:seanmhair
-  a :FeminineNoun ;
-  rdfs:label "seanmhair" ;
-  :part a:sean , n:maathair ;
-  :gen "seanmhar" ;
-  :pl "seanmhairean" .
-
-a:sean
-  a :Adjective ;
-  rdfs:label "sean" ;
-  :comp "sìne" .
-
-n:seanair
-  a :MasculineNoun ;
-  rdfs:label "seanair" ;
-  :part a:sean , n:athair ;
-  :gen "seannar" ;
-  :pl "seanairean" .
-
-n:seann_seanair
-  rdfs:label "seann seanair" ;
-  :part a:sean , n:seanair ;
-  :pl "seann seanairean" ;
-  :gen "seann seannar" .
-
-n:seann_seanmhair
-  a :FeminineNoun ;
-  rdfs:label "seann seanmhair" ;
-  :part a:sean , n:seanmhair ;
-  :pl "seann seanmhairean" ;
-  :gen "seann seanmhar" .
-
-n:oide
-  a :MasculineNoun ;
-  rdfs:label "oide" ;
-  :gen "oide" ;
-  :pl "oidean" .
-
-n:uncail
-  a :MasculineNoun ;
-  rdfs:label "uncail" ;
-  :gen "uncail" ;
-  :pl "uncailean" .
-
-n:antaidh
-  a :FeminineNoun ;
-  rdfs:label "antaidh" ;
-  :gen "antaidh(e)" ;
-  :pl "antaidhean" .
-
-n:caraid_as_fheaarr
-  rdfs:label "caraid as fheàrr" ;
-  :part n:caraid , a:math ;
-  :pl "càirdean as fheàrr" ;
-  :gen "caraid as fheàrr" .
-
-n:leth_bhraathair
-  rdfs:label "leth-bhràthair" ;
-  :part n:leth , n:braathair ;
-  :gen "leth-bhràthar" ;
-  :pl "leth-bhràithrean" .
-
-n:leth_phiuthar
-  a :FeminineNoun ;
-  rdfs:label "leth-phiuthar" ;
-  :part n:leth , n:piuthair ;
-  :gen "leth-pheathar" ;
-  :pl "leth-pheathraichean" .
-
-n:co_ogha
-  rdfs:label "co-ogha" ;
-  :gen "co-ogha" ;
-  :pl "co-oghaichean" ;
-  :part n:ogha .
-
-n:co_ogha
-  a :MasculineNoun ;
-  rdfs:label "ogha" ;
-  :gen "ogha" ;
-  :pl "oghaichean" .
-
-n:caraid
-  a :MasculineNoun ;
-  rdfs:label "caraid" ;
-  :gen "caraid" ;
-  :pl "càirdean" .
-
-n:teaghlach
-  a :MasculineNoun ;
-  rdfs:label "teaghlach" ;
-  :gen "teaghlaich" ;
-  :pl "teaghlaichean" .
-
-n:teaghlach_farsaing
-  rdfs:label "teaghlach farsaing" .
-
-n:paarant
-  rdfs:label "pàrant" .
-
-n:sean_phaarant
-  rdfs:label "sean-phàrant" .
-
-n:neach_cuuraim
-  rdfs:label "neach cùraim" .
-
-n:falt
-  a :MasculineNoun ;
-  rdfs:label "falt" .
-
-n:maoil
-  a :FeminineNoun ;
-  rdfs:label "maoil" .
-
-n:mala
-  a :FeminineNoun ;
-  rdfs:label "mala" .
+# All of these need to be moved to alphabetic files
 
 n:suuil
   a :FeminineNoun ;
@@ -181,9 +39,7 @@ n:bodhaig
   a :FeminineNoun ;
   rdfs:label "bodhaig" .
 
-n:aodann
-  a :MasculineNoun ;
-  rdfs:label "aodann" .
+
 
 n:ceann
   a :MasculineNoun ;
@@ -205,9 +61,7 @@ n:gluuin
   a :FeminineNoun ;
   rdfs:label "glùin" .
 
-n:amhach
-  a :FeminineNoun ;
-  rdfs:label "amhach" .
+
 
 n:gualann
   a :FeminineNoun ;
@@ -241,9 +95,7 @@ n:saail
   a :FeminineNoun ;
   rdfs:label "sàil" .
 
-n:adhbrann
-  a :FeminineNoun ;
-  rdfs:label "adhbrann" .
+
 
 n:troigh
   a :FeminineNoun ;
@@ -264,9 +116,7 @@ n:cliathan
   a :MasculineNoun ;
   rdfs:label "cliathan" .
 
-n:aisean
-  a :FeminineNoun ;
-  rdfs:label "aisean" .
+
 
 n:cnaaimh_droma
   rdfs:label "cnàimh droma" .
@@ -307,17 +157,13 @@ n:sgoornan
   a :MasculineNoun ;
   rdfs:label "sgòrnan" .
 
-n:adha
-  a :MasculineNoun ;
-  rdfs:label "adha" .
+
 
 n:dubhag
   a :FeminineNoun ;
   rdfs:label "dubhag" .
 
-n:aotroman
-  a :MasculineNoun ;
-  rdfs:label "aotroman" .
+
 
 n:sgamhan
   a :MasculineNoun ;
@@ -403,9 +249,7 @@ a:saamhach
   a :Adjective ;
   rdfs:label "sàmhach" .
 
-a:aard
-  a :Adjective ;
-  rdfs:label "àrd" .
+
 
 n:ciadfath
   rdfs:label "ciadfath" .
@@ -433,8 +277,7 @@ a:moiteil
   a :Adjective ;
   rdfs:label "moiteil" .
 
-o:air_bhioran
-  rdfs:label "air bhioran" .
+
 
 n:iongnadh
   a :MasculineNoun ;
@@ -455,8 +298,7 @@ v:gaaireachdaich
 o:troimh_a_cheeile
   rdfs:label "troimh-a-chèile" .
 
-o:air_mo_bhooradh
-  rdfs:label "air (mo) bhòradh" .
+
 
 n:dachaigh
   rdfs:label "dachaigh" .
@@ -515,9 +357,7 @@ n:garaids
   a :FeminineNoun ;
   rdfs:label "garaids" .
 
-n:amar
-  a :MasculineNoun ;
-  rdfs:label "amar" .
+
 
 n:taigh_beag
   rdfs:label "taigh beag" .
@@ -631,9 +471,7 @@ n:pile
   a :FeminineNoun ;
   rdfs:label "pile" .
 
-n:acfhainn
-  a :FeminineNoun ;
-  rdfs:label "acfhainn" .
+
 
 n:spong
   a :MasculineNoun ;
@@ -661,8 +499,7 @@ n:biadh
   a :FeminineNoun ;
   rdfs:label "biadh" .
 
-n:aodach
-  rdfs:label "aodach" .
+
 
 n:deoch
   a :FeminineNoun ;
@@ -754,9 +591,6 @@ n:pasta
 n:peasair_nan_luch
   rdfs:label "peasair nan luch" .
 
-n:aran
-  a :MasculineNoun ;
-  rdfs:label "aran" .
 
 n:coirce
   a :MasculineNoun ;
@@ -870,9 +704,7 @@ n:piobar
   a :MasculineNoun ;
   rdfs:label "piobar" .
 
-n:abhacaado
-  a :MasculineNoun ;
-  rdfs:label "abhacàdo" .
+
 
 n:peasair
   a :FeminineNoun ;
@@ -1006,9 +838,7 @@ n:stoc
   a :MasculineNoun ;
   rdfs:label "stoc" .
 
-n:ad
-  a :FeminineNoun ;
-  rdfs:label "ad" .
+
 
 n:miotag
   a :FeminineNoun ;
@@ -1025,8 +855,7 @@ n:sgiorta
   a :FeminineNoun ;
   rdfs:label "sgiorta" .
 
-n:aodach_laaitheil
-  rdfs:label "aodach làitheil" .
+
 
 n:bana_iimpire_Iapaanach
   rdfs:label "bana-ìmpire Iapànach" .
@@ -1105,9 +934,7 @@ n:clog
   a :FeminineNoun ;
   rdfs:label "clog" .
 
-n:aparan
-  a :MasculineNoun ;
-  rdfs:label "aparan" .
+
 
 n:taidh
   a :FeminineNoun ;
@@ -1117,8 +944,7 @@ n:deise
   a :FeminineNoun ;
   rdfs:label "deise" .
 
-n:ad_aard
-  rdfs:label "ad àrd" .
+
 
 n:peitean
   a :MasculineNoun ;
@@ -1157,9 +983,7 @@ n:deasg
   a :MasculineNoun ;
   rdfs:label "deasg" .
 
-n:aaireamhair
-  a :MasculineNoun ;
-  rdfs:label "àireamhair" .
+
 
 n:leabhar_eacarsaichean
   rdfs:label "leabhar eacarsaichean" .
@@ -1254,9 +1078,7 @@ n:innleadair
   a :MasculineNoun ;
   rdfs:label "innleadair" .
 
-n:ailtire
-  a :MasculineNoun ;
-  rdfs:label "ailtire" .
+
 
 n:lighiche_spreeidh
   rdfs:label "lighiche sprèidh" .
@@ -1333,8 +1155,7 @@ n:daaibhear
   a :MasculineNoun ;
   rdfs:label "dàibhear" .
 
-n:ad_chruaidh
-  rdfs:label "ad chruaidh" .
+
 
 n:sgriubhaire
   a :MasculineNoun ;
@@ -1509,9 +1330,7 @@ v:leum
   a :Verb ;
   rdfs:label "leum" .
 
-v:amais
-  a :Verb ;
-  rdfs:label "amais" .
+
 
 v:glaidhd
   a :Verb ;
@@ -1836,9 +1655,7 @@ n:camara
   a :MasculineNoun ;
   rdfs:label "camara" .
 
-n:aard_uurlar
-  a :MasculineNoun ;
-  rdfs:label "àrd-ùrlar" .
+
 
 n:solas
   a :MasculineNoun ;
@@ -1919,8 +1736,7 @@ n:proogram_spoors
 n:proogram_coomhraidh
   rdfs:label "prògram còmhraidh" .
 
-n:aithriseachd_naadair
-  rdfs:label "aithriseachd nàdair" .
+
 
 n:proogram_chleasan
   rdfs:label "prògram chleasan" .
@@ -1984,8 +1800,7 @@ n:reeile_bruthaich
 n:carbad_caabaill
   rdfs:label "carbad càbaill" .
 
-n:aardaichear_sgithidh
-  rdfs:label "àrdaichear sgithidh" .
+
 
 n:treeana
   a :FeminineNoun ;
@@ -2163,8 +1978,6 @@ n:einnsean_diet
 n:itealan_moor
   rdfs:label "itealan mòr" .
 
-n:aarainn_stiuuiridh
-  rdfs:label "àrainn stiùiridh" .
 
 n:soitheach
   a :MasculineNoun ;
@@ -2198,14 +2011,9 @@ n:baata_aiseig
   rdfs:label "bàta aiseig" ;
   :part n:baata , n:aiseag .
 
-n:aiseag
-  a :MasculineNoun ;
-  rdfs:label "aiseag" ;
-  :part v:aisig .
 
-v:aisig
-  a :Verb ;
-  rdfs:label "aisig" .
+
+
 
 n:baata_motair
   rdfs:label "bàta motair" ;
@@ -2253,9 +2061,7 @@ v:tooisich
   a :Verb ;
   rdfs:label "tòisich" .
 
-n:acair
-  a :MasculineNoun ;
-  rdfs:label "acair" .
+
 
 n:boord_luinge
   rdfs:label "bòrd luinge" ;
@@ -2318,9 +2124,7 @@ n:baata_seoolaidh
   rdfs:label "bàta seòlaidh" ;
   :part n:baata , n:seooladh .
 
-a:Arabach
-  a :Adjective ;
-  rdfs:label "Arabach" .
+
 
 n:catamaran
   a :MasculineNoun ;
@@ -2507,9 +2311,7 @@ n:oor
   a :MasculineNoun ;
   rdfs:label "òr" .
 
-n:airgead
-  a :MasculineNoun ;
-  rdfs:label "airgead" .
+
 
 n:umha
   a :MasculineNoun ;
@@ -3027,9 +2829,7 @@ n:boo
   a :FeminineNoun ;
   rdfs:label "bò" .
 
-n:asal
-  a :MasculineNoun ;
-  rdfs:label "asal" .
+
 
 n:tunnag
   a :FeminineNoun ;
@@ -3113,9 +2913,6 @@ n:cobra_EEipheiteach
 n:losgann_nan_gath_puinnseanta
   rdfs:label "losgann nan gath puinnseanta" .
 
-n:ailigeutair
-  a :MasculineNoun ;
-  rdfs:label "ailigeutair" .
 
 n:crogall
   a :MasculineNoun ;
@@ -4062,8 +3859,7 @@ n:innearadh
   a :MasculineNoun ;
   rdfs:label "innearadh" .
 
-n:ath_chleachdadh
-  rdfs:label "ath-chleachdadh" .
+
 
 n:saabhaladh_cumhachd
   rdfs:label "sàbhaladh cumhachd" .
@@ -4092,9 +3888,7 @@ n:faiche
   a :FeminineNoun ;
   rdfs:label "faiche" .
 
-n:aardchlaar
-  a :MasculineNoun ;
-  rdfs:label "àrdchlàr" .
+
 
 n:cnoc
   a :MasculineNoun ;
@@ -4267,9 +4061,7 @@ v:falbh
   a :Verb ;
   rdfs:label "falbh" .
 
-n:aaile
-  a :MasculineNoun ;
-  rdfs:label "àile" .
+
 
 n:sgruudaire
   a :MasculineNoun ;
@@ -4312,17 +4104,7 @@ n:beatha
   a :FeminineNoun ;
   rdfs:label "beatha" .
 
-n:aonad_obrachaidh_sgiobaichte
-  rdfs:label "aonad obrachaidh sgiobaichte" ;
-  :part n:aonad_obrachaidh , a:sgiobaichte .
 
-n:aonad_obrachaidh
-  rdfs:label "aonad obrachaidh" ;
-  :part n:aonad , n:obrachadh .
-
-n:aonad
-  a :MasculineNoun ;
-  rdfs:label "aonad" .
 
 n:obrachadh
   a :MasculineNoun ;
@@ -4528,18 +4310,7 @@ n:saideal_amhairc
   rdfs:label "saideal amhairc" ;
   :part n:saideal , n:amharc .
 
-n:amharc
-  a :MasculineNoun ;
-  rdfs:label "amharc" ;
-  :part v:amhairc .
 
-v:amhairc
-  a :Verb ;
-  rdfs:label "amhairc" .
-
-n:an_Talamh
-  rdfs:label "an Talamh" ;
-  :part n:talamh .
 
 n:talamh
   a :MasculineNoun ;
@@ -4749,9 +4520,6 @@ a:falamh
   a :Adjective ;
   rdfs:label "falamh" .
 
-a:aard
-  a :Adjective ;
-  rdfs:label "àrd" .
 
 a:iiosal
   a :Adjective ;
@@ -4776,14 +4544,6 @@ a:duuinte
 a:trom
   a :Adjective ;
   rdfs:label "trom" .
-
-a:aotrom
-  a :Adjective ;
-  rdfs:label "aotrom" .
-
-a:aard
-  a :Adjective ;
-  rdfs:label "àrd" .
 
 a:saamhach
   a :Adjective ;
