@@ -31,6 +31,12 @@ n:caal
   :sense "cabbage" ;
   rdfs:comment "[BMh 2013]" .
 
+n:camara
+  a :MasculineNoun ;
+  rdfs:label "camara" ;
+  :sense "camera" ;
+  rdfs:comment "[BMh 2013]" .
+
 n:caol_duuirn
   a :MasculineNoun ;
   rdfs:label "caol dùirn" ;
@@ -41,6 +47,18 @@ n:caolan
   a :MasculineNoun ;
   rdfs:label "caolan" ;
   :sense "intestine" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:caar_oighreachd
+  rdfs:label "càr oighreachd" ;
+  :sense "estate car" ;
+  :part n:caar , n:oighreachd ;
+  rdfs:comment "[BMh 2013]" .
+
+n:caar_spoors
+  rdfs:label "càr spòrs" ;
+  :sense "sports car" ;
+  :part n:caar , n:spoors ;
   rdfs:comment "[BMh 2013]" .
 
 n:caraid
@@ -59,10 +77,71 @@ n:caraid_as_fheaarr
   :sense "best friend" ;
   rdfs:comment "[BMh 2013]" .
 
+n:carbad_adhair
+  rdfs:label "carbad adhair" ;
+  :pl "carbadan adhair" ;
+  :sense "aircraft" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:carbad_caabaill
+  rdfs:label "carbad càbaill" ;
+  :sense "cable car" ;
+  :part n:carbad ;
+  rdfs:comment "[BMh 2013]" .
+
+n:carbad_eiridinn
+  rdfs:label "carbad eiridinn" ;
+  :sense "ambulance" ;
+  :part n:carbad ;
+  rdfs:comment "[BMh 2013]" .
+
+n:carbad_luchd_siubhail
+  rdfs:label "carbad luchd-siubhail" ;
+  :pl "carbadan luchd-siubhail" ;
+  :sense "passenger vehicle" ;
+  :part n:carbad , n:neach_siubhail ;
+  rdfs:comment "[BMh 2013]" .
+
+n:carbad_muir_thiireach
+  rdfs:label "carbad muir-thìreach" ;
+  :sense "amphibious vehicle" ;
+  :part n:carbad , a:muir_thiireach ;
+  rdfs:comment "[BMh 2013]" .
+
+n:carbad_poilis
+  rdfs:label "carbad poilis" ;
+  :sense "police car" ;
+  :part n:carbad , n:poileas ;
+  rdfs:comment "[BMh 2013]" .
+
+n:carbad_sneachda
+  rdfs:label "carbad sneachda" ;
+  :sense "snowmobile" ;
+  :part n:carbad , n:sneachd ;
+  rdfs:comment "[BMh 2013]" .
+
+n:carbad_spoors_uidheamaichte
+  rdfs:label "carbad spòrs uidheamaichte" ;
+  :sense "SUV" , "sports utility vehicle" ;
+  :part n:carbad , n:spoors , a:uidheamaichte ;
+  rdfs:comment "[BMh 2013]" .
+
+n:carbad_trom_bhathar
+  rdfs:label "carbad trom-bhathar" ;
+  :sense "heavy goods vehicle" ;
+  :part n:carbad , a:trom , n:bathar ;
+  rdfs:comment "[BMh 2013]" .
+
 n:caardagan
   a :MasculineNoun ;
   rdfs:label "càrdagan" ;
   :sense "cardigan" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cartuun
+  a :MasculineNoun ;
+  rdfs:label "cartùn" ;
+  :sense "cartoon" ;
   rdfs:comment "[BMh 2013]" .
 
 n:cas
@@ -82,6 +161,12 @@ n:casachain
   a :PluralNoun ;
   rdfs:label "casachain" ;
   :sense "leggings" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:catamaran
+  a :MasculineNoun ;
+  rdfs:label "catamaran" ;
+  :sense "catamaran" ;
   rdfs:comment "[BMh 2013]" .
 
 n:ceann
@@ -108,10 +193,52 @@ n:ceeic_chupa
   :sense "cupcake" ;
   rdfs:comment "[BMh 2013]" .
 
+n:ceeir
+  a :MasculineNoun ;
+  rdfs:label "cèir" ;
+  :sense "wax" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:ceeis
+  a :FeminineNoun ;
+  rdfs:label "cèis" ;
+  :sense "envelope" ;
+  rdfs:comment "[BMh 2013]" .
+
 n:ceool
   a :MasculineNoun ;
   rdfs:label "ceòl" ;
   :sense "music" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:ceool_pop
+  rdfs:label "ceòl pop" ;
+  :sense "pop" ;
+  :part n:ceool ;
+  rdfs:comment "[BMh 2013]" .
+
+n:ceool_reigidh
+  rdfs:label "ceòl reigidh" ;
+  :sense "reggae" ;
+  :part n:ceool ;
+  rdfs:comment "[BMh 2013]" .
+
+n:ceool_rap
+  rdfs:label "ceòl rap" ;
+  :sense "rap" ;
+  :part n:ceool ;
+  rdfs:comment "[BMh 2013]" .
+
+n:ceool_anaim
+  rdfs:label "ceòl anaim" ;
+  :sense "soul" ;
+  :part n:ceool , n:anam ;
+  rdfs:comment "[BMh 2013]" .
+
+n:ceool_cruinne
+  rdfs:label "ceòl cruinne" ;
+  :sense "world music" ;
+  :part n:ceool , n:cruinne ;
   rdfs:comment "[BMh 2013]" .
 
 n:ciadfath
@@ -137,10 +264,22 @@ n:ciomoona
   :sense "kimono" ;
   rdfs:comment "[BMh 2013]" .
 
+n:clach
+  a :FeminineNoun ;
+  rdfs:label "clach" ;
+  :sense "stone" ;
+  rdfs:comment "[BMh 2013]" .
+
 n:claigeann
   a :MasculineNoun ;
   rdfs:label "claigeann" ;
   :sense "skull" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:claairnead
+  a :FeminineNoun ;
+  rdfs:label "clàirnead" ;
+  :sense "clarinet" ;
   rdfs:comment "[BMh 2013]" .
 
 n:claisneachd
@@ -165,6 +304,24 @@ n:claar_DVD
   rdfs:label "clàr DVD" ;
   :sense "DVD" , "digital video disk" ;
   :part n:claar ;
+  rdfs:comment "[BMh 2013]" .
+
+n:claarsach
+  a :FeminineNoun ;
+  rdfs:label "clàrsach" ;
+  :sense "harp" ;
+  rdfs:comment "[BMh 2013]" .
+
+a:clasaigeach
+  a :Adjective ;
+  rdfs:label "clasaigeach" ;
+  :sense "classical" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cleasaiche
+  a :MasculineNoun ;
+  rdfs:label "cleasaiche" ;
+  :sense "actor" ;
   rdfs:comment "[BMh 2013]" .
 
 n:cleooca
@@ -196,6 +353,12 @@ n:clogaid
   a :FeminineNoun ;
   rdfs:label "clogaid" ;
   :sense "helmet" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:clooimh
+  a :MasculineNoun ;
+  rdfs:label "clòimh" ;
+  :sense "wool" ;
   rdfs:comment "[BMh 2013]" .
 
 n:cluas
@@ -260,6 +423,12 @@ n:co_ogha
   :sense "cousin" ;
   rdfs:comment "[BMh 2013]" .
 
+n:co_thaathadair
+  a :MasculineNoun ;
+  rdfs:label "co-thàthadair" ;
+  :sense "synthesiser" ;
+  rdfs:comment "[BMh 2013]" .
+
 n:coocaire
   a :MasculineNoun ;
   rdfs:label "còcaire" ;
@@ -270,6 +439,12 @@ n:cofaidh
   a :MasculineNoun ;
   rdfs:label "cofaidh" ;
   :sense "coffee" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:coidse
+  a :FeminineNoun ;
+  rdfs:label "coidse" ;
+  :sense "coach" ;
   rdfs:comment "[BMh 2013]" .
 
 n:coirce
@@ -296,10 +471,27 @@ n:coiridh
   :sense "curry" ;
   rdfs:comment "[BMh 2013]" .
 
+n:comadaidh
+  a :MasculineNoun ;
+  rdfs:label "comadaidh" ;
+  :sense "comedy" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:coomhdail
+  rdfs:label "còmhdail" ;
+  :sense "transport" ;
+  rdfs:comment "[BMh 2013]" .
+
 n:consoil_gheamannan
   rdfs:label "consoil gheamannan" ;
   :sense "games console" ;
   :part n:geama ;
+  rdfs:comment "[BMh 2013]" .
+
+n:copar
+  a :MasculineNoun ;
+  rdfs:label "copar" ;
+  :sense "copper" ;
   rdfs:comment "[BMh 2013]" .
 
 n:corrag
@@ -318,7 +510,31 @@ n:coota
 n:cotan
   a :MasculineNoun ;
   rdfs:label "cotan" ;
-  :sense "cotton wool" ;
+  :sense "cotton" , "cotton wool" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:crann
+  a :MasculineNoun ;
+  rdfs:label "crann" ;
+  :sense "crane" , "mast" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:crann_conaltraidh
+  rdfs:label "crann conaltraidh" ;
+  :sense "communications mast" ;
+  :part n:crann , n:conaltradh ;
+  rdfs:comment "[BMh 2013]" .
+
+n:crann_sgooide
+  rdfs:label "crann sgòide" ;
+  :sense "boom" ;
+  :part n:crann ;
+  rdfs:comment "[BMh 2013]" .
+
+n:crann_sneachda
+  rdfs:label "crann sneachda" ;
+  :sense "snow plough" ;
+  :part n:crann , n:sneachd ;
   rdfs:comment "[BMh 2013]" .
 
 n:creeadh_modailidh
@@ -366,6 +582,12 @@ n:cruachan
   :sense "hip" ;
   rdfs:comment "[BMh 2013]" .
 
+a:cruaidh
+  a :Adjective ;
+  rdfs:label "cruaidh" ;
+  :sense "hard" ;
+  rdfs:comment "[BMh 2013]" .
+
 n:cruinne
   a :MasculineNoun ;
   rdfs:label "cruinne" ;
@@ -397,17 +619,60 @@ n:cucair
   :sense "cooker" ;
   rdfs:comment "[BMh 2013]" .
 
+n:cuairt_dealain
+  rdfs:label "cuairt dealain" ;
+  :sense "electrical circuit" ;
+  :part n:cuairt , n:dealan ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cuuirtear
+  a :MasculineNoun ;
+  rdfs:label "cùirtear" ;
+  :pl "cùirtearan" ;
+  :sense "curtain" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:culaidh
+  a :FeminineNoun ;
+  rdfs:label "culaidh" ;
+  :sense "costume" ;
+  rdfs:comment "[BMh 2013]" .
+
 n:culaidh_aosmhor
   a :FeminineNoun ;
   rdfs:label "culaidh aosmhor" ;
   :pl "culaidhean aosmhor" ;
   :sense "historical costume" ;
+  :part n:culaidh , a:aosmhor ;
   rdfs:comment "[BMh 2013]" .
 
 n:cularan
   a :MasculineNoun ;
   rdfs:label "cularan" ;
   :sense "cucumber" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cumhachd
+  rdfs:label "cumhachd" ;
+  :sense "power" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cumhachd_gaoithe
+  rdfs:label "cumhachd gaoithe" ;
+  :sense "wind power" ;
+  :part n:cumhachd , n:gaoth ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cumhachd_niuuclasach
+  rdfs:label "cumhachd niùclasach" ;
+  :sense "nuclear energy" ;
+  :part n:cumhachd , a:niuuclasach ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cumhachd_uisge_dealain
+  rdfs:label "cumhachd uisge-dealain" ;
+  :sense "hydroelectric power" ;
+  :part n:cumhachd , n:uisge , n:dealan ;
   rdfs:comment "[BMh 2013]" .
 
 n:cur_seachad
@@ -419,6 +684,12 @@ n:currac
   a :MasculineNoun ;
   rdfs:label "currac" ;
   :sense "cap" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:curachan
+  a :MasculineNoun ;
+  rdfs:label "curachan" ;
+  :sense "canoe" ;
   rdfs:comment "[BMh 2013]" .
 
 n:curran

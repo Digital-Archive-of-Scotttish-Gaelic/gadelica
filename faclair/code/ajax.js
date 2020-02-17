@@ -1,5 +1,7 @@
 $(function() {
 
+// still need to get Gaelic search working
+
   $('#searchForm').submit(function(e){
     event.preventDefault();
     $('#resultsTable tbody').empty();
@@ -21,7 +23,6 @@ $(function() {
       $.getJSON(url, function(data) {
         addData(data);
       }).done(function() {
-        /*
         $('#resultsTable tbody').append('<tr><td></td><td></td></tr>');
         var url2 = 'ajax.php?action=getMoreEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
         $.getJSON(url2, function(data2) {
@@ -39,7 +40,6 @@ $(function() {
             });
           });
         });
-        */
       });
     }
     else {
@@ -64,27 +64,16 @@ function addData(data) {
     id = v.id.value;
     if (ids.indexOf(id)<0) { // unique values only
       ids.push(id);
-      alert(id);
     }
   });
   $.each(ids, function(k,id) { // display each entry in a row
-    var hw = '';
+    var hws = [];
     $.each(data, function(k,v) {
-      // prioritise headwords from the general list, if any
-      if (v.id.value == id && v.gdlex.value == 'http://faclair.ac.uk/sources/general') {
-        hw = v.gd.value;
-        return;
+      var gd = v.gd.value;
+      if (v.id.value == id && hws.indexOf(gd)<0) { // unique
+        hws.push(gd);
       }
     });
-    if (hw=='') {
-      // otherwise just use first headword you find
-      $.each(data, function(k,v) {
-        if (v.id.value == id) {
-          hw = v.gd.value;
-          return;
-        }
-      });
-    }
     var ens = [];
     $.each(data, function(k,v) {
       var en = v.en.value;
@@ -93,6 +82,11 @@ function addData(data) {
       }
     });
     var enStr = ens.join(', ');
-    $('#resultsTable tbody').append('<tr><td><a href="viewEntry.php?id=' + encodeURI(id) + '">' + hw + '</a></td><td>' + enStr + '</td></tr>');
+    var hwStr;
+    if (hws.length>0) {
+      hwStr = hws.join(', ');
+    }
+    else { hwStr = id; }
+    $('#resultsTable tbody').append('<tr><td><a href="viewEntry.php?id=' + encodeURI(id) + '">' + hwStr + '</a></td><td>' + enStr + '</td></tr>');
   });
 }

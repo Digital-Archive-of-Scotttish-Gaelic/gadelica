@@ -65,11 +65,13 @@ function getEnglishExact() {
   $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
-SELECT DISTINCT ?id ?gd ?en ?lex ?gdlex
+SELECT DISTINCT ?id ?gd ?en
 WHERE
 {
-  GRAPH ?gdlex {
-    ?id rdfs:label ?gd .
+  OPTIONAL {
+    GRAPH <http://faclair.ac.uk/sources/general> {
+      ?id rdfs:label ?gd .
+    }
   }
   GRAPH ?lex {
     ?id :sense ?en .
@@ -124,11 +126,13 @@ function getEnglishPrefix() {
   $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
-SELECT DISTINCT ?id ?gd ?en ?lex ?gdlex
+SELECT DISTINCT ?id ?gd ?en
 WHERE
 {
-  GRAPH ?gdlex {
-    ?id rdfs:label ?gd .
+  OPTIONAL {
+    GRAPH <http://faclair.ac.uk/sources/general> {
+      ?id rdfs:label ?gd .
+    }
   }
   GRAPH ?lex {
     ?id :sense ?en .
@@ -170,11 +174,13 @@ function getEnglishSuffix() {
   $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
-SELECT DISTINCT ?id ?gd ?en ?lex ?gdlex
+SELECT DISTINCT ?id ?gd ?en
 WHERE
 {
-  GRAPH ?gdlex {
-    ?id rdfs:label ?gd .
+  OPTIONAL {
+    GRAPH <http://faclair.ac.uk/sources/general> {
+      ?id rdfs:label ?gd .
+    }
   }
   GRAPH ?lex {
     ?id :sense ?en .
@@ -216,11 +222,13 @@ function getEnglishSubstring() {
   $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
-SELECT DISTINCT ?id ?gd ?en ?lex ?gdlex
+SELECT DISTINCT ?id ?gd ?en
 WHERE
 {
-  GRAPH ?gdlex {
-    ?id rdfs:label ?gd .
+  OPTIONAL {
+    GRAPH <http://faclair.ac.uk/sources/general> {
+      ?id rdfs:label ?gd .
+    }
   }
   GRAPH ?lex {
     ?id :sense ?en .
