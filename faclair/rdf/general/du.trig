@@ -1,0 +1,514 @@
+@prefix n: <http://faclair.ac.uk/nouns/> .
+@prefix a: <http://faclair.ac.uk/adjectives/> .
+@prefix v: <http://faclair.ac.uk/verbs/> .
+@prefix o: <http://faclair.ac.uk/other/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://faclair.ac.uk/meta/> .
+
+<http://faclair.ac.uk/sources/general> {
+
+n:dual_hair
+  a :MasculineNoun ;
+  rdfs:label "dual" ;
+  :gen "duail" ;
+  :pl "duail" , "dualan" ;
+  :sense "curl" , "lock of hair" , "plait in hair or rope" , "strand" , "ringlet of hair" ;
+  rdfs:comment "[CM 2004]" ;
+  rdfs:comment "[AW 2001] Cf. bachlag, camag" .
+
+v:cuir_an_duail
+  rdfs:label "cuir an duail" , "cuir an dualan" ;
+  :sense "braid" ;
+  :part n:dual_hair , v:cuir ;
+  rdfs:comment "[CM 2004]" .
+
+v:bha_ceoo_a_tighinn_na_dhualan_dubha_bhon_luaidhear
+  a :Example ;
+  rdfs:label "bha ceò a’ tighinn na dhualan dubha bhon luaidhear" ;
+  :sense "smoke was issuing from the chimney in black curls" ;
+  :part n:dual_hair ;
+  rdfs:comment "[CM 2004]" .
+
+v:bha_a_falt_a_tuiteam_na_dhuail_air_a_guailnean
+  a :Example ;
+  rdfs:label "bha a falt a’ tuiteam na dhuail air a guailnean" ;
+  :sense "her hair was falling in curls upon her shoulders" ;
+  :part n:dual_hair ;
+  rdfs:comment "[CM 2004]" .
+
+n:dual
+  a :MasculineNoun ;
+  rdfs:label "dual" ;
+  :gen "duail" ;
+  :pl "dualan" ;
+  :sense "hereditary" , "usual" , "natural" , "prone" , "to be expected" ;
+  :sense "what might be expected of one because of one’s descendance" , "one’s character considered as inherited" , "hereditary right" , "birthright" ;
+  rdfs:comment "[CM 2004]" ;
+  rdfs:comment "[AW 2001] Cf. dualchas , dùthchas" .
+
+v:bu_dual_dha_sin
+  rdfs:label "bu dual dha sin" ;
+  :sense "you would expect that of his people" , "it was hereditary to him" ;
+  :sense "that was to be expected of him (him being the man he is)" ;
+  :part n:dual ;
+  rdfs:comment "[CM 2004]" ;
+  rdfs:comment "[AW 2001]" .
+
+v:bu_dual_a_bhith_seinn
+  rdfs:label "bu dual a bhith seinn" ;
+  :sense "born to sing" ;
+  :part n:dual ;
+  rdfs:comment "[CM 2004]" .
+
+o:mar_as_dual
+  rdfs:label "mar as/bu dual" ;
+  :part n:dual ;
+  :sense "as is common" ;
+  rdfs:comment "[CM 2004]" .
+
+o:mar_bu_dual
+  rdfs:label "mar bu dual (dha)" ;
+  :sense "as you would expect (of him)" , "naturally" , "as was customary with him" ;
+  :part n:dual ;
+  rdfs:comment "[CM 2004]" .
+
+v:mar_bu_dual_do_na_seann_Hiortaich
+  a :Example ;
+  rdfs:label "mar bu dual do na seann Hiortaich" ;
+  :sense "as was customary to the old St. Kildans" ;
+  :part o:mar_bu_dual  ;
+  rdfs:comment "[CM 2004]" .
+
+v:mar_bha_dual_bha_mooran_dhaoine_ooga_a_tadhal_oirre
+  a :Example ;
+  rdfs:label "mar bha dual bha mòran dhaoine òga a’ tadhal oirre" ;
+  :sense "naturally / as one would expect there were many yound men visiting her" ;
+  rdfs:comment "[CM 2004]" ;
+  :part o:mar_bu_dual .
+
+v:tha_iad_mar_bu_dual_nas_liionmhoire_anns_na_bailtean
+  a :Example ;
+  rdfs:label "tha iad, mar bu dual, nas lìonmhoire anns na bailtean" ;
+  :sense "they are, naturally, more abundant in the towns" ;
+  rdfs:comment "[CM 2004]" ;
+  :part o:mar_bu_dual .
+
+v:bu_dual_do_dh_isean_an_rooin_a_dhol_air_a_thooin_chun_na_mara
+  a :Example ;
+  rdfs:label "bu dual do dh’isean an ròin a dhol air a thòin chun na mara" ;
+  :sense "some people have sea water in their veins i.e. take to the sea naturally" ;
+  rdfs:comment "[CM 2004]" ;
+  :part n:dual .
+
+v:bu_dual_dha_baardachd_bho_thaobh_athar
+  a :Example ;
+  rdfs:label "bu dual dha bàrdachd bho thaobh athar" ;
+  :sense "he inherited a talent for poetry from his father’s side of the family" , "literally, poetry was hereditary for him from his father’s side" ;
+  :part n:dual ;
+  rdfs:comment "[AW 2001]" .
+
+n:MacGriogair_aa_Ruadhshruth_dam_bu_dual_bhith_n_Gleann_Liiobhann
+  a :Example ;
+  rdfs:label "MacGriogair à Ruadhshruth dam bu dual bhith ’n Gleann Lìobhann" ;
+  :sense "MacGregor of Roro whose birthright it was to be in Glen Lyon (song)" ;
+  :part n:dual ;
+  rdfs:comment "[AW 2001]" .
+
+n:dual_fhine
+  rdfs:label "dual-fhine" ;
+  :sense "caste" ;
+  :part n:dual , n:fine ;
+  rdfs:comment "[CM 2004]" .
+
+a:dualach
+  a :Adjective ;
+  rdfs:label "dualach" ;
+  :also "dualtach" ;
+  :comp "dualaiche" ;
+  :sense "natural" , "inherent" , "innate" , "in one’ nature or temperament (with a suggestion of hereditary influence)" ;
+  :sense "hereditary" , "native" , "typical" , "usual" , "likely" , "liable" ;
+  rdfs:comment "[AW 2001]" ;
+  rdfs:comment "[CM 2004]" ;
+  rdfs:comment "Cf. buailteach" .
+
+v:tha_e_dualtach_dhut_a_bhith_ag_innse_bhreugan
+  a :Example ;
+  rdfs:label "tha e dualtach dhut a bhith ag innse bhreugan!" ;
+  :sense "it’s in your nature / just like you / typical of you to tell lies!" ;
+  rdfs:comment "[AW 2001]" ;
+  :part a:dualach .
+
+v:tha_iad_dualach_a_bhith_spiiocach
+  a :Example ;
+  rdfs:label "tha iad dualach a bhith spìocach" ;
+  :sense "they are inclined to be stingy / mean" ;
+  rdfs:comment "[AW 2001]" ;
+  :part a:dualach .
+
+v:chan_eil_e_dualach_don_leithid_beatha_shocrach_a_mhealtainn
+  a :Example ;
+  rdfs:label "chan eil e dualach don leithid beatha shocrach a mhealtainn" ;
+  :sense "it isn't usual for the likes of him to enjoy a comfortable life" ;
+  :part a:dualach ;
+  rdfs:comment "[CM 2004]" .
+
+n:gach_tinneas_a_bhitheas_dualach_do_dhuine
+  a :Example ;
+  rdfs:label "gach tinneas a bhitheas dualach do dhuine" ;
+  :sense "every ailment which is hereditary to man" ;
+  :part a:dualach ;
+  rdfs:comment "[CM 2004]" .
+
+v:tha_e_dualtach_do_iomadh_buidheann_a_bhith_ag_iarraidh_cuideachadh_aig_an_aon_aam
+  a :Example ;
+  rdfs:label "tha e dualtach do iomadh buidheann a bhith ag iarraidh cuideachadh aig an aon àm" ;
+  :sense "many groups are liable to be seeking help at the same time" ;
+  :part a:dualach ;
+  rdfs:comment "[CM 2004]" .
+
+v:dualaich
+  a :Verb ;
+  rdfs:label "dualaich" ;
+  :sense "typify" ;
+  :vn "dualachadh" ;
+  :vngen "dualachaidh" ;
+  rdfs:comment "[CM 2004]" ;
+  :part n:dual .
+
+v:dualaich_hair
+  a :Verb ;
+  rdfs:label "dualaich" ;
+  :sense "curl hair" , "twist" , "plait hair or rope" , "braid" ;
+  :vn "dualachadh" ;
+  :vngen "dualachaidh" ;
+  rdfs:comment "[AW 2001]" ;
+  rdfs:comment "[CM 2004]" ;
+  rdfs:comment "Cf. bachlaich" ;
+  :part n:dual_hair .
+
+n:dualchainnt
+  a :FeminineNoun ;
+  rdfs:label "dualchainnt" ;
+  :also "dual-chainnt" ;
+  :gen "dualchainnte" ;
+  :pl "dualchainntean" ;
+  :sense "dialect" , "brogue (of language)" ;
+  rdfs:comment "[AW 2001] (with and without hyphen)" ;
+  rdfs:comment "[CM 2004] (with and without hyphen)" ;
+  :part n:dual , n:cainnt .
+
+n:dualchas
+  a :MasculineNoun ;
+  rdfs:label "dualchas" ;
+  :also "dualachas" ;
+  :sense "heritage (especially cultural)" , "inheritance" , "(trad.) one’s character or characteristics (with a suggestion of hereditary influence)" , "one’s inheritance" , "what one is, what might be expected of one, or what one may be entitled to, by reason of one’s descent" ;
+  :sense "disposition (hereditary)" , "heritage" , "inheritance" , "patrimony" , "tradition" ;
+  :gen "dualchais" ;
+  :part a:dualach ;
+  rdfs:comment "[AW 2001] Cf. dual, dùthchas" ;
+  rdfs:comment "[CM 2004]" .
+
+v:is_e_a_dhualchas_a_bhith_aardanach
+  a :Example ;
+  rdfs:label "is e a dhualchas a bhith àrdanach" ;
+  :sense "it’s in his character / nature to be proud" ;
+  :part n:dualchas ;
+  rdfs:comment "[AW 2001]" .
+
+v:theeid_dualchas_an_aghaidh_nan_creag
+  a :Example ;
+  rdfs:label "thèid dualchas an aghaidh nan creag" ;
+  :sense "heritage will out (proverb)" ;
+  :part n:dualchas , n:creag ;
+  rdfs:comment "[CM 2004]" .
+
+n:Dualchas_Naadair_na_h_Alba
+  rdfs:label "Dualchas Nàdair na h-Alba" ;
+  :sense "Scottish Natural Heritage" ;
+  :part n:dualchas_naadair , n:Alba ;
+  rdfs:comment "[CM 2004]" .
+
+n:dualchas_naadair
+  rdfs:label "dualchas nàdair" ;
+  :sense "natural heritage" ;
+  :part n:dualchas , n:naadar .
+
+v:theeid_duine_ri_a_dhualchas_seachd_uairean_anns_an_latha
+  a :Example ;
+  rdfs:label "thèid duine ri a dhualchas seachd uairean anns an latha" ;
+  :sense "a man shows his heredity seven times a day" ;
+  :part n:dualchas ;
+  rdfs:comment "[CM 2004]" .
+
+o:a_tarraing_aas_an_tobar_seo_de_dhualchas
+  a :Example ;
+  rdfs:label "a’ tarraing às an tobar seo de dhualchas" ;
+  :sense "drawing from this well-spring of tradition" ;
+  :part n:dualchas ;
+  rdfs:comment "[CM 2004]" .
+
+a:dualchasach
+  a :Adjective ;
+  rdfs:label "dualchasach" ;
+  :sense "traditional" ;
+  :comp "dualchasaiche" ;
+  rdfs:comment "[CM 2004]" .
+
+n:ceool_dualchasach
+  rdfs:label "ceòl dualchasach" ;
+  :sense "traditional music" ;
+  :part a:dualchasach , n:ceool ;
+  rdfs:comment "[AW 2001]" .
+
+a:dubh
+  rdfs:label "dubh" ;
+  :sense "black" ;
+  rdfs:comment "[BMh 2013]" .
+
+v:dubh_aas
+  rdfs:label "dubh às" ;
+  :sense "delete" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:dubhag
+  a :FeminineNoun ;
+  rdfs:label "dubhagan" ;
+  :sense "kidneys" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:duilleag
+  a :FeminineNoun ;
+  rdfs:label "duilleag" ;
+  :sense "leaf" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:duilleag_dachaigh
+  rdfs:label "duilleag dachaigh" ;
+  :sense "home page" ;
+  :part n:duilleag , n:dachaigh ;
+  rdfs:comment "[BMh 2013]" .
+
+a:duuinte
+  a :Adjective ;
+  rdfs:label "dùinte" ;
+  :sense "closed" ;
+  :part v:duuin ;
+  rdfs:comment "[BMh 2013]" .
+
+n:duiseal
+  a :FeminineNoun ;
+  rdfs:label "duiseal" ;
+  :sense "flute" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:duuth
+  a :MasculineNoun ;
+  rdfs:label "dùth" ;
+  :sense "natural" , "hereditary" , "native" , "fitting" , "proper" ;
+  rdfs:comment "[CM 2004]" .
+
+o:mar_as_duuth
+  rdfs:label "mar as/bu dùth" ;
+  :sense "as is/was fitting" ;
+  :part n:duuth ;
+  rdfs:comment "[CM 2004]" .
+
+v:cha_duuth_do_dhuine_a_bhith_air_a_chumail_a_staigh_mar_sin
+  a :Example ;
+  rdfs:label "cha dùth do dhuine a bhith air a chumail a-staigh mar sin" ;
+  :sense "it isn’t natural for a man to be kept inside like that" ;
+  :part n:duuth ;
+  rdfs:comment "[CM 2004]" .
+
+v:is_duuth_do_neach_a_ghnee_fheein_a_shireadh
+  a :Example ;
+  rdfs:label "is dùth do neach a ghnè fhèin a shireadh" ;
+  :sense "it’s natural for one to seek one’s own kind" , "birds of a feather flock together" ;
+  :part n:duuth ;
+  rdfs:comment "[CM 2004]" .
+
+o:mar_bu_duuth
+  rdfs:label "agus, mar bu dùth ..." ;
+  :sense "and, as is fitting ..." ;
+  :part n:duuth ;
+  rdfs:comment "[CM 2004]" .
+
+v:is_duuth_do_gu_
+  a :Example ;
+  rdfs:label "is dùth dha gu bheil ..." ;
+  :sense "it is fitting for him that ..." ;
+  :part n:duuth ;
+  rdfs:comment "[CM 2004]" .
+
+n:duuthaich
+  a :FeminineNoun ;
+  rdfs:label "dùthaich" ;
+  :gen "dùthcha" ;
+  :pl "dùthchannan" ;
+  :sense "territory" , "one’s homeland or home district" ;
+  :sense "country" , "countryside" , "land" ;
+  :part n:duuth ;
+  rdfs:comment "[AW 2001] Cf. tìr" ;
+  rdfs:comment "[CM 2004]" .
+
+n:na_Duuthchannan_Aonaichte
+  rdfs:label "na Dùthchannan Aonaichte" ;
+  :part n:duuthaich , a:aonaichte ;
+  :sense "the United Nations" ;
+  rdfs:comment "[CM 2004]" .
+
+o:air_an_duuthaich
+  rdfs:label "air an dùthaich" ;
+  :part n:duuthaich ;
+  :sense "in the country(side)" ;
+  rdfs:comment "[CM 2004]" .
+
+n:duuthaich_MhicAoidh
+  rdfs:label "dùthaich MhicAoidh" ;
+  :sense "the Mackay country / lands (in Sutherland)" ;
+  :part n:duuthaich , n:MacAoidh ;
+  rdfs:comment "[AW 2001]" .
+
+n:UUghdarras_Duuthcha_na_h_Alba
+  rdfs:label "Ùghdarras Dùthcha na h-Alba" ;
+  :sense "the Countryside Commission for Scotland" ;
+  :part n:duuthaich , n:uughdarras , n:Alba ;
+  rdfs:comment "[AW 2001]" .
+
+o:O_mo_dhuuthaich_s_tu_th_air_m_aire
+  a :Example ;
+  rdfs:label "O mo dhùthaich, ’s tu th’ air m’ aire" ;
+  :sense "O my homeland, it is you who are on my mind (song)" ;
+  :part n:duuthaich ;
+  rdfs:comment "[AW 2001]" .
+
+v:cha_robh_sinn_fada_anns_an_duuthaich_mun_do_thachair_e_rinn
+  a :Example ;
+  rdfs:label "cha robh sinn fada anns an dùthaich mun do thachair e rinn" ;
+  :sense "we weren’t in the country long before we met him" ;
+  :part n:duuthaich ;
+  rdfs:comment "[CM 2004]" .
+
+v:chan_eil_mooran_dhuuthchannan_eile_a_tha_cho_breaagha_rithe
+  a :Example ;
+  rdfs:label "chan eil mòran dhùthchannan eile a tha cho breàgha rithe" ;
+  :sense "there aren’t many other countries which are as beautiful as it" ;
+  :part n:duuthaich ;
+  rdfs:comment "[CM 2004]" .
+
+a:duuthchail
+  a :Adjective ;
+  rdfs:label "dùthchail" ;
+  :comp "dùthchaile" ;
+  :sense "country" , "local" , "rustic" , "rural" ;
+  :part n:duuthaich ;
+  rdfs:comment "[CM 2004]" .
+
+n:baile_duuthchail
+  a :Example ;
+  rdfs:label "na bailtean dùthchail" ;
+  :sense "the rural villages" ;
+  :part n:baile , a:duuthchail ;
+  rdfs:comment "[CM 2004]" .
+
+n:duuthchas
+  a :MasculineNoun ;
+  rdfs:label "dùthchas" ;
+  :gen "dùthchais" ;
+  :sense "the ancestral lands of a clan or an individual (trad.)" , "one’s cultural inheritance or heritage" , "what one is by reason of the place one belongs to" ;
+  :sense "heredity" , "instinct" , "nationality" ;
+  :part n:duuthaich ;
+  rdfs:comment "[AW 2001] Cf. dùthaich, dualchas" ;
+  rdfs:comment "[CM 2004]" .
+
+v:theeid_duuthchas_an_aghaidh_nan_creag
+  a :Example ;
+  rdfs:label "thèid dùthchas an aghaidh nan creag" ;
+  :sense "heritage tells (proverb)" , "literally, heredity goes against the rocks" ;
+  :part n:duuthchas , n:creag ;
+  rdfs:comment "[CM 2004]" .
+
+v:cha_bhi_duuthchas_aig_mnaoi_no_aig_sagart
+  a :Example ;
+  rdfs:label "cha bhi dùthchas aig mnaoi no no aig sagart " ;
+  :sense "a woman and a priest have no homeland" ;
+  :part n:duuthaich ;
+  rdfs:comment "[AW 2001]" .
+
+v:canaidh_daoine_duuthchas_ris_an_rud_do_fhaicsinneach_seo
+  a :Example ;
+  rdfs:label "canaidh daoine dùthchas ris an rud do-fhaicsinneach seo" ;
+  :sense "men call this invisible thing instinct" ;
+  :part n:duuthchas ;
+  rdfs:comment "[CM 2004]" .
+
+a:duuthchasach
+  a :Adjective ;
+  rdfs:label "dùthchasach" ;
+  :comp "dùthchasaiche" ;
+  :sense "native" , "indigenous" , "aboriginal" ;
+  :sense "endemic" , "hereditary" , "instinctive" , "natural" , "traditional" , "vernacular" ;
+  :part n:duuthchas ;
+  rdfs:comment "[AW 2001]" ;
+  rdfs:comment "[CM 2004]" .
+
+n:caanan_duuthchasach
+  rdfs:label "cànan dùthchasach" ;
+  :sense "indigenous language" , "native language" ;
+  :part a:duuthchasach , n:caanan .
+
+v:seo_caanan_a_tha_duuthchasach_do_Alba
+  a :Example ;
+  rdfs:label "seo cànan a tha dùthchasach do Alba" ;
+  :sense "this is a language which is indigenous to Scotland" ;
+  :part n:caanan_duuthchasach ;
+  rdfs:comment "[CM 2004]" .
+
+n:rud_a_tha_duuthchasach_dhomh
+  a :Example ;
+  rdfs:label "rud a tha dùthchasach dhomh" ;
+  :sense "something which is natural to me" ;
+  :part a:duuthchasach ;
+  rdfs:comment "[CM 2004]" .
+
+n:ceool_duuthchasach
+  rdfs:label "ceòl dùthchasach" ;
+  :sense "indigenous music" , "traditional music" ;
+  :part a:dùthchasach , n:ceool .
+
+v:tha_e_nas_duuthchasaiche_do_dh_Alba_na_ceool_sam_bith_eile
+  a :Example ;
+  rdfs:label "tha e nas dùthchasaiche do dh’Alba na ceòl sam bith eile" ;
+  :sense "it is more indigenously Scottish than any other music" ;
+  :part n:ceool_duuthchasach ;
+  rdfs:comment "[CM 2004]" .
+
+n:duuthchasach
+  a :MasculineNoun ;
+  rdfs:label "dùthchasach" ;
+  :gen "dùthchasaich" ;
+  :pl "dùthchasaich" ;
+  :sense "native" ;
+  :part a:duuthchasach ;
+  rdfs:comment "[CM 2004]" .
+
+a:duuthchasail
+  a :Adjective ;
+  rdfs:label "dùthchasail" ;
+  :sense "indigenous" , "national" , "native" ;
+  :part n:duuthchas ;
+  rdfs:comment "[CM 2004]" .
+
+n:neach_labhairt_duuthchasail
+  rdfs:label "neach labhairt dùthchasail" ;
+  :sense "native speaker" , "traditional speaker" ;
+  :part a:duuthchasail , n:neach_labhairt .
+
+v:b_esan_am_fear_labhairt_duuthchasail_mu_dheireadh
+  a :Example ;
+  rdfs:label "b’ esan am fear-labhairt dùthchasail mu-dheireadh" ;
+  :sense "he was the last native speaker" ;
+  :part n:neach_labhairt_duuthchasail ;
+  rdfs:comment "[CM 2004]" .
+
+}

@@ -1,0 +1,100 @@
+@prefix n: <http://faclair.ac.uk/nouns/> .
+@prefix a: <http://faclair.ac.uk/adjectives/> .
+@prefix v: <http://faclair.ac.uk/verbs/> .
+@prefix o: <http://faclair.ac.uk/other/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://faclair.ac.uk/meta/> .
+
+<http://faclair.ac.uk/sources/general> {
+
+n:dachaigh
+  rdfs:label "dachaigh" ;
+  :sense "home" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:daaibhear
+  a :MasculineNoun ;
+  rdfs:label "dàibhear" ;
+  :sense "diver" ;
+  :part v:daaibhig ;
+  rdfs:comment "[BMh 2013]" .
+
+v:daaibhig
+  a :Verb ;
+  rdfs:label "dàibhig" ;
+  :sense "dive" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:dannsa
+  rdfs:label "dannsa" ;
+  :sense "dance" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:dannsair
+  a :MasculineNoun ;
+  rdfs:label "dannsair" ;
+  :sense "dancer" ;
+  :part n:dannsa ;
+  rdfs:comment "[BMh 2013]" .
+
+n:dannsa_baail
+  rdfs:label "dannsa bàil" ;
+  :sense "ballroom dancing" ;
+  :part n:dannsa ;
+  rdfs:comment "[BMh 2013]" .
+
+n:dannsa_tap
+  rdfs:label "dannsa tap" ;
+  :sense "tap dancing" ;
+  :part n:dannsa ;
+  rdfs:comment "[BMh 2013]" .
+
+n:daoimean
+  a :MasculineNoun ;
+  rdfs:label "daoimean" ;
+  :sense "diamond" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:daolag_adhrach
+  rdfs:label "daolag-adhrach" ;
+  :sense "praying mantis" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:daolag_dhearg_bhreac
+  a :FeminineNoun ;
+  rdfs:label "daolag dhearg-bhreac" ;
+  :sense "ladybird" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:darach
+  a :MasculineNoun ;
+  rdfs:label "darach" ;
+  :sense "oak" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:dath
+  a :MasculineNoun ;
+  rdfs:label "dath" ;
+  :sense "colour" ;
+  rdfs:comment "[BMh 2013]" .
+
+a:dathach
+  a :Adjective ;
+  rdfs:label "dathach" ;
+  :sense "colourful" ;
+  :part n:dath ;
+  rdfs:comment "[BMh 2013]" .
+
+n:dathan_pastail
+  rdfs:label "dathan pastail" ;
+  :sense "pastels" ;
+  :part n:dath ;
+  rdfs:comment "[BMh 2013]" .
+
+n:dathan_uisge
+  rdfs:label "dathan uisge" ;
+  :sense "watercolours" ;
+  :part n:dath , n:uisge ;
+  rdfs:comment "[BMh 2013]" .
+
+}

@@ -1,0 +1,64 @@
+@prefix n: <http://faclair.ac.uk/nouns/> .
+@prefix a: <http://faclair.ac.uk/adjectives/> .
+@prefix v: <http://faclair.ac.uk/verbs/> .
+@prefix o: <http://faclair.ac.uk/other/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://faclair.ac.uk/meta/> .
+
+<http://faclair.ac.uk/sources/general> {
+
+a:doilleir
+  a :Adjective ;
+  rdfs:label "doilleir" ;
+  :sense "opaque" , "dark" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:doineann
+  a :FeminineNoun ;
+  rdfs:label "doineann" ;
+  :sense "tornado" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:doirbeag
+  a :FeminineNoun ;
+  rdfs:label "doirbeag" ;
+  :sense "minnow" ;
+  rdfs:comment "[BMh 2013]" .
+
+a:dona
+  a :Adjective ;
+  rdfs:label "dona" ;
+  :sense "nasty" ;
+  rdfs:comment "[BMh 2013]" .
+
+a:donn
+  a :Adjective ;
+  rdfs:label "donn" ;
+  :sense "brown" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:doras
+  a :MasculineNoun ;
+  rdfs:label "doras" ;
+  :sense "door" ;
+  rdfs:comment "[BMh 2013]" .
+
+a:dorch
+  a :Adjective ;
+  rdfs:label "dorch" ;
+  :sense "dull" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:doornag
+  a :FeminineNoun ;
+  rdfs:label "dòrnag" ;
+  :sense "gauntlet" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:doortadh_ola
+  rdfs:label "dòrtadh ola" ;
+  :sense "oil spill" ;
+  :part n:ola ;
+  rdfs:comment "[BMh 2013]" .
+
+}

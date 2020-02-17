@@ -1,0 +1,759 @@
+@prefix n: <http://faclair.ac.uk/nouns/> .
+@prefix a: <http://faclair.ac.uk/adjectives/> .
+@prefix v: <http://faclair.ac.uk/verbs/> .
+@prefix o: <http://faclair.ac.uk/other/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://faclair.ac.uk/meta/> .
+
+<http://faclair.ac.uk/sources/general> {
+
+#266
+
+# fa – bi fa-near do
+
+  v:faabhair
+    a :Verb ;
+    rdfs:label "fàbhair" ;
+    :sense "favour" ;
+    :vn "fàbharadh" ;
+    :vngen "fàbharaidh" .
+
+  n:faabhar
+    a :MasculineNoun ;
+    rdfs:label "fàbhar" ;
+    :sense "favour" , "grace (of personal mien)" ;
+    :gen "fàbhair" ;
+    :pl "fàbharan" .
+
+  v:nochd_faabhar
+    a :Verb ;
+    rdfs:label "nochd fàbhar" ;
+    :sense "favour" ;
+    :part n:fàbhar .
+
+  v:lorg_faabhar
+    rdfs:label "lorg fàbhar" ;
+    :sense "ingratiate" ;
+    :part n:fàbhar .
+
+  o:mar_faabhar
+    rdfs:label "mar fàbhar" ;
+    :sense "as a favour" ;
+    :part n:fàbhar .
+
+  v:bha_fortan_nar_faabhar
+    a :Example ;
+    rdfs:label "bha fortan nar fàbhar" ;
+    :sense "fortune was in our favour" ;
+    :part n:fàbhar .
+
+  v:bha_trii_rudan_am_faabhar_nam_balach
+    a :Example ;
+    rdfs:label "bha trì rudan am fàbhar nam balach" ;
+    :sense "three things were in the boys’ favour" ;
+    :part n:fàbhar .
+
+  a:fàbharach
+    a :Adjective ;
+    rdfs:label "fàbharach" ;
+    :sense "auspicious" , "favourable" , "preferential" , "propitious" ;
+    :comp "fàbharaiche" .
+
+  v:bi_faabharach_do
+    rdfs:label "bi fàbharach do" ;
+    :sense "favour" , "be favourable to" ;
+    :part a:fàbharach .
+
+  v:a_bhitheas_faabharach_dhuinn_fheein
+    rdfs:label "a bhitheas fàbharach dhuinn fhèin" ;
+    :sense "that will be favourable to ourselves" , "that will favour us" ;
+    :part a:fàbharach .
+
+  n:fabhra
+    a :MasculineNoun ;
+    rdfs:label "fabhra" ;
+    :sense "eyelash" , "eyelid" ;
+    :gen "fabhra" ;
+    :pl "fabhran" , "fabhrannan" , "fabhrainean" .
+
+  n:facal
+    a :MasculineNoun ;
+    rdfs:label "facal" ;
+    :sense "word" , "comment" , "phrase" , "remark" , "saying" , "term" , "expression" ;
+    :gen "facail" ;
+    :pl "facail" , "faclan" .
+
+  n:faclan_faid
+    a :Example ;
+    rdfs:label "faclan faid" ;
+    :sense "vocabulary / language of length (in school maths)" ;
+    :part n:facal .
+
+  n:facal_air_an_fhacal
+    rdfs:label "facal air an fhacal" ;
+    :sense "word for word" , "verbatim" ;
+    :part n:facal .
+
+  v:dee_a_b_fhasa_dhi_na_facal_a_raadh_ris_an_ath_thuras_a_thachradh_i_ris
+    a :Example ;
+    rdfs:label "dè a b’fhasa dhi na facal a ràdh ris an ath thuras a thachradh i ris?" ;
+    :sense "what would be easier (for her) than to have a word with (lit. say a word to) him the next time she met (i.e. would meet) him?" ;
+    :part n:facal .
+
+  v:cuum_ri_a_fhacal
+    rdfs:label "cùm ri t’ fhacal" ;
+    :sense "keep to your word" ;
+    :part n:facal .
+
+  v:bha_aon_rud_air_an_robh_iad_gu_leeir_air_an_aon_fhacal
+    a :Example ;
+    rdfs:label "bha aon rud air an robh iad gu lèir air an aon fhacal" ;
+    :sense "there was one thing about which they were in complete agreement / agreed completely" ;
+    :part n:facal .
+
+#267
+
+  n:facal_faire
+    a :MasculineNoun ;
+    rdfs:label "facal-faire" ;
+    :sense "password" , "watchword" .
+
+  n:facal_fhreumhachd
+    a :FeminineNoun ;
+    rdfs:label "facal-fhreumachd" ;
+    :sense "etymology" .
+
+  a:facal_fhreumhail
+    a :Adjective ;
+    rdfs:label "facal-fhreumail" ;
+    :sense "etymological" .
+
+  n:facal_iasaid
+    a :MasculineNoun ;
+    rdfs:label "facal-iasaid" ;
+    :sense "loan-word" .
+
+  n:facal_riaghladair
+    a :MasculineNoun ;
+    rdfs:label "facal-riaghladair" ;
+    :sense "word processor" .
+
+  n:facal_suaicheantais
+    a :MasculineNoun ;
+    rdfs:label "facal-suaicheantais" ;
+    :sense "motto" .
+
+  n:fachach
+    a :MasculineNoun ;
+    rdfs:label "fachach" ;
+    :sense "puffin" ;
+    :gen "fachaich" ;
+    :pl "fachaich" .
+
+  a:faclach
+    a :Adjective ;
+    rdfs:label "faclach" ;
+    :sense "verbal" , "wordy" .
+
+  n:facladair
+    a :MasculineNoun ;
+    rdfs:label "facladair" ;
+    :sense "word processor" ;
+    :gen "facladair" ;
+    :pl "facladairean" .
+
+  n:faclair
+    a :MasculineNoun ;
+    rdfs:label "faclair" ;
+    :sense "dictionary" , "glossary" , "lexicon" , "vocabulary (in a book)" ;
+    :gen "faclair" ;
+    :pl "faclairean" .
+
+  o:anns_an_fhaclair
+    a :Example ;
+    rdfs:label "anns an fhaclair" ;
+    :sense "in the dictionary" ;
+    :part n:faclair .
+
+  o:ann_am_faclair
+    a :Example ;
+    rdfs:label "ann am faclair" ;
+    :sense "in a dictionary" ;
+    :part n:faclair .
+
+  n:faclaireachd
+    a :FeminineNoun ;
+    rdfs:label "faclaireachd" ;
+    :sense "lexicography" ;
+    :gen "faclaireachd" .
+
+  n:faclairiche
+    a :MasculineNoun ;
+    rdfs:label "faclairiche" ;
+    :sense "lexicographer" ;
+    :gen "faclairiche" ;
+    :pl "faclairichean" .
+
+  n:facs
+    a :MasculineNoun ;
+    rdfs:label "facs" ;
+    :sense "facsimile transmission" , "fax" .
+
+  n:factar
+    a :MasculineNoun ;
+    rdfs:label "factar" ;
+    :sense "factor (abstract / maths)" ;
+    :gen "factair" ;
+    :pl "factaran" .
+
+  n:factar_suidheachaidh
+    a :MasculineNoun ;
+    rdfs:label "factar-suidheachaidh" ;
+    :sense "locational factor (geography)" .
+
+  n:factaraidh
+    a :FeminineNoun ;
+    rdfs:label "factaraidh" ;
+    :sense "factory" ;
+    :gen "factaraidh" ;
+    :pl "factaraidhean" .
+
+  n:faad
+    a :MasculineNoun ;
+    rdfs:label "fàd" ;
+    :sense "peat (individual)" ;
+    :gen "fàid" ;
+    :pl "fàid" .
+
+  v:fad
+    a :Verb ;
+    rdfs:label "fad" ;
+    :sense "kindle" , "light" ;
+    :vn "fadaidh" .
+
+  v:fadaidh_iad_teine_fiodha
+    a :Example ;
+    rdfs:label "fadaidh iad teine fiodha" ;
+    :sense "they (will) kindle a wood fire" ;
+    :part v:fad .
+
+# 277
+
+  v:faaisg
+    a :Verb ;
+    rdfs:label "fàisg" ;
+    :sense "hug" , "pinch" , "press" , "squeeze" , "wring" ;
+    :vn "fàsgadh" ;
+    :vngen "fàsgaidh" .
+
+  v:dh_fhaaisg_e_am_putan
+    a :Example ;
+    rdfs:label "dh’fhàisg e am putan" ;
+    :sense "he pressed the button" ;
+    :part v:faaisg .
+
+  v:bha_iad_air_am_faasgadh_ri_cheeile
+    a :Example ;
+    rdfs:label "bha iad air am fàsgadh ri chèile" ;
+    :sense "they were squeezed together" ;
+    :part v:faaisg .
+
+  v:ghlac_e_a_chearc_agus_dh_fhaaisg_e_a_sgoornan
+    a :Example ;
+    rdfs:label "ghlac e a’ chearc agus dh’fhàisg e a sgòrnan" ;
+    :sense "he caught the hen and [he] wrung its neck" ;
+    :part v:faaisg .
+
+  v:faaisgidh_sinn_an_coorr_aas_a_dh_aithghearr
+    a :Example ;
+    rdfs:label "fàisgidh sinn an còrr às a dh’aithghearr" ;
+    :sense "we’ll soon wring the rest out of him" ;
+    :part v:faaisg .
+
+  n:faisge
+    a :FeminineNoun ;
+    rdfs:label "faisge" ;
+    :sense "closeness" .
+
+  n:faisgean
+    a :MasculineNoun ;
+    rdfs:label "faisgean" ;
+    :sense "sponge" ;
+    :pl "faisgeanan" ;
+    :gen "faisgein" .
+
+  a:faaisgte
+    a :PastParticiple ;
+    rdfs:label "fàisgte" ;
+    :sense "wrung" .
+
+  n:faististeachas
+    a :MasculineNoun ;
+    rdfs:label "faististeachas" ;
+    :sense "fascism" ;
+    :gen "faististeachais" .
+
+  a:faaisneachail
+    a :Adjective ;
+    rdfs:label "fàisneachail" ;
+    :sense "prophetic" .
+
+  n:faaisneachd
+    a :FeminineNoun ;
+    rdfs:label "fàisneachd" , "fàistneachd" ;
+    :sense "divination" , "prediction" , "prophecy" ;
+    :pl "fàisneachdan" , "fàistneachdan" .
+
+  v:is_e_faaisneachd_fhiior_a_bha_seo
+    a :Example ;
+    rdfs:label "’s e fàisneachd fhìor a bha seo" ;
+    :sense "this was a true prophecy" ;
+    :part n:faaisneachd .
+
+  v:thaainig_cuid_mhoor_dhen_fhaaisneachd_gu_bhith_fiior
+    a :Example ;
+    rdfs:label "thàinig cuid mhòr dhen fhàisneachd gu bhith fìor" ;
+    :sense "a large proportion of the prophecy came to be true" ;
+    :part n:faaisneachd .
+
+  v:bha_an_fhaaisneachd_air_a_coileanadh
+    a :Example ;
+    rdfs:label "bha an fhàisneachd air a coileanadh" ;
+    :sense "the prophecy wasfulfilled" ;
+    :part n:faaisneachd .
+
+#278
+
+  v:faaisnich
+    a :Verb ;
+    rdfs:label "fàisnich" ;
+    :vn "fàisneachadh" ;
+    :vngen "fàisneachaidh" ;
+    :sense "foretell" , "prophesy" , "vaticanate" .
+
+  v:bha_aon_rud_nach_burrainn_dhaibh_fhaaisneachadh
+    a :Example ;
+    rdfs:label "bha aon rud nach b’urrainn dhaibh fhàisneachadh" ;
+    :sense "there was one thing they couldn’t prophesy" ;
+    :part v:faaisnich .
+
+  a:faiteach
+    a :Adjective ;
+    rdfs:label "faiteach" ;
+    :sense "timid" , "shy" , "fearful" ;
+    :comp "faitiche" .
+
+  n:faite_gaaire
+    a :FeminineNoun ;
+    rdfs:label "faite-gàire" ;
+    :sense "smile" .
+
+  v:deean_faite_gaaire
+    a :Verb ;
+    rdfs:label "dèan faite-gàire" ;
+    :sense "smile" ;
+    :part n:faite_gaaire .
+
+  v:thug_i_faite_gaaire_da_ionnsaigh
+    a :Example ;
+    rdfs:label "thug i faite-gàire da ionnsaigh" ;
+    :sense "she smiled to him" , "lit. she gave a smile towards him" ;
+    :part n:faite_gaaire .
+
+  n:faiteas
+    a :MasculineNoun ;
+    rdfs:label "faiteas" ;
+    :sense "fear" , "bashfulness" , "shyness" ;
+    :gen "faiteis" .
+
+  o:air_faiteas_nan_creach
+    a :Example ;
+    rdfs:label "air faiteas nan creach" ;
+    :sense "for fear of raids" ;
+    :part n:faiteas .
+
+  n:faaitheam
+    a :MasculineNoun ;
+    rdfs:label "faitheam" ;
+    :sense "hem" , "seam" , "border (of a garment)" ;
+    :gen "faitheim" ;
+    :pl "faitheaman" .
+
+  n:faaitheam_sgiorta
+    a :Example ;
+    rdfs:label "faitheam sgiorta" ;
+    :sense "the hem of a skirt" ;
+    :part n:faaitheam .
+
+  v:cuir_faaitheam_air
+    a :Example ;
+    rdfs:label "cuir faitheam air" ;
+    :sense "hem" ;
+    :part n:faaitheam .
+
+  v:cuir_faaitheam_air_do_theanga
+    a :Example ;
+    rdfs:label "cuir faitheam air do theanga" ;
+    :sense "be circumspect" ;
+    :part n:faaitheam .
+
+  n:beul_gun_fhaaitheam
+    rdfs:label "beul gun fhaitheam" ;
+    :sense "a garrulous person" ;
+    :part n:faaitheam .
+
+  v:aithnich
+    rdfs:label "faithnich" .
+
+  v:faitich
+    a :Verb ;
+    rdfs:label "faitich" ;
+    :sense "beam (smile)" ;
+    :vn "faiteachadh" ;
+    :vngen "faiteachaidh" .
+
+  n:faal
+    a :MasculineNoun ;
+    rdfs:label "fàl" ;
+    :sense "hedge" , "turf" , "verge (of road)" ;
+    :gen "fàil" ;
+    :pl "fàil" .
+
+  o:am_falach
+    a :Adverb ;
+    rdfs:label "am falach" ;
+    :sense "in hiding" , "hidden" ;
+    :part v:falaich .
+
+  v:bha_e_am_falach_an_deeidh_a_chatha
+    a :Example ;
+    rdfs:label "bha e am falach an dèidh a’ chatha" ;
+    :sense "he was in hiding after the battle" ;
+    :part v:falaich .
+
+  v:chaidh_e_am_falach_ri_taobh_an_rathaid
+    a :Example ;
+    rdfs:label "chaidh e am falach ri taobh an rathaid" ;
+    :sense "he hid / went into hiding at the side of the road" ;
+    :part v:falaich .
+
+  v:cha_chumadh_sinn_e_am_falach
+    a :Example ;
+    rdfs:label "cha chumadh sinn e am falach" ;
+    :sense "we could not keep it hidden" ;
+    :part v:falaich .
+
+  o:air_falach
+    rdfs:label "air falach" ;
+    :part v:falaich .
+
+  v:chaidh_sinn_gu_luath_air_falach
+    a :Example ;
+    rdfs:label "chaidh sinn gu luath air falach" ;
+    :sense "we hid quickly" ;
+    :part v:falaich .
+
+  v:chuir_e_air_falach_e_ann_am_fear_de_na_tuill
+    a :Example ;
+    rdfs:label "chuir e air falach e ann am fear de na tuill" ;
+    :sense "he hid it in one of the holes" ;
+    :part v:falaich .
+
+  n:falach_fead
+    a :MasculineNoun ;
+    rdfs:label "falach-fead" ;
+    :sense "hide-and-seek" .
+
+  v:bha_a_chlann_a_cluich_air_falach_fead
+    a :Example ;
+    rdfs:label "bha a’ chlann a’ cluich air falach-fead" ;
+    :sense "the children were playing hide-and-seek" ;
+    :part n:falach_fead .
+
+  n:falachadh
+    a :MasculineNoun ;
+    rdfs:label "falachadh" ;
+    :sense "secretion" ;
+    :gen "falachaidh" ;
+    :pl "falachaidhean" .
+
+  a:falachaidh
+    a :Adjective ;
+    rdfs:label "falachaidh" ;
+    :sense "secret" .
+
+  v:theich_e_gu_falachaidh
+    a :Example ;
+    rdfs:label "theich e gu falachaidh" ;
+    :sense "he fled secretly" ;
+    :part a:falachaidh .
+
+  n:falachan
+    a :MasculineNoun ;
+    rdfs:label "falachan" ;
+    :sense "hidden object" , "hidden treasure" ;
+    :gen "falachain" ;
+    :pl "falachain" .
+
+  v:chaidh_iad_uile_air_falbh_feuch_coo_gheibheadh_na_falachain
+    a :Example ;
+    rdfs:label "chaidh iad uile air falbh feuch cò gheibheadh na falachain" ;
+    :sense "they all went off to see who could find the hidden objects" ;
+    :part n:falachan .
+
+  n:falachd
+    a :FeminineNoun ;
+    rdfs:label "falachd" , "folachd" ;
+    :sense "feud" ;
+    :gen "falachd" , "folachd" ;
+    :pl "falachdan" , "folachdan" ;
+    rdfs:comment "also folachd" .
+
+  n:faaladair
+    a :MasculineNoun ;
+    rdfs:label "fàladair" ;
+    :sense "scythe" ;
+    :gen "fàladair" ;
+    :pl "fàladairean" .
+
+  v:falaich
+    a :Verb ;
+    rdfs:label "falaich" ;
+    :sense "conceal" , "hide" , "lurk" , "secrete" , "shroud" ;
+    :vn "falach" ;
+    :vngen "falaich" .
+
+  v:dh_fhaag_e_ionad_falaich
+    a :Example ;
+    rdfs:label "dh’fhàg e ionad falaich" ;
+    :sense "he left his hiding place / his place of hiding" ;
+    :part v:falaich .
+
+  v:a_bheil_thu_a_feuchainn_ri_rudeigin_fhalach_orm
+    a :Example ;
+    rdfs:label "a bheil thu a’ feuchainn ri rudeigin fhalach orm?" ;
+    :sense "are you trying to hide something from me?" ;
+    :part v:falaich .
+
+  v:bha_iad_air_am_falach
+    a :Example ;
+    rdfs:label "bha iad air am falach" ;
+    :sense "they were hidden" ;
+    :part v:falaich .
+
+  v:fhuair_e_seo_fhalach_air_na_h_Innseanaich
+    a :Example ;
+    rdfs:label "fhuair e seo fhalach air na h-Innseanaich" ;
+    :sense "he managed to hide this from the Indians" ;
+    :part v:falaich .
+
+  v:bha_e_air_a_dheagh_fhalach
+    a :Example ;
+    rdfs:label "bha e air a dheagh fhalach" ;
+    :sense "it was well hidden" ;
+    :part v:falaich .
+
+  a:falaichte
+    a :PastParticiple ;
+    rdfs:label "falaichte" ;
+    :sense "hidden" , "latent" , "secret" , "ulterior" .
+
+  v:tha_na_rudan_sin_falaichte_air_a_chinne_daonna
+    a :Example ;
+    rdfs:label "tha na rudan sin falaichte air a’ chinne-daonna" ;
+    :sense "these things are hidden from mankind" ;
+    :part n:falaichte .
+
+  v:bha_e_falaichte_am_measg_nan_creag
+    a :Example ;
+    rdfs:label "bha e falaichte am measg nan creag" ;
+    :sense "he was hidden among the rocks" ;
+    :part n:falaichte .
+
+  n:falaid
+    a :MasculineNoun ;
+    rdfs:label "falaid" ;
+    :sense "varnish" ;
+    :gen "falaide" .
+
+  v:bha_a_ghrian_a_boillsgeadh_air_falaid_a_bhuuird
+    a :Example ;
+    rdfs:label "bha a’ ghrian a’ boillsgeadh air falaid a’ bhùird" ;
+    :sense "the sun was shining on the varnish of the table" ;
+    :part n:falaid .
+
+  v:falaidich
+    a :Verb ;
+    rdfs:label "falaidich" ;
+    :sense "varnish" ;
+    :vn "falaideachadh" .
+
+  v:thooisich_e_air_an_doras_fhalaideachadh
+    a :Example ;
+    rdfs:label "thòisich e air an doras fhalaideachadh" ;
+    :sense "he began to varnish the door" ;
+    :part v:falaidich .
+
+  n:faalaire
+    a :MasculineNoun ;
+    rdfs:label "fàlaire" ;
+    :sense "ambler" , "prancing horse" ;
+    :gen "fàlaire" ;
+    :pl "fàlairean" .
+
+  n:falaisg
+    a :FeminineNoun ;
+    rdfs:label "falaisg" ;
+    :sense "moor-burning" ;
+    :gen "falaisge" ;
+    :pl "falaisgean" .
+
+  v:bha_faaileadh_na_falaisg_laaidir_na_chuinneanan
+    a :Example ;
+    rdfs:label "bha fàileadh na falaisg làidir na chuinneanan" ;
+    :sense "the smell of the moor-burning was string in his nostrils" ;
+    :part n:falaisg .
+
+
+#302
+
+  n:fine
+    a :FeminineNoun ;
+    rdfs:label "fine" ;
+    :sense "clan" , "race" , "sept" , "tribe" , "heathen" ;
+    :gen "fine" ;
+    :pl "fineachan" .
+
+  n:fine_Gaaidhealach
+    rdfs:label "na fineachan Gaidhealach" ;
+    :sense "the Highland clans" ;
+    :part n:fine .
+
+  v:bha_iad_uile_nam_fineachan_ooga
+    a :Example ;
+    rdfs:label "bha iad uile nam fineachan òga" ;
+    :sense "they were all young heathens" ;
+    :part n:fine .
+
+  a:fineachail
+    a :Adjective ;
+    rdfs:label "fineachail" ;
+    :sense "heathenish" .
+
+  v:bha_e_air_a_bhith_fineachail_ruinn
+    a :Example ;
+    rdfs:label "bha e air a bhith fineachail ruinn" ;
+    :sense "he had been heathenish towards us" ;
+    :part a:fineachail .
+
+  n:creideamh_fineachail
+    rdfs:label "creideamh fineachail" ;
+    :sense "heathenish creed" ;
+    :part a:fineachail .
+
+  n:fineachas
+    a :MasculineNoun ;
+    rdfs:label "fineachas" ;
+    :sense "clanship" ;
+    :gen "fineachais" .
+
+  n:fiineadair
+    a :MasculineNoun ;
+    rdfs:label "fìneadair" ;
+    :sense "refinery" ;
+    :gen "fìneadair" ;
+    :pl "fìneadairean" .
+
+  n:fiineadair_ola
+    a :MasculineNoun ;
+    rdfs:label "fìneadair-ola" ;
+    :sense "oil refinery" .
+
+  v:fiinich
+    a :MasculineNoun ;
+    rdfs:label "fìneadh" ;
+    :sense "refining" ;
+    :gen "fìnidh" .
+
+  v:fiinich_ola
+    rdfs:label "far a bheil iad a’ fìneadh na h-ola" ;
+    :sense "where they refine the oil" ;
+    :part v:fiinich .
+
+  n:fineag
+    a :FeminineNoun ;
+    rdfs:label "fineag" ;
+    :sense "mite" ;
+    :gen "fineige" ;
+    :pl "fineagan" .
+
+  a:laan_fhineag
+    rdfs:label "làn fhineag" ;
+    :sense "full of mites" ;
+    :part n:fineag .
+
+  n:fineal
+    a :MasculineNoun ;
+    rdfs:label "fineal" ;
+    :sense "fennel" ;
+    :gen "fineil" .
+
+  a:fiinealta
+    a :Adjective ;
+    rdfs:label "fìnealta" ;
+    :sense "fine" , "delicate" , "polished (of manners etc.)" , "sensitive" .
+
+  n:fiinealtachd
+    a :FeminineNoun ;
+    rdfs:label "fìnealtachd" ;
+    :sense "fineness" , "polished manners" , "sensitivity" ;
+    :gen "fìnealtachd" .
+
+  n:fiinealtas
+    a :MasculineNoun ;
+    rdfs:label "fìnealtas" ;
+    :sense "delicacy" ;
+    :gen "fìnealtais" .
+
+  n:fineamhainn
+    a :FeminineNoun ;
+    rdfs:label "fineamhainn" ;
+    :sense "osier willow" .
+
+  n:finic
+    a :FeminineNoun ;
+    rdfs:label "finic" ;
+    :sense "jet" .
+
+  o:cho_dubh_ri_finic
+    rdfs:label "cho dubh ri finic" ;
+    :sense "as black as jet" ;
+    :part n:finic .
+
+  n:finid
+    a :FeminineNoun ;
+    rdfs:label "finid" ;
+    :sense "end" , "close" , "conclusion" ;
+    rdfs:comment "Uncommon" .
+
+  v:cuir_ceann_finid_air
+    rdfs:label "cuir ceann finid air ..." ;
+    :sense "bring to an end" , "bring to a close" ;
+    :part n:finid .
+
+  v:cuir_ceann_finid_air_gnothaichean
+    rdfs:label "agus a chur ceann finid air gnothaichean" ;
+    :sense "and to bring matters to a close" ;
+    :part n:finid .
+
+  n:fiiobrasas
+    a :MasculineNoun ;
+    rdfs:label "fìobrasas" ;
+    :sense "fibrositis" ;
+    :gen "fìobrasas" .
+
+
+
+
+
+}
