@@ -5,6 +5,8 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix : <http://faclair.ac.uk/meta/> .
 
+<http://faclair.ac.uk/sources/general> {
+
 n:dealan_dee
   rdfs:label "dealan dè" ;
   :sense "butterfly" ;
@@ -128,3 +130,5 @@ n:deuchainn
   rdfs:label "deuchainn" ;
   :sense "exam" ;
   rdfs:comment "[BMh 2013]" .
+
+}

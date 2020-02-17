@@ -5,14 +5,15 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix : <http://faclair.ac.uk/meta/> .
 
-n:ogha
-  a :MasculineNoun ;
-  rdfs:label "ogha" ;
-  :gen "ogha" ;
-  :pl "oghaichean" .
+<http://faclair.ac.uk/sources/general> {
 
-n:oide
-  a :MasculineNoun ;
-  rdfs:label "oide" ;
-  :gen "oide" ;
-  :pl "oidean" .
+n:paarant
+  rdfs:label "pàrant" .
+
+n:piuthar
+  a :FeminineNoun ;
+  rdfs:label "piuthar" ;
+  :gen "peathar" ;
+  :pl "peathraichean" .
+
+}

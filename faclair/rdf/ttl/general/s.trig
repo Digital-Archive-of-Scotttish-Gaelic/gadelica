@@ -5,6 +5,8 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix : <http://faclair.ac.uk/meta/> .
 
+<http://faclair.ac.uk/sources/general> {
+
 a:sean
   a :Adjective ;
   rdfs:label "sean" ;
@@ -15,38 +17,91 @@ n:seanair
   rdfs:label "seanair" ;
   :part a:sean , n:athair ;
   :gen "seannar" ;
-  :pl "seanairean" .
+  :pl "seanairean" ;
+  rdfs:comment "[BMh 2013]" .
 
 n:seanmhair
   a :FeminineNoun ;
   rdfs:label "seanmhair" ;
   :part a:sean , n:maathair ;
   :gen "seanmhar" ;
-  :pl "seanmhairean" .
+  :pl "seanmhairean" ;
+  rdfs:comment "[BMh 2013]" .
 
 n:sean_phaarant
-  rdfs:label "sean-phàrant" .
+  rdfs:label "sean-phàrant" ;
+  rdfs:comment "[BMh 2013]" .
 
 n:seann_seanair
   rdfs:label "seann seanair" ;
   :part a:sean , n:seanair ;
   :pl "seann seanairean" ;
-  :gen "seann seannar" .
+  :gen "seann seannar" ;
+  rdfs:comment "[BMh 2013]" .
 
 n:seann_seanmhair
   a :FeminineNoun ;
   rdfs:label "seann seanmhair" ;
   :part a:sean , n:seanmhair ;
   :pl "seann seanmhairean" ;
-  :gen "seann seanmhar" .
+  :gen "seann seanmhar" ;
+  rdfs:comment "[BMh 2013]" .
 
 
 
+n:seilcheag
+  a :FeminineNoun ;
+  rdfs:label "seilcheag" ;
+  :sense "snail" , "slug" ;
+  :gen "seilcheig", "seilcheige" ;
+  :pl "seilcheagan" ;
+  rdfs:comment "[CM 2004]" .
 
+n:seile
+  a :MasculineNoun ;
+  rdfs:label "seile" ;
+  :sense "saliva" , "spittle" , "slaver" ;
+  :gen "seile" ;
+  rdfs:comment "Cf ronn" ;
+  rdfs:comment "[CM 2004]" .
+
+# chuala mi e a’ slugadh a sheile
+# I heard him swallowing his saliva
+
+n:seileach
+  a :MasculineNoun ;
+  rdfs:label "seileach" ;
+  :sense "willow" ;
+  :gen "seilich" ;
+  :pl "seilichean" , "seileachan" ;
+  rdfs:comment "[CM 2004]" .
+
+# sèileafon
+# seilear
+# seileastair
+# òrain sheilge
+# taigh seilge
+# seilich
+# seilleach
+# seilleach-geal
+# seilleachan
+# seilleachan-Frangach
 
 n:seillean
   a :MasculineNoun ;
-  rdfs:label "seillean" .
+  rdfs:label "seillean" ;
+  :sense "bee" ;
+  :gen "seillein" ;
+  :pl "seilleanan" , "seillein" ;
+  rdfs:comment "[AW 2001 Cf. beach]" ;
+  rdfs:comment "[CM 2004]" .
+
+# laigh an sgaoth sheillean air preas
+# the swarm of bees landed on a bush
+#
+# sgeap sheillean
+# a beehive
+
 
 n:seillean_caardair
   rdfs:label "seillean càrdair" ;
@@ -79,7 +134,9 @@ n:seillean_meala
 
 n:seillean_moor
   rdfs:label "seillean mòr" ;
-  :part n:seillean , n:moor .
+  :sense "bumblebee" , "bumble bee" , "bumble-bee" ;
+  :part n:seillean , n:moor ;
+  rdfs:comment "[CM 2004]" .
 
 n:seillean_moor_a_bhlaair_fhraoich
   rdfs:label "seillean mòr a’ bhlàir fhraoich" ;
@@ -140,3 +197,5 @@ n:seillean_moor_nan_dearcan_fraoich
 n:seillean_moor_traath
   rdfs:label "seillean mòr tràth" ;
   :part n:seillean_moor , a:traath .
+
+}

@@ -4,23 +4,24 @@ $search = $_GET['searchTerm'];
 $snh = $_GET['snh'];
 $frp = $_GET['frp'];
 $seotal = $_GET['seotal'];
+$dwelly = $_GET['dwelly'];
 $others = $_GET['others'];
 
 switch ($_REQUEST["action"]) {
   case "getEnglishResults":
-    $results = getEnglishExact($search,$snh,$frp,$seotal,$others);
+    $results = getEnglishExact();
     echo json_encode($results);
     break;
   case "getMoreEnglishResults":
-    $results = getEnglishPrefix($search,$snh,$frp,$seotal,$others);
+    $results = getEnglishPrefix();
     echo json_encode($results);
     break;
   case "getEvenMoreEnglishResults":
-    $results = getEnglishSuffix($search,$snh,$frp,$seotal,$others);
+    $results = getEnglishSuffix();
     echo json_encode($results);
     break;
   case "getEvenEvenMoreEnglishResults":
-    $results = getEnglishSubstring($search,$snh,$frp,$seotal,$others);
+    $results = getEnglishSubstring();
     echo json_encode($results);
     break;
   case "getGaelicResults":
@@ -37,50 +38,39 @@ switch ($_REQUEST["action"]) {
     break;
 }
 
-function getLex($snh,$frp,$seotal,$others) { // NEED TO ADD OTHERS TO ALL BRANCHES
-  $lex = '';
-  if ($snh=='true') {
-    if ($frp=='true') {
-      if ($seotal='true') {
-        if ($others='true') {
-          $lex = '';
-        }
-        else {
-          $lex = 'FILTER (?lex=<http://faclair.ac.uk/sources/SNH> || ?lex=<http://faclair.ac.uk/sources/FRP2013> || ?lex=<http://faclair.ac.uk/sources/Seotal>) .';
-        }
-      }
-      else {
-        $lex = 'FILTER (?lex=<http://faclair.ac.uk/sources/SNH> || ?lex=<http://faclair.ac.uk/sources/FRP2013>) .';
-      }
-    }
-    else {
-      $lex = 'FILTER (?lex=<http://faclair.ac.uk/sources/SNH>) .';
-    }
+function getLex() {
+  $lex = [];
+  if ($_GET['snh']=='true') {
+    $lex[] = '?lex=<http://faclair.ac.uk/sources/SNH>';
   }
-  else if ($frp=='true') {
-    if ($seotal='true') {
-      $lex = 'FILTER (?lex=<http://faclair.ac.uk/sources/FRP2013> || ?lex=<http://faclair.ac.uk/sources/Seotal>) .';
-    }
-    else {
-      $lex = 'FILTER (?lex=<http://faclair.ac.uk/sources/FRP2013>) .';
-    }
+  if ($_GET['frp']=='true') {
+    $lex[] = '?lex=<http://faclair.ac.uk/sources/FRP2013>';
   }
-  else if ($seotal='true') {
-      $lex = 'FILTER (?lex=<http://faclair.ac.uk/sources/Seotal>) .';
+  if ($_GET['seotal']=='true') {
+    $lex[] = '?lex=<http://faclair.ac.uk/sources/Seotal>';
   }
-  return $lex;
+  if ($_GET['dwelly']=='true') {
+    $lex[] = '?lex=<http://faclair.ac.uk/sources/Dwelly>';
+  }
+  if ($_GET['others']=='true') {
+    $lex[] = '?lex=<http://faclair.ac.uk/sources/general>';
+  }
+  $str = implode(' || ', $lex);
+  return 'FILTER (' . $str . ') .';
 }
 
-function getEnglishExact($en,$snh,$frp,$seotal,$others) {
-  $lex = getLex($snh,$frp,$seotal,$others);
-  //return $lex;
+function getEnglishExact() {
+  $lex = getLex();
+  $en = $_GET['searchTerm'];
   $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
-SELECT DISTINCT ?id ?gd ?en
+SELECT DISTINCT ?id ?gd ?en ?lex ?gdlex
 WHERE
 {
-  ?id rdfs:label ?gd .
+  GRAPH ?gdlex {
+    ?id rdfs:label ?gd .
+  }
   GRAPH ?lex {
     ?id :sense ?en .
   }
@@ -88,10 +78,15 @@ WHERE
   {$lex}
 }
 SPQR;
-  //$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
+  //return $query;
+  $url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
   $url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
   return json_decode(file_get_contents($url),false)->results->bindings;
 }
+
+
+
+
 
 function getGaelicExact($gd,$snh,$frp,$seotal) {
   // convert $gd to accent insensitive RE
@@ -123,15 +118,18 @@ function accentInsensitive($in) {
   return $rx;
 }
 
-function getEnglishPrefix($en,$snh,$frp,$seotal,$others) {
-  $lex = getLex($snh,$frp,$seotal,$others);
+function getEnglishPrefix() {
+  $lex = getLex();
+  $en = $_GET['searchTerm'];
   $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
-SELECT DISTINCT ?id ?gd ?en
+SELECT DISTINCT ?id ?gd ?en ?lex ?gdlex
 WHERE
 {
-  ?id rdfs:label ?gd .
+  GRAPH ?gdlex {
+    ?id rdfs:label ?gd .
+  }
   GRAPH ?lex {
     ?id :sense ?en .
   }
@@ -166,15 +164,18 @@ SPQR;
   return json_decode(file_get_contents($url),false)->results->bindings;
 }
 
-function getEnglishSuffix($en,$snh,$frp,$seotal,$others) {
-  $lex = getLex($snh,$frp,$seotal,$others);
+function getEnglishSuffix() {
+  $lex = getLex();
+  $en = $_GET['searchTerm'];
   $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
-SELECT DISTINCT ?id ?gd ?en
+SELECT DISTINCT ?id ?gd ?en ?lex ?gdlex
 WHERE
 {
-  ?id rdfs:label ?gd .
+  GRAPH ?gdlex {
+    ?id rdfs:label ?gd .
+  }
   GRAPH ?lex {
     ?id :sense ?en .
   }
@@ -209,15 +210,18 @@ SPQR;
     return json_decode(file_get_contents($url),false)->results->bindings;
 }
 
-function getEnglishSubstring($en,$snh,$frp,$seotal,$others) {
-  $lex = getLex($snh,$frp,$seotal,$others);
+function getEnglishSubstring() {
+  $lex = getLex();
+  $en = $_GET['searchTerm'];
   $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
-SELECT DISTINCT ?id ?gd ?en
+SELECT DISTINCT ?id ?gd ?en ?lex ?gdlex
 WHERE
 {
-  ?id rdfs:label ?gd .
+  GRAPH ?gdlex {
+    ?id rdfs:label ?gd .
+  }
   GRAPH ?lex {
     ?id :sense ?en .
   }

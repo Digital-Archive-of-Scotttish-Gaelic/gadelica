@@ -5,6 +5,8 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix : <http://faclair.ac.uk/meta/> .
 
+<http://faclair.ac.uk/sources/general> {
+
 v:faabhair
   a :Verb ;
   rdfs:label "fàbhair" ;
@@ -678,3 +680,5 @@ n:fiiobrasas
   a :MasculineNoun ;
   rdfs:label "fìobrasas" ;
   :gen "fìobrasas" .
+
+}

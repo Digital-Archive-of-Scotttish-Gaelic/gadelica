@@ -21,17 +21,19 @@ $id = $_GET['id'];
 $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
-SELECT ?hw ?pid ?phw ?en ?cid ?chw
+SELECT ?hw #?pid ?phw ?cid ?chw
 WHERE
 {
-  OPTIONAL { <{$id}> rdfs:label ?hw . }
-  OPTIONAL {
-    <{$id}> :part ?pid .
-    OPTIONAL { ?pid rdfs:label ?phw . }
-  }
-  OPTIONAL {
-    ?cid :part <{$id}> .
-    OPTIONAL { ?cid rdfs:label ?chw . }
+  GRAPH <http://faclair.ac.uk/sources/general> {
+    <{$id}> rdfs:label ?hw .
+    #OPTIONAL {
+    #  <{$id}> :part ?pid .
+    #  OPTIONAL { ?pid rdfs:label ?phw . }
+    #}
+    #OPTIONAL {
+    #  ?cid :part <{$id}> .
+    #  OPTIONAL { ?cid rdfs:label ?chw . }
+    #}
   }
 }
 SPQR;
@@ -46,10 +48,7 @@ $results = json_decode($json,false)->results->bindings;
 <?php
 $hws = [];
 foreach($results as $nextResult) {
-  $hw = $nextResult->hw->value;
-  if ($hw != '') {
-    $hws[] = $hw;
-  }
+  $hws[] = $nextResult->hw->value;
 }
 $hws = array_unique($hws);
 echo '<h1 class="card-title">';

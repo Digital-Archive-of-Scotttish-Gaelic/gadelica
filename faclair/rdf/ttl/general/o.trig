@@ -5,13 +5,18 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix : <http://faclair.ac.uk/meta/> .
 
-n:teaghlach
+<http://faclair.ac.uk/sources/general> {
+
+n:ogha
   a :MasculineNoun ;
-  rdfs:label "teaghlach" ;
-  :gen "teaghlaich" ;
-  :pl "teaghlaichean" .
+  rdfs:label "ogha" ;
+  :gen "ogha" ;
+  :pl "oghaichean" .
 
-n:teaghlach_farsaing
-  rdfs:label "teaghlach farsaing" .
+n:oide
+  a :MasculineNoun ;
+  rdfs:label "oide" ;
+  :gen "oide" ;
+  :pl "oidean" .
 
-  
+}

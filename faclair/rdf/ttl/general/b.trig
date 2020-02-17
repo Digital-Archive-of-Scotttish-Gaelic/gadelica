@@ -5,6 +5,8 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix : <http://faclair.ac.uk/meta/> .
 
+<http://faclair.ac.uk/sources/general> {
+
 n:braathair
   a :MasculineNoun ;
   rdfs:label "bràthair" ;
@@ -12,3 +14,5 @@ n:braathair
   :pl "bràithrean" ;
   :sense "brother"  ;
   rdfs:comment "[BMh 2013]" .
+
+}

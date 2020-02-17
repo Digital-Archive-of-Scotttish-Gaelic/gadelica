@@ -5,6 +5,8 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix : <http://faclair.ac.uk/meta/> .
 
+<http://faclair.ac.uk/sources/general> {
+
 n:dachaigh
   rdfs:label "dachaigh" ;
   :sense "home" ;
@@ -94,4 +96,5 @@ n:dathan_uisge
   :sense "watercolours" ;
   :part n:dath , n:uisge ;
   rdfs:comment "[BMh 2013]" .
-  
+
+}

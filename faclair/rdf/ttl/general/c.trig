@@ -1,0 +1,432 @@
+@prefix n: <http://faclair.ac.uk/nouns/> .
+@prefix a: <http://faclair.ac.uk/adjectives/> .
+@prefix v: <http://faclair.ac.uk/verbs/> .
+@prefix o: <http://faclair.ac.uk/other/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://faclair.ac.uk/meta/> .
+
+<http://faclair.ac.uk/sources/general> {
+
+n:caibineat
+  a :MasculineNoun ;
+  rdfs:label "caibineat" ;
+  :sense "bathroom cabinet" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cailc
+  a :FeminineNoun ;
+  rdfs:label "cailc" ;
+  :sense "chalk" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:caaise
+  a :MasculineNoun ;
+  rdfs:label "càise" ;
+  :sense "cheese" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:caal
+  a :MasculineNoun ;
+  rdfs:label "càl" ;
+  :sense "cabbage" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:caol_duuirn
+  a :MasculineNoun ;
+  rdfs:label "caol dùirn" ;
+  :sense "wrist" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:caolan
+  a :MasculineNoun ;
+  rdfs:label "caolan" ;
+  :sense "intestine" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:caraid
+  a :MasculineNoun ;
+  rdfs:label "caraid" ;
+  :gen "caraid" ;
+  :pl "càirdean" ;
+  :sense "friend" , "relative" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:caraid_as_fheaarr
+  rdfs:label "caraid as fheàrr" ;
+  :part n:caraid , a:math ;
+  :pl "càirdean as fheàrr" ;
+  :gen "caraid as fheàrr" ;
+  :sense "best friend" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:caardagan
+  a :MasculineNoun ;
+  rdfs:label "càrdagan" ;
+  :sense "cardigan" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cas
+  a :FeminineNoun ;
+  rdfs:label "cas" ;
+  :sense "leg" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:casan_losgainn
+  a :FeminineNoun ;
+  rdfs:label "casan losgainn" ;
+  :sense "frogs’ legs" ;
+  :part n:cas , n:losgann ;
+  rdfs:comment "[BMh 2013]" .
+
+n:casachain
+  a :PluralNoun ;
+  rdfs:label "casachain" ;
+  :sense "leggings" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:ceann
+  a :MasculineNoun ;
+  rdfs:label "ceann" ;
+  :sense "head" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:ceapaire
+  a :MasculineNoun ;
+  rdfs:label "ceapaire" ;
+  :sense "sandwich" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cearc
+  a :FeminineNoun ;
+  rdfs:label "cearc" ;
+  :sense "chicken" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:ceeic_chupa
+  rdfs:label "cèic chupa" ;
+  :pl "cèicichean cupa" ;
+  :sense "cupcake" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:ceool
+  a :MasculineNoun ;
+  rdfs:label "ceòl" ;
+  :sense "music" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:ciadfath
+  rdfs:label "ciadfath" ;
+  :sense "sense" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cidhis
+  a :FeminineNoun ;
+  rdfs:label "cidhis" ;
+  :sense "visor" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cidsin
+  a :MasculineNoun ;
+  rdfs:label "cidsin" ;
+  :sense "kitchen" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:ciomoona
+  a :MasculineNoun ;
+  rdfs:label "ciomòna" ;
+  :sense "kimono" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:claigeann
+  a :MasculineNoun ;
+  rdfs:label "claigeann" ;
+  :sense "skull" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:claisneachd
+  a :FeminineNoun ;
+  rdfs:label "claisneachd" ;
+  :sense "hearing" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:claar_ama
+  rdfs:label "clàr ama" ;
+  :sense "timetable" ;
+  :part n:claar ;
+  rdfs:comment "[BMh 2013]" .
+
+n:claar_balla
+  rdfs:label "clàr balla" ;
+  :sense "wall chart" ;
+  :part n:claar ;
+  rdfs:comment "[BMh 2013]" .
+
+n:claar_DVD
+  rdfs:label "clàr DVD" ;
+  :sense "DVD" , "digital video disk" ;
+  :part n:claar ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cleooca
+  a :MasculineNoun ;
+  rdfs:label "cleòca" ;
+  :sense "cloak" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cliathan
+  a :MasculineNoun ;
+  rdfs:label "cliathan" ;
+  :sense "breastbone" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:clog
+  a :FeminineNoun ;
+  rdfs:label "clog" ;
+  :pl "clogan" ;
+  :sense "clog" ;
+  rdfs:comment "[BMh 2013 – footwear]" .
+
+n:clogan_rubair
+  rdfs:label "clogan rubair" ;
+  :sense "rubber clogs" ;
+  :part n:clog ;
+  rdfs:comment "[BMh 2013]" .
+
+n:clogaid
+  a :FeminineNoun ;
+  rdfs:label "clogaid" ;
+  :sense "helmet" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cluas
+  a :FeminineNoun ;
+  rdfs:label "cluas" ;
+  :sense "ear" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cluasanan
+  a :PluralNoun ;
+  rdfs:label "cluasanan" ;
+  :sense "earphones" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cluicheadair_aghaidh
+  rdfs:label "cluicheadair aghaidh" ;
+  :sense "striker" ;
+  :part n:cluicheadair , n:aghaidh ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cluicheadair_ciuuil
+  rdfs:label "cluicheadair ciùil" ;
+  :sense "music player" ;
+  :part n:cluicheadair , n:ceool ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cluicheadair_diion
+  rdfs:label "cluicheadair dìon" ;
+  :sense "defender" ;
+  :part n:cluicheadair , n:diion ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cnaaimh
+  a :MasculineNoun ;
+  rdfs:label "cnàimh" ;
+  :sense "bone" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cnaaimh_an_uga
+  a :MasculineNoun ;
+  rdfs:label "cnàimh an uga" ;
+  :sense "collarbone" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cnaaimh_droma
+  a :MasculineNoun ;
+  rdfs:label "cnàimh droma" ;
+  :sense "spine" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cnaaimheach
+  a :MasculineNoun ;
+  rdfs:label "cnàimheach" ;
+  :sense "skeleton" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:co_ogha
+  rdfs:label "co-ogha" ;
+  :gen "co-ogha" ;
+  :pl "co-oghaichean" ;
+  :part n:ogha ;
+  :sense "cousin" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:coocaire
+  a :MasculineNoun ;
+  rdfs:label "còcaire" ;
+  :sense "chef" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cofaidh
+  a :MasculineNoun ;
+  rdfs:label "cofaidh" ;
+  :sense "coffee" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:coirce
+  a :MasculineNoun ;
+  rdfs:label "coirce" ;
+  :sense "oats" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:coirce_milis
+  rdfs:label "coirce-milis" ;
+  :sense "sweetcorn" ;
+  :part n:coirce , a:milis ;
+  rdfs:comment "[BMh 2013]" .
+
+n:coire
+  a :MasculineNoun ;
+  rdfs:label "coire" ;
+  :sense "kettle" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:coiridh
+  a :MasculineNoun ;
+  rdfs:label "coiridh" ;
+  :sense "curry" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:consoil_gheamannan
+  rdfs:label "consoil gheamannan" ;
+  :sense "games console" ;
+  :part n:geama ;
+  rdfs:comment "[BMh 2013]" .
+
+n:corrag
+  a :FeminineNoun ;
+  rdfs:label "corrag" ;
+  :sense "finger" ;
+  :pl "corragan" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:coota
+  a :MasculineNoun ;
+  rdfs:label "còta" ;
+  :sense "coat" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cotan
+  a :MasculineNoun ;
+  rdfs:label "cotan" ;
+  :sense "cotton wool" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:creeadh_modailidh
+  rdfs:label "crèadh modailidh" ;
+  :sense "modelling clay" ;
+  :part n:creeadh ;
+  rdfs:comment "[BMh 2013]" .
+
+n:criathar
+  a :MasculineNoun ;
+  rdfs:label "criathar" ;
+  :gen "criathair" ;
+  :pl "criatharan" , "criathran" ;
+  :sense "sieve" , "riddle" ;
+  rdfs:comment "[BMh 2013]" ;
+  rdfs:comment "[CM 2004]" .
+
+n:cridhe
+  a :MasculineNoun ;
+  rdfs:label "cridhe" ;
+  :sense "heart" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:criogaid
+  a :MasculineNoun ;
+  rdfs:label "criogaid" ;
+  :sense "cricket" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:crios_cuideim
+  rdfs:label "crios cuideim" ;
+  :sense "weight belt" ;
+  :part n:crios ;
+  rdfs:comment "[BMh 2013]" .
+
+n:crios_innealan
+  rdfs:label "crios innealan" ;
+  :sense "tool belt" ;
+  :part n:crios ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cruachan
+  a :MasculineNoun ;
+  rdfs:label "cruachan" ;
+  :sense "hip" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cruinne
+  a :MasculineNoun ;
+  rdfs:label "cruinne" ;
+  :sense "globe" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cruinn_eoolas
+  rdfs:label "cruinn-eòlas" ;
+  :sense "geography" ;
+  :part n:cruinne , n:eoolas ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cruun
+  a :MasculineNoun ;
+  rdfs:label "crùn" ;
+  :sense "crown" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cuaran
+  a :MasculineNoun ;
+  rdfs:label "cuaran" ;
+  :pl "cuaranan" ;
+  :sense "sandal" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cucair
+  a :MasculineNoun ;
+  rdfs:label "cucair" ;
+  :sense "cooker" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:culaidh_aosmhor
+  a :FeminineNoun ;
+  rdfs:label "culaidh aosmhor" ;
+  :pl "culaidhean aosmhor" ;
+  :sense "historical costume" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cularan
+  a :MasculineNoun ;
+  rdfs:label "cularan" ;
+  :sense "cucumber" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cur_seachad
+  rdfs:label "cur-seachadan" ;
+  :sense "leisure" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:currac
+  a :MasculineNoun ;
+  rdfs:label "currac" ;
+  :sense "cap" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:curran
+  a :MasculineNoun ;
+  rdfs:label "curran" ;
+  :pl "currain" ;
+  :gen "currain" ;
+  :sense "carrot" ;
+  rdfs:comment "[BMh 2013]" .
+
+}

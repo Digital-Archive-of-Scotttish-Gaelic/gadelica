@@ -5,6 +5,8 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix : <http://faclair.ac.uk/meta/> .
 
+<http://faclair.ac.uk/sources/general> {
+
 n:diagram_cuairt_dealain
   rdfs:label "diagram cuairt-dealain" ;
   :sense "circuit diagram" ;
@@ -39,3 +41,5 @@ n:diuudo
   rdfs:label "diùdo" ;
   :sense "judo" ;
   rdfs:comment "[BMh 2013]" .
+
+}

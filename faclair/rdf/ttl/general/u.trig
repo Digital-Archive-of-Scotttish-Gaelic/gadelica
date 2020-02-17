@@ -5,11 +5,12 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix : <http://faclair.ac.uk/meta/> .
 
-n:paarant
-  rdfs:label "pàrant" .
+<http://faclair.ac.uk/sources/general> {
 
-n:piuthar
-  a :FeminineNoun ;
-  rdfs:label "piuthar" ;
-  :gen "peathar" ;
-  :pl "peathraichean" .
+n:uncail
+  a :MasculineNoun ;
+  rdfs:label "uncail" ;
+  :gen "uncail" ;
+  :pl "uncailean" .
+
+}

@@ -5,6 +5,8 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix : <http://faclair.ac.uk/meta/> .
 
+<http://faclair.ac.uk/sources/general> {
+
 n:dual_hair
   a :MasculineNoun ;
   rdfs:label "dual" ;
@@ -508,3 +510,5 @@ v:b_esan_am_fear_labhairt_duuthchasail_mu_dheireadh
   :sense "he was the last native speaker" ;
   :part n:neach_labhairt_duuthchasail ;
   rdfs:comment "[CM 2004]" .
+
+}

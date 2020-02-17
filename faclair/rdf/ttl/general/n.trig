@@ -5,16 +5,9 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix : <http://faclair.ac.uk/meta/> .
 
-n:mala
-  a :FeminineNoun ;
-  rdfs:label "mala" .
+<http://faclair.ac.uk/sources/general> {
 
-n:maoil
-  a :FeminineNoun ;
-  rdfs:label "maoil" .
+n:neach_cuuraim
+  rdfs:label "neach cùraim" .
 
-n:maathair
-  a :FeminineNoun ;
-  rdfs:label "màthair" ;
-  :gen "màthar" ;
-  :pl "màthraichean" .
+}

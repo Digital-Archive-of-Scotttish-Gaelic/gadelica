@@ -5,6 +5,8 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix : <http://faclair.ac.uk/meta/> .
 
+<http://faclair.ac.uk/sources/general> {
+
 n:draagan_Comoodo
   rdfs:label "dràgan Comòdo" ;
   :sense "Komodo dragon" ;
@@ -13,7 +15,7 @@ n:draagan_Comoodo
 n:draaibhear_bus
   rdfs:label "dràibhear bus" ;
   :sense "bus driver" ;
-  :part n:draaibhear n:bus ;
+  :part n:draaibhear , n:bus ;
   rdfs:comment "[BMh 2013]" .
 
 n:drannd_eun
@@ -59,3 +61,5 @@ n:druma_laaimhe
   :sense "tabla" ;
   :part n:druma , n:laamh ;
   rdfs:comment "[BMh 2013]" .
+
+}

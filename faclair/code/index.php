@@ -44,9 +44,13 @@
             <input class="form-check-input" type="checkbox" name="seotal" id="seotalCheck" value="yes" checked>
             <label class="form-check-label" for="seotalCheck">Seotal</label>
           </div>
+          <div class="form-check form-check-inline" data-toggle="tooltip" title="Search Dwelly">
+            <input class="form-check-input" type="checkbox" name="dwelly" id="dwellyCheck" value="yes" checked>
+            <label class="form-check-label" for="dwellyCheck">Dwelly</label>
+          </div>
           <div class="form-check form-check-inline" data-toggle="tooltip" title="Search other resources">
             <input class="form-check-input" type="checkbox" name="others" id="othersCheck" value="yes" checked>
-            <label class="form-check-label" for="othersCheck">eile</label>
+            <label class="form-check-label" for="othersCheck">Eile</label>
           </div>
         </div>
       </form>
