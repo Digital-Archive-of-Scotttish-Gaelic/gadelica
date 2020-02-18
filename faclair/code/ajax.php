@@ -25,13 +25,19 @@ switch ($_REQUEST["action"]) {
     echo json_encode($results);
     break;
   case "getGaelicResults":
-    $results = getGaelicExact($search,$snh,$frp,$seotal);
-    $results = array_merge($results,getGaelicPrefix($search,$snh,$frp,$seotal));
-    $results = array_merge($results,getGaelicSuffix($search,$snh,$frp,$seotal));
+    $results = getGaelicExact();
     echo json_encode($results);
     break;
   case "getMoreGaelicResults":
-    $results = getGaelicSubstring($search,$snh,$frp,$seotal);
+    $results = getGaelicPrefix();
+    echo json_encode($results);
+    break;
+  case "getEvenMoreGaelicResults":
+    $results = getGaelicSuffix();
+    echo json_encode($results);
+    break;
+  case "getEvenEvenMoreGaelicResults":
+    $results = getGaelicSubstring();
     echo json_encode($results);
     break;
   default:
@@ -86,36 +92,35 @@ SPQR;
   return json_decode(file_get_contents($url),false)->results->bindings;
 }
 
-
-
-
-
-function getGaelicExact($gd,$snh,$frp,$seotal) {
+function getGaelicExact() {
   // convert $gd to accent insensitive RE
-  $lex = getLex($snh,$frp,$seotal);
-    $query = <<<SPQR
+  $lex = getLex();
+  $gd = $_GET['searchTerm'];
+  $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
 SELECT DISTINCT ?id ?gd ?en
 WHERE
 {
-  ?id rdfs:label ?gd .
+  GRAPH ?lex {
+    ?id rdfs:label ?gd .
+  }
   GRAPH ?lex {
     ?id :sense ?en .
   }
 SPQR;
-    $query .= ' FILTER regex(?gd, "^' . accentInsensitive($gd) . '$", "i") . ' . $lex . ' } ';
-    //$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
-    $url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
-    return json_decode(file_get_contents($url),false)->results->bindings;
+  $query .= ' FILTER regex(?gd, "^' . accentInsensitive($gd) . '$", "i") . ' . $lex . ' } ';
+  //$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
+  $url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+  return json_decode(file_get_contents($url),false)->results->bindings;
 }
 
 function accentInsensitive($in) {
   $rx = $in;
   $rx = str_replace('a','[aà]',$rx);
-  $rx = str_replace('e','[eè]',$rx);
+  $rx = str_replace('e','[eèé]',$rx);
   $rx = str_replace('i','[iì]',$rx);
-  $rx = str_replace('o','[oò]',$rx);
+  $rx = str_replace('o','[oòó]',$rx);
   $rx = str_replace('u','[uù]',$rx);
   return $rx;
 }

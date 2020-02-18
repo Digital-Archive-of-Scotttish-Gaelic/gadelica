@@ -102,6 +102,10 @@ n:seillean
 # sgeap sheillean
 # a beehive
 
+n:seillean_achaidh
+  rdfs:label "seillean achaidh" ;
+  :sense "field bee" ;
+  :part n:seillean , n:achadh .
 
 n:seillean_caardair
   rdfs:label "seillean càrdair" ;
@@ -202,7 +206,10 @@ n:seillean_moor_traath
   rdfs:label "seillean mòr tràth" ;
   :part n:seillean_moor , a:traath .
 
-
+n:seillean_nimh
+  rdfs:label "seillean nimh" ;
+  :sense "hornet" ;
+  :part n:seillean .
 
 n:sgeap
   a :FeminineNoun ;

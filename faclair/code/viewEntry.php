@@ -17,7 +17,7 @@
   <body style="padding-top: 20px;">
     <div class="container-fluid">
 <?php
-// get generic information about lexicl item for top of page
+// get generic information about lexical item for top of page
 $id = $_GET['id'];
 $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -212,11 +212,9 @@ foreach($results as $nextResult) {
   }
 }
 $comments = array_unique($comments);
-if (count($comments) > 0) {
-  echo '<div class="list-group-item"><small class="text-muted">Admin: ';
-  echo implode(' | ',$comments);
-  echo '</small></div>';
-}
+echo '<div class="list-group-item"><small class="text-muted">Admin: ' . $id . ' | ';
+echo implode(' | ',$comments);
+echo '</small></div>';
 echo '</div>'; // end of list group
 ?>
 <!-- THE CAROUSEL: -->

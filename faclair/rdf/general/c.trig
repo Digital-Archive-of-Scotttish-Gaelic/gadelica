@@ -19,6 +19,24 @@ n:caaball_buulais
   :part n:caaball ;
   rdfs:comment "[BMh 2013]" .
 
+n:cabhsair
+  a :MasculineNoun ;
+  rdfs:label "cabhsair" ;
+  :sense "pavement" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cactas
+  a :MasculineNoun ;
+  rdfs:label "cactas" ;
+  :sense "cactus" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cafaidh
+  a :MasculineNoun ;
+  rdfs:label "cafaidh" ;
+  :sense "café" ;
+  rdfs:comment "[BMh 2013]" .
+
 n:caibineat
   a :MasculineNoun ;
   rdfs:label "caibineat" ;
@@ -89,6 +107,12 @@ n:caolan
   a :MasculineNoun ;
   rdfs:label "caolan" ;
   :sense "intestine" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:caomhnadh_cumhachd
+  rdfs:label "caomhnadh cumhachd" ;
+  :sense "energy conservation" ;
+  :part n:caomhnadh , n:cumhachd ;
   rdfs:comment "[BMh 2013]" .
 
 n:caora
@@ -243,7 +267,19 @@ n:ceanglachan
 n:ceann
   a :MasculineNoun ;
   rdfs:label "ceann" ;
-  :sense "head" ;
+  :sense "head" , "headlight" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:ceann_fionn
+  rdfs:label "ceann fionn" ;
+  :sense "penguin" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:ceannaiche_glasraich
+  a :MasculineNoun ;
+  rdfs:label "ceannaiche glasraich" ;
+  :sense "greengrocer" ;
+  :part n:ceannaiche , n:glasraich ;
   rdfs:comment "[BMh 2013]" .
 
 n:ceapaire
@@ -275,10 +311,157 @@ n:cearc_Fhrangach
   :sense "turkey" ;
   rdfs:comment "[BMh 2013]" .
 
+n:cearcall
+  a :MasculineNoun ;
+  rdfs:label "cearcall" ;
+  :sense "circle" , "gyre" , "hoop" , "ring" , "zone" , "cycle" ;
+  :gen "cearcaill" ;
+  :pl "cearcaill" ;
+  rdfs:comment "[CM 2004] [BMh 2013]" .
+
+n:Cearcall_na_h_Antarctaic
+  rdfs:label "Cearcall na h-Antarctaic" ;
+  :sense "Antarctic Circle" ;
+  :part n:cearcall ;
+  rdfs:comment "[CM 2004]" .
+
+n:Cearcall_na_h_Arctaic
+  rdfs:label "Cearcall na h-Arctaic" ;
+  :sense "Arctic Circle" ;
+  :part n:cearcall ;
+  rdfs:comment "[CM 2004]" .
+
+n:cearcall_na_beatha
+  rdfs:label "cearcall na beatha" ;
+  :sense "cycle of life" , "circle of life" ;
+  :part n:cearcall , n:beatha ;
+  rdfs:comment "[CM 2004]" .
+
+n:cearcall_biidhe
+  rdfs:label "cearcall bìdhe" ;
+  :sense "food cycle" ;
+  :part n:cearcall , n:biadh ;
+  rdfs:comment "[CM 2004]" .
+
+n:cearcall_buuirn
+  rdfs:label "cearcall bùirn" ;
+  :sense "water cycle" ;
+  :part n:cearcall , n:buurn ;
+  rdfs:comment "[CM 2004]" .
+
+n:cearcall_dathte
+  rdfs:label "cearcall dathte" ;
+  :sense "iris (of the eye)" ;
+  :part n:cearcall , a:dathte ;
+  rdfs:comment "[CM 2004]" .
+
+n:cearcall_eeadhair_theth
+  rdfs:label "cearcall eeadhair theth" ;
+  :sense "hot air cycle" ;
+  :part n:cearcall , n:eeadhair_theth ;
+  rdfs:comment "[CM 2004]" .
+
+n:cearcall_grian_stad
+  rdfs:label "cearcall grian-stad" ;
+  :sense "tropic" ;
+  :part n:cearcall , n:grian ;
+  rdfs:comment "[CM 2004]" .
+
+n:cearcall_millteach
+  rdfs:label "cearcall millteach" ;
+  :part n:cearcall , a:millteach ;
+  :sense "vicious circle" .
+
+n:cearcall_osooin
+  rdfs:label "cearcall osòin" ;
+  :sense "ozone layer" ;
+  :part n:cearcall ;
+  rdfs:comment "[CM 2004]" .
+
+n:cearcall_rathaid
+  rdfs:label "cearcall rathaid" ;
+  :sense "roundabout" ;
+  :part n:cearcall , n:rathad .
+
+n:cearcall_na_suula
+  rdfs:label "cearcall na sùla" ;
+  :sense "iris (of the eye)" ;
+  :part n:cearcall , n:suuil ;
+  rdfs:comment "[CM 2004]" .
+
+n:cearcall_thomas
+  rdfs:label "cearcall-thomas" ;
+  :sense "circumference" ;
+  :part n:cearcall , n:tomhas ;
+  rdfs:comment "[CM 2004]" .
+
+n:cearcallaiche
+  a :MasculineNoun ;
+  rdfs:label "cearcallaiche" ;
+  :sense "compasses" , "set of compasses" ;
+  :gen "cearcallaiche" ;
+  :pl "cearcallaichean" ;
+  :part n:cearcall ;
+  rdfs:comment "[CM 2004]" .
+
+a:cearclach
+  a :Adjective ;
+  rdfs:label "cearclach" ;
+  :sense "circular" ;
+  :part n:cearcall .
+
+n:cearclair
+  a :MasculineNoun ;
+  rdfs:label "cearclair" ;
+  :sense "gyroscope" ;
+  :gen "cearclair" ;
+  :pl "cearclairean" ;
+  :part n:cearcall ;
+  rdfs:comment "[CM 2004]" .
+
+n:cearclan
+  a :MasculineNoun ;
+  rdfs:label "cearclan" ;
+  :sense "washer" ;
+  :gen "cearclain" ;
+  :pl "cearclanan" ;
+  :part n:cearcall ;
+  rdfs:comment "[CM 2004 – mechanics]" .
+
+n:ceaarnag
+  a :FeminineNoun ;
+  rdfs:label "ceàrnag" ;
+  :sense "square" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:ceaarnaidh_poolarach
+  rdfs:label "ceàrnaidh pòlarach" ;
+  :sense "polar region" ;
+  :part n:ceaarnaidh , a:poolarach ;
+  rdfs:comment "[BMh 2013]" .
+
+n:ceaarnan
+  a :MasculineNoun ;
+  rdfs:label "ceàrnan" ;
+  :sense "cockroach" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:ceart_cheaarnach
+  rdfs:label "ceart-cheàrnach" ;
+  :sense "rectangle" ;
+  :part a:ceart ;
+  rdfs:comment "[BMh 2013]" .
+
 n:ceeic_chupa
   rdfs:label "cèic chupa" ;
   :pl "cèicichean cupa" ;
   :sense "cupcake" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:ceimigear
+  a :MasculineNoun ;
+  rdfs:label "ceimigear" ;
+  :sense "chemist" ;
   rdfs:comment "[BMh 2013]" .
 
 n:ceeir
@@ -291,6 +474,11 @@ n:ceeis
   a :FeminineNoun ;
   rdfs:label "cèis" ;
   :sense "envelope" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:ceithir_cheaarnach
+  rdfs:label "ceithir-cheàrnach" ;
+  :sense "quadrilateral" ;
   rdfs:comment "[BMh 2013]" .
 
 n:ceool
@@ -329,6 +517,12 @@ n:ceool_cruinne
   :part n:ceool , n:cruinne ;
   rdfs:comment "[BMh 2013]" .
 
+a:ceoothach
+  a :Adjective ;
+  rdfs:label "ceòthach" ;
+  :sense "foggy" ;
+  rdfs:comment "[BMh 2013]" .
+
 n:ciadfath
   rdfs:label "ciadfath" ;
   :sense "sense" ;
@@ -358,10 +552,22 @@ n:ciomoona
   :sense "kimono" ;
   rdfs:comment "[BMh 2013]" .
 
+n:ciuub
+  a :MasculineNoun ;
+  rdfs:label "ciùb" ;
+  :sense "cube" ;
+  rdfs:comment "[BMh 2013]" .
+
 n:clach
   a :FeminineNoun ;
   rdfs:label "clach" ;
   :sense "stone" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cladach
+  a :MasculineNoun ;
+  rdfs:label "cladach" ;
+  :sense "seashore" ;
   rdfs:comment "[BMh 2013]" .
 
 n:claigeann
@@ -531,6 +737,12 @@ n:cnaaimheach
   :sense "skeleton" ;
   rdfs:comment "[BMh 2013]" .
 
+n:cnoc
+  a :MasculineNoun ;
+  rdfs:label "cnoc" ;
+  :sense "hill" ;
+  rdfs:comment "[BMh 2013]" .
+
 n:co_ogha
   rdfs:label "co-ogha" ;
   :gen "co-ogha" ;
@@ -573,10 +785,29 @@ n:coidse
   :sense "coach" ;
   rdfs:comment "[BMh 2013]" .
 
+n:cooig_cheaarnach
+  a :MasculineNoun ;
+  rdfs:label "còig-cheàrnach" ;
+  :sense "pentagon" ;
+  :part n:cooig ;
+  rdfs:comment "[BMh 2013]" .
+
 n:coileach
   a :MasculineNoun ;
   rdfs:label "coileach" ;
   :sense "cockeral" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:coille_sior_ghorm
+  rdfs:label "coille sior-ghorm" ;
+  :sense "evergreen forest" ;
+  :part n:coille ;
+  rdfs:comment "[BMh 2013]" .
+
+n:coille_uisge
+  rdfs:label "coille-uisge" ;
+  :sense "rainforest" ;
+  :part n:coille , n:uisge ;
   rdfs:comment "[BMh 2013]" .
 
 n:coimpiutair
@@ -589,6 +820,12 @@ n:coimpiutair_gluuine
   rdfs:label "coimpiutair glùine" ;
   :sense "laptop" ;
   :part n:coimpiutair ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cooinneach
+  a :FeminineNoun ;
+  rdfs:label "còinneach" ;
+  :sense "moss" ;
   rdfs:comment "[BMh 2013]" .
 
 n:coirce
@@ -627,6 +864,12 @@ n:comadaidh
   :sense "comedy" ;
   rdfs:comment "[BMh 2013]" .
 
+n:comhachag
+  a :FeminineNoun ;
+  rdfs:label "comhachag" ;
+  :sense "barn owl" ;
+  rdfs:comment "[BMh 2013]" .
+
 n:coomhdach_giuurain
   rdfs:label "còmhdach giùrain" ;
   :sense "gill cover" ;
@@ -635,6 +878,12 @@ n:coomhdach_giuurain
 n:coomhdail
   rdfs:label "còmhdail" ;
   :sense "transport" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:coon
+  a :MasculineNoun ;
+  rdfs:label "còn" ;
+  :sense "cone" ;
   rdfs:comment "[BMh 2013]" .
 
 n:consoil_gheamannan
@@ -649,9 +898,20 @@ n:copar
   :sense "copper" ;
   rdfs:comment "[BMh 2013]" .
 
+n:cooras_greeine
+  rdfs:label "còras grèine" ;
+  :sense "solar system" ;
+  :part n:cooras , n:grian ;
+  rdfs:comment "[BMh 2013]" .
+
 n:corra_chagailte
   rdfs:label "corra chagailte" ;
   :sense "salamander" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:corra_ghritheach
+  rdfs:label "corra ghritheach" ;
+  :sense "heron" ;
   rdfs:comment "[BMh 2013]" .
 
 n:corrag
@@ -685,6 +945,11 @@ n:crann_conaltraidh
   :part n:crann , n:conaltradh ;
   rdfs:comment "[BMh 2013]" .
 
+n:crann_ola
+  rdfs:label "crann ola" ;
+  :sense "olive" ;
+  rdfs:comment "[BMh 2013]" .
+
 n:crann_reeidio
   rdfs:label "crann rèidio" ;
   :sense "radio mast" ;
@@ -709,16 +974,46 @@ n:crann_tarsainn
   :part n:crann ;
   rdfs:comment "[BMh 2013]" .
 
+n:craobh
+  a :FeminineNoun ;
+  rdfs:label "craobh" ;
+  :sense "tree" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:craobh_pailm
+  rdfs:label "craobh-pailm" ;
+  :sense "palm" ;
+  :part n:craobh ;
+  rdfs:comment "[BMh 2013]" .
+
+n:craobh_shice
+  rdfs:label "craobh shice" ;
+  :sense "sycamore" ;
+  rdfs:comment "[BMh 2013]" .
+
 n:creeadh_modailidh
   rdfs:label "crèadh modailidh" ;
   :sense "modelling clay" ;
   :part n:creeadh ;
   rdfs:comment "[BMh 2013]" .
 
+n:creag
+  a :FeminineNoun ;
+  rdfs:label "creag" ;
+  :sense "cliff" ;
+  rdfs:comment "[BMh 2013]" .
+
 n:creutair_mara
   rdfs:label "creutair mara" ;
   :pl "creutairean mara" ;
   :sense "sea creatures" ;
+  :part n:creutair , n:muir ;
+  rdfs:comment "[BMh 2013]" .
+
+n:creutair_oidhche
+  rdfs:label "creutair oidhche" ;
+  :sense "nocturnal creature" ;
+  :part n:creutair , n:oidhche ;
   rdfs:comment "[BMh 2013]" .
 
 n:criathar
@@ -754,10 +1049,26 @@ n:crios_innealan
   :part n:crios ;
   rdfs:comment "[BMh 2013]" .
 
+n:crios_meadhain
+  rdfs:label "crios meadhain" ;
+  :sense "equator" ;
+  :part n:crios , n:meadhan ;
+  rdfs:comment "[BMh 2013]" .
+
+n:croo_bheathaichean
+  rdfs:label "crò bheathaichean" ;
+  :sense "animal pen" ;
+  rdfs:comment "[BMh 2013]" .
+
 n:crogall
   a :MasculineNoun ;
   rdfs:label "crogall" ;
   :sense "crocodile" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:crom_lus
+  rdfs:label "crom-lus" ;
+  :sense "poppy" ;
   rdfs:comment "[BMh 2013]" .
 
 n:cruachan
@@ -773,15 +1084,33 @@ a:cruaidh
   rdfs:comment "[BMh 2013]" .
 
 n:cruinne
-  a :MasculineNoun ;
+  a :FeminineNoun ;
   rdfs:label "cruinne" ;
-  :sense "globe" ;
+  :sense "globe" , "sphere" ;
   rdfs:comment "[BMh 2013]" .
 
 n:cruinn_eoolas
   rdfs:label "cruinn-eòlas" ;
   :sense "geography" ;
   :part n:cruinne , n:eoolas ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cruinn_shloc
+  rdfs:label "cruinn-shloc" ;
+  :sense "crater" ;
+  :part n:cruinne , n:sloc ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cruithneachd
+  a :FeminineNoun ;
+  rdfs:label "cruithneachd" ;
+  :sense "wheat" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cruithneachd_iinnseanach
+  rdfs:label "cruithneachd ìnnseanach" ;
+  :sense "maize" ;
+  :part n:cruithneachd ;
   rdfs:comment "[BMh 2013]" .
 
 n:cruun
@@ -815,6 +1144,12 @@ n:cuach_mhullaich
   :part n:cuach , n:mullach ;
   rdfs:comment "[BMh 2013]" .
 
+n:cuan
+  a :MasculineNoun ;
+  rdfs:label "cuan" ;
+  :sense "ocean" ;
+  rdfs:comment "[BMh 2013]" .
+
 n:cuaran
   a :MasculineNoun ;
   rdfs:label "cuaran" ;
@@ -834,10 +1169,39 @@ n:cuairt_dealain
   :part n:cuairt , n:dealan ;
   rdfs:comment "[BMh 2013]" .
 
+v:cuairtich_an_Talamh
+  rdfs:label "cuairtich an Talamh" ;
+  :sense "orbit the Earth" ;
+  :part v:cuairtich , n:an_Talamh ;
+  rdfs:comment "[BMh 2013]" .
+
 n:cuibhle
   a :FeminineNoun ;
   rdfs:label "cuibhle" ;
   :sense "wheel" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cuilc_shiuucair
+  rdfs:label "cuilc shiùcair" ;
+  :sense "sugar cane" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cuileag
+  a :FeminineNoun ;
+  rdfs:label "cuileag" ;
+  :sense "housefly" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cuileann
+  a :MasculineNoun ;
+  rdfs:label "cuileann" ;
+  :sense "holly" ;
+  rdfs:comment "[BMh 2013]" .
+
+v:cuir_air_falbh_dhan_aaile
+  rdfs:label "cuir air falbh dhan àile" ;
+  :sense "launch into space" ;
+  :part v:cuir , n:aaile ;
   rdfs:comment "[BMh 2013]" .
 
 v:cuir_ann
@@ -851,6 +1215,12 @@ v:cuir_a_steach
   :sense "insert" ;
   :part v:cuir ;
   rdfs:comment "[BMh 2013]" .
+
+v:cuir_cearcall_air
+  rdfs:label "cuir cearcall air" ;
+  :sense "circle" , "put a circle round" ;
+  :part v:cuir , n:cearcall ;
+  rdfs:comment "[CM 2004]" .
 
 n:cuuirtear
   a :MasculineNoun ;
@@ -877,6 +1247,12 @@ n:cularan
   a :MasculineNoun ;
   rdfs:label "cularan" ;
   :sense "cucumber" ;
+  rdfs:comment "[BMh 2013]" .
+
+v:cuum_suuil_air_an_t_siide
+  rdfs:label "sùil a chumail air an t-sìde" ;
+  :sense "track the weather" ;
+  :part n:siide ;
   rdfs:comment "[BMh 2013]" .
 
 n:cumhachd
@@ -925,6 +1301,12 @@ n:curran
   :pl "currain" ;
   :gen "currain" ;
   :sense "carrot" ;
+  rdfs:comment "[BMh 2013]" .
+
+n:cuthag
+  a :FeminineNoun ;
+  rdfs:label "cuthag" ;
+  :sense "cuckoo" ;
   rdfs:comment "[BMh 2013]" .
 
 }
