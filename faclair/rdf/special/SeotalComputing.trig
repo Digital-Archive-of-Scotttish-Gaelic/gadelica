@@ -1,0 +1,2829 @@
+@prefix n: <http://faclair.ac.uk/nouns/> .
+@prefix a: <http://faclair.ac.uk/adjectives/> .
+@prefix v: <http://faclair.ac.uk/verbs/> .
+@prefix o: <http://faclair.ac.uk/other/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://faclair.ac.uk/meta/> .
+
+<http://faclair.ac.uk/sources/Seotal> {
+
+n:mar_deidhinn
+  rdfs:label "mar deidhinn" ;
+  :sense "about us" ;
+  :part o:mu .
+
+n:cood_ruigheachd
+  rdfs:label "còd ruigheachd" ;
+  :sense "access code" ;
+  :part n:ruigheachd ;
+  rdfs:comment "[Computing]" .
+
+n:liosta_riaghladh_ruigheachd
+  rdfs:label "liosta riaghladh ruigheachd" ;
+  :sense "access control list" ;
+  :part n:ruigheachd ;
+  rdfs:comment "[Computing]" .
+
+n:iuchair_ruigheachd
+  rdfs:label "iuchair ruigheachd" ;
+  :sense "access key" ;
+  :part n:ruigheachd ;
+  rdfs:comment "[Computing]" .
+
+n:ceadan_ruigheachd
+  rdfs:label "ceadan ruigheachd" ;
+  :sense "access permissions" ;
+  :part n:ruigheachd ;
+  rdfs:comment "[Computing]" .
+
+n:aaite_ruigheachd
+  rdfs:label "àite ruigheachd" ;
+  :sense "access point" ;
+  :part n:ruigheachd ;
+  rdfs:comment "[Computing]" .
+
+n:solaraiche_ruigheachd
+  rdfs:label "solaraiche ruigheachd" ;
+  :sense "access provider" ;
+  :part n:ruigheachd ;
+  rdfs:comment "[Computing]" .
+
+n:ruigheachd_gun_chead
+  rdfs:label "ruigheachd gun chead" ;
+  :sense "access violation" ;
+  :part n:ruigheachd ;
+  rdfs:comment "[Computing]" .
+
+n:grad_ruigheachd
+  rdfs:label "grad-ruigheachd" ;
+  :sense "quick access" ;
+  :part n:ruigheachd ;
+  rdfs:comment "[Computing]" .
+
+n:ruigheachd_Eadar_liin
+  rdfs:label "ruigheachd Eadar-lìn" ;
+  :sense "Internet access" ;
+  :part n:ruigheachd ;
+  rdfs:comment "[Computing]" .
+
+n:Solaraiche_Ruigheachd_Eadar_liin
+  rdfs:label "Solaraiche Ruigheachd Eadar-lìn (IAP)" ;
+  :sense "Internet Access Provider (IAP)" ;
+  :part n:ruigheachd ;
+  rdfs:comment "[Computing]" .
+
+n:Prootacal_Ruigheachd_Brath_Eadar_liin
+  rdfs:label "Pròtacal Ruigheachd Brath Eadar-lìn (IMAP)" ;
+  :sense "Internet Message Access Protocol (IMAP)" ;
+  :part n:ruigheachd ;
+  rdfs:comment "[Computing]" .
+
+n:goireasan_ruigsinneachd
+  rdfs:label "goireasan ruigsinneachd" ;
+  :sense "accessibility aids" ;
+  :part n:ruigsinneachd ;
+  rdfs:comment "[Computing]" .
+
+n:Draoidh_Ruigsinneachd
+  rdfs:label "Draoidh Ruigsinneachd" ;
+  :sense "Accessibility Wizard" ;
+  :part n:ruigsinneachd ;
+  rdfs:comment "[Computing]" .
+
+n:dreach_ruigsinneach
+  rdfs:label "dreach ruigsinneach" ;
+  :sense "accessible version" ;
+  :part a:ruigsinneach ;
+  rdfs:comment "[Computing]" .
+
+n:gniiomhachadh_proograim
+  rdfs:label "gnìomhachadh prògraim" ;
+  :sense "programme activation" ;
+  :part n:gniiomhachadh ;
+  rdfs:comment "[Computing]" .
+
+n:proogram_gniiomhach
+  rdfs:label "prògram gnìomhach" ;
+  :sense "active programme" ;
+  :part a:gniiomhach ;
+  rdfs:comment "[Computing]" .
+
+n:cuir_ro_shealladh_brath
+  rdfs:label "cuir ro-shealladh brath" ;
+  :sense "add post preview" ;
+  :part v:cuir_ris ;
+  rdfs:comment "[Computing]" .
+
+n:cuir_don_bhasgaid
+  rdfs:label "cuir don bhasgaid" ;
+  :sense "add to basket" ;
+  :part v:cuir_ris ;
+  rdfs:comment "[Computing]" .
+
+n:cuir_don_chairt
+  rdfs:label "cuir don chairt" ;
+  :sense "add to cart" ;
+  :part v:cuir_ris ;
+  rdfs:comment "[Computing]" .
+
+n:uidheam_cuir_ris
+  rdfs:label "uidheam cuir-ris" ;
+  :sense "add-on device" ;
+  :part n:cur_ris ;
+  rdfs:comment "[Computing]" .
+
+n:baar_seoolaidh
+  rdfs:label "bàr seòlaidh" ;
+  :sense "address bar" ;
+  :part n:seooladh ;
+  rdfs:comment "[Computing]" .
+
+n:leabhar_sheoolaidhean
+  rdfs:label "leabhar sheòlaidhean" ;
+  :sense "address book" ;
+  :part n:seooladh ;
+  rdfs:comment "[Computing]" .
+
+n:seooladh_tillidh
+  rdfs:label "seòladh-tillidh" ;
+  :sense "return address" ;
+  :part n:seooladh ;
+  rdfs:comment "[Computing]" .
+
+n:seooladh_puist
+  rdfs:label "seòladh puist" ;
+  :sense "shipping address" ;
+  :part n:seooladh ;
+  rdfs:comment "[Computing]" .
+
+n:seatadh_rianaire
+  rdfs:label "seatadh rianaire" ;
+  :sense "administrator setup" ;
+  :part n:rianaire ;
+  rdfs:comment "[Computing]" .
+
+n:rianaire_liionra
+  rdfs:label "rianaire lìonra" ;
+  :sense "network administrator" ;
+  :part n:rianaire ;
+  rdfs:comment "[Computing]" .
+
+n:rianaire_siostaim
+  rdfs:label "rianaire siostaim" ;
+  :sense "system administrator" ;
+  :part n:rianaire ;
+  rdfs:comment "[Computing]" .
+
+n:Rianaire_Liin_is_Stoor_daata
+  rdfs:label "Rianaire Lìn is Stòr-dàta" ;
+  :sense "Web and Database Administrator" ;
+  :part n:rianaire ;
+  rdfs:comment "[Computing]" .
+
+n:rianaire_acadaimigeach
+  rdfs:label "rianaire acadaimigeach" ;
+  :sense "academic administrator" ;
+  :part n:rianaire ;
+  rdfs:comment "[Computing]" .
+
+n:rianaire_prooiseict
+  rdfs:label "rianaire pròiseict" ;
+  :sense "project administrator" ;
+  :part n:rianaire ;
+  rdfs:comment "[Computing]" .
+
+n:rianaire_faailteachais
+  rdfs:label "rianaire fàilteachais" ;
+  :sense "front of house administrator" ;
+  :part n:rianaire ;
+  rdfs:comment "[Computing]" .
+
+n:rianaire_leasachaidh
+  rdfs:label "rianaire leasachaidh" ;
+  :sense "development administrator" ;
+  :part n:rianaire ;
+  rdfs:comment "[Computing]" .
+
+n:iuchair_ALT
+  rdfs:label "iuchair ALT" ;
+  :sense "ALT key" ;
+  :part n:ALT ;
+  rdfs:comment "[Computing]" .
+
+n:taga_ALT
+  rdfs:label "taga ALT" ;
+  :sense "ALT tag" ;
+  :part n:ALT ;
+  rdfs:comment "[Computing]" .
+
+n:adhbhar_proograim
+  rdfs:label "adhbhar prògraim" ;
+  :sense "application purpose" ;
+  :part n:proogram ;
+  rdfs:comment "[Computing]" .
+
+n:Àrd_Eoolaiche_Phroograman
+  rdfs:label "Àrd-Eòlaiche Phrògraman" ;
+  :sense "Senior Applications Specialist" ;
+  :part n:proogram ;
+  rdfs:comment "[Computing]" .
+
+n:saighead_chlii
+  rdfs:label "saighead chlì" ;
+  :sense "left arrow" ;
+  :part n:saighead ;
+  rdfs:comment "[Computing]" .
+
+n:saighead_dheas
+  rdfs:label "saighead dheas" ;
+  :sense "right arrow" ;
+  :part n:saighead ;
+  rdfs:comment "[Computing]" .
+
+n:air_ais_chun_an_toisich
+  rdfs:label "air ais chun an toisich" ;
+  :sense "back to start" ;
+  :part o:air_ais ;
+  rdfs:comment "[Computing]" .
+
+n:air_ais_chun_a_mhullaich
+  rdfs:label "air ais chun a' mhullaich" ;
+  :sense "back to top" ;
+  :part o:air_ais ;
+  rdfs:comment "[Computing]" .
+
+n:iuchair_Backspace
+  rdfs:label "iuchair Backspace" ;
+  :sense "Backspace key" ;
+  :part n:beaarn_air_ais ;
+  rdfs:comment "[Computing]" .
+
+n:baar_Flash
+  rdfs:label "bàr Flash" ;
+  :sense "Flash bar" ;
+  :part n:baar ;
+  rdfs:comment "[Computing]" .
+
+n:baar_seoolaidh
+  rdfs:label "bàr seòlaidh" ;
+  :sense "address bar" ;
+  :part n:baar ;
+  rdfs:comment "[Computing]" .
+
+n:baar_mearachd
+  rdfs:label "bàr-mearachd" ;
+  :sense "error bar" ;
+  :part n:baar ;
+  rdfs:comment "[Computing]" .
+
+n:baar_ceangail
+  rdfs:label "bàr ceangail" ;
+  :sense "link bar" ;
+  :part n:baar ;
+  rdfs:comment "[Computing]" .
+
+n:baar_menu
+  rdfs:label "bàr-menu" ;
+  :sense "menu bar" ;
+  :part n:baar ;
+  rdfs:comment "[Computing]" .
+
+n:cuir_don_bhasgaid
+  rdfs:label "cuir don bhasgaid" ;
+  :sense "add to basket" ;
+  :part n:basgaid ;
+  rdfs:comment "[Computing]" .
+
+n:thoir_aas_a_bhasgaid
+  rdfs:label "thoir às a' bhasgaid" ;
+  :sense "delete from basket" ;
+  :part n:basgaid ;
+  rdfs:comment "[Computing]" .
+
+n:basgaid
+  rdfs:label "basgaid" ;
+  :sense "shopping basket" ;
+  :part n:basgaid ;
+  rdfs:comment "[Computing]" .
+
+n:deuchainn_beta
+  rdfs:label "deuchainn beta" ;
+  :sense "beta test" ;
+  :part n:beta ;
+  rdfs:comment "[Computing]" .
+
+n:dreach_beta
+  rdfs:label "dreach beta" ;
+  :sense "beta version" ;
+  :part n:beta ;
+  rdfs:comment "[Computing]" .
+
+n:blog_seo
+  rdfs:label "blog seo" ;
+  :sense "blog this" ;
+  :part v:blog ;
+  rdfs:comment "[Computing]" .
+
+n:ceangal_Bluetooth
+  rdfs:label "ceangal Bluetooth" ;
+  :sense "Bluetooth connection" ;
+  :part n:Bluetooth ;
+  rdfs:comment "[Computing]" .
+
+n:slighe_lorgan
+  rdfs:label "slighe lorgan" ;
+  :sense "breadcrumb trail" ;
+  :part n:lorg_slighe ;
+  rdfs:comment "[Computing]" .
+
+n:ceangal_bann_leathainn
+  rdfs:label "ceangal bann-leathainn" ;
+  :sense "broadband connection" ;
+  :part n:bann_leathann ;
+  rdfs:comment "[Computing]" .
+
+n:liionra_bann_leathainn
+  rdfs:label "lìonra bann-leathainn" ;
+  :sense "broadband network" ;
+  :part n:bann_leathann ;
+  rdfs:comment "[Computing]" .
+
+n:brobhs_priiomh_luchd_aithne
+  rdfs:label "brobhs prìomh luchd-aithne" ;
+  :sense "browse key contacts" ;
+  :part v:brobhs ;
+  rdfs:comment "[Computing]" .
+
+n:atharraichear_brobhsair
+  rdfs:label "atharraichear brobhsair" ;
+  :sense "browser modifier" ;
+  :part n:brobhsair ;
+  rdfs:comment "[Computing]" .
+
+n:roghainnean_brobhsair
+  rdfs:label "roghainnean brobhsair" ;
+  :sense "browser options" ;
+  :part n:brobhsair ;
+  rdfs:comment "[Computing]" .
+
+n:seatadh_brobhsair
+  rdfs:label "seatadh brobhsair" ;
+  :sense "browser settings" ;
+  :part n:brobhsair ;
+  rdfs:comment "[Computing]" .
+
+n:seoorsa_brobhsair
+  rdfs:label "seòrsa brobhsair" ;
+  :sense "browser type" ;
+  :part n:brobhsair ;
+  rdfs:comment "[Computing]" .
+
+n:brobhsair_Liin
+  rdfs:label "brobhsair Lìn" ;
+  :sense "Web browser" ;
+  :part n:brobhsair ;
+  rdfs:comment "[Computing]" .
+
+n:eachdraidh_brobhsaidh
+  rdfs:label "eachdraidh brobhsaidh" ;
+  :sense "browsing history" ;
+  :part n:brobhsadh ;
+  rdfs:comment "[Computing]" .
+
+n:aodann_putain
+  rdfs:label "aodann putain" ;
+  :sense "button face" ;
+  :part n:putan ;
+  rdfs:comment "[Computing]" .
+
+n:putan_roghainn
+  rdfs:label "putan roghainn" ;
+  :sense "option button" ;
+  :part n:putan ;
+  rdfs:comment "[Computing]" .
+
+n:putan_reeidio
+  rdfs:label "putan rèidio" ;
+  :sense "radio button" ;
+  :part n:putan ;
+  rdfs:comment "[Computing]" .
+
+n:putan_oordugh
+  rdfs:label "putan òrdugh" ;
+  :sense "command button" ;
+  :part n:putan ;
+  rdfs:comment "[Computing]" .
+
+n:putan_menu
+  rdfs:label "putan-menu" ;
+  :sense "menu button" ;
+  :part n:putan ;
+  rdfs:comment "[Computing]" .
+
+n:putan_bruthaidh
+  rdfs:label "putan-bruthaidh" ;
+  :sense "pushbutton" ;
+  :part n:putan ;
+  rdfs:comment "[Computing]" .
+
+n:bruuth_putan
+  rdfs:label "brùth putan" ;
+  :sense "push button" ;
+  :part n:putan ;
+  rdfs:comment "[Computing]" .
+
+n:putan_baair_innealan
+  rdfs:label "putan bàir-innealan" ;
+  :sense "toolbar button" ;
+  :part n:putan ;
+  rdfs:comment "[Computing]" .
+
+n:tagh_putan_roghainn
+  rdfs:label "tagh putan roghainn" ;
+  :sense "choose option button" ;
+  :part n:putan ;
+  rdfs:comment "[Computing]" .
+
+n:ceannaich_a_nis
+  rdfs:label "ceannaich a-nis" ;
+  :sense "buy now" ;
+  :part v:ceannaich ;
+  rdfs:comment "[Computing]" .
+
+n:cuir_don_chairt
+  rdfs:label "cuir don chairt" ;
+  :sense "add to cart" ;
+  :part n:cairt ;
+  rdfs:comment "[Computing]" .
+
+n:thoir_aas_a_chairt
+  rdfs:label "thoir às a' chairt" ;
+  :sense "delete from cart" ;
+  :part n:cairt ;
+  rdfs:comment "[Computing]" .
+
+n:teisteanas_dearbhachd
+  rdfs:label "teisteanas dearbhachd" ;
+  :sense "certificate of authenticity" ;
+  :part n:teisteanas ;
+  rdfs:comment "[Computing]" .
+
+n:teisteanasan_dearbhachd
+  rdfs:label "teisteanasan dearbhachd" ;
+  :sense "certificates of authenticity" ;
+  :part n:teisteanas ;
+  rdfs:comment "[Computing]" .
+
+n:seoorsa_susbaint
+  rdfs:label "seòrsa susbaint" ;
+  :sense "content class" ;
+  :part n:seoorsa ;
+  rdfs:comment "[Computing]" .
+
+n:aon_chliog
+  rdfs:label "aon chliog" ;
+  :sense "single click" ;
+  :part n:cliog ;
+  rdfs:comment "[Computing]" .
+
+n:le_aon_chliog
+  rdfs:label "le aon chliog" ;
+  :sense "with one click" ;
+  :part n:cliog ;
+  rdfs:comment "[Computing]" .
+
+n:cliog_duubailte
+  rdfs:label "cliog dùbailte" ;
+  :sense "double click" ;
+  :part n:cliog ;
+  rdfs:comment "[Computing]" .
+
+n:putan_oordugh
+  rdfs:label "putan òrdugh" ;
+  :sense "command button" ;
+  :part n:oordugh ;
+  rdfs:comment "[Computing]" .
+
+n:comharra_beachd
+  rdfs:label "comharra beachd" ;
+  :sense "comment mark" ;
+  :part n:beachd ;
+  rdfs:comment "[Computing]" .
+
+n:cruthaich_post_d
+  rdfs:label "cruthaich post-d" ;
+  :sense "compose mail" ;
+  :part v:cruthaich ;
+  rdfs:comment "[Computing]" .
+
+n:cruthaich_is_cuir_post_d
+  rdfs:label "cruthaich is cuir post-d" ;
+  :sense "compose and send mail" ;
+  :part v:cruthaich ;
+  rdfs:comment "[Computing]" .
+
+n:Coimpiutaireachd
+  rdfs:label "Coimpiutaireachd" ;
+  :sense "Computing" ;
+  :part n:Coimpiutaireachd ;
+  rdfs:comment "[Computing]" .
+
+n:obair_Coimpiutaireachd
+  rdfs:label "obair Coimpiutaireachd" ;
+  :sense "Computing work" ;
+  :part n:Coimpiutaireachd ;
+  rdfs:comment "[Computing]" .
+
+n:ruum_Coimpiutaireachd
+  rdfs:label "rùm Coimpiutaireachd" ;
+  :sense "Computing room" ;
+  :part n:Coimpiutaireachd ;
+  rdfs:comment "[Computing]" .
+
+n:tidsear_Coimpiutaireachd
+  rdfs:label "tidsear Coimpiutaireachd" ;
+  :sense "Computing teacher" ;
+  :part n:Coimpiutaireachd ;
+  rdfs:comment "[Computing]" .
+
+n:Coimpiutaireachd___Teisteanais_Naaiseanta
+  rdfs:label "Coimpiutaireachd - Teisteanais Nàiseanta" ;
+  :sense "Computing - National Qualifications" ;
+  :part n:Coimpiutaireachd ;
+  rdfs:comment "[Computing]" .
+
+n:Manaidsear_Ceangail
+  rdfs:label "Manaidsear Ceangail" ;
+  :sense "Connection Manager" ;
+  :part n:ceangal ;
+  rdfs:comment "[Computing]" .
+
+n:ceangal_liin
+  rdfs:label "ceangal lìn" ;
+  :sense "web connection" ;
+  :part n:ceangal ;
+  rdfs:comment "[Computing]" .
+
+n:rianachd_luchd_aithne
+  rdfs:label "rianachd luchd-aithne" ;
+  :sense "contact management" ;
+  :part n:neach_aithne ;
+  rdfs:comment "[Computing]" .
+
+n:fios_thugainn
+  rdfs:label "fios thugainn" ;
+  :sense "contact us" ;
+  :part v:cuir_fios ;
+  rdfs:comment "[Computing]" .
+
+n:a_cruthachadh_agus_a_sgaoileadh_susbaint
+  rdfs:label "a' cruthachadh agus a' sgaoileadh susbaint" ;
+  :sense "creating and sharing content" ;
+  :part n:susbaint ;
+  rdfs:comment "[Computing]" .
+
+n:susbaint
+  rdfs:label "susbaint(e)" ;
+  :sense "content" ;
+  :part n:susbaint ;
+  rdfs:comment "[Computing]" .
+
+n:leum_gu_susbaint
+  rdfs:label "leum gu susbaint" ;
+  :sense "jump to content" ;
+  :part n:susbaint ;
+  rdfs:comment "[Computing]" .
+
+n:stoor_susbaint
+  rdfs:label "stòr susbaint" ;
+  :sense "content library" ;
+  :part n:susbaint ;
+  rdfs:comment "[Computing]" .
+
+n:rianachd_susbaint
+  rdfs:label "rianachd susbaint" ;
+  :sense "content management" ;
+  :part n:susbaint ;
+  rdfs:comment "[Computing]" .
+
+n:siostam_rianachd_susbaint
+  rdfs:label "siostam rianachd susbaint (CMS)" ;
+  :sense "content management system (CMS)" ;
+  :part n:susbaint ;
+  rdfs:comment "[Computing]" .
+
+n:freagarrachd_susbaint
+  rdfs:label "freagarrachd susbaint" ;
+  :sense "content rating" ;
+  :part n:susbaint ;
+  rdfs:comment "[Computing]" .
+
+n:teamplaid_susbaint
+  rdfs:label "teamplaid susbaint" ;
+  :sense "content template" ;
+  :part n:susbaint ;
+  rdfs:comment "[Computing]" .
+
+n:seoorsa_susbaint
+  rdfs:label "seòrsa susbaint" ;
+  :sense "content class" ;
+  :part n:susbaint ;
+  rdfs:comment "[Computing]" .
+
+n:oifigear_susbaint
+  rdfs:label "oifigear susbaint" ;
+  :sense "content officer" ;
+  :part n:susbaint ;
+  rdfs:comment "[Computing]" .
+
+n:Claaran_innse
+  rdfs:label "Clàran-innse" ;
+  :sense "Contents" ;
+  :part n:Claar_innse ;
+  rdfs:comment "[Computing]" .
+
+n:Claair_innse
+  rdfs:label "Clàir-innse" ;
+  :sense "Contents" ;
+  :part n:Claar_innse ;
+  rdfs:comment "[Computing]" .
+
+n:pannal_riaghlaidh
+  rdfs:label "pannal riaghlaidh" ;
+  :sense "control panel" ;
+  :part n:riaghladh ;
+  rdfs:comment "[Computing]" .
+
+n:liosta_riaghladh_ruigheachd
+  rdfs:label "liosta riaghladh ruigheachd" ;
+  :sense "access control list" ;
+  :part n:riaghladh ;
+  rdfs:comment "[Computing]" .
+
+n:riaghladh_dii_chomasaichte
+  rdfs:label "riaghladh dì-chomasaichte" ;
+  :sense "disabled control" ;
+  :part n:riaghladh ;
+  rdfs:comment "[Computing]" .
+
+n:Riaghladh_Cunntas_Neach_cleachdaidh
+  rdfs:label "Riaghladh Cunntas Neach-cleachdaidh" ;
+  :sense "User Account Control" ;
+  :part n:riaghladh ;
+  rdfs:comment "[Computing]" .
+
+n:poileasaidh_chriomagan
+  rdfs:label "poileasaidh chriomagan" ;
+  :sense "cookies policy" ;
+  :part n:criomag ;
+  rdfs:comment "[Computing]" .
+
+n:riaghladh_chriomagan
+  rdfs:label "riaghladh chriomagan" ;
+  :sense "cookie control" ;
+  :part n:criomag ;
+  rdfs:comment "[Computing]" .
+
+n:copaidh_carboin
+  rdfs:label "copaidh carboin (cc)" ;
+  :sense "carbon copy (cc)" ;
+  :part n:copaidh ;
+  rdfs:comment "[Computing]" .
+
+n:copaidh_carbon_falaichte
+  rdfs:label "copaidh carbon falaichte (bcc)" ;
+  :sense "blind carbon copy (bcc)" ;
+  :part n:copaidh ;
+  rdfs:comment "[Computing]" .
+
+n:fios_chooraichean
+  rdfs:label "fios chòraichean" ;
+  :sense "copyright notice" ;
+  :part o:cooraichean ;
+  rdfs:comment "[Computing]" .
+
+n:poileasaidh_chooraichean
+  rdfs:label "poileasaidh chòraichean" ;
+  :sense "copyright policy" ;
+  :part o:cooraichean ;
+  rdfs:comment "[Computing]" .
+
+n:samhla_chooraichean
+  rdfs:label "samhla chòraichean" ;
+  :sense "copyright symbol" ;
+  :part o:cooraichean ;
+  rdfs:comment "[Computing]" .
+
+n:cooraichean_gleeidhte
+  rdfs:label "còraichean glèidhte" ;
+  :sense "copyright reserved" ;
+  :part o:cooraichean ;
+  rdfs:comment "[Computing]" .
+
+n:daata_pearsanta
+  rdfs:label "dàta pearsanta" ;
+  :sense "personal data" ;
+  :part n:daata ;
+  rdfs:comment "[Computing]" .
+
+n:saabhail_do_dhaata_pearsanta
+  rdfs:label "sàbhail do dhàta pearsanta" ;
+  :sense "save your personal data" ;
+  :part n:daata ;
+  rdfs:comment "[Computing]" .
+
+n:proogramadh_coimpiutair_proograman_agus_daata
+  rdfs:label "prògramadh coimpiutair, prògraman agus dàta" ;
+  :sense "computer programming, programs and data" ;
+  :part n:daata ;
+  rdfs:comment "[Computing]" .
+
+n:laaimhseachadh_daata_agus_saidheans_coimpiutair
+  rdfs:label "làimhseachadh dàta agus saidheans coimpiutair" ;
+  :sense "data processing and computer science" ;
+  :part n:daata ;
+  rdfs:comment "[Computing]" .
+
+n:iuchair_Delete
+  rdfs:label "iuchair Delete" ;
+  :sense "Delete key" ;
+  :part v:dubh_aas ;
+  rdfs:comment "[Computing]" .
+
+n:foillseachadh_baarr_deasga
+  rdfs:label "foillseachadh bàrr-deasga" ;
+  :sense "desktop publishing" ;
+  :part n:baarr_deasga ;
+  rdfs:comment "[Computing]" .
+
+n:faic_iuul_lann_slaan
+  rdfs:label "faic iùl-lann slàn" ;
+  :sense "see full directory" ;
+  :part n:iuul_lann ;
+  rdfs:comment "[Computing]" .
+
+n:riaghladh_dii_chomasaichte
+  rdfs:label "riaghladh dì-chomasaichte" ;
+  :sense "disabled control" ;
+  :part a:casgte ;
+  rdfs:comment "[Computing]" .
+
+n:nithean_sa_choomhradh
+  rdfs:label "nithean sa chòmhradh" ;
+  :sense "items in discussion" ;
+  :part n:coomhradh ;
+  rdfs:comment "[Computing]" .
+
+n:buidheann_coomhraidh
+  rdfs:label "buidheann còmhraidh" ;
+  :sense "discussion group" ;
+  :part n:coomhradh ;
+  rdfs:comment "[Computing]" .
+
+n:coomhradh_Liin
+  rdfs:label "còmhradh Lìn" ;
+  :sense "Web discussion" ;
+  :part n:coomhradh ;
+  rdfs:comment "[Computing]" .
+
+n:bheir_am_modaraator_suuil_air_a_choomhradh_seo
+  rdfs:label "bheir am modaràtor sùil air a' chòmhradh seo" ;
+  :sense "this discussion is moderated" ;
+  :part n:coomhradh ;
+  rdfs:comment "[Computing]" .
+
+n:roghainnean_sgrion_no_roghainnean_taisbeanaidh
+  rdfs:label "roghainnean sgrion no roghainnean taisbeanaidh (a rèir suidheachadh)" ;
+  :sense "display options" ;
+  :part n:sgrion_no_taisbeanadh ;
+  rdfs:comment "[Computing]" .
+
+n:Feartan_Sgrion_no_Feartan_Taisbeanaidh
+  rdfs:label "Feartan Sgrion no Feartan Taisbeanaidh (a rèir suidheachadh)" ;
+  :sense "Display Properties" ;
+  :part n:sgrion_no_taisbeanadh ;
+  rdfs:comment "[Computing]" .
+
+n:sgrion_a_bharrachd
+  rdfs:label "sgrion a-bharrachd" ;
+  :sense "additional display" ;
+  :part n:sgrion_no_taisbeanadh ;
+  rdfs:comment "[Computing]" .
+
+n:sgrion_a_muigh
+  rdfs:label "sgrion a-muigh" ;
+  :sense "external display" ;
+  :part n:sgrion_no_taisbeanadh ;
+  rdfs:comment "[Computing]" .
+
+n:ainm_taisbeanaichte
+  rdfs:label "ainm taisbeanaichte" ;
+  :sense "display name" ;
+  :part n:sgrion_no_taisbeanadh ;
+  rdfs:comment "[Computing]" .
+
+n:luchdaich_a_nuas_aig_aam_eile
+  rdfs:label "luchdaich a-nuas aig àm eile" ;
+  :sense "download later" ;
+  :part v:luchdaich_a_nuas ;
+  rdfs:comment "[Computing]" .
+
+n:luchdaich_a_nuas_an_draasta
+  rdfs:label "luchdaich a-nuas an-dràsta" ;
+  :sense "download now" ;
+  :part v:luchdaich_a_nuas ;
+  rdfs:comment "[Computing]" .
+
+n:dreachd_de_phroogram
+  rdfs:label "dreachd de phrògram" ;
+  :sense "draft of programme" ;
+  :part n:dreachd ;
+  rdfs:comment "[Computing]" .
+
+n:Draaibh_Liionra
+  rdfs:label "Dràibh Lìonra" ;
+  :sense "Network Drive" ;
+  :part n:draaibh ;
+  rdfs:comment "[Computing]" .
+
+n:liosta_theaarnach
+  rdfs:label "liosta theàrnach" ;
+  :sense "drop-down list" ;
+  :part a:teaarnach ;
+  rdfs:comment "[Computing]" .
+
+n:bogsa_liosta_theaarnaich
+  rdfs:label "bogsa liosta theàrnaich" ;
+  :sense "drop-down list box" ;
+  :part a:teaarnach ;
+  rdfs:comment "[Computing]" .
+
+n:menu_teaarnach
+  rdfs:label "menu teàrnach" ;
+  :sense "drop-down menu" ;
+  :part a:teaarnach ;
+  rdfs:comment "[Computing]" .
+
+n:leughadair_d
+  rdfs:label "leughadair-d" ;
+  :sense "e-book reader" ;
+  :part n:leabhar_d ;
+  rdfs:comment "[Computing]" .
+
+n:leughadair_dealain
+  rdfs:label "leughadair-dealain" ;
+  :sense "e-book reader" ;
+  :part n:leabhar_d ;
+  rdfs:comment "[Computing]" .
+
+n:leabhar_dealain
+  rdfs:label "leabhar-dealain" ;
+  :sense "e-book" ;
+  :part n:leabhar_d ;
+  rdfs:comment "[Computing]" .
+
+n:lorg_san_leabhar_d
+  rdfs:label "lorg san leabhar-d" ;
+  :sense "search e-book" ;
+  :part n:leabhar_d ;
+  rdfs:comment "[Computing]" .
+
+n:uurachaidhean_puist_d
+  rdfs:label "ùrachaidhean puist-d" ;
+  :sense "e-mail updates" ;
+  :part n:post_d ;
+  rdfs:comment "[Computing]" .
+
+n:cunntas_puist_d
+  rdfs:label "cunntas puist-d" ;
+  :sense "e-mail account" ;
+  :part n:post_d ;
+  rdfs:comment "[Computing]" .
+
+n:seooladh_puist_d
+  rdfs:label "seòladh puist-d" ;
+  :sense "e-mail address" ;
+  :part n:post_d ;
+  rdfs:comment "[Computing]" .
+
+n:brath_puist_d
+  rdfs:label "brath puist-d" ;
+  :sense "e-mail message" ;
+  :part n:post_d ;
+  rdfs:comment "[Computing]" .
+
+n:frithealaiche_puist_d
+  rdfs:label "frithealaiche puist-d" ;
+  :sense "e-mail server" ;
+  :part n:post_d ;
+  rdfs:comment "[Computing]" .
+
+n:post_d_malairteach_gun_iarraidh
+  rdfs:label "post-d malairteach gun iarraidh" ;
+  :sense "unsolicited commercial e-mail" ;
+  :part n:post_d ;
+  rdfs:comment "[Computing]" .
+
+n:tuusan_mhearachdan
+  rdfs:label "tùsan mhearachdan" ;
+  :sense "sources of error" ;
+  :part n:mearachd ;
+  rdfs:comment "[Computing]" .
+
+n:baar_mearachd
+  rdfs:label "bàr-mearachd" ;
+  :sense "error bar" ;
+  :part n:mearachd ;
+  rdfs:comment "[Computing]" .
+
+n:cood_mearachd
+  rdfs:label "còd-mearachd" ;
+  :sense "error code" ;
+  :part n:mearachd ;
+  rdfs:comment "[Computing]" .
+
+n:loga_mhearachdan
+  rdfs:label "loga-mhearachdan" ;
+  :sense "error log" ;
+  :part n:mearachd ;
+  rdfs:comment "[Computing]" .
+
+n:faag_is_duuin
+  rdfs:label "fàg is dùin" ;
+  :sense "exit and close" ;
+  :part v:faag ;
+  rdfs:comment "[Computing]" .
+
+n:sgrion_a_muigh
+  rdfs:label "sgrion a-muigh" ;
+  :sense "external display" ;
+  :part o:a_muigh ;
+  rdfs:comment "[Computing]" .
+
+n:ceangalan_a_muigh
+  rdfs:label "ceangalan a-muigh" ;
+  :sense "external links" ;
+  :part o:a_muigh ;
+  rdfs:comment "[Computing]" .
+
+n:laaraich_a_muigh
+  rdfs:label "làraich a-muigh" ;
+  :sense "external sites" ;
+  :part o:a_muigh ;
+  rdfs:comment "[Computing]" .
+
+n:daaimhean_a_muigh
+  rdfs:label "dàimhean a-muigh" ;
+  :sense "external relations" ;
+  :part o:a_muigh ;
+  rdfs:comment "[Computing]" .
+
+n:Chan_eil_X_an_urra_ri_laaraich_a_muigh
+  rdfs:label "Chan eil X an urra ri làraich a-muigh" ;
+  :sense "X is not responsible for external sites" ;
+  :part o:a_muigh ;
+  rdfs:comment "[Computing]" .
+
+n:mo_roghaidhean
+  rdfs:label "mo roghaidhean" ;
+  :sense "my favorites" ;
+  :part n:rogha ;
+  rdfs:comment "[Computing]" .
+
+n:nii_comharraichte
+  rdfs:label "nì comharraichte" ;
+  :sense "featured item" ;
+  :part a:comharraichte ;
+  rdfs:comment "[Computing]" .
+
+n:sgeulachd_chomharraichte
+  rdfs:label "sgeulachd chomharraichte" ;
+  :sense "featured story" ;
+  :part a:comharraichte ;
+  rdfs:comment "[Computing]" .
+
+n:neach_reeic_comharraichte
+  rdfs:label "neach-rèic comharraichte" ;
+  :sense "featured seller" ;
+  :part a:comharraichte ;
+  rdfs:comment "[Computing]" .
+
+n:Biathadh_RSS
+  rdfs:label "Biathadh RSS" ;
+  :sense "RSS Feed" ;
+  :part n:biathadh ;
+  rdfs:comment "[Computing]" .
+
+n:biathadh_liin
+  rdfs:label "biathadh-lìn" ;
+  :sense "web feed" ;
+  :part n:biathadh ;
+  rdfs:comment "[Computing]" .
+
+n:faidhle_coimpiutair
+  rdfs:label "faidhle coimpiutair" ;
+  :sense "computer file" ;
+  :part n:faidhle ;
+  rdfs:comment "[Computing]" .
+
+n:foormat_faidhle
+  rdfs:label "fòrmat faidhle" ;
+  :sense "file format" ;
+  :part n:faidhle ;
+  rdfs:comment "[Computing]" .
+
+n:ainm_faidhle
+  rdfs:label "ainm-faidhle" ;
+  :sense "file name" ;
+  :part n:faidhle ;
+  rdfs:comment "[Computing]" .
+
+n:foormatan_faidhle
+  rdfs:label "fòrmatan faidhle" ;
+  :sense "file formats" ;
+  :part n:faidhle ;
+  rdfs:comment "[Computing]" .
+
+n:cha_deach_dad_a_lorg
+  rdfs:label "cha deach dad a lorg" ;
+  :sense "nothing was found" ;
+  :part v:lorg ;
+  rdfs:comment "[Computing]" .
+
+n:lorg_facal
+  rdfs:label "lorg facal" ;
+  :sense "find a word" ;
+  :part v:lorg ;
+  rdfs:comment "[Computing]" .
+
+n:pasgan_coimpiutair
+  rdfs:label "pasgan coimpiutair" ;
+  :sense "computer folder" ;
+  :part n:pasgan ;
+  rdfs:comment "[Computing]" .
+
+n:cuir_a_steach_bonn_theacsa
+  rdfs:label "cuir a-steach bonn-theacsa" ;
+  :sense "insert footer" ;
+  :part n:bonn_theacsa ;
+  rdfs:comment "[Computing]" .
+
+n:foormat_faidhle
+  rdfs:label "fòrmat faidhle" ;
+  :sense "file format" ;
+  :part n:foormat ;
+  rdfs:comment "[Computing]" .
+
+n:foormatan_faidhle
+  rdfs:label "fòrmatan faidhle" ;
+  :sense "file formats" ;
+  :part n:foormat ;
+  rdfs:comment "[Computing]" .
+
+n:foormat_am_faidhle
+  rdfs:label "fòrmat am faidhle" ;
+  :sense "format file" ;
+  :part v:foormat ;
+  rdfs:comment "[Computing]" .
+
+n:cuir_a_steach_ceann_theacsa
+  rdfs:label "cuir a-steach ceann-theacsa" ;
+  :sense "insert header" ;
+  :part n:ceann_theacsa ;
+  rdfs:comment "[Computing]" .
+
+n:faigh_cuideachadh
+  rdfs:label "faigh cuideachadh" ;
+  :sense "get help" ;
+  :part n:cuideachadh ;
+  rdfs:comment "[Computing]" .
+
+n:menu_cuideachaidh
+  rdfs:label "menu cuideachaidh" ;
+  :sense "help menu" ;
+  :part n:cuideachadh ;
+  rdfs:comment "[Computing]" .
+
+n:theirig_gu_menu_cuideachaidh
+  rdfs:label "theirig gu menu cuideachaidh" ;
+  :sense "go to help menu" ;
+  :part n:cuideachadh ;
+  rdfs:comment "[Computing]" .
+
+n:cuideachadh_far_loidhne
+  rdfs:label "cuideachadh far-loidhne" ;
+  :sense "offline help" ;
+  :part n:cuideachadh ;
+  rdfs:comment "[Computing]" .
+
+n:cealla_dachaigh
+  rdfs:label "cealla-dachaigh" ;
+  :sense "home cell" ;
+  :part n:dachaigh ;
+  rdfs:comment "[Computing]" .
+
+n:duilleag_dachaigh
+  rdfs:label "duilleag-dachaigh" ;
+  :sense "home page" ;
+  :part n:dachaigh ;
+  rdfs:comment "[Computing]" .
+
+n:duilleag_dachaigh
+  rdfs:label "duilleag-dachaigh" ;
+  :sense "homepage" ;
+  :part n:dachaigh ;
+  rdfs:comment "[Computing]" .
+
+n:taga_HTML
+  rdfs:label "taga HTML" ;
+  :sense "HTML tag" ;
+  :part n:HTML ;
+  rdfs:comment "[Computing]" .
+
+n:dearbhadair_HTML
+  rdfs:label "dearbhadair HTML" ;
+  :sense "HTML validator" ;
+  :part n:HTML ;
+  rdfs:comment "[Computing]" .
+
+n:dearbhadairean_HTML
+  rdfs:label "dearbhadairean HTML" ;
+  :sense "HTML validators" ;
+  :part n:HTML ;
+  rdfs:comment "[Computing]" .
+
+n:Caanan_Mharcaidh_Haidhpirteacsa
+  rdfs:label "Cànan Mharcaidh Haidhpirteacsa (HTML)" ;
+  :sense "Hypertext Markup Language (HTML)" ;
+  :part n:HTML ;
+  rdfs:comment "[Computing]" .
+
+n:Prootacal_Iomlaid_Haidhpirteacsa
+  rdfs:label "Pròtacal Iomlaid Haidhpirteacsa (HTTP)" ;
+  :sense "Hypertext Transfer Protocol (HTTP)" ;
+  :part n:HTTP ;
+  rdfs:comment "[Computing]" .
+
+n:dealbhag_fuaim
+  rdfs:label "dealbhag fuaim" ;
+  :sense "audio icon" ;
+  :part n:dealbhag ;
+  rdfs:comment "[Computing]" .
+
+n:map_iiomhaigh
+  rdfs:label "map-ìomhaigh" ;
+  :sense "image map" ;
+  :part n:iiomhaigh ;
+  rdfs:comment "[Computing]" .
+
+n:mion_dhealbh
+  rdfs:label "mion-dhealbh" ;
+  :sense "thumbnail image" ;
+  :part n:iiomhaigh ;
+  rdfs:comment "[Computing]" .
+
+n:iiomhaigheachd_dhidseatach
+  rdfs:label "ìomhaigheachd dhidseatach" ;
+  :sense "digital imaging" ;
+  :part n:iiomhaigheachd ;
+  rdfs:comment "[Computing]" .
+
+n:inneal_iiomhaigheachd
+  rdfs:label "inneal-ìomhaigheachd" ;
+  :sense "imaging device" ;
+  :part n:iiomhaigheachd ;
+  rdfs:comment "[Computing]" .
+
+n:iuchair_INSERT
+  rdfs:label "iuchair INSERT" ;
+  :sense "INSERT key" ;
+  :part v:cuir_a_steach ;
+  rdfs:comment "[Computing]" .
+
+n:cuir_proogam_an_saas
+  rdfs:label "cuir prògam an sàs" ;
+  :sense "install programme" ;
+  :part v:cuir_an_saas ;
+  rdfs:comment "[Computing]" .
+
+n:criiochnaich_an_cur_an_saas
+  rdfs:label "crìochnaich an cur an sàs" ;
+  :sense "complete the installation" ;
+  :part n:cur_an_saas ;
+  rdfs:comment "[Computing]" .
+
+n:Draoidh_Cur_an_saas_Cloo_bhualadair_Liionra
+  rdfs:label "Draoidh Cur-an-sàs Clò-bhualadair Lìonra" ;
+  :sense "Network Printer Installation Wizard" ;
+  :part n:cur_an_saas ;
+  rdfs:comment "[Computing]" .
+
+n:Lean_an_treoorachadh
+  rdfs:label "Lean an treòrachadh" ;
+  :sense "Follow the instructions" ;
+  :part n:treooir ;
+  rdfs:comment "[Computing]" .
+
+n:gniiomh_eadar_obrachail
+  rdfs:label "gnìomh eadar-obrachail" ;
+  :sense "interactive activity" ;
+  :part a:eadar_obrachail ;
+  rdfs:comment "[Computing]" .
+
+n:buuird_gheala_eadar_ghniiomhail
+  rdfs:label "bùird-gheala eadar-ghnìomhail" ;
+  :sense "interactive whiteboards" ;
+  :part a:eadar_obrachail ;
+  rdfs:comment "[Computing]" .
+
+n:seooladh_Eadar_liin
+  rdfs:label "seòladh Eadar-lìn" ;
+  :sense "Internet address" ;
+  :part n:Eadar_liion ;
+  rdfs:comment "[Computing]" .
+
+n:ruigheachd_Eadar_liin
+  rdfs:label "ruigheachd Eadar-lìn" ;
+  :sense "Internet access" ;
+  :part n:Eadar_liion ;
+  rdfs:comment "[Computing]" .
+
+n:ceangal_Eadar_liin
+  rdfs:label "ceangal Eadar-lìn" ;
+  :sense "Internet connection" ;
+  :part n:Eadar_liion ;
+  rdfs:comment "[Computing]" .
+
+n:roghainnean_Eadar_liin
+  rdfs:label "roghainnean Eadar-lìn" ;
+  :sense "Internet options" ;
+  :part n:Eadar_liion ;
+  rdfs:comment "[Computing]" .
+
+n:Solaraiche_Ruigheachd_Eadar_liin
+  rdfs:label "Solaraiche Ruigheachd Eadar-lìn (IAP)" ;
+  :sense "Internet Access Provider (IAP)" ;
+  :part n:Eadar_liion ;
+  rdfs:comment "[Computing]" .
+
+n:Solaraichean_Ruigheachd_Eadar_liin
+  rdfs:label "Solaraichean Ruigheachd Eadar-lìn (IAP)" ;
+  :sense "Internet Access Providers (IAP)" ;
+  :part n:Eadar_liion ;
+  rdfs:comment "[Computing]" .
+
+n:Seirbheisean_Fiosrachaidh_Eadar_liin
+  rdfs:label "Seirbheisean Fiosrachaidh Eadar-lìn (IIS)" ;
+  :sense "Internet Information Services (IIS)" ;
+  :part n:Eadar_liion ;
+  rdfs:comment "[Computing]" .
+
+n:Malairt_Iuchair_Eadar_liin
+  rdfs:label "Malairt Iuchair Eadar-lìn" ;
+  :sense "Internet Key Exchange" ;
+  :part n:Eadar_liion ;
+  rdfs:comment "[Computing]" .
+
+n:Prootacal_Ruigheachd_Brath_Eadar_liin
+  rdfs:label "Pròtacal Ruigheachd Brath Eadar-lìn (IMAP)" ;
+  :sense "Internet Message Access Protocol (IMAP)" ;
+  :part n:Eadar_liion ;
+  rdfs:comment "[Computing]" .
+
+n:Prootacal_Eadar_liin
+  rdfs:label "Pròtacal Eadar-lìn (IP)" ;
+  :sense "Internet Protocol (IP)" ;
+  :part n:Eadar_liion ;
+  rdfs:comment "[Computing]" .
+
+n:Prootacalan_Eadar_liin
+  rdfs:label "Pròtacalan Eadar-lìn (IP)" ;
+  :sense "Internet Protocols (IP)" ;
+  :part n:Eadar_liion ;
+  rdfs:comment "[Computing]" .
+
+n:Solaraiche_Seirbheis_Eadar_liin
+  rdfs:label "Solaraiche Seirbheis Eadar-lìn (ISP)" ;
+  :sense "Internet Service Provider (ISP)" ;
+  :part n:Eadar_liion ;
+  rdfs:comment "[Computing]" .
+
+n:Solaraichean_Seirbheis_Eadar_liin
+  rdfs:label "Solaraichean Seirbheis Eadar-lìn (ISP)" ;
+  :sense "Internet Service Providers (ISP)" ;
+  :part n:Eadar_liion ;
+  rdfs:comment "[Computing]" .
+
+n:Seirbheis_Stoor_Ainmean_Eadar_liin
+  rdfs:label "Seirbheis Stòr Ainmean Eadar-lìn (iSNS)" ;
+  :sense "Internet Storage Name Service (iSNS)" ;
+  :part n:Eadar_liion ;
+  rdfs:comment "[Computing]" .
+
+n:nithean_sa_choomhradh
+  rdfs:label "nithean sa chòmhradh" ;
+  :sense "items in discussion" ;
+  :part n:nii ;
+  rdfs:comment "[Computing]" .
+
+n:nii_co_cheangailte
+  rdfs:label "nì co-cheangailte" ;
+  :sense "related item" ;
+  :part n:nii ;
+  rdfs:comment "[Computing]" .
+
+n:iuchair_ruigheachd
+  rdfs:label "iuchair ruigheachd" ;
+  :sense "access key" ;
+  :part n:iuchair ;
+  rdfs:comment "[Computing]" .
+
+n:iuchair_Backspace
+  rdfs:label "iuchair Backspace" ;
+  :sense "Backspace key" ;
+  :part n:iuchair ;
+  rdfs:comment "[Computing]" .
+
+n:iuchair_Delete
+  rdfs:label "iuchair Delete" ;
+  :sense "Delete key" ;
+  :part n:iuchair ;
+  rdfs:comment "[Computing]" .
+
+n:iuchair_ENTER
+  rdfs:label "iuchair ENTER" ;
+  :sense "ENTER key" ;
+  :part n:iuchair ;
+  rdfs:comment "[Computing]" .
+
+n:iuchair_ESC
+  rdfs:label "iuchair ESC" ;
+  :sense "ESC key" ;
+  :part n:iuchair ;
+  rdfs:comment "[Computing]" .
+
+n:iuchair_ALT
+  rdfs:label "iuchair ALT" ;
+  :sense "ALT key" ;
+  :part n:iuchair ;
+  rdfs:comment "[Computing]" .
+
+n:iuchair_INSERT
+  rdfs:label "iuchair INSERT" ;
+  :sense "INSERT key" ;
+  :part n:iuchair ;
+  rdfs:comment "[Computing]" .
+
+n:Malairt_Iuchair_Eadar_liin
+  rdfs:label "Malairt Iuchair Eadar-lìn" ;
+  :sense "Internet Key Exchange" ;
+  :part n:iuchair ;
+  rdfs:comment "[Computing]" .
+
+n:iuchair_SHIFT
+  rdfs:label "iuchair SHIFT" ;
+  :sense "SHIFT key" ;
+  :part n:iuchair ;
+  rdfs:comment "[Computing]" .
+
+n:cuumhnantan_cead_cleachdaidh
+  rdfs:label "cùmhnantan cead-cleachdaidh" ;
+  :sense "license terms" ;
+  :part n:cead_cleachdaidh ;
+  rdfs:comment "[Computing]" .
+
+n:ceangalan_neo_fhaicsinneach
+  rdfs:label "ceangalan neo-fhaicsinneach" ;
+  :sense "invisible links" ;
+  :part n:ceangal ;
+  rdfs:comment "[Computing]" .
+
+n:ceangal_beoo
+  rdfs:label "ceangal beò" ;
+  :sense "live link" ;
+  :part n:ceangal ;
+  rdfs:comment "[Computing]" .
+
+n:baar_ceangail
+  rdfs:label "bàr ceangail" ;
+  :sense "link bar" ;
+  :part n:ceangal ;
+  rdfs:comment "[Computing]" .
+
+n:faidhle_loga
+  rdfs:label "faidhle loga" ;
+  :sense "log file" ;
+  :part n:loga ;
+  rdfs:comment "[Computing]" .
+
+n:logadh_a_mach
+  rdfs:label "logadh a-mach" ;
+  :sense "logging out" ;
+  :part n:logadh ;
+  rdfs:comment "[Computing]" .
+
+n:logadh_a_steach
+  rdfs:label "logadh a-steach" ;
+  :sense "logging in" ;
+  :part n:logadh ;
+  rdfs:comment "[Computing]" .
+
+n:neach_faighinn_puist_d
+  rdfs:label "neach-faighinn puist-d" ;
+  :sense "mail recipient" ;
+  :part n:post_d ;
+  rdfs:comment "[Computing]" .
+
+n:seooladh_puist
+  rdfs:label "seòladh puist" ;
+  :sense "mailing address" ;
+  :part n:post_d ;
+  rdfs:comment "[Computing]" .
+
+n:liosta_puist
+  rdfs:label "liosta puist" ;
+  :sense "mailing list" ;
+  :part n:post_d ;
+  rdfs:comment "[Computing]" .
+
+n:baar_menu
+  rdfs:label "bàr-menu" ;
+  :sense "menu bar" ;
+  :part n:menu ;
+  rdfs:comment "[Computing]" .
+
+n:putan_menu
+  rdfs:label "putan-menu" ;
+  :sense "menu button" ;
+  :part n:menu ;
+  rdfs:comment "[Computing]" .
+
+n:iar_mhenu
+  rdfs:label "iar-mhenu" ;
+  :sense "cascading menu" ;
+  :part n:menu ;
+  rdfs:comment "[Computing]" .
+
+n:menu_teaarnach
+  rdfs:label "menu teàrnach" ;
+  :sense "drop-down menu" ;
+  :part n:menu ;
+  rdfs:comment "[Computing]" .
+
+n:boord_brath
+  rdfs:label "bòrd-brath" ;
+  :sense "message board" ;
+  :part n:brath ;
+  rdfs:comment "[Computing]" .
+
+n:ceann_theacsa_teachdaireachd
+  rdfs:label "ceann-theacsa teachdaireachd" ;
+  :sense "message header" ;
+  :part n:brath ;
+  rdfs:comment "[Computing]" .
+
+n:brath_puist_d
+  rdfs:label "brath puist-d" ;
+  :sense "e-mail message" ;
+  :part n:brath ;
+  rdfs:comment "[Computing]" .
+
+n:Prootacal_Ruigheachd_Brath_Eadar_liin
+  rdfs:label "Pròtacal Ruigheachd Brath Eadar-lìn (IMAP)" ;
+  :sense "Internet Message Access Protocol (IMAP)" ;
+  :part n:brath ;
+  rdfs:comment "[Computing]" .
+
+n:moodam_a_staigh
+  rdfs:label "mòdam a-staigh" ;
+  :sense "internal modem" ;
+  :part n:moodam ;
+  rdfs:comment "[Computing]" .
+
+n:bheir_am_modaraator_suuil_air_a_choomhradh_seo
+  rdfs:label "bheir am modaràtor sùil air a' chòmhradh seo" ;
+  :sense "this discussion is moderated" ;
+  :part n:modaraator ;
+  rdfs:comment "[Computing]" .
+
+n:chaidh_an_nii_seo_a_chur_chun_mhodaraator
+  rdfs:label "chaidh an nì seo a chur chun mhodaràtor" ;
+  :sense "this item as been sent for moderation" ;
+  :part n:modaraator ;
+  rdfs:comment "[Computing]" .
+
+n:leugh_tuilleadh
+  rdfs:label "leugh tuilleadh" ;
+  :sense "read more" ;
+  :part o:tuilleadh ;
+  rdfs:comment "[Computing]" .
+
+n:gluais_an_luch
+  rdfs:label "gluais an luch" ;
+  :sense "move the mouse" ;
+  :part n:luch ;
+  rdfs:comment "[Computing]" .
+
+n:putan_lucha
+  rdfs:label "putan lucha" ;
+  :sense "mouse button" ;
+  :part n:luch ;
+  rdfs:comment "[Computing]" .
+
+n:putain_lucha
+  rdfs:label "putain lucha" ;
+  :sense "mouse buttons" ;
+  :part n:luch ;
+  rdfs:comment "[Computing]" .
+
+n:bruuth_am_putan_lucha
+  rdfs:label "brùth am putan lucha" ;
+  :sense "press the mouse button" ;
+  :part n:luch ;
+  rdfs:comment "[Computing]" .
+
+n:cliog_lucha
+  rdfs:label "cliog lucha" ;
+  :sense "mouse click" ;
+  :part n:luch ;
+  rdfs:comment "[Computing]" .
+
+n:cliogan_lucha
+  rdfs:label "cliogan lucha" ;
+  :sense "mouse clicks" ;
+  :part n:luch ;
+  rdfs:comment "[Computing]" .
+
+n:deean_cliog_lucha
+  rdfs:label "dèan cliog lucha" ;
+  :sense "do a mouse click" ;
+  :part n:luch ;
+  rdfs:comment "[Computing]" .
+
+n:putan_lucha_deas
+  rdfs:label "putan-lucha deas" ;
+  :sense "right mouse button" ;
+  :part n:luch ;
+  rdfs:comment "[Computing]" .
+
+n:putain_lucha_deasa
+  rdfs:label "putain-lucha deasa" ;
+  :sense "right mouse buttons" ;
+  :part n:luch ;
+  rdfs:comment "[Computing]" .
+
+n:bruuth_am_putan_lucha_deas
+  rdfs:label "brùth am putan-lucha deas" ;
+  :sense "press the right mouse button" ;
+  :part n:luch ;
+  rdfs:comment "[Computing]" .
+
+n:putan_lucha_clii
+  rdfs:label "putan-lucha clì" ;
+  :sense "left mouse button" ;
+  :part n:luch ;
+  rdfs:comment "[Computing]" .
+
+n:putain_lucha_clii
+  rdfs:label "putain-lucha clì" ;
+  :sense "left mouse buttons" ;
+  :part n:luch ;
+  rdfs:comment "[Computing]" .
+
+n:bruuth_am_putan_lucha_clii
+  rdfs:label "brùth am putan-lucha clì" ;
+  :sense "press the left mouse button" ;
+  :part n:luch ;
+  rdfs:comment "[Computing]" .
+
+n:stuthan_ioma_mheadhanach
+  rdfs:label "stuthan ioma-mheadhanach" ;
+  :sense "multimedia materials" ;
+  :part a:ioma_mheadhanach ;
+  rdfs:comment "[Computing]" .
+
+n:co_choordanaiche_liionra
+  rdfs:label "co-chòrdanaiche lìonra" ;
+  :sense "network adapter" ;
+  :part n:liionra ;
+  rdfs:comment "[Computing]" .
+
+n:rianaire_liionra
+  rdfs:label "rianaire lìonra" ;
+  :sense "network administrator" ;
+  :part n:liionra ;
+  rdfs:comment "[Computing]" .
+
+n:cumadh_liionra
+  rdfs:label "cumadh lìonra" ;
+  :sense "network configuration" ;
+  :part n:liionra ;
+  rdfs:comment "[Computing]" .
+
+n:liionra_bann_leathainn
+  rdfs:label "lìonra bann-leathainn" ;
+  :sense "broadband network" ;
+  :part n:liionra ;
+  rdfs:comment "[Computing]" .
+
+n:liionra_ionadail
+  rdfs:label "lìonra ionadail (LAN)" ;
+  :sense "local area network (LAN)" ;
+  :part n:liionra ;
+  rdfs:comment "[Computing]" .
+
+n:liionraidhean_ionadail
+  rdfs:label "lìonraidhean ionadail (LAN)" ;
+  :sense "local area networks (LAN)" ;
+  :part n:liionra ;
+  rdfs:comment "[Computing]" .
+
+n:Ionad_Liionra
+  rdfs:label "Ionad Lìonra" ;
+  :sense "Network Centre" ;
+  :part n:liionra ;
+  rdfs:comment "[Computing]" .
+
+n:Draaibh_Liionra
+  rdfs:label "Dràibh Lìonra" ;
+  :sense "Network Drive" ;
+  :part n:liionra ;
+  rdfs:comment "[Computing]" .
+
+n:Network_Explorer
+  rdfs:label "Network Explorer" ;
+  :sense "Network Explorer" ;
+  :part n:liionra ;
+  rdfs:comment "[Computing]" .
+
+n:Draoidh_Cur_an_saas_Cloo_bhualadair_Liionra
+  rdfs:label "Draoidh Cur-an-sàs Clò-bhualadair Lìonra" ;
+  :sense "Network Printer Installation Wizard" ;
+  :part n:liionra ;
+  rdfs:comment "[Computing]" .
+
+n:Liionra_air_a_Shaabhaladh
+  rdfs:label "Lìonra air a Shàbhaladh" ;
+  :sense "Saved network" ;
+  :part n:liionra ;
+  rdfs:comment "[Computing]" .
+
+n:liionraidhean_air_an_saabhaladh
+  rdfs:label "lìonraidhean air an sàbhaladh" ;
+  :sense "saved networks" ;
+  :part n:liionra ;
+  rdfs:comment "[Computing]" .
+
+n:liionra_sooisealta
+  rdfs:label "lìonra sòisealta" ;
+  :sense "social network" ;
+  :part n:liionra ;
+  rdfs:comment "[Computing]" .
+
+n:Neach_anailis_Obair_Liionra
+  rdfs:label "Neach-anailis Obair Lìonra" ;
+  :sense "Network Operations Analyst" ;
+  :part n:liionra ;
+  rdfs:comment "[Computing]" .
+
+n:cur_a_steach_gun_bhriigh
+  rdfs:label "cur-a-steach gun bhrìgh" ;
+  :sense "entry not valid" ;
+  :part o:gun_bhriigh ;
+  rdfs:comment "[Computing]" .
+
+n:proogram_a_nis_a_cluich
+  rdfs:label "prògram a-nis a' cluich" ;
+  :sense "program now playing" ;
+  :part o:A_nis_A_cluich ;
+  rdfs:comment "[Computing]" .
+
+n:cuideachadh_far_loidhne
+  rdfs:label "cuideachadh far-loidhne" ;
+  :sense "offline help" ;
+  :part a:far_loidhne ;
+  rdfs:comment "[Computing]" .
+
+n:obraich_far_loidhne
+  rdfs:label "obraich far-loidhne" ;
+  :sense "work offline" ;
+  :part a:far_loidhne ;
+  rdfs:comment "[Computing]" .
+
+n:modh_far_loidhne
+  rdfs:label "modh far-loidhne" ;
+  :sense "offline mode" ;
+  :part a:far_loidhne ;
+  rdfs:comment "[Computing]" .
+
+n:ann_am_modh_far_loidhne
+  rdfs:label "ann am modh far-loidhne" ;
+  :sense "in offline mode" ;
+  :part a:far_loidhne ;
+  rdfs:comment "[Computing]" .
+
+n:Ionnsaich_EEisteachd_Air_loidhne
+  rdfs:label "Ionnsaich Èisteachd Air-loidhne" ;
+  :sense "Learn Listening Online" ;
+  :part a:air_loidhne ;
+  rdfs:comment "[Computing]" .
+
+n:coimhearsnachdan_air_loidhne
+  rdfs:label "coimhearsnachdan air-loidhne" ;
+  :sense "online communities" ;
+  :part a:air_loidhne ;
+  rdfs:comment "[Computing]" .
+
+n:leasanan_air_loidhne
+  rdfs:label "leasanan air-loidhne" ;
+  :sense "online tutorials" ;
+  :part a:air_loidhne ;
+  rdfs:comment "[Computing]" .
+
+n:sgoiltean_na_h_Alba_air_loidhne
+  rdfs:label "sgoiltean na h-Alba air-loidhne" ;
+  :sense "Scottish schools online" ;
+  :part a:air_loidhne ;
+  rdfs:comment "[Computing]" .
+
+n:obraich_air_loidhne
+  rdfs:label "obraich air-loidhne" ;
+  :sense "work online" ;
+  :part a:air_loidhne ;
+  rdfs:comment "[Computing]" .
+
+n:taic_air_loidhne
+  rdfs:label "taic air-loidhne" ;
+  :sense "online support" ;
+  :part a:air_loidhne ;
+  rdfs:comment "[Computing]" .
+
+n:geamannan_air_loidhne
+  rdfs:label "geamannan air-loidhne" ;
+  :sense "online games" ;
+  :part a:air_loidhne ;
+  rdfs:comment "[Computing]" .
+
+n:coimhearsnachd_ionnsachaidh_air_loidhne
+  rdfs:label "coimhearsnachd ionnsachaidh air-loidhne" ;
+  :sense "online learning community" ;
+  :part a:air_loidhne ;
+  rdfs:comment "[Computing]" .
+
+n:roghainnean_brobhsair
+  rdfs:label "roghainnean brobhsair" ;
+  :sense "browser options" ;
+  :part n:roghainn ;
+  rdfs:comment "[Computing]" .
+
+n:roghainnean_sgrion_no_roghainnean_taisbeanaidh
+  rdfs:label "roghainnean sgrion no roghainnean taisbeanaidh (a rèir suidheachadh)" ;
+  :sense "display options" ;
+  :part n:roghainn ;
+  rdfs:comment "[Computing]" .
+
+n:roghainnean_eadar_liin
+  rdfs:label "roghainnean eadar-lìn" ;
+  :sense "internet options" ;
+  :part n:roghainn ;
+  rdfs:comment "[Computing]" .
+
+n:putan_roghainn
+  rdfs:label "putan roghainn" ;
+  :sense "option button" ;
+  :part n:roghainn ;
+  rdfs:comment "[Computing]" .
+
+n:buidheann_roghainn
+  rdfs:label "buidheann roghainn" ;
+  :sense "option group" ;
+  :part n:roghainn ;
+  rdfs:comment "[Computing]" .
+
+n:soonraich_buidheann_roghainn
+  rdfs:label "sònraich buidheann roghainn" ;
+  :sense "identify option group" ;
+  :part n:roghainn ;
+  rdfs:comment "[Computing]" .
+
+n:Leabhar_Sheoolaidhean_Outlook
+  rdfs:label "Leabhar Sheòlaidhean Outlook" ;
+  :sense "Outlook Address Book" ;
+  :part n:Outlook ;
+  rdfs:comment "[Computing]" .
+
+n:lorg_Leabhar_Sheoolaidhean_Outlook
+  rdfs:label "lorg Leabhar Sheòlaidhean Outlook" ;
+  :sense "find Outlook Address Book" ;
+  :part n:Outlook ;
+  rdfs:comment "[Computing]" .
+
+n:nii_Outlook
+  rdfs:label "nì Outlook" ;
+  :sense "Outlook item" ;
+  :part n:Outlook ;
+  rdfs:comment "[Computing]" .
+
+n:tagh_nii_Outlook
+  rdfs:label "tagh nì Outlook" ;
+  :sense "select Outlook item" ;
+  :part n:Outlook ;
+  rdfs:comment "[Computing]" .
+
+n:ath_dhuilleag
+  rdfs:label "ath dhuilleag" ;
+  :sense "next page" ;
+  :part n:duilleag ;
+  rdfs:comment "[Computing]" .
+
+n:leoosan_ro_sheallaidh
+  rdfs:label "leòsan ro-sheallaidh" ;
+  :sense "preview pane" ;
+  :part n:leoosan ;
+  rdfs:comment "[Computing]" .
+
+n:faic_leoosan_ro_sheallaidh
+  rdfs:label "faic leòsan ro-sheallaidh" ;
+  :sense "see preview pane" ;
+  :part n:leoosan ;
+  rdfs:comment "[Computing]" .
+
+n:cleachd_abairt_faire
+  rdfs:label "cleachd abairt-faire" ;
+  :sense "use passphrase" ;
+  :part n:abairt_faire ;
+  rdfs:comment "[Computing]" .
+
+n:seo_d_fhacal_faire
+  rdfs:label "seo d' fhacal-faire" ;
+  :sense "here is your password" ;
+  :part n:facal_faire ;
+  rdfs:comment "[Computing]" .
+
+n:dearbh_aithneachadh_facal_faire
+  rdfs:label "dearbh-aithneachadh facal-faire" ;
+  :sense "password authentication" ;
+  :part n:facal_faire ;
+  rdfs:comment "[Computing]" .
+
+n:cuir_a_steach_dearbh_aithneachadh_facal_faire
+  rdfs:label "cuir a-steach dearbh-aithneachadh facal-faire" ;
+  :sense "enter password authentication" ;
+  :part n:facal_faire ;
+  rdfs:comment "[Computing]" .
+
+n:meeirleach_facal_faire
+  rdfs:label "mèirleach facal-faire" ;
+  :sense "password stealer" ;
+  :part n:facal_faire ;
+  rdfs:comment "[Computing]" .
+
+n:cuir_a_steach_facal_faire
+  rdfs:label "cuir a-steach facal-faire" ;
+  :sense "enter password" ;
+  :part n:facal_faire ;
+  rdfs:comment "[Computing]" .
+
+n:obair_meeirleach_facal_faire
+  rdfs:label "obair mèirleach facal-faire" ;
+  :sense "work of password stealer" ;
+  :part n:facal_faire ;
+  rdfs:comment "[Computing]" .
+
+n:paatran_soilleir
+  rdfs:label "pàtran soilleir" ;
+  :sense "clear pattern" ;
+  :part n:paatran ;
+  rdfs:comment "[Computing]" .
+
+n:dooigh_paaighidh
+  rdfs:label "dòigh pàighidh" ;
+  :sense "payment method" ;
+  :part n:paaigheadh ;
+  rdfs:comment "[Computing]" .
+
+n:tagh_do_dhooigh_paaighidh
+  rdfs:label "tagh do dhòigh pàighidh" ;
+  :sense "choose your payment method" ;
+  :part n:paaigheadh ;
+  rdfs:comment "[Computing]" .
+
+n:Leabhar_Sheoolaidhean_Pearsanta
+  rdfs:label "Leabhar Sheòlaidhean Pearsanta" ;
+  :sense "Personal Address Book" ;
+  :part a:pearsanta ;
+  rdfs:comment "[Computing]" .
+
+n:nad_Leabhar_Sheoolaidhean_Phearsanta
+  rdfs:label "nad Leabhar Sheòlaidhean Phearsanta" ;
+  :sense "in your Personal Address Book" ;
+  :part a:pearsanta ;
+  rdfs:comment "[Computing]" .
+
+n:daata_pearsanta
+  rdfs:label "dàta pearsanta" ;
+  :sense "personal data" ;
+  :part a:pearsanta ;
+  rdfs:comment "[Computing]" .
+
+n:saabhail_do_dhaata_pearsanta
+  rdfs:label "sàbhail do dhàta pearsanta" ;
+  :sense "save your personal data" ;
+  :part a:pearsanta ;
+  rdfs:comment "[Computing]" .
+
+n:aaireamh_aithneachaidh_phearsanta
+  rdfs:label "àireamh aithneachaidh phearsanta" ;
+  :sense "personal identification number" ;
+  :part a:pearsanta ;
+  rdfs:comment "[Computing]" .
+
+n:fiosrachadh_pearsanta
+  rdfs:label "fiosrachadh pearsanta" ;
+  :sense "personal information" ;
+  :part a:pearsanta ;
+  rdfs:comment "[Computing]" .
+
+n:seatadh_pearsanta
+  rdfs:label "seatadh pearsanta" ;
+  :sense "personal settings" ;
+  :part a:pearsanta ;
+  rdfs:comment "[Computing]" .
+
+n:claar_d_aaireamh_aithneachaidh_phearsanta
+  rdfs:label "clàr d' àireamh aithneachaidh phearsanta" ;
+  :sense "note your personal identification number" ;
+  :part a:pearsanta ;
+  rdfs:comment "[Computing]" .
+
+n:fiosrachadh_pearsanta_diiomhair
+  rdfs:label "fiosrachadh pearsanta dìomhair" ;
+  :sense "private personal information" ;
+  :part a:pearsanta ;
+  rdfs:comment "[Computing]" .
+
+n:laarach_liin_fisidh
+  rdfs:label "làrach-lìn fisidh" ;
+  :sense "phishing website" ;
+  :part n:fiseadh ;
+  rdfs:comment "[Computing]" .
+
+n:cleachd_laarach_liin_fisidh
+  rdfs:label "cleachd làrach-lìn fisidh" ;
+  :sense "use phishing website" ;
+  :part n:fiseadh ;
+  rdfs:comment "[Computing]" .
+
+n:cluich_an_geama
+  rdfs:label "cluich an geama" ;
+  :sense "play the game" ;
+  :part v:cluich ;
+  rdfs:comment "[Computing]" .
+
+n:a_chiad_chluicheadair
+  rdfs:label "a' chiad chluicheadair" ;
+  :sense "the first player" ;
+  :part n:cluicheadair ;
+  rdfs:comment "[Computing]" .
+
+n:roghainn_bhon_chlaar_cluiche
+  rdfs:label "roghainn bhon chlàr-cluiche" ;
+  :sense "choice from the playlist" ;
+  :part n:claar_cluiche ;
+  rdfs:comment "[Computing]" .
+
+n:nochdain_chasgte
+  rdfs:label "nochdain chasgte" ;
+  :sense "pop-ups disabled" ;
+  :part n:nochdan ;
+  rdfs:comment "[Computing]" .
+
+n:menu_nochdain
+  rdfs:label "menu nochdain" ;
+  :sense "pop-up menu" ;
+  :part n:nochdan ;
+  rdfs:comment "[Computing]" .
+
+n:uinneag_nochdain
+  rdfs:label "uinneag nochdain" ;
+  :sense "pop-up window" ;
+  :part n:nochdan ;
+  rdfs:comment "[Computing]" .
+
+n:brath_uur
+  rdfs:label "brath ùr" ;
+  :sense "new post" ;
+  :part n:brath ;
+  rdfs:comment "[Computing]" .
+
+n:cuir_ro_shealladh_brath
+  rdfs:label "cuir ro-shealladh brath" ;
+  :sense "add post preview" ;
+  :part n:brath ;
+  rdfs:comment "[Computing]" .
+
+n:ro_shealladh_brath
+  rdfs:label "ro-shealladh brath" ;
+  :sense "post preview" ;
+  :part n:brath ;
+  rdfs:comment "[Computing]" .
+
+n:bruuth_iuchair_SHIFT
+  rdfs:label "brùth iuchair SHIFT" ;
+  :sense "press SHIFT key" ;
+  :part v:bruuth ;
+  rdfs:comment "[Computing]" .
+
+n:bruuth_am_putan_lucha_clii
+  rdfs:label "brùth am putan-lucha clì" ;
+  :sense "press the left mouse button" ;
+  :part v:bruuth ;
+  rdfs:comment "[Computing]" .
+
+n:bruuth_am_putan_lucha
+  rdfs:label "brùth am putan lucha" ;
+  :sense "press the mouse button" ;
+  :part v:bruuth ;
+  rdfs:comment "[Computing]" .
+
+n:bruuth_am_putan_lucha_deas
+  rdfs:label "brùth am putan-lucha deas" ;
+  :sense "press the right mouse button" ;
+  :part v:bruuth ;
+  rdfs:comment "[Computing]" .
+
+n:bruuth_iuchair_sam_bith
+  rdfs:label "brùth iuchair sam bith" ;
+  :sense "press any key" ;
+  :part v:bruuth ;
+  rdfs:comment "[Computing]" .
+
+n:cuir_ro_shealladh_brath
+  rdfs:label "cuir ro-shealladh brath" ;
+  :sense "add post preview" ;
+  :part n:ro_shealladh ;
+  rdfs:comment "[Computing]" .
+
+n:leoosan_ro_sheallaidh
+  rdfs:label "leòsan ro-sheallaidh" ;
+  :sense "preview pane" ;
+  :part n:ro_shealladh ;
+  rdfs:comment "[Computing]" .
+
+n:ro_shealladh_brath
+  rdfs:label "ro-shealladh brath" ;
+  :sense "post preview" ;
+  :part n:ro_shealladh ;
+  rdfs:comment "[Computing]" .
+
+n:ro_shealladh_cloo_bhualaidh
+  rdfs:label "ro-shealladh clò-bhualaidh" ;
+  :sense "print preview" ;
+  :part n:ro_shealladh ;
+  rdfs:comment "[Computing]" .
+
+n:duilleag_roimhe
+  rdfs:label "duilleag roimhe" ;
+  :sense "previous page" ;
+  :part o:roimhe ;
+  rdfs:comment "[Computing]" .
+
+n:dreach_cloo_bhualaidh
+  rdfs:label "dreach clò-bhualaidh" ;
+  :sense "print version" ;
+  :part v:cloo_bhuail ;
+  rdfs:comment "[Computing]" .
+
+n:ro_shealladh_cloo_bhualaidh
+  rdfs:label "ro-shealladh clò-bhualaidh" ;
+  :sense "print preview" ;
+  :part v:cloo_bhuail ;
+  rdfs:comment "[Computing]" .
+
+n:dreach_cloo_bhualadair
+  rdfs:label "dreach clò-bhualadair" ;
+  :sense "printer friendly version" ;
+  :part n:cloo_bhualadair ;
+  rdfs:comment "[Computing]" .
+
+n:cloo_bhualadh_agus_gniiomhan_co_cheangailte
+  rdfs:label "clò-bhualadh agus gnìomhan co-cheangailte" ;
+  :sense "printing and related activities" ;
+  :part n:cloo_bhualadh_ ;
+  rdfs:comment "[Computing]" .
+
+n:prooiseasan_dathaidh_priontaidh
+  rdfs:label "pròiseasan dathaidh priontaidh" ;
+  :sense "pigment processes of printing" ;
+  :part n:priontadh ;
+  rdfs:comment "[Computing]" .
+
+n:prooiseasan_bloc_phriontaidh
+  rdfs:label "pròiseasan bloc-phriontaidh" ;
+  :sense "block printing processes" ;
+  :part n:priontadh ;
+  rdfs:comment "[Computing]" .
+
+n:poileasaidh_priiobhaideachd
+  rdfs:label "poileasaidh prìobhaideachd" ;
+  :sense "privacy policy" ;
+  :part n:priiobhaideachd ;
+  rdfs:comment "[Computing]" .
+
+n:rach_gu_cunntair
+  rdfs:label "rach gu cunntair" ;
+  :sense "proceed to checkout" ;
+  :part v:lean_ort ;
+  rdfs:comment "[Computing]" .
+
+n:iomradh_neach_cleachdaidh
+  rdfs:label "iomradh neach-cleachdaidh" ;
+  :sense "user profile" ;
+  :part n:iomradh ;
+  rdfs:comment "[Computing]" .
+
+n:proograman_agus_daata
+  rdfs:label "prògraman agus dàta" ;
+  :sense "programmes and data" ;
+  :part n:proogram ;
+  rdfs:comment "[Computing]" .
+
+n:stiuuireadh_phroograman
+  rdfs:label "stiùireadh phrògraman" ;
+  :sense "programme management" ;
+  :part n:proogram ;
+  rdfs:comment "[Computing]" .
+
+n:proogramadh_coimpiutair_proograman_agus_daata
+  rdfs:label "prògramadh coimpiutair, prògraman agus dàta" ;
+  :sense "computer programming, programs and data" ;
+  :part n:proogramadh ;
+  rdfs:comment "[Computing]" .
+
+n:Feartan_Sgrion_no_Feartan_Taisbeanaidh
+  rdfs:label "Feartan Sgrion no Feartan Taisbeanaidh (a rèir suidheachadh)" ;
+  :sense "Display Properties" ;
+  :part n:feart ;
+  rdfs:comment "[Computing]" .
+
+n:diion_d_obair
+  rdfs:label "dìon d' obair" ;
+  :sense "protect your work" ;
+  :part v:diion ;
+  rdfs:comment "[Computing]" .
+
+n:putan_bruthaidh
+  rdfs:label "putan-bruthaidh" ;
+  :sense "pushbutton" ;
+  :part v:bruuth ;
+  rdfs:comment "[Computing]" .
+
+n:bruuth_putan
+  rdfs:label "brùth putan" ;
+  :sense "push button" ;
+  :part v:bruuth ;
+  rdfs:comment "[Computing]" .
+
+n:Ballrachd_RSS
+  rdfs:label "Ballrachd RSS" ;
+  :sense "RSS Subscriptions" ;
+  :part n:RSS ;
+  rdfs:comment "[Computing]" .
+
+n:liosta_luchd_faighinn_earbsach
+  rdfs:label "liosta luchd-faighinn earbsach" ;
+  :sense "safe recipients list" ;
+  :part n:neach_faighinn ;
+  rdfs:comment "[Computing]" .
+
+n:nuadhaich_an_duilleag_seo
+  rdfs:label "nuadhaich an duilleag seo" ;
+  :sense "refresh this page" ;
+  :part v:nuadhaich ;
+  rdfs:comment "[Computing]" .
+
+n:cuimhnich_dhomh_aig_aam_eile
+  rdfs:label "cuimhnich dhomh aig àm eile" ;
+  :sense "remind me later" ;
+  :part v:cuimhnich_dhomh ;
+  rdfs:comment "[Computing]" .
+
+n:leughadair_sgrion
+  rdfs:label "leughadair sgrion" ;
+  :sense "screen reader" ;
+  :part n:sgrion ;
+  rdfs:comment "[Computing]" .
+
+n:laan_sgrionaichean
+  rdfs:label "làn-sgrionaichean" ;
+  :sense "full screens" ;
+  :part n:sgrion ;
+  rdfs:comment "[Computing]" .
+
+n:laan_sgrion
+  rdfs:label "làn-sgrion" ;
+  :sense "full screen" ;
+  :part n:sgrion ;
+  rdfs:comment "[Computing]" .
+
+n:cloo_bhuail_laan_sgrion
+  rdfs:label "clò-bhuail làn-sgrion" ;
+  :sense "print full screen" ;
+  :part n:sgrion ;
+  rdfs:comment "[Computing]" .
+
+n:einnsean_lorg
+  rdfs:label "einnsean-lorg" ;
+  :sense "search engine" ;
+  :part v:lorg ;
+  rdfs:comment "[Computing]" .
+
+n:leasachadh_einnsein_lorg
+  rdfs:label "leasachadh einnsein-lorg" ;
+  :sense "search engine optimization" ;
+  :part v:lorg ;
+  rdfs:comment "[Computing]" .
+
+n:lorg_san_laarach
+  rdfs:label "lorg san làrach" ;
+  :sense "search site" ;
+  :part v:lorg ;
+  rdfs:comment "[Computing]" .
+
+n:lorg_san_liion
+  rdfs:label "lorg san lìon" ;
+  :sense "search the web" ;
+  :part v:lorg ;
+  rdfs:comment "[Computing]" .
+
+n:lorg_san_laarach_seo
+  rdfs:label "lorg san làrach seo" ;
+  :sense "search this site" ;
+  :part v:lorg ;
+  rdfs:comment "[Computing]" .
+
+n:lorg_san_liion
+  rdfs:label "lorg san lìon" ;
+  :sense "search web" ;
+  :part v:lorg ;
+  rdfs:comment "[Computing]" .
+
+n:lorg_san_liion_shlaan
+  rdfs:label "lorg san lìon shlàn" ;
+  :sense "search whole web" ;
+  :part v:lorg ;
+  rdfs:comment "[Computing]" .
+
+n:lorg_san_laarach_seo
+  rdfs:label "lorg san làrach seo" ;
+  :sense "search within this site" ;
+  :part v:lorg ;
+  rdfs:comment "[Computing]" .
+
+n:grad_lorg
+  rdfs:label "grad-lorg" ;
+  :sense "quick search" ;
+  :part v:lorg ;
+  rdfs:comment "[Computing]" .
+
+n:liosta_luchd_cuir_earbsach
+  rdfs:label "liosta luchd-cuir earbsach" ;
+  :sense "safe senders list" ;
+  :part n:neach_cuir ;
+  rdfs:comment "[Computing]" .
+
+n:chaidh_an_nii_seo_a_chur_chun_mhodaraator
+  rdfs:label "chaidh an nì seo a chur chun mhodaràtor" ;
+  :sense "this item as been sent for moderation" ;
+  :part a:cuirte ;
+  rdfs:comment "[Computing]" .
+
+n:seataidhean_pearsanta
+  rdfs:label "seataidhean pearsanta" ;
+  :sense "personal settings" ;
+  :part n:suidheachadh ;
+  rdfs:comment "[Computing]" .
+
+n:siota_stoidhle
+  rdfs:label "siota stoidhle" ;
+  :sense "style sheet" ;
+  :part n:siota ;
+  rdfs:comment "[Computing]" .
+
+n:Iar_Shiota_Stoidhle
+  rdfs:label "Iar-Shiota Stoidhle (CSS)" ;
+  :sense "Cascading Style Sheet (CSS)" ;
+  :part n:siota ;
+  rdfs:comment "[Computing]" .
+
+n:bruuth_iuchair_SHIFT
+  rdfs:label "brùth iuchair SHIFT" ;
+  :sense "press SHIFT key" ;
+  :part n:iuchair_SHIFT ;
+  rdfs:comment "[Computing]" .
+
+n:liosta_sheoolaidhean_puist
+  rdfs:label "liosta sheòlaidhean puist" ;
+  :sense "list of shipping addresses" ;
+  :part n:seooladh_puist ;
+  rdfs:comment "[Computing]" .
+
+n:sgriiobh_leubail_puist
+  rdfs:label "sgrìobh leubail puist" ;
+  :sense "write shipping label" ;
+  :part n:leubail_puist ;
+  rdfs:comment "[Computing]" .
+
+n:seall_air_fad
+  rdfs:label "seall air fad" ;
+  :sense "show all" ;
+  :part v:seall ;
+  rdfs:comment "[Computing]" .
+
+n:seatadh_ainm_sgriiobhte
+  rdfs:label "seatadh ainm-sgrìobhte" ;
+  :sense "signature setup" ;
+  :part n:ainm_sgriiobhte ;
+  rdfs:comment "[Computing]" .
+
+n:feartan_laaraich
+  rdfs:label "feartan làraich" ;
+  :sense "site features" ;
+  :part n:laarach ;
+  rdfs:comment "[Computing]" .
+
+n:mapa_laaraich
+  rdfs:label "mapa làraich" ;
+  :sense "sitemap" ;
+  :part n:laarach ;
+  rdfs:comment "[Computing]" .
+
+n:aithisgean_laaraich
+  rdfs:label "aithisgean làraich" ;
+  :sense "site reports" ;
+  :part n:laarach ;
+  rdfs:comment "[Computing]" .
+
+n:leum_air_adhart
+  rdfs:label "leum air adhart" ;
+  :sense "skip to next" ;
+  :part v:leum_thairis ;
+  rdfs:comment "[Computing]" .
+
+n:leum_gu_baarr
+  rdfs:label "leum gu bàrr" ;
+  :sense "skip to top" ;
+  :part v:leum_thairis ;
+  rdfs:comment "[Computing]" .
+
+n:straac_air_ais
+  rdfs:label "stràc-air-ais" ;
+  :sense "backslash" ;
+  :part n:straac ;
+  rdfs:comment "[Computing]" .
+
+n:straac_air_adhart
+  rdfs:label "stràc-air-adhart" ;
+  :sense "forward slash" ;
+  :part n:straac ;
+  rdfs:comment "[Computing]" .
+
+n:comharra_straaic
+  rdfs:label "comharra stràic" ;
+  :sense "slash mark" ;
+  :part n:straac ;
+  rdfs:comment "[Computing]" .
+
+n:slaighd_Powerpoint
+  rdfs:label "slaighd Powerpoint" ;
+  :sense "Powerpoint slide" ;
+  :part n:slaighd ;
+  rdfs:comment "[Computing]" .
+
+n:seall_mar_thaisbeanadh_slaighd
+  rdfs:label "seall mar thaisbeanadh-slaighd" ;
+  :sense "view as slideshow" ;
+  :part n:taisbeanadh_slaighd ;
+  rdfs:comment "[Computing]" .
+
+n:air_ais_chun_toisich
+  rdfs:label "air ais chun toisich" ;
+  :sense "back to start" ;
+  :part n:toiseach ;
+  rdfs:comment "[Computing]" .
+
+n:tooisich_an_seo
+  rdfs:label "tòisich an seo" ;
+  :sense "start here" ;
+  :part v:tooisich ;
+  rdfs:comment "[Computing]" .
+
+n:menu_tooiseachaidh
+  rdfs:label "menu-tòiseachaidh" ;
+  :sense "start menu" ;
+  :part v:tooisich ;
+  rdfs:comment "[Computing]" .
+
+n:tooisich_snaaithlean_uur
+  rdfs:label "tòisich snàithlean ùr" ;
+  :sense "start new thread" ;
+  :part v:tooisich ;
+  rdfs:comment "[Computing]" .
+
+n:siota_stoidhle
+  rdfs:label "siota stoidhle" ;
+  :sense "style sheet" ;
+  :part n:stoidhle ;
+  rdfs:comment "[Computing]" .
+
+n:Iar_Shiota_Stoidhle
+  rdfs:label "Iar-Shiota Stoidhle (CSS)" ;
+  :sense "Cascading Style Sheet (CSS)" ;
+  :part n:stoidhle ;
+  rdfs:comment "[Computing]" .
+
+n:siostam_rianachd_susbaint
+  rdfs:label "siostam rianachd susbaint (CMS)" ;
+  :sense "content management system (CMS)" ;
+  :part n:siostam ;
+  rdfs:comment "[Computing]" .
+
+n:rianaire_siostaim
+  rdfs:label "rianaire siostaim" ;
+  :sense "system administrator" ;
+  :part n:siostam ;
+  rdfs:comment "[Computing]" .
+
+n:neach_anailis_shiostaman
+  rdfs:label "neach-anailis shiostaman" ;
+  :sense "systems analyst" ;
+  :part n:siostam ;
+  rdfs:comment "[Computing]" .
+
+n:neach_anailis_siostaman_fiosrachaidh
+  rdfs:label "neach-anailis siostaman fiosrachaidh" ;
+  :sense "informations systems analyst" ;
+  :part n:siostam ;
+  rdfs:comment "[Computing]" .
+
+n:cuir_a_steach_claar_innse
+  rdfs:label "cuir a-steach clàr-innse" ;
+  :sense "insert table of contents" ;
+  :part n:claar_innse ;
+  rdfs:comment "[Computing]" .
+
+n:paatran_teamplaid
+  rdfs:label "pàtran teamplaid" ;
+  :sense "template pattern" ;
+  :part n:teamplaid ;
+  rdfs:comment "[Computing]" .
+
+n:teacsa_a_mhaain
+  rdfs:label "teacsa a-mhàin" ;
+  :sense "text only" ;
+  :part n:teacsa ;
+  rdfs:comment "[Computing]" .
+
+n:dreach_teacsa_a_mhaain
+  rdfs:label "dreach teacsa a-mhàin" ;
+  :sense "text only version" ;
+  :part n:teacsa ;
+  rdfs:comment "[Computing]" .
+
+n:tooisich_snaaithlean_uur
+  rdfs:label "tòisich snàithlean ùr" ;
+  :sense "start new thread" ;
+  :part n:snaaithlean ;
+  rdfs:comment "[Computing]" .
+
+n:baarr_snaaithlein
+  rdfs:label "bàrr snàithlein" ;
+  :sense "top of thread" ;
+  :part n:snaaithlean ;
+  rdfs:comment "[Computing]" .
+
+n:innealan_liin
+  rdfs:label "innealan-lìn" ;
+  :sense "web tools" ;
+  :part n:inneal ;
+  rdfs:comment "[Computing]" .
+
+n:putan_baar_innealan
+  rdfs:label "putan bàr-innealan" ;
+  :sense "toolbar button" ;
+  :part n:baar_innealan ;
+  rdfs:comment "[Computing]" .
+
+n:uurachaidhean_puist_d
+  rdfs:label "ùrachaidhean puist-d" ;
+  :sense "e-mail updates" ;
+  :part n:uurachadh ;
+  rdfs:comment "[Computing]" .
+
+n:ag_uurachadh
+  rdfs:label "ag ùrachadh" ;
+  :sense "updating" ;
+  :part v:uuraich ;
+  rdfs:comment "[Computing]" .
+
+n:uurachadh_mu_dheireadh
+  rdfs:label "ùrachadh mu dheireadh" ;
+  :sense "last updated" ;
+  :part a:uuraichte ;
+  rdfs:comment "[Computing]" .
+
+n:luchdaich_suas_aig_aam_eile
+  rdfs:label "luchdaich suas aig àm eile" ;
+  :sense "upload later" ;
+  :part v:luchdaich_suas ;
+  rdfs:comment "[Computing]" .
+
+n:luchdaich_suas_an_draasta
+  rdfs:label "luchdaich suas an-dràsta" ;
+  :sense "upload now" ;
+  :part v:luchdaich_suas ;
+  rdfs:comment "[Computing]" .
+
+n:cunntas_neach_cleachdaidh
+  rdfs:label "cunntas neach-cleachdaidh" ;
+  :sense "user account" ;
+  :part n:neach_cleachdaidh ;
+  rdfs:comment "[Computing]" .
+
+n:Riaghladh_Cunntas_Neach_cleachdaidh
+  rdfs:label "Riaghladh Cunntas Neach-cleachdaidh" ;
+  :sense "User Account Control" ;
+  :part n:neach_cleachdaidh ;
+  rdfs:comment "[Computing]" .
+
+n:ainm_neach_cleachdaidh
+  rdfs:label "ainm neach-cleachdaidh" ;
+  :sense "user name" ;
+  :part n:neach_cleachdaidh ;
+  rdfs:comment "[Computing]" .
+
+n:iomradh_neach_cleachdaidh
+  rdfs:label "iomradh neach-cleachdaidh" ;
+  :sense "user profile" ;
+  :part n:neach_cleachdaidh ;
+  rdfs:comment "[Computing]" .
+
+n:cooraichean_neach_cleachdaidh
+  rdfs:label "còraichean neach-cleachdaidh" ;
+  :sense "user rights" ;
+  :part n:neach_cleachdaidh ;
+  rdfs:comment "[Computing]" .
+
+n:furasta_a_chleachdadh
+  rdfs:label "furasta a chleachdadh" ;
+  :sense "user-friendly" ;
+  :part n:neach_cleachdaidh ;
+  rdfs:comment "[Computing]" .
+
+n:ceaarnaidh_neach_cleachdaidh
+  rdfs:label "ceàrnaidh neach-cleachdaidh" ;
+  :sense "user locale" ;
+  :part n:neach_cleachdaidh ;
+  rdfs:comment "[Computing]" .
+
+n:neach_cleachdaidh_deireannach
+  rdfs:label "neach-cleachdaidh deireannach" ;
+  :sense "end user" ;
+  :part n:neach_cleachdaidh ;
+  rdfs:comment "[Computing]" .
+
+n:dearbhadair_HTML
+  rdfs:label "dearbhadair HTML" ;
+  :sense "HTML validator" ;
+  :part n:dearbhadair ;
+  rdfs:comment "[Computing]" .
+
+n:dearbhadairean_HTML
+  rdfs:label "dearbhadairean HTML" ;
+  :sense "HTML validators" ;
+  :part n:dearbhadair ;
+  rdfs:comment "[Computing]" .
+
+n:dreach_ruigsinneach
+  rdfs:label "dreach ruigsinneach" ;
+  :sense "accessible version" ;
+  :part n:dreach ;
+  rdfs:comment "[Computing]" .
+
+n:dreach_beta
+  rdfs:label "dreach beta" ;
+  :sense "beta version" ;
+  :part n:dreach ;
+  rdfs:comment "[Computing]" .
+
+n:dreach_cloo_bhualaidh
+  rdfs:label "dreach clò-bhualaidh" ;
+  :sense "print version" ;
+  :part n:dreach ;
+  rdfs:comment "[Computing]" .
+
+n:dreach_cloo_bhualadair
+  rdfs:label "dreach clò-bhualadair" ;
+  :sense "printer friendly version" ;
+  :part n:dreach ;
+  rdfs:comment "[Computing]" .
+
+n:dreach_teacsa_a_mhaain
+  rdfs:label "dreach teacsa a-mhàin" ;
+  :sense "text only version" ;
+  :part n:dreach ;
+  rdfs:comment "[Computing]" .
+
+n:dreach_deuchainn
+  rdfs:label "dreach deuchainn" ;
+  :sense "trial version" ;
+  :part n:dreach ;
+  rdfs:comment "[Computing]" .
+
+n:WebDav
+  rdfs:label "WebDav" ;
+  :sense "Web Distributed Authoring and Versioning" ;
+  :part n:dreach ;
+  rdfs:comment "[Computing]" .
+
+n:seall_mar_thaisbeanadh_slaighd
+  rdfs:label "seall mar thaisbeanadh-slaighd" ;
+  :sense "view as slideshow" ;
+  :part v:seall ;
+  rdfs:comment "[Computing]" .
+
+n:seall_ri_menu
+  rdfs:label "seall ri menu" ;
+  :sense "view menu" ;
+  :part v:seall ;
+  rdfs:comment "[Computing]" .
+
+n:diion_o_bhiioras
+  rdfs:label "dìon o bhìoras" ;
+  :sense "virus protection" ;
+  :part n:bhiioras ;
+  rdfs:comment "[Computing]" .
+
+n:seula_bhiiorais
+  rdfs:label "seula bhìorais" ;
+  :sense "virus signature" ;
+  :part n:bhiioras ;
+  rdfs:comment "[Computing]" .
+
+n:slatan_tomhais_agus_stiuuireadh_Liin
+  rdfs:label "slatan-tomhais agus stiùireadh Lìn" ;
+  :sense "Web standards and guidelines" ;
+  :part n:Liion ;
+  rdfs:comment "[Computing]" .
+
+n:seooladh_liin
+  rdfs:label "seòladh lìn" ;
+  :sense "web address" ;
+  :part n:Liion ;
+  rdfs:comment "[Computing]" .
+
+n:ruigsinneachd_liin
+  rdfs:label "ruigsinneachd lìn" ;
+  :sense "web accessibility" ;
+  :part n:Liion ;
+  rdfs:comment "[Computing]" .
+
+n:brobhsair_Liin
+  rdfs:label "brobhsair Lìn" ;
+  :sense "Web browser" ;
+  :part n:Liion ;
+  rdfs:comment "[Computing]" .
+
+n:ceangal_liin
+  rdfs:label "ceangal lìn" ;
+  :sense "web connection" ;
+  :part n:Liion ;
+  rdfs:comment "[Computing]" .
+
+n:coomhradh_Liin
+  rdfs:label "còmhradh Lìn" ;
+  :sense "Web discussion" ;
+  :part n:Liion ;
+  rdfs:comment "[Computing]" .
+
+n:pasgain_liin
+  rdfs:label "pasgain lìn" ;
+  :sense "Web Folders" ;
+  :part n:Liion ;
+  rdfs:comment "[Computing]" .
+
+n:blog
+  rdfs:label "blog" ;
+  :sense "web log" ;
+  :part n:Liion ;
+  rdfs:comment "[Computing]" .
+
+n:duilleag_liin
+  rdfs:label "duilleag lìn" ;
+  :sense "web page" ;
+  :part n:Liion ;
+  rdfs:comment "[Computing]" .
+
+n:ro_shealladh_duilleag_liin
+  rdfs:label "ro-shealladh duilleag lìn" ;
+  :sense "web page preview" ;
+  :part n:Liion ;
+  rdfs:comment "[Computing]" .
+
+n:Co_phaairt_Liin
+  rdfs:label "Co-phàirt Lìn" ;
+  :sense "Web Part" ;
+  :part n:Liion ;
+  rdfs:comment "[Computing]" .
+
+n:bacaidhean_liin
+  rdfs:label "bacaidhean-lìn" ;
+  :sense "web restrictions" ;
+  :part n:Liion ;
+  rdfs:comment "[Computing]" .
+
+n:trafaig_liin
+  rdfs:label "trafaig lìn" ;
+  :sense "web traffic" ;
+  :part n:Liion ;
+  rdfs:comment "[Computing]" .
+
+n:lorg_san_liion
+  rdfs:label "lorg san lìon" ;
+  :sense "search the web" ;
+  :part n:Liion ;
+  rdfs:comment "[Computing]" .
+
+n:lorg_san_liion
+  rdfs:label "lorg san lìon" ;
+  :sense "search web" ;
+  :part n:Liion ;
+  rdfs:comment "[Computing]" .
+
+n:lorg_san_liion_shlaan
+  rdfs:label "lorg san lìon shlàn" ;
+  :sense "search whole web" ;
+  :part n:Liion ;
+  rdfs:comment "[Computing]" .
+
+n:biathadh_liin
+  rdfs:label "biathadh lìn" ;
+  :sense "web feed" ;
+  :part n:Liion ;
+  rdfs:comment "[Computing]" .
+
+n:innealan_liin
+  rdfs:label "innealan-lìn" ;
+  :sense "web tools" ;
+  :part n:Liion ;
+  rdfs:comment "[Computing]" .
+
+n:laarach_liin_airson_taic_do_thidsearan_uura
+  rdfs:label "làrach-lìn airson taic do thidsearan ùra" ;
+  :sense "support for new teachers website" ;
+  :part n:laarach_liin ;
+  rdfs:comment "[Computing]" .
+
+n:laarach_liin_thidsearan_uura
+  rdfs:label "làrach-lìn thidsearan ùra" ;
+  :sense "new teachers website" ;
+  :part n:laarach_liin ;
+  rdfs:comment "[Computing]" .
+
+n:seirbheisean_laaraich_liin
+  rdfs:label "seirbheisean làraich-lìn" ;
+  :sense "website services" ;
+  :part n:laarach_liin ;
+  rdfs:comment "[Computing]" .
+
+n:laarach_liin_fisidh
+  rdfs:label "làrach-lìn fisidh" ;
+  :sense "phishing website" ;
+  :part n:laarach_liin ;
+  rdfs:comment "[Computing]" .
+
+n:cleachd_laarach_liin_fisidh
+  rdfs:label "cleachd làrach-lìn fisidh" ;
+  :sense "use phishing website" ;
+  :part n:laarach_liin ;
+  rdfs:comment "[Computing]" .
+
+n:LAN_gun_ueir
+  rdfs:label "LAN gun ueir" ;
+  :sense "wireless LAN" ;
+  :part a:gun_ueir ;
+  rdfs:comment "[Computing]" .
+
+n:cuir_ri_liosta_miann
+  rdfs:label "cuir ri liosta-miann" ;
+  :sense "add to wishlist" ;
+  :part n:liosta_miann ;
+  rdfs:comment "[Computing]" .
+
+n:Co_bhanntachd_Liion_na_Cruinne
+  rdfs:label "Co-bhanntachd Lìon na Cruinne" ;
+  :sense "World Wide Web Consortium" ;
+  :part n:Liion_na_Cruinne ;
+  rdfs:comment "[Computing]" .
+
+}

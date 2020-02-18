@@ -5,18 +5,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix : <http://faclair.ac.uk/meta/> .
 
-#needs to be checked thoroughly by hand
-
-<http://faclair.ac.uk/sources/Seotal>
-  rdfs:label "An Seotal (Stòrlann)" .
-
 <http://faclair.ac.uk/sources/Seotal> {
-
-:MasculineNoun rdfs:label "n(m)" .
-:FeminineNoun rdfs:label "n(f)" .
-:Adjective rdfs:label "adj" .
-:Verb rdfs:label "vb" .
-:VerbalNoun rdfs:label "vn" .
 
 a:acadaimigeach
   a :Adjective ;

@@ -7,7 +7,8 @@
   <xsl:output method="text" encoding="UTF-8"/>
   
   <xsl:template match="/">
-    <xsl:apply-templates select="//dd[@class='def']"/>
+    <!--<xsl:apply-templates select="//dd[@class='def']"/>-->
+    <xsl:apply-templates select="//dd[@class='clearfix eg']"/>
   </xsl:template>
   
   <xsl:template match="dd[@class='def']">
@@ -38,6 +39,7 @@
     <xsl:value-of select="preceding-sibling::dt[1]"/>
     <xsl:text>" </xsl:text>
     <xsl:apply-templates select="following-sibling::dd[@class='gramUsage'][1]"/>
+    <xsl:apply-templates select="following-sibling::dd[@class='subject'][1]"/>
     <xsl:text>. &#10;</xsl:text>
     <xsl:text>&#10;</xsl:text>
   </xsl:template>
@@ -67,14 +69,54 @@
   <xsl:template match="dd[@class='gramUsage']">
     <xsl:for-each select="span[@class='sceangailte']">
       <xsl:text>;&#10;  :gen "</xsl:text>
-      <xsl:value-of select="substring-before(substring-after(.,'- '),' sc')"/>
+      <xsl:value-of select="substring-before(substring-after(.,'- '),' poss')"/>
       <xsl:text>" </xsl:text>
     </xsl:for-each>
     <xsl:for-each select="span[@class='iom']">
       <xsl:text>;&#10;  :pl "</xsl:text>
-      <xsl:value-of select="substring-before(substring-after(.,'- '),' iom')"/>
+      <xsl:value-of select="substring-before(substring-after(.,'- '),' pl')"/>
       <xsl:text>" </xsl:text>
     </xsl:for-each>
   </xsl:template>
+  
+  <xsl:template match="dd[@class='subject']">
+    <xsl:text>;&#10;  rdfs:comment "[</xsl:text>
+    <xsl:value-of select="a"/>
+    <xsl:text>]" </xsl:text>
+  </xsl:template>
+  
+  <xsl:template match="dd[@class='clearfix eg']">
+    <xsl:variable name="pos" select="preceding-sibling::dd[@class='grammar'][1]/span[@class='pos']/abbr/@title"/>
+    <xsl:text>n:</xsl:text>
+    <xsl:value-of select="translate(span[@class='egEle gdEg'],'- àèìòù','__*^%$£')"/>
+    <xsl:text>&#10;</xsl:text>
+    <xsl:text>  rdfs:label "</xsl:text>
+    <xsl:value-of select="span[@class='egEle gdEg']"/>
+    <xsl:text>" ; &#10;</xsl:text>
+    <xsl:text>  :sense "</xsl:text>
+    <xsl:value-of select="span[@class='egEle enEg']"/>
+    <xsl:text>" ; &#10;</xsl:text>
+    <xsl:text>  :part </xsl:text>
+    <xsl:choose>
+      <xsl:when test="$pos='adjective'">
+        <xsl:text>a:</xsl:text>
+      </xsl:when>
+      <xsl:when test="$pos='noun'">
+        <xsl:text>n:</xsl:text>
+      </xsl:when>
+      <xsl:when test="$pos='verb'">
+        <xsl:text>v:</xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text>o:</xsl:text>
+      </xsl:otherwise>
+    </xsl:choose>
+    <xsl:value-of select="translate(preceding-sibling::dd[@class='def'][1],'- àèìòù','__*^%$£')"/>
+    <xsl:text> </xsl:text>
+    <xsl:apply-templates select="preceding-sibling::dd[@class='subject'][1]"/>
+    <xsl:text>.&#10;</xsl:text>
+    <xsl:text>&#10;</xsl:text>
+  </xsl:template>
+  
   
 </xsl:stylesheet>
