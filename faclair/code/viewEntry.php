@@ -66,8 +66,8 @@ WHERE
 }
 SPQR;
 //$query = urlencode($query);
-//$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . $query;
-$url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . $query;
+//$url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
 $json = file_get_contents($url);
 $results = json_decode($json,false)->results->bindings;
 ?>
@@ -265,8 +265,8 @@ WHERE
 }
 SPQR;
 //$query = urlencode($query);
-//$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . $query;
-$url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . $query;
+//$url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
 $json = file_get_contents($url);
 $results = json_decode($json,false)->results->bindings;
 $sources = [];
