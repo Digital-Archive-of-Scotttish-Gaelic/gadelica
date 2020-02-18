@@ -16,27 +16,24 @@ $(function() {
     if ($('#snhCheck:checked').val()=='yes' ) { snh = true; }
     if ($('#frpCheck:checked').val()=='yes' ) { frp = true; }
     if ($('#seotalCheck:checked').val()=='yes' ) { seotal = true; }
-    if ($('#dwellyCheck:checked').val()=='yes' ) { dwelly = true; }
+    //if ($('#dwellyCheck:checked').val()=='yes' ) { dwelly = true; }
     if ($('#othersCheck:checked').val()=='yes' ) { others = true; }
     if (lang == 'en') {
       var url = 'ajax.php?action=getEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
       $.getJSON(url, function(data) {
         addData(data);
       }).done(function() {
-        $('#resultsTable tbody').append('<tr><td></td><td></td></tr>');
-        var url2 = 'ajax.php?action=getMoreEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
-        $.getJSON(url2, function(data2) {
-          addData(data2);
+        var url = 'ajax.php?action=getMoreEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
+        $.getJSON(url, function(data) {
+          addData(data);
         }).done(function() {
-          $('#resultsTable tbody').append('<tr><td></td><td></td></tr>');
-          var url3 = 'ajax.php?action=getEvenMoreEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
-          $.getJSON(url3, function(data3) {
-            addData(data3);
+          var url = 'ajax.php?action=getEvenMoreEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
+          $.getJSON(url, function(data) {
+            addData(data);
           }).done(function() {
-            $('#resultsTable tbody').append('<tr><td></td><td></td></tr>');
-            var url4 = 'ajax.php?action=getEvenEvenMoreEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
-            $.getJSON(url4, function(data4) {
-              addData(data4);
+            var url = 'ajax.php?action=getEvenEvenMoreEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
+            $.getJSON(url, function(data4) {
+              addData(data);
             });
           });
         });

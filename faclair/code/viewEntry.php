@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script>
       $(function () {
         $('[data-toggle="tooltip"]').tooltip()
@@ -16,8 +16,13 @@
   </head>
   <body style="padding-top: 20px;">
     <div class="container-fluid">
+
 <?php
-// get generic information about lexical item for top of page
+
+//////////////////////////////////////////////////////////////////
+// HEADER
+//////////////////////////////////////////////////////////////////
+
 if (isset($_GET['id'])) {
   $id = $_GET['id'];
 }
@@ -29,6 +34,7 @@ WHERE
 {
   GRAPH <http://faclair.ac.uk/sources/general> {
     OPTIONAL { <{$id}> rdfs:label ?hw . }
+    OPTIONAL { <{$id}> a ?pos . }
     OPTIONAL { <{$id}> :sense ?en . }
     OPTIONAL {
       <{$id}> :part ?pid .
@@ -38,36 +44,17 @@ WHERE
       ?cid :part <{$id}> .
       OPTIONAL { ?cid rdfs:label ?chw . }
     }
-    OPTIONAL {
-      <{$id}> :pl ?pl .
-    }
-    OPTIONAL {
-      <{$id}> :gen ?gen .
-    }
-    OPTIONAL {
-      <{$id}> :comp ?comp .
-    }
-    OPTIONAL {
-      <{$id}> :vn ?vn .
-    }
-    OPTIONAL {
-      <{$id}> :vngen ?vngen .
-    }
-    OPTIONAL {
-      <{$id}> rdfs:comment ?comment .
-    }
-  }
-  OPTIONAL {
-    GRAPH <http://faclair.ac.uk/sources/general> {
-      <{$id}> a ?posid .
-    }
-    ?posid rdfs:label ?pos .
+    OPTIONAL { <{$id}> :pl ?pl . }
+    OPTIONAL { <{$id}> :gen ?gen . }
+    OPTIONAL { <{$id}> :comp ?comp . }
+    OPTIONAL { <{$id}> :vn ?vn . }
+    OPTIONAL { <{$id}> :vngen ?vngen . }
+    OPTIONAL { <{$id}> rdfs:comment ?comment . }
   }
 }
 SPQR;
-//$query = urlencode($query);
-$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . $query;
-//$url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+//$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
+$url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
 $json = file_get_contents($url);
 $results = json_decode($json,false)->results->bindings;
 ?>
@@ -85,15 +72,22 @@ if (count($hws)>0) {
 }
 else { echo $id; } // FALLBACK
 echo '</h1>';
+
+function printPOS($posid) {
+  if ($posid=='http://faclair.ac.uk/meta/MasculineNoun') { return '<span data-toggle="tooltip" data-placement="right" title="masculine noun">ainmear fireann</span>'; }
+  if ($posid=='http://faclair.ac.uk/meta/FeminineNoun') { return '<span data-toggle="tooltip" data-placement="right" title="feminine noun">ainmear boireann</span>'; }
+  if ($posid=='http://faclair.ac.uk/meta/Adjective') { return '<span data-toggle="tooltip" data-placement="right" title="adjective">buadhair</span>'; }
+  if ($posid=='http://faclair.ac.uk/meta/Verb') { return '<span data-toggle="tooltip" data-placement="right" title="verb">gnìomhair</verb>'; }
+  return $posid;
+}
+
 $pos = []; // PARTS OF SPEECH
 foreach($results as $nextResult) {
   $pos[] = $nextResult->pos->value;
 }
 $pos = array_unique($pos);
-if (count($pos)>0) {
-  echo '<p class="text-muted">';
-  echo implode(', ', $pos);
-  echo '</p>';
+foreach ($pos as $nextpos) {
+  echo '<p class="text-muted">' . printPOS($nextpos) . '</p>';
 }
 $ens = []; // ENGLISH EQUIVALENTS
 foreach($results as $nextResult) {
@@ -149,6 +143,9 @@ if (count($compounds)>0) {
   }
   echo '</div>';
 }
+
+////////////////////////
+
 // GET ALTERNATIVE FORMS NEXT
 $pls = [];
 foreach($results as $nextResult) {
@@ -191,20 +188,24 @@ foreach($results as $nextResult) {
 }
 $vngens = array_unique($vngens);
 if (count($pls) > 0) {
-  echo '<div class="list-group-item"><span class="text-muted">plural:</span> ' . implode(', ',$pls) . '</div>';
+  echo '<div class="list-group-item"><span class="text-muted" data-toggle="tooltip" data-placement="bottom" title="plural">iolra:</span> ' . implode(', ',$pls) . '</div>';
 }
 if (count($gens) > 0) {
-  echo '<div class="list-group-item"><span class="text-muted">genitive:</span> ' . implode(', ',$gens) . '</div>';
+  echo '<div class="list-group-item"><span class="text-muted" data-toggle="tooltip" data-placement="bottom" title="genitive">ginideach:</span> ' . implode(', ',$gens) . '</div>';
 }
 if (count($comps) > 0) {
-  echo '<div class="list-group-item"><span class="text-muted">comparative:</span> ' . implode(', ',$comps) . '</div>';
+  echo '<div class="list-group-item"><span class="text-muted" data-toggle="tooltip" data-placement="bottom" title="comparative">coimeasach:</span> ' . implode(', ',$comps) . '</div>';
 }
 if (count($vns) > 0) {
-  echo '<div class="list-group-item"><span class="text-muted">verbal noun:</span> ' . implode(', ',$vns) . '</div>';
+  echo '<div class="list-group-item"><span class="text-muted" data-toggle="tooltip" data-placement="bottom" title="verbal noun">ainmear gnìomhaireach:</span> ' . implode(', ',$vns) . '</div>';
 }
 if (count($vngens) > 0) {
-  echo '<div class="list-group-item"><span class="text-muted">verbal noun:</span> ' . implode(', ',$vngens) . '</div>';
+  echo '<div class="list-group-item"><span class="text-muted" data-toggle="tooltip" data-placement="bottom" title="genitive verbal noun">ainmear gnìomhaireach ginideach:</span> ' . implode(', ',$vngens) . '</div>';
 }
+///////////////////////////
+
+
+
 // ADMIN COMMENTS:
 $comments = [];
 foreach($results as $nextResult) {
@@ -214,61 +215,38 @@ foreach($results as $nextResult) {
   }
 }
 $comments = array_unique($comments);
-echo '<div class="list-group-item"><small class="text-muted">Admin: ' . $id . ' | ';
+echo '<div class="list-group-item"><small class="text-muted"><span data-toggle="tooltip" data-placement="top" title="admin notes">Rianachd</span>: ' . $id . ' | ';
 echo implode(' | ',$comments);
 echo '</small></div>';
 echo '</div>'; // end of list group
 ?>
+<p>&nbsp;</p>
 <!-- THE CAROUSEL: -->
     <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="false">
 <?php
-// MAYBE DO NEXT BIT BY AJAX???
 $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
-SELECT DISTINCT ?g ?lex ?hw #?en ?posid ?pos ?pl ?gen ?comp ?vn ?vngen ?comment ?xid ?xhw ?xen
+SELECT DISTINCT ?g ?hw ?en ?pos ?pl ?gen ?comp ?vn ?vngen ?comment
 WHERE
 {
   GRAPH ?g {
       <{$id}> rdfs:label ?hw .
       OPTIONAL { <{$id}> :sense ?en . }
-      #OPTIONAL {
-      #  <{$id}> a ?posid .
-      #  OPTIONAL { ?posid rdfs:label ?pos . }
-      #}
-      #OPTIONAL {
-      #  <{$id}> :pl ?pl .
-      #}
-      #OPTIONAL {
-      #  <{$id}> :gen ?gen .
-      #}
-      #OPTIONAL {
-      #  <{$id}> :comp ?comp .
-      #}
-      #OPTIONAL {
-      #  <{$id}> :vn ?vn .
-      #}
-      #OPTIONAL {
-      #  <{$id}> :vngen ?vngen .
-      #}
-      #OPTIONAL {
-      #  ?xid :part <{$id}> .
-      #  ?xid rdfs:label ?xhw .
-      #  ?xid :sense ?xen .
-      #}
-      #OPTIONAL {
-      #  <{$id}> rdfs:comment ?comment .
-      #}
+      OPTIONAL { <{$id}> a ?pos . }
+      OPTIONAL { <{$id}> :pl ?pl . }
+      OPTIONAL { <{$id}> :gen ?gen . }
+      OPTIONAL { <{$id}> :comp ?comp . }
+      OPTIONAL { <{$id}> :vn ?vn . }
+      OPTIONAL { <{$id}> :vngen ?vngen . }
+      OPTIONAL { <{$id}> rdfs:comment ?comment . }
   }
-  OPTIONAL { ?g rdfs:label ?lex . }
-  FILTER (?lex!=<http://faclair.ac.uk/sources/general>) .
+  FILTER (?g!=<http://faclair.ac.uk/sources/general>) .
 }
 SPQR;
-//$query = urlencode($query);
-$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . $query;
-//$url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
-$json = file_get_contents($url);
-$results = json_decode($json,false)->results->bindings;
+//$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
+$url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+$results = json_decode(file_get_contents($url),false)->results->bindings;
 $sources = [];
 foreach($results as $nextResult) {
   $g = $nextResult->g->value;
@@ -289,6 +267,14 @@ foreach ($sources as $nextIndex=>$nextSource) {
 }
 echo '</ol>';
 echo  '<div class="carousel-inner">';
+
+function printSource($sid) {
+  if ($sid=='http://faclair.ac.uk/sources/SNH') { return '<span data-toggle="tooltip" data-placement="top" title="Scottish Natural Heritage nature terms">Faclan Nàdair Dualchas Nàdair na h-Alba</span>'; }
+  if ($sid=='http://faclair.ac.uk/sources/FRP2013') { return '<span data-toggle="tooltip" data-placement="top" title="TELI’s official terms for public administration">Faclair na Pàrlamaid msaa (TELI)</span>'; }
+  if ($sid=='http://faclair.ac.uk/sources/Seotal') { return '<span data-toggle="tooltip" data-placement="top" title="Stòrlann’s terms for GME">An Seotal (Stòrlann)</span>'; }
+  return $sid;
+}
+
 foreach ($sources as $nextIndex=>$nextSource) {
   echo '<div class="carousel-item';
   if ($nextIndex == 0) {
@@ -296,17 +282,7 @@ foreach ($sources as $nextIndex=>$nextSource) {
   }
   else { echo '">'; }
   echo '<div class="card"><div class="card-body">';
-  $name = $nextSource;
-  foreach($results as $nextResult) {
-    if ($nextResult->g->value==$nextSource) {
-      $lex = $nextResult->lex->value;
-      if ($lex != '') {
-        $name = $lex;
-      }
-      break;
-    }
-  }
-  echo '<p>From <em>' . $name . '</em>:</p><h3 class="card-title">';
+  echo '<p><em>' . printSource($nextSource) . '</em>:</p><h3 class="card-title">'; // print out nicer
   $hws = [];
   foreach($results as $nextResult) {
     if ($nextResult->g->value==$nextSource) {
@@ -322,24 +298,19 @@ foreach ($sources as $nextIndex=>$nextSource) {
   }
   else { echo $id; } // FALLBACK
   echo '</h3>';
-
-  /*
+  echo '<div class="list-group list-group-flush">';
   $poss = [];
   foreach($results as $nextResult) {
     if ($nextResult->g->value==$nextSource) {
-      $posid = $nextResult->posid->value;
-      if ($posid != '') {
-        $pos = $nextResult->pos->value;
-        if ($pos != '') {
-          $poss[] = $pos;
-        }
-        else { $poss[] = $posid; }
+      $pos = $nextResult->pos->value;
+      if ($pos != '') {
+        $poss[] = $pos;
       }
     }
   }
   $poss = array_unique($poss);
-  if (count($poss)>0) {
-    echo '<p>' . implode(', ',$poss) . '</p>';
+  foreach ($poss as $nextpos) {
+    echo '<div class="list-group-item text-muted">' . printPOS($nextpos) . '</div>';
   }
   $ens = [];
   foreach($results as $nextResult) {
@@ -352,125 +323,94 @@ foreach ($sources as $nextIndex=>$nextSource) {
   }
   $ens = array_unique($ens);
   if (count($ens)>0) {
-    echo '<p><em>' . implode(', ',$ens) . '</em></p>';
+    echo '<div class="list-group-item text-muted"><em>' . implode(', ',$ens) . '</em></div>';
   }
 
-      echo '</small></td><td><small>';
 
-
-      $pls = [];
-      foreach($results as $nextResult) {
-        if ($nextResult->g->value == $nextSource) {
-          $pl = $nextResult->pl->value;
-          if ($pl!='') {
-            $pls[] = $pl;
-          }
-        }
-      }
-      $pls = array_unique($pls);
-      $gens = [];
-      foreach($results as $nextResult) {
-        if ($nextResult->g->value == $nextSource) {
-          $gen = $nextResult->gen->value;
-          if ($gen!='') {
-            $gens[] = $gen;
-          }
-        }
-      }
-      $gens = array_unique($gens);
-
-      $comps = [];
-      foreach($results as $nextResult) {
-        if ($nextResult->g->value == $nextSource) {
-          $comp = $nextResult->comp->value;
-          if ($comp!='') {
-            $comps[] = $comp;
-          }
-        }
-      }
-      $comps = array_unique($comps);
-      $vns = [];
-      foreach($results as $nextResult) {
-        if ($nextResult->g->value == $nextSource) {
-          $vn = $nextResult->vn->value;
-          if ($vn!='') {
-            $vns[] = $vn;
-          }
-        }
-      }
-      $vns = array_unique($vns);
-      $vngens = [];
-      foreach($results as $nextResult) {
-        if ($nextResult->g->value == $nextSource) {
-          $vngen = $nextResult->vngen->value;
-          if ($vngen!='') {
-            $vngens[] = $vngen;
-          }
-        }
-      }
-      $vngens = array_unique($vngens);
-      if (count($pls) > 0) {
-        echo '<span class="text-muted">pl:</span> ' . implode(', ',$pls) . '<br/>';
-      }
-      if (count($gens) > 0) {
-        echo '<span class="text-muted">gn:</span> ' . implode(', ',$gens) . '<br/>';
-      }
-      if (count($comps) > 0) {
-        echo '<span class="text-muted">cmp:</span> ' . implode(', ',$comps) . '<br/>';
-      }
-      if (count($vns) > 0) {
-        echo '<span class="text-muted">vn:</span> ' . implode(', ',$vns) . '<br/>';
-      }
-      if (count($vngens) > 0) {
-        echo '<span class="text-muted">vn gn:</span> ' . implode(', ',$vngens) . '<br/>';
-      }
-      echo '</small></td><td>';
-
-  echo '<p>';
-  $parts = [];
+  /////////////////////////////////
+  $pls = [];
   foreach($results as $nextResult) {
     if ($nextResult->g->value == $nextSource) {
-      $part = $nextResult->xid->value;
-      if ($part!='') {
-        $parts[] = $nextResult->xid->value;
+      $pl = $nextResult->pl->value;
+      if ($pl!='') {
+        $pls[] = $pl;
       }
     }
   }
-  $parts = array_unique($parts);
-  foreach($parts as $nextPart) {
-    foreach($results as $nextResult) {
-      if ($nextResult->g->value == $nextSource && $nextResult->xid->value == $nextPart) {
-        $xens = [];
-        foreach($results as $nextResult2) {
-          if ($nextResult2->xid->value == $nextPart) {
-            $xens[] = $nextResult2->xen->value;
-          }
-        }
-        $xens = array_unique($xens);
-        $tooltip = implode(' | ',$xens);
-        echo '<em data-toggle="tooltip" data-placement="top" title="' . $tooltip . '">' . $nextResult->xhw->value . '</em><br/>';
-        break;
+  $pls = array_unique($pls);
+  $gens = [];
+  foreach($results as $nextResult) {
+    if ($nextResult->g->value == $nextSource) {
+      $gen = $nextResult->gen->value;
+      if ($gen!='') {
+        $gens[] = $gen;
       }
     }
   }
-  echo '</p>';
-
-
-      echo '</td><td><small class="text-muted">';
-      $comments = [];
-      foreach($results as $nextResult) {
-        if ($nextResult->g->value==$nextSource) {
-          $comment = $nextResult->comment->value;
-          if ($comment!='') {
-            $comments[] = $comment;
-          }
-        }
+  $gens = array_unique($gens);
+  $comps = [];
+  foreach($results as $nextResult) {
+    if ($nextResult->g->value == $nextSource) {
+      $comp = $nextResult->comp->value;
+      if ($comp!='') {
+        $comps[] = $comp;
       }
-      $comments = array_unique($comments);
-      echo implode('<br/>',$comments);
-      echo '</small>';
-*/
-  echo '</div></div></div>'; // end of card-body, card and carousel item
+    }
+  }
+  $comps = array_unique($comps);
+  $vns = [];
+  foreach($results as $nextResult) {
+    if ($nextResult->g->value == $nextSource) {
+      $vn = $nextResult->vn->value;
+      if ($vn!='') {
+        $vns[] = $vn;
+      }
+    }
+  }
+  $vns = array_unique($vns);
+  $vngens = [];
+  foreach($results as $nextResult) {
+    if ($nextResult->g->value == $nextSource) {
+      $vngen = $nextResult->vngen->value;
+      if ($vngen!='') {
+        $vngens[] = $vngen;
+      }
+    }
+  }
+  $vngens = array_unique($vngens);
+  if (count($pls) > 0) {
+    echo '<div class="list-group-item"><span class="text-muted" data-toggle="tooltip" data-placement="bottom" title="plural">iolra:</span> ' . implode(', ',$pls) . '</div>';
+  }
+  if (count($gens) > 0) {
+    echo '<div class="list-group-item"><span class="text-muted" data-toggle="tooltip" data-placement="bottom" title="genitive">ginideach:</span> ' . implode(', ',$gens) . '</div>';
+  }
+  if (count($comps) > 0) {
+    echo '<div class="list-group-item"><span class="text-muted" data-toggle="tooltip" data-placement="bottom" title="comparative">coimeasach:</span> ' . implode(', ',$comps) . '</div>';
+  }
+  if (count($vns) > 0) {
+    echo '<div class="list-group-item"><span class="text-muted" data-toggle="tooltip" data-placement="bottom" title="verbal noun">ainmear gnìomhaireach:</span> ' . implode(', ',$vns) . '</div>';
+  }
+  if (count($vngens) > 0) {
+    echo '<div class="list-group-item"><span class="text-muted" data-toggle="tooltip" data-placement="bottom" title="genitive verbal noun">ainmear gnìomhaireach ginideach:</span> ' . implode(', ',$vngens) . '</div>';
+  }
+  /////////////////////////
+
+
+  $comments = [];
+  foreach($results as $nextResult) {
+    if ($nextResult->g->value==$nextSource) {
+      $comment = $nextResult->comment->value;
+      if ($comment!='') {
+        $comments[] = $comment;
+      }
+    }
+  }
+  $comments = array_unique($comments);
+  echo '<div class="list-group-item"><small class="text-muted"><span data-toggle="tooltip" data-placement="top" title="admin notes">Rianachd</span>: ';
+  echo implode(' | ',$comments);
+  echo '</small></div>';
+
+  echo '</div></div></div></div>'; // end of list group, card-body, card and carousel item
 }
 echo '</div>'; // end of carousel inner
 if (count($sources)>1) {
@@ -490,7 +430,7 @@ if (count($sources)>1) {
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <a class="nav-item nav-link" href="about.html" data-toggle="tooltip" title="About this site">fios</a>
-            <a class="nav-item nav-link" href="random.php" data-toggle="tooltip" title="View random entry">sonas</a>
+            <a class="nav-item nav-link" href="random.php" data-toggle="tooltip" title="Be adventurous!">dàna</a>
           </div>
         </div>
       </nav>
