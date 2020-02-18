@@ -47,13 +47,13 @@ $(function() {
       $.getJSON(url, function(data) {
         addData(data);
       }).done(function() {
-        /*
         $('#resultsTable tbody').append('<tr><td></td><td></td></tr>');
-        var url2 = 'ajax.php?action=getMoreGaelicResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal;
+        var url2 = 'ajax.php?action=getMoreGaelicResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
         $.getJSON(url2, function(data) {
           addData(data);
+        }).done(function() {
+
         });
-        */
       });
     }
   });

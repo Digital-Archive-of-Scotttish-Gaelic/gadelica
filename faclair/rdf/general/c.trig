@@ -564,6 +564,12 @@ n:clach
   :sense "stone" ;
   rdfs:comment "[BMh 2013]" .
 
+n:clach_liionraith
+  a :PluralNoun ;
+  rdfs:label "clach-lìonraith" ;
+  :sense "rolling whetstone" ;
+  :part n:clach .
+
 n:cladach
   a :MasculineNoun ;
   rdfs:label "cladach" ;
@@ -742,6 +748,11 @@ n:cnoc
   rdfs:label "cnoc" ;
   :sense "hill" ;
   rdfs:comment "[BMh 2013]" .
+
+n:co_ghnaaths
+  rdfs:label "co-ghnàths" ;
+  :sense "protocol" ;
+  :part n:gnaaths .
 
 n:co_ogha
   rdfs:label "co-ogha" ;
@@ -1249,6 +1260,11 @@ n:cularan
   :sense "cucumber" ;
   rdfs:comment "[BMh 2013]" .
 
+n:cuum_ri_co_ghnaaths
+  rdfs:label "cùm ri co-ghnàths" ;
+  :part n:co_ghnaaths ;
+  :sense "observe protocol" .
+
 v:cuum_suuil_air_an_t_siide
   rdfs:label "sùil a chumail air an t-sìde" ;
   :sense "track the weather" ;
@@ -1277,6 +1293,28 @@ n:cumhachd_uisge_dealain
   :sense "hydroelectric power" ;
   :part n:cumhachd , n:uisge , n:dealan ;
   rdfs:comment "[BMh 2013]" .
+
+a:cunbhalach
+  a :Adjective ;
+  rdfs:label "cunbhalach" ;
+  :sense "uniform" , "steady" , "regular" ;
+  rdfs:comment "[CM 2004]" .
+
+n:cunbhalachd
+  a :FeminineNoun ;
+  rdfs:label "cunbhalachd" ;
+  :gen "cunbhalachd" ;
+  :sense "steadiness" , "consistency" , "constancy" , "proportion" , "symmetry" ;
+  :part a:cunbhalach ;
+  rdfs:comment "[CM 2004]" .
+
+v:cunbhalaich
+  a :Verb ;
+  rdfs:label "cunbhalaich" ;
+  :vn "cunbhalachadh" ;
+  :sense "standardise" ;
+  :part a:cunbhalach ;
+  rdfs:comment "[CM 2004]" .
 
 n:cur_seachad
   rdfs:label "cur-seachadan" ;

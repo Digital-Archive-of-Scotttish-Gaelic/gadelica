@@ -7,5 +7,44 @@
 
 <http://faclair.ac.uk/sources/general> {
 
+  n:geamhradh
+    a :MasculineNoun ;
+    rdfs:label "geamhradh" ;
+    :sense "winter" ;
+    :gen "geamhraidh" ;
+    :pl "geamhraidhean" ;
+    rdfs:comment "[CM 2004]" .
+
+  v:geamhraich
+    a :Verb ;
+    rdfs:label "geamhraich" ;
+    :sense "winter" , "spend the winter" , "keep animals over the winter" ;
+    :vn "geamhrachadh" ;
+    :vngen "geamhrachaidh" ;
+    :part n:geamhradh ;
+    rdfs:comment "[CM 2004]" .
+
+  n:geamhrachadh
+    a :MasculineNoun ;
+    rdfs:label "geamhrachadh" ;
+    :sense "wintering" , "spending the winter" , "keeping animals over the winter" , "feeding stuff for cattle over the winter" ;
+    :part v:geamhraich ;
+    rdfs:comment "[CM 2004]" .
+
+  a:gnaath
+    a :Adjective ;
+    rdfs:label "gnàth" ;
+    :sense "common" , "usual" , "standing" , "habitual" .
+
+  n:gnaaths
+    a :MasculineNoun ;
+    rdfs:label "gnàths" ;
+    :sense "usage" , "custom" , "fashion" , "wont" , "nature" ;
+    :gen "gnàiths" , "gnàthais" ;
+    :pl "gnàthasan" ;
+    :part a:gnaath ;
+    rdfs:comment "[CM 2004 – also gnàthas]" .
+
+
 
 }

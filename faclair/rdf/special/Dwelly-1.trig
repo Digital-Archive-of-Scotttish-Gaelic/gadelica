@@ -10626,8 +10626,9 @@ n:sabhsair
 a:cunbhalach
   a :Adjective ;
   rdfs:label "cunbhalach" ;
-  :sense "-aiche,<i> a</i> Constant, steady, firm, durable. 2&dagger;&dagger; Sensible, witty. 3 Even &mdash;<i>Lewis. </i>4(DU) Regular, uniform. 5(AH) Trim, tidy, snug. Gu cunbhalach, <i>firmly;</i> tha an sìol air a chur gu cunbhalach, <i>the seed is sown evenly; </i>tha e a' tighinn gu cunbhalach, <i>he is coming regularly.</i>" ;
-  rdfs:comment "-aiche,<i> a</i> Constant, steady, firm, durable. 2&dagger;&dagger; Sensible, witty. 3 Even &mdash;<i>Lewis. </i>4(DU) Regular, uniform. 5(AH) Trim, tidy, snug. Gu cunbhalach, <i>firmly;</i> tha an sìol air a chur gu cunbhalach, <i>the seed is sown evenly; </i>tha e a' tighinn gu cunbhalach, <i>he is coming regularly.</i>" ;
+  :comp "cunbhalaiche" ;
+  :sense "constant" , "steady" , "firm" , "durable" , "sensible" , "witty" , "regular" , "uniform" , "trim" , "tidy" , "snug" ;
+  rdfs:comment "Gu cunbhalach, <i>firmly;</i> tha an sìol air a chur gu cunbhalach, <i>the seed is sown evenly; </i>tha e a' tighinn gu cunbhalach, <i>he is coming regularly.</i>" ;
   rdfs:comment "ID: 1B63F86ED4E112089A24902107B9927C." .
 
 a:diileagach
@@ -14764,8 +14765,10 @@ n:brooineach
 n:racaid
   a :FeminineNoun ;
   rdfs:label "racaid" ;
-  :sense "-e, -ean, <i>sf </i>Noise, disturbance. 2 Continual crashing noise. 3 Discordant voice, croaking. 4 Racket. 5* Drawling female. 6 Strong blow. Thug mi racaid dhà sa chluais, <i>I </i><i>gave him a hard box on the ear.</i>" ;
-  rdfs:comment "-e, -ean, <i>sf </i>Noise, disturbance. 2 Continual crashing noise. 3 Discordant voice, croaking. 4 Racket. 5* Drawling female. 6 Strong blow. Thug mi racaid dhà sa chluais, <i>I </i><i>gave him a hard box on the ear.</i>" ;
+  :gen "racaide" ;
+  :pl "racaidean" ;
+  :sense "noise" , "disturbance" , "continual crashing noise" , "discordant voice" , "croaking" , "racket" , "drawling female" , "strong blow" ;
+  rdfs:comment "Thug mi racaid dhà sa chluais, <i>I </i><i>gave him a hard box on the ear.</i>" ;
   rdfs:comment "ID: 25403E8E4299D630BFE9368D420BEB4F." .
 
 o:gu_buileach
@@ -52486,7 +52489,7 @@ a:baiceach
   rdfs:comment "&dagger; <i>a </i>Twisted, having turns." ;
   rdfs:comment "ID: 86D99D5A56C858B6D463CA3A6EB9021D." .
 
-o:cunnabhallach
+a:cunbhalach
   rdfs:label "cunnabhallach" ;
   :sense "* see cunbhalach." ;
   rdfs:comment "* see cunbhalach." ;
@@ -73015,10 +73018,10 @@ n:caithtealachd
   rdfs:comment "ID: BC3F98481C44662951CFCD2AF3461F69." .
 
 n:clach_liionraith
-  a :PluralNoun ;
+  a :FeminineNoun ;
   rdfs:label "clach-lìonraith" ;
-  :sense "<i>pl. </i>-an-lìonraith, <i>sf </i>Rolling whetstone." ;
-  rdfs:comment "<i>pl. </i>-an-lìonraith, <i>sf </i>Rolling whetstone." ;
+  :sense "rolling whetstone" ;
+  :pl "clachan-lìonraith"
   rdfs:comment "ID: BC458430A5741EA0E6916F15175E27C2." .
 
 n:buailteachan
@@ -75770,13 +75773,6 @@ n:uur_labhairteachd
   :sense "<i>sf ind </i>Eloquence, rhetoric, oratory." ;
   rdfs:comment "<i>sf ind </i>Eloquence, rhetoric, oratory." ;
   rdfs:comment "ID: C34AC76346A7D10E00EE1DC3CF291923." .
-
-n:geamhrachadh
-  a :MasculineNoun ;
-  rdfs:label "geamhrachadh" ;
-  :sense "-aidh, <i>sm </i>Wintering, feeding during winter, as sheep or cattle. 2** Winter quarters. 3 Feeding stuff for winter. A' geamhrachadh, <i>pr pt</i> of geamhraich." ;
-  rdfs:comment "-aidh, <i>sm </i>Wintering, feeding during winter, as sheep or cattle. 2** Winter quarters. 3 Feeding stuff for winter. A' geamhrachadh, <i>pr pt</i> of geamhraich." ;
-  rdfs:comment "ID: C34D008898674A53711D3BAC1657D46E." .
 
 o:an_uachdar
   a :Adverb ;
@@ -91320,8 +91316,7 @@ a:snotach
 n:cunbhalachd
   a :FeminineNoun ;
   rdfs:label "cunbhalachd" ;
-  :sense "<i>sf</i> Constancy, steadiness, firmness, durableness. 2&dagger;&dagger; Sense, judgment. 3 Evenness. 4(AH) Tidiness." ;
-  rdfs:comment "<i>sf</i> Constancy, steadiness, firmness, durableness. 2&dagger;&dagger; Sense, judgment. 3 Evenness. 4(AH) Tidiness." ;
+  :sense "constancy" , "steadiness" , "firmness" , "durableness" , "sense" , "judgment" , "evenness" , "tidiness" ;
   rdfs:comment "ID: EBF4A671C35A8B47A437ECA00B592964." .
 
 n:arc_crannach

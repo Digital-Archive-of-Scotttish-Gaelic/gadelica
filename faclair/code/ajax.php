@@ -105,7 +105,7 @@ WHERE
   GRAPH ?lex {
     ?id rdfs:label ?gd .
   }
-  GRAPH ?lex {
+  GRAPH ?lex2 {
     ?id :sense ?en .
   }
 SPQR;
@@ -152,22 +152,24 @@ SPQR;
   return json_decode(file_get_contents($url),false)->results->bindings;
 }
 
-function getGaelicPrefix($gd,$snh,$frp,$seotal) {
-  $lex = getLex($snh,$frp,$seotal);
+function getGaelicPrefix() {
+  $lex = getLex(); // NOT WORKING
+  $gd = $_GET['searchTerm'];
   $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
 SELECT DISTINCT ?id ?gd ?en
 WHERE
 {
-  ?id rdfs:label ?gd .
   GRAPH ?lex {
+    ?id rdfs:label ?gd .
+  }
+  GRAPH ?lex2 {
     ?id :sense ?en .
   }
-  FILTER (regex(?gd, "^{$gd}", "i") &&  !(regex(?gd, "{$gd}$", "i"))) .
-  {$lex}
 }
 SPQR;
+  $query .= ' FILTER (regex(?gd, "^' . accentInsensitive($gd) . '", "i") &&  !(regex(?gd, "' . accentInsensitive($gd) . '$", "i"))) .' . $lex . ' } ';
   //$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
   $url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
   return json_decode(file_get_contents($url),false)->results->bindings;
@@ -200,16 +202,20 @@ SPQR;
   return json_decode(file_get_contents($url),false)->results->bindings;
 }
 
-function getGaelicSuffix($gd,$snh,$frp,$seotal) {
-  $lex = getLex($snh,$frp,$seotal);
-    $query = <<<SPQR
+function getGaelicSuffix() {
+  // make accent insensitive
+  $lex = getLex();
+  $gd = $_GET['searchTerm'];
+  $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
 SELECT DISTINCT ?id ?gd ?en
 WHERE
 {
-  ?id rdfs:label ?gd .
   GRAPH ?lex {
+    ?id rdfs:label ?gd .
+  }
+  GRAPH ?lex2 {
     ?id :sense ?en .
   }
   FILTER (regex(?gd, "{$gd}$", "i") &&  !(regex(?gd, "^{$gd}", "i"))) .
@@ -248,16 +254,20 @@ SPQR;
   return json_decode(file_get_contents($url),false)->results->bindings;
 }
 
-function getGaelicSubstring($gd,$snh,$frp,$seotal) {
-  $lex = getLex($snh,$frp,$seotal);
+function getGaelicSubstring() {
+  // make accent insensitive
+  $lex = getLex();
+  $gd = $_GET['searchTerm'];
   $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
 SELECT DISTINCT ?id ?gd ?en
 WHERE
 {
-  ?id rdfs:label ?gd .
   GRAPH ?lex {
+    ?id rdfs:label ?gd .
+  }
+  GRAPH ?lex2 {
     ?id :sense ?en .
   }
   FILTER (regex(?gd, "{$gd}", "i") && !(regex(?gd, "^{$gd}", "i"))  && !(regex(?gd, "{$gd}$", "i"))) .

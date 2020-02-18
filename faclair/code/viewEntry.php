@@ -18,7 +18,9 @@
     <div class="container-fluid">
 <?php
 // get generic information about lexical item for top of page
-$id = $_GET['id'];
+if (isset($_GET['id'])) {
+  $id = $_GET['id'];
+}
 $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>

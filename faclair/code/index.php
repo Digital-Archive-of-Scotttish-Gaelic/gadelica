@@ -17,7 +17,7 @@
           <div class="input-group">
             <input id="searchBox" type="text" class="form-control active" name="searchTerm"  data-toggle="tooltip" title="Enter search term here" autofocus="autofocus"/>
             <div class="input-group-append">
-              <button class="btn btn-primary" type="submit" data-toggle="tooltip" title="Click to find entries">Lorg</button>
+              <button class="btn btn-primary" type="submit" data-toggle="tooltip" title="Click to find entries">Siuthad</button>
             </div>
           </div>
         </div>
@@ -68,7 +68,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
              <a class="nav-item nav-link" href="about.html" data-toggle="tooltip" title="About this site">fios</a>
-             <a class="nav-item nav-link" href="random.php" data-toggle="tooltip" title="View random entry">sonas</a>
+             <a class="nav-item nav-link" href="random.php" data-toggle="tooltip" title="Be adventurous!">dàna</a>
           </div>
         </div>
       </nav>
