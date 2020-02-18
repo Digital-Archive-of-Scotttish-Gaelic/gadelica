@@ -32,7 +32,7 @@ $(function() {
             addData(data);
           }).done(function() {
             var url = 'ajax.php?action=getEvenEvenMoreEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
-            $.getJSON(url, function(data4) {
+            $.getJSON(url, function(data) {
               addData(data);
             });
           });
