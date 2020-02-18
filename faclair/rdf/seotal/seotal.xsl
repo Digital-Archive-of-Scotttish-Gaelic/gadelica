@@ -33,12 +33,10 @@
     <xsl:text> ; &#10;</xsl:text>
     <xsl:text>  rdfs:label "</xsl:text>
     <xsl:value-of select="."/>
-    <xsl:text>" <!--; &#10;--></xsl:text>
-    <!--
+    <xsl:text>" ; &#10;</xsl:text>
     <xsl:text>  :sense "</xsl:text>
     <xsl:value-of select="preceding-sibling::dt[1]"/>
     <xsl:text>" </xsl:text>
-    -->
     <xsl:apply-templates select="following-sibling::dd[@class='gramUsage'][1]"/>
     <xsl:text>. &#10;</xsl:text>
     <xsl:text>&#10;</xsl:text>
