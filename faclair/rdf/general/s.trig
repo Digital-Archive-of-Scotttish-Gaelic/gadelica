@@ -126,11 +126,15 @@ n:seillean_diiomhain
 n:seillean_lunndach
   rdfs:label "seillean lunndach" ;
   :pl "seilleanan lunndach" ;
+  :gen "seillein lunndaich" ;
+  :sense "drone bee" ;
   :part n:seillean , a:lunndach .
 
 n:seillean_meala
   rdfs:label "seillean meala" ;
-  :part n:seillean , n:mil .
+  :sense "honey bee" , "honeybee" , "honey-bee" ;
+  :part n:seillean , n:mil ;
+  rdfs:comment "[BMh 2013]" .
 
 n:seillean_moor
   rdfs:label "seillean mòr" ;
@@ -197,5 +201,16 @@ n:seillean_moor_nan_dearcan_fraoich
 n:seillean_moor_traath
   rdfs:label "seillean mòr tràth" ;
   :part n:seillean_moor , a:traath .
+
+
+
+n:sgeap
+  a :FeminineNoun ;
+  rdfs:label "sgeap" ;
+  :pl "sgeapan" ;
+  :sense "beehive" , "hive" , "skep" ;
+  rdfs:comment "[CM 2004]" .
+
+
 
 }

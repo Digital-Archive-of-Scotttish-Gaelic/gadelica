@@ -17,25 +17,43 @@
   <body style="padding-top: 20px;">
     <div class="container-fluid">
 <?php
+// get generic information about lexicl item for top of page
 $id = $_GET['id'];
 $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
-SELECT ?hw ?pos ?en #?pid ?phw ?cid ?chw
+SELECT DISTINCT ?hw ?pos ?en ?pid ?phw ?cid ?chw ?pl ?gen ?comp ?vn ?vngen ?comment
 WHERE
 {
   GRAPH <http://faclair.ac.uk/sources/general> {
     OPTIONAL { <{$id}> rdfs:label ?hw . }
-    OPTIONAL { <{$id}> a ?posid . }
     OPTIONAL { <{$id}> :sense ?en . }
-    #OPTIONAL {
-    #  <{$id}> :part ?pid .
-    #  OPTIONAL { ?pid rdfs:label ?phw . }
-    #}
-    #OPTIONAL {
-    #  ?cid :part <{$id}> .
-    #  OPTIONAL { ?cid rdfs:label ?chw . }
-    #}
+    OPTIONAL {
+      <{$id}> :part ?pid .
+      OPTIONAL { ?pid rdfs:label ?phw . }
+    }
+    OPTIONAL {
+      ?cid :part <{$id}> .
+      OPTIONAL { ?cid rdfs:label ?chw . }
+    }
+    OPTIONAL {
+      <{$id}> :pl ?pl .
+    }
+    OPTIONAL {
+      <{$id}> :gen ?gen .
+    }
+    OPTIONAL {
+      <{$id}> :comp ?comp .
+    }
+    OPTIONAL {
+      <{$id}> :vn ?vn .
+    }
+    OPTIONAL {
+      <{$id}> :vngen ?vngen .
+    }
+    OPTIONAL {
+      <{$id}> rdfs:comment ?comment .
+    }
   }
   OPTIONAL {
     GRAPH <http://faclair.ac.uk/sources/general> {
@@ -54,7 +72,7 @@ $results = json_decode($json,false)->results->bindings;
       <div class="card">
         <div class="card-body">
 <?php
-$hws = [];
+$hws = []; // HEADWORDS
 foreach($results as $nextResult) {
   $hws[] = $nextResult->hw->value;
 }
@@ -63,9 +81,9 @@ echo '<h1 class="card-title">';
 if (count($hws)>0) {
   echo implode(', ',$hws);
 }
-else { echo $id; }
+else { echo $id; } // FALLBACK
 echo '</h1>';
-$pos = [];
+$pos = []; // PARTS OF SPEECH
 foreach($results as $nextResult) {
   $pos[] = $nextResult->pos->value;
 }
@@ -73,9 +91,9 @@ $pos = array_unique($pos);
 if (count($pos)>0) {
   echo '<p class="text-muted">';
   echo implode(', ', $pos);
-  echo '<p>';
+  echo '</p>';
 }
-$ens = [];
+$ens = []; // ENGLISH EQUIVALENTS
 foreach($results as $nextResult) {
   $ens[] = $nextResult->en->value;
 }
@@ -83,16 +101,15 @@ $ens = array_unique($ens);
 if (count($ens)>0) {
   echo '<p class="text-muted"><em>';
   echo implode(', ', $ens);
-  echo '</em><p>';
+  echo '</em></p>';
 }
-
-
+// PARTS AND COMPOUNDS:
 echo '<div class="list-group list-group-flush">';
 $parts = [];
 foreach($results as $nextResult) {
   $pid = $nextResult->pid->value;
   if ($pid!='') {
-    $parts[$pid] = $nextResult->phw->value;
+    $parts[$pid] = $nextResult->phw->value; // ASSOCIATIVE ARRAY
   }
 }
 $parts = array_unique($parts);
@@ -101,9 +118,9 @@ if (count($parts)>0) {
   foreach ($parts as $nextId=>$nextHw) {
     echo '<a href="viewEntry?id=' . $nextId . '">';
     if ($nextHw != '') { echo $nextHw; }
-    else { echo '<small>' . $nextId . '</small>'; }
+    else { echo '<small>' . $nextId . '</small>'; } // FALLBACK
     echo '</a>';
-    if ($nextHw != end($parts)) {
+    if ($nextHw != end($parts)) { // FUNKY!
       echo ', ';
     }
   }
@@ -122,7 +139,7 @@ if (count($compounds)>0) {
   foreach ($compounds as $nextId=>$nextHw) {
     echo '<a href="viewEntry?id=' . $nextId . '">';
     if ($nextHw != '') { echo $nextHw; }
-    else { echo '<small>' . $nextId . '</small>'; }
+    else { echo '<small>' . $nextId . '</small>'; } // FALLBACK
     echo '</a>';
     if ($nextHw != end($compounds)) {
       echo ', ';
@@ -130,48 +147,121 @@ if (count($compounds)>0) {
   }
   echo '</div>';
 }
-echo '</div>';
-
-
-/*
+// GET ALTERNATIVE FORMS NEXT
+$pls = [];
+foreach($results as $nextResult) {
+  $pl = $nextResult->pl->value;
+  if ($pl!='') {
+    $pls[] = $pl;
+  }
+}
+$pls = array_unique($pls);
+$gens = [];
+foreach($results as $nextResult) {
+  $gen = $nextResult->gen->value;
+  if ($gen!='') {
+    $gens[] = $gen;
+  }
+}
+$gens = array_unique($gens);
+$comps = [];
+foreach($results as $nextResult) {
+  $comp = $nextResult->comp->value;
+  if ($comp!='') {
+    $comps[] = $comp;
+  }
+}
+$comps = array_unique($comps);
+$vns = [];
+foreach($results as $nextResult) {
+  $vn = $nextResult->vn->value;
+  if ($vn!='') {
+    $vns[] = $vn;
+  }
+}
+$vns = array_unique($vns);
+$vngens = [];
+foreach($results as $nextResult) {
+  $vngen = $nextResult->vngen->value;
+  if ($vngen!='') {
+    $vngens[] = $vngen;
+  }
+}
+$vngens = array_unique($vngens);
+if (count($pls) > 0) {
+  echo '<div class="list-group-item"><span class="text-muted">plural:</span> ' . implode(', ',$pls) . '</div>';
+}
+if (count($gens) > 0) {
+  echo '<div class="list-group-item"><span class="text-muted">genitive:</span> ' . implode(', ',$gens) . '</div>';
+}
+if (count($comps) > 0) {
+  echo '<div class="list-group-item"><span class="text-muted">comparative:</span> ' . implode(', ',$comps) . '</div>';
+}
+if (count($vns) > 0) {
+  echo '<div class="list-group-item"><span class="text-muted">verbal noun:</span> ' . implode(', ',$vns) . '</div>';
+}
+if (count($vngens) > 0) {
+  echo '<div class="list-group-item"><span class="text-muted">verbal noun:</span> ' . implode(', ',$vngens) . '</div>';
+}
+// ADMIN COMMENTS:
+$comments = [];
+foreach($results as $nextResult) {
+  $comment = $nextResult->comment->value;
+  if ($comment!='') {
+    $comments[] = $comment;
+  }
+}
+$comments = array_unique($comments);
+if (count($comments) > 0) {
+  echo '<div class="list-group-item"><small class="text-muted">Admin: ';
+  echo implode(' | ',$comments);
+  echo '</small></div>';
+}
+echo '</div>'; // end of list group
+?>
+<!-- THE CAROUSEL: -->
+    <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="false">
+<?php
+// MAYBE DO NEXT BIT BY AJAX???
 $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
-SELECT DISTINCT ?g ?lex ?lhw ?en ?posid ?pos ?pl ?gen ?comp ?vn ?vngen ?comment ?xid ?xhw ?xen
+SELECT DISTINCT ?g ?lex ?hw #?en ?posid ?pos ?pl ?gen ?comp ?vn ?vngen ?comment ?xid ?xhw ?xen
 WHERE
 {
   GRAPH ?g {
-      <{$id}> rdfs:label ?lhw .
+      <{$id}> rdfs:label ?hw .
       OPTIONAL { <{$id}> :sense ?en . }
-      OPTIONAL {
-        <{$id}> a ?posid .
-        OPTIONAL { ?posid rdfs:label ?pos . }
-      }
-      OPTIONAL {
-        <{$id}> :pl ?pl .
-      }
-      OPTIONAL {
-        <{$id}> :gen ?gen .
-      }
-      OPTIONAL {
-        <{$id}> :comp ?comp .
-      }
-      OPTIONAL {
-        <{$id}> :vn ?vn .
-      }
-      OPTIONAL {
-        <{$id}> :vngen ?vngen .
-      }
-      OPTIONAL {
-        ?xid :part <{$id}> .
-        ?xid rdfs:label ?xhw .
-        ?xid :sense ?xen .
-      }
-      OPTIONAL {
-        <{$id}> rdfs:comment ?comment .
-      }
+      #OPTIONAL {
+      #  <{$id}> a ?posid .
+      #  OPTIONAL { ?posid rdfs:label ?pos . }
+      #}
+      #OPTIONAL {
+      #  <{$id}> :pl ?pl .
+      #}
+      #OPTIONAL {
+      #  <{$id}> :gen ?gen .
+      #}
+      #OPTIONAL {
+      #  <{$id}> :comp ?comp .
+      #}
+      #OPTIONAL {
+      #  <{$id}> :vn ?vn .
+      #}
+      #OPTIONAL {
+      #  <{$id}> :vngen ?vngen .
+      #}
+      #OPTIONAL {
+      #  ?xid :part <{$id}> .
+      #  ?xid rdfs:label ?xhw .
+      #  ?xid :sense ?xen .
+      #}
+      #OPTIONAL {
+      #  <{$id}> rdfs:comment ?comment .
+      #}
   }
   OPTIONAL { ?g rdfs:label ?lex . }
+  FILTER (?lex!=<http://faclair.ac.uk/sources/general>) .
 }
 SPQR;
 //$query = urlencode($query);
@@ -187,7 +277,7 @@ foreach($results as $nextResult) {
   }
 }
 $sources = array_unique($sources);
-echo '<div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="false"><ol class="carousel-indicators">';
+echo '<ol class="carousel-indicators">';
 foreach ($sources as $nextIndex=>$nextSource) {
   if (count($sources)>1) {
     echo '<li data-target="#carouselExample" data-slide-to="' . $nextIndex . '"';
@@ -197,7 +287,8 @@ foreach ($sources as $nextIndex=>$nextSource) {
     echo ' style="filter: invert(50%);"></li>';
   }
 }
-echo  '</ol><div class="carousel-inner">';
+echo '</ol>';
+echo  '<div class="carousel-inner">';
 foreach ($sources as $nextIndex=>$nextSource) {
   echo '<div class="carousel-item';
   if ($nextIndex == 0) {
@@ -215,22 +306,24 @@ foreach ($sources as $nextIndex=>$nextSource) {
       break;
     }
   }
-  echo '<p>From <em>' . $name . '</em>:</p><h2 class="card-title">';
-  $lhws = [];
+  echo '<p>From <em>' . $name . '</em>:</p><h3 class="card-title">';
+  $hws = [];
   foreach($results as $nextResult) {
     if ($nextResult->g->value==$nextSource) {
-      $lhw = $nextResult->lhw->value;
-      if ($lhw != '') {
-        $lhws[] = $lhw;
+      $hw = $nextResult->hw->value;
+      if ($hw != '') {
+        $hws[] = $hw;
       }
     }
   }
-  $lhws = array_unique($lhws);
-  if (count($lhws)>0) {
-    echo implode(', ',$lhws);
+  $hws = array_unique($hws);
+  if (count($hws)>0) {
+    echo implode(', ',$hws);
   }
-  else { echo $id; }
-  echo '</h2>';
+  else { echo $id; } // FALLBACK
+  echo '</h3>';
+
+  /*
   $poss = [];
   foreach($results as $nextResult) {
     if ($nextResult->g->value==$nextSource) {
@@ -263,6 +356,8 @@ foreach ($sources as $nextIndex=>$nextSource) {
   }
 
       echo '</small></td><td><small>';
+
+
       $pls = [];
       foreach($results as $nextResult) {
         if ($nextResult->g->value == $nextSource) {
@@ -283,6 +378,7 @@ foreach ($sources as $nextIndex=>$nextSource) {
         }
       }
       $gens = array_unique($gens);
+
       $comps = [];
       foreach($results as $nextResult) {
         if ($nextResult->g->value == $nextSource) {
@@ -360,9 +456,6 @@ foreach ($sources as $nextIndex=>$nextSource) {
   echo '</p>';
 
 
-/*
-
-
       echo '</td><td><small class="text-muted">';
       $comments = [];
       foreach($results as $nextResult) {
@@ -376,20 +469,19 @@ foreach ($sources as $nextIndex=>$nextSource) {
       $comments = array_unique($comments);
       echo implode('<br/>',$comments);
       echo '</small>';
-  echo '</div></div></div>';
+*/
+  echo '</div></div></div>'; // end of card-body, card and carousel item
 }
+echo '</div>'; // end of carousel inner
 if (count($sources)>1) {
   echo '<a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">';
   echo '<span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(50%);"></span>';
   echo '<span class="sr-only">Next</span></a>';
 }
-*/
 ?>
-          <!--  </div>
-          </div>-->
-
-        </div>
-      </div>
+          </div> <!-- end of carousel -->
+        </div> <!-- end of card body -->
+      </div> <!-- end of card -->
       <nav class="navbar navbar-dark bg-primary fixed-bottom navbar-expand-lg">
         <a class="navbar-brand" href="index.php">🏛 Stòras Brì</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
