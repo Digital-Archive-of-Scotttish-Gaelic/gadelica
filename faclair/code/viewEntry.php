@@ -111,7 +111,7 @@ $parts = array_unique($parts);
 if (count($parts)>0) {
   echo '<div class="list-group-item"><span data-toggle="tooltip" data-placement="top" title="components">↗️</span> ';
   foreach ($parts as $nextId=>$nextHw) {
-    echo '<strong><a href="viewEntry?id=' . $nextId . '">';
+    echo '<strong><a href="viewEntry.php?id=' . $nextId . '">';
     if ($nextHw != '') { echo $nextHw; }
     else { echo '<small>' . $nextId . '</small>'; } // FALLBACK
     echo '</a></strong>';
@@ -132,7 +132,7 @@ $compounds = array_unique($compounds);
 if (count($compounds)>0) {
   echo '<div class="list-group-item"><span data-toggle="tooltip" data-placement="top" title="compounds">↘️</span> ';
   foreach ($compounds as $nextId=>$nextHw) {
-    echo '<strong><a href="viewEntry?id=' . $nextId . '">';
+    echo '<strong><a href="viewEntry.php?id=' . $nextId . '">';
     if ($nextHw != '') { echo $nextHw; }
     else { echo '<small>' . $nextId . '</small>'; } // FALLBACK
     echo '</a></strong>';
