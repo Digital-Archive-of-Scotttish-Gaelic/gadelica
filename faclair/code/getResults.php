@@ -2,7 +2,7 @@
 
 // add variable for queries
 
-$search = $_GET['searchTerm'];
+$search = $_GET['searchTerm']; // encodeURI?????
 $snh = $_GET['snh'];
 $frp = $_GET['frp'];
 $seotal = $_GET['seotal'];
@@ -104,7 +104,7 @@ function getGaelicExact() {
   $lex = getLex();
   $gd = $_GET['searchTerm'];
   $query = getQueryPrefix() . 'FILTER regex(?gd, "^' . accentInsensitive($gd) . '$", "i") .' . $lex . '}';
-  $url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
+  $url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query); // maybe this is problem???? maybe not url encode $gd
   if (getcwd()=='/Users/mark/Sites/gadelica/faclair/code') {
     $url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
   }
@@ -113,11 +113,11 @@ function getGaelicExact() {
 
 function accentInsensitive($in) {
   $rx = $in;
-  $rx = str_replace('a','[aà]',$rx);
+  $rx = str_replace('a','[aà]',$rx); // maybe replace à with hex??? \u????
   $rx = str_replace('e','[eèé]',$rx);
   $rx = str_replace('i','[iì]',$rx);
   $rx = str_replace('o','[oòó]',$rx);
-  $rx = str_replace('u','[uù]',$rx);
+  $rx = str_replace('u','[u\u00f9]',$rx);
   return $rx;
 }
 
