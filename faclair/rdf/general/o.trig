@@ -7,16 +7,25 @@
 
 <http://faclair.ac.uk/sources/general> {
 
-n:ogha
-  a :MasculineNoun ;
-  rdfs:label "ogha" ;
-  :gen "ogha" ;
-  :pl "oghaichean" .
+  n:ogha
+    a :MasculineNoun ;
+    rdfs:label "ogha" ;
+    :gen "ogha" ;
+    :pl "oghaichean" .
 
-n:oide
-  a :MasculineNoun ;
-  rdfs:label "oide" ;
-  :gen "oide" ;
-  :pl "oidean" .
+  n:oide
+    a :MasculineNoun ;
+    rdfs:label "oide" ;
+    :gen "oide" ;
+    :pl "oidean" .
+
+  n:oir
+    a :FeminineNoun ;
+    rdfs:label "oir" ;
+    :gen "oire" ;
+    :pl "oirean" ;
+    :sense "border" , "brim" , "brink" , "edge" , "fringe" , "lip" , "margin" , "rim" , "verge" , "ledge" ;
+    rdfs:comment "[CM 2004]" .
+
 
 }

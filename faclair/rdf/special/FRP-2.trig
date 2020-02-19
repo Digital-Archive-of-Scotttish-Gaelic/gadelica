@@ -3255,24 +3255,28 @@
       :part n:leth_iomradh ;
       :sense "campaign of innuendo" .
 
-    a:lethoireachail
+    a:leth_oireachail
+      a :Adjective ;
       rdfs:label "lethoireachail" ;
       :sense "isolationist" .
 
-    n:poileasaidhean_lethoireachail
+    n:poileasaidhean_leth_oireachail
       rdfs:label "poileasaidhean lethoireachail" ;
-      :part a:lethoireachail ;
+      :part a:leth_oireachail ;
       :sense "isolationist policies" .
 
-    n:lethoireachas
+    n:leth_oireachas
+      a :MasculineNoun ;
       rdfs:label "lethoireachas" ;
       :sense "isolationism" .
 
-    n:lethoireachd
+    n:leth_oireachd
+      a :FeminineNoun ;
       rdfs:label "lethoireachd" ;
       :sense "isolation" .
 
-    n:lethoiriche
+    n:leth_oiriche
+      a :MasculineNoun ;
       rdfs:label "lethoiriche" ;
       :sense "isolationist" .
 
