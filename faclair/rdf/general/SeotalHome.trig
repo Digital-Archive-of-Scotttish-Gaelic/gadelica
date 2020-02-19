@@ -14,14 +14,6 @@ n:sgeadachadh
   :gen "sgeadachaidh" ;
   rdfs:comment "[Home Economics]" .
 
-n:poonair
-  a :MasculineNoun ;
-  rdfs:label "pònair" ;
-  :sense "bean" ;
-  :gen "pònarach" ;
-  :pl "pònair" ;
-  rdfs:comment "[Home Economics]" .
-
 n:deoch
   a :MasculineNoun ;
   rdfs:label "deoch" ;
@@ -260,14 +252,6 @@ n:prootain
   :pl "pròtainean" ;
   rdfs:comment "[Home Economics]" .
 
-n:siiol_peasrach
-  a :MasculineNoun ;
-  rdfs:label "sìol-peasrach" ;
-  :sense "pulse" ;
-  :gen "sìl-pheasraich" ;
-  :pl "sìl-pheasrach" ;
-  rdfs:comment "[Home Economics]" .
-
 n:reasabaidh
   a :MasculineNoun ;
   rdfs:label "reasabaidh" ;
@@ -365,12 +349,6 @@ n:aairneis_agus_sgeadachadh
   rdfs:label "àirneis agus sgeadachadh" ;
   :sense "furniture and accessories" ;
   :part n:sgeadachadh .
-
-n:poonair_soya
-  rdfs:label "pònair soya" ;
-  :sense "soya beans" ;
-  :part n:poonair ;
-  rdfs:comment "[Home Economics]" .
 
 n:teicneoolas_dibhe
   rdfs:label "teicneòlas dibhe" ;
@@ -556,12 +534,6 @@ n:fuaigheal_aodach_agus_beatha_laaitheil
   rdfs:label "fuaigheal, aodach agus beatha làitheil" ;
   :sense "sewing, clothing and personal living" ;
   :part n:fuaigheal ;
-  rdfs:comment "[Home Economics]" .
-
-n:poonair_soya
-  rdfs:label "pònair soya" ;
-  :sense "soya beans" ;
-  :part a:soya ;
   rdfs:comment "[Home Economics]" .
 
 n:spaainean_adhairce
