@@ -1,0 +1,1959 @@
+@prefix n: <http://faclair.ac.uk/nouns/> .
+@prefix a: <http://faclair.ac.uk/adjectives/> .
+@prefix v: <http://faclair.ac.uk/verbs/> .
+@prefix o: <http://faclair.ac.uk/other/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://faclair.ac.uk/meta/> .
+
+<http://faclair.ac.uk/sources/general> {
+
+  n:giorrachadh
+    a :MasculineNoun ;
+    rdfs:label "giorrachadh" ;
+    :sense "abbreviation" ;
+    :gen "giorrachaidh" ;
+    :pl "giorrachaidhean" ;
+    rdfs:comment "[Language]" .
+
+  n:ooraid
+    a :FeminineNoun ;
+    rdfs:label "òraid" ;
+    :sense "address" ;
+    :gen "òraide" ;
+    :pl "òraidean" ;
+    rdfs:comment "[Language]" .
+
+  n:buadhair
+    a :MasculineNoun ;
+    rdfs:label "buadhair" ;
+    :sense "adjective" ;
+    :gen "buadhair" ;
+    :pl "buadhairean" ;
+    rdfs:comment "[Language]" .
+
+  n:co_ghniiomhair
+    a :MasculineNoun ;
+    rdfs:label "co-ghnìomhair" ;
+    :sense "adverb" ;
+    :gen "co-ghnìomhair" ;
+    :pl "co-ghnìomhairean" ;
+    rdfs:comment "[Language]" .
+
+  a:Afro_AAisianach
+    a :Adjective ;
+    rdfs:label "Afro-Àisianach" ;
+    :sense "Afro-Asiatic" ;
+    rdfs:comment "[Language]" .
+
+  a:Altaig
+    a :Adjective ;
+    rdfs:label "Altaig" ;
+    :sense "Altaic" ;
+    rdfs:comment "[Language]" .
+
+  n:Altaig
+    a :FeminineNoun ;
+    rdfs:label "Altaig" ;
+    :sense "Altaic" ;
+    :gen "Altaig" ;
+    rdfs:comment "[Language]" .
+
+  n:Arabais
+    a :FeminineNoun ;
+    rdfs:label "Arabais" ;
+    :sense "Arabic" ;
+    :gen "Arabais" ;
+    rdfs:comment "[Language]" .
+
+  n:alt
+    a :MasculineNoun ;
+    rdfs:label "alt" ;
+    :sense "article" ;
+    :gen "uilt" ;
+    :pl "altan" ;
+    rdfs:comment "[Language]" .
+
+  n:artaigil
+    a :MasculineNoun ;
+    rdfs:label "artaigil" ;
+    :sense "article" ;
+    :gen "artaigil" ;
+    :pl "artaigilean" ;
+    rdfs:comment "[Language]" .
+
+  a:Astroniisianach
+    a :Adjective ;
+    rdfs:label "Astronìsianach" ;
+    :sense "Austronesian" ;
+    rdfs:comment "[Language]" .
+
+  a:daa_chaananach
+    a :Adjective ;
+    rdfs:label "dà-chànanach" ;
+    :sense "bilingual" ;
+    rdfs:comment "[Language]" .
+
+  n:suidheachadh
+    a :MasculineNoun ;
+    rdfs:label "suidheachadh" ;
+    :sense "case" ;
+    :gen "suidheachaidh" ;
+    :pl "suidheachaidhean" ;
+    rdfs:comment "[Language]" .
+
+  n:tuiseal
+    a :MasculineNoun ;
+    rdfs:label "tuiseal" ;
+    :sense "case" ;
+    :gen "tuiseil" ;
+    :pl "tuisealan" ;
+    rdfs:comment "[Language]" .
+
+  a:Catalan
+    a :Adjective ;
+    rdfs:label "Catalan" ;
+    :sense "Catalan" ;
+    rdfs:comment "[Language]" .
+
+  n:Catalan
+    a :MasculineNoun ;
+    rdfs:label "Catalan" ;
+    :sense "Catalan" ;
+    :gen "Catalan" ;
+    rdfs:comment "[Language]" .
+
+  a:Ceilteach
+    a :Adjective ;
+    rdfs:label "Ceilteach" ;
+    :sense "Celtic" ;
+    rdfs:comment "[Language]" .
+
+  a:coimeasach
+    a :Adjective ;
+    rdfs:label "coimeasach" ;
+    :sense "comparative" ;
+    rdfs:comment "[Language]" .
+
+  n:aiste
+    a :FeminineNoun ;
+    rdfs:label "aiste" ;
+    :sense "composition" ;
+    :gen "aiste" ;
+    :pl "aistean" ;
+    rdfs:comment "[Language]" .
+
+  n:naisgear
+    a :MasculineNoun ;
+    rdfs:label "naisgear" ;
+    :sense "conjunction" ;
+    :gen "naisgeir" ;
+    :pl "naisgearan" ;
+    rdfs:comment "[Language]" .
+
+  n:breithneachadh
+    a :MasculineNoun ;
+    rdfs:label "breithneachadh" ;
+    :sense "criticism" ;
+    :gen "breithneachaidh" ;
+    rdfs:comment "[Language]" .
+
+  a:tabhartach
+    a :Adjective ;
+    rdfs:label "tabhartach" ;
+    :sense "dative" ;
+    rdfs:comment "[Language]" .
+
+  n:eoolas_dualchainnt
+    a :MasculineNoun ;
+    rdfs:label "eòlas-dualchainnt" ;
+    :sense "dialectology" ;
+    :gen "eòlais-dualchainnt" ;
+    rdfs:comment "[Language]" .
+
+  a:Drabhaidianach
+    a :Adjective ;
+    rdfs:label "Drabhaidianach" ;
+    :sense "Dravidian" ;
+    rdfs:comment "[Language]" .
+
+  n:Drabhaidianach
+    a :FeminineNoun ;
+    rdfs:label "Drabhaidianach" ;
+    :sense "Dravidian" ;
+    :gen "Drabhaidianaich" ;
+    rdfs:comment "[Language]" .
+
+  n:Beurla
+    a :FeminineNoun ;
+    rdfs:label "Beurla" ;
+    :sense "English" ;
+    :gen "Beurla" ;
+    rdfs:comment "[Language]" .
+
+  n:aiste
+    a :FeminineNoun ;
+    rdfs:label "aiste" ;
+    :sense "essay" ;
+    :gen "aiste" ;
+    :pl "aistean" ;
+    rdfs:comment "[Language]" .
+
+  n:aistear
+    a :MasculineNoun ;
+    rdfs:label "aistear" ;
+    :sense "essayist" ;
+    :gen "aisteir" ;
+    :pl "aistearan" ;
+    rdfs:comment "[Language]" .
+
+  n:freumh_fhaclachd
+    a :MasculineNoun ;
+    rdfs:label "freumh-fhaclachd" ;
+    :sense "etymology" ;
+    :gen "freumh-fhaclachd" ;
+    rdfs:comment "[Language]" .
+
+  n:ficsean
+    a :MasculineNoun ;
+    rdfs:label "ficsean" ;
+    :sense "fiction" ;
+    :gen "ficsein" ;
+    rdfs:comment "[Language]" .
+
+  n:Fraingis
+    a :FeminineNoun ;
+    rdfs:label "Fraingis" ;
+    :sense "French" ;
+    :gen "Fraingis" ;
+    rdfs:comment "[Language]" .
+
+  n:Gaaidhlig
+    a :FeminineNoun ;
+    rdfs:label "Gàidhlig" ;
+    :sense "Gaelic" ;
+    :gen "Gàidhlig" ;
+    rdfs:comment "[Language]" .
+
+  a:ginideach
+    a :Adjective ;
+    rdfs:label "ginideach" ;
+    :sense "genitive" ;
+    rdfs:comment "[Language]" .
+
+  n:Gearmailtis
+    a :FeminineNoun ;
+    rdfs:label "Gearmailtis" ;
+    :sense "German" ;
+    :gen "Gearmailtis" ;
+    rdfs:comment "[Language]" .
+
+  a:Gearmainig
+    a :Adjective ;
+    rdfs:label "Gearmainig" ;
+    :sense "Germanic" ;
+    rdfs:comment "[Language]" .
+
+  n:graamar
+    a :MasculineNoun ;
+    rdfs:label "gràmar" ;
+    :sense "grammar" ;
+    :gen "gràmair" ;
+    rdfs:comment "[Language]" .
+
+  n:Greugais
+    a :FeminineNoun ;
+    rdfs:label "Greugais" ;
+    :sense "Greek" ;
+    :gen "Greugais" ;
+    rdfs:comment "[Language]" .
+
+  a:Greugach
+    a :Adjective ;
+    rdfs:label "Greugach" ;
+    :sense "Hellenic" ;
+    rdfs:comment "[Language]" .
+
+  a:Haipearborach
+    a :Adjective ;
+    rdfs:label "Haipearborach" ;
+    :sense "Hyperborean" ;
+    rdfs:comment "[Language]" .
+
+  n:Haipearborach
+    a :FeminineNoun ;
+    rdfs:label "Haipearborach" ;
+    :sense "Hyperborean" ;
+    :gen "Haipearboraich" ;
+    rdfs:comment "[Language]" .
+
+  a:aaithneach
+    a :Adjective ;
+    rdfs:label "àithneach" ;
+    :sense "imperative" ;
+    rdfs:comment "[Language]" .
+
+  a:Indo_Eoorpach
+    a :Adjective ;
+    rdfs:label "Indo-Eòrpach" ;
+    :sense "Indo-European" ;
+    rdfs:comment "[Language]" .
+
+  a:neo_aisigeach
+    a :Adjective ;
+    rdfs:label "neo-aisigeach" ;
+    :sense "intransitive" ;
+    rdfs:comment "[Language]" .
+
+  n:Eadailtis
+    a :FeminineNoun ;
+    rdfs:label "Eadailtis" ;
+    :sense "Italian" ;
+    :gen "Eadailtis" ;
+    rdfs:comment "[Language]" .
+
+  n:Eadailig
+    a :FeminineNoun ;
+    rdfs:label "Eadailig" ;
+    :sense "Italic" ;
+    :gen "Eadailig" ;
+    rdfs:comment "[Language]" .
+
+  a:ath_dheeanamh
+    a :Adjective ;
+    rdfs:label "ath-dhèanamh" ;
+    :sense "iterative" ;
+    rdfs:comment "[Language]" .
+
+  n:caanan
+    a :noun ;
+    rdfs:label "cànan" ;
+    :sense "language" ;
+    :gen "cànain" ;
+    :pl "cànanan" ;
+    rdfs:comment "[Language]" .
+
+  n:cainnt_lann
+    a :FeminineNoun ;
+    rdfs:label "cainnt-lann" ;
+    :sense "language laboratory" ;
+    :gen "cainnt-lainn" ;
+    :pl "cainnt-lannan" ;
+    rdfs:comment "[Language]" .
+
+  n:Laideann
+    a :FeminineNoun ;
+    rdfs:label "Laideann" ;
+    :sense "Latin" ;
+    :gen "Laidinn" ;
+    rdfs:comment "[Language]" .
+
+  n:Latbhianais
+    a :FeminineNoun ;
+    rdfs:label "Latbhianais" ;
+    :sense "Latvian" ;
+    :gen "Latbhianais" ;
+    rdfs:comment "[Language]" .
+
+  n:litir
+    a :FeminineNoun ;
+    rdfs:label "litir" ;
+    :sense "letter" ;
+    :gen "litreach" ;
+    :pl "litrichean" ;
+    rdfs:comment "[Language]" .
+
+  n:litreachas
+    a :MasculineNoun ;
+    rdfs:label "litreachas" ;
+    :sense "literature" ;
+    :gen "litreachais" ;
+    :pl "litreachasan" ;
+    rdfs:comment "[Language]" .
+
+  a:duuthchasach
+    a :Adjective ;
+    rdfs:label "dùthchasach" ;
+    :sense "native" ;
+    rdfs:comment "[Language]" .
+
+  a:ainmneach
+    a :Adjective ;
+    rdfs:label "ainmneach" ;
+    :sense "nominative" ;
+    rdfs:comment "[Language]" .
+
+  a:neo_Sheimitig
+    a :Adjective ;
+    rdfs:label "neo-Sheimitig" ;
+    :sense "non-Semitic" ;
+    rdfs:comment "[Language]" .
+
+  n:ainmear
+    a :MasculineNoun ;
+    rdfs:label "ainmear" ;
+    :sense "noun" ;
+    :gen "ainmeir" ;
+    :pl "ainmearan" ;
+    rdfs:comment "[Language]" .
+
+  a:mii_mhodhail
+    a :Adjective ;
+    rdfs:label "mì-mhodhail" ;
+    :sense "offensive" ;
+    rdfs:comment "[Language]" .
+
+  n:foneataig
+    a :FeminineNoun ;
+    rdfs:label "foneataig" ;
+    :sense "phonetic" ;
+    :gen "foneataig" ;
+    :pl "foneataigean" ;
+    rdfs:comment "[Language]" .
+
+  n:foneataigs
+    a :FeminineNoun ;
+    rdfs:label "foneataigs" ;
+    :sense "phonetics" ;
+    :gen "foneataigs" ;
+    rdfs:comment "[Language]" .
+
+  n:fonaigs
+    a :FeminineNoun ;
+    rdfs:label "fonaigs" ;
+    :sense "phonics" ;
+    :gen "fonaigs" ;
+    rdfs:comment "[Language]" .
+
+  n:foneoolas
+    a :MasculineNoun ;
+    rdfs:label "foneòlas" ;
+    :sense "phonology" ;
+    :gen "foneòlais" ;
+    rdfs:comment "[Language]" .
+
+  a:iomarra
+    a :Adjective ;
+    rdfs:label "iomarra" ;
+    :sense "plural" ;
+    rdfs:comment "[Language]" .
+
+  a:iolra
+    a :Adjective ;
+    rdfs:label "iolra" ;
+    :sense "plural" ;
+    rdfs:comment "[Language]" .
+
+  n:baardachd
+    a :FeminineNoun ;
+    rdfs:label "bàrdachd" ;
+    :sense "poetry" ;
+    :gen "bàrdachd" ;
+    rdfs:comment "[Language]" .
+
+  n:Poolainnis
+    a :FeminineNoun ;
+    rdfs:label "Pòlainnis" ;
+    :sense "Polish" ;
+    :gen "Pòlainnis" ;
+    rdfs:comment "[Language]" .
+
+  n:Portagailis
+    a :FeminineNoun ;
+    rdfs:label "Portagailis" ;
+    :sense "Portuguese" ;
+    :gen "Portagailis" ;
+    rdfs:comment "[Language]" .
+
+  a:iar_chlasaigeach
+    a :Adjective ;
+    rdfs:label "iar-chlasaigeach" ;
+    :sense "postclassical" ;
+    rdfs:comment "[Language]" .
+
+  a:ro_chlasaigeach
+    a :Adjective ;
+    rdfs:label "ro-chlasaigeach" ;
+    :sense "preclassical" ;
+    rdfs:comment "[Language]" .
+
+  n:ro_leasachan
+    a :MasculineNoun ;
+    rdfs:label "ro-leasachan" ;
+    :sense "prefix" ;
+    :gen "ro-leasachain" ;
+    :pl "ro-leasachain" ;
+    rdfs:comment "[Language]" .
+
+  n:roimhear
+    a :MasculineNoun ;
+    rdfs:label "roimhear" ;
+    :sense "preposition" ;
+    :gen "roimheir" ;
+    :pl "roimhearan" ;
+    rdfs:comment "[Language]" .
+
+  n:riochdair
+    a :MasculineNoun ;
+    rdfs:label "riochdair" ;
+    :sense "pronoun" ;
+    :gen "riochdair" ;
+    :pl "riochdairean" ;
+    rdfs:comment "[Language]" .
+
+  n:fuaimneachadh
+    a :MasculineNoun ;
+    rdfs:label "fuaimneachadh" ;
+    :sense "pronounciation" ;
+    :gen "fuaimneachaidh" ;
+    :pl "fuaimneachaidhean" ;
+    rdfs:comment "[Language]" .
+
+  n:reatoraig
+    a :MasculineNoun ;
+    rdfs:label "reatoraig" ;
+    :sense "rhetoric" ;
+    :gen "reatoraig" ;
+    rdfs:comment "[Language]" .
+
+  a:Romansach
+    a :Adjective ;
+    rdfs:label "Romansach" ;
+    :sense "Romance" ;
+    rdfs:comment "[Language]" .
+
+  n:Romaanianais
+    a :FeminineNoun ;
+    rdfs:label "Romànianais" ;
+    :sense "Romanian" ;
+    :gen "Romànianais" ;
+    rdfs:comment "[Language]" .
+
+  n:Romaanais
+    a :FeminineNoun ;
+    rdfs:label "Romànais" ;
+    :sense "Romansch" ;
+    :gen "Romànais" ;
+    rdfs:comment "[Language]" .
+
+  n:Ruisis
+    a :FeminineNoun ;
+    rdfs:label "Ruisis" ;
+    :sense "Russian" ;
+    :gen "Ruisis" ;
+    rdfs:comment "[Language]" .
+
+  n:Ruiseanais
+    a :FeminineNoun ;
+    rdfs:label "Ruiseanais" ;
+    :sense "Russian" ;
+    :gen "Ruiseanais" ;
+    rdfs:comment "[Language]" .
+
+  a:Lochlannach
+    a :Adjective ;
+    rdfs:label "Lochlannach" ;
+    :sense "Scandinavian" ;
+    rdfs:comment "[Language]" .
+
+  n:Albais
+    a :FeminineNoun ;
+    rdfs:label "Albais" ;
+    :sense "Scots" ;
+    rdfs:comment "[Language]" .
+
+  a:Seimitig
+    a :Adjective ;
+    rdfs:label "Seimitig" ;
+    :sense "Semitic" ;
+    rdfs:comment "[Language]" .
+
+  a:singilte
+    a :Adjective ;
+    rdfs:label "singilte" ;
+    :sense "singular" ;
+    rdfs:comment "[Language]" .
+
+  n:mith_chainnt
+    a :FeminineNoun ;
+    rdfs:label "mith-chainnt" ;
+    :sense "slang" ;
+    :gen "mith-chainnt" ;
+    :pl "mith-chainntean" ;
+    rdfs:comment "[Language]" .
+
+  a:Slaabhach
+    a :Adjective ;
+    rdfs:label "Slàbhach" ;
+    :sense "Slavic" ;
+    rdfs:comment "[Language]" .
+
+  n:Spaainntis
+    a :FeminineNoun ;
+    rdfs:label "Spàinn(t)is" ;
+    :sense "Spanish" ;
+    :gen "Spàinn(t)is" ;
+    rdfs:comment "[Language]" .
+
+  n:ooraid
+    a :FeminineNoun ;
+    rdfs:label "òraid" ;
+    :sense "speech" ;
+    :gen "òraide" ;
+    :pl "òraidean" ;
+    rdfs:comment "[Language]" .
+
+  n:litreachadh
+    a :MasculineNoun ;
+    rdfs:label "litreachadh" ;
+    :sense "spelling" ;
+    :gen "litreachaidh" ;
+    rdfs:comment "[Language]" .
+
+  n:iar_leasachan
+    a :MasculineNoun ;
+    rdfs:label "iar-leasachan" ;
+    :sense "suffix" ;
+    :gen "iar-leasachain" ;
+    :pl "iar-leasachain" ;
+    rdfs:comment "[Language]" .
+
+  a:feabhasach
+    a :Adjective ;
+    rdfs:label "feabhasach" ;
+    :sense "superlative" ;
+    rdfs:comment "[Language]" .
+
+  n:briathrachas
+    a :MasculineNoun ;
+    rdfs:label "briathrachas" ;
+    :sense "terminology" ;
+    rdfs:comment "[Language]" .
+
+  a:aisigeach
+    a :Adjective ;
+    rdfs:label "aisigeach" ;
+    :sense "transitive" ;
+    rdfs:comment "[Language]" .
+
+  v:tionndaidh
+    a :Verb ;
+    rdfs:label "tionndaidh" ;
+    :sense "translate" ;
+    rdfs:comment "[Language]" .
+
+  o:a_tionndadh
+    rdfs:label "a' tionndadh" ;
+    :sense "translating" ;
+    rdfs:comment "[Language]" .
+
+  n:tionndadh
+    a :MasculineNoun ;
+    rdfs:label "tionndadh" ;
+    :sense "translation" ;
+    :gen "tionndaidh" ;
+    :pl "tionndaidhean" ;
+    rdfs:comment "[Language]" .
+
+  a:Uralaig
+    a :Adjective ;
+    rdfs:label "Uralaig" ;
+    :sense "Uralic" ;
+    rdfs:comment "[Language]" .
+
+  n:Uralaig
+    a :FeminineNoun ;
+    rdfs:label "Uralaig" ;
+    :sense "Uralic" ;
+    :gen "Uralaig" ;
+    rdfs:comment "[Language]" .
+
+  n:gniiomhair
+    a :MasculineNoun ;
+    rdfs:label "gnìomhair" ;
+    :sense "verb" ;
+    :gen "gnìomhair" ;
+    :pl "gnìomhairean" ;
+    rdfs:comment "[Language]" .
+
+  a:gairmeach
+    a :Adjective ;
+    rdfs:label "gairmeach" ;
+    :sense "vocative" ;
+    rdfs:comment "[Language]" .
+
+  n:facal
+    a :MasculineNoun ;
+    rdfs:label "facal" ;
+    :sense "word" ;
+    :gen "facail" ;
+    :pl "facail" ;
+    :pl "faclan" ;
+    rdfs:comment "[Language]" .
+
+  n:abairt_cho_ghniiomhaireach
+    rdfs:label "abairt cho-ghnìomhaireach" ;
+    :sense "adverbial phrase" ;
+    :part n:co_ghniiomhair ;
+    rdfs:comment "[Language]" .
+
+  n:caananan_Afro_AAisianach
+    rdfs:label "cànanan Afro-Àisianach" ;
+    :sense "Afro-Asiatic languages" ;
+    :part a:Afro_Àisianach ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_Afro_AAisianach
+    rdfs:label "litreachasan Afro-Àisianach" ;
+    :sense "Afro-Asiatic literatures" ;
+    :part a:Afro_Àisianach ;
+    rdfs:comment "[Language]" .
+
+  n:caananan_Afro_AAisianach_neo_Sheimitig
+    rdfs:label "cànanan Afro-Àisianach neo-Sheimitig" ;
+    :sense "non-Semitic Afro-Asiatic languages" ;
+    :part a:Afro_Àisianach ;
+    rdfs:comment "[Language]" .
+
+  n:caananan_Altaig
+    rdfs:label "cànanan Altaig" ;
+    :sense "Altaic languages" ;
+    :part a:Altaig ;
+    rdfs:comment "[Language]" .
+
+  n:caananan_Astroniisianach
+    rdfs:label "cànanan Astronìsianach" ;
+    :sense "Austronesian languages" ;
+    :part a:Astroniisianach ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_Astroniisianach
+    rdfs:label "litreachasan Astronìsianach" ;
+    :sense "Austronesian literatures" ;
+    :part a:Astroniisianach ;
+    rdfs:comment "[Language]" .
+
+  n:clann_daa_chaananach
+    rdfs:label "clann dà-chànanach" ;
+    :sense "bilingual children" ;
+    :part a:daa_chaananach ;
+    rdfs:comment "[Language]" .
+
+  n:suidheachadh_ceangailte
+    rdfs:label "suidheachadh ceangailte" ;
+    :sense "possessive case" ;
+    :part n:suidheachadh ;
+    rdfs:comment "[Language]" .
+
+  n:suidheachadh_roimhearach
+    rdfs:label "suidheachadh roimhearach" ;
+    :sense "prepositional case" ;
+    :part n:suidheachadh ;
+    rdfs:comment "[Language]" .
+
+  n:suidheachadh_gairmeach
+    rdfs:label "suidheachadh gairmeach" ;
+    :sense "vocative case" ;
+    :part n:suidheachadh ;
+    rdfs:comment "[Language]" .
+
+  n:roimhear_agus_suidheachadh_ceangailte
+    rdfs:label "roimhear + suidheachadh ceangailte" ;
+    :sense "preposition + possessive case" ;
+    :part n:suidheachadh ;
+    rdfs:comment "[Language]" .
+
+  n:suidheachadh_ainmneach
+    rdfs:label "suidheachadh ainmneach" ;
+    :sense "nominal case" ;
+    :part n:suidheachadh ;
+    rdfs:comment "[Language]" .
+
+  n:tuiseal_ainmneach
+    rdfs:label "tuiseal ainmneach" ;
+    :sense "nominative case" ;
+    :part n:tuiseal ;
+    rdfs:comment "[Language]" .
+
+  n:tuiseal_gairmeach
+    rdfs:label "tuiseal gairmeach" ;
+    :sense "vocative case" ;
+    :part n:tuiseal ;
+    rdfs:comment "[Language]" .
+
+  n:tuiseal_ginideach
+    rdfs:label "tuiseal ginideach" ;
+    :sense "genitive case" ;
+    :part n:tuiseal ;
+    rdfs:comment "[Language]" .
+
+  n:tuiseal_tabhartach
+    rdfs:label "tuiseal tabhartach" ;
+    :sense "dative case" ;
+    :part n:tuiseal ;
+    rdfs:comment "[Language]" .
+
+  n:cruinneachaidhean_ann_am_Fraingis_Occitan_agus_Catalan
+    rdfs:label "cruinneachaidhean ann am Fraingis, Occitan agus Catalan" ;
+    :sense "collections in French, Occitan and Catalan" ;
+    :part n:Catalan ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_Catalan
+    rdfs:label "litreachasan Catalan" ;
+    :sense "Catalan literatures" ;
+    :part n:Catalan ;
+    rdfs:comment "[Language]" .
+
+  n:caananan_Ceilteach
+    rdfs:label "cànanan Ceilteach" ;
+    :sense "Celtic languages" ;
+    :part a:Ceilteach ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_Ceilteach
+    rdfs:label "litreachasan Ceilteach" ;
+    :sense "Celtic literatures" ;
+    :part a:Ceilteach ;
+    rdfs:comment "[Language]" .
+
+  n:am_Muir_Ceilteach
+    rdfs:label "am Muir Ceilteach" ;
+    :sense "Celtic Sea" ;
+    :part a:Ceilteach ;
+    rdfs:comment "[Language]" .
+
+  n:saidhceoolas_coimeasach
+    rdfs:label "saidhceòlas coimeasach" ;
+    :sense "comparative psychology" ;
+    :part a:coimeasach ;
+    rdfs:comment "[Language]" .
+
+  n:buadhair_coimeasach
+    rdfs:label "buadhair coimeasach" ;
+    :sense "comparative adjective" ;
+    :part a:coimeasach ;
+    rdfs:comment "[Language]" .
+
+  n:ainmear_buadhair
+    rdfs:label "ainmear/buadhair" ;
+    :sense "noun/adjective" ;
+    :part a:coimeasach ;
+    rdfs:comment "[Language]" .
+
+  n:buadhair_feabhasach
+    rdfs:label "buadhair feabhasach" ;
+    :sense "superlative adjective" ;
+    :part a:coimeasach ;
+    rdfs:comment "[Language]" .
+
+  n:aiste_dhealbhach
+    rdfs:label "aiste dhealbhach" ;
+    :sense "descriptive essay" ;
+    :part n:aiste ;
+    rdfs:comment "[Language]" .
+
+  n:litreachas_reatoraig_agus_breithneachadh
+    rdfs:label "litreachas, reatoraig agus breithneachadh" ;
+    :sense "literature, rhetoric and criticism" ;
+    :part n:breithneachadh ;
+    rdfs:comment "[Language]" .
+
+  n:eachdraidh_iomradh_agus_breithneachadh
+    rdfs:label "eachdraidh, iomradh agus breithneachadh" ;
+    :sense "history, description and criticism" ;
+    :part n:breithneachadh ;
+    rdfs:comment "[Language]" .
+
+  n:tuiseal_tabhartach
+    rdfs:label "tuiseal tabhartach" ;
+    :sense "dative case" ;
+    :part a:tabhartach ;
+    rdfs:comment "[Language]" .
+
+  n:eoolas_dualchainnt_agus_caananachas_eachdraidheil
+    rdfs:label "eòlas-dualchainnt agus cànanachas eachdraidheil" ;
+    :sense "dialectology and historical linguistics" ;
+    :part n:eoolas_dualchainnt ;
+    rdfs:comment "[Language]" .
+
+  n:caananan_Drabhaidianach
+    rdfs:label "cànanan Drabhaidianach" ;
+    :sense "Dravidian languages" ;
+    :part a:Drabhaidianach ;
+    rdfs:comment "[Language]" .
+
+  n:aabhachdas_Beurla
+    rdfs:label "àbhachdas Beurla" ;
+    :sense "English humour" ;
+    :part n:Beurla ;
+    rdfs:comment "[Language]" .
+
+  n:ionnsaich_Beurla
+    rdfs:label "ionnsaich Beurla" ;
+    :sense "learn English" ;
+    :part n:Beurla ;
+    rdfs:comment "[Language]" .
+
+  n:litreachas_Beurla
+    rdfs:label "litreachas Beurla" ;
+    :sense "English literature" ;
+    :part n:Beurla ;
+    rdfs:comment "[Language]" .
+
+  n:clas_Beurla
+    rdfs:label "clas Beurla" ;
+    :sense "English class" ;
+    :part n:Beurla ;
+    rdfs:comment "[Language]" .
+
+  n:diofar_riochdan_na_Beurla
+    rdfs:label "diofar riochdan na Beurla" ;
+    :sense "English language variations" ;
+    :part n:Beurla ;
+    rdfs:comment "[Language]" .
+
+  n:Seann_Bheurla
+    rdfs:label "Seann Bheurla" ;
+    :sense "Old English" ;
+    :part n:Beurla ;
+    rdfs:comment "[Language]" .
+
+  n:cleachdadh_steeidhichte_na_Beurla
+    rdfs:label "cleachdadh stèidhichte na Beurla" ;
+    :sense "standard English usage" ;
+    :part n:Beurla ;
+    rdfs:comment "[Language]" .
+
+  n:aistean_Gearmailtis
+    rdfs:label "aistean Gearmailtis" ;
+    :sense "German essays" ;
+    :part n:aiste_ ;
+    rdfs:comment "[Language]" .
+
+  n:freumh_fhaclachd_na_h_Eadailtis
+    rdfs:label "freumh-fhaclachd na h-Eadailtis" ;
+    :sense "Italian etymology" ;
+    :part n:freumh_fhaclachd ;
+    rdfs:comment "[Language]" .
+
+  n:freumh_fhaclachd_na_Greugais_chlasaigich
+    rdfs:label "freumh-fhaclachd na Greugais chlasaigich" ;
+    :sense "classical Greek etymology" ;
+    :part n:freumh_fhaclachd ;
+    rdfs:comment "[Language]" .
+
+  n:ficsean_Fraingis
+    rdfs:label "ficsean Fraingis" ;
+    :sense "French fiction" ;
+    :part n:ficsean_ ;
+    rdfs:comment "[Language]" .
+
+  n:aoireadh_Fraingis
+    rdfs:label "aoireadh Fraingis" ;
+    :sense "French satire" ;
+    :part n:Fraingis ;
+    rdfs:comment "[Language]" .
+
+  n:graamar_na_Fraingis
+    rdfs:label "gràmar na Fraingis" ;
+    :sense "French grammar" ;
+    :part n:Fraingis ;
+    rdfs:comment "[Language]" .
+
+  n:Guiana_na_Frainge
+    rdfs:label "Guiana na Frainge" ;
+    :sense "French Guiana" ;
+    :part n:Fraingis ;
+    rdfs:comment "[Language]" .
+
+  n:baardachd_Fhraingis
+    rdfs:label "bàrdachd Fhraingis" ;
+    :sense "French poetry" ;
+    :part n:Fraingis ;
+    rdfs:comment "[Language]" .
+
+  n:cleachdadh_steeidhichte_na_Fraingis
+    rdfs:label "cleachdadh stèidhichte na Fraingis" ;
+    :sense "standard French usage" ;
+    :part n:Fraingis ;
+    rdfs:comment "[Language]" .
+
+  n:Gaaidhlig_fhileanta
+    rdfs:label "Gàidhlig fhileanta" ;
+    :sense "fluent Gaelic" ;
+    :part n:Gaaidhlig ;
+    rdfs:comment "[Language]" .
+
+  n:leabhraichean_Gaaidhlig
+    rdfs:label "leabhraichean Gàidhlig" ;
+    :sense "Gaelic books" ;
+    :part n:Gaaidhlig ;
+    rdfs:comment "[Language]" .
+
+  n:deuchainn_Ghaaidhlig
+    rdfs:label "deuchainn Ghàidhlig" ;
+    :sense "Gaelic examination" ;
+    :part n:Gaaidhlig ;
+    rdfs:comment "[Language]" .
+
+  n:ruum_na_Gaaidhlig
+    rdfs:label "rùm na Gàidhlig" ;
+    :sense "Gaelic room" ;
+    :part n:Gaaidhlig ;
+    rdfs:comment "[Language]" .
+
+  n:Gaaidhlig_Luchd_ionnsachaidh_Teisteanais_Naaiseanta
+    rdfs:label "Gàidhlig (Luchd-ionnsachaidh) - Teisteanais Nàiseanta" ;
+    :sense "Gaelic (Learners) - National Qualification" ;
+    :part n:Gaaidhlig ;
+    rdfs:comment "[Language]" .
+
+  n:luchd_ionnsachaidh_Gaaidhlig
+    rdfs:label "luchd-ionnsachaidh Gàidhlig" ;
+    :sense "Gaelic learners" ;
+    :part n:Gaaidhlig ;
+    rdfs:comment "[Language]" .
+
+  n:leasachadh_acadaimigeach_Gaaidhlig
+    rdfs:label "leasachadh acadaimigeach Gàidhlig" ;
+    :sense "Gaelic academic development" ;
+    :part n:Gaaidhlig ;
+    rdfs:comment "[Language]" .
+
+  n:Oifigear_Susbaint_Gaaidhlig
+    rdfs:label "Oifigear Susbaint Gàidhlig" ;
+    :sense "Gaelic Content Officer" ;
+    :part n:Gaaidhlig ;
+    rdfs:comment "[Language]" .
+
+  n:Oifigear_Leasachaidh_Gaaidhlig
+    rdfs:label "Oifigear Leasachaidh Gàidhlig" ;
+    :sense "Gaelic Development Officer" ;
+    :part n:Gaaidhlig ;
+    rdfs:comment "[Language]" .
+
+  n:Manaidsear_Phrooiseactan_Gaaidhlig
+    rdfs:label "Manaidsear Phròiseactan Gàidhlig" ;
+    :sense "Gaelic Project Manager" ;
+    :part n:Gaaidhlig ;
+    rdfs:comment "[Language]" .
+
+  n:Rianaire_Leasachadh_Luchd_obrach_Gaaidhlig
+    rdfs:label "Rianaire Leasachadh Luchd-obrach Gàidhlig" ;
+    :sense "Gaelic Staff Development Administrator" ;
+    :part n:Gaaidhlig ;
+    rdfs:comment "[Language]" .
+
+  n:Neach_leasachaidh_Seirbheis_Teicneoolais_Gaaidhlig
+    rdfs:label "Neach-leasachaidh Seirbheis Teicneòlais Gàidhlig" ;
+    :sense "Gaelic Technology Service Developer" ;
+    :part n:Gaaidhlig ;
+    rdfs:comment "[Language]" .
+
+  n:Manaidsear_Leasachadh_Ro_innleachd_Gaaidhlig
+    rdfs:label "Manaidsear Leasachadh Ro-innleachd Gàidhlig" ;
+    :sense "Manager of Gaelic Strategy Development" ;
+    :part n:Gaaidhlig ;
+    rdfs:comment "[Language]" .
+
+  n:Foghlam_tro_Mheadhan_na_Gaaidhlig
+    rdfs:label "Foghlam tro Mheadhan na Gàidhlig" ;
+    :sense "Gaelic Medium Education" ;
+    :part n:Gaaidhlig ;
+    rdfs:comment "[Language]" .
+
+  n:foghlam_Gaaidhlig
+    rdfs:label "foghlam Gàidhlig" ;
+    :sense "Gaelic education" ;
+    :part n:Gaaidhlig ;
+    rdfs:comment "[Language]" .
+
+  n:tuiseal_ginideach
+    rdfs:label "tuiseal ginideach" ;
+    :sense "genitive case" ;
+    :part a:ginideach ;
+    rdfs:comment "[Language]" .
+
+  n:Gearmailtis_Teisteanais_Naaiseanta
+    rdfs:label "Gearmailtis - Teisteanais Nàiseanta" ;
+    :sense "German - National Qualifications" ;
+    :part n:Gearmailtis ;
+    rdfs:comment "[Language]" .
+
+  n:Gearmailtis_agus_caananan_co_cheangailte
+    rdfs:label "Gearmailtis agus cànanan co-cheangailte" ;
+    :sense "German and related languages" ;
+    :part n:Gearmailtis ;
+    rdfs:comment "[Language]" .
+
+  n:faclairean_Gearmailtis
+    rdfs:label "faclairean Gearmailtis" ;
+    :sense "German dictionaries" ;
+    :part n:Gearmailtis ;
+    rdfs:comment "[Language]" .
+
+  n:graamar_na_Gearmailtis
+    rdfs:label "gràmar na Gearmailtis" ;
+    :sense "German grammar" ;
+    :part n:Gearmailtis ;
+    rdfs:comment "[Language]" .
+
+  n:diofar_riochdan_na_Gearmailtis
+    rdfs:label "diofar riochdan na Gearmailtis" ;
+    :sense "German language variations" ;
+    :part n:Gearmailtis ;
+    rdfs:comment "[Language]" .
+
+  n:siostam_sgriiobhaidh_agus_foneoolas_na_Gearmailtis
+    rdfs:label "siostam sgrìobhaidh agus foneòlas na Gearmailtis" ;
+    :sense "German writing system and phonology" ;
+    :part n:Gearmailtis ;
+    rdfs:comment "[Language]" .
+
+  n:cleachdadh_steeidhichte_na_Gearmailtis
+    rdfs:label "cleachdadh stèidhichte na Gearmailtis" ;
+    :sense "standard German usage" ;
+    :part n:Gearmailtis ;
+    rdfs:comment "[Language]" .
+
+  n:caananan_Gearmainig
+    rdfs:label "cànanan Gearmainig" ;
+    :sense "Germanic languages" ;
+    :part a:Gearmainig ;
+    rdfs:comment "[Language]" .
+
+  n:creideamh_Gearmainig
+    rdfs:label "creideamh Gearmainig" ;
+    :sense "Germanic religion" ;
+    :part a:Gearmainig ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_nan_caanan_Gearmainig
+    rdfs:label "litreachasan nan cànan Gearmainig" ;
+    :sense "literatures of Germanic languages" ;
+    :part a:Gearmainig ;
+    rdfs:comment "[Language]" .
+
+  n:irisean_ann_an_caananan_Gearmainig
+    rdfs:label "irisean ann an cànanan Gearmainig" ;
+    :sense "serials in Germanic languages" ;
+    :part a:Gearmainig ;
+    rdfs:comment "[Language]" .
+
+  n:graamar_na_Gaaidhlig
+    rdfs:label "gràmar na Gàidhlig" ;
+    :sense "Gaelic grammar" ;
+    :part n:graamar ;
+    rdfs:comment "[Language]" .
+
+  n:graamar_na_Greugais_chlasaigich
+    rdfs:label "gràmar na Greugais chlasaigich" ;
+    :sense "classical Greek grammar" ;
+    :part n:graamar ;
+    rdfs:comment "[Language]" .
+
+  n:litreachas_Greugais
+    rdfs:label "litreachas Greugais" ;
+    :sense "Greek literature" ;
+    :part n:Greugais ;
+    rdfs:comment "[Language]" .
+
+  n:Greugais_ro_chlasaigeach
+    rdfs:label "Greugais ro-chlasaigeach" ;
+    :sense "preclassical Greek" ;
+    :part n:Greugais ;
+    rdfs:comment "[Language]" .
+
+  n:Greugais_chlasaigeach
+    rdfs:label "Greugais chlasaigeach" ;
+    :sense "classical Greek" ;
+    :part n:Greugais ;
+    rdfs:comment "[Language]" .
+
+  n:litreachas_Greugais_nuadh
+    rdfs:label "litreachas Greugais nuadh" ;
+    :sense "modern Greek literature" ;
+    :part n:Greugais ;
+    rdfs:comment "[Language]" .
+
+  n:Greugais_iar_chlasaigeach
+    rdfs:label "Greugais iar-chlasaigeach" ;
+    :sense "postclassical Greek" ;
+    :part n:Greugais ;
+    rdfs:comment "[Language]" .
+
+  n:baardachd_Ghreugais_Chlasaigeach
+    rdfs:label "bàrdachd Ghreugais Chlasaigeach" ;
+    :sense "classical Greek poetry" ;
+    :part n:Greugais ;
+    rdfs:comment "[Language]" .
+
+  n:cleachdadh_na_Greugais_chlasaigich
+    rdfs:label "cleachdadh na Greugais chlasaigich" ;
+    :sense "classical Greek usage" ;
+    :part n:Greugais ;
+    rdfs:comment "[Language]" .
+
+  n:caananan_Greugach
+    rdfs:label "cànanan Greugach" ;
+    :sense "Hellenic languages" ;
+    :part a:Greugach ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_Greugach
+    rdfs:label "litreachasan Greugach" ;
+    :sense "Hellenic literatures" ;
+    :part a:Greugach ;
+    rdfs:comment "[Language]" .
+
+  n:caananan_Greugach_eile
+    rdfs:label "cànanan Greugach eile" ;
+    :sense "other Hellenic languages" ;
+    :part a:Greugach ;
+    rdfs:comment "[Language]" .
+
+  n:caananan_Haipearborach
+    rdfs:label "cànanan Haipearborach" ;
+    :sense "Hyperborean languages" ;
+    :part a:Haipearborach ;
+    rdfs:comment "[Language]" .
+
+  n:modh_aaithneach
+    rdfs:label "modh àithneach" ;
+    :sense "imperative mood" ;
+    :part a:aaithneach ;
+    rdfs:comment "[Language]" .
+
+  n:Indo_Eoorpach_an_Ear
+    rdfs:label "Indo-Eòrpach an Ear" ;
+    :sense "East Indo-European" ;
+    :part a:Indo_Eoorpach ;
+    rdfs:comment "[Language]" .
+
+  n:caananan_Indo_Eoorpach
+    rdfs:label "cànanan Indo-Eòrpach" ;
+    :sense "Indo-European languages" ;
+    :part a:Indo_Eoorpach ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_Indo_Eoorpach
+    rdfs:label "litreachasan Indo-Eòrpach" ;
+    :sense "Indo-European literatures" ;
+    :part a:Indo_Eoorpach ;
+    rdfs:comment "[Language]" .
+
+  n:gniiomhar_neo_aisigeach
+    rdfs:label "gnìomhar neo-aisigeach" ;
+    :sense "intransitive verb" ;
+    :part a:neo_aisigeach ;
+    rdfs:comment "[Language]" .
+
+  n:faclairean_Eadailtis
+    rdfs:label "faclairean Eadailtis" ;
+    :sense "Italian dictionaries" ;
+    :part n:Eadailtis ;
+    rdfs:comment "[Language]" .
+
+  n:baardachd_Eadailtis
+    rdfs:label "bàrdachd Eadailtis" ;
+    :sense "Italian poetry" ;
+    :part n:Eadailtis ;
+    rdfs:comment "[Language]" .
+
+  n:cleachdadh_steeidhichte_na_h_Eadailtis
+    rdfs:label "cleachdadh stèidhichte na h-Eadailtis" ;
+    :sense "standard Italian usage" ;
+    :part n:Eadailtis ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_nan_caanan_Eadailig_eile
+    rdfs:label "litreachasan nan cànan Eadailig eile" ;
+    :sense "literatures of other Italic languages" ;
+    :part n:Eadailig ;
+    rdfs:comment "[Language]" .
+
+  n:caananan_Eadailig
+    rdfs:label "cànanan Eadailig" ;
+    :sense "Italic languages" ;
+    :part n:Eadailig ;
+    rdfs:comment "[Language]" .
+
+  n:aarainneachd_nuadh_chaananan_coimheach
+    rdfs:label "àrainneachd nuadh -chànanan coimheach" ;
+    :sense "modern foreign languages environment" ;
+    :part n:caanan ;
+    rdfs:comment "[Language]" .
+
+  n:caananan_soidhne
+    rdfs:label "cànanan soidhne" ;
+    :sense "sign languages" ;
+    :part n:caanan ;
+    rdfs:comment "[Language]" .
+
+  n:caananan_duuthchasach
+    rdfs:label "cànanan dùthchasach" ;
+    :sense "native languages" ;
+    :part n:caanan ;
+    rdfs:comment "[Language]" .
+
+  n:caananan_clasaigeach
+    rdfs:label "cànanan clasaigeach" ;
+    :sense "classical languages" ;
+    :part n:caanan ;
+    rdfs:comment "[Language]" .
+
+  n:nuadh_chaananan
+    rdfs:label "nuadh-chànanan" ;
+    :sense "modern languages" ;
+    :part n:caanan ;
+    rdfs:comment "[Language]" .
+
+  n:a_cleachdadh_eoolas_mu_chaanan
+    rdfs:label "a' cleachdadh eòlas mu chànan" ;
+    :sense "using knowledge about language" ;
+    :part n:caanan ;
+    rdfs:comment "[Language]" .
+
+  n:Laideann_chlasaigeach
+    rdfs:label "Laideann chlasaigeach" ;
+    :sense "classical Latin" ;
+    :part n:Laideann ;
+    rdfs:comment "[Language]" .
+
+  n:faclairean_Laideann_chlasaigeach
+    rdfs:label "faclairean Laideann chlasaigeach" ;
+    :sense "classical Latin dictionaries" ;
+    :part n:Laideann ;
+    rdfs:comment "[Language]" .
+
+  n:cleachdadh_na_Laidinn_chlasaigich
+    rdfs:label "cleachdadh na Laidinn chlasaigich" ;
+    :sense "classical Latin usage" ;
+    :part n:Laideann ;
+    rdfs:comment "[Language]" .
+
+  n:Laideann_iar_chlasaigeach_agus_choitcheann
+    rdfs:label "Laideann iar-chlasaigeach agus choitcheann" ;
+    :sense "postclassical and vulgar Latin" ;
+    :part n:Laideann ;
+    rdfs:comment "[Language]" .
+
+  n:baardachd_lirig_Laidinn
+    rdfs:label "bàrdachd lirig Laidinn" ;
+    :sense "Latin lyric poetry" ;
+    :part n:Laideann ;
+    rdfs:comment "[Language]" .
+
+  n:seann_Laideann
+    rdfs:label "seann Laideann" ;
+    :sense "old Latin" ;
+    :part n:Laideann ;
+    rdfs:comment "[Language]" .
+
+  n:litrichean_Laidinn
+    rdfs:label "Litrichean Laidinn" ;
+    :sense "Latin letters" ;
+    :part n:litir ;
+    rdfs:comment "[Language]" .
+
+  n:litrichean_na_h_aibidil
+    rdfs:label "litrichean na h-aibidil" ;
+    :sense "letters of the alphabet" ;
+    :part n:litir ;
+    rdfs:comment "[Language]" .
+
+  n:litir_mhoor
+    rdfs:label "litir mhòr" ;
+    :sense "capital letter" ;
+    :part n:litir ;
+    rdfs:comment "[Language]" .
+
+  n:litir_bheag
+    rdfs:label "litir bheag" ;
+    :sense "small letter" ;
+    :part n:litir ;
+    rdfs:comment "[Language]" .
+
+  n:litrichean_gu_caraid
+    rdfs:label "litrichean gu caraid" ;
+    :sense "letters to a friend" ;
+    :part n:litir ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_Afro_AAisianach_litreachasan_Seimitig
+    rdfs:label "litreachasan Afro-Àisianach; litreachasan Seimitig" ;
+    :sense "Afro-Asiatic literatures; Semitic literatures" ;
+    :part n:litreachas ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_Astro_innseach_agus_caananan_eile
+    rdfs:label "litreachasan Astro-innseach agus cànanan eile" ;
+    :sense "Austronesian and other literatures" ;
+    :part n:litreachas ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_Greugais_clasaigeach_agus_nuadh
+    rdfs:label "litreachasan Greugais, clasaigeach agus nuadh" ;
+    :sense "classical and modern Greek literatures" ;
+    :part n:litreachas ;
+    rdfs:comment "[Language]" .
+
+  n:litreachas_adhraidh
+    rdfs:label "litreachas adhraidh" ;
+    :sense "devotional literature" ;
+    :part n:litreachas ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_Ear_Indo_Eoorpach_agus_Ceilteach
+    rdfs:label "litreachasan Ear-Indo-Eòrpach agus Ceilteach" ;
+    :sense "East Indo-European and Celtic literatures" ;
+    :part n:litreachas ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_Greugach_Greugais_chlasaigeach
+    rdfs:label "litreachasan Greugach; Greugais chlasaigeach" ;
+    :sense "Hellenic literatures; classical Greek" ;
+    :part n:litreachas ;
+    rdfs:comment "[Language]" .
+
+  n:Eadailtis_Romaainis_agus_litreachasan_co_cheangailte
+    rdfs:label "Eadailtis, Romàinis agus litreachasan co-cheangailte" ;
+    :sense "Italian, Romanian and related literatures" ;
+    :part n:litreachas ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_Eadailig_litreachas_Laidinn
+    rdfs:label "litreachasan Eadailig; litreachas Laidinn" ;
+    :sense "Italic literatures; Latin literature" ;
+    :part n:litreachas ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_Laidinn_agus_Eadailig
+    rdfs:label "litreachasan Laidinn agus Eadailig" ;
+    :sense "Latin and Italic literatures" ;
+    :part n:litreachas ;
+    rdfs:comment "[Language]" .
+
+  n:litreachas_agus_reatoraig
+    rdfs:label "litreachas agus reatoraig" ;
+    :sense "literature and rhetoric" ;
+    :part n:litreachas ;
+    rdfs:comment "[Language]" .
+
+  n:litreachas_reatoraig_agus_breithneachadh
+    rdfs:label "litreachas, reatoraig agus breithneachadh" ;
+    :sense "literature, rhetoric and criticism" ;
+    :part n:litreachas ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_taobh_an_ear_agus_ear_dheas_Àisia
+    rdfs:label "litreachasan taobh an ear agus ear-dheas Àisia" ;
+    :sense "literatures of East and Southeast Asia" ;
+    :part n:litreachas ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_nan_caanan_Gearmainig
+    rdfs:label "litreachasan nan cànan Gearmainig" ;
+    :sense "literatures of Germanic languages" ;
+    :part n:litreachas ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_nan_caanan_Eadailig_eile
+    rdfs:label "litreachasan nan cànan Eadailig eile" ;
+    :sense "literatures of other Italic languages" ;
+    :part n:litreachas ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_caananan_eile
+    rdfs:label "litreachasan cànanan eile" ;
+    :sense "literatures of other languages" ;
+    :part n:litreachas ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_nan_caanan_Romansach
+    rdfs:label "litreachasan nan cànan Romansach" ;
+    :sense "literatures of Romance languages" ;
+    :part n:litreachas ;
+    rdfs:comment "[Language]" .
+
+  n:litreachas_Greeugais_nuadh
+    rdfs:label "litreachas Grèugais nuadh" ;
+    :sense "modern Greek literature" ;
+    :part n:litreachas ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_Afro_AAisianach_neo_Sheimitig
+    rdfs:label "litreachasan Afro-Àisianach neo-Sheimitig" ;
+    :sense "non-Semitic Afro-Asiatic literatures" ;
+    :part n:litreachas ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_duuthchasach_Ameireaga_a_Tuath
+    rdfs:label "litreachasan dùthchasach Ameireaga a Tuath" ;
+    :sense "North American native literature" ;
+    :part n:litreachas ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_Occitan_agus_Catalan
+    rdfs:label "litreachasan Occitan agus Catalan" ;
+    :sense "Occitan and Catalan literatures" ;
+    :part n:litreachas ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_eile_nan_caanan_Gearmainig
+    rdfs:label "litreachasan eile nan cànan Gearmainig" ;
+    :sense "other Germanic literatures" ;
+    :part n:litreachas ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_eile
+    rdfs:label "litreachasan eile" ;
+    :sense "other literatures" ;
+    :part n:litreachas ;
+    rdfs:comment "[Language]" .
+
+  n:litreachas_Portagailis
+    rdfs:label "litreachas Portagailis" ;
+    :sense "Portuguese literature" ;
+    :part n:litreachas ;
+    rdfs:comment "[Language]" .
+
+  n:reatoraig_agus_cruinneachaidhean_litreachais
+    rdfs:label "reatoraig agus cruinneachaidhean litreachais" ;
+    :sense "rhetoric and collections of literature" ;
+    :part n:litreachas ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_Romaainis_agus_litreachasan_co_cheangailte
+    rdfs:label "litreachasan Romàinis agus litreachasan co-cheangailte" ;
+    :sense "Romanian and related literatures" ;
+    :part n:litreachas ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_duuthchasach_Ameireaga_a_Deas
+    rdfs:label "litreachasan dùthchasach Ameireaga a Deas" ;
+    :sense "South American native literature" ;
+    :part n:litreachas ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_Spaainntis_agus_Portagailis
+    rdfs:label "litreachasan Spàinntis agus Portagailis" ;
+    :sense "Spanish and Portuguese literatures" ;
+    :part n:litreachas ;
+    rdfs:comment "[Language]" .
+
+  n:caananan_duuthchasach
+    rdfs:label "cànanan dùthchasach" ;
+    :sense "native languages" ;
+    :part a:duuthchasach ;
+    rdfs:comment "[Language]" .
+
+  n:caananan_duuthchasach_Ameireaga_a_Tuath
+    rdfs:label "cànanan dùthchasach Ameireaga a Tuath" ;
+    :sense "North American native languages" ;
+    :part a:duuthchasach ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_duuthchasach_Ameireaga_a_Deas
+    rdfs:label "litreachasan dùthchasach Ameireaga a Deas" ;
+    :sense "South American native literature" ;
+    :part a:duuthchasach ;
+    rdfs:comment "[Language]" .
+
+  n:tuiseal_ainmneach
+    rdfs:label "tuiseal ainmneach" ;
+    :sense "nominative case" ;
+    :part a:ainmneach ;
+    rdfs:comment "[Language]" .
+
+  n:caananan_neo_Sheimitig
+    rdfs:label "cànanan neo-Sheimitig" ;
+    :sense "non-Semitic languages" ;
+    :part a:neo_Sheimitig ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_neo_Sheimitig
+    rdfs:label "litreachasan neo-Sheimitig" ;
+    :sense "non-Semitic literatures" ;
+    :part a:neo_Sheimitig ;
+    rdfs:comment "[Language]" .
+
+  n:caananan_Afro_AAisianach_neo_Sheimitig
+    rdfs:label "cànanan Afro-Àisianach neo-Sheimitig" ;
+    :sense "non-Semitic Afro-Asiatic languages" ;
+    :part a:neo_Sheimitig ;
+    rdfs:comment "[Language]" .
+
+  n:ainmear
+    rdfs:label "ainmear" ;
+    :sense "noun" ;
+    :part n:ainmear ;
+    rdfs:comment "[Language]" .
+
+  n:ainmear
+    rdfs:label "ainmear (fireannta)" ;
+    :sense "noun" ;
+    :part n:ainmear ;
+    rdfs:comment "[Language]" .
+
+  n:gniiomh_ainmear
+    rdfs:label "gnìomh-ainmear" ;
+    :sense "verbal noun" ;
+    :part n:ainmear ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_Occitan
+    rdfs:label "litreachasan Occitan" ;
+    :sense "Occitan literatures" ;
+    :part n:Occitan ;
+    rdfs:comment "[Language]" .
+
+  n:irisean_ann_am_Fraingis_Occitan_agus_Catalan
+    rdfs:label "irisean ann am Fraingis, Occitan agus Catalan" ;
+    :sense "serials in French, Occitan and Catalan" ;
+    :part n:Occitan ;
+    rdfs:comment "[Language]" .
+
+  n:foneoolas_agus_foneataigs
+    rdfs:label "foneòlas agus foneataigs" ;
+    :sense "phonology and phonetics" ;
+    :part n:foneataigs ;
+    rdfs:comment "[Language]" .
+
+  n:leabhar_fonaigs
+    rdfs:label "leabhar fonaigs" ;
+    :sense "phonics book" ;
+    :part n:fonaigs ;
+    rdfs:comment "[Language]" .
+
+  n:foneoolas_na_Fraingis
+    rdfs:label "foneòlas na Fraingis" ;
+    :sense "French phonology" ;
+    :part n:foneoolas ;
+    rdfs:comment "[Language]" .
+
+  n:baardachd_eapaig
+    rdfs:label "bàrdachd eapaig" ;
+    :sense "epic poetry" ;
+    :part n:baardachd_ ;
+    rdfs:comment "[Language]" .
+
+  n:baardachd_lirig
+    rdfs:label "bàrdachd lirig" ;
+    :sense "lyric poetry" ;
+    :part n:baardachd_ ;
+    rdfs:comment "[Language]" .
+
+  n:baardachd_Ghreugais_Chlasaigeach
+    rdfs:label "bàrdachd Ghreugais Chlasaigeach" ;
+    :sense "classical Greek poetry" ;
+    :part n:baardachd_ ;
+    rdfs:comment "[Language]" .
+
+  n:baardachd_dhramataigeach
+    rdfs:label "bàrdachd dhramataigeach" ;
+    :sense "dramatic poetry" ;
+    :part n:baardachd_ ;
+    rdfs:comment "[Language]" .
+
+  n:baardachd_Ghaaidhlig
+    rdfs:label "bàrdachd Ghàidhlig" ;
+    :sense "Gaelic poetry" ;
+    :part n:baardachd_ ;
+    rdfs:comment "[Language]" .
+
+  n:baardachd_thuairisgeulach
+    rdfs:label "bàrdachd thuairisgeulach" ;
+    :sense "descriptive poetry" ;
+    :part n:baardachd_ ;
+    rdfs:comment "[Language]" .
+
+  n:irisean_ann_am_Portagailis
+    rdfs:label "irisean ann am Portagailis" ;
+    :sense "serials in Portuguese" ;
+    :part n:Portagailis ;
+    rdfs:comment "[Language]" .
+
+  n:litreachas_Portagailis
+    rdfs:label "litreachas Portagailis" ;
+    :sense "Portuguese literature" ;
+    :part n:Portagailis ;
+    rdfs:comment "[Language]" .
+
+  n:Greugais_iar_chlasaigeach
+    rdfs:label "Greugais iar-chlasaigeach" ;
+    :sense "postclassical Greek" ;
+    :part a:iar_chlasaigeach ;
+    rdfs:comment "[Language]" .
+
+  n:Laideann_Iar_chlasaigeach
+    rdfs:label "Laideann Iar-chlasaigeach" ;
+    :sense "postclassical Latin" ;
+    :part a:iar_chlasaigeach ;
+    rdfs:comment "[Language]" .
+
+  n:Greugais_ro_chlasaigeach
+    rdfs:label "Greugais ro-chlasaigeach" ;
+    :sense "preclassical Greek" ;
+    :part a:ro_chlasaigeach ;
+    rdfs:comment "[Language]" .
+
+  n:suidheachadh_roimhearach
+    rdfs:label "suidheachadh roimhearach" ;
+    :sense "prepositional case" ;
+    :part n:roimhear ;
+    rdfs:comment "[Language]" .
+
+  n:riochdair_roimhearach
+    rdfs:label "riochdair roimhearach" ;
+    :sense "prepositional pronoun" ;
+    :part n:roimhear ;
+    rdfs:comment "[Language]" .
+
+  n:abairt_roimhearach
+    rdfs:label "abairt roimhearach" ;
+    :sense "prepositional phrase" ;
+    :part n:roimhear ;
+    rdfs:comment "[Language]" .
+
+  n:riochdair_pearsanta
+    rdfs:label "riochdair pearsanta" ;
+    :sense "personal pronoun" ;
+    :part n:riochdair ;
+    rdfs:comment "[Language]" .
+
+  n:riochdair_roimhearach
+    rdfs:label "riochdair roimhearach" ;
+    :sense "prepositional pronoun" ;
+    :part n:riochdair ;
+    rdfs:comment "[Language]" .
+
+  n:litreachas_reatoraig_agus_breithneachadh
+    rdfs:label "litreachas, reatoraig agus breithneachadh" ;
+    :sense "literature, rhetoric and criticism" ;
+    :part n:reatoraig ;
+    rdfs:comment "[Language]" .
+
+  n:litreachas_agus_reatoraig
+    rdfs:label "litreachas agus reatoraig" ;
+    :sense "literature and rhetoric" ;
+    :part n:reatoraig ;
+    rdfs:comment "[Language]" .
+
+  n:reatoraig_agus_cruinneachaidhean_litreachais
+    rdfs:label "reatoraig agus cruinneachaidhean litreachais" ;
+    :sense "rhetoric and collections of literature" ;
+    :part n:reatoraig ;
+    rdfs:comment "[Language]" .
+
+  n:caananan_Romansach
+    rdfs:label "cànanan Romansach" ;
+    :sense "Romance languages" ;
+    :part a:Romansach ;
+    rdfs:comment "[Language]" .
+
+  n:leabhraichean_moor_eoolais_ann_an_Romaanianais
+    rdfs:label "leabhraichean mòr-eòlais ann an Romànianais" ;
+    :sense "encyclopedias in Romanian" ;
+    :part n:Romaanianais ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_Romaanianais
+    rdfs:label "litreachasan Romànianais" ;
+    :sense "Romanian literatures" ;
+    :part n:Romaanianais ;
+    rdfs:comment "[Language]" .
+
+  n:leabhraichean_moor_eoolais_anns_na_caananan_Lochlannach
+    rdfs:label "leabhraichean mòr-eòlais anns na cànanan Lochlannach" ;
+    :sense "encyclopedias in Scandinavian languages" ;
+    :part a:Lochlannach ;
+    rdfs:comment "[Language]" .
+
+  n:caananan_Lochlannach
+    rdfs:label "cànanan Lochlannach" ;
+    :sense "Scandinavian languages" ;
+    :part a:Lochlannach ;
+    rdfs:comment "[Language]" .
+
+  n:cruinneachaidhean_anns_na_caananan_Lochlannach
+    rdfs:label "cruinneachaidhean anns na cànanan Lochlannach" ;
+    :sense "collections in Scandinavian languages" ;
+    :part a:Lochlannach ;
+    rdfs:comment "[Language]" .
+
+  n:irisean_anns_na_caananan_Lochlannach
+    rdfs:label "irisean anns na cànanan Lochlannach" ;
+    :sense "serials in Scandinavian languages" ;
+    :part a:Lochlannach ;
+    rdfs:comment "[Language]" .
+
+  n:caananan_Seimitig
+    rdfs:label "cànanan Seimitig" ;
+    :sense "Semitic languages" ;
+    :part a:Seimitig ;
+    rdfs:comment "[Language]" .
+
+  n:litreachasan_Seimitig
+    rdfs:label "litreachasan Seimitig" ;
+    :sense "Semitic literatures" ;
+    :part a:Seimitig ;
+    rdfs:comment "[Language]" .
+
+  n:a_chiad_phearsa_singilte
+    rdfs:label "a' chiad phearsa singilte" ;
+    :sense "first person singular" ;
+    :part a:singilte ;
+    rdfs:comment "[Language]" .
+
+  n:caananan_Slaabhach
+    rdfs:label "cànanan Slàbhach" ;
+    :sense "Slavic languages" ;
+    :part a:Slaabhach ;
+    rdfs:comment "[Language]" .
+
+  n:leabhraichean_moor_eoolais_anns_na_caananan_Slaabhach
+    rdfs:label "leabhraichean mòr-eòlais anns na cànanan Slàbhach" ;
+    :sense "encyclopedias in Slavic languages" ;
+    :part a:Slaabhach ;
+    rdfs:comment "[Language]" .
+
+  n:cruinneachaidhean_anns_na_caananan_Slaabhach
+    rdfs:label "cruinneachaidhean anns na cànanan Slàbhach" ;
+    :sense "collections in Slavic languages" ;
+    :part a:Slaabhach ;
+    rdfs:comment "[Language]" .
+
+  n:irisean_anns_na_caananan_Slaabhach
+    rdfs:label "irisean anns na cànanan Slàbhach" ;
+    :sense "serials in Slavic languages" ;
+    :part a:Slaabhach ;
+    rdfs:comment "[Language]" .
+
+  n:faclairean_Spaainntis
+    rdfs:label "faclairean Spàinntis" ;
+    :sense "Spanish dictionaries" ;
+    :part n:Spaainntis ;
+    rdfs:comment "[Language]" .
+
+  n:diofar_riochdan_na_Spaainntis
+    rdfs:label "diofar riochdan na Spàinntis" ;
+    :sense "Spanish language variations" ;
+    :part n:Spaainntis ;
+    rdfs:comment "[Language]" .
+
+  n:foneoolas_na_Spaainntis
+    rdfs:label "foneòlas na Spàinntis" ;
+    :sense "Spanish phonology" ;
+    :part n:Spaainntis ;
+    rdfs:comment "[Language]" .
+
+  n:cleachdadh_steeidhichte_na_Spaainntis
+    rdfs:label "cleachdadh stèidhichte na Spàinntis" ;
+    :sense "Standard Spanish usage" ;
+    :part n:Spaainntis ;
+    rdfs:comment "[Language]" .
+
+  n:cruinneachaidhean_ann_an_Spaainntis
+    rdfs:label "cruinneachaidhean ann an Spàinntis" ;
+    :sense "collections in Spanish" ;
+    :part n:Spaainntis ;
+    rdfs:comment "[Language]" .
+
+  n:deliver_a_speech
+    rdfs:label "deliver a speech" ;
+    :sense "thoir seachad òraid" ;
+    :part n:ooraid ;
+    rdfs:comment "[Language]" .
+
+  n:ooraidean_Fraingis
+    rdfs:label "òraidean Fraingis" ;
+    :sense "French speeches" ;
+    :part n:ooraid ;
+    rdfs:comment "[Language]" .
+
+  n:buadhair_feabhasach
+    rdfs:label "buadhair feabhasach" ;
+    :sense "superlative adjective" ;
+    :part a:feabhasach ;
+    rdfs:comment "[Language]" .
+
+  n:briathrachais
+    rdfs:label "briathrachais" ;
+    :sense "terminology" ;
+    :part n:briathrachas ;
+    rdfs:comment "[Language]" .
+
+  n:briathrachas_eadar_liin
+    rdfs:label "briathrachas eadar-lìn" ;
+    :sense "internet terminology" ;
+    :part n:briathrachas ;
+    rdfs:comment "[Language]" .
+
+  n:stoor_daata_briathrachais_Gaaidhlig
+    rdfs:label "stòr-dàta briathrachais Gàidhlig" ;
+    :sense "Gaelic terminology database" ;
+    :part n:briathrachas ;
+    rdfs:comment "[Language]" .
+
+  n:briathrachas_coimpiutaireachd
+    rdfs:label "briathrachas coimpiutaireachd" ;
+    :sense "computer terminology" ;
+    :part n:briathrachas ;
+    rdfs:comment "[Language]" .
+
+  n:briathrachas_coimpiutaireachd
+    rdfs:label "briathrachas coimpiutaireachd" ;
+    :sense "computing terminology" ;
+    :part n:briathrachas ;
+    rdfs:comment "[Language]" .
+
+  n:gniiomhar_aisigeach
+    rdfs:label "gnìomhar aisigeach" ;
+    :sense "transitive verb" ;
+    :part a:aisigeach ;
+    rdfs:comment "[Language]" .
+
+  n:caananan_Uralaig
+    rdfs:label "cànanan Uralaig" ;
+    :sense "Uralic languages" ;
+    :part a:Uralaig ;
+    rdfs:comment "[Language]" .
+
+  n:gniiomh_ainmear
+    rdfs:label "gnìomh-ainmear" ;
+    :sense "verbal noun" ;
+    :part n:gniiomhair ;
+    rdfs:comment "[Language]" .
+
+  n:tuiseal_gairmeach
+    rdfs:label "tuiseal gairmeach" ;
+    :sense "vocative case" ;
+    :part a:gairmeach ;
+    rdfs:comment "[Language]" .
+
+  n:suidheachadh_gairmeach
+    rdfs:label "suidheachadh gairmeach" ;
+    :sense "vocative case" ;
+    :part a:gairmeach ;
+    rdfs:comment "[Language]" .
+
+  n:ceist_teacsa
+    rdfs:label "ceist-teacsa" ;
+    :sense "word problem" ;
+    :part n:facal ;
+    rdfs:comment "[Language]" .
+
+  n:facal_air_an_fhacal
+    rdfs:label "facal air an fhacal" ;
+    :sense "word for word" ;
+    :part n:facal ;
+    rdfs:comment "[Language]" .
+
+  n:facal_faire
+    rdfs:label "facal-faire" ;
+    :sense "password" ;
+    :part n:facal ;
+    rdfs:comment "[Language]" .
+
+}
