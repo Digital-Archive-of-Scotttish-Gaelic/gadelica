@@ -93,7 +93,9 @@ function getEnglishExact() {
 ORDER BY strlen(?gd)
 SPQR;
   $url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
-  //$url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+  if (getcwd()=='/Users/mark/Sites/gadelica/faclair/code') {
+    $url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+  }
   return json_decode(file_get_contents($url),false)->results->bindings;
 }
 
@@ -103,7 +105,9 @@ function getGaelicExact() {
   $gd = $_GET['searchTerm'];
   $query = getQueryPrefix() . 'FILTER regex(?gd, "^' . accentInsensitive($gd) . '$", "i") .' . $lex . '}';
   $url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
-  //$url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+  if (getcwd()=='/Users/mark/Sites/gadelica/faclair/code') {
+    $url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+  }
   return json_decode(file_get_contents($url),false)->results->bindings;
 }
 
@@ -127,7 +131,9 @@ function getEnglishPrefix() {
 ORDER BY strlen(?gd)
 SPQR;
   $url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
-  //$url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+  if (getcwd()=='/Users/mark/Sites/gadelica/faclair/code') {
+    $url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+  }
   return json_decode(file_get_contents($url),false)->results->bindings;
 }
 
@@ -137,7 +143,9 @@ function getGaelicPrefix() {
   $query = getQueryPrefix() . 'FILTER (regex(?gd, "^' . accentInsensitive($gd) . '", "i") && !(regex(?gd, "' . accentInsensitive($gd) . '$", "i"))) .' . $lex . ' }';
   $query .= 'ORDER BY strlen(?gd)';
   $url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
-  //$url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+  if (getcwd()=='/Users/mark/Sites/gadelica/faclair/code') {
+    $url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+  }
   return json_decode(file_get_contents($url),false)->results->bindings;
 }
 
@@ -151,7 +159,9 @@ function getEnglishSuffix() {
 ORDER BY strlen(?gd)
 SPQR;
   $url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
-  //$url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+  if (getcwd()=='/Users/mark/Sites/gadelica/faclair/code') {
+    $url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+  }
   return json_decode(file_get_contents($url),false)->results->bindings;
 }
 
@@ -161,7 +171,9 @@ function getGaelicSuffix() {
   $query = getQueryPrefix() . 'FILTER (regex(?gd, "' . accentInsensitive($gd) . '$", "i") && !(regex(?gd, "^' . accentInsensitive($gd) . '", "i"))) .' . $lex . ' }';
   $query .= 'ORDER BY strlen(?gd)';
   $url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
-  //$url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+  if (getcwd()=='/Users/mark/Sites/gadelica/faclair/code') {
+    $url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+  }
   return json_decode(file_get_contents($url),false)->results->bindings;
 }
 
@@ -175,7 +187,9 @@ function getEnglishSubstring() {
 ORDER BY strlen(?gd)
 SPQR;
   $url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
-  //$url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+  if (getcwd()=='/Users/mark/Sites/gadelica/faclair/code') {
+    $url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+  }
   return json_decode(file_get_contents($url),false)->results->bindings;
 }
 
@@ -185,7 +199,9 @@ function getGaelicSubstring() {
   $query = getQueryPrefix() . 'FILTER (regex(?gd, "' . accentInsensitive($gd) . '", "i") && !(regex(?gd, "^' . accentInsensitive($gd) . '", "i")) && !(regex(?gd, "' . accentInsensitive($gd) . '$", "i"))) .' . $lex . ' }';
   $query .= 'ORDER BY strlen(?gd)';
   $url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
-  //$url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+  if (getcwd()=='/Users/mark/Sites/gadelica/faclair/code') {
+    $url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+  }
   return json_decode(file_get_contents($url),false)->results->bindings;
 }
 
