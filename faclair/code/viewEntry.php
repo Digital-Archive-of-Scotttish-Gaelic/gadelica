@@ -220,7 +220,7 @@ echo '<p>&nbsp;</p>';
 // CAROUSEL //
 //////////////
 
-echo '<div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="false">';
+echo '<div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="3000">';
 $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
