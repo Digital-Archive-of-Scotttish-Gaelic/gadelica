@@ -1,0 +1,385 @@
+@prefix n: <http://faclair.ac.uk/nouns/> .
+@prefix a: <http://faclair.ac.uk/adjectives/> .
+@prefix v: <http://faclair.ac.uk/verbs/> .
+@prefix o: <http://faclair.ac.uk/other/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://faclair.ac.uk/meta/> .
+
+<http://faclair.ac.uk/sources/Seotal> {
+
+n:braaiste
+  a :FeminineNoun ;
+  rdfs:label "bràiste" ;
+  :sense "brooch" ;
+  :gen "bràiste" ;
+  :pl "bràistean" ;
+  rdfs:comment "[History]" .
+
+o:boycott_bhusaichean
+  rdfs:label "boycott bhusaichean" ;
+  :sense "bus boycott" ;
+  rdfs:comment "[History]" .
+
+o:fear_taaileisg
+  rdfs:label "fear-tàileisg" ;
+  :sense "chessman" ;
+  :gen "fir-tàileisg" ;
+  :pl "fir-tàileisg" ;
+  rdfs:comment "[History]" .
+
+n:coorn
+  a :MasculineNoun ;
+  rdfs:label "còrn" ;
+  :sense "drinking horn" ;
+  :gen "cùirn" ;
+  :pl "cùirn" ;
+  rdfs:comment "[History]" .
+
+n:birlinn
+  a :FeminineNoun ;
+  rdfs:label "birlinn" ;
+  :sense "galley" ;
+  :gen "birlinn(e)" ;
+  :pl "birlinnean" ;
+  rdfs:comment "[History]" .
+
+n:clogaid
+  a :noun ;
+  rdfs:label "clogaid" ;
+  :sense "helmet" ;
+  :gen "clogaid" ;
+  :pl "clogaidean" ;
+  rdfs:comment "[History]" .
+
+n:eachdraidh
+  a :FeminineNoun ;
+  rdfs:label "Eachdraidh" ;
+  :sense "History" ;
+  :gen "Eachdraidh(e)" ;
+  :pl "eachdraidhean" ;
+  rdfs:comment "[History]" .
+
+n:sealgair_tionail
+  a :MasculineNoun ;
+  rdfs:label "sealgair-tionail" ;
+  :sense "hunter-gatherer" ;
+  :gen "sealgair-tionail" ;
+  :pl "sealgairean-tionail" ;
+  rdfs:comment "[History]" .
+
+o:Meadhan_Linn_na_Cloiche
+  rdfs:label "Meadhan Linn na Cloiche" ;
+  :sense "Mesolithic" ;
+  rdfs:comment "[History]" .
+
+o:Meadhan_Aoisean
+  rdfs:label "Meadhan Aoisean" ;
+  :sense "Middle Ages" ;
+  rdfs:comment "[History]" .
+
+n:taigh_tasgaidh
+  a :MasculineNoun ;
+  rdfs:label "taigh-tasgaidh" ;
+  :sense "museum" ;
+  :gen "taigh-tasgaidh" ;
+  :pl "taighean-tasgaidh" ;
+  rdfs:comment "[History]" .
+
+o:Nuadh_Linn_na_Cloiche
+  rdfs:label "Nuadh Linn na Cloiche" ;
+  :sense "Neolithic" ;
+  rdfs:comment "[History]" .
+
+o:Seann_Linn_na_Cloiche
+  rdfs:label "Seann Linn na Cloiche" ;
+  :sense "Palaeolithic" ;
+  rdfs:comment "[History]" .
+
+n:ruun
+  a :MasculineNoun ;
+  rdfs:label "rùn" ;
+  :sense "rune" ;
+  :gen "rùin" ;
+  :pl "rùnaichean" ;
+  rdfs:comment "[History]" .
+
+o:Linn_na_Cloiche
+  rdfs:label "Linn na Cloiche" ;
+  :sense "Stone Age" ;
+  rdfs:comment "[History]" .
+
+n:Lochlannach
+  a :MasculineNoun ;
+  rdfs:label "Lochlannach" ;
+  :sense "Viking" ;
+  :gen "Lochlannaich" ;
+  :pl "Lochlannaich" ;
+  rdfs:comment "[History]" .
+
+a:Lochlannach
+  a :Adjective ;
+  rdfs:label "Lochlannach" ;
+  :sense "Viking" ;
+  rdfs:comment "[History]" .
+
+n:claar_sgriiobhaidh
+  a :MasculineNoun ;
+  rdfs:label "clàr-sgrìobhaidh" ;
+  :sense "writing tablet" ;
+  :gen "clàir-sgrìobhaidh" ;
+  :pl "clàran-sgrìobhaidh" ;
+  rdfs:comment "[History]" .
+
+n:Boycott_Bhusaichean_Mhontgomery
+  rdfs:label "Boycott Bhusaichean Mhontgomery" ;
+  :sense "Montgomery Bus Boycott" ;
+  :part o:boycott_bhusaichean ;
+  rdfs:comment "[History]" .
+
+n:Fir_taaileisg_Leoodhais
+  rdfs:label "Fir-tàileisg Leòdhais" ;
+  :sense "Lewis Chessmen" ;
+  :part o:fear_taaileisg_ ;
+  rdfs:comment "[History]" .
+
+n:clogaid_Lochlannach
+  rdfs:label "clogaid Lochlannach" ;
+  :sense "Viking helmet" ;
+  :part n:clogaid ;
+  rdfs:comment "[History]" .
+
+n:clogaid_diiona
+  rdfs:label "clogaid-dìona" ;
+  :sense "crash helmet" ;
+  :part n:clogaid ;
+  rdfs:comment "[History]" .
+
+n:leasain_Eachdraidh
+  rdfs:label "leasain Eachdraidh" ;
+  :sense "History lessons" ;
+  :part n:Eachdraidh ;
+  rdfs:comment "[History]" .
+
+n:leabhar_eachdraidh
+  rdfs:label "leabhar eachdraidh" ;
+  :sense "history book" ;
+  :part n:Eachdraidh ;
+  rdfs:comment "[History]" .
+
+n:eachdraidh_phoilitigeach
+  rdfs:label "eachdraidh phoilitigeach" ;
+  :sense "political history" ;
+  :part n:Eachdraidh ;
+  rdfs:comment "[History]" .
+
+n:eachdraidh_agus_cruinn_eoolas
+  rdfs:label "Eachdraidh agus Cruinn-eòlas" ;
+  :sense "History and Geography" ;
+  :part n:Eachdraidh ;
+  rdfs:comment "[History]" .
+
+n:eachdraidh_Afraga
+  rdfs:label "Eachdraidh Afraga" ;
+  :sense "History of Africa" ;
+  :part n:Eachdraidh ;
+  rdfs:comment "[History]" .
+
+n:eachdraidh_an_t_saoghail_aarsaidh_gu_ca_499
+  rdfs:label "Eachdraidh an t-saoghail àrsaidh gu ca. 499" ;
+  :sense "History of ancient world to ca. 499" ;
+  :part n:Eachdraidh ;
+  rdfs:comment "[History]" .
+
+n:eachdraidh_Àisia
+  rdfs:label "Eachdraidh Àisia" ;
+  :sense "History of Asia" ;
+  :part n:Eachdraidh ;
+  rdfs:comment "[History]" .
+
+n:eachdraidh_Criiosdaidheachd
+  rdfs:label "Eachdraidh Crìosdaidheachd" ;
+  :sense "History of Christianity" ;
+  :part n:Eachdraidh ;
+  rdfs:comment "[History]" .
+
+n:Eachdraidh_Criiosdaidheachd_agus_na_h_eaglais_Chriiosdail
+  rdfs:label "Eachdraidh Crìosdaidheachd agus na h-eaglais Chrìosdail" ;
+  :sense "History of Christianity and Christian church" ;
+  :part n:Eachdraidh ;
+  rdfs:comment "[History]" .
+
+n:Eachdraidh_Criiosdaidheachd_ann_an_Afraga
+  rdfs:label "Eachdraidh Crìosdaidheachd ann an Afraga" ;
+  :sense "History of Christianity in Africa" ;
+  :part n:Eachdraidh ;
+  rdfs:comment "[History]" .
+
+n:Eachdraidh_Criiosdaidheachd_ann_an_Àisia
+  rdfs:label "Eachdraidh Crìosdaidheachd ann an Àisia" ;
+  :sense "History of Christianity in Asia" ;
+  :part n:Eachdraidh ;
+  rdfs:comment "[History]" .
+
+n:Eachdraidh_Criiosdaidheachd_san_Roinn_Eoorpa
+  rdfs:label "Eachdraidh Crìosdaidheachd san Roinn Eòrpa" ;
+  :sense "History of Christianity in Europe" ;
+  :part n:Eachdraidh ;
+  rdfs:comment "[History]" .
+
+n:Eachdraidh_Criiosdaidheachd_ann_an_Ameireaga_a_Tuath
+  rdfs:label "Eachdraidh Crìosdaidheachd ann an Ameireaga a Tuath" ;
+  :sense "History of Christianity in North America" ;
+  :part n:Eachdraidh ;
+  rdfs:comment "[History]" .
+
+n:Eachdraidh_Criiosdaidheachd_ann_an_ceaarnaidhen_eile
+  rdfs:label "Eachdraidh Crìosdaidheachd ann an ceàrnaidhen eile" ;
+  :sense "History of Christianity in other areas" ;
+  :part n:Eachdraidh ;
+  rdfs:comment "[History]" .
+
+n:Eachdraidh_Criiosdaidheachd_ann_an_Ameireaga_a_Deas
+  rdfs:label "Eachdraidh Crìosdaidheachd ann an Ameireaga a Deas" ;
+  :sense "History of Christianity in South America" ;
+  :part n:Eachdraidh ;
+  rdfs:comment "[History]" .
+
+n:Eachdraidh_na_Roinn_Eoorpa
+  rdfs:label "Eachdraidh na Roinn Eòrpa" ;
+  :sense "History of Europe" ;
+  :part n:Eachdraidh ;
+  rdfs:comment "[History]" .
+
+n:Eachdraidh_Ameireaga_a_Tuath
+  rdfs:label "Eachdraidh Ameireaga a Tuath" ;
+  :sense "History of North America" ;
+  :part n:Eachdraidh ;
+  rdfs:comment "[History]" .
+
+n:Eachdraidh_cheaarnaidhean_eile
+  rdfs:label "Eachdraidh cheàrnaidhean eile" ;
+  :sense "History of other areas" ;
+  :part n:Eachdraidh ;
+  rdfs:comment "[History]" .
+
+n:Eachdraidh_Ameireaga_a_Deas
+  rdfs:label "Eachdraidh Ameireaga a Deas" ;
+  :sense "History of South America" ;
+  :part n:Eachdraidh ;
+  rdfs:comment "[History]" .
+
+n:eachdraidh_iomradh_agus_breithneachadh
+  rdfs:label "eachdraidh, iomradh agus breithneachadh" ;
+  :sense "history, description and criticism" ;
+  :part n:Eachdraidh ;
+  rdfs:comment "[History]" .
+
+n:Eachdraidh_naadarra
+  rdfs:label "Eachdraidh nàdarra" ;
+  :sense "Natural history" ;
+  :part n:Eachdraidh ;
+  rdfs:comment "[History]" .
+
+n:Eachdraidh_naadarra_fhaas_bheairtean
+  rdfs:label "Eachdraidh nàdarra fhàs-bheairtean" ;
+  :sense "Natural history of organisms" ;
+  :part n:Eachdraidh ;
+  rdfs:comment "[History]" .
+
+n:geur_leanmhainn_ann_an_eachdraidh_na_h_eaglais
+  rdfs:label "geur-leanmhainn ann an eachdraidh na h-eaglais" ;
+  :sense "persecutions in church history" ;
+  :part n:Eachdraidh ;
+  rdfs:comment "[History]" .
+
+n:oordughan_craabhach_ann_an_eachdraidh_na_h_eaglais
+  rdfs:label "Òrdughan cràbhach ann an eachdraidh na h-eaglais" ;
+  :sense "Religious orders in church history" ;
+  :part n:Eachdraidh ;
+  rdfs:comment "[History]" .
+
+n:Cultar_Eachdraidh_agus_Dualchas_na_h_Alba
+  rdfs:label "Cultar, Eachdraidh agus Dualchas na h-Alba" ;
+  :sense "Scotland's Culture, History and Heritage" ;
+  :part n:Eachdraidh ;
+  rdfs:comment "[History]" .
+
+n:Eachdraidh_na_h_Alba
+  rdfs:label "Eachdraidh na h-Alba" ;
+  :sense "Scottish History" ;
+  :part n:Eachdraidh ;
+  rdfs:comment "[History]" .
+
+n:Cuspairean_aaraid_ann_an_eachdraidh_naadarra
+  rdfs:label "Cuspairean àraid ann an eachdraidh nàdarra" ;
+  :sense "Specific topics in natural history" ;
+  :part n:Eachdraidh ;
+  rdfs:comment "[History]" .
+
+n:Eachdraidh_an_t_saoghail
+  rdfs:label "Eachdraidh an t-saoghail" ;
+  :sense "World history" ;
+  :part n:Eachdraidh ;
+  rdfs:comment "[History]" .
+
+n:an_Linn_Mesozoic
+  rdfs:label "an Linn Mesozoic" ;
+  :sense "the Mesozoic Era" ;
+  :part a:mesozoic ;
+  rdfs:comment "[History]" .
+
+n:muinntir_nam_Meadhan_Aoisean
+  rdfs:label "muinntir nam Meadhan Aoisean" ;
+  :sense "people of the Middle Ages" ;
+  :part o:Meadhan_Aoisean ;
+  rdfs:comment "[History]" .
+
+n:comainn_buidhnean_agus_taighean_tasgaidh
+  rdfs:label "comainn, buidhnean agus taighean-tasgaidh" ;
+  :sense "associations, organisations and museums" ;
+  :part n:taigh_tasgaidh ;
+  rdfs:comment "[History]" .
+
+n:saidheans_taigh_tasgaidh
+  rdfs:label "saidheans taigh-tasgaidh" ;
+  :sense "museum science" ;
+  :part n:taigh_tasgaidh ;
+  rdfs:comment "[History]" .
+
+n:taigh_tasgaidh_barantaichte
+  rdfs:label "taigh-tasgaidh barantaichte" ;
+  :sense "accredited museum" ;
+  :part n:taigh_tasgaidh ;
+  rdfs:comment "[History]" .
+
+n:clach_ruunaichean
+  rdfs:label "clach rùnaichean" ;
+  :sense "rune stone" ;
+  :part n:ruun ;
+  rdfs:comment "[History]" .
+
+n:muinntir_Linn_na_Cloiche
+  rdfs:label "muinntir Linn na Cloiche" ;
+  :sense "people of the Stone Age" ;
+  :part o:Linn_na_Cloiche ;
+  rdfs:comment "[History]" .
+
+n:aodach_Lochlannach
+  rdfs:label "aodach Lochlannach" ;
+  :sense "Viking clothes" ;
+  :part a:Lochlannach ;
+  rdfs:comment "[History]" .
+
+n:clogaid_Lochlannach
+  rdfs:label "clogaid Lochlannach" ;
+  :sense "Viking helmet" ;
+  :part a:Lochlannach ;
+  rdfs:comment "[History]" .
+
+n:claar_sgriiobhaidh_ceeire
+  rdfs:label "clàr-sgrìobhaidh cèire" ;
+  :sense "wax writing tablet" ;
+  :part n:claar_sgriiobhaidh ;
+  rdfs:comment "[History]" .
+
+}

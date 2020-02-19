@@ -7,7 +7,7 @@
   <xsl:output method="text" encoding="UTF-8"/>
   
   <xsl:template match="/">
-    <!--<xsl:apply-templates select="//dd[@class='def']"/>-->
+    <xsl:apply-templates select="//dd[@class='def']"/>
     <xsl:apply-templates select="//dd[@class='clearfix eg']"/>
   </xsl:template>
   
