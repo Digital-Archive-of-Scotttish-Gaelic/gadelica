@@ -10,8 +10,8 @@ WHERE
   }
 }
 SPQR;
-//$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
-$url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
+$url = 'https://daerg.arts.gla.ac.uk/fuseki/Faclair?output=json&query=' . urlencode($query);
+//$url = 'http://localhost:3030/Faclair?output=json&query=' . urlencode($query);
 $results = json_decode(file_get_contents($url),false)->results->bindings;
 $ids = [];
 foreach ($results as $nextResult) {

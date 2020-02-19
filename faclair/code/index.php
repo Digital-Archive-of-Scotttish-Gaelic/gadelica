@@ -4,10 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="ajax.js"></script>
     <title>Stòras Brì</title>
     <style>
       td { width: 50%; }
@@ -73,10 +69,117 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
              <a class="nav-item nav-link" href="about.html" data-toggle="tooltip" title="About this site">fios</a>
-             <a class="nav-item nav-link" href="random.php" data-toggle="tooltip" title="Be adventurous!">dàna</a>
+             <a class="nav-item nav-link" href="viewRandomEntry.php" data-toggle="tooltip" title="Be adventurous!">dàna</a>
           </div>
         </div>
       </nav>
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script>
+    $(function() {
+      $('#searchForm').submit(function(e){ // do a sequence of ajax calls to search the database, each time calling addData
+        event.preventDefault();
+        $('#resultsTable tbody').empty();
+        var searchTerm = $('#searchBox').val();
+        var lang = 'en';
+        if ($('#gdRadio:checked').val()=='gd' ) { lang = 'gd'; }
+        var snh = false;
+        var frp = false;
+        var seotal = false;
+        var dwelly = false;
+        var others = false;
+        if ($('#snhCheck:checked').val()=='yes' ) { snh = true; }
+        if ($('#frpCheck:checked').val()=='yes' ) { frp = true; }
+        if ($('#seotalCheck:checked').val()=='yes' ) { seotal = true; }
+        //if ($('#dwellyCheck:checked').val()=='yes' ) { dwelly = true; }
+        if ($('#othersCheck:checked').val()=='yes' ) { others = true; }
+        if (lang == 'en') {
+          var url = 'getResults.php?action=getEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
+          $.getJSON(url, function(data) {
+            addData(data);
+          }).done(function() {
+            var url = 'getResults.php?action=getMoreEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
+            $.getJSON(url, function(data) {
+              addData(data);
+            }).done(function() {
+              var url = 'getResults.php?action=getEvenMoreEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
+              $.getJSON(url, function(data) {
+                addData(data);
+              }).done(function() {
+                var url = 'getResults.php?action=getEvenEvenMoreEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
+                $.getJSON(url, function(data) {
+                  addData(data);
+                }).done(noResults());
+              });
+            });
+          });
+        }
+        else {
+          var url = 'getResults.php?action=getGaelicResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
+          $.getJSON(url, function(data) {
+            addData(data);
+          }).done(function() {
+            var url = 'getResults.php?action=getMoreGaelicResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
+            $.getJSON(url, function(data) {
+              addData(data);
+            }).done(function() {
+              var url = 'getResults.php?action=getEvenMoreGaelicResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
+              $.getJSON(url, function(data) {
+                addData(data);
+              }).done(function() {
+                var url = 'getResults.php?action=getEvenEvenMoreGaelicResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
+                $.getJSON(url, function(data) {
+                  addData(data);
+                }).done(noResults());
+              });
+            });
+          });
+        }
+      });
+    });
+
+    function addData(data) { // add rows (search results) to the table
+      var ids = [];
+      $.each(data, function(k,v) {
+        id = v.id.value;
+        if (ids.indexOf(id)<0) { // unique values only
+          ids.push(id);
+        }
+      });
+      $.each(ids, function(k,id) { // display each entry in a row
+        var hws = [];
+        $.each(data, function(k,v) {
+          var gd = v.gd.value;
+          if (v.id.value == id && hws.indexOf(gd)<0) { // unique
+            hws.push(gd);
+          }
+        });
+        var ens = [];
+        $.each(data, function(k,v) {
+          var en = v.en.value;
+          if (v.id.value == id && ens.indexOf(en)<0) {
+            ens.push(en);
+          }
+        });
+        var enStr = ens.join(', ');
+        var hwStr;
+        if (hws.length>0) {
+          hwStr = hws.join(', ');
+        }
+        else { hwStr = id; }
+        $('#resultsTable tbody').append('<tr><td><a href="viewEntry.php?id=' + encodeURI(id) + '">' + hwStr + '</a></td><td>' + enStr + '</td></tr>');
+      });
+    }
+
+    function noResults() {
+      x = $('#resultsTable tbody tr').length;
+      if (x==0) {
+        alert('No results!');
+      }
+    }
+
+    </script>
   </body>
 </html>
