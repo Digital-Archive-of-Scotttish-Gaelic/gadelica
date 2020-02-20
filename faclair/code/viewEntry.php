@@ -438,7 +438,7 @@ if (count($sources)>1) {
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link" href="about.html" data-toggle="tooltip" title="About this site">fios</a>
+            <!--<a class="nav-item nav-link" href="about.html" data-toggle="tooltip" title="About this site">fios</a>-->
             <a class="nav-item nav-link" href="viewRandomEntry.php" data-toggle="tooltip" title="Be adventurous!">dàna</a>
           </div>
         </div>
