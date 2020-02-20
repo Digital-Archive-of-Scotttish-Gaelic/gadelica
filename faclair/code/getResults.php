@@ -113,11 +113,17 @@ function getGaelicExact() {
 
 function accentInsensitive($in) {
   $rx = $in;
-  $rx = str_replace('a','[aà]',$rx); // maybe replace à with hex??? \u????
-  $rx = str_replace('e','[eèé]',$rx);
-  $rx = str_replace('i','[iì]',$rx);
-  $rx = str_replace('o','[oòó]',$rx);
-  $rx = str_replace('u','[u\u00f9]',$rx);
+  //$rx = str_replace('a','[a\u00e0]',$rx); // maybe replace à with hex??? \u???? BROKEN!!!!
+  $rx = str_replace('u','[uù]',$rx); //sùil
+  $rx = str_replace('e','[eèé]',$rx); // lèirmheas
+  $rx = str_replace('a','[aà]',$rx); // làmh
+  $rx = str_replace('i','[iì]',$rx); //gnìomh
+  $rx = str_replace('o','[oòó]',$rx); // mòr
+  //$rx = str_replace('e','[e\u00e8\u00e9]',$rx);  //
+  //$rx = str_replace('i','[i\u00ec]',$rx);  // gnìomh
+  //$rx = str_replace('o','[o\u00f2\u00f3]',$rx); // mòr
+  //$rx = str_replace('u','[u\u00f9]',$rx);
+  //$rx = str_replace('u','[uù]',$rx);
   return $rx;
 }
 
