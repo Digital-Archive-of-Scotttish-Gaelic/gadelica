@@ -82,7 +82,7 @@
       $('#searchForm').submit(function(e){ // do a sequence of ajax calls to search the database, each time calling addData
         event.preventDefault();
         $('#resultsTable tbody').empty();
-        var searchTerm = $('#searchBox').val();
+        var searchTerm = removeAccents($('#searchBox').val());
         var lang = 'en';
         if ($('#gdRadio:checked').val()=='gd' ) { lang = 'gd'; }
         var snh = false;
@@ -139,6 +139,18 @@
         }
       });
     });
+
+    function removeAccents(str) {
+      str = str.replace('ù','\u00f9');
+      str = str.replace('è','\u00e8');
+      str = str.replace('é','\u00e9');
+      str = str.replace('à','\u00e0');
+      str = str.replace('ì','\u00ec');
+      str = str.replace('ò','\u00f2');
+      str = str.replace('ó','\u00f3');
+      alert(str);
+      return str;
+    }
 
     function addData(data) { // add rows (search results) to the table
       var ids = [];
