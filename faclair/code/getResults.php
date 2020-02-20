@@ -48,12 +48,19 @@ function getLex() {
   if ($_GET['seotal']=='true') {
     $lex[] = '?lex=<http://faclair.ac.uk/sources/Seotal>';
   }
+  /*
   if ($_GET['dwelly']=='true') {
     $lex[] = '?lex=<http://faclair.ac.uk/sources/Dwelly>';
   }
+  */
+  if (count($lex)==3) {
+    $lex[] = '?lex=<http://faclair.ac.uk/sources/general>';
+  }
+  /*
   if ($_GET['others']=='true') {
     $lex[] = '?lex=<http://faclair.ac.uk/sources/general>';
   }
+  */
   $str = implode(' || ', $lex);
   return 'FILTER (' . $str . ') .';
 }

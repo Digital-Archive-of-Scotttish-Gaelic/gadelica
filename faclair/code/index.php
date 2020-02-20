@@ -48,11 +48,11 @@
             <input class="form-check-input" type="checkbox" name="dwelly" id="dwellyCheck" value="yes" checked>
             <label class="form-check-label" for="dwellyCheck">Dwelly</label>
           </div>
-          -->
           <div class="form-check form-check-inline" data-toggle="tooltip" title="Search other resources">
             <input class="form-check-input" type="checkbox" name="others" id="othersCheck" value="yes" checked>
             <label class="form-check-label" for="othersCheck">Eile</label>
           </div>
+          -->
         </div>
       </form>
       <table class="table table-hover" id="resultsTable">
@@ -81,9 +81,12 @@
     $(function() {
       $('#searchForm').submit(function(e){ // do a sequence of ajax calls to search the database, each time calling addData
         event.preventDefault();
-        $('#resultsTable tbody').empty();
         var searchTerm = removeAccents($('#searchBox').val());
-        //var searchTerm = $('#searchBox').val();
+        if (searchTerm=='') {
+          alert('No search term!');
+          return false;
+        }
+        $('#resultsTable tbody').empty();
         var lang = 'en';
         if ($('#gdRadio:checked').val()=='gd' ) { lang = 'gd'; }
         var snh = false;
@@ -95,7 +98,7 @@
         if ($('#frpCheck:checked').val()=='yes' ) { frp = true; }
         if ($('#seotalCheck:checked').val()=='yes' ) { seotal = true; }
         //if ($('#dwellyCheck:checked').val()=='yes' ) { dwelly = true; }
-        if ($('#othersCheck:checked').val()=='yes' ) { others = true; }
+        //if ($('#othersCheck:checked').val()=='yes' ) { others = true; }
         if (lang == 'en') {
           var url = 'getResults.php?action=getEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
           $.getJSON(url, function(data) {
