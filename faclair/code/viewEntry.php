@@ -8,7 +8,7 @@
   </head>
   <body style="padding-top: 20px;">
     <div class="container-fluid">
-      <div class="card" style="width: 750px;">
+      <div class="card" style="max-width: 800px;">
         <div class="card-body">
 <?php
 if (isset($_GET['id'])) {
