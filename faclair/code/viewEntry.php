@@ -8,7 +8,7 @@
   </head>
   <body style="padding-top: 20px;">
     <div class="container-fluid">
-      <div class="card">
+      <div class="card" style="width: 750px;">
         <div class="card-body">
 <?php
 if (isset($_GET['id'])) {
@@ -300,12 +300,12 @@ foreach ($sources as $nextIndex=>$nextSource) {
     }
   }
   $hws = array_unique($hws);
-  echo '<h3 class="card-title">';
+  echo '<h4 class="card-title">';
   if (count($hws)>0) {
     echo implode(', ',$hws);
   }
   else { echo $id; } // FALLBACK
-  echo '</h3>';
+  echo '</h4>';
   echo '<div class="list-group list-group-flush">';
   // ENGLISH EQUIVALENTS
   $ens = [];
