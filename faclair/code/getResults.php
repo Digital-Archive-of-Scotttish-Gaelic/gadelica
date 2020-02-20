@@ -1,14 +1,5 @@
 <?php
 
-// add variable for queries
-
-$search = $_GET['searchTerm']; // encodeURI?????
-$snh = $_GET['snh'];
-$frp = $_GET['frp'];
-$seotal = $_GET['seotal'];
-$dwelly = $_GET['dwelly'];
-$others = $_GET['others'];
-
 switch ($_REQUEST["action"]) {
   case "getEnglishResults":
     $results = getEnglishExact();
@@ -100,7 +91,6 @@ SPQR;
 }
 
 function getGaelicExact() {
-  // convert $gd to accent insensitive RE
   $lex = getLex();
   $gd = $_GET['searchTerm'];
   $query = getQueryPrefix() . 'FILTER regex(?gd, "^' . accentInsensitive($gd) . '$", "i") .' . $lex . '}';
