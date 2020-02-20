@@ -1,0 +1,2163 @@
+@prefix n: <http://faclair.ac.uk/nouns/> .
+@prefix a: <http://faclair.ac.uk/adjectives/> .
+@prefix v: <http://faclair.ac.uk/verbs/> .
+@prefix o: <http://faclair.ac.uk/other/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://faclair.ac.uk/meta/> .
+
+<http://faclair.ac.uk/sources/Seotal> {
+
+  o:Gniiomharan
+    a :PluralNoun ;
+    rdfs:label "Gnìomharan" ;
+    :sense "Acts" ;
+    :gen "Gnìomharan" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:Aidmheinteil
+    a :Adjective ;
+    rdfs:label "Aidmheinteil" ;
+    :sense "Adventist" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Aidmheinteach
+    a :MasculineNoun ;
+    rdfs:label "Aidmheinteach" ;
+    :sense "Adventist" ;
+    :gen "Aidmheintich" ;
+    :pl "Aidmheintich" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:antropaig
+    a :Adjective ;
+    rdfs:label "antropaig" ;
+    :sense "anthropic" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Apocrypha
+    a :MasculineNoun ;
+    rdfs:label "Apocrypha" ;
+    :sense "Apocrypha" ;
+    :gen "Apocrypha" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:fiireanachadh
+    a :MasculineNoun ;
+    rdfs:label "fìreanachadh" ;
+    :sense "apologetics" ;
+    :gen "fìreanachaidh" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:feart
+    a :FeminineNoun ;
+    rdfs:label "feart" ;
+    :sense "attribute" ;
+    :gen "fearta" ;
+    :pl "feartan" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Babachd
+    a :MasculineNoun ;
+    rdfs:label "Babachd" ;
+    :sense "Babism" ;
+    :gen "Babachd" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  o:an_creideamh_Bahai
+    rdfs:label "an creideamh Bahai" ;
+    :sense "Bahai Faith" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:Baisteach
+    a :Adjective ;
+    rdfs:label "Baisteach" ;
+    :sense "Baptist" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Baisteach
+    a :MasculineNoun ;
+    rdfs:label "Baisteach" ;
+    :sense "Baptist" ;
+    :gen "Baistich" ;
+    :pl "Baistich" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:creutair
+    a :MasculineNoun ;
+    rdfs:label "creutair" ;
+    :sense "being" ;
+    :gen "creutair" ;
+    :pl "creutairean" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:creideas
+    a :MasculineNoun ;
+    rdfs:label "creideas" ;
+    :sense "belief" ;
+    :gen "creideis" ;
+    :pl "creideasan" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Biioball
+    a :MasculineNoun ;
+    rdfs:label "Bìoball" ;
+    :sense "Bible" ;
+    :gen "Bìobaill" ;
+    :pl "Bìobaill" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Budachd
+    a :FeminineNoun ;
+    rdfs:label "Budachd" ;
+    :sense "Buddhism" ;
+    :gen "Budachd" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Budach
+    a :MasculineNoun ;
+    rdfs:label "Budach" ;
+    :sense "Buddhist" ;
+    :gen "Budaich" ;
+    :pl "Budaich" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:Budach
+    a :Adjective ;
+    rdfs:label "Budach" ;
+    :sense "Buddhist" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:leabhar_cheist
+    a :MasculineNoun ;
+    rdfs:label "leabhar-cheist" ;
+    :sense "catechism" ;
+    :gen "leabhair-cheist" ;
+    :pl "leabhraichean-cheist" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Criiosd
+    a :MasculineNoun ;
+    rdfs:label "Crìosd" ;
+    :sense "Christ" ;
+    :gen "Chrìosd(a)" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:Criiosdail
+    a :Adjective ;
+    rdfs:label "Crìosdail" ;
+    :sense "Christian" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Criiosdaidh
+    a :MasculineNoun ;
+    rdfs:label "Crìosdaidh" ;
+    :sense "Christian" ;
+    :gen "Crìosdaidh" ;
+    :pl "Crìosdaidhean" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Criiosdaidheachd
+    a :FeminineNoun ;
+    rdfs:label "Crìosdaidheachd" ;
+    :sense "Christianity" ;
+    :gen "Crìosdaidheachd" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eaglais
+    a :FeminineNoun ;
+    rdfs:label "eaglais" ;
+    :sense "church" ;
+    :gen "eaglais(e)" ;
+    :pl "eaglaisean" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:coitheanal
+    a :MasculineNoun ;
+    rdfs:label "coitheanal" ;
+    :sense "congregation" ;
+    :gen "coitheanail" ;
+    :pl "coitheanalan" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:Coitheanalach
+    a :Adjective ;
+    rdfs:label "Coitheanalach" ;
+    :sense "Congregational" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:A_Chruthaigheachd
+    a :FeminineNoun ;
+    rdfs:label "A' Chruthaigheachd" ;
+    :sense "Creation" ;
+    :gen "A' Chruthaigheachd" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:creud
+    a :FeminineNoun ;
+    rdfs:label "creud" ;
+    :sense "creed" ;
+    :gen "creuda" ;
+    :pl "creudan" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  v:luathraich
+    a :Verb ;
+    rdfs:label "luathraich" ;
+    :sense "cremate" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:luathrachadh
+    a :MasculineNoun ;
+    rdfs:label "luathrachadh" ;
+    :sense "cremation" ;
+    :gen "luathrachaidh" ;
+    :pl "luathrachaidhean" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:ionad_luathrachaidh
+    a :MasculineNoun ;
+    rdfs:label "ionad-luathrachaidh" ;
+    :sense "crematorium" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:meur_creideimh
+    a :MasculineNoun ;
+    rdfs:label "meur-creideimh" ;
+    :sense "denomination" ;
+    :gen "meur-creideimh" ;
+    :pl "meuran-creideimh" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:adhrachail
+    a :Adjective ;
+    rdfs:label "adhrachail" ;
+    :sense "devotional" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:adhradh
+    a :MasculineNoun ;
+    rdfs:label "adhradh" ;
+    :sense "devotions" ;
+    :gen "adhraidh" ;
+    :pl "adhradh" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:deisciobal
+    a :MasculineNoun ;
+    rdfs:label "deisciobal" ;
+    :sense "disciple" ;
+    :gen "deisciobail" ;
+    :pl "deisciobail" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:diadhachd
+    a :FeminineNoun ;
+    rdfs:label "diadhachd" ;
+    :sense "divinity" ;
+    :gen "diadhachd" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:teagasgail
+    a :Adjective ;
+    rdfs:label "teagasgail" ;
+    :sense "doctrinal" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:teagasg
+    a :MasculineNoun ;
+    rdfs:label "teagasg" ;
+    :sense "doctrine" ;
+    :gen "teagaisg" ;
+    :pl "teagasgan" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:eaglaiseil
+    a :Adjective ;
+    rdfs:label "eaglaiseil" ;
+    :sense "ecclesiastical" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eaglais_eoolas
+    a :MasculineNoun ;
+    rdfs:label "eaglais-eòlas" ;
+    :sense "ecclesiology" ;
+    :gen "eaglais-eòlais" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:ochd_fillte
+    a :Adjective ;
+    rdfs:label "ochd-fillte" ;
+    :sense "eightfold" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:litir
+    a :FeminineNoun ;
+    rdfs:label "litir" ;
+    :sense "epistle" ;
+    :gen "litreach" ;
+    :pl "litrichean" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  o:feallsanachd_mu_chriioch_na_cruinne
+    rdfs:label "feallsanachd mu chrìoch na cruinne" ;
+    :sense "eschatology" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:briigh
+    a :FeminineNoun ;
+    rdfs:label "brìgh" ;
+    :sense "essence" ;
+    :gen "brìgh" ;
+    :pl "brìghean" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:soisgeulach
+    a :Adjective ;
+    rdfs:label "soisgeulach" ;
+    :sense "evangelistic" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:bith
+    a :FeminineNoun ;
+    rdfs:label "bith" ;
+    :sense "existence" ;
+    :gen "bith" ;
+    :pl "bithean" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:creideamh
+    a :MasculineNoun ;
+    rdfs:label "creideamh" ;
+    :sense "faith" ;
+    :gen "creideimh" ;
+    :pl "creideamhan" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:tiiodhlacadh
+    a :MasculineNoun ;
+    rdfs:label "tìodhlacadh" ;
+    :sense "funeral" ;
+    :gen "tìodhlacaidh" ;
+    :pl "tìodhlacaidhean" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:adhlacadh
+    a :MasculineNoun ;
+    rdfs:label "adhlacadh" ;
+    :sense "funeral" ;
+    :gen "adhlacaidh" ;
+    :pl "adhlacaidhean" ;
+    :pl "adhlacaidh" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:toorradh
+    a :MasculineNoun ;
+    rdfs:label "tòrradh" ;
+    :sense "funeral" ;
+    :gen "tòrraidh" ;
+    :pl "tòrraidhean" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:dia
+    a :MasculineNoun ;
+    rdfs:label "dia" ;
+    :sense "god" ;
+    :gen "dè" ;
+    :pl "diathan" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:soisgeul
+    a :MasculineNoun ;
+    rdfs:label "soisgeul" ;
+    :sense "gospel" ;
+    :gen "soisgeil" ;
+    :pl "soisgeulan" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:graas
+    a :MasculineNoun ;
+    rdfs:label "gràs" ;
+    :sense "grace" ;
+    :gen "gràis" ;
+    :pl "gràsan" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:neeamh
+    a :MasculineNoun ;
+    rdfs:label "nèamh" ;
+    :sense "heaven" ;
+    :gen "nèimh" ;
+    :pl "nèamhan" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:flaitheas
+    a :MasculineNoun ;
+    rdfs:label "flaitheas" ;
+    :sense "heaven" ;
+    :gen "flaitheis" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:flaitheanas
+    a :MasculineNoun ;
+    rdfs:label "flaitheanas" ;
+    :sense "heaven" ;
+    :gen "flaitheanais" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:ifrinn
+    a :FeminineNoun ;
+    rdfs:label "ifrinn" ;
+    :sense "hell" ;
+    :gen "ifrinn(e)" ;
+    :pl "ifrinnean" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:iutharna
+    a :FeminineNoun ;
+    rdfs:label "iutharna" ;
+    :sense "hell" ;
+    :gen "iutharna" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:saobh_chreideas
+    a :MasculineNoun ;
+    rdfs:label "saobh-chreideas" ;
+    :sense "heresy" ;
+    :gen "saobh-chreideis" ;
+    :pl "saobh-chreideasan" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:Hindeach
+    a :Adjective ;
+    rdfs:label "Hindeach" ;
+    :sense "Hindu" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Hindeach
+    a :MasculineNoun ;
+    rdfs:label "Hindeach" ;
+    :sense "Hindu" ;
+    :gen "Hindich" ;
+    :pl "Hindich" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:naomh
+    a :Adjective ;
+    rdfs:label "naomh" ;
+    :sense "holy" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:daonnaire
+    a :MasculineNoun ;
+    rdfs:label "daonnaire" ;
+    :sense "humanist" ;
+    :gen "daonnaire" ;
+    :pl "daonnairean" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:daonnarach
+    a :Adjective ;
+    rdfs:label "daonnarach" ;
+    :sense "humanist" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:mii_mhoralta
+    a :Adjective ;
+    rdfs:label "mì-mhoralta" ;
+    :sense "immoral" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  o:dealbhaiche_innleachdach
+    rdfs:label "dealbhaiche innleachdach" ;
+    :sense "intelligent designer" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:IIosa
+    a :MasculineNoun ;
+    rdfs:label "Ìosa" ;
+    :sense "Jesus" ;
+    :gen "Ìosa" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Iuudhach
+    a :MasculineNoun ;
+    rdfs:label "Iùdhach" ;
+    :sense "Jew" ;
+    :gen "Iùdhaich" ;
+    :pl "Iùdhaich" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:Iuudhach
+    a :Adjective ;
+    rdfs:label "Iùdhach" ;
+    :sense "Jewish" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Iuudhachd
+    a :FeminineNoun ;
+    rdfs:label "Iùdhachd" ;
+    :sense "Judaism" ;
+    :gen "Iùdhachd" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:breitheanas
+    a :MasculineNoun ;
+    rdfs:label "breitheanas" ;
+    :sense "judgement" ;
+    :gen "breitheanais" ;
+    :pl "breitheanasan" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:naadar
+    a :MasculineNoun ;
+    rdfs:label "nàdar" ;
+    :sense "knowability" ;
+    :gen "nàdair" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:meoorachadh
+    a :MasculineNoun ;
+    rdfs:label "meòrachadh" ;
+    :sense "meditation" ;
+    :gen "meòrachaidh" ;
+    :pl "meòrachaidhean" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Meatodach
+    a :MasculineNoun ;
+    rdfs:label "Meatodach" ;
+    :sense "Methodist" ;
+    :gen "Meatodaich" ;
+    :pl "Meatodaich" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:Meatodach
+    a :Adjective ;
+    rdfs:label "Meatodach" ;
+    :sense "Methodist" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:misean
+    a :MasculineNoun ;
+    rdfs:label "misean" ;
+    :sense "mission" ;
+    :gen "misein" ;
+    :pl "miseanan" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:moralta
+    a :Adjective ;
+    rdfs:label "moralta" ;
+    :sense "moral" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Muslamach
+    a :MasculineNoun ;
+    rdfs:label "Muslamach" ;
+    :sense "Muslim" ;
+    :gen "Muslamaich" ;
+    :pl "Muslamaich" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:Muslamach
+    a :Adjective ;
+    rdfs:label "Muslamach" ;
+    :sense "Muslim" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:uasal
+    a :Adjective ;
+    rdfs:label "uasal" ;
+    :sense "noble" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:cleachdadh
+    a :MasculineNoun ;
+    rdfs:label "cleachdadh" ;
+    :sense "observance" ;
+    :gen "cleachdaidh" ;
+    :pl "cleachdaidhean" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:oifig
+    a :FeminineNoun ;
+    rdfs:label "oifig" ;
+    :sense "office" ;
+    :gen "oifig" ;
+    :pl "oifigean" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:uile_fhiosrach
+    a :Adjective ;
+    rdfs:label "uile-fhiosrach" ;
+    :sense "omnicient" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:uile_chumhachd
+    a :FeminineNoun ;
+    rdfs:label "uile-chumhachd" ;
+    :sense "omnipotence" ;
+    :gen "uile-chumhachd" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:uile_chumhachdach
+    a :Adjective ;
+    rdfs:label "uile-chumhachdach" ;
+    :sense "omnipotent" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:uile_laathaireachd
+    a :FeminineNoun ;
+    rdfs:label "uile-làthaireachd" ;
+    :sense "omnipresence" ;
+    :gen "uile-làthaireachd" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:oordugh
+    a :MasculineNoun ;
+    rdfs:label "òrdugh" ;
+    :sense "order" ;
+    :gen "òrduigh" ;
+    :pl "òrduighean" ;
+    :pl "òrdughan" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Paarras
+    a :MasculineNoun ;
+    rdfs:label "Pàrras" ;
+    :sense "Paradise" ;
+    :gen "Pàrrais" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:deasbaireachd
+    a :MasculineNoun ;
+    rdfs:label "deasbaireachd" ;
+    :sense "polemics" ;
+    :gen "deasbaireachd" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:paidirean
+    a :MasculineNoun ;
+    rdfs:label "paidirean" ;
+    :sense "prayer bead" ;
+    :gen "paidirein" ;
+    :pl "paidireanan" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  o:searmonaich
+    rdfs:label "searmonaich" ;
+    :sense "preach" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:searmonaiche
+    a :MasculineNoun ;
+    rdfs:label "searmonaiche" ;
+    :sense "preacher" ;
+    :gen "searmonaiche" ;
+    :pl "searmonaichean" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:searmonachadh
+    a :MasculineNoun ;
+    rdfs:label "searmonachadh" ;
+    :sense "preaching" ;
+    :gen "searmonachaidh" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  o:a_searmonachadh
+    rdfs:label "a' searmonachadh" ;
+    :sense "preaching" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:cleeireach
+    a :Adjective ;
+    rdfs:label "clèireach" ;
+    :sense "presbyterian" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:faaidh
+    a :MasculineNoun ;
+    rdfs:label "fàidh" ;
+    :sense "prophet" ;
+    :gen "fàidhe" ;
+    :pl "fàidhean" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:faaidheil
+    a :Adjective ;
+    rdfs:label "fàidheil" ;
+    :sense "prophetic" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Proostanach
+    a :MasculineNoun ;
+    rdfs:label "Pròstanach" ;
+    :sense "Protestant" ;
+    :gen "Pròstanaich" ;
+    :pl "Pròstanaich" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:Proostanach
+    a :Adjective ;
+    rdfs:label "Pròstanach" ;
+    :sense "Protestant" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:purgadair
+    a :MasculineNoun ;
+    rdfs:label "purgadair" ;
+    :sense "purgatory" ;
+    :gen "purgadair" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:ath_leasaichte
+    a :Adjective ;
+    rdfs:label "ath-leasaichte" ;
+    :sense "reformed" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:ath_cholainneadh
+    a :MasculineNoun ;
+    rdfs:label "ath-cholainneadh" ;
+    :sense "reincarnation" ;
+    :gen "ath-cholainnidh" ;
+    :pl "ath-cholainnidhean" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:creideamh
+    a :MasculineNoun ;
+    rdfs:label "creideamh" ;
+    :sense "religion" ;
+    :gen "creideimh" ;
+    :pl "creideamhan" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:craabhach
+    a :Adjective ;
+    rdfs:label "cràbhach" ;
+    :sense "religious" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:creideamh
+    a :MasculineNoun ;
+    rdfs:label "creideamh" ;
+    :sense "religious belief" ;
+    :gen "creideimh" ;
+    :pl "creideamhan" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:taisbeanadh
+    a :MasculineNoun ;
+    rdfs:label "taisbeanadh" ;
+    :sense "revelation" ;
+    :gen "taisbeanaidh" ;
+    :pl "taisbeanaidhean" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:deas_ghnaath
+    a :MasculineNoun ;
+    rdfs:label "deas-ghnàth" ;
+    :sense "rite" ;
+    :gen "deas-ghnàtha" ;
+    :pl "deas-ghnàthan" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:saacramaid
+    a :FeminineNoun ;
+    rdfs:label "sàcramaid" ;
+    :sense "sacrament" ;
+    :gen "sàcramaid(e)" ;
+    :pl "sàcramaidean" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:naomh
+    a :Adjective ;
+    rdfs:label "naomh" ;
+    :sense "sacred" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:naomh
+    a :MasculineNoun ;
+    rdfs:label "naomh" ;
+    :sense "saint" ;
+    :gen "naoimh" ;
+    :pl "naoimh" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:teaarnadh
+    a :MasculineNoun ;
+    rdfs:label "teàrnadh" ;
+    :sense "salvation" ;
+    :gen "teàrnaidh" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:seact
+    a :MasculineNoun ;
+    rdfs:label "seact" ;
+    :sense "sect" ;
+    :gen "seact" ;
+    :pl "seactaichean" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:searmon
+    a :MasculineNoun ;
+    rdfs:label "searmon" ;
+    :sense "sermon" ;
+    :gen "searmoin" ;
+    :pl "searmonan" ;
+    :pl "searmoin" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:sgriin
+    a :FeminineNoun ;
+    rdfs:label "sgrìn" ;
+    :sense "shrine" ;
+    :gen "sgrìne" ;
+    :pl "sgrìnichean" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Siog
+    a :MasculineNoun ;
+    rdfs:label "Siog" ;
+    :sense "Sikh" ;
+    :gen "Sioga" ;
+    :pl "Siogan" ;
+    :pl "Siogaich" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:Siogach
+    a :Adjective ;
+    rdfs:label "Siogach" ;
+    :sense "Sikh" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Siogachd
+    a :FeminineNoun ;
+    rdfs:label "Siogachd" ;
+    :sense "Sikhism" ;
+    :gen "Siogachd" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:peacadh
+    a :MasculineNoun ;
+    rdfs:label "peacadh" ;
+    :sense "sin" ;
+    :gen "peacaidh" ;
+    :pl "peacaidhean" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:spioradail
+    a :Adjective ;
+    rdfs:label "spioradail" ;
+    :sense "spiritual" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:tiomnadh
+    a :MasculineNoun ;
+    rdfs:label "tiomnadh" ;
+    :sense "testament" ;
+    :gen "tiomnaidh" ;
+    :pl "tiomnaidhean" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  o:a_Chonair_Mhoire
+    rdfs:label "a’ Chonair Mhoire" ;
+    :sense "The Rosary" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  o:teearmann_Dhee
+    rdfs:label "tèarmann Dhè" ;
+    :sense "theodicy" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:diadhaire
+    a :MasculineNoun ;
+    rdfs:label "diadhaire" ;
+    :sense "theologian" ;
+    :gen "diadhaire" ;
+    :pl "diadhairean" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eoolas_diadhachd
+    a :MasculineNoun ;
+    rdfs:label "eòlas-diadhachd" ;
+    :sense "theology" ;
+    :gen "eòlais-diadhachd" ;
+    :pl "eòlasan-diadhachd" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:fiirinn
+    a :FeminineNoun ;
+    rdfs:label "fìrinn" ;
+    :sense "truth" ;
+    :gen "fìrinn(e)" ;
+    :pl "fìrinnean" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:feumalaiche
+    a :MasculineNoun ;
+    rdfs:label "feumalaiche" ;
+    :sense "utilitarian" ;
+    :gen "feumalaiche" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:feumalach
+    a :Adjective ;
+    rdfs:label "feumalach" ;
+    :sense "utilitarian" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  a:utilitarianach
+    a :Adjective ;
+    rdfs:label "utilitarianach" ;
+    :sense "utilitarian" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:utilitarianachd
+    a :FeminineNoun ;
+    rdfs:label "utilitarianachd" ;
+    :sense "utilitarianism" ;
+    :gen "feumalachd" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:adhradh
+    a :MasculineNoun ;
+    rdfs:label "adhradh" ;
+    :sense "worship" ;
+    :gen "adhraidh" ;
+    :pl "adhraidhean" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  o:creideamh_Zoroastair
+    rdfs:label "creideamh Zoroastair" ;
+    :sense "Zoroastrianism" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Na_Soisgeulan_agus_Na_Gniiomharan
+    rdfs:label "Na Soisgeulan agus Na Gnìomharan" ;
+    :sense "Gospels and Acts" ;
+    :part o:Gniiomharan .
+
+  n:Gniiomharan_nan_Abstol
+    rdfs:label "Gnìomharan nan Abstol" ;
+    :sense "Acts of the Apostles" ;
+    :part o:Gniiomharan .
+
+  n:Baistich_Deisciobail_Chriiosd_agus_Aidmheintich
+    rdfs:label "Baistich, Deisciobail Chrìosd agus Aidmheintich" ;
+    :sense "Baptist, Disciples of Christ and Adventist" ;
+    :part n:Aidmheinteach ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:prionnsabal_antropaig
+    rdfs:label "prionnsabal antropaig" ;
+    :sense "anthropic principle" ;
+    :part a:antropaig ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Apocrypha_agus_Pseudepigrapha
+    rdfs:label "Apocrypha agus Pseudepigrapha" ;
+    :sense "Apocrypha and Pseudepigrapha" ;
+    :part n:Apocrypha ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:fiireanachadh_agus_deasbaireachd
+    rdfs:label "fìreanachadh agus deasbaireachd" ;
+    :sense "apologetics and polemics" ;
+    :part n:fiireanachadh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:bith_naadar_agus_feartan_Dhee
+    rdfs:label "bith, nàdar agus feartan Dhè" ;
+    :sense "existence, knowablility and attributes of God" ;
+    :part n:feart ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Ioslam_Babachd_agus_an_creideamh_Bahai
+    rdfs:label "Ioslam, Babachd agus an creideamh Bahai" ;
+    :sense "Islam, Babism and Bahai Faith" ;
+    :part o:an_creideamh_Bahai ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:an_Eaglais_Bhaisteach
+    rdfs:label "an Eaglais Bhaisteach" ;
+    :sense "the Baptist Church" ;
+    :part a:Baisteach ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Eooin_Baistidh
+    rdfs:label "Eòin Baistidh" ;
+    :sense "John the Baptist" ;
+    :part n:Baisteach ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Baistich_Deisciobail_Chriiosd_agus_Aidmheintich
+    rdfs:label "Baistich, Deisciobail Chrìosd agus Aidmheintich" ;
+    :sense "Baptist, Disciples of Christ and Adventist" ;
+    :part n:Baisteach ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:creutairean_spioradail
+    rdfs:label "creutairean spioradail" ;
+    :sense "spiritual beings" ;
+    :part n:creutair ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:a_toirt_luachan_agus_creideasan_air_adhart
+    rdfs:label "a' toirt luachan agus creideasan air adhart" ;
+    :sense "developing values and beliefs" ;
+    :part n:creideas ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Am_Biioball
+    rdfs:label "Am Bìoball" ;
+    :sense "The Bible" ;
+    :part n:Biioball ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:teampall_Budach
+    rdfs:label "teampall Budach" ;
+    :sense "Buddhist temple" ;
+    :part a:Budach ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:manach_Budach
+    rdfs:label "manach Budach" ;
+    :sense "Buddhist monk" ;
+    :part a:Budach ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:creudan_agus_leabhraichean_cheist
+    rdfs:label "creudan agus leabhraichean cheist" ;
+    :sense "creeds and catechisms" ;
+    :part n:leabhar_cheist ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Leabhar_Aithghearr_nan_Ceist
+    rdfs:label "Leabhar Aithghearr nan Ceist" ;
+    :sense "the Shorter Catechism" ;
+    :part n:leabhar_cheist ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:IIosa_Criiosd
+    rdfs:label "Ìosa Crìosd" ;
+    :sense "Jesus Christ" ;
+    :part n:Criiosd ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:creideamh_ann_an_Criiosd
+    rdfs:label "creideamh ann an Crìosd" ;
+    :sense "faith in Christ" ;
+    :part n:Criiosd ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:IIosa_Criiosd_agus_a_theaghlach
+    rdfs:label "Ìosa Crìosd agus a theaghlach" ;
+    :sense "Jesus Christ and his family" ;
+    :part n:Criiosd ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Baistich_Deisciobail_Chriiosd_agus_Aidmheintich
+    rdfs:label "Baistich, Deisciobail Chrìosd agus Aidmheintich" ;
+    :sense "Baptist, Disciples of Christ and Adventist" ;
+    :part n:Criiosd ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:an_creideamh_Criiosdail
+    rdfs:label "an creideamh Crìosdail" ;
+    :sense "the Christian religion" ;
+    :part a:Criiosdail ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Criiosdaidheachd_agus_eoolas_diadhachd_Criiosdail
+    rdfs:label "Crìosdaidheachd agus eòlas-diadhachd Crìosdail" ;
+    :sense "Christianity and Christian theology" ;
+    :part a:Criiosdail ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eoolas_diadhachd_Criiosdail
+    rdfs:label "eòlas-diadhachd Crìosdail" ;
+    :sense "Christian theology" ;
+    :part a:Criiosdail ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:gnaathas_Criiosdail
+    rdfs:label "gnàthas Crìosdail" ;
+    :sense "Christian practice" ;
+    :part a:Criiosdail ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:cleachdadh_Criiosdail
+    rdfs:label "cleachdadh Crìosdail" ;
+    :sense "Christian observance" ;
+    :part a:Criiosdail ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:oordughan_Criiosdail_agus_eaglaisean_ionadail
+    rdfs:label "òrdughan Crìosdail agus eaglaisean ionadail" ;
+    :sense "Christian orders and local church" ;
+    :part a:Criiosdail ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:a_bheatha_Criiosdail
+    rdfs:label "a' bheatha Crìosdail" ;
+    :sense "the Christian life" ;
+    :part a:Criiosdail ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:gnaathas_aoghaireil_Criiosdail_agus_oordughan_craabhach
+    rdfs:label "gnàthas aoghaireil Crìosdail agus òrdughan cràbhach" ;
+    :sense "Christian pastoral practice and religious orders" ;
+    :part a:Criiosdail ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eachdraidh_Criiosdaidheachd_ann_an_Afraga
+    rdfs:label "eachdraidh Crìosdaidheachd ann an Afraga" ;
+    :sense "Christian organization, social work and worship" ;
+    :part a:Criiosdail ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:meuran_Criiosdail
+    rdfs:label "meuran Crìosdail" ;
+    :sense "Christian denominations" ;
+    :part a:Criiosdail ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:meuran_agus_seactaichean_Criiosdail
+    rdfs:label "meuran agus seactaichean Crìosdail" ;
+    :sense "Christian denominations and sects" ;
+    :part a:Criiosdail ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:beus_eoolas_Criiosdail
+    rdfs:label "beus-eòlas Crìosdail" ;
+    :sense "Christian ethics" ;
+    :part a:Criiosdail ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eoolas_gnaathas_agus_beatha_Chriiosdail
+    rdfs:label "eòlas, gnàthas agus beatha Chrìosdail" ;
+    :sense "Christian experience, practice and life" ;
+    :part a:Criiosdail ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eoolas_diadhachd_Criiosdail_moraltan_agus_adhradh
+    rdfs:label "eòlas-diadhachd Crìosdail, moraltan agus adhradh" ;
+    :sense "Christian moral and devotional theology" ;
+    :part a:Criiosdail ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:cleachdaidhean_Criiosdail_ann_am_beatha_teaghlaich
+    rdfs:label "cleachdaidhean Crìosdail ann am beatha teaghlaich" ;
+    :sense "Christian observances in family life" ;
+    :part a:Criiosdail ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Criiosdaidheachd_gnaathas_agus_cleachdadh
+    rdfs:label "Crìosdaidheachd: gnàthas agus cleachdadh" ;
+    :sense "Christian practice and observance" ;
+    :part a:Criiosdail ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eachdraidh_Criiosdaidheachd_agus_na_h_eaglais_Criiosdail
+    rdfs:label "eachdraidh Crìosdaidheachd agus na h-eaglais Crìosdail" ;
+    :sense "history of Christianity and Christian church" ;
+    :part a:Criiosdail ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Criiosdaidheachd_agus_eoolas_diadhachd_Criiosdail
+    rdfs:label "Crìosdaidheachd agus eòlas-diadhachd Crìosdail" ;
+    :sense "Christianity and Christian theology" ;
+    :part n:Criiosdaidheachd ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eachdraidh_Criiosdaidheachd
+    rdfs:label "eachdraidh Crìosdaidheachd" ;
+    :sense "history of Christianity" ;
+    :part n:Criiosdaidheachd ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eachdraidh_Criiosdaidheachd_agus_na_h_eaglais_Chriiosdail
+    rdfs:label "eachdraidh Crìosdaidheachd agus na h-eaglais Chrìosdail" ;
+    :sense "history of Christianity and Christian church" ;
+    :part n:Criiosdaidheachd ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eachdraidh_Criiosdaidheachd_ann_an_Afraga
+    rdfs:label "eachdraidh Crìosdaidheachd ann an Afraga" ;
+    :sense "history of Christianity in Africa" ;
+    :part n:Criiosdaidheachd ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eachdraidh_Criiosdaidheachd_ann_an_Àisia
+    rdfs:label "eachdraidh Crìosdaidheachd ann an Àisia" ;
+    :sense "history of Christianity in Asia" ;
+    :part n:Criiosdaidheachd ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eachdraidh_Criiosdaidheachd_san_Roinn_Eoorpa
+    rdfs:label "eachdraidh Crìosdaidheachd san Roinn Eòrpa" ;
+    :sense "history of Christianity in Europe" ;
+    :part n:Criiosdaidheachd ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eachdraidh_Criiosdaidheachd_ann_an_Ameireaga_a_Tuath
+    rdfs:label "eachdraidh Crìosdaidheachd ann an Ameireaga a Tuath" ;
+    :sense "history of Christianity in North America" ;
+    :part n:Criiosdaidheachd ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eachdraidh_Criiosdaidheachd_ann_an_ceaarnaidhean_eile
+    rdfs:label "eachdraidh Crìosdaidheachd ann an ceàrnaidhean eile" ;
+    :sense "history of Christianity in other areas" ;
+    :part n:Criiosdaidheachd ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eachdraidh_Criiosdaidheachd_ann_an_Ameireaga_a_Deas
+    rdfs:label "eachdraidh Crìosdaidheachd ann an Ameireaga a Deas" ;
+    :sense "history of Christianity in South America" ;
+    :part n:Criiosdaidheachd ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:cleachdadh_ealain_ann_an_Criiosdaidheachd
+    rdfs:label "cleachdadh ealain ann an Crìosdaidheachd" ;
+    :sense "use of art in Christianity" ;
+    :part n:Criiosdaidheachd ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:aairneis_agus_acfhainnean_eaglais
+    rdfs:label "àirneis agus acfhainnean eaglais" ;
+    :sense "church furnishings and articles" ;
+    :part n:eaglais ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Eaglais_na_h_Alba
+    rdfs:label "Eaglais na h-Alba" ;
+    :sense "the Church of Scotland" ;
+    :part n:eaglais ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:an_Eaglais_Shaor
+    rdfs:label "an Eaglais Shaor" ;
+    :sense "the Free Church" ;
+    :part n:eaglais ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:an_Eaglais_Bhaisteach
+    rdfs:label "an Eaglais Bhaisteach" ;
+    :sense "the Baptist Church" ;
+    :part n:eaglais ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:an_Eaglais_Chaitligeach
+    rdfs:label "an Eaglais Chaitligeach" ;
+    :sense "the Catholic church" ;
+    :part n:eaglais ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:an_Eaglais_Easbaigeach
+    rdfs:label "an Eaglais Easbaigeach" ;
+    :sense "the Episcopal Church" ;
+    :part n:eaglais ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:an_Eaglais_Shaor_Chleeireach
+    rdfs:label "an Eaglais Shaor Chlèireach" ;
+    :sense "the Free Presbyterian Church" ;
+    :part n:eaglais ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:an_Eaglais_Steeidhichte
+    rdfs:label "an Eaglais Stèidhichte" ;
+    :sense "the Established Church" ;
+    :part n:eaglais ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:an_Eaglais_Mheatodach
+    rdfs:label "an Eaglais Mheatodach" ;
+    :sense "the Methodist Church" ;
+    :part n:eaglais ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:an_Eaglais_Anglican
+    rdfs:label "an Eaglais Anglican" ;
+    :sense "the Anglican church" ;
+    :part n:eaglais ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Eaglais_Chaitligeach_na_Rooimhe
+    rdfs:label "Eaglais Chaitligeach na Ròimhe" ;
+    :sense "the Roman Catholic Church" ;
+    :part n:eaglais ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Eaglais_Shasainn
+    rdfs:label "Eaglais Shasainn" ;
+    :sense "the Church of England" ;
+    :part n:eaglais ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eachdraidh_na_h_eaglais
+    rdfs:label "eachdraidh na h-eaglais" ;
+    :sense "church history" ;
+    :part n:eaglais ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:oordughan_Criiosdail_agus_eaglaisean_ionadail
+    rdfs:label "òrdughan Crìosdail agus eaglaisean ionadail" ;
+    :sense "Christian orders and local church" ;
+    :part n:eaglais ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:rdughan_craabhach_ann_an_eachdraidh_na_h_eaglais
+    rdfs:label "rdughan cràbhach ann an eachdraidh na h-eaglais" ;
+    :sense "religious orders in church history" ;
+    :part n:eaglais ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eachdraidh_Criiosdaidheachd_agus_na_h_eaglais_Criiosdail
+    rdfs:label "eachdraidh Crìosdaidheachd agus na h-eaglais Crìosdail" ;
+    :sense "history of Christianity and Christian church" ;
+    :part n:eaglais ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:an_eaglais_thraath_agus_eaglaisean_na_h_aaird_an_ear
+    rdfs:label "an eaglais thràth agus eaglaisean na h-àird an ear" ;
+    :sense "early church and eastern churches" ;
+    :part n:eaglais ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:geur_leanmhainn_ann_an_eachdraidh_na_h_eaglais
+    rdfs:label "geur-leanmhainn ann an eachdraidh na h-eaglais" ;
+    :sense "persecutions in church history" ;
+    :part n:eaglais ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eaglais_le_stiiopall
+    rdfs:label "eaglais le stìopall" ;
+    :sense "church with a spire" ;
+    :part n:eaglais ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eaglais_le_tuur
+    rdfs:label "eaglais le tùr" ;
+    :sense "church with a tower" ;
+    :part n:eaglais ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:coitheanalan_agus_oordughan_craabhach
+    rdfs:label "coitheanalan agus òrdughan cràbhach" ;
+    :sense "religious congregations and orders" ;
+    :part n:coitheanal ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:coitheanalan_baana
+    rdfs:label "coitheanalan bàna" ;
+    :sense "vacant congregations" ;
+    :part n:coitheanal ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:a_gairm_coitheanal_baan
+    rdfs:label "a' gairm coitheanal bàn" ;
+    :sense "preaching a congregation vacant" ;
+    :part n:coitheanal ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Cleeireach_Ath_leasaichte_agus_Coithionalach
+    rdfs:label "Clèireach, Ath-leasaichte agus Coithionalach" ;
+    :sense "Presbyterian, Reformed and Congregational" ;
+    :part a:Coitheanalach ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eaglaisean_coitheanalach
+    rdfs:label "eaglaisean coitheanalach" ;
+    :sense "congregational churches" ;
+    :part a:Coitheanalach ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:creudan_agus_leabhraichean_cheist
+    rdfs:label "creudan agus leabhraichean cheist" ;
+    :sense "creeds and catechisms" ;
+    :part n:creud ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:ionaid_luathrachaidh
+    rdfs:label "ionaid-luathrachaidh" ;
+    :sense "crematorium" ;
+    :part n:ionad_luathrachaidh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:ionadan_luathrachaidh
+    rdfs:label "ionadan-luathrachaidh" ;
+    :sense "crematoriums" ;
+    :part n:ionad_luathrachaidh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:meuran_Criosdail
+    rdfs:label "meuran Criosdail" ;
+    :sense "Christian denominations" ;
+    :part n:meur_creideimh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:meuran_agus_seactaichean_Criiosdail
+    rdfs:label "meuran agus seactaichean Crìosdail" ;
+    :sense "Christian denominations and sects" ;
+    :part n:meur_creideimh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:meuran_agus_seactaichean_eile
+    rdfs:label "meuran agus seactaichean eile" ;
+    :sense "other denominations and sects" ;
+    :part n:meur_creideimh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:litreachas_adhraidh
+    rdfs:label "litreachas adhraidh" ;
+    :sense "devotional literature" ;
+    :part n:adhradh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eoolas_diadhachd_Criiosdail_moraltan_agus_adhradh
+    rdfs:label "eòlas-diadhachd Crìosdail, moraltan agus adhradh" ;
+    :sense "Christian moral and devotional theology" ;
+    :part n:adhradh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:lathaichean_uairean_agus_aaiteachan_adhraidh
+    rdfs:label "lathaichean, uairean agus àiteachan adhraidh" ;
+    :sense "days, times and places of observance" ;
+    :part n:adhradh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Baistich_Deisciobail_Chriiosd_agus_Aidmheintich
+    rdfs:label "Baistich, Deisciobail Chrìosd agus Aidmheintich" ;
+    :sense "Baptist, Disciples of Christ and Adventist" ;
+    :part n:deisciobal ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:connspaidean_teagasgail_agus_saobh_chreideasan
+    rdfs:label "connspaidean teagasgail agus saobh-chreideasan" ;
+    :sense "doctrinal controversies and heresies" ;
+    :part a:teagasgail ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eoolas_diadhachd_eaglaiseil
+    rdfs:label "eòlas-diadhachd eaglaiseil" ;
+    :sense "ecclesiastical theology" ;
+    :part a:eaglaiseil ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:an_t_slighe_uasal_ochd_fillte
+    rdfs:label "an t-slighe uasal ochd-fillte" ;
+    :sense "the noble eightfold path" ;
+    :part a:ochd_fillte ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:na_Litrichean
+    rdfs:label "na Litrichean" ;
+    :sense "the Epistles" ;
+    :part n:litir ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:sgriiobhaidhean_soisgeulach_do_dhaoine_fa_leth
+    rdfs:label "sgrìobhaidhean soisgeulach do dhaoine fa leth" ;
+    :sense "evangelistic writings for individuals" ;
+    :part a:soisgeulach ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:seirbheisean_soisgeulach
+    rdfs:label "seirbheisean soisgeulach" ;
+    :sense "evangelistic services" ;
+    :part a:soisgeulach ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:bith_naadar_agus_feartan_Dhee
+    rdfs:label "bith, nàdar agus feartan Dhè" ;
+    :sense "existence, knowablility and attributes of God" ;
+    :part n:bith ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:creideamhan_Ioslamach_Babach_agus_Bahai
+    rdfs:label "creideamhan Ioslamach, Babach agus Bahai" ;
+    :sense "Islam, Babism and Bahai faith" ;
+    :part n:creideamh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:creideamhan_ann_an_IIosa
+    rdfs:label "creideamhan ann an Ìosa" ;
+    :sense "faith in Jesus" ;
+    :part n:creideamh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:creideamhan_ann_an_Criiosd
+    rdfs:label "creideamhan ann an Crìosd" ;
+    :sense "faith in Christ" ;
+    :part n:creideamh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:teine_toorraidh
+    rdfs:label "teine-tòrraidh" ;
+    :sense "funeral pyre" ;
+    :part n:toorradh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Dia
+    rdfs:label "Dia" ;
+    :sense "God" ;
+    :part n:dia ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:obair_Dhee
+    rdfs:label "obair Dhè" ;
+    :sense "God's work" ;
+    :part n:dia ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:bun_bheachdan_mu_Dhia
+    rdfs:label "bun-bheachdan mu Dhia" ;
+    :sense "concepts of God" ;
+    :part n:dia ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:bith_naadar_agus_feartan_Dhee
+    rdfs:label "bith, nàdar agus feartan Dhè" ;
+    :sense "existence, knowablility and attributes of God" ;
+    :part n:dia ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Na_Soisgeulan_agus_Na_Gniiomharan
+    rdfs:label "Na Soisgeulan agus Na Gnìomharan" ;
+    :sense "Gospels and Acts" ;
+    :part n:soisgeul ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:an_Soisgeul
+    rdfs:label "an Soisgeul" ;
+    :sense "the Gospel" ;
+    :part n:soisgeul ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:teaarnadh_agus_graas
+    rdfs:label "teàrnadh agus gràs" ;
+    :sense "salvation and grace" ;
+    :part n:graas ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:connspaidean_teagasgail_agus_saobh_chreideasan
+    rdfs:label "connspaidean teagasgail agus saobh-chreideasan" ;
+    :sense "doctrinal controversies and heresies" ;
+    :part n:saobh_chreideas ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:leabhar_naomh
+    rdfs:label "leabhar naomh" ;
+    :sense "holy book" ;
+    :part a:naomh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:baile_naomh
+    rdfs:label "baile naomh" ;
+    :sense "holy city" ;
+    :part a:naomh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:An_t_Eilean_Naomh
+    rdfs:label "An t-Eilean Naomh" ;
+    :sense "Holy Island" ;
+    :part a:naomh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Islam_Babachd_agus_an_creideamh_Bahai
+    rdfs:label "Islam, Babachd agus an creideamh Bahai" ;
+    :sense "Islam, Babism and Bahai Faith" ;
+    :part n:Islam ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:cooig_carraighean_Islam
+    rdfs:label "còig carraighean Islam" ;
+    :sense "five pillars of Islam" ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:IIosa_Criiosd
+    rdfs:label "Ìosa Crìosd" ;
+    :sense "Jesus Christ" ;
+    :part n:IIosa ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:creideamh_ann_an_IIosa
+    rdfs:label "creideamh ann an Ìosa" ;
+    :sense "faith in Jesus" ;
+    :part n:IIosa ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:latha_a_bhreitheanais
+    rdfs:label "là a’ bhreitheanais" ;
+    :sense "judgement day" ;
+    :part n:breitheanas ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:latha_a_bhreitheanais
+    rdfs:label "là a’ bhreitheanais" ;
+    :sense "day of judgement" ;
+    :part n:breitheanas ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:thig_breitheanas_ort
+    rdfs:label "thig breitheanas ort" ;
+    :sense "you will suffer for it" ;
+    :part n:breitheanas ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:a_breithneachadh
+    rdfs:label "a' breithneachadh" ;
+    :sense "making judgements" ;
+    :part n:breitheanas ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:bith_naadar_agus_feartan_Dhee
+    rdfs:label "bith, nàdar agus feartan Dhè" ;
+    :sense "existence, knowability and attributes of God" ;
+    :part n:naadar ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:an_Eaglais_Mheatodach_agus_eaglaisean_co_cheangailte
+    rdfs:label "an Eaglais Mheatodach agus eaglaisean co-cheangailte" ;
+    :sense "Methodist and related churches" ;
+    :part a:Meatodach ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:an_Eaglais_Mheatodach
+    rdfs:label "an Eaglais Mheatodach" ;
+    :sense "the Methodist Church" ;
+    :part a:Meatodach ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:miseanan_agus_foghlam_creideimh
+    rdfs:label "miseanan agus foghlam creideimh" ;
+    :sense "missions and religious education" ;
+    :part n:misean ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eoolas_diadhachd_Criiosdail_moraltan_agus_adhradh
+    rdfs:label "eòlas-diadhachd Crìosdail, moraltan agus adhradh" ;
+    :sense "Christian moral and devotional theology" ;
+    :part a:moralta ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:olc_moralta
+    rdfs:label "olc moralta" ;
+    :sense "moral evil" ;
+    :part a:moralta ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:na_cooig_reachdan_moralta
+    rdfs:label "na còig reachdan moralta" ;
+    :sense "the five moral precepts" ;
+    :part a:moralta ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:na_Muslamaich_Sunni
+    rdfs:label "na Muslamaich Sunni" ;
+    :sense "the Sunni Muslims" ;
+    :part n:Muslamach ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:ainmean_Muslamach
+    rdfs:label "ainmean Muslamach" ;
+    :sense "Muslim names" ;
+    :part a:Muslamach ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:an_creideamh_Muslamach
+    rdfs:label "an creideamh Muslamach" ;
+    :sense "the Muslim religion" ;
+    :part a:Muslamach ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:ceithir_fiirinnean_uasal
+    rdfs:label "ceithir fìrinnean uasal" ;
+    :sense "four noble truths" ;
+    :part a:uasal ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:an_t_slighe_uasal_ochd_fillte
+    rdfs:label "an t-slighe uasal ochd-fillte" ;
+    :sense "the noble eightfold path" ;
+    :part a:uasal ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:cleachdaidhean_Criiosdail_ann_am_beatha_teaghlaich
+    rdfs:label "cleachdaidhean Crìosdail ann am beatha teaghlaich" ;
+    :sense "Christian observances in family life" ;
+    :part n:cleachdadh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:cleachdadh_Criiosdail
+    rdfs:label "cleachdadh Crìosdail" ;
+    :sense "Christian observance" ;
+    :part n:cleachdadh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Criiosdaidheachd_gnaathas_agus_cleachdadh
+    rdfs:label "Crìosdaidheachd: gnàthas agus cleachdadh" ;
+    :sense "Christian practice and observance" ;
+    :part n:cleachdadh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:cumail_creideimh
+    rdfs:label "cumail creideimh" ;
+    :sense "religious observance" ;
+    :part n:cleachdadh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:oifig_agus_obair_aoghaireil
+    rdfs:label "oifig agus obair aoghaireil" ;
+    :sense "pastoral office and work" ;
+    :part n:oifig ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:dia_uile_fhiosrach
+    rdfs:label "dia uile-fhiosrach" ;
+    :sense "omnicient god" ;
+    :part a:uile_fhiosrach ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:uile_chumhachd_Dhee
+    rdfs:label "uile-chumhachd Dhè" ;
+    :sense "God's omnipotence" ;
+    :part n:uile_chumhachd ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:dia_uile_chumhachdach
+    rdfs:label "dia uile-chumhachdach" ;
+    :sense "omnipotent god" ;
+    :part a:uile_chumhachdach ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:OOrdughan_Criiosdail_agus_eaglaisean_ionadail
+    rdfs:label "Òrdughan Crìosdail agus eaglaisean ionadail" ;
+    :sense "Christian orders and local church" ;
+    :part n:oordugh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Gnaathas_aoghaireil_Criiosdail_agus_oordughan_craabhach
+    rdfs:label "Gnàthas aoghaireil Crìosdail agus òrdughan cràbhach" ;
+    :sense "Christian pastoral practice and religious orders" ;
+    :part n:oordugh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Coitheanalan_agus_oordughan_craabhach
+    rdfs:label "Coitheanalan agus òrdughan cràbhach" ;
+    :sense "Religious congregations and orders" ;
+    :part n:oordugh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:OOrdughan_craabhach_ann_an_eachdraidh_na_h_eaglais
+    rdfs:label "Òrdughan cràbhach ann an eachdraidh na h-eaglais" ;
+    :sense "Religious orders in church history" ;
+    :part n:oordugh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:fiireanachadh_agus_deasbaireachd
+    rdfs:label "fìreanachadh agus deasbaireachd" ;
+    :sense "apologetics and polemics" ;
+    :part n:deasbaireachd ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:searmonaiche_math
+    rdfs:label "searmonaiche math" ;
+    :sense "a good preacher" ;
+    :part n:searmonaiche ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:a_searmonachadh_an_t_soisgeil
+    rdfs:label "a' searmonachadh an t-soisgeil" ;
+    :sense "preaching the gospel" ;
+    :part o:a_searmonachadh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:cleeireach_ath_leasaichte_agus_coitheanalach
+    rdfs:label "clèireach, ath-leasaichte agus coitheanalach" ;
+    :sense "presbyterian, reformed and congregational" ;
+    :part a:cleeireach ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:an_Eaglais_Shaor_Chleeireach
+    rdfs:label "an Eaglais Shaor Chlèireach" ;
+    :sense "the Free Presbyterian Church" ;
+    :part a:cleeireach ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eaglais_chleeireach
+    rdfs:label "eaglais chlèireach" ;
+    :sense "a presbyterian church" ;
+    :part a:cleeireach ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:faaidhean_breeige
+    rdfs:label "fàidhean brèige" ;
+    :sense "false prohphets" ;
+    :part n:faaidh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:leabhraichean_faaidheil_an_t_Seann_Tiomnaidh
+    rdfs:label "leabhraichean fàidheil an t-Seann Tiomnaidh" ;
+    :sense "prophetic books of the Old Testament" ;
+    :part a:faaidheil ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Proostanaich_a_bhuineas_do_Mhoor_thiir_na_Roinn_Eoorpa
+    rdfs:label "Pròstanaich a bhuineas do Mhòr-thìr na Roinn Eòrpa" ;
+    :sense "Protestants of Continental origin" ;
+    :part n:Proostanach ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:an_Eaglais_Phroostanach
+    rdfs:label "an Eaglais Phròstanach" ;
+    :sense "the Protestant Church" ;
+    :part a:Proostanach ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Apocrypha_agus_Pseudepigrapha
+    rdfs:label "Apocrypha agus Pseudepigrapha" ;
+    :sense "Apocrypha and Pseudepigrapha" ;
+    :part n:Pseudepigrapha ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Cleeireach_Ath_leasaichte_agus_Coitheanalach
+    rdfs:label "Clèireach, Ath-leasaichte agus Coitheanalach" ;
+    :sense "Presbyterian, Reformed and Congregational" ;
+    :part a:ath_leasaichte ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:an_Eaglais_Ath_leasaichte
+    rdfs:label "an Eaglais Ath-leasaichte" ;
+    :sense "the Reformed Church" ;
+    :part a:ath_leasaichte ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:creideamh_Gearmainig
+    rdfs:label "creideamh Gearmainig" ;
+    :sense "Germanic religion" ;
+    :part n:creideamh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:creideamh_Greugach_agus_Roomanach
+    rdfs:label "creideamh Greugach agus Ròmanach" ;
+    :sense "Greek and Roman religion" ;
+    :part n:creideamh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:creideamhan_eile
+    rdfs:label "creideamhan eile" ;
+    :sense "other religions" ;
+    :part n:creideamh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:creideamhan_aas_na_h_Innseachan
+    rdfs:label "creideamhan às na h-Innseachan" ;
+    :sense "religions of Indic origin" ;
+    :part n:creideamh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:saidheans_agus_creideamh
+    rdfs:label "saidheans agus creideamh" ;
+    :sense "science and religion" ;
+    :part n:creideamh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:creideamh_Zoroastair
+    rdfs:label "creideamh Zoroastair" ;
+    :sense "Zoroastrianism" ;
+    :part n:creideamh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:feallsanachd_agus_teooiridh_creideimh
+    rdfs:label "feallsanachd agus teòiridh creideimh" ;
+    :sense "philosophy and theory of religion" ;
+    :part n:creideamh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:creidheamhan_eile
+    rdfs:label "creidheamhan eile" ;
+    :sense "religions not provided for elsewhere" ;
+    :part n:creideamh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:beus_eoolas_craabhach
+    rdfs:label "beus-eòlas cràbhach" ;
+    :sense "religious ethics" ;
+    :part a:craabhach ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eoolas_beatha_agus_gnaathas_craabhach
+    rdfs:label "eòlas, beatha agus gnàthas cràbhach" ;
+    :sense "religious experience, life and practice" ;
+    :part a:craabhach ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:miotas_eoolas_craabhach_agus_eoolas_diadhachd_sooisealta
+    rdfs:label "miotas-eòlas cràbhach agus eòlas-diadhachd sòisealta" ;
+    :sense "religious mythology and social theology" ;
+    :part a:craabhach ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:oordughan_craabhach_ann_an_eachdraidh_na_h_eaglais
+    rdfs:label "òrdughan cràbhach ann an eachdraidh na h-eaglais" ;
+    :sense "religious orders in church history" ;
+    :part a:craabhach ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:coitheanalan_craabhach
+    rdfs:label "coitheanalan cràbhach" ;
+    :sense "religious congregations" ;
+    :part a:craabhach ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:oordughan_craabhach
+    rdfs:label "òrdughan cràbhach" ;
+    :sense "religious orders" ;
+    :part a:craabhach ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:cumail_creideimh
+    rdfs:label "cumail creideimh" ;
+    :sense "religious observance" ;
+    :part n:creideamh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:tha_cumail_creideimh_na_dhleastanas_air_sgoiltean
+    rdfs:label "tha cumail creideimh na dhleastanas air sgoiltean" ;
+    :sense "religious observance is required in schools" ;
+    :part n:creideamh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eoolas_creideimh_moraltachd_agus_feallsanachd
+    rdfs:label "eòlas creideimh, moraltachd agus feallsanachd" ;
+    :sense "religious, moral and philosophical studies" ;
+    :part n:creideamh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:comainn_airson_obair_creideimh
+    rdfs:label "comainn airson obair creideimh" ;
+    :sense "associations for religious works" ;
+    :part n:creideamh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:togalaichean_airson_adhbharan_creideimh
+    rdfs:label "togalaichean airson adhbharan creideimh" ;
+    :sense "buildings for religious purposes" ;
+    :part n:creideamh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:gnaathas_aoghaireil_Criiosdail_agus_oordughan_craabhach
+    rdfs:label "gnàthas aoghaireil Crìosdail agus òrdughan cràbhach" ;
+    :sense "Christian pastoral practice and religious orders" ;
+    :part n:creideamh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:miseanan_agus_foghlam_creideimh
+    rdfs:label "miseanan agus foghlam creideimh" ;
+    :sense "missions and religious education" ;
+    :part n:creideamh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:coitheanalan_agus_oordughan_craabhach
+    rdfs:label "coitheanalan agus òrdughan cràbhach" ;
+    :sense "religious congregations and orders" ;
+    :part n:creideamh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:foghlam_creideimh
+    rdfs:label "foghlam creideimh" ;
+    :sense "religious education" ;
+    :part n:creideamh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:An_Taisbeanadh
+    rdfs:label "An Taisbeanadh (Apocalypse)" ;
+    :sense "Revelation (Apocalypse)" ;
+    :part n:taisbeanadh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Leabhar_an_Taisbeanaidh
+    rdfs:label "Leabhar an Taisbeanaidh" ;
+    :sense "The Book of Revelation" ;
+    :part n:taisbeanadh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:saacramaidean_deas_ghnaathan_agus_gniiomhan_eile
+    rdfs:label "sàcramaidean, deas-ghnàthan agus gnìomhan eile" ;
+    :sense "sacracraments, other rites and acts" ;
+    :part n:deas_ghnaath , n:saacramaid ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:teacsa_naomh
+    rdfs:label "teacsa naomh" ;
+    :sense "sacred text" ;
+    :part a:naomh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Naomh_Anndra
+    rdfs:label "Naomh Anndra" ;
+    :sense "St Andrew" ;
+    :part n:naomh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Latha_Naomh_Anndra
+    rdfs:label "Latha Naomh Anndra" ;
+    :sense "St Andrew's Day" ;
+    :part n:naomh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:teaarnadh_agus_graas
+    rdfs:label "teàrnadh agus gràs" ;
+    :sense "salvation and grace" ;
+    :part n:teaarnadh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:teaarnadh_Dhee
+    rdfs:label "teàrnadh Dhè" ;
+    :sense "God's salvation" ;
+    :part n:teaarnadh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:seactaichean_agus_gluasadan_ath_leasachail
+    rdfs:label "seactaichean agus gluasadan ath-leasachail" ;
+    :sense "sects and reform movements" ;
+    :part n:seact ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:meuran_agus_seactaichean_eile
+    rdfs:label "meuran agus seactaichean eile" ;
+    :sense "other denominations and sects" ;
+    :part n:seact ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:meuran_agus_seactaichean_Criiosdail
+    rdfs:label "meuran agus seactaichean Crìosdail" ;
+    :sense "Christian denominations and sects" ;
+    :part n:seact ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:searmoin_sgriiobhte
+    rdfs:label "searmoin sgrìobhte" ;
+    :sense "texts of sermons" ;
+    :part n:searmon ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:teampall_Siogach
+    rdfs:label "teampall Siogach" ;
+    :sense "Sikh temple" ;
+    :part a:Siogach ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:creutairean_spioradail
+    rdfs:label "creutairean spioradail" ;
+    :sense "spiritual beings" ;
+    :part a:spioradail ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:ath_nuadhachadh_spioradail
+    rdfs:label "ath-nuadhachadh spioradail" ;
+    :sense "spiritual renewal" ;
+    :part a:spioradail ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:An_Seann_Tiomnadh
+    rdfs:label "An Seann Tiomnadh (Tanakh)" ;
+    :sense "Old Testament (Tanakh)" ;
+    :part n:tiomnadh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:An_Tiomnadh_Nuadh
+    rdfs:label "An Tiomnadh Nuadh" ;
+    :sense "New Testament" ;
+    :part n:tiomnadh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:leabhraichean_eachdraidheil_an_t_Seann_Tiomnaidh
+    rdfs:label "leabhraichean eachdraidheil an t-Seann Tiomnaidh" ;
+    :sense "historical books of the Old Testament" ;
+    :part n:tiomnadh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:leabhraichean_daain_an_t_seann_Tiomnaidh
+    rdfs:label "leabhraichean dàin an t-seann Tiomnaidh" ;
+    :sense "poetic books of the Old Testament" ;
+    :part n:tiomnadh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:leabhraichean_faaidheil_an_t_Seann_Tiomnaidh
+    rdfs:label "leabhraichean fàidheil an t-Seann Tiomnaidh" ;
+    :sense "prophetic books of the Old Testament" ;
+    :part n:tiomnadh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:gabh_a_Chonair_Mhoire
+    rdfs:label "gabh a’ Chonair Mhoire" ;
+    :sense "say the rosary" ;
+    :part o:a_Chonair_Mhoire ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:miotas_eoolas_craabhach_agus_eoolas_diadhachd_sooisealta
+    rdfs:label "miotas-eòlas cràbhach agus eòlas-diadhachd sòisealta" ;
+    :sense "religious mythology and social theology" ;
+    :part n:eoolas_diadhachd ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eoolas_diadhachd_Criiosdail_moraltan_agus_adhradh
+    rdfs:label "eòlas-diadhachd Crìosdail, moraltan agus adhradh" ;
+    :sense "Christian moral and devotional theology" ;
+    :part n:eoolas_diadhachd ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:Criiosdaidheachd_agus_eoolas_diadhachd_Criiosdail
+    rdfs:label "Crìosdaidheachd agus eòlas-diadhachd Crìosdail" ;
+    :sense "Christianity and Christian theology" ;
+    :part n:eoolas_diadhachd ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eoolas_diadhachd_sooisealta_agus_eaglaiseil
+    rdfs:label "eòlas-diadhachd sòisealta agus eaglaiseil" ;
+    :sense "social and ecclesiastical theology" ;
+    :part n:eoolas_diadhachd ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eoolas_diadhachd_sooisealta
+    rdfs:label "eòlas-diadhachd sòisealta" ;
+    :sense "social theology" ;
+    :part n:eoolas_diadhachd ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:ceithir_fiirinnean_uasal
+    rdfs:label "ceithir fìrinnean uasal" ;
+    :sense "four noble truths" ;
+    :part n:fiirinn ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:eagrachadh_obair_shooisealta_agus_adhradh_Criiosdail
+    rdfs:label "eagrachadh, obair shòisealta agus adhradh Crìosdail" ;
+    :sense "Christian organization, social work and worship" ;
+    :part n:adhradh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:adhradh_poblach
+    rdfs:label "adhradh poblach" ;
+    :sense "public worship" ;
+    :part n:adhradh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:aaite_adhraidh
+    rdfs:label "àite adhraidh" ;
+    :sense "place of worship" ;
+    :part n:adhradh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+  n:adhradh_poblach_agus_gnaathasan_eile
+    rdfs:label "adhradh poblach agus gnàthasan eile" ;
+    :sense "public worship and other practices" ;
+    :part n:adhradh ;
+    rdfs:comment "[Religious and Moral Education]" .
+
+}

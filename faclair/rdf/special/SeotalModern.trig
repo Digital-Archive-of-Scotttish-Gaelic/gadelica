@@ -1,0 +1,458 @@
+@prefix n: <http://faclair.ac.uk/nouns/> .
+@prefix a: <http://faclair.ac.uk/adjectives/> .
+@prefix v: <http://faclair.ac.uk/verbs/> .
+@prefix o: <http://faclair.ac.uk/other/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://faclair.ac.uk/meta/> .
+
+<http://faclair.ac.uk/sources/Seotal> {
+
+  a:rianachail
+    a :Adjective ;
+    rdfs:label "rianachail" ;
+    :sense "administrative" ;
+    rdfs:comment "[Modern Studies]" .
+
+  a:catharra
+    a :Adjective ;
+    rdfs:label "catharra" ;
+    :sense "civil" ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:tiireachas
+    a :MasculineNoun ;
+    rdfs:label "tìreachas" ;
+    :sense "colonisation" ;
+    :gen "tìreachais" ;
+    rdfs:comment "[Modern Studies]" .
+
+  a:bun_reachdail
+    a :Adjective ;
+    rdfs:label "bun-reachdail" ;
+    :sense "constitutional" ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:cuuis_lagha
+    a :FeminineNoun ;
+    rdfs:label "cùis-lagha" ;
+    :sense "court case" ;
+    :gen "cùise-lagha" ;
+    :pl "cùisean-lagha" ;
+    rdfs:comment "[Modern Studies]" .
+
+  a:Eoorpach
+    a :Adjective ;
+    rdfs:label "Eòrpach" ;
+    :sense "European" ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:riaghaltas
+    a :MasculineNoun ;
+    rdfs:label "riaghaltas" ;
+    :sense "government" ;
+    :gen "riaghaltais" ;
+    :pl "riaghaltasan" ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:casaid_cuuirte
+    a :FeminineNoun ;
+    rdfs:label "casaid-cùirte" ;
+    :sense "law suit" ;
+    :gen "casaid-cùirte" ;
+    :pl "casaidean-cùirte" ;
+    rdfs:comment "[Modern Studies]" .
+
+  a:reachdail
+    a :Adjective ;
+    rdfs:label "reachdail" ;
+    :sense "legislative" ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:imrich
+    a :FeminineNoun ;
+    rdfs:label "imrich" ;
+    :sense "migration" ;
+    :gen "imrich(e)" ;
+    :pl "imrichean" ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:Nuadh_eoolas
+    a :MasculineNoun ;
+    rdfs:label "Nuadh-eòlas" ;
+    :sense "Modern Studies" ;
+    :gen "Nuadh-eòlais" ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:duuthaich
+    a :FeminineNoun ;
+    rdfs:label "dùthaich" ;
+    :sense "nation" ;
+    :gen "dùthcha" ;
+    :pl "dùthchannan" ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:paarlamaid
+    a :FeminineNoun ;
+    rdfs:label "pàrlamaid" ;
+    :sense "parliament" ;
+    :gen "pàrlamaid(e)" ;
+    :pl "pàrlamaidean" ;
+    rdfs:comment "[Modern Studies]" .
+
+  a:poilitigeach
+    a :Adjective ;
+    rdfs:label "poilitigeach" ;
+    :sense "political" ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:cooir
+    a :FeminineNoun ;
+    rdfs:label "còir" ;
+    :sense "right" ;
+    :gen "còire" ;
+    :pl "còraichean" ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:seanadair
+    a :MasculineNoun ;
+    rdfs:label "seanadair" ;
+    :sense "senator" ;
+    :gen "seanadair" ;
+    :pl "seanadairean" ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:sooisealachd
+    a :FeminineNoun ;
+    rdfs:label "sòisealachd" ;
+    :sense "socialism" ;
+    :gen "sòisealachd agus siostaman co-cheangailte" ;
+    :pl "sòisealachd" ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:bhoot
+    a :FeminineNoun ;
+    rdfs:label "bhòt" ;
+    :sense "vote" ;
+    :gen "bhòta" ;
+    :pl "bhòtaichean" ;
+    rdfs:comment "[Modern Studies]" .
+
+  v:bhootadh
+    a :Verb ;
+    rdfs:label "bhòtadh" ;
+    :sense "voting" ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:bhootadh
+    a :MasculineNoun ;
+    rdfs:label "bhòtadh" ;
+    :sense "voting" ;
+    :gen "bhòtaidh" ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:lagh_rianachail
+    rdfs:label "lagh rianachail" ;
+    :sense "administrative law" ;
+    :part a:rianachail .
+
+  n:cooraichean_catharra
+    rdfs:label "còraichean catharra" ;
+    :sense "civil rights" ;
+    :part a:catharra ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:gluasad_nan_cooraichean_catharra
+    rdfs:label "gluasad nan còraichean catharra" ;
+    :sense "civil rights movement" ;
+    :part a:catharra ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:iomairt_nan_cooraichean_catharra
+    rdfs:label "iomairt nan còraichean catharra" ;
+    :sense "civil rights campaign" ;
+    :part a:catharra ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:seirbheiseach_catharra
+    rdfs:label "seirbheiseach catharra" ;
+    :sense "civil servant" ;
+    :part a:catharra ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:seirbheis_chatharra
+    rdfs:label "seirbheis chatharra" ;
+    :sense "civil service" ;
+    :part a:catharra ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:An_t_Seirbheis_Chatharra
+    rdfs:label "An t-Seirbheis Chatharra" ;
+    :sense "The Civil Service" ;
+    :part a:catharra ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:einnseanaireachd_chatharra
+    rdfs:label "einnseanaireachd chatharra" ;
+    :sense "civil engineering" ;
+    :part a:catharra ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:modh_obrach_catharra
+    rdfs:label "modh-obrach catharra" ;
+    :sense "civil procedure" ;
+    :part a:catharra ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:cuuirt_chatharra
+    rdfs:label "cùirt chatharra" ;
+    :sense "civil court" ;
+    :part a:catharra ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:cogadh_catharra
+    rdfs:label "cogadh catharra" ;
+    :sense "civil war" ;
+    :part a:catharra ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:lagh_catharra
+    rdfs:label "lagh catharra" ;
+    :sense "civil law" ;
+    :part a:catharra ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:saorsa_chatharra
+    rdfs:label "saorsa chatharra" ;
+    :sense "civil liberty" ;
+    :part a:catharra ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:tiireachas_eadar_naaiseanta
+    rdfs:label "tìreachas eadar-nàiseanta" ;
+    :sense "international colonisation" ;
+    :part n:tiireachas ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:lagh_bun_reachdail
+    rdfs:label "lagh bun-reachdail" ;
+    :sense "constitutional law" ;
+    :part a:bun_reachdail ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:sealladh_Eoorpach
+    rdfs:label "sealladh Eòrpach" ;
+    :sense "European dimension" ;
+    :part a:Eoorpach ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:An_Coimisean_Eoorpach
+    rdfs:label "An Coimisean Eòrpach" ;
+    :sense "European Commission" ;
+    :part a:Eoorpach ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:Paarlamaid_na_h_Eoorpa
+    rdfs:label "Pàrlamaid na h-Eòrpa" ;
+    :sense "European Parliament" ;
+    :part a:Eoorpach ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:An_t_Aonadh_Eoorpach
+    rdfs:label "An t-Aonadh Eòrpach" ;
+    :sense "European Union" ;
+    :part a:Eoorpach ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:leasachadh_Eoorpach
+    rdfs:label "leasachadh Eòrpach" ;
+    :sense "European development" ;
+    :part a:Eoorpach ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:ceannard_leasachadh_Eoorpach
+    rdfs:label "ceannard leasachadh Eòrpach" ;
+    :sense "head of European development" ;
+    :part a:Eoorpach ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:siostaman_riaghaltasan_agus_staaitean
+    rdfs:label "siostaman riaghaltasan agus stàitean" ;
+    :sense "systems of governments and states" ;
+    :part n:riaghaltas ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:riaghaltas_ionadail
+    rdfs:label "riaghaltas ionadail" ;
+    :sense "local government" ;
+    :part n:riaghaltas ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:Riaghaltas_na_h_Alba
+    rdfs:label "Riaghaltas na h-Alba" ;
+    :sense "Scotttish Government" ;
+    :part n:riaghaltas ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:prooiseas_reachdail
+    rdfs:label "pròiseas reachdail" ;
+    :sense "legislative process" ;
+    :part a:reachdail ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:imrich_eadar_naaiseanta
+    rdfs:label "imrich eadar-nàiseanta" ;
+    :sense "international migration" ;
+    :part n:imrich ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:deuchainn_Nuadh_eoolais
+    rdfs:label "deuchainn Nuadh-eòlais" ;
+    :sense "Modern Studies examination" ;
+    :part n:Nuadh_eoolas ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:goireasan_Nuadh_eoolais
+    rdfs:label "goireasan Nuadh-eòlais" ;
+    :sense "Modern Studies resources" ;
+    :part n:Nuadh_eoolas ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:lagh_dhuuthchannan
+    rdfs:label "lagh dhùthchannan" ;
+    :sense "law of nations" ;
+    :part n:duuthaich ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:Paarlamaid_na_h_Alba
+    rdfs:label "Pàrlamaid na h-Alba" ;
+    :sense "the Scottish Parliament" ;
+    :part n:paarlamaid ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:Paarlamaid_na_h_Eoorpa
+    rdfs:label "Pàrlamaid na h-Eòrpa" ;
+    :sense "the European Parliament" ;
+    :part n:paarlamaid ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:Ball_Paarlamaid
+    rdfs:label "Ball Pàrlamaid" ;
+    :sense "Member of Parliament" ;
+    :part n:paarlamaid ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:Ball_Paarlamaid_na_h_Alba
+    rdfs:label "Ball Pàrlamaid na h-Alba" ;
+    :sense "Member of the Scottish Parliament" ;
+    :part n:paarlamaid ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:Ball_Paarlamaid_na_h_Eoorpa
+    rdfs:label "Ball Pàrlamaid na h-Eòrpa" ;
+    :sense "Member of the European Parliament" ;
+    :part n:paarlamaid ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:Achd_Paarlamaid
+    rdfs:label "Achd Pàrlamaid" ;
+    :sense "Act of Parliament" ;
+    :part n:paarlamaid ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:saidheans_poilitigeach
+    rdfs:label "saidheans poilitigeach" ;
+    :sense "political science" ;
+    :part a:poilitigeach ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:beus_eoolas_poilitigeach
+    rdfs:label "beus-eòlas poilitigeach" ;
+    :sense "political ethics" ;
+    :part a:poilitigeach ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:cooraichean_catharra_agus_poilitigeach
+    rdfs:label "còraichean catharra agus poilitigeach" ;
+    :sense "civil and political rights" ;
+    :part a:poilitigeach ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:cooraichean_poilitigeach
+    rdfs:label "còraichean poilitigeach" ;
+    :sense "political rights" ;
+    :part a:poilitigeach ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:prooiseas_poilitigeach
+    rdfs:label "pròiseas poilitigeach" ;
+    :sense "political process" ;
+    :part a:poilitigeach ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:mothachadh_poilitigeach
+    rdfs:label "mothachadh poilitigeach" ;
+    :sense "political awareness" ;
+    :part a:poilitigeach ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:partaidh_poilitigeach
+    rdfs:label "partaidh poilitigeach" ;
+    :sense "political party" ;
+    :part a:poilitigeach ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:cooraichean_poilitigeach
+    rdfs:label "còraichean poilitigeach" ;
+    :sense "political rights" ;
+    :part n:cooir ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:cooraichean_a_chinne_daonna
+    rdfs:label "còraichean a' chinne-daonna" ;
+    :sense "human rights" ;
+    :part n:cooir ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:Cuumhnantan_UN_air_Cooraichean_Chloinne
+    rdfs:label "Cùmhnantan UN air Còraichean Chloinne" ;
+    :sense "UN Convention on the Rights of the Child" ;
+    :part n:cooir ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:Foillseachadh_UN_air_Cooraichean_a_Chinne_daonna
+    rdfs:label "Foillseachadh UN air Còraichean a' Chinne-daonna" ;
+    :sense "UN Declaration of Human Rights" ;
+    :part n:cooir ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:cooraichean_catharra
+    rdfs:label "còraichean catharra" ;
+    :sense "civil rights" ;
+    :part n:cooir ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:gluasad_nan_cooraichean_catharra
+    rdfs:label "gluasad nan còraichean catharra" ;
+    :sense "civil rights movement" ;
+    :part n:cooir ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:iomairt_nan_cooraichean_catharra
+    rdfs:label "iomairt nan còraichean catharra" ;
+    :sense "civil rights campaign" ;
+    :part n:cooir ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:cooraichean_uile_gleeidhte
+    rdfs:label "còraichean uile glèidhte" ;
+    :sense "all rights reserved" ;
+    :part n:cooir ;
+    rdfs:comment "[Modern Studies]" .
+
+  n:toradh_na_bhoota
+    rdfs:label "toradh na bhòta" ;
+    :sense "result of the vote" ;
+    :part n:bhoot ;
+    rdfs:comment "[Modern Studies]" .
+
+}
