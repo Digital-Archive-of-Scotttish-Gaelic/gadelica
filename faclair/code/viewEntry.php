@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Stòras Brì</title>
+    <title>Briathradan</title>
   </head>
   <body style="padding-top: 20px;">
     <div class="container-fluid">
@@ -432,14 +432,14 @@ if (count($sources)>1) {
       <p>&nbsp;</p>
       <p>&nbsp;</p>
       <nav class="navbar navbar-dark bg-primary fixed-bottom navbar-expand-lg">
-        <a class="navbar-brand" href="index.php">🏛 Stòras Brì</a>
+        <a class="navbar-brand" href="index.php">🏛 Briathradan</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <!--<a class="nav-item nav-link" href="about.html" data-toggle="tooltip" title="About this site">fios</a>-->
-            <a class="nav-item nav-link" href="viewRandomEntry.php" data-toggle="tooltip" title="Be adventurous!">dàna</a>
+            <a class="nav-item nav-link" href="viewRandomEntry.php" data-toggle="tooltip" title="View random entry">sonas</a>
           </div>
         </div>
       </nav>
