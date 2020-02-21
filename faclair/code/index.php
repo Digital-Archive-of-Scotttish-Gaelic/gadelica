@@ -1,4 +1,11 @@
 <!doctype html>
+<?php
+$searchTerm = $_GET['searchTerm'];
+$gd = $_GET['gd'];
+$snh = $_GET['snh'];
+$frp = $_GET['frp'];
+$seotal = $_GET['seotal'];
+?>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -14,33 +21,58 @@
       <form autocomplete="off" id="searchForm"> <!-- Search box -->
         <div class="form-group">
           <div class="input-group">
-            <input id="searchBox" type="text" class="form-control active" name="searchTerm"  data-toggle="tooltip" title="Enter search term here" autofocus="autofocus"/>
+<?php
+echo '<input id="searchBox" type="text" class="form-control active" name="searchTerm"  data-toggle="tooltip" title="Enter search term here" ';
+if ($searchTerm!='') { echo 'value="' . $searchTerm . '"'; }
+else { echo 'autofocus="autofocus"'; }
+echo '/>';
+?>
             <div class="input-group-append">
-              <button class="btn btn-primary" type="submit" data-toggle="tooltip" title="Click to find entries">Siuthad</button>
+              <button id="searchButton" class="btn btn-primary" type="submit" data-toggle="tooltip" title="Click to find entries">Siuthad</button>
             </div>
           </div>
         </div>
         <div class="form-group">
           <div class="form-check form-check-inline" data-toggle="tooltip" title="Enter English term">
-            <input class="form-check-input" type="radio" name="lang" id="enRadio" value="en" checked>
+<?php
+echo '<input class="form-check-input" type="radio" name="lang" id="enRadio" value="en"';
+if ($gd!='yes') { echo ' checked'; }
+echo '>';
+?>
             <label class="form-check-label" for="enRadio">Beurla</label>
           </div>
           <div class="form-check form-check-inline" data-toggle="tooltip" title="Enter Gaelic term">
-            <input class="form-check-input" type="radio" name="lang" id="gdRadio" value="gd">
+<?php
+echo '<input class="form-check-input" type="radio" name="lang" id="gdRadio" value="gd"';
+if ($gd=='yes') { echo ' checked'; }
+echo '>';
+?>
             <label class="form-check-label" for="gdRadio">Gàidhlig</label>
           </div>
         </div>
         <div class="form-group">
           <div class="form-check form-check-inline" data-toggle="tooltip" title="Search Scottish Natural Heritage nature terms">
-            <input class="form-check-input" type="checkbox" name="snh" id="snhCheck" value="yes" checked>
+<?php
+echo '<input class="form-check-input" type="checkbox" name="snh" id="snhCheck" value="yes"';
+if ($snh!='no') { echo ' checked'; }
+echo '>';
+?>
             <label class="form-check-label" for="snhCheck">Faclan Nàdair</label>
           </div>
           <div class="form-check form-check-inline" data-toggle="tooltip" title="Search the Scottish Parliament dictionary and related resources">
-            <input class="form-check-input" type="checkbox" name="frp" id="frpCheck" value="yes" checked>
+<?php
+echo '<input class="form-check-input" type="checkbox" name="frp" id="frpCheck" value="yes"';
+if ($frp!='no') { echo ' checked'; }
+echo '>';
+?>
             <label class="form-check-label" for="frpCheck">Faclair na Pàrlamaid</label>
           </div>
           <div class="form-check form-check-inline" data-toggle="tooltip" title="Search Stòrlann’s terms for use in GME">
-            <input class="form-check-input" type="checkbox" name="seotal" id="seotalCheck" value="yes" checked>
+<?php
+echo '<input class="form-check-input" type="checkbox" name="seotal" id="seotalCheck" value="yes"';
+if ($seotal!='no') { echo ' checked'; }
+echo '>';
+?>
             <label class="form-check-label" for="seotalCheck">Seotal</label>
           </div>
           <!--
@@ -142,6 +174,15 @@
           });
         }
       });
+
+      if ($('#searchBox').val()) {
+        alert('boo');
+        $('#searchButton').trigger('click');
+
+        
+        //$('#searchForm').trigger('submit');
+      }
+
     });
 
     function removeAccents(str) {
