@@ -2,9 +2,13 @@
 <?php
 $searchTerm = $_GET['searchTerm'];
 $gd = $_GET['gd'];
-$snh = $_GET['snh'];
-$frp = $_GET['frp'];
-$seotal = $_GET['seotal'];
+$query = $_SERVER['QUERY_STRING'];
+$snh = false;
+$frp = false;
+$seotal = false;
+if (strpos($query,'lex=snh')>-1) { $snh = true; }
+if (strpos($query,'lex=frp')>-1) { $frp = true; }
+if (strpos($query,'lex=seotal')>-1) { $seotal = true; }
 ?>
 <html lang="en">
   <head>
@@ -18,11 +22,11 @@ $seotal = $_GET['seotal'];
   </head>
   <body style="padding-top: 20px;">
     <div class="container-fluid">
-      <form autocomplete="off" id="searchForm"> <!-- Search box -->
+      <form action="index.php" method="get" autocomplete="off" id="searchForm"> <!-- Search box -->
         <div class="form-group">
           <div class="input-group">
 <?php
-echo '<input id="searchBox" type="text" class="form-control active" name="searchTerm"  data-toggle="tooltip" title="Enter search term here" ';
+echo '<input id="searchBox" type="text" class="form-control active" name="searchTerm" data-toggle="tooltip" title="Enter search term here" ';
 if ($searchTerm!='') { echo 'value="' . $searchTerm . '"'; }
 else { echo 'autofocus="autofocus"'; }
 echo '/>';
@@ -35,7 +39,7 @@ echo '/>';
         <div class="form-group">
           <div class="form-check form-check-inline" data-toggle="tooltip" title="Enter English term">
 <?php
-echo '<input class="form-check-input" type="radio" name="lang" id="enRadio" value="en"';
+echo '<input class="form-check-input" type="radio" name="gd" id="enRadio" value="no"';
 if ($gd!='yes') { echo ' checked'; }
 echo '>';
 ?>
@@ -43,7 +47,7 @@ echo '>';
           </div>
           <div class="form-check form-check-inline" data-toggle="tooltip" title="Enter Gaelic term">
 <?php
-echo '<input class="form-check-input" type="radio" name="lang" id="gdRadio" value="gd"';
+echo '<input class="form-check-input" type="radio" name="gd" id="gdRadio" value="yes"';
 if ($gd=='yes') { echo ' checked'; }
 echo '>';
 ?>
@@ -53,24 +57,24 @@ echo '>';
         <div class="form-group">
           <div class="form-check form-check-inline" data-toggle="tooltip" title="Search Scottish Natural Heritage nature terms">
 <?php
-echo '<input class="form-check-input" type="checkbox" name="snh" id="snhCheck" value="yes"';
-if ($snh!='no') { echo ' checked'; }
+echo '<input class="form-check-input" type="checkbox" name="lex" id="snhCheck" value="snh"';
+if ($snh || $searchTerm=='') { echo ' checked'; }
 echo '>';
 ?>
             <label class="form-check-label" for="snhCheck">Faclan Nàdair</label>
           </div>
           <div class="form-check form-check-inline" data-toggle="tooltip" title="Search the Scottish Parliament dictionary and related resources">
 <?php
-echo '<input class="form-check-input" type="checkbox" name="frp" id="frpCheck" value="yes"';
-if ($frp!='no') { echo ' checked'; }
+echo '<input class="form-check-input" type="checkbox" name="lex" id="frpCheck" value="frp"';
+if ($frp || $searchTerm=='') { echo ' checked'; }
 echo '>';
 ?>
             <label class="form-check-label" for="frpCheck">Faclair na Pàrlamaid</label>
           </div>
           <div class="form-check form-check-inline" data-toggle="tooltip" title="Search Stòrlann’s terms for use in GME">
 <?php
-echo '<input class="form-check-input" type="checkbox" name="seotal" id="seotalCheck" value="yes"';
-if ($seotal!='no') { echo ' checked'; }
+echo '<input class="form-check-input" type="checkbox" name="lex" id="seotalCheck" value="seotal"';
+if ($seotal || $searchTerm=='') { echo ' checked'; }
 echo '>';
 ?>
             <label class="form-check-label" for="seotalCheck">Seotal</label>
@@ -89,6 +93,7 @@ echo '>';
       </form>
       <table class="table table-hover" id="resultsTable">
         <tbody>
+          <!-- PUT PHP HERE MAYBE -->
         </tbody>
       </table>
       <p>&nbsp;</p>
@@ -111,6 +116,9 @@ echo '>';
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script>
     $(function() {
+
+      // JUST START RUNNING AJAX IF SEARCH TERM EXISTS
+      
       $('#searchForm').submit(function(e){ // do a sequence of ajax calls to search the database, each time calling addData
         event.preventDefault();
         var searchTerm = removeAccents($('#searchBox').val());
@@ -175,11 +183,12 @@ echo '>';
         }
       });
 
+/*
       if ($('#searchBox').val()) {
         alert('boo');
         $('#searchButton').trigger('click');
+*/
 
-        
         //$('#searchForm').trigger('submit');
       }
 
