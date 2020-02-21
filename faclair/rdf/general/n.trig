@@ -7,7 +7,12 @@
 
 <http://faclair.ac.uk/sources/general> {
 
-n:neach_cuuraim
-  rdfs:label "neach cùraim" .
+  o:na_aonar
+    rdfs:label "na* aonar" ;
+    :sense "in isolation" , "on one’s own" ;
+    :part n:aonar .
+
+  n:neach_cuuraim
+    rdfs:label "neach cùraim" .
 
 }

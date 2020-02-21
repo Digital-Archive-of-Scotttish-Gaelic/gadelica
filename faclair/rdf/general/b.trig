@@ -7,12 +7,17 @@
 
 <http://faclair.ac.uk/sources/general> {
 
-n:braathair
-  a :MasculineNoun ;
-  rdfs:label "bràthair" ;
-  :gen "bràthar" ;
-  :pl "bràithrean" ;
-  :sense "brother"  ;
-  rdfs:comment "[BMh 2013]" .
+  n:braathair
+    a :MasculineNoun ;
+    rdfs:label "bràthair" ;
+    :gen "bràthar" ;
+    :pl "bràithrean" ;
+    :sense "brother"  ;
+    rdfs:comment "[BMh 2013]" .
+
+  n:buidheann_a_sheasas_na_aonar
+    rdfs:label "buidheann a sheasas na aonar" ;
+    :part n:buidheann , v:seas_na_aonar ;
+    :sense "stand-alone body" .
 
 }

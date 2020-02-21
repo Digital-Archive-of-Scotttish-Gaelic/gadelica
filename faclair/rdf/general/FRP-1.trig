@@ -84,13 +84,6 @@ o:de_reeir_an_lagha
     rdfs:label "tionnsgnadh a tha a rèir an t-solair" ;
     :part o:a_reeir_solair .
 
-  o:a_sheasas_na_aonar
-    rdfs:label "a sheasas na aonar" .
-
-  n:buidheann_a_sheasas_na_aonar
-    rdfs:label "buidheann a sheasas na aonar" ;
-    :part o:a_sheasas_na_aonar .
-
   n:A_Shoillse
     rdfs:label "A Shoillse" .
 
@@ -732,10 +725,6 @@ a:ailtireil
     rdfs:label "chaidh e air iasad gu roinn eile" ;
     :part o:air_iasad ;
     :sense "he went on secondment to another department" .
-
-  o:air_leth
-    rdfs:label "air leth" ;
-    :sense "in isolation" .
 
   o:air_saoradh
     rdfs:label "air saoradh (bho chuing)" ;
@@ -2068,27 +2057,6 @@ a:ailtireil
     rdfs:label "poileasaidhean aonaichte" ;
     :part a:aonaichte ;
     :sense "integrated policies" .
-
-  n:aonarachd
-    rdfs:label "aonarachd" ;
-    :sense "isolation" .
-
-  n:aonarachdas
-    rdfs:label "aonarachdas" ;
-    :sense "isolationism" .
-
-  n:aonaraiche
-    rdfs:label "aonaraiche" ;
-    :sense "isolationist" .
-
-  a:aonarail
-    rdfs:label "aonarail" ;
-    :sense "isolationist" .
-
-  n:poileasaidhean_aonarail
-    rdfs:label "poileasaidhean aonarail" ;
-    :part a:aonarail ;
-    :sense "isolationist policies" .
 
   n:aon_chuuise
     rdfs:label "aon-chùise" ;
@@ -11525,9 +11493,7 @@ a:toileach
     rdfs:label "cosgaisean a’ buntainn ri luchd-obrach" ;
     :sense "staff-related costs" .
 
-  n:cosgaisean_air_leth
-    rdfs:label "cosgaisean air leth" ;
-    :sense "exceptional expenses" .
+
 
   n:Cosgaisean_BPA
     rdfs:label "Cosgaisean BPA" ;
@@ -13048,9 +13014,7 @@ v:chuireadh_aas_don_Bhile_le_cuilbheartan_bacaidh_na_feadhna_a_bha_na_aghaidh
     rdfs:label "cuir air iasad" ;
     :sense "second (staff)" .
 
-  v:cuir_air_leth
-    rdfs:label "cuir air leth" ;
-    :sense "appropriate (funds)" .
+
 
   v:cuir_air_liosta_thaghte
     rdfs:label "cuir air liosta thaghte" ;
@@ -14832,10 +14796,6 @@ v:chuireadh_aas_don_Bhile_le_cuilbheartan_bacaidh_na_feadhna_a_bha_na_aghaidh
   n:cur_air_bhonn
     rdfs:label "cur air bhonn" ;
     :sense "establishment" , "setting up" .
-
-  n:cur_air_leth
-    rdfs:label "cur air leth" ;
-    :sense "appropriation" , "the act of setting apart" .
 
   n:cur_a_mach_aa_dachaigh
     rdfs:label "cur a-mach (à dachaigh)" ;

@@ -30,6 +30,16 @@
     :gen "peathar" ;
     :pl "peathraichean" .
 
+  n:poileasaidhean_aonarail
+    rdfs:label "poileasaidhean aonarail" ;
+    :part a:aonarail , n:poileasaidh ;
+    :sense "isolationist policies" .
+
+  n:poileasaidhean_leth_oireachail
+    rdfs:label "poileasaidhean leth-oireachail" ;
+    :part a:leth_oireachail , n:poileasaidh ;
+    :sense "isolationist policies" .
+
   n:poonair
     a :FeminineNoun ;
     rdfs:label "pònair" ;

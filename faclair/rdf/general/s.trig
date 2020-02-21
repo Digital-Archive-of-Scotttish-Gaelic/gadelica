@@ -47,7 +47,16 @@ n:seann_seanmhair
   :gen "seann seanmhar" ;
   rdfs:comment "[BMh 2013]" .
 
+  v:seas
+    a :Verb ;
+    rdfs:label "seas" ;
+    :vn "seasamh" ;
+    :sense "stand" .
 
+  v:seas_na_aonar
+    rdfs:label "seas na* aonar" ;
+    :sense "stand alone" ;
+    :part v:seas , o:na_aonar .
 
 n:seilcheag
   a :FeminineNoun ;

@@ -932,6 +932,12 @@ n:corrag
   :pl "corragan" ;
   rdfs:comment "[BMh 2013]" .
 
+  n:cosgais_air_leth
+    rdfs:label "cosgais air leth" ;
+    :pl "cosgaisean air leth" ;
+    :sense "exceptional expense" ;
+    :part n:cosgais , o:air_leth .
+
 n:coota
   a :MasculineNoun ;
   rdfs:label "còta" ;
@@ -1214,6 +1220,11 @@ v:cuir_air_falbh_dhan_aaile
   :sense "launch into space" ;
   :part v:cuir , n:aaile ;
   rdfs:comment "[BMh 2013]" .
+
+  v:cuir_air_leth
+    rdfs:label "cuir air leth" ;
+    :sense "appropriate" , "set apart" ;
+    :part v:cuir , o:air_leth .
 
 v:cuir_ann
   rdfs:label "cuir ann" ;

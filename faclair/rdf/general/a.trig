@@ -101,10 +101,15 @@ o:air_bhioran
   :sense "excited" ;
   rdfs:comment "[BMh 2013]" .
 
-o:air_mo_bhooradh
-  rdfs:label "air (mo) bhòradh" ;
+o:air_a_bhooradh
+  rdfs:label "air a* bhòradh" ;
   :sense "bored" ;
   rdfs:comment "[BMh 2013]" .
+
+  o:air_leth
+    rdfs:label "air leth" ;
+    :sense "in isolation" , "outstanding" , "apart" ;
+    :part n:leth .
 
 n:aiseag
   a :MasculineNoun ;
@@ -204,6 +209,63 @@ n:aonad_obrachaidh_sgiobaichte
   rdfs:label "aonad obrachaidh sgiobaichte" ;
   :part n:aonad_obrachaidh , a:sgiobaichte ;
   rdfs:comment "[BMh 2013]" .
+
+  o:aon
+    rdfs:label "aon" ;
+    :sense "one" .
+
+  n:aonar
+    a :MasculineNoun ;
+    rdfs:label "aonar" ;
+    :sense "one person" ;
+    :part o:aon ;
+    rdfs:comment "[CM 2004]" .
+
+  a:aonarach
+    a :Adjective ;
+    rdfs:label "aonarach" ;
+    :sense "alone" , "forlorn" , "lone" , "lonely" , "solitary" ;
+    :comp "aonaraiche" ;
+    :part n:aonar ;
+    rdfs:comment "[CM 2004 – also aon(a)ranach]" .
+
+  n:aonarachd
+    a :FeminineNoun ;
+    rdfs:label "aonarachd" ;
+    :sense "isolation" , "lonliness" ;
+    :gen "aonarachd" ;
+    :part a:aonarach ;
+    rdfs:comment "[CM 2004 – also aonaranachd]" .
+
+  n:aonarachdas
+    a :MasculineNoun ;
+    rdfs:label "aonarachdas" ;
+    :gen "aonarachdais" ;
+    :part n:aonarachd ;
+    :sense "isolationism" .
+
+  n:aonaraiche
+    a :MasculineNoun ;
+    rdfs:label "aonaraiche" ;
+    :sense "isolationist" ;
+    :gen "aonaraiche" ;
+    :pl "aonaraiche" ;
+    :part a:aonarach .
+
+  a:aonarail
+    a :Adjective ;
+    rdfs:label "aonarail" ;
+    :comp "aonaraile" ;
+    :sense "isolationist" ;
+    :part n:aonar .
+
+  n:aonaran
+    rdfs:label "aonaran" ;
+    :sense "hermit" , "anchorite" , "recluse" ;
+    :gen "aonarain" ;
+    :pl "aonarain" ;
+    :part n:aonar ;
+    rdfs:comment "[CM 2004 – also aonaranach]" .
 
 a:aotrom
   a :Adjective ;
