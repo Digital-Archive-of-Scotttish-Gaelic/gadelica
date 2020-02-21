@@ -93,7 +93,6 @@ echo '>';
       </form>
       <table class="table table-hover" id="resultsTable">
         <tbody>
-          <!-- PUT PHP HERE MAYBE -->
         </tbody>
       </table>
       <p>&nbsp;</p>
@@ -115,97 +114,77 @@ echo '>';
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script>
-    $(function() {
-
-      // JUST START RUNNING AJAX IF SEARCH TERM EXISTS
-      
-      $('#searchForm').submit(function(e){ // do a sequence of ajax calls to search the database, each time calling addData
-        event.preventDefault();
-        var searchTerm = removeAccents($('#searchBox').val());
-        if (searchTerm=='') {
-          alert('No search term!');
-          return false;
-        }
-        $('#resultsTable tbody').empty();
-        var lang = 'en';
-        if ($('#gdRadio:checked').val()=='gd' ) { lang = 'gd'; }
-        var snh = false;
-        var frp = false;
-        var seotal = false;
-        var dwelly = false;
-        var others = false;
-        if ($('#snhCheck:checked').val()=='yes' ) { snh = true; }
-        if ($('#frpCheck:checked').val()=='yes' ) { frp = true; }
-        if ($('#seotalCheck:checked').val()=='yes' ) { seotal = true; }
-        //if ($('#dwellyCheck:checked').val()=='yes' ) { dwelly = true; }
-        //if ($('#othersCheck:checked').val()=='yes' ) { others = true; }
-        if (lang == 'en') {
-          var url = 'getResults.php?action=getEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
+$(function() {
+  var searchTerm = removeAccents($('#searchBox').val());
+  if (searchTerm!='') {
+    $('#resultsTable tbody').empty();
+    var lang = 'en';
+    if ($('#gdRadio').is(':checked')) { lang = 'gd'; }
+    var snh = false;
+    var frp = false;
+    var seotal = false;
+    var dwelly = false;
+    var others = false;
+    if($('#snhCheck').is(':checked')) { snh = true; }
+    if($('#frpCheck').is(':checked')) { frp = true; }
+    if($('#seotalCheck').is(':checked')) { seotal = true; }
+    if (lang == 'en') {
+      var url = 'getResults.php?action=getEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
+      $.getJSON(url, function(data) {
+        addData(data);
+      }).done(function() {
+        var url = 'getResults.php?action=getMoreEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
+        $.getJSON(url, function(data) {
+          addData(data);
+        }).done(function() {
+          var url = 'getResults.php?action=getEvenMoreEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
           $.getJSON(url, function(data) {
             addData(data);
           }).done(function() {
-            var url = 'getResults.php?action=getMoreEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
+            var url = 'getResults.php?action=getEvenEvenMoreEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
             $.getJSON(url, function(data) {
               addData(data);
-            }).done(function() {
-              var url = 'getResults.php?action=getEvenMoreEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
-              $.getJSON(url, function(data) {
-                addData(data);
-              }).done(function() {
-                var url = 'getResults.php?action=getEvenEvenMoreEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
-                $.getJSON(url, function(data) {
-                  addData(data);
-                }).done(noResults());
-              });
-            });
+            }).done(noResults());
           });
-        }
-        else {
-          var url = 'getResults.php?action=getGaelicResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
-          $.getJSON(url, function(data) {
-            addData(data);
-          }).done(function() {
-            var url = 'getResults.php?action=getMoreGaelicResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
-            $.getJSON(url, function(data) {
-              addData(data);
-            }).done(function() {
-              var url = 'getResults.php?action=getEvenMoreGaelicResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
-              $.getJSON(url, function(data) {
-                addData(data);
-              }).done(function() {
-                var url = 'getResults.php?action=getEvenEvenMoreGaelicResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
-                $.getJSON(url, function(data) {
-                  addData(data);
-                }).done(noResults());
-              });
-            });
-          });
-        }
+        });
       });
-
-/*
-      if ($('#searchBox').val()) {
-        alert('boo');
-        $('#searchButton').trigger('click');
-*/
-
-        //$('#searchForm').trigger('submit');
-      }
-
-    });
-
-    function removeAccents(str) {
-      str = str.replace('ù','u');
-      str = str.replace('è','e');
-      str = str.replace('é','e');
-      str = str.replace('à','a');
-      str = str.replace('ì','i');
-      str = str.replace('ò','o');
-      str = str.replace('ó','o');
-      return str;
     }
+    else {
+      var url = 'getResults.php?action=getGaelicResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
+      $.getJSON(url, function(data) {
+        addData(data);
+      }).done(function() {
+        var url = 'getResults.php?action=getMoreGaelicResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
+        $.getJSON(url, function(data) {
+          addData(data);
+        }).done(function() {
+          var url = 'getResults.php?action=getEvenMoreGaelicResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
+          $.getJSON(url, function(data) {
+            addData(data);
+          }).done(function() {
+            var url = 'getResults.php?action=getEvenEvenMoreGaelicResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
+            $.getJSON(url, function(data) {
+              addData(data);
+            }).done(noResults());
+          });
+        });
+      });
+    }
+  }
+});
 
-    function addData(data) { // add rows (search results) to the table
+function removeAccents(str) {
+  str = str.replace('ù','u');
+  str = str.replace('è','e');
+  str = str.replace('é','e');
+  str = str.replace('à','a');
+  str = str.replace('ì','i');
+  str = str.replace('ò','o');
+  str = str.replace('ó','o');
+  return str;
+}
+
+function addData(data) { // add rows (search results) to the table
       var ids = [];
       $.each(data, function(k,v) {
         id = v.id.value;
@@ -236,15 +215,14 @@ echo '>';
         else { hwStr = id; }
         $('#resultsTable tbody').append('<tr><td><a href="viewEntry.php?id=' + encodeURI(id) + '">' + hwStr + '</a></td><td>' + enStr + '</td></tr>');
       });
-    }
+}
 
-    function noResults() {
-      x = $('#resultsTable tbody tr').length;
-      if (x==0) {
-        alert('No results!');
-      }
-    }
-
+function noResults() {
+  x = $('#resultsTable tbody tr').length;
+  if (x==0) {
+    alert('No results!'); // NEED GAELIC
+  }
+}
     </script>
   </body>
 </html>
