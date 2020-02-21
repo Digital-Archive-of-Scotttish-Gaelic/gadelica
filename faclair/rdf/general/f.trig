@@ -563,6 +563,17 @@ n:falt
   rdfs:label "falt" .
 
 
+  n:filleadh
+    a :MasculineNoun ;
+    rdfs:label "filleadh" ;
+    :sense "layer" ;
+    :gen "fillidh" ;
+    :pl "fillidhean" .
+
+  n:filleadh_ooson
+    rdfs:label "filleadh osòn" ;
+    :sense "ozone layer" ;
+    :part n:filleadh , n:osoon .
 
 
 n:fine
