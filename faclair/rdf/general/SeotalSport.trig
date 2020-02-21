@@ -1,0 +1,437 @@
+@prefix n: <http://faclair.ac.uk/nouns/> .
+@prefix a: <http://faclair.ac.uk/adjectives/> .
+@prefix v: <http://faclair.ac.uk/verbs/> .
+@prefix o: <http://faclair.ac.uk/other/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://faclair.ac.uk/meta/> .
+
+<http://faclair.ac.uk/sources/general> {
+
+  a:uisge
+    a :Adjective ;
+    rdfs:label "uisge" ;
+    :sense "aquatic" ;
+    rdfs:comment "[Physical Education]" .
+
+  n:luuth_chleasaiche
+    a :MasculineNoun ;
+    rdfs:label "lùth-chleasaiche" ;
+    :sense "athlete" ;
+    :gen "lùth-chleasaiche" ;
+    :pl "lùth-chleasaichean" ;
+    rdfs:comment "[Physical Education]" .
+
+  a:luuth_chleasach
+    a :Adjective ;
+    rdfs:label "lùth-chleasach" ;
+    :sense "athletic" ;
+    rdfs:comment "[Physical Education]" .
+
+  n:luuth_chleas
+    a :MasculineNoun ;
+    rdfs:label "lùth-chleas" ;
+    :sense "athletics" ;
+    :gen "lùth-chleasa" ;
+    :pl "lùth-chleasan" ;
+    rdfs:comment "[Physical Education]" .
+
+  n:luuth_chleasachd
+    a :FeminineNoun ;
+    rdfs:label "lùth-chleasachd" ;
+    :sense "athletics" ;
+    :gen "lùth-chleasachd" ;
+    rdfs:comment "[Physical Education]" .
+
+  n:badmantan
+    a :MasculineNoun ;
+    rdfs:label "badmantan" ;
+    :sense "badminton" ;
+    :gen "badmantan" ;
+    rdfs:comment "[Physical Education]" .
+
+  n:ball_basgaid
+    a :MasculineNoun ;
+    rdfs:label "ball-basgaid" ;
+    :sense "basketball" ;
+    :gen "ball-basgaid" ;
+    rdfs:comment "[Physical Education]" .
+
+  n:boobhladh
+    a :MasculineNoun ;
+    rdfs:label "bòbhladh" ;
+    :sense "bowling" ;
+    rdfs:comment "[Physical Education]" .
+
+  a:marcachd
+    a :Adjective ;
+    rdfs:label "marcachd" ;
+    :sense "equestrian" ;
+    rdfs:comment "[Physical Education]" .
+
+  n:fallaineachd
+    a :FeminineNoun ;
+    rdfs:label "fallaineachd" ;
+    :sense "fitness" ;
+    :gen "fallaineachd" ;
+    rdfs:comment "[Physical Education]" .
+
+  n:freagarrachd
+    a :FeminineNoun ;
+    rdfs:label "freagarrachd" ;
+    :sense "fitness" ;
+    :gen "freagarrachd" ;
+    rdfs:comment "[Physical Education]" .
+
+  n:geeam
+    a :MasculineNoun ;
+    rdfs:label "gèam" ;
+    :sense "game" ;
+    :gen "geama" ;
+    :pl "geamannan" ;
+    :pl "geamachan" ;
+    :pl "geamaichean" ;
+    rdfs:comment "[Physical Education]" .
+
+  n:sligheadaireachd
+    a :FeminineNoun ;
+    rdfs:label "sligheadaireachd" ;
+    :sense "orienteering" ;
+    :gen "sligheadaireachd" ;
+    rdfs:comment "[Physical Education]" .
+
+  a:corporra
+    a :Adjective ;
+    rdfs:label "corporra" ;
+    :sense "physical" ;
+    rdfs:comment "[Physical Education]" .
+
+  n:polo
+    a :MasculineNoun ;
+    rdfs:label "polo" ;
+    :sense "polo" ;
+    :gen "polo" ;
+    rdfs:comment "[Physical Education]" .
+
+  n:reeis
+    a :FeminineNoun ;
+    rdfs:label "rèis" ;
+    :sense "race" ;
+    :gen "rèise" ;
+    :pl "rèisean" ;
+    rdfs:comment "[Physical Education]" .
+
+  n:reeiseadh
+    a :MasculineNoun ;
+    rdfs:label "rèiseadh" ;
+    :sense "racing" ;
+    :gen "rèisidh" ;
+    rdfs:comment "[Physical Education]" .
+
+  n:racaid
+    a :FeminineNoun ;
+    rdfs:label "racaid" ;
+    :sense "racquet" ;
+    :gen "racaid(e)" ;
+    :pl "racaidean" ;
+    rdfs:comment "[Physical Education]" .
+
+  n:speeileabord
+    a :MasculineNoun ;
+    rdfs:label "spèileabord" ;
+    :sense "skateboard" ;
+    :gen "spèileabuird" ;
+    :pl "spèileabuird" ;
+    rdfs:comment "[Physical Education]" .
+
+  n:speeileadh
+    a :MasculineNoun ;
+    rdfs:label "spèileadh" ;
+    :sense "skating" ;
+    :gen "spèilidh" ;
+    rdfs:comment "[Physical Education]" .
+
+  o:a_speeileadh
+    rdfs:label "a' spèileadh" ;
+    :sense "skating" ;
+    rdfs:comment "[Physical Education]" .
+
+  n:spoors
+    a :FeminineNoun ;
+    rdfs:label "spòrs" ;
+    :sense "sport" ;
+    :gen "spòrsa" ;
+    :pl "spòrsan" ;
+    rdfs:comment "[Physical Education]" .
+
+  n:teanas
+    a :MasculineNoun ;
+    rdfs:label "teanas" ;
+    :sense "tennis" ;
+    :gen "teanas" ;
+    rdfs:comment "[Physical Education]" .
+
+  o:Riigh_nan_Trii_Puingean
+    rdfs:label "Rìgh nan Trì Puingean" ;
+    :sense "Three point King" ;
+    :gen "Rìgh nan Trì Puingean" ;
+    rdfs:comment "[Physical Education]" .
+
+  o:iooga
+    rdfs:label "iòga" ;
+    :sense "yoga" ;
+    :gen "iòga" ;
+    rdfs:comment "[Physical Education]" .
+
+  n:spoorsan_uisge
+    rdfs:label "spòrsan uisge" ;
+    :sense "aquatic sports" ;
+    :part a:uisge ;
+    rdfs:comment "[Physical Education]" .
+
+  n:geamannan_luuth_chleasach
+    rdfs:label "geamannan lùth-chleasach" ;
+    :sense "athletic games" ;
+    :part a:luuth_chleasach ;
+    rdfs:comment "[Physical Education]" .
+
+  n:spoorsan_luuth_chleasach
+    rdfs:label "spòrsan lùth-chleasach" ;
+    :sense "athletic sports" ;
+    :part a:luuth_chleasach ;
+    rdfs:comment "[Physical Education]" .
+
+  n:aaireamh_de_luuth_chleasan_aig_Geamannan_Co_fhlaitheis
+    rdfs:label "àireamh de lùth-chleasan aig Geamannan Co-fhlaitheis" ;
+    :sense "number of athletics at Commonwealth Games" ;
+    :part n:luuth_chleas ;
+    rdfs:comment "[Physical Education]" .
+
+  n:uuidh_ann_an_luuth_chleasachd
+    rdfs:label "ùidh ann an lùth-chleasachd" ;
+    :sense "an interest in athletics" ;
+    :part n:luuth_chleasachd ;
+    rdfs:comment "[Physical Education]" .
+
+  n:boobhlaidh
+    rdfs:label "bòbhlaidh" ;
+    :sense "bowling" ;
+    :part n:boobhladh ;
+    rdfs:comment "[Physical Education]" .
+
+  n:leeana_boobhlaidh
+    rdfs:label "lèana-bòbhlaidh" ;
+    :sense "bowling green" ;
+    :part n:boobhladh ;
+    rdfs:comment "[Physical Education]" .
+
+  n:ionad_boobhlaidh
+    rdfs:label "ionad-bòbhlaidh" ;
+    :sense "bowling alley" ;
+    :part n:boobhladh ;
+    rdfs:comment "[Physical Education]" .
+
+  n:spoorsan_marcachd
+    rdfs:label "spòrsan marcachd" ;
+    :sense "equestrian sports" ;
+    :part a:marcachd ;
+    rdfs:comment "[Physical Education]" .
+
+  n:ionnsachadh_steeidhte_air_geamannan
+    rdfs:label "ionnsachadh stèidhte air geamannan" ;
+    :sense "games-based learning" ;
+    :part n:geeam ;
+    rdfs:comment "[Physical Education]" .
+
+  n:geamannan_luuth_chleasach
+    rdfs:label "geamannan lùth-chleasach" ;
+    :sense "athletic games" ;
+    :part n:geeam ;
+    rdfs:comment "[Physical Education]" .
+
+  n:geamannan_a_muigh
+    rdfs:label "geamannan a-muigh" ;
+    :sense "outdoor games" ;
+    :part n:geeam ;
+    rdfs:comment "[Physical Education]" .
+
+  n:geamannan_turchairt
+    rdfs:label "geamannan-turchairt" ;
+    :sense "games of chance" ;
+    :part n:geeam ;
+    rdfs:comment "[Physical Education]" .
+
+  n:geamannan_a_staigh
+    rdfs:label "geamannan a-staigh" ;
+    :sense "indoor games" ;
+    :part n:geeam ;
+    rdfs:comment "[Physical Education]" .
+
+  n:geamannan_sgil_a_staigh
+    rdfs:label "geamannan-sgil a-staigh" ;
+    :sense "indoor games of skill" ;
+    :part n:geeam ;
+    rdfs:comment "[Physical Education]" .
+
+  n:cluich_le_ball_toirmisgte
+    rdfs:label "cluich le ball toirmisgte" ;
+    :sense "no ball games" ;
+    :part n:geeam ;
+    rdfs:comment "[Physical Education]" .
+
+  n:spoors_geamannan_agus_dibhearsain
+    rdfs:label "spòrs, geamannan agus dibhearsain" ;
+    :sense "sports, games and entertainment" ;
+    :part n:geeam ;
+    rdfs:comment "[Physical Education]" .
+
+  n:puingean_mapa_air_cuursa_sligheadaireachd
+    rdfs:label "puingean-mapa air cùrsa sligheadaireachd" ;
+    :sense "waypoints on an orienteering course" ;
+    :part n:sligheadaireachd ;
+    rdfs:comment "[Physical Education]" .
+
+  n:gniiomhachd_chorporra_agus_spoors
+    rdfs:label "gnìomhachd chorporra agus spòrs" ;
+    :sense "physical activity and sports" ;
+    :part a:corporra ;
+    rdfs:comment "[Physical Education]" .
+
+  n:eoolas_corporra
+    rdfs:label "eòlas corporra" ;
+    :sense "physical education" ;
+    :part a:corporra ;
+    rdfs:comment "[Physical Education]" .
+
+  n:sunnd_inntinneil_faireachail_sooisealta_agus_corporra
+    rdfs:label "sunnd inntinneil, faireachail, sòisealta agus corporra" ;
+    :sense "mental, emotional, social and physical well-being" ;
+    :part a:corporra ;
+    rdfs:comment "[Physical Education]" .
+
+  n:polo_uisge
+    rdfs:label "polo-uisge" ;
+    :sense "water polo" ;
+    :part n:polo ;
+    rdfs:comment "[Physical Education]" .
+
+  n:reeis_each
+    rdfs:label "rèis-each" ;
+    :sense "horse race" ;
+    :part n:reeis ;
+    rdfs:comment "[Physical Education]" .
+
+  n:reeiseadh_bheathaichean
+    rdfs:label "rèiseadh bheathaichean" ;
+    :sense "animal racing" ;
+    :part n:reeiseadh ;
+    rdfs:comment "[Physical Education]" .
+
+  n:caar_reeisidh
+    rdfs:label "càr-rèisidh" ;
+    :sense "racing car" ;
+    :part n:reeiseadh ;
+    rdfs:comment "[Physical Education]" .
+
+  n:reeiseadh_chaaraichean
+    rdfs:label "rèiseadh chàraichean" ;
+    :sense "car racing" ;
+    :part n:reeiseadh ;
+    rdfs:comment "[Physical Education]" .
+
+  n:reeiseadh_each
+    rdfs:label "rèiseadh each" ;
+    :sense "horse racing" ;
+    :part n:reeiseadh ;
+    rdfs:comment "[Physical Education]" .
+
+  n:slighe_reeisidh
+    rdfs:label "slighe-rèisidh" ;
+    :sense "race track" ;
+    :part n:reeiseadh ;
+    rdfs:comment "[Physical Education]" .
+
+  n:racaid_teanas
+    rdfs:label "racaid teanas" ;
+    :sense "tennis racquet" ;
+    :part n:racaid ;
+    rdfs:comment "[Physical Education]" .
+
+  n:gniiomhachd_chorporra_agus_spoors
+    rdfs:label "gnìomhachd chorporra agus spòrs" ;
+    :sense "physical activity and sports" ;
+    :part n:spoors ;
+    rdfs:comment "[Physical Education]" .
+
+  n:spoorsan_uisge
+    rdfs:label "spòrsan uisge" ;
+    :sense "aquatic sports" ;
+    :part n:spoors ;
+    rdfs:comment "[Physical Education]" .
+
+  n:spoorsan_adhair
+    rdfs:label "spòrsan adhair" ;
+    :sense "air sports" ;
+    :part n:spoors ;
+    rdfs:comment "[Physical Education]" .
+
+  n:spoorsan_luuth_chleasach
+    rdfs:label "spòrsan lùth-chleasach" ;
+    :sense "athletic sports" ;
+    :part n:spoors ;
+    rdfs:comment "[Physical Education]" .
+
+  n:spoorsan_a_muigh
+    rdfs:label "spòrsan a-muigh" ;
+    :sense "outdoor sports" ;
+    :part n:spoors ;
+    rdfs:comment "[Physical Education]" .
+
+  n:spoorsan_marcachd
+    rdfs:label "spòrsan marcachd" ;
+    :sense "equestrian sports" ;
+    :part n:spoors ;
+    rdfs:comment "[Physical Education]" .
+
+  n:ionad_spoors
+    rdfs:label "ionad-spòrs" ;
+    :sense "sports centre" ;
+    :part n:spoors ;
+    rdfs:comment "[Physical Education]" .
+
+  n:goireasan_spoors
+    rdfs:label "goireasan spòrs" ;
+    :sense "sports facilities" ;
+    :part n:spoors ;
+    rdfs:comment "[Physical Education]" .
+
+  n:spoors_geamannan_agus_dibhearsain
+    rdfs:label "spòrs, geamannan agus dibhearsain" ;
+    :sense "sports, games and entertainment" ;
+    :part n:spoors ;
+    rdfs:comment "[Physical Education]" .
+
+  n:racaid_teanas
+    rdfs:label "racaid teanas" ;
+    :sense "tennis racquet" ;
+    :part n:teanas ;
+    rdfs:comment "[Physical Education]" .
+
+  n:teanas_buuird
+    rdfs:label "teanas-bùird" ;
+    :sense "table tennis" ;
+    :part n:teanas ;
+    rdfs:comment "[Physical Education]" .
+
+  n:geeam_teanas
+    rdfs:label "gèam teanas" ;
+    :sense "game of tennis" ;
+    :part n:teanas ;
+    rdfs:comment "[Physical Education]" .
+
+  n:clas_iooga
+    rdfs:label "clas iòga" ;
+    :sense "yoga class" ;
+    :part o:iooga ;
+    rdfs:comment "[Physical Education]" .
+
+}
