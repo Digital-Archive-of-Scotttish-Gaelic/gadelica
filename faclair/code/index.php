@@ -128,22 +128,28 @@ $(function() {
     if($('#snhCheck').is(':checked')) { snh = true; }
     if($('#frpCheck').is(':checked')) { frp = true; }
     if($('#seotalCheck').is(':checked')) { seotal = true; }
+    var parameters = '&searchTerm='+searchTerm;
+    if (lang=='en') { parameters += '&gd=no'; }
+    else { parameters += '&gd=yes'; }
+    if (snh) { parameters += '&lex=snh'; }
+    if (frp) { parameters += '&lex=frp'; }
+    if (seotal) { parameters += '&lex=seotal'; }
     if (lang == 'en') {
       var url = 'getResults.php?action=getEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
       $.getJSON(url, function(data) {
-        addData(data);
+        addData(data,parameters);
       }).done(function() {
         var url = 'getResults.php?action=getMoreEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
         $.getJSON(url, function(data) {
-          addData(data);
+          addData(data,parameters);
         }).done(function() {
           var url = 'getResults.php?action=getEvenMoreEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
           $.getJSON(url, function(data) {
-            addData(data);
+            addData(data,parameters);
           }).done(function() {
             var url = 'getResults.php?action=getEvenEvenMoreEnglishResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
             $.getJSON(url, function(data) {
-              addData(data);
+              addData(data,parameters);
             }).done(noResults());
           });
         });
@@ -152,19 +158,19 @@ $(function() {
     else {
       var url = 'getResults.php?action=getGaelicResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
       $.getJSON(url, function(data) {
-        addData(data);
+        addData(data,parameters);
       }).done(function() {
         var url = 'getResults.php?action=getMoreGaelicResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
         $.getJSON(url, function(data) {
-          addData(data);
+          addData(data,parameters);
         }).done(function() {
           var url = 'getResults.php?action=getEvenMoreGaelicResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
           $.getJSON(url, function(data) {
-            addData(data);
+            addData(data,parameters);
           }).done(function() {
             var url = 'getResults.php?action=getEvenEvenMoreGaelicResults&searchTerm='+searchTerm+'&snh='+snh+'&frp='+frp+'&seotal='+seotal+'&dwelly='+dwelly+'&others='+others;
             $.getJSON(url, function(data) {
-              addData(data);
+              addData(data,parameters);
             }).done(noResults());
           });
         });
@@ -184,7 +190,7 @@ function removeAccents(str) {
   return str;
 }
 
-function addData(data) { // add rows (search results) to the table
+function addData(data,parameters) { // add rows (search results) to the table
       var ids = [];
       $.each(data, function(k,v) {
         id = v.id.value;
@@ -213,7 +219,7 @@ function addData(data) { // add rows (search results) to the table
           hwStr = hws.join(', ');
         }
         else { hwStr = id; }
-        $('#resultsTable tbody').append('<tr><td><a href="viewEntry.php?id=' + encodeURI(id) + '">' + hwStr + '</a></td><td>' + enStr + '</td></tr>');
+        $('#resultsTable tbody').append('<tr><td><a href="viewEntry.php?id=' + encodeURI(id) + parameters +'">' + hwStr + '</a></td><td>' + enStr + '</td></tr>');
       });
 }
 
