@@ -13,6 +13,11 @@
     :sense "ballet" ;
     rdfs:comment "[BMh 2013]" .
 
+  n:bailiuun_eeadhair_theth
+    rdfs:label "bailiùn èadhair theth" ;
+    :sense "hot air balloon" ;
+    rdfs:comment "[BMh 2013]" .
+
   n:bainne
     a :MasculineNoun ;
     rdfs:label "bainne" ;
@@ -91,6 +96,66 @@
     :sense "medieval queen" ;
     rdfs:comment "[BMh 2013]" .
 
+  n:baar_smachd
+    rdfs:label "bàr smachd" ;
+    :sense "control bar" ;
+    :part n:smachd ;
+    rdfs:comment "[BMh 2013]" .
+
+  n:baarr_bhalla
+    a :MasculineNoun ;
+    rdfs:label "bàrr-bhalla" ;
+    :sense "parapet" ;
+    rdfs:comment "[BMh 2013]" .
+
+  n:basgaid
+    a :FeminineNoun ;
+    rdfs:label "basgaid" ;
+    :sense "basket" ;
+    rdfs:comment "[BMh 2013]" .
+
+  n:baata
+    rdfs:label "bàta" ;
+    :pl "bàtaichean" ;
+    :sense "boats" ;
+    rdfs:comment "[BMh 2013]" .
+
+  n:baata_aiseig
+    rdfs:label "bàta aiseig" ;
+    :sense "ferry" ;
+    :part n:baata , n:aiseag ;
+    rdfs:comment "[BMh 2013]" .
+
+  n:baata_iomraidh
+    rdfs:label "bàta iomraidh" ;
+    :sense "rowing boat" ;
+    :part n:baata ;
+    rdfs:comment "[BMh 2013]" .
+
+  n:baata_motair
+    rdfs:label "bàta motair" ;
+    :sense "motor boat" ;
+    :part n:baata ;
+    rdfs:comment "[BMh 2013]" .
+
+  n:baata_seoolaidh_Arabach
+    rdfs:label "bàta seòlaidh Arabach" ;
+    :sense "dhow" ;
+    :part n:baata ;
+    rdfs:comment "[BMh 2013]" .
+
+  n:baata_foluaimein
+    rdfs:label "bàta foluaimein" ;
+    :sense "hovercraft" ;
+    :part n:baata ;
+    rdfs:comment "[BMh 2013]" .
+
+  n:bataraidh
+    a :FeminineNoun ;
+    rdfs:label "bataraidh" ;
+    :sense "battery" ;
+    rdfs:comment "[BMh 2013]" .
+
   n:beul
     a :MasculineNoun ;
     rdfs:label "beul" ;
@@ -121,16 +186,31 @@
     :sense "campervan" ;
     rdfs:comment "[BMh 2013]" .
 
+  n:bhana_liubhairt
+    rdfs:label "bhana liubhairt" ;
+    :sense "delivery van" ;
+    rdfs:comment "[BMh 2013]" .
+
   n:biadh
     rdfs:label "biadh" ;
     :gen "bìdhe" ;
     :sense "food" , "flesh of a fruit" ;
     rdfs:comment "[BMh 2013]" .
 
+  n:bioran_cuimhne
+    rdfs:label "bioran cuimhne" ;
+    :sense "memory stick" ;
+    rdfs:comment "[BMh 2013]" .
+
   n:biorain_ithe
     a :MasculineNoun ;
     rdfs:label "biorain ithe" ;
     :sense "chopsticks" ;
+    rdfs:comment "[BMh 2013]" .
+
+  n:bith_luuth
+    rdfs:label "bith-lùth" ;
+    :sense "bioenergy" ;
     rdfs:comment "[BMh 2013]" .
 
   n:blas
@@ -174,6 +254,12 @@
     :sense "archery" ;
     rdfs:comment "[BMh 2013]" .
 
+  n:bolgan
+    a :MasculineNoun ;
+    rdfs:label "bolgan" ;
+    :sense "bulb" ;
+    rdfs:comment "[BMh 2013]" .
+
   n:bonaid
     a :MasculineNoun ;
     rdfs:label "bonaid" ;
@@ -203,6 +289,18 @@
   n:boord_gearraidh
     rdfs:label "bòrd gearraidh" ;
     :sense "chopping board" ;
+    :part n:boord ;
+    rdfs:comment "[BMh 2013]" .
+
+  n:boord_luinge
+    rdfs:label "bòrd luinge" ;
+    :sense "deck" ;
+    :part n:boord , n:long ;
+    rdfs:comment "[BMh 2013]" .
+
+  n:boord_seoolaidh
+    rdfs:label "bòrd seòlaidh" ;
+    :sense "sailboard" ;
     :part n:boord ;
     rdfs:comment "[BMh 2013]" .
 
@@ -374,5 +472,12 @@
     rdfs:label "burgar" ;
     :sense "burger" ;
     rdfs:comment "[BMh 2013]" .
+
+  n:buuthal
+    a :MasculineNoun ;
+    rdfs:label "bùthal" ;
+    :sense "fulcrum" ;
+    rdfs:comment "[BMh 2013]" .
+
 
 }
