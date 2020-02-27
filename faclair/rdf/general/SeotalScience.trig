@@ -4873,6 +4873,7 @@
     rdfs:label "ortaipeadaigs" ;
     :sense "orthopaedics" ;
     :gen "ortaipeadaigs" ;
+    :part a:ortaipeadaig ;
     rdfs:comment "[Science]" .
 
   n:oraigs
@@ -11631,9 +11632,9 @@
     rdfs:comment "[Science]" .
 
   n:lannsair_chnaamhan
-    rdfs:label "lannsair-chnàmhan" ;
+    rdfs:label "lannsair chnàmhan" ;
     :sense "orthopaedic surgeon" ;
-    :part a:ortaipeadaig ;
+    :part n:lannsair , n:cnaaimh ;
     rdfs:comment "[Science]" .
 
   n:oraigs_adharcach_a_chlaidheimh_chruinn

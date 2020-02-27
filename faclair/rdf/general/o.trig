@@ -7,6 +7,47 @@
 
 <http://faclair.ac.uk/sources/general> {
 
+  n:obair
+    a :FeminineNoun ;
+    rdfs:label "obair" ;
+    :sense "work" ;
+    rdfs:comment "[BMh 2013]" .
+
+  n:obair_cuursa
+    rdfs:label "obair cùrsa" ;
+    :sense "coursework" ;
+    :part n:obair ;
+    rdfs:comment "[BMh 2013]" .
+
+  n:obair_dachaigh
+    rdfs:label "obair dachaigh" ;
+    :sense "homework" ;
+    :part n:obair ;
+    rdfs:comment "[BMh 2013]" .
+
+  v:obraich_soitheach_faanais
+    rdfs:label "obraich soitheach fànais" ;
+    :sense "operate a spacecraft" ;
+    rdfs:comment "[BMh 2013]" .
+
+  n:ochd_chasach
+    a :MasculineNoun ;
+    rdfs:label "ochd-chasach" ;
+    :sense "octopus" ;
+    rdfs:comment "[BMh 2013]" .
+
+  n:ochd_chasach_dumbo
+    rdfs:label "ochd-chasach dumbo" ;
+    :sense "dumbo octopus" ;
+    :part n:ochd_chasach ;
+    rdfs:comment "[BMh 2013]" .
+
+  n:ochd_cheaarnach
+    a :MasculineNoun ;
+    rdfs:label "ochd-cheàrnach" ;
+    :sense "octagon" ;
+    rdfs:comment "[BMh 2013]" .
+
   n:ogha
     a :MasculineNoun ;
     rdfs:label "ogha" ;
@@ -16,8 +57,28 @@
   n:oide
     a :MasculineNoun ;
     rdfs:label "oide" ;
+    :sense "stepfather" ;
     :gen "oide" ;
-    :pl "oidean" .
+    :pl "oidean" ;
+    rdfs:comment "[BMh 2013]" .
+
+  n:oifigear_poilis
+    rdfs:label "oifigear poilis" ;
+    :sense "police officer" ;
+    :part n:oifigear ;
+    rdfs:comment "[BMh 2013]" .
+
+  n:oifis
+    a :FeminineNoun ;
+    rdfs:label "oifis" ;
+    :sense "office" ;
+    rdfs:comment "[BMh 2013]" .
+
+  n:oifis_puist
+    rdfs:label "oifis puist" ;
+    :sense "post office" ;
+    :part n:oifis ;
+    rdfs:comment "[BMh 2013]" .
 
   n:oir
     a :FeminineNoun ;
@@ -27,10 +88,61 @@
     :sense "border" , "brim" , "brink" , "edge" , "fringe" , "lip" , "margin" , "rim" , "verge" , "ledge" ;
     rdfs:comment "[CM 2004]" .
 
+  n:ola
+    a :FeminineNoun ;
+    rdfs:label "ola" ;
+    :sense "oil" ;
+    rdfs:comment "[BMh 2013]" .
+
+  n:oor
+    a :MasculineNoun ;
+    rdfs:label "òr" ;
+    :sense "gold" ;
+    rdfs:comment "[BMh 2013]" .
+
+  a:orains
+    a :Adjective ;
+    rdfs:label "orains" ;
+    :sense "orange" ;
+    rdfs:comment "[BMh 2013]" .
+
+  n:orainsear
+    a :MasculineNoun ;
+    rdfs:label "orainsear" ;
+    :sense "orange" ;
+    :part a:orains ;
+    rdfs:comment "[BMh 2013]" .
+
+  n:oord
+    a :MasculineNoun ;
+    rdfs:label "òrd" ;
+    :sense "hammer" ;
+    rdfs:comment "[BMh 2013]" .
+
+  n:oordag
+    a :FeminineNoun ;
+    rdfs:label "òrdag" ;
+    :pl "òrdagan" ;
+    :sense "toe" ;
+    rdfs:comment "[BMh 2013]" .
+
+  n:oorgan
+    a :MasculineNoun ;
+    rdfs:label "òrgan" ;
+    :sense "organ" ;
+    rdfs:comment "[BMh 2013]" .
+
   n:osoon
     a :MasculineNoun ;
     rdfs:label "òson" ;
     :sense "ozone" ;
     :gen "òsoin" .
+
+  n:ospadal
+    a :MasculineNoun ;
+    rdfs:label "ospadal" ;
+    :sense "hospital" ;
+    rdfs:comment "[BMh 2013]" .
+
 
 }
