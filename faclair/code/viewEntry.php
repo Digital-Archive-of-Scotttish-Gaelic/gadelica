@@ -13,9 +13,12 @@
 <?php
 $parameters = $_SERVER['QUERY_STRING'];
 $parameters = substr($parameters,strpos($parameters,'searchTerm'));
-?>
-          <p><small style="float: right;"><a href="index.php?<?php echo $parameters; ?>">&lt; Air ais dhan toraidhean</a></small></p> <!-- GAELIC!!! -->
-<?php
+if ($parameters!='' && substr($parameters,0,3) !== "id=") {
+  echo '<p><small style="float: right;"><a href="index.php?' . $parameters . '" data-toggle="tooltip" data-placement="right" title="back to search results">&lt; toraidhean</a></small></p>';
+}
+else {
+  echo '<p><small style="float: right;"><a href="index.php" data-toggle="tooltip" data-placement="right" title="back to homepage">&lt; dachaigh</a></small></p>';
+}
 if (isset($_GET['id'])) {
   $id = $_GET['id'];
 }
@@ -118,7 +121,11 @@ $parts = array_unique($parts);
 if (count($parts)>0) {
   echo '<div class="list-group-item"><span data-toggle="tooltip" data-placement="top" title="components">↗️</span> ';
   foreach ($parts as $nextId=>$nextHw) {
-    echo '<strong><a href="viewEntry.php?id=' . $nextId . '&' . $parameters . '">';
+    echo '<strong><a href="viewEntry.php?id=' . $nextId;
+    if ($parameters!='' && substr($parameters,0,3) !== "id=") {
+      echo '&' . $parameters;
+    }
+    echo '">';
     if ($nextHw != '') { echo $nextHw; }
     else { echo '<small>' . $nextId . '</small>'; } // FALLBACK
     echo '</a></strong>';
@@ -139,7 +146,11 @@ $compounds = array_unique($compounds);
 if (count($compounds)>0) {
   echo '<div class="list-group-item"><span data-toggle="tooltip" data-placement="top" title="compounds">↘️</span> ';
   foreach ($compounds as $nextId=>$nextHw) {
-    echo '<strong><a href="viewEntry.php?id=' . $nextId . '&' . $parameters . '">';
+    echo '<strong><a href="viewEntry.php?id=' . $nextId;
+    if ($parameters!='' && substr($parameters,0,3) !== "id=") {
+      echo '&' . $parameters;
+    }
+    echo '">';
     if ($nextHw != '') { echo $nextHw; }
     else { echo '<small>' . $nextId . '</small>'; } // FALLBACK
     echo '</a></strong>';
