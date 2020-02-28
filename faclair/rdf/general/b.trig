@@ -449,6 +449,25 @@
     :part n:buidheann , v:seas_na_aonar ;
     :sense "stand-alone body" .
 
+  n:buidsead
+    a :MasculineNoun ;
+    rdfs:label "buidsead" ;
+    :gen "buidseid" ;
+    :pl "buidseadan" ;
+    :sense "budget" ;
+    rdfs:comment "[CM 2004]" .
+
+  n:buidsead_bliadhnail
+    rdfs:label "buidsead bliadhnail" ;
+    :sense "annual budget" ;
+    :part n:buidsead , a:bliadhnail ;
+    rdfs:comment "[CM 2004]" .
+
+  n:buidsead_sgoiltean_ionadail
+    rdfs:label "buidsead sgoiltean ionadail" ;
+    :part n:buidsead , n:sgoil , a:ionadail ;
+    :sense "local schools budget" .
+
   n:bumpar
     a :MasculineNoun ;
     rdfs:label "bumpar" ;

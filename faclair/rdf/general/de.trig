@@ -7,6 +7,46 @@
 
 <http://faclair.ac.uk/sources/general> {
 
+  v:deachd
+    a :Verb ;
+    rdfs:label "deachd" ;
+    :vn "deachdadh" ;
+    :sense "dictate" , "inspire" ;
+    rdfs:comment "[CM 2004]" .
+
+  v:deachd_teacsa
+    rdfs:label "deachd teacsa" ;
+    :part v:deachd , n:teacsa ;
+    :sense "dictate a text" .
+
+  n:deachdair
+    a :MasculineNoun ;
+    rdfs:label "deachdair" ;
+    :sense "dictator" ;
+    :gen "deachdair" ;
+    :pl "deachdairean" ;
+    :part v:deachd ;
+    rdfs:comment "[CM 2004]" .
+
+  v:is_e_laan_dheachdair_a_tha_ann
+    a :Example ;
+    rdfs:label "is e làn dheachdair a tha ann" ;
+    :part n:deachdair ;
+    :sense "he is an absolute dictator" .
+
+  n:deachdaireachd
+    a :FeminineNoun ;
+    rdfs:label "deachdaireachd" ;
+    :sense "dictatorship" ;
+    :part n:deachdair ;
+    rdfs:comment "[CM 2004]" .
+
+  n:deachdaireachd_an_deagh_ruuin
+    rdfs:label "deachdaireachd an deagh rùin" ;
+    :part n:deachdaireachd ;
+    :sense "benevolent dictatorship" .
+
+
 n:dealan_dee
   rdfs:label "dealan dè" ;
   :sense "butterfly" ;

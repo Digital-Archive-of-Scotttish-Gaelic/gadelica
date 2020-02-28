@@ -23,6 +23,34 @@ n:dibhearsain
   :sense "entertainment" ;
   rdfs:comment "[BMh 2013]" .
 
+  n:diimeas
+    a :MasculineNoun ;
+    rdfs:label "dìmeas" ;
+    :sense "disregard" , "contempt" , "depreciation" , "disdain" , "disesteem" , "disrespect" , "reprobation" , "slight" ;
+    :part n:meas ;
+    rdfs:comment "[CM 2004]" .
+
+  n:diimeas_air_an_fhiirinn
+    rdfs:label "dìmeas air an fhìrinn" ;
+    :part n:diimeas , n:fiirinn ;
+    :sense "disregard for the truth" .
+
+  v:deean_diimeas
+    rdfs:label "dèan dìmeas" ;
+    :part n:diimeas ;
+    :sense "disregard" .
+
+  n:diimeas_cuurtach
+    rdfs:label "dìmeas cùrtach" ;
+    :part n:diimeas ;
+    :sense "contempt of court" .
+
+  a:diimeasach
+    rdfs:label "dìmeasach" ;
+    :part n:diimeas ;
+    :sense "disrespectful" , "scornful" ;
+    rdfs:comment "[CM 2004]" .
+
 n:diinichean
   a :PluralNoun ;
   rdfs:label "dinichean" ;

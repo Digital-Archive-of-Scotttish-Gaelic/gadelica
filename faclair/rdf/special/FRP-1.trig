@@ -6054,113 +6054,115 @@
     rdfs:label "buidhnean-goireis" ;
     :sense "public utilities" .
 
-  n:buidseat
+  n:buidsead
+    a :MasculineNoun ;
     rdfs:label "buidseat" ;
     :sense "budget" .
 
-  n:Am_Buidseat
+  n:Am_Buidsead
     rdfs:label "Am Buidseat" ;
-    :part n:buidseat ;
+    :part n:buidsead ;
     :sense "The Budget" .
 
-  n:easbhaidh_sa_bhuidseat
+  n:easbhaidh_sa_bhuidsead
     rdfs:label "easbhaidh sa bhuidseat" ;
-    :part n:buidseat ;
+    :part n:buidsead ;
     :sense "budget deficit" .
 
-  n:poileasaidh_a_thaobh_a%27_bhuidseit
+  n:poileasaidh_a_thaobh_a_bhuidseid
     rdfs:label "poileasaidh a thaobh a’ bhuidseit" ;
-    :part n:buidseat ;
+    :part n:buidsead ;
     :sense "budget policy" .
 
-  n:ooraid_a%27_bhuidseit
+  n:ooraid_a_bhuidseid
     rdfs:label "òraid a’ bhuidseit" ;
-    :part n:buidseat ;
+    :part n:buidsead ;
     :sense "budget speech" .
 
-  n:cunntas_buidseat
+  n:cunntas_buidsead
     rdfs:label "cunntas buidseat" ;
-    :part n:buidseat ;
+    :part n:buidsead ;
     :sense "budget statement" .
 
-  n:smachd_air_a%27_bhuidseat
+  n:smachd_air_a_bhuidsead
     rdfs:label "smachd air a’ bhuidseat" ;
-    :part n:buidseat ;
+    :part n:buidsead ;
     :sense "budgetary control" .
 
-  o:a_bhuineas_don_bhuidseat
+  o:a_bhuineas_don_bhuidsead
     rdfs:label "a bhuineas don bhuidseat" ;
-    :part n:buidseat ;
+    :part n:buidsead ;
     :sense "budgetary" .
 
-  n:buidseat_bliadhnail
+  n:buidsead_bliadhnail
     rdfs:label "buidseat bliadhnail" ;
     :sense "annual budget" .
 
-  n:cuairt_bhuidseit_na_bliadhna
+  n:cuairt_bhuidseid_na_bliadhna
     rdfs:label "cuairt-bhuidseit na bliadhna" ;
-    :part n:buidseat_bliadhnail ;
+    :part n:buidsead_bliadhnail ;
     :sense "annual budget cycle" .
 
-  n:buidseat_bun_loidhne
+  n:buidsead_bun_loidhne
     rdfs:label "buidseat bun-loidhne" ;
     :sense "baseline budget" .
 
-  n:buidseat_bun_loidhne_2012_13
+  n:buidsead_bun_loidhne_2012_13
     rdfs:label "buidseat bun-loidhne 2012-13" ;
-    :part n:buidseat_bun_loidhne ;
+    :part n:buidsead_bun_loidhne ;
     :sense "the 2012-13 baseline budget" .
 
-  n:buidseat_calpa
+  n:buidsead_calpa
     rdfs:label "buidseat calpa" ;
     :sense "capital budget" .
 
-  n:buidseat_coitcheann_nan_sgoiltean
+  n:buidsead_coitcheann_nan_sgoiltean
     rdfs:label "buidseat coitcheann nan sgoiltean" ;
     :sense "general schools budget" , "GSB" .
 
-  n:buidseat_gun_fhaas
+  n:buidsead_gun_fhaas
     rdfs:label "buidseat gun fhàs" ;
     :sense "standstill budget" .
 
-  n:buidseat_iomlan_air_a_mholadh
+  n:buidsead_iomlan_air_a_mholadh
     rdfs:label "buidseat iomlan air a mholadh" ;
     :sense "total proposed budget" .
 
-  n:tagradh_airson_buidseat_iomlan_a_th%27_air_a_mholadh
+  n:tagradh_airson_buidsead_iomlan_a_th_air_a_mholadh
     rdfs:label "tagradh airson buidseat iomlan a th’ air a mholadh" ;
-    :part n:buidseat_iomlan_air_a_mholadh ;
+    :part n:buidsead_iomlan_air_a_mholadh ;
     :sense "total proposed budget submission" .
 
-  n:buidseat_lom
+  n:buidsead_lom
     rdfs:label "buidseat lom" ;
     :sense "net budget" .
 
-  n:Buidseat_na_h_Alba
+  n:Buidsead_na_h_Alba
     rdfs:label "Buidseat na h-Alba" ;
     :sense "Scottish budget" .
 
-  n:buidseat_obrach
+  n:buidsead_obrach
     rdfs:label "buidseat obrach" ;
     :sense "working budget" .
 
-  n:buidseat_paaighidh_luchd_obrach
+  n:buidsead_paaighidh_luchd_obrach
     rdfs:label "buidseat pàighidh luchd-obrach" ;
     :sense "staff pay budget" .
 
-  n:buidseat_proograim
+  n:buidsead_proograim
     rdfs:label "buidseat prògraim" ;
     :sense "programme budget" .
 
-  n:buidseat_sgoiltean_ionadail
+  n:buidsead_sgoiltean_ionadail
+    a :MasculineNoun ;
     rdfs:label "buidseat sgoiltean ionadail" ;
     :sense "local schools budget" , "LSB" .
 
-  n:buidseat_suubailte
+  n:buidsead_suubailte
     rdfs:label "buidseat sùbailte" ;
     :sense "flexible budget" .
 
-  n:buidseatadh_bun_neoni
+  n:buidseadadh_bun_neoni
     rdfs:label "buidseatadh bun-neoni" ;
     :sense "zero-based budgeting" .
 
@@ -6168,7 +6170,7 @@
     rdfs:label "buil" ;
     :sense "consequence" , "impact" , "outcome" .
 
-  v:is_e_a%27_bhuil
+  v:is_e_a_bhuil
     rdfs:label "’s e a’ bhuil" ;
     :part n:buil ;
     :sense "in consequence of" .
@@ -15513,11 +15515,12 @@
     :part a:daa_thaobhach ;
     :sense "bilateral agreement" .
 
-  o:de_dh%27aard_inbhe
+  o:de_dh_aard_inbhe
     rdfs:label "de dh’àrd-inbhe" ;
     :sense "prestigious" .
 
   v:deachd
+    a :Verb ;
     rdfs:label "deachd" ;
     :sense "dictate (correspondence)" .
 
@@ -15526,16 +15529,18 @@
     :part v:deachd ;
     :sense "dictate a text" .
 
-  n:deachdaire
+  n:deachdair
+    a :MasculineNoun ;
     rdfs:label "deachdaire" ;
-    :sense "dictator (despot)" .
+    :sense "dictator" , "despot" .
 
-  v:%27s_e_laan_dheachdaire_a_tha_ann
+  v:is_e_laan_dheachdair_a_tha_ann
     rdfs:label "’s e làn dheachdaire a tha ann" ;
-    :part n:deachdaire ;
+    :part n:deachdair ;
     :sense "he is an absolute dictator" .
 
   n:deachdaireachd
+    a :FeminineNoun ;
     rdfs:label "deachdaireachd" ;
     :sense "dictatorship" .
 
@@ -15544,7 +15549,7 @@
     :part n:deachdaireachd ;
     :sense "benevolent dictatorship" .
 
-  n:deagh
+  a:deagh
     rdfs:label "deagh" ;
     :sense "good" , "excellent" .
 
@@ -16015,10 +16020,6 @@
   v:deean_deuchainn_air
     rdfs:label "dèan deuchainn air" ;
     :sense "test" .
-
-  v:deean_diimeas
-    rdfs:label "dèan dìmeas" ;
-    :sense "disregard" .
 
   v:deean_dligheil
     rdfs:label "dèan dligheil" ;
@@ -16828,6 +16829,7 @@
     :sense "devaluation of currency" .
 
   n:diimeas
+    a :MasculineNoun ;
     rdfs:label "dìmeas" ;
     :sense "disregard" .
 
@@ -16836,8 +16838,14 @@
     :part n:diimeas ;
     :sense "disregard for the truth" .
 
+  v:deean_diimeas
+    rdfs:label "dèan dìmeas" ;
+    :part n:diimeas ;
+    :sense "disregard" .
+
   n:diimeas_cuurtach
     rdfs:label "dìmeas cùrtach" ;
+    :part n:diimeas ;
     :sense "contempt of court" .
 
   a:dii_mhisneachail
