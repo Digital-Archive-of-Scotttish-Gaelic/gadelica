@@ -357,6 +357,33 @@
     :sense "layer" , "stratum" ;
     rdfs:comment "[CM 2004]" .
 
+  n:briathar
+    a :MasculineNoun ;
+    rdfs:label "briathar" ;
+    :sense "term" .
+
+  a:briathrach
+    a :Adjective ;
+    rdfs:label "briathrach" ;
+    :sense "wordy" , "talkative" , "verbose" , "loquacious" ;
+    :part n:briathar .
+
+  n:briathrachas
+    a :MasculineNoun ;
+    rdfs:label "briathrachas" ;
+    :sense "vocabulary" ;
+    :part a:briathrach .
+
+  n:briathrachas_speisealta
+    rdfs:label "briathrachas speisealta" ;
+    :sense "jargon" ;
+    :part n:briathrachas .
+
+  n:briathran_tooiseachaidh
+    rdfs:label "briathran tòiseachaidh" ;
+    :sense "introductory remarks" ;
+    :part n:briathar .
+
   n:briogais_ghoirid
     rdfs:label "briogais ghoirid" ;
     :sense "shorts" ;

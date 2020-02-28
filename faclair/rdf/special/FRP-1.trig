@@ -2498,9 +2498,15 @@
     rdfs:label "àrd-bhall" ;
     :sense "senior member" .
 
-  n:aard_bhriathrach
+  a:aard_bhriathrach
+    a :Adjective ;
     rdfs:label "àrd-bhriathrach" ;
     :sense "outspoken" .
+
+  n:neach_a_bheir_caaineadh_aard_bhriathrach_air_poileasaidh_an_riaghaltais
+    rdfs:label "neach a bheir càineadh àrd-bhriathrach air poileasaidh an riaghaltais" ;
+    :sense "outspoken critic of government policy" ;
+    :part a:aard_bhriathrach .
 
   n:aard_cheannard
     rdfs:label "àrd-cheannard" ;
@@ -5056,10 +5062,12 @@
     :sense "constituency MSP" .
 
   n:braaigh
+    a :MasculineNoun , :FeminineNoun ;
     rdfs:label "bràigh" ;
     :sense "hostage" .
 
   n:braighdeanas
+    a :MasculineNoun ;
     rdfs:label "braighdeanas" ;
     :sense "imprisonment" .
 
@@ -5226,10 +5234,12 @@
     :sense "rebut" , "refute" .
 
   n:briathar
+    a :MasculineNoun ;
     rdfs:label "briathar" ;
     :sense "term" .
 
   n:briathrachas
+    a :MasculineNoun ;
     rdfs:label "briathrachas" ;
     :sense "vocabulary" .
 

@@ -2427,10 +2427,6 @@ a:ailtireil
     rdfs:label "àrd-bhall" ;
     :sense "senior member" .
 
-  n:aard_bhriathrach
-    rdfs:label "àrd-bhriathrach" ;
-    :sense "outspoken" .
-
   n:aard_cheannard
     rdfs:label "àrd-cheannard" ;
     :sense "supremo" , "chief of staff" .
@@ -4952,47 +4948,58 @@ n:baardachd
 
     n:boord_ceadachd
       rdfs:label "bòrd ceadachd" ;
-      :sense "licensing board" .
+      :sense "licensing board" ;
+      :part n:boord .
 
     n:Boord_Comhairleachaidh_an_Sgruudaidh
       rdfs:label "Bòrd Comhairleachaidh an Sgrùdaidh" ;
-      :sense "Advisory Audit Board (AAB)" .
+      :sense "advisory audit board" ;
+      :part n:boord .
 
     n:boord_poileasaidh_slaainte
       rdfs:label "bòrd poileasaidh slàinte" ;
-      :sense "health policy board" .
+      :sense "health policy board" ;
+      :part n:boord .
 
     n:boord_reachdail
       rdfs:label "bòrd reachdail" ;
-      :sense "statutory board" .
+      :sense "statutory board" ;
+      :part n:boord .
 
     n:boord_slaainte
       rdfs:label "bòrd slàinte" ;
-      :sense "health board" .
+      :sense "health board" ;
+      :part n:boord .
 
     n:boord_stiuuirichean
       rdfs:label "bòrd stiùirichean" ;
-      :sense "board of directors" .
+      :sense "board of directors" ;
+      :part n:boord .
 
     n:boord_turasachd
       rdfs:label "bòrd turasachd" ;
-      :sense "tourist board" .
+      :sense "tourist board" ;
+      :part n:boord .
 
     n:boord_geal
-      rdfs:label "bòrd-geal" ;
-      :sense "white board" .
+      rdfs:label "bòrd geal" ;
+      :sense "white board" ;
+      :part n:boord .
 
     n:boord_stiuuiridh
-      rdfs:label "bòrd-stiùiridh" ;
-      :sense "governing / management board" .
+      rdfs:label "bòrd stiùiridh" ;
+      :sense "governing / management board" ;
+      :part n:boord .
 
     n:boord_treeanaidh
-      rdfs:label "bòrd-trèanaidh" ;
-      :sense "training board" .
+      rdfs:label "bòrd trèanaidh" ;
+      :sense "training board" ;
+      :part n:boord .
 
     n:boord_treeanaidh_gniiomhachasach
-      rdfs:label "bòrd-trèanaidh gnìomhachasach" ;
-      :sense "industrial training board" .
+      rdfs:label "bòrd trèanaidh gnìomhachasach" ;
+      :sense "industrial training board" ;
+      :part n:boord_treeanaidh .
 
     n:BPA_le_Mandat_Duubailte
       rdfs:label "BPA le Mandat Dùbailte" ;
@@ -5007,12 +5014,19 @@ n:baardachd
       :sense "constituency MSP" .
 
     n:braaigh
+      a :MasculineNoun , :FeminineNoun ;
       rdfs:label "bràigh" ;
-      :sense "hostage" .
+      :pl "bràighean" ;
+      :sense "hostage" , "captive" ;
+      rdfs:comment "[CM 2004]" .
 
     n:braighdeanas
+      a :MasculineNoun ;
       rdfs:label "braighdeanas" ;
-      :sense "imprisonment" .
+      :sense "imprisonment" ;
+      :gen "braighdeanais" ;
+      :part n:braaigh ;
+      rdfs:comment "[CM 2004]" .
 
     n:neach_am_braighdeanas
       rdfs:label "neach am braighdeanas" ;
@@ -5175,22 +5189,6 @@ n:baardachd
     v:breugnaich
       rdfs:label "breugnaich" ;
       :sense "rebut" , "refute" .
-
-    n:briathar
-      rdfs:label "briathar" ;
-      :sense "term" .
-
-    n:briathrachas
-      rdfs:label "briathrachas" ;
-      :sense "vocabulary" .
-
-    n:briathrachas_speisealta
-      rdfs:label "briathrachas speisealta" ;
-      :sense "jargon" .
-
-    n:briathran_tooiseachaidh
-      rdfs:label "briathran tòiseachaidh" ;
-      :sense "introductory remarks" .
 
     n:briib
       rdfs:label "brìb" ;
