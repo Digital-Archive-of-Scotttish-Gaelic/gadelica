@@ -216,6 +216,7 @@ if (count($vns) > 0) {
 if (count($vngens) > 0) {
   echo '<div class="list-group-item"><em class="text-muted" data-toggle="tooltip" data-placement="top" title="genitive verbal noun">ainmear gnìomhaireach ginideach</em> <strong>' . implode('</strong> <span class="text-muted">|</span> <strong>',$vngens) . '</strong></div>';
 }
+echo '</div>'; // end of list group
 // ADMIN COMMENTS
 $comments = [];
 foreach($results as $nextResult) {
@@ -225,11 +226,12 @@ foreach($results as $nextResult) {
   }
 }
 $comments = array_unique($comments);
-echo '<div class="list-group-item"><small class="text-muted"><span data-toggle="tooltip" data-placement="top" title="admin notes">Rianachd</span>: [' . $id . ']';
+echo '<p style="padding-top:10px;"><span data-toggle="tooltip" data-placement="top" title="';
+echo 'Notes: ' . $id;
 if (count($comments)>0) { echo ' | '; }
 echo implode(' | ',$comments);
-echo '</small></div>';
-echo '</div>'; // end of list group
+echo '" style="float:right;">⚙️</span>';
+echo '</p>';
 echo '<p>&nbsp;</p>';
 
 //////////////
@@ -417,6 +419,7 @@ foreach ($sources as $nextIndex=>$nextSource) {
   if (count($vngens) > 0) {
     echo '<div class="list-group-item"><em class="text-muted" data-toggle="tooltip" data-placement="top" title="genitive verbal noun">ainmear gnìomhaireach ginideach</em> <strong>' . implode('</strong> <span class="text-muted">|</span> <strong>',$vngens) . '</strong></div>';
   }
+  echo '</div>'; // end of list group
   //NOTES
   $comments = [];
   foreach($results as $nextResult) {
@@ -429,19 +432,23 @@ foreach ($sources as $nextIndex=>$nextSource) {
   }
   $comments = array_unique($comments);
   if (count($comments) > 0) {
-    echo '<div class="list-group-item"><small class="text-muted"><span data-toggle="tooltip" data-placement="top" title="admin notes">Rianachd</span>: ';
+    echo '<p style="padding-top:10px;"><span data-toggle="tooltip" data-placement="top" title="';
+    echo 'Notes: ';
     echo implode(' | ',$comments);
-    echo '</small></div>';
+    echo '" style="float:right;">⚙️</span>';
+    echo '</p>';
   }
-  echo '</div></div></div></div>'; // end of list group, card-body, card and carousel item
+  echo '</div></div></div>'; // end of card-body, card and carousel item
 }
 echo '</div>'; // end of carousel inner
+echo '<p>&nbsp;</p>';
 if (count($sources)>1) {
   echo '<a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">';
   echo '<span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(50%);"></span>';
   echo '<span class="sr-only">Next</span></a>';
 }
 ?>
+            <p>&nbsp;</p>
           </div> <!-- end of carousel -->
         </div> <!-- end of card body -->
       </div> <!-- end of card -->
