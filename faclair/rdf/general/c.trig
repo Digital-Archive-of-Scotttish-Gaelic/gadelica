@@ -436,6 +436,19 @@ n:cearclan
   :part n:cearcall ;
   rdfs:comment "[CM 2004 – mechanics]" .
 
+  n:ceaarn
+    a :MasculineNoun ;
+    rdfs:label "ceàrn" ;
+    :sense "angle" ;
+    :gen "ceàirn" ;
+    :pl "ceàrnan" .
+
+  n:ceaarn_ceart
+    rdfs:label "ceàrn ceart" ;
+    :sense "right angle" ;
+    :part n:ceaarn , a:ceart ;
+    rdfs:comment "[Mathematics]" .
+
 n:ceaarnag
   a :FeminineNoun ;
   rdfs:label "ceàrnag" ;
@@ -454,11 +467,23 @@ n:ceaarnan
   :sense "cockroach" ;
   rdfs:comment "[BMh 2013]" .
 
-n:ceart_cheaarnach
-  rdfs:label "ceart-cheàrnach" ;
-  :sense "rectangle" ;
-  :part a:ceart ;
-  rdfs:comment "[BMh 2013]" .
+  a:ceart_cheaarnach
+    a :Adjective ;
+    rdfs:label "ceart-cheàrnach" ;
+    :sense "perpendicular" , "right-angled" ;
+    :part n:ceaarn_ceart .
+
+  a:ceart_cheaarnachail
+    a :Adjective ;
+    rdfs:label "ceart-cheàrnachail" ;
+    :sense "right-angled" ;
+    :part n:ceart_cheaarnach .
+
+  n:ceart_cheaarnach
+    rdfs:label "ceart-cheàrnach" ;
+    :sense "rectangle" ;
+    :part a:ceart_cheaarnach ;
+    rdfs:comment "[BMh 2013]" .
 
 n:ceeic_chupa
   rdfs:label "cèic chupa" ;
@@ -904,6 +929,13 @@ n:coon
   rdfs:label "còn" ;
   :sense "cone" ;
   rdfs:comment "[BMh 2013]" .
+
+  n:connadh
+    a :MasculineNoun ;
+    rdfs:label "connadh" ;
+    :sense "fuel" ;
+    :gen "connaidh" ;
+    :pl "connaidhean" .
 
 n:consoil_gheamannan
   rdfs:label "consoil gheamannan" ;

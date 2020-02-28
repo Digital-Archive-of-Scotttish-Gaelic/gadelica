@@ -399,7 +399,49 @@
     a :MasculineNoun ;
     rdfs:label "triantan" ;
     :sense "triangle" ;
+    :gen "triantain" ;
+    :pl "triantain" ;
     rdfs:comment "[BMh 2013]" .
+
+  n:triantan_ceart_cheaarnach
+    rdfs:label "triantan ceart-cheàrnach" ;
+    :sense "right-angled triangle" ;
+    :part n:triantan , a:ceart_cheaarnach .
+
+  n:triantan_co_chasach
+    rdfs:label "triantan co-chasach" ;
+    :sense "isosceles triangle" ;
+    :part n:triantan , a:co_chasach .
+
+  n:triantan_ionann_thaobhach
+    rdfs:label "triantan ionann-thaobhach" ;
+    :sense "equilateral triangle" ;
+    :part n:triantan , a:ionann_thaobhach .
+
+  n:triantan_le_ceaarn_farsaing
+    rdfs:label "triantan le ceàrn farsaing" ;
+    :sense "obtuse-angled triangle" ;
+    :part n:triantan , n:ceaarn_farsaing .
+
+  n:triantan_neo_chothromach
+    rdfs:label "triantan neo-chothromach" ;
+    :sense "scalene triangle" ;
+    :part n:triantan , a:neo-chothromach .
+
+  a:triantanach
+    a :Adjective ;
+    rdfs:label "triantanach" ;
+    :sense "triangular" ;
+    :part n:triantan ;
+    rdfs:comment "[Mathematics]" .
+
+  n:triantanachd
+    a :FeminineNoun ;
+    rdfs:label "triantanachd" ;
+    :sense "trigonometry" ;
+    :gen "triantanachd" ;
+    :part a:triantanach ;
+    rdfs:comment "[Mathematics]" .
 
   a:triid_shoilleireachd
     rdfs:label "trìd-shoilleireachd" ;

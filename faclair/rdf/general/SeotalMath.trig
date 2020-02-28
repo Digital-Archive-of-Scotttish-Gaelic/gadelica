@@ -154,14 +154,6 @@
     :pl "analogan" ;
     rdfs:comment "[Mathematics]" .
 
-  n:ceaarn
-    a :MasculineNoun ;
-    rdfs:label "ceàrn" ;
-    :sense "angle" ;
-    :gen "ceàirn" ;
-    :pl "ceàrnan" ;
-    rdfs:comment "[Mathematics]" .
-
   a:tuathal
     a :Adjective ;
     rdfs:label "tuathal" ;
@@ -3549,12 +3541,6 @@
     :sense "periodic" ;
     rdfs:comment "[Mathematics]" .
 
-  a:ceart_cheaarnach
-    a :Adjective ;
-    rdfs:label "ceart-cheàrnach" ;
-    :sense "perpendicular" ;
-    rdfs:comment "[Mathematics]" .
-
   n:claar_dhealbhan
     a :MasculineNoun ;
     rdfs:label "clàr-dhealbhan" ;
@@ -4178,18 +4164,6 @@
     a :Adjective ;
     rdfs:label "ceart" ;
     :sense "right" ;
-    rdfs:comment "[Mathematics]" .
-
-  a:ceart_cheaarnach
-    a :Adjective ;
-    rdfs:label "ceart-cheàrnach" ;
-    :sense "right-angled" ;
-    rdfs:comment "[Mathematics]" .
-
-  a:ceart_cheaarnachail
-    a :Adjective ;
-    rdfs:label "ceart-cheàrnachail" ;
-    :sense "right-angled" ;
     rdfs:comment "[Mathematics]" .
 
   a:cruaidh
@@ -5544,27 +5518,6 @@
     :pl "gluasadan" ;
     rdfs:comment "[Mathematics]" .
 
-  n:triantan
-    a :MasculineNoun ;
-    rdfs:label "triantan" ;
-    :sense "triangle" ;
-    :gen "triantain" ;
-    :pl "triantain" ;
-    rdfs:comment "[Mathematics]" .
-
-  a:triantanach
-    a :Adjective ;
-    rdfs:label "triantanach" ;
-    :sense "triangular" ;
-    rdfs:comment "[Mathematics]" .
-
-  n:triantanachd
-    a :FeminineNoun ;
-    rdfs:label "triantanachd" ;
-    :sense "trigonometry" ;
-    :gen "triantanachd" ;
-    rdfs:comment "[Mathematics]" .
-
   a:trii_theirmeach
     a :Adjective ;
     rdfs:label "trì-theirmeach" ;
@@ -6071,11 +6024,7 @@
     :part n:ceaarn ;
     rdfs:comment "[Mathematics]" .
 
-  n:ceaarn_ceart
-    rdfs:label "ceàrn ceart" ;
-    :sense "right angle" ;
-    :part n:ceaarn ;
-    rdfs:comment "[Mathematics]" .
+
 
   n:ceaarn_co_leasachail
     rdfs:label "ceàrn co-leasachail" ;
@@ -7067,12 +7016,6 @@
     :part n:co_aontar ;
     rdfs:comment "[Mathematics]" .
 
-  n:triantan_ionann_thaobhach
-    rdfs:label "triantan ionann-thaobhach" ;
-    :sense "equilateral triangle" ;
-    :part a:ionann_thaobhach ;
-    rdfs:comment "[Mathematics]" .
-
   n:bloighean_co_ionann
     rdfs:label "bloighean co-ionann" ;
     :sense "equivalent fractions" ;
@@ -7781,18 +7724,6 @@
     :part a:isomeatrach ;
     rdfs:comment "[Mathematics]" .
 
-  n:triantan_co_chasach
-    rdfs:label "triantan co-chasach" ;
-    :sense "isosceles triangle" ;
-    :part a:co_chasach ;
-    rdfs:comment "[Mathematics]" .
-
-  n:triantan_co_chasach
-    rdfs:label "triantan co-chasach" ;
-    :sense "isoscles triangle" ;
-    :part a:co_chasach ;
-    rdfs:comment "[Mathematics]" .
-
   n:this_example_of_trial_and_improvement_is_referred_to_as_iteration
     rdfs:label "this example of trial and improvement is referred to as iteration" ;
     :sense "canaidh sinn 'tuairmse air thuairmse' ris an eisimpleir seo de 'feuch is leasaich'" ;
@@ -8417,11 +8348,7 @@
     :part a:farsaing ;
     rdfs:comment "[Mathematics]" .
 
-  n:triantan_le_ceaarn_farsaing
-    rdfs:label "triantan le ceàrn farsaing" ;
-    :sense "obtuse-angled triangle" ;
-    :part a:farsaing ;
-    rdfs:comment "[Mathematics]" .
+
 
   n:aaireamh_choorr
     rdfs:label "àireamh chòrr" ;
@@ -9147,12 +9074,6 @@
     rdfs:label "modail-sgèile" ;
     :sense "scale model" ;
     :part n:sgeeile ;
-    rdfs:comment "[Mathematics]" .
-
-  n:triantan_neo_chothromach
-    rdfs:label "triantan neo-chothromach" ;
-    :sense "scalene triangle" ;
-    :part a:neo_chothromach ;
     rdfs:comment "[Mathematics]" .
 
   n:An_Daarna_Cogadh
@@ -10071,30 +9992,6 @@
     rdfs:label "graf-ghluasadan" ;
     :sense "trend graph" ;
     :part n:gluasad ;
-    rdfs:comment "[Mathematics]" .
-
-  n:triantan_ionann_thaobhach
-    rdfs:label "triantan ionann-thaobhach" ;
-    :sense "equilateral triangle" ;
-    :part n:triantan ;
-    rdfs:comment "[Mathematics]" .
-
-  n:triantan_co_chasach
-    rdfs:label "triantan co-chasach" ;
-    :sense "isosceles triangle" ;
-    :part n:triantan ;
-    rdfs:comment "[Mathematics]" .
-
-  n:triantan_ceart_cheaarnach
-    rdfs:label "triantan ceart-cheàrnach" ;
-    :sense "right angled triangle" ;
-    :part n:triantan ;
-    rdfs:comment "[Mathematics]" .
-
-  n:triantan_neo_chothromach
-    rdfs:label "triantan neo-chothromach" ;
-    :sense "scalene triangle" ;
-    :part n:triantan ;
     rdfs:comment "[Mathematics]" .
 
   n:aodainnean_triantain

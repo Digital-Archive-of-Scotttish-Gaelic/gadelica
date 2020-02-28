@@ -7,6 +7,11 @@
 
 <http://faclair.ac.uk/sources/general> {
 
+  n:sealladh_spreadhte
+    rdfs:label "sealladh spreadhte" ;
+    :sense "exploded view" ;
+    :part n:sealladh , a:spreadhte .
+
 a:sean
   a :Adjective ;
   rdfs:label "sean" ;
@@ -245,5 +250,34 @@ n:siiol_peasrach
   :part n:siiol , n:peasair .
 
 
+  v:spreadh
+    a :Verb ;
+    rdfs:label "spreadh" ;
+    :sense "burst" , "explode" ;
+    :vn "spreadhadh" ;
+    rdfs:comment "[CM 2004]" .
+
+  n:spreadhadair
+    a :MasculineNoun ;
+    rdfs:label "spreadhadair" ;
+    :sense "explosive" ;
+    :gen "spreadhadair" ;
+    :pl "spreadhadairean" ;
+    :part v:spreadh ;
+    rdfs:comment "[CM 2004]" .
+
+  a:spreadhte
+    a :Adjective ;
+    rdfs:label "spreadhte" ;
+    :sense "exploded" ;
+    :part v:spreadh ;
+    rdfs:comment "[CM 2004]" .
+
+  n:stuth_spreadhaidh
+    rdfs:label "stuth spreadhaidh" ;
+    :sense "explosive" ;
+    :gen "stuth spreadhaidh" ;
+    :pl "stuthan spreadhaidh" ;
+    :part n:stuth , v:spreadh .
 
 }

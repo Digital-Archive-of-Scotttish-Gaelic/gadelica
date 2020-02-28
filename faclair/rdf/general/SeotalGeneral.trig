@@ -2176,18 +2176,9 @@ o:gabhail_brath_air
   :sense "exploitation" ;
   rdfs:comment "[General]" .
 
-o:cleachdadh_airson_buannachd_
-
-  rdfs:label "cleachdadh airson buannachd " ;
+o:cleachdadh_airson_buannachd
+  rdfs:label "cleachdadh airson buannachd" ;
   :sense "exploitation" ;
-  rdfs:comment "[General]" .
-
-n:stuth_spreadhaidh
-  a :MasculineNoun ;
-  rdfs:label "stuth-spreadhaidh" ;
-  :sense "explosive" ;
-  :gen "stuth-spreadhaidh" ;
-  :pl "stuthan-spreadhaidh" ;
   rdfs:comment "[General]" .
 
 a:neo_thalmhaidh
@@ -10410,10 +10401,9 @@ n:tar_eoolasan
   rdfs:comment "[General]" .
 
 n:stuthan_spreadhaidh_connadh_agus_bathar_co_cheangailte
-  rdfs:label "stuthan-spreadhaidh, connadh agus bathar co-cheangailte" ;
+  rdfs:label "stuthan spreadhaidh, connadh agus bathar co-cheangailte" ;
   :sense "explosives, fuels and related products" ;
-  :part n:stuth_spreadhaidh ;
-  rdfs:comment "[General]" .
+  :part n:stuth_spreadhaidh , n:connadh .
 
 n:saoghalan_neo_thalmhaidh
   rdfs:label "saoghalan neo-thalmhaidh" ;
@@ -16362,10 +16352,9 @@ n:aaiteachas_agus_teicneoolasan_co_cheangailte
   rdfs:comment "[General]" .
 
 n:stuthan_spreadhaidh_connaidhean_agus_bathar_co_cheangailte
-  rdfs:label "stuthan-spreadhaidh, connaidhean agus bathar co-cheangailte" ;
+  rdfs:label "stuthan spreadhaidh, connaidhean agus bathar co-cheangailte" ;
   :sense "explosives, fuels and related products" ;
-  :part a:co_cheangailte ;
-  rdfs:comment "[General]" .
+  :part n:stuth_spreadhaidh , n:connadh , a:co_cheangailte .
 
 n:idealism_agus_siostaman_co_cheangailte
   rdfs:label "idealism agus siostaman co-cheangailte" ;
