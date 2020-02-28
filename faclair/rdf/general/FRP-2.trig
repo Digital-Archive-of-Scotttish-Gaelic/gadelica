@@ -9388,35 +9388,43 @@ n:oordugh_bacaidh
 
   n:paairc_chaaraichean
     rdfs:label "pàirc chàraichean" ;
-    :sense "car park" .
+    :sense "car park" ;
+    :part n:paairc .
 
   n:paairc_chaaraichean_ioma_laair
     rdfs:label "pàirc chàraichean ioma-làir" ;
-    :sense "multi-storey car park" .
+    :sense "multi-storey car park" ;
+    :part n:paairc_chaaraichean .
 
   n:paairc_eag_eoolasach
     rdfs:label "pàirc eag-eòlasach" ;
-    :sense "ecological park" .
+    :sense "ecological park" ;
+    :part n:paairc .
 
   n:paairc_ghnothachais
     rdfs:label "pàirc ghnothachais" ;
-    :sense "business park" .
+    :sense "business park" ;
+    :part n:paairc .
 
   n:paairc_naaiseanta
     rdfs:label "pàirc nàiseanta" ;
-    :sense "national park" .
+    :sense "national park" ;
+    :part n:paairc .
 
   n:paairc_saidheans
     rdfs:label "pàirc saidheans" ;
-    :sense "science park" .
+    :sense "science park" ;
+    :part n:paairc , n:saidheans .
 
   n:paairc_theicneoolais
     rdfs:label "pàirc theicneòlais" ;
-    :sense "technology park" .
+    :sense "technology park" ;
+    :part n:paairc .
 
   n:paairc_chluiche
     rdfs:label "pàirc-chluiche" ;
-    :sense "playing field" .
+    :sense "playing field" ;
+    :part n:paairc .
 
   n:paairceadh_far_rathaid
     rdfs:label "pàirceadh far rathaid" ;
@@ -12129,10 +12137,6 @@ n:riaghailtean_bacadh_fuaim
   n:rianachd_seilbh
     rdfs:label "rianachd seilbh" ;
     :sense "estate management" .
-
-  n:rianachd_sgoile
-    rdfs:label "rianachd sgoile" ;
-    :sense "school management" .
 
   n:rianachd_sgudail
     rdfs:label "rianachd sgudail" ;
@@ -18378,11 +18382,6 @@ n:taabhachd_cho_ionann
     rdfs:label "faochadh taice" ;
     :part n:taic ;
     :sense "ancillary relief" .
-
-  n:uughdarrasan_taice
-    rdfs:label "ùghdarrasan taice" ;
-    :part n:taic ;
-    :sense "ancillary powers" .
 
   a:taiceil
     rdfs:label "taiceil" ;

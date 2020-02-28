@@ -7,10 +7,15 @@
 
 <http://faclair.ac.uk/sources/general> {
 
-n:uncail
-  a :MasculineNoun ;
-  rdfs:label "uncail" ;
-  :gen "uncail" ;
-  :pl "uncailean" .
+  n:uughdarrasan_taice
+    rdfs:label "ùghdarrasan taice" ;
+    :part n:taic , n:uughdarras ;
+    :sense "ancillary powers" .
+
+  n:uncail
+    a :MasculineNoun ;
+    rdfs:label "uncail" ;
+    :gen "uncail" ;
+    :pl "uncailean" .
 
 }
