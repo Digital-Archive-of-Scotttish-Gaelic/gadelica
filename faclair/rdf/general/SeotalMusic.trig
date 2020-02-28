@@ -1,0 +1,5347 @@
+@prefix n: <http://faclair.ac.uk/nouns/> .
+@prefix a: <http://faclair.ac.uk/adjectives/> .
+@prefix v: <http://faclair.ac.uk/verbs/> .
+@prefix o: <http://faclair.ac.uk/other/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://faclair.ac.uk/meta/> .
+
+<http://faclair.ac.uk/sources/general> {
+
+n:aicinn
+  a :MasculineNoun ;
+  rdfs:label "aicinn" ;
+  :sense "accent" ;
+  :gen "aicinn" ;
+  :pl "aicinnean" ;
+  rdfs:comment "[Music]" .
+
+n:seachran
+  a :MasculineNoun ;
+  rdfs:label "seachran" ;
+  :sense "accidental" ;
+  :gen "seachrain" ;
+  :pl "seachranan" ;
+  rdfs:comment "[Music]" .
+
+n:accompagnato
+  a :FeminineNoun ;
+  rdfs:label "accompagnato" ;
+  :sense "accompagnato" ;
+  :gen "accompagnato" ;
+  :pl "accompagnatothan" ;
+  rdfs:comment "[Music]" .
+
+n:ceool_taic
+  a :MasculineNoun ;
+  rdfs:label "ceòl-taic" ;
+  :sense "accompaniment" ;
+  :gen "ciùil-taic" ;
+  :pl "ceòl-taic(ean)" ;
+  rdfs:comment "[Music]" .
+
+n:neach_taic
+  a :MasculineNoun ;
+  rdfs:label "neach-taic" ;
+  :sense "accompanist" ;
+  :gen "neach-taic" ;
+  :pl "luchd-taic" ;
+  rdfs:comment "[Music]" .
+
+v:thoir_taic_do
+  a :Verb ;
+  rdfs:label "thoir taic do" ;
+  :sense "accompany" ;
+  rdfs:comment "[Music]" .
+
+n:bogsa
+  a :MasculineNoun ;
+  rdfs:label "bogsa" ;
+  :sense "accordion" ;
+  :gen "bogsa" ;
+  :pl "bogsaichean" ;
+  rdfs:comment "[Music]" .
+
+a:acustaig
+  a :Adjective ;
+  rdfs:label "acustaig" ;
+  :sense "acoustic" ;
+  rdfs:comment "[Music]" .
+
+n:acustaigs
+  a :noun ;
+  rdfs:label "acustaigs" ;
+  :sense "acoustics" ;
+  :gen "acustaigs" ;
+  rdfs:comment "[Music]" .
+
+n:ath_riochdachadh
+  a :MasculineNoun ;
+  rdfs:label "ath-riochdachadh" ;
+  :sense "adaptation" ;
+  :gen "ath-riochdachaidh" ;
+  :pl "ath-riochdachaidhean" ;
+  rdfs:comment "[Music]" .
+
+a:ath_riochdaichte
+  a :Adjective ;
+  rdfs:label "ath-riochdaichte" ;
+  :sense "adapted" ;
+  rdfs:comment "[Music]" .
+
+n:fonn
+  a :MasculineNoun ;
+  rdfs:label "fonn" ;
+  :sense "air" ;
+  :gen "fuinn" ;
+  :pl "fuinn" ;
+  rdfs:comment "[Music]" .
+
+a:aleatoric
+  a :Adjective ;
+  rdfs:label "aleatoric" ;
+  :sense "aleatoric" ;
+  rdfs:comment "[Music]" .
+
+n:allegro
+  a :noun ;
+  rdfs:label "allegro" ;
+  :sense "allegro" ;
+  :gen "allegro" ;
+  :pl "allegrothan" ;
+  rdfs:comment "[Music]" .
+
+n:allemande
+  a :FeminineNoun ;
+  rdfs:label "allemande" ;
+  :sense "allemande" ;
+  :gen "allemande" ;
+  :pl "allemandeathan" ;
+  rdfs:comment "[Music]" .
+
+n:almand
+  a :noun ;
+  rdfs:label "almand" ;
+  :sense "almand" ;
+  :gen "almand" ;
+  :pl "almandathan" ;
+  rdfs:comment "[Music]" .
+
+n:alto
+  a :FeminineNoun ;
+  rdfs:label "alto" ;
+  :sense "alto" ;
+  :gen "alto" ;
+  :pl "altothan" ;
+  rdfs:comment "[Music]" .
+
+n:anacrusis
+  a :FeminineNoun ;
+  rdfs:label "anacrusis" ;
+  :sense "anacrusis" ;
+  :gen "anacrusis" ;
+  :pl "anancruses" ;
+  rdfs:comment "[Music]" .
+
+n:laoidh
+  a :noun ;
+  rdfs:label "laoidh" ;
+  :sense "anthem" ;
+  :gen "laoidhe" ;
+  :pl "laoidhean" ;
+  rdfs:comment "[Music]" .
+
+a:antifonail
+  a :Adjective ;
+  rdfs:label "antifonail" ;
+  :sense "antiphonal" ;
+  rdfs:comment "[Music]" .
+
+n:arco
+  a :MasculineNoun ;
+  rdfs:label "arco" ;
+  :sense "arco" ;
+  :gen "arco" ;
+  :pl "arcothan" ;
+  rdfs:comment "[Music]" .
+
+n:aairia
+  a :FeminineNoun ;
+  rdfs:label "àiria" ;
+  :sense "aria" ;
+  :gen "àiria" ;
+  :pl "àiriathan" ;
+  rdfs:comment "[Music]" .
+
+n:arioso
+  a :MasculineNoun ;
+  rdfs:label "arioso" ;
+  :sense "arioso" ;
+  :gen "arioso" ;
+  :pl "ariosothan" ;
+  rdfs:comment "[Music]" .
+
+n:arpeggio
+  a :noun ;
+  rdfs:label "arpeggio" ;
+  :sense "arpeggio" ;
+  :gen "arpeggio" ;
+  :pl "arpeggiothan" ;
+  rdfs:comment "[Music]" .
+
+v:diirich
+  a :Verb ;
+  rdfs:label "dìrich" ;
+  :sense "ascend" ;
+  rdfs:comment "[Music]" .
+
+o:diireadh
+  rdfs:label "dìreadh" ;
+  :sense "ascending" ;
+  rdfs:comment "[Music]" .
+
+a:diiridh
+  a :Adjective ;
+  rdfs:label "dìridh" ;
+  :sense "ascending" ;
+  rdfs:comment "[Music]" .
+
+a:eu_toonalach
+  a :Adjective ;
+  rdfs:label "eu-tònalach" ;
+  :sense "atonal" ;
+  rdfs:comment "[Music]" .
+
+n:eu_toonalachd
+  a :FeminineNoun ;
+  rdfs:label "eu-tònalachd" ;
+  :sense "atonality" ;
+  :gen "eu-tònalachd" ;
+  :pl "eu-tònalachdan" ;
+  rdfs:comment "[Music]" .
+
+v:meudaich
+  a :Verb ;
+  rdfs:label "meudaich" ;
+  :sense "augment" ;
+  rdfs:comment "[Music]" .
+
+n:meudachadh
+  a :MasculineNoun ;
+  rdfs:label "meudachadh" ;
+  :sense "augmentation" ;
+  :gen "meudachaidh" ;
+  :pl "meudachaidhean" ;
+  rdfs:comment "[Music]" .
+
+n:ayre
+  a :MasculineNoun ;
+  rdfs:label "ayre" ;
+  :sense "ayre" ;
+  :gen "ayre" ;
+  :pl "ayreathan" ;
+  rdfs:comment "[Music]" .
+
+n:bailead
+  a :MasculineNoun ;
+  rdfs:label "bailead" ;
+  :sense "ballad" ;
+  :gen "baileid" ;
+  :pl "baileadan" ;
+  rdfs:comment "[Music]" .
+
+n:ballet
+  a :FeminineNoun ;
+  rdfs:label "ballet" ;
+  :sense "ballet" ;
+  :gen "ballet" ;
+  :pl "ballethean" ;
+  rdfs:comment "[Music]" .
+
+n:ballett
+  a :FeminineNoun ;
+  rdfs:label "ballett" ;
+  :sense "ballett" ;
+  :gen "ballett" ;
+  :pl "ballettean" ;
+  rdfs:comment "[Music]" .
+
+n:coomhlan
+  a :MasculineNoun ;
+  rdfs:label "còmhlan" ;
+  :sense "band" ;
+  :gen "còmhlain" ;
+  :pl "còmhlain" ;
+  rdfs:comment "[Music]" .
+
+n:baar_loidhne
+  a :FeminineNoun ;
+  rdfs:label "bàr-loidhne" ;
+  :sense "bar line" ;
+  :gen "bàr-loidhne" ;
+  :pl "bàr-loidhnichean" ;
+  rdfs:comment "[Music]" .
+
+n:baratoon
+  a :MasculineNoun ;
+  rdfs:label "baratòn" ;
+  :sense "baritone" ;
+  :gen "baratòn" ;
+  :pl "baratònan" ;
+  rdfs:comment "[Music]" .
+
+a:baroc
+  a :Adjective ;
+  rdfs:label "baroc" ;
+  :sense "baroque" ;
+  rdfs:comment "[Music]" .
+
+n:baroc
+  a :MasculineNoun ;
+  rdfs:label "baroc" ;
+  :sense "baroque" ;
+  :gen "baroc" ;
+  rdfs:comment "[Music]" .
+
+n:beus
+  a :MasculineNoun ;
+  rdfs:label "beus" ;
+  :sense "bass" ;
+  :gen "beus" ;
+  :pl "beusan" ;
+  rdfs:comment "[Music]" .
+
+n:beus_chleaf
+  a :MasculineNoun ;
+  rdfs:label "beus-chleaf" ;
+  :sense "bass clef" ;
+  :gen "beus-chleaf" ;
+  :pl "beus-chleafan" ;
+  rdfs:comment "[Music]" .
+
+n:beus_thromboon
+  a :MasculineNoun ;
+  rdfs:label "beus-thrombòn" ;
+  :sense "bass trombone" ;
+  :gen "beus-thrombòn" ;
+  :pl "beus-thrombònan" ;
+  rdfs:comment "[Music]" .
+
+n:basuun
+  a :MasculineNoun ;
+  rdfs:label "basùn" ;
+  :sense "bassoon" ;
+  :gen "basùn" ;
+  :pl "basùnaichean" ;
+  rdfs:comment "[Music]" .
+
+n:batan
+  a :MasculineNoun ;
+  rdfs:label "batan" ;
+  :sense "baton" ;
+  :gen "batain" ;
+  :pl "batanan" ;
+  rdfs:comment "[Music]" .
+
+n:buille
+  a :FeminineNoun ;
+  rdfs:label "buille" ;
+  :sense "beat" ;
+  :gen "buille" ;
+  :pl "buillean" ;
+  rdfs:comment "[Music]" .
+
+n:balg_seeididh
+  a :MasculineNoun ;
+  rdfs:label "balg-sèididh" ;
+  :sense "bellows" ;
+  :gen "builg-sèididh" ;
+  :pl "builg-sèididh" ;
+  rdfs:comment "[Music]" .
+
+n:barral
+  a :MasculineNoun ;
+  rdfs:label "barral" ;
+  :sense "birl" ;
+  :gen "barrail" ;
+  :pl "barralan" ;
+  rdfs:comment "[Music]" .
+
+n:blocbustair
+  a :MasculineNoun ;
+  rdfs:label "blocbustair" ;
+  :sense "blockbuster" ;
+  :gen "blocbustair" ;
+  :pl "blocbustairean" ;
+  rdfs:comment "[Music]" .
+
+n:seeideadh
+  a :MasculineNoun ;
+  rdfs:label "sèideadh" ;
+  :sense "blowing" ;
+  :gen "sèididh" ;
+  :pl "sèididhean" ;
+  rdfs:comment "[Music]" .
+
+n:blues
+  a :MasculineNoun ;
+  rdfs:label "blues" ;
+  :sense "blues" ;
+  :gen "blues" ;
+  :pl "blues" ;
+  rdfs:comment "[Music]" .
+
+n:boogie_woogie
+  a :MasculineNoun ;
+  rdfs:label "boogie woogie" ;
+  :sense "boogie woogie" ;
+  :gen "boogie woogie" ;
+  rdfs:comment "[Music]" .
+
+n:bossa_nova
+  a :MasculineNoun ;
+  rdfs:label "bossa nova" ;
+  :sense "bossa nova" ;
+  :gen "bossa nova" ;
+  :pl "bossa novathan" ;
+  rdfs:comment "[Music]" .
+
+a:nota_buinn
+  a :Adjective ;
+  rdfs:label "nota-buinn" ;
+  :sense "bottom note" ;
+  :gen "nota-buinn" ;
+  :pl "notaichean-buinn" ;
+  rdfs:comment "[Music]" .
+
+n:boureee
+  a :FeminineNoun ;
+  rdfs:label "boureé" ;
+  :sense "boureé" ;
+  :gen "boureé" ;
+  :pl "boureéthean" ;
+  rdfs:comment "[Music]" .
+
+n:bouzouki
+  a :MasculineNoun ;
+  rdfs:label "bouzouki" ;
+  :sense "bouzouki" ;
+  :gen "bouzouki" ;
+  :pl "bouzoukiathan" ;
+  rdfs:comment "[Music]" .
+
+n:boghadh
+  a :MasculineNoun ;
+  rdfs:label "boghadh" ;
+  :sense "bowing" ;
+  :gen "boghaidh" ;
+  :pl "boghaidhean" ;
+  rdfs:comment "[Music]" .
+
+n:cuing
+  a :FeminineNoun ;
+  rdfs:label "cuing" ;
+  :sense "brace" ;
+  :gen "cuinge" ;
+  :pl "cuingean" ;
+  rdfs:comment "[Music]" .
+
+n:briibh
+  a :MasculineNoun ;
+  rdfs:label "brìbh" ;
+  :sense "breve" ;
+  :gen "brìbh" ;
+  :pl "brìbhean" ;
+  rdfs:comment "[Music]" .
+
+n:duunadh
+  a :MasculineNoun ;
+  rdfs:label "dùnadh" ;
+  :sense "cadence" ;
+  :gen "dùnaidh" ;
+  :pl "dùnaidhean" ;
+  rdfs:comment "[Music]" .
+
+n:calypso
+  a :MasculineNoun ;
+  rdfs:label "calypso" ;
+  :sense "calypso" ;
+  :gen "calypso" ;
+  :pl "calypsothan" ;
+  rdfs:comment "[Music]" .
+
+n:canon
+  a :MasculineNoun ;
+  rdfs:label "canon" ;
+  :sense "canon" ;
+  :gen "canon" ;
+  :pl "canonan" ;
+  rdfs:comment "[Music]" .
+
+n:cantaata
+  a :FeminineNoun ;
+  rdfs:label "cantàta" ;
+  :sense "cantata" ;
+  :gen "cantàta" ;
+  :pl "cantàtathan" ;
+  rdfs:comment "[Music]" .
+
+n:canzona
+  a :FeminineNoun ;
+  rdfs:label "canzona" ;
+  :sense "canzona" ;
+  :gen "canzona" ;
+  :pl "canzonathan" ;
+  rdfs:comment "[Music]" .
+
+n:cello
+  a :FeminineNoun ;
+  rdfs:label "cello" ;
+  :sense "cello" ;
+  :gen "cello" ;
+  :pl "cellothan" ;
+  rdfs:comment "[Music]" .
+
+n:chaconne
+  a :FeminineNoun ;
+  rdfs:label "chaconne" ;
+  :sense "chaconne" ;
+  :gen "chaconne" ;
+  :pl "chaconneathan" ;
+  rdfs:comment "[Music]" .
+
+n:canadh
+  a :MasculineNoun ;
+  rdfs:label "canadh" ;
+  :sense "chant" ;
+  :gen "canaidh" ;
+  :pl "canaidhean" ;
+  rdfs:comment "[Music]" .
+
+n:guth_cleeibh
+  a :MasculineNoun ;
+  rdfs:label "guth-clèibh" ;
+  :sense "chest register" ;
+  :gen "guth-clèibh" ;
+  :pl "guthan-clèibh" ;
+  rdfs:comment "[Music]" .
+
+a:cooisireach
+  a :Adjective ;
+  rdfs:label "còisireach" ;
+  :sense "choral" ;
+  rdfs:comment "[Music]" .
+
+n:chorale
+  a :MasculineNoun ;
+  rdfs:label "chorale" ;
+  :sense "chorale" ;
+  :gen "chorale" ;
+  :pl "choraleathan" ;
+  rdfs:comment "[Music]" .
+
+n:coord
+  a :MasculineNoun ;
+  rdfs:label "còrd" ;
+  :sense "chord" ;
+  :gen "còrd(a)" ;
+  :pl "còrdan" ;
+  rdfs:comment "[Music]" .
+
+n:cooisridh
+  a :FeminineNoun ;
+  rdfs:label "còisridh" ;
+  :sense "chorus" ;
+  :gen "còisridh" ;
+  :pl "còisridhean" ;
+  rdfs:comment "[Music]" .
+
+n:seeist
+  a :FeminineNoun ;
+  rdfs:label "sèist" ;
+  :sense "chorus" ;
+  :gen "sèiste" ;
+  :pl "sèistean" ;
+  rdfs:comment "[Music]" .
+
+a:cromataig
+  a :Adjective ;
+  rdfs:label "cromataig" ;
+  :sense "chromatic" ;
+  rdfs:comment "[Music]" .
+
+n:cromataigeachd
+  a :FeminineNoun ;
+  rdfs:label "cromataigeachd" ;
+  :sense "chromaticism" ;
+  :gen "cromataigeachd" ;
+  rdfs:comment "[Music]" .
+
+n:claairneid
+  a :FeminineNoun ;
+  rdfs:label "clàirneid" ;
+  :sense "clarinet" ;
+  :gen "clàirneid(e)" ;
+  :pl "clàirneidean" ;
+  rdfs:comment "[Music]" .
+
+n:clabhacord
+  a :FeminineNoun ;
+  rdfs:label "clabhacord" ;
+  :sense "clavichord" ;
+  :gen "clabhacord" ;
+  :pl "clabhacordan" ;
+  rdfs:comment "[Music]" .
+
+n:cleaf
+  a :MasculineNoun ;
+  rdfs:label "cleaf" ;
+  :sense "clef" ;
+  :gen "cleaf" ;
+  :pl "cleafan" ;
+  rdfs:comment "[Music]" .
+
+n:aain
+  a :FeminineNoun ;
+  rdfs:label "àin" ;
+  :sense "climax" ;
+  :gen "àine" ;
+  :pl "àinean" ;
+  rdfs:comment "[Music]" .
+
+n:dluuth_chruth
+  a :MasculineNoun ;
+  rdfs:label "dlùth-chruth" ;
+  :sense "close position" ;
+  :gen "dlùth-chruth" ;
+  :pl "dlùth-chruthan" ;
+  rdfs:comment "[Music]" .
+
+n:cooda
+  a :FeminineNoun ;
+  rdfs:label "còda" ;
+  :sense "coda" ;
+  :gen "còda" ;
+  :pl "còdathan" ;
+  rdfs:comment "[Music]" .
+
+o:col_legno
+  a :adverb ;
+  rdfs:label "col legno" ;
+  :sense "col legno" ;
+  rdfs:comment "[Music]" .
+
+n:coloratura
+  a :FeminineNoun ;
+  rdfs:label "coloratura" ;
+  :sense "coloratura" ;
+  :gen "coloratura" ;
+  :pl "coloraturathan" ;
+  rdfs:comment "[Music]" .
+
+n:comas_guth
+  a :MasculineNoun ;
+  rdfs:label "comas-guth" ;
+  :sense "compass" ;
+  :gen "comais-guth" ;
+  :pl "comasan-guth" ;
+  rdfs:comment "[Music]" .
+
+v:cruthaich
+  a :Verb ;
+  rdfs:label "cruthaich" ;
+  :sense "compose" ;
+  rdfs:comment "[Music]" .
+
+n:cruthadair_ciuuil
+  a :MasculineNoun ;
+  rdfs:label "cruthadair-ciùil" ;
+  :sense "composer" ;
+  :gen "cruthadair-ciùil" ;
+  :pl "cruthadairean-ciùil" ;
+  rdfs:comment "[Music]" .
+
+n:cruthachadh
+  a :MasculineNoun ;
+  rdfs:label "cruthachadh" ;
+  :sense "composing" ;
+  rdfs:comment "[Music]" .
+
+n:piios_ciuuil
+  a :MasculineNoun ;
+  rdfs:label "pìos-ciùil" ;
+  :sense "composition" ;
+  :gen "pìos-ciùil" ;
+  :pl "pìosan-ciùil" ;
+  rdfs:comment "[Music]" .
+
+o:con_sordino
+  a :adverb ;
+  rdfs:label "con sordino" ;
+  :sense "con sordino" ;
+  rdfs:comment "[Music]" .
+
+n:consairt
+  a :noun ;
+  rdfs:label "consairt" ;
+  :sense "concert" ;
+  :gen "consairt" ;
+  :pl "consairtean" ;
+  rdfs:comment "[Music]" .
+
+n:concertina
+  a :MasculineNoun ;
+  rdfs:label "concertina" ;
+  :sense "concertina" ;
+  :gen "concertina" ;
+  :pl "concertinathan" ;
+  rdfs:comment "[Music]" .
+
+n:concertino
+  a :FeminineNoun ;
+  rdfs:label "concertino" ;
+  :sense "concertino" ;
+  :gen "concertino" ;
+  :pl "concertinothan" ;
+  rdfs:comment "[Music]" .
+
+n:concerto
+  a :FeminineNoun ;
+  rdfs:label "concerto" ;
+  :sense "concerto" ;
+  :gen "concerto" ;
+  :pl "concertothan" ;
+  rdfs:comment "[Music]" .
+
+n:stiuuiriche_ciuuil
+  a :MasculineNoun ;
+  rdfs:label "stiùiriche-ciùil" ;
+  :sense "conductor" ;
+  :gen "stiùiriche-ciùil" ;
+  :pl "stiùirichean-ciùil" ;
+  rdfs:comment "[Music]" .
+
+a:co_leantainneach
+  a :Adjective ;
+  rdfs:label "co-leantainneach" ;
+  :sense "consecutive" ;
+  rdfs:comment "[Music]" .
+
+n:co_fhuaimneachd
+  a :FeminineNoun ;
+  rdfs:label "co-fhuaimneachd" ;
+  :sense "consonance" ;
+  :gen "co-fhuaimneachd" ;
+  :pl "co-fhuaimneachdan" ;
+  rdfs:comment "[Music]" .
+
+a:co_fhuaimneach
+  a :Adjective ;
+  rdfs:label "co-fhuaimneach" ;
+  :sense "consonant" ;
+  rdfs:comment "[Music]" .
+
+n:consort
+  a :FeminineNoun ;
+  rdfs:label "consort" ;
+  :sense "consort" ;
+  :gen "consort" ;
+  :pl "consortan" ;
+  rdfs:comment "[Music]" .
+
+n:cumadh
+  a :MasculineNoun ;
+  rdfs:label "cumadh" ;
+  :sense "construction" ;
+  :gen "cumaidh" ;
+  :pl "cumaidhean" ;
+  rdfs:comment "[Music]" .
+
+n:continuo
+  a :FeminineNoun ;
+  rdfs:label "continuo" ;
+  :sense "continuo" ;
+  :gen "continuo" ;
+  :pl "continuothan" ;
+  rdfs:comment "[Music]" .
+
+a:contrapuntal
+  a :Adjective ;
+  rdfs:label "contrapuntal" ;
+  :sense "contrapuntal" ;
+  rdfs:comment "[Music]" .
+
+n:iomsgaradh
+  a :MasculineNoun ;
+  rdfs:label "iomsgaradh" ;
+  :sense "contrast" ;
+  :gen "iomsgaraidh" ;
+  :pl "iomsgaraidhean" ;
+  rdfs:comment "[Music]" .
+
+a:iomsgarach
+  a :Adjective ;
+  rdfs:label "iomsgarach" ;
+  :sense "contrasting" ;
+  rdfs:comment "[Music]" .
+
+n:cor_anglais
+  a :MasculineNoun ;
+  rdfs:label "cor anglais" ;
+  :sense "cor anglais" ;
+  :gen "cor anglais" ;
+  :pl "coran anglais" ;
+  rdfs:comment "[Music]" .
+
+n:coornaid
+  a :FeminineNoun ;
+  rdfs:label "còrnaid" ;
+  :sense "cornet" ;
+  :gen "còrnaid" ;
+  :pl "còrnaidean" ;
+  rdfs:comment "[Music]" .
+
+n:cornett
+  a :FeminineNoun ;
+  rdfs:label "cornett" ;
+  :sense "cornett" ;
+  :gen "cornett" ;
+  :pl "cornetti" ;
+  rdfs:comment "[Music]" .
+
+n:contrafhonn
+  a :MasculineNoun ;
+  rdfs:label "contrafhonn" ;
+  :sense "counter melody" ;
+  :gen "contrafhuinn" ;
+  :pl "contrafhuinn" ;
+  rdfs:comment "[Music]" .
+
+n:contrapuing
+  a :FeminineNoun ;
+  rdfs:label "contrapuing" ;
+  :sense "counterpoint" ;
+  :gen "contrapuing" ;
+  :pl "contrapuingean" ;
+  rdfs:comment "[Music]" .
+
+n:leth_cheathramh
+  a :FeminineNoun ;
+  rdfs:label "leth-cheathramh" ;
+  :sense "couplet" ;
+  :gen "leth-cheathraimh" ;
+  :pl "leth-cheathramhan" ;
+  rdfs:comment "[Music]" .
+
+n:courante
+  a :MasculineNoun ;
+  rdfs:label "courante" ;
+  :sense "courante" ;
+  :gen "courante" ;
+  :pl "couranteathan" ;
+  rdfs:comment "[Music]" .
+
+n:crescendo
+  a :MasculineNoun ;
+  rdfs:label "crescendo" ;
+  :sense "crescendo" ;
+  :gen "crescendo" ;
+  :pl "crescendothan" ;
+  rdfs:comment "[Music]" .
+
+n:fuaim_tarsainn
+  a :MasculineNoun ;
+  rdfs:label "fuaim-tarsainn" ;
+  :sense "crossing noise" ;
+  :gen "fuaim-tarsainn" ;
+  :pl "fuaimean-tarsainn" ;
+  rdfs:comment "[Music]" .
+
+n:nota_tarsainn
+  a :MasculineNoun ;
+  rdfs:label "nota-tarsainn" ;
+  :sense "crossing note" ;
+  :gen "nota-tarsainn" ;
+  :pl "notaichean-tarsainn" ;
+  rdfs:comment "[Music]" .
+
+n:croitseat
+  a :MasculineNoun ;
+  rdfs:label "croitseat" ;
+  :sense "crotchet" ;
+  :gen "croitseit" ;
+  :pl "croitseatan" ;
+  rdfs:comment "[Music]" .
+
+n:crumhorn
+  a :MasculineNoun ;
+  rdfs:label "crumhorn" ;
+  :sense "crumhorn" ;
+  :gen "crumhorn" ;
+  :pl "crumhornan" ;
+  rdfs:comment "[Music]" .
+
+a:cuairteach
+  a :Adjective ;
+  rdfs:label "cuairteach" ;
+  :sense "cyclic" ;
+  rdfs:comment "[Music]" .
+
+n:ciombal
+  a :FeminineNoun ;
+  rdfs:label "ciombal" ;
+  :sense "cymbal" ;
+  :gen "ciombail" ;
+  :pl "ciombalan" ;
+  rdfs:comment "[Music]" .
+
+a:da_capo
+  a :Adjective ;
+  rdfs:label "da capo" ;
+  :sense "da capo" ;
+  rdfs:comment "[Music]" .
+
+n:debut
+  a :FeminineNoun ;
+  rdfs:label "debut" ;
+  :sense "debut" ;
+  :gen "debut" ;
+  :pl "debuthan" ;
+  rdfs:comment "[Music]" .
+
+n:demisemicueebhear
+  a :FeminineNoun ;
+  rdfs:label "demisemicuèbhear" ;
+  :sense "demisemiquaver" ;
+  :gen "demisemicuèbhear" ;
+  :pl "demisemicuèbhearan" ;
+  rdfs:comment "[Music]" .
+
+n:descant
+  a :MasculineNoun ;
+  rdfs:label "descant" ;
+  :sense "descant" ;
+  :gen "descant" ;
+  :pl "descantan" ;
+  rdfs:comment "[Music]" .
+
+a:teaarnaidh
+  a :Adjective ;
+  rdfs:label "teàrnaidh" ;
+  :sense "descending" ;
+  rdfs:comment "[Music]" .
+
+o:teaarnadh
+
+  rdfs:label "teàrnadh" ;
+  :sense "descending" ;
+  rdfs:comment "[Music]" .
+
+n:adhartachadh
+  a :MasculineNoun ;
+  rdfs:label "adhartachadh" ;
+  :sense "development" ;
+  :gen "adhartachaidh" ;
+  :pl "adhartachaidhean" ;
+  rdfs:comment "[Music]" .
+
+a:diatonaig
+  a :Adjective ;
+  rdfs:label "diatonaig" ;
+  :sense "diatonic" ;
+  rdfs:comment "[Music]" .
+
+n:diminuendo
+  a :FeminineNoun ;
+  rdfs:label "diminuendo" ;
+  :sense "diminuendo" ;
+  :gen "diminuendo" ;
+  :pl "diminuendothan" ;
+  rdfs:comment "[Music]" .
+
+n:eas_sheirm
+  a :FeminineNoun ;
+  rdfs:label "eas-sheirm" ;
+  :sense "discord" ;
+  :gen "eas-sheirme" ;
+  :pl "eas-sheirmean" ;
+  rdfs:comment "[Music]" .
+
+n:eas_fhuaimneachd
+  a :FeminineNoun ;
+  rdfs:label "eas-fhuaimneachd" ;
+  :sense "dissonance" ;
+  :gen "eas-fhuaimneachd" ;
+  :pl "eas-fhuaimneachdan" ;
+  rdfs:comment "[Music]" .
+
+a:eas_fhuaimneach
+  a :Adjective ;
+  rdfs:label "eas-fhuaimneach" ;
+  :sense "dissonant" ;
+  rdfs:comment "[Music]" .
+
+n:fiaradh
+  a :MasculineNoun ;
+  rdfs:label "fiaradh" ;
+  :sense "distortion" ;
+  :gen "fiaraidh" ;
+  :pl "fiaraidhean" ;
+  rdfs:comment "[Music]" .
+
+n:divertissement
+  a :FeminineNoun ;
+  rdfs:label "divertissement" ;
+  :sense "divertissement" ;
+  :gen "divertissement" ;
+  :pl "divertissementan" ;
+  rdfs:comment "[Music]" .
+
+a:ceannasach
+  a :Adjective ;
+  rdfs:label "ceannasach" ;
+  :sense "dominant" ;
+  rdfs:comment "[Music]" .
+
+n:dotag
+  a :FeminineNoun ;
+  rdfs:label "dotag" ;
+  :sense "dot" ;
+  :gen "dotaig(e)" ;
+  :pl "dotagan" ;
+  rdfs:comment "[Music]" .
+
+a:dotagach
+  a :Adjective ;
+  rdfs:label "dotagach" ;
+  :sense "dotted" ;
+  rdfs:comment "[Music]" .
+
+n:proo_bheus
+  a :noun ;
+  rdfs:label "prò-bheus" ;
+  :sense "double bass" ;
+  :gen "prò-bheus" ;
+  :pl "prò-bheusan" ;
+  rdfs:comment "[Music]" .
+
+o:taisbeanadh_duubailte
+  rdfs:label "taisbeanadh dùbailte" ;
+  :sense "double exposition" ;
+  rdfs:comment "[Music]" .
+
+o:co_chluich_theud
+  rdfs:label "co-chluich theud" ;
+  :sense "double stopping" ;
+  rdfs:comment "[Music]" .
+
+n:bogha_siios
+  a :MasculineNoun ;
+  rdfs:label "bogha-sìos" ;
+  :sense "downbow" ;
+  :gen "bogha-sìos" ;
+  :pl "boghaichean-sìos" ;
+  rdfs:comment "[Music]" .
+
+n:torman
+  a :MasculineNoun ;
+  rdfs:label "torman" ;
+  :sense "drone" ;
+  :gen "tormain" ;
+  :pl "tormanan" ;
+  rdfs:comment "[Music]" .
+
+n:dos
+  a :MasculineNoun ;
+  rdfs:label "dos" ;
+  :sense "drone" ;
+  :gen "dois" ;
+  :gen "duis" ;
+  :pl "duis" ;
+  :pl "dosan" ;
+  :pl "dois" ;
+  rdfs:comment "[Music]" .
+
+n:druma
+  a :noun ;
+  rdfs:label "druma" ;
+  :sense "drum" ;
+  :gen "druma" ;
+  :pl "drumaichean" ;
+  rdfs:comment "[Music]" .
+
+o:seata_dhrumaichean
+  rdfs:label "seata dhrumaichean" ;
+  :sense "drumkit" ;
+  rdfs:comment "[Music]" .
+
+n:ceool_caaraid
+  a :MasculineNoun ;
+  rdfs:label "ceòl-càraid" ;
+  :sense "duet" ;
+  :gen "ciùil-càraid" ;
+  :pl "ceòl-chàraid(ean)" ;
+  rdfs:comment "[Music]" .
+
+n:caaraid
+  a :FeminineNoun ;
+  rdfs:label "càraid" ;
+  :sense "duo" ;
+  :gen "càraid(e)" ;
+  :pl "càraidean" ;
+  rdfs:comment "[Music]" .
+
+n:dublaid
+  a :FeminineNoun ;
+  rdfs:label "dublaid" ;
+  :sense "duplet" ;
+  :gen "dublaid(e)" ;
+  :pl "dublaidean" ;
+  rdfs:comment "[Music]" .
+
+n:faid
+  a :MasculineNoun ;
+  rdfs:label "faid" ;
+  :sense "duration" ;
+  :gen "faid" ;
+  :pl "faidean" ;
+  rdfs:comment "[Music]" .
+
+o:daineamaigs
+  rdfs:label "daineamaigs" ;
+  :sense "dynamics" ;
+  :gen "daineamaigs" ;
+  :pl "daineamaigs" ;
+  rdfs:comment "[Music]" .
+
+n:encore
+  a :MasculineNoun ;
+  rdfs:label "encore" ;
+  :sense "encore" ;
+  :gen "encore" ;
+  :pl "encorean" ;
+  rdfs:comment "[Music]" .
+
+o:encore
+  a :adverb ;
+  rdfs:label "encore" ;
+  :sense "encore" ;
+  rdfs:comment "[Music]" .
+
+n:ensemble
+  a :FeminineNoun ;
+  rdfs:label "ensemble" ;
+  :sense "ensemble" ;
+  :gen "ensemble" ;
+  :pl "ensemblean" ;
+  rdfs:comment "[Music]" .
+
+n:entr_acte
+  a :FeminineNoun ;
+  rdfs:label "entr'acte" ;
+  :sense "entr’acte" ;
+  :gen "entr'acte" ;
+  :pl "entr'actan" ;
+  rdfs:comment "[Music]" .
+
+n:inntrigeadh
+  a :MasculineNoun ;
+  rdfs:label "inntrigeadh" ;
+  :sense "entry" ;
+  :gen "inntrigidh" ;
+  :pl "inntrigidhean" ;
+  rdfs:comment "[Music]" .
+
+n:eadar_fhonn
+  a :MasculineNoun ;
+  rdfs:label "eadar-fhonn" ;
+  :sense "episode" ;
+  :gen "eadar-fhuinn" ;
+  :pl "eadar-fhuinn" ;
+  rdfs:comment "[Music]" .
+
+n:co_reeiteachd
+  a :FeminineNoun ;
+  rdfs:label "co-rèiteachd" ;
+  :sense "equal temperament" ;
+  :gen "co-rèiteachd" ;
+  :pl "co-rèiteachdan" ;
+  rdfs:comment "[Music]" .
+
+n:esprit
+  a :FeminineNoun ;
+  rdfs:label "esprit" ;
+  :sense "esprit" ;
+  :gen "esprit" ;
+  rdfs:comment "[Music]" .
+
+n:earrann
+  a :FeminineNoun ;
+  rdfs:label "earrann" ;
+  :sense "excerpt" ;
+  :gen "earrainn" ;
+  :pl "earrannan" ;
+  rdfs:comment "[Music]" .
+
+n:gniiomhachadh
+  a :MasculineNoun ;
+  rdfs:label "gnìomhachadh" ;
+  :sense "execution" ;
+  :gen "gnìomhachaidh" ;
+  :pl "gnìomhachaidhean" ;
+  rdfs:comment "[Music]" .
+
+n:expressionism
+  a :MasculineNoun ;
+  rdfs:label "expressionism" ;
+  :sense "expressionism" ;
+  :gen "expressionism" ;
+  rdfs:comment "[Music]" .
+
+n:extravaganza
+  a :FeminineNoun ;
+  rdfs:label "extravaganza" ;
+  :sense "extravaganza" ;
+  :gen "extravaganza" ;
+  :pl "extravaganzathan" ;
+  rdfs:comment "[Music]" .
+
+n:gleadhar
+  a :noun ;
+  rdfs:label "gleadhar" ;
+  :sense "fanfare" ;
+  :gen "gleadhair" ;
+  :pl "gleadhair" ;
+  rdfs:comment "[Music]" .
+
+n:fantasia
+  a :MasculineNoun ;
+  rdfs:label "fantasia" ;
+  :sense "fantasia" ;
+  :gen "fantasia" ;
+  :pl "fantasiathan" ;
+  rdfs:comment "[Music]" .
+
+n:figear
+  a :MasculineNoun ;
+  rdfs:label "figear" ;
+  :sense "figure" ;
+  :gen "figeir" ;
+  :pl "figearan" ;
+  rdfs:comment "[Music]" .
+
+n:finale
+  a :FeminineNoun ;
+  rdfs:label "finale" ;
+  :sense "finale" ;
+  :gen "finale" ;
+  :pl "finaleathan" ;
+  rdfs:comment "[Music]" .
+
+n:meurachadh
+  a :MasculineNoun ;
+  rdfs:label "meurachadh" ;
+  :sense "fingering" ;
+  :gen "meurachaidh" ;
+  :pl "meurachaidhean" ;
+  rdfs:comment "[Music]" .
+
+n:duislear
+  a :MasculineNoun ;
+  rdfs:label "duislear" ;
+  :sense "flautist" ;
+  :gen "duisleir" ;
+  :pl "duislearan" ;
+  rdfs:comment "[Music]" .
+
+n:stocadh
+  a :MasculineNoun ;
+  rdfs:label "stocadh" ;
+  :sense "flourish" ;
+  :gen "stocaidh" ;
+  :pl "stocaidhean" ;
+  rdfs:comment "[Music]" .
+
+n:duiseal
+  a :MasculineNoun ;
+  rdfs:label "duiseal" ;
+  :sense "flute" ;
+  :gen "duiseil" ;
+  :pl "duisealan" ;
+  rdfs:comment "[Music]" .
+
+n:crith_theangaireachd
+  a :FeminineNoun ;
+  rdfs:label "crith-theangaireachd" ;
+  :sense "flutter tonguing" ;
+  :gen "crith-theangaireachd" ;
+  rdfs:comment "[Music]" .
+
+n:cruth
+  a :MasculineNoun ;
+  rdfs:label "cruth" ;
+  :sense "form" ;
+  :gen "cruth(a)" ;
+  :pl "cruthan" ;
+  rdfs:comment "[Music]" .
+
+o:coorn_Frangach
+
+  rdfs:label "còrn Frangach" ;
+  :sense "French horn" ;
+  rdfs:comment "[Music]" .
+
+n:ceap
+  a :MasculineNoun ;
+  rdfs:label "ceap" ;
+  :sense "fret" ;
+  :gen "ceapa" ;
+  :pl "ceapan" ;
+  rdfs:comment "[Music]" .
+
+a:fiuugail
+  a :Adjective ;
+  rdfs:label "fiùgail" ;
+  :sense "fugal" ;
+  rdfs:comment "[Music]" .
+
+n:fiuug
+  a :MasculineNoun ;
+  rdfs:label "fiùg" ;
+  :sense "fugue" ;
+  :gen "fiùg" ;
+  :pl "fiùgan" ;
+  rdfs:comment "[Music]" .
+
+n:slaan_dhuunadh
+  a :MasculineNoun ;
+  rdfs:label "slàn-dhùnadh" ;
+  :sense "full-close" ;
+  :gen "slàn-dhùnaidh" ;
+  :pl "slàn-dhùnaidhean" ;
+  rdfs:comment "[Music]" .
+
+a:funcaidh
+  a :Adjective ;
+  rdfs:label "funcaidh" ;
+  :sense "funky" ;
+  rdfs:comment "[Music]" .
+
+n:galliard
+  a :MasculineNoun ;
+  rdfs:label "galliard" ;
+  :sense "galliard" ;
+  :gen "galliard" ;
+  :pl "galliardan" ;
+  rdfs:comment "[Music]" .
+
+n:gamelan
+  a :MasculineNoun ;
+  rdfs:label "gamelan" ;
+  :sense "gamelan" ;
+  :gen "gamelan" ;
+  :pl "gamelanan" ;
+  rdfs:comment "[Music]" .
+
+n:gavotte
+  a :MasculineNoun ;
+  rdfs:label "gavotte" ;
+  :sense "gavotte" ;
+  :gen "gavotte" ;
+  :pl "gavotteathan" ;
+  rdfs:comment "[Music]" .
+
+n:gigue
+  a :noun ;
+  rdfs:label "gigue" ;
+  :sense "gigue" ;
+  :gen "gigue" ;
+  :pl "giguean" ;
+  rdfs:comment "[Music]" .
+
+n:glissando
+  a :MasculineNoun ;
+  rdfs:label "glissando" ;
+  :sense "glissando" ;
+  :gen "glissando" ;
+  :pl "glissandothan" ;
+  rdfs:comment "[Music]" .
+
+n:glockenspiel
+  a :MasculineNoun ;
+  rdfs:label "glockenspiel" ;
+  :sense "glockenspiel" ;
+  :gen "glockenspiel" ;
+  :pl "glockenspielean" ;
+  rdfs:comment "[Music]" .
+
+n:nota_maise
+  a :MasculineNoun ;
+  rdfs:label "nota-maise" ;
+  :sense "grace note" ;
+  :gen "nota-maise" ;
+  :pl "notaichean-maise" ;
+  rdfs:comment "[Music]" .
+
+n:claar_notaireachd
+  a :FeminineNoun ;
+  rdfs:label "clàr-notaireachd" ;
+  :sense "grid notation" ;
+  :gen "clàr-notaireachd" ;
+  rdfs:comment "[Music]" .
+
+n:gruppetto
+  a :MasculineNoun ;
+  rdfs:label "gruppetto" ;
+  :sense "gruppetto" ;
+  :gen "gruppetto" ;
+  :pl "gruppettothan" ;
+  rdfs:comment "[Music]" .
+
+n:giotaar
+  a :MasculineNoun ;
+  rdfs:label "giotàr" ;
+  :sense "guitar" ;
+  :gen "giotàir" ;
+  :pl "giotàran" ;
+  rdfs:comment "[Music]" .
+
+n:leth_dhuunadh
+  a :MasculineNoun ;
+  rdfs:label "leth-dhùnadh" ;
+  :sense "half-close" ;
+  :gen "leth-dhùnaidh" ;
+  :pl "leth-dhùnaidhean" ;
+  rdfs:comment "[Music]" .
+
+n:harmonaig
+  a :FeminineNoun ;
+  rdfs:label "harmonaig" ;
+  :sense "harmonic" ;
+  :gen "harmonaig" ;
+  :pl "harmonaigean" ;
+  rdfs:comment "[Music]" .
+
+a:co_sheirmeach
+  a :Adjective ;
+  rdfs:label "co-sheirmeach" ;
+  :sense "harmonic" ;
+  rdfs:comment "[Music]" .
+
+a:harmonaig
+  a :Adjective ;
+  rdfs:label "harmonaig" ;
+  :sense "harmonic" ;
+  rdfs:comment "[Music]" .
+
+v:co_sheirmich
+  a :Verb ;
+  rdfs:label "co-sheirmich" ;
+  :sense "harmonise" ;
+  rdfs:comment "[Music]" .
+
+n:co_sheirm
+  a :FeminineNoun ;
+  rdfs:label "co-sheirm" ;
+  :sense "harmony" ;
+  :gen "co-sheirm(e)" ;
+  :pl "co-sheirmean" ;
+  rdfs:comment "[Music]" .
+
+n:harpsacord
+  a :FeminineNoun ;
+  rdfs:label "harpsacord" ;
+  :sense "harpsichord" ;
+  :gen "harpsacord" ;
+  :pl "harpsacordan" ;
+  rdfs:comment "[Music]" .
+
+n:hemidemisemicueebhear
+  a :FeminineNoun ;
+  rdfs:label "hemidemisemicuèbhear" ;
+  :sense "hemidemisemiquaver" ;
+  :gen "hemidemisemicuèbheir" ;
+  :pl "" ;
+  rdfs:comment "[Music]" .
+
+n:co_fhuaimneachadh
+  a :MasculineNoun ;
+  rdfs:label "co-fhuaimneachadh" ;
+  :sense "homophony" ;
+  :gen "co-fhuaimneachaidh" ;
+  :pl "co-fhuaimneachaidhean" ;
+  rdfs:comment "[Music]" .
+
+n:coorn
+  a :MasculineNoun ;
+  rdfs:label "còrn" ;
+  :sense "horn" ;
+  :gen "cùirn" ;
+  :pl "cùirn" ;
+  rdfs:comment "[Music]" .
+
+n:laoidh
+  a :noun ;
+  rdfs:label "laoidh" ;
+  :sense "hymn" ;
+  :gen "laoidhe" ;
+  :pl "laoidhean" ;
+  rdfs:comment "[Music]" .
+
+n:atharrais
+  a :FeminineNoun ;
+  rdfs:label "atharrais" ;
+  :sense "imitation" ;
+  :gen "atharrais" ;
+  rdfs:comment "[Music]" .
+
+n:impreiseanachd
+  a :FeminineNoun ;
+  rdfs:label "impreiseanachd" ;
+  :sense "impressionism" ;
+  :gen "impreiseanachd" ;
+  rdfs:comment "[Music]" .
+
+n:impreiseanair
+  a :MasculineNoun ;
+  rdfs:label "impreiseanair" ;
+  :sense "impressionist" ;
+  :gen "impreiseanair" ;
+  :pl "impreiseanairean" ;
+  rdfs:comment "[Music]" .
+
+v:saor_chluich
+  a :Verb ;
+  rdfs:label "saor-chluich" ;
+  :sense "improvise" ;
+  rdfs:comment "[Music]" .
+
+n:ionnsramaid
+  a :FeminineNoun ;
+  rdfs:label "ionnsramaid" ;
+  :sense "instrument" ;
+  :gen "ionnsramaid(e)" ;
+  :pl "ionnsramaidean" ;
+  rdfs:comment "[Music]" .
+
+a:ionnsramaideach
+  a :Adjective ;
+  rdfs:label "ionnsramaideach" ;
+  :sense "instrumental" ;
+  rdfs:comment "[Music]" .
+
+n:deeine
+  a :FeminineNoun ;
+  rdfs:label "dèine" ;
+  :sense "intensity" ;
+  :gen "dèine" ;
+  rdfs:comment "[Music]" .
+
+n:eadar_chluich
+  a :MasculineNoun ;
+  rdfs:label "eadar-chluich" ;
+  :sense "interlude" ;
+  :gen "eadar-chluich(e)" ;
+  :pl "eadar-chluichean" ;
+  rdfs:comment "[Music]" .
+
+n:intermezzo
+  a :MasculineNoun ;
+  rdfs:label "intermezzo" ;
+  :sense "intermezzo" ;
+  :gen "intermezzo" ;
+  :pl "intermezzothan" ;
+  rdfs:comment "[Music]" .
+
+v:eadar_mhiinich
+  a :Verb ;
+  rdfs:label "eadar-mhìnich" ;
+  :sense "interpret" ;
+  rdfs:comment "[Music]" .
+
+n:eadar_mhiineachadh
+  a :MasculineNoun ;
+  rdfs:label "eadar-mhìneachadh" ;
+  :sense "interpretation" ;
+  :gen "eadar-mhìneachaidh" ;
+  :pl "eadar-mhìneachaidhean" ;
+  rdfs:comment "[Music]" .
+
+n:deas_thoonadh
+  a :MasculineNoun ;
+  rdfs:label "deas-thònadh" ;
+  :sense "intonation" ;
+  :gen "deas-thònaidh" ;
+  :pl "deas-thònaidhean" ;
+  rdfs:comment "[Music]" .
+
+n:tionnsgal
+  a :MasculineNoun ;
+  rdfs:label "tionnsgal" ;
+  :sense "invention" ;
+  :gen "tionnsgail" ;
+  :pl "tionnsgalan" ;
+  rdfs:comment "[Music]" .
+
+a:inbheartach
+  a :Adjective ;
+  rdfs:label "inbheartach" ;
+  :sense "inverse" ;
+  rdfs:comment "[Music]" .
+
+n:inbheartachadh
+  a :MasculineNoun ;
+  rdfs:label "inbheartachadh" ;
+  :sense "inversion" ;
+  :gen "inbheartachaidh" ;
+  :pl "inbheartachaidhean" ;
+  rdfs:comment "[Music]" .
+
+a:iso_ruitheamach
+  a :Adjective ;
+  rdfs:label "iso-ruitheamach" ;
+  :sense "isorhythmic" ;
+  rdfs:comment "[Music]" .
+
+n:jazz
+  a :MasculineNoun ;
+  rdfs:label "jazz" ;
+  :sense "jazz" ;
+  :gen "jazz" ;
+  rdfs:comment "[Music]" .
+
+n:port_cruinn
+  a :MasculineNoun ;
+  rdfs:label "port-cruinn" ;
+  :sense "jig" ;
+  :gen "port-cruinn" ;
+  :pl "puirt-cruinn" ;
+  rdfs:comment "[Music]" .
+
+n:dannsa_cruinn
+  a :MasculineNoun ;
+  rdfs:label "dannsa-cruinn" ;
+  :sense "jig" ;
+  :gen "dannsa-cruinn" ;
+  :pl "dannsaichean-cruinne" ;
+  rdfs:comment "[Music]" .
+
+n:sige
+  a :FeminineNoun ;
+  rdfs:label "sige" ;
+  :sense "jig" ;
+  :gen "sige" ;
+  :pl "sigean" ;
+  rdfs:comment "[Music]" .
+
+n:coire_dhruma
+  a :noun ;
+  rdfs:label "coire-dhruma" ;
+  :sense "kettle-drum" ;
+  :gen "coire-dhruma" ;
+  :pl "coire-dhrumaichean" ;
+  rdfs:comment "[Music]" .
+
+n:iuchair
+  a :FeminineNoun ;
+  rdfs:label "iuchair" ;
+  :sense "key" ;
+  :gen "iuchrach" ;
+  :pl "iuchraichean" ;
+  rdfs:comment "[Music]" .
+
+n:gleus
+  a :MasculineNoun ;
+  rdfs:label "gleus" ;
+  :sense "key" ;
+  :gen "gleus" ;
+  :pl "gleusan" ;
+  rdfs:comment "[Music]" .
+
+n:comharra_gleus
+  a :MasculineNoun ;
+  rdfs:label "comharra-gleus" ;
+  :sense "key signature" ;
+  :gen "comharra-gleus" ;
+  :pl "comharran-gleus" ;
+  rdfs:comment "[Music]" .
+
+n:meur_chlaar_
+  a :MasculineNoun ;
+  rdfs:label "meur-chlàr " ;
+  :sense "keyboard" ;
+  :gen "meur-chlàir" ;
+  :pl "meòir-chlàr" ;
+  rdfs:comment "[Music]" .
+
+n:treooir_nota
+  a :MasculineNoun ;
+  rdfs:label "treòir-nota" ;
+  :sense "leading note" ;
+  :gen "treòir-nota" ;
+  :pl "treòir-notaichean" ;
+  rdfs:comment "[Music]" .
+
+n:leum
+  a :MasculineNoun ;
+  rdfs:label "leum" ;
+  :sense "leap" ;
+  :gen "leuma" ;
+  :pl "leuman" ;
+  rdfs:comment "[Music]" .
+
+n:legato
+  a :MasculineNoun ;
+  rdfs:label "legato" ;
+  :sense "legato" ;
+  :gen "legato" ;
+  :pl "legatothan" ;
+  rdfs:comment "[Music]" .
+
+a:legato
+  a :Adjective ;
+  rdfs:label "legato" ;
+  :sense "legato" ;
+  rdfs:comment "[Music]" .
+
+o:legato
+  a :adverb ;
+  rdfs:label "legato" ;
+  :sense "legato" ;
+  rdfs:comment "[Music]" .
+
+n:leitmotif
+  a :MasculineNoun ;
+  rdfs:label "leitmotif" ;
+  :sense "leitmotif" ;
+  :gen "leitmotif" ;
+  :pl "leitmotifean" ;
+  rdfs:comment "[Music]" .
+
+n:faid
+  a :FeminineNoun ;
+  rdfs:label "faid" ;
+  :sense "length" ;
+  :gen "faide" ;
+  :pl "faidean" ;
+  rdfs:comment "[Music]" .
+
+v:siin
+  a :Verb ;
+  rdfs:label "sìn" ;
+  :sense "lengthen" ;
+  rdfs:comment "[Music]" .
+
+v:laigh_air
+  a :Verb ;
+  rdfs:label "laigh air" ;
+  :sense "lengthen slightly" ;
+  rdfs:comment "[Music]" .
+
+n:lied
+  a :MasculineNoun ;
+  rdfs:label "lied" ;
+  :sense "lied" ;
+  :gen "lied" ;
+  :pl "liedean" ;
+  rdfs:comment "[Music]" .
+
+n:comharra_ceangail
+  a :MasculineNoun ;
+  rdfs:label "comharra-ceangail" ;
+  :sense "ligature" ;
+  :gen "comharra-ceangail" ;
+  :pl "comharran-ceangail" ;
+  rdfs:comment "[Music]" .
+
+n:loidhne_cleeithe
+  a :FeminineNoun ;
+  rdfs:label "loidhne-clèithe" ;
+  :sense "line of staff" ;
+  :gen "loidhne-clèithe" ;
+  :pl "loidhnichean-clèithe" ;
+  rdfs:comment "[Music]" .
+
+a:forte
+  a :Adjective ;
+  rdfs:label "forte" ;
+  :sense "loud" ;
+  rdfs:comment "[Music]" .
+
+n:lutaire
+  a :MasculineNoun ;
+  rdfs:label "lutaire" ;
+  :sense "lutanist" ;
+  :gen "lutaire" ;
+  :pl "lutairean" ;
+  rdfs:comment "[Music]" .
+
+n:lut
+  a :MasculineNoun ;
+  rdfs:label "lut" ;
+  :sense "lute" ;
+  :gen "luta" ;
+  :pl "lutan" ;
+  rdfs:comment "[Music]" .
+
+n:lirig
+  a :FeminineNoun ;
+  rdfs:label "lirig" ;
+  :sense "lyric" ;
+  :gen "lirig(e)" ;
+  :pl "lirigean" ;
+  rdfs:comment "[Music]" .
+
+a:lirigeach
+  a :Adjective ;
+  rdfs:label "lirigeach" ;
+  :sense "lyrical" ;
+  rdfs:comment "[Music]" .
+
+n:lirigeachd
+  a :FeminineNoun ;
+  rdfs:label "lirigeachd" ;
+  :sense "lyricism" ;
+  :gen "lirigeachd" ;
+  :pl "lirigeachdan" ;
+  rdfs:comment "[Music]" .
+
+n:maestro_di_capella
+  a :MasculineNoun ;
+  rdfs:label "maestro di capella" ;
+  :sense "maestro di capella" ;
+  :gen "maestro di capella" ;
+  rdfs:comment "[Music]" .
+
+a:maaidsear
+  a :Adjective ;
+  rdfs:label "màidsear" ;
+  :sense "major" ;
+  rdfs:comment "[Music]" .
+
+n:paaipear_cleeithe
+  a :MasculineNoun ;
+  rdfs:label "pàipear-clèithe" ;
+  :sense "manuscript paper" ;
+  :gen "pàipeir-clèithe" ;
+  :pl "pàipearan-clèithe" ;
+  rdfs:comment "[Music]" .
+
+n:mazurka
+  a :FeminineNoun ;
+  rdfs:label "mazurka" ;
+  :sense "mazurka" ;
+  :gen "mazurka" ;
+  :pl "mazurkathan" ;
+  rdfs:comment "[Music]" .
+
+n:meadhanta
+  a :FeminineNoun ;
+  rdfs:label "meadhanta" ;
+  :sense "mediant" ;
+  :gen "meadhanta" ;
+  :pl "meadhantan" ;
+  rdfs:comment "[Music]" .
+
+a:fonnmhor
+  a :Adjective ;
+  rdfs:label "fonnmhor" ;
+  :sense "melodic" ;
+  rdfs:comment "[Music]" .
+
+n:melo_draama
+  a :FeminineNoun ;
+  rdfs:label "melo-dràma" ;
+  :sense "melodrama" ;
+  :gen "melo-dràma" ;
+  :pl "melo-dràmathan" ;
+  rdfs:comment "[Music]" .
+
+n:fonn
+  a :MasculineNoun ;
+  rdfs:label "fonn" ;
+  :sense "melody" ;
+  :gen "fuinn" ;
+  :pl "fuinn" ;
+  rdfs:comment "[Music]" .
+
+n:meatranoom
+  a :MasculineNoun ;
+  rdfs:label "meatranòm" ;
+  :sense "metronome" ;
+  :gen "meatranòm" ;
+  :pl "meatranòman" ;
+  rdfs:comment "[Music]" .
+
+n:guth_meadhain
+  a :MasculineNoun ;
+  rdfs:label "guth-meadhain" ;
+  :sense "middle register" ;
+  :gen "guth-meadhain" ;
+  :pl "guthan-meadhain" ;
+  rdfs:comment "[Music]" .
+
+n:minim
+  a :noun ;
+  rdfs:label "minim" ;
+  :sense "minim" ;
+  :gen "minim" ;
+  :pl "minimean" ;
+  rdfs:comment "[Music]" .
+
+n:mionamalachd
+  a :FeminineNoun ;
+  rdfs:label "mionamalachd" ;
+  :sense "minimalism" ;
+  :gen "mionamalachd" ;
+  rdfs:comment "[Music]" .
+
+a:miinear
+  a :Adjective ;
+  rdfs:label "mìnear" ;
+  :sense "minor" ;
+  rdfs:comment "[Music]" .
+
+a:moodail
+  a :Adjective ;
+  rdfs:label "mòdail" ;
+  :sense "modal" ;
+  rdfs:comment "[Music]" .
+
+v:atharraich_mood
+  a :Verb ;
+  rdfs:label "atharraich mòd" ;
+  :sense "modulate" ;
+  rdfs:comment "[Music]" .
+
+n:gluasad
+  a :MasculineNoun ;
+  rdfs:label "gluasad" ;
+  :sense "motion" ;
+  :gen "gluasaid" ;
+  :pl "gluasadan" ;
+  rdfs:comment "[Music]" .
+
+n:gluasad
+  a :MasculineNoun ;
+  rdfs:label "gluasad" ;
+  :sense "movement" ;
+  :gen "gluasaid" ;
+  :pl "gluasadan" ;
+  rdfs:comment "[Music]" .
+
+n:ceool
+  a :MasculineNoun ;
+  rdfs:label "ceòl" ;
+  :sense "music" ;
+  :gen "ciùil" ;
+  rdfs:comment "[Music]" .
+
+n:ceooladaireachd
+  a :FeminineNoun ;
+  rdfs:label "ceòladaireachd" ;
+  :sense "musicianship" ;
+  :gen "ceòladaireachd" ;
+  rdfs:comment "[Music]" .
+
+n:maothadair
+  a :MasculineNoun ;
+  rdfs:label "maothadair" ;
+  :sense "mute" ;
+  :gen "maothadair" ;
+  :pl "maothadairean" ;
+  rdfs:comment "[Music]" .
+
+a:maothaichte
+  a :Adjective ;
+  rdfs:label "maothaichte" ;
+  :sense "muted" ;
+  rdfs:comment "[Music]" .
+
+n:nocturne
+  a :FeminineNoun ;
+  rdfs:label "nocturne" ;
+  :sense "nocturne" ;
+  :gen "nocturne" ;
+  :pl "nocturnean" ;
+  rdfs:comment "[Music]" .
+
+n:notaireachd
+  a :FeminineNoun ;
+  rdfs:label "notaireachd" ;
+  :sense "notation" ;
+  :gen "notaireachd" ;
+  :pl "notaireachdan" ;
+  rdfs:comment "[Music]" .
+
+n:nota
+  a :FeminineNoun ;
+  rdfs:label "nota" ;
+  :sense "note" ;
+  :gen "nota" ;
+  :pl "notaichean" ;
+  rdfs:comment "[Music]" .
+
+n:nuance
+  a :MasculineNoun ;
+  rdfs:label "nuance" ;
+  :sense "nuance" ;
+  :gen "nuance" ;
+  :pl "nuances" ;
+  rdfs:comment "[Music]" .
+
+a:obbligato
+  a :Adjective ;
+  rdfs:label "obbligato" ;
+  :sense "obbligato" ;
+  rdfs:comment "[Music]" .
+
+n:oboe
+  a :MasculineNoun ;
+  rdfs:label "oboe" ;
+  :sense "oboe" ;
+  :gen "oboe" ;
+  :pl "oboethean" ;
+  rdfs:comment "[Music]" .
+
+n:ochdad
+  a :MasculineNoun ;
+  rdfs:label "ochdad" ;
+  :sense "octave" ;
+  :gen "ochdaid" ;
+  :pl "ochdadan" ;
+  rdfs:comment "[Music]" .
+
+n:opara
+  a :FeminineNoun ;
+  rdfs:label "opara" ;
+  :sense "opera" ;
+  :gen "opara" ;
+  :pl "oparathan" ;
+  rdfs:comment "[Music]" .
+
+n:comann_opara
+  a :MasculineNoun ;
+  rdfs:label "comann opara" ;
+  :sense "operatic society" ;
+  :gen "comainn opara" ;
+  :pl "comainn opara" ;
+  rdfs:comment "[Music]" .
+
+n:opus
+  a :FeminineNoun ;
+  rdfs:label "opus" ;
+  :sense "opus" ;
+  :gen "opus" ;
+  :pl "opusan" ;
+  rdfs:comment "[Music]" .
+
+n:oratorio
+  a :MasculineNoun ;
+  rdfs:label "oratorio" ;
+  :sense "oratorio" ;
+  :gen "oratorio" ;
+  :pl "oratoriothan" ;
+  rdfs:comment "[Music]" .
+
+n:orcastra
+  a :FeminineNoun ;
+  rdfs:label "orcastra" ;
+  :sense "orchestra" ;
+  :gen "orcastra" ;
+  :pl "orcastrathan" ;
+  rdfs:comment "[Music]" .
+
+n:ceoolann
+  a :FeminineNoun ;
+  rdfs:label "ceòlann" ;
+  :sense "orchestra" ;
+  :gen "ceòlainn" ;
+  :pl "ceòlainn" ;
+  rdfs:comment "[Music]" .
+
+n:sgoor_orcastra
+  a :MasculineNoun ;
+  rdfs:label "sgòr-orcastra" ;
+  :sense "orchestration" ;
+  :gen "sgòr-orcastra" ;
+  :pl "sgòran-orcastra" ;
+  rdfs:comment "[Music]" .
+
+n:oorgan
+  a :MasculineNoun ;
+  rdfs:label "òrgan" ;
+  :sense "organ" ;
+  :gen "òrgain" ;
+  :pl "òrganan" ;
+  rdfs:comment "[Music]" .
+
+n:maiseachadh
+  a :MasculineNoun ;
+  rdfs:label "maiseachadh" ;
+  :sense "ornament" ;
+  :gen "maiseachaidh" ;
+  :pl "maiseachaidhean" ;
+  rdfs:comment "[Music]" .
+
+v:maisich
+  a :Verb ;
+  rdfs:label "maisich" ;
+  :sense "ornament" ;
+  rdfs:comment "[Music]" .
+
+n:ostinato
+  a :MasculineNoun ;
+  rdfs:label "ostinato" ;
+  :sense "ostinato" ;
+  :gen "ostinato" ;
+  :pl "ostinatothan" ;
+  rdfs:comment "[Music]" .
+
+n:ro_cheool
+  a :MasculineNoun ;
+  rdfs:label "ro-cheòl" ;
+  :sense "overture" ;
+  :gen "ro-chiùil" ;
+  :pl "ro-cheòl" ;
+  rdfs:comment "[Music]" .
+
+n:pan_phiiob
+  a :FeminineNoun ;
+  rdfs:label "pan-phìob" ;
+  :sense "panpipe" ;
+  :gen "pan-phìoba" ;
+  :pl "pan-phìoban" ;
+  rdfs:comment "[Music]" .
+
+n:pantomaim
+  a :MasculineNoun ;
+  rdfs:label "pantomaim" ;
+  :sense "pantomime" ;
+  :gen "pantomaim" ;
+  :pl "pantomaimean" ;
+  rdfs:comment "[Music]" .
+
+n:partita
+  a :MasculineNoun ;
+  rdfs:label "partita" ;
+  :sense "partita" ;
+  :gen "partita" ;
+  :pl "partitathan" ;
+  rdfs:comment "[Music]" .
+
+n:passacaglia
+  a :MasculineNoun ;
+  rdfs:label "passacaglia" ;
+  :sense "passacaglia" ;
+  :gen "passacaglia" ;
+  :pl "passacagliathan" ;
+  rdfs:comment "[Music]" .
+
+n:moor_earrann
+  a :FeminineNoun ;
+  rdfs:label "mòr-earrann" ;
+  :sense "passage" ;
+  :gen "mòr-earrainn" ;
+  :pl "mòr-earrannan" ;
+  rdfs:comment "[Music]" .
+
+n:passepied
+  a :MasculineNoun ;
+  rdfs:label "passepied" ;
+  :sense "passepied" ;
+  :gen "passepied" ;
+  :pl "passepiedean" ;
+  rdfs:comment "[Music]" .
+
+n:paais_dhraama
+  a :MasculineNoun ;
+  rdfs:label "pàis-dhràma" ;
+  :sense "passion-play" ;
+  :gen "pàis-dhràma" ;
+  :pl "pàisean-dràma" ;
+  rdfs:comment "[Music]" .
+
+n:pavan
+  a :MasculineNoun ;
+  rdfs:label "pavan" ;
+  :sense "pavan" ;
+  :gen "pavan" ;
+  :pl "pavanan" ;
+  rdfs:comment "[Music]" .
+
+n:casachan
+  a :MasculineNoun ;
+  rdfs:label "casachan" ;
+  :sense "pedal" ;
+  :gen "casachain" ;
+  :pl "casachain" ;
+  rdfs:comment "[Music]" .
+
+n:fiideag
+  a :FeminineNoun ;
+  rdfs:label "fìdeag" ;
+  :sense "penny whistle" ;
+  :gen "fìdeig" ;
+  :pl "fìdeagan" ;
+  rdfs:comment "[Music]" .
+
+a:cooig_nota
+  a :Adjective ;
+  rdfs:label "còig-nota" ;
+  :sense "pentatonic" ;
+  rdfs:comment "[Music]" .
+
+n:buille_cheool
+  a :MasculineNoun ;
+  rdfs:label "buille-cheòl" ;
+  :sense "percussion" ;
+  :gen "buille-chiùil" ;
+  rdfs:comment "[Music]" .
+
+v:cluich
+  a :Verb ;
+  rdfs:label "cluich" ;
+  :sense "perform" ;
+  rdfs:comment "[Music]" .
+
+v:seinn
+  a :Verb ;
+  rdfs:label "seinn" ;
+  :sense "perform" ;
+  rdfs:comment "[Music]" .
+
+n:earrann
+  a :FeminineNoun ;
+  rdfs:label "earrann" ;
+  :sense "phrase" ;
+  :gen "earrainn" ;
+  :pl "earrannan" ;
+  rdfs:comment "[Music]" .
+
+n:cur_earrannan
+  a :MasculineNoun ;
+  rdfs:label "cur earrannan" ;
+  :sense "phrasing" ;
+  :gen "cur earrannan" ;
+  :pl "cur earrannan" ;
+  rdfs:comment "[Music]" .
+
+n:piaana
+  a :MasculineNoun ;
+  rdfs:label "piàna" ;
+  :sense "piano" ;
+  :gen "piàna" ;
+  :pl "piànathan" ;
+  rdfs:comment "[Music]" .
+
+n:piccolo
+  a :MasculineNoun ;
+  rdfs:label "piccolo" ;
+  :sense "piccolo" ;
+  :gen "piccolo" ;
+  :pl "piccolothan" ;
+  rdfs:comment "[Music]" .
+
+n:pitse
+  a :MasculineNoun ;
+  rdfs:label "pitse" ;
+  :sense "pitch" ;
+  :gen "pitse" ;
+  :pl "pitsichean" ;
+  rdfs:comment "[Music]" .
+
+n:pizzicato
+  a :MasculineNoun ;
+  rdfs:label "pizzicato" ;
+  :sense "pizzicato" ;
+  :gen "pizzicato" ;
+  :pl "pizzicatothan" ;
+  rdfs:comment "[Music]" .
+
+o:pizzicato
+  a :adverb ;
+  rdfs:label "pizzicato" ;
+  :sense "pizzicato" ;
+  rdfs:comment "[Music]" .
+
+a:pizzicato
+  a :Adjective ;
+  rdfs:label "pizzicato" ;
+  :sense "pizzicato" ;
+  rdfs:comment "[Music]" .
+
+n:canadh_eaglaise
+  a :MasculineNoun ;
+  rdfs:label "canadh-eaglaise" ;
+  :sense "plainsong" ;
+  :gen "canadh-eaglaise" ;
+  :pl "canaidhean-eaglaise" ;
+  rdfs:comment "[Music]" .
+
+n:piocadh
+  a :MasculineNoun ;
+  rdfs:label "piocadh" ;
+  :sense "plucking" ;
+  :gen "piocaidh" ;
+  rdfs:comment "[Music]" .
+
+o:a_piocadh
+  rdfs:label "a' piocadh" ;
+  :sense "plucking" ;
+  rdfs:comment "[Music]" .
+
+n:pointillism
+  a :MasculineNoun ;
+  rdfs:label "pointillism" ;
+  :sense "pointillism" ;
+  :gen "pointillism" ;
+  rdfs:comment "[Music]" .
+
+n:polonaise
+  a :MasculineNoun ;
+  rdfs:label "polonaise" ;
+  :sense "polonaise" ;
+  :gen "polonaise" ;
+  :pl "polonaisean" ;
+  rdfs:comment "[Music]" .
+
+n:poilifonaig
+  a :MasculineNoun ;
+  rdfs:label "poilifonaig" ;
+  :sense "polyphonic" ;
+  :gen "poilifonaig" ;
+  :pl "poilifonaigean" ;
+  rdfs:comment "[Music]" .
+
+n:poilifonaidh
+  a :MasculineNoun ;
+  rdfs:label "poilifonaidh" ;
+  :sense "polyphony" ;
+  :gen "poilifonaidh" ;
+  :pl "poilifonaidhean" ;
+  rdfs:comment "[Music]" .
+
+n:poilitoonalachd
+  a :FeminineNoun ;
+  rdfs:label "poilitònalachd" ;
+  :sense "polytonality" ;
+  :gen "poilitònalachd" ;
+  :pl "poilitònalachdan" ;
+  rdfs:comment "[Music]" .
+
+n:ceool_pop
+  a :MasculineNoun ;
+  rdfs:label "ceòl pop" ;
+  :sense "pop" ;
+  :gen "ceòl pop" ;
+  rdfs:comment "[Music]" .
+
+a:proogramataig
+  a :Adjective ;
+  rdfs:label "prògramataig" ;
+  :sense "programmatic" ;
+  rdfs:comment "[Music]" .
+
+n:cueebhear
+  a :FeminineNoun ;
+  rdfs:label "cuèbhear" ;
+  :sense "quaver" ;
+  :gen "cuèbher" ;
+  :pl "cuèbhearan" ;
+  rdfs:comment "[Music]" .
+
+o:rackett
+  a : ;
+  rdfs:label "rackett" ;
+  :sense "rackett" ;
+  :gen "rackett" ;
+  :pl "rackettean" ;
+  rdfs:comment "[Music]" .
+
+n:rag
+  a :MasculineNoun ;
+  rdfs:label "rag" ;
+  :sense "rag" ;
+  :gen "rag" ;
+  :pl "rags" ;
+  rdfs:comment "[Music]" .
+
+n:ragtime
+  a :MasculineNoun ;
+  rdfs:label "ragtime" ;
+  :sense "ragtime" ;
+  :gen "ragtime" ;
+  rdfs:comment "[Music]" .
+
+a:rallentando
+  a :Adjective ;
+  rdfs:label "rallentando" ;
+  :sense "rallentando" ;
+  rdfs:comment "[Music]" .
+
+n:ath_innse_
+  a :FeminineNoun ;
+  rdfs:label "ath-innse " ;
+  :sense "recapitulation" ;
+  :gen "ath-innse" ;
+  :pl "ath-innse" ;
+  rdfs:comment "[Music]" .
+
+a:fonn_duain
+  a :Adjective ;
+  rdfs:label "fonn-duain" ;
+  :sense "recitative" ;
+  rdfs:comment "[Music]" .
+
+n:reacoordair
+  a :MasculineNoun ;
+  rdfs:label "reacòrdair" ;
+  :sense "recorder" ;
+  :gen "reacòrdair" ;
+  :pl "reacòrdairean" ;
+  rdfs:comment "[Music]" .
+
+o:roinn_ribheidean
+
+  rdfs:label "roinn ribheidean" ;
+  :sense "reed section" ;
+  rdfs:comment "[Music]" .
+
+n:ruidhle
+  a :MasculineNoun ;
+  rdfs:label "ruidhle" ;
+  :sense "reel" ;
+  :gen "ruidhle" ;
+  :pl "ruidhlean" ;
+  :pl "ruidhleachan" ;
+  rdfs:comment "[Music]" .
+
+n:ath_chluiche
+  a :FeminineNoun ;
+  rdfs:label "ath-chluiche" ;
+  :sense "repetition" ;
+  :gen "ath-chluiche" ;
+  :pl "ath-chluichean" ;
+  rdfs:comment "[Music]" .
+
+v:siin
+  a :Verb ;
+  rdfs:label "sìn" ;
+  :sense "rest on" ;
+  rdfs:comment "[Music]" .
+
+v:laigh_air
+  a :Verb ;
+  rdfs:label "laigh air" ;
+  :sense "rest on" ;
+  rdfs:comment "[Music]" .
+
+o:stoidhle_rapsodaig
+
+  rdfs:label "stoidhle rapsodaig" ;
+  :sense "rhapsodic style" ;
+  rdfs:comment "[Music]" .
+
+n:rapsodaidh
+  a :MasculineNoun ;
+  rdfs:label "rapsodaidh" ;
+  :sense "rhapsody" ;
+  :gen "rapsodaidh" ;
+  :pl "rapsodaidhean" ;
+  rdfs:comment "[Music]" .
+
+n:ruitheam
+  a :noun ;
+  rdfs:label "ruitheam" ;
+  :sense "rhythm" ;
+  :gen "ruitheim" ;
+  :pl "ruitheaman" ;
+  rdfs:comment "[Music]" .
+
+n:ricercar
+  a :MasculineNoun ;
+  rdfs:label "ricercar" ;
+  :sense "ricercar" ;
+  :gen "ricercar" ;
+  :pl "ricercari" ;
+  rdfs:comment "[Music]" .
+
+n:riff
+  a :MasculineNoun ;
+  rdfs:label "riff" ;
+  :sense "riff" ;
+  :gen "riff" ;
+  :pl "riffs" ;
+  rdfs:comment "[Music]" .
+
+n:ripieno
+  a :MasculineNoun ;
+  rdfs:label "ripieno" ;
+  :sense "ripieno" ;
+  :gen "ripieno" ;
+  :pl "ripieni" ;
+  rdfs:comment "[Music]" .
+
+n:ritornello
+  a :MasculineNoun ;
+  rdfs:label "ritornello" ;
+  :sense "ritornello" ;
+  :gen "ritornello" ;
+  :pl "ritornelli" ;
+  rdfs:comment "[Music]" .
+
+n:rock
+  a :MasculineNoun ;
+  rdfs:label "rock" ;
+  :sense "rock" ;
+  :gen "rock" ;
+  rdfs:comment "[Music]" .
+
+n:toirm
+  a :FeminineNoun ;
+  rdfs:label "toirm" ;
+  :sense "roll" ;
+  :gen "toirme" ;
+  :pl "toirmean" ;
+  rdfs:comment "[Music]" .
+
+n:rondo
+  a :MasculineNoun ;
+  rdfs:label "rondo" ;
+  :sense "rondo" ;
+  :gen "rondo" ;
+  :pl "rondothan" ;
+  rdfs:comment "[Music]" .
+
+n:cuairt_ooran
+  a :MasculineNoun ;
+  rdfs:label "cuairt-òran" ;
+  :sense "round" ;
+  :gen "cuairt-òrain" ;
+  :pl "cuairt-òrain" ;
+  rdfs:comment "[Music]" .
+
+n:rubato
+  a :MasculineNoun ;
+  rdfs:label "rubato" ;
+  :sense "rubato" ;
+  :gen "rubato" ;
+  :pl "rubatothan" ;
+  rdfs:comment "[Music]" .
+
+n:sgeeile
+  a :FeminineNoun ;
+  rdfs:label "sgèile" ;
+  :sense "scale" ;
+  :gen "sgèile" ;
+  :pl "sgèilean" ;
+  :pl "sgèilichean" ;
+  rdfs:comment "[Music]" .
+
+n:semibriibh
+  a :MasculineNoun ;
+  rdfs:label "semibrìbh" ;
+  :sense "semibreve" ;
+  :gen "semibrìbh" ;
+  :pl "semibrìbhean" ;
+  rdfs:comment "[Music]" .
+
+n:semicueebhear
+  a :FeminineNoun ;
+  rdfs:label "semicuèbhear" ;
+  :sense "semiquaver" ;
+  :gen "semicuèbhear" ;
+  :pl "semicuèbhearan" ;
+  rdfs:comment "[Music]" .
+
+n:semitoon
+  a :MasculineNoun ;
+  rdfs:label "semitòn" ;
+  :sense "semitone" ;
+  :gen "semitòn" ;
+  :pl "semitònan" ;
+  rdfs:comment "[Music]" .
+
+n:ruith
+  a :FeminineNoun ;
+  rdfs:label "ruith" ;
+  :sense "sequence" ;
+  :gen "ruithe" ;
+  :pl "ruithean" ;
+  rdfs:comment "[Music]" .
+
+a:biorach
+  a :Adjective ;
+  rdfs:label "biorach" ;
+  :sense "sharp" ;
+  rdfs:comment "[Music]" .
+
+n:slur
+  a :MasculineNoun ;
+  rdfs:label "slur" ;
+  :sense "slur" ;
+  :gen "slur" ;
+  :pl "sluran" ;
+  rdfs:comment "[Music]" .
+
+n:straaic
+  a :MasculineNoun ;
+  rdfs:label "stràic" ;
+  :sense "slur" ;
+  :gen "stràic" ;
+  :pl "stràicean" ;
+  rdfs:comment "[Music]" .
+
+n:ooran
+  a :MasculineNoun ;
+  rdfs:label "òran" ;
+  :sense "song" ;
+  :gen "òrain" ;
+  :pl "òrain" ;
+  rdfs:comment "[Music]" .
+
+n:cliath
+  a :MasculineNoun ;
+  rdfs:label "cliath" ;
+  :sense "stave" ;
+  :gen "clèithe" ;
+  :pl "cliathan" ;
+  rdfs:comment "[Music]" .
+
+n:straaic
+  a :MasculineNoun ;
+  rdfs:label "stràic" ;
+  :sense "strike" ;
+  :gen "stràic" ;
+  :pl "stràicean" ;
+  rdfs:comment "[Music]" .
+
+n:straaic
+  a :MasculineNoun ;
+  rdfs:label "stràic" ;
+  :sense "strike" ;
+  :gen "stràic" ;
+  :pl "stràicean" ;
+  rdfs:comment "[Music]" .
+
+a:teudach
+  a :Adjective ;
+  rdfs:label "teudach" ;
+  :sense "stringed" ;
+  rdfs:comment "[Music]" .
+
+n:straac
+  a :FeminineNoun ;
+  rdfs:label "stràc" ;
+  :sense "stroke" ;
+  :gen "stràic" ;
+  :pl "stràcan" ;
+  rdfs:comment "[Music]" .
+
+n:stoidhle
+  a :FeminineNoun ;
+  rdfs:label "stoidhle" ;
+  :sense "style" ;
+  :gen "stoidhle" ;
+  :pl "stoidhlichean" ;
+  rdfs:comment "[Music]" .
+
+n:siomfonaidh
+  a :MasculineNoun ;
+  rdfs:label "siomfonaidh" ;
+  :sense "symphony" ;
+  :gen "siomfonaidh" ;
+  :pl "siomfonaidhean" ;
+  rdfs:comment "[Music]" .
+
+n:tempo
+  a :MasculineNoun ;
+  rdfs:label "tempo" ;
+  :sense "tempo" ;
+  :gen "tempo" ;
+  :pl "tempothan" ;
+  rdfs:comment "[Music]" .
+
+n:tiim
+  a :FeminineNoun ;
+  rdfs:label "tìm" ;
+  :sense "time" ;
+  :gen "tìme" ;
+  :pl "tìmean" ;
+  rdfs:comment "[Music]" .
+
+n:buille
+  a :MasculineNoun ;
+  rdfs:label "buille" ;
+  :sense "time" ;
+  :gen "buille" ;
+  :pl "buillean" ;
+  rdfs:comment "[Music]" .
+
+n:comharra_tiime
+  a :MasculineNoun ;
+  rdfs:label "comharra-tìme" ;
+  :sense "time signature" ;
+  :gen "comharra-tìme" ;
+  :pl "comharran-tìme" ;
+  rdfs:comment "[Music]" .
+
+n:tiompano
+  a :MasculineNoun ;
+  rdfs:label "tiompano" ;
+  :sense "timpano" ;
+  :gen "tiompano" ;
+  :pl "tiompaini" ;
+  rdfs:comment "[Music]" .
+
+n:aard_chleaf
+  a :MasculineNoun ;
+  rdfs:label "àrd-chleaf" ;
+  :sense "treble clef" ;
+  :gen "àrd-chleaf" ;
+  :pl "àrd-chleafan" ;
+  rdfs:comment "[Music]" .
+
+n:tromboon
+  a :MasculineNoun ;
+  rdfs:label "trombòn" ;
+  :sense "trombone" ;
+  :gen "trombòn" ;
+  :pl "trombònan" ;
+  rdfs:comment "[Music]" .
+
+n:gleus
+  a :noun ;
+  rdfs:label "gleus" ;
+  :sense "tune" ;
+  :gen "gleusa" ;
+  :pl "gleusan" ;
+  rdfs:comment "[Music]" .
+
+v:cuir_air_ghleus
+  a :Verb ;
+  rdfs:label "cuir air ghleus" ;
+  :sense "tune" ;
+  rdfs:comment "[Music]" .
+
+v:gleus
+  a :Verb ;
+  rdfs:label "gleus" ;
+  :sense "tune" ;
+  rdfs:comment "[Music]" .
+
+n:fonn
+  a :MasculineNoun ;
+  rdfs:label "fonn" ;
+  :sense "tune" ;
+  :gen "fuinn" ;
+  :pl "fuinn" ;
+  rdfs:comment "[Music]" .
+
+a:aon_ghuthach
+  a :Adjective ;
+  rdfs:label "aon-ghuthach" ;
+  :sense "unison" ;
+  rdfs:comment "[Music]" .
+
+a:guthach
+  a :Adjective ;
+  rdfs:label "guthach" ;
+  :sense "vocal" ;
+  rdfs:comment "[Music]" .
+
+n:guth
+  a :MasculineNoun ;
+  rdfs:label "guth" ;
+  :sense "voice" ;
+  :gen "gutha" ;
+  :pl "guthan" ;
+  rdfs:comment "[Music]" .
+
+n:fiideag
+  a :FeminineNoun ;
+  rdfs:label "fìdeag" ;
+  :sense "whistle" ;
+  :gen "fìdeig" ;
+  :pl "fìdeagan" ;
+  rdfs:comment "[Music]" .
+
+n:feadag
+  a :FeminineNoun ;
+  rdfs:label "feadag" ;
+  :sense "whistle" ;
+  :gen "feadaig(e)" ;
+  :pl "feadagan" ;
+  rdfs:comment "[Music]" .
+
+o:dealbhadh_oorain
+
+  rdfs:label "dealbhadh-òrain" ;
+  :sense "word painting" ;
+  rdfs:comment "[Music]" .
+
+n:saidhleafon
+  a :MasculineNoun ;
+  rdfs:label "saidhleafon" ;
+  :sense "xylophone" ;
+  :gen "saidhleafon" ;
+  :pl "saidhleafonan" ;
+  rdfs:comment "[Music]" .
+
+n:seinn_a_cappella
+  rdfs:label "seinn a cappella" ;
+  :sense "a cappella singing" ;
+  :part a:a_cappella .
+
+n:seinn_atharraiseach_a_cappella
+  rdfs:label "seinn atharraiseach a cappella" ;
+  :sense "a cappella imitative singing" ;
+  :part a:a_cappella .
+
+n:sheinn_iad_a_cappella
+  rdfs:label "sheinn iad a cappella" ;
+  :sense "they sang a cappella" ;
+  :part o:a_cappella ;
+  rdfs:comment "[Music]" .
+
+n:moor_earrann_accelerando
+  rdfs:label "mòr-earrann accelerando" ;
+  :sense "an accelerando passage" ;
+  :part a:accelerando ;
+  rdfs:comment "[Music]" .
+
+n:chluich_iad_accelerando
+  rdfs:label "chluich iad accelerando" ;
+  :sense "they played accelerando" ;
+  :part o:accelerando ;
+  rdfs:comment "[Music]" .
+
+n:iislich_seachran
+  rdfs:label "ìslich seachran" ;
+  :sense "lower accidental" ;
+  :part n:seachran ;
+  rdfs:comment "[Music]" .
+
+n:adhbhar_seachrain
+  rdfs:label "adhbhar seachrain" ;
+  :sense "reason for accidental" ;
+  :part n:seachran ;
+  rdfs:comment "[Music]" .
+
+n:meud_ciuuil_taic
+  rdfs:label "meud ciùil-taic" ;
+  :sense "extent of accompaniment" ;
+  :part n:ceool_taic ;
+  rdfs:comment "[Music]" .
+
+n:dreuchd_an_neach_taic
+  rdfs:label "dreuchd an neach-taic" ;
+  :sense "role of the accompanist" ;
+  :part n:neach_taic ;
+  rdfs:comment "[Music]" .
+
+n:gun_neach_taic
+  rdfs:label "gun neach-taic" ;
+  :sense "without accompanist" ;
+  :part n:neach_taic ;
+  rdfs:comment "[Music]" .
+
+n:thoir_taic_don_ooran
+  rdfs:label "thoir taic don òran" ;
+  :sense "accompany the song" ;
+  :part v:thoir_taic_do ;
+  rdfs:comment "[Music]" .
+
+n:ceool_a_bhogsa
+  rdfs:label "ceòl a' bhogsa" ;
+  :sense "accordion music" ;
+  :part n:bogsa ;
+  rdfs:comment "[Music]" .
+
+n:a_cluich_a_bhogsa
+  rdfs:label "a' cluich a' bhogsa" ;
+  :sense "playing the accordion" ;
+  :part n:bogsa ;
+  rdfs:comment "[Music]" .
+
+n:bogsa_piaana
+  rdfs:label "bogsa-piàna" ;
+  :sense "piano accordion" ;
+  :part n:bogsa ;
+  rdfs:comment "[Music]" .
+
+n:feartan_acustaig
+  rdfs:label "feartan acustaig" ;
+  :sense "acoustic qualities" ;
+  :part a:acustaig ;
+  rdfs:comment "[Music]" .
+
+n:meudaichear_acustaig
+  rdfs:label "meudaichear acustaig" ;
+  :sense "acoustic amplifier" ;
+  :part a:acustaig ;
+  rdfs:comment "[Music]" .
+
+n:giotaar_acustaig
+  rdfs:label "giotàr acustaig" ;
+  :sense "acoustic guitar" ;
+  :part a:acustaig ;
+  rdfs:comment "[Music]" .
+
+n:acustaigs_mhath
+  rdfs:label "acustaigs mhath" ;
+  :sense "good acoustics" ;
+  :part n:acustaigs ;
+  rdfs:comment "[Music]" .
+
+n:feartan_acustaigs
+  rdfs:label "feartan acustaigs" ;
+  :sense "acoustics qualities" ;
+  :part n:acustaigs ;
+  rdfs:comment "[Music]" .
+
+n:freagarrachd_an_ath_riochdachaidh
+  rdfs:label "freagarrachd an ath-riochdachaidh" ;
+  :sense "suitability of the adaptation" ;
+  :part n:ath_riochdachadh ;
+  rdfs:comment "[Music]" .
+
+n:allegro_assai
+  rdfs:label "allegro assai" ;
+  :sense "allegro assai" ;
+  :part n:allegro ;
+  rdfs:comment "[Music]" .
+
+n:allegro_aig_toiseach_siomfonaidh
+  rdfs:label "allegro aig toiseach siomfonaidh" ;
+  :sense "allegro at beginning of symphony" ;
+  :part n:allegro ;
+  rdfs:comment "[Music]" .
+
+n:seinneadair_alto
+  rdfs:label "seinneadair alto" ;
+  :sense "alto singer" ;
+  :part n:alto ;
+  rdfs:comment "[Music]" .
+
+n:laoidh_naaiseanta
+  rdfs:label "laoidh nàiseanta" ;
+  :sense "national anthem" ;
+  :part n:laoidh ;
+  rdfs:comment "[Music]" .
+
+n:a_seinn_aairia_fhada
+  rdfs:label "a' seinn àiria fhada" ;
+  :sense "singing a long aria" ;
+  :part n:aairia ;
+  rdfs:comment "[Music]" .
+
+n:aairia_coloratura
+  rdfs:label "àiria coloratura" ;
+  :sense "coloratura aria" ;
+  :part n:aairia ;
+  rdfs:comment "[Music]" .
+
+n:diirich_gu_nota_nas_aairde
+  rdfs:label "dìrich gu nota nas àirde" ;
+  :sense "ascend to a higher note" ;
+  :part v:diirich ;
+  rdfs:comment "[Music]" .
+
+n:notaichean_a_tha_a_diireadh_no_a_teaarnadh
+  rdfs:label "notaichean a tha a' dìreadh no a' teàrnadh" ;
+  :sense "notes which are ascending or descending" ;
+  :part o:diireadh ;
+  rdfs:comment "[Music]" .
+
+n:a_diireadh_gu_nota_nas_aairde
+  rdfs:label "a' dìreadh gu nota nas àirde" ;
+  :sense "ascending to a higher note" ;
+  :part o:diireadh ;
+  rdfs:comment "[Music]" .
+
+n:sgeeile_diiridh
+  rdfs:label "sgèile-dìridh" ;
+  :sense "ascending scale" ;
+  :part a:diiridh ;
+  rdfs:comment "[Music]" .
+
+n:sgeeilean_diiridh
+  rdfs:label "sgèilean-dìridh" ;
+  :sense "ascending scales" ;
+  :part a:diiridh ;
+  rdfs:comment "[Music]" .
+
+n:meud_sgeeile_diiridh
+  rdfs:label "meud sgèile-dìridh" ;
+  :sense "extent of ascending scale" ;
+  :part a:diiridh ;
+  rdfs:comment "[Music]" .
+
+n:ruithean_diiridh
+  rdfs:label "ruithean-dìridh" ;
+  :sense "ascending sequences" ;
+  :part a:diiridh ;
+  rdfs:comment "[Music]" .
+
+n:oorain_eu_toonalach
+  rdfs:label "òrain eu-tònalach" ;
+  :sense "atonal songs" ;
+  :part a:eu_toonalach ;
+  rdfs:comment "[Music]" .
+
+n:feartan_eu_toonalachd
+  rdfs:label "feartan eu-tònalachd" ;
+  :sense "features of atonality" ;
+  :part n:eu_toonalachd ;
+  rdfs:comment "[Music]" .
+
+n:meudaich_eadar_uuine_sa_cheool
+  rdfs:label "meudaich eadar-ùine sa cheòl" ;
+  :sense "augment interval in the music" ;
+  :part v:meudaich ;
+  rdfs:comment "[Music]" .
+
+n:notaichean_a_mheudachaidh
+  rdfs:label "notaichean a' mheudachaidh" ;
+  :sense "notes of the augmentation" ;
+  :part n:meudachadh ;
+  rdfs:comment "[Music]" .
+
+n:coomhlan_dannsa
+  rdfs:label "còmhlan dannsa" ;
+  :sense "dance band" ;
+  :part n:coomhlan ;
+  rdfs:comment "[Music]" .
+
+n:coomhlan_piioba
+  rdfs:label "còmhlan pìoba" ;
+  :sense "pipe band" ;
+  :part n:coomhlan ;
+  rdfs:comment "[Music]" .
+
+n:baar_loidhne_dhuubailte
+  rdfs:label "bàr-loidhne dhùbailte" ;
+  :sense "double bar line" ;
+  :part n:baar_loidhne ;
+  rdfs:comment "[Music]" .
+
+n:guth_a_bharatoon
+  rdfs:label "guth a' bharatòn" ;
+  :sense "the baritone's voice" ;
+  :part n:baratoon ;
+  rdfs:comment "[Music]" .
+
+n:piiosan_ciuuil_baroc
+  rdfs:label "pìosan ciùil baroc" ;
+  :sense "baroque musical pieces" ;
+  :part a:baroc ;
+  rdfs:comment "[Music]" .
+
+n:ceool_baroc
+  rdfs:label "ceòl baroc" ;
+  :sense "baroque music" ;
+  :part a:baroc ;
+  rdfs:comment "[Music]" .
+
+n:ealain_bharoc
+  rdfs:label "ealain bharoc" ;
+  :sense "baroque art" ;
+  :part a:baroc ;
+  rdfs:comment "[Music]" .
+
+n:Linn_a_Bharoc
+  rdfs:label "Linn a' Bharoc" ;
+  :sense "Baroque period" ;
+  :part n:baroc ;
+  rdfs:comment "[Music]" .
+
+n:beus_loidhne
+  rdfs:label "beus-loidhne" ;
+  :sense "bass line" ;
+  :part n:beus ;
+  rdfs:comment "[Music]" .
+
+n:beus_loidhne_teaarnaidh
+  rdfs:label "beus-loidhne teàrnaidh" ;
+  :sense "descending bass line" ;
+  :part n:beus ;
+  rdfs:comment "[Music]" .
+
+n:seinn_bheusan
+  rdfs:label "seinn bheusan" ;
+  :sense "bass singing" ;
+  :part n:beus ;
+  rdfs:comment "[Music]" .
+
+n:beus_chleaf
+  rdfs:label "beus-chleaf" ;
+  :sense "bass clef" ;
+  :part n:beus ;
+  rdfs:comment "[Music]" .
+
+n:beus_Alberti
+  rdfs:label "beus Alberti" ;
+  :sense "Alberti bass" ;
+  :part n:beus ;
+  rdfs:comment "[Music]" .
+
+n:beus_thromboon
+  rdfs:label "beus-thrombòn" ;
+  :sense "bass trombone" ;
+  :part n:beus ;
+  rdfs:comment "[Music]" .
+
+n:proo_bheus
+  rdfs:label "prò-bheus" ;
+  :sense "double bass" ;
+  :part n:beus ;
+  rdfs:comment "[Music]" .
+
+n:beus_figearach
+  rdfs:label "beus figearach" ;
+  :sense "figured bass" ;
+  :part n:beus ;
+  rdfs:comment "[Music]" .
+
+n:beus_gun_cheap
+  rdfs:label "beus gun cheap" ;
+  :sense "fretless bass" ;
+  :part n:beus ;
+  rdfs:comment "[Music]" .
+
+n:bonn_bheus
+  rdfs:label "bonn-bheus" ;
+  :sense "ground bass" ;
+  :part n:beus ;
+  rdfs:comment "[Music]" .
+
+n:ceud_bheus
+  rdfs:label "ceud-bheus" ;
+  :sense "first bass" ;
+  :part n:beus ;
+  rdfs:comment "[Music]" .
+
+n:pitse_beus_chleaf
+  rdfs:label "pitse beus-chleaf" ;
+  :sense "bass clef pitch" ;
+  :part n:beus_chleaf ;
+  rdfs:comment "[Music]" .
+
+n:comharra_beus_chleaf
+  rdfs:label "comharra beus-chleaf" ;
+  :sense "bass clef symbol" ;
+  :part n:beus_chleaf ;
+  rdfs:comment "[Music]" .
+
+n:ceool_beus_thromboon
+  rdfs:label "ceòl beus-thrombòn" ;
+  :sense "bass trombone music" ;
+  :part n:beus_thromboon ;
+  rdfs:comment "[Music]" .
+
+n:basuun_contra
+  rdfs:label "basùn contra" ;
+  :sense "contra bassoon" ;
+  :part n:basuun ;
+  rdfs:comment "[Music]" .
+
+n:basuun_le_daa_ribheid
+  rdfs:label "basùn le dà ribheid" ;
+  :sense "double reed bassoon" ;
+  :part n:basuun ;
+  rdfs:comment "[Music]" .
+
+n:a_cluiche_a_bhasuun
+  rdfs:label "a' cluiche a' bhasùn" ;
+  :sense "playing the bassoon" ;
+  :part n:basuun ;
+  rdfs:comment "[Music]" .
+
+n:a_togail_a_bhatain
+  rdfs:label "a' togail a' bhatain" ;
+  :sense "raising the baton" ;
+  :part n:batan ;
+  rdfs:comment "[Music]" .
+
+n:batan_an_stiuuiriche_ciuuil
+  rdfs:label "batan an stiùiriche-ciùil" ;
+  :sense "the conductor's baton" ;
+  :part n:batan ;
+  rdfs:comment "[Music]" .
+
+n:iar_bhuille
+  rdfs:label "iar-bhuille" ;
+  :sense "echo beat" ;
+  :part n:buille ;
+  rdfs:comment "[Music]" .
+
+n:ruitheam_na_buille
+  rdfs:label "ruitheam na buille" ;
+  :sense "rhythm of the beat" ;
+  :part n:buille ;
+  rdfs:comment "[Music]" .
+
+n:a_cumail_na_buille
+  rdfs:label "a' cumail na buille" ;
+  :sense "beating" ;
+  :part n:buille ;
+  rdfs:comment "[Music]" .
+
+n:a_cumail_na_buille
+  rdfs:label "a' cumail na buille" ;
+  :sense "keeping the beat" ;
+  :part n:buille ;
+  rdfs:comment "[Music]" .
+
+n:builg_seeididh_a_bhogsa
+  rdfs:label "builg-sèididh a' bhogsa" ;
+  :sense "the accordion's bellows" ;
+  :part n:balg_seeididh ;
+  rdfs:comment "[Music]" .
+
+n:ceool_blues
+  rdfs:label "ceòl blues" ;
+  :sense "blues music" ;
+  :part n:blues ;
+  rdfs:comment "[Music]" .
+
+n:sgeeile_teaarnaidh_blues
+  rdfs:label "sgèile-teàrnaidh blues" ;
+  :sense "descending blues scales" ;
+  :part n:blues ;
+  rdfs:comment "[Music]" .
+
+n:nota_buinn_aona_toona
+  rdfs:label "nota-buinn aona-tòna" ;
+  :sense "single tone bottom note" ;
+  :part a:nota_buinn ;
+  rdfs:comment "[Music]" .
+
+n:nota_briibh
+  rdfs:label "nota brìbh" ;
+  :sense "breve note" ;
+  :part n:briibh ;
+  rdfs:comment "[Music]" .
+
+n:duunadh_coileanta
+  rdfs:label "dùnadh coileanta" ;
+  :sense "perfect cadence" ;
+  :part n:duunadh ;
+  rdfs:comment "[Music]" .
+
+n:duunadh_plagal
+  rdfs:label "dùnadh plagal" ;
+  :sense "plagel cadence" ;
+  :part n:duunadh ;
+  rdfs:comment "[Music]" .
+
+n:duunadh_neo_choileanta
+  rdfs:label "dùnadh neo-choileanta" ;
+  :sense "imperfect cadence" ;
+  :part n:duunadh ;
+  rdfs:comment "[Music]" .
+
+n:duunadh_briste
+  rdfs:label "dùnadh briste" ;
+  :sense "interrupted cadence" ;
+  :part n:duunadh ;
+  rdfs:comment "[Music]" .
+
+n:seinn_is_cluiche_cantaata
+  rdfs:label "seinn is cluiche cantàta" ;
+  :sense "cantata singing and playing" ;
+  :part n:cantaata ;
+  rdfs:comment "[Music]" .
+
+n:a_cluiche_na_cello
+  rdfs:label "a' cluiche na cello" ;
+  :sense "playing the cello" ;
+  :part n:cello ;
+  rdfs:comment "[Music]" .
+
+n:guth_cleeibh_iiosal
+  rdfs:label "guth-clèibh ìosal" ;
+  :sense "low chest register" ;
+  :part n:guth_cleeibh ;
+  rdfs:comment "[Music]" .
+
+n:fuaim_guth_cleeibh
+  rdfs:label "fuaim guth-clèibh" ;
+  :sense "sound of chest register" ;
+  :part n:guth_cleeibh ;
+  rdfs:comment "[Music]" .
+
+n:gach_coord_an_co_sheirm
+  rdfs:label "gach còrd an co-sheirm" ;
+  :sense "each chord in harmony" ;
+  :part n:coord ;
+  rdfs:comment "[Music]" .
+
+n:coord_ruith
+  rdfs:label "còrd-ruith" ;
+  :sense "chord progression" ;
+  :part n:coord ;
+  rdfs:comment "[Music]" .
+
+n:coordan_iioslaichte
+  rdfs:label "còrdan ìoslaichte" ;
+  :sense "diminished chords" ;
+  :part n:coord ;
+  rdfs:comment "[Music]" .
+
+n:7mh_coord_ceannasach
+  rdfs:label "7mh còrd ceannasach" ;
+  :sense "dominant 7th chord" ;
+  :part n:coord ;
+  rdfs:comment "[Music]" .
+
+n:coordan_inbheartach
+  rdfs:label "còrdan inbheartach" ;
+  :sense "inverse chords" ;
+  :part n:coord ;
+  rdfs:comment "[Music]" .
+
+n:inbheartachadh_choordan
+  rdfs:label "inbheartachadh chòrdan" ;
+  :sense "inversion of chords" ;
+  :part n:coord ;
+  rdfs:comment "[Music]" .
+
+n:ceool_cooisridh
+  rdfs:label "ceòl còisridh" ;
+  :sense "chorus music" ;
+  :part n:cooisridh ;
+  rdfs:comment "[Music]" .
+
+n:inntrigeadh_seeiste
+  rdfs:label "inntrigeadh sèiste" ;
+  :sense "chorus entry" ;
+  :part n:seeist ;
+  rdfs:comment "[Music]" .
+
+n:sgeeile_chromataig
+  rdfs:label "sgèile chromataig" ;
+  :sense "chromatic scale" ;
+  :part a:cromataig ;
+  rdfs:comment "[Music]" .
+
+n:semitoon_cromataig
+  rdfs:label "semitòn cromataig" ;
+  :sense "chromatic semitone" ;
+  :part a:cromataig ;
+  rdfs:comment "[Music]" .
+
+n:ruithean_cromataig
+  rdfs:label "ruithean cromataig" ;
+  :sense "chromatic sequences" ;
+  :part a:cromataig ;
+  rdfs:comment "[Music]" .
+
+n:comharran_cleaf
+  rdfs:label "comharran cleaf" ;
+  :sense "clef symbols" ;
+  :part n:cleaf ;
+  rdfs:comment "[Music]" .
+
+n:beus_chleaf
+  rdfs:label "beus-chleaf" ;
+  :sense "bass clef" ;
+  :part n:cleaf ;
+  rdfs:comment "[Music]" .
+
+n:aard_chleaf
+  rdfs:label "àrd-chleaf" ;
+  :sense "treble clef" ;
+  :part n:cleaf ;
+  rdfs:comment "[Music]" .
+
+n:aain_bhrosnachail
+  rdfs:label "àin bhrosnachail" ;
+  :sense "rousing climax" ;
+  :part n:aain ;
+  rdfs:comment "[Music]" .
+
+n:soirbheachadh_aaine
+  rdfs:label "soirbheachadh àine" ;
+  :sense "success of climax" ;
+  :part n:aain ;
+  rdfs:comment "[Music]" .
+
+n:dluuth_chruth_notaichean
+  rdfs:label "dlùth-chruth notaichean" ;
+  :sense "close position of notes" ;
+  :part n:dluuth_chruth ;
+  rdfs:comment "[Music]" .
+
+n:coord_dluuth_chruth
+  rdfs:label "còrd dlùth-chruth" ;
+  :sense "close position chord" ;
+  :part n:dluuth_chruth ;
+  rdfs:comment "[Music]" .
+
+n:criioch_na_cooda
+  rdfs:label "crìoch na còda" ;
+  :sense "conclusion of coda" ;
+  :part n:cooda ;
+  rdfs:comment "[Music]" .
+
+n:aairia_coloratura
+  rdfs:label "àiria coloratura" ;
+  :sense "coloratura aria" ;
+  :part n:coloratura ;
+  rdfs:comment "[Music]" .
+
+n:sopraano_coloratura
+  rdfs:label "sopràno coloratura" ;
+  :sense "coloratura soprano" ;
+  :part n:coloratura ;
+  rdfs:comment "[Music]" .
+
+n:deagh_chomas_guth
+  rdfs:label "deagh chomas-guth" ;
+  :sense "good compass" ;
+  :part n:comas_guth ;
+  rdfs:comment "[Music]" .
+
+n:cruthaich_ooran
+  rdfs:label "cruthaich òran" ;
+  :sense "compose a song" ;
+  :part v:cruthaich ;
+  rdfs:comment "[Music]" .
+
+n:a_cruthachadh_ooran
+  rdfs:label "a' cruthachadh òran" ;
+  :sense "composing a song" ;
+  :part v:cruthaich ;
+  rdfs:comment "[Music]" .
+
+n:a_cruthachadh_ceool
+  rdfs:label "a' cruthachadh ceòl" ;
+  :sense "composing music" ;
+  :part v:cruthaich ;
+  rdfs:comment "[Music]" .
+
+n:comas_cruthadair_ciuuil
+  rdfs:label "comas cruthadair-ciùil" ;
+  :sense "composer's ability" ;
+  :part n:cruthadair_ciuuil ;
+  rdfs:comment "[Music]" .
+
+n:cruthadair_ciuuil_ainmeil
+  rdfs:label "cruthadair-ciùil ainmeil" ;
+  :sense "famous composer" ;
+  :part n:cruthadair_ciuuil ;
+  rdfs:comment "[Music]" .
+
+n:cruthachadh_oorain
+  rdfs:label "cruthachadh òrain" ;
+  :sense "composing of a song" ;
+  :part n:cruthachadh ;
+  rdfs:comment "[Music]" .
+
+n:cruthachadh_ciuuil
+  rdfs:label "cruthachadh ciùil" ;
+  :sense "composing of music" ;
+  :part n:cruthachadh ;
+  rdfs:comment "[Music]" .
+
+n:consairt_cuimhneachain
+  rdfs:label "consairt-cuimhneachain" ;
+  :sense "memorial concert" ;
+  :part n:consairt ;
+  rdfs:comment "[Music]" .
+
+n:seinneadair_consairt_cuimhneachain
+  rdfs:label "seinneadair consairt-cuimhneachain" ;
+  :sense "memorial concert singer" ;
+  :part n:consairt ;
+  rdfs:comment "[Music]" .
+
+n:moor_earrann_aa_concerto
+  rdfs:label "mòr-earrann à concerto" ;
+  :sense "passage from concerto" ;
+  :part n:concerto ;
+  rdfs:comment "[Music]" .
+
+n:stiuuiriche_ciuuil_orcastra
+  rdfs:label "stiùiriche(-ciùil) orcastra" ;
+  :sense "orchestra conductor" ;
+  :part n:stiuuiriche_ciuuil ;
+  rdfs:comment "[Music]" .
+
+n:stiuuirichean_ciuuil_orcastra
+  rdfs:label "stiùirichean(-ciùil) orcastra" ;
+  :sense "orchestra conductors" ;
+  :part n:stiuuiriche_ciuuil ;
+  rdfs:comment "[Music]" .
+
+n:batan_stiuuiriche
+  rdfs:label "batan stiùiriche" ;
+  :sense "conductor's baton" ;
+  :part n:stiuuiriche_ciuuil ;
+  rdfs:comment "[Music]" .
+
+n:notaichean_co_leantainneach
+  rdfs:label "notaichean co-leantainneach" ;
+  :sense "consecutive notes" ;
+  :part a:co_leantainneach ;
+  rdfs:comment "[Music]" .
+
+n:co_fhuaimneachd_ciuuil
+  rdfs:label "co-fhuaimneachd ciùil" ;
+  :sense "musical consonance" ;
+  :part n:co_fhuaimneachd ;
+  rdfs:comment "[Music]" .
+
+n:notaichean_co_fhuaimneach
+  rdfs:label "notaichean co-fhuaimneach" ;
+  :sense "consonant notes" ;
+  :part a:co_fhuaimneach ;
+  rdfs:comment "[Music]" .
+
+n:cumaidhean_ciuuil
+  rdfs:label "cumaidhean ciùil" ;
+  :sense "musical constructions" ;
+  :part n:cumadh ;
+  rdfs:comment "[Music]" .
+
+n:cumadh_earrainn
+  rdfs:label "cumadh earrainn" ;
+  :sense "construction of phrase" ;
+  :part n:cumadh ;
+  rdfs:comment "[Music]" .
+
+n:cumadh_sgeeile
+  rdfs:label "cumadh sgèile" ;
+  :sense "construction of scale" ;
+  :part n:cumadh ;
+  rdfs:comment "[Music]" .
+
+n:cruth_contrapuntal
+  rdfs:label "cruth contrapuntal" ;
+  :sense "contrapuntal form" ;
+  :part a:contrapuntal ;
+  rdfs:comment "[Music]" .
+
+n:meud_iomsgaraidh
+  rdfs:label "meud iomsgaraidh" ;
+  :sense "extent of contrast" ;
+  :part n:iomsgaradh ;
+  rdfs:comment "[Music]" .
+
+n:daineamaigs_iomsgarach
+  rdfs:label "daineamaigs iomsgarach" ;
+  :sense "contrasting dynamics" ;
+  :part a:iomsgarach ;
+  rdfs:comment "[Music]" .
+
+n:guthan_iomsgarach
+  rdfs:label "guthan iomsgarach" ;
+  :sense "contrasting voices" ;
+  :part a:iomsgarach ;
+  rdfs:comment "[Music]" .
+
+n:cluicheadair_cor_anglais
+  rdfs:label "cluicheadair cor anglais" ;
+  :sense "cor anglais player" ;
+  :part n:cor_anglais ;
+  rdfs:comment "[Music]" .
+
+n:a_cluiche_coornaid
+  rdfs:label "a' cluiche còrnaid" ;
+  :sense "playing a cornet" ;
+  :part n:coornaid ;
+  rdfs:comment "[Music]" .
+
+n:coomhla_ann_an_contrapuing
+  rdfs:label "còmhla ann an contrapuing" ;
+  :sense "together in counterpoint" ;
+  :part n:contrapuing ;
+  rdfs:comment "[Music]" .
+
+n:fonn_contrapuing
+  rdfs:label "fonn contrapuing" ;
+  :sense "contrapoint melody" ;
+  :part n:contrapuing ;
+  rdfs:comment "[Music]" .
+
+n:leth_cheathramh_oorain
+  rdfs:label "leth-cheathramh òrain" ;
+  :sense "song couplet" ;
+  :part n:leth_cheathramh ;
+  rdfs:comment "[Music]" .
+
+n:nota_croitseit
+  rdfs:label "nota croitseit" ;
+  :sense "crotchet note" ;
+  :part n:croitseat ;
+  rdfs:comment "[Music]" .
+
+n:paatran_cuarteach
+  rdfs:label "pàtran cuarteach" ;
+  :sense "cyclic pattern" ;
+  :part a:cuairteach ;
+  rdfs:comment "[Music]" .
+
+n:fuinn_chuairteach
+  rdfs:label "fuinn chuairteach" ;
+  :sense "cyclic tunes" ;
+  :part a:cuairteach ;
+  rdfs:comment "[Music]" .
+
+n:a_cluiche_nan_ciombal
+  rdfs:label "a' cluiche nan ciombal" ;
+  :sense "playing the cymbals" ;
+  :part n:ciombal ;
+  rdfs:comment "[Music]" .
+
+n:faid_na_demisemicueebhear
+  rdfs:label "faid na demisemicuèbhear" ;
+  :sense "length of the demisemiquaver" ;
+  :part n:demisemicueebhear ;
+  rdfs:comment "[Music]" .
+
+n:sgeeile_teaarnaidh_blues
+  rdfs:label "sgèile-teàrnaidh blues" ;
+  :sense "descending blues scale" ;
+  :part a:teaarnaidh ;
+  rdfs:comment "[Music]" .
+
+n:sgeeilean_teaarnaidh
+  rdfs:label "sgèilean-teàrnaidh" ;
+  :sense "descending scales" ;
+  :part a:teaarnaidh ;
+  rdfs:comment "[Music]" .
+
+n:ruithean_teaarnaidh
+  rdfs:label "ruithean-teàrnaidh" ;
+  :sense "descending sequences" ;
+  :part a:teaarnaidh ;
+  rdfs:comment "[Music]" .
+
+n:notaichean_a_tha_a_diireadh_no_a_teaarnadh
+  rdfs:label "notaichean a tha a' dìreadh no a' teàrnadh" ;
+  :sense "notes which are ascending or descending" ;
+  :part o:teaarnadh ;
+  rdfs:comment "[Music]" .
+
+n:earrann_adhartachaidh_sonaata
+  rdfs:label "earrann adhartachaidh sonàta" ;
+  :sense "delopment section of sonata" ;
+  :part n:adhartachadh ;
+  rdfs:comment "[Music]" .
+
+n:toiseach_an_adhartachaidh
+  rdfs:label "toiseach an adhartachaidh" ;
+  :sense "start of the development" ;
+  :part n:adhartachadh ;
+  rdfs:comment "[Music]" .
+
+n:sgeeile_diatonaig
+  rdfs:label "sgèile diatonaig" ;
+  :sense "diatonic scale" ;
+  :part a:diatonaig ;
+  rdfs:comment "[Music]" .
+
+n:semitoon_diatonaig
+  rdfs:label "semitòn diatonaig" ;
+  :sense "diatonic semitone" ;
+  :part a:diatonaig ;
+  rdfs:comment "[Music]" .
+
+n:eas_sheirm_notaichean
+  rdfs:label "eas-sheirm notaichean" ;
+  :sense "note discord" ;
+  :part n:eas_sheirm ;
+  rdfs:comment "[Music]" .
+
+n:buaidh_na_h_eas_sheirm
+  rdfs:label "buaidh na h-eas-sheirm" ;
+  :sense "effect of the discord" ;
+  :part n:eas_sheirm ;
+  rdfs:comment "[Music]" .
+
+n:eas_fhuaimneachd_ciuuil
+  rdfs:label "eas-fhuaimneachd ciùil" ;
+  :sense "music dissonance" ;
+  :part n:eas_fhuaimneachd ;
+  rdfs:comment "[Music]" .
+
+n:buaidh_na_h_eas_fhuaimneachd
+  rdfs:label "buaidh na h-eas-fhuaimneachd" ;
+  :sense "effect of dissonance" ;
+  :part n:eas_fhuaimneachd ;
+  rdfs:comment "[Music]" .
+
+n:seinn_eas_fhuaimneach
+  rdfs:label "seinn eas-fhuaimneach" ;
+  :sense "dissonant singing" ;
+  :part a:eas_fhuaimneach ;
+  rdfs:comment "[Music]" .
+
+n:co_sheirm_eas_fhuaimneach
+  rdfs:label "co-sheirm eas-fhuaimneach" ;
+  :sense "dissonant harmony" ;
+  :part a:eas_fhuaimneach ;
+  rdfs:comment "[Music]" .
+
+n:dannsa_divertissment_goirid
+  rdfs:label "dannsa divertissment goirid" ;
+  :sense "short divertissment dance" ;
+  :part n:divertissement ;
+  rdfs:comment "[Music]" .
+
+n:sgeeile_cheannasach
+  rdfs:label "sgèile cheannasach" ;
+  :sense "dominant scale" ;
+  :part a:ceannasach ;
+  rdfs:comment "[Music]" .
+
+n:7mh_coord_ceannasach
+  rdfs:label "7mh còrd ceannasach" ;
+  :sense "dominant 7th chord" ;
+  :part a:ceannasach ;
+  rdfs:comment "[Music]" .
+
+n:buaidh_dhotaig
+  rdfs:label "buaidh dhotaig" ;
+  :sense "effect of a dot" ;
+  :part n:dotag ;
+  rdfs:comment "[Music]" .
+
+n:nota_dhotagach
+  rdfs:label "nota dhotagach" ;
+  :sense "dotted note" ;
+  :part a:dotagach ;
+  rdfs:comment "[Music]" .
+
+n:ruitheam_dhotagach
+  rdfs:label "ruitheam dhotagach" ;
+  :sense "dotted rhythm" ;
+  :part a:dotagach ;
+  rdfs:comment "[Music]" .
+
+n:seinn_nan_notaichean_dotagach
+  rdfs:label "seinn nan notaichean dotagach" ;
+  :sense "singing of the dotted notes" ;
+  :part a:dotagach ;
+  rdfs:comment "[Music]" .
+
+n:a_cluiche_proo_bheus
+  rdfs:label "a' cluiche prò-bheus" ;
+  :sense "playing double bass" ;
+  :part n:proo_bheus ;
+  rdfs:comment "[Music]" .
+
+n:coire_dhruma
+  rdfs:label "coire-dhruma" ;
+  :sense "kettle-drum" ;
+  :part n:druma ;
+  rdfs:comment "[Music]" .
+
+n:seata_dhrumaichean
+  rdfs:label "seata dhrumaichean" ;
+  :sense "drumkit" ;
+  :part n:druma ;
+  rdfs:comment "[Music]" .
+
+n:teud_dhruma
+  rdfs:label "teud-dhruma" ;
+  :sense "snare drum" ;
+  :part n:druma ;
+  rdfs:comment "[Music]" .
+
+n:toirm_teud_dhruma
+  rdfs:label "toirm teud-dhruma" ;
+  :sense "snare-drum rolls" ;
+  :part n:druma ;
+  rdfs:comment "[Music]" .
+
+n:toirm_dhrumaichean
+  rdfs:label "toirm dhrumaichean" ;
+  :sense "drum roll" ;
+  :part n:druma ;
+  rdfs:comment "[Music]" .
+
+n:a_cluiche_ceool_caaraid
+  rdfs:label "a' cluiche ceòl-càraid" ;
+  :sense "playing a duet" ;
+  :part n:ceool_caaraid ;
+  rdfs:comment "[Music]" .
+
+n:ran_na_caaraid
+  rdfs:label "ran na càraid" ;
+  :sense "the duo's song" ;
+  :part n:caaraid ;
+  rdfs:comment "[Music]" .
+
+n:daa_nota_dublaid
+  rdfs:label "dà nota dublaid" ;
+  :sense "two duplet notes" ;
+  :part n:dublaid ;
+  rdfs:comment "[Music]" .
+
+n:daineamaigs_iomsgarach
+  rdfs:label "daineamaigs iomsgarach" ;
+  :sense "contrasting dynamics" ;
+  :part o:daineamaigs ;
+  rdfs:comment "[Music]" .
+
+n:daineamaigs_dhraamadach
+  rdfs:label "daineamaigs dhràmadach" ;
+  :sense "dramatic dynamics" ;
+  :part o:daineamaigs ;
+  rdfs:comment "[Music]" .
+
+n:a_seinn_encore
+  rdfs:label "a' seinn encore" ;
+  :sense "singing an encore" ;
+  :part n:encore ;
+  rdfs:comment "[Music]" .
+
+n:Encore
+  rdfs:label "Encore!" ;
+  :sense "Encore!" ;
+  :part o:encore ;
+  rdfs:comment "[Music]" .
+
+n:luchd_ciuuil_na_h_ensemble
+  rdfs:label "luchd-ciùil na h-ensemble" ;
+  :sense "the ensemble musicians" ;
+  :part n:ensemble ;
+  rdfs:comment "[Music]" .
+
+n:ensemblean_le_aon_ionnsramaid_gach_paairt
+  rdfs:label "ensemblean le aon ionnsramaid gach pàirt" ;
+  :sense "ensembles with one instrument per part" ;
+  :part n:ensemble ;
+  rdfs:comment "[Music]" .
+
+n:ionnsramaidean_agus_ensemblean_ionnsramaideach
+  rdfs:label "ionnsramaidean agus ensemblean ionnsramaideach" ;
+  :sense "instruments and instrumental ensembles" ;
+  :part n:ensemble ;
+  rdfs:comment "[Music]" .
+
+n:fad_eadar_uuine_na_h_entr_acte
+  rdfs:label "fad eadar-ùine na h-entr'acte" ;
+  :sense "length of entr'acte interval" ;
+  :part n:entr_acte ;
+  rdfs:comment "[Music]" .
+
+n:aam_an_inntrigidh
+  rdfs:label "àm an inntrigidh" ;
+  :sense "the time of the entry" ;
+  :part n:inntrigeadh ;
+  rdfs:comment "[Music]" .
+
+n:na_inntrig
+  rdfs:label "na inntrig" ;
+  :sense "no entry" ;
+  :part n:inntrigeadh ;
+  rdfs:comment "[Music]" .
+
+n:inntrigeadh_seeiste
+  rdfs:label "inntrigeadh sèiste" ;
+  :sense "chorus entry" ;
+  :part n:inntrigeadh ;
+  rdfs:comment "[Music]" .
+
+n:gleusadh_co_reeiteachd
+  rdfs:label "gleusadh co-rèiteachd" ;
+  :sense "equal temperament tuning" ;
+  :part n:co_reeiteachd ;
+  rdfs:comment "[Music]" .
+
+n:beothalachd_esprit
+  rdfs:label "beothalachd esprit" ;
+  :sense "esprit liveliness" ;
+  :part n:esprit ;
+  rdfs:comment "[Music]" .
+
+n:earrann_bhon_an_ro_cheool
+  rdfs:label "earrann bhon an ro-cheòl" ;
+  :sense "excerpt from the overture" ;
+  :part n:earrann ;
+  rdfs:comment "[Music]" .
+
+n:gniiomhachadh_an_oorain
+  rdfs:label "gnìomhachadh an òrain" ;
+  :sense "execution of the song" ;
+  :part n:gniiomhachadh ;
+  rdfs:comment "[Music]" .
+
+n:eeifeachdas_a_ghniiomhachaidh
+  rdfs:label "èifeachdas a' ghnìomhachaidh" ;
+  :sense "success of the execution" ;
+  :part n:gniiomhachadh ;
+  rdfs:comment "[Music]" .
+
+n:extravaganza_le_James_Planche
+  rdfs:label "extravaganza le James Planche" ;
+  :sense "an extravaganza by James Planche" ;
+  :part n:extravaganza ;
+  rdfs:comment "[Music]" .
+
+n:notaichean_ann_am_figear
+  rdfs:label "notaichean ann am figear" ;
+  :sense "notes in figure" ;
+  :part n:figear ;
+  rdfs:comment "[Music]" .
+
+n:faid_an_fhigeir
+  rdfs:label "faid an fhigeir" ;
+  :sense "length of the figure" ;
+  :part n:figear ;
+  rdfs:comment "[Music]" .
+
+n:finale_consairt
+  rdfs:label "finale consairt" ;
+  :sense "concert finale" ;
+  :part n:finale ;
+  rdfs:comment "[Music]" .
+
+n:ceool_an_duisleir
+  rdfs:label "ceòl an duisleir" ;
+  :sense "the flautist's music" ;
+  :part n:duislear ;
+  rdfs:comment "[Music]" .
+
+n:a_cluiche_an_duiseil
+  rdfs:label "a' cluiche an duiseil" ;
+  :sense "playing the flute" ;
+  :part n:duiseal ;
+  rdfs:comment "[Music]" .
+
+n:cruth_daa_earrainn
+  rdfs:label "cruth dà-earrainn" ;
+  :sense "binary form" ;
+  :part n:cruth ;
+  rdfs:comment "[Music]" .
+
+n:cruth_daa_earrainn_fillte
+  rdfs:label "cruth dà-earrainn fillte" ;
+  :sense "compound binary form" ;
+  :part n:cruth ;
+  rdfs:comment "[Music]" .
+
+n:cruth_contrapuntal
+  rdfs:label "cruth contrapuntal" ;
+  :sense "contrapuntal form" ;
+  :part n:cruth ;
+  rdfs:comment "[Music]" .
+
+n:cruth_ciad_ghluasaid
+  rdfs:label "cruth ciad-ghluasaid" ;
+  :sense "first movement form" ;
+  :part n:cruth ;
+  rdfs:comment "[Music]" .
+
+n:cruthan_ciuuil
+  rdfs:label "cruthan ciùil" ;
+  :sense "musical forms" ;
+  :part n:cruth ;
+  rdfs:comment "[Music]" .
+
+n:ceool_fiuugail
+  rdfs:label "ceòl fiùgail" ;
+  :sense "fugal music" ;
+  :part a:fiuugail ;
+  rdfs:comment "[Music]" .
+
+n:cuspair_fiuug
+  rdfs:label "cuspair fiùg" ;
+  :sense "fugue subject" ;
+  :part n:fiuug ;
+  rdfs:comment "[Music]" .
+
+n:toiseach_a_fiuug
+  rdfs:label "toiseach a' fiùg" ;
+  :sense "beginning of the fugue" ;
+  :part n:fiuug ;
+  rdfs:comment "[Music]" .
+
+n:ceool_funcaidh
+  rdfs:label "ceòl funcaidh" ;
+  :sense "funky music" ;
+  :part a:funcaidh ;
+  rdfs:comment "[Music]" .
+
+n:gigue_le_Handel
+  rdfs:label "gigue le Handel" ;
+  :sense "gigue by Handel" ;
+  :part n:gigue ;
+  rdfs:comment "[Music]" .
+
+n:nota_maise_a_bharrachd
+  rdfs:label "nota-maise a bharrachd" ;
+  :sense "extra grace note" ;
+  :part n:nota_maise ;
+  rdfs:comment "[Music]" .
+
+n:giotaar_dealain
+  rdfs:label "giotàr dealain" ;
+  :sense "electric guitar" ;
+  :part n:giotaar ;
+  rdfs:comment "[Music]" .
+
+n:giotaar_acustaig
+  rdfs:label "giotàr acustaig" ;
+  :sense "acoustic guitar" ;
+  :part n:giotaar ;
+  rdfs:comment "[Music]" .
+
+n:slaighd_giotaar
+  rdfs:label "slaighd-giotàr" ;
+  :sense "slide guitar" ;
+  :part n:giotaar ;
+  rdfs:comment "[Music]" .
+
+n:a_cluich_a_ghiotaair
+  rdfs:label "a' cluich a' ghiotàir" ;
+  :sense "playing the guitar" ;
+  :part n:giotaar ;
+  rdfs:comment "[Music]" .
+
+n:thar_thona_harmonaig
+  rdfs:label "thar-thona harmonaig" ;
+  :sense "harmonic overtone" ;
+  :part n:harmonaig ;
+  rdfs:comment "[Music]" .
+
+n:ceool_co_sheirmeach
+  rdfs:label "ceòl co-sheirmeach" ;
+  :sense "harmonic music" ;
+  :part a:co_sheirmeach ;
+  rdfs:comment "[Music]" .
+
+n:feartan_harmonaig
+  rdfs:label "feartan harmonaig" ;
+  :sense "harmonic qualities" ;
+  :part a:harmonaig ;
+  rdfs:comment "[Music]" .
+
+n:co_sheirmichibh_ur_seinn
+  rdfs:label "co-sheirmichibh ur seinn" ;
+  :sense "harmonise your singing" ;
+  :part v:co_sheirmich ;
+  rdfs:comment "[Music]" .
+
+n:tlachd_co_sheirme
+  rdfs:label "tlachd co-sheirme" ;
+  :sense "pleasure of harmony" ;
+  :part n:co_sheirm ;
+  rdfs:comment "[Music]" .
+
+n:a_seinn_an_co_sheirm
+  rdfs:label "a' seinn an co-sheirm" ;
+  :sense "singing in harmony" ;
+  :part n:co_sheirm ;
+  rdfs:comment "[Music]" .
+
+n:co_sheirm_cho_shiinte
+  rdfs:label "co-sheirm cho-shìnte" ;
+  :sense "parallel harmony" ;
+  :part n:co_sheirm ;
+  rdfs:comment "[Music]" .
+
+n:co_sheirm_eas_fhuaimneach
+  rdfs:label "co-sheirm eas-fhuaimneach" ;
+  :sense "dissonant harmony" ;
+  :part n:co_sheirm ;
+  rdfs:comment "[Music]" .
+
+n:a_cluich_harpsacord
+  rdfs:label "a' cluich harpsacord" ;
+  :sense "playing a harpsichord" ;
+  :part n:harpsacord ;
+  rdfs:comment "[Music]" .
+
+n:nota_hemidemisemicueebheir
+  rdfs:label "nota hemidemisemicuèbheir" ;
+  :sense "hemidemisemiquaver note" ;
+  :part n:hemidemisemicueebhear ;
+  rdfs:comment "[Music]" .
+
+n:coorn_Frangach
+  rdfs:label "còrn Frangach" ;
+  :sense "French horn" ;
+  :part n:coorn ;
+  rdfs:comment "[Music]" .
+
+n:fonn_na_laoidhe
+  rdfs:label "fonn na laoidhe" ;
+  :sense "the hymn tune" ;
+  :part n:laoidh ;
+  rdfs:comment "[Music]" .
+
+n:saor_chluich_an_cadenza
+  rdfs:label "saor-chluich an cadenza" ;
+  :sense "improvise the cadenza" ;
+  :part v:saor_chluich ;
+  rdfs:comment "[Music]" .
+
+n:ionnsramaid_ciuuil
+  rdfs:label "ionnsramaid ciùil" ;
+  :sense "musical instrument" ;
+  :part n:ionnsramaid ;
+  rdfs:comment "[Music]" .
+
+n:ensemblean_le_aon_ionnsramaid_gach_paairt
+  rdfs:label "ensemblean le aon ionnsramaid gach pàirt" ;
+  :sense "ensembles with one instrument per part" ;
+  :part n:ionnsramaid ;
+  rdfs:comment "[Music]" .
+
+n:ionnsramaidean_agus_ensemblean_ionnsramaideach
+  rdfs:label "ionnsramaidean agus ensemblean ionnsramaideach" ;
+  :sense "instruments and instrumental ensembles" ;
+  :part n:ionnsramaid ;
+  rdfs:comment "[Music]" .
+
+n:meur_chlaar_agus_ionnsramaidean_eile
+  rdfs:label "meur-chlàr agus ionnsramaidean eile" ;
+  :sense "keyboard and other instruments" ;
+  :part n:ionnsramaid ;
+  rdfs:comment "[Music]" .
+
+n:ionnsramaidean_teudach
+  rdfs:label "ionnsramaidean teudach" ;
+  :sense "stringed instruments" ;
+  :part n:ionnsramaid ;
+  rdfs:comment "[Music]" .
+
+n:ionnsramaidean_seeididh
+  rdfs:label "ionnsramaidean sèididh" ;
+  :sense "wind instruments" ;
+  :part n:ionnsramaid ;
+  rdfs:comment "[Music]" .
+
+n:ceool_ionnsramaid
+  rdfs:label "ceòl ionnsramaid" ;
+  :sense "instrument music" ;
+  :part n:ionnsramaid ;
+  rdfs:comment "[Music]" .
+
+n:ensemblean_ionnsramaideach
+  rdfs:label "ensemblean ionnsramaideach" ;
+  :sense "instrumental ensembles" ;
+  :part a:ionnsramaideach ;
+  rdfs:comment "[Music]" .
+
+n:stoidhle_ionnsramaideach
+  rdfs:label "stoidhle ionnsramaideach" ;
+  :sense "instrumental style" ;
+  :part a:ionnsramaideach ;
+  rdfs:comment "[Music]" .
+
+n:deeine_a_chiuuil
+  rdfs:label "dèine a' chiùil" ;
+  :sense "the intensity of the music" ;
+  :part n:deeine ;
+  rdfs:comment "[Music]" .
+
+n:eadar_chluich_ciuuil
+  rdfs:label "eadar-chluich ciùil" ;
+  :sense "musical interlude" ;
+  :part n:eadar_chluich ;
+  rdfs:comment "[Music]" .
+
+n:faid_an_eadar_chluich
+  rdfs:label "faid an eadar-chluich" ;
+  :sense "length of the interlude" ;
+  :part n:eadar_chluich ;
+  rdfs:comment "[Music]" .
+
+n:gluasad_goirid_intermezzo
+  rdfs:label "gluasad goirid intermezzo" ;
+  :sense "short intermezzo movement" ;
+  :part n:intermezzo ;
+  rdfs:comment "[Music]" .
+
+n:eadar_mhiinich_an_ceool
+  rdfs:label "eadar-mhìnich an ceòl" ;
+  :sense "interpret the music" ;
+  :part v:eadar_mhiinich ;
+  rdfs:comment "[Music]" .
+
+n:eadar_mhiineachadh_ciuuil
+  rdfs:label "eadar-mhìneachadh ciùil" ;
+  :sense "interpretation of music" ;
+  :part n:eadar_mhiineachadh ;
+  rdfs:comment "[Music]" .
+
+n:dooigh_a_mhiineachaidh
+  rdfs:label "dòigh a' mhìneachaidh" ;
+  :sense "manner of the interpretation" ;
+  :part n:eadar_mhiineachadh ;
+  rdfs:comment "[Music]" .
+
+n:deas_thoonadh_pitse
+  rdfs:label "deas-thònadh pitse" ;
+  :sense "intonation of pitch" ;
+  :part n:deas_thoonadh ;
+  rdfs:comment "[Music]" .
+
+n:meud_deas_thoonaidh
+  rdfs:label "meud deas-thònaidh" ;
+  :sense "extent of intonation" ;
+  :part n:deas_thoonadh ;
+  rdfs:comment "[Music]" .
+
+n:tionnsgalan_ainmeil_le_Bach
+  rdfs:label "tionnsgalan ainmeil le Bach" ;
+  :sense "famous inventions by Bach" ;
+  :part n:tionnsgal ;
+  rdfs:comment "[Music]" .
+
+n:toiseach_tionnsgail
+  rdfs:label "toiseach tionnsgail" ;
+  :sense "the beginning of an invention" ;
+  :part n:tionnsgal ;
+  rdfs:comment "[Music]" .
+
+n:coordan_inbheartach
+  rdfs:label "còrdan inbheartach" ;
+  :sense "inverse chords" ;
+  :part a:inbheartach ;
+  rdfs:comment "[Music]" .
+
+n:inbheartachadh_choordan
+  rdfs:label "inbheartachadh chòrdan" ;
+  :sense "inversion of chords" ;
+  :part n:inbheartachadh ;
+  rdfs:comment "[Music]" .
+
+n:ceool_iso_ruitheamach
+  rdfs:label "ceòl iso-ruitheamach" ;
+  :sense "isorhythmic music" ;
+  :part a:iso_ruitheamach ;
+  rdfs:comment "[Music]" .
+
+n:ceool_jazz
+  rdfs:label "ceòl jazz" ;
+  :sense "jazz music" ;
+  :part n:jazz ;
+  rdfs:comment "[Music]" .
+
+n:danns_ri_port_cruinn
+  rdfs:label "danns ri port-cruinn" ;
+  :sense "dance to a jig" ;
+  :part n:port_cruinn ;
+  rdfs:comment "[Music]" .
+
+n:danns_a_phuirt_chruinn
+  rdfs:label "danns a' phuirt-chruinn" ;
+  :sense "jig dance" ;
+  :part n:port_cruinn ;
+  rdfs:comment "[Music]" .
+
+n:iuchraichean_piaana
+  rdfs:label "iuchraichean piàna" ;
+  :sense "piano keys" ;
+  :part n:iuchair ;
+  rdfs:comment "[Music]" .
+
+n:dath_na_h_iuchrach
+  rdfs:label "dath na h-iuchrach" ;
+  :sense "colour of the key" ;
+  :part n:iuchair ;
+  rdfs:comment "[Music]" .
+
+n:nota_a_ghleus
+  rdfs:label "nota a' ghleus" ;
+  :sense "note of the key" ;
+  :part n:gleus ;
+  rdfs:comment "[Music]" .
+
+n:comharra_gleus
+  rdfs:label "comharra-gleus" ;
+  :sense "key signature" ;
+  :part n:gleus ;
+  rdfs:comment "[Music]" .
+
+n:maaidsear_ghleus
+  rdfs:label "màidsear-ghleus" ;
+  :sense "major key" ;
+  :part n:gleus ;
+  rdfs:comment "[Music]" .
+
+n:maaidsear_ghleusan
+  rdfs:label "màidsear-ghleusan" ;
+  :sense "major keys" ;
+  :part n:gleus ;
+  rdfs:comment "[Music]" .
+
+n:fonn_air_meur_chlaar
+  rdfs:label "fonn air meur-chlàr" ;
+  :sense "tune on a keyboard" ;
+  :part n:meur_chlaar_ ;
+  rdfs:comment "[Music]" .
+
+n:a_cluich_a_mheur_chlaar
+  rdfs:label "a’ cluich a’ mheur-chlàr" ;
+  :sense "playing the keyboard" ;
+  :part n:meur_chlaar_ ;
+  rdfs:comment "[Music]" .
+
+n:fuaim_treooir_nota
+  rdfs:label "fuaim treòir-nota" ;
+  :sense "sound of leading note" ;
+  :part n:treooir_nota ;
+  rdfs:comment "[Music]" .
+
+n:leum_luath
+  rdfs:label "leum luath" ;
+  :sense "quick leap" ;
+  :part n:leum ;
+  rdfs:comment "[Music]" .
+
+n:meud_an_leuma
+  rdfs:label "meud an leuma" ;
+  :sense "extent of leap" ;
+  :part n:leum ;
+  rdfs:comment "[Music]" .
+
+n:tomhas_an_fhaide
+  rdfs:label "tomhas an fhaide" ;
+  :sense "measure of the length" ;
+  :part n:faid ;
+  rdfs:comment "[Music]" .
+
+n:siin_an_nota
+  rdfs:label "sìn an nota" ;
+  :sense "lengthen the note" ;
+  :part v:siin ;
+  rdfs:comment "[Music]" .
+
+n:laigh_air_an_nota_sin
+  rdfs:label "laigh air an nota sin" ;
+  :sense "slightly lengthen that note" ;
+  :part v:laigh_air ;
+  rdfs:comment "[Music]" .
+
+n:slugadh_comharra_ceangail
+  rdfs:label "slugadh comharra-ceangail" ;
+  :sense "ligature slur" ;
+  :part n:comharra_ceangail ;
+  rdfs:comment "[Music]" .
+
+n:suidheachadh_loidhne_cleeithe
+  rdfs:label "suidheachadh loidhne-clèithe" ;
+  :sense "position of line of staff" ;
+  :part n:loidhne_cleeithe ;
+  rdfs:comment "[Music]" .
+
+n:aaireamh_loidhnichean_cleeithe
+  rdfs:label "àireamh loidhnichean-clèithe" ;
+  :sense "number of lines of staff" ;
+  :part n:loidhne_cleeithe ;
+  rdfs:comment "[Music]" .
+
+n:cluich_forte
+  rdfs:label "cluich forte" ;
+  :sense "play loudly" ;
+  :part a:forte ;
+  rdfs:comment "[Music]" .
+
+n:ceool_an_lutaire
+  rdfs:label "ceòl an lutaire" ;
+  :sense "lutanist's music" ;
+  :part n:lutaire ;
+  rdfs:comment "[Music]" .
+
+n:lutaire_a_cluich
+  rdfs:label "lutaire a' cluich" ;
+  :sense "a lutanist playing" ;
+  :part n:lutaire ;
+  rdfs:comment "[Music]" .
+
+n:ceool_an_luta
+  rdfs:label "ceòl an luta" ;
+  :sense "music of the lute" ;
+  :part n:lut ;
+  rdfs:comment "[Music]" .
+
+n:uughdar_nan_lirigean
+  rdfs:label "ùghdar nan lirigean" ;
+  :sense "author of the lyrics" ;
+  :part n:lirig ;
+  rdfs:comment "[Music]" .
+
+n:baardachd_lirig_na_Laidinn
+  rdfs:label "bàrdachd lirig na Laidinn" ;
+  :sense "Latin lyric poetry" ;
+  :part n:lirig ;
+  rdfs:comment "[Music]" .
+
+n:lirigean_oorain
+  rdfs:label "lirigean òrain" ;
+  :sense "lyrics of a song" ;
+  :part n:lirig ;
+  rdfs:comment "[Music]" .
+
+n:booidhchead_na_lirigeachd
+  rdfs:label "bòidhchead na lirigeachd" ;
+  :sense "beauty of the lyricism" ;
+  :part n:lirigeachd ;
+  rdfs:comment "[Music]" .
+
+n:lirigeachd_oorain
+  rdfs:label "lirigeachd òrain" ;
+  :sense "lyricism of song" ;
+  :part n:lirigeachd ;
+  rdfs:comment "[Music]" .
+
+n:maaidsear_sgeeile
+  rdfs:label "màidsear-sgèile" ;
+  :sense "major scale" ;
+  :part a:maaidsear ;
+  rdfs:comment "[Music]" .
+
+n:maaidsear_ghleus
+  rdfs:label "màidsear-ghleus" ;
+  :sense "major key" ;
+  :part a:maaidsear ;
+  rdfs:comment "[Music]" .
+
+n:dannsa_mazurka
+  rdfs:label "dannsa mazurka" ;
+  :sense "mazurka dance" ;
+  :part n:mazurka ;
+  rdfs:comment "[Music]" .
+
+n:oorain_fhonnmhor
+  rdfs:label "òrain fhonnmhor" ;
+  :sense "melodic songs" ;
+  :part a:fonnmhor ;
+  rdfs:comment "[Music]" .
+
+n:melo_draama_chlasaigeach
+  rdfs:label "melo-dràma chlasaigeach" ;
+  :sense "classical melodrama" ;
+  :part n:melo_draama ;
+  rdfs:comment "[Music]" .
+
+n:fonn_binn
+  rdfs:label "fonn binn" ;
+  :sense "sweet melody" ;
+  :part n:fonn ;
+  rdfs:comment "[Music]" .
+
+n:fuaim_an_fhuinn
+  rdfs:label "fuaim an fhuinn" ;
+  :sense "sound of the melody" ;
+  :part n:fonn ;
+  rdfs:comment "[Music]" .
+
+n:fonn_seinn
+  rdfs:label "fonn seinn" ;
+  :sense "singing melody" ;
+  :part n:fonn ;
+  rdfs:comment "[Music]" .
+
+n:contrafhonn
+  rdfs:label "contrafhonn" ;
+  :sense "counter melody" ;
+  :part n:fonn ;
+  rdfs:comment "[Music]" .
+
+n:tiog_a_mheatranoom
+  rdfs:label "tiog a' mheatranòm" ;
+  :sense "metronome tick" ;
+  :part n:meatranoom ;
+  rdfs:comment "[Music]" .
+
+n:sgeeile_guth_meadhain
+  rdfs:label "sgèile guth-meadhain" ;
+  :sense "middle register scale" ;
+  :part n:guth_meadhain ;
+  rdfs:comment "[Music]" .
+
+n:notaichean_minim
+  rdfs:label "notaichean minim" ;
+  :sense "minim notes" ;
+  :part n:minim ;
+  rdfs:comment "[Music]" .
+
+n:miinear_sgeeile
+  rdfs:label "mìnear-sgèile" ;
+  :sense "minor scale" ;
+  :part a:miinear ;
+  rdfs:comment "[Music]" .
+
+n:ceool_moodail
+  rdfs:label "ceòl mòdail" ;
+  :sense "modal music" ;
+  :part a:moodail ;
+  rdfs:comment "[Music]" .
+
+n:gluasad_an_aghaidh_a_cheeile
+  rdfs:label "gluasad an aghaidh a chèile" ;
+  :sense "contrary motion" ;
+  :part n:gluasad ;
+  rdfs:comment "[Music]" .
+
+n:co_ghluasad
+  rdfs:label "co-ghluasad" ;
+  :sense "parallel motion" ;
+  :part n:gluasad ;
+  rdfs:comment "[Music]" .
+
+n:co_ghluasad_ciuuil
+  rdfs:label "co-ghluasad ciùil" ;
+  :sense "musical parallel motion" ;
+  :part n:gluasad ;
+  rdfs:comment "[Music]" .
+
+n:cruth_ciad_ghluasaid
+  rdfs:label "cruth ciad-ghluasaid" ;
+  :sense "first movement form" ;
+  :part n:gluasad ;
+  rdfs:comment "[Music]" .
+
+n:ceithir_ghluasad
+  rdfs:label "ceithir-ghluasad" ;
+  :sense "four-movement" ;
+  :part n:gluasad ;
+  rdfs:comment "[Music]" .
+
+n:ciad_ghluasad
+  rdfs:label "ciad-ghluasad" ;
+  :sense "opening movement" ;
+  :part n:gluasad ;
+  rdfs:comment "[Music]" .
+
+n:gluasad_mall
+  rdfs:label "gluasad mall" ;
+  :sense "slow movement" ;
+  :part n:gluasad ;
+  rdfs:comment "[Music]" .
+
+n:roinneadh_a_chiad_ghluasaid
+  rdfs:label "roinneadh a' chiad ghluasaid" ;
+  :sense "division of opening movement" ;
+  :part n:gluasad ;
+  rdfs:comment "[Music]" .
+
+n:ceool_pop
+  rdfs:label "ceòl pop" ;
+  :sense "pop music" ;
+  :part n:ceool ;
+  rdfs:comment "[Music]" .
+
+n:ionnsramaid_ciuuil
+  rdfs:label "ionnsramaid ciùil" ;
+  :sense "musical instrument" ;
+  :part n:ceool ;
+  rdfs:comment "[Music]" .
+
+n:ceool_binn
+  rdfs:label "ceòl binn" ;
+  :sense "sweet music" ;
+  :part n:ceool ;
+  rdfs:comment "[Music]" .
+
+n:clas_ciuuil
+  rdfs:label "clas ciùil" ;
+  :sense "music class" ;
+  :part n:ceool ;
+  rdfs:comment "[Music]" .
+
+n:ceool_folk
+  rdfs:label "ceòl folk" ;
+  :sense "folk music" ;
+  :part n:ceool ;
+  rdfs:comment "[Music]" .
+
+n:corra_cheool
+  rdfs:label "corra-cheòl" ;
+  :sense "incidental music" ;
+  :part n:ceool ;
+  rdfs:comment "[Music]" .
+
+n:ceool_do_ghuthan_singilte
+  rdfs:label "ceòl do ghuthan singilte" ;
+  :sense "music for single voices" ;
+  :part n:ceool ;
+  rdfs:comment "[Music]" .
+
+n:seastan_ciuuil
+  rdfs:label "seastan-ciùil" ;
+  :sense "music stand" ;
+  :part n:ceool ;
+  rdfs:comment "[Music]" .
+
+n:ceool_tuairisgeul
+  rdfs:label "ceòl tuairisgeul" ;
+  :sense "programme music" ;
+  :part n:ceool ;
+  rdfs:comment "[Music]" .
+
+n:ceool_guthach
+  rdfs:label "ceòl guthach" ;
+  :sense "vocal music" ;
+  :part n:ceool ;
+  rdfs:comment "[Music]" .
+
+n:ceool_seoomrach
+  rdfs:label "ceòl seòmrach" ;
+  :sense "chamber music" ;
+  :part n:ceool ;
+  rdfs:comment "[Music]" .
+
+n:ceool_turchairt
+  rdfs:label "ceòl-turchairt" ;
+  :sense "chance music" ;
+  :part n:ceool ;
+  rdfs:comment "[Music]" .
+
+n:ceool_Clasaigeach
+  rdfs:label "ceòl Clasaigeach" ;
+  :sense "Classical music" ;
+  :part n:ceool ;
+  rdfs:comment "[Music]" .
+
+n:deagh_cheooladaireachd
+  rdfs:label "deagh cheòladaireachd" ;
+  :sense "good musicianship" ;
+  :part n:ceooladaireachd ;
+  rdfs:comment "[Music]" .
+
+n:coon_mhaothadair
+  rdfs:label "còn-mhaothadair" ;
+  :sense "mute cone" ;
+  :part n:maothadair ;
+  rdfs:comment "[Music]" .
+
+n:ceool_maothaichte
+  rdfs:label "ceòl maothaichte" ;
+  :sense "muted music" ;
+  :part a:maothaichte ;
+  rdfs:comment "[Music]" .
+
+n:ionnsramaid_mhaothaichte
+  rdfs:label "ionnsramaid mhaothaichte" ;
+  :sense "muted instrument" ;
+  :part a:maothaichte ;
+  rdfs:comment "[Music]" .
+
+n:umha_maothaichte
+  rdfs:label "umha maothaichte" ;
+  :sense "muted brass" ;
+  :part a:maothaichte ;
+  rdfs:comment "[Music]" .
+
+n:claar_notaireachd
+  rdfs:label "clàr-notaireachd" ;
+  :sense "grid notation" ;
+  :part n:notaireachd ;
+  rdfs:comment "[Music]" .
+
+n:staf_notaireachd
+  rdfs:label "staf-notaireachd" ;
+  :sense "staff notation" ;
+  :part n:notaireachd ;
+  rdfs:comment "[Music]" .
+
+n:cliath_notaireachd
+  rdfs:label "cliath-notaireachd" ;
+  :sense "standard musical notation" ;
+  :part n:notaireachd ;
+  rdfs:comment "[Music]" .
+
+n:nota_maise
+  rdfs:label "nota-maise" ;
+  :sense "grace note" ;
+  :part n:nota ;
+  rdfs:comment "[Music]" .
+
+n:nota_buinn
+  rdfs:label "nota-buinn" ;
+  :sense "bottom note" ;
+  :part n:nota ;
+  rdfs:comment "[Music]" .
+
+n:nota_briibh
+  rdfs:label "nota brìbh" ;
+  :sense "breve note" ;
+  :part n:nota ;
+  rdfs:comment "[Music]" .
+
+n:nota_co_leantainneach
+  rdfs:label "nota co-leantainneach" ;
+  :sense "consecutive note" ;
+  :part n:nota ;
+  rdfs:comment "[Music]" .
+
+n:nota_co_fhuaimneach
+  rdfs:label "nota co-fhuaimneach" ;
+  :sense "consonant note" ;
+  :part n:nota ;
+  rdfs:comment "[Music]" .
+
+n:nota_croitseit
+  rdfs:label "nota croitseit" ;
+  :sense "crotchet note" ;
+  :part n:nota ;
+  rdfs:comment "[Music]" .
+
+n:eas_sheirm_notaichean
+  rdfs:label "eas-sheirm notaichean" ;
+  :sense "note discord" ;
+  :part n:nota ;
+  rdfs:comment "[Music]" .
+
+n:nota_dhotagach
+  rdfs:label "nota dhotagach" ;
+  :sense "dotted note" ;
+  :part n:nota ;
+  rdfs:comment "[Music]" .
+
+n:nota_dublaid
+  rdfs:label "nota dublaid" ;
+  :sense "duplet note" ;
+  :part n:nota ;
+  rdfs:comment "[Music]" .
+
+n:nota_tarsainn
+  rdfs:label "nota-tarsainn" ;
+  :sense "crossing note" ;
+  :part n:nota ;
+  rdfs:comment "[Music]" .
+
+n:treoor_nota
+  rdfs:label "treòr-nota" ;
+  :sense "leading note (musical scale)" ;
+  :part n:nota ;
+  rdfs:comment "[Music]" .
+
+n:trast_nota
+  rdfs:label "trast-nota" ;
+  :sense "passing note" ;
+  :part n:nota ;
+  rdfs:comment "[Music]" .
+
+n:nota_ciuuil
+  rdfs:label "nota-ciùil" ;
+  :sense "musical note" ;
+  :part n:nota ;
+  rdfs:comment "[Music]" .
+
+n:fuaim_na_nota
+  rdfs:label "fuaim na nota" ;
+  :sense "sound of the note" ;
+  :part n:nota ;
+  rdfs:comment "[Music]" .
+
+n:briigh_an_nuance
+  rdfs:label "brìgh an nuance" ;
+  :sense "meaning of the nuance" ;
+  :part n:nuance ;
+  rdfs:comment "[Music]" .
+
+n:notaichean_an_ochdaid
+  rdfs:label "notaichean an ochdaid" ;
+  :sense "notes of the octave" ;
+  :part n:ochdad ;
+  rdfs:comment "[Music]" .
+
+n:opara_aotrom
+  rdfs:label "opara aotrom" ;
+  :sense "comic opera" ;
+  :part n:opara ;
+  rdfs:comment "[Music]" .
+
+n:seinneadair_opara_aotrom
+  rdfs:label "seinneadair opara aotrom" ;
+  :sense "comic opera singer" ;
+  :part n:opara ;
+  rdfs:comment "[Music]" .
+
+n:opara_aotrom
+  rdfs:label "opara aotrom" ;
+  :sense "light opera" ;
+  :part n:opara ;
+  rdfs:comment "[Music]" .
+
+n:oparathan_aotrom
+  rdfs:label "oparathan aotrom" ;
+  :sense "light operas" ;
+  :part n:opara ;
+  rdfs:comment "[Music]" .
+
+n:taigh_na_h_opara
+  rdfs:label "taigh na h-opara" ;
+  :sense "opera house" ;
+  :part n:opara ;
+  rdfs:comment "[Music]" .
+
+n:obair_a_chomainn_opara
+  rdfs:label "obair a' chomainn opara" ;
+  :sense "work of the operatic society" ;
+  :part n:comann_opara ;
+  rdfs:comment "[Music]" .
+
+n:ceool_na_h_opus
+  rdfs:label "ceòl na h-opus" ;
+  :sense "music of the opus" ;
+  :part n:opus ;
+  rdfs:comment "[Music]" .
+
+n:orcastra_shiomfonaidh
+  rdfs:label "orcastra shiomfonaidh" ;
+  :sense "symphony orchestra" ;
+  :part n:orcastra ;
+  rdfs:comment "[Music]" .
+
+n:buill_na_h_orcastra
+  rdfs:label "buill na h-orcastra" ;
+  :sense "members of the orchestra" ;
+  :part n:orcastra ;
+  rdfs:comment "[Music]" .
+
+n:stiuuiriche_ciuuil_orcastra
+  rdfs:label "stiùiriche(-ciùil) orcastra" ;
+  :sense "orchestra conductor" ;
+  :part n:orcastra ;
+  rdfs:comment "[Music]" .
+
+n:sloc_na_h_orcastra
+  rdfs:label "sloc na h-orcastra" ;
+  :sense "orchestra pit" ;
+  :part n:orcastra ;
+  rdfs:comment "[Music]" .
+
+n:orcastra_theud_dhuubailte
+  rdfs:label "orcastra theud-dhùbailte" ;
+  :sense "double string orchestra" ;
+  :part n:orcastra ;
+  rdfs:comment "[Music]" .
+
+n:oorgan_piioba
+  rdfs:label "òrgan pìoba" ;
+  :sense "pipe organ" ;
+  :part n:oorgan ;
+  rdfs:comment "[Music]" .
+
+n:maiseachadh_ciuuil
+  rdfs:label "maiseachadh ciùil" ;
+  :sense "musical ornament" ;
+  :part n:maiseachadh ;
+  rdfs:comment "[Music]" .
+
+n:maisich_an_ceool
+  rdfs:label "maisich an ceòl" ;
+  :sense "ornament the music" ;
+  :part v:maisich ;
+  rdfs:comment "[Music]" .
+
+n:seusan_pantomaim
+  rdfs:label "seusan pantomaim" ;
+  :sense "pantomime season" ;
+  :part n:pantomaim ;
+  rdfs:comment "[Music]" .
+
+n:moor_earrann_aa_concerto
+  rdfs:label "mòr-earrann à concerto" ;
+  :sense "passage from concerto" ;
+  :part n:moor_earrann ;
+  rdfs:comment "[Music]" .
+
+n:obair_earrainn
+  rdfs:label "obair-earrainn" ;
+  :sense "passage work" ;
+  :part n:moor_earrann ;
+  rdfs:comment "[Music]" .
+
+n:pais_dhraama_a_sealltainn_fulangas_Chriiosd
+  rdfs:label "pais-dhràma a' sealltainn fulangas Chrìosd" ;
+  :sense "passion-play depicting Christ's suffering" ;
+  :part n:paais_dhraama ;
+  rdfs:comment "[Music]" .
+
+n:sgeeilichean_cooig_nota
+  rdfs:label "sgèilichean còig-nota" ;
+  :sense "pentatonic scales" ;
+  :part a:cooig_nota ;
+  rdfs:comment "[Music]" .
+
+n:ionnsramaid_buille_chiuuil
+  rdfs:label "ionnsramaid buille-chiùil" ;
+  :sense "percussion instrument" ;
+  :part n:buille_cheool ;
+  rdfs:comment "[Music]" .
+
+n:fuaim_buille_chiuuil
+  rdfs:label "fuaim buille-chiùil" ;
+  :sense "percussion sound" ;
+  :part n:buille_cheool ;
+  rdfs:comment "[Music]" .
+
+n:cluich_an_ionnsramaid
+  rdfs:label "cluich an ionnsramaid" ;
+  :sense "play the instrument" ;
+  :part v:cluich ;
+  rdfs:comment "[Music]" .
+
+n:seinn_an_t_ooran
+  rdfs:label "seinn an t-òran" ;
+  :sense "sing the song" ;
+  :part v:seinn ;
+  rdfs:comment "[Music]" .
+
+n:cumadh_earrainn
+  rdfs:label "cumadh earrainn" ;
+  :sense "construction of phrase" ;
+  :part n:earrann ;
+  rdfs:comment "[Music]" .
+
+n:a_cumadh_earrannan
+  rdfs:label "a' cumadh earrannan" ;
+  :sense "constructing phrases" ;
+  :part n:earrann ;
+  rdfs:comment "[Music]" .
+
+n:earrann_ochd_notaichean
+  rdfs:label "earrann ochd notaichean" ;
+  :sense "an eight note phrase" ;
+  :part n:earrann ;
+  rdfs:comment "[Music]" .
+
+n:seinn_na_h_earrainn
+  rdfs:label "seinn na h-earrainn" ;
+  :sense "singing of the phrase" ;
+  :part n:earrann ;
+  rdfs:comment "[Music]" .
+
+n:soonraich_cur_earrannan
+  rdfs:label "sònraich cur earrannan" ;
+  :sense "identify phrasing" ;
+  :part n:cur_earrannan ;
+  rdfs:comment "[Music]" .
+
+n:sgoor_piaana
+  rdfs:label "sgòr-piàna" ;
+  :sense "piano score" ;
+  :part n:piaana ;
+  rdfs:comment "[Music]" .
+
+n:pitse_math
+  rdfs:label "pitse math" ;
+  :sense "good pitch" ;
+  :part n:pitse ;
+  rdfs:comment "[Music]" .
+
+n:pitse_eadar_dhealaichte
+  rdfs:label "pitse eadar-dhealaichte" ;
+  :sense "a different pitch" ;
+  :part n:pitse ;
+  rdfs:comment "[Music]" .
+
+n:fiior_phitse
+  rdfs:label "fìor phitse" ;
+  :sense "perfect pitch" ;
+  :part n:pitse ;
+  rdfs:comment "[Music]" .
+
+n:faid_na_cueebher
+  rdfs:label "faid na cuèbher" ;
+  :sense "length of the quaver" ;
+  :part n:cueebhear ;
+  rdfs:comment "[Music]" .
+
+n:deean_ath_innse_trii_tursan_air_a_phiios
+  rdfs:label "dèan ath-innse trì tursan air a' phìos" ;
+  :sense "do three recapitulations of the piece" ;
+  :part n:ath_innse_ ;
+  rdfs:comment "[Music]" .
+
+n:siin_an_nota_sin
+  rdfs:label "sìn an nota sin" ;
+  :sense "rest on that note" ;
+  :part v:siin ;
+  rdfs:comment "[Music]" .
+
+n:laigh_air_an_nota
+  rdfs:label "laigh air an nota" ;
+  :sense "rest on the note" ;
+  :part v:laigh_air ;
+  rdfs:comment "[Music]" .
+
+n:ruitheam_tiim_choitcheann
+  rdfs:label "ruitheam tìm choitcheann" ;
+  :sense "common time rhythm" ;
+  :part n:ruitheam ;
+  rdfs:comment "[Music]" .
+
+n:ruitheam_dhotagach
+  rdfs:label "ruitheam dhotagach" ;
+  :sense "dotted rhythm" ;
+  :part n:ruitheam ;
+  rdfs:comment "[Music]" .
+
+n:ruitheam_na_buille
+  rdfs:label "ruitheam na buille" ;
+  :sense "rhythm of the beat" ;
+  :part n:ruitheam ;
+  rdfs:comment "[Music]" .
+
+n:cruth_ritornello
+  rdfs:label "cruth ritornello" ;
+  :sense "ritornello form" ;
+  :part n:ritornello ;
+  rdfs:comment "[Music]" .
+
+n:ceool_rock
+  rdfs:label "ceòl rock" ;
+  :sense "rock music" ;
+  :part n:rock ;
+  rdfs:comment "[Music]" .
+
+n:toirm_dhrumaichean
+  rdfs:label "toirm dhrumaichean" ;
+  :sense "drum roll" ;
+  :part n:toirm ;
+  rdfs:comment "[Music]" .
+
+n:toirm_teud_dhruma
+  rdfs:label "toirm teud-dhruma" ;
+  :sense "snare-drum roll" ;
+  :part n:toirm ;
+  rdfs:comment "[Music]" .
+
+n:cumadh_sgeeile
+  rdfs:label "cumadh sgèile" ;
+  :sense "construction of scale" ;
+  :part n:sgeeile ;
+  rdfs:comment "[Music]" .
+
+n:a_cumadh_sgeeilean
+  rdfs:label "a' cumadh sgèilean" ;
+  :sense "constructing scales" ;
+  :part n:sgeeile ;
+  rdfs:comment "[Music]" .
+
+n:sgeeile_diiridh
+  rdfs:label "sgèile-dìridh" ;
+  :sense "ascending scale" ;
+  :part n:sgeeile ;
+  rdfs:comment "[Music]" .
+
+n:sgeeilean_diiridh
+  rdfs:label "sgèilean-dìridh" ;
+  :sense "ascending scales" ;
+  :part n:sgeeile ;
+  rdfs:comment "[Music]" .
+
+n:sgeeile_teaarnaidh
+  rdfs:label "sgèile-teàrnaidh" ;
+  :sense "descending scale" ;
+  :part n:sgeeile ;
+  rdfs:comment "[Music]" .
+
+n:sgeeilean_teaarnaidh
+  rdfs:label "sgèilean-teàrnaidh" ;
+  :sense "descending scales" ;
+  :part n:sgeeile ;
+  rdfs:comment "[Music]" .
+
+n:sgeeile_chromataig
+  rdfs:label "sgèile chromataig" ;
+  :sense "chromatic scale" ;
+  :part n:sgeeile ;
+  rdfs:comment "[Music]" .
+
+n:sgeeile_teaarnaidh_blues
+  rdfs:label "sgèile-teàrnaidh blues" ;
+  :sense "descending blues scale" ;
+  :part n:sgeeile ;
+  rdfs:comment "[Music]" .
+
+n:sgeeilean_cooig_nota
+  rdfs:label "sgèilean còig-nota" ;
+  :sense "pentatonic scales" ;
+  :part n:sgeeile ;
+  rdfs:comment "[Music]" .
+
+n:semitoon_diatonaig
+  rdfs:label "semitòn diatonaig" ;
+  :sense "diatonic semitone" ;
+  :part n:semitoon ;
+  rdfs:comment "[Music]" .
+
+n:fuaim_semitoon_diatonaig
+  rdfs:label "fuaim semitòn diatonaig" ;
+  :sense "sound of diatonic semitone" ;
+  :part n:semitoon ;
+  rdfs:comment "[Music]" .
+
+n:semitoon_cromataig
+  rdfs:label "semitòn cromataig" ;
+  :sense "chromatic semitone" ;
+  :part n:semitoon ;
+  rdfs:comment "[Music]" .
+
+n:ruithean_diiridh
+  rdfs:label "ruithean-dìridh" ;
+  :sense "ascending sequences" ;
+  :part n:ruith ;
+  rdfs:comment "[Music]" .
+
+n:ruith_chromataig
+  rdfs:label "ruith chromataig" ;
+  :sense "chromatic sequence" ;
+  :part n:ruith ;
+  rdfs:comment "[Music]" .
+
+n:ruithean_cromataig
+  rdfs:label "ruithean cromataig" ;
+  :sense "chromatic sequences" ;
+  :part n:ruith ;
+  rdfs:comment "[Music]" .
+
+n:ruithean_teaarnaidh
+  rdfs:label "ruithean-teàrnaidh" ;
+  :sense "descending sequences" ;
+  :part n:ruith ;
+  rdfs:comment "[Music]" .
+
+n:F_biorach
+  rdfs:label "F biorach" ;
+  :sense "F sharp" ;
+  :part a:biorach ;
+  rdfs:comment "[Music]" .
+
+n:ooran_paairteach
+  rdfs:label "òran pàirteach" ;
+  :sense "part song" ;
+  :part n:ooran ;
+  rdfs:comment "[Music]" .
+
+n:mith_ooran
+  rdfs:label "mith-òran" ;
+  :sense "folk song" ;
+  :part n:ooran ;
+  rdfs:comment "[Music]" .
+
+n:ooran_Folk
+  rdfs:label "òran Folk" ;
+  :sense "Folk song" ;
+  :part n:ooran ;
+  rdfs:comment "[Music]" .
+
+n:ooran_aon_neach
+  rdfs:label "òran aon-neach" ;
+  :sense "solo song" ;
+  :part n:ooran ;
+  rdfs:comment "[Music]" .
+
+n:cuairt_ooran
+  rdfs:label "cuairt òran" ;
+  :sense "song cycle" ;
+  :part n:ooran ;
+  rdfs:comment "[Music]" .
+
+n:canadh_eaglaise
+  rdfs:label "canadh-eaglaise" ;
+  :sense "plainsong" ;
+  :part n:ooran ;
+  rdfs:comment "[Music]" .
+
+n:gabh_ooran
+  rdfs:label "gabh òran" ;
+  :sense "sing a song" ;
+  :part n:ooran ;
+  rdfs:comment "[Music]" .
+
+n:ooran_caaraid
+  rdfs:label "òran-càraid" ;
+  :sense "duet" ;
+  :part n:ooran ;
+  rdfs:comment "[Music]" .
+
+n:ooran_luaidh
+  rdfs:label "òran luaidh" ;
+  :sense "waulking song" ;
+  :part n:ooran ;
+  rdfs:comment "[Music]" .
+
+n:ionnsramaidean_teudach
+  rdfs:label "ionnsramaidean teudach" ;
+  :sense "stringed instruments" ;
+  :part a:teudach ;
+  rdfs:comment "[Music]" .
+
+n:stoidhle_bel_canto
+  rdfs:label "stoidhle bel canto" ;
+  :sense "bel canto style" ;
+  :part n:stoidhle ;
+  rdfs:comment "[Music]" .
+
+n:stoidhle_ionnsramaideach
+  rdfs:label "stoidhle ionnsramaideach" ;
+  :sense "instrumental style" ;
+  :part n:stoidhle ;
+  rdfs:comment "[Music]" .
+
+n:siomfonaidh_pastarail
+  rdfs:label "siomfonaidh pastarail" ;
+  :sense "pastoral symphony" ;
+  :part n:siomfonaidh ;
+  rdfs:comment "[Music]" .
+
+n:orcastra_shiomfonaidh
+  rdfs:label "orcastra shiomfonaidh" ;
+  :sense "symphony orchestra" ;
+  :part n:siomfonaidh ;
+  rdfs:comment "[Music]" .
+
+n:atharrachadh_tempo
+  rdfs:label "atharrachadh tempo" ;
+  :sense "change of tempo" ;
+  :part n:tempo ;
+  rdfs:comment "[Music]" .
+
+n:comharra_tiime
+  rdfs:label "comharra-tìme" ;
+  :sense "time signature" ;
+  :part n:tiim ;
+  rdfs:comment "[Music]" .
+
+n:tiim_choitcheann
+  rdfs:label "tìm choitcheann" ;
+  :sense "common time" ;
+  :part n:tiim ;
+  rdfs:comment "[Music]" .
+
+n:ruitheam_tiim_choitcheann
+  rdfs:label "ruitheam tìm choitcheann" ;
+  :sense "common time rhythm" ;
+  :part n:tiim ;
+  rdfs:comment "[Music]" .
+
+n:buille_trii_fhillte
+  rdfs:label "buille trì-fhillte" ;
+  :sense "compound time" ;
+  :part n:buille ;
+  rdfs:comment "[Music]" .
+
+n:buille_shiimplidh
+  rdfs:label "buille shìmplidh" ;
+  :sense "simple time" ;
+  :part n:buille ;
+  rdfs:comment "[Music]" .
+
+n:beus_thromboon
+  rdfs:label "beus-thrombòn" ;
+  :sense "bass trombone" ;
+  :part n:tromboon ;
+  rdfs:comment "[Music]" .
+
+n:teanor_thromboon
+  rdfs:label "teanor-thrombòn" ;
+  :sense "tenor trombone" ;
+  :part n:tromboon ;
+  rdfs:comment "[Music]" .
+
+n:far_ghleus
+  rdfs:label "far ghleus" ;
+  :sense "out of tune" ;
+  :part n:gleus ;
+  rdfs:comment "[Music]" .
+
+n:air_ghleus
+  rdfs:label "air ghleus" ;
+  :sense "in tune" ;
+  :part n:gleus ;
+  rdfs:comment "[Music]" .
+
+n:fonn_na_laoidhe
+  rdfs:label "fonn na laoidhe" ;
+  :sense "the hymn tune" ;
+  :part n:fonn ;
+  rdfs:comment "[Music]" .
+
+n:fuinn_chuairteach
+  rdfs:label "fuinn chuairteach" ;
+  :sense "cyclic tunes" ;
+  :part n:fonn ;
+  rdfs:comment "[Music]" .
+
+n:fonn_air_meur_chlaar
+  rdfs:label "fonn air meur-chlàr" ;
+  :sense "tune on a keyboard" ;
+  :part n:fonn ;
+  rdfs:comment "[Music]" .
+
+n:seinn_aon_ghuthach
+  rdfs:label "seinn aon-ghuthach" ;
+  :sense "unison singing" ;
+  :part a:aon_ghuthach ;
+  rdfs:comment "[Music]" .
+
+n:ceool_guthach
+  rdfs:label "ceòl guthach" ;
+  :sense "vocal music" ;
+  :part a:guthach ;
+  rdfs:comment "[Music]" .
+
+n:guth_chleasachd
+  rdfs:label "guth-chleasachd" ;
+  :sense "vocal acrobatics" ;
+  :part a:guthach ;
+  rdfs:comment "[Music]" .
+
+n:ceool_do_ghuthan_singilte
+  rdfs:label "ceòl do ghuthan singilte" ;
+  :sense "music for single voices" ;
+  :part n:guth ;
+  rdfs:comment "[Music]" .
+
+n:an_guth
+  rdfs:label "an guth" ;
+  :sense "the voice" ;
+  :part n:guth ;
+  rdfs:comment "[Music]" .
+
+n:air_a_chur_gu_dol_le_guth
+  rdfs:label "air a chur gu dol le guth" ;
+  :sense "voice activated" ;
+  :part n:guth ;
+  rdfs:comment "[Music]" .
+
+n:cur_gu_dol_le_guth
+  rdfs:label "cur gu dol le guth" ;
+  :sense "voice activation" ;
+  :part n:guth ;
+  rdfs:comment "[Music]" .
+
+n:fiideag
+  rdfs:label "fìdeag" ;
+  :sense "penny whistle" ;
+  :part n:fiideag ;
+  rdfs:comment "[Music]" .
+
+n:fiideag_adhairce
+  rdfs:label "fìdeag adhairce" ;
+  :sense "horn whistle" ;
+  :part n:fiideag ;
+  rdfs:comment "[Music]" .
+
+n:feadag_adhairce
+  rdfs:label "feadag adhairce" ;
+  :sense "horn whistle" ;
+  :part n:feadag ;
+  rdfs:comment "[Music]" .
+
+n:fiideag
+  rdfs:label "fìdeag" ;
+  :sense "penny whistle" ;
+  :part n:feadag ;
+  rdfs:comment "[Music]" .
+
+
+
+}
