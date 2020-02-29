@@ -34,52 +34,62 @@ c:_81-4
 c:_81-1-1
   dc:title "Mac-Talla 1.1" ;
   dc:date "1892-05-28" ;
-  dc:isPartOf c:_81-1 .
+  dc:isPartOf c:_81-1 ;
+  dc:source "http://www.smo.uhi.ac.uk/mactalla/vol1/1/no1.pdf" .
 
 c:_81-1-2
   dc:title "Mac-Talla 1.2" ;
   dc:date "1892-06-04" ;
-  dc:isPartOf c:_81-1 .
+  dc:isPartOf c:_81-1 ;
+  dc:source "http://www.smo.uhi.ac.uk/mactalla/vol1/2/no2.pdf" .
 
 c:_81-1-3
   dc:title "Mac-Talla 1.3" ;
   dc:date "1892-06-11" ;
-  dc:isPartOf c:_81-1 .
+  dc:isPartOf c:_81-1 ;
+  dc:source "http://www.smo.uhi.ac.uk/mactalla/vol1/3/no3.pdf" .
 
 c:_81-1-4
   dc:title "Mac-Talla 1.4" ;
   dc:date "1892-06-18" ;
-  dc:isPartOf c:_81-1 .
+  dc:isPartOf c:_81-1 ;
+  dc:source "http://www.smo.uhi.ac.uk/mactalla/vol1/4/no4.pdf" .
 
 c:_81-1-5
   dc:title "Mac-Talla 1.5" ;
   dc:date "1892-06-25" ;
-  dc:isPartOf c:_81-1 .
+  dc:isPartOf c:_81-1 ;
+  dc:source "http://www.smo.uhi.ac.uk/mactalla/vol1/5/no5.pdf" .
 
 c:_81-1-6
   dc:title "Mac-Talla 1.6" ;
   dc:date "1892-07-02" ;
-  dc:isPartOf c:_81-1 .
+  dc:isPartOf c:_81-1 ;
+  dc:source "http://www.smo.uhi.ac.uk/mactalla/vol1/6/no6.pdf" .
 
 c:_81-1-7
   dc:title "Mac-Talla 1.7" ;
   dc:date "1892-07-09" ;
-  dc:isPartOf c:_81-1 .
+  dc:isPartOf c:_81-1 ;
+  dc:source "http://www.smo.uhi.ac.uk/mactalla/vol1/7/no7.pdf" .
 
 c:_81-1-8
   dc:title "Mac-Talla 1.8" ;
   dc:date "1892-07-16" ;
-  dc:isPartOf c:_81-1 .
+  dc:isPartOf c:_81-1 ;
+  dc:source "http://www.smo.uhi.ac.uk/mactalla/vol1/8/no8.pdf" .
 
 c:_81-1-9
   dc:title "Mac-Talla 1.9" ;
   dc:date "1892-07-23" ;
-  dc:isPartOf c:_81-1 .
+  dc:isPartOf c:_81-1 ;
+  dc:source "http://www.smo.uhi.ac.uk/mactalla/vol1/9/no9.pdf" .
 
 c:_81-1-10
   dc:title "Mac-Talla 1.10" ;
   dc:date "1892-07-30" ;
-  dc:isPartOf c:_81-1 .
+  dc:isPartOf c:_81-1 ;
+  dc:source "http://www.smo.uhi.ac.uk/mactalla/vol1/10/no10.pdf" .
 
 c:_81-1-11
   dc:title "Mac-Talla 1.11" ;
@@ -1077,3 +1087,42 @@ c:_81-4-51
   dc:isPartOf c:_81-4 .
 
 #Songs
+
+c:_81-1-1_Scots_Wha_Hae
+  dc:source "http://www.smo.uhi.ac.uk/mactalla/vol1/1/04.jpg" ;
+  dc:isPartOf c:_81-1-1 ;
+  dc:title "‘Scots Wha Hae’ ann an Gaelic" ;
+  hs:page "4" ;
+  dc:type "praise" , "political" ;
+  dc:subject "Scotland" , "William Wallace" ;
+  hs:note "Translated from English by A. MacLean Sinclair" ;
+  rdfs:comment "Fhuair sinn an dan so anns a Chasket. Cha’n eil fhios againn co thug gu Gaelic e, ach se ar barail gun d’thug e ionnsaidh mhath air. Thug an t-Urr. A. MacIllean Sinclair an dan so gu Gaelic ach cha d’fhuair sinn greim an fhathast. Bhitheamaid an comain neach sam bith a chuireadh g’ar n’ionnsaidh e." .
+
+  #hs:structure "Eight line verse" ;
+  #dc:creator p:Robert_Burns_1759_1796 ;
+  #dc:date "1793" .
+
+c:_81-1-2_Dol_Fodha_na_Greine
+  dc:source "http://www.smo.uhi.ac.uk/mactalla/vol1/2/01.jpg" ;
+  dc:isPartOf c:_81-1-2 ;
+  dc:title "Dol Fodha na Greine" ;
+  hs:page "1" ;
+  dc:type "praise" , "nature" ;
+  dc:subject "sun" .
+
+#  hs:structure "eight line verse" ;
+#  dc:creator p:N_MacLeod_ .
+#p:N_MacLeod_
+#  rdfs:label "N. MacLeod" ;
+#  hs:origin "Scotland" ;
+#  hs:gender "male" .
+
+c:_81-1-2_Seann_Sgeul_agus_Oran
+  dc:source "http://www.smo.uhi.ac.uk/mactalla/vol1/2/01.jpg" ;
+  dc:isPartOf c:_81-1-2 ;
+  dc:title "Seann Sgeul agus Oran" ;
+  hs:page "1" ;
+  dc:type "love" ;
+  dc:subject "hunter" ;
+  #hs:structure "three line verse" ;
+  rdfs:comment "See Transactions of the Gaelic Society of Inverness, Volume 20, p. 192" .
