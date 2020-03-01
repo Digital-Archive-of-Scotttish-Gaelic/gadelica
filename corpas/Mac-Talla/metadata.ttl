@@ -1149,7 +1149,7 @@ c:_81-1-8_Dhia_Gleidh_Bhanrigh
   rdfs:comment "Translated from English" ;
   rdfs:comment "Le Aoghnas Domhnullach [translator?]" ;
   hs:alternativeTitle "God Save the Queen" ;
-  dc:type "Political" , "Praise" ;
+  dc:type "political" , "praise" ;
   dc:subject "Queen Victoria" ;
   hs:structure "Eight line verse" ;
   dc:creator [ hs:origin "Scotland" ] .
@@ -1163,10 +1163,8 @@ c:_81-1-8_Brosnachadh_Catha_Bhruis
   rdfs:comment "Translated from English" ;
   rdfs:comment "Translated by S. A., Arisaig 1892?" ;
   hs:alternativeTitle "Scots Wha Hae" ;
-  dc:type "Praise" ;
-  dc:type "Political" ;
-  dc:subject "Scotland" ;
-  dc:subject "Bruce" ;
+  dc:type "praise" , "political" ;
+  dc:subject "Scotland" , "Bruce" ;
   hs:structure "Eight line verse" ;
   dc:creator [ hs:origin "Scotland" ] .
 
@@ -1192,7 +1190,7 @@ c:_81-1-9_Nighnn_Donn_a_Chuil_Reidh
   hs:page "4" ;
   rdfs:comment "Submitted by C." ;
   hs:alternativeTitle "Nighean Donn a Chùil Rèidh" ;
-  dc:type "Love" ;
+  dc:type "love" ;
   dc:subject "Mary MacDonald" ;
   hs:structure "Six line verse / Six line chorus" ;
   dc:creator p:Calum_MacIllIosa_1856_1929 ;
@@ -1215,7 +1213,7 @@ c:_81-1-10_Eilean_Leodhais
   hs:firstLineVerse "A chiall nach mise" ;
   hs:page "3" ;
   rdfs:comment "Included with letter from Tormoid, Montreal, 1892" ;
-  dc:type "Homeland" , "Praise" ;
+  dc:type "homeland" , "praise" ;
   dc:subject "Lewis" ;
   hs:structure "Four line verse" ;
   dc:creator p:Muchadh_MacLeooid_ .
@@ -1238,7 +1236,7 @@ c:_81-1-10_Bealach_na_Beiste
   hs:firstLineVerse "Dh’eirich sinn moch maduinn dhruchd" ;
   hs:page "4" ;
   rdfs:comment "Chaidh orain Mairi nighean Ian Bhain a chuir a mach an uiridh. Tha i fhathast slan| fallain| ged tha i coir ’us tri fichead bliadhna ’s a deich a dh’aois." ;
-  dc:type "Homeland" , "Political" , "Complaint" ;
+  dc:type "homeland" , "political" , "complaint" ;
   dc:subject "Bealach-na-beiste" , "Isle of Skye" ;
   hs:structure "Four line verse / Two line chorus" ;
   dc:creator p:_Maairi___Nic_A__Phearsain__ ;
@@ -1263,7 +1261,7 @@ c:_81-1-11_Marbh_rann_neo_Cumha_Sauil_agus_Ionatain
   hs:page "4" ;
   rdfs:comment "Submitted by D.B.B. [ Blair? ]" ;
   hs:alternativeTitle "2 SAM. I, 19—27" ;
-  dc:type "Religious" ;
+  dc:type "religious" ;
   dc:subject "King David " ;
   hs:structure "Four line verse" ;
   dc:creator [ hs:origin "Scotland" ; hs:gender "Male " ] .
@@ -1278,8 +1276,8 @@ c:_81-1-12_Duanag_Aotruim
   rdfs:comment "Gnereally considered the first Gaelic song composed in North America` " ;
   rdfs:comment "In his book| 'We're Indians Sure Enough: The Legancy of the Scottish Highlanders in the United States' (p. 175)| Dr. Michael Newton casts doubts on the common assumption that the poem was composed by Iain Mac Mhurchaidh (John MacRae) of Kintail| and instead suggests an anonymous female composer. His book also contains an alternative version of the song text. " ;
   hs:alternativeTitle "Dean Cadalan Samhach" ;
-  dc:type "Lullaby" , "Supernatural" ;
-  dc:subject "America" , "Immigration" ;
+  dc:type "lullaby" , "supernatural" ;
+  dc:subject "America" , "immigration" ;
   hs:structure "Four line verse" ;
   dc:creator p:_John___MacRae__18th_Century .
 
@@ -1302,7 +1300,265 @@ c:_81-1-13_Anna_Bhoidheach
   rdfs:comment "Translated from English" ;
   rdfs:comment "Submitted by A. MacLean Sinclair" ;
   hs:alternativeTitle "Annie Laurie" ;
-  dc:type "Love" ;
+  dc:type "love" ;
   dc:subject "Annie Laurie" ;
   hs:structure "Eight line verse" ;
   dc:creator [ hs:origin "Scotland" ; hs:gender "Unknown" ] .
+
+c:_81-1-14_Cuairt_do_Eilean_a_Cheoo
+  dc:source "http://www.smo.uhi.ac.uk/mactalla/vol1/14/04.jpg" ;
+  dc:isPartOf c:_81-1-14 ;
+  dc:title "Cuairt do Eilean a' Cheò" ;
+  hs:firstLineVerse "Aon turas eile tha mo chas" ;
+  hs:page "4" ;
+  dc:type "homeland" , "praise" ;
+  dc:subject "Skye" ;
+  hs:structure "Eight line verse" ;
+  dc:creator p:N._MacLeoid_ .
+
+p:N._MacLeoid_
+  rdfs:label "N. MacLeoid" ;
+  :dob "" ;
+  :dod "" ;
+  hs:origin "Scotland" ;
+  hs:gender "Male " ;
+  hs:nickname "" ;
+  hs:community "" ;
+  hs:county "" .
+
+c:_81-1-15_An_Cogadh_Ruiseanach
+  dc:source "http://www.smo.uhi.ac.uk/mactalla/vol1/15/01.jpg" ;
+  dc:isPartOf c:_81-1-15 ;
+  dc:title "An Cogadh Ruiseanach" ;
+  hs:firstLineVerse "’S an cuala sibhse mar a thachair" ;
+  hs:page "1" ;
+  dc:type "historical" ;
+  dc:subject "Russia" , "soldier" , "war" ;
+  hs:structure "Four line verse" ;
+  dc:creator p:Alasdair_Mac_Ille_Mhaoil_ .
+
+p:Alasdair_Mac_Ille_Mhaoil_
+  rdfs:label "Alasdair Mac 'Ille-Mhaoil" ;
+  :dob "" ;
+  :dod "" ;
+  hs:origin "Scotland" ;
+  hs:gender "Male " ;
+  hs:nickname "" ;
+  hs:community "" ;
+  hs:county "" .
+
+c:_81-1-17_Cnoic_is_Glinn_a_Bhraighe
+  dc:source "http://www.smo.uhi.ac.uk/mactalla/vol1/17/04.jpg" ;
+  dc:isPartOf c:_81-1-17 ;
+  dc:title "Cnoic is Glinn a Bhraighe" ;
+  hs:firstLineChorus "Na cnoic is glinn ’bu bhoidhche leinn" ;
+  hs:firstLineVerse "Cha ’n fheil ait an diugh fo’n ghrein" ;
+  hs:page "4" ;
+  rdfs:comment "Submitted by C." ;
+  hs:alternativeTitle "Am Braighe" ;
+  dc:type "homeland" , "praise" ;
+  dc:subject "Margaree" ;
+  hs:structure "Four line verse / Four line chorus" ;
+  dc:creator p:_Calum____MacIllIosa__1856___1929 .
+
+p:_Calum____MacIllIosa__1856___1929
+  rdfs:label "[ Calum ]  [ Mac'Ill'Iosa ]" ;
+  :dob "1856 - 1929" ;
+  :dod "1856 - 1929" ;
+  hs:origin "Nova Scotia" ;
+  hs:gender "Male " ;
+  hs:nickname "Calum Eòghain 'ic Aonghais 'ic Caluim 'ic Dhòmhnaill 'ic Dhonnchaidh." ;
+  hs:community "Southwest Margaree" ;
+  hs:county "Inverness" .
+
+c:_81-1-24_An_Gleann_s_An_Robh_Mi_Og
+  dc:source "http://www.smo.uhi.ac.uk/mactalla/vol1/24/04.jpg" ;
+  dc:isPartOf c:_81-1-24 ;
+  dc:title "An Gleann 's An Robh Mi Og" ;
+  hs:firstLineChorus "Anns a’ ghleann ’s an robh mi og" ;
+  hs:firstLineVerse "’N uair ’philleas ruinn an samhradh" ;
+  hs:page "4" ;
+  dc:type "homeland" , "praise" ;
+  hs:structure "Eight  line verse / Four line chorus" ;
+  dc:creator p:N._MacLeoid_ .
+
+p:N._MacLeoid_
+  rdfs:label "N. MacLeoid" ;
+  :dob "" ;
+  :dod "" ;
+  hs:origin "Scotland" ;
+  hs:gender "Male " ;
+  hs:nickname "" ;
+  hs:community "" ;
+  hs:county "" .
+
+c:_81-1-25_Do_Fheadhainn_a_Chaidh_gu_Banais_Fhrangach_Gun_Chuireadh
+  dc:source "http://www.smo.uhi.ac.uk/mactalla/vol1/25/03.jpg" ;
+  dc:isPartOf c:_81-1-25 ;
+  dc:title "Do Fheadhainn a Chaidh gu Banais Fhrangach Gun Chuireadh" ;
+  hs:firstLineChorus "Bithibh aotrom ’s togibh fonn" ;
+  hs:firstLineVerse "Dh’fhalbh sibh le maomadh [maoimeadh ] mor" ;
+  hs:page "3" ;
+  rdfs:comment "Submitted by R." ;
+  hs:alternativeTitle "Bithibh aotrom ’s togibh fonn" ;
+  dc:type "local events and characters" , "humorous" ;
+  dc:subject "wedding" , "French" , "invitation" ;
+  hs:structure "Four line verse / Four line chorus" ;
+  dc:creator [ hs:origin "Nova Scotia" ; hs:gender "Unknown" ] .
+
+c:_81-1-30_An_Tim_A_Bh_ann_O_Chian
+  dc:source "http://www.smo.uhi.ac.uk/mactalla/vol1/30/04.jpg" ;
+  dc:isPartOf c:_81-1-30 ;
+  dc:title "An Tim A Bh’ ann O Chian" ;
+  hs:firstLineChorus "N coir seann luchd-eolis dhol a beachd" ;
+  hs:firstLineVerse "Air sgath an tim a bh’ ann a rùin" ;
+  hs:page "4" ;
+  rdfs:comment "Translated from English" ;
+  rdfs:comment "Submitted by M. Macrath of Ottawa" ;
+  hs:alternativeTitle "Auld Lang Syne" ;
+  dc:type "love" ;
+  dc:subject "New Years Eve" , "friendship" ;
+  hs:structure "Four line verse / Four line chorus" ;
+  dc:creator p:_Robert____Burns__1759___1796 .
+
+p:_Robert____Burns__1759___1796
+  rdfs:label "[ Robert ]  [ Burns ]" ;
+  :dob "1759 - 1796" ;
+  :dod "1759 - 1796" ;
+  hs:origin "Scotland" ;
+  hs:gender "Male " ;
+  hs:nickname "" ;
+  hs:community "" ;
+  hs:county "" .
+
+c:_81-1-31_Clann_Domhnuill
+  dc:source "http://www.smo.uhi.ac.uk/mactalla/vol1/31/02.jpg" ;
+  dc:isPartOf c:_81-1-31 ;
+  dc:title "Clann Domhnuill" ;
+  hs:firstLineChorus "Ho i ri ri iu o" ;
+  hs:firstLineVerse "Gur a binn leam bhi leubhadh" ;
+  hs:page "2" ;
+  rdfs:comment "Rinneadh an t-òran so mar fhreagairt do “Òran molaidh Chlainn Leòid” a bha air a thoirt do luchd leubhidh a phàipear so air a mhìos s’a dh’fhalbh. Tha am bàrd dhe’n bharail nach robh Clann Leòid riabh cho cliù-thoillteanaach ri chinneadh fhèin." ;
+  dc:type "praise" , "political" ;
+  dc:subject "Mac-Talla" , "Clan Donald" ;
+  hs:structure "Four line verse / Four line chorus" ;
+  dc:creator p:__Alasdair___Doomhnallach__ ;
+  dc:date "1892" .
+
+p:__Alasdair___Doomhnallach__
+  rdfs:label " [ Alasdair ] [ Dòmhnallach ]" ;
+  :dob "" ;
+  :dod "" ;
+  hs:origin "Nova Scotia" ;
+  hs:gender "Male " ;
+  hs:nickname "Alasdir an Ridge | [ Alasdair mac Ailein 'ic Alasdair 'ic Aonghais ]" ;
+  hs:community "Lower South River" ;
+  hs:county "Antigonish" .
+
+c:_81_1_32_Do_m_Mhathair
+  dc:source "http://www.smo.uhi.ac.uk/mactalla/vol1/32/02.jpg" ;
+  dc:isPartOf c:_81-1-32 ;
+  dc:title "Do 'm Mhathair" ;
+  hs:air "Ho oh nighean, he o nighean" ;
+  hs:firstLineChorus "Ho gur toigh leam, he gur toigh leam" ;
+  hs:firstLineVerse "Thoir an t-soraidh so thar chuaintean" ;
+  hs:page "2" ;
+  rdfs:comment "Contributed by C.C. Strath-Alba Dec 24 1892" ;
+  rdfs:comment "See notes on song at http://www.canadiancelticarts.ca/Gaelic_News_2013_01_11.pdf  (Page 6) " ;
+  hs:alternativeTitle "Oran na Bliadhna Uire" ;
+  dc:type "love" ;
+  dc:subject "childhood" , "motherhood" ;
+  hs:structure "Four line verse / Four line chorus" ;
+  dc:creator p:_Rev._Malcolm___Campbell__ .
+
+p:_Rev._Malcolm___Campbell__
+  rdfs:label "[ Rev. Malcolm ] [ Campbell ]" ;
+  :dob "" ;
+  :dod "" ;
+  hs:origin "Nova Scotia" ;
+  hs:gender "Male " ;
+  hs:nickname "" ;
+  hs:community "North Shore" ;
+  hs:county "Victoria" .
+
+c:_81-1-33_A_Mhic_Talla_Runich
+  dc:source "http://www.smo.uhi.ac.uk/mactalla/vol1/33/02.jpg" ;
+  dc:isPartOf c:_81-1-33 ;
+  dc:title "A Mhic-Talla Runich" ;
+  hs:firstLineVerse "Bliadhn’ eile theich air meadhon oi’ch" ;
+  hs:page "2" ;
+  rdfs:comment "Submitted by An Gille Beag" ;
+  dc:type "praise" ;
+  dc:subject "Mac-Talla" ;
+  hs:structure "Ten line verse" ;
+  dc:creator [ hs:origin "Nova Scotia" ; hs:gender "Unknown" ] ;
+  dc:date "c. 1892" .
+
+c:_81-1-36_Cait_An_Caidil_An_Nionag
+  dc:source "http://www.smo.uhi.ac.uk/mactalla/vol1/36/04.jpg" ;
+  dc:isPartOf c:_81-1-36 ;
+  dc:title "Cait' An Caidil An Nionag" ;
+  hs:firstLineChorus "Cait an caidil an ninoag an nochd" ;
+  hs:firstLineVerse "Is truagh a righ nach robh mi thall" ;
+  hs:page "4" ;
+  rdfs:comment "Submitted by Lag A Mhuilinn" ;
+  dc:type "love" ;
+  dc:subject "Catriona nighean Alasdair Pheutain" ;
+  dc:subject "emigration" ;
+  hs:structure "Four line verse / Four line chorus" ;
+  dc:creator p:Iain__Domhnullach_ ;
+  dc:date "c. 1831" .
+
+p:Iain__Domhnullach_
+  rdfs:label "Iain  Domhnullach" ;
+  :dob "" ;
+  :dod "" ;
+  hs:origin "Scotland" ;
+  hs:gender "Male " ;
+  hs:nickname "Iain Mac Dhomhnuill Oig Mhic Fhionnlaidh" ;
+  hs:community "Cille-Moire" ;
+  hs:county "Isle of Skye" .
+
+c:_81-1-38_Cadal_Cha_Dean_Mi
+  dc:source "http://www.smo.uhi.ac.uk/mactalla/vol1/38/04.jpg" ;
+  dc:isPartOf c:_81-1-38 ;
+  dc:title "Cadal Cha Dean Mi" ;
+  hs:firstLineChorus "Cadal Cha Dean Mi" ;
+  hs:firstLineVerse "’S mis’ a thug an gaol" ;
+  hs:page "4" ;
+  rdfs:comment "Submitted by Lag- A- Mhuilinn" ;
+  dc:type "love" ;
+  hs:structure "Six line verse" ;
+  dc:creator [ hs:origin "Scotland" ; hs:gender "Unknown" ] .
+
+c:_81-1-40_Nighean_A_Mhorair
+  dc:source "http://www.smo.uhi.ac.uk/mactalla/vol1/40/02.jpg" ;
+  dc:isPartOf c:_81-1-40 ;
+  dc:title "Nighean A Mhorair" ;
+  hs:firstLineVerse "An so chan ait do shùgradh fhaoin" ;
+  hs:page "2" ;
+  rdfs:comment "Submitted by Eobhan MacLaomuinn" ;
+  dc:type "religious" , "instructive" ;
+  hs:structure "Eight line verse" ;
+  dc:creator [ hs:origin "Scotland" ; hs:gender "Unknown" ] .
+
+c:_81-1-40_Clarsach_an_Doire
+  dc:source "http://www.smo.uhi.ac.uk/mactalla/vol1/40/04.jpg" ;
+  dc:isPartOf c:_81-1-40 ;
+  dc:title "Clarsach an Doire" ;
+  hs:firstLineVerse "Bha de sholas dhe gach seors’ ann" ;
+  hs:page "4" ;
+  dc:type "homeland" , "praise" , "nature" ;
+  dc:subject "Clarsach an Doire" ;
+  hs:structure "Eight line verse" ;
+  dc:creator p:Neill_IcLeoid__MacLeooid__ .
+
+p:Neill_IcLeoid__MacLeooid__
+  rdfs:label "Neill IcLeoid [ MacLeòid ]" ;
+  :dob "" ;
+  :dod "" ;
+  hs:origin "Scotland" ;
+  hs:gender "Male " ;
+  hs:nickname "Am Bard Sgiathanach" ;
+  hs:community "" ;
+  hs:county "Isle of Skye" .
