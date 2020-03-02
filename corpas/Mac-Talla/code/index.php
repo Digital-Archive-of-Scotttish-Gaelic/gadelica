@@ -8,25 +8,35 @@
   </head>
   <body>
     <div class="container-fluid">
-      <h1>Mac-Talla Songs</h1>
-      <div class="list-group list-group-flush">
+      <h1>
+<?php
+$order = $_GET['order'];
+if ($order == '') { $order = 'date'; }
+echo 'Mac-Talla songs – ';
+if ($order=='title') { echo 'alphabetical'; }
+else { echo 'chronological'; }
+?>
+      </h1>
+<!-- switch to other order -->
+      <table class="table table-hover">
+        <tbody>
 <?php
 $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
 PREFIX dc: <http://purl.org/dc/terms/>
-SELECT DISTINCT ?title ?song ?issueTitle ?issueDate
+SELECT DISTINCT ?title ?song ?issue ?date
 WHERE
 {
-  ?song dc:isPartOf ?issue .
-  ?issue dc:isPartOf ?volume .
+  ?song dc:isPartOf ?issueID .
+  ?issueID dc:isPartOf ?volume .
   ?volume dc:isPartOf <https://dasg.ac.uk/corpus/_81> .
-  ?issue dc:title ?issueTitle .
-  ?issue dc:date ?issueDate .
+  ?issueID dc:title ?issue .
+  ?issueID dc:date ?date .
   ?song dc:title ?title .
 }
-ORDER BY ?title
 SPQR;
+$query .= 'ORDER BY ?' . $order;
 $url = 'https://daerg.arts.gla.ac.uk/fuseki/MacTalla?output=json&query=' . urlencode($query);
 if (getcwd()=='/Users/mark/Sites/gadelica/corpas/Mac-Talla/code') {
   $url = 'http://localhost:3030/MacTalla?output=json&query=' . urlencode($query);
@@ -34,18 +44,20 @@ if (getcwd()=='/Users/mark/Sites/gadelica/corpas/Mac-Talla/code') {
 $json = file_get_contents($url);
 $songs = json_decode($json,false)->results->bindings;
 foreach ($songs as $nextSong) {
-  echo '<a class="list-group-item list-group-item-action" href="showSong.php?id=';
+  echo '<tr><td>';
+  echo '<a href="showSong.php?id=';
   echo $nextSong->song->value;
   echo '">';
   echo $nextSong->title->value;
-  echo ' (';
-  echo $nextSong->issueTitle->value;
-  echo ': ';
-  echo $nextSong->issueDate->value;
-  echo ')</a>';
+  echo '</a></td><td>';
+  echo $nextSong->issue->value;
+  echo '</td><td>';
+  echo $nextSong->date->value;
+  echo '</td></tr>';
 }
 ?>
-      </div>
+        </tbody>
+      </table>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
