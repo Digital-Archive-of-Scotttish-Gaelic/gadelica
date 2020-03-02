@@ -55,7 +55,7 @@ foreach ($facts as $nextFact) {
 }
 $keywords = array_unique($keywords);
 foreach ($keywords as $nextKw) {
-  echo '<button type="button" class="btn btn-primary">' . $nextKw . '</button> ';
+  echo '<a class="badge badge-primary" href="browseType.php?id=' . $nextKw . '">' . $nextKw . '</a> ';
 }
 echo '</td></tr>';
 echo '<tr><td>subject:</td><td>';
@@ -79,7 +79,7 @@ foreach ($facts as $nextFact) {
 }
 $formats = array_unique($formats);
 foreach ($formats as $nextFm) {
-  echo '<button type="button" class="btn btn-success">' . $nextFm . '</button> ';
+  echo '<a class="badge badge-success" href="browseFormat.php?id=' . $nextFm . '">' . $nextFm . '</a> ';
 }
 echo '</td></tr>';
 
