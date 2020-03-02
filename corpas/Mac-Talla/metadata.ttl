@@ -1096,9 +1096,8 @@ c:_81-1-1_Scots_Wha_Hae
   dc:type "praise" , "political" ;
   dc:subject "Scotland" , "William Wallace" ;
   hs:note "Translated from English by A. MacLean Sinclair" ;
-  rdfs:comment "Fhuair sinn an dan so anns a Chasket. Cha’n eil fhios againn co thug gu Gaelic e, ach se ar barail gun d’thug e ionnsaidh mhath air. Thug an t-Urr. A. MacIllean Sinclair an dan so gu Gaelic ach cha d’fhuair sinn greim an fhathast. Bhitheamaid an comain neach sam bith a chuireadh g’ar n’ionnsaidh e." .
-
-  #hs:structure "Eight line verse" ;
+  rdfs:comment "Fhuair sinn an dan so anns a Chasket. Cha’n eil fhios againn co thug gu Gaelic e, ach se ar barail gun d’thug e ionnsaidh mhath air. Thug an t-Urr. A. MacIllean Sinclair an dan so gu Gaelic ach cha d’fhuair sinn greim an fhathast. Bhitheamaid an comain neach sam bith a chuireadh g’ar n’ionnsaidh e." ;
+  dc:format "eight line verse" .
   #dc:creator p:Robert_Burns_1759_1796 ;
   #dc:date "1793" .
 
@@ -1108,9 +1107,8 @@ c:_81-1-2_Dol_Fodha_na_Greine
   dc:title "Dol Fodha na Greine" ;
   hs:page "1" ;
   dc:type "praise" , "nature" ;
-  dc:subject "sun" .
-
-#  hs:structure "eight line verse" ;
+  dc:subject "sun" ;
+  dc:format "eight line verse" .
 #  dc:creator p:N_MacLeod_ .
 #p:N_MacLeod_
 #  rdfs:label "N. MacLeod" ;
@@ -1124,7 +1122,7 @@ c:_81-1-2_Seann_Sgeul_agus_Oran
   hs:page "1" ;
   dc:type "love" ;
   dc:subject "hunter" ;
-  #hs:structure "three line verse" ;
+  dc:format "three line verse" ;
   rdfs:comment "See Transactions of the Gaelic Society of Inverness, Volume 20, p. 192" .
 
 c:_81-1-3_A_Cathair_Ghaidhlig
@@ -1133,7 +1131,7 @@ c:_81-1-3_A_Cathair_Ghaidhlig
   dc:title "A’ Cathair Ghaidhlig" ;
   dc:type "local events and characters" , "praise" ;
   dc:subject "Gaelic Chair Edinburgh" ;
-  hs:structure "eight line verse" ;
+  dc:format "eight line verse" ;
   dc:creator p:N_MacLeod_ ;
   hs:air "Faigh a naus [a nuas] dhuinn am botal" ;
   hs:firstLineVerse "Gur binn leam an sgeul ud" ;
@@ -1151,7 +1149,7 @@ c:_81-1-8_Dhia_Gleidh_Bhanrigh
   hs:alternativeTitle "God Save the Queen" ;
   dc:type "political" , "praise" ;
   dc:subject "Queen Victoria" ;
-  hs:structure "Eight line verse" ;
+  dc:format "eight line verse" ;
   dc:creator [ hs:origin "Scotland" ] .
 
 c:_81-1-8_Brosnachadh_Catha_Bhruis
@@ -1165,7 +1163,7 @@ c:_81-1-8_Brosnachadh_Catha_Bhruis
   hs:alternativeTitle "Scots Wha Hae" ;
   dc:type "praise" , "political" ;
   dc:subject "Scotland" , "Bruce" ;
-  hs:structure "Eight line verse" ;
+  dc:format "eight line verse" ;
   dc:creator [ hs:origin "Scotland" ] .
 
 c:_81-1-9_Dhfhalbh_Mi_Fhein_us_Ceathar_Ghillean
@@ -1177,7 +1175,7 @@ c:_81-1-9_Dhfhalbh_Mi_Fhein_us_Ceathar_Ghillean
   hs:page "3" ;
   rdfs:comment "Included in story from Fionn" ;
   dc:type "Port à Beul" ;
-  hs:structure "Four line verse / Four line chorus" ;
+  dc:format "four line verse" , "four line chorus" ;
   dc:creator [ hs:origin "Scotland" ] .
 
 c:_81-1-9_Nighnn_Donn_a_Chuil_Reidh
@@ -1192,7 +1190,7 @@ c:_81-1-9_Nighnn_Donn_a_Chuil_Reidh
   hs:alternativeTitle "Nighean Donn a Chùil Rèidh" ;
   dc:type "love" ;
   dc:subject "Mary MacDonald" ;
-  hs:structure "Six line verse / Six line chorus" ;
+  dc:format "six line verse" , "six line chorus" ;
   dc:creator p:Calum_MacIllIosa_1856_1929 ;
   dc:date "1887" .
 
@@ -1215,7 +1213,7 @@ c:_81-1-10_Eilean_Leodhais
   rdfs:comment "Included with letter from Tormoid, Montreal, 1892" ;
   dc:type "homeland" , "praise" ;
   dc:subject "Lewis" ;
-  hs:structure "Four line verse" ;
+  dc:format "four line verse" ;
   dc:creator p:Muchadh_MacLeooid_ .
 
 p:_Muchadh_MacLeooid_
@@ -1238,7 +1236,7 @@ c:_81-1-10_Bealach_na_Beiste
   rdfs:comment "Chaidh orain Mairi nighean Ian Bhain a chuir a mach an uiridh. Tha i fhathast slan| fallain| ged tha i coir ’us tri fichead bliadhna ’s a deich a dh’aois." ;
   dc:type "homeland" , "political" , "complaint" ;
   dc:subject "Bealach-na-beiste" , "Isle of Skye" ;
-  hs:structure "Four line verse / Two line chorus" ;
+  dc:format "four line verse" , "two line chorus" ;
   dc:creator p:_Maairi___Nic_A__Phearsain__ ;
   dc:date "c. 1891" .
 
@@ -1263,13 +1261,14 @@ c:_81-1-11_Marbh_rann_neo_Cumha_Sauil_agus_Ionatain
   hs:alternativeTitle "2 SAM. I, 19—27" ;
   dc:type "religious" ;
   dc:subject "King David " ;
-  hs:structure "Four line verse" ;
+  dc:format "four line verse" ;
   dc:creator [ hs:origin "Scotland" ; hs:gender "Male " ] .
 
 c:_81-1-12_Duanag_Aotruim
   dc:source "http://www.smo.uhi.ac.uk/mactalla/vol1/12/04.jpg" ;
   dc:isPartOf c:_81-1-12 ;
-  dc:title "Duanag Aotruim [ Duanag Altrum ]" ;
+  dc:title "Duanag Aotruim" ;
+  hs:corrTitle "Duanag Altrum";
   hs:air "Flow gently Sweet Afton" ;
   hs:firstLineVerse "Dean cadalan samhach a chuilain mo ruin" ;
   hs:page "4" ;
@@ -1278,7 +1277,7 @@ c:_81-1-12_Duanag_Aotruim
   hs:alternativeTitle "Dean Cadalan Samhach" ;
   dc:type "lullaby" , "supernatural" ;
   dc:subject "America" , "immigration" ;
-  hs:structure "Four line verse" ;
+  dc:format "four line verse" ;
   dc:creator p:_John___MacRae__18th_Century .
 
 p:_John___MacRae__18th_Century
@@ -1302,7 +1301,7 @@ c:_81-1-13_Anna_Bhoidheach
   hs:alternativeTitle "Annie Laurie" ;
   dc:type "love" ;
   dc:subject "Annie Laurie" ;
-  hs:structure "Eight line verse" ;
+  dc:format "eight line verse" ;
   dc:creator [ hs:origin "Scotland" ; hs:gender "Unknown" ] .
 
 c:_81-1-14_Cuairt_do_Eilean_a_Cheoo
@@ -1313,7 +1312,7 @@ c:_81-1-14_Cuairt_do_Eilean_a_Cheoo
   hs:page "4" ;
   dc:type "homeland" , "praise" ;
   dc:subject "Skye" ;
-  hs:structure "Eight line verse" ;
+  dc:format "eight line verse" ;
   dc:creator p:N._MacLeoid_ .
 
 p:N._MacLeoid_
@@ -1334,7 +1333,7 @@ c:_81-1-15_An_Cogadh_Ruiseanach
   hs:page "1" ;
   dc:type "historical" ;
   dc:subject "Russia" , "soldier" , "war" ;
-  hs:structure "Four line verse" ;
+  dc:format "four line verse" ;
   dc:creator p:Alasdair_Mac_Ille_Mhaoil_ .
 
 p:Alasdair_Mac_Ille_Mhaoil_
@@ -1358,7 +1357,7 @@ c:_81-1-17_Cnoic_is_Glinn_a_Bhraighe
   hs:alternativeTitle "Am Braighe" ;
   dc:type "homeland" , "praise" ;
   dc:subject "Margaree" ;
-  hs:structure "Four line verse / Four line chorus" ;
+  dc:format "four line verse" , "four line chorus" ;
   dc:creator p:_Calum____MacIllIosa__1856___1929 .
 
 p:_Calum____MacIllIosa__1856___1929
@@ -1379,7 +1378,7 @@ c:_81-1-24_An_Gleann_s_An_Robh_Mi_Og
   hs:firstLineVerse "’N uair ’philleas ruinn an samhradh" ;
   hs:page "4" ;
   dc:type "homeland" , "praise" ;
-  hs:structure "Eight  line verse / Four line chorus" ;
+  dc:format "eight line verse" , "four line chorus" ;
   dc:creator p:N._MacLeoid_ .
 
 p:N._MacLeoid_
@@ -1403,7 +1402,7 @@ c:_81-1-25_Do_Fheadhainn_a_Chaidh_gu_Banais_Fhrangach_Gun_Chuireadh
   hs:alternativeTitle "Bithibh aotrom ’s togibh fonn" ;
   dc:type "local events and characters" , "humorous" ;
   dc:subject "wedding" , "French" , "invitation" ;
-  hs:structure "Four line verse / Four line chorus" ;
+  dc:format "four line verse" , "four line chorus" ;
   dc:creator [ hs:origin "Nova Scotia" ; hs:gender "Unknown" ] .
 
 c:_81-1-30_An_Tim_A_Bh_ann_O_Chian
@@ -1418,7 +1417,7 @@ c:_81-1-30_An_Tim_A_Bh_ann_O_Chian
   hs:alternativeTitle "Auld Lang Syne" ;
   dc:type "love" ;
   dc:subject "New Years Eve" , "friendship" ;
-  hs:structure "Four line verse / Four line chorus" ;
+  dc:format "four line verse" , "four line chorus" ;
   dc:creator p:_Robert____Burns__1759___1796 .
 
 p:_Robert____Burns__1759___1796
@@ -1441,7 +1440,7 @@ c:_81-1-31_Clann_Domhnuill
   rdfs:comment "Rinneadh an t-òran so mar fhreagairt do “Òran molaidh Chlainn Leòid” a bha air a thoirt do luchd leubhidh a phàipear so air a mhìos s’a dh’fhalbh. Tha am bàrd dhe’n bharail nach robh Clann Leòid riabh cho cliù-thoillteanaach ri chinneadh fhèin." ;
   dc:type "praise" , "political" ;
   dc:subject "Mac-Talla" , "Clan Donald" ;
-  hs:structure "Four line verse / Four line chorus" ;
+  dc:format "four line verse" , "four line chorus" ;
   dc:creator p:__Alasdair___Doomhnallach__ ;
   dc:date "1892" .
 
@@ -1468,7 +1467,7 @@ c:_81_1_32_Do_m_Mhathair
   hs:alternativeTitle "Oran na Bliadhna Uire" ;
   dc:type "love" ;
   dc:subject "childhood" , "motherhood" ;
-  hs:structure "Four line verse / Four line chorus" ;
+  dc:format "four line verse" , "four line chorus" ;
   dc:creator p:_Rev._Malcolm___Campbell__ .
 
 p:_Rev._Malcolm___Campbell__
@@ -1490,7 +1489,7 @@ c:_81-1-33_A_Mhic_Talla_Runich
   rdfs:comment "Submitted by An Gille Beag" ;
   dc:type "praise" ;
   dc:subject "Mac-Talla" ;
-  hs:structure "Ten line verse" ;
+  dc:format "ten line verse" ;
   dc:creator [ hs:origin "Nova Scotia" ; hs:gender "Unknown" ] ;
   dc:date "c. 1892" .
 
@@ -1505,7 +1504,7 @@ c:_81-1-36_Cait_An_Caidil_An_Nionag
   dc:type "love" ;
   dc:subject "Catriona nighean Alasdair Pheutain" ;
   dc:subject "emigration" ;
-  hs:structure "Four line verse / Four line chorus" ;
+  dc:format "four line verse" , "four line chorus" ;
   dc:creator p:Iain__Domhnullach_ ;
   dc:date "c. 1831" .
 
@@ -1528,7 +1527,7 @@ c:_81-1-38_Cadal_Cha_Dean_Mi
   hs:page "4" ;
   rdfs:comment "Submitted by Lag- A- Mhuilinn" ;
   dc:type "love" ;
-  hs:structure "Six line verse" ;
+  dc:format "six line verse" ;
   dc:creator [ hs:origin "Scotland" ; hs:gender "Unknown" ] .
 
 c:_81-1-40_Nighean_A_Mhorair
@@ -1539,7 +1538,7 @@ c:_81-1-40_Nighean_A_Mhorair
   hs:page "2" ;
   rdfs:comment "Submitted by Eobhan MacLaomuinn" ;
   dc:type "religious" , "instructive" ;
-  hs:structure "Eight line verse" ;
+  dc:format "eight line verse" ;
   dc:creator [ hs:origin "Scotland" ; hs:gender "Unknown" ] .
 
 c:_81-1-40_Clarsach_an_Doire
@@ -1550,7 +1549,7 @@ c:_81-1-40_Clarsach_an_Doire
   hs:page "4" ;
   dc:type "homeland" , "praise" , "nature" ;
   dc:subject "Clarsach an Doire" ;
-  hs:structure "Eight line verse" ;
+  dc:format "eight line verse" ;
   dc:creator p:Neill_IcLeoid__MacLeooid__ .
 
 p:Neill_IcLeoid__MacLeooid__

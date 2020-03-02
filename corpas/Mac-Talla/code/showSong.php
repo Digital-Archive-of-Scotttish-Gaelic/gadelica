@@ -10,11 +10,15 @@ $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
 PREFIX dc: <http://purl.org/dc/terms/>
-SELECT DISTINCT ?title ?issueTitle ?issueDate ?issue
+SELECT DISTINCT ?title ?issueTitle ?issueDate ?issue ?keyword ?jpg ?subject ?format
 WHERE
 {
   <{$song}> dc:title ?title .
   <{$song}> dc:isPartOf ?issue .
+  <{$song}> dc:type ?keyword .
+  <{$song}> dc:source ?jpg .
+  OPTIONAL { <{$song}> dc:subject ?subject . }
+  OPTIONAL { <{$song}> dc:format ?format . }
   ?issue dc:date ?issueDate .
   ?issue dc:title ?issueTitle .
 }
@@ -33,15 +37,54 @@ echo '</title>';
   <body>
     <div class="container-fluid">
       <h1><?php echo $facts[0]->title->value; ?></h1>
-      <h3><?php echo $facts[0]->issueTitle->value . ' (' . $facts[0]->issueDate->value . ')'; ?></h3>
       <table class="table table-hover">
         <tbody>
 <?php
-echo '<tr>';
-echo '<td>source:</td>';
-echo '<td>' . $facts[0]->issueTitle->value . ' (' . $facts[0]->issueDate->value . ')</td>';
-echo '</tr>';
-// page? keywords? subjects? structure? author? notes?
+echo '<tr><td>source:</td>';
+echo '<td>' . $facts[0]->issueTitle->value . ' (' . $facts[0]->issueDate->value . ')</td></tr>';
+echo '<tr><td>image:</td>';
+$jpg = $facts[0]->jpg->value;
+echo '<td><a href="' . $jpg . '" target="_new">' . $jpg . '</td></tr>';
+echo '<tr><td>type:</td><td>';
+$keywords = [];
+foreach ($facts as $nextFact) {
+  $kw = $nextFact->keyword->value;
+  if ($kw!='') {
+    $keywords[] = $kw;
+  }
+}
+$keywords = array_unique($keywords);
+foreach ($keywords as $nextKw) {
+  echo '<button type="button" class="btn btn-primary">' . $nextKw . '</button> ';
+}
+echo '</td></tr>';
+echo '<tr><td>subject:</td><td>';
+$subjects = [];
+foreach ($facts as $nextFact) {
+  $sbj = $nextFact->subject->value;
+  if ($sbj!='') {
+    $subjects[] = $sbj;
+  }
+}
+$subjects = array_unique($subjects);
+echo implode($subjects,', ');
+echo '</td></tr>';
+echo '<tr><td>type:</td><td>';
+$formats = [];
+foreach ($facts as $nextFact) {
+  $fm = $nextFact->format->value;
+  if ($fm!='') {
+    $formats[] = $fm;
+  }
+}
+$formats = array_unique($formats);
+foreach ($formats as $nextFm) {
+  echo '<button type="button" class="btn btn-success">' . $nextFm . '</button> ';
+}
+echo '</td></tr>';
+
+
+// page? author? notes?
 ?>
         </tbody>
       </table>
