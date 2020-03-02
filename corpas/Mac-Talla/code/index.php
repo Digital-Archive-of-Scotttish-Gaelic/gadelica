@@ -17,7 +17,14 @@ if ($order=='title') { echo 'alphabetical'; }
 else { echo 'chronological'; }
 ?>
       </h1>
-<!-- switch to other order -->
+      <p>
+<?php
+echo 'Switch to ';
+if ($order=='title') { echo '<a href="index.php?order=date">chronological</a>'; }
+else { echo '<a href="index.php?order=title">alphabetical</a>'; }
+echo ' ordering.';
+?>
+      </p>
       <table class="table table-hover">
         <tbody>
 <?php
@@ -51,8 +58,6 @@ foreach ($songs as $nextSong) {
   echo $nextSong->title->value;
   echo '</a></td><td>';
   echo $nextSong->issue->value;
-  echo '</td><td>';
-  echo $nextSong->date->value;
   echo '</td></tr>';
 }
 ?>

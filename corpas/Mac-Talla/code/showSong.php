@@ -25,7 +25,7 @@ if (getcwd()=='/Users/mark/Sites/gadelica/corpas/Mac-Talla/code') {
 }
 $json = file_get_contents($url);
 $facts = json_decode($json,false)->results->bindings;
-echo '<title>';
+echo '<title>Mac-Talla – ';
 echo $facts[0]->title->value;
 echo '</title>';
 ?>
@@ -34,6 +34,17 @@ echo '</title>';
     <div class="container-fluid">
       <h1><?php echo $facts[0]->title->value; ?></h1>
       <h3><?php echo $facts[0]->issueTitle->value . ' (' . $facts[0]->issueDate->value . ')'; ?></h3>
+      <table class="table table-hover">
+        <tbody>
+<?php
+echo '<tr>';
+echo '<td>source:</td>';
+echo '<td>' . $facts[0]->issueTitle->value . ' (' . $facts[0]->issueDate->value . ')</td>';
+echo '</tr>';
+// page? keywords? subjects? structure? author? notes?
+?>
+        </tbody>
+      </table>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
