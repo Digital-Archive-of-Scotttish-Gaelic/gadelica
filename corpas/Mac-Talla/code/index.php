@@ -80,6 +80,7 @@ foreach ($formats as $nextFm) {
   echo '<a class="badge btn badge-success" href="#">' . $nextFm . '</a> ';
 }
 ?>
+        <small><a href="#" onclick="$('.badge').removeClass('disabled'); $('tr').show();">clear filters</a></small>
       </p>
       <table class="table table-hover">
         <tbody>
@@ -128,12 +129,10 @@ foreach ($songIds as $nextSongId) {
     <script>
 $(function() {
   $('.badge').click(function(){
-    $('.badge').removeClass('disabled');
     $(this).addClass('disabled');
     str = $(this).text();
     str = str.replace(/ /g, "_")
-    $('tr').hide();
-    $('.'+str).show();
+    $('tr:visible').not('.'+str).hide();
   });
 });
     </script>
