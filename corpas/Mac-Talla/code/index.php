@@ -68,7 +68,7 @@ foreach ($songs as $nextSong) {
 }
 $keywords = array_unique($keywords);
 foreach ($keywords as $nextKw) {
-  echo '<a class="badge badge-primary" href="#">' . $nextKw . '</a> ';
+  echo '<a class="badge btn badge-primary" href="#">' . $nextKw . '</a> ';
 }
 $formats = [];
 foreach ($songs as $nextSong) {
@@ -77,7 +77,7 @@ foreach ($songs as $nextSong) {
 }
 $formats = array_unique($formats);
 foreach ($formats as $nextFm) {
-  echo '<a class="badge badge-success" href="#">' . $nextFm . '</a> ';
+  echo '<a class="badge btn badge-success" href="#">' . $nextFm . '</a> ';
 }
 ?>
       </p>
@@ -128,8 +128,8 @@ foreach ($songIds as $nextSongId) {
     <script>
 $(function() {
   $('.badge').click(function(){
-    //$('.badge').removeClass('disabled');
-    $(this).addClass('active');
+    $('.badge').removeClass('disabled');
+    $(this).addClass('disabled');
     str = $(this).text();
     str = str.replace(/ /g, "_")
     $('tr').hide();
