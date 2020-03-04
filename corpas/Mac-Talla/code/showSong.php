@@ -10,7 +10,8 @@ $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
 PREFIX dc: <http://purl.org/dc/terms/>
-SELECT DISTINCT ?title ?issueTitle ?issueDate ?issue ?keyword ?jpg ?subject ?format
+PREFIX hs: <http://faclair.ac.uk/meta/sparling>
+SELECT DISTINCT ?title ?issueTitle ?issueDate ?issue ?page ?keyword ?jpg ?subject ?format ?note
 WHERE
 {
   <{$song}> dc:title ?title .
@@ -21,6 +22,8 @@ WHERE
   OPTIONAL { <{$song}> dc:format ?format . }
   ?issue dc:date ?issueDate .
   ?issue dc:title ?issueTitle .
+  <{$song}> hs:page ?page .
+  OPTIONAL { <{$song}> rdfs:comment ?note . }
 }
 SPQR;
 $url = 'https://daerg.arts.gla.ac.uk/fuseki/MacTalla?output=json&query=' . urlencode($query);
@@ -41,7 +44,7 @@ echo '</title>';
         <tbody>
 <?php
 echo '<tr><td>source:</td>';
-echo '<td>' . $facts[0]->issueTitle->value . ' (' . $facts[0]->issueDate->value . ')</td></tr>';
+echo '<td>' . $facts[0]->issueTitle->value . ' (' . $facts[0]->issueDate->value . ') p.' . $facts[0]->page->value . '</td></tr>';
 echo '<tr><td>image:</td>';
 $jpg = $facts[0]->jpg->value;
 echo '<td><a href="' . $jpg . '" target="_new">' . $jpg . '</td></tr>';
@@ -55,7 +58,7 @@ foreach ($facts as $nextFact) {
 }
 $keywords = array_unique($keywords);
 foreach ($keywords as $nextKw) {
-  echo '<a class="badge badge-primary" href="browseType.php?id=' . $nextKw . '">' . $nextKw . '</a> ';
+  echo '<a class="badge badge-primary" href="index.php?filter=' . str_replace(' ','+',$nextKw) . '">' . $nextKw . '</a> ';
 }
 echo '</td></tr>';
 echo '<tr><td>subject:</td><td>';
@@ -79,12 +82,23 @@ foreach ($facts as $nextFact) {
 }
 $formats = array_unique($formats);
 foreach ($formats as $nextFm) {
-  echo '<a class="badge badge-success" href="browseFormat.php?id=' . $nextFm . '">' . $nextFm . '</a> ';
+  echo '<a class="badge badge-success" href="index.php?filter=' . str_replace(' ','+',$nextFm) . '">' . $nextFm . '</a> ';
 }
 echo '</td></tr>';
+$notes = [];
+foreach ($facts as $nextFact) {
+  $note = $nextFact->note->value;
+  if ($note!='') {
+    $notes[] = $note;
+  }
+}
+$notes = array_unique($notes);
+foreach ($notes as $nextNote) {
+  echo '<tr><td>note:</td><td>' . $nextNote . '</td></tr> ';
+}
 
 
-// page? author? notes?
+// author? air? first line verse? first line chorus? alternative title? corrected title? 
 ?>
         </tbody>
       </table>
