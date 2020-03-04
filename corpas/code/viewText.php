@@ -1,20 +1,23 @@
 <!doctype html>
 <?php
-function getSubText($ref,$xml,$dir) {
+function getSubText($ref,$xml,$path) {
   //echo $ref . '<br/>';
   //echo $xml['ref'] . '<br/>';
-  echo $dir . '<br/>';
+  //echo 'Directory ' . $dir . '<br/>';
   if ($ref==$xml['ref']) {
+    echo 'Bingo!' . '<br/>';
     return $xml;
   }
   else {
+    //echo 'Nae luck!' . '<br/>';
+    //$path = $path .=
+    echo 'Path: ' . $path . '<br/>';
     $xml->registerXPathNamespace('xi','http://www.w3.org/2001/XInclude');
     foreach ($xml->xpath('descendant::xi:include') as $nextInclude) {
-      //$dir .=
-      echo $nextInclude['href'] . '<br/>';
+      echo 'Trying ' . $path . $nextInclude['href'] . '<br/>';
       //$dir .= $nextInclude['href'];
-      $xml2 = new SimpleXMLElement($dir . $nextInclude['href'],0,true);
-      $result = getSubText($ref,$xml2,$dir);
+      $xml2 = new SimpleXMLElement($path . $nextInclude['href'],0,true);
+      $result = getSubText($ref,$xml2,$path);
       if ($result) { return $result; }
     }
 
