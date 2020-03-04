@@ -2,6 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:dasg="https://dasg.ac.uk/corpus/"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
   exclude-result-prefixes="xs"
   version="1.0">
   
@@ -13,23 +14,20 @@
   </xsl:template>
 
   <xsl:template match="dasg:text">
-    <p>
-      <a href="#">
-        <xsl:attribute name="onclick">
-          <xsl:text>showMeta('</xsl:text>
-          <xsl:value-of select="@ref"/>
-          <xsl:text>');</xsl:text>
-        </xsl:attribute>
-        [meta]
-      </a>
-    </p>
     <xsl:apply-templates/>
   </xsl:template>
   
+  <xsl:template match="xi:include">
+    <xsl:variable name="file" select="@href"/>
+    <p>
+      <xsl:value-of select="document($file)/dasg:text/@ref"/>
+    </p>
+  </xsl:template>
+  
   <xsl:template match="dasg:h">
-    <h1>
+    <h3>
       <xsl:apply-templates/>
-    </h1>
+    </h3>
   </xsl:template>
   
   <xsl:template match="dasg:p">
@@ -92,9 +90,6 @@
         <xsl:text>.</xsl:text>
         <xsl:value-of select="@pos"/>
       </xsl:attribute>
-      <xsl:attribute name="data-ref">
-        <xsl:value-of select="@ref"/>
-      </xsl:attribute>
       <xsl:apply-templates/>
     </span>
   </xsl:template>
@@ -133,5 +128,7 @@
   <xsl:template match="dasg:pause">
     <p> </p>
   </xsl:template>
+  
+  
   
 </xsl:stylesheet>

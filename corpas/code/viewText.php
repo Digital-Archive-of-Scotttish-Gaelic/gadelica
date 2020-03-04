@@ -16,10 +16,18 @@ $dir = '../xml/';
 $files = scandir($dir);
 foreach ($files as $nextFile) {
   if (substr($nextFile,  strlen($nextFile)-4  ) == '.xml') {
-    // find text element within files (recursively)
-
-
-
+    $xml = new SimpleXMLElement($dir . $nextFile,0,true);
+    $ref = $xml['ref'];
+    if ($ref==$text) {
+      $xsl = new DOMDocument;
+      $xsl->load('corpus.xsl');
+      $proc = new XSLTProcessor;
+      $proc->importStyleSheet($xsl);
+      echo $proc->transformToXML($xml);
+      
+      //echo $nextFile;
+      break;
+    }
   }
 }
 
@@ -27,7 +35,7 @@ foreach ($files as $nextFile) {
 
 
 /*
-$text = new SimpleXMLElement("../xml/" . $_GET["t"] . ".xml", LIBXML_XINCLUDE, true);
+//$text = new SimpleXMLElement("../xml/" . $_GET["t"] . ".xml", LIBXML_XINCLUDE, true);
 //$text->registerXPathNamespace('dasg', 'https://dasg.ac.uk/corpus/');
 //$subtext = $text->xpath('//dasg:text[@ref="' . $_GET["ref"] . '"]')[0];
 $xsl = new DOMDocument;
