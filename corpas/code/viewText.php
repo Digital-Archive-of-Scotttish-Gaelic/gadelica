@@ -1,4 +1,29 @@
 <!doctype html>
+<?php
+function getSubText($ref,$xml,$dir) {
+  //echo $ref . '<br/>';
+  //echo $xml['ref'] . '<br/>';
+  echo $dir . '<br/>';
+  if ($ref==$xml['ref']) {
+    return $xml;
+  }
+  else {
+    $xml->registerXPathNamespace('xi','http://www.w3.org/2001/XInclude');
+    foreach ($xml->xpath('descendant::xi:include') as $nextInclude) {
+      //$dir .=
+      echo $nextInclude['href'] . '<br/>';
+      //$dir .= $nextInclude['href'];
+      $xml2 = new SimpleXMLElement($dir . $nextInclude['href'],0,true);
+      $result = getSubText($ref,$xml2,$dir);
+      if ($result) { return $result; }
+    }
+
+  }
+
+  return false;
+}
+
+?>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -8,28 +33,32 @@
   </head>
   <body>
     <div class="container-fluid">
-
 <?php
 $text = $_GET['ref'];
 echo '<h1>' . $text . '</h1>';
+$short = substr($text,27);
+$i = strpos($short,'-');
+$root = $short;
+if ($i) {
+  $root = substr($short,0,strpos($short,'-'));
+}
 $dir = '../xml/';
 $files = scandir($dir);
 foreach ($files as $nextFile) {
   if (substr($nextFile,  strlen($nextFile)-4  ) == '.xml') {
-    $xml = new SimpleXMLElement($dir . $nextFile,0,true);
-    $ref = $xml['ref'];
-    if ($ref==$text) {
+    if (substr($nextFile,0,strpos($nextFile,'_'))==$root) {
+      $xml = new SimpleXMLElement($dir . $nextFile,0,true);
+      $xml = getSubText($text,$xml,$dir);
       $xsl = new DOMDocument;
       $xsl->load('corpus.xsl');
       $proc = new XSLTProcessor;
       $proc->importStyleSheet($xsl);
       echo $proc->transformToXML($xml);
-      
-      //echo $nextFile;
       break;
     }
   }
 }
+
 
 
 

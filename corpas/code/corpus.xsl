@@ -19,8 +19,11 @@
   
   <xsl:template match="xi:include">
     <xsl:variable name="file" select="@href"/>
+    <xsl:variable name="ref" select="document($file)/dasg:text/@ref"/>
     <p>
-      <xsl:value-of select="document($file)/dasg:text/@ref"/>
+      <a href="viewText.php?ref={$ref}">
+        <xsl:value-of select="$ref"/>
+      </a>
     </p>
   </xsl:template>
   
