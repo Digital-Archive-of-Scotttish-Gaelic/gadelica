@@ -35,7 +35,7 @@ if (getcwd()=='/Users/mark/Sites/gadelica/corpas/code') {
 $json = file_get_contents($url);
 $results = json_decode($json,false)->results->bindings;
 $id = $results[0]->id->value;
-echo '<h1>#' . $id . ' ' . $results[0]->title->value . '</h1>';
+echo '<h1>#' . $id . ': ' . $results[0]->title->value . '</h1>';
 $subURIs = [];
 foreach ($results as $nextResult) {
   $nextSubURI = $nextResult->suburi->value;
@@ -47,16 +47,18 @@ $subURIs = array_unique($subURIs);
 if (count($subURIs)>0) {
   echo '<div class="list-group list-group-flush">';
   foreach ($subURIs as $nextSubURI) {
-    echo '<div class="list-group-item list-group-item-action"><a href="viewText.php?uri=' . $nextSubURI .'">';
+    echo '<div class="list-group-item list-group-item-action">';
     $subURITitle = 'Poo';
+    $subURIRank = 0;
     foreach ($results as $nextResult) {
       $nextSubURI2 = $nextResult->suburi->value;
       if ($nextSubURI2==$nextSubURI) {
         $subURITitle = $nextResult->suburiTitle->value;
+        $subURIRank = $nextResult->suburiRank->value;
         break;
       }
     }
-    echo $subURITitle;
+    echo '#' . $subURIRank . ': <a href="viewText.php?uri=' . $nextSubURI .'">' . $subURITitle;
     echo '</a></div>';
   }
   echo '</div>';

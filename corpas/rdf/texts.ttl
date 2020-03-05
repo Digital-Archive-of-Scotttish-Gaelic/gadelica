@@ -5,36 +5,6 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix : <http://faclair.ac.uk/meta/> .
 
-dc:isVersionOf
-  rdfs:active "Publication of: " ;
-  rdfs:passive "Published as: " .
-dc:title
-  rdfs:active "Title: " .
-dc:hasPart
-  rdfs:active "Contains: " ;
-  rdfs:passive "Part of: " .
-dc:date
-  rdfs:active "Date: " .
-dc:creator
-  rdfs:active "Creator: " ;
-  rdfs:passive "Created: " .
-dc:publisher
-  rdfs:active "Publisher: " ;
-  rdfs:passive "Published: " .
-
-c:_1
-  dc:title "Dàin do Eimhir" ;
-  rdfs:label "Dàin do Eimhir (2002)" ;
-  dc:date "2002" ;
-  dc:creator p:Sorley_MacLean_1911_1996 , p:Christopher_Whyte_1952_ ;
-  dc:publisher "The Association for Scottish Literary Studies, Glasgow" ;
-  dc:hasPart c:_1-1, c:_1-2, c:_1-3, c:_1-4, c:_1-5, c:_1-6, c:_1-8, c:_1-9, c:_1-10 ,
-             c:_1-11, c:_1-12, c:_1-13, c:_1-14, c:_1-15, c:_1-16, c:_1-17, c:_1-18, c:_1-19, c:_1-20 ,
-             c:_1-21, c:_1-22, c:_1-23, c:_1-24, c:_1-25, c:_1-26, c:_1-27, c:_1-28, c:_1-29, c:_1-30 ,
-             c:_1-31, c:_1-32, c:_1-33, c:_1-34, c:_1-35, c:_1-36, c:_1-37, c:_1-38, c:_1-39, c:_1-40 ,
-             c:_1-41, c:_1-42, c:_1-43, c:_1-44, c:_1-45, c:_1-46, c:_1-47, c:_1-48, c:_1-49, c:_1-50 ,
-             c:_1-51, c:_1-52, c:_1-53, c:_1-54, c:_1-55, c:_1-56, c:_1-57, c:_1-58, c:_1-59, c:_1-60 , c:_1-61 .
-
 p:Sorley_MacLean_1911_1996
   rdfs:label "Sorley MacLean" ;
   :dob "1911-10" ;
@@ -43,14 +13,6 @@ p:Sorley_MacLean_1911_1996
 p:Christopher_Whyte_1952_
   rdfs:label "Christopher Whyte" ;
   :dob "1952-10" .
-
-c:_1X
-  rdfs:label "Dàin do Eimhir agus Dàin Eile (1943)" ;
-  dc:title "Dàin do Eimhir agus Dàin Eile" ;
-  dc:date "1943" ;
-  dc:creator p:Sorley_MacLean_1911_1996 , p:Douglas_Young_1913_1973 ;
-  dc:publisher "William Maclellan, Glasgow" ;
-  dc:hasPart c:_1X-1 .
 
 p:Douglas_Young_1913_1973
   rdfs:label "Douglas Young" ;
