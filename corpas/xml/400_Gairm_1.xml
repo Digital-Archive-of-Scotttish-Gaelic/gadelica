@@ -2,7 +2,7 @@
 <?xml-model href="../texts.rnc" schematypens="https://relaxng.org/ns/structure/1.0?>
 <?xml-stylesheet type="text/xsl" href="../../code/corpus.xsl"?>
 <!-- cleaned up by MM 22/1/20; next: check lemmas, then POS tags, then add IDs to metadatabase -->
-<text ref="https://dasg.ac.uk/corpus/_400-1" xmlns="https://dasg.ac.uk/corpus/" xmlns:xi="http://www.w3.org/2001/XInclude">
+<text ref="https://dasg.ac.uk/corpus/_400-1" xmlns="https://dasg.ac.uk/corpus/">
   <pb n="13"/>
   <h>
     <w pos="N" lemma="Gairm">Gairm</w>
@@ -25,17 +25,17 @@
     <o>1952</o>
     <pc join="left">.</pc>
   </p>
-  <xi:include href="1/As_a_Chathair.xml" parse="xml"/>
+  <include href="400_Gairm/1/As_a_Chathair.xml" parse="xml"/>
   <pb n="15"/>
-  <xi:include href="1/Eilean_Hiort.xml" parse="xml"/>
+  <include href="400_Gairm/1/Eilean_Hiort.xml" parse="xml"/>
   <pb n="19"/>
-  <xi:include href="1/Falaisgearan_Fad_As.xml" parse="xml"/>
+  <include href="400_Gairm/1/Falaisgearan_Fad_As.xml" parse="xml"/>
   <pb n="23"/>
-  <xi:include href="1/Eachdraidh_an_Iasgaich_an_Leodhas.xml" parse="xml"/>
+  <include href="400_Gairm/1/Eachdraidh_an_Iasgaich_an_Leodhas.xml" parse="xml"/>
   <pb n="29"/>
-  <xi:include href="1/Am_Bas-aar.xml" parse="xml"/>
+  <include href="400_Gairm/1/Am_Bas-aar.xml" parse="xml"/>
   <pb n="51"/>
-  <xi:include href="1/Leabhar-Latha_Mhgr_Ailein_Domhnallaich.xml" parse="xml"/>
+  <include href="400_Gairm/1/Leabhar-Latha_Mhgr_Ailein_Domhnallaich.xml" parse="xml"/>
   <text ref="https://dasg.ac.uk/corpus/_400-1-A">
     <h>
       <w pos="n" lemma="Taing">Taing</w>
@@ -140,11 +140,11 @@
     </p>
   </text>
   <pb n="57"/>
-  <xi:include href="1/Clachan_Gaidhealach_an_Albainn_Nuaidh.xml" parse="xml"/>
+  <include href="400_Gairm/1/Clachan_Gaidhealach_an_Albainn_Nuaidh.xml" parse="xml"/>
   <pb n="64"/>
-  <xi:include href="1/Gnothuich_Bhoirionnach.xml" parse="xml"/>
+  <include href="400_Gairm/1/Gnothuich_Bhoirionnach.xml" parse="xml"/>
   <pb n="67"/>
-  <xi:include href="1/Na_Ceistean_a_Dh_fheuch_ri_Catto.xml" parse="xml"/>
+  <include href="400_Gairm/1/Na_Ceistean_a_Dh_fheuch_ri_Catto.xml" parse="xml"/>
   <pb n="70"/>
   <text ref="https://dasg.ac.uk/corpus/_400-1-B">
     <h>
@@ -223,9 +223,9 @@
     <w pos="n" lemma="tighe">tighe</w>
     <pc join="left">.</pc>
   </p>
-  <xi:include href="1/Suil_mu_n_Cuairt.xml" parse="xml"/>
+  <include href="400_Gairm/1/Suil_mu_n_Cuairt.xml" parse="xml"/>
   <pb n="81"/>
-  <xi:include href="1/Cion_na_Beurla.xml" parse="xml"/>
+  <include href="400_Gairm/1/Cion_na_Beurla.xml" parse="xml"/>
   <pb n="85"/>
-  <xi:include href="1/An_Sgeilp_Leabhraichean.xml" parse="xml"/>
+  <include href="400_Gairm/1/An_Sgeilp_Leabhraichean.xml" parse="xml"/>
 </text>

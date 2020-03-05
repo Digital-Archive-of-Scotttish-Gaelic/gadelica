@@ -11,18 +11,29 @@
       <h1>Corpas na Gàidhlig</h1>
       <div class="list-group list-group-flush">
 <?php
-$dir = '../xml/';
-$files = scandir($dir);
-foreach ($files as $nextFile) {
-  if (substr($nextFile,  strlen($nextFile)-4  ) == '.xml') {
-    $xml = new SimpleXMLElement($dir . $nextFile,0,true);
-    $ref = $xml['ref'];
-    echo '<div class="list-group-item list-group-item-action">';
-    echo '<a href="viewText.php?ref=' . $ref . '">';
-    echo $ref;
-    echo '</a>';
-    echo '</div>';
-  }
+$query = <<<SPQR
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX : <http://faclair.ac.uk/meta/>
+PREFIX dc: <http://purl.org/dc/terms/>
+SELECT DISTINCT ?uri ?id ?title
+WHERE
+{
+  ?uri dc:identifier ?id .
+  ?uri dc:title ?title .
+  FILTER NOT EXISTS { ?uri dc:isPartOf ?superuri . }
+}
+SPQR;
+$url = 'https://daerg.arts.gla.ac.uk/fuseki/Corpus?output=json&query=' . urlencode($query);
+if (getcwd()=='/Users/mark/Sites/gadelica/corpas/code') {
+  $url = 'http://localhost:3030/Corpus?output=json&query=' . urlencode($query);
+}
+$json = file_get_contents($url);
+$texts = json_decode($json,false)->results->bindings;
+foreach ($texts as $nextText) {
+  echo '<div class="list-group-item list-group-item-action">#';
+  echo $nextText->id->value . ': ';
+  echo '<a href="viewText.php?uri=' . $nextText->uri->value . '">' . $nextText->title->value . '</a>';
+  echo '</div>';
 }
 ?>
       </div>

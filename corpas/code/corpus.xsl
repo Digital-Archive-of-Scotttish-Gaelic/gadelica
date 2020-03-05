@@ -2,7 +2,6 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:dasg="https://dasg.ac.uk/corpus/"
-  xmlns:xi="http://www.w3.org/2001/XInclude"
   exclude-result-prefixes="xs"
   version="1.0">
   
@@ -17,7 +16,7 @@
     <xsl:apply-templates/>
   </xsl:template>
   
-  <xsl:template match="xi:include">
+  <xsl:template match="dasg:include">
     <xsl:variable name="file" select="@href"/>
     <xsl:variable name="ref" select="document($file)/dasg:text/@ref"/>
     <p>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../texts.rnc" schematypens="https://relaxng.org/ns/structure/1.0?>
 <?xml-stylesheet type="text/xsl" href="../../code/corpus.xsl"?>
-<text ref="https://dasg.ac.uk/corpus/_400-2" xmlns="https://dasg.ac.uk/corpus/" xmlns:xi="http://www.w3.org/2001/XInclude">
+<text ref="https://dasg.ac.uk/corpus/_400-2" xmlns="https://dasg.ac.uk/corpus/">
   <pb n="13"/>
   <h>
     <w pos="N" lemma="Gairm">Gairm</w>
@@ -24,11 +24,11 @@
     <o>1952</o>
     <pc join="left">.</pc>
   </p>
-  <xi:include href="2/As_a_Chathair.xml" parse="xml"/>
+  <include href="400_Gairm/2/As_a_Chathair.xml" parse="xml"/>
   <pb n="15"/>
-  <xi:include href="2/Mana_an_Nisich.xml" parse="xml"/>
+  <include href="400_Gairm/2/Mana_an_Nisich.xml" parse="xml"/>
   <pb n="19"/>
-  <xi:include href="2/Nollaig_Chridheil.xml" parse="xml"/>
+  <include href="400_Gairm/2/Nollaig_Chridheil.xml" parse="xml"/>
   <pb n="22"/>
   <p>
     <note>Photo caption</note>
@@ -55,14 +55,14 @@
     <o>Daily Record</o>
     <pc join="both">)</pc>
   </p>
-  <xi:include href="2/Tir_nan_Og.xml" parse="xml"/>
+  <include href="400_Gairm/2/Tir_nan_Og.xml" parse="xml"/>
   <pb n="23"/>
-  <xi:include href="2/Mealladh.xml" parse="xml"/>
+  <include href="400_Gairm/2/Mealladh.xml" parse="xml"/>
   <pb n="25"/>
   <pb n="35"/>
-  <xi:include href="2/Suil_Mun_Cuairt.xml" parse="xml"/>
+  <include href="400_Gairm/2/Suil_Mun_Cuairt.xml" parse="xml"/>
   <pb n="57"/>
-  <xi:include href="2/Cuairt_ann_an_Canada.xml" parse="xml"/>
+  <include href="400_Gairm/2/Cuairt_ann_an_Canada.xml" parse="xml"/>
   <pb n="60"/>
   <h>
     <w pos="n" lemma="CHUALA">CHUALA</w>
@@ -287,7 +287,7 @@
     <pc join="left">.</pc>
   </p>
   <pb n="63"/>
-  <xi:include href="2/Bho_Bhaile_Bhooid_gu_Baile_Bhooid.xml" parse="xml"/>
+  <include href="400_Gairm/2/Bho_Bhaile_Bhooid_gu_Baile_Bhooid.xml" parse="xml"/>
   <pb n="67"/>
   <p>
     <note>Photo caption</note>
@@ -307,13 +307,13 @@
     <w pos="n" lemma="Caimbeul">Caimbeul</w>
     <pc join="left">.</pc>
   </p>
-  <xi:include href="2/Air_Chul_an_t-Saoghail.xml" parse="xml"/>
+  <include href="400_Gairm/2/Air_Chul_an_t-Saoghail.xml" parse="xml"/>
   <pb n="71"/>
-  <xi:include href="2/Leabhar-Latha_Mhgr_Ailein_Domhnullaich.xml" parse="xml"/>
+  <include href="400_Gairm/2/Leabhar-Latha_Mhgr_Ailein_Domhnullaich.xml" parse="xml"/>
   <pb n="77"/>
-  <xi:include href="2/So_an_Lagh.xml" parse="xml"/>
+  <include href="400_Gairm/2/So_an_Lagh.xml" parse="xml"/>
   <pb n="83"/>
-  <xi:include href="2/Aithisg_Bhliadhnail_an_Runaire.xml" parse="xml"/>
+  <include href="400_Gairm/2/Aithisg_Bhliadhnail_an_Runaire.xml" parse="xml"/>
   <pb n="88"/>
-  <xi:include href="2/An_Sgeilp_Leabhraichean.xml" parse="xml"/>
+  <include href="400_Gairm/2/An_Sgeilp_Leabhraichean.xml" parse="xml"/>
 </text>

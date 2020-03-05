@@ -1,32 +1,4 @@
 <!doctype html>
-<?php
-function getSubText($ref,$xml,$path) {
-  //echo $ref . '<br/>';
-  //echo $xml['ref'] . '<br/>';
-  //echo 'Directory ' . $dir . '<br/>';
-  if ($ref==$xml['ref']) {
-    echo 'Bingo!' . '<br/>';
-    return $xml;
-  }
-  else {
-    //echo 'Nae luck!' . '<br/>';
-    //$path = $path .=
-    echo 'Path: ' . $path . '<br/>';
-    $xml->registerXPathNamespace('xi','http://www.w3.org/2001/XInclude');
-    foreach ($xml->xpath('descendant::xi:include') as $nextInclude) {
-      echo 'Trying ' . $path . $nextInclude['href'] . '<br/>';
-      //$dir .= $nextInclude['href'];
-      $xml2 = new SimpleXMLElement($path . $nextInclude['href'],0,true);
-      $result = getSubText($ref,$xml2,$path);
-      if ($result) { return $result; }
-    }
-
-  }
-
-  return false;
-}
-
-?>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -37,30 +9,54 @@ function getSubText($ref,$xml,$path) {
   <body>
     <div class="container-fluid">
 <?php
-$text = $_GET['ref'];
-echo '<h1>' . $text . '</h1>';
-$short = substr($text,27);
-$i = strpos($short,'-');
-$root = $short;
-if ($i) {
-  $root = substr($short,0,strpos($short,'-'));
+$uri = $_GET['uri'];
+$query = <<<SPQR
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX : <http://faclair.ac.uk/meta/>
+PREFIX dc: <http://purl.org/dc/terms/>
+SELECT DISTINCT ?title ?id ?suburi ?suburiTitle ?xml
+WHERE
+{
+  <{$uri}> dc:title ?title .
+  OPTIONAL { <{$uri}> dc:identifier ?id . }
+  OPTIONAL { <{$uri}> :xml ?xml . }
+  OPTIONAL {
+    ?suburi dc:isPartOf <{$uri}> .
+    ?suburi dc:title ?suburiTitle .
+  }
 }
-$dir = '../xml/';
-$files = scandir($dir);
-foreach ($files as $nextFile) {
-  if (substr($nextFile,  strlen($nextFile)-4  ) == '.xml') {
-    if (substr($nextFile,0,strpos($nextFile,'_'))==$root) {
-      $xml = new SimpleXMLElement($dir . $nextFile,0,true);
-      $xml = getSubText($text,$xml,$dir);
-      $xsl = new DOMDocument;
-      $xsl->load('corpus.xsl');
-      $proc = new XSLTProcessor;
-      $proc->importStyleSheet($xsl);
-      echo $proc->transformToXML($xml);
+ORDER BY ?id ?title
+SPQR;
+$url = 'https://daerg.arts.gla.ac.uk/fuseki/Corpus?output=json&query=' . urlencode($query);
+if (getcwd()=='/Users/mark/Sites/gadelica/corpas/code') {
+  $url = 'http://localhost:3030/Corpus?output=json&query=' . urlencode($query);
+}
+$json = file_get_contents($url);
+$results = json_decode($json,false)->results->bindings;
+echo '<h1>' . $results[0]->title->value . ' (#' . $results[0]->id->value . ')</h1>';
+$subURIs = [];
+foreach ($results as $nextResult) {
+  $nextSubURI = $nextResult->suburi->value;
+  if ($nextSubURI!='') {
+    $subURIs[] = $nextSubURI;
+  }
+}
+$subURIs = array_unique($subURIs);
+echo '<div class="list-group list-group-flush">';
+foreach ($subURIs as $nextSubURI) {
+  echo '<div class="list-group-item list-group-item-action"><a href="viewText.php?uri=' . $nextSubURI .'">';
+  $subURITitle = 'Poo';
+  foreach ($results as $nextResult) {
+    $nextSubURI2 = $nextResult->suburi->value;
+    if ($nextSubURI2==$nextSubURI) {
+      $subURITitle = $nextResult->suburiTitle->value;
       break;
     }
   }
+  echo $subURITitle;
+  echo '</a></div>';
 }
+echo '</div>';
 
 
 
