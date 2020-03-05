@@ -15,13 +15,14 @@ $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
 PREFIX dc: <http://purl.org/dc/terms/>
-SELECT DISTINCT ?uri ?id ?title
+SELECT DISTINCT ?uri ?rank ?title
 WHERE
 {
-  ?uri dc:identifier ?id .
+  ?uri dc:identifier ?rank .
   ?uri dc:title ?title .
   FILTER NOT EXISTS { ?uri dc:isPartOf ?superuri . }
 }
+ORDER BY ?rank
 SPQR;
 $url = 'https://daerg.arts.gla.ac.uk/fuseki/Corpus?output=json&query=' . urlencode($query);
 if (getcwd()=='/Users/mark/Sites/gadelica/corpas/code') {
@@ -31,7 +32,7 @@ $json = file_get_contents($url);
 $texts = json_decode($json,false)->results->bindings;
 foreach ($texts as $nextText) {
   echo '<div class="list-group-item list-group-item-action">#';
-  echo $nextText->id->value . ': ';
+  echo $nextText->rank->value . ': ';
   echo '<a href="viewText.php?uri=' . $nextText->uri->value . '">' . $nextText->title->value . '</a>';
   echo '</div>';
 }

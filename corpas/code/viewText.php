@@ -14,18 +14,19 @@ $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
 PREFIX dc: <http://purl.org/dc/terms/>
-SELECT DISTINCT ?title ?id ?suburi ?suburiTitle ?xml
+SELECT DISTINCT ?title ?id ?suburi ?suburiTitle ?suburiRank ?xml
 WHERE
 {
   <{$uri}> dc:title ?title .
-  OPTIONAL { <{$uri}> dc:identifier ?id . }
+  <{$uri}> dc:identifier ?id .
   OPTIONAL { <{$uri}> :xml ?xml . }
   OPTIONAL {
     ?suburi dc:isPartOf <{$uri}> .
     ?suburi dc:title ?suburiTitle .
+    ?suburi dc:identifier ?suburiRank .
   }
 }
-ORDER BY ?id ?title
+ORDER BY ?suburiRank
 SPQR;
 $url = 'https://daerg.arts.gla.ac.uk/fuseki/Corpus?output=json&query=' . urlencode($query);
 if (getcwd()=='/Users/mark/Sites/gadelica/corpas/code') {
@@ -33,7 +34,8 @@ if (getcwd()=='/Users/mark/Sites/gadelica/corpas/code') {
 }
 $json = file_get_contents($url);
 $results = json_decode($json,false)->results->bindings;
-echo '<h1>' . $results[0]->title->value . ' (#' . $results[0]->id->value . ')</h1>';
+$id = $results[0]->id->value;
+echo '<h1>#' . $id . ' ' . $results[0]->title->value . '</h1>';
 $subURIs = [];
 foreach ($results as $nextResult) {
   $nextSubURI = $nextResult->suburi->value;
@@ -42,36 +44,32 @@ foreach ($results as $nextResult) {
   }
 }
 $subURIs = array_unique($subURIs);
-echo '<div class="list-group list-group-flush">';
-foreach ($subURIs as $nextSubURI) {
-  echo '<div class="list-group-item list-group-item-action"><a href="viewText.php?uri=' . $nextSubURI .'">';
-  $subURITitle = 'Poo';
-  foreach ($results as $nextResult) {
-    $nextSubURI2 = $nextResult->suburi->value;
-    if ($nextSubURI2==$nextSubURI) {
-      $subURITitle = $nextResult->suburiTitle->value;
-      break;
+if (count($subURIs)>0) {
+  echo '<div class="list-group list-group-flush">';
+  foreach ($subURIs as $nextSubURI) {
+    echo '<div class="list-group-item list-group-item-action"><a href="viewText.php?uri=' . $nextSubURI .'">';
+    $subURITitle = 'Poo';
+    foreach ($results as $nextResult) {
+      $nextSubURI2 = $nextResult->suburi->value;
+      if ($nextSubURI2==$nextSubURI) {
+        $subURITitle = $nextResult->suburiTitle->value;
+        break;
+      }
     }
+    echo $subURITitle;
+    echo '</a></div>';
   }
-  echo $subURITitle;
-  echo '</a></div>';
+  echo '</div>';
 }
-echo '</div>';
-
-
-
-
-
-/*
-//$text = new SimpleXMLElement("../xml/" . $_GET["t"] . ".xml", LIBXML_XINCLUDE, true);
-//$text->registerXPathNamespace('dasg', 'https://dasg.ac.uk/corpus/');
-//$subtext = $text->xpath('//dasg:text[@ref="' . $_GET["ref"] . '"]')[0];
-$xsl = new DOMDocument;
-$xsl->load('corpus.xsl');
-$proc = new XSLTProcessor;
-$proc->importStyleSheet($xsl);
-echo $proc->transformToXML($text);
-*/
+$xml = $results[0]->xml->value;
+if ($xml!='') {
+  $text = new SimpleXMLElement("../xml/" . $xml, 0, true);
+  $xsl = new DOMDocument;
+  $xsl->load('corpus.xsl');
+  $proc = new XSLTProcessor;
+  $proc->importStyleSheet($xsl);
+  echo $proc->transformToXML($text);
+}
 ?>
 
 
