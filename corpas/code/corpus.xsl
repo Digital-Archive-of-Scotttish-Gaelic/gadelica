@@ -27,9 +27,11 @@
   </xsl:template>
   
   <xsl:template match="dasg:h">
-    <h3>
-      <xsl:apply-templates/>
-    </h3>
+    <p>
+      <strong>
+        <xsl:apply-templates/>
+      </strong>
+    </p>
   </xsl:template>
   
   <xsl:template match="dasg:p">

@@ -14,7 +14,7 @@ $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
 PREFIX dc: <http://purl.org/dc/terms/>
-SELECT DISTINCT ?title ?id ?suburi ?suburiTitle ?suburiRank ?xml
+SELECT DISTINCT ?title ?id ?suburi ?suburiTitle ?suburiRank ?xml ?medium ?genre
 WHERE
 {
   <{$uri}> dc:title ?title .
@@ -25,6 +25,8 @@ WHERE
     ?suburi dc:title ?suburiTitle .
     ?suburi dc:identifier ?suburiRank .
   }
+  OPTIONAL { <{$uri}> :medium ?medium . }
+  OPTIONAL { <{$uri}> :genre ?genre . }
 }
 ORDER BY ?suburiRank
 SPQR;
@@ -36,6 +38,41 @@ $json = file_get_contents($url);
 $results = json_decode($json,false)->results->bindings;
 $id = $results[0]->id->value;
 echo '<h1>#' . $id . ': ' . $results[0]->title->value . '</h1>';
+
+// META:
+echo '<div class="list-group list-group-flush">';
+$media = [];
+foreach ($results as $nextResult) {
+  $nextMedium = $nextResult->medium->value;
+  if ($nextMedium!='') {
+    $media[] = $nextMedium;
+  }
+}
+$media = array_unique($media);
+if (count($media)>0) {
+  echo '<div list-group-item list-group-item-action>';
+  echo 'medium: ';
+  echo implode($media,', ');
+  echo '</div>';
+}
+$genres = [];
+foreach ($results as $nextResult) {
+  $nextGenre = $nextResult->genre->value;
+  if ($nextGenre!='') {
+    $genres[] = $nextGenre;
+  }
+}
+$genres = array_unique($genres);
+if (count($genres)>0) {
+  echo '<div list-group-item list-group-item-action>';
+  echo 'genre: ';
+  echo implode($genres,', ');
+  echo '</div>';
+}
+echo '</div>';
+echo '<p>&nbsp;</p>';
+
+// PARTS:
 $subURIs = [];
 foreach ($results as $nextResult) {
   $nextSubURI = $nextResult->suburi->value;
@@ -63,6 +100,8 @@ if (count($subURIs)>0) {
   }
   echo '</div>';
 }
+
+// XML:
 $xml = $results[0]->xml->value;
 if ($xml!='') {
   $text = new SimpleXMLElement("../xml/" . $xml, 0, true);
