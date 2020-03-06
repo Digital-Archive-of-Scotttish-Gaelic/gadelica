@@ -133,6 +133,9 @@
     <p> </p>
   </xsl:template>
   
-  
+  <xsl:template match="dasg:pb">
+    <hr/>
+    <p class="text-muted">[p. <xsl:value-of select="@n"/>]</p>
+  </xsl:template>
   
 </xsl:stylesheet>

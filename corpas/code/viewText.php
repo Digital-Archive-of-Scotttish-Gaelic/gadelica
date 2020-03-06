@@ -7,7 +7,7 @@
     <title>Corpas na Gàidhlig</title>
   </head>
   <body>
-    <div class="container-fluid">
+    <div class="container-fluid" style="max-width: 800px; float: left;">
 <?php
 $uri = $_GET['uri'];
 $query = <<<SPQR
