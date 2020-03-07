@@ -73,11 +73,16 @@
   </xsl:template>
 
   <xsl:template match="dasg:w[name(following-sibling::*[1])='w' or name(following-sibling::*[1])='o']">
-    <span class="word">
+    <span class="word" data-toggle="tooltip" data-placement="top">
       <xsl:attribute name="title">
-        <xsl:value-of select="@lemma"/>
-        <xsl:text>.</xsl:text>
-        <xsl:value-of select="@pos"/>
+        <xsl:if test="@lemma">
+          <xsl:text>lemma: </xsl:text>
+          <xsl:value-of select="@lemma"/>
+        </xsl:if>
+        <xsl:if test="@pos">
+          <xsl:text> pos: </xsl:text>
+          <xsl:value-of select="@pos"/>
+        </xsl:if>
       </xsl:attribute>
       <xsl:attribute name="data-ref">
         <xsl:value-of select="@ref"/>
@@ -88,11 +93,16 @@
   </xsl:template>
   
   <xsl:template match="dasg:w">
-    <span class="word">
+    <span class="word" data-toggle="tooltip" data-placement="top">
       <xsl:attribute name="title">
-        <xsl:value-of select="@lemma"/>
-        <xsl:text>.</xsl:text>
-        <xsl:value-of select="@pos"/>
+        <xsl:if test="@lemma">
+          <xsl:text>lemma: </xsl:text>
+          <xsl:value-of select="@lemma"/>
+        </xsl:if>
+        <xsl:if test="@pos">
+          <xsl:text> pos: </xsl:text>
+          <xsl:value-of select="@pos"/>
+        </xsl:if>
       </xsl:attribute>
       <xsl:apply-templates/>
     </span>
