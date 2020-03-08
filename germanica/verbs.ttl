@@ -5,6 +5,20 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix : <http://faclair.ac.uk/meta/> .
 
+v:mess_
+  a :Verb ;
+  rdfs:label "messen" ;
+  :sense "measure" .
+
+v:beimess_
+  rdfs:label "beimessen" ;
+  :part v:mess_ .
+
+v:beimess_Wichtigkeit_DAT
+  rdfs:label "einer Sache Wichtigkeit beimessen" ;
+  :sense "attach importance to" ;
+  :part v:beimess_ .
+
 a:gedraengt
   a :Adjective ;
   rdfs:label "gedrängt" ;
