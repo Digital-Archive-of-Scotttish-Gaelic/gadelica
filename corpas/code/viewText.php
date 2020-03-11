@@ -1,5 +1,9 @@
 <!doctype html>
 <?php
+function getSuperMedia($uri) {
+  return [];
+}
+
 function getSuperWriters($uri) {
   $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -83,7 +87,6 @@ $json = file_get_contents($url);
 $results = json_decode($json,false)->results->bindings;
 $id = $results[0]->id->value;
 echo '<h1>#' . $id . ': ' . $results[0]->title->value . '</h1>';
-
 // META:
 echo '<table class="table"><tbody>';
 $writers = [];
@@ -110,7 +113,6 @@ if (count($writers)>0) {
   }
   echo '</td></tr>';
 }
-
 $media = [];
 foreach ($results as $nextResult) {
   $nextMedium = $nextResult->medium->value;
@@ -119,12 +121,21 @@ foreach ($results as $nextResult) {
   }
 }
 $media = array_unique($media);
+if (count($media==0)) {
+  $writers = getSuperMedia($uri); // START HERE
+}
 if (count($media)>0) {
   echo '<tr><td>';
   echo 'medium</td><td>';
-  echo implode($media,', ');
+  foreach ($media as $nextMedium) {
+    echo '<a class="badge badge-primary" href="#">';
+    echo $nextMedium;
+    echo '</a> ';
+  }
   echo '</td></tr>';
 }
+
+
 $genres = [];
 foreach ($results as $nextResult) {
   $nextGenre = $nextResult->genre->value;
@@ -136,7 +147,11 @@ $genres = array_unique($genres);
 if (count($genres)>0) {
   echo '<tr><td>';
   echo 'genre</td><td>';
-  echo implode($genres,', ');
+  foreach ($genres as $nextGenre) {
+    echo '<a class="badge badge-primary" href="#">';
+    echo $nextGenre;
+    echo '</a> ';
+  }
   echo '</td></tr>';
 }
 echo '</tbody></table>';
