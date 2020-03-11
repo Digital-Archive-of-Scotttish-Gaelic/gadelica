@@ -1,4 +1,42 @@
 <!doctype html>
+<?php
+function getSuperWriters($uri) {
+  $query = <<<SPQR
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX : <http://faclair.ac.uk/meta/>
+PREFIX dc: <http://purl.org/dc/terms/>
+SELECT DISTINCT ?superuri ?writer ?surname ?forenames
+WHERE
+{
+  <{$uri}> dc:isPartOf ?superuri .
+  OPTIONAL {
+    ?superuri dc:creator ?writer .
+    OPTIONAL {
+      ?writer :surnameGD ?surname .
+      ?writer :forenamesGD ?forenames .
+    }
+  }
+}
+SPQR;
+  $url = 'https://daerg.arts.gla.ac.uk/fuseki/Corpus?output=json&query=' . urlencode($query);
+  if (getcwd()=='/Users/mark/Sites/gadelica/corpas/code') {
+    $url = 'http://localhost:3030/Corpus?output=json&query=' . urlencode($query);
+  }
+  $json = file_get_contents($url);
+  $results = json_decode($json,false)->results->bindings;
+  if (count($results)==0) {
+    return [];
+  }
+  $writers = [];
+  foreach ($results as $nextResult) {
+    $writers[$nextResult->writer->value] = $nextResult->forenames->value . ' ' . $nextResult->surname->value;
+  }
+  if (count($writers)==0) {
+    return getSuperWriters($results[0]->superuri->value);
+  }
+  return $writers;
+}
+?>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -14,7 +52,7 @@ $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
 PREFIX dc: <http://purl.org/dc/terms/>
-SELECT DISTINCT ?title ?id ?suburi ?suburiTitle ?suburiRank ?xml ?medium ?genre
+SELECT DISTINCT ?title ?id ?suburi ?suburiTitle ?suburiRank ?xml ?medium ?genre ?writer ?surname ?forenames
 WHERE
 {
   <{$uri}> dc:title ?title .
@@ -27,6 +65,13 @@ WHERE
   }
   OPTIONAL { <{$uri}> :medium ?medium . }
   OPTIONAL { <{$uri}> :genre ?genre . }
+  OPTIONAL {
+    <{$uri}> dc:creator ?writer .
+    OPTIONAL {
+      ?writer :surnameGD ?surname .
+      ?writer :forenamesGD ?forenames .
+    }
+  }
 }
 ORDER BY ?suburiRank
 SPQR;
@@ -40,7 +85,32 @@ $id = $results[0]->id->value;
 echo '<h1>#' . $id . ': ' . $results[0]->title->value . '</h1>';
 
 // META:
-echo '<div class="list-group list-group-flush">';
+echo '<table class="table"><tbody>';
+$writers = [];
+foreach ($results as $nextResult) {
+  $nextWriter = $nextResult->writer->value;
+  if ($nextWriter!='') {
+    $writers[$nextWriter] = $nextResult->forenames->value . ' ' . $nextResult->surname->value;
+  }
+}
+if (count($writers)==0) {
+  $writers = getSuperWriters($uri);
+}
+if (count($writers)>0) {
+  echo '<tr><td>';
+  echo 'writer</td><td>';
+  foreach ($writers as $nextWriter=>$nextName) {
+    if (substr($nextWriter,0,8)=='https://') {
+      echo '<a href="viewWriter.php?uri=' . $nextWriter . '">';
+      echo $nextName;
+      echo '</a>';
+    }
+    else { echo $nextWriter; }
+    if ($nextWriter !== end(array_keys($writers))) { echo ', '; }
+  }
+  echo '</td></tr>';
+}
+
 $media = [];
 foreach ($results as $nextResult) {
   $nextMedium = $nextResult->medium->value;
@@ -50,10 +120,10 @@ foreach ($results as $nextResult) {
 }
 $media = array_unique($media);
 if (count($media)>0) {
-  echo '<div list-group-item list-group-item-action>';
-  echo 'medium: ';
+  echo '<tr><td>';
+  echo 'medium</td><td>';
   echo implode($media,', ');
-  echo '</div>';
+  echo '</td></tr>';
 }
 $genres = [];
 foreach ($results as $nextResult) {
@@ -64,12 +134,12 @@ foreach ($results as $nextResult) {
 }
 $genres = array_unique($genres);
 if (count($genres)>0) {
-  echo '<div list-group-item list-group-item-action>';
-  echo 'genre: ';
+  echo '<tr><td>';
+  echo 'genre</td><td>';
   echo implode($genres,', ');
-  echo '</div>';
+  echo '</td></tr>';
 }
-echo '</div>';
+echo '</tbody></table>';
 echo '<p>&nbsp;</p>';
 
 // PARTS:

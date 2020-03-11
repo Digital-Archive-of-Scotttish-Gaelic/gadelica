@@ -16,16 +16,16 @@ $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
 PREFIX dc: <http://purl.org/dc/terms/>
-SELECT DISTINCT ?uri ?rank ?title ?xml ?part ?creator ?surname ?forenames
+SELECT DISTINCT ?uri ?rank ?title ?xml ?part ?writer ?surname ?forenames
 WHERE
 {
   ?uri dc:identifier ?rank .
   ?uri dc:title ?title .
   OPTIONAL {
-    ?uri dc:creator ?creator .
+    ?uri dc:creator ?writer .
     OPTIONAL {
-      ?creator :surnameGD ?surname .
-      ?creator :forenamesGD ?forenames .
+      ?writer :surnameGD ?surname .
+      ?writer :forenamesGD ?forenames .
     }
   }
   OPTIONAL { ?uri :xml ?xml . }
@@ -49,15 +49,11 @@ foreach ($texts as $nextText) {
   $rank = '';
   $title = '';
   $done = false;
-  $creator = '';
-  $surname = '';
   foreach ($results as $nextResult) {
     if ($nextResult->uri->value==$nextText) {
       $rank = $nextResult->rank->value;
       $title = $nextResult->title->value;
       $done = $nextResult->xml->value!='' || $nextResult->part->value!='' ;
-      $creator = $nextResult->creator->value;
-      $name = $nextResult->forenames->value . ' ' . $nextResult->surname->value;
       break;
     }
   }
@@ -67,10 +63,32 @@ foreach ($texts as $nextText) {
   echo '<a href="viewText.php?uri=' . $nextText . '">' . $title . '</a>';
   if ($done) { echo '</strong>'; }
   echo '</td><td>';
-  if (substr($creator,0,8)=='https://') {
-    echo '<a href="viewWriter.php?uri=' . $creator . '">' . $name . '</a>';
+  $writers = [];
+  foreach ($results as $nextResult) {
+    if ($nextResult->uri->value==$nextText) {
+      $nextWriter = $nextResult->writer->value;
+      if ($nextWriter!='') {
+        $writers[] = $nextWriter;
+      }
+    }
   }
-  else { echo $creator; }
+  $writers = array_unique($writers);
+  foreach ($writers as $nextWriter) {
+    if (substr($nextWriter,0,8)=='https://') {
+      echo '<a href="viewWriter.php?uri=' . $nextWriter . '">';
+      foreach ($results as $nextResult) {
+        if ($nextResult->writer->value==$nextWriter) {
+          echo $nextResult->forenames->value;
+          echo ' ';
+          echo $nextResult->surname->value;
+          break;
+        }
+      }
+      echo '</a>';
+    }
+    else { echo $nextWriter; }
+    if ($nextWriter !== end($writers)) { echo ', '; }
+  }
   echo '</td></tr>';
 }
 ?>
