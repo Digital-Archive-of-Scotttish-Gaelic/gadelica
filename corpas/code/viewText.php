@@ -1,7 +1,69 @@
 <!doctype html>
 <?php
 function getSuperMedia($uri) {
-  return [];
+  $query = <<<SPQR
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX : <http://faclair.ac.uk/meta/>
+PREFIX dc: <http://purl.org/dc/terms/>
+SELECT DISTINCT ?superuri ?medium
+WHERE
+{
+  <{$uri}> dc:isPartOf ?superuri .
+  OPTIONAL {
+    ?superuri :medium ?medium .
+  }
+}
+SPQR;
+  $url = 'https://daerg.arts.gla.ac.uk/fuseki/Corpus?output=json&query=' . urlencode($query);
+  if (getcwd()=='/Users/mark/Sites/gadelica/corpas/code') {
+    $url = 'http://localhost:3030/Corpus?output=json&query=' . urlencode($query);
+  }
+  $json = file_get_contents($url);
+  $results = json_decode($json,false)->results->bindings;
+  if (count($results)==0) {
+    return [];
+  }
+  $media = [];
+  foreach ($results as $nextResult) {
+    $media[] = $nextResult->medium->value;
+  }
+  if (count($media)==0) {
+    return getSuperMedia($results[0]->superuri->value);
+  }
+  return array_unique($media);
+}
+
+function getSuperGenres($uri) {
+  $query = <<<SPQR
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX : <http://faclair.ac.uk/meta/>
+PREFIX dc: <http://purl.org/dc/terms/>
+SELECT DISTINCT ?superuri ?genre
+WHERE
+{
+  <{$uri}> dc:isPartOf ?superuri .
+  OPTIONAL {
+    ?superuri :genre ?genre .
+  }
+}
+SPQR;
+  $url = 'https://daerg.arts.gla.ac.uk/fuseki/Corpus?output=json&query=' . urlencode($query);
+  if (getcwd()=='/Users/mark/Sites/gadelica/corpas/code') {
+    $url = 'http://localhost:3030/Corpus?output=json&query=' . urlencode($query);
+  }
+  $json = file_get_contents($url);
+  $results = json_decode($json,false)->results->bindings;
+  if (count($results)==0) {
+    return [];
+  }
+  $genres = [];
+  foreach ($results as $nextResult) {
+    $genres[] = $nextResult->genre->value;
+  }
+  if (count($genres)==0) {
+    return getSuperGenres($results[0]->superuri->value);
+  }
+  return array_unique($genres);
 }
 
 function getSuperWriters($uri) {
@@ -56,7 +118,7 @@ $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
 PREFIX dc: <http://purl.org/dc/terms/>
-SELECT DISTINCT ?title ?id ?suburi ?suburiTitle ?suburiRank ?xml ?medium ?genre ?writer ?surname ?forenames
+SELECT DISTINCT ?title ?id ?suburi ?suburiTitle ?suburiRank ?xml ?medium ?genre ?writer ?surname ?forenames ?date ?publisher ?rating ?superuri ?supertitle
 WHERE
 {
   <{$uri}> dc:title ?title .
@@ -76,6 +138,13 @@ WHERE
       ?writer :forenamesGD ?forenames .
     }
   }
+  OPTIONAL { <{$uri}> dc:date ?date . }
+  OPTIONAL { <{$uri}> dc:publisher ?publisher . }
+  OPTIONAL { <{$uri}> :rating ?rating . }
+  OPTIONAL {
+    <{$uri}> dc:isPartOf ?superuri .
+    ?superuri dc:title ?supertitle .
+  }
 }
 ORDER BY ?suburiRank
 SPQR;
@@ -84,9 +153,10 @@ if (getcwd()=='/Users/mark/Sites/gadelica/corpas/code') {
   $url = 'http://localhost:3030/Corpus?output=json&query=' . urlencode($query);
 }
 $json = file_get_contents($url);
+//echo $json;
 $results = json_decode($json,false)->results->bindings;
 $id = $results[0]->id->value;
-echo '<h1>#' . $id . ': ' . $results[0]->title->value . '</h1>';
+echo '<h1>' . $results[0]->title->value . '</h1>';
 // META:
 echo '<table class="table"><tbody>';
 $writers = [];
@@ -121,12 +191,11 @@ foreach ($results as $nextResult) {
   }
 }
 $media = array_unique($media);
-if (count($media==0)) {
-  $writers = getSuperMedia($uri); // START HERE
+if (count($media)==0) {
+  $media = getSuperMedia($uri);
 }
 if (count($media)>0) {
-  echo '<tr><td>';
-  echo 'medium</td><td>';
+  echo '<tr><td>medium</td><td>';
   foreach ($media as $nextMedium) {
     echo '<a class="badge badge-primary" href="#">';
     echo $nextMedium;
@@ -134,8 +203,6 @@ if (count($media)>0) {
   }
   echo '</td></tr>';
 }
-
-
 $genres = [];
 foreach ($results as $nextResult) {
   $nextGenre = $nextResult->genre->value;
@@ -144,9 +211,11 @@ foreach ($results as $nextResult) {
   }
 }
 $genres = array_unique($genres);
+if (count($genres)==0) {
+  $genres = getSuperGenres($uri);
+}
 if (count($genres)>0) {
-  echo '<tr><td>';
-  echo 'genre</td><td>';
+  echo '<tr><td>genre</td><td>';
   foreach ($genres as $nextGenre) {
     echo '<a class="badge badge-primary" href="#">';
     echo $nextGenre;
@@ -154,6 +223,33 @@ if (count($genres)>0) {
   }
   echo '</td></tr>';
 }
+$date = $results[0]->date->value;
+if ($date!='') {
+  echo '<tr><td>publication year</td><td>';
+  echo $results[0]->date->value;
+  echo '</td></tr>';
+}
+$publisher = $results[0]->publisher->value;
+if ($publisher!='') {
+  echo '<tr><td>publisher</td><td>';
+  echo $results[0]->publisher->value;
+  echo '</td></tr>';
+}
+$rating = $results[0]->rating->value;
+if ($rating!='') {
+  echo '<tr><td>rating</td><td>';
+  echo $results[0]->rating->value;
+  echo '</td></tr>';
+}
+$superuri = $results[0]->superuri->value;
+if ($superuri!='') {
+  echo '<tr><td>part of</td><td>';
+  echo '<a href="viewText.php?uri=' . $superuri . '">';
+  echo $results[0]->supertitle->value;;
+  echo '</a></td></tr>';
+}
+
+echo '<tr><td>URI</td><td>' . $uri . '</td></tr>';
 echo '</tbody></table>';
 echo '<p>&nbsp;</p>';
 
