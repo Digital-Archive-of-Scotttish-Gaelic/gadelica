@@ -6,11 +6,12 @@
 @prefix : <http://faclair.ac.uk/meta/> .
 
 c:_1
-  dc:title "Somhairle MacGill-Eain: Dàin do Eimhir" ;
+  dc:title "Dàin do Eimhir" ;
+  :fullTitle "Somhairle MacGill-Eain: Dàin do Eimhir" ;
   dc:identifier 1 ;
   dc:date "2002" ;
   dc:publisher "Association for Scottish Literary Studies, Glasgow" ;
-  dc:creator "MacGill-Eain, Somhairle (author)" ;
+  dc:creator p:Sorley_MacLean_1911_1996 ;
   dc:contributor "Whyte, Christopher (editor)" ;
   :shortTitle "Dàin do Eimhir" ;
   :rating "B" .
@@ -20,12 +21,13 @@ c:_2
   dc:identifier 2 ;
   dc:date "2001" ;
   dc:publisher "Acair, Stornoway" ;
-  dc:creator "Dòmhnallach, Dòmhnall Alasdair (author)" ;
+  dc:creator p:Donald_Alexander_MacDonald_1919_2003 ;
   :shortTitle "Sgeulachdan" ;
   :rating "B" .
 
 c:_3
-  dc:title "Smuaintean fo Éiseabhal (Thoughts under Eiseaval)" ;
+  dc:title "Smuaintean fo Éiseabhal" ;
+  :fullTitle "Smuaintean fo Éiseabhal (Thoughts under Eiseaval)" ;
   dc:identifier 3 ;
   dc:date "2000" ;
   dc:publisher "Birlinn, Edinburgh" ;
@@ -41,14 +43,15 @@ c:_4
   dc:identifier 4 ;
   dc:date "1999" ;
   dc:publisher "Acair, Stornoway" ;
-  dc:creator "Dòmhnallach, Dòmhnall Alasdair (author)" ;
+  dc:creator p:Donald_Alexander_MacDonald_1919_2003 ;
   :genre "literature" ;
   :medium "verse" ;
-  :shortTitle "Bàrdachd " ;
+  :shortTitle "Bàrdachd" ;
   :rating "B" .
 
 c:_5
-  dc:title "Inbhe Thearainte Dhan Ghàidhlig, Dreach iùl airson Achd Gàidhlig" ;
+  dc:title "Inbhe Thearainte Dhan Ghàidhlig" ;
+  :fullTitle "Inbhe Thearainte Dhan Ghàidhlig, Dreach iùl airson Achd Gàidhlig" ;
   dc:identifier 5 ;
   dc:date "1999" ;
   dc:publisher "Comunn na Gàidhlig, Inverness" ;
@@ -59,7 +62,8 @@ c:_5
   :rating "B" .
 
 c:_6
-  dc:title "Tasgadh anns an Ùine Romhainn, A’ Cruthachadh Luchd-Obrach Cothromaichte air Ghaidhealtachd is sna h-Eileanan" ;
+  dc:title "Tasgadh anns an Ùine Romhainn" ;
+  :fullTitle "Tasgadh anns an Ùine Romhainn, A’ Cruthachadh Luchd-Obrach Cothromaichte air Ghaidhealtachd is sna h-Eileanan" ;
   dc:identifier 6 ;
   dc:date "1996" ;
   dc:publisher "Produced by Cànan, Sabhal Mòr Ostaig, Isle of Skye (for Training 2000, Children in Scotland, Rural Forum, Scotland), Inverness" ;
@@ -69,11 +73,11 @@ c:_6
   :rating "B" .
 
 c:_7
-  dc:title "Moch is Anmoch, the Gaelic poetry of Donald A. MacNeill and other Colonsay bards." ;
+  dc:title "Moch is Anmoch" ;
+  :fullTitle "Moch is Anmoch, the Gaelic poetry of Donald A. MacNeill and other Colonsay bards." ;
   dc:identifier 7 ;
   dc:date "1998" ;
   dc:publisher "House of Lochar, Isle of Colonsay " ;
-  dc:creator "MacNeill, Donald A.  (author)" ;
   dc:contributor "Scouller, Alastair MacNeill (editor)" ;
   :genre "literature" ;
   :medium "verse" ;
@@ -81,7 +85,8 @@ c:_7
   :rating "B" .
 
 c:_8
-  dc:title "Hiort, Far na Laigh a’ Ghrian" ;
+  dc:title "Hiort" ;
+  :fullTitle "Hiort, Far na Laigh a’ Ghrian" ;
   dc:identifier 8 ;
   dc:date "1995" ;
   dc:publisher "Acair, Stornoway" ;
@@ -158,7 +163,8 @@ c:_14
   :rating "B" .
 
 c:_15
-  dc:title "Bàrdachd na Roinn-Eòrpa an Gàidhlig (European Poetry in Gaelic)" ;
+  dc:title "Bàrdachd na Roinn-Eòrpa an Gàidhlig" ;
+  :fullTitle "Bàrdachd na Roinn-Eòrpa an Gàidhlig (European Poetry in Gaelic)" ;
   dc:identifier 15 ;
   dc:date "1990" ;
   dc:publisher "Gairm, Glasgow" ;
@@ -191,7 +197,8 @@ c:_17
   :rating "B" .
 
 c:_18
-  dc:title "Dealbh-chruth nan Eilean Siar: aithisg sgrìobhte (Western Isles Structure Plan: written statement)" ;
+  dc:title "Dealbh-chruth nan Eilean Siar" ;
+  :fullTitle "Dealbh-chruth nan Eilean Siar: aithisg sgrìobhte (Western Isles Structure Plan: written statement)" ;
   dc:identifier 18 ;
   dc:date "1988" ;
   dc:publisher "Comhairle nan Eilean, Stornoway" ;
@@ -212,7 +219,8 @@ c:_19
   :rating "B" .
 
 c:_20
-  dc:title "A’ Ghaidhlig anns an Eilean Sgitheanach Plana Leasachaidh Deich Bliadhna (Gaelic in Skye A Ten Year Development Plan)" ;
+  dc:title "A’ Ghaidhlig anns an Eilean Sgitheanach" ;
+  :fullTitle "A’ Ghaidhlig anns an Eilean Sgitheanach Plana Leasachaidh Deich Bliadhna (Gaelic in Skye A Ten Year Development Plan)" ;
   dc:identifier 20 ;
   dc:date "1987" ;
   dc:publisher "Comunn na Gaidhlig, Inverness" ;
@@ -222,7 +230,8 @@ c:_20
   :rating "B" .
 
 c:_21
-  dc:title "Chì Mi, Bàrdachd Dhòmhnaill Iain Dhonnchaidh (The Gaelic Poetry of Donald John MacDonald)" ;
+  dc:title "Chì Mi – Bàrdachd Dhòmhnaill Iain Dhonnchaidh" ;
+  :fullTitle "Chì Mi, Bàrdachd Dhòmhnaill Iain Dhonnchaidh (The Gaelic Poetry of Donald John MacDonald)" ;
   dc:identifier 21 ;
   dc:date "2001" ;
   dc:publisher "Birlinn, Edinburgh" ;
@@ -420,7 +429,7 @@ c:_38
   dc:identifier 38 ;
   dc:date "1973" ;
   dc:publisher "Techmac & Co., Edinburgh" ;
-  dc:creator "MacLeòid, Iain Aonghas (author)" ;
+  dc:creator p:John_Angus_MacLeod__ ;
   :genre "literature" ;
   :medium "prose" ;
   :shortTitle "Criomagan Ioma-dhathte" ;
@@ -431,7 +440,7 @@ c:_39
   dc:identifier 39 ;
   dc:date "1973" ;
   dc:publisher "Gairm, Glasgow" ;
-  dc:creator "Moireach, Iain (author)" ;
+  dc:creator p:John_Murray_1938_2018 ;
   :genre "literature" ;
   :medium "prose" ;
   :shortTitle "An Aghaidh Choimheach" ;
@@ -442,7 +451,7 @@ c:_40
   dc:identifier 40 ;
   dc:date "1972" ;
   dc:publisher "Club Leabhar, Inverness" ;
-  dc:creator "Watt, Eilidh (author)" ;
+  dc:creator p:Eilidh_MacAskill_Watt_1908_1996 ;
   dc:contributor "Donnchadh Mac Guaire (editor)" ;
   :genre "literature" ;
   :medium "prose" ;
@@ -489,7 +498,7 @@ c:_44
   dc:identifier 44 ;
   dc:date "1970" ;
   dc:publisher "Celtic Department, Glasgow University, Glasgow" ;
-  dc:contributor "MacDhòmhnaill, Coinneach Dòmhnall (editor)" ;
+  dc:contributor p:Kenneth_Donald_MacDonald__ ;
   :genre "literature" ;
   :medium "prose" ;
   :shortTitle "Briseadh na Cloiche" ;

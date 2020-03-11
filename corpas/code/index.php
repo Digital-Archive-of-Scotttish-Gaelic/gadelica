@@ -9,17 +9,27 @@
   <body>
     <div class="container-fluid">
       <h1>Corpas na Gàidhlig</h1>
-      <div class="list-group list-group-flush">
+      <table class="table">
+        <tbody>
 <?php
 $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
 PREFIX dc: <http://purl.org/dc/terms/>
-SELECT DISTINCT ?uri ?rank ?title
+SELECT DISTINCT ?uri ?rank ?title ?xml ?part ?creator ?surname ?forenames
 WHERE
 {
   ?uri dc:identifier ?rank .
   ?uri dc:title ?title .
+  OPTIONAL {
+    ?uri dc:creator ?creator .
+    OPTIONAL {
+      ?creator :surnameGD ?surname .
+      ?creator :forenamesGD ?forenames .
+    }
+  }
+  OPTIONAL { ?uri :xml ?xml . }
+  OPTIONAL { ?part dc:isPartOf ?uri . }
   FILTER NOT EXISTS { ?uri dc:isPartOf ?superuri . }
 }
 ORDER BY ?rank
@@ -29,15 +39,43 @@ if (getcwd()=='/Users/mark/Sites/gadelica/corpas/code') {
   $url = 'http://localhost:3030/Corpus?output=json&query=' . urlencode($query);
 }
 $json = file_get_contents($url);
-$texts = json_decode($json,false)->results->bindings;
+$results = json_decode($json,false)->results->bindings;
+$texts = [];
+foreach ($results as $nextResult) {
+  $texts[] = $nextResult->uri->value;
+}
+$texts = array_unique($texts);
 foreach ($texts as $nextText) {
-  echo '<div class="list-group-item list-group-item-action">#';
-  echo $nextText->rank->value . ': ';
-  echo '<a href="viewText.php?uri=' . $nextText->uri->value . '">' . $nextText->title->value . '</a>';
-  echo '</div>';
+  $rank = '';
+  $title = '';
+  $done = false;
+  $creator = '';
+  $surname = '';
+  foreach ($results as $nextResult) {
+    if ($nextResult->uri->value==$nextText) {
+      $rank = $nextResult->rank->value;
+      $title = $nextResult->title->value;
+      $done = $nextResult->xml->value!='' || $nextResult->part->value!='' ;
+      $creator = $nextResult->creator->value;
+      $name = $nextResult->forenames->value . ' ' . $nextResult->surname->value;
+      break;
+    }
+  }
+  echo '<tr><td>#';
+  echo $rank . '</td><td style="width: 50%;">';
+  if ($done) { echo '<strong>'; }
+  echo '<a href="viewText.php?uri=' . $nextText . '">' . $title . '</a>';
+  if ($done) { echo '</strong>'; }
+  echo '</td><td>';
+  if (substr($creator,0,8)=='https://') {
+    echo '<a href="viewWriter.php?uri=' . $creator . '">' . $name . '</a>';
+  }
+  else { echo $creator; }
+  echo '</td></tr>';
 }
 ?>
-      </div>
+        </tbody>
+      </table>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
