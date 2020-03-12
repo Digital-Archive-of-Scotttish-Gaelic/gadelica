@@ -8,27 +8,39 @@
   </head>
   <body>
     <div class="container-fluid" style="max-width: 800px; float: left;">
+      <p><a href="index.php">&lt; Back to corpus index</a></p>
+      <p><a href="writers.php">&lt; Back to writer index</a></p>
 <?php
 $uri = $_GET['uri'];
 $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
 PREFIX dc: <http://purl.org/dc/terms/>
-SELECT DISTINCT ?surname ?forenames ?yob ?yod ?origin ?work
+SELECT DISTINCT ?surname ?forenames ?yob ?yod ?origin ?work ?title ?nickname ?parent ?psur ?pfore ?pnick ?sprog ?ssur ?sfore ?snick
 WHERE
 {
   <{$uri}> :surnameGD ?surname .
   <{$uri}> :forenamesGD ?forenames .
+  OPTIONAL { <{$uri}> :nickname ?nickname . }
   OPTIONAL {
-    <{$uri}> :yob ?yob .
+    <{$uri}> :parent ?parent .
+    ?parent :surnameGD ?psur .
+    ?parent :forenamesGD ?pfore .
+    OPTIONAL { ?parent :nickname ?pnick . }
+  }
+  OPTIONAL { <{$uri}> :yob ?yob . }
+  OPTIONAL { <{$uri}> :yod ?yod . }
+  OPTIONAL { <{$uri}> :where ?origin . }
+  OPTIONAL {
+    ?work dc:creator <{$uri}> .
+    ?work dc:title ?title .
   }
   OPTIONAL {
-    <{$uri}> :yod ?yod .
+    ?sprog :parent <{$uri}> .
+    ?sprog :surnameGD ?ssur .
+    ?sprog :forenamesGD ?sfore .
+    OPTIONAL { ?sprog :nickname ?snick . }
   }
-  OPTIONAL {
-    <{$uri}> :where ?origin .
-  }
-  ?work dc:creator <{$uri}> .
 }
 SPQR;
 $url = 'https://daerg.arts.gla.ac.uk/fuseki/Corpus?output=json&query=' . urlencode($query);
@@ -38,7 +50,12 @@ if (getcwd()=='/Users/mark/Sites/gadelica/corpas/code') {
 $json = file_get_contents($url);
 //echo $json;
 $results = json_decode($json,false)->results->bindings;
-echo '<h1>' . $results[0]->forenames->value . ' ' . $results[0]->surname->value . '</h1>';
+echo '<h3>' . $results[0]->forenames->value . ' ' . $results[0]->surname->value;
+$nick = $results[0]->nickname->value;
+if ($nick!='') {
+  echo ' (' . $nick . ')';
+}
+echo '</h3>';
 echo '<table class="table"><tbody>';
 if ($results[0]->yob->value!='') {
   echo '<tr><td>lifespan</td><td>';
@@ -48,18 +65,45 @@ if ($results[0]->yob->value!='') {
 if ($results[0]->origin->value!='') {
   echo '<tr><td>origin</td><td><a class="badge badge-primary" href="#">';
   echo $results[0]->origin->value;
+  echo '</a></td></tr>';
+}
+if ($results[0]->parent->value!='') {
+  echo '<tr><td>parents</td><td><a href="viewWriter.php?uri=' . $results[0]->parent->value . '">';
+  echo $results[0]->pfore->value . ' ' . $results[0]->psur->value; // assumes only one parent!
+  $nick = $results[0]->pnick->value;
+  if ($nick!='') {
+    echo ' (' . $nick . ')';
+  }
+  echo '</td></tr>';
+}
+$sprogs = [];
+foreach ($results as $nextResult) {
+  if ($nextResult->sprog->value!='') {
+    $name = $nextResult->sfore->value . ' ' . $nextResult->ssur->value;
+    if ($nextResult->snick->value!='') {
+      $name .= ' (' . $nextResult->snick->value . ')';
+    }
+    $sprogs[$nextResult->sprog->value] = $name;
+  }
+}
+if (count($sprogs)>0) {
+  echo '<tr><td>children</td><td>';
+  foreach ($sprogs as $nextSprog=>$nextName) {
+    echo '<a href="viewWriter.php?uri=' . $nextSprog . '">';
+    echo $nextName . '</a>';
+    if ($nextSprog!=end(array_keys($sprogs))) { echo ', '; }
+  }
   echo '</td></tr>';
 }
 echo '</tbody></table>';
 $works = [];
 foreach ($results as $nextResult) {
   if ($nextResult->work->value!='') {
-    $works[] = $nextResult->work->value;
+    $works[$nextResult->work->value] = $nextResult->title->value;
   }
 }
-$works = array_unique($works);
-foreach ($works as $nextWork) {
-  echo '<a href="viewText.php?uri=' . $nextWork . '">' . $nextWork . '</a><br/>';
+foreach ($works as $nextWork=>$nextTitle) {
+  echo '<a href="viewText.php?uri=' . $nextWork . '">' . $nextTitle . '</a><br/>';
 }
 ?>
 

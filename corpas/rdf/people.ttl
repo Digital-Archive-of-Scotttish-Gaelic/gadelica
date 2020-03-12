@@ -5,14 +5,96 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix : <http://faclair.ac.uk/meta/> .
 
-p:Sorley_MacLean_1911_1996
-  :surnameEN "MacLean" ;
-  :forenamesEN "Sorley" ;
-  :surnameGD "MacGill-Eain" ;
-  :forenamesGD "Somhairle" ;
-  :yob "1911" ;
-  :yod "1996" ;
-  :where "Skye" .
+p:Alexander_Campbell__
+  :surnameEN "Campbell" ;
+  :forenamesEN "Alexander" ;
+  :surnameGD "Caimbeul" ;
+  :forenamesGD "Alasdair" ;
+  :nickname "Alasdair Mhurchaidh Òig" ;
+  :yob "" ;
+  :yod "" ;
+  :where "Lewis" .
+
+p:Alexander_Campbell_1941_
+  :surnameEN "Campbell" ;
+  :forenamesEN "Alexander" ;
+  :surnameGD "Caimbeul" ;
+  :forenamesGD "Alasdair" ;
+  :nickname "Alasdair a’ Bhocsair" ;
+  :parent p:Angus_Campbell_1908_1949 ;
+  :yob "1941" ;
+  :yod "" ;
+  :where "Lewis" .
+
+p:Angus_Campbell_1908_1949
+  :surnameEN "Campbell" ;
+  :forenamesEN "Angus" ;
+  :surnameGD "Caimbeul" ;
+  :forenamesGD "Aonghas" ;
+  :nickname "Am Bocsair" ;
+  :parent p:Alexander_Campbell__ ;
+  :yob "1908" ;
+  :yod "1949" ;
+  :where "Lewis" .
+
+p:Angus_Campbell_1903_1982
+  :surnameEN "Campbell" ;
+  :forenamesEN "Angus" ;
+  :surnameGD "Caimbeul" ;
+  :forenamesGD "Aonghas" ;
+  :nickname "Am Puilean" ;
+  :parent p:Alexander_Campbell__ ;
+  :yob "1903" ;
+  :yod "1982" ;
+  :where "Lewis" .
+
+p:Elizabeth_Campbell_1913_
+  :surnameEN "Campbell" ;
+  :forenamesEN "Elizabeth" ;
+  :surnameGD "Chaimbeul" ;
+  :forenamesGD "Ealasaid" ;
+  :yob "1913" ;
+  :yod "" ;
+  :where "South Uist" .
+
+p:Norman_Campbell_1942_2015
+  :surnameEN "Campbell" ;
+  :forenamesEN "Norman" ;
+  :surnameGD "Caimbeul" ;
+  :forenamesGD "Tormod" ;
+  :nickname "Tormod a’ Bhocsair" ;
+  :parent p:Angus_Campbell_1908_1949 ;
+  :yob "1942" ;
+  :yod "2015" ;
+  :where "Lewis" .
+
+p:Calum_Ferguson__
+  :surnameEN "Ferguson" ;
+  :forenamesEN "Calum" ;
+  :surnameGD "MacFhearghuis" ;
+  :forenamesGD "Calum" ;
+  :yob "" ;
+  :yod "" ;
+  :where "Lewis" .
+
+p:Paul_Galbraith_1923_2011
+  :surnameEN "Galbraith" ;
+  :forenamesEN "Paul" ;
+  :surnameGD "Mac a’ Bhreatunnaich" ;
+  :forenamesGD "Pòl" ;
+  :yob "1923" ;
+  :yod "2011" ;
+  :where "South Uist" .
+
+p:George_Campbell_Hay_1915_1984
+  :surnameEN "Hay" ;
+  :forenamesEN "George Campbell" ;
+  :surnameGD "Hay" ;
+  :forenamesGD "George Campbell" ;
+  :nickname "Deòrsa Mac Iain Dheòrsa" ;
+  :yob "1915" ;
+  :yod "1984" ;
+  :where "Argyll" .
 
 p:Donald_Alexander_MacDonald_1919_2003
   :surnameEN "MacDonald" ;
@@ -23,23 +105,25 @@ p:Donald_Alexander_MacDonald_1919_2003
   :yod "2003" ;
   :where "Lewis" .
 
-p:John_Angus_MacLeod__
-  :surnameEN "MacLeod" ;
-  :forenamesEN "John Angus" ;
-  :surnameGD "MacLeòid" ;
-  :forenamesGD "Iain Aonghas" ;
-  :yob "" ;
-  :yod "" ;
-  :where "Harris" .
+p:Donald_MacDonald_1926_2000
+  :surnameEN "MacDonald" ;
+  :forenamesEN "Donald" ;
+  :surnameGD "MacDhòmhnaill" ;
+  :forenamesGD "Dòmhnall" ;
+  :nickname "Dòmhnall Aonghais Bhàin" ;
+  :yob "1920" ;
+  :yod "2000" ;
+  :where "South Uist" .
 
-p:Eilidh_MacAskill_Watt_1908_1996
-  :surnameEN "Watt" ;
-  :forenamesEN "Eilidh" ;
-  :surnameGD "Watt" ;
-  :forenamesGD "Eilidh" ;
-  :yob "1908" ;
-  :yod "1996" ;
-  :where "Skye" .
+p:Donald_John_MacDonald_1919_1986
+  :surnameEN "MacDonald" ;
+  :forenamesEN "Donald John" ;
+  :surnameGD "MacDhòmhnaill" ;
+  :forenamesGD "Dòmhnall Iain" ;
+  :nickname "Dòmhnall Iain Dhonnchaidh" ;
+  :yob "1919" ;
+  :yod "1986" ;
+  :where "South Uist" .
 
 p:Kenneth_Donald_MacDonald__
   :surnameEN "MacDonald" ;
@@ -50,13 +134,32 @@ p:Kenneth_Donald_MacDonald__
   :yod "" ;
   :where "" .
 
-p:John_Murray_1938_2018
-  :surnameEN "Murray" ;
+p:Sorley_MacLean_1911_1996
+  :surnameEN "MacLean" ;
+  :forenamesEN "Sorley" ;
+  :surnameGD "MacGill-Eain" ;
+  :forenamesGD "Somhairle" ;
+  :yob "1911" ;
+  :yod "1996" ;
+  :where "Skye" .
+
+p:John_Angus_MacLeod__
+  :surnameEN "MacLeod" ;
+  :forenamesEN "John Angus" ;
+  :surnameGD "MacLeòid" ;
+  :forenamesGD "Iain Aonghas" ;
+  :yob "" ;
+  :yod "" ;
+  :where "Harris" .
+
+p:John_MacLeod_1889_1956
+  :surnameEN "MacLeod" ;
   :forenamesEN "John" ;
-  :surnameGD "Moireach" ;
+  :surnameGD "MacLeòid" ;
   :forenamesGD "Iain" ;
-  :yob "1938" ;
-  :yod "2018" ;
+  :nickname "Suileabhan" ;
+  :yob "1889" ;
+  :yod "1956" ;
   :where "Lewis" .
 
 p:John_MacLeod_1934_
@@ -67,3 +170,39 @@ p:John_MacLeod_1934_
   :yob "1934" ;
   :yod "" ;
   :where "Skye" .
+
+p:Calum_MacMillan__
+  :surnameEN "MacMillan" ;
+  :forenamesEN "Calum" ;
+  :surnameGD "MacMhaoilein" ;
+  :forenamesGD "Calum" ;
+  :yob "" ;
+  :yod "" ;
+  :where "Lewis" .
+
+p:John_Murray_1938_2018
+  :surnameEN "Murray" ;
+  :forenamesEN "John" ;
+  :surnameGD "Moireach" ;
+  :forenamesGD "Iain" ;
+  :yob "1938" ;
+  :yod "2018" ;
+  :where "Lewis" .
+
+p:Eilidh_MacAskill_Watt_1908_1996
+  :surnameEN "Watt" ;
+  :forenamesEN "Eilidh" ;
+  :surnameGD "Watt" ;
+  :forenamesGD "Eilidh" ;
+  :yob "1908" ;
+  :yod "1996" ;
+  :where "Skye" .
+
+p:Derick_Thomson_1921_2012
+  :surnameEN "Thomson" ;
+  :forenamesEN "Derick" ;
+  :surnameGD "MacThòmais" ;
+  :forenamesGD "Ruairidh" ;
+  :yob "1921" ;
+  :yod "2012" ;
+  :where "Lewis" .

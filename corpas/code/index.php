@@ -8,6 +8,7 @@
   </head>
   <body>
     <div class="container-fluid">
+      <p><a href="writers.php">&gt; Writer index</a></p>
       <h1>Corpas na Gàidhlig</h1>
       <table class="table">
         <tbody>
@@ -16,7 +17,7 @@ $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
 PREFIX dc: <http://purl.org/dc/terms/>
-SELECT DISTINCT ?uri ?rank ?title ?xml ?part ?writer ?surname ?forenames
+SELECT DISTINCT ?uri ?rank ?title ?xml ?part ?writer ?surname ?forenames ?nickname
 WHERE
 {
   ?uri dc:identifier ?rank .
@@ -26,6 +27,9 @@ WHERE
     OPTIONAL {
       ?writer :surnameGD ?surname .
       ?writer :forenamesGD ?forenames .
+      OPTIONAL {
+        ?writer :nickname ?nickname .
+      }
     }
   }
   OPTIONAL { ?uri :xml ?xml . }
@@ -75,16 +79,21 @@ foreach ($texts as $nextText) {
   $writers = array_unique($writers);
   foreach ($writers as $nextWriter) {
     if (substr($nextWriter,0,8)=='https://') {
-      echo '<a href="viewWriter.php?uri=' . $nextWriter . '">';
       foreach ($results as $nextResult) {
         if ($nextResult->writer->value==$nextWriter) {
+          echo '<a href="viewWriter.php?uri=' . $nextWriter . '">';
           echo $nextResult->forenames->value;
           echo ' ';
           echo $nextResult->surname->value;
+          echo '</a>';
+          if ($nextResult->nickname->value!='') {
+            echo ' (';
+            echo $nextResult->nickname->value;
+            echo ')';
+          }
           break;
         }
       }
-      echo '</a>';
     }
     else { echo $nextWriter; }
     if ($nextWriter !== end($writers)) { echo ', '; }

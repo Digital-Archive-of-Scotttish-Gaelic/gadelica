@@ -112,13 +112,14 @@ SPQR;
   </head>
   <body>
     <div class="container-fluid" style="max-width: 800px; float: left;">
+      <p><a href="index.php">&lt; Back to corpus index</a></p>
 <?php
 $uri = $_GET['uri'];
 $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
 PREFIX dc: <http://purl.org/dc/terms/>
-SELECT DISTINCT ?title ?id ?suburi ?suburiTitle ?suburiRank ?xml ?medium ?genre ?writer ?surname ?forenames ?date ?publisher ?rating ?superuri ?supertitle
+SELECT DISTINCT ?title ?id ?suburi ?suburiTitle ?suburiRank ?xml ?medium ?genre ?writer ?surname ?forenames ?nick ?date ?publisher ?rating ?superuri ?supertitle
 WHERE
 {
   <{$uri}> dc:title ?title .
@@ -136,6 +137,9 @@ WHERE
     OPTIONAL {
       ?writer :surnameGD ?surname .
       ?writer :forenamesGD ?forenames .
+      OPTIONAL {
+        ?writer :nickname ?nick .
+      }
     }
   }
   OPTIONAL { <{$uri}> dc:date ?date . }
@@ -156,14 +160,18 @@ $json = file_get_contents($url);
 //echo $json;
 $results = json_decode($json,false)->results->bindings;
 $id = $results[0]->id->value;
-echo '<h1>' . $results[0]->title->value . '</h1>';
+echo '<h3>' . $results[0]->title->value . '</h3>';
 // META:
 echo '<table class="table"><tbody>';
 $writers = [];
 foreach ($results as $nextResult) {
   $nextWriter = $nextResult->writer->value;
   if ($nextWriter!='') {
-    $writers[$nextWriter] = $nextResult->forenames->value . ' ' . $nextResult->surname->value;
+    $name = $nextResult->forenames->value . ' ' . $nextResult->surname->value;
+    if ($nextResult->nick->value!='') {
+      $name .= ' (' . $nextResult->nick->value . ')';
+    }
+    $writers[$nextWriter] = $name;
   }
 }
 if (count($writers)==0) {
