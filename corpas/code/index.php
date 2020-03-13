@@ -17,11 +17,12 @@ $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
 PREFIX dc: <http://purl.org/dc/terms/>
-SELECT DISTINCT ?uri ?rank ?title ?xml ?part ?writer ?surname ?forenames ?nickname
+SELECT DISTINCT ?uri ?rank ?title ?xml ?part ?writer ?surname ?forenames ?nickname ?date
 WHERE
 {
   ?uri dc:identifier ?rank .
   ?uri dc:title ?title .
+  ?uri dc:date ?date .
   OPTIONAL {
     ?uri dc:creator ?writer .
     OPTIONAL {
@@ -97,6 +98,13 @@ foreach ($texts as $nextText) {
     }
     else { echo $nextWriter; }
     if ($nextWriter !== end($writers)) { echo ', '; }
+  }
+  echo '</td><td>';
+  foreach ($results as $nextResult) {
+    if ($nextResult->uri->value==$nextText) {
+      echo $nextResult->date->value;
+      break;
+    }
   }
   echo '</td></tr>';
 }
