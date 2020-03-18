@@ -5,7 +5,7 @@ $path = '../xml/';
 $files = scandir($path);
 foreach ($files as $nextFile) {
   if (substr($nextFile,-4)=='.xml') {
-    echo $path . $nextFile . PHP_EOL;
+    processXML($path . $nextFile);
   }
   else if ($nextFile!='.' && $nextFile!='..') {
     $path2 = $path . $nextFile . '/';
@@ -13,7 +13,7 @@ foreach ($files as $nextFile) {
       $files2 = scandir($path2);
       foreach ($files2 as $nextFile2) {
         if (substr($nextFile2,-4)=='.xml') {
-          echo $path2 . $nextFile2 . PHP_EOL;
+          processXML($path2 . $nextFile2);
         }
         else if ($nextFile2!='.' && $nextFile2!='..') {
           $path3 = $path2 . $nextFile2 . '/';
@@ -21,7 +21,7 @@ foreach ($files as $nextFile) {
             $files3 = scandir($path3);
             foreach ($files3 as $nextFile3) {
               if (substr($nextFile3,-4)=='.xml') {
-                echo $path3 . $nextFile3 . PHP_EOL;
+                processXML($path3 . $nextFile3);
               }
             }
           }
@@ -29,6 +29,22 @@ foreach ($files as $nextFile) {
       }
     }
   }
+}
+
+function processXML($file) {
+  $xml = new SimpleXMLElement($file,0,true);
+  if ($xml['status'] == 'tagged') {
+    $xml->registerXPathNamespace('dasg', 'https://dasg.ac.uk/corpus/');
+    foreach ($xml->xpath('descendant::dasg:w') as $nextWord) {
+      if ($nextWord['lemma']!='') {
+        echo $nextWord['lemma'] .PHP_EOL;
+      }
+      else {
+        echo $nextWord . PHP_EOL;
+      }
+    }
+  }
+
 }
 
 
