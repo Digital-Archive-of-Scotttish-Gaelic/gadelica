@@ -1,0 +1,150 @@
+@prefix n: <http://faclair.ac.uk/nouns/> .
+@prefix a: <http://faclair.ac.uk/adjectives/> .
+@prefix v: <http://faclair.ac.uk/verbs/> .
+@prefix o: <http://faclair.ac.uk/other/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://faclair.ac.uk/meta/> .
+
+n:agricol_ a :Noun , :Lexeme , :Masculine ; rdfs:label "agricol(a)" ; :sense "farmer" .
+n:agricola a :Nominative, :Singular ; :stem n:agricol_ ; rdfs:label "agricola" ; :ipa "a'grikola" .
+n:agricolam a :Accusative , :Singular ; :stem n:agricol_ ; rdfs:label "agricolam" ; :ipa "a'grikolam" .
+n:agricolae-gen a :Genitive , :Singular ; :stem n:agricol_ ; rdfs:label "agricolae" ; :ipa "a'grikolaj" .
+n:agricolae-dat a :Dative , :Singular ; :stem n:agricol_ ; rdfs:label "agricolae" ; :ipa "a'grikolaj" .
+n:agricola-abl a :Ablative , :Singular ; :stem n:agricol_ ; rdfs:label "agricola" ; :ipa "a'grikola:" .
+n:agricolae a :Nominative , :Plural ; :stem n:agricol_ ; rdfs:label "agricolae" ; :ipa "a'grikolaj" .
+n:agricolas a :Accusative , :Plural ; :stem n:agricol_ ; rdfs:label "agricolas" ; :ipa "a'grikola:s" .
+n:agricolarum a :Genitive , :Plural ; :stem n:agricol_ ; rdfs:label "agricolarum" ; :ipa "agriko'la:rum" .
+n:agricolis a :Dative , :Plural ; :stem n:agricol_ ; rdfs:label "agricolis" ; :ipa "a'grikoli:s" .
+n:agricolis-abl a :Ablative , :Plural ; :stem n:agricol_ ; rdfs:label "agricolis" ; :ipa "a'grikoli:s" .
+
+n:aqu_ a :Noun , :Lexeme , :Feminine ; rdfs:label "aqu(a)" ; :sense "water" .
+n:aqua a :Nominative, :Singular ; :stem n:aqu_ ; rdfs:label "aqua" ; :ipa "'akwa" .
+n:aquam a :Accusative , :Singular ; :stem n:aqu_ ; rdfs:label "aquam" ; :ipa "'akwam" .
+n:aquae-gen a :Genitive , :Singular ; :stem n:aqu_ ; rdfs:label "aquae" ; :ipa "'akwaj" .
+n:aquae-dat a :Dative , :Singular ; :stem n:aqu_ ; rdfs:label "aquae" ; :ipa "'akwaj" .
+n:aqua-abl a :Ablative , :Singular ; :stem n:aqu_ ; rdfs:label "aqua" ; :ipa "'akwa:" .
+n:aquae a :Nominative , :Plural ; :stem n:aqu_ ; rdfs:label "aquae" ; :ipa "'akwaj" .
+n:aquas a :Accusative , :Plural ; :stem n:aqu_ ; rdfs:label "aquas" ; :ipa "'akwa:s" .
+n:aquarum a :Genitive , :Plural ; :stem n:aqu_ ; rdfs:label "aquarum" ; :ipa "a'kwa:rum" .
+n:aquis a :Dative , :Plural ; :stem n:aqu_ ; rdfs:label "aquis" ; :ipa "'akwi:s" .
+n:aquis-abl a :Ablative , :Plural ; :stem n:aqu_ ; rdfs:label "aquis" ; :ipa "'akwi:s" .
+
+n:Hispani_ a :Noun , :Lexeme , :Feminine ; rdfs:label "Hispani(a)" ; :sense "Spain" .
+n:Hispania a :Nominative, :Singular ; :stem n:Hispani_ ; rdfs:label "Hispania" ; :ipa "hi'spa:nja" .
+n:Hispaniam a :Accusative , :Singular ; :stem n:Hispani_ ; rdfs:label "Hispaniam" ; :ipa "hi'spa:njam" .
+n:Hispaniae-gen a :Genitive , :Singular ; :stem n:Hispani_ ; rdfs:label "Hispaniae" ; :ipa "hi'spa:njaj" .
+n:Hispaniae-dat a :Dative , :Singular ; :stem n:Hispani_ ; rdfs:label "Hispaniae" ; :ipa "hi'spa:njaj" .
+n:Hispania-abl a :Ablative , :Singular ; :stem n:Hispani_ ; rdfs:label "Hispania" ; :ipa "hi'spa:nja:" .
+n:Hispaniae a :Nominative , :Plural ; :stem n:Hispani_ ; rdfs:label "Hispaniae" ; :ipa "hi'spa:njaj" .
+n:Hispanias a :Accusative , :Plural ; :stem n:Hispani_ ; rdfs:label "Hispanias" ; :ipa "hi'spa:nja:s" .
+n:Hispaniarum a :Genitive , :Plural ; :stem n:Hispani_ ; rdfs:label "Hispaniarum" ; :ipa "hispa:'nja:rum" .
+n:Hispaniis a :Dative , :Plural ; :stem n:Hispani_ ; rdfs:label "Hispaniis" ; :ipa "hi'spa:nji:s" .
+n:Hispaniis-abl a :Ablative , :Plural ; :stem n:Hispani_ ; rdfs:label "Hispaniis" ; :ipa "hi'spa:nji:s" .
+
+n:incol_ a :Noun , :Lexeme , :Masculine ; rdfs:label "incol(a)" ; :sense "inhabitant" .
+n:incola a :Nominative, :Singular ; :stem n:incol_ ; rdfs:label "incola" ; :ipa "'inkola" .
+n:incolam a :Accusative , :Singular ; :stem n:incol_ ; rdfs:label "incolam" ; :ipa "'inkolam" .
+n:incolae-gen a :Genitive , :Singular ; :stem n:incol_ ; rdfs:label "incolae" ; :ipa "'inkolaj" .
+n:incolae-dat a :Dative , :Singular ; :stem n:incol_ ; rdfs:label "incolae" ; :ipa "'inkolaj" .
+n:incola-abl a :Ablative , :Singular ; :stem n:incol_ ; rdfs:label "incola" ; :ipa "'inkola:" .
+n:incolae a :Nominative , :Plural ; :stem n:incol_ ; rdfs:label "incolae" ; :ipa "'inkolaj" .
+n:incolas a :Accusative , :Plural ; :stem n:incol_ ; rdfs:label "incolas" ; :ipa "'inkola:s" .
+n:incolarum a :Genitive , :Plural ; :stem n:incol_ ; rdfs:label "incolarum" ; :ipa "inko'la:rum" .
+n:incolis a :Dative , :Plural ; :stem n:incol_ ; rdfs:label "incolis" ; :ipa "'inkoli:s" .
+n:incolis-abl a :Ablative , :Plural ; :stem n:incol_ ; rdfs:label "incolis" ; :ipa "'inkoli:s" .
+
+n:insul_ a :Noun , :Lexeme , :Feminine ; rdfs:label "insul(a)" ; :sense "island" .
+n:insula a :Nominative, :Singular ; :stem n:insul_ ; rdfs:label "insula" ; :ipa "'insula" .
+n:insulam a :Accusative , :Singular ; :stem n:insul_ ; rdfs:label "insulam" ; :ipa "'insulam" .
+n:insulae-gen a :Genitive , :Singular ; :stem n:insul_ ; rdfs:label "insulae" ; :ipa "'insulaj" .
+n:insulae-dat a :Dative , :Singular ; :stem n:insul_ ; rdfs:label "insulae" ; :ipa "'insulaj" .
+n:insula-abl a :Ablative , :Singular ; :stem n:insul_ ; rdfs:label "insula" ; :ipa "'insula:" .
+n:insulae a :Nominative , :Plural ; :stem n:insul_ ; rdfs:label "insulae" ; :ipa "'insulaj" .
+n:insulas a :Accusative , :Plural ; :stem n:insul_ ; rdfs:label "insulas" ; :ipa "'insula:s" .
+n:insularum a :Genitive , :Plural ; :stem n:insul_ ; rdfs:label "insularum" ; :ipa "insu'la:rum" .
+n:insulis a :Dative , :Plural ; :stem n:insul_ ; rdfs:label "insulis" ; :ipa "'insuli:s" .
+n:insulis-abl a :Ablative , :Plural ; :stem n:insul_ ; rdfs:label "insulis" ; :ipa "'insuli:s" .
+
+n:Itali_ a :Noun , :Lexeme , :Feminine ; rdfs:label "Itali(a)" ; :sense "Italy" .
+n:Italia a :Nominative, :Singular ; :stem n:Itali_ ; rdfs:label "Italia" ; :ipa "i'ta:lja" .
+n:Italiam a :Accusative , :Singular ; :stem n:Itali_ ; rdfs:label "Italiam" ; :ipa "i'ta:ljam" .
+n:Italiae-gen a :Genitive , :Singular ; :stem n:Itali_ ; rdfs:label "Italiae" ; :ipa "i'ta:ljaj" .
+n:Italiae-dat a :Dative , :Singular ; :stem n:Itali_ ; rdfs:label "Italiae" ; :ipa "i'ta:ljaj" .
+n:Italia-abl a :Ablative , :Singular ; :stem n:Itali_ ; rdfs:label "Italia" ; :ipa "i'ta:lja:" .
+n:Italiae a :Nominative , :Plural ; :stem n:Itali_ ; rdfs:label "Italiae" ; :ipa "i'ta:ljaj" .
+n:Italias a :Accusative , :Plural ; :stem n:Itali_ ; rdfs:label "Italias" ; :ipa "i'ta:lja:s" .
+n:Italiarum a :Genitive , :Plural ; :stem n:Itali_ ; rdfs:label "Italiarum" ; :ipa "ita:'lja:rum" .
+n:Italiis a :Dative , :Plural ; :stem n:Itali_ ; rdfs:label "Italiis" ; :ipa "i'ta:lji:s" .
+n:Italiis-abl a :Ablative , :Plural ; :stem n:Itali_ ; rdfs:label "Italiis" ; :ipa "i'ta:lji:s" .
+
+n:naut_ a :Noun , :Lexeme , :Masculine ; rdfs:label "naut(a)" ; :sense "sailor" .
+n:nauta a :Nominative, :Singular ; :stem n:naut_ ; rdfs:label "nauta" ; :ipa "'nawta" .
+n:nautam a :Accusative , :Singular ; :stem n:naut_ ; rdfs:label "nautam" ; :ipa "'nawtam" .
+n:nautae-gen a :Genitive , :Singular ; :stem n:naut_ ; rdfs:label "nautae" ; :ipa "'nawtaj" .
+n:nautae-dat a :Dative , :Singular ; :stem n:naut_ ; rdfs:label "nautae" ; :ipa "'nawtaj" .
+n:nauta-abl a :Ablative , :Singular ; :stem n:naut_ ; rdfs:label "nauta" ; :ipa "'nawta:" .
+n:nautae a :Nominative , :Plural ; :stem n:naut_ ; rdfs:label "nautae" ; :ipa "'nawtaj" .
+n:nautas a :Accusative , :Plural ; :stem n:naut_ ; rdfs:label "nautas" ; :ipa "'nawta:s" .
+n:nautarum a :Genitive , :Plural ; :stem n:naut_ ; rdfs:label "nautarum" ; :ipa "naw'ta:rum" .
+n:nautis a :Dative , :Plural ; :stem n:naut_ ; rdfs:label "nautis" ; :ipa "'nawti:s" .
+n:nautis-abl a :Ablative , :Plural ; :stem n:naut_ ; rdfs:label "nautis" ; :ipa "'nawti:s" .
+
+n:puell_ a :Noun , :Lexeme , :Feminine ; rdfs:label "puell(a)" ; :sense "girl" .
+n:puella a :Nominative, :Singular ; :stem n:puell_ ; rdfs:label "puella" ; :ipa "'pwella" .
+n:puellam a :Accusative , :Singular ; :stem n:puell_ ; rdfs:label "puellam" ; :ipa "'pwellam" .
+n:puellae-gen a :Genitive , :Singular ; :stem n:puell_ ; rdfs:label "puellae" ; :ipa "'pwellaj" .
+n:puellae-dat a :Dative , :Singular ; :stem n:puell_ ; rdfs:label "puellae" ; :ipa "'pwellaj" .
+n:puella-abl a :Ablative , :Singular ; :stem n:puell_ ; rdfs:label "puella" ; :ipa "'pwella:" .
+n:puellae a :Nominative , :Plural ; :stem n:puell_ ; rdfs:label "puellae" ; :ipa "'pwellaj" .
+n:puellas a :Accusative , :Plural ; :stem n:puell_ ; rdfs:label "puellas" ; :ipa "'pwella:s" .
+n:puellarum a :Genitive , :Plural ; :stem n:puell_ ; rdfs:label "puellarum" ; :ipa "pwel'la:rum" .
+n:puellis a :Dative , :Plural ; :stem n:puell_ ; rdfs:label "puellis" ; :ipa "'pwelli:s" .
+n:puellis-abl a :Ablative , :Plural ; :stem n:puell_ ; rdfs:label "puellis" ; :ipa "'pwelli:s" .
+
+n:Rom_ a :Noun , :Lexeme , :Feminine ; rdfs:label "Rom(a)" ; :sense "Rome" .
+n:Roma a :Nominative, :Singular ; :stem n:Rom_ ; rdfs:label "Roma" ; :ipa "'ro:ma" .
+n:Romam a :Accusative , :Singular ; :stem n:Rom_ ; rdfs:label "Romam" ; :ipa "'ro:mam" .
+n:Romae-gen a :Genitive , :Singular ; :stem n:Rom_ ; rdfs:label "Romae" ; :ipa "'ro:maj" .
+n:Romae-dat a :Dative , :Singular ; :stem n:Rom_ ; rdfs:label "Romae" ; :ipa "'ro:maj" .
+n:Roma-abl a :Ablative , :Singular ; :stem n:Rom_ ; rdfs:label "Roma" ; :ipa "'ro:ma:" .
+n:Romae a :Nominative , :Plural ; :stem n:Rom_ ; rdfs:label "Romae" ; :ipa "'ro:maj" .
+n:Romas a :Accusative , :Plural ; :stem n:Rom_ ; rdfs:label "Romas" ; :ipa "'ro:ma:s" .
+n:Romarum a :Genitive , :Plural ; :stem n:Rom_ ; rdfs:label "Romarum" ; :ipa "ro:'ma:rum" .
+n:Romis a :Dative , :Plural ; :stem n:Rom_ ; rdfs:label "Romis" ; :ipa "'ro:mi:s" .
+n:Romis-abl a :Ablative , :Plural ; :stem n:Rom_ ; rdfs:label "Romis" ; :ipa "'ro:mi:s" .
+
+n:tabern_ a :Noun , :Lexeme , :Feminine ; rdfs:label "tabern(a)" ; :sense "tavern" .
+n:taberna a :Nominative, :Singular ; :stem n:tabern_ ; rdfs:label "taberna" ; :ipa "ta'berna" .
+n:tabernam a :Accusative , :Singular ; :stem n:tabern_ ; rdfs:label "tabernam" ; :ipa "ta'bernam" .
+n:tabernae-gen a :Genitive , :Singular ; :stem n:tabern_ ; rdfs:label "tabernae" ; :ipa "ta'bernaj" .
+n:tabernae-dat a :Dative , :Singular ; :stem n:tabern_ ; rdfs:label "tabernae" ; :ipa "ta'bernaj" .
+n:taberna-abl a :Ablative , :Singular ; :stem n:tabern_ ; rdfs:label "taberna" ; :ipa "ta'berna:" .
+n:tabernae a :Nominative , :Plural ; :stem n:tabern_ ; rdfs:label "tabernae" ; :ipa "ta'bernaj" .
+n:tabernas a :Accusative , :Plural ; :stem n:tabern_ ; rdfs:label "tabernas" ; :ipa "ta'berna:s" .
+n:tabernarum a :Genitive , :Plural ; :stem n:tabern_ ; rdfs:label "tabernarum" ; :ipa "taber'na:rum" .
+n:tabernis a :Dative , :Plural ; :stem n:tabern_ ; rdfs:label "tabernis" ; :ipa "ta'berni:s" .
+n:tabernis-abl a :Ablative , :Plural ; :stem n:tabern_ ; rdfs:label "tabernis" ; :ipa "ta'berni:s" .
+
+n:victori_ a :Noun , :Lexeme , :Feminine ; rdfs:label "victori(a)" ; :sense "victory" .
+n:victoria a :Nominative, :Singular ; :stem n:victori_ ; rdfs:label "victoria" ; :ipa "wik'to:rja" .
+n:victoriam a :Accusative , :Singular ; :stem n:victori_ ; rdfs:label "victoriam" ; :ipa "wik'to:rjam" .
+n:victoriae-gen a :Genitive , :Singular ; :stem n:victori_ ; rdfs:label "victoriae" ; :ipa "wik'to:rjaj" .
+n:victoriae-dat a :Dative , :Singular ; :stem n:victori_ ; rdfs:label "victoriae" ; :ipa "wik'to:rjaj" .
+n:victoria-abl a :Ablative , :Singular ; :stem n:victori_ ; rdfs:label "victoria" ; :ipa "wik'to:rja:" .
+n:victoriae a :Nominative , :Plural ; :stem n:victori_ ; rdfs:label "victoriae" ; :ipa "wik'to:rjaj" .
+n:victorias a :Accusative , :Plural ; :stem n:victori_ ; rdfs:label "victorias" ; :ipa "wik'to:rja:s" .
+n:victoriarum a :Genitive , :Plural ; :stem n:victori_ ; rdfs:label "victoriarum" ; :ipa "wikto:'rja:rum" .
+n:victoriis a :Dative , :Plural ; :stem n:victori_ ; rdfs:label "victoriis" ; :ipa "wik'to:rji:s" .
+n:victoriis-abl a :Ablative , :Plural ; :stem n:victori_ ; rdfs:label "victoriis" ; :ipa "wik'to:rji:s" .
+
+n:vit_ a :Noun , :Lexeme , :Feminine ; rdfs:label "vit(a)" ; :sense "life" .
+n:vita a :Nominative, :Singular ; :stem n:vit_ ; rdfs:label "vita" ; :ipa "'wi:ta" .
+n:vitam a :Accusative , :Singular ; :stem n:vit_ ; rdfs:label "vitam" ; :ipa "'wi:tam" .
+n:vitae-gen a :Genitive , :Singular ; :stem n:vit_ ; rdfs:label "vitae" ; :ipa "'wi:taj" .
+n:vitae-dat a :Dative , :Singular ; :stem n:vit_ ; rdfs:label "vitae" ; :ipa "'wi:taj" .
+n:vita-abl a :Ablative , :Singular ; :stem n:vit_ ; rdfs:label "vita" ; :ipa "'wi:ta:" .
+n:vitae a :Nominative , :Plural ; :stem n:vit_ ; rdfs:label "vitae" ; :ipa "'wi:taj" .
+n:vitas a :Accusative , :Plural ; :stem n:vit_ ; rdfs:label "vitas" ; :ipa "'wi:ta:s" .
+n:vitarum a :Genitive , :Plural ; :stem n:vit_ ; rdfs:label "vitarum" ; :ipa "wi:'ta:rum" .
+n:vitis a :Dative , :Plural ; :stem n:vit_ ; rdfs:label "vitis" ; :ipa "'wi:ti:s" .
+n:vitis-abl a :Ablative , :Plural ; :stem n:vit_ ; rdfs:label "vitis" ; :ipa "'wi:ti:s" .

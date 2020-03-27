@@ -1,0 +1,167 @@
+@prefix n: <http://faclair.ac.uk/nouns/> .
+@prefix a: <http://faclair.ac.uk/adjectives/> .
+@prefix v: <http://faclair.ac.uk/verbs/> .
+@prefix o: <http://faclair.ac.uk/other/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://faclair.ac.uk/meta/> .
+
+v:cie_ a :Verb , :Lexeme ; rdfs:label "cie-" ; :sense "stir up" .
+v:ciere a :Infinitive ; rdfs:label "ciere" ; :stem v:cie_ ; :sense "to stir up" ; :ipa "'kje:re" .
+v:cieba_ a :ImperfectiveStem ; rdfs:label "cieba-" ; :stem v:cie_ ; :suffix v:_eba_ .
+v:cieb_ a :FutureStem ; rdfs:label "cieb-" ; :stem v:cie_ ; :suffix v:_eb_ .
+v:cieo a :Verb ; rdfs:label "cieo" ; :stem v:cie_ ; :suffix v:_o ; :sense "I stir up" ; :ipa "'kjeo:" .
+v:cies a :Verb ; rdfs:label "cies" ; :stem v:cie_ ; :suffix v:_is ; :sense "you stir up" ; :ipa "'kje:s" .
+v:ciet a :Verb ; rdfs:label "ciet" ; :stem v:cie_ ; :suffix v:_it ; :sense "he/she/it stirs up" ; :ipa "'kjet" .
+v:ciemus a :Verb ; rdfs:label "ciemus" ; :stem v:cie_ ; :suffix v:_imus ; :sense "we stir up" ; :ipa "'kje:mus" .
+v:cietis a :Verb ; rdfs:label "cietis" ; :stem v:cie_ ; :suffix v:_itis ; :sense "you(s) stir up" ; :ipa "'kje:tis" .
+v:cient a :Verb ; rdfs:label "cient" ; :stem v:cie_ ; :suffix v:_unt ; :sense "they stir up" ; :ipa "'kjent" .
+v:ciebam a :Verb ; rdfs:label "ciebam" ; :stem v:cieba_ ; :suffix v:_am ; :sense "I was stirring up" ; :ipa "a'ma:bam" .
+v:ciebas a :Verb ; rdfs:label "ciebas" ; :stem v:cieba_ ; :suffix v:_is ; :sense "you were stirring up"; :ipa "'kje:bas" .
+v:ciebat a :Verb ; rdfs:label "ciebat" ; :stem v:cieba_ ; :suffix v:_it ; :sense "he/she/it was stirring up"; :ipa "'kje:bat" .
+v:ciebamus a :Verb ; rdfs:label "ciebamus" ; :stem v:cieba_ ; :suffix v:_imus ; :sense "we were stirring up"; :ipa "kje:'ba:mus" .
+v:ciebatis a :Verb ; rdfs:label "ciebatis" ; :stem v:cieba_ ; :suffix v:_itis ; :sense "you(s) were stirring up"; :ipa "kje:'ba:tis" .
+v:ciebant a :Verb ; rdfs:label "ciebant" ; :stem v:cieba_ ; :suffix v:_unt ; :sense "they were stirring up"; :ipa "'kje:bant" .
+v:ciebo a :Verb ; rdfs:label "ciebo" ; :stem v:cieb_ ; :suffix v:_o ; :sense "I will stir up"; :ipa "'kje:bo:" .
+v:ciebis a :Verb ; rdfs:label "ciebis" ; :stem v:cieb_ ; :suffix v:_is ; :sense "you will stir up"; :ipa "'kje:bis" .
+v:ciebit a :Verb ; rdfs:label "ciebit" ; :stem v:cieb_ ; :suffix v:_it ; :sense "he/she/it will stir up"; :ipa "'kje:bit" .
+v:ciebimus a :Verb ; rdfs:label "ciebimus" ; :stem v:cieb_ ; :suffix v:_imus ; :sense "we will stir up"; :ipa "'kje:bimus" .
+v:ciebitis a :Verb ; rdfs:label "ciebitis" ; :stem v:cieb_ ; :suffix v:_itis ; :sense "you(s) will stir up"; :ipa "'kje:bitis" .
+v:ciebunt a :Verb ; rdfs:label "ciebunt" ; :stem v:cieb_ ; :suffix v:_unt ; :sense "they will stir up"; :ipa "'kje:bunt" .
+
+v:concie_ a :Verb , :Lexeme ; rdfs:label "concie-" ; :stem v:cie_ ; :prefix v:con_ ; :sense "stir up" .
+v:conciere a :Infinitive ; rdfs:label "conciere" ; :stem v:concie_ ; :sense "to stir up" ; :ipa "kon'kje:re" .
+v:concieba_ a :ImperfectiveStem ; rdfs:label "concieba-" ; :stem v:concie_ ; :suffix v:_eba_ .
+v:concieb_ a :FutureStem ; rdfs:label "concieb-" ; :stem v:concie_ ; :suffix v:_eb_ .
+v:concieo a :Verb ; rdfs:label "concieo" ; :stem v:concie_ ; :suffix v:_o ; :sense "I stir up" ; :ipa "kon'kjeo:" .
+v:concies a :Verb ; rdfs:label "concies" ; :stem v:concie_ ; :suffix v:_is ; :sense "you stir up" ; :ipa "kon'kje:s" .
+v:conciet a :Verb ; rdfs:label "conciet" ; :stem v:concie_ ; :suffix v:_it ; :sense "he/she/it stirs up" ; :ipa "kon'kjet" .
+v:conciemus a :Verb ; rdfs:label "conciemus" ; :stem v:concie_ ; :suffix v:_imus ; :sense "we stir up" ; :ipa "kon'kje:mus" .
+v:concietis a :Verb ; rdfs:label "concietis" ; :stem v:concie_ ; :suffix v:_itis ; :sense "you(s) stir up" ; :ipa "kon'kje:tis" .
+v:concient a :Verb ; rdfs:label "concient" ; :stem v:concie_ ; :suffix v:_unt ; :sense "they stir up" ; :ipa "kon'kjent" .
+v:conciebam a :Verb ; rdfs:label "conciebam" ; :stem v:concieba_ ; :suffix v:_am ; :sense "I was stirring up"; :ipa "kon'kje:bam" .
+v:conciebas a :Verb ; rdfs:label "conciebas" ; :stem v:concieba_ ; :suffix v:_is ; :sense "you were stirring up"; :ipa "kon'kje:bas" .
+v:conciebat a :Verb ; rdfs:label "conciebat" ; :stem v:concieba_ ; :suffix v:_it ; :sense "he/she/it was stirring up"; :ipa "kon'kje:bat" .
+v:conciebamus a :Verb ; rdfs:label "conciebamus" ; :stem v:concieba_ ; :suffix v:_imus ; :sense "we were stirring up"; :ipa "konkje:'ba:mus" .
+v:conciebatis a :Verb ; rdfs:label "conciebatis" ; :stem v:concieba_ ; :suffix v:_itis ; :sense "you(s) were stirring up"; :ipa "konkje:'ba:tis" .
+v:conciebant a :Verb ; rdfs:label "conciebant" ; :stem v:concieba_ ; :suffix v:_unt ; :sense "they were stirring up"; :ipa "kon'kje:bant" .
+v:conciebo a :Verb ; rdfs:label "conciebo" ; :stem v:concieb_ ; :suffix v:_o ; :sense "I will stir up"; :ipa "kon'kje:bo:" .
+v:conciebis a :Verb ; rdfs:label "conciebis" ; :stem v:concieb_ ; :suffix v:_is ; :sense "you will stir up"; :ipa "kon'kje:bis" .
+v:conciebit a :Verb ; rdfs:label "conciebit" ; :stem v:concieb_ ; :suffix v:_it ; :sense "he/she/it will stir up"; :ipa "kon'kje:bit" .
+v:conciebimus a :Verb ; rdfs:label "conciebimus" ; :stem v:concieb_ ; :suffix v:_imus ; :sense "we will stir up"; :ipa "kon'kje:bimus" .
+v:conciebitis a :Verb ; rdfs:label "conciebitis" ; :stem v:concieb_ ; :suffix v:_itis ; :sense "you(s) will stir up"; :ipa "kon'kje:bitis" .
+v:conciebunt a :Verb ; rdfs:label "conciebunt" ; :stem v:concieb_ ; :suffix v:_unt ; :sense "they will stir up"; :ipa "kon'kje:bunt" .
+
+v:habe_ a :Verb , :Lexeme ; rdfs:label "habe-" ; :sense "have" .
+v:habere a :Infinitive ; rdfs:label "habere" ; :stem v:habe_ ; :sense "to have" ; :ipa "ha'be:re" .
+v:habeba_ a :ImperfectiveStem ; rdfs:label "habeba-" ; :stem v:habe_ ; :suffix v:_eba_ .
+v:habeb_ a :FutureStem ; rdfs:label "habeb-" ; :stem v:habe_ ; :suffix v:_eb_ .
+v:habeo a :Verb ; rdfs:label "habeo" ; :stem v:habe_ ; :suffix v:_o ; :sense "I have" ; :ipa "'habeo:" .
+v:habes a :Verb ; rdfs:label "habes" ; :stem v:habe_ ; :suffix v:_is ; :sense "you have" ; :ipa "'habes" .
+v:habet a :Verb ; rdfs:label "habet" ; :stem v:habe_ ; :suffix v:_it ; :sense "he/she/it has" ; :ipa "'habet" .
+v:habemus a :Verb ; rdfs:label "habemus" ; :stem v:habe_ ; :suffix v:_imus ; :sense "we have" ; :ipa "ha'be:mus" .
+v:habetis a :Verb ; rdfs:label "habetis" ; :stem v:habe_ ; :suffix v:_itis ; :sense "you(s) have" ; :ipa "ha'be:tis" .
+v:habent a :Verb ; rdfs:label "habent" ; :stem v:habe_ ; :suffix v:_unt ; :sense "they have" ; :ipa "'habent" .
+v:habebam a :Verb ; rdfs:label "habebam" ; :stem v:habeba_ ; :suffix v:_am ; :sense "I was having"; :ipa "ha'be:bam" .
+v:habebas a :Verb ; rdfs:label "habebas" ; :stem v:habeba_ ; :suffix v:_is ; :sense "you were having"; :ipa "ha'be:bas" .
+v:habebat a :Verb ; rdfs:label "habebat" ; :stem v:habeba_ ; :suffix v:_it ; :sense "he/she/it was having"; :ipa "ha'be:bat" .
+v:habebamus a :Verb ; rdfs:label "habebamus" ; :stem v:habeba_ ; :suffix v:_imus ; :sense "we were having"; :ipa "habe:'ba:mus" .
+v:habebatis a :Verb ; rdfs:label "habebatis" ; :stem v:habeba_ ; :suffix v:_itis ; :sense "you(s) were having"; :ipa "habe:'ba:tis" .
+v:habebant a :Verb ; rdfs:label "habebant" ; :stem v:habeba_ ; :suffix v:_unt ; :sense "they were having"; :ipa "ha'be:bant" .
+v:habebo a :Verb ; rdfs:label "habebo" ; :stem v:habeb_ ; :suffix v:_o ; :sense "I will have"; :ipa "ha'be:bo:" .
+v:habebis a :Verb ; rdfs:label "habebis" ; :stem v:habeb_ ; :suffix v:_is ; :sense "you will have"; :ipa "ha'be:bis" .
+v:habebit a :Verb ; rdfs:label "habebit" ; :stem v:habeb_ ; :suffix v:_it ; :sense "he/she/it will have"; :ipa "ha'be:bit" .
+v:habebimus a :Verb ; rdfs:label "habebimus" ; :stem v:habeb_ ; :suffix v:_imus ; :sense "we will have"; :ipa "ha'be:bimus" .
+v:habebitis a :Verb ; rdfs:label "habebitis" ; :stem v:habeb_ ; :suffix v:_itis ; :sense "you(s) will have"; :ipa "ha'be:bitis" .
+v:habebunt a :Verb ; rdfs:label "habebunt" ; :stem v:habeb_ ; :suffix v:_unt ; :sense "they will have"; :ipa "ha'be:bunt" .
+
+v:mone_ a :Verb , :Lexeme ; rdfs:label "mone-" ; :sense "warn" .
+v:monere a :Infinitive ; rdfs:label "monere" ; :stem v:mone_ ; :sense "to warn" ; :ipa "mo'ne:re" .
+v:moneba_ a :ImperfectiveStem ; rdfs:label "moneba-" ; :stem v:mone_ ; :suffix v:_eba_ .
+v:moneb_ a :FutureStem ; rdfs:label "moneb-" ; :stem v:mone_ ; :suffix v:_eb_ .
+v:moneo a :Verb ; rdfs:label "moneo" ; :stem v:mone_ ; :suffix v:_o ; :sense "I warn" ; :ipa "'moneo:" .
+v:mones a :Verb ; rdfs:label "mones" ; :stem v:mone_ ; :suffix v:_is ; :sense "you warn" ; :ipa "'mone:s" .
+v:monet a :Verb ; rdfs:label "monet" ; :stem v:mone_ ; :suffix v:_it ; :sense "he/she/it warns" ; :ipa "'monet" .
+v:monemus a :Verb ; rdfs:label "monemus" ; :stem v:mone_ ; :suffix v:_imus ; :sense "we warn" ; :ipa "mo'ne:mus" .
+v:monetis a :Verb ; rdfs:label "monetis" ; :stem v:mone_ ; :suffix v:_itis ; :sense "you(s) warn" ; :ipa "mo'ne:tis" .
+v:monent a :Verb ; rdfs:label "monent" ; :stem v:mone_ ; :suffix v:_unt ; :sense "they warn" ; :ipa "'monent" .
+v:monebam a :Verb ; rdfs:label "monebam" ; :stem v:moneba_ ; :suffix v:_am ; :sense "I was warning"; :ipa "mo'ne:bam" .
+v:monebas a :Verb ; rdfs:label "monebas" ; :stem v:moneba_ ; :suffix v:_is ; :sense "you were warning"; :ipa "mo'ne:bas" .
+v:monebat a :Verb ; rdfs:label "monebat" ; :stem v:moneba_ ; :suffix v:_it ; :sense "he/she/it was warning"; :ipa "mo'ne:bat" .
+v:monebamus a :Verb ; rdfs:label "monebamus" ; :stem v:moneba_ ; :suffix v:_imus ; :sense "we were warning"; :ipa "mone:'ba:mus" .
+v:monebatis a :Verb ; rdfs:label "monebatis" ; :stem v:moneba_ ; :suffix v:_itis ; :sense "you(s) were warning"; :ipa "mone:'ba:tis" .
+v:monebant a :Verb ; rdfs:label "monebant" ; :stem v:moneba_ ; :suffix v:_unt ; :sense "they were warning"; :ipa "mo'ne:bant" .
+v:monebo a :Verb ; rdfs:label "monebo" ; :stem v:moneb_ ; :suffix v:_o ; :sense "I will warn"; :ipa "mo'ne:bo:" .
+v:monebis a :Verb ; rdfs:label "monebis" ; :stem v:moneb_ ; :suffix v:_is ; :sense "you will warn"; :ipa "mo'ne:bis" .
+v:monebit a :Verb ; rdfs:label "monebit" ; :stem v:moneb_ ; :suffix v:_it ; :sense "he/she/it will warn"; :ipa "mo'ne:bit" .
+v:monebimus a :Verb ; rdfs:label "monebimus" ; :stem v:moneb_ ; :suffix v:_imus ; :sense "we will warn"; :ipa "mo'ne:bimus" .
+v:monebitis a :Verb ; rdfs:label "monebitis" ; :stem v:moneb_ ; :suffix v:_itis ; :sense "you(s) will warn"; :ipa "mo'ne:bitis" .
+v:monebunt a :Verb ; rdfs:label "monebunt" ; :stem v:moneb_ ; :suffix v:_unt ; :sense "they will warn"; :ipa "mo'ne:bunt" .
+
+v:sede_ a :Verb , :Lexeme ; rdfs:label "sede-" ; :sense "sit" .
+v:sedere a :Infinitive ; rdfs:label "sedere" ; :stem v:sede_ ; :sense "to sit" ; :ipa "se'de:re" .
+v:sedeba_ a :ImperfectiveStem ; rdfs:label "sedeba-" ; :stem v:sede_ ; :suffix v:_eba_ .
+v:sedeb_ a :FutureStem ; rdfs:label "sedeb-" ; :stem v:sede_ ; :suffix v:_eb_ .
+v:sedeo a :Verb ; rdfs:label "sedeo" ; :stem v:sede_ ; :suffix v:_o ; :sense "I sit" ; :ipa "'sedeo:" .
+v:sedes a :Verb ; rdfs:label "sedes" ; :stem v:sede_ ; :suffix v:_is ; :sense "you sit" ; :ipa "'sedes" .
+v:sedet a :Verb ; rdfs:label "sedet" ; :stem v:sede_ ; :suffix v:_it ; :sense "he/she/it sits" ; :ipa "'sedet" .
+v:sedemus a :Verb ; rdfs:label "sedemus" ; :stem v:sede_ ; :suffix v:_imus ; :sense "we sit" ; :ipa "se'de:mus" .
+v:sedetis a :Verb ; rdfs:label "sedetis" ; :stem v:sede_ ; :suffix v:_itis ; :sense "you(s) sit" ; :ipa "se'de:tis" .
+v:sedent a :Verb ; rdfs:label "sedent" ; :stem v:sede_ ; :suffix v:_unt ; :sense "they sit" ; :ipa "'sedent" .
+v:sedebam a :Verb ; rdfs:label "sedebam" ; :stem v:sedeba_ ; :suffix v:_am ; :sense "I was sitting"; :ipa "se'de:bam" .
+v:sedebas a :Verb ; rdfs:label "sedebas" ; :stem v:sedeba_ ; :suffix v:_is ; :sense "you were sitting"; :ipa "se'de:bas" .
+v:sedebat a :Verb ; rdfs:label "sedebat" ; :stem v:sedeba_ ; :suffix v:_it ; :sense "he/she/it was sitting"; :ipa "se'de:bat" .
+v:sedebamus a :Verb ; rdfs:label "sedebamus" ; :stem v:sedeba_ ; :suffix v:_imus ; :sense "we were sitting"; :ipa "sede:'ba:mus" .
+v:sedebatis a :Verb ; rdfs:label "sedebatis" ; :stem v:sedeba_ ; :suffix v:_itis ; :sense "you(s) were sitting"; :ipa "sede:'ba:tis" .
+v:sedebant a :Verb ; rdfs:label "sedebant" ; :stem v:sedeba_ ; :suffix v:_unt ; :sense "they were sitting"; :ipa "se'de:bant" .
+v:sedebo a :Verb ; rdfs:label "sedebo" ; :stem v:sedeb_ ; :suffix v:_o ; :sense "I will sit"; :ipa "se'de:bo:" .
+v:sedebis a :Verb ; rdfs:label "sedebis" ; :stem v:sedeb_ ; :suffix v:_is ; :sense "you will sit"; :ipa "se'de:bis" .
+v:sedebit a :Verb ; rdfs:label "sedebit" ; :stem v:sedeb_ ; :suffix v:_it ; :sense "he/she/it will sit"; :ipa "se'de:bit" .
+v:sedebimus a :Verb ; rdfs:label "sedebimus" ; :stem v:sedeb_ ; :suffix v:_imus ; :sense "we will sit"; :ipa "se'de:bimus" .
+v:sedebitis a :Verb ; rdfs:label "sedebitis" ; :stem v:sedeb_ ; :suffix v:_itis ; :sense "you(s) will sit"; :ipa "se'de:bitis" .
+v:sedebunt a :Verb ; rdfs:label "sedebunt" ; :stem v:sedeb_ ; :suffix v:_unt ; :sense "they will sit"; :ipa "se'de:bunt" .
+
+v:stude_ a :Verb , :Lexeme ; rdfs:label "stude-" ; :sense "study" .
+v:studere a :Infinitive ; rdfs:label "studere" ; :stem v:stude_ ; :sense "to study" ; :ipa "stu'de:re" .
+v:studeba_ a :ImperfectiveStem ; rdfs:label "studeba-" ; :stem v:stude_ ; :suffix v:_eba_ .
+v:studeb_ a :FutureStem ; rdfs:label "studeb-" ; :stem v:stude_ ; :suffix v:_eb_ .
+v:studeo a :Verb ; rdfs:label "studeo" ; :stem v:stude_ ; :suffix v:_o ; :sense "I study" ; :ipa "'studeo:" .
+v:studes a :Verb ; rdfs:label "studes" ; :stem v:stude_ ; :suffix v:_is ; :sense "you study" ; :ipa "'stude:s" .
+v:studet a :Verb ; rdfs:label "studet" ; :stem v:stude_ ; :suffix v:_it ; :sense "he/she/it studies" ; :ipa "'studet" .
+v:studemus a :Verb ; rdfs:label "studemus" ; :stem v:stude_ ; :suffix v:_imus ; :sense "we study" ; :ipa "stu'de:mus" .
+v:studetis a :Verb ; rdfs:label "studetis" ; :stem v:stude_ ; :suffix v:_itis ; :sense "you(s) study" ; :ipa "stu'de:tis" .
+v:student a :Verb ; rdfs:label "student" ; :stem v:stude_ ; :suffix v:_unt ; :sense "they study" ; :ipa "'student" .
+v:studebam a :Verb ; rdfs:label "studebam" ; :stem v:studeba_ ; :suffix v:_am ; :sense "I was studying"; :ipa "stu'de:bam" .
+v:studebas a :Verb ; rdfs:label "studebas" ; :stem v:studeba_ ; :suffix v:_is ; :sense "you were studying"; :ipa "stu'de:bas" .
+v:studebat a :Verb ; rdfs:label "studebat" ; :stem v:studeba_ ; :suffix v:_it ; :sense "he/she/it was studying"; :ipa "stu'de:bat" .
+v:studebamus a :Verb ; rdfs:label "studebamus" ; :stem v:studeba_ ; :suffix v:_imus ; :sense "we were studying"; :ipa "stude:'ba:mus" .
+v:studebatis a :Verb ; rdfs:label "studebatis" ; :stem v:studeba_ ; :suffix v:_itis ; :sense "you(s) were studying"; :ipa "stude:'ba:tis" .
+v:studebant a :Verb ; rdfs:label "studebant" ; :stem v:studeba_ ; :suffix v:_unt ; :sense "they were studying"; :ipa "stu'de:bant" .
+v:studebo a :Verb ; rdfs:label "studebo" ; :stem v:studeb_ ; :suffix v:_o ; :sense "I will study"; :ipa "stu'de:bo:" .
+v:studebis a :Verb ; rdfs:label "studebis" ; :stem v:studeb_ ; :suffix v:_is ; :sense "you will study"; :ipa "stu'de:bis" .
+v:studebit a :Verb ; rdfs:label "studebit" ; :stem v:studeb_ ; :suffix v:_it ; :sense "he/she/it will study"; :ipa "stu'de:bit" .
+v:studebimus a :Verb ; rdfs:label "studebimus" ; :stem v:studeb_ ; :suffix v:_imus ; :sense "we will study"; :ipa "stu'de:bimus" .
+v:studebitis a :Verb ; rdfs:label "studebitis" ; :stem v:studeb_ ; :suffix v:_itis ; :sense "you(s) will study"; :ipa "stu'de:bitis" .
+v:studebunt a :Verb ; rdfs:label "studebunt" ; :stem v:studeb_ ; :suffix v:_unt ; :sense "they will study"; :ipa "stu'de:bunt" .
+
+v:vide_ a :Verb , :Lexeme ; rdfs:label "vide-" ; :sense "see" , "look at" .
+v:videre a :Infinitive ; rdfs:label "videre" ; :stem v:vide_ ; :sense "to see" ; :ipa "wi'de:re" .
+v:videba_ a :ImperfectiveStem ; rdfs:label "videba-" ; :stem v:vide_ ; :suffix v:_eba_ .
+v:videb_ a :FutureStem ; rdfs:label "videb-" ; :stem v:vide_ ; :suffix v:_eb_ .
+v:video a :Verb ; rdfs:label "video" ; :stem v:vide_ ; :suffix v:_o ; :sense "I see" ; :ipa "'wideo:" .
+v:vides a :Verb ; rdfs:label "vides" ; :stem v:vide_ ; :suffix v:_is ; :sense "you see" ; :ipa "'wide:s" .
+v:videt a :Verb ; rdfs:label "videt" ; :stem v:vide_ ; :suffix v:_it ; :sense "he/she/it sees" ; :ipa "'widet" .
+v:videmus a :Verb ; rdfs:label "videmus" ; :stem v:vide_ ; :suffix v:_imus ; :sense "we see" ; :ipa "wi'de:mus" .
+v:videtis a :Verb ; rdfs:label "videtis" ; :stem v:vide_ ; :suffix v:_itis ; :sense "you(s) see" ; :ipa "wi'de:tis" .
+v:vident a :Verb ; rdfs:label "vident" ; :stem v:vide_ ; :suffix v:_unt ; :sense "they see" ; :ipa "'wident" .
+v:videbam a :Verb ; rdfs:label "videbam" ; :stem v:videba_ ; :suffix v:_am ; :sense "I was seeing"; :ipa "wi'de:bam" .
+v:videbas a :Verb ; rdfs:label "videbas" ; :stem v:videba_ ; :suffix v:_is ; :sense "you were seeing"; :ipa "wi'de:bas" .
+v:videbat a :Verb ; rdfs:label "videbat" ; :stem v:videba_ ; :suffix v:_it ; :sense "he/she/it was seeing"; :ipa "wi'de:bat" .
+v:videbamus a :Verb ; rdfs:label "videbamus" ; :stem v:videba_ ; :suffix v:_imus ; :sense "we were seeing"; :ipa "wide:'ba:mus" .
+v:videbatis a :Verb ; rdfs:label "videbatis" ; :stem v:videba_ ; :suffix v:_itis ; :sense "you(s) were seeing"; :ipa "wide:'ba:tis" .
+v:videbant a :Verb ; rdfs:label "videbant" ; :stem v:videba_ ; :suffix v:_unt ; :sense "they were seeing"; :ipa "wi'de:bant" .
+v:videbo a :Verb ; rdfs:label "videbo" ; :stem v:videb_ ; :suffix v:_o ; :sense "I will see"; :ipa "wi'de:bo:" .
+v:videbis a :Verb ; rdfs:label "videbis" ; :stem v:videb_ ; :suffix v:_is ; :sense "you will see"; :ipa "wi'de:bis" .
+v:videbit a :Verb ; rdfs:label "videbit" ; :stem v:videb_ ; :suffix v:_it ; :sense "he/she/it will see"; :ipa "wi'de:bit" .
+v:videbimus a :Verb ; rdfs:label "videbimus" ; :stem v:videb_ ; :suffix v:_imus ; :sense "we will see"; :ipa "wi'de:bimus" .
+v:videbitis a :Verb ; rdfs:label "videbitis" ; :stem v:videb_ ; :suffix v:_itis ; :sense "you(s) will see"; :ipa "wi'de:bitis" .
+v:videbunt a :Verb ; rdfs:label "videbunt" ; :stem v:videb_ ; :suffix v:_unt ; :sense "they will see"; :ipa "wi'de:bunt" .
