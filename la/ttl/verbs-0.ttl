@@ -1,0 +1,18 @@
+@prefix n: <http://faclair.ac.uk/nouns/> .
+@prefix a: <http://faclair.ac.uk/adjectives/> .
+@prefix v: <http://faclair.ac.uk/verbs/> .
+@prefix o: <http://faclair.ac.uk/other/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://faclair.ac.uk/meta/> .
+
+v:con_
+  a :VerbPrefix ;
+  rdfs:label "con/m-" .
+
+v:e_ a :Verb , :Lexeme ; rdfs:label "e(sse)" ; :sense "be" .
+v:sum a :FirstSingular ; rdfs:label "sum" ; :stem v:e_ ; :sense "I am" ; :ipa "sum" .
+v:es a :SecondSingular ; rdfs:label "es" ; :stem v:e_ ; :sense "you are" ; :ipa "es" .
+v:est a :ThirdSingular ; rdfs:label "est" ; :stem v:e_ ; :sense "he/she/it is" ; :ipa "est" .
+v:sumus a :FirstPlural ; rdfs:label "sumus" ; :stem v:e_ ; :sense "we are" ; :ipa "'sumus" .
+v:estis a :SecondPlural ; rdfs:label "estis" ; :stem v:e_ ; :sense "you(s) are" ; :ipa "'estis" .
+v:sunt a :ThirdPlural ; rdfs:label "sunt" ; :stem v:e_ ; :sense "they are" ; :ipa "sunt" .

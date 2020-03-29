@@ -1,16 +1,5 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Latin</title>
-  </head>
-  <body style="padding-top: 20px;">
-    <div class="container-fluid">
-      <div class="card" style="max-width: 800px;">
-        <div class="card-body">
-          <a href="index.php" style="float: right;">&nbsp;&lt; Back to lexeme index</a>
+<div class="card" style="max-width: 800px;">
+  <div class="card-body">
 <?php
 $id = $_GET['id'];
 $query = <<<SPQR
@@ -32,13 +21,14 @@ WHERE
 {
   <{$id}> rdfs:label ?hw .
   <{$id}> :sense ?en .
-  ?inf :stem <{$id}> ; a :Infinitive ; rdfs:label ?inff .
+  #?inf :stem <{$id}> ; a :Infinitive ; rdfs:label ?inff .
   ?p1s :stem <{$id}> ; a :FirstSingular ; rdfs:label ?p1sf .
   ?p2s :stem <{$id}> ; a :SecondSingular ; rdfs:label ?p2sf .
   ?p3s :stem <{$id}> ; a :ThirdSingular ; rdfs:label ?p3sf .
   ?p1p :stem <{$id}> ; a :FirstPlural ; rdfs:label ?p1pf .
   ?p2p :stem <{$id}> ; a :SecondPlural ; rdfs:label ?p2pf .
   ?p3p :stem <{$id}> ; a :ThirdPlural ; rdfs:label ?p3pf .
+  OPTIONAL {
   ?impStem :stem <{$id}> ; a :Imperfect .
   ?i1s :stem ?impStem ; a :FirstSingular ; rdfs:label ?i1sf .
   ?i2s :stem ?impStem ; a :SecondSingular ; rdfs:label ?i2sf .
@@ -46,6 +36,8 @@ WHERE
   ?i1p :stem ?impStem ; a :FirstPlural ; rdfs:label ?i1pf .
   ?i2p :stem ?impStem ; a :SecondPlural ; rdfs:label ?i2pf .
   ?i3p :stem ?impStem ; a :ThirdPlural ; rdfs:label ?i3pf .
+  }
+  OPTIONAL {
   ?futStem :stem <{$id}> ; a :Future .
   ?f1s :stem ?futStem ; a :FirstSingular ; rdfs:label ?f1sf .
   ?f2s :stem ?futStem ; a :SecondSingular ; rdfs:label ?f2sf .
@@ -53,6 +45,7 @@ WHERE
   ?f1p :stem ?futStem ; a :FirstPlural ; rdfs:label ?f1pf .
   ?f2p :stem ?futStem ; a :SecondPlural ; rdfs:label ?f2pf .
   ?f3p :stem ?futStem ; a :ThirdPlural ; rdfs:label ?f3pf .
+  }
   OPTIONAL {
     ?perfStem :stem <{$id}> ; a :Perfect .
     ?pfinf :stem ?perfStem ; a :Infinitive ; rdfs:label ?pfinff .
@@ -262,16 +255,5 @@ echo '</div>';
 
 echo '</div>'; // end of list-group
 ?>
-        </div> <!-- end of card-body-->
-      </div> <!-- end of card -->
-    </div> <!-- end of container-fluid -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script>
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
-    </script>
-  </body>
-</html>
+  </div> <!-- end of card-body-->
+</div> <!-- end of card -->
