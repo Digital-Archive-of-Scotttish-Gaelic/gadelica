@@ -21,14 +21,13 @@ WHERE
 {
   <{$id}> rdfs:label ?hw .
   <{$id}> :sense ?en .
-  #?inf :stem <{$id}> ; a :Infinitive ; rdfs:label ?inff .
+  ?inf :stem <{$id}> ; a :Infinitive ; rdfs:label ?inff .
   ?p1s :stem <{$id}> ; a :FirstSingular ; rdfs:label ?p1sf .
   ?p2s :stem <{$id}> ; a :SecondSingular ; rdfs:label ?p2sf .
   ?p3s :stem <{$id}> ; a :ThirdSingular ; rdfs:label ?p3sf .
   ?p1p :stem <{$id}> ; a :FirstPlural ; rdfs:label ?p1pf .
   ?p2p :stem <{$id}> ; a :SecondPlural ; rdfs:label ?p2pf .
   ?p3p :stem <{$id}> ; a :ThirdPlural ; rdfs:label ?p3pf .
-  OPTIONAL {
   ?impStem :stem <{$id}> ; a :Imperfect .
   ?i1s :stem ?impStem ; a :FirstSingular ; rdfs:label ?i1sf .
   ?i2s :stem ?impStem ; a :SecondSingular ; rdfs:label ?i2sf .
@@ -36,7 +35,6 @@ WHERE
   ?i1p :stem ?impStem ; a :FirstPlural ; rdfs:label ?i1pf .
   ?i2p :stem ?impStem ; a :SecondPlural ; rdfs:label ?i2pf .
   ?i3p :stem ?impStem ; a :ThirdPlural ; rdfs:label ?i3pf .
-  }
   OPTIONAL {
   ?futStem :stem <{$id}> ; a :Future .
   ?f1s :stem ?futStem ; a :FirstSingular ; rdfs:label ?f1sf .
