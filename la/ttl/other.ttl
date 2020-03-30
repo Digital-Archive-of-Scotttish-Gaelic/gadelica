@@ -5,12 +5,28 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix : <http://faclair.ac.uk/meta/> .
 
-o:ubi rdfs:label "ubi" ; :ipa "'ubi" ; :sense "where" .
+o:ubi rdfs:label "ubi" ; :ipa "'ubi" ; :sense "where" , "when" .
+
+o:cur rdfs:label "cur" ; :ipa "'ku:r" ; :sense "why" .
 
 o:primo rdfs:label "primo" ; :ipa "'pri:mo:" ; :sense "at first" .
 
+o:nunc rdfs:label "nunc" ; :ipa "nunk" ; :sense "now" .
+
+o:semper rdfs:label "semper" ; :ipa "'semper" ; :sense "always" .
+
+o:saepe rdfs:label "saepe" ; :ipa "'sajpe" ; :sense "often" .
+
 o:in rdfs:label "in" ; :ipa "in" ; :sense "in" .
+
+o:cum rdfs:label "cum" ; :ipa "kum" ; :sense "with" .
+
+o:de rdfs:label "de" ; :ipa "de:" ; :sense "about" .
 
 o:non rdfs:label "non" ; :ipa "no:n" ; :sense "not" .
 
 o:et rdfs:label "et" ; :ipa "et" ; :sense "and" .
+
+o:sed rdfs:label "sed" ; :ipa "sed" ; :sense "but" .
+
+o:O rdfs:label "O" ; :ipa "o:" ; :sense "oh" .
