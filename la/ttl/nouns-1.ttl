@@ -29,6 +29,18 @@ n:amicitiarum a :Genitive , :Plural ; :stem n:amiciti_ ; rdfs:label "amicitiarum
 n:amicitiis a :Dative , :Plural ; :stem n:amiciti_ ; rdfs:label "amicitiis" ; :ipa "ami:'kitji:s" .
 n:amicitiis-abl a :Ablative , :Plural ; :stem n:amiciti_ ; rdfs:label "amicitiis" ; :ipa "ami:'kitji:s" .
 
+n:anim_ a :Noun , :Lexeme , :Feminine ; rdfs:label "anim(a)" ; :sense "soul" , "spirit" .
+n:anima a :Nominative, :Singular ; :stem n:anim_ ; rdfs:label "anima" ; :ipa "'anima" .
+n:animam a :Accusative , :Singular ; :stem n:anim_ ; rdfs:label "animam" ; :ipa "'animam" .
+n:animae-gen a :Genitive , :Singular ; :stem n:anim_ ; rdfs:label "animae" ; :ipa "'animaj" .
+n:animae-dat a :Dative , :Singular ; :stem n:anim_ ; rdfs:label "animae" ; :ipa "'animaj" .
+n:anima-abl a :Ablative , :Singular ; :stem n:anim_ ; rdfs:label "anima" ; :ipa "'anima:" .
+n:animae a :Nominative , :Plural ; :stem n:anim_ ; rdfs:label "animae" ; :ipa "'animaj" .
+n:animas a :Accusative , :Plural ; :stem n:anim_ ; rdfs:label "animas" ; :ipa "'anima:s" .
+n:animarum a :Genitive , :Plural ; :stem n:anim_ ; rdfs:label "animarum" ; :ipa "ani'ma:rum" .
+n:animis a :Dative , :Plural ; :stem n:anim_ ; rdfs:label "animis" ; :ipa "'animi:s" .
+n:animis-abl a :Ablative , :Plural ; :stem n:anim_ ; rdfs:label "animis" ; :ipa "'animi:s" .
+
 n:aqu_ a :Noun , :Lexeme , :Feminine ; rdfs:label "aqu(a)" ; :sense "water" .
 n:aqua a :Nominative, :Singular ; :stem n:aqu_ ; rdfs:label "aqua" ; :ipa "'akwa" .
 n:aquam a :Accusative , :Singular ; :stem n:aqu_ ; rdfs:label "aquam" ; :ipa "'akwam" .
@@ -40,6 +52,42 @@ n:aquas a :Accusative , :Plural ; :stem n:aqu_ ; rdfs:label "aquas" ; :ipa "'akw
 n:aquarum a :Genitive , :Plural ; :stem n:aqu_ ; rdfs:label "aquarum" ; :ipa "a'kwa:rum" .
 n:aquis a :Dative , :Plural ; :stem n:aqu_ ; rdfs:label "aquis" ; :ipa "'akwi:s" .
 n:aquis-abl a :Ablative , :Plural ; :stem n:aqu_ ; rdfs:label "aquis" ; :ipa "'akwi:s" .
+
+n:Barc_ a :Noun , :Lexeme , :Masculine ; rdfs:label "Barc(a)" ; :sense "Barca" .
+n:Barca a :Nominative, :Singular ; :stem n:Barc_ ; rdfs:label "Barca" ; :ipa "'barka" .
+n:Barcam a :Accusative , :Singular ; :stem n:Barc_ ; rdfs:label "Barcam" ; :ipa "'barkam" .
+n:Barcae-gen a :Genitive , :Singular ; :stem n:Barc_ ; rdfs:label "Barcae" ; :ipa "'barkaj" .
+n:Barcae-dat a :Dative , :Singular ; :stem n:Barc_ ; rdfs:label "Barcae" ; :ipa "'barkaj" .
+n:Barca-abl a :Ablative , :Singular ; :stem n:Barc_ ; rdfs:label "Barca" ; :ipa "'barka:" .
+n:Barcae a :Nominative , :Plural ; :stem n:Barc_ ; rdfs:label "Barcae" ; :ipa "'barkaj" .
+n:Barcas a :Accusative , :Plural ; :stem n:Barc_ ; rdfs:label "Barcas" ; :ipa "'barka:s" .
+n:Barcarum a :Genitive , :Plural ; :stem n:Barc_ ; rdfs:label "Barcarum" ; :ipa "bar'ka:rum" .
+n:Barcis a :Dative , :Plural ; :stem n:Barc_ ; rdfs:label "Barcis" ; :ipa "'barki:s" .
+n:Barcis-abl a :Ablative , :Plural ; :stem n:Barc_ ; rdfs:label "Barcis" ; :ipa "'barki:s" .
+
+n:Curi_ a :Noun , :Lexeme , :Feminine ; rdfs:label "Curi(a)" ; :sense "Senate House" .
+n:Curia a :Nominative, :Singular ; :stem n:Curi_ ; rdfs:label "Curia" ; :ipa "'ku:rja" .
+n:Curiam a :Accusative , :Singular ; :stem n:Curi_ ; rdfs:label "Curiam" ; :ipa "'ku:rjam" .
+n:Curiae-gen a :Genitive , :Singular ; :stem n:Curi_ ; rdfs:label "Curiae" ; :ipa "'ku:rjaj" .
+n:Curiae-dat a :Dative , :Singular ; :stem n:Curi_ ; rdfs:label "Curiae" ; :ipa "'ku:rjaj" .
+n:Curia-abl a :Ablative , :Singular ; :stem n:Curi_ ; rdfs:label "Curia" ; :ipa "'ku:rja:" .
+n:Curiae a :Nominative , :Plural ; :stem n:Curi_ ; rdfs:label "Curiae" ; :ipa "'ku:rjaj" .
+n:Curias a :Accusative , :Plural ; :stem n:Curi_ ; rdfs:label "Curias" ; :ipa "'ku:rja:s" .
+n:Curiarum a :Genitive , :Plural ; :stem n:Curi_ ; rdfs:label "Curiarum" ; :ipa "ku:'rja:rum" .
+n:Curiis a :Dative , :Plural ; :stem n:Curi_ ; rdfs:label "Curiis" ; :ipa "'ku:rji:s" .
+n:Curiis-abl a :Ablative , :Plural ; :stem n:Curi_ ; rdfs:label "Curiis" ; :ipa "'ku:rji:s" .
+
+n:de_ a :Noun , :Lexeme , :Feminine ; rdfs:label "de(a)" ; :sense "goddess" .
+n:dea a :Nominative, :Singular ; :stem n:de_ ; rdfs:label "dea" ; :ipa "'deja" .
+n:deam a :Accusative , :Singular ; :stem n:de_ ; rdfs:label "deam" ; :ipa "'dejam" .
+n:deae-gen a :Genitive , :Singular ; :stem n:de_ ; rdfs:label "deae" ; :ipa "'dejaj" .
+n:deae-dat a :Dative , :Singular ; :stem n:de_ ; rdfs:label "deae" ; :ipa "'dejaj" .
+n:dea-abl a :Ablative , :Singular ; :stem n:de_ ; rdfs:label "dea" ; :ipa "'deja:" .
+n:deae a :Nominative , :Plural ; :stem n:de_ ; rdfs:label "deae" ; :ipa "'dejaj" .
+n:deas a :Accusative , :Plural ; :stem n:de_ ; rdfs:label "deas" ; :ipa "'deja:s" .
+n:dearum a :Genitive , :Plural ; :stem n:de_ ; rdfs:label "dearum" ; :ipa "de'ja:rum" .
+n:deabus a :Dative , :Plural ; :stem n:de_ ; rdfs:label "deabus" ; :ipa "'deja:bus" .
+n:deabus-abl a :Ablative , :Plural ; :stem n:de_ ; rdfs:label "deabus" ; :ipa "'deja:bus" .
 
 n:fabul_ a :Noun , :Lexeme , :Feminine ; rdfs:label "fabul(a)" ; :sense "story" .
 n:fabula a :Nominative, :Singular ; :stem n:fabul_ ; rdfs:label "fabula" ; :ipa "'fa:bula" .
@@ -64,6 +112,30 @@ n:feminas a :Accusative , :Plural ; :stem n:femin_ ; rdfs:label "feminas" ; :ipa
 n:feminarum a :Genitive , :Plural ; :stem n:femin_ ; rdfs:label "feminarum" ; :ipa "fe:mi'na:rum" .
 n:feminis a :Dative , :Plural ; :stem n:femin_ ; rdfs:label "feminis" ; :ipa "'fe:mini:s" .
 n:feminis-abl a :Ablative , :Plural ; :stem n:femin_ ; rdfs:label "feminis" ; :ipa "'fe:mini:s" .
+
+n:fili_ a :Noun , :Lexeme , :Feminine ; rdfs:label "fili(a)" ; :sense "daughter" .
+n:filia a :Nominative, :Singular ; :stem n:fili_ ; rdfs:label "filia" ; :ipa "'fi:lja" .
+n:filiam a :Accusative , :Singular ; :stem n:fili_ ; rdfs:label "filiam" ; :ipa "'fi:ljam" .
+n:filiae-gen a :Genitive , :Singular ; :stem n:fili_ ; rdfs:label "filiae" ; :ipa "'fi:ljaj" .
+n:filiae-dat a :Dative , :Singular ; :stem n:fili_ ; rdfs:label "filiae" ; :ipa "'fi:ljaj" .
+n:filia-abl a :Ablative , :Singular ; :stem n:fili_ ; rdfs:label "filia" ; :ipa "'fi:lja:" .
+n:filiae a :Nominative , :Plural ; :stem n:fili_ ; rdfs:label "filiae" ; :ipa "'fi:ljaj" .
+n:filias a :Accusative , :Plural ; :stem n:fili_ ; rdfs:label "filias" ; :ipa "'fi:lja:s" .
+n:filiarum a :Genitive , :Plural ; :stem n:fili_ ; rdfs:label "filiarum" ; :ipa "fi:'lja:rum" .
+n:filiabus a :Dative , :Plural ; :stem n:fili_ ; rdfs:label "filiabus" ; :ipa "'fi:lja:bus" .
+n:filiabus-abl a :Ablative , :Plural ; :stem n:fili_ ; rdfs:label "filiabus" ; :ipa "'fi:lja:bus" .
+
+n:flamm_ a :Noun , :Lexeme , :Feminine ; rdfs:label "flamm(a)" ; :sense "flame" .
+n:flamma a :Nominative, :Singular ; :stem n:flamm_ ; rdfs:label "flamma" ; :ipa "'flamma" .
+n:flammam a :Accusative , :Singular ; :stem n:flamm_ ; rdfs:label "flammam" ; :ipa "'flammam" .
+n:flammae-gen a :Genitive , :Singular ; :stem n:flamm_ ; rdfs:label "flammae" ; :ipa "'flammaj" .
+n:flammae-dat a :Dative , :Singular ; :stem n:flamm_ ; rdfs:label "flammae" ; :ipa "'flammaj" .
+n:flamma-abl a :Ablative , :Singular ; :stem n:flamm_ ; rdfs:label "flamma" ; :ipa "'flamma:" .
+n:flammae a :Nominative , :Plural ; :stem n:flamm_ ; rdfs:label "flammae" ; :ipa "'flammaj" .
+n:flammas a :Accusative , :Plural ; :stem n:flamm_ ; rdfs:label "flammas" ; :ipa "'flamma:s" .
+n:flammarum a :Genitive , :Plural ; :stem n:flamm_ ; rdfs:label "flammarum" ; :ipa "flam'ma:rum" .
+n:flammis a :Dative , :Plural ; :stem n:flamm_ ; rdfs:label "flammis" ; :ipa "'flammi:s" .
+n:flammis-abl a :Ablative , :Plural ; :stem n:flamm_ ; rdfs:label "flammis" ; :ipa "'flammi:s" .
 
 n:Galli_ a :Noun , :Lexeme , :Feminine ; rdfs:label "Galli(a)" ; :sense "Gaul" .
 n:Gallia a :Nominative, :Singular ; :stem n:Galli_ ; rdfs:label "Gallia" ; :ipa "'gallja" .
@@ -137,6 +209,18 @@ n:Italiarum a :Genitive , :Plural ; :stem n:Itali_ ; rdfs:label "Italiarum" ; :i
 n:Italiis a :Dative , :Plural ; :stem n:Itali_ ; rdfs:label "Italiis" ; :ipa "i'ta:lji:s" .
 n:Italiis-abl a :Ablative , :Plural ; :stem n:Itali_ ; rdfs:label "Italiis" ; :ipa "i'ta:lji:s" .
 
+n:lun_ a :Noun , :Lexeme , :Feminine ; rdfs:label "lun(a)" ; :sense "moon" .
+n:luna a :Nominative, :Singular ; :stem n:lun_ ; rdfs:label "luna" ; :ipa "'lu:na" .
+n:lunam a :Accusative , :Singular ; :stem n:lun_ ; rdfs:label "lunam" ; :ipa "'lu:nam" .
+n:lunae-gen a :Genitive , :Singular ; :stem n:lun_ ; rdfs:label "lunae" ; :ipa "'lu:naj" .
+n:lunae-dat a :Dative , :Singular ; :stem n:lun_ ; rdfs:label "lunae" ; :ipa "'lu:naj" .
+n:luna-abl a :Ablative , :Singular ; :stem n:lun_ ; rdfs:label "luna" ; :ipa "'lu:na:" .
+n:lunae a :Nominative , :Plural ; :stem n:lun_ ; rdfs:label "lunae" ; :ipa "'lu:naj" .
+n:lunas a :Accusative , :Plural ; :stem n:lun_ ; rdfs:label "lunas" ; :ipa "'lu:na:s" .
+n:lunarum a :Genitive , :Plural ; :stem n:lun_ ; rdfs:label "lunarum" ; :ipa "lu:'na:rum" .
+n:lunis a :Dative , :Plural ; :stem n:lun_ ; rdfs:label "lunis" ; :ipa "'lu:ni:s" .
+n:lunis-abl a :Ablative , :Plural ; :stem n:lun_ ; rdfs:label "lunis" ; :ipa "'lu:ni:s" .
+
 n:naut_ a :Noun , :Lexeme , :Masculine ; rdfs:label "naut(a)" ; :sense "sailor" .
 n:nauta a :Nominative, :Singular ; :stem n:naut_ ; rdfs:label "nauta" ; :ipa "'nawta" .
 n:nautam a :Accusative , :Singular ; :stem n:naut_ ; rdfs:label "nautam" ; :ipa "'nawtam" .
@@ -172,6 +256,18 @@ n:poetas a :Accusative , :Plural ; :stem n:poet_ ; rdfs:label "poetas" ; :ipa "p
 n:poetarum a :Genitive , :Plural ; :stem n:poet_ ; rdfs:label "poetarum" ; :ipa "powe:'ta:rum" .
 n:poetis a :Dative , :Plural ; :stem n:poet_ ; rdfs:label "poetis" ; :ipa "po'we:ti:s" .
 n:poetis-abl a :Ablative , :Plural ; :stem n:poet_ ; rdfs:label "poetis" ; :ipa "po'we:ti:s" .
+
+n:Porti_ a :Noun , :Lexeme , :Feminine ; rdfs:label "Porti(a)" ; :sense "Portia" .
+n:Portia a :Nominative, :Singular ; :stem n:Porti_ ; rdfs:label "Portia" ; :ipa "'portja" .
+n:Portiam a :Accusative , :Singular ; :stem n:Porti_ ; rdfs:label "Portiam" ; :ipa "'portjam" .
+n:Portiae-gen a :Genitive , :Singular ; :stem n:Porti_ ; rdfs:label "Portiae" ; :ipa "'portjaj" .
+n:Portiae-dat a :Dative , :Singular ; :stem n:Porti_ ; rdfs:label "Portiae" ; :ipa "'portjaj" .
+n:Portia-abl a :Ablative , :Singular ; :stem n:Porti_ ; rdfs:label "Portia" ; :ipa "'portja:" .
+n:Portiae a :Nominative , :Plural ; :stem n:Porti_ ; rdfs:label "Portiae" ; :ipa "'portjaj" .
+n:Portias a :Accusative , :Plural ; :stem n:Porti_ ; rdfs:label "Portias" ; :ipa "'portja:s" .
+n:Portiarum a :Genitive , :Plural ; :stem n:Porti_ ; rdfs:label "Portiarum" ; :ipa "por'tja:rum" .
+n:Portiis a :Dative , :Plural ; :stem n:Porti_ ; rdfs:label "Portiis" ; :ipa "'portji:s" .
+n:Portiis-abl a :Ablative , :Plural ; :stem n:Porti_ ; rdfs:label "Portiis" ; :ipa "'portji:s" .
 
 n:puell_ a :Noun , :Lexeme , :Feminine ; rdfs:label "puell(a)" ; :sense "girl" .
 n:puella a :Nominative, :Singular ; :stem n:puell_ ; rdfs:label "puella" ; :ipa "'pwella" .
