@@ -10,9 +10,17 @@ v:con_
   rdfs:label "con/m-" .
 
 v:e_ a :Verb , :Lexeme ; rdfs:label "e(sse)" ; :sense "be" .
+v:esse a :Infinitive ; rdfs:label "esse" ; :stem v:e_ ; :sense "to be" ; :ipa "'esse" .
+v:era_ a :Imperfect ; rdfs:label "era-" ; :stem v:e_ .
 v:sum a :FirstSingular ; rdfs:label "sum" ; :stem v:e_ ; :sense "I am" ; :ipa "sum" .
 v:es a :SecondSingular ; rdfs:label "es" ; :stem v:e_ ; :sense "you are" ; :ipa "es" .
 v:est a :ThirdSingular ; rdfs:label "est" ; :stem v:e_ ; :sense "he/she/it is" ; :ipa "est" .
 v:sumus a :FirstPlural ; rdfs:label "sumus" ; :stem v:e_ ; :sense "we are" ; :ipa "'sumus" .
 v:estis a :SecondPlural ; rdfs:label "estis" ; :stem v:e_ ; :sense "you(s) are" ; :ipa "'estis" .
 v:sunt a :ThirdPlural ; rdfs:label "sunt" ; :stem v:e_ ; :sense "they are" ; :ipa "sunt" .
+v:eram a :FirstSingular ; rdfs:label "eram" ; :stem v:era_ ; :sense "I was" ; :ipa "'eram" .
+v:eras a :SecondSingular ; rdfs:label "eras" ; :stem v:era_ ; :sense "you were" ; :ipa "'eras" .
+v:erat a :ThirdSingular ; rdfs:label "erat" ; :stem v:era_ ; :sense "he/she/it was" ; :ipa "'erat" .
+v:eramus a :FirstPlural ; rdfs:label "eramus" ; :stem v:era_ ; :sense "we were" ; :ipa "e'ramus" .
+v:eratis a :SecondPlural ; rdfs:label "eratis" ; :stem v:era_ ; :sense "you(s) were" ; :ipa "e'ratis" .
+v:erant a :ThirdPlural ; rdfs:label "erant" ; :stem v:era_ ; :sense "they were" ; :ipa "'erant" .

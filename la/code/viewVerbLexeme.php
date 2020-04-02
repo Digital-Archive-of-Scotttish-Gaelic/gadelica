@@ -53,7 +53,6 @@ WHERE
     ?pf1p :stem ?perfStem ; a :FirstPlural ; rdfs:label ?pf1pf .
     ?pf2p :stem ?perfStem ; a :SecondPlural ; rdfs:label ?pf2pf .
     ?pf3p :stem ?perfStem ; a :ThirdPlural ; rdfs:label ?pf3pf .
-  }
   OPTIONAL {
     ?pperfStem :stem ?perfStem ; a :PluPerfect .
     ?ppf1s :stem ?pperfStem ; a :FirstSingular ; rdfs:label ?ppf1sf .
@@ -73,23 +72,6 @@ WHERE
     ?fpf3p :stem ?fperfStem ; a :ThirdPlural ; rdfs:label ?fpf3pf .
   }
   OPTIONAL {
-    ?subjStem :stem <{$id}> ; a :Subjunctive .
-    ?sp1s :stem ?subjStem ; a :FirstSingular ; rdfs:label ?sp1sf .
-    ?sp2s :stem ?subjStem ; a :SecondSingular ; rdfs:label ?sp2sf .
-    ?sp3s :stem ?subjStem ; a :ThirdSingular ; rdfs:label ?sp3sf .
-    ?sp1p :stem ?subjStem ; a :FirstPlural ; rdfs:label ?sp1pf .
-    ?sp2p :stem ?subjStem ; a :SecondPlural ; rdfs:label ?sp2pf .
-    ?sp3p :stem ?subjStem ; a :ThirdPlural ; rdfs:label ?sp3pf .
-  }
-  OPTIONAL {
-    ?si1s :stem ?inf ; a :FirstSingular ; rdfs:label ?si1sf .
-    ?si2s :stem ?inf ; a :SecondSingular ; rdfs:label ?si2sf .
-    ?si3s :stem ?inf ; a :ThirdSingular ; rdfs:label ?si3sf .
-    ?si1p :stem ?inf ; a :FirstPlural ; rdfs:label ?si1pf .
-    ?si2p :stem ?inf ; a :SecondPlural ; rdfs:label ?si2pf .
-    ?si3p :stem ?inf ; a :ThirdPlural ; rdfs:label ?si3pf .
-  }
-  OPTIONAL {
     ?sppf1s :stem ?pfinf ; a :FirstSingular ; rdfs:label ?sppf1sf .
     ?sppf2s :stem ?pfinf ; a :SecondSingular ; rdfs:label ?sppf2sf .
     ?sppf3s :stem ?pfinf ; a :ThirdSingular ; rdfs:label ?sppf3sf .
@@ -106,6 +88,28 @@ WHERE
     ?spf2p :stem ?perfSubjStem ; a :SecondPlural ; rdfs:label ?spf2pf .
     ?spf3p :stem ?perfSubjStem ; a :ThirdPlural ; rdfs:label ?spf3pf .
   }
+
+
+  }
+
+  OPTIONAL {
+    ?subjStem :stem <{$id}> ; a :Subjunctive .
+    ?sp1s :stem ?subjStem ; a :FirstSingular ; rdfs:label ?sp1sf .
+    ?sp2s :stem ?subjStem ; a :SecondSingular ; rdfs:label ?sp2sf .
+    ?sp3s :stem ?subjStem ; a :ThirdSingular ; rdfs:label ?sp3sf .
+    ?sp1p :stem ?subjStem ; a :FirstPlural ; rdfs:label ?sp1pf .
+    ?sp2p :stem ?subjStem ; a :SecondPlural ; rdfs:label ?sp2pf .
+    ?sp3p :stem ?subjStem ; a :ThirdPlural ; rdfs:label ?sp3pf .
+  }
+  OPTIONAL {
+    ?si1s :stem ?inf ; a :FirstSingular ; rdfs:label ?si1sf .
+    ?si2s :stem ?inf ; a :SecondSingular ; rdfs:label ?si2sf .
+    ?si3s :stem ?inf ; a :ThirdSingular ; rdfs:label ?si3sf .
+    ?si1p :stem ?inf ; a :FirstPlural ; rdfs:label ?si1pf .
+    ?si2p :stem ?inf ; a :SecondPlural ; rdfs:label ?si2pf .
+    ?si3p :stem ?inf ; a :ThirdPlural ; rdfs:label ?si3pf .
+  }
+
 
 
   OPTIONAL {
@@ -157,26 +161,26 @@ if ($stem!='') {
 }
 echo '<div class="list-group-item">';
 echo '<em class="text-muted">infinitives</em> ';
-echo '<strong><a href="viewForm.php?id=' . $results[0]->inf->value . '">' . $results[0]->inff->value . '</a></strong>, ';
-echo '<strong><a href="viewForm.php?id=' . $results[0]->pfinf->value . '">' . $results[0]->pfinff->value . '</a></strong>';
+echo '<strong><a href="#" onclick="loadForm(\'' . $results[0]->inf->value . '\');">' . $results[0]->inff->value . '</a></strong>, ';
+echo '<strong><a href="#" onclick="loadForm(\'' . $results[0]->pfinf->value . '\');">' . $results[0]->pfinff->value . '</a></strong>';
 echo '</div>';
 echo '<div class="list-group-item">';
 echo '<em class="text-muted">present indicative active</em> ';
-echo '<strong><a href="viewForm.php?id=' . $results[0]->p1s->value . '">' . $results[0]->p1sf->value . '</a></strong>, ';
-echo '<strong><a href="viewForm.php?id=' . $results[0]->p2s->value . '">' . $results[0]->p2sf->value . '</a></strong>, ';
-echo '<strong><a href="viewForm.php?id=' . $results[0]->p3s->value . '">' . $results[0]->p3sf->value . '</a></strong>, ';
-echo '<strong><a href="viewForm.php?id=' . $results[0]->p1p->value . '">' . $results[0]->p1pf->value . '</a></strong>, ';
-echo '<strong><a href="viewForm.php?id=' . $results[0]->p2p->value . '">' . $results[0]->p2pf->value . '</a></strong>, ';
-echo '<strong><a href="viewForm.php?id=' . $results[0]->p3p->value . '">' . $results[0]->p3pf->value . '</a></strong>';
+echo '<strong><a href="#" onclick="loadForm(\'' . $results[0]->p1s->value . '\');">' . $results[0]->p1sf->value . '</a></strong>, ';
+echo '<strong><a href="#" onclick="loadForm(\'' . $results[0]->p2s->value . '\');">' . $results[0]->p2sf->value . '</a></strong>, ';
+echo '<strong><a href="#" onclick="loadForm(\'' . $results[0]->p3s->value . '\');">' . $results[0]->p3sf->value . '</a></strong>, ';
+echo '<strong><a href="#" onclick="loadForm(\'' . $results[0]->p1p->value . '\');">' . $results[0]->p1pf->value . '</a></strong>, ';
+echo '<strong><a href="#" onclick="loadForm(\'' . $results[0]->p2p->value . '\');">' . $results[0]->p2pf->value . '</a></strong>, ';
+echo '<strong><a href="#" onclick="loadForm(\'' . $results[0]->p3p->value . '\');">' . $results[0]->p3pf->value . '</a></strong>';
 echo '</div>';
 echo '<div class="list-group-item">';
 echo '<em class="text-muted">imperfect indicative active</em> ';
-echo '<strong><a href="viewForm.php?id=' . $results[0]->i1s->value . '">' . $results[0]->i1sf->value . '</a></strong>, ';
-echo '<strong><a href="viewForm.php?id=' . $results[0]->i2s->value . '">' . $results[0]->i2sf->value . '</a></strong>, ';
-echo '<strong><a href="viewForm.php?id=' . $results[0]->i3s->value . '">' . $results[0]->i3sf->value . '</a></strong>, ';
-echo '<strong><a href="viewForm.php?id=' . $results[0]->i1p->value . '">' . $results[0]->i1pf->value . '</a></strong>, ';
-echo '<strong><a href="viewForm.php?id=' . $results[0]->i2p->value . '">' . $results[0]->i2pf->value . '</a></strong>, ';
-echo '<strong><a href="viewForm.php?id=' . $results[0]->i3p->value . '">' . $results[0]->i3pf->value . '</a></strong>';
+echo '<strong><a href="#" onclick="loadForm(\'' . $results[0]->i1s->value . '\');">' . $results[0]->i1sf->value . '</a></strong>, ';
+echo '<strong><a href="#" onclick="loadForm(\'' . $results[0]->i2s->value . '\');">' . $results[0]->i2sf->value . '</a></strong>, ';
+echo '<strong><a href="#" onclick="loadForm(\'' . $results[0]->i3s->value . '\');">' . $results[0]->i3sf->value . '</a></strong>, ';
+echo '<strong><a href="#" onclick="loadForm(\'' . $results[0]->i1p->value . '\');">' . $results[0]->i1pf->value . '</a></strong>, ';
+echo '<strong><a href="#" onclick="loadForm(\'' . $results[0]->i2p->value . '\');">' . $results[0]->i2pf->value . '</a></strong>, ';
+echo '<strong><a href="#" onclick="loadForm(\'' . $results[0]->i3p->value . '\');">' . $results[0]->i3pf->value . '</a></strong>';
 echo '</div>';
 echo '<div class="list-group-item">';
 echo '<em class="text-muted">future indicative active</em> ';
