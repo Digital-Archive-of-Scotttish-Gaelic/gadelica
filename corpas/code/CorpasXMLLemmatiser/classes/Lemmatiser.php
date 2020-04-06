@@ -49,29 +49,16 @@ class Lemmatiser
   private function _getLemmas($wordform) {
     $wordform = $this->_prepareWordform($wordform);
     $lemmas = array();
-    //Removes any duplicate lemmas
     //Searches the multidict DB on MySQL
     $query = <<<SQL
-        SELECT DISTINCT lemma FROM lemmas WHERE wordform = :wordform AND batch = 'pri'
+        SELECT DISTINCT lemma FROM lemmas WHERE wordform = :wordform
 SQL;
     $sth = $this->_dbh->prepare($query);
     $sth->execute(array(":wordform" => $wordform));
     $results = $sth->fetchAll();
-    if (count($results)) {    //there is a pri result so use it
- //     foreach ($results as $result) {
-        $lemmas[] = $results[0]["lemma"];
- //     }
-    } else {    //there is no pri result so run another query
-      $query = <<<SQL
-        SELECT DISTINCT lemma, ord FROM lemmas WHERE wordform = :wordform ORDER BY ord 
-SQL;
-      $sth2 = $this->_dbh->prepare($query);
-      $sth2->execute(array(":wordform" => $wordform));
-      $ordResults = $sth2->fetchAll();
-      if (count($ordResults)) {    //there is a result
- //       foreach ($ordResults as $result) {
-          $lemmas[] = $ordResults[0]["lemma"];
- //       }
+    if (count($results)) {
+      foreach ($results as $result) {
+        $lemmas[] = $result["lemma"];
       }
     }
     return $lemmas;
