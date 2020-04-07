@@ -13,8 +13,8 @@ class Lemmatiser
   }
 
   /*
-   * Main proesseor for XML generateion
-   * Can deal with mutiple level texts
+   * Main processor for XML generateion
+   * Can deal with multiple level texts
    */
   public function getProcessedXml() {
     $text = new SimpleXMLElement($this->_inputXml);
@@ -37,9 +37,11 @@ class Lemmatiser
       if (isset($p->w)) {
         foreach ($p->w as $word) {
           $wordform = (string)$word;
-          $lemmas = $this->_getLemmas($wordform);
-          $lemmasGlued = implode(' ', $lemmas);
+          $hits = $this->_getLemmas($wordform);
+          $lemmasGlued = implode(' ', $hits["lemma"]);
+          $pos1Glued = implode(' ', $hits["pos1"]);
           $word["lemma"] = $lemmasGlued;
+          $word["pos"] = $pos1Glued;
         }
       }
     }
@@ -48,20 +50,24 @@ class Lemmatiser
 
   private function _getLemmas($wordform) {
     $wordform = $this->_prepareWordform($wordform);
-    $lemmas = array();
-    //Searches the multidict DB on MySQL
+    $hits["lemma"] = array();
+    $hits["pos1"] = array();
+    //Searches the multidict DB in MySQL
     $query = <<<SQL
-        SELECT DISTINCT lemma FROM lemmas WHERE wordform = :wordform
+        SELECT DISTINCT lemma, pos1 FROM lemmas WHERE wordform = :wordform
 SQL;
     $sth = $this->_dbh->prepare($query);
     $sth->execute(array(":wordform" => $wordform));
     $results = $sth->fetchAll();
     if (count($results)) {
+      $i = 0;
       foreach ($results as $result) {
-        $lemmas[] = $result["lemma"];
+        $hits["lemma"][$i] = $result["lemma"];
+        $hits["pos1"][$i] = $result["pos1"];
+        $i++;
       }
     }
-    return $lemmas;
+    return $hits;
   }
 
   private function _prepareWordform($wordform) {
