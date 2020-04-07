@@ -5,10 +5,11 @@ $id = $_GET['id'];
 $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
-SELECT DISTINCT ?hw ?en ?ipa
+SELECT DISTINCT ?hw ?en ?ipa ?pos
 WHERE
 {
   <{$id}> rdfs:label ?hw .
+  OPTIONAL { <{$id}> a ?pos . }
   OPTIONAL { <{$id}> :sense ?en . }
   OPTIONAL { <{$id}> :ipa ?ipa . }
 }
@@ -23,6 +24,19 @@ echo '<h1 class="card-title">';
 echo $results[0]->hw->value;
 echo '</h1>';
 echo '<div class="list-group list-group-flush">';
+$pos = $results[0]->pos->value;
+if ($pos!='') {
+  echo '<div class="list-group-item"><em class="text-muted">';
+  if ($pos=='http://faclair.ac.uk/meta/Adverb') {
+    echo 'adverb';
+  }
+  else if ($pos=='http://faclair.ac.uk/meta/Preposition') {
+    echo 'preposition';
+  }
+  echo '</em></div>';
+}
+
+
 $ens = []; // ENGLISH EQUIVALENTS
 foreach($results as $nextResult) {
   $en = $nextResult->en->value;
