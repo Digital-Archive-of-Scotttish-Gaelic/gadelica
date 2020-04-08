@@ -21,13 +21,13 @@ o:propter rdfs:label "propter" ; :ipa "'propter" ; :sense "on account of" .
 o:trans rdfs:label "trans" ; :ipa "trans" ; :sense "across" .
 
 o:ab rdfs:label "a(b)" ; :ipa "a(:,b)" ; :sense "by" , "from" .
-o:cum rdfs:label "cum" ; :ipa "kum" ; :sense "with" .
+o:cum a :Preposition ; rdfs:label "cum" ; :ipa "kum" ; :sense "with" .
 o:de rdfs:label "de" ; :ipa "de:" ; :sense "about" , "down from" , "concerning" .
 o:ex rdfs:label "e(x)" ; :ipa "e(:,ks)" ; :sense "out of" .
 o:pro rdfs:label "pro" ; :ipa "pro:" ; :sense "before" , "on behalf of" .
 o:sine rdfs:label "sine" ; :ipa "'sine" ; :sense "without" .
 
-o:in rdfs:label "in" ; :ipa "in" ; :sense "in" , "into" .
+o:in a :Preposition ; rdfs:label "in" ; :ipa "in" ; :sense "in" , "into" .
 o:sub rdfs:label "sub" ; :ipa "sub" ; :sense "up to" , "under" .
 
 o:ubi rdfs:label "ubi" ; :ipa "'ubi" ; :sense "where" , "when" .
@@ -46,9 +46,9 @@ o:hodie rdfs:label "hodie" ; :ipa "'hodje:" ; :sense "today" .
 
 o:iam rdfs:label "iam" ; :ipa "jam" ; :sense "already" , "now" .
 
-o:non rdfs:label "non" ; :ipa "no:n" ; :sense "not" .
+o:non a :Adverb ; rdfs:label "non" ; :ipa "no:n" ; :sense "not" .
 
-o:minus rdfs:label "minus" ; :ipa "minus" ; :sense "less" .
+o:minus a :Adverb ; rdfs:label "minus" ; :ipa "minus" ; :sense "less" .
 
 o:et rdfs:label "et" ; :ipa "et" ; :sense "and" .
 
@@ -57,3 +57,5 @@ o:sed rdfs:label "sed" ; :ipa "sed" ; :sense "but" .
 o:O rdfs:label "O" ; :ipa "o:" ; :sense "oh" .
 
 n:ego rdfs:label "ego" ; :ipa "'ego" ; :sense "I" .
+
+o:_ne rdfs:label "-ne" ; :ipa "ne" ; :sense "?" .

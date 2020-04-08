@@ -5,6 +5,31 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix : <http://faclair.ac.uk/meta/> .
 
+n:aedifici_ a :Noun , :Lexeme , :Neuter ; rdfs:label "aedifici(um)" ; :sense "building" .
+n:aedificium a :Nominative, :Singular ; :stem n:aedifici_ ; rdfs:label "aedificium" ; :ipa "ajdi'fikjum" .
+n:aedificium-acc a :Accusative , :Singular ; :stem n:aedifici_ ; rdfs:label "aedificium" ; :ipa "ajdi'fikjum" .
+n:aedificii-gen a :Genitive , :Singular ; :stem n:aedifici_ ; rdfs:label "aedificii" ; :ipa "ajdi'fikji:" .
+n:aedificio a :Dative , :Singular ; :stem n:aedifici_ ; rdfs:label "aedificio" ; :ipa "ajdi'fikjo:" .
+n:aedificio-abl a :Ablative , :Singular ; :stem n:aedifici_ ; rdfs:label "aedificio" ; :ipa "ajdi'fikjo:" .
+n:aedificia a :Nominative , :Plural ; :stem n:aedifici_ ; rdfs:label "aedificia" ; :ipa "ajdi'fikja" .
+n:aedificia-acc a :Accusative , :Plural ; :stem n:aedifici_ ; rdfs:label "aedificia" ; :ipa "ajdi'fikja" .
+n:aedificiorum a :Genitive , :Plural ; :stem n:aedifici_ ; rdfs:label "aedificiorum" ; :ipa "ajdifi'kjo:rum" .
+n:aedificiis a :Dative , :Plural ; :stem n:aedifici_ ; rdfs:label "aedificiis" ; :ipa "ajdi'fikji:s" .
+n:aedificiis-abl a :Ablative , :Plural ; :stem n:aedifici_ ; rdfs:label "aedificiis" ; :ipa "ajdi'fikji:s" .
+
+n:Aegypt_ a :Noun , :Lexeme , :Feminine ; rdfs:label "Aegypt(us)" ; :sense "Egypt" .
+n:Aegyptus a :Nominative, :Singular ; :stem n:Aegypt_ ; rdfs:label "Aegyptus" ; :ipa "aj'giptus" .
+n:Aegyptum a :Accusative , :Singular ; :stem n:Aegypt_ ; rdfs:label "Aegyptum" ; :ipa "aj'giptum" .
+n:Aegypti-gen a :Genitive , :Singular ; :stem n:Aegypt_ ; rdfs:label "Aegypti" ; :ipa "aj'gipti:" .
+n:Aegypto a :Dative , :Singular ; :stem n:Aegypt_ ; rdfs:label "Aegypto" ; :ipa "aj'gipto:" .
+n:Aegypto-abl a :Ablative , :Singular ; :stem n:Aegypt_ ; rdfs:label "Aegypto" ; :ipa "aj'gipto:" .
+n:Aegypti a :Nominative , :Plural ; :stem n:Aegypt_ ; rdfs:label "Aegypti" ; :ipa "aj'gipti:" .
+n:Aegyptos a :Accusative , :Plural ; :stem n:Aegypt_ ; rdfs:label "Aegyptos" ; :ipa "aj'gipto:s" .
+n:Aegyptorum a :Genitive , :Plural ; :stem n:Aegypt_ ; rdfs:label "Aegyptorum" ; :ipa "ajgip'to:rum" .
+n:Aegyptis a :Dative , :Plural ; :stem n:Aegypt_ ; rdfs:label "Aegyptis" ; :ipa "aj'gipti:s" .
+n:Aegyptis-abl a :Ablative , :Plural ; :stem n:Aegypt_ ; rdfs:label "Aegyptis" ; :ipa "aj'gipti:s" .
+n:Aegypte a :Vocative, :Singular ; :stem n:Aegypt_ ; rdfs:label "Aegypte" ; :ipa "aj'gipte" .
+
 n:agr_ a :Noun , :Lexeme , :Masculine ; rdfs:label "ag(e)r" ; :sense "field" .
 n:ager a :Nominative, :Singular ; :stem n:agr_ ; rdfs:label "ager" ; :ipa "'ager" .
 n:agrum a :Accusative , :Singular ; :stem n:agr_ ; rdfs:label "agrum" ; :ipa "'agrum" .
@@ -30,38 +55,63 @@ n:amicis a :Dative , :Plural ; :stem n:amic_ ; rdfs:label "amicis" ; :ipa "a'mi:
 n:amicis-abl a :Ablative , :Plural ; :stem n:amic_ ; rdfs:label "amicis" ; :ipa "a'mi:ki:s" .
 n:amice a :Vocative, :Singular ; :stem n:amic_ ; rdfs:label "amice" ; :ipa "a'mi:ke" .
 
+n:astr_ a :Noun , :Lexeme , :Neuter ; rdfs:label "astr(um)" ; :sense "star" .
+n:astrum a :Nominative, :Singular ; :stem n:astr_ ; rdfs:label "astrum" ; :ipa "'astrum" .
+n:astrum-acc a :Accusative , :Singular ; :stem n:astr_ ; rdfs:label "astrum" ; :ipa "'astrum" .
+n:astri-gen a :Genitive , :Singular ; :stem n:astr_ ; rdfs:label "astri" ; :ipa "'astri:" .
+n:astro a :Dative , :Singular ; :stem n:astr_ ; rdfs:label "astro" ; :ipa "'astro:" .
+n:astro-abl a :Ablative , :Singular ; :stem n:astr_ ; rdfs:label "astro" ; :ipa "'astro:" .
+n:astra a :Nominative , :Plural ; :stem n:astr_ ; rdfs:label "astra" ; :ipa "'astra" .
+n:astra-acc a :Accusative , :Plural ; :stem n:astr_ ; rdfs:label "astra" ; :ipa "'astra" .
+n:astrorum a :Genitive , :Plural ; :stem n:astr_ ; rdfs:label "astrorum" ; :ipa "a'stro:rum" .
+n:astris a :Dative , :Plural ; :stem n:astr_ ; rdfs:label "astris" ; :ipa "'astri:s" .
+n:astris-abl a :Ablative , :Plural ; :stem n:astr_ ; rdfs:label "astris" ; :ipa "'astri:s" .
+
 n:auxili_ a :Noun , :Lexeme , :Neuter ; rdfs:label "auxili(um)" ; :sense "help" .
 n:auxilium a :Nominative, :Singular ; :stem n:auxili_ ; rdfs:label "auxilium" ; :ipa "awk'siljum" .
-n:auxilium a :Accusative , :Singular ; :stem n:auxili_ ; rdfs:label "auxilium" ; :ipa "awk'siljum" .
+n:auxilium-acc a :Accusative , :Singular ; :stem n:auxili_ ; rdfs:label "auxilium" ; :ipa "awk'siljum" .
 n:auxilii-gen a :Genitive , :Singular ; :stem n:auxili_ ; rdfs:label "auxilii" ; :ipa "awk'silji:" .
 n:auxilio a :Dative , :Singular ; :stem n:auxili_ ; rdfs:label "auxilio" ; :ipa "awk'siljo:" .
 n:auxilio-abl a :Ablative , :Singular ; :stem n:auxili_ ; rdfs:label "auxilio" ; :ipa "awk'siljo:" .
 n:auxilia a :Nominative , :Plural ; :stem n:auxili_ ; rdfs:label "auxilia" ; :ipa "awk'silja" .
-n:auxilia a :Accusative , :Plural ; :stem n:auxili_ ; rdfs:label "auxilia" ; :ipa "awk'silja" .
+n:auxilia-acc a :Accusative , :Plural ; :stem n:auxili_ ; rdfs:label "auxilia" ; :ipa "awk'silja" .
 n:auxiliorum a :Genitive , :Plural ; :stem n:auxili_ ; rdfs:label "auxiliorum" ; :ipa "awksi'ljo:rum" .
 n:auxiliis a :Dative , :Plural ; :stem n:auxili_ ; rdfs:label "auxiliis" ; :ipa "awk'silji:s" .
 n:auxiliis-abl a :Ablative , :Plural ; :stem n:auxili_ ; rdfs:label "auxiliis" ; :ipa "awk'silji:s" .
 
 n:bell_ a :Noun , :Lexeme , :Neuter ; rdfs:label "bell(um)" ; :sense "war" .
 n:bellum a :Nominative, :Singular ; :stem n:bell_ ; rdfs:label "bellum" ; :ipa "'bellum" .
-n:bellum a :Accusative , :Singular ; :stem n:bell_ ; rdfs:label "bellum" ; :ipa "'bellum" .
+n:bellum-acc a :Accusative , :Singular ; :stem n:bell_ ; rdfs:label "bellum" ; :ipa "'bellum" .
 n:belli-gen a :Genitive , :Singular ; :stem n:bell_ ; rdfs:label "belli" ; :ipa "'belli:" .
 n:bello a :Dative , :Singular ; :stem n:bell_ ; rdfs:label "bello" ; :ipa "'bello:" .
 n:bello-abl a :Ablative , :Singular ; :stem n:bell_ ; rdfs:label "bello" ; :ipa "'bello:" .
 n:bella a :Nominative , :Plural ; :stem n:bell_ ; rdfs:label "bella" ; :ipa "'bella" .
-n:bella a :Accusative , :Plural ; :stem n:bell_ ; rdfs:label "bella" ; :ipa "'bella" .
+n:bella-acc a :Accusative , :Plural ; :stem n:bell_ ; rdfs:label "bella" ; :ipa "'bella" .
 n:bellorum a :Genitive , :Plural ; :stem n:bell_ ; rdfs:label "bellorum" ; :ipa "bel'lo:rum" .
 n:bellis a :Dative , :Plural ; :stem n:bell_ ; rdfs:label "bellis" ; :ipa "'belli:s" .
 n:bellis-abl a :Ablative , :Plural ; :stem n:bell_ ; rdfs:label "bellis" ; :ipa "'belli:s" .
 
+n:Brut_ a :Noun , :Lexeme , :Masculine ; rdfs:label "Brut(us)" ; :sense "Brutus" .
+n:Brutus a :Nominative, :Singular ; :stem n:Brut_ ; rdfs:label "Brutus" ; :ipa "'bru:tus" .
+n:Brutum a :Accusative , :Singular ; :stem n:Brut_ ; rdfs:label "Brutum" ; :ipa "'bru:tum" .
+n:Bruti-gen a :Genitive , :Singular ; :stem n:Brut_ ; rdfs:label "Bruti" ; :ipa "'bru:ti:" .
+n:Bruto a :Dative , :Singular ; :stem n:Brut_ ; rdfs:label "Bruto" ; :ipa "'bru:to:" .
+n:Bruto-abl a :Ablative , :Singular ; :stem n:Brut_ ; rdfs:label "Bruto" ; :ipa "'bru:to:" .
+n:Bruti a :Nominative , :Plural ; :stem n:Brut_ ; rdfs:label "Bruti" ; :ipa "'bru:ti:" .
+n:Brutos a :Accusative , :Plural ; :stem n:Brut_ ; rdfs:label "Brutos" ; :ipa "'bru:to:s" .
+n:Brutorum a :Genitive , :Plural ; :stem n:Brut_ ; rdfs:label "Brutorum" ; :ipa "bru:'to:rum" .
+n:Brutis a :Dative , :Plural ; :stem n:Brut_ ; rdfs:label "Brutis" ; :ipa "'bru:ti:s" .
+n:Brutis-abl a :Ablative , :Plural ; :stem n:Brut_ ; rdfs:label "Brutis" ; :ipa "'bru:ti:s" .
+n:Brute a :Vocative, :Singular ; :stem n:Brut_ ; rdfs:label "Brute" ; :ipa "'bru:te" .
+
 n:cael_ a :Noun , :Lexeme , :Neuter ; rdfs:label "cael(um)" ; :sense "sky" , "heaven" .
 n:caelum a :Nominative, :Singular ; :stem n:cael_ ; rdfs:label "caelum" ; :ipa "'kajlum" .
-n:caelum a :Accusative , :Singular ; :stem n:cael_ ; rdfs:label "caelum" ; :ipa "'kajlum" .
+n:caelum-acc a :Accusative , :Singular ; :stem n:cael_ ; rdfs:label "caelum" ; :ipa "'kajlum" .
 n:caeli-gen a :Genitive , :Singular ; :stem n:cael_ ; rdfs:label "caeli" ; :ipa "'kajli:" .
 n:caelo a :Dative , :Singular ; :stem n:cael_ ; rdfs:label "caelo" ; :ipa "'kajlo:" .
 n:caelo-abl a :Ablative , :Singular ; :stem n:cael_ ; rdfs:label "caelo" ; :ipa "'kajlo:" .
 n:caela a :Nominative , :Plural ; :stem n:cael_ ; rdfs:label "caela" ; :ipa "'kajla" .
-n:caela a :Accusative , :Plural ; :stem n:cael_ ; rdfs:label "caela" ; :ipa "'kajla" .
+n:caela-acc a :Accusative , :Plural ; :stem n:cael_ ; rdfs:label "caela" ; :ipa "'kajla" .
 n:caelorum a :Genitive , :Plural ; :stem n:cael_ ; rdfs:label "caelorum" ; :ipa "kaj'lo:rum" .
 n:caelis a :Dative , :Plural ; :stem n:cael_ ; rdfs:label "caelis" ; :ipa "'kajli:s" .
 n:caelis-abl a :Ablative , :Plural ; :stem n:cael_ ; rdfs:label "caelis" ; :ipa "'kajli:s" .
@@ -80,24 +130,24 @@ n:deis-abl a :Ablative , :Plural ; :stem n:de_ ; rdfs:label "d(e)is" ; :ipa "'de
 
 n:don_ a :Noun , :Lexeme , :Neuter ; rdfs:label "don(um)" ; :sense "gift" .
 n:donum a :Nominative, :Singular ; :stem n:don_ ; rdfs:label "donum" ; :ipa "'do:num" .
-n:donum a :Accusative , :Singular ; :stem n:don_ ; rdfs:label "donum" ; :ipa "'do:num" .
+n:donum-acc a :Accusative , :Singular ; :stem n:don_ ; rdfs:label "donum" ; :ipa "'do:num" .
 n:doni-gen a :Genitive , :Singular ; :stem n:don_ ; rdfs:label "doni" ; :ipa "'do:ni:" .
 n:dono a :Dative , :Singular ; :stem n:don_ ; rdfs:label "dono" ; :ipa "'do:no:" .
 n:dono-abl a :Ablative , :Singular ; :stem n:don_ ; rdfs:label "dono" ; :ipa "'do:no:" .
 n:dona a :Nominative , :Plural ; :stem n:don_ ; rdfs:label "dona" ; :ipa "'do:na" .
-n:dona a :Accusative , :Plural ; :stem n:don_ ; rdfs:label "dona" ; :ipa "'do:na" .
+n:dona-acc a :Accusative , :Plural ; :stem n:don_ ; rdfs:label "dona" ; :ipa "'do:na" .
 n:donorum a :Genitive , :Plural ; :stem n:don_ ; rdfs:label "donorum" ; :ipa "do:'no:rum" .
 n:donis a :Dative , :Plural ; :stem n:don_ ; rdfs:label "donis" ; :ipa "'do:ni:s" .
 n:donis-abl a :Ablative , :Plural ; :stem n:don_ ; rdfs:label "donis" ; :ipa "'do:ni:s" .
 
 n:excidi_ a :Noun , :Lexeme , :Neuter ; rdfs:label "excidi(um)" ; :sense "destruction" .
 n:excidium a :Nominative, :Singular ; :stem n:excidi_ ; rdfs:label "excidium" ; :ipa "ek'skidjum" .
-n:excidium a :Accusative , :Singular ; :stem n:excidi_ ; rdfs:label "excidium" ; :ipa "ek'skidjum" .
+n:excidium-acc a :Accusative , :Singular ; :stem n:excidi_ ; rdfs:label "excidium" ; :ipa "ek'skidjum" .
 n:excidii-gen a :Genitive , :Singular ; :stem n:excidi_ ; rdfs:label "excidii" ; :ipa "ek'skidji:" .
 n:excidio a :Dative , :Singular ; :stem n:excidi_ ; rdfs:label "excidio" ; :ipa "ek'skidjo:" .
 n:excidio-abl a :Ablative , :Singular ; :stem n:excidi_ ; rdfs:label "excidio" ; :ipa "ek'skidjo:" .
 n:excidia a :Nominative , :Plural ; :stem n:excidi_ ; rdfs:label "excidia" ; :ipa "ek'skidja" .
-n:excidia a :Accusative , :Plural ; :stem n:excidi_ ; rdfs:label "excidia" ; :ipa "ek'skidja" .
+n:excidia-acc a :Accusative , :Plural ; :stem n:excidi_ ; rdfs:label "excidia" ; :ipa "ek'skidja" .
 n:excidiorum a :Genitive , :Plural ; :stem n:excidi_ ; rdfs:label "excidiorum" ; :ipa "ekski'djo:rum" .
 n:excidiis a :Dative , :Plural ; :stem n:excidi_ ; rdfs:label "excidiis" ; :ipa "ek'skidji:s" .
 n:excidiis-abl a :Ablative , :Plural ; :stem n:excidi_ ; rdfs:label "excidiis" ; :ipa "ek'skidji:s" .
@@ -143,12 +193,12 @@ n:foce a :Vocative, :Singular ; :stem n:foc_ ; rdfs:label "foce" ; :ipa "'foke" 
 
 n:for_ a :Noun , :Lexeme , :Neuter ; rdfs:label "for(um)" ; :sense "public square" .
 n:forum a :Nominative, :Singular ; :stem n:for_ ; rdfs:label "forum" ; :ipa "'forum" .
-n:forum a :Accusative , :Singular ; :stem n:for_ ; rdfs:label "forum" ; :ipa "'forum" .
+n:forum-acc a :Accusative , :Singular ; :stem n:for_ ; rdfs:label "forum" ; :ipa "'forum" .
 n:fori-gen a :Genitive , :Singular ; :stem n:for_ ; rdfs:label "fori" ; :ipa "'fori:" .
 n:foro a :Dative , :Singular ; :stem n:for_ ; rdfs:label "foro" ; :ipa "'foro:" .
 n:foro-abl a :Ablative , :Singular ; :stem n:for_ ; rdfs:label "foro" ; :ipa "'foro:" .
 n:fora a :Nominative , :Plural ; :stem n:for_ ; rdfs:label "fora" ; :ipa "'fora" .
-n:fora a :Accusative , :Plural ; :stem n:for_ ; rdfs:label "fora" ; :ipa "'fora" .
+n:fora-acc a :Accusative , :Plural ; :stem n:for_ ; rdfs:label "fora" ; :ipa "'fora" .
 n:fororum a :Genitive , :Plural ; :stem n:for_ ; rdfs:label "fororum" ; :ipa "fo'ro:rum" .
 n:foris a :Dative , :Plural ; :stem n:for_ ; rdfs:label "foris" ; :ipa "'fori:s" .
 n:foris-abl a :Ablative , :Plural ; :stem n:for_ ; rdfs:label "foris" ; :ipa "'fori:s" .
@@ -166,14 +216,27 @@ n:Gallis a :Dative , :Plural ; :stem n:Gall_ ; rdfs:label "Gallis" ; :ipa "'gall
 n:Gallis-abl a :Ablative , :Plural ; :stem n:Gall_ ; rdfs:label "Gallis" ; :ipa "'galli:s" .
 n:Galle a :Vocative, :Singular ; :stem n:Gall_ ; rdfs:label "Galle" ; :ipa "'galle" .
 
+n:hort_ a :Noun , :Lexeme , :Masculine ; rdfs:label "hort(us)" ; :sense "garden" .
+n:hortus a :Nominative, :Singular ; :stem n:hort_ ; rdfs:label "hortus" ; :ipa "'hortus" .
+n:hortum a :Accusative , :Singular ; :stem n:hort_ ; rdfs:label "hortum" ; :ipa "'hortum" .
+n:horti-gen a :Genitive , :Singular ; :stem n:hort_ ; rdfs:label "horti" ; :ipa "'horti:" .
+n:horto a :Dative , :Singular ; :stem n:hort_ ; rdfs:label "horto" ; :ipa "'horto:" .
+n:horto-abl a :Ablative , :Singular ; :stem n:hort_ ; rdfs:label "horto" ; :ipa "'horto:" .
+n:horti a :Nominative , :Plural ; :stem n:hort_ ; rdfs:label "horti" ; :ipa "'horti:" .
+n:hortos a :Accusative , :Plural ; :stem n:hort_ ; rdfs:label "hortos" ; :ipa "'horto:s" .
+n:hortorum a :Genitive , :Plural ; :stem n:hort_ ; rdfs:label "hortorum" ; :ipa "hor'to:rum" .
+n:hortis a :Dative , :Plural ; :stem n:hort_ ; rdfs:label "hortis" ; :ipa "'horti:s" .
+n:hortis-abl a :Ablative , :Plural ; :stem n:hort_ ; rdfs:label "hortis" ; :ipa "'horti:s" .
+n:horte a :Vocative, :Singular ; :stem n:hort_ ; rdfs:label "horte" ; :ipa "'horte" .
+
 n:ingeni_ a :Noun , :Lexeme , :Neuter ; rdfs:label "ingeni(um)" ; :sense "talent" .
 n:ingenium a :Nominative, :Singular ; :stem n:ingeni_ ; rdfs:label "ingenium" ; :ipa "in'genjum" .
-n:ingenium a :Accusative , :Singular ; :stem n:ingeni_ ; rdfs:label "ingenium" ; :ipa "in'genjum" .
+n:ingenium-acc a :Accusative , :Singular ; :stem n:ingeni_ ; rdfs:label "ingenium" ; :ipa "in'genjum" .
 n:ingenii-gen a :Genitive , :Singular ; :stem n:ingeni_ ; rdfs:label "ingenii" ; :ipa "in'genji:" .
 n:ingenio a :Dative , :Singular ; :stem n:ingeni_ ; rdfs:label "ingenio" ; :ipa "in'genjo:" .
 n:ingenio-abl a :Ablative , :Singular ; :stem n:ingeni_ ; rdfs:label "ingenio" ; :ipa "in'genjo:" .
 n:ingenia a :Nominative , :Plural ; :stem n:ingeni_ ; rdfs:label "ingenia" ; :ipa "in'genja" .
-n:ingenia a :Accusative , :Plural ; :stem n:ingeni_ ; rdfs:label "ingenia" ; :ipa "in'genja" .
+n:ingenia-acc a :Accusative , :Plural ; :stem n:ingeni_ ; rdfs:label "ingenia" ; :ipa "in'genja" .
 n:ingeniorum a :Genitive , :Plural ; :stem n:ingeni_ ; rdfs:label "ingeniorum" ; :ipa "inge'njo:rum" .
 n:ingeniis a :Dative , :Plural ; :stem n:ingeni_ ; rdfs:label "ingeniis" ; :ipa "in'genji:s" .
 n:ingeniis-abl a :Ablative , :Plural ; :stem n:ingeni_ ; rdfs:label "ingeniis" ; :ipa "in'genji:s" .
@@ -193,12 +256,12 @@ n:inimice a :Vocative, :Singular ; :stem n:inimic_ ; rdfs:label "inimice" ; :ipa
 
 n:initi_ a :Noun , :Lexeme , :Neuter ; rdfs:label "initi(um)" ; :sense "beginning" .
 n:initium a :Nominative, :Singular ; :stem n:initi_ ; rdfs:label "initium" ; :ipa "i'nitjum" .
-n:initium a :Accusative , :Singular ; :stem n:initi_ ; rdfs:label "initium" ; :ipa "i'nitjum" .
+n:initium-acc a :Accusative , :Singular ; :stem n:initi_ ; rdfs:label "initium" ; :ipa "i'nitjum" .
 n:initii-gen a :Genitive , :Singular ; :stem n:initi_ ; rdfs:label "initii" ; :ipa "i'nitji:" .
 n:initio a :Dative , :Singular ; :stem n:initi_ ; rdfs:label "initio" ; :ipa "i'nitjo:" .
 n:initio-abl a :Ablative , :Singular ; :stem n:initi_ ; rdfs:label "initio" ; :ipa "i'nitjo:" .
 n:initia a :Nominative , :Plural ; :stem n:initi_ ; rdfs:label "initia" ; :ipa "i'nitja" .
-n:initia a :Accusative , :Plural ; :stem n:initi_ ; rdfs:label "initia" ; :ipa "i'nitja" .
+n:initia-acc a :Accusative , :Plural ; :stem n:initi_ ; rdfs:label "initia" ; :ipa "i'nitja" .
 n:initiorum a :Genitive , :Plural ; :stem n:initi_ ; rdfs:label "initiorum" ; :ipa "ini'tjo:rum" .
 n:initiis a :Dative , :Plural ; :stem n:initi_ ; rdfs:label "initiis" ; :ipa "i'nitji:s" .
 n:initiis-abl a :Ablative , :Plural ; :stem n:initi_ ; rdfs:label "initiis" ; :ipa "i'nitji:s" .
@@ -215,6 +278,19 @@ n:magistrorum a :Genitive , :Plural ; :stem n:magistr_ ; rdfs:label "magistrorum
 n:magistris a :Dative , :Plural ; :stem n:magistr_ ; rdfs:label "magistris" ; :ipa "ma'gistri:s" .
 n:magistris-abl a :Ablative , :Plural ; :stem n:magistr_ ; rdfs:label "magistris" ; :ipa "ma'gistri:s" .
 
+n:mortu_ a :Noun , :Lexeme , :Masculine ; rdfs:label "mortu(us)" ; :sense "dead man" .
+n:mortuus a :Nominative, :Singular ; :stem n:mortu_ ; rdfs:label "mortuus" ; :ipa "'mortwus" .
+n:mortuum a :Accusative , :Singular ; :stem n:mortu_ ; rdfs:label "mortuum" ; :ipa "'mortwum" .
+n:mortui-gen a :Genitive , :Singular ; :stem n:mortu_ ; rdfs:label "mortui" ; :ipa "'mortwi:" .
+n:mortuo a :Dative , :Singular ; :stem n:mortu_ ; rdfs:label "mortuo" ; :ipa "'mortwo:" .
+n:mortuo-abl a :Ablative , :Singular ; :stem n:mortu_ ; rdfs:label "mortuo" ; :ipa "'mortwo:" .
+n:mortui a :Nominative , :Plural ; :stem n:mortu_ ; rdfs:label "mortui" ; :ipa "'mortwi:" .
+n:mortuos a :Accusative , :Plural ; :stem n:mortu_ ; rdfs:label "mortuos" ; :ipa "'mortwo:s" .
+n:mortuorum a :Genitive , :Plural ; :stem n:mortu_ ; rdfs:label "mortuorum" ; :ipa "mor'two:rum" .
+n:mortuis a :Dative , :Plural ; :stem n:mortu_ ; rdfs:label "mortuis" ; :ipa "'mortwi:s" .
+n:mortuis-abl a :Ablative , :Plural ; :stem n:mortu_ ; rdfs:label "mortuis" ; :ipa "'mortwi:s" .
+n:mortue a :Vocative, :Singular ; :stem n:mortu_ ; rdfs:label "mortue" ; :ipa "'mortwe" .
+
 n:mur_ a :Noun , :Lexeme , :Masculine ; rdfs:label "mur(us)" ; :sense "wall" .
 n:murus a :Nominative, :Singular ; :stem n:mur_ ; rdfs:label "murus" ; :ipa "'mu:rus" .
 n:murum a :Accusative , :Singular ; :stem n:mur_ ; rdfs:label "murum" ; :ipa "'mu:rum" .
@@ -228,6 +304,57 @@ n:muris a :Dative , :Plural ; :stem n:mur_ ; rdfs:label "muris" ; :ipa "'mu:ri:s
 n:muris-abl a :Ablative , :Plural ; :stem n:mur_ ; rdfs:label "muris" ; :ipa "'mu:ri:s" .
 n:mure a :Vocative, :Singular ; :stem n:mur_ ; rdfs:label "mure" ; :ipa "'mu:re" .
 
+n:nas_ a :Noun , :Lexeme , :Masculine ; rdfs:label "nas(us)" ; :sense "nose" .
+n:nasus a :Nominative, :Singular ; :stem n:nas_ ; rdfs:label "nasus" ; :ipa "'na:sus" .
+n:nasum a :Accusative , :Singular ; :stem n:nas_ ; rdfs:label "nasum" ; :ipa "'na:sum" .
+n:nasi-gen a :Genitive , :Singular ; :stem n:nas_ ; rdfs:label "nasi" ; :ipa "'na:si:" .
+n:naso a :Dative , :Singular ; :stem n:nas_ ; rdfs:label "naso" ; :ipa "'na:so:" .
+n:naso-abl a :Ablative , :Singular ; :stem n:nas_ ; rdfs:label "naso" ; :ipa "'na:so:" .
+n:nasi a :Nominative , :Plural ; :stem n:nas_ ; rdfs:label "nasi" ; :ipa "'na:si:" .
+n:nasos a :Accusative , :Plural ; :stem n:nas_ ; rdfs:label "nasos" ; :ipa "'na:so:s" .
+n:nasorum a :Genitive , :Plural ; :stem n:nas_ ; rdfs:label "nasorum" ; :ipa "na:'so:rum" .
+n:nasis a :Dative , :Plural ; :stem n:nas_ ; rdfs:label "nasis" ; :ipa "'na:si:s" .
+n:nasis-abl a :Ablative , :Plural ; :stem n:nas_ ; rdfs:label "nasis" ; :ipa "'na:si:s" .
+n:nase a :Vocative, :Singular ; :stem n:nas_ ; rdfs:label "nase" ; :ipa "'na:se" .
+
+n:pericul_ a :Noun , :Lexeme , :Neuter ; rdfs:label "pericul(um)" ; :sense "danger" .
+n:periculum a :Nominative, :Singular ; :stem n:pericul_ ; rdfs:label "periculum" ; :ipa "pe'ri:kulum" .
+n:periculum-acc a :Accusative , :Singular ; :stem n:pericul_ ; rdfs:label "periculum" ; :ipa "pe'ri:kulum" .
+n:periculi-gen a :Genitive , :Singular ; :stem n:pericul_ ; rdfs:label "periculi" ; :ipa "pe'ri:kuli:" .
+n:periculo a :Dative , :Singular ; :stem n:pericul_ ; rdfs:label "periculo" ; :ipa "pe'ri:kulo:" .
+n:periculo-abl a :Ablative , :Singular ; :stem n:pericul_ ; rdfs:label "periculo" ; :ipa "pe'ri:kulo:" .
+n:pericula a :Nominative , :Plural ; :stem n:pericul_ ; rdfs:label "pericula" ; :ipa "pe'ri:kula" .
+n:pericula-acc a :Accusative , :Plural ; :stem n:pericul_ ; rdfs:label "pericula" ; :ipa "pe'ri:kula" .
+n:periculorum a :Genitive , :Plural ; :stem n:pericul_ ; rdfs:label "periculorum" ; :ipa "periku'lo:rum" .
+n:periculis a :Dative , :Plural ; :stem n:pericul_ ; rdfs:label "periculis" ; :ipa "pe'ri:kuli:s" .
+n:periculis-abl a :Ablative , :Plural ; :stem n:pericul_ ; rdfs:label "periculis" ; :ipa "pe'ri:kuli:s" .
+
+n:Poen_ a :Noun , :Lexeme , :Masculine ; rdfs:label "Poen(us)" ; :sense "Carthaginian" .
+n:Poenus a :Nominative, :Singular ; :stem n:Poen_ ; rdfs:label "Poenus" ; :ipa "'pwenus" .
+n:Poenum a :Accusative , :Singular ; :stem n:Poen_ ; rdfs:label "Poenum" ; :ipa "'pwenum" .
+n:Poeni-gen a :Genitive , :Singular ; :stem n:Poen_ ; rdfs:label "Poeni" ; :ipa "'pweni:" .
+n:Poeno a :Dative , :Singular ; :stem n:Poen_ ; rdfs:label "Poeno" ; :ipa "'pweno:" .
+n:Poeno-abl a :Ablative , :Singular ; :stem n:Poen_ ; rdfs:label "Poeno" ; :ipa "'pweno:" .
+n:Poeni a :Nominative , :Plural ; :stem n:Poen_ ; rdfs:label "Poeni" ; :ipa "'pweni:" .
+n:Poenos a :Accusative , :Plural ; :stem n:Poen_ ; rdfs:label "Poenos" ; :ipa "'pweno:s" .
+n:Poenorum a :Genitive , :Plural ; :stem n:Poen_ ; rdfs:label "Poenorum" ; :ipa "pwe'no:rum" .
+n:Poenis a :Dative , :Plural ; :stem n:Poen_ ; rdfs:label "Poenis" ; :ipa "'pweni:s" .
+n:Poenis-abl a :Ablative , :Plural ; :stem n:Poen_ ; rdfs:label "Poenis" ; :ipa "'pweni:s" .
+n:Poene a :Vocative, :Singular ; :stem n:Poen_ ; rdfs:label "Poene" ; :ipa "'pwene" .
+
+n:Pompei_ a :Noun , :Lexeme , :Masculine ; rdfs:label "Pompei(us)" ; :sense "Pompey" .
+n:Pompeius a :Nominative, :Singular ; :stem n:Pompei_ ; rdfs:label "Pompeius" ; :ipa "pom'pejus" .
+n:Pompeium a :Accusative , :Singular ; :stem n:Pompei_ ; rdfs:label "Pompeium" ; :ipa "pom'pejum" .
+n:Pompeii-gen a :Genitive , :Singular ; :stem n:Pompei_ ; rdfs:label "Pompeii" ; :ipa "pom'peji:" .
+n:Pompeio a :Dative , :Singular ; :stem n:Pompei_ ; rdfs:label "Pompeio" ; :ipa "pom'pejo:" .
+n:Pompeio-abl a :Ablative , :Singular ; :stem n:Pompei_ ; rdfs:label "Pompeio" ; :ipa "pom'pejo:" .
+n:Pompeii a :Nominative , :Plural ; :stem n:Pompei_ ; rdfs:label "Pompeii" ; :ipa "pom'peji:" .
+n:Pompeios a :Accusative , :Plural ; :stem n:Pompei_ ; rdfs:label "Pompeios" ; :ipa "pom'pejo:s" .
+n:Pompeiorum a :Genitive , :Plural ; :stem n:Pompei_ ; rdfs:label "Pompeiorum" ; :ipa "pompe'jo:rum" .
+n:Pompeiis a :Dative , :Plural ; :stem n:Pompei_ ; rdfs:label "Pompeiis" ; :ipa "pom'peji:s" .
+n:Pompeiis-abl a :Ablative , :Plural ; :stem n:Pompei_ ; rdfs:label "Pompeiis" ; :ipa "pom'peji:s" .
+n:Pompeie a :Vocative, :Singular ; :stem n:Pompei_ ; rdfs:label "Pompeie" ; :ipa "pom'peje" .
+
 n:puer_ a :Noun , :Lexeme , :Masculine ; rdfs:label "puer" ; :sense "boy" .
 n:puer a :Nominative, :Singular ; :stem n:puer_ ; rdfs:label "puer" ; :ipa "'puer" .
 n:puerum a :Accusative , :Singular ; :stem n:puer_ ; rdfs:label "puerum" ; :ipa "'puerum" .
@@ -239,6 +366,81 @@ n:pueros a :Accusative , :Plural ; :stem n:puer_ ; rdfs:label "pueros" ; :ipa "'
 n:puerorum a :Genitive , :Plural ; :stem n:puer_ ; rdfs:label "puerorum" ; :ipa "pue'ro:rum" .
 n:pueris a :Dative , :Plural ; :stem n:puer_ ; rdfs:label "pueris" ; :ipa "'pueri:s" .
 n:pueris-abl a :Ablative , :Plural ; :stem n:puer_ ; rdfs:label "pueris" ; :ipa "'pueri:s" .
+
+n:Roman_ a :Noun , :Lexeme , :Masculine ; rdfs:label "Roman(us)" ; :sense "Roman" .
+n:Romanus a :Nominative, :Singular ; :stem n:Roman_ ; rdfs:label "Romanus" ; :ipa "ro'ma:nus" .
+n:Romanum a :Accusative , :Singular ; :stem n:Roman_ ; rdfs:label "Romanum" ; :ipa "ro'ma:num" .
+n:Romani-gen a :Genitive , :Singular ; :stem n:Roman_ ; rdfs:label "Romani" ; :ipa "ro'ma:ni:" .
+n:Romano a :Dative , :Singular ; :stem n:Roman_ ; rdfs:label "Romano" ; :ipa "ro'ma:no:" .
+n:Romano-abl a :Ablative , :Singular ; :stem n:Roman_ ; rdfs:label "Romano" ; :ipa "ro'ma:no:" .
+n:Romani a :Nominative , :Plural ; :stem n:Roman_ ; rdfs:label "Romani" ; :ipa "ro'ma:ni:" .
+n:Romanos a :Accusative , :Plural ; :stem n:Roman_ ; rdfs:label "Romanos" ; :ipa "ro'ma:no:s" .
+n:Romanorum a :Genitive , :Plural ; :stem n:Roman_ ; rdfs:label "Romanorum" ; :ipa "roma:'no:rum" .
+n:Romanis a :Dative , :Plural ; :stem n:Roman_ ; rdfs:label "Romanis" ; :ipa "ro'ma:ni:s" .
+n:Romanis-abl a :Ablative , :Plural ; :stem n:Roman_ ; rdfs:label "Romanis" ; :ipa "ro'ma:ni:s" .
+n:Romane a :Vocative, :Singular ; :stem n:Roman_ ; rdfs:label "Romane" ; :ipa "ro'ma:ne" .
+
+n:sepulchr_ a :Noun , :Lexeme , :Neuter ; rdfs:label "sepulchr(um)" ; :sense "tomb" .
+n:sepulchrum a :Nominative, :Singular ; :stem n:sepulchr_ ; rdfs:label "sepulchrum" ; :ipa "se'pulkrum" .
+n:sepulchrum-acc a :Accusative , :Singular ; :stem n:sepulchr_ ; rdfs:label "sepulchrum" ; :ipa "se'pulkrum" .
+n:sepulchri-gen a :Genitive , :Singular ; :stem n:sepulchr_ ; rdfs:label "sepulchri" ; :ipa "se'pulkri:" .
+n:sepulchro a :Dative , :Singular ; :stem n:sepulchr_ ; rdfs:label "sepulchro" ; :ipa "se'pulkro:" .
+n:sepulchro-abl a :Ablative , :Singular ; :stem n:sepulchr_ ; rdfs:label "sepulchro" ; :ipa "se'pulkro:" .
+n:sepulchra a :Nominative , :Plural ; :stem n:sepulchr_ ; rdfs:label "sepulchra" ; :ipa "se'pulkra" .
+n:sepulchra-acc a :Accusative , :Plural ; :stem n:sepulchr_ ; rdfs:label "sepulchra" ; :ipa "se'pulkra" .
+n:sepulchrorum a :Genitive , :Plural ; :stem n:sepulchr_ ; rdfs:label "sepulchrorum" ; :ipa "sepul'kro:rum" .
+n:sepulchris a :Dative , :Plural ; :stem n:sepulchr_ ; rdfs:label "sepulchris" ; :ipa "se'pulkri:s" .
+n:sepulchris-abl a :Ablative , :Plural ; :stem n:sepulchr_ ; rdfs:label "sepulchris" ; :ipa "se'pulkri:s" .
+
+n:templ_ a :Noun , :Lexeme , :Neuter ; rdfs:label "templ(um)" ; :sense "temple" .
+n:templum a :Nominative, :Singular ; :stem n:templ_ ; rdfs:label "templum" ; :ipa "'templum" .
+n:templum-acc a :Accusative , :Singular ; :stem n:templ_ ; rdfs:label "templum" ; :ipa "'templum" .
+n:templi-gen a :Genitive , :Singular ; :stem n:templ_ ; rdfs:label "templi" ; :ipa "'templi:" .
+n:templo a :Dative , :Singular ; :stem n:templ_ ; rdfs:label "templo" ; :ipa "'templo:" .
+n:templo-abl a :Ablative , :Singular ; :stem n:templ_ ; rdfs:label "templo" ; :ipa "'templo:" .
+n:templa a :Nominative , :Plural ; :stem n:templ_ ; rdfs:label "templa" ; :ipa "'templa" .
+n:templa-acc a :Accusative , :Plural ; :stem n:templ_ ; rdfs:label "templa" ; :ipa "'templa" .
+n:templorum a :Genitive , :Plural ; :stem n:templ_ ; rdfs:label "templorum" ; :ipa "tem'plo:rum" .
+n:templis a :Dative , :Plural ; :stem n:templ_ ; rdfs:label "templis" ; :ipa "'templi:s" .
+n:templis-abl a :Ablative , :Plural ; :stem n:templ_ ; rdfs:label "templis" ; :ipa "'templi:s" .
+
+n:titul_ a :Noun , :Lexeme , :Masculine ; rdfs:label "titul(us)" ; :sense "inscription" .
+n:titulus a :Nominative, :Singular ; :stem n:titul_ ; rdfs:label "titulus" ; :ipa "'titulus" .
+n:titulum a :Accusative , :Singular ; :stem n:titul_ ; rdfs:label "titulum" ; :ipa "'titulum" .
+n:tituli-gen a :Genitive , :Singular ; :stem n:titul_ ; rdfs:label "tituli" ; :ipa "'tituli:" .
+n:titulo a :Dative , :Singular ; :stem n:titul_ ; rdfs:label "titulo" ; :ipa "'titulo:" .
+n:titulo-abl a :Ablative , :Singular ; :stem n:titul_ ; rdfs:label "titulo" ; :ipa "'titulo:" .
+n:tituli a :Nominative , :Plural ; :stem n:titul_ ; rdfs:label "tituli" ; :ipa "'tituli:" .
+n:titulos a :Accusative , :Plural ; :stem n:titul_ ; rdfs:label "titulos" ; :ipa "'titulo:s" .
+n:titulorum a :Genitive , :Plural ; :stem n:titul_ ; rdfs:label "titulorum" ; :ipa "titu'lo:rum" .
+n:titulis a :Dative , :Plural ; :stem n:titul_ ; rdfs:label "titulis" ; :ipa "'tituli:s" .
+n:titulis-abl a :Ablative , :Plural ; :stem n:titul_ ; rdfs:label "titulis" ; :ipa "'tituli:s" .
+n:titule a :Vocative, :Singular ; :stem n:titul_ ; rdfs:label "titule" ; :ipa "'titule" .
+
+n:verb_ a :Noun , :Lexeme , :Neuter ; rdfs:label "verb(um)" ; :sense "word" .
+n:verbum a :Nominative, :Singular ; :stem n:verb_ ; rdfs:label "verbum" ; :ipa "'werbum" .
+n:verbum-acc a :Accusative , :Singular ; :stem n:verb_ ; rdfs:label "verbum" ; :ipa "'werbum" .
+n:verbi-gen a :Genitive , :Singular ; :stem n:verb_ ; rdfs:label "verbi" ; :ipa "'werbi:" .
+n:verbo a :Dative , :Singular ; :stem n:verb_ ; rdfs:label "verbo" ; :ipa "'werbo:" .
+n:verbo-abl a :Ablative , :Singular ; :stem n:verb_ ; rdfs:label "verbo" ; :ipa "'werbo:" .
+n:verba a :Nominative , :Plural ; :stem n:verb_ ; rdfs:label "verba" ; :ipa "'werba" .
+n:verba-acc a :Accusative , :Plural ; :stem n:verb_ ; rdfs:label "verba" ; :ipa "'werba" .
+n:verborum a :Genitive , :Plural ; :stem n:verb_ ; rdfs:label "verborum" ; :ipa "wer'bo:rum" .
+n:verbis a :Dative , :Plural ; :stem n:verb_ ; rdfs:label "verbis" ; :ipa "'werbi:s" .
+n:verbis-abl a :Ablative , :Plural ; :stem n:verb_ ; rdfs:label "verbis" ; :ipa "'werbi:s" .
+
+n:Vergili_ a :Noun , :Lexeme , :Masculine ; rdfs:label "Vergili(us)" ; :sense "Vergil" .
+n:Vergilius a :Nominative, :Singular ; :stem n:Vergili_ ; rdfs:label "Vergilius" ; :ipa "wer'giljus" .
+n:Vergilium a :Accusative , :Singular ; :stem n:Vergili_ ; rdfs:label "Vergilium" ; :ipa "wer'giljum" .
+n:Vergilii-gen a :Genitive , :Singular ; :stem n:Vergili_ ; rdfs:label "Vergilii" ; :ipa "wer'gilji:" .
+n:Vergilio a :Dative , :Singular ; :stem n:Vergili_ ; rdfs:label "Vergilio" ; :ipa "wer'giljo:" .
+n:Vergilio-abl a :Ablative , :Singular ; :stem n:Vergili_ ; rdfs:label "Vergilio" ; :ipa "wer'giljo:" .
+n:Vergilii a :Nominative , :Plural ; :stem n:Vergili_ ; rdfs:label "Vergilii" ; :ipa "wer'gilji:" .
+n:Vergilios a :Accusative , :Plural ; :stem n:Vergili_ ; rdfs:label "Vergilios" ; :ipa "wer'giljo:s" .
+n:Vergiliorum a :Genitive , :Plural ; :stem n:Vergili_ ; rdfs:label "Vergiliorum" ; :ipa "wergi'ljo:rum" .
+n:Vergiliis a :Dative , :Plural ; :stem n:Vergili_ ; rdfs:label "Vergiliis" ; :ipa "wer'gilji:s" .
+n:Vergiliis-abl a :Ablative , :Plural ; :stem n:Vergili_ ; rdfs:label "Vergiliis" ; :ipa "wer'gilji:s" .
+n:Vergilie a :Vocative, :Singular ; :stem n:Vergili_ ; rdfs:label "Vergilie" ; :ipa "wer'gilje" .
 
 n:vir_ a :Noun , :Lexeme , :Masculine ; rdfs:label "vir" ; :sense "man" .
 n:vir a :Nominative, :Singular ; :stem n:vir_ ; rdfs:label "vir" ; :ipa "wir" .

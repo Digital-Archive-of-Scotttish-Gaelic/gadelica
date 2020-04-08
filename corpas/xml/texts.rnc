@@ -5,7 +5,7 @@ start = Text
 
 Text = element text {
   attribute ref { xsd:anyURI } ,
-  attribute status { "tagged" } ,
+  attribute status { "tagged"|"raw" } ,
   ( Paragraph | Heading | Verse | Utterance | Text | Page )+
 }
 
