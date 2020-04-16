@@ -5,9 +5,9 @@ class FileHandler
 {
   private $_filename;
 
-  public function __construct($filename)
-  {
+  public function __construct($filename) {
     $this->_filename = $filename;
+    echo "\n\n" . $this->_filename;
   }
 
   //Import XML
@@ -19,7 +19,6 @@ class FileHandler
   //Export XML
   public function saveXml($xml) {
     file_put_contents(OUTPUT_FILEPATH . $this->_filename, $xml);
-    echo "\n" . $this->_filename;
   }
 
 }
