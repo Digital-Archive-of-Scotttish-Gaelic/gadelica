@@ -2,13 +2,14 @@
 
 require_once "includes/htmlHeader.php";
 
+/*
 echo <<<HTML
       <form>
         <input type="text" name="search"/>
         <button name="submit" type="submit">go</button>
       </form>
 HTML;
-
+*/
 
 foreach (new DirectoryIterator(INPUT_FILEPATH) as $fileinfo) {
   if ($fileinfo->isDot()) continue;
