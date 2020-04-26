@@ -21,12 +21,17 @@ foreach (new DirectoryIterator(INPUT_FILEPATH) as $fileinfo) {
     }
     $xml->registerXPathNamespace($strPrefix,$strNamespace);
   }
+  // MM: $xml->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/'); ?????
   $words = $xml->xpath("//dasg:w[contains(@lemma, 'craobh')]");
   foreach ($words as $word) {
     echo $word[0]. "<br/>";
   }
+/* Some suggestions for next steps:
+1. Output results as rows in a Bootstrap table (see Bootstrap online docs for details)
+2. Three cols to start with: previous context, word, following context
+3. Context defined as five elements from the set: dasg:w, dasg:pc, dasg:o
+*/
 
 }
 
 require_once "includes/htmlFooter.php";
-
