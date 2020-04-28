@@ -1,7 +1,7 @@
 <?php
 
 //constants
-define(INPUT_FILEPATH, "./CorpasXMLLemmatiser/outputFiles/");
+define(INPUT_FILEPATH, "../xml/");
 
 define(DB, "corpas");
 define(DB_HOST, "130.209.99.241");
