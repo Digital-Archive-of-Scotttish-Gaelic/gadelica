@@ -15,5 +15,5 @@ echo <<<HTML
 <body>
 <div class="container-fluid">
   <p><a href="writers.php">&gt; Writer index</a> <a href="lexemes.php">&gt; Lexeme index</a></p>
-  <h1>Corpas na Gàidhlig</h1
+  <h1>Corpas na Gàidhlig</h1>
 HTML;
