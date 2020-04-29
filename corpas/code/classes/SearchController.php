@@ -33,21 +33,28 @@ class SearchController
   public function getFileSearchResults() {
     $dbResults = $this->getDBSearchResults($_REQUEST["search"]);
     $fileResults = array();
-    $currentFile = $xml = "";
+    //$currentFile = $xml = "";
     $i = 0;
     foreach ($dbResults as $result) {
+
+
+      /*
       //check for next filename
       if ($currentFile != $result["filename"]) {
         $currentFile = trim($result["filename"]);
         $xml = simplexml_load_file(INPUT_FILEPATH . $currentFile);
         $xml->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/');
       }
-      $id = trim($result["id"]);
+
       $xpath = <<<XPATH
         //dasg:w[@id='{$id}']
 XPATH;
       $word = $xml->xpath($xpath);
       $fileResults[$i]["wordform"] = $word[0];
+*/
+
+
+      $id = trim($result["id"]);
       $fileResults[$i]["id"] = $id;
       $fileResults[$i]["filename"] = $result["filename"];
       $i++;
@@ -58,7 +65,7 @@ XPATH;
   public function getDBSearchResults($search) {
     $sql = <<<SQL
   SELECT filename, id, wordform FROM lemmas WHERE lemma = ?
-    ORDER BY filename, id 
+    ORDER BY filename, id
 SQL;
     $results = $this->_db->fetch($sql, array($search));
     return $results;

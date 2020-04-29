@@ -30,20 +30,22 @@ HTML;
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Wordform</th>
                     <th scope="col">Filename</th>
                     <th scope="col">id</th>
+                    <th scope="col">form</th>
                 </tr>
             </thead>
-            <tbody>             
+            <tbody>
 HTML;
     foreach ($results as $result) {
       echo <<<HTML
                 <tr>
                     <th scope="row">{$rowNum}</th>
-                    <td>{$result["wordform"]}</td>
                     <td>{$result["filename"]}</td>
                     <td>{$result["id"]}</td>
+HTML;
+      $this->_writeSearchResult($result); // MM added this
+      echo <<<HTML
                 </tr>
 HTML;
       $rowNum++;
@@ -55,6 +57,21 @@ HTML;
         <ul id="pagination" class="pagination-sm"></ul>
 HTML;
     $this->_writeJavascript();
+  }
+
+  /* MM: added following to encapsulate this bit of code */
+  private function _writeSearchResult($result) {
+    echo '<td>';
+    $filename = trim($result['filename']);
+    $id = trim($result['id']);
+    $xml = simplexml_load_file(INPUT_FILEPATH . trim($result['filename']));
+    $xml->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/');
+    $xpath = <<<XPATH
+      //dasg:w[@id='{$id}']
+XPATH;
+    $word = $xml->xpath($xpath);
+    echo $word[0];
+    echo '</td>';
   }
 
   /**
