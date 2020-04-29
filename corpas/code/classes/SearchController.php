@@ -37,7 +37,7 @@ class SearchController
     $i = 0;
     foreach ($dbResults as $result) {
 
-
+      // MM: MOVED BELOW TO SearchView.writeSearchResults()
       /*
       //check for next filename
       if ($currentFile != $result["filename"]) {
@@ -45,14 +45,12 @@ class SearchController
         $xml = simplexml_load_file(INPUT_FILEPATH . $currentFile);
         $xml->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/');
       }
-
       $xpath = <<<XPATH
         //dasg:w[@id='{$id}']
 XPATH;
       $word = $xml->xpath($xpath);
       $fileResults[$i]["wordform"] = $word[0];
 */
-
 
       $id = trim($result["id"]);
       $fileResults[$i]["id"] = $id;
