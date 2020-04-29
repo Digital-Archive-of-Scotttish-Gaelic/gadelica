@@ -74,6 +74,9 @@
 
   <xsl:template match="dasg:w[name(following-sibling::*[1])='w' or name(following-sibling::*[1])='o']">
     <span class="word" data-toggle="tooltip" data-placement="top">
+      <xsl:attribute name="id">
+        <xsl:value-of select="@id"/>
+      </xsl:attribute>
       <xsl:attribute name="title">
         <xsl:if test="@lemma">
           <xsl:text>lemma: </xsl:text>
@@ -94,6 +97,9 @@
   
   <xsl:template match="dasg:w">
     <span class="word" data-toggle="tooltip" data-placement="top">
+      <xsl:attribute name="id">
+        <xsl:value-of select="@id"/>
+      </xsl:attribute>
       <xsl:attribute name="title">
         <xsl:if test="@lemma">
           <xsl:text>lemma: </xsl:text>
