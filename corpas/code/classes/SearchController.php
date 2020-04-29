@@ -39,7 +39,7 @@ class SearchController
       //check for next filename
       if ($currentFile != $result["filename"]) {
 
-        echo "<br>{$currentFile}";
+  echo "<br>{$currentFile}";
         $currentFile = trim($result["filename"]);
         $xml = simplexml_load_file(INPUT_FILEPATH . $currentFile);
         $xml->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/');
