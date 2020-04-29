@@ -3,6 +3,15 @@
 
 class SearchView
 {
+  private $_page = 1;
+  private $_resultCount = 0;
+  private $_perpage = 10;
+  private $_search = "";
+
+  public function __construct() {
+    $this->_search     = isset($_GET["search"]) ? $_GET["search"] : null;
+  }
+
   public function writeSearchForm() {
     echo <<<HTML
       <form>
@@ -42,6 +51,35 @@ HTML;
     echo <<<HTML
             </tbody>
         </table>
+
+        <ul id="pagination" class="pagination-sm"></ul>
+HTML;
+    $this->_writeJavascript();
+  }
+
+  /**
+   * Writes the Javascript required for the pagination
+   */
+  private function _writeJavascript() {
+    echo <<<HTML
+            <script>
+                $(function() {
+			     /*
+				    Pagination handler
+			     */
+		          $("#pagination").pagination({
+				          currentPage: {$this->_page},
+		              items: {$this->_resultCount},
+		              itemsOnPage: {$this->_perpage},
+		              cssStyle: "light-theme",
+		              onPageClick: function(pageNum) {
+					   $('#concResultsTable').hide();
+					   $('#concResultsLoading').show();
+					   window.location.assign('search.php?pp={$this->_perpage}&page=' + pageNum + '&search={$this->_search}');
+		              }
+		          });
+		      });
+	       </script>
 HTML;
   }
 }

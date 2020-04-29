@@ -63,5 +63,4 @@ SQL;
     $results = $this->_db->fetch($sql, array($search));
     return $results;
   }
-
 }
