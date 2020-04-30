@@ -3,12 +3,14 @@
 
 class SearchController
 {
-  private $_db;
+  private $_db, $_dbResults, $_resultCount;
 
   public function __construct() {
     if (!isset($this->_db)) {
       $this->_db = new Database();
     }
+    $_GET["pp"] = isset($_GET["pp"]) ? $_GET["pp"] : 10;
+    $_GET["page"] = isset($_GET["page"]) ? $_GET["page"] : 1;
 
     if (!isset($_REQUEST["action"])) {
       $_REQUEST["action"] = "newSearch";
@@ -20,9 +22,11 @@ class SearchController
         $searchView->writeSearchForm();
         break;
       case "runSearch":
+        $this->_resultCount = $this->_getDBSearchResultsTotal($_GET["search"]);
+        $this->_dbResults = $this->_getDBSearchResults($_GET["search"], $_GET["pp"], $_GET["page"]);
         $results = $this->getFileSearchResults();
         $searchView = new SearchView();
-        $searchView->writeSearchResults($results);
+        $searchView->writeSearchResults($results, $this->_resultCount);
         break;
     }
   }
@@ -31,11 +35,10 @@ class SearchController
    * Takes an array of database results and searches through the XML corpus for matches
    */
   public function getFileSearchResults() {
-    $dbResults = $this->getDBSearchResults($_REQUEST["search"]);
     $fileResults = array();
     //$currentFile = $xml = "";
     $i = 0;
-    foreach ($dbResults as $result) {
+    foreach ($this->_dbResults as $result) {
 
       // MM: MOVED BELOW TO SearchView.writeSearchResults()
       /*
@@ -60,12 +63,27 @@ XPATH;
     return $fileResults;
   }
 
-  public function getDBSearchResults($search) {
+  private function _getDBSearchResults($search, $perpage, $pagenum) {
+    $offset = $pagenum == 1 ? 0 : ($perpage * $pagenum) - $perpage;
     $sql = <<<SQL
-  SELECT filename, id, wordform FROM lemmas WHERE lemma = ?
+  SELECT filename, id, wordform FROM lemmas
+    WHERE lemma = ?
     ORDER BY filename, id
+    LIMIT {$perpage} OFFSET {$offset}
+SQL;
+    $this->_dbResults = $this->_db->fetch($sql, array($search));
+    return $this->_dbResults;
+  }
+
+  /*
+   * Query to get the size of the complete result set
+   * Return int: count of the size of the set
+   */
+  private function _getDBSearchResultsTotal($search) {
+    $sql = <<<SQL
+  SELECT wordform FROM lemmas WHERE lemma = ?
 SQL;
     $results = $this->_db->fetch($sql, array($search));
-    return $results;
+    return count($results);
   }
 }
