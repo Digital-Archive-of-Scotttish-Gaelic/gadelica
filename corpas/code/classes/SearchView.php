@@ -5,11 +5,13 @@ class SearchView
 {
   private $_page = 1;
   private $_resultCount = 0;
-  private $_perpage = 10;
-  private $_search = "";
+  private $_perpage;
+  private $_search;
 
   public function __construct() {
-    $this->_search     = isset($_GET["search"]) ? $_GET["search"] : null;
+    $this->_search      = isset($_GET["search"]) ? $_GET["search"] : null;
+    $this->_perpage     = isset($_GET["pp"]) ? $_GET["pp"] : 10;
+    $this->_page         = isset($_GET["page"]) ? $_GET["page"] : 1;
   }
 
   public function writeSearchForm() {
@@ -22,9 +24,9 @@ class SearchView
 HTML;
   }
 
-  public function writeSearchResults($results) {
+  public function writeSearchResults($results, $resultTotal) {
     echo '<a href="search.php?action=newSearch" title="new search">< new search</a>';
-    $rowNum = 1;
+    $rowNum = $this->_page * $this->_perpage - $this->_perpage + 1;
     echo <<<HTML
         <table class="table">
             <!-- <thead>
@@ -58,7 +60,7 @@ HTML;
 
         <ul id="pagination" class="pagination-sm"></ul>
 HTML;
-    $this->_writeJavascript();
+    $this->_writeJavascript($resultTotal);
   }
 
   /* MM: added following to encapsulate and develop this bit of code */
@@ -98,7 +100,8 @@ XPATH;
   /**
    * Writes the Javascript required for the pagination
    */
-  private function _writeJavascript() {
+  private function _writeJavascript($resultTotal) {
+
     echo <<<HTML
             <script>
                 $(function() {
@@ -107,13 +110,11 @@ XPATH;
 			     */
 		          $("#pagination").pagination({
 				          currentPage: {$this->_page},
-		              items: {$this->_resultCount},
+		              items: {$resultTotal},
 		              itemsOnPage: {$this->_perpage},
 		              cssStyle: "light-theme",
 		              onPageClick: function(pageNum) {
-					   $('#concResultsTable').hide();
-					   $('#concResultsLoading').show();
-					   window.location.assign('search.php?pp={$this->_perpage}&page=' + pageNum + '&search={$this->_search}');
+					           window.location.assign('search.php?action=runSearch&pp={$this->_perpage}&page=' + pageNum + '&search={$this->_search}');
 		              }
 		          });
 		      });
