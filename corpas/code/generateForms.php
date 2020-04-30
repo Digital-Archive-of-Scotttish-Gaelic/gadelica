@@ -3,7 +3,6 @@
 require_once "includes/htmlHeader.php";
 
 $it = new RecursiveDirectoryIterator(INPUT_FILEPATH);
-
 $words = [];
 foreach (new RecursiveIteratorIterator($it) as $nextFile) {
   if ($nextFile->getExtension()=='xml') {

@@ -26,8 +26,10 @@ echo <<<HTML
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link" id="numbersToggle" href="browseCorpus.php">browse</a>
-          <a class="nav-item nav-link" id="numbersToggle" href="search.php?action=newSearch">search</a>
+          <a class="nav-item nav-link" href="browseCorpus.php">browse</a>
+          <a class="nav-item nav-link" href="search.php?action=newSearch">search</a>
+          <a class="nav-item nav-link" href="generateForms.php">forms</a>
+          <a class="nav-item nav-link" href="generateHeadwords.php">headwords</a>
         </div>
       </div>
     </nav>
