@@ -61,6 +61,7 @@ XPATH;
       $i++;
     }
     return $fileResults;
+
   }
 
   private function _getDBSearchResults($search, $perpage, $pagenum) {
