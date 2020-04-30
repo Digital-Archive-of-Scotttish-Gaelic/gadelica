@@ -2,8 +2,8 @@
 
 //constants
 //define(INPUT_FILEPATH, "./inputFiles/");
-define(INPUT_FILEPATH, "../../outXML/");
-define(OUTPUT_FILEPATH, "./outputFiles/");
+define(INPUT_FILEPATH, "./inputFiles/");
+define(OUTPUT_FILEPATH, "../../xml/");
 //DB
 define(DB_HOST, "localhost");
 define(DB_NAME, "multidict");
