@@ -14,11 +14,21 @@ echo <<<HTML
   <title>Corpas na Gàidhlig</title>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>  
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="js/jquery.simplePagination.js"></script>
 </head>
-<body>
-<div class="container-fluid">
-  <p><a href="writers.php">&gt; Writer index</a> <a href="lexemes.php">&gt; Lexeme index</a></p>
-  <h1>Corpas na Gàidhlig</h1>
+<body style="padding-top: 80px;">
+  <div class="container-fluid">
+    <nav class="navbar navbar-dark bg-primary fixed-top navbar-expand-lg">
+      <a class="navbar-brand" href="index.php">DASG/FnaG</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" id="numbersToggle" href="browseCorpus.php">browse</a>
+          <a class="nav-item nav-link" id="numbersToggle" href="search.php?action=newSearch">search</a>
+        </div>
+      </div>
+    </nav>
 HTML;
