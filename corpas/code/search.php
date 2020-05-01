@@ -28,11 +28,6 @@ foreach (new DirectoryIterator(INPUT_FILEPATH) as $fileinfo) {
   }
   if ($hitCount >= $tempLimit) {break;} //temp
 }
-
-/* Some suggestions for next steps:
-1. Output results as rows in a Bootstrap table (see Bootstrap online docs for details)
-2. Three cols to start with: previous context, word, following context
-3. Context defined as five elements from the set: dasg:w, dasg:pc, dasg:o
 */
 
 require_once "includes/htmlFooter.php";

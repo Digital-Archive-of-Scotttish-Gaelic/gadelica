@@ -36,32 +36,14 @@ class SearchController
    */
   public function getFileSearchResults() {
     $fileResults = array();
-    //$currentFile = $xml = "";
     $i = 0;
     foreach ($this->_dbResults as $result) {
-
-      // MM: MOVED BELOW TO SearchView.writeSearchResults()
-      /*
-      //check for next filename
-      if ($currentFile != $result["filename"]) {
-        $currentFile = trim($result["filename"]);
-        $xml = simplexml_load_file(INPUT_FILEPATH . $currentFile);
-        $xml->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/');
-      }
-      $xpath = <<<XPATH
-        //dasg:w[@id='{$id}']
-XPATH;
-      $word = $xml->xpath($xpath);
-      $fileResults[$i]["wordform"] = $word[0];
-*/
-
       $id = trim($result["id"]);
       $fileResults[$i]["id"] = $id;
       $fileResults[$i]["filename"] = $result["filename"];
       $i++;
     }
     return $fileResults;
-
   }
 
   private function _getDBSearchResults($search, $perpage, $pagenum) {
