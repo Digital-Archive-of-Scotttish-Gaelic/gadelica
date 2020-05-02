@@ -21,8 +21,10 @@ foreach (new RecursiveIteratorIterator($it) as $nextFile) {
     }
   }
 }
-sort($words);
+echo '<p>' . count($words) . ' words in total</p>';
+usort($words,'gdSort');
 $lexicon = array_unique($words);
+echo '<p>' . count($lexicon) . ' distinct word forms</p>';
 
 $headwords = [];
 foreach ($lexicon as $nextWord) {
@@ -30,44 +32,34 @@ foreach ($lexicon as $nextWord) {
   $headwords[$array[0]] .= $array[1] . ':' . $array[2] . '|';
 }
 
-foreach ($headwords as $nextHw => $nextForms) {
-  echo $nextHw . ' – ' . $nextForms . '<br/>';
-}
-
-
-/*
-$lexemes = [];
-foreach ($xmls as $nextXML) {
-  $xml = new SimpleXMLElement($nextXML,0,true);
-  if ($xml['status'] == 'tagged') {
-    $xml->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/');
-    foreach ($xml->xpath('descendant::dasg:w') as $nextWord) {
-      if ($nextWord['lemma']!='') {
-        $lexemes[] = (string)$nextWord['lemma'];
-      }
-      else {
-        $lexemes[] = (string)$nextWord;
-      }
-    }
-  }
-}
-
 echo <<<HTML
-    <table class="table">
-        <tbody>
+<table class="table">
+  <thead>
+    <tr><th>headword</th><th>forms</th></tr>
+  </thead>
+  <tbody>
 HTML;
 
-sort($lexemes);
-$lexemes = array_unique($lexemes);
-foreach ($lexemes as $nextLexeme) {
-  echo '<tr><td>' . $nextLexeme . '</td></tr>';
+foreach ($headwords as $nextHw => $nextForms) {
+  echo '<tr><td>' . $nextHw . '</td><td>';
+  $forms = explode('|',$nextForms);
+  foreach ($forms as $nextForm) {
+    $bits = explode(':',$nextForm);
+    if ($bits[0]!='') {
+      echo $bits[0];
+      if ($bits[1]!='') {
+        echo ' (' . $bits[1] . ')';
+      }
+      echo ', ';
+    }
+  }
+  echo '</td></tr>';
 }
 
 echo <<<HTML
         </tbody>
       </table>
 HTML;
-*/
 
 require_once "includes/htmlFooter.php";
 

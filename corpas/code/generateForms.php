@@ -21,8 +21,18 @@ foreach (new RecursiveIteratorIterator($it) as $nextFile) {
     }
   }
 }
-sort($words);
+echo '<p>' . count($words) . ' words in total</p>';
+
+usort($words,'gdSort');
+
 $lexicon = array_unique($words);
+echo '<p>' . count($lexicon) . ' distinct word forms</p>';
+$lexemes = [];
+foreach ($lexicon as $nextForm) {
+  $bits = explode('|',$nextForm);
+  $lexemes[] = $bits[1];
+}
+echo '<p>' . count(array_unique($lexemes)) . ' distinct lexemes</p>';
 
 echo <<<HTML
 <table class="table">
