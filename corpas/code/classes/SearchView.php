@@ -74,7 +74,7 @@ HTML;
     $xpath = "//dasg:w[@id='{$id}']/following::*";
     $words = $xml->xpath($xpath);
     echo implode(' ', array_slice($words,0,12));
-    echo '</td>';
+    echo '</td><td><small><a href="#" data-uri="' . $uri . '" data-id="' . $id . '" data-xml="' . $filename . '">slip</a></small></td>';
   }
 
   /**
