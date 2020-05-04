@@ -22,9 +22,7 @@ foreach (new RecursiveIteratorIterator($it) as $nextFile) {
   }
 }
 echo '<p>' . count($words) . ' words in total</p>';
-
 usort($words,'gdSort');
-
 $lexicon = array_unique($words);
 echo '<p>' . count($lexicon) . ' distinct word forms</p>';
 $lexemes = [];
