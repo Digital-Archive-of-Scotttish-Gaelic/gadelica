@@ -7,11 +7,13 @@ class SearchView
   private $_resultCount = 0;
   private $_perpage;
   private $_search;
+  private $_mode;
 
   public function __construct() {
     $this->_search      = isset($_GET["search"]) ? $_GET["search"] : null;
     $this->_perpage     = isset($_GET["pp"]) ? $_GET["pp"] : 10;
-    $this->_page         = isset($_GET["page"]) ? $_GET["page"] : 1;
+    $this->_page        = isset($_GET["page"]) ? $_GET["page"] : 1;
+    $this->_mode        = $_GET["mode"] == "wordform" ? "wordform" : "headword";
   }
 
   public function writeSearchForm() {
@@ -19,6 +21,27 @@ class SearchView
       <form>
         <input type="text" name="search"/>
         <input type="hidden" name="action" value="runSearch"/>
+        <div class="radio">
+            <label class="radio-inline"><input type="radio" name="mode" id="headwordRadio" value="headword"checked>headword</label>
+            &nbsp;
+            <label class="radio-inline"><input type="radio" name="mode" id="wordformRadio" value="wordform">wordform</label>
+        </div>
+        
+        <div id="wordformOptions">
+          <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="caseSensitiveRadio" name="case" value="sensitive">
+              <label class="form-check-label" for="caseSensitiveRadio">case sensitive</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="accentSensitiveRadio" name="accent" value="sensitive">
+            <label class="form-check-label" for="accentSensitiveRadio">accent sensitive</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="lenitionSensitiveRadio" name="lenition" value="sensitive">
+            <label class="form-check-label" for="lenitionSensitiveRadio">lenition sensitive</label>
+          </div>
+        </div>
+
         <button name="submit" type="submit">go</button>
       </form>
 HTML;
@@ -48,12 +71,13 @@ HTML;
 
         <ul id="pagination" class="pagination-sm"></ul>
 HTML;
+    $this->_writeInfoDiv();
     $this->_writeJavascript($resultTotal);
   }
 
   /* print out search result as table row */
   private function _writeSearchResult($result) {
-    echo '<td style="float: right;">';
+    echo '<td style="text-align: right;">';
     $filename = trim($result['filename']);
     $id = trim($result['id']);
     $xml = simplexml_load_file(INPUT_FILEPATH . trim($result['filename']));
@@ -65,7 +89,7 @@ HTML;
     $words = $xml->xpath($xpath);
     echo implode(' ', array_slice($words,-12));
     echo '</td>';
-    echo '<td style="float: center;"><a href="viewText.php?uri=' . $uri . '&id=' . $id . '" title="' . $filename . ' ' . $id . '">';
+    echo '<td style="text-align: center;"><a href="viewText.php?uri=' . $uri . '&id=' . $id . '" title="' . $filename . ' ' . $id . '">';
     $xpath = "//dasg:w[@id='{$id}']";
     $word = $xml->xpath($xpath);
     echo $word[0];
@@ -74,7 +98,13 @@ HTML;
     $xpath = "//dasg:w[@id='{$id}']/following::*";
     $words = $xml->xpath($xpath);
     echo implode(' ', array_slice($words,0,12));
-    echo '</td><td><small><a href="#" data-uri="' . $uri . '" data-id="' . $id . '" data-xml="' . $filename . '">slip</a></small></td>';
+    echo '</td><td><small><a href="#" class="slip" data-uri="' . $uri . '" data-id="' . $id . '" data-xml="' . $filename . '">slip</a></small></td>';
+  }
+
+  private function _writeInfoDiv() {
+    echo <<<HTML
+        <div id="info"><h1>Hello world</h1></hq></div>
+HTML;
   }
 
   /**
@@ -93,7 +123,7 @@ HTML;
 		              itemsOnPage: {$this->_perpage},
 		              cssStyle: "light-theme",
 		              onPageClick: function(pageNum) {
-					           window.location.assign('search.php?action=runSearch&pp={$this->_perpage}&page=' + pageNum + '&search={$this->_search}');
+					           window.location.assign('search.php?action=runSearch&mode={$this->_mode}&pp={$this->_perpage}&page=' + pageNum + '&search={$this->_search}');
 		              }
 		          });
 		      });
