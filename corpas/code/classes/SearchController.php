@@ -22,8 +22,8 @@ class SearchController
         $searchView->writeSearchForm();
         break;
       case "runSearch":
-        $this->_resultCount = $this->_getDBSearchResultsTotal($_GET["search"]);
-        $this->_dbResults = $this->_getDBSearchResults($_GET["search"], $_GET["pp"], $_GET["page"]);
+        $this->_resultCount = $this->_getDBSearchResultsTotal($_GET);
+        $this->_dbResults = $this->_getDBSearchResults($_GET);
         $results = $this->getFileSearchResults();
         $searchView = new SearchView();
         $searchView->writeSearchResults($results, $this->_resultCount);
@@ -46,8 +46,27 @@ class SearchController
     return $fileResults;
   }
 
-  private function _getDBSearchResults($search, $perpage, $pagenum) {
+  private function _getDBSearchResults($params) {
+    $search = $params["search"];
+    $perpage = $params["pp"];
+    $pagenum = $params["page"];
     $offset = $pagenum == 1 ? 0 : ($perpage * $pagenum) - $perpage;
+    $collate = ($params["accent"] == "sensitive") ? "COLLATE utf8_bin" : "";  //accent sensitive check
+
+    /* wordform search */
+    if ($params["mode"] == "wordform") {
+      $search = ' ' . $search; //temp hack for malformed CSV input
+      $sql = <<<SQL
+  SELECT filename, id FROM lemmas
+    WHERE wordform = ? {$collate}
+    ORDER BY filename, id
+    LIMIT {$perpage} OFFSET {$offset}
+SQL;
+      $this->_dbResults = $this->_db->fetch($sql, array($search));
+      return $this->_dbResults;
+    }
+
+    /* lemma search */
     $sql = <<<SQL
   SELECT filename, id, wordform FROM lemmas
     WHERE lemma = ?
@@ -62,11 +81,14 @@ SQL;
    * Query to get the size of the complete result set
    * Return int: count of the size of the set
    */
-  private function _getDBSearchResultsTotal($search) {
+  private function _getDBSearchResultsTotal($params) {
+    $collate = ($params["accent"]== "sensitive") ? "COLLATE utf8_bin" : "";  //accent sensitive check
+    $column = $params["mode"] == "wordform" ? "wordform" : "lemma";
+    $params["search"] = $column == "wordform" ? " " . $params["search"] : $params["search"];  //temp hack for CSV issue
     $sql = <<<SQL
-  SELECT wordform FROM lemmas WHERE lemma = ?
+  SELECT wordform FROM lemmas WHERE {$column} = ? {$collate}
 SQL;
-    $results = $this->_db->fetch($sql, array($search));
+    $results = $this->_db->fetch($sql, array($params["search"]));
     return count($results);
   }
 }
