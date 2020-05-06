@@ -1,0 +1,16 @@
+@prefix n: <http://faclair.ac.uk/nouns/> .
+@prefix a: <http://faclair.ac.uk/adjectives/> .
+@prefix v: <http://faclair.ac.uk/verbs/> .
+@prefix o: <http://faclair.ac.uk/other/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://faclair.ac.uk/meta/> .
+
+n:ragazzo a :Lexeme , :Noun , :Masculine , :Singular ; rdfs:label "ragazzo" ; :sense "boy" .
+n:ragazzi a :Noun, :Masculine , :Plural , :Indefinite ; :stem n:ragazzo ; rdfs:label "ragazzi" .
+n:un_ragazzo a :Noun , :Masculine , :Singular , :Indefinite ; rdfs:label "un ragazzo" .
+n:il_ragazzo a :Noun , :Masculine , :Singular , :Definite ; rdfs:label "il ragazzo" .
+n:i_ragazzi a :Noun , :Masculine , :Plural , :Definite ; rdfs:label "i ragazzi" .
+
+
+n:ragazza a :Lexeme , :Noun , :Feminine , :Singular ; rdfs:label "ragazza" ; :sense "girl" .
+n:ragazze a :Noun, :Feminine , :Plural ; :stem n:ragazza ; rdfs:label "ragazze" .
