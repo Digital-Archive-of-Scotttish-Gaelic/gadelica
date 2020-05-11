@@ -51,17 +51,19 @@ class SearchController
     $perpage = $params["pp"];
     $pagenum = $params["page"];
     $offset = $pagenum == 1 ? 0 : ($perpage * $pagenum) - $perpage;
-    $collate = ($params["accent"] == "sensitive") ? "COLLATE utf8_bin" : "";  //accent sensitive check
+    $whereClause = ($params["case"] != "sensitive") ? "LOWER (wordform) = LOWER (?)" : "wordform = ?";  //accent sensitive check
 
     /* wordform search */
     if ($params["mode"] == "wordform") {
       $search = ' ' . $search; //temp hack for malformed CSV input
       $sql = <<<SQL
   SELECT filename, id FROM lemmas
-    WHERE wordform = ? {$collate}
+    WHERE {$whereClause}
     ORDER BY filename, id
     LIMIT {$perpage} OFFSET {$offset}
 SQL;
+
+      echo $sql;
       $this->_dbResults = $this->_db->fetch($sql, array($search));
       return $this->_dbResults;
     }
