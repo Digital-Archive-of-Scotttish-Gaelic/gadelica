@@ -7,13 +7,16 @@ class SearchView
   private $_resultCount = 0;
   private $_perpage;
   private $_search;
-  private $_mode;
+  private $_mode, $_case, $_accent, $_lenition;
 
   public function __construct() {
     $this->_search      = isset($_GET["search"]) ? $_GET["search"] : null;
     $this->_perpage     = isset($_GET["pp"]) ? $_GET["pp"] : 10;
     $this->_page        = isset($_GET["page"]) ? $_GET["page"] : 1;
     $this->_mode        = $_GET["mode"] == "wordform" ? "wordform" : "headword";
+    $this->_case        = $_GET["case"];
+    $this->_accent     = $_GET["accent"];
+    $this->_lenition    = $_GET["lenition"];
   }
 
   public function writeSearchForm() {
@@ -54,23 +57,30 @@ HTML;
         <table class="table">
             <tbody>
 HTML;
-    foreach ($results as $result) {
-      echo <<<HTML
+    if (count($results)) {
+      foreach ($results as $result) {
+        echo <<<HTML
                 <tr>
                     <th scope="row">{$rowNum}</th>
 HTML;
-      $this->_writeSearchResult($result);
-      echo <<<HTML
+        $this->_writeSearchResult($result);
+        echo <<<HTML
                 </tr>
 HTML;
-      $rowNum++;
-    }
-    echo <<<HTML
+        $rowNum++;
+      }
+      echo <<<HTML
             </tbody>
         </table>
 
         <ul id="pagination" class="pagination-sm"></ul>
 HTML;
+    } else {
+      echo <<<HTML
+                <tr><th>Sorry, there were No results for <em>{$this->_search}</em></th></tr>
+HTML;
+
+    }
     $this->_writeInfoDiv();
     $this->_writeJavascript($resultTotal);
   }
@@ -123,7 +133,9 @@ HTML;
 		              itemsOnPage: {$this->_perpage},
 		              cssStyle: "light-theme",
 		              onPageClick: function(pageNum) {
-					           window.location.assign('search.php?action=runSearch&mode={$this->_mode}&pp={$this->_perpage}&page=' + pageNum + '&search={$this->_search}');
+				            var url = 'search.php?action=runSearch&mode={$this->_mode}&pp={$this->_perpage}&page=' + pageNum + '&search={$this->_search}';
+				            url += '&case={$this->_case}&accent=($this->_accent}&lenition={$this->_lenition}';
+					           window.location.assign(url);
 		              }
 		          });
 		      });
