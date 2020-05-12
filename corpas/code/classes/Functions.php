@@ -7,10 +7,6 @@ class Functions
 			  return false;
 		  }
 		
-		  if (substr($word, 1, 1) == 'h') {
-			  return false;
-		  }
-		
       $excludeChars = array('h', 'l', 'n', 'r', '?', '*', '~', '[', ']');
       if (in_array(substr($word, 0, 1), $excludeChars)) {
         return false;
@@ -22,8 +18,11 @@ class Functions
       if (self::canBeLenited($word) == false) {
         return $word;
       }
-		
-      $word = substr_replace($word, "h=", 1, 0);
+		  if (substr($word, 1, 1) == 'h') { //already lenited
+        $word = substr_replace($word, "?", 2, 0);
+      } else {                                       //add lenition test
+        $word = substr_replace($word, "h?", 1, 0);
+      }
       return $word;
     }
 

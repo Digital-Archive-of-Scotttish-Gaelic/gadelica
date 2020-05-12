@@ -4,7 +4,7 @@
 class SearchView
 {
   private $_page = 1;
-  private $_resultCount = 0;
+  private $_hits = 0;
   private $_perpage;
   private $_search;
   private $_mode, $_case, $_accent, $_lenition;
@@ -15,7 +15,7 @@ class SearchView
     $this->_page        = isset($_GET["page"]) ? $_GET["page"] : 1;
     $this->_mode        = $_GET["mode"] == "wordform" ? "wordform" : "headword";
     $this->_case        = $_GET["case"];
-    $this->_accent     = $_GET["accent"];
+    $this->_accent      = $_GET["accent"];
     $this->_lenition    = $_GET["lenition"];
   }
 
@@ -113,8 +113,12 @@ HTML;
 
   private function _writeInfoDiv() {
     echo <<<HTML
-        <div id="info"><h1>Hello world</h1></hq></div>
+        <div id="info"><h1>Hello world</h1></div>
 HTML;
+  }
+
+  public function setHits($num) {
+    $this->_hits = $num;
   }
 
   /**
@@ -134,7 +138,8 @@ HTML;
 		              cssStyle: "light-theme",
 		              onPageClick: function(pageNum) {
 				            var url = 'search.php?action=runSearch&mode={$this->_mode}&pp={$this->_perpage}&page=' + pageNum + '&search={$this->_search}';
-				            url += '&case={$this->_case}&accent=($this->_accent}&lenition={$this->_lenition}';
+				            url += '&case={$this->_case}&accent={$this->_accent}&lenition={$this->_lenition}';
+				            url += '&hits={$this->_hits}';
 					           window.location.assign(url);
 		              }
 		          });

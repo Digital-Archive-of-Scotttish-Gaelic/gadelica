@@ -22,10 +22,11 @@ class SearchController
         $searchView->writeSearchForm();
         break;
       case "runSearch":
-        $this->_resultCount = $this->_getDBSearchResultsTotal($_GET);
+        $searchView = new SearchView();
+        $this->_resultCount = !isset($_GET["hits"]) ? $this->_getDBSearchResultsTotal($_GET) : $_GET["hits"];
+        $searchView->setHits($this->_resultCount);
         $this->_dbResults = $this->_getDBSearchResults($_GET);
         $results = $this->getFileSearchResults();
-        $searchView = new SearchView();
         $searchView->writeSearchResults($results, $this->_resultCount);
         break;
     }
@@ -51,72 +52,54 @@ class SearchController
     $perpage = $params["pp"];
     $pagenum = $params["page"];
     $offset = $pagenum == 1 ? 0 : ($perpage * $pagenum) - $perpage;
+
     /* wordform search */
     if ($params["mode"] == "wordform") {
-      $sql = $this->_getWordformQuerySql($params);
+      $query = $this->_getWordformQuery($params);
+      $sql = $query["sql"];
       $sql .= <<<SQL
-        ORDER BY filename, id
-        LIMIT {$perpage} OFFSET {$offset}
+            ORDER BY filename, id
+            LIMIT {$perpage} OFFSET {$offset}
 SQL;
-      $this->_dbResults = $this->_db->fetch($sql, array($search));
+      $this->_dbResults = $this->_db->fetch($sql, array($query["search"]));
       return $this->_dbResults;
     }
 
     /* lemma search */
     $sql = <<<SQL
-  SELECT filename, id, wordform FROM lemmas
-    WHERE lemma = ?
-    ORDER BY filename, id
-    LIMIT {$perpage} OFFSET {$offset}
+        SELECT filename, id, wordform FROM lemmas
+            WHERE lemma = ?
+            ORDER BY filename, id
+            LIMIT {$perpage} OFFSET {$offset}
 SQL;
     $this->_dbResults = $this->_db->fetch($sql, array($search));
     return $this->_dbResults;
   }
 
-  private function _getWordformQuerySql($params) {
+  /*
+   * Form and return the query required for a wordform search
+   * Returns an associative array with the SQL and search term
+   */
+  private function _getWordformQuery($params) {
     $search = $params["search"];
-    /*
-     * SB: note on the following line for $collate: if performance becomes an issue, creating a duplicate
-     * wordform column with a different collation might be the way to go
-     */
-
     if ($params["accent"] != "sensitive") {
       $search = Functions::getAccentInsensitive($search, $params["case"] == "sensitive");
     }
-
+    if ($params["lenition"] != "sensitive") {
+      $search = Functions::getLenited($search);
+    }
     $whereClause = "";
-
     $search = "[[:<:]]" . $search . "[[:>:]]";  //word boundary
     if ($params["case"] == "sensitive") {   //case sensitive
-      $whereClause .= "wordform_bin REGEXP '{$search}'";
+      $whereClause .= "wordform_bin REGEXP ?";
     } else {                              //case insensitive
-      $whereClause .= "wordform REGEXP '{$search}'";
+      $whereClause .= "wordform REGEXP ?";
     }
-
-    //$whereClause = ($params["case"] != "sensitive") ? "wordform = ?" : "wordform_bin = ?";  //case sensitive check
-
-//    $collate = ($params["accent"] == "sensitive" || $params["case"] == "sensitive") ? "COLLATE utf8_bin" : "";
- //   $collate = ($params["accent"] == "sensitive") ? "COLLATE utf8_bin" : "";  //accent sensitive check
- //   $whereClause = ($params["case"] != "sensitive") ? "LOWER (wordform) = LOWER (?)" : "wordform = ?";  //case sensitive check
- //   $whereClause = ($params["case"] != "sensitive") ? "wordform = ?" : "wordform = BINARY(?)";  //case sensitive check
-  /*  if ($params["lenition"] != "sensitive") {
-      $binary = ($params["case"] != "sensitive") ? "" : "BINARY ";
-      $whereClause = "wordform REGEXP {$binary}'{$this->_getLenitionRegEx($search)}'";
-    }*/
     $sql = <<<SQL
         SELECT filename, id FROM lemmas
-          WHERE {$whereClause} {$collate}
+          WHERE {$whereClause}
 SQL;
-
-    echo $sql;
-      return $sql;
-  }
-
-  private function _getLenitionRegEx($string) {
-    $start = (mb_substr($string, 1, 1) == "h") ? 2 : 1;
-    $regEx = mb_substr($string, 0, 1) . "h?" . mb_substr($string, $start);
-    $regEx .= "$";
-    return $regEx;
+      return array("sql" => $sql, "search" => $search);
   }
 
   /*
@@ -125,30 +108,15 @@ SQL;
    */
   private function _getDBSearchResultsTotal($params)
   {
-    if ($params["mode"] == "headword") { //lemma
-      $sql = <<<SQL
+    if ($params["mode"] == "headword") {    //lemma
+      $query["search"] = $params["search"];
+      $query["sql"] = <<<SQL
         SELECT wordform FROM lemmas WHERE lemma = ? 
 SQL;
-    } else {  //wordform
-      $sql = $this->_getWordformQuerySql($params);
+    } else {                                //wordform
+      $query = $this->_getWordformQuery($params);
     }
-    $results = $this->_db->fetch($sql, array($params["search"]));
-    echo "<h1>" . count($results) . "</h1>";
+    $results = $this->_db->fetch($query["sql"], array($query["search"]));
     return count($results);
-
-/*
-  previous code ...
-*/
-      /*
-      $collate = ($params["accent"] == "sensitive") ? "COLLATE utf8_bin" : "";  //accent sensitive check
-      $column = $params["mode"] == "wordform" ? "wordform" : "lemma";
-      $params["search"] = $column == "wordform" ? " " . $params["search"] : $params["search"];  //temp hack for CSV issue
-      $sql = <<<SQL
-  SELECT wordform FROM lemmas WHERE {$column} = ? {$collate}
-SQL;
-      $results = $this->_db->fetch($sql, array($params["search"]));
-      return count($results);
-    }
-      */
   }
 }
