@@ -11,9 +11,9 @@ foreach (new RecursiveIteratorIterator($it) as $nextFile) {
     foreach ($xml->xpath("//dasg:w") as $nextWord) {
       $lemma = (string)$nextWord['lemma'];
       if ($lemma && !strpos($lemma,' ')) {
-        echo $lemma . ', ';
-        echo substr($nextFile,10) . ', ';
-        echo $nextWord['id'] . ', ';
+        echo $lemma . ',';
+        echo substr($nextFile,10) . ',';
+        echo $nextWord['id'] . ',';
         echo $nextWord;
         echo PHP_EOL;
       }
