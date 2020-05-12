@@ -48,7 +48,6 @@ class SearchController
 
   private function _getDBSearchResults($params) {
     $search = $params["search"];
-   // $search = " " . $search;  //temp hack to allow for malformed CSV input
     $perpage = $params["pp"];
     $pagenum = $params["page"];
     $offset = $pagenum == 1 ? 0 : ($perpage * $pagenum) - $perpage;
@@ -75,21 +74,41 @@ SQL;
   }
 
   private function _getWordformQuerySql($params) {
-    $search = trim($params["search"]);  //temp fix for malformed CSV input
+    $search = $params["search"];
     /*
      * SB: note on the following line for $collate: if performance becomes an issue, creating a duplicate
      * wordform column with a different collation might be the way to go
      */
-   // $collate = ($params["accent"] != "sensitive") ? "COLLATE utf8_general_ci" : "";  //accent sensitive check
-    $whereClause = ($params["case"] != "sensitive") ? "LOWER (wordform) = LOWER (?)" : "wordform = ?";  //case sensitive check
-    if ($params["lenition"] != "sensitive") {
+
+    if ($params["accent"] != "sensitive") {
+      $search = Functions::getAccentInsensitive($search, $params["case"] == "sensitive");
+    }
+
+    $whereClause = "";
+
+    $search = "[[:<:]]" . $search . "[[:>:]]";  //word boundary
+    if ($params["case"] == "sensitive") {   //case sensitive
+      $whereClause .= "wordform_bin REGEXP '{$search}'";
+    } else {                              //case insensitive
+      $whereClause .= "wordform REGEXP '{$search}'";
+    }
+
+    //$whereClause = ($params["case"] != "sensitive") ? "wordform = ?" : "wordform_bin = ?";  //case sensitive check
+
+//    $collate = ($params["accent"] == "sensitive" || $params["case"] == "sensitive") ? "COLLATE utf8_bin" : "";
+ //   $collate = ($params["accent"] == "sensitive") ? "COLLATE utf8_bin" : "";  //accent sensitive check
+ //   $whereClause = ($params["case"] != "sensitive") ? "LOWER (wordform) = LOWER (?)" : "wordform = ?";  //case sensitive check
+ //   $whereClause = ($params["case"] != "sensitive") ? "wordform = ?" : "wordform = BINARY(?)";  //case sensitive check
+  /*  if ($params["lenition"] != "sensitive") {
       $binary = ($params["case"] != "sensitive") ? "" : "BINARY ";
       $whereClause = "wordform REGEXP {$binary}'{$this->_getLenitionRegEx($search)}'";
-    }
+    }*/
     $sql = <<<SQL
         SELECT filename, id FROM lemmas
           WHERE {$whereClause} {$collate}
 SQL;
+
+    echo $sql;
       return $sql;
   }
 
@@ -106,11 +125,9 @@ SQL;
    */
   private function _getDBSearchResultsTotal($params)
   {
-    $params["search"] = ' ' . $params["search"];   //temp hack for malformed CSV input
-    if ($params["mode"] == "lemma") { //lemma
-      $collate = ($params["accent"] != "sensitive") ? "COLLATE utf8_general_ci" : "";  //accent sensitive check
+    if ($params["mode"] == "headword") { //lemma
       $sql = <<<SQL
-        SELECT wordform FROM lemmas WHERE lemma = ? {$collate}
+        SELECT wordform FROM lemmas WHERE lemma = ? 
 SQL;
     } else {  //wordform
       $sql = $this->_getWordformQuerySql($params);
