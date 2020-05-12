@@ -10,11 +10,13 @@ foreach (new RecursiveIteratorIterator($it) as $nextFile) {
     $xml->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/');
     foreach ($xml->xpath("//dasg:w") as $nextWord) {
       $lemma = (string)$nextWord['lemma'];
-      if ($lemma && !strpos($lemma,' ')) {
+      if ($lemma && !strpos($lemma,' ')) { // ann an ???
         echo $lemma . ',';
         echo substr($nextFile,10) . ',';
         echo $nextWord['id'] . ',';
-        echo $nextWord;
+        echo $nextWord . ',';
+        echo $nextWord . ',';
+        echo $nextWord['pos'];
         echo PHP_EOL;
       }
     }
