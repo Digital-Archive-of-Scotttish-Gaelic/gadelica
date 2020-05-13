@@ -7,7 +7,8 @@ class SearchView
   private $_hits = 0;
   private $_perpage;
   private $_search;
-  private $_mode, $_case, $_accent, $_lenition;
+  private $_mode, $_case, $_accent, $_lenition, $_view;
+  private $_xmlFile;
 
   public function __construct() {
     $this->_search      = isset($_GET["search"]) ? $_GET["search"] : null;
@@ -17,6 +18,7 @@ class SearchView
     $this->_case        = $_GET["case"];
     $this->_accent      = $_GET["accent"];
     $this->_lenition    = $_GET["lenition"];
+    $this->_view        = (isset($_GET["view"])) ? $_GET["view"] : "corpus";
   }
 
   public function writeSearchForm() {
@@ -25,8 +27,7 @@ class SearchView
         <input type="text" name="search"/>
         <input type="hidden" name="action" value="runSearch"/>
         <div class="radio">
-            <label class="radio-inline"><input type="radio" name="mode" id="headwordRadio" value="headword"checked>headword</label>
-            &nbsp;
+            <label class="radio-inline"><input type="radio" name="mode" id="headwordRadio" value="headword"checked>headword</label>     &nbsp;
             <label class="radio-inline"><input type="radio" name="mode" id="wordformRadio" value="wordform">wordform</label>
         </div>
         
@@ -43,22 +44,31 @@ class SearchView
             <input class="form-check-input" type="checkbox" id="lenitionSensitiveRadio" name="lenition" value="sensitive">
             <label class="form-check-label" for="lenitionSensitiveRadio">lenition sensitive</label>
           </div>
+          
+          <div class="radio" id="wordformView">
+            <label class="radio-inline"><input type="radio" name="view" id="corpusViewRadio" value="corpus" checked>corpus</label>
+            <label class="radio-inline"><input type="radio" name="view" id="dictionaryViewRadio" value="dictionary">dictionary</label>
+          </div>
         </div>
-
+       
         <button name="submit" type="submit">go</button>
       </form>
 HTML;
   }
 
   public function writeSearchResults($results, $resultTotal) {
-    //echo '<a href="search.php?action=newSearch" title="new search">< new search</a>';
     $rowNum = $this->_page * $this->_perpage - $this->_perpage + 1;
     echo <<<HTML
         <table class="table">
             <tbody>
 HTML;
     if (count($results)) {
+      $filename = "";
       foreach ($results as $result) {
+        if ($filename != $result["filename"]) {
+          $filename = $result["filename"];
+          $this->_xmlFile = new XmlFileHandler($filename);
+        }
         echo <<<HTML
                 <tr>
                     <th scope="row">{$rowNum}</th>
@@ -87,28 +97,37 @@ HTML;
 
   /* print out search result as table row */
   private function _writeSearchResult($result) {
-    echo '<td style="text-align: right;">';
-    $filename = trim($result['filename']);
-    $id = trim($result['id']);
-    $xml = simplexml_load_file(INPUT_FILEPATH . trim($result['filename']));
-    $xml->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/');
-    $xpath = '/dasg:text/@ref';
-    $out = $xml->xpath($xpath);
-    $uri = $out[0];
-    $xpath = "//dasg:w[@id='{$id}']/preceding::*";
-    $words = $xml->xpath($xpath);
-    echo implode(' ', array_slice($words,-12));
-    echo '</td>';
-    echo '<td style="text-align: center;"><a href="viewText.php?uri=' . $uri . '&id=' . $id . '" title="' . $filename . ' ' . $id . '">';
-    $xpath = "//dasg:w[@id='{$id}']";
-    $word = $xml->xpath($xpath);
-    echo $word[0];
-    echo '</a></td>';
-    echo '<td>';
-    $xpath = "//dasg:w[@id='{$id}']/following::*";
-    $words = $xml->xpath($xpath);
-    echo implode(' ', array_slice($words,0,12));
-    echo '</td><td><small><a href="#" class="slip" data-uri="' . $uri . '" data-id="' . $id . '" data-xml="' . $filename . '">slip</a></small></td>';
+
+    /* temp code for dictionary view */
+    if ($this->_view == "dictionary") {
+      echo <<<HTML
+        <td>{$result["lemma"]}</td>
+        <td>{$result["filename"]}</td>
+        <td>{$result["id"]}</td>
+        <td>{$result["wordform"]}</td>
+        <td>{$result["pos"]}</td>
+HTML;
+      return;
+    }
+    /* end temp code */
+
+    $context = $this->_xmlFile->getContext($result["id"], 12);
+    echo <<<HTML
+        <td style="text-align: right;">{$context["pre"]}</td>
+        <td style="text-align: center;">
+            <a href="viewText.php?uri={$context["uri"]}&id={$result["id"]}" 
+                    title="{$this->_xmlFile->getFilename()}{$result["id"]}">
+                {$context["word"]}
+            </a>
+        </td>
+        <td>{$context["post"]}</td>
+        <td>
+            <small><a href="#" class="slip" data-uri="{$context["uri"]}" 
+                data-id="{$result["id"]}" data-xml="{$this->_xmlFile->getFilename()}">slip</a>
+            </small>
+        </td>
+HTML;
+    return;
   }
 
   private function _writeInfoDiv() {
@@ -139,7 +158,7 @@ HTML;
 		              onPageClick: function(pageNum) {
 				            var url = 'search.php?action=runSearch&mode={$this->_mode}&pp={$this->_perpage}&page=' + pageNum + '&search={$this->_search}';
 				            url += '&case={$this->_case}&accent={$this->_accent}&lenition={$this->_lenition}';
-				            url += '&hits={$this->_hits}';
+				            url += '&hits={$this->_hits}&view={$this->_view}';
 					           window.location.assign(url);
 		              }
 		          });

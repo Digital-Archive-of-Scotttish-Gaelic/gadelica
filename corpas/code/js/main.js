@@ -1,10 +1,14 @@
 $(function () {
   $('.slip').on('click', function () {
-    var html = 'data-id : ' + $(this).attr('data-id') + '<br>';
-    html += 'data-xml : ' + $(this).attr('data-xml') + '<br>';
-    html += 'data-uri : ' + $(this).attr('data-uri');
-    $('#info').html(html);
-    $('#info').show();
+    $.getJSON("ajax.php?action=getContext&filename="+$(this).attr('data-xml')+"&id="+$(this).attr('data-id'), function (data) {
+      $.each(data, function (key, val) {
+        var html = data.pre;
+        html += ' <strong>' + data.word[0] + '</strong> ';
+        html += data.post;
+        $('#info').html(html);
+        $('#info').show();
+      });
+    });
   });
 
   $('#info').on('click', function() {
