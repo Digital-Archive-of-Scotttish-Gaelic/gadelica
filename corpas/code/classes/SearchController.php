@@ -67,7 +67,7 @@ SQL;
 
     /* lemma search */
     $sql = <<<SQL
-        SELECT filename, id, wordform, pos FROM lemmas
+        SELECT filename, id, wordform, pos, lemma FROM lemmas
             WHERE lemma = ?
             ORDER BY filename, id
             LIMIT {$perpage} OFFSET {$offset}

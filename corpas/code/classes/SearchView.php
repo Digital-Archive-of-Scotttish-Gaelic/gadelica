@@ -57,6 +57,10 @@ HTML;
   }
 
   public function writeSearchResults($results, $resultTotal) {
+    if ($this->_view == "dictionary") {
+      $this->_writeDictionaryView($results);
+      return;
+    }
     $rowNum = $this->_page * $this->_perpage - $this->_perpage + 1;
     echo <<<HTML
         <table class="table">
@@ -99,7 +103,12 @@ HTML;
   private function _writeSearchResult($result) {
 
     /* temp code for dictionary view */
+    /*
     if ($this->_view == "dictionary") {
+
+
+
+
       echo <<<HTML
         <td>{$result["lemma"]}</td>
         <td>{$result["filename"]}</td>
@@ -107,8 +116,11 @@ HTML;
         <td>{$result["wordform"]}</td>
         <td>{$result["pos"]}</td>
 HTML;
+
+
       return;
     }
+    */
     /* end temp code */
 
     $context = $this->_xmlFile->getContext($result["id"], 12);
@@ -126,6 +138,34 @@ HTML;
                 data-id="{$result["id"]}" data-xml="{$this->_xmlFile->getFilename()}">slip</a>
             </small>
         </td>
+HTML;
+    return;
+  }
+
+  private function _writeDictionaryView($results) { // added by MM
+    echo '<h3>' . $results[0]['lemma'] . '</h3>';
+    $forms = [];
+    foreach ($results as $nextResult) {
+      $forms[] = $nextResult['wordform'] . '|' . $nextResult['pos'];
+    }
+    $forms = array_unique($forms);
+    echo <<<HTML
+      <table class="table">
+        <tbody>
+HTML;
+    foreach ($forms as $nextForm) {
+      $array = explode('|',$nextForm);
+      echo '<tr><td>' . $array[0] . '</td><td>' . $array[1] . '</td><td>';
+      foreach ($results as $nextResult) {
+        if ($nextResult['wordform']==$array[0] && $nextResult['pos']==$array[1]) {
+          echo $nextResult['filename'] . ' ' . $nextResult['id'] . '<br/>';
+        }
+      }
+      echo '</td></tr>';
+    }
+    echo <<<HTML
+        </tbody>
+      </table>
 HTML;
     return;
   }
