@@ -30,7 +30,7 @@ class SearchView
             <label class="radio-inline"><input type="radio" name="mode" id="headwordRadio" value="headword"checked>headword</label>     &nbsp;
             <label class="radio-inline"><input type="radio" name="mode" id="wordformRadio" value="wordform">wordform</label>
         </div>
-        
+
         <div id="wordformOptions">
           <div class="form-check form-check-inline">
               <input class="form-check-input" type="checkbox" id="caseSensitiveRadio" name="case" value="sensitive">
@@ -44,13 +44,13 @@ class SearchView
             <input class="form-check-input" type="checkbox" id="lenitionSensitiveRadio" name="lenition" value="sensitive">
             <label class="form-check-label" for="lenitionSensitiveRadio">lenition sensitive</label>
           </div>
-          
-          <div class="radio" id="wordformView">
-            <label class="radio-inline"><input type="radio" name="view" id="corpusViewRadio" value="corpus" checked>corpus</label>
-            <label class="radio-inline"><input type="radio" name="view" id="dictionaryViewRadio" value="dictionary">dictionary</label>
-          </div>
         </div>
-       
+
+        <div class="radio" id="wordformView">
+          <label class="radio-inline"><input type="radio" name="view" id="corpusViewRadio" value="corpus" checked>corpus view</label>&nbsp;
+          <label class="radio-inline"><input type="radio" name="view" id="dictionaryViewRadio" value="dictionary">dictionary view</label>
+        </div>
+
         <button name="submit" type="submit">go</button>
       </form>
 HTML;
@@ -115,14 +115,14 @@ HTML;
     echo <<<HTML
         <td style="text-align: right;">{$context["pre"]}</td>
         <td style="text-align: center;">
-            <a href="viewText.php?uri={$context["uri"]}&id={$result["id"]}" 
+            <a href="viewText.php?uri={$context["uri"]}&id={$result["id"]}"
                     title="{$this->_xmlFile->getFilename()}{$result["id"]}">
                 {$context["word"]}
             </a>
         </td>
         <td>{$context["post"]}</td>
         <td>
-            <small><a href="#" class="slip" data-uri="{$context["uri"]}" 
+            <small><a href="#" class="slip" data-uri="{$context["uri"]}"
                 data-id="{$result["id"]}" data-xml="{$this->_xmlFile->getFilename()}">slip</a>
             </small>
         </td>

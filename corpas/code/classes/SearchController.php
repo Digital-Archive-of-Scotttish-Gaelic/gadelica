@@ -67,7 +67,7 @@ SQL;
 
     /* lemma search */
     $sql = <<<SQL
-        SELECT filename, id, wordform FROM lemmas
+        SELECT filename, id, wordform, pos FROM lemmas
             WHERE lemma = ?
             ORDER BY filename, id
             LIMIT {$perpage} OFFSET {$offset}
@@ -111,7 +111,7 @@ SQL;
     if ($params["mode"] == "headword") {    //lemma
       $query["search"] = $params["search"];
       $query["sql"] = <<<SQL
-        SELECT wordform FROM lemmas WHERE lemma = ? 
+        SELECT wordform FROM lemmas WHERE lemma = ?
 SQL;
     } else {                                //wordform
       $query = $this->_getWordformQuery($params);
