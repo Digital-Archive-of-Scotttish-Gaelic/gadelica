@@ -26,7 +26,7 @@ class SearchController
         $this->_resultCount = !isset($_GET["hits"]) ? $this->_getDBSearchResultsTotal($_GET) : $_GET["hits"];
         $searchView->setHits($this->_resultCount);
         $this->_dbResults = $this->_getDBSearchResults($_GET);
-        $results = $this->getFileSearchResults();
+        $results = ($_GET["view"] == "corpus") ? $this->getFileSearchResults() : $this->_dbResults;
         $searchView->writeSearchResults($results, $this->_resultCount);
         break;
     }
@@ -39,7 +39,7 @@ class SearchController
     $fileResults = array();
     $i = 0;
     foreach ($this->_dbResults as $result) {
-      $id = trim($result["id"]);
+      $id = $result["id"];
       $fileResults[$i]["id"] = $id;
       $fileResults[$i]["filename"] = $result["filename"];
       $i++;
@@ -95,19 +95,19 @@ SQL;
     } else {                              //case insensitive
       $whereClause .= "wordform REGEXP ?";
     }
+    $selectFields = ($params["view"] == "corpus") ? "filename, id" : "lemma, filename, id, wordform, pos";
     $sql = <<<SQL
-        SELECT filename, id FROM lemmas
+        SELECT {$selectFields} FROM lemmas
           WHERE {$whereClause}
 SQL;
-      return array("sql" => $sql, "search" => $search);
+    return array("sql" => $sql, "search" => $search);
   }
 
   /*
    * Query to get the size of the complete result set
    * Return int: count of the size of the set
    */
-  private function _getDBSearchResultsTotal($params)
-  {
+  private function _getDBSearchResultsTotal($params) {
     if ($params["mode"] == "headword") {    //lemma
       $query["search"] = $params["search"];
       $query["sql"] = <<<SQL
