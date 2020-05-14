@@ -14,7 +14,7 @@ class Functions
     }
 
     public static function canBeLenited($word) { 
-		  if (strlen($word) < 2) {
+		  if (mb_strlen($word) < 2 || mb_substr($word, 1, 1) == '-') {
 			  return false;
 		  }
 		
