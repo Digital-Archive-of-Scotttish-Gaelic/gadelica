@@ -101,30 +101,10 @@ HTML;
 
   /* print out search result as table row */
   private function _writeSearchResult($result) {
-
-    /* temp code for dictionary view */
-    /*
-    if ($this->_view == "dictionary") {
-
-
-
-
-      echo <<<HTML
-        <td>{$result["lemma"]}</td>
-        <td>{$result["filename"]}</td>
-        <td>{$result["id"]}</td>
-        <td>{$result["wordform"]}</td>
-        <td>{$result["pos"]}</td>
-HTML;
-
-
-      return;
-    }
-    */
-    /* end temp code */
-
     $context = $this->_xmlFile->getContext($result["id"], 12);
     echo <<<HTML
+        <td>{$result["lemma"]}</td>
+        <td>{$result["pos"]}</td>
         <td style="text-align: right;">{$context["pre"]}</td>
         <td style="text-align: center;">
             <a href="viewText.php?uri={$context["uri"]}&id={$result["id"]}"

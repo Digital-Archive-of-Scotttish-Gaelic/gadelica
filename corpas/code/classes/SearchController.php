@@ -41,6 +41,8 @@ class SearchController
     foreach ($this->_dbResults as $result) {
       $id = $result["id"];
       $fileResults[$i]["id"] = $id;
+      $fileResults[$i]["lemma"] = $result["lemma"];
+      $fileResults[$i]["pos"] = $result["pos"];
       $fileResults[$i]["filename"] = $result["filename"];
       $i++;
     }
@@ -95,7 +97,7 @@ SQL;
     } else {                              //case insensitive
       $whereClause .= "wordform REGEXP ?";
     }
-    $selectFields = ($params["view"] == "corpus") ? "filename, id" : "lemma, filename, id, wordform, pos";
+    $selectFields =  "lemma, filename, id, wordform, pos";
     $sql = <<<SQL
         SELECT {$selectFields} FROM lemmas
           WHERE {$whereClause}
