@@ -1,8 +1,11 @@
 $(function () {
   $('.slip').on('click', function () {
-    $.getJSON("ajax.php?action=getContext&filename="+$(this).attr('data-xml')+"&id="+$(this).attr('data-id'), function (data) {
+    var filename = $(this).attr('data-xml');
+    var id = $(this).attr('data-id');
+    $.getJSON("ajax.php?action=getContext&filename="+filename+"&id="+id, function (data) {
       $.each(data, function (key, val) {
-        var html = data.pre;
+        var html = '<em>filename:</em> ' + filename + '<br><em>id:</em> ' + id + '<br><br>';
+        html += data.pre;
         html += ' <strong>' + data.word[0] + '</strong> ';
         html += data.post;
         $('#info').html(html);
