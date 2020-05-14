@@ -25,7 +25,8 @@ class SearchController
         $searchView = new SearchView();
         $this->_resultCount = !isset($_GET["hits"]) ? $this->_getDBSearchResultsTotal($_GET) : $_GET["hits"];
         $searchView->setHits($this->_resultCount);
-        $this->_dbResults = $this->_getDBSearchResults($_GET);
+        $chunk = ($searchView->getView() == "dictionary") ? false : true;
+        $this->_dbResults = $this->_getDBSearchResults($_GET, $chunk);
         $results = ($_GET["view"] == "corpus") ? $this->getFileSearchResults() : $this->_dbResults;
         $searchView->writeSearchResults($results, $this->_resultCount);
         break;
@@ -49,19 +50,20 @@ class SearchController
     return $fileResults;
   }
 
-  private function _getDBSearchResults($params) {
+  private function _getDBSearchResults($params, $chunk = true) {
     $search = $params["search"];
     $perpage = $params["pp"];
     $pagenum = $params["page"];
     $offset = $pagenum == 1 ? 0 : ($perpage * $pagenum) - $perpage;
 
     /* wordform search */
+    $limit = ($chunk == true) ? "LIMIT {$perpage} OFFSET {$offset}" : "";
     if ($params["mode"] == "wordform") {
       $query = $this->_getWordformQuery($params);
       $sql = $query["sql"];
       $sql .= <<<SQL
             ORDER BY filename, id
-            LIMIT {$perpage} OFFSET {$offset}
+            {$limit}
 SQL;
       $this->_dbResults = $this->_db->fetch($sql, array($query["search"]));
       return $this->_dbResults;
@@ -90,6 +92,7 @@ SQL;
     }
     if ($params["lenition"] != "sensitive") {
       $search = Functions::getLenited($search);
+      $search = Functions::addMutations($search);
     } else {
       //deal with h-, n-, t-
       $searchPrefix = "^";  //don't use word boundary at start of search, but start of string instead

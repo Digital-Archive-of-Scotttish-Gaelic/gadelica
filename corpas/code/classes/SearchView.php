@@ -21,6 +21,10 @@ class SearchView
     $this->_view        = (isset($_GET["view"])) ? $_GET["view"] : "corpus";
   }
 
+  public function getView() {
+    return $this->_view;
+  }
+
   public function writeSearchForm() {
     echo <<<HTML
       <form>

@@ -2,6 +2,17 @@
 
 class Functions
 {
+    public static function addMutations($word) {
+      $mutations = array('h-', 'n-', 't-');
+      foreach ($mutations as $mutation) {
+        if (mb_substr($word, 0, 2) == $mutation) {
+          $word = str_replace($mutation, "", $word);
+        }
+      }
+      $regexp = "[h|n||t-]?" . $word;
+      return $regexp;
+    }
+
     public static function canBeLenited($word) { 
 		  if (strlen($word) < 2) {
 			  return false;
