@@ -84,14 +84,18 @@ SQL;
    */
   private function _getWordformQuery($params) {
     $search = $params["search"];
+    $searchPrefix = "[[:<:]]";  //default to word boundary at start
     if ($params["accent"] != "sensitive") {
       $search = Functions::getAccentInsensitive($search, $params["case"] == "sensitive");
     }
     if ($params["lenition"] != "sensitive") {
       $search = Functions::getLenited($search);
+    } else {
+      //deal with h-, n-, t-
+      $searchPrefix = "^";  //don't use word boundary at start of search, but start of string instead
     }
     $whereClause = "";
-    $search = "[[:<:]]" . $search . "[[:>:]]";  //word boundary
+    $search = $searchPrefix . $search . "[[:>:]]";  //word boundary
     if ($params["case"] == "sensitive") {   //case sensitive
       $whereClause .= "wordform_bin REGEXP ?";
     } else {                              //case insensitive
