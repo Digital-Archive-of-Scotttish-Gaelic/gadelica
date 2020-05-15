@@ -17,15 +17,17 @@ class XmlFileHandler
 
   public function getContext($id, $scope = 12) {
     $context = array();
+    $context["id"] = $id;
+    $context["filename"] = $this->getFilename();
     $xpath = '/dasg:text/@ref';
     $out = $this->_xml->xpath($xpath);
-    $context["uri"] = $out[0];
+    $context["uri"] = (string)$out[0];
     $xpath = "//dasg:w[@id='{$id}']/preceding::*";
     $words = $this->_xml->xpath($xpath);
     $context["pre"] = implode(' ', array_slice($words,-$scope));
     $xpath = "//dasg:w[@id='{$id}']";
     $word = $this->_xml->xpath($xpath);
-    $context["word"] = $word[0];
+    $context["word"] = (string)$word[0];
     $xpath = "//dasg:w[@id='{$id}']/following::*";
     $words = $this->_xml->xpath($xpath);
     $context["post"] = implode(' ', array_slice($words,0, $scope));

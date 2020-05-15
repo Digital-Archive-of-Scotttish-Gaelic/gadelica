@@ -93,6 +93,7 @@ HTML;
 
         <ul id="pagination" class="pagination-sm"></ul>
 HTML;
+      $this->_writeViewSwitch();
     } else {
       echo <<<HTML
                 <tr><th>Sorry, there were No results for <em>{$this->_search}</em></th></tr>
@@ -103,22 +104,39 @@ HTML;
     $this->_writeJavascript($resultTotal);
   }
 
+  private function _writeViewSwitch() {
+    $alternateView = ($this->_view == "corpus") ? "dictionary" : "corpus";
+    echo <<<HTML
+        <div id="viewSwitch">
+            <a href="search.php?action=runSearch&search={$this->_search}&view={$alternateView}&hits={$this->_hits}">
+                switch to {$alternateView} view
+            </a>
+        </div>
+HTML;
+
+  }
+
   /* print out search result as table row */
   private function _writeSearchResult($result) {
     $context = $this->_xmlFile->getContext($result["id"], 12);
+    $title = <<<HTML
+        {$this->_xmlFile->getFilename()}{$result["id"]}<br><br>
+        headword: {$result["lemma"]}<br>
+        POS: {$result["pos"]}
+HTML;
+
     echo <<<HTML
-        <td>{$result["lemma"]}</td>
-        <td>{$result["pos"]}</td>
         <td style="text-align: right;">{$context["pre"]}</td>
         <td style="text-align: center;">
             <a href="viewText.php?uri={$context["uri"]}&id={$result["id"]}"
-                    title="{$this->_xmlFile->getFilename()}{$result["id"]}">
+                    data-toggle="tooltip" data-html="true" title="{$title}">
                 {$context["word"]}
             </a>
         </td>
         <td>{$context["post"]}</td>
         <td>
             <small><a href="#" class="slip" data-uri="{$context["uri"]}"
+                data-headword="{$result["lemma"]}" data-pos="{$result["pos"]}"
                 data-id="{$result["id"]}" data-xml="{$this->_xmlFile->getFilename()}">slip</a>
             </small>
         </td>
@@ -137,20 +155,37 @@ HTML;
       <table class="table">
         <tbody>
 HTML;
+    $formNum=0;
     foreach ($forms as $nextForm) {
+      $formNum++;
       $array = explode('|',$nextForm);
       echo '<tr><td>' . $array[0] . '</td><td>' . $array[1] . '</td><td>';
+      $i=0;
+      $locations = array();
       foreach ($results as $nextResult) {
         if ($nextResult['wordform']==$array[0] && $nextResult['pos']==$array[1]) {
-          echo $nextResult['filename'] . ' ' . $nextResult['id'] . '<br/>';
+          $i++;
+          $locations[] = $nextResult['filename'] . ' ' . $nextResult['id'];
         }
       }
-      echo '</td></tr>';
+      $locs = implode('|', $locations);
+      echo <<<HTML
+            <button href="#" id="show-{$formNum}" data-formNum="{$formNum}" data-locs="{$locs}" 
+                data-pos="{$array[1]}" data-lemma="{$array[0]}"
+                 class="loadDictResults">
+                show {$i} result(s)
+            </button>
+            <button href="#" id="hide-{$formNum}" data-formNum="{$formNum}" class="hideDictResults">hide results</button>
+            <table id="form-{$formNum}"><tbody></tbody></table></div>
+        </td></tr>
+HTML;
     }
     echo <<<HTML
         </tbody>
       </table>
 HTML;
+    $this->_writeInfoDiv();
+    $this->_writeViewSwitch();
     return;
   }
 
