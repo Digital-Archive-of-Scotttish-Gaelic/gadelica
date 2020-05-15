@@ -106,19 +106,24 @@ HTML;
   /* print out search result as table row */
   private function _writeSearchResult($result) {
     $context = $this->_xmlFile->getContext($result["id"], 12);
+    $title = <<<HTML
+        {$this->_xmlFile->getFilename()}{$result["id"]}<br><br>
+        headword: {$result["lemma"]}<br>
+        POS: {$result["pos"]}
+HTML;
+
     echo <<<HTML
-        <td>{$result["lemma"]}</td>
-        <td>{$result["pos"]}</td>
         <td style="text-align: right;">{$context["pre"]}</td>
         <td style="text-align: center;">
             <a href="viewText.php?uri={$context["uri"]}&id={$result["id"]}"
-                    title="{$this->_xmlFile->getFilename()}{$result["id"]}">
+                    data-toggle="tooltip" data-html="true" title="{$title}">
                 {$context["word"]}
             </a>
         </td>
         <td>{$context["post"]}</td>
         <td>
             <small><a href="#" class="slip" data-uri="{$context["uri"]}"
+                data-headword="{$result["lemma"]}" data-pos="{$result["pos"]}"
                 data-id="{$result["id"]}" data-xml="{$this->_xmlFile->getFilename()}">slip</a>
             </small>
         </td>

@@ -1,10 +1,16 @@
 $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+
   $('.slip').on('click', function () {
-    var filename = $(this).attr('data-xml');
-    var id = $(this).attr('data-id');
+    var filename  = $(this).attr('data-xml');
+    var id        = $(this).attr('data-id');
+    var headword  = $(this).attr('data-headword');
+    var pos       = $(this).attr('data-pos');
     $.getJSON("ajax.php?action=getContext&filename="+filename+"&id="+id, function (data) {
       $.each(data, function (key, val) {
-        var html = '<em>filename:</em> ' + filename + '<br><em>id:</em> ' + id + '<br><br>';
+        var html = '<em>filename:</em> ' + filename + '<br><em>id:</em> ' + id + '<br>';
+        html += '<em>headword:</em> ' + headword + '<br>';
+        html += '<em>POS:</em> ' + pos + '<br><br>';
         html += data.pre;
         html += ' <strong>' + data.word[0] + '</strong> ';
         html += data.post;
