@@ -170,11 +170,13 @@ HTML;
       }
       $locs = implode('|', $locations);
       echo <<<HTML
-            <button href="#" id="show-{$formNum}" data-formNum="{$formNum}" data-locs="{$locs}" class="loadDictResults">
+            <button href="#" id="show-{$formNum}" data-formNum="{$formNum}" data-locs="{$locs}" 
+                data-pos="{$array[1]}" data-lemma="{$array[0]}"
+                 class="loadDictResults">
                 show {$i} result(s)
             </button>
             <button href="#" id="hide-{$formNum}" data-formNum="{$formNum}" class="hideDictResults">hide results</button>
-            <div id="form-{$formNum}"/>
+            <table id="form-{$formNum}"><tbody></tbody></table></div>
         </td></tr>
 HTML;
     }
@@ -182,6 +184,7 @@ HTML;
         </tbody>
       </table>
 HTML;
+    $this->_writeInfoDiv();
     $this->_writeViewSwitch();
     return;
   }

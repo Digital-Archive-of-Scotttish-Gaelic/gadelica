@@ -1,7 +1,12 @@
 $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
+  $('[data-toggle="tooltip"]').tooltip();
 
-  $('.slip').on('click', function () {
+  //bind the tooltips to the body for AJAX content
+  $('body').tooltip({
+    selector: '[data-toggle=tooltip]'
+  });
+
+  $(document).on('click', '.slip', function () {
     var filename  = $(this).attr('data-xml');
     var id        = $(this).attr('data-id');
     var headword  = $(this).attr('data-headword');
@@ -23,19 +28,29 @@ $(function () {
   $('.loadDictResults').on('click', function () {
     var formNum = $(this).attr('data-formNum');
     var locations  = $(this).attr('data-locs');
-    var html = '<table><tbody>';
+    var headword = $(this).attr('data-lemma');
+    var pos = $(this).attr('data-pos');
     $.post("ajax.php", {action: "getDictionaryResults", locs: locations}, function (data)  {
       $.each(data, function (key, val) {
-        html += '<tr>';
+        var title = val.filename + val.id + '<br><br>';
+        title += 'headword: ' + headword + '<br>';
+        title += 'POS: ' + pos;
+
+        html = '<tr>';
         html += '<td style="text-align: right;">'+val.pre + '</td>';
-        html += '<td>' + val.word[0] + '</td>';
+        html += '<td><a href="viewText.php?uri=' + val.uri + '&id=' + val.id + '"';
+        html += ' data-toggle="tooltip" data-html="true" title="' + title + '">';
+        html += val.word + '</a>';
         html += '<td>' + val.post + '</td>';
+        html += '<td><small><a href="#" class="slip" data-uri="' + val.uri + '"';
+        html += ' data-headword="' + headword + '" data-pos="' + pos + '"';
+        html += ' data-id="' + val.id + '" data-xml="' + val.filename + '">slip</a></small>';
+        html += '</td>';
         html += '</tr>';
+        $('#form-' + formNum + ' tbody').append(html);
       });
     }, "json")
       .done(function () {
-        html += '</tbody></table>';
-        $('#form-' + formNum).html(html);
         $('#form-' + formNum).show();
         $('#show-' + formNum).hide();
         $('#hide-' + formNum).show();
@@ -61,3 +76,4 @@ $(function () {
     $('#wordformOptions').hide();
   });
 });
+
