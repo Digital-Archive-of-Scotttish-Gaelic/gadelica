@@ -155,18 +155,28 @@ HTML;
       <table class="table">
         <tbody>
 HTML;
+    $formNum=0;
     foreach ($forms as $nextForm) {
+      $formNum++;
       $array = explode('|',$nextForm);
       echo '<tr><td>' . $array[0] . '</td><td>' . $array[1] . '</td><td>';
       $i=0;
+      $locations = array();
       foreach ($results as $nextResult) {
         if ($nextResult['wordform']==$array[0] && $nextResult['pos']==$array[1]) {
           $i++;
-          echo $nextResult['filename'] . ' ' . $nextResult['id'] . '<br/>';
+          $locations[] = $nextResult['filename'] . ' ' . $nextResult['id'];
         }
       }
-      //echo '<a href="#">show ' . $i . ' result(s)</a>';
-      echo '</td></tr>';
+      $locs = implode('|', $locations);
+      echo <<<HTML
+            <a href="#" id="show-{$formNum}" data-formNum="{$formNum}" data-locs="{$locs}" class="loadDictResults">
+                show {$i} result(s)
+            </a>
+            <a href="#" id="hide-{$formNum}" data-formNum="{$formNum}" class="hideDictResults">hide results</a>
+            <div id="form-{$formNum}"/>
+        </td></tr>
+HTML;
     }
     echo <<<HTML
         </tbody>

@@ -20,6 +20,40 @@ $(function () {
     });
   });
 
+  $('.loadDictResults').on('click', function () {
+    //check if already loaded
+    if ($('#form-' + formNum).contents().length != 0) {
+      $('#form-' + formNum).show();
+      return
+    }
+    var locations  = $(this).attr('data-locs');
+    var formNum = $(this).attr('data-formNum');
+    var html = '<table><tbody>';
+    $.getJSON("ajax.php?action=getDictionaryResults&locs=" + locations, function (data) {
+      $.each(data, function (key, val) {
+        html += '<tr>';
+        html += '<td style="text-align: right;">'+val.pre + '</td>';
+        html += '<td>' + val.word[0] + '</td>';
+        html += '<td>' + val.post + '</td>';
+        html += '</tr>';
+      });
+    })
+      .done(function () {
+        html += '</tbody></table>';
+        $('#form-' + formNum).html(html);
+        $('#form-' + formNum).show();
+        $('#show-' + formNum).hide();
+        $('#hide-' + formNum).show();
+      });
+  });
+
+  $('.hideDictResults').on('click', function () {
+    var formNum = $(this).attr('data-formNum');
+    $('#show-' + formNum).show();
+    $('#hide-' + formNum).hide();
+    $('#form-' + formNum).hide();
+  });
+
   $('#info').on('click', function() {
     $('#info').hide();
   });
