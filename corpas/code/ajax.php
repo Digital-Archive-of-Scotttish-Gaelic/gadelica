@@ -20,7 +20,7 @@ switch ($_GET["action"]) {
         $filename = $elems[0];
         $fileHandler = new XmlFileHandler($filename);
       }
-      $context = $fileHandler->getContext($elems[1], 5);
+      $context = $fileHandler->getContext($elems[1], 8);
       $results[] = $context;
     }
     echo json_encode($results);
