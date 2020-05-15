@@ -170,10 +170,10 @@ HTML;
       }
       $locs = implode('|', $locations);
       echo <<<HTML
-            <a href="#" id="show-{$formNum}" data-formNum="{$formNum}" data-locs="{$locs}" class="loadDictResults">
+            <button href="#" id="show-{$formNum}" data-formNum="{$formNum}" data-locs="{$locs}" class="loadDictResults">
                 show {$i} result(s)
-            </a>
-            <a href="#" id="hide-{$formNum}" data-formNum="{$formNum}" class="hideDictResults">hide results</a>
+            </button>
+            <button href="#" id="hide-{$formNum}" data-formNum="{$formNum}" class="hideDictResults">hide results</button>
             <div id="form-{$formNum}"/>
         </td></tr>
 HTML;
