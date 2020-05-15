@@ -74,7 +74,7 @@ SQL;
         SELECT filename, id, wordform, pos, lemma FROM lemmas
             WHERE lemma = ?
             ORDER BY filename, id
-            LIMIT {$perpage} OFFSET {$offset}
+            {$limit}
 SQL;
     $this->_dbResults = $this->_db->fetch($sql, array($search));
     return $this->_dbResults;
