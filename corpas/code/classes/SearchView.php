@@ -93,6 +93,7 @@ HTML;
 
         <ul id="pagination" class="pagination-sm"></ul>
 HTML;
+      $this->_writeViewSwitch();
     } else {
       echo <<<HTML
                 <tr><th>Sorry, there were No results for <em>{$this->_search}</em></th></tr>
@@ -101,6 +102,18 @@ HTML;
     }
     $this->_writeInfoDiv();
     $this->_writeJavascript($resultTotal);
+  }
+
+  private function _writeViewSwitch() {
+    $alternateView = ($this->_view == "corpus") ? "dictionary" : "corpus";
+    echo <<<HTML
+        <div id="viewSwitch">
+            <a href="search.php?action=runSearch&search={$this->_search}&view={$alternateView}">
+                switch to {$alternateView} view
+            </a>
+        </div>
+HTML;
+
   }
 
   /* print out search result as table row */
@@ -145,17 +158,21 @@ HTML;
     foreach ($forms as $nextForm) {
       $array = explode('|',$nextForm);
       echo '<tr><td>' . $array[0] . '</td><td>' . $array[1] . '</td><td>';
+      $i=0;
       foreach ($results as $nextResult) {
         if ($nextResult['wordform']==$array[0] && $nextResult['pos']==$array[1]) {
+          $i++;
           echo $nextResult['filename'] . ' ' . $nextResult['id'] . '<br/>';
         }
       }
+      //echo '<a href="#">show ' . $i . ' result(s)</a>';
       echo '</td></tr>';
     }
     echo <<<HTML
         </tbody>
       </table>
 HTML;
+    $this->_writeViewSwitch();
     return;
   }
 
