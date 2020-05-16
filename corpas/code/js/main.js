@@ -17,7 +17,7 @@ $(function () {
         html += '<em>headword:</em> ' + headword + '<br>';
         html += '<em>POS:</em> ' + pos + '<br><br>';
         html += data.pre;
-        html += ' <strong>' + data.word[0] + '</strong> ';
+        html += ' <strong>' + data.word + '</strong> ';
         html += data.post;
         $('#info').html(html);
         $('#info').show();
