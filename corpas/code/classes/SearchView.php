@@ -100,7 +100,7 @@ HTML;
 HTML;
 
     }
-    $this->_writeInfoDiv();
+    $this->_writeSlipDiv();
     $this->_writeJavascript($resultTotal);
   }
 
@@ -118,7 +118,7 @@ HTML;
 
   /* print out search result as table row */
   private function _writeSearchResult($result) {
-    $context = $this->_xmlFile->getContext($result["id"], 12);
+    $context = $this->_xmlFile->getContext($result["id"], 12, 12);
     $title = <<<HTML
         {$this->_xmlFile->getFilename()}{$result["id"]}<br><br>
         headword: {$result["lemma"]}<br>
@@ -135,7 +135,7 @@ HTML;
         </td>
         <td>{$context["post"]}</td>
         <td>
-            <small><a href="#" class="slip" data-uri="{$context["uri"]}"
+            <small><a href="#" class="slipLink" data-uri="{$context["uri"]}"
                 data-headword="{$result["lemma"]}" data-pos="{$result["pos"]}"
                 data-id="{$result["id"]}" data-xml="{$this->_xmlFile->getFilename()}">slip</a>
             </small>
@@ -184,14 +184,33 @@ HTML;
         </tbody>
       </table>
 HTML;
-    $this->_writeInfoDiv();
+    $this->_writeSlipDiv();
     $this->_writeViewSwitch();
     return;
   }
 
-  private function _writeInfoDiv() {
+  private function _writeSlipDiv() {
     echo <<<HTML
-        <div id="info"><h1>Hello world</h1></div>
+        <div id="slip">
+            filename: <span id="slipFilename"></span><br>
+            id: <span id="slipId"></span><br>
+            headword: <span id="slipHeadword"></span><br>
+            POS: <span id="slipPOS"/></span><br><br>
+            
+            <div>
+              <div>
+                <span><a href="#" class="updateContext btn-link" id="decrementPre">-</a></span>
+                <span><a href="#" class="updateContext" id="incrementPre">+</a></span>
+              </div>
+              <span data-precontextscope="20" data-postcontextscope="20" id="slipContext"></span>
+              <div>
+                <span><a href="#" class="updateContext btn-link" id="decrementPost">-</a></span>
+                <span><a href="#" class="updateContext" id="incrementPost">+</a></span>
+              </div>
+            </div>
+            
+            <div style="text-align: right"><a id="closeSlipLink" href="#">close</a></div>        
+        </div>
 HTML;
   }
 

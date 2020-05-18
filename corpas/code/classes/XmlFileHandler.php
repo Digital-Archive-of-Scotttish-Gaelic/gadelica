@@ -15,7 +15,7 @@ class XmlFileHandler
     return $this->_filename;
   }
 
-  public function getContext($id, $scope = 12) {
+  public function getContext($id, $preScope = 12, $postScope = 12) {
     $context = array();
     $context["id"] = $id;
     $context["filename"] = $this->getFilename();
@@ -24,13 +24,13 @@ class XmlFileHandler
     $context["uri"] = (string)$out[0];
     $xpath = "//dasg:w[@id='{$id}']/preceding::*";
     $words = $this->_xml->xpath($xpath);
-    $context["pre"] = implode(' ', array_slice($words,-$scope));
+    $context["pre"] = ($preScope == 0) ? "" : implode(' ', array_slice($words,-$preScope));
     $xpath = "//dasg:w[@id='{$id}']";
     $word = $this->_xml->xpath($xpath);
     $context["word"] = (string)$word[0];
     $xpath = "//dasg:w[@id='{$id}']/following::*";
     $words = $this->_xml->xpath($xpath);
-    $context["post"] = implode(' ', array_slice($words,0, $scope));
+    $context["post"] = ($postScope == 0) ? "": implode(' ', array_slice($words,0, $postScope));
     return $context;
   }
 }

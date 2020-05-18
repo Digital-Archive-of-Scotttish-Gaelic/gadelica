@@ -5,7 +5,7 @@ require_once 'includes/include.php';
 switch ($_REQUEST["action"]) {
   case "getContext":
     $handler = new XmlFileHandler($_GET["filename"]);
-    $context = $handler->getContext($_GET["id"], 20);
+    $context = $handler->getContext($_GET["id"], $_GET["preScope"], $_GET["postScope"]);
     echo json_encode($context);
     break;
   case "getDictionaryResults":
@@ -20,7 +20,7 @@ switch ($_REQUEST["action"]) {
         $filename = $elems[0];
         $fileHandler = new XmlFileHandler($filename);
       }
-      $context = $fileHandler->getContext($elems[1], 8);
+      $context = $fileHandler->getContext($elems[1], 8, 8);
       $results[] = $context;
     }
     echo json_encode($results);
