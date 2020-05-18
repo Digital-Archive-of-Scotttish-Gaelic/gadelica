@@ -1,4 +1,5 @@
 $(function () {
+
   $('[data-toggle="tooltip"]').tooltip();
 
   //bind the tooltips to the body for AJAX content
@@ -6,23 +7,48 @@ $(function () {
     selector: '[data-toggle=tooltip]'
   });
 
-  $(document).on('click', '.slip', function () {
-    var filename  = $(this).attr('data-xml');
-    var id        = $(this).attr('data-id');
-    var headword  = $(this).attr('data-headword');
-    var pos       = $(this).attr('data-pos');
-    $.getJSON("ajax.php?action=getContext&filename="+filename+"&id="+id, function (data) {
-      $.each(data, function (key, val) {
-        var html = '<em>filename:</em> ' + filename + '<br><em>id:</em> ' + id + '<br>';
-        html += '<em>headword:</em> ' + headword + '<br>';
-        html += '<em>POS:</em> ' + pos + '<br><br>';
-        html += data.pre;
-        html += ' <strong>' + data.word + '</strong> ';
-        html += data.post;
-        $('#info').html(html);
-        $('#info').show();
-      });
-    });
+  $(document).on('click', '.slipLink', function () {
+    var filename    = $(this).attr('data-xml');
+    var id          = $(this).attr('data-id');
+    var headword    = $(this).attr('data-headword');
+    var pos         = $(this).attr('data-pos');
+    $('#slipFilename').html(filename);
+    $('#slipId').html(id);
+    $('#slipHeadword').html(headword);
+    $('#slipPOS').html(pos);
+    writeSlipContext(filename, id);
+  });
+
+  $('.updateContext').on('click', function () {
+    var preScope = $('#slipContext').attr('data-precontextscope');
+    var postScope = $('#slipContext').attr('data-postcontextscope');
+    var filename = $('#slipFilename').text();
+    var id = $('#slipId').text();
+    switch ($(this).attr('id')) {
+      case "decrementPre":
+        preScope--;
+        if (preScope == 0) {
+          $('#decrementPre').addClass("disabled");
+        }
+        break;
+      case "incrementPre":
+        preScope++;
+        $('#decrementPre').removeClass("disabled");
+        break;
+      case "decrementPost":
+        postScope--;
+        if (postScope == 0) {
+          $('#decrementPost').addClass("disabled");
+        }
+        break;
+      case "incrementPost":
+        postScope++;
+        $('#decrementPost').removeClass("disabled");
+        break;
+    }
+    $('#slipContext').attr('data-precontextscope', preScope);
+    $('#slipContext').attr('data-postcontextscope', postScope);
+    writeSlipContext(filename, id);
   });
 
   $('.loadDictResults').on('click', function () {
@@ -42,7 +68,7 @@ $(function () {
         html += ' data-toggle="tooltip" data-html="true" title="' + title + '">';
         html += val.word + '</a>';
         html += '<td>' + val.post + '</td>';
-        html += '<td><small><a href="#" class="slip" data-uri="' + val.uri + '"';
+        html += '<td><small><a href="#" class="slipLink" data-uri="' + val.uri + '"';
         html += ' data-headword="' + headword + '" data-pos="' + pos + '"';
         html += ' data-id="' + val.id + '" data-xml="' + val.filename + '">slip</a></small>';
         html += '</td>';
@@ -64,8 +90,8 @@ $(function () {
     $('#form-' + formNum).hide();
   });
 
-  $('#info').on('click', function() {
-    $('#info').hide();
+  $(document).on('click', '#closeSlipLink', function() {
+    $('#slip').hide();
   });
 
   $('#wordformRadio').on('click', function () {
@@ -75,5 +101,19 @@ $(function () {
   $('#headwordRadio').on('click', function () {
     $('#wordformOptions').hide();
   });
+
+  function writeSlipContext(filename, id) {
+    var preScope  = $('#slipContext').attr('data-precontextscope');
+    var postScope = $('#slipContext').attr('data-postcontextscope');
+    $.getJSON("ajax.php?action=getContext&filename="+filename+"&id="+id+"&preScope="+preScope+"&postScope="+postScope, function (data) {
+
+      //html += '<a href="#">more</a> ';
+      var html = data.pre;
+      html += ' <strong>' + data.word + '</strong> ';
+      html += data.post;
+      $('#slipContext').html(html);
+      $('#slip').show();
+    });
+  }
 });
 
