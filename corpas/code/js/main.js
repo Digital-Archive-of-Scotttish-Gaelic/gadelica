@@ -16,7 +16,20 @@ $(function () {
     $('#slipId').html(id);
     $('#slipHeadword').html(headword);
     $('#slipPOS').html(pos);
-    writeSlipContext(filename, id);
+
+    //temp code
+    $.getJSON('ajax.php?action=loadSlip&filename='+filename+'&id='+id, function (data) {
+      if (data.isNew != true) {
+        $('#slipContext').attr('data-precontextscope', data.preContextScope);
+        $('#slipContext').attr('data-postcontextscope', data.postContextScope);
+      }
+    })
+      .done(function () {
+        writeSlipContext(filename, id);
+      });
+
+    //
+    //writeSlipContext(filename, id);
   });
 
   $('.updateContext').on('click', function () {
@@ -51,6 +64,15 @@ $(function () {
     writeSlipContext(filename, id);
   });
 
+  $('#saveSlip').on('click', function () {
+    $.post("ajax.php", {action: "saveSlip", filename: $('#slipFilename').text(), id: $('#slipId').text(),
+      starred: 1, translation: 'blah', notes: 'notesies', preContextScope: $('#slipContext').attr('data-precontextscope'),
+      postContextScope: $('#slipContext').attr('data-postcontextscope')
+        }, function (data) {
+      console.log(data);
+    });
+  });
+
   $('.loadDictResults').on('click', function () {
     var formNum = $(this).attr('data-formNum');
     var locations  = $(this).attr('data-locs');
@@ -61,7 +83,6 @@ $(function () {
         var title = val.filename + val.id + '<br><br>';
         title += 'headword: ' + headword + '<br>';
         title += 'POS: ' + pos;
-
         html = '<tr>';
         html += '<td style="text-align: right;">'+val.pre + '</td>';
         html += '<td><a href="viewText.php?uri=' + val.uri + '&id=' + val.id + '"';

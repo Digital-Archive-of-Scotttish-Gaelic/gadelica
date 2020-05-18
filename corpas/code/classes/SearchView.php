@@ -209,7 +209,10 @@ HTML;
               </div>
             </div>
             
-            <div style="text-align: right"><a id="closeSlipLink" href="#">close</a></div>        
+            <div style="text-align: right">
+                <button type="button" id="saveSlip" class="btn btn-primary">save</button>
+                <a id="closeSlipLink" href="#">close</a>
+            </div>        
         </div>
 HTML;
   }
