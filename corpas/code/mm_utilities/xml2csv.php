@@ -16,7 +16,8 @@ foreach (new RecursiveIteratorIterator($it) as $nextFile) {
         echo $nextWord['id'] . ',';
         echo $nextWord . ',';
         echo $nextWord . ',';
-        echo $nextWord['pos'];
+        echo $nextWord['pos'] . ',';
+        echo rand(1800,1999);
         echo PHP_EOL;
       }
     }
