@@ -28,14 +28,32 @@ class SearchView
   public function writeSearchForm() {
     echo <<<HTML
       <form>
-        <input type="text" name="search"/>
+        <div class="form-group">
+          <div class="input-group">
+            <input type="text" name="search"/>
+            <div class="input-group-append">
+              <button name="submit" class="btn btn-primary" type="submit">search</button>
+            </div>
+          </div>
+        </div>
         <input type="hidden" name="action" value="runSearch"/>
-        <div class="radio">
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="mode" id="headwordRadio" value="headword" checked>
+            <label class="form-check-label" for="headwordRadio">headword</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="mode" id="wordformRadio" value="wordform">
+            <label class="form-check-label" for="wordformRadio">wordform</label>
+          </div>
+          <!--
+          <div class="radio">
             <label class="radio-inline"><input type="radio" name="mode" id="headwordRadio" value="headword"checked>headword</label>     &nbsp;
             <label class="radio-inline"><input type="radio" name="mode" id="wordformRadio" value="wordform">wordform</label>
+          </div>
+          -->
         </div>
-
-        <div id="wordformOptions">
+        <div id="wordformOptions" class="form-group">
           <div class="form-check form-check-inline">
               <input class="form-check-input" type="checkbox" id="caseSensitiveRadio" name="case" value="sensitive">
               <label class="form-check-label" for="caseSensitiveRadio">case sensitive</label>
@@ -49,13 +67,23 @@ class SearchView
             <label class="form-check-label" for="lenitionSensitiveRadio">lenition sensitive</label>
           </div>
         </div>
-
-        <div class="radio" id="wordformView">
-          <label class="radio-inline"><input type="radio" name="view" id="corpusViewRadio" value="corpus" checked>corpus view</label>&nbsp;
-          <label class="radio-inline"><input type="radio" name="view" id="dictionaryViewRadio" value="dictionary">dictionary view</label>
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="view" id="corpusViewRadio" value="corpus" checked>
+            <label class="form-check-label" for="corpusViewRadio">corpus view</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="view" id="dictionaryViewRadio" value="dictionary">
+            <label class="form-check-label" for="dictionaryViewRadio">dictionary view</label>
+          </div>
+          <!--
+          <div class="radio" id="wordformView">
+            <label class="radio-inline"><input type="radio" name="view" id="corpusViewRadio" value="corpus" checked>corpus view</label>&nbsp;
+            <label class="radio-inline"><input type="radio" name="view" id="dictionaryViewRadio" value="dictionary">dictionary view</label>
+          </div>
+          -->
         </div>
-
-        <button name="submit" type="submit">go</button>
+        <!--<button name="submit" type="submit">go</button>-->
       </form>
 HTML;
   }
@@ -170,7 +198,7 @@ HTML;
       }
       $locs = implode('|', $locations);
       echo <<<HTML
-            <button href="#" id="show-{$formNum}" data-formNum="{$formNum}" data-locs="{$locs}" 
+            <button href="#" id="show-{$formNum}" data-formNum="{$formNum}" data-locs="{$locs}"
                 data-pos="{$array[1]}" data-lemma="{$array[0]}"
                  class="loadDictResults">
                 show {$i} result(s)
@@ -196,7 +224,7 @@ HTML;
             id: <span id="slipId"></span><br>
             headword: <span id="slipHeadword"></span><br>
             POS: <span id="slipPOS"/></span><br><br>
-            
+
             <div>
               <div>
                 <span><a href="#" class="updateContext btn-link" id="decrementPre">-</a></span>
@@ -208,27 +236,27 @@ HTML;
                 <span><a href="#" class="updateContext" id="incrementPost">+</a></span>
               </div>
             </div>
-            
+
             <div>
                 <label for="slipStarred">Starred: </label>
-                <input type="checkbox" name="slipStarred" id="slipStarred">            
+                <input type="checkbox" name="slipStarred" id="slipStarred">
             </div>
-            
+
             <div>
                 <label for="slipTranslation">English Translation:</label><br>
                 <textarea id="slipTranslation"></textarea>
             </div>
-            
+
             <div>
                 <label for="slipNotes">Notes:</label><br>
                 <textarea id="slipNotes"></textarea>
-            </div> 
-            
+            </div>
+
             <div style="text-align: right">
                 <button type="button" id="saveSlip" class="btn btn-primary">save</button>
                 <a id="closeSlipLink" href="#">close</a>
-            </div>      
-                  
+            </div>
+
         </div>
 HTML;
   }
