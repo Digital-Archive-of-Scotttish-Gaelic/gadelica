@@ -8,6 +8,8 @@ $(function () {
   });
 
   $(document).on('click', '.slipLink', function () {
+    //reset the slip form
+    resetSlip();
     var filename    = $(this).attr('data-xml');
     var id          = $(this).attr('data-id');
     var headword    = $(this).attr('data-headword');
@@ -16,7 +18,27 @@ $(function () {
     $('#slipId').html(id);
     $('#slipHeadword').html(headword);
     $('#slipPOS').html(pos);
-    writeSlipContext(filename, id);
+
+    //temp code
+    $.getJSON('ajax.php?action=loadSlip&filename='+filename+'&id='+id
+      +'&preContextScope='+$('#slipContext').attr('data-precontextscope')
+      +'&postContextScope='+$('#slipContext').attr('data-postcontextscope'), function (data) {
+      if (data.isNew != true) {
+        $('#slipContext').attr('data-precontextscope', data.preContextScope);
+        $('#slipContext').attr('data-postcontextscope', data.postContextScope);
+        if (data.starred == 1) {
+          $('#slipStarred').prop('checked', true);
+        }
+        $('#slipTranslation').val(data.translation);
+        $('#slipNotes').val(data.notes);
+      }
+    })
+      .done(function () {
+        writeSlipContext(filename, id);
+      });
+
+    //
+    //writeSlipContext(filename, id);
   });
 
   $('.updateContext').on('click', function () {
@@ -51,6 +73,18 @@ $(function () {
     writeSlipContext(filename, id);
   });
 
+  $('#saveSlip').on('click', function () {
+    var starred = $('#slipStarred').prop('checked') ? 1 : 0;
+    var translation = $('#slipTranslation').val();
+    var notes = $('#slipNotes').val();
+    $.post("ajax.php", {action: "saveSlip", filename: $('#slipFilename').text(), id: $('#slipId').text(),
+      starred: starred, translation: translation, notes: notes, preContextScope: $('#slipContext').attr('data-precontextscope'),
+      postContextScope: $('#slipContext').attr('data-postcontextscope')
+        }, function (data) {
+      console.log(data);        //TODO: add some response code on successful save
+    });
+  });
+
   $('.loadDictResults').on('click', function () {
     var formNum = $(this).attr('data-formNum');
     var locations  = $(this).attr('data-locs');
@@ -61,7 +95,6 @@ $(function () {
         var title = val.filename + val.id + '<br><br>';
         title += 'headword: ' + headword + '<br>';
         title += 'POS: ' + pos;
-
         html = '<tr>';
         html += '<td style="text-align: right;">'+val.pre + '</td>';
         html += '<td><a href="viewText.php?uri=' + val.uri + '&id=' + val.id + '"';
@@ -114,6 +147,14 @@ $(function () {
       $('#slipContext').html(html);
       $('#slip').show();
     });
+  }
+
+  function resetSlip() {
+    $('#slipContext').attr('data-precontextscope', 20);
+    $('#slipContext').attr('data-postcontextscope', 20);
+    $('#slipStarred').prop('checked', false);
+    $('#slipTranslation').val('');
+    $('#slipNotes').val('');
   }
 });
 
