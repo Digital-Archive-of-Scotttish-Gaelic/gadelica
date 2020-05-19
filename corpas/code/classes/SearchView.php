@@ -209,10 +209,26 @@ HTML;
               </div>
             </div>
             
+            <div>
+                <label for="slipStarred">Starred: </label>
+                <input type="checkbox" name="slipStarred" id="slipStarred">            
+            </div>
+            
+            <div>
+                <label for="slipTranslation">English Translation:</label><br>
+                <textarea id="slipTranslation"></textarea>
+            </div>
+            
+            <div>
+                <label for="slipNotes">Notes:</label><br>
+                <textarea id="slipNotes"></textarea>
+            </div> 
+            
             <div style="text-align: right">
                 <button type="button" id="saveSlip" class="btn btn-primary">save</button>
                 <a id="closeSlipLink" href="#">close</a>
-            </div>        
+            </div>      
+                  
         </div>
 HTML;
   }

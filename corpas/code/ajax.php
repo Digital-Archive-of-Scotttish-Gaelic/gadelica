@@ -9,7 +9,7 @@ switch ($_REQUEST["action"]) {
     echo json_encode($context);
     break;
   case "loadSlip":
-    $slip = new Slip($_GET["filename"], $_GET["id"]);
+    $slip = new Slip($_GET["filename"], $_GET["id"], $_GET["preContextScope"], $_GET["postContextScope"]);
     if ($slip->getIsNew()) {
       echo json_encode(array("new"=>true));
       break;
@@ -20,9 +20,11 @@ switch ($_REQUEST["action"]) {
     echo json_encode($results);
     break;
   case "saveSlip":
-    $slip = new Slip($_POST["filename"], $_POST["id"]);
+    $slip = new Slip($_POST["filename"], $_POST["id"],
+      $_POST["starred"], $_POST["translation"], $_POST["notes"], $_POST["preContextScope"], $_POST["postContextScope"]);
     unset($_POST["action"]);
     $slip->saveSlip($_POST);
+    echo "success"; //TODO: remove or replace with something more useful
     break;
   case "getDictionaryResults":
     $locs = $_POST["locs"];

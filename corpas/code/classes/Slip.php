@@ -8,16 +8,16 @@ class Slip
   private $_preContextScope, $_postContextScope, $_lastUpdated;
   private $_isNew;
 
-  public function __construct($filename, $id) {
+  public function __construct($filename, $id, $preScope, $postScope) {
     $this->_filename = $filename;
     $this->_id = $id;
     if (!isset($this->_db)) {
       $this->_db = new Database();
     }
-    $this->_loadSlip();
+    $this->_loadSlip($preScope, $postScope);
   }
 
-  private function _loadSlip() {
+  private function _loadSlip($preScope, $postScope) {
     $sql = <<<SQL
         SELECT * FROM slips 
         WHERE filename = ? AND id = ?
@@ -30,9 +30,9 @@ SQL;
     } else {
       $this->_isNew = true;
       $sql = <<<SQL
-        INSERT INTO slips (filename, id) VALUES (?, ?);
+        INSERT INTO slips (filename, id, preContextScope, postContextScope) VALUES (?, ?, ?, ?);
 SQL;
-      $this->_db->exec($sql, array($this->_filename, $this->_id));
+      $this->_db->exec($sql, array($this->_filename, $this->_id, $preScope, $postScope));
     }
     return $this;
   }
@@ -73,6 +73,7 @@ SQL;
     $this->_preContextScope = $params["preContextScope"];
     $this->_postContextScope = $params["postContextScope"];
     $this->_lastUpdated = $params["lastUpdated"];
+
     return $this;
   }
 
