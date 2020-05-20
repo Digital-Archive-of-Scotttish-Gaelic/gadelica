@@ -64,7 +64,7 @@ class SearchView
           </div>
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="checkbox" id="lenitionSensitiveRadio" name="lenition" value="sensitive">
-            <label class="form-check-label" for="lenitionSensitiveRadio">lenition sensitive</label>
+            <label class="form-check-label" for="lenitionSensitiveRadio">mutation sensitive</label>
           </div>
         </div>
         <div class="form-group">
