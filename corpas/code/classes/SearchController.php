@@ -1,6 +1,5 @@
 <?php
 
-
 class SearchController
 {
   private $_db, $_dbResults, $_resultCount;
@@ -44,6 +43,7 @@ class SearchController
       $fileResults[$i]["id"] = $id;
       $fileResults[$i]["lemma"] = $result["lemma"];
       $fileResults[$i]["pos"] = $result["pos"];
+      $fileResults[$i]["date_of_lang"] = $result["date_of_lang"];
       $fileResults[$i]["filename"] = $result["filename"];
       $i++;
     }
@@ -51,33 +51,48 @@ class SearchController
   }
 
   private function _getDBSearchResults($params, $chunk = true) {
-    $search = $params["search"];
+   // $search = $params["search"];
     $perpage = $params["pp"];
     $pagenum = $params["page"];
     $offset = $pagenum == 1 ? 0 : ($perpage * $pagenum) - $perpage;
 
-    /* wordform search */
+    return array_slice($_SESSION["results"], $offset, $perpage);
+/*
+    switch ($params["date"]) {
+      case "random":
+        $orderBy = "RAND()";
+        break;
+      case "asc":
+        $orderBy = "date_of_lang ASC";
+        break;
+      case "desc":
+        $orderBy = "date_of_lang DESC";
+        break;
+      default:
+        $orderBy = "filename, id";
+    }
+    // wordform search
     $limit = ($chunk == true) ? "LIMIT {$perpage} OFFSET {$offset}" : "";
     if ($params["mode"] == "wordform") {
       $query = $this->_getWordformQuery($params);
       $sql = $query["sql"];
       $sql .= <<<SQL
-            ORDER BY filename, id
+            ORDER BY {$orderBy}
             {$limit}
 SQL;
       $this->_dbResults = $this->_db->fetch($sql, array($query["search"]));
       return $this->_dbResults;
     }
 
-    /* lemma search */
+    //lemma search
     $sql = <<<SQL
-        SELECT filename, id, wordform, pos, lemma FROM lemmas
+        SELECT filename, id, wordform, pos, lemma, date_of_lang FROM lemmas
             WHERE lemma = ?
             ORDER BY filename, id
             {$limit}
 SQL;
     $this->_dbResults = $this->_db->fetch($sql, array($search));
-    return $this->_dbResults;
+    return $this->_dbResults; */
   }
 
   /*
@@ -104,7 +119,7 @@ SQL;
     } else {                              //case insensitive
       $whereClause .= "wordform REGEXP ?";
     }
-    $selectFields =  "lemma, filename, id, wordform, pos";
+    $selectFields =  "lemma, filename, id, wordform, pos, date_of_lang";
     $sql = <<<SQL
         SELECT {$selectFields} FROM lemmas
           WHERE {$whereClause}
@@ -117,15 +132,38 @@ SQL;
    * Return int: count of the size of the set
    */
   private function _getDBSearchResultsTotal($params) {
+    switch ($params["date"]) {
+      case "random":
+        $orderBy = "RAND()";
+        break;
+      case "asc":
+        $orderBy = "date_of_lang ASC";
+        break;
+      case "desc":
+        $orderBy = "date_of_lang DESC";
+        break;
+      default:
+        $orderBy = "filename, id";
+    }
     if ($params["mode"] == "headword") {    //lemma
       $query["search"] = $params["search"];
       $query["sql"] = <<<SQL
-        SELECT wordform FROM lemmas WHERE lemma = ?
+        SELECT filename, id, wordform, pos, lemma, date_of_lang FROM lemmas
+            WHERE lemma = ?
 SQL;
     } else {                                //wordform
       $query = $this->_getWordformQuery($params);
     }
-    $results = $this->_db->fetch($query["sql"], array($query["search"]));
-    return count($results);
+    $query["sql"] .= $this->_getDateWhereClause($params);
+    $query["sql"] .= <<<SQL
+        ORDER BY {$orderBy}
+SQL;
+    $_SESSION["results"] = $this->_db->fetch($query["sql"], array($query["search"]));
+    return count($_SESSION["results"]);
+  }
+
+  private function _getDateWhereClause($params) {
+    $whereClause = " AND date_of_lang >= '1800' AND date_of_lang <= '1999' ";
+    return $whereClause;
   }
 }
