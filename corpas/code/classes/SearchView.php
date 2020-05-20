@@ -7,6 +7,7 @@ class SearchView
   private $_hits = 0;
   private $_perpage;
   private $_search;
+  private $_date;
   private $_mode, $_case, $_accent, $_lenition, $_view;
   private $_xmlFile;
 
@@ -19,6 +20,7 @@ class SearchView
     $this->_accent      = $_GET["accent"];
     $this->_lenition    = $_GET["lenition"];
     $this->_view        = (isset($_GET["view"])) ? $_GET["view"] : "corpus";
+    $this->_date        = (isset($_GET["date"])) ? $_GET["date"] : "random";
   }
 
   public function getView() {
@@ -83,7 +85,40 @@ class SearchView
           </div>
           -->
         </div>
-        <!--<button name="submit" type="submit">go</button>-->
+        <div class="form-group">
+          <h5>Order results by date:</h5>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="date" id="randomDateRadio" value="random" checked>
+            <label class="form-check-label" for="randomDateRadio">random</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="date" id="ascDateRadio" value="asc">
+            <label class="form-check-label" for="ascDateRadio">ascending</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="date" id="descDateRadio" value="desc">
+            <label class="form-check-label" for="ascDateRadio">descending</label>
+          </div>
+        </div>
+        <!--div class="form-group">
+          <h5>Search dates:</h5>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="dateRange[]" id="dateRange1" value="1800-1849" checked>
+            <label class="form-check-label" for="dateRange1">1800-1849</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="dateRange[]" id="dateRange2" value="1850-1899" checked>
+            <label class="form-check-label" for="dateRange2">1850-1899</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="dateRange[]" id="dateRange3" value="1900-1949" checked>
+            <label class="form-check-label" for="dateRange3">1900-1949</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="dateRange[]" id="dateRange4" value="1950-1999" checked>
+            <label class="form-check-label" for="dateRange4">1950-1999</label>
+          </div>
+        </div-->
       </form>
 HTML;
   }
@@ -141,7 +176,6 @@ HTML;
             </a>
         </div>
 HTML;
-
   }
 
   /* print out search result as table row */
@@ -150,7 +184,8 @@ HTML;
     $title = <<<HTML
         {$this->_xmlFile->getFilename()}{$result["id"]}<br><br>
         headword: {$result["lemma"]}<br>
-        POS: {$result["pos"]}
+        POS: {$result["pos"]}<br>
+        Date: {$result["date_of_lang"]}
 HTML;
 
     echo <<<HTML
@@ -176,7 +211,7 @@ HTML;
     echo '<h3>' . $results[0]['lemma'] . '</h3>';
     $forms = [];
     foreach ($results as $nextResult) {
-      $forms[] = $nextResult['wordform'] . '|' . $nextResult['pos'];
+      $forms[] = $nextResult['wordform'] . '|' . $nextResult['pos'] . '|' . $nextResult["date_of_lang"];
     }
     $forms = array_unique($forms);
     echo <<<HTML
@@ -199,7 +234,7 @@ HTML;
       $locs = implode('|', $locations);
       echo <<<HTML
             <button href="#" id="show-{$formNum}" data-formNum="{$formNum}" data-locs="{$locs}"
-                data-pos="{$array[1]}" data-lemma="{$array[0]}"
+                data-pos="{$array[1]}" data-lemma="{$array[0]}" data-date="{$array[2]}"
                  class="loadDictResults">
                 show {$i} result(s)
             </button>
@@ -284,6 +319,7 @@ HTML;
 				            var url = 'search.php?action=runSearch&mode={$this->_mode}&pp={$this->_perpage}&page=' + pageNum + '&search={$this->_search}';
 				            url += '&case={$this->_case}&accent={$this->_accent}&lenition={$this->_lenition}';
 				            url += '&hits={$this->_hits}&view={$this->_view}';
+				            url += '&date={$this->_date}'
 					           window.location.assign(url);
 		              }
 		          });

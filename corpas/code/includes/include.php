@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 //constants
 define(INPUT_FILEPATH, "../xml/");
 
