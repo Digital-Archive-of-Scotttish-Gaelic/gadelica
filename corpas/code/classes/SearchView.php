@@ -27,7 +27,7 @@ class SearchView
     return $this->_view;
   }
 
-  public function writeSearchForm() {
+  public function writeSearchForm($minMaxDates) {
     echo <<<HTML
       <form>
         <div class="form-group">
@@ -88,7 +88,11 @@ class SearchView
         <div class="form-group">
           <h5>Order results by date:</h5>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="date" id="randomDateRadio" value="random" checked>
+            <input class="form-check-input" type="radio" name="date" id="offDateRadio" value="off" checked>
+            <label class="form-check-label" for="offDateRadio">off</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="date" id="randomDateRadio" value="random">
             <label class="form-check-label" for="randomDateRadio">random</label>
           </div>
           <div class="form-check form-check-inline">
@@ -100,27 +104,18 @@ class SearchView
             <label class="form-check-label" for="ascDateRadio">descending</label>
           </div>
         </div>
-        <!--div class="form-group">
-          <h5>Search dates:</h5>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" name="dateRange[]" id="dateRange1" value="1800-1849" checked>
-            <label class="form-check-label" for="dateRange1">1800-1849</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" name="dateRange[]" id="dateRange2" value="1850-1899" checked>
-            <label class="form-check-label" for="dateRange2">1850-1899</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" name="dateRange[]" id="dateRange3" value="1900-1949" checked>
-            <label class="form-check-label" for="dateRange3">1900-1949</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" name="dateRange[]" id="dateRange4" value="1950-1999" checked>
-            <label class="form-check-label" for="dateRange4">1950-1999</label>
-          </div>
-        </div-->
+        <div class="form-group">
+            <h5>Restrict by date range:</h5>
+            <div id="selectedDatesDisplay">{$minMaxDates["min"]}-{$minMaxDates["max"]}</div>
+            <input type="hidden" class="form-control col-2" name="selectedDates" id="selectedDates">
+            <div id="dateRangeSelector" class="col-6">
+                <label id="dateRangeMin">1800</label>
+                <label id="dateRangeMax">1999</label>
+            </div>
+        </div>
       </form>
 HTML;
+    $this->_writeSearchJavascript($minMaxDates);
   }
 
   public function writeSearchResults($results, $resultTotal) {
@@ -164,7 +159,7 @@ HTML;
 
     }
     $this->_writeSlipDiv();
-    $this->_writeJavascript($resultTotal);
+    $this->_writeResultsJavascript($resultTotal);
   }
 
   private function _writeViewSwitch() {
@@ -303,10 +298,24 @@ HTML;
   /**
    * Writes the Javascript required for the pagination
    */
-  private function _writeJavascript($resultTotal) {
+  private function _writeResultsJavascript($resultTotal) {
     echo <<<HTML
             <script>
                 $(function() {
+                  
+          /*
+            Date range slider
+           */
+             $( "#dateRange" ).slider({
+                range:true,
+                min: 0,
+                max: 500,
+                values: [ 35, 200 ],
+                slide: function( event, ui ) {
+                  $( "#selectedDate" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+                }
+              });
+                     
 			     /*
 				    Pagination handler
 			     */
@@ -325,6 +334,31 @@ HTML;
 		          });
 		      });
 	       </script>
+HTML;
+  }
+
+  /**
+   * Writes the JS required for the search form
+   * @param $params array
+   */
+  private function _writeSearchJavascript($params) {
+    echo <<<HTML
+
+    <script>
+    $(function() {
+      $( "#dateRangeSelector" ).slider({
+        range:true,
+        min: {$params["min"]},
+        max: {$params["max"]},
+        values: [ {$params["min"]}, {$params["max"]} ], 
+        slide: function( event, ui ) {
+          var output = ui.values[0] + "-" + ui.values[1];
+          $("#selectedDates").val(output);
+          $('#selectedDatesDisplay').html(output);
+        }
+      });
+    });
+    </script>
 HTML;
   }
 }
