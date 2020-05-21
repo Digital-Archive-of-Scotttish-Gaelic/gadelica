@@ -28,3 +28,27 @@
 .hideDictResults {
     display:none;
 }
+
+/**
+    Date Range slider
+ */
+#selectedDatesDisplay {
+    font-weight: bold;
+    margin: 0 0 5px 60px;
+}
+#dateRangeSelector label {
+    font-size: 10pt;
+    position: absolute;
+    width: 20px;
+    margin-top: 20px;
+    margin-left: -10px;
+    text-align: center;
+}
+
+#dateRangeMin {
+    left:0%;
+}
+
+#dateRangeMax {
+    left:100%;
+}

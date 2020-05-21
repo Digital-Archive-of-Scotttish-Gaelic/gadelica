@@ -18,7 +18,8 @@ class SearchController
     switch ($_REQUEST["action"]) {
       case "newSearch":
         $searchView = new SearchView();
-        $searchView->writeSearchForm();
+        $minMaxDates = $this->_getMinMaxDates();
+        $searchView->writeSearchForm($minMaxDates);
         break;
       case "runSearch":
         $searchView = new SearchView();
@@ -154,7 +155,9 @@ SQL;
     } else {                                //wordform
       $query = $this->_getWordformQuery($params);
     }
-    $query["sql"] .= $this->_getDateWhereClause($params);
+    if ($params["selectedDates"]) {
+      $query["sql"] .= $this->_getDateWhereClause($params);
+    }
     $query["sql"] .= <<<SQL
         ORDER BY {$orderBy}
 SQL;
@@ -163,7 +166,18 @@ SQL;
   }
 
   private function _getDateWhereClause($params) {
-    $whereClause = " AND date_of_lang >= '1800' AND date_of_lang <= '1999' ";
+    $dates = explode('-', $params["selectedDates"]);
+    $whereClause = " AND date_of_lang >= {$dates[0]} AND date_of_lang <= {$dates[1]} ";
     return $whereClause;
+  }
+
+  //Retrives the minumum and maximum dates of language in the database
+  private function _getMinMaxDates() {
+    $sql = <<<SQL
+        SELECT MIN(date_of_lang) AS min, MAX(date_of_lang) AS max FROM lemmas
+            WHERE date_of_lang != ''
+SQL;
+    $result = $this->_db->fetch($sql, array());
+    return $result[0];
   }
 }
