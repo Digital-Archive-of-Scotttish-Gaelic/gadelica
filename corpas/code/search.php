@@ -31,3 +31,29 @@ foreach (new DirectoryIterator(INPUT_FILEPATH) as $fileinfo) {
 */
 
 require_once "includes/htmlFooter.php";
+
+/*
+
+MM documentation
+----------------
+
+Input parameters –
+
+action = newSearch
+
+action = runSearch
+  & search = craobh
+  & mode = headword | wordform
+  & view = corpus | dictionary
+  & date = off | random | asc | desc
+  & selecteddates = | 1900-1999
+  & submit =
+
+  & pp = 10
+  & page = 2 | 3 | ...
+  & case = | sensitive
+  & accent = | sensitive
+  & lenition = | sensitive
+  & hits = 39
+
+*/

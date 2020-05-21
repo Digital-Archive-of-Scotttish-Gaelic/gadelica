@@ -48,12 +48,6 @@ class SearchView
             <input class="form-check-input" type="radio" name="mode" id="wordformRadio" value="wordform">
             <label class="form-check-label" for="wordformRadio">wordform</label>
           </div>
-          <!--
-          <div class="radio">
-            <label class="radio-inline"><input type="radio" name="mode" id="headwordRadio" value="headword"checked>headword</label>     &nbsp;
-            <label class="radio-inline"><input type="radio" name="mode" id="wordformRadio" value="wordform">wordform</label>
-          </div>
-          -->
         </div>
         <div id="wordformOptions" class="form-group">
           <div class="form-check form-check-inline">
@@ -78,22 +72,12 @@ class SearchView
             <input class="form-check-input" type="radio" name="view" id="dictionaryViewRadio" value="dictionary">
             <label class="form-check-label" for="dictionaryViewRadio">dictionary view</label>
           </div>
-          <!--
-          <div class="radio" id="wordformView">
-            <label class="radio-inline"><input type="radio" name="view" id="corpusViewRadio" value="corpus" checked>corpus view</label>&nbsp;
-            <label class="radio-inline"><input type="radio" name="view" id="dictionaryViewRadio" value="dictionary">dictionary view</label>
-          </div>
-          -->
         </div>
         <div class="form-group">
-          <h5>Order results by date:</h5>
+          <p>Order results by date:</p>
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="date" id="offDateRadio" value="off" checked>
             <label class="form-check-label" for="offDateRadio">off</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="date" id="randomDateRadio" value="random">
-            <label class="form-check-label" for="randomDateRadio">random</label>
           </div>
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="date" id="ascDateRadio" value="asc">
@@ -103,9 +87,13 @@ class SearchView
             <input class="form-check-input" type="radio" name="date" id="descDateRadio" value="desc">
             <label class="form-check-label" for="ascDateRadio">descending</label>
           </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="date" id="randomDateRadio" value="random">
+            <label class="form-check-label" for="randomDateRadio">random</label>
+          </div>
         </div>
         <div class="form-group">
-            <h5>Restrict by date range:</h5>
+            <p>Restrict by date range:</p>
             <div id="selectedDatesDisplay">{$minMaxDates["min"]}-{$minMaxDates["max"]}</div>
             <input type="hidden" class="form-control col-2" name="selectedDates" id="selectedDates">
             <div id="dateRangeSelector" class="col-6">
@@ -302,7 +290,7 @@ HTML;
     echo <<<HTML
             <script>
                 $(function() {
-                  
+
           /*
             Date range slider
            */
@@ -315,7 +303,7 @@ HTML;
                   $( "#selectedDate" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
                 }
               });
-                     
+
 			     /*
 				    Pagination handler
 			     */
@@ -350,7 +338,7 @@ HTML;
         range:true,
         min: {$params["min"]},
         max: {$params["max"]},
-        values: [ {$params["min"]}, {$params["max"]} ], 
+        values: [ {$params["min"]}, {$params["max"]} ],
         slide: function( event, ui ) {
           var output = ui.values[0] + "-" + ui.values[1];
           $("#selectedDates").val(output);
