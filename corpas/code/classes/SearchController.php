@@ -8,8 +8,8 @@ class SearchController
     if (!isset($this->_db)) {
       $this->_db = new Database();
     }
-    $_GET["pp"] = isset($_GET["pp"]) ? $_GET["pp"] : 10;
-    $_GET["page"] = isset($_GET["page"]) ? $_GET["page"] : 1;
+    $_GET["pp"] = isset($_GET["pp"]) ? $_GET["pp"] : 10; // number of results per page
+    $_GET["page"] = isset($_GET["page"]) ? $_GET["page"] : 1; // results page number
 
     if (!isset($_REQUEST["action"])) {
       $_REQUEST["action"] = "newSearch";
@@ -17,9 +17,9 @@ class SearchController
 
     switch ($_REQUEST["action"]) {
       case "newSearch":
-        $searchView = new SearchView();
-        $minMaxDates = $this->_getMinMaxDates();
-        $searchView->writeSearchForm($minMaxDates);
+        $searchView = new SearchView(); // gets parameters from URL
+        $minMaxDates = $this->_getMinMaxDates(); // search database for earliest and latest years
+        $searchView->writeSearchForm($minMaxDates); // prints HTML for form
         break;
       case "runSearch":
         $searchView = new SearchView();
@@ -171,7 +171,8 @@ SQL;
     return $whereClause;
   }
 
-  //Retrives the minumum and maximum dates of language in the database
+  //Retrieves the minimum and maximum dates of language in the database
+  // MM: Would it be more efficient if we just hard-coded these values? Let's discuss. Is it possible to use a non-linear scale for the slider?
   private function _getMinMaxDates() {
     $sql = <<<SQL
         SELECT MIN(date_of_lang) AS min, MAX(date_of_lang) AS max FROM lemmas

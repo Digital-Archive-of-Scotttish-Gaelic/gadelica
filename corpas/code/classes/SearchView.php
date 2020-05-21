@@ -3,12 +3,12 @@
 
 class SearchView
 {
-  private $_page = 1;
+  private $_page = 1; // results page number
   private $_hits = 0;
-  private $_perpage;
-  private $_search;
-  private $_date;
-  private $_mode, $_case, $_accent, $_lenition, $_view;
+  private $_perpage; // how many results per page
+  private $_search; // search term
+  private $_date; // how are results to be ordered
+  private $_mode, $_case, $_accent, $_lenition, $_view; // various other input parameters from search form
   private $_xmlFile;
 
   public function __construct() {
@@ -20,7 +20,7 @@ class SearchView
     $this->_accent      = $_GET["accent"];
     $this->_lenition    = $_GET["lenition"];
     $this->_view        = (isset($_GET["view"])) ? $_GET["view"] : "corpus";
-    $this->_date        = (isset($_GET["date"])) ? $_GET["date"] : "random";
+    $this->_date        = (isset($_GET["date"])) ? $_GET["date"] : "random"; // MM: Shouldn't default be "off" here?
   }
 
   public function getView() {
@@ -103,7 +103,7 @@ class SearchView
         </div>
       </form>
 HTML;
-    $this->_writeSearchJavascript($minMaxDates);
+    $this->_writeSearchJavascript($minMaxDates); // writes JS for year slider (maybe not necessary?)
   }
 
   public function writeSearchResults($results, $resultTotal) {
