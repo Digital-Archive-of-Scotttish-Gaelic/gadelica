@@ -23,10 +23,12 @@ class SearchController
         break;
       case "runSearch":
         $searchView = new SearchView();
+        //check if there is an existing result set, if not then run the query
         $this->_resultCount = !isset($_GET["hits"]) ? $this->_getDBSearchResultsTotal($_GET) : $_GET["hits"];
         $searchView->setHits($this->_resultCount);
-        $chunk = ($searchView->getView() == "dictionary") ? false : true;
-        $this->_dbResults = $this->_getDBSearchResults($_GET, $chunk);
+        //fetch the results required for this page
+        $this->_dbResults = $this->_getDBSearchResults($_GET);
+        //fetch the results from file if
         $results = ($_GET["view"] == "corpus") ? $this->getFileSearchResults() : $this->_dbResults;
         $searchView->writeSearchResults($results, $this->_resultCount);
         break;
@@ -51,49 +53,11 @@ class SearchController
     return $fileResults;
   }
 
-  private function _getDBSearchResults($params, $chunk = true) {
-   // $search = $params["search"];
+  private function _getDBSearchResults($params) {
     $perpage = $params["pp"];
     $pagenum = $params["page"];
     $offset = $pagenum == 1 ? 0 : ($perpage * $pagenum) - $perpage;
-
     return array_slice($_SESSION["results"], $offset, $perpage);
-/*
-    switch ($params["date"]) {
-      case "random":
-        $orderBy = "RAND()";
-        break;
-      case "asc":
-        $orderBy = "date_of_lang ASC";
-        break;
-      case "desc":
-        $orderBy = "date_of_lang DESC";
-        break;
-      default:
-        $orderBy = "filename, id";
-    }
-    // wordform search
-    $limit = ($chunk == true) ? "LIMIT {$perpage} OFFSET {$offset}" : "";
-    if ($params["mode"] == "wordform") {
-      $query = $this->_getWordformQuery($params);
-      $sql = $query["sql"];
-      $sql .= <<<SQL
-            ORDER BY {$orderBy}
-            {$limit}
-SQL;
-      $this->_dbResults = $this->_db->fetch($sql, array($query["search"]));
-      return $this->_dbResults;
-    }
-
-    //lemma search
-    $sql = <<<SQL
-        SELECT filename, id, wordform, pos, lemma, date_of_lang FROM lemmas
-            WHERE lemma = ?
-            ORDER BY filename, id
-            {$limit}
-SQL;
-    $this->_dbResults = $this->_db->fetch($sql, array($search));
-    return $this->_dbResults; */
   }
 
   /*
@@ -130,6 +94,7 @@ SQL;
 
   /*
    * Query to get the size of the complete result set
+   * Stores the query results in a SESSION variable
    * Return int: count of the size of the set
    */
   private function _getDBSearchResultsTotal($params) {
