@@ -8,7 +8,7 @@ class Slip
   private $_preContextScope, $_postContextScope, $_lastUpdated;
   private $_isNew;
 
-  public function __construct($filename, $id, $preScope, $postScope) {
+  public function __construct($filename, $id, $preScope = 20, $postScope = 20) {
     $this->_filename = $filename;
     $this->_id = $id;
     if (!isset($this->_db)) {
@@ -35,6 +35,14 @@ SQL;
       $this->_db->exec($sql, array($this->_filename, $this->_id, $preScope, $postScope));
     }
     return $this;
+  }
+
+  public function getFilename() {
+    return $this->_filename;
+  }
+
+  public function getId() {
+    return $this->_id;
   }
 
   public function getIsNew() {
