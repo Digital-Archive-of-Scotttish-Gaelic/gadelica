@@ -191,10 +191,10 @@ HTML;
   }
 
   private function _writeDictionaryView($results) { // added by MM
-    echo '<h3>' . $results[0]['lemma'] . '</h3>';
+    echo '<h3>' . $results[0]['lemma'] . ' ' . count($results) .'</h3>'; // MM edit
     $forms = [];
     foreach ($results as $nextResult) {
-      $forms[] = $nextResult['wordform'] . '|' . $nextResult['pos'] . '|' . $nextResult["date_of_lang"];
+      $forms[] = $nextResult['wordform'] . '|' . $nextResult['pos']; //. '|' . $nextResult["date_of_lang"]; // MM:this messes things up!
     }
     $forms = array_unique($forms);
     echo <<<HTML
