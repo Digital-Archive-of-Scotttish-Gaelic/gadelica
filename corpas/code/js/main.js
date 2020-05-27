@@ -85,8 +85,12 @@ $(function () {
     });
   });
 
+  /*
+      Load the dictionary results
+   */
   $('.loadDictResults').on('click', function () {
     var formNum = $(this).attr('data-formNum');
+    $('#form-' + formNum + ' tbody').empty();   //clear any previous results
     var locations  = $(this).attr('data-locs');
     var headword = $(this).attr('data-lemma');
     var pos = $(this).attr('data-pos');

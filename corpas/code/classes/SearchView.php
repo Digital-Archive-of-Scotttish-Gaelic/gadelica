@@ -108,7 +108,7 @@ HTML;
 
   public function writeSearchResults($results, $resultTotal) {
     if ($this->_view == "dictionary") {
-      $this->_writeDictionaryView($results);
+      $this->_writeDictionaryView();
       return;
     }
     $rowNum = $this->_page * $this->_perpage - $this->_perpage + 1;
@@ -190,11 +190,11 @@ HTML;
     return;
   }
 
-  private function _writeDictionaryView($results) { // added by MM
-    echo '<h3>' . $results[0]['lemma'] . ' ' . count($results) .'</h3>'; // MM edit
+  private function _writeDictionaryView() { // added by MM
+    echo '<h3>' . $_SESSION["results"][0]['lemma'] . ' ' . count($_SESSION["results"]) .'</h3>'; // MM edit
     $forms = [];
-    foreach ($results as $nextResult) {
-      $forms[] = $nextResult['wordform'] . '|' . $nextResult['pos']; //. '|' . $nextResult["date_of_lang"]; // MM:this messes things up!
+    foreach ($_SESSION["results"] as $nextResult) {
+      $forms[] = $nextResult['wordform'] . '|' . $nextResult['pos'] . '|' . $nextResult["date_of_lang"];
     }
     $forms = array_unique($forms);
     echo <<<HTML
@@ -208,7 +208,7 @@ HTML;
       echo '<tr><td>' . $array[0] . '</td><td>' . $array[1] . '</td><td>';
       $i=0;
       $locations = array();
-      foreach ($results as $nextResult) {
+      foreach ($_SESSION["results"] as $nextResult) {
         if ($nextResult['wordform']==$array[0] && $nextResult['pos']==$array[1]) {
           $i++;
           $locations[] = $nextResult['filename'] . ' ' . $nextResult['id'];
