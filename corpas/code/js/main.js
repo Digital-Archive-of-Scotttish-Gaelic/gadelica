@@ -94,13 +94,13 @@ $(function () {
     var locations  = $(this).attr('data-locs');
     var headword = $(this).attr('data-lemma');
     var pos = $(this).attr('data-pos');
-    var date = $(this).attr('data-date');
+   // var date = $(this).attr('data-date');
     $.post("ajax.php", {action: "getDictionaryResults", locs: locations}, function (data)  {
       $.each(data, function (key, val) {
         var title = val.filename + val.id + '<br><br>';
         title += 'headword: ' + headword + '<br>';
         title += 'POS: ' + pos + '<br>';
-        title += 'Date: ' + date;
+        title += 'Date: ' + val.date;
         html = '<tr>';
         html += '<td style="text-align: right;">'+val.pre + '</td>';
         html += '<td><a href="viewText.php?uri=' + val.uri + '&id=' + val.id + '"';

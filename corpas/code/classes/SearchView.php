@@ -194,7 +194,7 @@ HTML;
     echo '<h3>' . $_SESSION["results"][0]['lemma'] . ' ' . count($_SESSION["results"]) .'</h3>'; // MM edit
     $forms = [];
     foreach ($_SESSION["results"] as $nextResult) {
-      $forms[] = $nextResult['wordform'] . '|' . $nextResult['pos'] . '|' . $nextResult["date_of_lang"];
+      $forms[] = $nextResult['wordform'] . '|' . $nextResult['pos'];
     }
     $forms = array_unique($forms);
     echo <<<HTML
@@ -211,13 +211,13 @@ HTML;
       foreach ($_SESSION["results"] as $nextResult) {
         if ($nextResult['wordform']==$array[0] && $nextResult['pos']==$array[1]) {
           $i++;
-          $locations[] = $nextResult['filename'] . ' ' . $nextResult['id'];
+          $locations[] = $nextResult['filename'] . ' ' . $nextResult['id'] . ' ' . $nextResult['date_of_lang'];
         }
       }
       $locs = implode('|', $locations);
       echo <<<HTML
             <button href="#" id="show-{$formNum}" data-formNum="{$formNum}" data-locs="{$locs}"
-                data-pos="{$array[1]}" data-lemma="{$array[0]}" data-date="{$array[2]}"
+                data-pos="{$array[1]}" data-lemma="{$array[0]}"
                  class="loadDictResults">
                 show {$i} result(s)
             </button>

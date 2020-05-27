@@ -39,6 +39,7 @@ switch ($_REQUEST["action"]) {
         $fileHandler = new XmlFileHandler($filename);
       }
       $context = $fileHandler->getContext($elems[1], 8, 8);
+      $context["date"] = $elems[2];   //return the date of language as well
       $results[] = $context;
     }
     echo json_encode($results);
