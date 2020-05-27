@@ -262,16 +262,16 @@ HTML;
 
             <div>
                 <label for="slipTranslation">English Translation:</label><br>
-                <textarea id="slipTranslation"></textarea>
+                <div id="slipTranslation"></div>
             </div>
 
             <div>
                 <label for="slipNotes">Notes:</label><br>
-                <textarea id="slipNotes"></textarea>
+                <div id="slipNotes"></div>
             </div>
 
             <div style="text-align: right">
-                <button type="button" id="saveSlip" class="btn btn-primary">save</button>
+                <button type="button" id="editSlip" class="btn btn-primary">edit</button>
                 <a id="closeSlipLink" href="#">close</a>
             </div>
 

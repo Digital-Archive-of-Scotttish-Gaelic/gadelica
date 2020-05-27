@@ -36,9 +36,6 @@ $(function () {
       .done(function () {
         writeSlipContext(filename, id);
       });
-
-    //
-    //writeSlipContext(filename, id);
   });
 
   $('.updateContext').on('click', function () {
@@ -71,18 +68,27 @@ $(function () {
     $('#slipContext').attr('data-precontextscope', preScope);
     $('#slipContext').attr('data-postcontextscope', postScope);
     writeSlipContext(filename, id);
+    saveSlip();
   });
 
-  $('#saveSlip').on('click', function () {
-    var starred = $('#slipStarred').prop('checked') ? 1 : 0;
-    var translation = $('#slipTranslation').val();
-    var notes = $('#slipNotes').val();
-    $.post("ajax.php", {action: "saveSlip", filename: $('#slipFilename').text(), id: $('#slipId').text(),
-      starred: starred, translation: translation, notes: notes, preContextScope: $('#slipContext').attr('data-precontextscope'),
-      postContextScope: $('#slipContext').attr('data-postcontextscope')
-        }, function (data) {
-      console.log(data);        //TODO: add some response code on successful save
-    });
+  $('#slipStarred').on('click', function () {
+    saveSlip();
+  });
+
+  $('#editSlip').on('click', function () {
+    var filename = $('#slipFilename').text();
+    var id = $('#slipId').text();
+    var headword = $('#slipHeadword').text();
+    var pos = $('#slipPOS').text();
+    var url = 'slipEdit.php?filename=' + filename + '&id=' + id + '&headword=' + headword + '&pos=' + pos;
+    var win = window.open(url, '_blank');
+    if (win) {
+      //Browser has allowed it to be opened
+      win.focus();
+    } else {
+      //Browser has blocked it
+      alert('Please allow popups for this website');
+    }
   });
 
   $('.loadDictResults').on('click', function () {
@@ -157,6 +163,18 @@ $(function () {
     $('#slipStarred').prop('checked', false);
     $('#slipTranslation').val('');
     $('#slipNotes').val('');
+  }
+
+  function saveSlip() {
+    var starred = $('#slipStarred').prop('checked') ? 1 : 0;
+    var translation = $('#slipTranslation').val();
+    var notes = $('#slipNotes').val();
+    $.post("ajax.php", {action: "saveSlip", filename: $('#slipFilename').text(), id: $('#slipId').text(),
+      starred: starred, translation: translation, notes: notes, preContextScope: $('#slipContext').attr('data-precontextscope'),
+      postContextScope: $('#slipContext').attr('data-postcontextscope')
+    }, function (data) {
+      console.log(data);        //TODO: add some response code on successful save
+    });
   }
 });
 
