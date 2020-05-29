@@ -21,7 +21,10 @@ class SlipController
         $slipView->writeEditForm();
         break;
       case "save":
-        $slipView = new SlipView();
+        $slip = new Slip($_POST["filename"], $_POST["id"]);
+        $slip->saveSlip($_POST);
+        $slipView = new SlipView($slip);
+        $slipView->writeEditForm();
         break;
     }
   }

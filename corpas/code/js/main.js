@@ -67,6 +67,8 @@ $(function () {
     }
     $('#slipContext').attr('data-precontextscope', preScope);
     $('#slipContext').attr('data-postcontextscope', postScope);
+    $('#preContextScope').val(preScope);
+    $('#postContextScope').val(postScope);
     writeSlipContext(filename, id);
     saveSlip();
   });
