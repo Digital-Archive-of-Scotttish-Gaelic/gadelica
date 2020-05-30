@@ -23,10 +23,24 @@ foreach (new RecursiveIteratorIterator($it) as $nextFile) {
 }
 echo '<p>' . count($words) . ' words in total</p>';
 usort($words,'gdSort');
-$lexicon = array_unique($words);
+
+$lexicon = [];
+foreach ($words as $nextWord) {
+  if ($lexicon[$nextWord]) {
+    $lexicon[$nextWord]++;
+  }
+  else {
+    $lexicon[$nextWord] = 1;
+  }
+}
+
+
+//$lexicon = array_unique($words);
+
+
 echo '<p>' . count($lexicon) . ' distinct word forms</p>';
 $lexemes = [];
-foreach ($lexicon as $nextForm) {
+foreach ($lexicon as $nextForm=>$nextCount) {
   $bits = explode('|',$nextForm);
   $lexemes[] = $bits[1];
 }
@@ -35,17 +49,18 @@ echo '<p>' . count(array_unique($lexemes)) . ' distinct lexemes</p>';
 echo <<<HTML
 <table class="table">
   <thead>
-    <tr><th>form</th><th>headword</th><th>pos</th></tr>
+    <tr><th>form</th><th>headword</th><th>pos</th><th>count</th></tr>
   </thead>
   <tbody>
 HTML;
 
-foreach ($lexicon as $nextForm) {
+foreach ($lexicon as $nextForm=>$nextCount) {
   $bits = explode('|',$nextForm);
   echo '<tr><td>';
   echo $bits[0] . '</td><td>';
   echo $bits[1] . '</td><td>';
-  echo $bits[2] . '</td></tr>';
+  echo $bits[2] . '</td><td>';
+  echo $nextCount . '</td></tr>';
 }
 
 echo <<<HTML

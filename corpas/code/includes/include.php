@@ -3,7 +3,7 @@
 session_start();
 
 //constants
-define(INPUT_FILEPATH, "../xml/");
+define(INPUT_FILEPATH, "../xml/2_Sgeulachdan_Dhoomhnaill_Alasdair/");
 
 define(DB, "corpas");
 define(DB_HOST, "130.209.99.241");
