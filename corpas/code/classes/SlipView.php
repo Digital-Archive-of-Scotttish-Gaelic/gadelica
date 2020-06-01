@@ -26,10 +26,16 @@ class SlipView
         <div class="form-group">
           <label for="translation">English translation:</label>
           <textarea class="form-control" name="translation" id="translation" rows="3">{$this->_slip->getTranslation()}</textarea>
+          <script>
+            CKEDITOR.replace('translation');
+          </script>
         </div>
         <div class="form-group">
           <label for="notes">Notes:</label>
           <textarea class="form-control" name="notes" id="notes" rows="3">{$this->_slip->getNotes()}</textarea>
+          <script>
+            CKEDITOR.replace('notes');
+          </script>
         </div>
         <div class="form-group">
           <div class="input-group">
