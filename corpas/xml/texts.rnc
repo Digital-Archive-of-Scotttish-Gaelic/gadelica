@@ -13,7 +13,7 @@ Paragraph = element p { (Token | Page | Sentence | Note)+ }
 Heading = element h { Token+ }
 Verse = element lg { element l { Token+ }+ }
 Utterance = element u { attribute ref { xsd:anyURI }?, Token+ }
-Page = element pb {attribute n { text } }
+Page = element pb {attribute n { text }, attribute img { text }? }
 Sentence = element s { (Token | Page)+ }
 Note = element note { text }
 

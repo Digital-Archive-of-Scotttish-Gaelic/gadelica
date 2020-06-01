@@ -151,7 +151,14 @@
   
   <xsl:template match="dasg:pb">
     <hr/>
-    <p class="text-muted">[p. <xsl:value-of select="@n"/>]</p>
+    <xsl:choose>
+      <xsl:when test="@img">
+        <p><a href="{concat('../img/',@img)}" target="_new">[p. <xsl:value-of select="@n"/>]</a></p>
+      </xsl:when>
+      <xsl:otherwise>
+        <p class="text-muted">[p. <xsl:value-of select="@n"/>]</p>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
   
 </xsl:stylesheet>
