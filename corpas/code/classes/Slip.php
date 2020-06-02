@@ -8,7 +8,7 @@ class Slip
   private $_preContextScope, $_postContextScope, $_lastUpdated;
   private $_isNew;
 
-  public function __construct($filename, $id, $preScope, $postScope) {
+  public function __construct($filename, $id, $preScope = 20, $postScope = 20) {
     $this->_filename = $filename;
     $this->_id = $id;
     if (!isset($this->_db)) {
@@ -35,6 +35,14 @@ SQL;
       $this->_db->exec($sql, array($this->_filename, $this->_id, $preScope, $postScope));
     }
     return $this;
+  }
+
+  public function getFilename() {
+    return $this->_filename;
+  }
+
+  public function getId() {
+    return $this->_id;
   }
 
   public function getIsNew() {
@@ -67,24 +75,26 @@ SQL;
 
   private function _populateClass($params) {
     $this->_isNew = false;
-    $this->_starred = $params["starred"];
+    $this->_starred = $params["starred"] ? 1 : 0;
     $this->_translation = $params["translation"];
     $this->_notes = $params["notes"];
     $this->_preContextScope = $params["preContextScope"];
     $this->_postContextScope = $params["postContextScope"];
-    $this->_lastUpdated = $params["lastUpdated"];
+    $this->_lastUpdated = isset($params["lastUpdated"]) ? $params["lastUpdated"] : "";
 
     return $this;
   }
 
   public function saveSlip($params) {
+    $params["starred"] = isset($params["starred"]) ? 1 : 0;
+    $this->_populateClass($params);
     $sql = <<<SQL
         UPDATE slips 
             SET starred = ?, translation = ?, notes = ?, preContextScope = ?, postContextScope = ?
             WHERE filename = ? AND id = ?
 SQL;
-    $this->_db->exec($sql, array($params["starred"], $params["translation"], $params["notes"],
-      $params["preContextScope"], $params["postContextScope"], $params["filename"], $params["id"]));
+    $this->_db->exec($sql, array($this->getStarred(), $this->getTranslation(), $this->getNotes(),
+      $this->getPreContextScope(), $this->getPostContextScope(), $this->getFilename(), $this->getId()));
     return $this;
   }
 }
