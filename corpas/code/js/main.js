@@ -19,7 +19,6 @@ $(function () {
     $('#slipHeadword').html(headword);
     $('#slipPOS').html(pos);
 
-    //temp code
     $.getJSON('ajax.php?action=loadSlip&filename='+filename+'&id='+id
       +'&preContextScope='+$('#slipContext').attr('data-precontextscope')
       +'&postContextScope='+$('#slipContext').attr('data-postcontextscope'), function (data) {
@@ -29,16 +28,13 @@ $(function () {
         if (data.starred == 1) {
           $('#slipStarred').prop('checked', true);
         }
-        $('#slipTranslation').val(data.translation);
-        $('#slipNotes').val(data.notes);
+        $('#slipTranslation').html(data.translation);
+        $('#slipNotes').html(data.notes);
       }
     })
       .done(function () {
         writeSlipContext(filename, id);
       });
-
-    //
-    //writeSlipContext(filename, id);
   });
 
   $('.updateContext').on('click', function () {
@@ -70,19 +66,35 @@ $(function () {
     }
     $('#slipContext').attr('data-precontextscope', preScope);
     $('#slipContext').attr('data-postcontextscope', postScope);
+    $('#preContextScope').val(preScope);
+    $('#postContextScope').val(postScope);
     writeSlipContext(filename, id);
+    saveSlip();
   });
 
-  $('#saveSlip').on('click', function () {
-    var starred = $('#slipStarred').prop('checked') ? 1 : 0;
-    var translation = $('#slipTranslation').val();
-    var notes = $('#slipNotes').val();
-    $.post("ajax.php", {action: "saveSlip", filename: $('#slipFilename').text(), id: $('#slipId').text(),
-      starred: starred, translation: translation, notes: notes, preContextScope: $('#slipContext').attr('data-precontextscope'),
-      postContextScope: $('#slipContext').attr('data-postcontextscope')
-        }, function (data) {
-      console.log(data);        //TODO: add some response code on successful save
-    });
+  $('#slipStarred').on('click', function () {
+    saveSlip();
+  });
+
+  $('#editSlip').on('click', function () {
+    var filename = $('#slipFilename').text();
+    var id = $('#slipId').text();
+    var headword = $('#slipHeadword').text();
+    var pos = $('#slipPOS').text();
+    var url = 'slipEdit.php?filename=' + filename + '&id=' + id + '&headword=' + headword + '&pos=' + pos;
+    var win = window.open(url, '_blank');
+    if (win) {
+      //Browser has allowed it to be opened
+      $('#slip').hide();
+      win.focus();
+    } else {
+      //Browser has blocked it
+      alert('Please allow popups for this website');
+    }
+  });
+
+  $('#savedClose').on('click', function () {
+    window.close();
   });
 
   /*
@@ -161,6 +173,18 @@ $(function () {
     $('#slipStarred').prop('checked', false);
     $('#slipTranslation').val('');
     $('#slipNotes').val('');
+  }
+
+  function saveSlip() {
+    var starred = $('#slipStarred').prop('checked') ? 1 : 0;
+    var translation = $('#slipTranslation').val();
+    var notes = $('#slipNotes').val();
+    $.post("ajax.php", {action: "saveSlip", filename: $('#slipFilename').text(), id: $('#slipId').text(),
+      starred: starred, translation: translation, notes: notes, preContextScope: $('#slipContext').attr('data-precontextscope'),
+      postContextScope: $('#slipContext').attr('data-postcontextscope')
+    }, function (data) {
+      console.log(data);        //TODO: add some response code on successful save
+    });
   }
 });
 
