@@ -64,6 +64,23 @@ HTML;
 HTML;
   }
 
+  public function writeSavedState() {
+    $this->_writeHeader();
+    $editUrl = "slipEdit.php?action=show&filename={$this->_slip->getFilename()}&id={$this->_slip->getId()}&headword={$_GET["headword"]}&pos={$_GET["pos"]}";
+    echo <<<HTML
+        <div>
+            <h2>Slip saved</h2>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <a href="{$editUrl}" name="edit" id="savedEdit" class="btn btn-danger">edit</a>
+                <button name="close" id="savedClose" class="btn btn-success">close</button>
+            </div> 
+        </div>
+HTML;
+
+  }
+
   private function _writeContext() {
     $handler = new XmlFileHandler($this->_slip->getFilename());
     $preScope = $this->_slip->getPreContextScope();

@@ -19,7 +19,6 @@ $(function () {
     $('#slipHeadword').html(headword);
     $('#slipPOS').html(pos);
 
-    //temp code
     $.getJSON('ajax.php?action=loadSlip&filename='+filename+'&id='+id
       +'&preContextScope='+$('#slipContext').attr('data-precontextscope')
       +'&postContextScope='+$('#slipContext').attr('data-postcontextscope'), function (data) {
@@ -29,8 +28,8 @@ $(function () {
         if (data.starred == 1) {
           $('#slipStarred').prop('checked', true);
         }
-        $('#slipTranslation').val(data.translation);
-        $('#slipNotes').val(data.notes);
+        $('#slipTranslation').html(data.translation);
+        $('#slipNotes').html(data.notes);
       }
     })
       .done(function () {
@@ -86,11 +85,16 @@ $(function () {
     var win = window.open(url, '_blank');
     if (win) {
       //Browser has allowed it to be opened
+      $('#slip').hide();
       win.focus();
     } else {
       //Browser has blocked it
       alert('Please allow popups for this website');
     }
+  });
+
+  $('#savedClose').on('click', function () {
+    window.close();
   });
 
   $('.loadDictResults').on('click', function () {
