@@ -149,6 +149,14 @@
     <p> </p>
   </xsl:template>
   
+  <xsl:template match="dasg:i">
+    <xsl:text> </xsl:text>
+    <i>
+      <xsl:apply-templates/>
+    </i>
+    <xsl:text> </xsl:text>
+  </xsl:template>
+  
   <xsl:template match="dasg:pb">
     <hr/>
     <xsl:choose>
