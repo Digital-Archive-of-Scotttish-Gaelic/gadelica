@@ -171,8 +171,8 @@ $(function () {
     $('#slipContext').attr('data-precontextscope', 20);
     $('#slipContext').attr('data-postcontextscope', 20);
     $('#slipStarred').prop('checked', false);
-    $('#slipTranslation').val('');
-    $('#slipNotes').val('');
+    $('#slipTranslation').html('');
+    $('#slipNotes').html('');
   }
 
   function saveSlip() {
