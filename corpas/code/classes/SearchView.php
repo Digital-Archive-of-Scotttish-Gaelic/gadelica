@@ -97,8 +97,8 @@ class SearchView
             <div id="selectedDatesDisplay">{$minMaxDates["min"]}-{$minMaxDates["max"]}</div>
             <input type="hidden" class="form-control col-2" name="selectedDates" id="selectedDates">
             <div id="dateRangeSelector" class="col-6">
-                <label id="dateRangeMin">1800</label>
-                <label id="dateRangeMax">1999</label>
+                <label id="dateRangeMin">{$minMaxDates["min"]}</label>
+                <label id="dateRangeMax">{$minMaxDates["max"]}</label>
             </div>
         </div>
       </form>
