@@ -72,7 +72,7 @@
     </span>
   </xsl:template>
 
-  <xsl:template match="dasg:w[name(following-sibling::*[1])='w' or name(following-sibling::*[1])='o']">
+  <xsl:template match="dasg:w[name(following-sibling::*[1])='w' or name(following-sibling::*[1])='o' or name(following-sibling::*[1])='i']">
     <span class="word" data-toggle="tooltip" data-placement="top">
       <xsl:attribute name="id">
         <xsl:value-of select="@id"/>
@@ -147,6 +147,19 @@
   
   <xsl:template match="dasg:pause">
     <p> </p>
+  </xsl:template>
+  
+  <xsl:template match="dasg:i[name(following-sibling::*[1])='pc' and following-sibling::*[1]/@join='left']">
+    <i>
+      <xsl:apply-templates/>
+    </i>
+  </xsl:template>
+  
+  <xsl:template match="dasg:i">
+    <i>
+      <xsl:apply-templates/>
+    </i>
+    <xsl:text> </xsl:text>
   </xsl:template>
   
   <xsl:template match="dasg:pb">

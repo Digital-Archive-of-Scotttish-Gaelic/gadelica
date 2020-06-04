@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../texts.rnc" schematypens="https://relaxng.org/ns/structure/1.0?>
 <text xmlns="https://dasg.ac.uk/corpus/" ref="https://dasg.ac.uk/corpus/_2-25" status="tagged">
+  <pb n="back cover" img="2_Sgeulachdan_Dhoomhnaill_Alasdair/C2.tif"/>
   <p>
     <s>
       <w id="d1e6" pos="V" lemma="beir">Rugadh</w>
@@ -40,9 +41,11 @@
   <p>
     <s>
       <w id="d1e110" pos="V" lemma="thig">Thàinig</w>
-      <w id="d1e113" pos="n" lemma="bàrdachd">Bàrdachd</w>
-      <w id="d1e116" pos="Nx" lemma="Dòmhnall">Dhòmhnaill</w>
-      <w id="d1e119" pos="N" lemma="Alastair">Alasdair</w>
+      <i>
+        <w id="d1e113" pos="n" lemma="bàrdachd">Bàrdachd</w>
+        <w id="d1e116" pos="Nx" lemma="Dòmhnall">Dhòmhnaill</w>
+        <w id="d1e119" pos="N" lemma="Alastair">Alasdair</w>
+      </i>
       <w id="d1e122" pos="A" lemma="a-mach">a-mach</w>
       <w id="d1e132" pos="p" lemma="an">an</w>
       <o>1999</o>
@@ -63,9 +66,11 @@
       <w id="d1e183" pos="A" lemma="a-nis">a-nis</w>
       <w id="d1e192" lemma="ag">a’</w>
       <w id="d1e198" pos="vn" lemma="foillsich">foillseachadh</w>
-      <w id="d1e202" pos="ns" lemma="sgeulachd">Sgeulachdan</w>
-      <w id="d1e205" pos="Nx" lemma="Dòmhnall">Dhòmhnaill</w>
-      <w id="d1e208" pos="N" lemma="Alastair">Alasdair</w>
+      <i>
+        <w id="d1e202" pos="ns" lemma="sgeulachd">Sgeulachdan</w>
+        <w id="d1e205" pos="Nx" lemma="Dòmhnall">Dhòmhnaill</w>
+        <w id="d1e208" pos="N" lemma="Alastair">Alasdair</w>
+      </i>
       <pc join="left">.</pc>
     </s>
   </p>
