@@ -75,4 +75,12 @@ class Functions
       }
       return preg_split("//u", $str, -1, PREG_SPLIT_NO_EMPTY);
     }
+
+    public static function gdSort($s, $t) {
+      $accentedvowels = array('à', 'è', 'ì', 'ò', 'ù', 'À', 'È', 'Ì', 'Ò', 'Ù', 'ê', 'ŷ', 'ŵ', 'â', 'á', 'é', 'í', 'ó', 'ú', 'Á', 'É', 'Í', 'Ó', 'Ú');
+      $unaccentedvowels = array('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U', 'e', 'y', 'w', 'a', 'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U');
+      $str3 = str_replace($accentedvowels, $unaccentedvowels, $s);
+      $str4 = str_replace($accentedvowels, $unaccentedvowels, $t);
+      return strcasecmp($str3, $str4);
+    }
 }

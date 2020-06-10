@@ -21,7 +21,7 @@ foreach (new RecursiveIteratorIterator($it) as $nextFile) {
     }
   }
 }
-usort($words,'gdSort');
+usort($words,'Functions::gdSort');
 $lexicon = [];
 foreach ($words as $nextWord) {
   if ($lexicon[$nextWord]) {
