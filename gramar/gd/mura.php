@@ -23,7 +23,7 @@ and as such is the <a href="../xx/polarity.php">negative</a> counterpart to the 
 <p><strong>mura b’ e</strong> often behaves like a preposition</p>
 <ul>
   <li><strong>Is iongantach gu robh am poileas air a lorg gu bràth <mark>mura b’ e</mark> aon rud neònach.</strong><br/> 
-  <small class="text-muted">‘It is unlikely that thepolice would ever have found them if it were not for one strange thing.’ [#2 50]</small></li>
+  <small class="text-muted">‘It is unlikely that the police would ever have found them if it were not for one strange thing.’ [#2 50]</small></li>
 </ul>
 
 

@@ -4,7 +4,6 @@ require_once "../includes/htmlHeader.php";
 <h1>ma</h1>
 <p><strong>ma</strong> is a <a href="../xx/subordinatingConjunctions.php">subordinating conjunction</a>, typically governing a <a href="../xx/tense.php">future</a> <a href="../xx/dependency.php">relative</a> verb form, and usually modifying a future tense verb form or particle.</p>
 <p><strong>ma</strong> generally corresponds to future-conditional uses of the English word <a href="../en/if.php"><em>if</em></a>, and complements the other Gaelic conditional-hypothetical subordinating conjunctions <a href="nan.php"><strong>nan</strong></a> and <a href="mura.php"><strong>mura</strong></a>.</p>
-<p><strong>ma is</strong> is usually contracted to <strong>mas</strong>.</p>
 <hr/>
 <p>Here are some canonical corpus examples from reported speech:</p>
 <ul>
@@ -14,12 +13,15 @@ require_once "../includes/htmlHeader.php";
   <small class="text-muted">“If you go into the office, take off your cap and spin it before him.” [#2 91]</small></li>
   <li><strong>“<mark>Ma dh’fhalbhas</mark> tu, ’ille, <mark>cha leig</mark> thu leas tilleadh idir.”</strong><br/> 
   <small class="text-muted">“If you leave, lad, you needn’t bother returning at all.” [#2 91]</small></li>
-  <li><strong>“<mark>Mas</mark> e sin a tha sibh ag iarraidh, <mark>cosgaidh</mark> e barrachd.”</strong><br/> 
-  <small class="text-muted">“If that is what you want, it will cost more.” [#2 100]</small></li>
   <li><strong>“<mark>Cha toir</mark> mi gu lagh thu <mark>ma nì</mark> thu car obrach dhòmhsa.”</strong><br/> 
   <small class="text-muted">“I won’t take you to the police if you do a bit of work for me.” [#2 29]</small></li>
   <li><strong>“<mark>Bidh</mark> mi fada nad chomain <mark>ma thig</mark> thu còmhla rium gus am faigh mi air a’ chiste fhosgladh.”</strong><br/> 
   <small class="text-muted">“I will be much in your debt if you come along with me to get the chest open.” [#2 41]</small></li>
+</ul>
+<p><strong>ma is</strong> is usually contracted to <strong>mas</strong>.</p>
+<ul>
+  <li><strong>“<mark>Mas</mark> e sin a tha sibh ag iarraidh, <mark>cosgaidh</mark> e barrachd.”</strong><br/> 
+  <small class="text-muted">“If that is what you want, it will cost more.” [#2 100]</small></li>
 </ul>
 <p>The coordination in the following example shows that <strong>ma</strong> contains a relative pronoun <strong>a</strong>:</p>
 <ul>
@@ -33,7 +35,7 @@ require_once "../includes/htmlHeader.php";
   <li><strong>“<mark>Tha</mark> thu air do mhealladh <mark>ma tha</mark> thu a’ smaoineachadh gu bheil thu san arm fhathast, a Chaiptein Chaimbeil.”</strong><br/>
   <small class="text-muted">“You are deceiving yourself if you think that you are still in the army, Captain Campbell.” [#2 92]</small></li>
   <li><strong>“Bruidhinn ri do mhàthair, agus <mark>ma tha</mark> i deònach, <mark>faodaidh</mark> tu tòiseachadh a-màireach.”</strong><br/>
-  <small class="text-muted">“Speak to your mother, and if she is willing, you can start tomorrow.”</small> [#2 12]</li>
+  <small class="text-muted">“Speak to your mother, and if she is willing, you can start tomorrow.” [#2 12]</small></li>
 </ul>
 <p>Here are some non-canonical examples from reported speech:</p>
 <ul>
