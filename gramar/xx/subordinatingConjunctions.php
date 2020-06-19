@@ -7,9 +7,11 @@ require_once "../includes/htmlHeader.php";
 <hr/>
 <p>Semantic types of subordinating conjunction:</p>
 <ul>
-  <li>temporal: <a href="../gd/mus.php">mus</a>, nuair (a/nach)</p>
-  <li>conditional-hypothetical: <a href="../gd/ma.php">ma</a>, <a href="../gd/mura.php">mura</a>, <a href="../gd/nan.php">nan</a></p>
+  <li>temporal: <a href="../gd/conjunctions/mus.php">mus</a>, nuair (a/nach)</li>
+  <li>conditional-hypothetical: <a href="../gd/conjunctions/ma.php">ma</a>, <a href="../gd/conjunctions/mura.php">mura</a>, <a href="../gd/conjunctions/nan.php">nan</a></li>
   <li>contrastive: ged (a/nach)</li>
+  <li>gus (an/nach)</li>
+  <li>oir, bho</li>
 </ul>
 
 

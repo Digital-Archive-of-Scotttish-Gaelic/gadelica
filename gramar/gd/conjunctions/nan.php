@@ -1,9 +1,9 @@
 <?php
-require_once "../includes/htmlHeader.php";
+require_once "../../includes/htmlHeader.php";
 ?>
 <h1>nan</h1>
 <p><strong>nan</strong> is a <a href="../xx/subordinatingConjunctions.php">subordinating conjunction</a>, typically governing a <a href="../xx/tense.php">conditional</a> <a href="../xx/dependency.php">dependent</a> verb form, and usually modifying a conditional tense verb form or particle.</p>
-<p><strong>nan</strong> generally corresponds to past-conditional uses of the English word <a href="../en/if.php"><em>if</em></a>, and complements the other Gaelic conditional-hypothetical subordinating conjunctions <a href="ma.php"><strong>ma</strong></a> and <a href="mura.php"><strong>mura</strong></a>.</p>
+<p><strong>nan</strong> generally corresponds to past-conditional uses of the English word <a href="../../en/if.php"><em>if</em></a>, and complements the other Gaelic conditional-hypothetical subordinating conjunctions <a href="ma.php"><strong>ma</strong></a> and <a href="mura.php"><strong>mura</strong></a>.</p>
 <p><strong>nan</strong> is written as <strong>nam</strong> when the following word starts with a labial consonant <strong>b-</strong>, <strong>p-</strong>, <strong>f-</strong>, <strong>m-</strong>.</p>
 <hr/>
 <p>Here are some canonical corpus examples from reported speech:</p>
@@ -40,5 +40,5 @@ require_once "../includes/htmlHeader.php";
 </ul>
 
 <?php
-require_once "../includes/htmlFooter.php";
+require_once "../../includes/htmlFooter.php";
 ?>

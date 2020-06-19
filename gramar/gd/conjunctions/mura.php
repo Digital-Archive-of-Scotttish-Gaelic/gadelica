@@ -1,9 +1,9 @@
 <?php
-require_once "../includes/htmlHeader.php";
+require_once "../../includes/htmlHeader.php";
 ?>
 <h1>mura</h1>
 <p><strong>mura</strong> is a <a href="../xx/subordinatingConjunctions.php">subordinating conjunction</a>, typically governing a <a href="../xx/tense.php">future or conditional</a> <a href="../xx/dependency.php">dependent</a> verb form, and usually modifying a verb form or particle with the same tense.</p>
-<p><strong>mura</strong> corresponds to conditional uses of the English words <a href="../en/if.php"><em>if (not)</em></a> and <a href="../en/unless.php"><em>unless</em></a>, 
+<p><strong>mura</strong> corresponds to conditional uses of the English words <a href="../../en/if.php"><em>if (not)</em></a> and <a href="../en/unless.php"><em>unless</em></a>, 
 and as such is the <a href="../xx/polarity.php">negative</a> counterpart to the Gaelic subordinating conjunctions <a href="ma.php"><strong>ma</strong></a> and <a href="nan.php"><strong>nan</strong></a>.</p>
 <hr/>
 <p>Here are some canonical corpus examples:</p>
@@ -28,5 +28,5 @@ and as such is the <a href="../xx/polarity.php">negative</a> counterpart to the 
 
 
 <?php
-require_once "../includes/htmlFooter.php";
+require_once "../../includes/htmlFooter.php";
 ?>

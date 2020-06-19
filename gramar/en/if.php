@@ -29,11 +29,16 @@ require_once "../includes/htmlHeader.php";
   <li>He asked <mark>whether</mark> Maggie was in.</li>
   <li>He asked <mark>whether</mark> Maggie wasn’t in.</li>
 </ul>
+<p>Or the whole embedded question could be turned into reported speech:</p>
+<ul>
+  <li>He asked, “Is Maggie in?”</li>
+  <li>He asked, “Is Maggie not in?”</li>
+</ul>
 <p>When <strong>if</strong> is used in a conditional-hypothetical sense, it corresponds to one of the following Gaelic subordinating conjunctions:</p>
 <ul>
-  <li><strong><a href="../gd/ma.php">ma</a></strong> ‘if’</li>
-  <li><strong><a href="../gd/mura.php">mura</a></strong> ‘if not’, ‘unless’</li>
-  <li><strong><a href="../gd/nan.php">nan</a></strong> ‘if’</li>
+  <li><strong><a href="../gd/conjunctions/ma.php">ma</a></strong> ‘if’</li>
+  <li><strong><a href="../gd/conjunctions/mura.php">mura</a></strong> ‘if not’, ‘unless’</li>
+  <li><strong><a href="../gd/conjunctions/nan.php">nan</a></strong> ‘if’</li>
 </ul>
 <p>For example:</p>
 <ul>
@@ -46,8 +51,8 @@ require_once "../includes/htmlHeader.php";
 </ul>
 <p>When <strong>if</strong> is used to introduce an embedded question, it corresponds to embedded uses of the Gaelic interrogative verb particles:</p>
 <ul>
-  <li><strong><a href="../gd/an.php">an</a></strong></li>
-  <li><strong><a href="../gd/nach.php">nach</a></strong></li>
+  <li><strong><a href="../gd/particles/an.php">an</a></strong></li>
+  <li><strong><a href="../gd/particles/nach.php">nach</a></strong></li>
 </ul>
 <p>For example:</p>
 <ul>
@@ -56,7 +61,7 @@ require_once "../includes/htmlHeader.php";
   <li><strong>Dh’fhaighnich e <mark>nach</mark> robh Magaidh a-staigh.</strong><br/>
   <small class="text-muted">‘He asked if Maggie wasn’t in.’</small></li> 
 </ul>
-<p>Note that using <strong>ma</strong> or <strong>nan</strong> to introduce an embedded question is ☠️ Beurlachas ☠️:</p>
+<p>Note that using <strong>ma</strong> or <strong>nan</strong> to introduce an embedded question is ☠️ <span class="badge badge-danger">Beurlachas</span> ☠️:</p>
 <ul>
   <li>☠️ Dh’fhaighnich e <mark>ma</mark> bha Magaidh a-staigh. ☠️</li> 
   <li>☠️ Dh’fhaighnich e <mark>nan</mark> robh Magaidh a-staigh. ☠️</li> 

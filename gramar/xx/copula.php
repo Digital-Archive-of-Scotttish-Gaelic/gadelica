@@ -1,11 +1,7 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>A’ Mhaighdeag – the copula</title>
-  </head>
-  <body>
-    <h1>The Copula</h1>
+<?php
+require_once "../includes/htmlHeader.php";
+?>
+<h1>The copula</h1>
     <h2>Forms of the copula</h2>
     <p>The form of the copula depends on three different factors:</p>
     <ul>
@@ -42,6 +38,7 @@
         <td>nach bu</td>
       </tr>
     </table>
+<p>gur?</p>
     <p>Notes:</p>
     <ul>
       <li><em>is</em> is often written as <em>’s</em>.</li>
@@ -433,5 +430,8 @@
     </ul>
     <p>nas òige (na), as òige, na b’ òige (na), a b’ òige [ROM 142-3]</p>
     <p>[ROM 145-6, 170]</p>
-  </body>
-</html>
+
+<?php
+require_once "../includes/htmlFooter.php";
+?>
+

@@ -1,8 +1,8 @@
 <?php
-require_once "../includes/htmlHeader.php";
+require_once "../../includes/htmlHeader.php";
 ?>
 <h1>an</h1>
-<p><strong>an</strong> is the positive interrogative <a href="../xx/verbParticles.php">verb particle</a>, in contrast to the negative interrogative <strong><a href="nach.php">nach</a></strong>.</p>
+<p><strong>an</strong> is the positive interrogative <a href="../../xx/verbParticles.php">verb particle</a>, contrasting with the negative interrogative <strong><a href="nach.php">nach</a></strong>.</p>
 <p><strong>an</strong> is written as <strong>am</strong> when the following word starts with a labial consonant <strong>b-</strong>, <strong>p-</strong>, <strong>f-</strong>, <strong>m-</strong>.</p>
 <p><strong>an</strong> can be either ungoverned (introducing a matrix question), or governed by another word (introducing an embedded question or as part of a compound conjunction).</p>
 <hr/>
@@ -120,5 +120,5 @@ require_once "../includes/htmlHeader.php";
 
 
 <?php
-require_once "../includes/htmlFooter.php";
+require_once "../../includes/htmlFooter.php";
 ?>

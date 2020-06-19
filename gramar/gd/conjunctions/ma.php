@@ -1,9 +1,9 @@
 <?php
-require_once "../includes/htmlHeader.php";
+require_once "../../includes/htmlHeader.php";
 ?>
 <h1>ma</h1>
 <p><strong>ma</strong> is a <a href="../xx/subordinatingConjunctions.php">subordinating conjunction</a>, typically governing a <a href="../xx/tense.php">future</a> <a href="../xx/dependency.php">relative</a> verb form, and usually modifying a future tense verb form or particle.</p>
-<p><strong>ma</strong> generally corresponds to future-conditional uses of the English word <a href="../en/if.php"><em>if</em></a>, and complements the other Gaelic conditional-hypothetical subordinating conjunctions <a href="nan.php"><strong>nan</strong></a> and <a href="mura.php"><strong>mura</strong></a>.</p>
+<p><strong>ma</strong> generally corresponds to future-conditional uses of the English word <a href="../../en/if.php"><em>if</em></a>, and complements the other Gaelic conditional-hypothetical subordinating conjunctions <a href="nan.php"><strong>nan</strong></a> and <a href="mura.php"><strong>mura</strong></a>.</p>
 <hr/>
 <p>Here are some canonical corpus examples from reported speech:</p>
 <ul>
@@ -57,6 +57,6 @@ require_once "../includes/htmlHeader.php";
 </ul>
 
 <?php
-require_once "../includes/htmlFooter.php";
+require_once "../../includes/htmlFooter.php";
 ?>
 

@@ -1,5 +1,5 @@
 <?php
-require_once "../includes/htmlHeader.php";
+require_once "../../includes/htmlHeader.php";
 ?>
 <h1>mus</h1>
 
@@ -61,5 +61,5 @@ require_once "../includes/htmlHeader.php";
 
 
 <?php
-require_once "../includes/htmlFooter.php";
+require_once "../../includes/htmlFooter.php";
 ?>
