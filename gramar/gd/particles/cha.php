@@ -33,8 +33,8 @@ require_once "../../includes/htmlHeader.php";
 </ul>
 <p>Some copular idioms involving <strong>cha</strong>:</p>
 <ul>
-  <li><strong><a href="../idioms/chan_fhada_gus.php">chan fhada gus an/nach ...</a></strong> <small class="text-muted">‘it will not be long until/before ...’</small></li>
-  <li><strong><a href="../idioms/cha_mhoor_nach.php">cha mhòr nach ...</a></strong> <small class="text-muted">‘nearly’, ‘almost’</small></li>
+  <li><strong><a href="../copular_idioms/chan_fhada_gus.php">chan fhada gus an/nach ...</a></strong> <small class="text-muted">‘it will not be long until/before ...’</small></li>
+  <li><strong><a href="../copular_idioms/cha_mhoor_gun.php">cha mhòr gun/nach ...</a></strong> <small class="text-muted">‘nearly’, ‘almost’, ‘scarcely’, ‘hardly’</small></li>
 </ul>
 
 

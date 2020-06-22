@@ -186,6 +186,11 @@ require_once "../includes/htmlHeader.php";
 <hr/>
 <hr/>
 <h2>Idioms using the copula</h2>
+<ul>
+  <li><strong><a href="../gd/copular_idioms/is_gann_gun.php">is gann gun ...</a></strong> ‘scarcely’, ‘hardly’, ‘almost not’</li>
+  <li><strong><a href="../gd/copular_idioms/cha_mhoor_gun.php">cha mhòr gun/nach ...</a></strong> ‘scarcely’ , ‘hardly’, ‘almost’, ‘nearly’</li>
+</ul>
+
 
 <p>is fhada</p>
 
@@ -248,8 +253,8 @@ require_once "../includes/htmlHeader.php";
 <p>’S cinnteach nach eil diofar càit an tèid corp a chur fon talamh?” [20]</p>
 <p>’s cinnteach gur e siud am ‘missing link’ air am bi iad a’ bruidhinn.” [30]</p>
 
-<p>Thòisich an siorraidh ag èigheachd ainmean clann an ath chlas, ach ’s gann gun cuala no gu faca mise càil tuilleadh. ‘hardly, scarcely (almost not)’ [71]</p>
-<p>Bu ghann gun creideadh Dan a shùilean. [118]</p>
+
+
 
 <p>B’ fheudar do Eilidh seo eadar-theangachadh do Newall. [80]</p>
 <p>B’ fheudar do Phàdraig a dhol a sheòladh. [96]</p>
