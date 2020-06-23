@@ -187,6 +187,7 @@ require_once "../includes/htmlHeader.php";
 <hr/>
 <h2>Idioms using the copula</h2>
 <ul>
+  <li><strong><a href="../gd/copular_idioms/is_fheudar_do.php">is fheudar do ...</a></strong> ‘must’, ‘have to’, ‘need to’</li>
   <li><strong><a href="../gd/copular_idioms/is_gann_gun.php">is gann gun ...</a></strong> ‘scarcely’, ‘hardly’, ‘almost not’</li>
   <li><strong><a href="../gd/copular_idioms/cha_mhoor_gun.php">cha mhòr gun/nach ...</a></strong> ‘scarcely’ , ‘hardly’, ‘almost’, ‘nearly’</li>
 </ul>
@@ -256,11 +257,7 @@ require_once "../includes/htmlHeader.php";
 
 
 
-<p>B’ fheudar do Eilidh seo eadar-theangachadh do Newall. [80]</p>
-<p>B’ fheudar do Phàdraig a dhol a sheòladh. [96]</p>
-<p>B’ fheudar dha na balaich falbh a sheòladh [97]</p>
-<p>B’ fheudar tuilleadh uidheim a thoirt bho Thorcall airson sgùilean ùra. [94]</p>
-<p>B’ fheudar do Aonghas an t-oilthigh fhàgail leis a’ chaitheamh - tinneas a bha cumanta aig an àm. [5-6]</p>
+
 
 <p>Ach ’s iomadh ceist a tha gun a freagairt fhathast. ???? [86]</p>
 <p>’S iomadh duine dha na thachair sin, [103]</p>
