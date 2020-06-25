@@ -1,7 +1,7 @@
 <?php
 require_once "../includes/htmlHeader.php";
 ?>
-<h1>The copula</h1>
+<h1>The copula <em>is</em></h1>
     <h2>Forms of the copula</h2>
     <p>The form of the copula depends on three different factors:</p>
     <ul>
@@ -187,108 +187,33 @@ require_once "../includes/htmlHeader.php";
 <hr/>
 <h2>Idioms using the copula</h2>
 <ul>
+  <li><strong><a href="../gd/copular_idioms/is_aabhaist.php">is àbhaist ...</a></strong></li>
+  <li><strong><a href="../gd/copular_idioms/is_aithne_do.php">is aithne do ...</a></strong></li>
+  <li><strong><a href="../gd/copular_idioms/is_caomh_le.php">is caomh le ...</a></strong></li>
+  <li><strong><a href="../gd/copular_idioms/is_cinnteach_gun.php">is cinnteach gun/nach ...</a></strong></li>
+  <li><strong><a href="../gd/copular_idioms/is_còir_do.php">is còir do ...</a></strong></li>
+  <li><strong><a href="../gd/adjectives/is_coma_le.php">is coma le ...</a></strong></li>
+  <li><strong><a href="../gd/copular_idioms/is_cuimhne_le.php">is cuimhne le ...</a></strong></li>
+  <li><strong><a href="../gd/copular_idioms/is_doocha_gun.php">is dòcha gun ...</a></strong></li>
+  <li><strong><a href="../gd/copular_idioms/is_duilich_do.php">is duilich do ...</a></strong></li>
+  <li><strong><a href="../gd/copular_idioms/is_fhada_bho.php">is fhada bho ...</a></strong></li>
+  <li><strong><a href="../gd/copular_idioms/chan_fhada_gus.php">chan fhada gus ...</a></strong></li>
+  <li><strong><a href="../gd/copular_idioms/is_fheaarr.php">is fheàrr ...</a></strong></li>
+  <li><strong><a href="../gd/copular_idioms/is_fheaairrde.php">is fheàirrde ...</a></strong> ‘benefit from’, ‘do someone good’, ‘be the better for’</li>
   <li><strong><a href="../gd/copular_idioms/is_fheudar_do.php">is fheudar do ...</a></strong> ‘must’, ‘have to’, ‘need to’</li>
+  <li><strong><a href="../gd/copular_idioms/is_fhiach.php">is fhiach ...</a></strong></li>
   <li><strong><a href="../gd/copular_idioms/is_gann_gun.php">is gann gun ...</a></strong> ‘scarcely’, ‘hardly’, ‘almost not’</li>
+  <li><strong><a href="../gd/copular_idioms/is_iomadh.php">is iomadh ... a/nach ...</a></strong></li>
+  <li><strong><a href="../gd/copular_idioms/is_iongantach_gun.php">is iongantach gun ...</a></strong> ‘scarcely’, ‘hardly’, ‘almost not’</li>
+  <li><strong><a href="../gd/copular_idioms/is_mairg.php">is mairg ...</a></strong></li>
   <li><strong><a href="../gd/copular_idioms/cha_mhoor_gun.php">cha mhòr gun/nach ...</a></strong> ‘scarcely’ , ‘hardly’, ‘almost’, ‘nearly’</li>
+  <li><strong><a href="../gd/adjectives/is_oil_le.php">is oil le ...</a></strong></li>
+  <li><strong><a href="../gd/adjectives/tric.php">is tric ...</a></strong></li>
+  <li><strong><a href="../gd/copular_idioms/is_urrainn_do.php">is urrainn do ...</a></strong></li>
 </ul>
 
-
-<p>is fhada</p>
-
-<p>Thug mi dha £50 agus cha b’ urrainn duine a bhith cho taingeil. [49]</p>
-<p>ach cha b’ urrainn dha sin innse do dhuine beò. [86]</p>
-<p>Nuair a thàinig fios bhon nighinn a bha còmhla ris gun bhàsaich e, cha b’ urrainn duine de mhuinntir Thòmais am malairt fhàgail, [8]</p>
-<p>Cha b’ urrainn gu robh i leth cho aosta ris. [108]</p>
-<p>“An dùil am b’ urrainn dhuibh ...?” I wonder if you could ...? [14]</p>
-<p>Bha Peigi agus Anna na b’ aosta na e fhèin, ’s cha b’ urrainn dhaibh a dhol còmhla ris. [18]</p>
-<p>Chaidh mi gu Taigh nam Bochd cho luath ’s a b’ urrainn dhomh [35] OPPORTUNITY!</p>
-<p>Ach an ùine ghòirid dh’iarr e fhèin agus Màiri orm a thighinn a chèilidh cho tric ’s a b’ urrainn dhomh. [37]</p>
-
-<p>“Ach bu chaomh leam sealltainn a-rithist.” “Bit I would want to have another look.”[49]</p>
-<p>“’S caomh leis daoine a thighinn air a bheulaibh le eagal am beatha orra.” [91]</p>
-
-<p>“<mark>’S iongantach gu bheil</mark> balach ann nach robh air an dearbh rud a dhèanamh.” “It is unlikely that ...” [49-50]</p>
-<p>Agus <mark>is iongantach gu robh</mark> am poileas air a lorg gu bràth mura b’ e aon rud neònach. ‘It is unlikely that ...’ [50]</p>
-<p>’s iongantach gu robh siorraidh ann a-riamh aig an robh am poileasaidh a bha aige. [73]</p>
-<p>An dùil am faighinn còmhradh air do bhràthair?” “ ’S iongantach gu faigh, Ailig. ’S e an rud mu dheireadh a chuala mise gu bheil e ann an Tasmania, agus cha robh seòladh air a’ chairt a chuir e thgam.” [107]</p>
-
-<p>’S e sin <mark>bu choireach gun mhothaich</mark> mi dhi idir. ‘That is the reason why I noticed it at all.’ [51]</p>
-<p>Cha b’ e nach robh mi faiceallach bu choireach gun thachair e idir, [13]</p>
-<p>Bhon chiad chrathadh-làimhe chòrd sinn ri chèile, agus is dòcha gur e sin bu choireach gun dh’innis e dhomh gu robh e càirdeach do dh’Fhionnghal NicDhòmhnaill [36]</p>
-
-<p>‘Is fheàrr deagh earbsa na droch fhoighidinn’: ‘Eccl. VII:9’. [76]</p>
-<p>Nach b’ fheàrr dhuit fhàgail? [109]</p>
-<p>’S e candaidh a’ chlobha an rud a b’ fheàrr leam a bhiodh sinn a’ dèanamh. [33]</p>
-<p>“Dh’fhalbh e leis an uaireadair a bh’ aige an seotal na ciste,” ars ise. “B’ fheàrr leis a shadadh às na fhàgail againne.” [35]</p>
-
-<p>Cha <mark>b’ fheàirrde</mark> na gillean gur e ceàrraiche a bh’ ann am Mgr. Grey leis an robh an taigh-seinnse. [53]</p>
-<p>bha a phàrantan a’ smaoineachadh gum b’ fheàirrde e greis còmhla ri Seòras Mòr [78]</p>
-<p>“Seo an seòrsa là a bh’ ann nuair a thuirt an ‘Auk’ rium gum b’ fheàirrde mi drama,” [16]</p>
-<p>B’ fheàirrde sinn gun tàinig Elsie May, [29]</p>
-<p>“B’ fheàirrde mi bruidhinn riut,” [47]</p>
-<p>’S ann as fheàirrde Eilidh a bhith a’ falbh ’s a’ tighinn air a’ bhus còmhla ri càch.” [88]</p>
-
-<p>“’S dòcha gu bheil Harry Heyford beò fhathast?” [63]</p>
-<p>’S dòcha gu robh am baile mòr air a h-inntinn o chionn fhada. [87]</p>
-<p>’S dòcha nach creid thu e an-dràsta, ach ’s e an rud as fheàrr dhut a dhèanamh gun leigeil ort aon uair g’ eil diù a’ choin agad dhen nighinn sin. [125]</p>
-<p>Ach ’s dòcha gun canadh an coigreach, “Nach ann againn a tha an teas an-dràsta,” [16]</p>
-<p>Aig an àm, 1956, ’s e rùn-dìomhair stàite a bha san eachdraidh seo. ’S dòcha gur e sin a tha innte fhathast. [16]</p>
-<p>Bhon chiad chrathadh-làimhe chòrd sinn ri chèile, agus is dòcha gur e sin bu choireach gun dh’innis e dhomh gu robh e càirdeach do dh’Fhionnghal NicDhòmhnaill [36]</p>
-
-<p>Ach tha fios a’m a-nise gur tric a tha an dìoghaltas a’ cosg barrachd air na <mark>’s fhiach e</mark>.” [64]</p>
-<p>“Feumaidh mi fios a chur gu mo bhean gum bi mi fada gun tilleadh,” arsa Seòras, a’ gabhail an airgid, mòran a bharrachd air na b’ fhiach a’ bhòidse. [98]</p>
-
-<p>“Nach bu chòir nàire a bhith ort?” “Shouldn’t you be embarrassed?” [66]</p>
-<p>Bha a h-uile càil mar bu chòir dha bhith. [83]</p>
-<p>Nach bu chòir dhomh a bhith air fios fhaighinn o chionn fhada. [90]</p>
-<p>“Saoilidh mi gur e Marta bu chòir a bhith air an fhear òg.” [99]</p>
-<p>“’S ann bu chòir dhutsa dealbh-chluich a sgrìobhadh. [109]</p>
-<p>“Nach bu chòir dhuit a dhol a shealltainn a bheil d’ athair a’ tighinn,” [123]</p>
-<p>Na bheachd-san bu chòir dhaibhsan a bhith taingeil gu robh e a’ ceadachadh dhaibh a chuideachadh. [39]</p>
-<p>Bha i air cluinntinn nach robh sinn air toirt dha na goireasan bu chòir a bhith aig duine dall. [40]</p>
-
-<p>“’S cinnteach gun rinn sibh probhadh air beathaichean mus do dh’fheuch sibh air an leanabh e?” [68]</p>
-<p>’S cinnteach gur e fealla-dhà a bha air aire. ‘He was certainly joking. He must have been joking.’[85]</p>
-<p>“’S cinnteach g’ eil lagh ann mu dheidhinn seo.” [90]</p>
-<p>“ ’S cinnteach nach eil thu dol a phòsadh a’ chreutair.” [7]</p>
-<p>’S cinnteach nach eil diofar càit an tèid corp a chur fon talamh?” [20]</p>
-<p>’s cinnteach gur e siud am ‘missing link’ air am bi iad a’ bruidhinn.” [30]</p>
-
-
-
-
-
-
-<p>Ach ’s iomadh ceist a tha gun a freagairt fhathast. ???? [86]</p>
-<p>’S iomadh duine dha na thachair sin, [103]</p>
-<p>ach ’s iomadh dealbh-chluich anns an robh mi nach eil a leth cho math ri do stòraidh.” [109]</p>
-<p>“’S iomadh duine grànda a chunnaic mi,” [30]</p>
-
-<p>Bhiodh iad a’ dol gu muir aig briseadh an là airson togail is biathadh nan cliabh, agus <mark>mar bu tric</mark> a’ tilleadh aig aon uair deug. [88]</p>
-<p>Mar bu tric’ ’s e geansaidh iasgair agus seann bhriogais a bhiodh air [103]</p>
-
-<p>’S tric a bhios daoine a’ bruidhinn air na rudan èibhinn no eirmseach a thuirt e [17]</p>
-
-<p>thuirt i gum <mark>bu mhairg</mark> a chanadh ri Ruairidh nuair a thog e an taigh gur e Sìonach a bhiodh a’ fuireach ann an-diugh [93]</p>
-
-<p>Bho ’s cuimhne leam dh’fheumadh an òigridh againn an t-eilean fhàgail airson beòshlaint fhaighinn. [94]</p>
-
-<p>Nuair a chaidh Rob a chèilidh air an teaghlach bha iad mar a b’ àbhaist ag innse dha cho amaideach ’s a bha a chaitheamh-beatha. [7]</p>
-<p>An là seo bha an gille a b’ àbhaist a bhith cuideachadh Ailig air làithean-saora, [104]</p>
-<p>ged a bha Aonghas cho suilbhir ’s a b’ àbhaist, chunna mi nach robh e gu math idir. [35]</p>
-<p>Rinn i teatha dhomh mar a b’ àbhaist, [37]</p>
-
-<p>“ ’S coma leam sin. [99]</p>
-
-<p>’S e searbhant a dh’fhosgail an doras, agus seach nach <mark>b’ aithne</mark> dhi cò e, thuirt i gun innseadh i do bhean an taighe gu robh e air tadhal. [108]</p> 
-<p>Ged as uirsgeul a bha seo, cha b’ aithne dhuinn aig an àm cho faisg ’s a bha e air an fhìrinn. [103]</p>
-
-<p>Chuala mi e ag ràdh uair is uair rud a thug gàire orm. Rinn Peigi, a phiuthar, teatha dhomh aon fheasgar agus thuirt i: “Cha dèan mi coigreach dhìot. Cha leig mi leas na soithichean spaideil a thoirt a-mach.” 
-“<mark>’S duilich dhut</mark>,” ars an Còirneal, “chan eil iad agad.” [17]</p>
-
-<p>Ma thèid thu chun Bhanca Dhìomhair, gheibh thu rud beag an sin a shàbhail mi dhut ge b’ oil leotha. [35]</p>
-
 <hr/>
+
 <h2>Comparatives and superlatives</h2>
 <p>Saoilidh mi gu robh Brian air <mark>beòshlaint na b’ fheàrr</mark> a dhèanamh mar chleasaiche. ‘I think that Brian would have made a better living as an actor.’ [51]</p>
 <p>Thairg mi glainne searaidh dhi ach thuirt i gu robh <mark>rud na b’ fheàrr na sin</mark> aice na seòmar. [48]</p>
@@ -303,6 +228,13 @@ require_once "../includes/htmlHeader.php";
 <p>’S e am Baile Bàn, no Balbane, mar a tha air a’ mhap, an clachan a b’ fhaisg’ òirnn [78]</p>
 <p>Bha e dol a phòsadh na h-ìghne bu bhrèagha bha san sgìre [83]</p>
 <p>Cha robh seo cho math agus bha na bu mhiosa ri thighinn. [95]</p>
+
+<p>’S e sin <mark>bu choireach gun mhothaich</mark> mi dhi idir. ‘That is the reason why I noticed it at all.’ [51]</p>
+<p>Cha b’ e nach robh mi faiceallach bu choireach gun thachair e idir, [13]</p>
+<p>Bhon chiad chrathadh-làimhe chòrd sinn ri chèile, agus is dòcha gur e sin bu choireach gun dh’innis e dhomh gu robh e càirdeach do dh’Fhionnghal NicDhòmhnaill [36]</p>
+
+
+
 
 <hr/>
 
