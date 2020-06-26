@@ -16,7 +16,10 @@ require_once "../../includes/htmlHeader.php";
   <li><strong>rach sìos</strong> ‘go down (of a price)’ [#2 95, 96]</li>
   <li><strong>cuir sìos air duine</strong> ‘disparage/,align somebody’ [#2 112]</li>
 </ul>
-
+<ul>
+      <li>“Seall a-nis mar a tha am bùrn a’ <mark>dol sìos</mark>,” [#2 67]</li>
+      <li>Chaidh e sìos an staidhre. [#2 121]</li>
+    </ul>
 
 <?php
 require_once "../../includes/htmlFooter.php";
