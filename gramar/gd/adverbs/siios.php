@@ -18,7 +18,11 @@ require_once "../../includes/htmlHeader.php";
 </ul>
 <ul>
       <li>“Seall a-nis mar a tha am bùrn a’ <mark>dol sìos</mark>,” [#2 67]</li>
-      <li>Chaidh e sìos an staidhre. [#2 121]</li>
+    </ul>
+
+<ul>
+      <li><strong>Chaidh e <mark>sìos an staidhre</mark>.</strong><br/> 
+      <small class="text-muted">‘He went down the stairs.’ [#2 121]</small></li>
     </ul>
 
 <?php
