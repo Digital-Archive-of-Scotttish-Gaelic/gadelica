@@ -17,32 +17,43 @@ require_once "../../includes/htmlHeader.php";
   </tbody>
 </table>
 <hr/>
-<p><strong>rach</strong> has the following main senses/uses:</p>
-<ol>
-  <li>as a <a href="#motion">verb of motion</a></li>
-  <li>as an <a href="#aspectual">aspectual/modal auxiliary verb</a></li>
-  <li>as a <a href="#passive">passive/impersonal auxiliary verb</a></li>
-  <li>miscellaneous <a href="#idioms">idiomatic uses</a>.</li>
-</ol>
-<hr/>
-<h3 id="motion">1. <em>rach</em> as a verb of motion</h3>
-<p>In its simplest sense, <strong>rach</strong> denotes the kind of event where a material entity (e.g. a person or animal) 
-moves along a non-proximal spatial trajectory (i.e. not towards the speaker or deictic centre ‘here’ 
-cf. <strong><a href="thig.php">thig</a></strong>). The subject of <strong>rach</strong> in this sense is a noun phrase denoting the object in motion, and
-the complement is a (non-proximal) <a href="../../xx/pathExpressions.php">path expression</a> denoting the trajectory.</p>
+<p><strong>rach</strong> has three main senses/uses:</p>
 <ul>
-  <li>Thairg mi glainne searaidh dhi ach thuirt i gu robh rud na b’ fheàrr na sin aice na seòmar, agus sin far an deach sinn às dèidh ar dìnneir. [#2 48]</li>
-  <li>Bha na mèirlich a’ smaoineachadh nan deigheadh iad dhachaigh gum biodh am poileasman aig an doras glè aithghearr. [#2 53]</li>
-  <li>Chaidh iad gu doras an ruma ’s thòisich fear ga bhualadh le dhòrn ’s ag èigheachd, “Fosgail an doras no nì mi bloighean dheth.” [#2 57]</li>
+  <li>as a <a href="#motion">verb of motion</a> ‘go somewhere’</li>
+  <li>as an <a href="#aspectual">aspectual/modal auxiliary verb</a> ‘be going to do something’</li>
+  <li>as a <a href="#passive">passive/impersonal auxiliary verb</a></li>
 </ul>
-<p>rach le/còmhla ri; rach cannot occur without a complement cf. rach ann.</p>
-
-
+In addition, there are many miscellaneous <a href="#idioms">idiomatic uses</a> of <strong>rach</strong>.
 <hr/>
-<h3 id="aspectual">2. <em>rach</em> as an aspectual/modal auxiliary verb – <em>rach do dhèanamh rud</em></h3>
-
-<h4>2.1. Future tense: <em>bi a’ dol a dhèanamh rud</em></h4>
-<p>No movement.</p>
+<h3 id="motion"><em>rach</em> as a verb of motion</h3>
+<p>In its simplest sense, <strong>rach</strong> denotes the kind of event where a material entity (e.g. a person or animal) 
+moves along some one-dimensional spatial trajectory. The subject of <strong>rach</strong> in this sense is a noun phrase denoting the object in motion, and
+the complement is a <a href="../../xx/pathExpressions.php">path expression</a> denoting the trajectory, which is usually ‘non-proximal’, 
+i.e. not leading towards the speaker or deictic centre ‘here’ (cf. <strong><a href="thig.php">thig</a></strong> ‘come’).</p>
+<ul>
+  <li><strong><mark>Chaidh e gu doras an taighe</mark>.</strong><br/> 
+    <small class="text-muted">‘He went up to the door of the house.’ [#2 66]</small></li>
+  <li><strong><mark>Chaidh mi dhachaigh</mark> gun bruidhinn ri duine.</strong><br/>
+    <small class="text-muted">“I went home without talking to anyone.” [#2 71]</small></li>
+  <li><strong>“Tha e <mark>dol timcheall</mark> mar làmhan a’ chleoc.”</strong><br/>
+    <small class="text-muted">“It is going around like the hands of a clock.” [#2 67]</small></li>
+</ul>
+<p>In the absence of an explicit path expression complement, <strong>rach</strong> can govern a accompaniment modifier 
+or an <a href="../../xx/intentionalExpressions.php">intentional</a> complement:</p>
+<ul>
+  <li><strong>Nuair a dh’fhalbh iad, <mark>chaidh Anna còmhla riutha</mark>.</strong><br/>
+    <small class="text-muted">‘When they left, Ann went along with them.’ [#2 78]</small></li>
+  <li><strong>“Nach bu chòir dhuit a <mark>dhol a shealltainn</mark> a bheil d’ athair a’ tighinn?”</strong><br/> 
+    <small class="text-muted">“Shouldn’t you go and see if your father is coming?” [#2 123]</small></li>
+</ul>
+<p>In the absence of any of the above, <strong>rach</strong> takes the null path expression <strong>ann</strong> ‘there’ as its complement:</p>
+<ul>
+  <li><strong>Bha e a’ creidsinn gur e call a bha am prìosan a’ dèanamh air a h-uile duine a bha a’ <mark>dol ann</mark>.</strong><br/>
+    <small class="text-muted">‘He believed that prison damaged everyone who went there.’ [#2 73]</small></li>
+</ul>
+<hr/>
+<h3 id="aspectual"><em>rach</em> as an aspectual/modal auxiliary verb – <em>bi a’ dol a dhèanamh rud</em></h3>
+<p>Kind of like future tense; no movement implied. Complement is an <a href="../../xx/intentionalExpressions.php">intentional expression</a>.</p>
 <p>Examples from reported speech:</p>
 <ul>
   <li><strong>“Tha mi <mark>a’ dol a thoirt</mark> dhut aon chothrom dearbhadh gur e duine sìobhalta a tha annad.”</strong><br/> 
@@ -65,67 +76,15 @@ the complement is a (non-proximal) <a href="../../xx/pathExpressions.php">path e
   <li><strong>Bha a h-uile coltas gu robh i <mark>a’ dol a bhriseadh</mark>.</strong><br/> 
     <small class="text-muted">‘It appeared that it was going to break.’ [#2 45]</small></li>  
 </ul>
-<h4>2.2. Motion with intention:</h4>
-<p>Non-progressive. Motion with a particular intention or purpose.</p>
-<p>Examples from reported speech:</p>
-<ul>
-  <li><strong>“Nach bu chòir dhuit a <mark>dhol a shealltainn</mark> a bheil d’ athair a’ tighinn?”</strong><br/> 
-    <small class="text-muted">“Shouldn’t you go and see if your father is coming?” [#2 123]</small></li>
-    <li><strong>“Chan eil cead againn a <mark>dhol a choimhead</mark> air a’ chiste.”</strong><br/> 
-    <small class="text-muted">“We didn’t have permission to go and look at the chest.” [#2 38]</small></li>
-</ul>
-<p>Examples from past tense narrative:</p>
-<ul>
-  <li><strong><mark>Chaidh e a dh’fheuchainn</mark> am faigheadh e iasg.</strong><br/> 
-    <small class="text-muted">‘He had gone to try and get fish.’ [#2 123]</small></li>
-  <li><strong><mark>Chaidh mi a dh’iarraidh</mark> iuchar taigh Eilidh.</strong><br/> 
-    <small class="text-muted">‘I went to fetch Helen’s house key.’ [#2 14]</small></li>
-  <li><strong>Ma tha duine ann a tha faighneachd carson nach <mark>deach mi a dh’innse</mark> mun eucoir sa dhan mhaighstir-sgoile ...</strong><br/> 
-    <small class="text-muted">‘If anybody is asking why I didn’t go and tell the schoolmaster about this crime ...’ [#2 70]</small></li>
-  <li><strong><mark>Chaidh e a lorg</mark> taigh caraid.</strong><br/> 
-    <small class="text-muted">‘He went to find his friend’s house.’ [#2 117]</small></li>
-</ul>
-<p>Conditional tense examples:</p>
-<ul>
-  <li><strong>Nuair a thigeadh e an dèidh obair-là <mark>dheigheadh e a dh’obair</mark> air a’ chroit.</strong><br/> 
-    <small class="text-muted">When he came (home) after a day at work he would go and work on the croft. [#2 90]</small></li>
-  <li><strong>Nuair a <mark>dheighinn a chèilidh</mark> air Aonghas ...</strong><br/> 
-    <small class="text-muted">‘When I would go and visit Angus ...’ [#2 34]</small></li>
-</ul>
-<p>Examples with verbal noun:</p>
-<ul>
-  <li><strong>’S e am plana a bha aige a <mark>dhol a dh’iarraidh</mark> a’ chàir agus na pocannan ’s am bogha a chur ann.</strong><br/>
-    <small class="text-muted">‘His plan was to go and fetch the car and put the the bags and the bow in it.’ [#2 121]</small></li>
-  <li><strong>Bhiodh i ag innse do Rob càit am biodh e sàbhailte a <mark>dhol a phoidsearachd</mark>.</strong><br/> 
-    <small class="text-muted">‘She would tell Rob where it would be safe to go poaching.’ [#2 113]</small></li>
-</ul>
-<p>Examples with pronoun objects:</p>
-<ul>
-  <li><strong>Dh’fhàs an là cho garbh ’s gun <mark>deach Dan ga coimhead</mark> dhachaigh sàbhailt.</strong><br/>
-    <small class="text-muted">‘The day got so rough that Dan went and saw her home safely.’ [#2 126]</small></li> 
-  <li><strong>Bha mi a’ <mark>dol ga choimhead</mark> a h-uile madainn ’s a h-uile feasgar.</strong><br/>
-    <small class="text-muted">‘I went to see him every morning and evening.’ [#2 18]</small></li>
-  <li><strong><mark>Dheigheadh Brus gan coinneachadh</mark> air taobh thall an locha.</strong><br/>
-    <small class="text-muted">‘Bruce would go and meet them at the far end of the loch.’ [#2 34]</small></li>
-</ul>
-<p>Examples with both an explicit path and an intention/purpose:</p>
-<ul>
-  <li><strong>Dh’iarr iad ormsa a <mark>dhol a Lunnainn a choimhead</mark> às dèidh ghnothaichean.</strong><br/>
-    <small class="text-muted">‘They asked me to go to London to take care of things.’ [#2 8]</small></li>
-  <li><strong><mark>Chaidh sinn timcheall an taighe a shealltainn</mark> an robh doras no uinneag fosgailte.</strong><br/>
-    <small class="text-muted">‘We went around the house to see if a door or window were open.’ [#2 14]</small></li>
-  <li><strong><mark>Chaidh iad an sin a choimhead</mark> air na craobhan.</strong><br/>
-    <small class="text-muted">‘They went there to look at the trees.’ [#2 30]</small></li>
-</ul>
 <hr/>
-<h3 id="passive">3. <em>rach</em> as a passive/impersonal auxiliary verb</h3>
+<h3 id="passive"><em>rach</em> as a passive/impersonal auxiliary verb</h3>
 <ul>
   <li>Gu mì-fhortanach dhaibhsan, chaidh an coimhead agus an aithneachadh. [#2 52]</li>
   <li>Gheall pàrantan nan gillean gum pàigheadh iad airson na chaidh a ghoid. [#2 53]</li>
   <li>Chaidh Uisdean a chur dhachaigh air itealan-eiridinn. [#2 58]</li>
 </ul>
 <hr/> 
-<h3 id="idioms">4. Miscellaneous idiomatic uses of <em>rach</em></h3>
+<h3 id="idioms">Miscellaneous idiomatic uses of <em>rach</em></h3>
 <ul>
   <li><strong>rach ann am muinchill duine</strong> ‘deceive somebody i.e. go into someone’s sleeve’ – Ach ged a bha fianais cho soilleir agam gun deach Brian nam mhuinchill, bha dòchas agam gun cluinninn uaithe. [#2 50]</li>
   <li>thuig mi sa bhad gun deach Murd agus an Daolag nam mhuinchill. [71]</li>
@@ -148,13 +107,7 @@ the complement is a (non-proximal) <a href="../../xx/pathExpressions.php">path e
   <li>Chaidh trì uairean a thìde seachad mus do mhothaich duine gu robh Harry Heyford a dhìth [62]</li>
   <li>Chaidh an seusan seachad gun aon ghiomach bàsachadh air an t-slighe a Lunnainn. [95]</li>
   <li>“Tha thu a’ faireachdainn ìosal an-dràsta,” ars esan, “ach thèid sin seachad.” [125]</li>
-  <li>chaidh e leatha gu àite preasach [59] accompany, take</li>
-  <li>Cha tèid balach no nighean leatsa gu Mòd. [92]</li>
-  <li>Nuair a dh’fhalbh iad, chaidh Anna còmhla riutha, [78]</li>
-  <li>bhiodh fear dhe na fir-ceàirde aige a’ dol còmhla ri Ailig. [104]</li>
-  <li>“Chaidh mise còmhla ri Ailig dhan Spàinn.” [109]</li>
-  <li>Chaidh mi còmhla ris a’ ghille  [14]</li>
-  <li>Bha Peigi agus Anna na b’ aosta na e fhèin, ’s cha b’ urrainn dhaibh a dhol còmhla ris. [18]</li>
+  
   <li>Chuir e an uair sin clag air a’ bhalla, clag aig nach robh gnothaich ris a’ fòn, ach a bha a’ dol air is dheth o àm gu àm a là is a dh’oidhche. [65] turn on and off</li>
   <li>Na caill thusa do mhisneachd idir ged a chaidh aon bhliadhna nad aghaidh. [72]</li>
   <li>Bha am buntàta ann am pocannan air a’ chroit agus chaidh deich pocannan às an t-sealladh aon oidhche. [74] disappear, vanish</li>
