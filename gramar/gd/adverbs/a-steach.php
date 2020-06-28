@@ -12,6 +12,12 @@ require_once "../../includes/htmlHeader.php";
       <li>nuair a chaidh sinn a-steach dhan taigh [#2 14]</li>
       <li>“Thèid sinn a-steach a-nis,” [#2 30]</li>
       <li>chaidh mi a-steach gu Màiri. [#2 37]</li>
+      
+  <li>Thug mi a-steach dhan chàr e {him} [48]</li>
+  <li>thug i Kevin a-steach dhan rum-cadail aice fhèin. [109]</li>
+  <li>Thog i an daga le clobhd a bha sa chiste agus thug i a-steach e gun meur a chur air. [110] sic? a-mach?</li>
+  <li>Thug i a-steach e airson drama [126]</li>
+      
     </ul>
 
 

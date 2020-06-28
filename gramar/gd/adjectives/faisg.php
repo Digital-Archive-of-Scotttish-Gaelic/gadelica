@@ -8,6 +8,7 @@ require_once "../../includes/htmlHeader.php";
 <ul>
       <li><strong>Cha robh muinntir Thòmais airson gum biodh Rob a’ dol <mark>faisg air an euslainteach</mark>.</strong><br/>
         <small class="text-muted">‘Thomas’s people didn’t want Rob to go near the patient.’ [#2 6]</small></li>
+        <li>Nuair a bheireadh e iad faisg air tìr, shadadh iad a-mach às an eathar e [100]</li>
     </ul>
 
 <?php

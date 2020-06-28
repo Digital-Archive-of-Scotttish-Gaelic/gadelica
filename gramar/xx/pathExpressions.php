@@ -12,12 +12,16 @@ require_once "../includes/htmlHeader.php";
     <ul>
       <li><strong>Chaidh an goiriola <mark>a-steach</mark>.</strong><br/>
         <small class="text-muted">‘The gorilla went inside.’ [#2 57]</small></li>
+      <li><strong>Thug i <mark>a-steach</mark> e airson drama.</strong><br/>
+        <small class="text-muted">‘She took him inside for a dram.’ [#2 126]</small></li>  
     </ul>
   </li>
   <li><strong><a href="../gd/adverbs/a-mach.php">a-mach</a></strong> ‘(to) outside’
     <ul>
       <li><strong>“Thèid mi <mark>a-mach</mark> nuair a bhios mi deiseil.”</strong><br/>
         <small class="text-muted">“I will go outside when I am ready.” [#2 91]</small></li>
+      <li><strong>Nuair a dh’fhalbh am ministear thug Aonghas <mark>a-mach</mark> am botal.</strong><br/>
+        <small class="text-muted">‘When the minister left, Angus brought out the bottle.’ [#2 7]</small></li>
     </ul>
   </li>
   <li><strong><a href="../gd/adverbs/air_ais.php">air ais</a></strong> ‘back(wards)’
@@ -30,6 +34,8 @@ require_once "../includes/htmlHeader.php";
     <ul>
       <li><strong>Chaidh mi <mark>dhachaigh</mark> gun bruidhinn ri duine.</strong><br/>
         <small class="text-muted">“I went home without talking to anyone.” [#2 71]</small></li>
+      <li><strong>Aon oidhche thug e dà bhradan <mark>dhachaigh</mark>.</strong><br/>
+        <small class="text-muted">‘One night he brought two salmon home.’ [#2 113]</small></li>  
     </ul>
   </li>
   <li><strong><a href="../gd/adverbs/timcheall.php">timcheall</a></strong> ‘around‘, “round and round’
@@ -60,7 +66,9 @@ require_once "../includes/htmlHeader.php";
   </li>
   <li><strong><a href="../gd/adverbs/suas.php">suas</a></strong> ‘up(wards), towards the top’
     <ul>
-      <li></li>
+      <li>[rach suas]</li>
+      <li><strong>Thug i a’ ghlainne agus an daga <mark>suas</mark> gu rum Ailig.</strong><br/>
+        <small class="text-muted">‘She took the glass and the pistol up to Alec’s room.’ [#2 110]</small></li>
     </ul>
   </li>
 </ul>
@@ -89,25 +97,44 @@ require_once "../includes/htmlHeader.php";
   <li><strong><a href="../gd/prepositions/gu.php">gu</a></strong> ‘(up) to’
     <ul>
       <li><strong>Chaidh e <mark>gu doras an taighe</mark>.</strong><br/> 
-        <small class="text-muted">‘He went up to the door of the house.’ [#2 66]</small></li>
+        <small class="text-muted">‘He went up to the door of the house.’ [#2 66]</small></li>  
+      <li><strong>Nam fuiricheadh e gus an tigeadh athair, dh’fhaodadh e iasg a thoirt <mark>thuice</mark> cuideachd.</strong><br/> 
+        <small class="text-muted">‘If he stayed until his father came, he could take her a fish as well.’ [#2 123]</small></li>
     </ul>
   </li>
   <li><strong><a href="../gd/prepositions/chun.php">chun</a></strong> ‘(up) to (the)’
     <ul>
       <li><strong>Chaidh mi <mark>chun a’ phuirt-adhair</mark> nan coinneimh.</strong><br/> 
         <small class="text-muted">‘I went to the airport to meet them.’ [#2 14]</small></li>
+      <li><strong>“Theirig gu tuathanas an Rosaich agus thoir loda todhair <mark>chun a’ ghàrraidh agam</mark>.”</strong><br/> 
+        <small class="text-muted">“Go to the Ross farm and bring a load of manure to my garden.” [#2 25]</small></li>
     </ul>
   </li>
   <li><strong><a href="../gd/prepositions/do.php">do</a></strong> ‘(in)to’
     <ul>
       <li><strong>“Chaidh mi <mark>dhan ospadal</mark>.”</strong><br/> 
         <small class="text-muted">‘I went to the hospital.’ [#2 41]</small></li>
+      <li><strong>Thug i e <mark>dhan chidsin</mark>.</strong><br/> 
+        <small class="text-muted">‘She took him to the kitchen.’ [#2 108]</small></li>
     </ul>
   </li>
 </ul>
 <p>from-paths</p>
 <ul>
-  <li></li>
+  <li><strong><a href="../gd/prepositions/aa.php">à</a></strong> ‘out of’, ‘from’
+  <ul>
+    <li>[rach à]</li>
+    <li><strong>Thug e fir-lagha ainmeil <mark>à Dun Eideann</mark></strong><br/> 
+      <small class="text-muted">‘He brought famous lawyers from Edinburgh.’ [#2 75]</small></li>      
+  </ul>
+  </li>
+  <li><strong><a href="../gd/prepositions/do.php">bho</a></strong> ‘from’
+  <ul>
+    <li>[rach bho]</li>
+    <li><strong>“Nach toir iad <mark>bhuam</mark> an taigh?”</strong><br/> 
+      <small class="text-muted">“Won’t they take the house from me?” [#2 28]</small></li>
+  </ul>
+  </li>
 </ul>
 <p>via-paths</p>
 <ul>
@@ -133,12 +160,20 @@ require_once "../includes/htmlHeader.php";
     <ul>
       <li><strong>Chaidh an naidheachd <mark>air feadh na sgìre</mark>.</strong><br/>
         <small class="text-muted">‘The news went all over the district.’ (figurative) [#2 97]</small></li>
+      <li><strong>Aig an àm bha mo dhreuchd gam thoirt <mark>air feadh nan Eilean Siar</mark>.</strong><br/>
+        <small class="text-muted">‘At the timemy job took me all over the Western Isles.’ [#2 44]</small></li>
     </ul>
   </li>
   <li><strong><a href="../gd/adverbs/siios.php">sìos</a></strong>
     <ul>
       <li><strong>Chaidh e <mark>sìos an staidhre</mark>.</strong><br/> 
       <small class="text-muted">‘He went down the stairs.’ [#2 121]</small></li>
+    </ul>
+  </li>
+  <li><strong><a href="../gd/adverbs/suas.php">suas</a></strong>
+    <ul>
+      <li><strong>Thug i Kevin <mark>suas an staidhre</mark>.</strong><br/> 
+      <small class="text-muted">‘She took Kevin upstairs.’ [#2 109]</small></li>
     </ul>
   </li>
 </ul>
@@ -149,6 +184,8 @@ require_once "../includes/htmlHeader.php";
     <ul>
       <li><strong>Cha robh muinntir Thòmais airson gum biodh Rob a’ dol <mark>faisg air an euslainteach</mark>.</strong><br/>
         <small class="text-muted">‘Thomas’s people didn’t want Rob to go near the patient.’ [#2 6]</small></li>
+      <li><strong>Nuair a bheireadh e iad <mark>faisg air tìr</mark>, shadadh iad a-mach às an eathar e.</strong><br/>
+        <small class="text-muted">‘When he brought them near the land, they would throw him out of the boat.’ [#2 100]</small></li>
     </ul>
   </li>
   <li><strong><a href="../gd/adverbs/seachad.php">seachad air</a></strong> ‘past’

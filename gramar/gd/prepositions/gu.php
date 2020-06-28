@@ -41,7 +41,11 @@ Chaidh Pòl uair is uair gu àitichean san robh obair air tòiseachadh [9]
 Bha nàbaidh dhuinn a’ dol dhan bhaile mhòr gu agallamh airson obair [17]
 “Thoir leat gràpa agus theirig gu tuathanas an Rosaich [25]
 
-
+<li>gu</li>
+  <li>b’ e am peanasachadh a fhuair iad gu feumadh iad a h-uile fàd a ghoid iad a thoirt gu taigh bantrach Uilleim [74]</li>
+  <li>“Bheir thu sinn gu Geàrrloch.” [100]</li>
+  <li>Ach thairg iad seo £300 nan tugadh e gu muir iad sa bhad. [98]</li>
+  <li>Nam fuiricheadh e gus an tigeadh athair, dh’fhaodadh e iasg a thoirt thuice cuideachd. [123]</li>
 
 
 

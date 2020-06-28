@@ -11,6 +11,9 @@ require_once "../../includes/htmlHeader.php";
   <li><strong>lean duine suas (an staidhre)</strong> ‘follow someone up(stairs)’ [#2 42]</li>
   <li><strong>slaod rud suas (air)</strong> ‘drag something up (onto)’ [#2 88, 96]</li> 
   <li><strong>tarraing rud suas</strong> ‘pull something up’ [#2 45]</li> 
+  <li>suas</li>
+  <li>Thug i a’ ghlainne agus an daga suas gu rum Ailig. [110]</li>
+  <li>Thug i Kevin suas an staidhre [109]</li>
 </ul>
 <p>Idioms:</p>
 <ul>

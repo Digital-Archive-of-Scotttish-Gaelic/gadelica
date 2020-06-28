@@ -55,7 +55,16 @@ Chaidh esan anns a’ bhad a mhullach an t-simileir, [22]
 
 Theirig air ais dhan leabaidh [30]
 
-
+<li>do</li>
+  <li>Thug mi a-steach dhan chàr e {him} [48]</li>
+  <li>thug i Kevin a-steach dhan rum-cadail aice fhèin. [109]</li>
+  <li>Stad Syd ri thaobh air an t-sràid agus thug e dhan chàr e, dìreach mar a thug e fhèin Monica. [61]</li>
+  <li>Thug an duine dhan chàr i, [59]</li>
+  <li>ged a bha Newall ag iarraidh a’ chailleach a thoirt dhan taigh mhòr aige fhèin [79]</li>
+  <li> gus an deach a thoirt dhan ospadal. [8]</li>
+  <li>Thug i e dhan chidsin [108]</li>
+  <li>Bha bliadhna bho thòisich e a’ falbh leatha, a’ bhliadhna a fhuair e àrdachadh gu inbhe lioftanant san Nèibhi agus a thug e Magaidh dà uair a Lunnainn. [124]</li>
+  <li> Chaidh a thoirt a Ghlaschu dhan ospadal. [18]</li>
 
 
 

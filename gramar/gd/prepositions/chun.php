@@ -22,6 +22,9 @@ Dh’fhaodadh an dithis againn a dhol chun a’ Mhòid.” [89]
 chaidh mi chun a’ phuirt-adhair nan coinneimh. [14]
 Ma thèid thu chun Bhanca Dhìomhair [35]
 
+<li>chun</li>
+  <li>theirig gu tuathanas an Rosaich agus thoir loda todhair chun a’ ghàrraidh agam.” [25]</li>
+
 <?php
 require_once "../../includes/htmlFooter.php";
 ?> 

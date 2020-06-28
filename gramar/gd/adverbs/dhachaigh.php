@@ -20,6 +20,14 @@ require_once "../../includes/htmlHeader.php";
 </ul>
 <p>air an t-slighe dhachaigh ??</p>
 
+<ul>
+<li>ach an àite a’ [sic] toirt dhachaigh [59]</li>
+  <li>Nuair a chaidh sinn a-mach leis an làraidh airson a’ mhòine a thoirt dhachaigh [73]</li>
+  <li>Aon oidhche thug e dà bhradan dhachaigh [113]</li>
+  <li>Innis dhomh an tug e bradan dhachaigh.” [113]</li>
+  <li>Rinn mise ullachadh airson an dust a thoirt dhachaigh. [19]</li>
+</ul>
+
 <?php
 require_once "../../includes/htmlFooter.php";
 ?>
