@@ -171,6 +171,7 @@ HTML;
         Date: {$result["date_of_lang"]}
 HTML;
 
+    $slipLinkText = ($result["auto_id"] != null) ? "view slip" : "create slip";
     echo <<<HTML
         <td style="text-align: right;">{$context["pre"]}</td>
         <td style="text-align: center;">
@@ -183,7 +184,7 @@ HTML;
         <td>
             <small><a href="#" class="slipLink" data-uri="{$context["uri"]}"
                 data-headword="{$result["lemma"]}" data-pos="{$result["pos"]}"
-                data-id="{$result["id"]}" data-xml="{$this->_xmlFile->getFilename()}">slip</a>
+                data-id="{$result["id"]}" data-xml="{$this->_xmlFile->getFilename()}">{$slipLinkText}</a>
             </small>
         </td>
 HTML;
@@ -211,7 +212,7 @@ HTML;
       foreach ($_SESSION["results"] as $nextResult) {
         if ($nextResult['wordform']==$array[0] && $nextResult['pos']==$array[1]) {
           $i++;
-          $locations[] = $nextResult['filename'] . ' ' . $nextResult['id'] . ' ' . $nextResult['date_of_lang'];
+          $locations[] = $nextResult['filename'] . ' ' . $nextResult['id'] . ' ' . $nextResult['date_of_lang'] . ' ' . $nextResult["auto_id"];
         }
       }
       $locs = implode('|', $locations);
