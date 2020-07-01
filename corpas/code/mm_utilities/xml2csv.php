@@ -6,10 +6,13 @@ $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
 PREFIX dc: <http://purl.org/dc/terms/>
-SELECT DISTINCT ?xml ?date
+SELECT DISTINCT ?xml ?date ?title ?supertitle ?supersupertitle
 WHERE
 {
   ?id :xml ?xml .
+  OPTIONAL { ?id dc:title ?title . }
+  OPTIONAL { ?id dc:isPartOf ?id2 . ?id2 dc:title ?supertitle . }
+  OPTIONAL { ?id dc:isPartOf ?id2 . ?id2 dc:isPartOf ?id3 . ?id3 dc:title ?supersupertitle . }
   {
     { ?id :internalDate ?date . }
     UNION
@@ -32,6 +35,16 @@ foreach ($results as $nextResult) {
   $nextDate = $nextResult->date->value;
   $dates[$nextFile] = $nextDate;
 }
+$titles = [];
+foreach ($results as $nextResult) {
+  $nextFile = $nextResult->xml->value;
+  $nextTitle = '';
+  if ($nextResult->supersupertitle->value!='') $nextTitle .= $nextResult->supersupertitle->value . ' – ';
+  if ($nextResult->supertitle->value!='') $nextTitle .= $nextResult->supertitle->value . ' – ';
+  $nextTitle .= $nextResult->title->value;
+  $titles[$nextFile] = $nextTitle;
+}
+
 /*
 foreach ($dates as $key => $value) {
   echo $key . ' ' . $value . PHP_EOL;
@@ -54,8 +67,10 @@ foreach (new RecursiveIteratorIterator($it) as $nextFile) {
         echo $nextWord . ',';
         echo $nextWord . ',';
         echo $nextWord['pos'] . ',';
-        if ($dates[$filename]) { echo $dates[$filename]; }
-        else { echo '9999'; }
+        if ($dates[$filename]) { echo $dates[$filename] . ','; }
+        else { echo '9999,'; }
+        if ($titles[$filename]) { echo '"' . $titles[$filename] . '"'; }
+        else { echo '"6666"'; }
         echo PHP_EOL;
       }
     }
