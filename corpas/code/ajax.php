@@ -39,7 +39,8 @@ switch ($_REQUEST["action"]) {
         $fileHandler = new XmlFileHandler($filename);
       }
       $context = $fileHandler->getContext($elems[1], 8, 8);
-      $context["date"] = $elems[2];   //return the date of language as well
+      $context["date"] = $elems[2];   //return the date of language
+      $context["auto_id"] = $elems[3]; //return the auto_id (slip id) as well
       $results[] = $context;
     }
     echo json_encode($results);

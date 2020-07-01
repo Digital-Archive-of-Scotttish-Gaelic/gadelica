@@ -48,6 +48,7 @@ class SearchController
       $fileResults[$i]["pos"] = $result["pos"];
       $fileResults[$i]["date_of_lang"] = $result["date_of_lang"];
       $fileResults[$i]["filename"] = $result["filename"];
+      $fileResults[$i]["auto_id"] = $result["auto_id"];
       $i++;
     }
     return $fileResults;
@@ -84,9 +85,10 @@ class SearchController
     } else {                              //case insensitive
       $whereClause .= "wordform REGEXP ?";
     }
-    $selectFields =  "lemma, filename, id, wordform, pos, date_of_lang";
+    $selectFields =  "lemma, l.filename AS filename, l.id AS id, wordform, pos, date_of_lang, s.auto_id AS auto_id";
     $sql = <<<SQL
-        SELECT {$selectFields} FROM lemmas
+        SELECT {$selectFields} FROM lemmas AS l
+          LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id
           WHERE {$whereClause}
 SQL;
     return array("sql" => $sql, "search" => $search);
@@ -114,7 +116,8 @@ SQL;
     if ($params["mode"] == "headword") {    //lemma
       $query["search"] = $params["search"];
       $query["sql"] = <<<SQL
-        SELECT filename, id, wordform, pos, lemma, date_of_lang FROM lemmas
+        SELECT l.filename AS filename, l.id AS id, wordform, pos, lemma, date_of_lang, s.auto_id as auto_id FROM lemmas AS l
+            LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id
             WHERE lemma = ?
 SQL;
     } else {                                //wordform
@@ -137,7 +140,6 @@ SQL;
   }
 
   //Retrieves the minimum and maximum dates of language in the database
-  // MM: Would it be more efficient if we just hard-coded these values? Let's discuss. Is it possible to use a non-linear scale for the slider?
   private function _getMinMaxDates() {
     $sql = <<<SQL
         SELECT MIN(date_of_lang) AS min, MAX(date_of_lang) AS max FROM lemmas
