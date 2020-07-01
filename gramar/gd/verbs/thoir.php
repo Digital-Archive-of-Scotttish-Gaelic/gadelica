@@ -17,37 +17,45 @@ require_once "../../includes/htmlHeader.php";
   </tbody>
 </table>
 <hr/>
-
+<p><strong>thoir</strong> has two main senses/uses:</p>
 <ul>
-  <li>thug i Kevin a-steach dhan rum-cadail aice fhèin. [109]</li>
-  <li>Rinn mise ullachadh airson an dust a thoirt dhachaigh. [19]</li>  
-  <li>Thug i a’ ghlainne agus an daga suas gu rum Ailig. [110]</li>
-  <li>b’ e am peanasachadh a fhuair iad gu feumadh iad a h-uile fàd a ghoid iad a thoirt gu taigh bantrach Uilleim [74]</li>
-  <li>“Theirig gu tuathanas an Rosaich agus thoir loda todhair chun a’ ghàrraidh agam.” [25]</li>
-  <li>Chaidh a thoirt a Ghlaschu dhan ospadal. [18]</li>  
-  <li>Nuair a fhuair iad am flat bhiodh iad a’ toirt clann-nighean ann [54]</li>
-  <li>Glè thric ’s e eathraichean beaga a bhiodh gam thoirt bho eilean gu eilean [44]</li>
-  <li>“Thug e an iuchair à pòcaid Theàrlaich [37]</li>
+  <li>as a <a href="#motion">verb of caused motion</a> ‘take/bring something somewhere’</li>
+  <li>as an <a href="#possession">verb of transferring possessing</a> ‘give someone something’</li>
 </ul>
-
-<p>take/bring to do sth</p>
-<ul>
-  <li>Nuair a dh’innis e gu robh e air nighean a thoirt a dh’fhuireach còmhla ris [5]</li>
-</ul>
-
-
-<p>take/bring (with)</p>
-<ul>
-  <li>Tha fios a’m far a bheil iuchar na ciste-tasgaidh aige agus bheir thusa leat na tha innte. [110]</li>
-  <li>Chaidh e sìos an staidhre agus tharraing e a-mach na saigheadan agus thug e leis iad. [121]</li>
-  <li>“Bheir sinn leinn an dubhan,” [56]</li>
-  <li>“Thoir leat gràpa agus theirig gu tuathanas an Rosaich [25]</li>
-</ul>
-
-
-
+In addition, there are many miscellaneous <a href="#idioms">idiomatic uses</a> of <strong>thoir</strong>.
 <hr/>
-<h4>thoir rud do dhuine – give</h4>
+<h3 id="motion"><em>thoir</em> as a verb of caused motion</h3>
+<p>In its simplest sense, <strong>thoir</strong> denotes the kind of event where a person causes a material entity (e.g. another person, animal or object) to
+move along some one-dimensional spatial trajectory. The subject of <strong>thoir</strong> in this sense is a noun phrase denoting the person who causes the motion, 
+the object is a noun phrase denoting the thing being moved, and
+the complement is a <a href="../../xx/pathExpressions.php">path expression</a> denoting the trajectory.
+In other words, <strong>thoir</strong> is the causative of <strong><a href="rach.php">rach</a></strong> ‘go’ and <strong><a href="thig.php">thig</a></strong> ‘come’.
+</p>
+<ul>
+  <li><strong><mark>Thug</mark> i a’ ghlainne agus an daga suas gu rum Ailig.</strong><br/>
+    <small class="text-muted">‘She brought the glass and the pistol up to Alec’s room.’ [#2 110]</small></li>
+  <li><strong>Chaidh a <mark>thoirt</mark> a Ghlaschu dhan ospadal.</strong><br/>
+    <small class="text-muted">‘He was taken to hospital in Glasgow.’ [#2 18]</small></li>    
+  <li><strong>Glè thric ’s e eathraichean beaga a bhiodh gam <mark>thoirt</mark> bho eilean gu eilean.</strong><br/>
+    <small class="text-muted">‘Very often little boats take me from island to island.’ [#2 44]</small></li>
+</ul>
+<p>In the absence of an explicit path expression complement, <strong>thoir</strong> can govern an <a href="../../xx/intentionalExpressions.php">intentional</a> complement:</p>
+<ul>
+  <li><strong>Nuair a dh’innis e gu robh e air nighean a <mark>thoirt a dh’fhuireach còmhla ris</mark> ...</strong><br/> 
+    <small class="text-muted">‘When he said that he had brought a girl to live with him ...’ [#2 5]</small></li>
+</ul>
+<p>In the absence of either of the above, <strong>thoir</strong> takes either a <strong>le</strong> prepositional phrase co-referential with the subject, 
+or the null path expression <strong>ann</strong> ‘there’ as its complement:</p>
+<ul>
+  <li>Chaidh e sìos an staidhre agus tharraing e a-mach na saigheadan agus thug e leis iad.<br/>
+    ‘He went down the stairs and pulled the arrows out and took them with him.’ [#2 121]</li>
+  <li>“Bheir sinn leinn an dubhan.”<br/>
+    “We’ll take the hook with us.” [#2 56]</li>
+  <li>Nuair a fhuair iad am flat bhiodh iad a’ toirt clann-nighean ann.<br/>
+    ‘When they got the flat they would bring girls there.’ [#2 54]</li>
+</ul>
+<hr/>
+<h3 id="possession">thoir rud do dhuine – give</h3>
 <p>Transfer of possession to somebody</p>
 <p>Concrete object:</p>
 <ul>
@@ -70,7 +78,34 @@ require_once "../../includes/htmlHeader.php";
 <hr/>
 
 
-<p>idioms</p>
+
+<h3 id="idioms">Miscellaneous idiomatic uses of <em>thoir</em></h3>
+<table class="table">
+  <tbody>
+    <tr>
+      <td><strong>thoir <mark>air</mark> duine rud a dhèanamh</strong><br/><small class="text-muted">‘make someone do something’</small></td>
+      <td>
+        <ul>
+          <li><strong>’S e am plana a bha aig Sandaidh gun <mark>tugadh e a chreidsinn air Jock Wallace</mark> gun chuir Uisdean às dha fhèin.</strong><br/>
+            <small class="text-muted">‘Sandy’s plan was to convince Jock Wallace that Hugh had killed himself.’ [#2 56]</small></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>thoir <mark>bàs</mark> do</strong><br/><small class="text-muted">‘kill’</small></td>
+      <td>
+        <ul>
+          <li><strong>Cha b’ e briseadh-cridhe a thug bàs do Pheigi Anna</strong><br/>
+            <small class="text-muted">‘’ [#2 86]</small></li>
+            <li><strong>Ach tha cinnt againn a-nise gur e stròc a thug bàs do dh’athair Mab.</strong><br/>
+            <small class="text-muted">‘’ [#2 115]</small></li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!--
 <ul>
   <li>Bha e air leth modhail, a’ toirt ‘Sir’ dhomh glè thric. [48]</li>
   <li>Cha do smaoinich mi aon uair gur e eucorach a bha anns a’ ghille a bha coimhead cho ceart, agus a bha toirt ‘Sir’ dhomh a h-uile turas a bhruidhinneadh e rium. [50]</li>
@@ -78,19 +113,19 @@ require_once "../../includes/htmlHeader.php";
   <li>Chan eil mòran de dhaoine òga a bheir urram dhan aois an-diugh. [48]</li>
   <li>“Tha e a’ toirt dhut gu meadhan-latha Disathairne airson na fiachan a tha aige ort a phàigheadh. [55]</li>
   <li>Thug a’ chiad fhear a-mach sgian [57]</li>
-  <li>’S e am plana a bha aig Sandaidh gun tugadh e a chreidsinn air Jock Wallace gun chuir Uisdean às dha fhèin. [56]</li>
+  
   <li>thug am beathach breab dha mun cheann. [57]</li>
   <li>Chan ann airson biadh a tha siorc a’ toirt ionnsaigh air duine idir. [63]</li>
   <li>Thug Sam sùil gheur o dhuine gu bean. [67]</li>
-  <li>Fada ro sin thug an t-eucorach a chasan leis gu tìr-mòr. [74]</li>
-  <li> thug an ceàrd a chasan às. [85]</li>
-  <li>“Tha thu glè fhortanach do chasan a thoirt às,” [102]</li>
+  
+  <li>Fada ro sin thug an t-eucorach a chasan leis gu tìr-mòr. ‘Long before that, the criminal took his feet with him to the mainland’ [74]</li>
+  <li>Thug an ceàrd a chasan às. ‘The tinker took his feet out of it.’ [85]</li>
+  <li>“Tha thu glè fhortanach do chasan a thoirt às.” “You are very fortunate to take your feet out of it.” [102]</li>
+  
   <li>Ach ’s e a thug an siorraidh againne gu aire pàipearan-naidheachd na rìoghachd cùis-lagha an dà thidseir [74]</li>
   <li>’S e feadhainn a bha ag obair air mòine faisg air an rathad a thug cobhair dhan dà nighinn [75]</li>
   <li>tha mi a’ dol a thoirt dhut aon chothrom dearbhadh gur e duine sìobhalta a tha annad [76]</li>
-  <li>Cha b’ e briseadh-cridhe a thug bàs do Pheigi Anna idir mar a bha sinn a’ cluinntinn, [86]</li>
-  <li>“Dè thug bàs dha?” [8]</li>
-  <li>Ach tha cinnt againn a-nise gur e stròc a thug bàs do dh’athair Mab. [115]</li>
+  
   <li>bha Mangan cho trom ann an gaol ’s nach robh e a’ toirt cluais dhan t-sodalachd sin. [83]</li>
   <li>’S dòcha gu robh am baile mòr air a h-inntinn o chionn fhada ged nach robh i a’ toirt guth air. [87]</li>
   <li>ma gheallas tu nach toir thu guth air ri duine beò [105]</li>
@@ -133,7 +168,7 @@ require_once "../../includes/htmlHeader.php";
   <li>“Tha C mar chearcall le glaim air a thoirt às a mhionach, [34]</li>
   <li>Ach ma bha e a’ smaoineachadh gun tug seo a’ ghaoth à seòl Sam Broom, bha e air a mhealladh. [66]</li>
 </ul>
-
+-->
 
 <?php
 require_once "../../includes/htmlFooter.php";
