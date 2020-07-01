@@ -59,20 +59,22 @@ foreach (new RecursiveIteratorIterator($it) as $nextFile) {
     $xml->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/');
     foreach ($xml->xpath("//dasg:w") as $nextWord) {
       $lemma = (string)$nextWord['lemma'];
-      if ($lemma && !strpos($lemma,' ')) { // ann an ???
-        echo $lemma . ',';
-        $filename = substr($nextFile,10);
-        echo $filename . ',';
-        echo $nextWord['id'] . ',';
-        echo $nextWord . ',';
-        echo $nextWord . ',';
-        echo $nextWord['pos'] . ',';
-        if ($dates[$filename]) { echo $dates[$filename] . ','; }
-        else { echo '9999,'; }
-        if ($titles[$filename]) { echo '"' . $titles[$filename] . '"'; }
-        else { echo '"6666"'; }
-        echo PHP_EOL;
-      }
+      if ($lemma /*&& !strpos($lemma,' ')*/) { echo $lemma . ','; }
+      else { echo $nextWord . ','; }
+      $filename = substr($nextFile,10);
+      echo $filename . ',';
+      echo $nextWord['id'] . ',';
+      echo $nextWord . ',';
+      echo $nextWord . ',';
+      echo $nextWord['pos'] . ',';
+      if ($dates[$filename]) { echo $dates[$filename] . ','; }
+      else { echo '9999,'; }
+      if ($titles[$filename]) { echo '"' . $titles[$filename] . '",'; }
+      else { echo '"6666"'; }
+      $nextWord->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/');
+      $xxxs = $nextWord->xpath("preceding::dasg:pb[1]/@n");
+      echo $xxxs[0];
+      echo PHP_EOL;
     }
   }
 }
