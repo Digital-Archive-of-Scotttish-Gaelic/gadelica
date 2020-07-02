@@ -117,6 +117,10 @@ HTML;
             <tbody>
 HTML;
     if (count($results)) {
+      $lastDisplayedRowNum = $rowNum + $this->_perpage - 1;
+      echo <<<HTML
+        <h4>Showing results {$rowNum} - {$lastDisplayedRowNum} of {$resultTotal}</h4>
+HTML;
       $filename = "";
       foreach ($results as $result) {
         if ($filename != $result["filename"]) {
@@ -165,13 +169,21 @@ HTML;
   private function _writeSearchResult($result) {
     $context = $this->_xmlFile->getContext($result["id"], 12, 12);
     $title = <<<HTML
-        {$this->_xmlFile->getFilename()}{$result["id"]}<br><br>
-        headword: {$result["lemma"]}<br>
+        Headword: {$result["lemma"]}<br>
         POS: {$result["pos"]}<br>
-        Date: {$result["date_of_lang"]}
+        Date: {$result["date_of_lang"]}<br>
+        Title: {$result["title"]}<br>
+        Page No: {$result["page"]}<br><br>
+        {$this->_xmlFile->getFilename()}{$result["id"]}<br><br>        
 HTML;
-
-    $slipLinkText = ($result["auto_id"] != null) ? "view slip" : "create slip";
+    //check if there is an exisitng slip for this entry
+    if ($result["auto_id"] != null) {
+      $slipLinkText = "view slip";
+      $createSlipStyle = "";
+    } else {
+      $slipLinkText = "create slip";
+      $createSlipStyle = "createSlipLink";
+    }
     echo <<<HTML
         <td style="text-align: right;">{$context["pre"]}</td>
         <td style="text-align: center;">
@@ -182,9 +194,14 @@ HTML;
         </td>
         <td>{$context["post"]}</td>
         <td>
-            <small><a href="#" class="slipLink" data-uri="{$context["uri"]}"
-                data-headword="{$result["lemma"]}" data-pos="{$result["pos"]}"
-                data-id="{$result["id"]}" data-xml="{$this->_xmlFile->getFilename()}">{$slipLinkText}</a>
+            <small>
+                <a href="#" class="slipLink {$createSlipStyle}" data-uri="{$context["uri"]}"
+                    data-headword="{$result["lemma"]}" data-pos="{$result["pos"]}"
+                    data-id="{$result["id"]}" data-xml="{$this->_xmlFile->getFilename()}"
+                    data-date="{$result["date_of_lang"]}" data-title="{$result["title"]}"
+                    data-page="{$result["page"]}">
+                    {$slipLinkText}
+                </a>
             </small>
         </td>
 HTML;
@@ -192,7 +209,8 @@ HTML;
   }
 
   private function _writeDictionaryView() { // added by MM
-    echo '<h3>' . $_SESSION["results"][0]['lemma'] . ' ' . count($_SESSION["results"]) .'</h3>'; // MM edit
+    echo '<h4>' . $_SESSION["results"][0]['lemma'] . '</h4>';
+    echo '<h5>' . count($_SESSION["results"]) .' results</h5>';
     $forms = [];
     foreach ($_SESSION["results"] as $nextResult) {
       $forms[] = $nextResult['wordform'] . '|' . $nextResult['pos'];
@@ -212,7 +230,9 @@ HTML;
       foreach ($_SESSION["results"] as $nextResult) {
         if ($nextResult['wordform']==$array[0] && $nextResult['pos']==$array[1]) {
           $i++;
-          $locations[] = $nextResult['filename'] . ' ' . $nextResult['id'] . ' ' . $nextResult['date_of_lang'] . ' ' . $nextResult["auto_id"];
+          $locations[] = $nextResult['filename'] . ' ' . $nextResult['id'] . ' '
+            . $nextResult['date_of_lang'] . ' ' . $nextResult["auto_id"] . ' '
+            . str_replace(" ", "\\", $nextResult['title']) . ' ' . $nextResult["page"];
         }
       }
       $locs = implode('|', $locations);
@@ -238,39 +258,52 @@ HTML;
 
   private function _writeSlipDiv() {
     echo <<<HTML
-        <div id="slip">
-            filename: <span id="slipFilename"></span><br>
-            id: <span id="slipId"></span><br>
-            headword: <span id="slipHeadword"></span><br>
-            POS: <span id="slipPOS"/></span><br><br>
-
-            <div>
-              <div>
+        <div id="slip"> 
+            <div id="slipHeader">
+              <div id="slipTopRight">
+                  <div id="slipChecked">
+                  <!--label for="slipStarred">Starred: </label>
+                  <input type="checkbox" name="slipStarred" id="slipStarred"-->
+                  </div>
+                  <div id="slipNumber"></div>
+              </div> 
+              <div id="slipHeadword"></div>
+              <div id="slipTextNum"></div>
+            </div>  <!-- end slipHeader -->
+        
+            <div id="slipBody">
+              <!--div>
                 <span><a href="#" class="updateContext btn-link" id="decrementPre">-</a></span>
                 <span><a href="#" class="updateContext" id="incrementPre">+</a></span>
-              </div>
+              </div-->
+              
               <span data-precontextscope="20" data-postcontextscope="20" id="slipContext"></span>
-              <div>
+              
+              <!--div>
                 <span><a href="#" class="updateContext btn-link" id="decrementPost">-</a></span>
                 <span><a href="#" class="updateContext" id="incrementPost">+</a></span>
-              </div>
+              </div-->
+              <div id="slipTranslation"></div>
             </div>
-
-            <div>
-                <label for="slipStarred">Starred: </label>
-                <input type="checkbox" name="slipStarred" id="slipStarred">
+            
+            <div id="slipFooter">
+                <div id="slipTextRefContainer">
+                    <div id="slipTextRef"></div>
+                </div>
+                <div id="slipDate"></div>
             </div>
-
-            <div>
-                <label for="slipTranslation">English Translation:</label><br>
-                <div id="slipTranslation"></div>
-            </div>
+            
+        <!--
+            filename: <span id="slipFilename"></span><br>
+            id: <span id="slipId"></span><br>
+            POS: <span id="slipPOS"/></span><br><br>
+           
 
             <div>
                 <label for="slipNotes">Notes:</label><br>
                 <div id="slipNotes"></div>
             </div>
-
+        -->
             <div style="text-align: right">
                 <button type="button" id="editSlip" class="btn btn-primary">edit</button>
                 <a id="closeSlipLink" href="#">close</a>
