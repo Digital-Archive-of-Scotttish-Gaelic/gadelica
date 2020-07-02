@@ -6,7 +6,7 @@ $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
 PREFIX dc: <http://purl.org/dc/terms/>
-SELECT DISTINCT ?xml ?date ?title ?supertitle ?supersupertitle
+SELECT DISTINCT ?xml ?date ?title ?supertitle ?supersupertitle ?medium
 WHERE
 {
   ?id :xml ?xml .
@@ -19,6 +19,13 @@ WHERE
     { ?id dc:isPartOf ?id2 . ?id2 :internalDate ?date . }
     UNION
     { ?id dc:isPartOf ?id2 . ?id2 dc:isPartOf ?id3 . ?id3 :internalDate ?date . }
+  }
+  {
+    { ?id :medium ?medium . }
+    UNION
+    { ?id dc:isPartOf ?id2 . ?id2 :medium ?medium . }
+    UNION
+    { ?id dc:isPartOf ?id2 . ?id2 dc:isPartOf ?id3 . ?id3 :medium ?medium . }
   }
 }
 SPQR;
@@ -44,6 +51,13 @@ foreach ($results as $nextResult) {
   $nextTitle .= $nextResult->title->value;
   $titles[$nextFile] = $nextTitle;
 }
+$media = [];
+foreach ($results as $nextResult) {
+  $nextFile = $nextResult->xml->value;
+  $nextMedium = $nextResult->medium->value;
+  $media[$nextFile] = $nextMedium;
+}
+
 
 /*
 foreach ($dates as $key => $value) {
@@ -70,10 +84,12 @@ foreach (new RecursiveIteratorIterator($it) as $nextFile) {
       if ($dates[$filename]) { echo $dates[$filename] . ','; }
       else { echo '9999,'; }
       if ($titles[$filename]) { echo '"' . $titles[$filename] . '",'; }
-      else { echo '"6666"'; }
+      else { echo '"6666,"'; }
       $nextWord->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/');
       $xxxs = $nextWord->xpath("preceding::dasg:pb[1]/@n");
-      echo $xxxs[0];
+      echo $xxxs[0] . ",";
+      if ($media[$filename]) { echo $media[$filename]; }
+      else { echo '7777'; }
       echo PHP_EOL;
     }
   }
