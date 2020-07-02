@@ -49,6 +49,8 @@ class SearchController
       $fileResults[$i]["date_of_lang"] = $result["date_of_lang"];
       $fileResults[$i]["filename"] = $result["filename"];
       $fileResults[$i]["auto_id"] = $result["auto_id"];
+      $fileResults[$i]["title"] = $result["title"];
+      $fileResults[$i]["page"] = $result["page"];
       $i++;
     }
     return $fileResults;
@@ -85,7 +87,7 @@ class SearchController
     } else {                              //case insensitive
       $whereClause .= "wordform REGEXP ?";
     }
-    $selectFields =  "lemma, l.filename AS filename, l.id AS id, wordform, pos, date_of_lang, s.auto_id AS auto_id";
+    $selectFields =  "lemma, l.filename AS filename, l.id AS id, wordform, pos, date_of_lang, title, page, s.auto_id AS auto_id";
     $sql = <<<SQL
         SELECT {$selectFields} FROM lemmas AS l
           LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id
@@ -116,11 +118,11 @@ SQL;
     if ($params["mode"] == "headword") {    //lemma
       $query["search"] = $params["search"];
       $query["sql"] = <<<SQL
-        SELECT l.filename AS filename, l.id AS id, wordform, pos, lemma, date_of_lang, s.auto_id as auto_id FROM lemmas AS l
+        SELECT l.filename AS filename, l.id AS id, wordform, pos, lemma, date_of_lang, title, page, s.auto_id as auto_id FROM lemmas AS l
             LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id
             WHERE lemma = ?
 SQL;
-    } else {                                //wordform
+    } else {                               //wordform
       $query = $this->_getWordformQuery($params);
     }
     if ($params["selectedDates"]) {

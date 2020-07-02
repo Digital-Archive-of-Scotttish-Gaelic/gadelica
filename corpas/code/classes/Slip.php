@@ -3,7 +3,7 @@
 
 class Slip
 {
-  private $_filename, $_id, $_db;
+  private $_auto_id, $_filename, $_id, $_db;
   private $_starred, $_translation, $_notes;
   private $_preContextScope, $_postContextScope, $_lastUpdated;
   private $_isNew;
@@ -35,6 +35,10 @@ SQL;
       $this->_db->exec($sql, array($this->_filename, $this->_id, $preScope, $postScope));
     }
     return $this;
+  }
+
+  public function getAutoId() {
+    return $this->_auto_id;
   }
 
   public function getFilename() {
@@ -74,6 +78,7 @@ SQL;
   }
 
   private function _populateClass($params) {
+    $this->_auto_id = $params["auto_id"];
     $this->_isNew = false;
     $this->_starred = $params["starred"] ? 1 : 0;
     $this->_translation = $params["translation"];
