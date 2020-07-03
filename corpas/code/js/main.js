@@ -126,7 +126,7 @@ $(function () {
         title += 'Date: ' + val.date + '<br>';
         title += 'Title: ' + val.title + '<br>';
         title += 'Page No:: ' + val.page + '<br><br>';
-        title += val.filename + val.id;
+        title += val.filename + '<br>' + val.id;
         var slipLinkText = 'create slip';
         var createSlipStyle = 'createSlipLink';
         if (val.auto_id) {  //if a slip exists for this entry
