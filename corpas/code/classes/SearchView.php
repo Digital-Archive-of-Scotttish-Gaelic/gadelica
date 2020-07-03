@@ -101,6 +101,22 @@ class SearchView
                 <label id="dateRangeMax">{$minMaxDates["max"]}</label>
             </div>
         </div>
+        <br>
+        <div class="form-group">
+            <p>Restrict by medium:</p>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="medium[]" id="proseMediumCheck" value="prose" checked>
+                <label class="form-check-label" for="proseMediumCheck">prose</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="medium[]" id="verseMediumCheck" value="verse" checked>
+                <label class="form-check-label" for="verseMediumCheck">verse</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="medium[]" id="otherMediumCheck" value="other" checked>
+                <label class="form-check-label" for="otherMediumCheck">other</label>
+            </div>
+        </div>
       </form>
 HTML;
     $this->_writeSearchJavascript($minMaxDates); // writes JS for year slider (maybe not necessary?)
@@ -118,6 +134,7 @@ HTML;
 HTML;
     if (count($results)) {
       $lastDisplayedRowNum = $rowNum + $this->_perpage - 1;
+      $lastDisplayedRowNum = ($lastDisplayedRowNum > $resultTotal) ? $resultTotal : $lastDisplayedRowNum;
       echo <<<HTML
         <h4>Showing results {$rowNum} - {$lastDisplayedRowNum} of {$resultTotal}</h4>
 HTML;
@@ -174,7 +191,7 @@ HTML;
         Date: {$result["date_of_lang"]}<br>
         Title: {$result["title"]}<br>
         Page No: {$result["page"]}<br><br>
-        {$this->_xmlFile->getFilename()}{$result["id"]}<br><br>        
+        {$this->_xmlFile->getFilename()}<br>{$result["id"]}      
 HTML;
     //check if there is an exisitng slip for this entry
     if ($result["auto_id"] != null) {

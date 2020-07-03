@@ -14,7 +14,7 @@ WHERE
 }
 SPQR;
   $url = 'https://daerg.arts.gla.ac.uk/fuseki/Corpus?output=json&query=' . urlencode($query);
-  if (getcwd()=='/Users/mark/Sites/gadelica/corpas/code') {
+  if (getcwd()=='/Users/mark/Sites/gadelica/corpas/code' || getcwd()=='/Users/stephenbarrett/Sites/gadelica/corpas/code') {
     $url = 'http://localhost:3030/Corpus?output=json&query=' . urlencode($query);
   }
   $json = file_get_contents($url);
@@ -47,7 +47,7 @@ WHERE
 }
 SPQR;
   $url = 'https://daerg.arts.gla.ac.uk/fuseki/Corpus?output=json&query=' . urlencode($query);
-  if (getcwd()=='/Users/mark/Sites/gadelica/corpas/code') {
+  if (getcwd()=='/Users/mark/Sites/gadelica/corpas/code' || getcwd()=='/Users/stephenbarrett/Sites/gadelica/corpas/code') {
     $url = 'http://localhost:3030/Corpus?output=json&query=' . urlencode($query);
   }
   $json = file_get_contents($url);
@@ -84,7 +84,7 @@ WHERE
 }
 SPQR;
   $url = 'https://daerg.arts.gla.ac.uk/fuseki/Corpus?output=json&query=' . urlencode($query);
-  if (getcwd()=='/Users/mark/Sites/gadelica/corpas/code') {
+  if (getcwd()=='/Users/mark/Sites/gadelica/corpas/code' || getcwd()=='/Users/stephenbarrett/Sites/gadelica/corpas/code') {
     $url = 'http://localhost:3030/Corpus?output=json&query=' . urlencode($query);
   }
   $json = file_get_contents($url);
@@ -143,7 +143,7 @@ WHERE
 ORDER BY ?suburiRank
 SPQR;
 $url = 'https://daerg.arts.gla.ac.uk/fuseki/Corpus?output=json&query=' . urlencode($query);
-if (getcwd()=='/Users/mark/Sites/gadelica/corpas/code') {
+if (getcwd()=='/Users/mark/Sites/gadelica/corpas/code' || getcwd()=='/Users/stephenbarrett/Sites/gadelica/corpas/code') {
   $url = 'http://localhost:3030/Corpus?output=json&query=' . urlencode($query);
 }
 $json = file_get_contents($url);

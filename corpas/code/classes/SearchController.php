@@ -87,7 +87,7 @@ class SearchController
     } else {                              //case insensitive
       $whereClause .= "wordform REGEXP ?";
     }
-    $selectFields =  "lemma, l.filename AS filename, l.id AS id, wordform, pos, date_of_lang, title, page, s.auto_id AS auto_id";
+    $selectFields =  "lemma, l.filename AS filename, l.id AS id, wordform, pos, date_of_lang, title, page, medium, s.auto_id AS auto_id";
     $sql = <<<SQL
         SELECT {$selectFields} FROM lemmas AS l
           LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id
@@ -118,7 +118,7 @@ SQL;
     if ($params["mode"] == "headword") {    //lemma
       $query["search"] = $params["search"];
       $query["sql"] = <<<SQL
-        SELECT l.filename AS filename, l.id AS id, wordform, pos, lemma, date_of_lang, title, page, s.auto_id as auto_id FROM lemmas AS l
+        SELECT l.filename AS filename, l.id AS id, wordform, pos, lemma, date_of_lang, title, page, medium, s.auto_id as auto_id FROM lemmas AS l
             LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id
             WHERE lemma = ?
 SQL;
@@ -128,6 +128,7 @@ SQL;
     if ($params["selectedDates"]) {
       $query["sql"] .= $this->_getDateWhereClause($params);
     }
+    $query["sql"] .= $this->_getMediumWhereClause($params);
     $query["sql"] .= <<<SQL
         ORDER BY {$orderBy}
 SQL;
@@ -138,6 +139,20 @@ SQL;
   private function _getDateWhereClause($params) {
     $dates = explode('-', $params["selectedDates"]);
     $whereClause = " AND date_of_lang >= {$dates[0]} AND date_of_lang <= {$dates[1]} ";
+    return $whereClause;
+  }
+
+  private function _getMediumWhereClause($params) {
+    $whereClause = "";
+    if (count($params["medium"]) == 3) {
+      return $whereClause;    //don't bother with restrictions if all selected
+    }
+    $whereClause = " AND (";
+    foreach ($params["medium"] as $medium) {
+      $mediumString[] = " medium = '{$medium}' ";
+    }
+    $whereClause .= implode(" OR ", $mediumString);
+    $whereClause .= ") ";
     return $whereClause;
   }
 
