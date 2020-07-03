@@ -14,6 +14,7 @@ require_once "includes/htmlHeader.php";
       <a href="gd/verbs/bi.php">bi</a>, 
       <a href="xx/copula.php">bu</a>, 
       <a href="gd/particles/cha.php">cha</a>, 
+      <a href="gd/prepositions/an_deeidh.php">dèidh</a>, 
       <a href="gd/adjectives/gann.php">gann</a>,
       <a href="gd/particles/gun.php">gun</a>,
       <a href="gd/prepositions/gu.php">gu</a>, 
@@ -29,6 +30,7 @@ require_once "includes/htmlHeader.php";
     </p>
 
     <p>English index: 
+      <a href="gd/prepositions/an_deeidh.php">after</a>, 
       <a href="xx/degreeExpressions.php">almost</a>, 
       <a href="xx/degreeExpressions.php">barely</a>, 
       <a href="gd/verbs/thig.php">come</a>, 
