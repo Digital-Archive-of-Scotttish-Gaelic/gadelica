@@ -15,6 +15,7 @@ require_once "includes/htmlHeader.php";
       <a href="xx/copula.php">bu</a>, 
       <a href="gd/particles/cha.php">cha</a>, 
       <a href="gd/prepositions/an_deeidh.php">dèidh</a>, 
+      <a href="gd/verbs/faigh.php">faigh</a>,
       <a href="gd/adjectives/gann.php">gann</a>,
       <a href="gd/particles/gun.php">gun</a>,
       <a href="gd/prepositions/gu.php">gu</a>, 
