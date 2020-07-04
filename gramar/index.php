@@ -25,6 +25,7 @@ require_once "includes/htmlHeader.php";
       <a href="gd/particles/nach.php">nach</a>, 
       <a href="gd/conjunctions/nan.php">nan</a>,
       <a href="gd/verbs/rach.php">rach</a>,
+      <a href="gd/adverbs/seachad.php">seachad</a>,
       <a href="gd/verbs/theab.php">theab</a>,
       <a href="gd/verbs/thig.php">thig</a>
     </p>
