@@ -3,7 +3,7 @@ require_once "../../includes/htmlHeader.php";
 ?>
 <h1>seall</h1>
 <p><strong>seall</strong> is a <a href="../../xx/regularVerbs.php">regular verb</a> corresponding to the English ‘show’, ‘look’, ‘see’.</p>
-<p>Verbs with a similar meaning are <strong><a href="faic.php">faic</a></strong> and <strong><a href="coimhead.php">coimhead</a></strong>.</p>
+<p>Verbs with a similar meaning (visual perception and attention) are <strong><a href="coimhead.php">coimhead</a></strong> and <strong><a href="faic.php">faic</a></strong>. (cluinn, èist?)</p>
 <p>The forms of <strong>seall</strong> are:</p>
 <table class="table table-bordered text-center" style="max-width:800px;">
   <thead>
@@ -18,8 +18,8 @@ require_once "../../includes/htmlHeader.php";
   </tbody>
 </table>
 <hr/>
-<p>Often used in imperative cf. coimhead.</p>
 <h3>Intransitive uses – ‘look (at)’, ‘check’</h3>
+<p>Often used in imperative cf. coimhead.</p>
 <p><strong>seall ri rud</strong> – ‘look at something’, ‘check something out’</p>
 <ul>
   <li><strong>“<mark>Seall ri cas</mark> a’ bheathaich, ma-tà.”</strong><br/>
@@ -61,39 +61,49 @@ require_once "../../includes/htmlHeader.php";
   <li><strong>“<mark>Seall a-nis mar a tha</mark> am bùrn a’ dol sìos.”</strong><br/>
     <small class="text-muted">“See now how the water is going down.” [#2 67]</small></li>
 </ul>
-<p>seall a-rithist – ‘take another look’</p>
+<p><strong>seall a-rithist</strong> – ‘take another look’</p>
 <ul>
-  <li>Bheil sibh a’ creidsinn ann an gaol a’ chiad seallaidh?” “Tha, ach bu chaomh leam sealltainn a-rithist.” [#2 49]</li>
+  <li><strong>“Bheil sibh a’ creidsinn ann an gaol a’ chiad seallaidh?” “Tha, ach bu chaomh leam <mark>sealltainn a-rithist</mark>.”</strong><br/>
+  <small class="text-muted">“Do you believe in love at first sight?” “Yes, but I’d want to take another look.” [#2 49]</small></li>
 </ul>
-
-
-
-
-
-
-
 <hr/>
 <h3>Transitive uses – ‘show’, ‘demonstrate’</h3>
-
-Sheall am poileasman dealbh Mhangain do Ruairidh Beag [84]
-Sheall Laura an còmhlachadh do Mhangan [86]
-Nuair a sheall e a dealbh dhaibh, thuirt tè: “Dhia beannaich mi, ’s e Sìonach a tha seo.” [7]
-Sheall i dhomh clòsaid mhòr làn de dheilbh [8]
-Dh’fhosgail am poileasman an daga agus sheall e na sia peilearan dham charaid. [102]
-Sheall mi na pàipearan don Chòirneal. [18]
-Bha am ministear a-staigh am feasgar a thàinig am parsail, agus bha a’ bhantrach a’ sealltainn dha na fhuair i nuair a thàinig Frank a-steach [21]
-Nuair a thàinig Donnchadh a-nuas sheall e na lorg e do Mhòr [22-3]
-Nise, ’s e seudair a bha sa bhodach, agus le buille dhe shùil dh’aithnich e gur e seudan-muineil brèige a sheall a’ chailleach dha. [23]
- Chuir Aonghas a mheur air a bheul, a’ comharrachadh gu robh e dol a shealltainn dhomh rud dìomhair. [32]
-Bha an clàr air a roiligeadh am broinn siolandair meatailt, ach ged a sheall e dhomh e, cha tug e guth air a’ chiste-mhara [36]
-sheall i an litir dhomh. [40]
-
-Sheall e dhaibh far an robh biadh is deoch sa chèaban [100] question?
-Chaidh fear a chur còmhla ris a shealltainn dha far an robh an obair [10]
-Nuair a bhiodh là blàth ann bhiodh sinn a-muigh san iodhlainn agus shealladh e dhomh mar a dhèanainn fuaim binn le bileag feòir, [33]
-
-’S e uaireadair prìseil a th’ ann, le cèis agus slabhraidh òir, ach nuair a chaidh mi a shealltainn dha mo charaid gu robh e agam cha robh Aonghas ann. [35]
-
+<p><strong>seall rud do dhuine</strong> – ‘show someone something’</p>
+<ul>
+  <li><strong><mark>Sheall am poileasman dealbh Mhangain do Ruairidh Beag</mark>.</strong><br/>
+  <small class="text-muted">‘The policeman showed Mangan’s picture to Little Roddy.’ [#2 84]</small></li>
+  <li><strong><mark>Sheall i dhomh clòsaid mhòr</mark> làn de dheilbh.</strong><br/>
+  <small class="text-muted">‘She showed me a large closet full of pictures.’ [#2 8]</small></li>
+  <li><strong><mark>Sheall mi na pàipearan don Chòirneal</mark>.</strong><br/>
+  <small class="text-muted">‘I showed the papers to the Colonel.’ [#2 18]</small></li>
+  <li><strong>Chuir Aonghas a mheur air a bheul, a’ comharrachadh gu robh e dol a <mark>shealltainn dhomh rud dìomhair</mark>.</strong><br/>
+  <small class="text-muted"> ‘Angus put his finger on his mouth, signalling that he was going to show me a secret.’ [#2 32]</small></li>
+</ul>
+<p>Free relative clause examples:</p>
+<ul>
+  <li><strong>Bha am ministear a-staigh am feasgar a thàinig am parsail, agus bha a’ bhantrach a’ <mark>sealltainn dha na fhuair i</mark> nuair a thàinig Frank a-steach.</strong><br/>
+  <small class="text-muted">‘The minister was in the evening the parcel came, and the widow was showing him what she got when Frank came in.’ [#2 21]</small></li>
+  <li><strong>Nuair a thàinig Donnchadh a-nuas <mark>sheall e na lorg e do Mhòr</mark>.</strong><br/>
+  <small class="text-muted">‘When Duncan came down, he showed Morag what he had found.’ [#2 22-3]</small></li>
+</ul>
+<p><strong>seall do dhuine far an ...</strong> – ‘show someone where ...’</p>
+<ul>
+  <li><strong><mark>Sheall e dhaibh far an robh</mark> biadh is deoch sa chèaban.</strong><br/>
+  <small class="text-muted">‘He shows them where the food and drink was in the cabin.’ [#2 100]</small></li>
+  <li><strong>Chaidh fear a chur còmhla ris a <mark>shealltainn dha far an robh</mark> an obair.</strong><br/>
+  <small class="text-muted">‘A man was sent with him to show him where the work was.’ [#2 10]</small></li>
+</ul>
+<p><strong>seall do dhuine mar a ...</strong> – ‘show someone how to ...’</p>
+<ul>
+  <li><strong>Nuair a bhiodh là blàth ann bhiodh sinn a-muigh san iodhlainn agus <mark>shealladh e dhomh mar a dhèanainn</mark> fuaim binn le bileag feòir,</strong><br/>
+  <small class="text-muted">‘When it was warm, we would be outside in the yard and he would show me how to make a sweet sound with a blade of grass.’ [#2 33]</small></li>
+</ul>
+<p><strong>seall do dhuine gun ...</strong> – ‘show someone that ...’</p>
+<ul>
+  <li><strong>Nuair a chaidh mi a <mark>shealltainn dha mo charaid gu robh</mark> e agam cha robh Aonghas ann.</strong><br/>
+  <small class="text-muted">‘When I went to show my friend that I had it, Angus was not there.’ [#2 35]</small></li>
+</ul>
+<hr/>
 <h3>idiom</h3>
 mar as àbhaist bha mi a’ coimhead às dèidh an àite a cheart cho cùramach ’s a sheallainn às dèidh mo dhachaigh fhìn. [13]
 
