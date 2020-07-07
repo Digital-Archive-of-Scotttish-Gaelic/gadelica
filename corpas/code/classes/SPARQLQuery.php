@@ -37,5 +37,4 @@ SPQR;
     }
     return $results;
   }
-
 }
