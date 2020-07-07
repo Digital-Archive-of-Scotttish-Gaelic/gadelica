@@ -43,7 +43,7 @@ HTML;
       } else {
         $nickname = (empty($writer["nickname"])) ? "" : " (" . $writer["nickname"] . ")";
         $writerList[$index] = <<<HTML
-            <a href="viewWriter.php?uri={$writer["writerUri"]}">{$writer["forenames"]} {$writer["surname"]}</a> {$nickname}
+            <a href="viewWriter2.php?uri={$writer["writerUri"]}">{$writer["forenames"]} {$writer["surname"]}</a> {$nickname}
 HTML;
       }
     }

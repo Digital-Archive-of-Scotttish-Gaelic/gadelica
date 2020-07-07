@@ -4,7 +4,7 @@
 class CorpusText
 {
   private $_uri;
-  private $_id, $_title, $_date, $_publisher, $_rating, $_superuri, $_supertitle, $_transformedText;
+  private $_id, $_title, $_date, $_publisher, $_rating, $_superuri, $_supertitle, $_filename, $_transformedText;
   private $_writers, $_media, $_genres, $_subURIs = [];  //arrays
 
   public function __construct($uri) {
@@ -12,6 +12,9 @@ class CorpusText
     $this->_load();
   }
 
+  /**
+   * Queries Fueski for text info and sets properties accordingly
+   */
   private function _load() {
     $uri = $this->_uri;
     $query = <<<SPQR
@@ -61,6 +64,7 @@ SPQR;
     $this->_superuri = $results[0]->superuri->value;
     $this->_supertitle = $results[0]->supertitle->value;
     $this->_setSubURIs($results);
+    $this->_filename = $results[0]->xml->value;
     $this->_transformedText = $this->_applyXSLT($results);
   }
 
@@ -142,9 +146,8 @@ SPQR;
 
   private function _applyXSLT($results) {
     // XML:
-    $xml = $results[0]->xml->value;
-    if ($xml != '') {
-      $text = new SimpleXMLElement("../xml/" . $xml, 0, true);
+    if ($this->_filename != '') {
+      $text = new SimpleXMLElement("../xml/" . $this->_filename, 0, true);
       $xsl = new DOMDocument;
       $xsl->load('corpus.xsl');
       $proc = new XSLTProcessor;
@@ -235,6 +238,8 @@ SPQR;
     return $writers;
   }
 
+  //Getters
+
   public function getURI() {
     return $this->_uri;
   }
@@ -281,6 +286,10 @@ SPQR;
 
   public function getSubURIs() {
     return $this->_subURIs;
+  }
+
+  public function getFilename() {
+    return $this->_filename;
   }
 
   public function getTransformedText() {

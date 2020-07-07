@@ -25,10 +25,65 @@ class ViewTextView
           </tbody>
         </table>
         <p>&nbsp;</p>
+        {$this->_getSearchFormHtml()}
         {$this->_getSubURIHtml()}
         {$this->_text->getTransformedText()}
 HTML;
     $this->_writeJavascript();
+  }
+
+  private function _getSearchFormHtml() {
+    $html = <<<HTML
+        <form>
+          <div class="form-group">
+            <div class="input-group">
+              <input type="text" name="search"/>
+              <div class="input-group-append">
+                <input type="hidden" name="uri" value="{$_GET["uri"]}">
+                <input type="hidden" name="filename" value="{$this->_text->getFilename()}">
+                <input type="hidden" name="show" value="search">
+                <button name="submit" class="btn btn-primary" type="submit">search</button>
+              </div>
+            </div>
+          </div>
+          <input type="hidden" name="action" value="runSearch"/>
+          <div class="form-group">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="mode" id="headwordRadio" value="headword" checked>
+              <label class="form-check-label" for="headwordRadio">headword</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="mode" id="wordformRadio" value="wordform">
+              <label class="form-check-label" for="wordformRadio">wordform</label>
+            </div>
+          </div>
+          <div id="wordformOptions" class="form-group">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="caseSensitiveRadio" name="case" value="sensitive">
+                <label class="form-check-label" for="caseSensitiveRadio">case sensitive</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="accentSensitiveRadio" name="accent" value="sensitive">
+              <label class="form-check-label" for="accentSensitiveRadio">accent sensitive</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="lenitionSensitiveRadio" name="lenition" value="sensitive">
+              <label class="form-check-label" for="lenitionSensitiveRadio">mutation sensitive</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="view" id="corpusViewRadio" value="corpus" checked>
+              <label class="form-check-label" for="corpusViewRadio">corpus view</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="view" id="dictionaryViewRadio" value="dictionary">
+              <label class="form-check-label" for="dictionaryViewRadio">dictionary view</label>
+            </div>
+          </div>
+        </form>
+HTML;
+    return $html;
   }
 
   private function _getDateHtml() {
@@ -70,7 +125,7 @@ HTML;
     $html = '<tr><td>writer</td><td>';
     foreach ($this->_text->getWriters() as $nextWriter => $nextName) {
       if (substr($nextWriter,0,8)=='https://') {
-        $html .= '<a href="viewWriter.php?uri=' . $nextWriter . '">';
+        $html .= '<a href="viewWriter2.php?uri=' . $nextWriter . '">';
         $html .= $nextName;
         $html .= '</a>';
       }
