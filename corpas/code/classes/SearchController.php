@@ -3,13 +3,15 @@
 class SearchController
 {
   private $_db, $_dbResults, $_resultCount;
+  private $_origin;   //used to track the initial search page
 
-  public function __construct() {
+  public function __construct($origin) {
+    $this->_origin = $origin;
     if (!isset($this->_db)) {
       $this->_db = new Database();
     }
-    $_GET["pp"] = isset($_GET["pp"]) ? $_GET["pp"] : 10; // number of results per page
-    $_GET["page"] = isset($_GET["page"]) ? $_GET["page"] : 1; // results page number
+    $_GET["pp"] = ($_GET["pp"]) ? $_GET["pp"] : 10; // number of results per page
+    $_GET["page"] = ($_GET["page"]) ? $_GET["page"] : 1; // results page number
 
     if (!isset($_REQUEST["action"])) {
       $_REQUEST["action"] = "newSearch";
@@ -26,6 +28,7 @@ class SearchController
         //check if there is an existing result set, if not then run the query
         $this->_resultCount = !isset($_GET["hits"]) ? $this->_getDBSearchResultsTotal($_GET) : $_GET["hits"];
         $searchView->setHits($this->_resultCount);
+        $searchView->setOrigin($this->_origin);   //to allow linking back to originating script
         //fetch the results required for this page
         $this->_dbResults = $this->_getDBSearchResults($_GET);
         //fetch the results from file if
@@ -129,6 +132,12 @@ SQL;
       $query["sql"] .= $this->_getDateWhereClause($params);
     }
     $query["sql"] .= $this->_getMediumWhereClause($params);
+    if ($params["filename"]) {    //restrict to single file
+      $query["sql"] .= " AND l.filename = '{$params["filename"]}' ";
+    } else if ($params["uri"]) {  //restrict to all files in this text
+      $parts = explode("_", $params["uri"]);
+      $query["sql"] .= " AND l.filename LIKE('{$parts[1]}\_%') ";
+    }
     $query["sql"] .= <<<SQL
         ORDER BY {$orderBy}
 SQL;
@@ -144,7 +153,7 @@ SQL;
 
   private function _getMediumWhereClause($params) {
     $whereClause = "";
-    if (count($params["medium"]) == 3) {
+    if (!$params["medium"] || count($params["medium"]) == 3) {
       return $whereClause;    //don't bother with restrictions if all selected
     }
     $whereClause = " AND (";

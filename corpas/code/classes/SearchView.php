@@ -5,6 +5,7 @@ class SearchView
 {
   private $_page = 1; // results page number
   private $_hits = 0;
+  private $_origin; //used to track the launch page of the search
   private $_perpage; // how many results per page
   private $_search; // search term
   private $_date; // how are results to be ordered
@@ -123,6 +124,11 @@ HTML;
   }
 
   public function writeSearchResults($results, $resultTotal) {
+    //Add a back link to originating script
+    echo <<<HTML
+        <p><a href="{$this->_origin}" title="Back to search">&lt; Back to search</a></p>
+HTML;
+
     if ($this->_view == "dictionary") {
       $this->_writeDictionaryView();
       return;
@@ -175,7 +181,7 @@ HTML;
     $alternateView = ($this->_view == "corpus") ? "dictionary" : "corpus";
     echo <<<HTML
         <div id="viewSwitch">
-            <a href="search.php?action=runSearch&search={$this->_search}&view={$alternateView}&hits={$this->_hits}">
+            <a href="search.php?action=runSearch&search={$this->_search}&view={$alternateView}&hits={$this->_hits}&origin={$this->_origin}">
                 switch to {$alternateView} view
             </a>
         </div>
@@ -334,6 +340,10 @@ HTML;
     $this->_hits = $num;
   }
 
+  public function setOrigin($origin) {
+    $this->_origin = $origin;
+  }
+
   /**
    * Writes the Javascript required for the pagination
    */
@@ -363,12 +373,14 @@ HTML;
 		              items: {$resultTotal},
 		              itemsOnPage: {$this->_perpage},
 		              cssStyle: "light-theme",
-		              onPageClick: function(pageNum) {
-				            var url = 'search.php?action=runSearch&mode={$this->_mode}&pp={$this->_perpage}&page=' + pageNum + '&search={$this->_search}';
+		              onPageClick: function(pageNum) {  
+				            /*var url = 'search.php?action=runSearch&mode={$this->_mode}&pp={$this->_perpage}&page=' + pageNum + '&search={$this->_search}';
 				            url += '&case={$this->_case}&accent={$this->_accent}&lenition={$this->_lenition}';
 				            url += '&hits={$this->_hits}&view={$this->_view}';
-				            url += '&date={$this->_date}'
-					           window.location.assign(url);
+				            url += '&date={$this->_date}';*/
+                    var url = 'search.php?action=runSearch&mode={$this->_mode}&pp={$this->_perpage}&page=' + pageNum + '&search={$this->_search}';		
+                    url += '&hits={$this->_hits}&origin={$this->_origin}';
+                    window.location.assign(url);
 		              }
 		          });
 		      });
