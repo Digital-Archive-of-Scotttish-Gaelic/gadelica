@@ -58,33 +58,6 @@ require_once "../../includes/htmlHeader.php";
 <ul>
   <li>Mar a tha thu a’ coimhead, ghlac an teine mi, ach fhuair mi air falbh, agus thog eathar mi.</li>
 </ul>
-<hr/>
-<h3>Transitive uses of <em>coimhead</em></h3>
-‘see, observe someone/something‘
-
-Gu mì-fhortanach dhaibhsan, chaidh an coimhead agus an aithneachadh. [52]
-Chuir e cuireadh thuige, ann an litir chun a’ phàipeir-naidheachd, a thighinn a choimhead nan rudan a bha esan agus a bhean a’ falach. [66]
-“Tha thu airson coimhead àite nan Caimbeulach.” [67]
-Nuair a bhiodh sinn a’ dol dhan sgoil agus a’ tighinn dhachaigh, stadadh sinn a’ coimhead nam flùraichean àlainn, geal, dearg is buidhe. [69]
-aig àm teatha na maidne chaidh Ruairidh ga choimhead gun bhonaid idir. [91]
-Stad e a’ coimhead an duine airson greis.  [91]
-Ach bha e air a coimhead còmhla ri fear a’ chàir roimhe. [124]
-Bha mi a’ dol ga choimhead a h-uile madainn ’s a h-uile feasgar,  [18]
-Cha robh i ga choimhead ach uair no dhà sa bhliadhna. [43]
-Bha e air an duine seo a choimhead roimhe. [118]
-
-TRANS + AG
-Anns a’ chùirt thuirt e gu robh e gan coimhead a’ gàireachdainn, a’ fanaid air. [75]
-
-<li><strong>Saoilidh mise gur e balach liugach a th’ ann.” Rinn Syd dealbh air na inntinn, ach cha b’ ann liugach a bha esan ga choimhead idir.</strong><br/>
-    <small class="text-muted">‘’ [#2 60]</small></li>
-
-<hr/>
-
-
-
-
-
 GUN/NACH
 Tha mi coimhead gu bheil tinneas craicinn ort. [67]
  “Tha mi coimhead gu bheil thu a’ dèanamh nam pools,” [10]
@@ -106,6 +79,39 @@ mar as àbhaist bha mi a’ coimhead às dèidh an àite  [13]
 
 IDIOM?
 dh’fhàs an là cho garbh ’s gun deach Dan ga coimhead dhachaigh sàbhailt. [126]
+
+<hr/>
+<h3>Transitive uses of <em>coimhead</em></h3>
+<p>‘see, observe someone/something’</p>
+<ul>
+  <li>Gu mì-fhortanach dhaibhsan, chaidh an coimhead agus an aithneachadh. ‘Unfortunately for them, they were seen and recognised.’ [#2 52]</li>
+  <li>Ach bha e air a coimhead còmhla ri fear a’ chàir roimhe. ‘But he had seen her with the man with the car before.’ [124]</li>
+  <li>Bha e air an duine seo a choimhead roimhe. ‘He had seen this man before.’ [118]</li>
+</ul>
+<p>Other meanings similar to intransitive uses:</p>
+<ul>
+  <li>Chuir e cuireadh thuige a thighinn a choimhead nan rudan a bha esan agus a bhean a’ falach. ‘He invited him to come and see the things which he and his wife were hiding.’ [#2 66]</li>
+  <li>“Tha thu airson coimhead àite nan Caimbeulach.” “You want to see the Campbell’s place.” [#2 67]</li>
+  <li>Nuair a bhiodh sinn a’ dol dhan sgoil agus a’ tighinn dhachaigh, stadadh sinn a’ coimhead nam flùraichean àlainn. ‘When they went to school and came home, we would stand looking at the pretty flowers.’ [69]</li>
+  <li>Aig àm teatha na maidne chaidh Ruairidh ga choimhead gun bhonaid idir. ‘During the morning tea break Roddy went to see him without any cap.’ [91]</li>
+  <li>Stad e a’ coimhead an duine airson greis. ‘He stood looking at the man for a while.’ [91]</li>
+  <li>Bha mi a’ dol ga choimhead a h-uile madainn ’s a h-uile feasgar. ‘I was going to see him every moring and every evening.’ [18]</li>
+  <li>Cha robh i ga choimhead ach uair no dhà sa bhliadhna. ‘She only saw him a couple of times a year.’ [43]</li>
+</ul>
+
+TRANS + AG
+Anns a’ chùirt thuirt e gu robh e gan coimhead a’ gàireachdainn, a’ fanaid air. [75]
+
+<li><strong>Saoilidh mise gur e balach liugach a th’ ann.” Rinn Syd dealbh air na inntinn, ach cha b’ ann liugach a bha esan ga choimhead idir.</strong><br/>
+    <small class="text-muted">‘’ [#2 60]</small></li>
+
+<hr/>
+
+
+
+
+
+
 
 
 
