@@ -316,12 +316,12 @@ HTML;
                 <div id="slipDate"></div>
             </div>
             
-        <!--
-            filename: <span id="slipFilename"></span><br>
-            id: <span id="slipId"></span><br>
-            POS: <span id="slipPOS"/></span><br><br>
+        
+            <input type="hidden" id="slipFilename">
+            <input type="hidden" id="slipId">
+            <input type="hidden" id="slipPOS">
            
-
+        <!--
             <div>
                 <label for="slipNotes">Notes:</label><br>
                 <div id="slipNotes"></div>
