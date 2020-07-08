@@ -180,9 +180,15 @@ $(function () {
     var postScope = $('#slipContext').attr('data-postcontextscope');
     $.getJSON("ajax.php?action=getContext&filename="+filename+"&id="+id+"&preScope="+preScope+"&postScope="+postScope, function (data) {
 
-      var html = data.pre;
-      html += ' <span id="slipWordInContext">' + data.word + '</span> ';
-      html += data.post;
+      var html = data.pre["output"];
+      if (data.pre["endJoin"] != "right" && data.pre["endJoin"] != "both") {
+        html += ' ';
+      }
+      html += '<span id="slipWordInContext">' + data.word + '</span>';
+      if (data.post["startJoin"] != "left" && data.post["startJoin"] != "both") {
+        html += ' ';
+      }
+      html += data.post["output"];
       $('#slipContext').html(html);
       $('#slip').show();
     });

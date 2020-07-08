@@ -31,7 +31,7 @@ class XmlFileHandler
       if ($normalisePunc) {
         $context["pre"] = $this->_normalisePunctuation($pre);
       } else {
-        $context["pre"] = implode(' ', $pre);
+        $context["pre"]["output"] = implode(' ', $pre);
       }
     }
     /* -- */
@@ -47,7 +47,7 @@ class XmlFileHandler
       if ($normalisePunc) {
         $context["post"] = $this->_normalisePunctuation($post);
       } else {
-        $context["post"] = implode(' ', $post);
+        $context["post"]["output"] = implode(' ', $post);
       }
     }
     return $context;
@@ -56,15 +56,20 @@ class XmlFileHandler
   /**
    * Parses an array of SimpleXML objects and formats the punctuation
    * @param array $chunk : array of SimpleXML objects
-   * @return string $output : the formatted output
+   * @return array : an array containing output string and flags for start and end joins
    */
   private function _normalisePunctuation (array $chunk) {
-    $output = "";
+    $output = $startJoin = $endJoin = "";
     $rightJoin = true;
     foreach ($chunk as $i => $word) {
       $followingWord = ($i < (count($chunk)-1)) ? $chunk[$i+1] : null;
       $followingJoin = $followingWord ? $followingWord->attributes()["join"] : "";
       $attributes = $word->attributes();
+      if ($i == 0) {
+        $startJoin = (string)$attributes["join"];
+      } else if ($i == (count($chunk) -1)) {
+        $endJoin = (string)$attributes["join"];
+      }
       switch ($attributes["join"]) {
         case "left":
           $output .= $followingJoin == "right" || $followingJoin == "both" ? $word[0] : $word[0] . ' ';
@@ -83,6 +88,6 @@ class XmlFileHandler
           $rightJoin = false;
       }
     }
-    return $output;
+    return array("output" => $output, "startJoin" => $startJoin, "endJoin" => $endJoin);
   }
 }
