@@ -14,7 +14,7 @@ require_once "../../includes/htmlHeader.php";
     <tr><th>future</th><td colspan="3">seallaidh</td><td colspan="3">seall</td></tr>
     <tr><th>conditional</th><td>shealladh</td><td>sheallainn</td><td>sheallamaid</td><td>sealladh</td><td>seallainn</td><td>seallamaid</tr>
     <tr><th>imperative</th><td colspan="6">seall</td></tr>
-    <tr><th>nominal</th><td colspan="6">sealltainn</td></tr>
+    <tr><th>nominal</th><td colspan="6">sealltainn (<a href="coimhead.php">coimhead</a>)</td></tr>
   </tbody>
 </table>
 <hr/>
@@ -40,6 +40,7 @@ require_once "../../includes/htmlHeader.php";
   <li><strong><mark>Sheall Diana gu feargach ri Màiri</mark>.</strong><br/>
     <small class="text-muted">‘Diana looked angrily at Mary.’ [#2 42]</small></li>
 </ul>
+<p>Note that the progressive of <strong>seall ri</strong> is most commonly <strong><a href="coimhead.php">a’ coimhead ri</a></strong> (rather than <strong>a’ sealltainn ri</strong>).</p>
 <p><strong>seall</strong> + path expression – ‘look somewhere’</p>
 <ul>
   <li><strong><mark>Sheall Eilidh tron phrosbaig</mark>.</strong><br/>

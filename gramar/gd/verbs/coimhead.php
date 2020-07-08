@@ -2,9 +2,11 @@
 require_once "../../includes/htmlHeader.php";
 ?>
 <h1>coimhead</h1>
+<p><strong>coimhead</strong> is a <a href="../../xx/regularVerbs.php">regular verb</a> corresponding to the English ‘look’, ‘see’.</p>
+<p>Verbs with a similar meaning (visual perception and attention) are <strong><a href="faic.php">faic</a></strong> and <strong><a href="seall.php">seall</a></strong>. (cluinn, èist?)</p>
 <hr/>
-<h3>Intransitive uses</h3>
-<p><strong>bi a’ coimhead ri rud/duine</strong> – ‘be looking at something/one’</p>
+<h3>Intransitive uses of <em>coimhead</em></h3>
+<p><strong>a’ coimhead ri rud/duine</strong> – ‘(be) looking at something/one’</p>
 <ul>
   <li><strong>Chuir na leugh Syd na thuaineal e. Bha inntinn bàn a’ <mark>coimhead ris an litir</mark>.</strong><br/>
     <small class="text-muted">‘What Syd read stupified him. An empty mind was looking at the letter.’ [#2 59]</small></li>
@@ -13,49 +15,51 @@ require_once "../../includes/htmlHeader.php";
   <li><strong>Thog e catalog agus thòisich e a’ leigeil air gur ann a’ <mark>coimhead ris</mark> a bha sinn.</strong><br/>
     <small class="text-muted">‘He picked up a catalogue and started to pretend that we were looking at it.’ [#2 32]</small></li>
   <li><strong>’S ann <mark>riumsa agus ri Doilean a bha e a’ coimhead</mark>.</strong><br/>
-    <small class="text-muted">‘’ [#2 71]</small></li>
+    <small class="text-muted">‘He was looking at me and Doilean.’ [#2 71]</small></li>
 </ul>
-<p>nb. seall ri in non-progressive</p>
-
-
-<p><strong>coimhead air</strong> – ‘(go/come and) see, visit somebody’</p>
+<p>Note that <strong>a’ coimhead ri</strong> is essentially the progressive of <strong><a href="seall.php">seall ri</a></strong>.</p>
+<p><strong>rach/thig a choimhead air duine</strong> – ‘go/come to visit/see somebody’</p>
 <ul>
-  <li>Mura dèan thu sin, chan e mise a thig a choimhead ort idir.” [55]</li>
-  <li>Ach nuair a chaidh an dotair a choimhead orra, cha b’ ann air an slàinte a bha aire ach air am faighinn a-mach às an taigh. [65]</li>
-  <li>Seachdain mus deach e a choimhead orra, rinn e toll tro bhalla an taighe eadar e fhèin agus iadsan, [65]</li>
-  <li>’S e an Daolag an aon fhear a tha beò fhathast, ach nuair a chaidh mi dhan ospadal a choimhead air cha robh cuimhne aige orm fhìn no air càil a tha anns an eachdraidh sa. [72]</li>
-  <li>An ceann seachdaine thàinig lorg-phoileas a choimhead orm. [116]</li>
-  <li>am feasgar seo bha e mì-fhoighidneach, oir bha e a’ dol a choimhead air a leannan, Magaidh, sa bhaile mhòr. [123]</li>
-  <li>thàinig Sir Claude Auchinlech dhan ospadal a choimhead air. [16]</li>
-  <li>Cha tàinig i choimhead air a’ Chaiptean ach uair no dhà a-riamh.  [40]</li>
+  <li><strong>Mura dèan thu sin, chan e mise a <mark>thig a choimhead ort</mark> idir.”</strong><br/>
+    <small class="text-muted">‘If you don’t that, it certainly won’t be me who comes to see you.’ [#2 55]</small></li>
+  <li><strong>An ceann seachdaine <mark>thàinig lorg-phoileas a choimhead orm</mark>.</strong><br/>
+    <small class="text-muted">‘A week later a detective came to see me.’ [#2 116]</small></li>
+  <li><strong>Am feasgar seo bha e mì-fhoighidneach, oir bha e a’ <mark>dol a choimhead air a leannan</mark> sa bhaile mhòr.</strong><br/>
+    <small class="text-muted">‘This evening he was impatient, because he was going to see his girlfriend in the city.’ [#2 123]</small></li>
+  <li><strong><mark>Thàinig Sir Claude Auchinlech dhan ospadal a choimhead air</mark>.</strong><br/>
+    <small class="text-muted">‘Sir Claude Auchinlech came came to the hospital to see him.’ [#2 16]</small></li>
 </ul>
-<p>m</p>
+<p>The following use of the progressive is very close related to this:</p>
 <ul>
-  <li>an dèidh dha a bhith a’ coimhead air a bhean san ospadal [117]</li>
+  <li><strong>an dèidh dha a <mark>bhith a’ coimhead air a bhean</a> san ospadal</strong><br/>
+    <small class="text-muted">‘after he had been to visit his wife in hospital’ [#2 117]</small></li>
 </ul>
-<p>‘regard something as’</p>
+<p><strong>rach a choimhead air rud</strong> – ‘go to look at something’</p>
 <ul>
-  <li>Bha sinne a’ coimhead air mar aon dhe na prìomh bheusan! [112] poaching</li>
+  <li><strong><mark>Chaidh iad an sin a choimhead air na craobhan</mark>.</strong><br/>
+    <small class="text-muted">‘They went to look at the trees.’ [#2 30]</small></li>
+  <li><strong>‘Chan eil cead againn a <mark>dhol a choimhead air a’ chiste</mark>.’</strong><br/>
+    <small class="text-muted">‘We weren’t allowed to go and look at the chest.’ [#2 38]</small></li>
 </ul>
-<p>‘inspect, look at something’</p>
+<p><strong>bi a’ coimhead air rud mar ...</strong> ‘regard something as’</p>
 <ul>
-  <li>Chaidh iad an sin a choimhead air na craobhan, [30]</li>
-  <li>‘Chan eil cead againn a dhol a choimhead air a’ chiste [38]</li>
+  <li><strong>Bha sinne a’ <mark>coimhead air mar aon dhe na prìomh bheusan</mark>!</strong><br/>
+    <small class="text-muted">‘We regarded it [poaching] as one of the primary virtues!’ [#2 112]</small></li>
 </ul>
-<p><strong>coimhead</strong> + adjective</p>
+<p><strong>a’ coimhead</strong> + adjective – ‘appear’, ‘look’</p>
 <ul>
-  <li>Cha do smaoinich mi aon uair gur e eucorach a bha anns a’ ghille a bha coimhead cho ceart, [50]</li>
-  <li>Saoilidh mise gur e balach liugach a th’ ann.” Rinn Syd dealbh air na inntinn, ach cha b’ ann liugach a bha esan ga choimhead idir. [60]</li>
-  <li>Bha e duilich a chreidsinn gun rinn duine a bha coimhead cho stòlda an rud uabhasach a rinn e.  [61]</li>
-  <li>’S e Murd a’ Mhinisteir am prìomh pheata, balach eireachdail nach robh cho beag-lochd ’s a bha e a’ coimhead. [69-70]</li>
-  <li>bha an t-àite a’ coimhead cho marbh. [117]</li>
-  <li>“Tha ’n t-àite seo coimhead glè fhallain,” [17]</li>
+  <li><strong>Bha e duilich a chreidsinn gun rinn duine a bha <mark>coimhead cho stòlda</mark> an rud uabhasach a rinn e.</strong><br/>
+    <small class="text-muted">‘It was hard to believe that someone who looked so staid had done the terrible thing which he did.’ [#2 61]</small></li>
+  <li><strong>... balach eireachdail nach robh <mark>cho beag-lochd ’s a bha e a’ coimhead</mark>.</strong><br/>
+    <small class="text-muted">... a handsome boy who was not as harmless as he looked. [#2 69-70]</small></li>
+  <li><strong>“Tha ’n t-àite seo <mark>coimhead glè fhallain</mark>.”</strong><br/>
+    <small class="text-muted">“This place looks very healthy.” [#2 17]</small></li>
 </ul>
 <ul>
   <li>Mar a tha thu a’ coimhead, ghlac an teine mi, ach fhuair mi air falbh, agus thog eathar mi.</li>
 </ul>
 <hr/>
-<h3>Transitive uses</h3>
+<h3>Transitive uses of <em>coimhead</em></h3>
 ‘see, observe someone/something‘
 
 Gu mì-fhortanach dhaibhsan, chaidh an coimhead agus an aithneachadh. [52]
@@ -71,6 +75,9 @@ Bha e air an duine seo a choimhead roimhe. [118]
 
 TRANS + AG
 Anns a’ chùirt thuirt e gu robh e gan coimhead a’ gàireachdainn, a’ fanaid air. [75]
+
+<li><strong>Saoilidh mise gur e balach liugach a th’ ann.” Rinn Syd dealbh air na inntinn, ach cha b’ ann liugach a bha esan ga choimhead idir.</strong><br/>
+    <small class="text-muted">‘’ [#2 60]</small></li>
 
 <hr/>
 
