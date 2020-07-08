@@ -42,7 +42,7 @@ HTML;
                 <input type="hidden" name="uri" value="{$_GET["uri"]}">
                 <input type="hidden" name="filename" value="{$this->_text->getFilename()}">
                 <input type="hidden" name="show" value="search">
-                <button name="submit" class="btn btn-primary" type="submit">search</button>
+                <button name="submit" class="btn btn-primary" type="submit">search this text</button>
               </div>
             </div>
           </div>
@@ -112,7 +112,7 @@ HTML;
       return "";
     }
     $html = '<tr><td>part of</td><td>';
-    $html .= '<a href="viewText2.php?uri=' . $this->_text->getSuperURI() . '">';
+    $html .= '<a href="viewText.php?uri=' . $this->_text->getSuperURI() . '">';
     $html .= $this->_text->getSuperTitle();
     $html .= '</a></td></tr>';
     return $html;
@@ -125,7 +125,7 @@ HTML;
     $html = '<tr><td>writer</td><td>';
     foreach ($this->_text->getWriters() as $nextWriter => $nextName) {
       if (substr($nextWriter,0,8)=='https://') {
-        $html .= '<a href="viewWriter2.php?uri=' . $nextWriter . '">';
+        $html .= '<a href="viewWriter.php?uri=' . $nextWriter . '">';
         $html .= $nextName;
         $html .= '</a>';
       }
@@ -175,7 +175,7 @@ HTML;
     $html = '<div class="list-group list-group-flush">';
     foreach ($this->_text->getSubURIs() as $nextSubURI) {
       $html .= '<div class="list-group-item list-group-item-action">';
-      $html .= '#' . $nextSubURI["rank"] . ': <a href="viewText2.php?uri=' . $nextSubURI["uri"] .'">' . $nextSubURI["title"];
+      $html .= '#' . $nextSubURI["rank"] . ': <a href="viewText.php?uri=' . $nextSubURI["uri"] .'">' . $nextSubURI["title"];
       $html .= '</a></div>';
     }
     $html .= '</div>';

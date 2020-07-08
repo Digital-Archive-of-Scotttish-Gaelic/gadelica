@@ -28,7 +28,7 @@ HTML;
       $lifespan = $writer->getYearOfBirth() ? $writer->getYearOfBirth() . " - " . $writer->getYearOfDeath() : "";
       $html .= <<<HTML
         <tr>
-            <td><a href="viewWriter2.php?uri={$writer->getURI()}">
+            <td><a href="viewWriter.php?uri={$writer->getURI()}">
                 {$writer->getForenames()} {$writer->getSurname()}</a> {$nickname}</td>
             </td>
             <td>{$lifespan}</td>
@@ -49,7 +49,7 @@ HTML;
     echo <<<HTML
         <div class="container-fluid" style="max-width: 800px; float: left;">
             <p><a href="index.php">&lt; Back to corpus index</a></p>
-            <p><a href="writers2.php">&lt; Back to writer index</a></p>
+            <p><a href="writers.php">&lt; Back to writer index</a></p>
             <h3>{$this->_writer->getForenames()} {$this->_writer->getSurname()} {$nickname}</h3>
             <table class="table">
                 <tbody>
@@ -91,7 +91,7 @@ HTML;
     $nickname = $parent["nickname"] ? "({$parent["nickname"]})" : "";
     return <<<HTML
         <tr><td>parents</td>
-            <td><a href="viewWriter2.php?uri={$parent["uri"]}">
+            <td><a href="viewWriter.php?uri={$parent["uri"]}">
                     {$parent["forenames"]} {$parent["surname"]} {$nickname}
                 </a>
             </td>
@@ -106,7 +106,7 @@ HTML;
     }
     $html = '<tr><td>children</td><td>';
     foreach ($children as $uri => $child) {
-      $html .= '<a href="viewWriter2.php?uri=' . $uri . '">';
+      $html .= '<a href="viewWriter.php?uri=' . $uri . '">';
       $nickname = $child["nickname"] ? "({$child["nickname"]})" : "";
       $html .= "{$child["forenames"]} {$child["surname"]} {$nickname}</a>";
       if ($child != end(array_keys($children))) { $html .= ', '; }
@@ -121,7 +121,7 @@ HTML;
     }
     $html = "";
     foreach ($this->_writer->getWorks() as $uri => $title) {
-      $html .= '<a href="viewText2.php?uri=' . $uri . '">' . $title . '</a><br/>';
+      $html .= '<a href="viewText.php?uri=' . $uri . '">' . $title . '</a><br/>';
     }
     return $html;
   }

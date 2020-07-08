@@ -12,7 +12,7 @@ class ViewTextController
         $view->printText();
         break;
       case "search":
-        $origin = "viewText2.php?uri={$_GET["uri"]}";   //the originating script
+        $origin = "viewText.php?uri={$_GET["uri"]}";   //the originating script
         $searchController = new SearchController($origin);
         break;
     }

@@ -23,12 +23,12 @@ $(function () {
     var title       = $(this).attr('data-title');
     var page        = $(this).attr('data-page');
     $('#slipTextNum').html('Text ' + textId);
-    $('#slipFilename').html(filename);
-    $('#slipId').html(id);
+    $('#slipFilename').val(filename);
+    $('#slipId').val(id);
     $('#slipHeadword').html(headword);
     $('#slipDate').html(date);
     $('#slipTextRef').html(date + ' <span class="slipFooterTitle">' + title + '</span> ' + page);
-    $('#slipPOS').html(pos);
+    $('#slipPOS').val(pos);
     $.getJSON('ajax.php?action=loadSlip&filename='+filename+'&id='+id
       +'&preContextScope='+$('#slipContext').attr('data-precontextscope')
       +'&postContextScope='+$('#slipContext').attr('data-postcontextscope'), function (data) {
@@ -90,10 +90,10 @@ $(function () {
   });
 
   $('#editSlip').on('click', function () {
-    var filename = $('#slipFilename').text();
-    var id = $('#slipId').text();
+    var filename = $('#slipFilename').val();
+    var id = $('#slipId').val();
     var headword = $('#slipHeadword').text();
-    var pos = $('#slipPOS').text();
+    var pos = $('#slipPOS').val();
     var url = 'slipEdit.php?filename=' + filename + '&id=' + id + '&headword=' + headword + '&pos=' + pos;
     var win = window.open(url, '_blank');
     if (win) {
@@ -180,9 +180,15 @@ $(function () {
     var postScope = $('#slipContext').attr('data-postcontextscope');
     $.getJSON("ajax.php?action=getContext&filename="+filename+"&id="+id+"&preScope="+preScope+"&postScope="+postScope, function (data) {
 
-      var html = data.pre;
-      html += ' <span id="slipWordInContext">' + data.word + '</span> ';
-      html += data.post;
+      var html = data.pre["output"];
+      if (data.pre["endJoin"] != "right" && data.pre["endJoin"] != "both") {
+        html += ' ';
+      }
+      html += '<span id="slipWordInContext">' + data.word + '</span>';
+      if (data.post["startJoin"] != "left" && data.post["startJoin"] != "both") {
+        html += ' ';
+      }
+      html += data.post["output"];
       $('#slipContext').html(html);
       $('#slip').show();
     });

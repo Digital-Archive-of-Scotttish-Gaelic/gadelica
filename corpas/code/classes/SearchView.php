@@ -208,14 +208,14 @@ HTML;
       $createSlipStyle = "createSlipLink";
     }
     echo <<<HTML
-        <td style="text-align: right;">{$context["pre"]}</td>
+        <td style="text-align: right;">{$context["pre"]["output"]}</td>
         <td style="text-align: center;">
             <a href="viewText.php?uri={$context["uri"]}&id={$result["id"]}"
                     data-toggle="tooltip" data-html="true" title="{$title}">
                 {$context["word"]}
             </a>
         </td>
-        <td>{$context["post"]}</td>
+        <td>{$context["post"]["output"]}</td>
         <td>
             <small>
                 <a href="#" class="slipLink {$createSlipStyle}" data-uri="{$context["uri"]}"
@@ -316,12 +316,12 @@ HTML;
                 <div id="slipDate"></div>
             </div>
             
-        <!--
-            filename: <span id="slipFilename"></span><br>
-            id: <span id="slipId"></span><br>
-            POS: <span id="slipPOS"/></span><br><br>
+        
+            <input type="hidden" id="slipFilename">
+            <input type="hidden" id="slipId">
+            <input type="hidden" id="slipPOS">
            
-
+        <!--
             <div>
                 <label for="slipNotes">Notes:</label><br>
                 <div id="slipNotes"></div>

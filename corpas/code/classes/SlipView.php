@@ -86,6 +86,15 @@ HTML;
     $preScope = $this->_slip->getPreContextScope();
     $postScope = $this->_slip->getPostContextScope();
     $context = $handler->getContext($this->_slip->getId(), $preScope, $postScope);
+    $contextHtml = $context["pre"]["output"];
+    if ($context["pre"]["endJoin"] != "right" && $context["pre"]["endJoin"] != "both") {
+      $contextHtml .= ' ';
+    }
+    $contextHtml .= '<span id="slipWordInContext">' . $context["word"] . '</span>';
+    if ($context["post"]["startJoin"] != "left" && $context["post"]["startJoin"] != "both") {
+      $contextHtml .= ' ';
+    }
+    $contextHtml .= $context["post"]["output"];
     echo <<<HTML
             <div>
               <div>
@@ -93,7 +102,7 @@ HTML;
                 <span><a href="#" class="updateContext" id="incrementPre">+</a></span>
               </div>
               <span data-precontextscope="{$preScope}" data-postcontextscope="{$postScope}" id="slipContext">
-                {$context["pre"]} <strong>{$context["word"]}</strong> {$context["post"]}
+                {$contextHtml}
               </span>
               <div>
                 <span><a href="#" class="updateContext btn-link" id="decrementPost">-</a></span>
