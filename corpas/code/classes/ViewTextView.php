@@ -1,7 +1,7 @@
 <?php
 
 
-class ViewTextView
+class ViewTextView extends SearchView
 {
   private $_text;   //an instance of CorpusText
 
@@ -81,6 +81,7 @@ HTML;
               <label class="form-check-label" for="dictionaryViewRadio">dictionary view</label>
             </div>
           </div>
+          {$this->_getSelectPosHtml()}
         </form>
 HTML;
     return $html;

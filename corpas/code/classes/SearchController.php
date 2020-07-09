@@ -20,8 +20,7 @@ class SearchController
     switch ($_REQUEST["action"]) {
       case "newSearch":
         $searchView = new SearchView(); // gets parameters from URL
-        $minMaxDates = $this->_getMinMaxDates(); // search database for earliest and latest years
-        $searchView->writeSearchForm($minMaxDates); // prints HTML for form
+        $searchView->writeSearchForm(); // prints HTML for form
         break;
       case "runSearch":
         $searchView = new SearchView();
@@ -128,10 +127,13 @@ SQL;
     } else {                               //wordform
       $query = $this->_getWordformQuery($params);
     }
-    if ($params["selectedDates"]) {
+    if ($params["selectedDates"]) {       //restrict by date
       $query["sql"] .= $this->_getDateWhereClause($params);
     }
-    $query["sql"] .= $this->_getMediumWhereClause($params);
+    $query["sql"] .= $this->_getMediumWhereClause($params); //restrict by medium
+    if ($params["pos"][0] != "") {
+      $query["sql"] .= $this->_getPOSWhereClause($params);  //restrict by POS
+    }
     if ($params["filename"]) {    //restrict to single file
       $query["sql"] .= " AND l.filename = '{$params["filename"]}' ";
     } else if ($params["uri"]) {  //restrict to all files in this text
@@ -165,13 +167,46 @@ SQL;
     return $whereClause;
   }
 
+  private function _getPOSWhereClause($params) {
+    $whereClause = " AND (";
+    foreach ($params["pos"] as $pos) {
+      $posString[] = " BINARY pos REGEXP '{$pos}\$|{$pos}\\\+|{$pos}[[:space:]]' ";
+    }
+    $whereClause .= implode(" OR ", $posString);
+    $whereClause .= ") ";
+    return $whereClause;
+  }
+
   //Retrieves the minimum and maximum dates of language in the database
-  private function _getMinMaxDates() {
+  public static function getMinMaxDates() {
+    $db = new Database();
     $sql = <<<SQL
         SELECT MIN(date_of_lang) AS min, MAX(date_of_lang) AS max FROM lemmas
             WHERE date_of_lang != ''
 SQL;
-    $result = $this->_db->fetch($sql, array());
+    $result = $db->fetch($sql, array());
     return $result[0];
+  }
+
+  /**
+   * Retrieves a list of distinct parts of speech
+   * @return array
+   */
+  public static function getDistinctPOS() {
+    $db = new Database();
+    $sql = <<<SQL
+        SELECT DISTINCT pos FROM lemmas 
+            ORDER BY pos
+SQL;
+    $results = $db->fetch($sql);
+    //parse out the extra POS info
+    $distinctPOS = array();
+    foreach ($results as $result) {
+      if (in_array($result[0], $distinctPOS) || stristr($result[0], " ") || $result[0] == "") {
+        continue;
+      }
+      $distinctPOS[] = $result[0];
+    }
+    return $distinctPOS;
   }
 }
