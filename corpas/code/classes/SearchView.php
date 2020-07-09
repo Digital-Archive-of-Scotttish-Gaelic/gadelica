@@ -232,7 +232,7 @@ HTML;
         <td style="text-align: center;">
             <a href="viewText.php?uri={$context["uri"]}&id={$result["id"]}"
                     data-toggle="tooltip" data-html="true" title="{$title}">
-                {$context["word"]} ({$result["pos"]})
+                {$context["word"]}
             </a>
         </td>
         <td>{$context["post"]["output"]}</td>
