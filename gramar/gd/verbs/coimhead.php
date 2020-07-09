@@ -82,7 +82,7 @@ dh’fhàs an là cho garbh ’s gun deach Dan ga coimhead dhachaigh sàbhailt. 
 
 <hr/>
 <h3>Transitive uses of <em>coimhead</em></h3>
-<p>‘see, observe someone/something’</p>
+<p>‘see, notice someone/something’</p>
 <ul>
   <li>Gu mì-fhortanach dhaibhsan, chaidh an coimhead agus an aithneachadh. ‘Unfortunately for them, they were seen and recognised.’ [#2 52]</li>
   <li>Ach bha e air a coimhead còmhla ri fear a’ chàir roimhe. ‘But he had seen her with the man with the car before.’ [124]</li>
