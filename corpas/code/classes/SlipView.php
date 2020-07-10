@@ -78,7 +78,7 @@ HTML;
     }
     $html = <<<HTML
         <div class="form-group">
-          <select class="form-control col-3">      
+          <select name="wordClass" class="form-control col-3">      
             {$optionHtml}
           </select>
       </div>
