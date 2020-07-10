@@ -16,12 +16,12 @@ class SlipController
 
     switch ($_REQUEST["action"]) {
       case "show":
-        $slip = new Slip($_GET["filename"], $_GET["id"]);
+        $slip = new Slip($_GET["filename"], $_GET["id"], $_GET["auto_id"], $_GET["pos"]);
         $slipView = new SlipView($slip);
         $slipView->writeEditForm();
         break;
       case "save":
-        $slip = new Slip($_POST["filename"], $_POST["id"]);
+        $slip = new Slip($_POST["filename"], $_POST["id"], $_POST["auto_id"], $_POST["pos"]);
         $slip->saveSlip($_POST);
         $slipView = new SlipView($slip);
         $slipView->writeSavedState();

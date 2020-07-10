@@ -5,36 +5,59 @@ class Slip
 {
   private $_auto_id, $_filename, $_id, $_db;
   private $_starred, $_translation, $_notes;
-  private $_preContextScope, $_postContextScope, $_lastUpdated;
+  private $_preContextScope, $_postContextScope, $_wordClass, $_lastUpdated;
   private $_isNew;
+  private $_wordClasses = array(
+    'noun' => array("n", "nx", "ns", "N", "Nx"),
+    "verb" => array("v", "V", "vn"),
+    "adjective" => array("a", "ar"),
+    "preposition" => array("p", "P"),
+    "adverb" => array("A"),
+    "other" => array("d", "c", "z", "o", "D", "Dx", "ax", "px", "q"));
 
-  public function __construct($filename, $id, $preScope = 20, $postScope = 20) {
+  public function __construct($filename, $id, $auto_id = null, $pos, $preScope = 20, $postScope = 20) {
     $this->_filename = $filename;
     $this->_id = $id;
+    $this->_auto_id = $auto_id;
     if (!isset($this->_db)) {
       $this->_db = new Database();
     }
-    $this->_loadSlip($preScope, $postScope);
+    $this->_loadSlip($preScope, $postScope, $pos);
   }
 
-  private function _loadSlip($preScope, $postScope) {
+  private function _loadSlip($preScope, $postScope, $pos) {
+    if (!$this->getAutoId()) {  //create a new slip entry
+      $this->_isNew = true;
+      $this->_auto_id = $this->_db->getLastInsertId();
+      $this->_extractWordClass($pos);
+      $sql = <<<SQL
+        INSERT INTO slips (filename, id, preContextScope, postContextScope, wordClass) VALUES (?, ?, ?, ?, ?);
+SQL;
+      $this->_db->exec($sql, array($this->_filename, $this->_id, $preScope, $postScope, $this->getWordClass()));
+    }
     $sql = <<<SQL
         SELECT * FROM slips 
         WHERE filename = ? AND id = ?
 SQL;
     $result = $this->_db->fetch($sql, array($this->_filename, $this->_id));
-    if (count($result)) {
-      $slipData = $result[0];
-      $this->_populateClass($slipData);
-      return $this;
-    } else {
-      $this->_isNew = true;
-      $sql = <<<SQL
-        INSERT INTO slips (filename, id, preContextScope, postContextScope) VALUES (?, ?, ?, ?);
-SQL;
-      $this->_db->exec($sql, array($this->_filename, $this->_id, $preScope, $postScope));
-    }
+    $slipData = $result[0];
+    $this->_populateClass($slipData);
     return $this;
+  }
+
+  /**
+   * Updates the results stored in the SESSION with the new auto_id
+   */
+  public function updateResults($index) {
+    $_SESSION["results"][$index]["auto_id"] = $this->getAutoId();
+  }
+
+  private function _extractWordClass($pos) {
+    foreach ($this->_wordClasses as $class => $posArray) {
+      if (in_array($pos, $posArray)) {
+        $this->_wordClass = $class;
+      }
+    }
   }
 
   public function getAutoId() {
@@ -73,6 +96,10 @@ SQL;
     return $this->_postContextScope;
   }
 
+  public function getWordClass() {
+    return $this->_wordClass;
+  }
+
   public function getLastUpdated() {
     return $this->_lastUpdated;
   }
@@ -85,6 +112,7 @@ SQL;
     $this->_notes = $params["notes"];
     $this->_preContextScope = $params["preContextScope"];
     $this->_postContextScope = $params["postContextScope"];
+    $this->_wordClass = $params["wordClass"];
     $this->_lastUpdated = isset($params["lastUpdated"]) ? $params["lastUpdated"] : "";
 
     return $this;
@@ -95,11 +123,21 @@ SQL;
     $this->_populateClass($params);
     $sql = <<<SQL
         UPDATE slips 
-            SET starred = ?, translation = ?, notes = ?, preContextScope = ?, postContextScope = ?
+            SET starred = ?, translation = ?, notes = ?, preContextScope = ?, postContextScope = ?,
+                wordClass = ?
             WHERE filename = ? AND id = ?
 SQL;
     $this->_db->exec($sql, array($this->getStarred(), $this->getTranslation(), $this->getNotes(),
-      $this->getPreContextScope(), $this->getPostContextScope(), $this->getFilename(), $this->getId()));
+      $this->getPreContextScope(), $this->getPostContextScope(), $this->getWordClass(),
+      $this->getFilename(), $this->getId()));
     return $this;
+  }
+
+  /**
+   * Returns the array of word classes
+   * @return array
+   */
+  public function getWordClasses() {
+    return $this->_wordClasses;
   }
 }
