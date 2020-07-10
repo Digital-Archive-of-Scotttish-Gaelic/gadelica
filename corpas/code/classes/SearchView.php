@@ -28,7 +28,8 @@ class SearchView
     return $this->_view;
   }
 
-  public function writeSearchForm($minMaxDates) {
+  public function writeSearchForm() {
+    $minMaxDates = SearchController::getMinMaxDates();
     echo <<<HTML
       <form>
         <div class="form-group">
@@ -118,9 +119,28 @@ class SearchView
                 <label class="form-check-label" for="otherMediumCheck">other</label>
             </div>
         </div>
+        <div class="form-group">
+            <p>Restrict by part-of-speech:</p>
+            {$this->_getSelectPosHtml()}
+        </div>
       </form>
 HTML;
     $this->_writeSearchJavascript($minMaxDates); // writes JS for year slider (maybe not necessary?)
+  }
+
+  protected function _getSelectPosHtml() {
+    $distinctPOS = SearchController::getDistinctPOS();
+    $posHtml = "";
+    foreach ($distinctPOS as $pos) {
+      $posHtml .= '<option value="' . $pos . '">' . $pos . '</option>';
+    }
+    $posHtml = <<<HTML
+        <select class="form-control col-3" multiple name="pos[]">
+                <option value="" selected>-- all POS --</option>
+                {$posHtml}
+            </select>
+HTML;
+    return $posHtml;
   }
 
   public function writeSearchResults($results, $resultTotal) {
