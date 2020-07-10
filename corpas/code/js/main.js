@@ -22,6 +22,7 @@ $(function () {
     var date        = $(this).attr('data-date');
     var title       = $(this).attr('data-title');
     var page        = $(this).attr('data-page');
+    var index       = $(this).attr('data-resultindex');   //the index of the result in the results array
     $('#slipTextNum').html('Text ' + textId);
     $('#slipFilename').val(filename);
     $('#slipId').val(id);
@@ -29,10 +30,14 @@ $(function () {
     $('#slipDate').html(date);
     $('#slipTextRef').html(date + ' <span class="slipFooterTitle">' + title + '</span> ' + page);
     $('#slipPOS').val(pos);
-    $.getJSON('ajax.php?action=loadSlip&filename='+filename+'&id='+id
+    $.getJSON('ajax.php?action=loadSlip&filename='+filename+'&id='+id+'&index='+index
       +'&preContextScope='+$('#slipContext').attr('data-precontextscope')
-      +'&postContextScope='+$('#slipContext').attr('data-postcontextscope'), function (data) {
-      if (data.isNew != true) {
+      +'&postContextScope='+$('#slipContext').attr('data-postcontextscope') + '&pos=' + pos, function (data) {
+      if (data.wordClass) {
+        $('#slipHeadword').html(headword);
+        $('#slipWordClass').html('(' + data.wordClass + ')');
+      }
+  //    if (data.isNew != true) {
         $('#slipNumber').html(data.auto_id);
         $('#slipContext').attr('data-precontextscope', data.preContextScope);
         $('#slipContext').attr('data-postcontextscope', data.postContextScope);
@@ -43,7 +48,7 @@ $(function () {
         }
         $('#slipTranslation').html(data.translation);
         $('#slipNotes').html(data.notes);
-      }
+//      }
     })
       .done(function () {
         writeSlipContext(filename, id);
@@ -94,7 +99,9 @@ $(function () {
     var id = $('#slipId').val();
     var headword = $('#slipHeadword').text();
     var pos = $('#slipPOS').val();
-    var url = 'slipEdit.php?filename=' + filename + '&id=' + id + '&headword=' + headword + '&pos=' + pos;
+    var auto_id = $('#auto_id').val();
+    var url = 'slipEdit.php?filename=' + filename + '&id=' + id + '&headword=' + headword;
+    url += '&pos=' + pos + '&auto_id=' + auto_id;
     var win = window.open(url, '_blank');
     if (win) {
       //Browser has allowed it to be opened
@@ -143,6 +150,7 @@ $(function () {
         html += ' data-headword="' + headword + '" data-pos="' + pos + '"';
         html += ' data-id="' + val.id + '" data-xml="' + val.filename + '"';
         html += ' data-date="' + val.date + '" data-title="' + val.title + '" data-page="' + val.page + '"';
+        html += ' data-auto_id="' + val.auto_id + '"';
         html += '>' + slipLinkText + '</a></small>';
         html += '</td>';
         html += '</tr>';

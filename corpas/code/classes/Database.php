@@ -58,4 +58,8 @@ class Database {
       echo $e->getMessage();
     }
   }
+
+  public function getLastInsertId() {
+    return $this->_dbh->lastInsertId();
+  }
 }

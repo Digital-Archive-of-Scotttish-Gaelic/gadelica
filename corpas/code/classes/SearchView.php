@@ -136,9 +136,9 @@ HTML;
     }
     $posHtml = <<<HTML
         <select class="form-control col-3" multiple name="pos[]">
-                <option value="" selected>-- all POS --</option>
-                {$posHtml}
-            </select>
+            <option value="" selected>-- all POS --</option>
+            {$posHtml}
+        </select>
 HTML;
     return $posHtml;
   }
@@ -174,7 +174,7 @@ HTML;
                 <tr>
                     <th scope="row">{$rowNum}</th>
 HTML;
-        $this->_writeSearchResult($result);
+        $this->_writeSearchResult($result, $rowNum-1);
         echo <<<HTML
                 </tr>
 HTML;
@@ -209,7 +209,7 @@ HTML;
   }
 
   /* print out search result as table row */
-  private function _writeSearchResult($result) {
+  private function _writeSearchResult($result, $index) {
     $context = $this->_xmlFile->getContext($result["id"], 12, 12);
     $title = <<<HTML
         Headword: {$result["lemma"]}<br>
@@ -242,7 +242,8 @@ HTML;
                     data-headword="{$result["lemma"]}" data-pos="{$result["pos"]}"
                     data-id="{$result["id"]}" data-xml="{$this->_xmlFile->getFilename()}"
                     data-date="{$result["date_of_lang"]}" data-title="{$result["title"]}"
-                    data-page="{$result["page"]}">
+                    data-page="{$result["page"]}" data-resultindex="{$index}"
+                    data-auto_id="{$result["auto_id"]}">
                     {$slipLinkText}
                 </a>
             </small>
@@ -310,7 +311,10 @@ HTML;
                   </div>
                   <div id="slipNumber"></div>
               </div> 
-              <div id="slipHeadword"></div>
+              <div id="slipHeadwordContainer">
+                <span id="slipHeadword"></span>
+                <span id="slipWordClass"></span>
+              </div>
               <div id="slipTextNum"></div>
             </div>  <!-- end slipHeader -->
         
@@ -339,6 +343,7 @@ HTML;
         
             <input type="hidden" id="slipFilename">
             <input type="hidden" id="slipId">
+            <!--input type="hidden" id="auto_id"-->
             <input type="hidden" id="slipPOS">
            
         <!--

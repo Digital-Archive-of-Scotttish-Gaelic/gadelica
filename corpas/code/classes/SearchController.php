@@ -120,7 +120,9 @@ SQL;
     if ($params["mode"] == "headword") {    //lemma
       $query["search"] = $params["search"];
       $query["sql"] = <<<SQL
-        SELECT l.filename AS filename, l.id AS id, wordform, pos, lemma, date_of_lang, title, page, medium, s.auto_id as auto_id FROM lemmas AS l
+        SELECT l.filename AS filename, l.id AS id, wordform, pos, lemma, date_of_lang, title, 
+                page, medium, s.auto_id as auto_id, s.wordClass as wordClass 
+            FROM lemmas AS l
             LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id
             WHERE lemma = ?
 SQL;
@@ -170,7 +172,7 @@ SQL;
   private function _getPOSWhereClause($params) {
     $whereClause = " AND (";
     foreach ($params["pos"] as $pos) {
-      $posString[] = " BINARY pos REGEXP '{$pos}\$|{$pos}\\\+|{$pos}[[:space:]]' ";
+      $posString[] = " BINARY pos REGEXP '{$pos}\$|{$pos}[[:space:]]' ";
     }
     $whereClause .= implode(" OR ", $posString);
     $whereClause .= ") ";
@@ -195,7 +197,7 @@ SQL;
   public static function getDistinctPOS() {
     $db = new Database();
     $sql = <<<SQL
-        SELECT DISTINCT pos FROM lemmas 
+        SELECT DISTINCT BINARY pos FROM lemmas 
             ORDER BY pos
 SQL;
     $results = $db->fetch($sql);
