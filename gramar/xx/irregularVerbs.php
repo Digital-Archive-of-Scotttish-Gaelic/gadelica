@@ -5,8 +5,8 @@ require_once "../includes/htmlHeader.php";
 <ul>
   <li><strong>abair</strong> ‘say’</li>
   <li><strong>beir</strong> ‘bear’</li>
-  <li><strong>cluinn</strong> ‘hear’</li>
-  <li><strong>faic</strong> ‘see’</li>
+  <li><strong><a href="../gd/verbs/cluinn.php">cluinn</a></strong> ‘hear’</li>
+  <li><strong><a href="../gd/verbs/faic.php">faic</a></strong> ‘see’</li>
   <li><strong><a href="../gd/verbs/faigh.php">faigh</a></strong> ‘get’</li>
   <li><strong><a href="../gd/verbs/rach.php">rach</a></strong> ‘go’</li>
   <li><strong><a href="../gd/verbs/thig.php">thig</a></strong> ‘come’</li>

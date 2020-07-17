@@ -1,0 +1,35 @@
+Every indefinite NP within the object/complement of ‘want’ can be interpreted as either specific or non-specific.
+
+John wants a fish.
+John wants to catch a fish.
+John wants a friend of his to catch a fish.
+John wants to see a friend of his catch a fish.
+
+The two readings of ‘John wants (to catch) a fish’ are as follows:
+
+J: want(J, [x: fish(x), catch(J,x)])
+J,x: fish(x), want(J, [catch(J,x)])
+
+The four readings of ‘John wants to see a friend of his catch a fish’ are:
+
+J: want(J, [x,y: friend(x,J), fish(y), see(J,catch(x,y))])
+J,x: friend(x,J), want(J, [y:  fish(y), see(J,catch(x,y))])
+J,y: fish(y), want(J, [x: friend(x,J), see(J,catch(x,y))])
+J,x,y: friend(x,J), fish(y), want(J, [see(J,catch(x,y))])
+
+Every indefinite NP within the ‘for’ complement of ‘ask’ can similarly be interpreted as either specific of non-specific:
+
+Bill asked a man for a cigar.
+
+B,x: man(x), ask(B,x, [y: cigar(y), give(x,y,B)])
+B,x,y: man(x), cigar(y), ask(B,x, [give(x,y,B)])
+
+Fred wants a man to ask him for a cigar.
+
+F: want(F, [x: man(x), ask(x,F, [y: cigar(y), give(F,y,x)])])
+F,x: man(x), want(F, [ask(x,F, [y: cigar(y), give(F,y,x)])])
+F,y: cigar(y), want(F, [x: man(x), ask(x,F, [give(F,y,x)])])
+F,x,y: man(x), cigar(y), want(F, [ask(x,F, [give(F,y,x)])])
+F: want(F, [x,y: man(x), cigar(y), ask(x,F, [give(F,y,x)])])
+F,x: man(x), want(F, [y: cigar(y), ask(x,F, [give(F,y,x)])])
+

@@ -11,7 +11,7 @@ require_once "../../includes/htmlHeader.php";
   <tbody>
     <tr><th>past</th><td colspan="3">fhuair</td><td colspan="3">d’ fhuair</td></tr>
     <tr><th>future</th><td colspan="3">gheibh</td><td colspan="3">faigh</td></tr>
-    <tr><th>conditional</th><td>gheibheadh</td><td>gheibhhinn</td><td>gheibheamaid</td><td>faigheadh</td><td>faighinn</td><td>faigheamaid</tr>
+    <tr><th>conditional</th><td>gheibheadh</td><td>gheibhinn</td><td>gheibheamaid</td><td>faigheadh</td><td>faighinn</td><td>faigheamaid</tr>
     <tr><th>imperative</th><td colspan="6">faigh</td></tr>
     <tr><th>nominal</th><td colspan="6">faighinn, faotainn</td></tr>
   </tbody>
