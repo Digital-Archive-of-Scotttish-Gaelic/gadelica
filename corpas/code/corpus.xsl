@@ -166,7 +166,7 @@
     <hr/>
     <xsl:choose>
       <xsl:when test="@img">
-        <p><a href="{concat('../img/',@img)}" target="_new">[p. <xsl:value-of select="@n"/>]</a></p>
+        <p><a href="{concat('https://dasg.ac.uk/images/cnag/pages/',@img)}" target="_new">[p. <xsl:value-of select="@n"/>]</a></p>
       </xsl:when>
       <xsl:otherwise>
         <p class="text-muted">[p. <xsl:value-of select="@n"/>]</p>
