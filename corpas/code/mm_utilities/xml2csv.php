@@ -6,19 +6,22 @@ $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX : <http://faclair.ac.uk/meta/>
 PREFIX dc: <http://purl.org/dc/terms/>
-SELECT DISTINCT ?xml ?date ?title ?supertitle ?supersupertitle ?medium
+SELECT DISTINCT ?xml ?date ?title ?supertitle ?supersupertitle ?supersupersupertitle ?medium
 WHERE
 {
   ?id :xml ?xml .
   OPTIONAL { ?id dc:title ?title . }
   OPTIONAL { ?id dc:isPartOf ?id2 . ?id2 dc:title ?supertitle . }
   OPTIONAL { ?id dc:isPartOf ?id2 . ?id2 dc:isPartOf ?id3 . ?id3 dc:title ?supersupertitle . }
+  OPTIONAL { ?id dc:isPartOf ?id2 . ?id2 dc:isPartOf ?id3 . ?id3 dc:isPartOf ?id4 . ?id4 dc:title ?supersupersupertitle . }
   {
     { ?id :internalDate ?date . }
     UNION
     { ?id dc:isPartOf ?id2 . ?id2 :internalDate ?date . }
     UNION
     { ?id dc:isPartOf ?id2 . ?id2 dc:isPartOf ?id3 . ?id3 :internalDate ?date . }
+    UNION
+    { ?id dc:isPartOf ?id2 . ?id2 dc:isPartOf ?id3 . ?id3 dc:isPartOf ?id4 . ?id4 :internalDate ?date . }
   }
   {
     { ?id :medium ?medium . }
@@ -26,6 +29,8 @@ WHERE
     { ?id dc:isPartOf ?id2 . ?id2 :medium ?medium . }
     UNION
     { ?id dc:isPartOf ?id2 . ?id2 dc:isPartOf ?id3 . ?id3 :medium ?medium . }
+    UNION
+    { ?id dc:isPartOf ?id2 . ?id2 dc:isPartOf ?id3 . ?id3 dc:isPartOf ?id4 . ?id4 :medium ?medium . }
   }
 }
 SPQR;
@@ -46,6 +51,7 @@ $titles = [];
 foreach ($results as $nextResult) {
   $nextFile = $nextResult->xml->value;
   $nextTitle = '';
+  if ($nextResult->supersupersupertitle->value!='') $nextTitle .= $nextResult->supersupersupertitle->value . ' – ';
   if ($nextResult->supersupertitle->value!='') $nextTitle .= $nextResult->supersupertitle->value . ' – ';
   if ($nextResult->supertitle->value!='') $nextTitle .= $nextResult->supertitle->value . ' – ';
   $nextTitle .= $nextResult->title->value;
