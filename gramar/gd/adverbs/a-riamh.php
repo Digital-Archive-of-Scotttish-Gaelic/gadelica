@@ -10,7 +10,13 @@ require_once "../../includes/htmlHeader.php";
   <li><strong><mark>Chan fhaca</mark> mi gin <mark>a-riamh</mark> cho àlainn.</strong><br/>
     <small class="text-muted">‘I had never see someone so beautiful.’ [#2 48]</small></li>
   <li>Cha d’ fhuair e a-riamh thairis air. ‘He never recovered from it.’ [57] FUTURE?</li>
+  <li>Cha do thachair càil cho oillteil san eilean a-riamh. ‘had ever happened’ [60]</li>
 </ul>
+
+
+
+“An aithne dhut gun dh’ith siorc duine a-riamh?” “Do you know that a shark has ever eaten a man?” [63]
+
 <p>Superlative:</p>
 <ul>
   <li><strong>Sin nuair a rinn iad an eucoir agus an aingidheachd a b’ uabhasaiche a thachair <mark>a-riamh</mark> sa Chlachan.</strong><br/>
