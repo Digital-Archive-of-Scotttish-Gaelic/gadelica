@@ -15,6 +15,7 @@ require_once "../../includes/htmlHeader.php";
 
 
 
+
 “An aithne dhut gun dh’ith siorc duine a-riamh?” “Do you know that a shark has ever eaten a man?” [63]
 
 <p>Superlative:</p>
@@ -38,6 +39,7 @@ require_once "../../includes/htmlHeader.php";
     <small class="text-muted">‘But it was not Dolan’s name or my own name that came out for the third prize but the Daolag’s, who had not won a prize ever before.’ [#2 71]</small></li>
   <li><strong><mark>Cha do dh’innis</mark> mi do dhuine <mark>a-riamh roimhe</mark> e.</strong><br/>
     <small class="text-muted">‘I had never told it to anyone before.’ [#2 44]</small></li>
+    
 </ul>
 <p><strong>an/nach do thachair rud a-riamh roimhe?</strong> ‘had something (n)ever happened before?’</p>
 <ul>
@@ -49,11 +51,14 @@ require_once "../../includes/htmlHeader.php";
   <li><strong><mark>Cha robh</mark> dalta anns an sgìre againn <mark>a-riamh roimhe</mark>.</strong><br/>
     <small class="text-muted">‘There had not been a fosterling in our area ever before.’ [#2 21]</small></li>
 </ul>
+
 <p>Pluperfect example, cf. ‘cha do chuala mi guth a-riamh roimhe’:</p>
 <ul>
   <li><strong><mark>Cha robh</mark> mi air guth a chluinntinn <mark>a-riamh roimhe</mark>.</strong><br/>
     <small class="text-muted">‘I hadn’t heard it mentioned ever before.’ [#2 40]</small></li>
 </ul>
+
+
 
 
 
