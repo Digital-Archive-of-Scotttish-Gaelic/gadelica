@@ -141,11 +141,11 @@ $(function () {
           createSlipStyle = '';
         }
         html = '<tr>';
-        html += '<td style="text-align: right;">'+val.pre + '</td>';
+        html += '<td style="text-align: right;">'+val.pre.output + '</td>';
         html += '<td><a href="viewText.php?uri=' + val.uri + '&id=' + val.id + '"';
         html += ' data-toggle="tooltip" data-html="true" title="' + title + '">';
         html += val.word + '</a>';
-        html += '<td>' + val.post + '</td>';
+        html += '<td>' + val.post.output + '</td>';
         html += '<td><small><a href="#" class="slipLink ' + createSlipStyle + '" data-uri="' + val.uri + '"';
         html += ' data-headword="' + headword + '" data-pos="' + pos + '"';
         html += ' data-id="' + val.id + '" data-xml="' + val.filename + '"';
