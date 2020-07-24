@@ -129,10 +129,10 @@ HTML;
   }
 
   protected function _getSelectPosHtml() {
-    $distinctPOS = SearchController::getDistinctPOS();
+    $distinctPOS = PartOfSpeech::getAllLabels();
     $posHtml = "";
-    foreach ($distinctPOS as $pos) {
-      $posHtml .= '<option value="' . $pos . '">' . $pos . '</option>';
+    foreach ($distinctPOS as $abbr => $label) {
+      $posHtml .= '<option value="' . $abbr . '">' . $abbr . ' (' . $label . ')</option>';
     }
     $posHtml = <<<HTML
         <select class="form-control col-3" multiple name="pos[]">
@@ -211,9 +211,10 @@ HTML;
   /* print out search result as table row */
   private function _writeSearchResult($result, $index) {
     $context = $this->_xmlFile->getContext($result["id"], 12, 12);
+    $pos = new PartOfSpeech($result["pos"]);
     $title = <<<HTML
         Headword: {$result["lemma"]}<br>
-        POS: {$result["pos"]}<br>
+        POS: {$result["pos"]} ({$pos->getLabel()})<br>
         Date: {$result["date_of_lang"]}<br>
         Title: {$result["title"]}<br>
         Page No: {$result["page"]}<br><br>
