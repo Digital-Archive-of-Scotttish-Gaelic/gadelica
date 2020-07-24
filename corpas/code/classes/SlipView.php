@@ -53,16 +53,26 @@ class SlipView
         </div>
       </form>
 HTML;
+    $this->_writeFooter();;
   }
 
   private function _writeHeader() {
     echo <<<HTML
         <div>
+            headword: <span id="slipHeadword">{$_REQUEST["headword"]}</span>
+            {$this->_writeWordClassesSelect()}
+        </div>
+HTML;
+  }
+
+  private function _writeFooter() {
+    $pos = new PartOfSpeech($_REQUEST["pos"]);
+    $label = $_REQUEST["pos"] ? " ({$pos->getLabel()})" : "";
+    echo <<<HTML
+        <div>
+            POS tag:<span id="slipPOS">{$_REQUEST["pos"]}{$label}</span><br><br>
             filename: <span id="slipFilename">{$this->_slip->getFilename()}</span><br>
             id: <span id="slipId">{$this->_slip->getId()}</span><br>
-            headword: <span id="slipHeadword">{$_REQUEST["headword"]}</span><br>
-            POS:<span id="slipPOS">{$_REQUEST["pos"]}</span><br><br>
-            {$this->_writeWordClassesSelect()}
         </div>
 HTML;
   }
@@ -77,8 +87,9 @@ HTML;
 HTML;
     }
     $html = <<<HTML
-        <div class="form-group">
-          <select name="wordClass" class="form-control col-3">      
+        <div id="wordClassSelect" class="form-group">
+          <label for="wordClass">Part-of-speech:</label>
+          <select name="wordClass" id="wordClass" class="form-control col-3">      
             {$optionHtml}
           </select>
       </div>
