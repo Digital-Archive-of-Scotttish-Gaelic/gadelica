@@ -64,6 +64,10 @@
     z-index: 10;
 }
 
+#slipChecked {
+    float: right;
+}
+
 #slipHeadword {
     font-weight: bold;
     font-size: 14pt;
@@ -73,9 +77,15 @@
     margin: 20px 0px;
 }
 
+#slipContextContainer {
+    padding: 5px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+}
+
 #slipContext {
     font-family: "Times New Roman";
-    font-size: 12pt;
+    font-size: 16pt;
 }
 
 #slipHeader {

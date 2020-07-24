@@ -10,19 +10,21 @@ class SlipView
   }
 
   public function writeEditForm() {
+    $checked = $this->_slip->getStarred() ? "checked" : "";
+    echo <<<HTML
+        <div class="form-group" id="slipChecked">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="starred" id="slipStarred" {$checked}>
+            <label class="form-check-label" for="slipStarred">checked</label>
+          </div>
+        </div>
+HTML;
     $this->_writeHeader();
-    $starred = $this->_slip->getStarred() ? "checked" : "";
     echo <<<HTML
       <div>
         {$this->_writeContext()}
       </div>
       <form method="post">
-        <div class="form-group">
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" name="starred" id="slipStarred" {$starred}>
-            <label class="form-check-label" for="slipStarred">starred</label>
-          </div>
-        </div>
         <div class="form-group">
           <label for="translation">English translation:</label>
           <textarea class="form-control" name="translation" id="translation" rows="3">{$this->_slip->getTranslation()}</textarea>
@@ -129,7 +131,7 @@ HTML;
     }
     $contextHtml .= $context["post"]["output"];
     echo <<<HTML
-            <div>
+            <div id="slipContextContainer">
               <div>
                 <span><a href="#" class="updateContext btn-link" id="decrementPre">-</a></span>
                 <span><a href="#" class="updateContext" id="incrementPre">+</a></span>
