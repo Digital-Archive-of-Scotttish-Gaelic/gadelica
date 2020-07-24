@@ -7,6 +7,7 @@ class XmlFileHandler
 
   public function __construct($filename) {
     $this->_filename = $filename;
+    echo INPUT_FILEPATH . $this->_filename;
     $this->_xml = simplexml_load_file(INPUT_FILEPATH . $this->_filename);
     $this->_xml->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/');
   }
