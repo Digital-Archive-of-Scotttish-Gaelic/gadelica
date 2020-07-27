@@ -12,6 +12,7 @@ class SlipView
   public function writeEditForm() {
     $checked = $this->_slip->getStarred() ? "checked" : "";
     echo <<<HTML
+        <form method="post">
         <div class="form-group" id="slipChecked">
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="checkbox" name="starred" id="slipStarred" {$checked}>
@@ -20,11 +21,11 @@ class SlipView
         </div>
 HTML;
     $this->_writeHeader();
+    $this->_writePartOfSpeechSelects();
     echo <<<HTML
       <div>
         {$this->_writeContext()}
       </div>
-      <form method="post">
         <div class="form-group">
           <label for="translation">English translation:</label>
           <textarea class="form-control" name="translation" id="translation" rows="3">{$this->_slip->getTranslation()}</textarea>
@@ -43,7 +44,7 @@ HTML;
           <div class="input-group">
             <input type="hidden" name="filename" value="{$_REQUEST["filename"]}">
             <input type="hidden" name="id" value="{$_REQUEST["id"]}">
-            <input type="hidden" name="auto_id" value="{$_REQUEST["auto_id"]}">
+            <input type="hidden" name="auto_id" value="{$this->_slip->getAutoId()}">
             <input type="hidden" name="pos" value="{$_REQUEST["pos"]}">
             <input type="hidden" id="preContextScope" name="preContextScope" value="{$this->_slip->getPreContextScope()}">
             <input type="hidden" id="postContextScope" name="postContextScope" value="{$this->_slip->getPostContextScope()}">
@@ -62,7 +63,6 @@ HTML;
     echo <<<HTML
         <div>
             headword: <span id="slipHeadword">{$_REQUEST["headword"]}</span>
-            {$this->_writeWordClassesSelect()}
         </div>
 HTML;
   }
@@ -77,6 +77,83 @@ HTML;
             id: <span id="slipId">{$this->_slip->getId()}</span><br>
         </div>
 HTML;
+    $this->_writeJavascript();
+  }
+
+  private function _writePartOfSpeechSelects() {
+    echo $this->_writeWordClassesSelect();
+    $props = $this->_slip->getSlipMorph()->getProps();
+    $numgenOptions = array("masculine singular", "feminine singular", "plural", "singular (gender unclear)",
+      "feminine dual", "unclear");
+    $caseOptions = array("nominative", "genitive", "dative", "unclear");
+    $statusOptions = array("dependent", "independent", "relative", "verbal noun", "unclear");
+    $tenseOptions = array("present", "future", "past", "conditional", "unclear");
+    $moodOptions = array("active", "passive", "unclear");
+    $numgenOptionHtml = $caseOptionHtml = $statusOptionHtml = $tenseOptionHtml = $moodOptionHtml = "";
+    foreach ($numgenOptions as $numgen) {
+      $selected = $numgen == $props["numgen"] ? "selected" : "";
+      $numgenOptionHtml .= <<<HTML
+        <option value="{$numgen}" {$selected}>{$numgen}</option>
+HTML;
+    }
+    foreach ($caseOptions as $case) {
+      $selected = $case == $props["case"] ? "selected" : "";
+      $caseOptionHtml .= <<<HTML
+        <option value="{$case}" {$selected}>{$case}</option>
+HTML;
+    }
+    foreach ($statusOptions as $status) {
+      $selected = $status == $props["status"] ? "selected" : "";
+      $statusOptionHtml .= <<<HTML
+        <option value="{$status}" {$selected}>{$status}</option>
+HTML;
+    }
+    foreach ($tenseOptions as $tense) {
+      $selected = $tense== $props["tense"] ? "selected" : "";
+      $tenseOptionHtml .= <<<HTML
+        <option value="{$tense}" {$selected}>{$tense}</option>
+HTML;
+    }
+    foreach ($moodOptions as $mood) {
+      $selected = $mood == $props["mood"] ? "selected" : "";
+      $moodOptionHtml .= <<<HTML
+        <option value="{$mood}" {$selected}>{$mood}</option>
+HTML;
+    }
+    $nounSelectHide = $this->_slip->getWordClass() == "noun" ? "" : "hide";
+    $verbSelectHide = $this->_slip->getWordClass() == "verb" ? "" : "hide";
+    $verbalNounHide = $props["status"] == "verbal noun" ? "hide" : "";
+    echo <<<HTML
+        <div>
+            <div id="nounSelects" class="{$nounSelectHide}">
+                <label for="posNumberGender">Number:</label>
+                <select name="numgen" id="posNumberGender" class="form-control col-2">      
+                  {$numgenOptionHtml}
+                </select>  
+                <label for="posCase">Case:</label>
+                <select name="case" id="posCase" class="form-control col-2">      
+                  {$caseOptionHtml}
+                </select>      
+            </div>
+            <div id="verbSelects" class="{$verbSelectHide}">
+                <label for="posStatus">Status:</label>
+                <select name="status" id="posStatus" class="form-control col-2">      
+                  {$statusOptionHtml}
+                </select>  
+                <span id="nonVerbalNounOptions" class="{$verbalNounHide}">
+                  <label for="posTense">Tense:</label>
+                  <select name="tense" id="posTense" class="form-control col-2">      
+                    {$tenseOptionHtml}
+                  </select>   
+                  <label for="posMood">Mood:</label>
+                  <select name="mood" id="posMood" class="form-control col-2">      
+                    {$moodOptionHtml}
+                  </select>
+                </span>      
+            </div>
+        </div>
+HTML;
+
   }
 
   private function _writeWordClassesSelect(){
@@ -144,6 +221,34 @@ HTML;
                 <span><a href="#" class="updateContext" id="incrementPost">+</a></span>
               </div>
             </div>
+HTML;
+  }
+
+  private function _writeJavascript() {
+    echo <<<HTML
+        <script>        
+            $('#wordClass').on('change', function() {
+              if($(this).val() == "verb") {
+                $('#verbSelects').show();
+                $('#nonVerbalNounOptions').show();
+                $('#nounSelects').hide();
+              } else if ($(this).val() == "noun") {
+                $('#nounSelects').show();
+                $('#verbSelects').hide();
+              } else {
+                $('#nounSelects').hide();
+                $('#verbSelects').hide();
+              }
+            });
+            
+            $('#posStatus').on('change', function() {
+              if($(this).val() == "verbal noun") {
+                $('#nonVerbalNounOptions').hide();
+              } else {
+                $('#nonVerbalNounOptions').show();
+              }
+            });
+        </script>
 HTML;
   }
 }

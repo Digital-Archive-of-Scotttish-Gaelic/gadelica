@@ -3,7 +3,7 @@
 
 class Slip
 {
-  private $_auto_id, $_filename, $_id, $_db;
+  private $_auto_id, $_filename, $_id, $_pos, $_db;
   private $_starred, $_translation, $_notes;
   private $_preContextScope, $_postContextScope, $_wordClass, $_lastUpdated;
   private $_isNew;
@@ -14,26 +14,30 @@ class Slip
     "preposition" => array("p", "P"),
     "adverb" => array("A"),
     "other" => array("d", "c", "z", "o", "D", "Dx", "ax", "px", "q"));
+  private $_slipMorph;  //an instance of SlipMorphFeature
 
   public function __construct($filename, $id, $auto_id = null, $pos, $preScope = 20, $postScope = 20) {
     $this->_filename = $filename;
     $this->_id = $id;
     $this->_auto_id = $auto_id;
+    $this->_pos = $pos;
     if (!isset($this->_db)) {
       $this->_db = new Database();
     }
-    $this->_loadSlip($preScope, $postScope, $pos);
+    $this->_loadSlip($preScope, $postScope);
   }
 
-  private function _loadSlip($preScope, $postScope, $pos) {
+  private function _loadSlip($preScope, $postScope) {
+    $this->_slipMorph = new SlipMorphFeature($this->_pos);
     if (!$this->getAutoId()) {  //create a new slip entry
       $this->_isNew = true;
-      $this->_auto_id = $this->_db->getLastInsertId();
-      $this->_extractWordClass($pos);
+      $this->_extractWordClass($this->_pos);
       $sql = <<<SQL
         INSERT INTO slips (filename, id, preContextScope, postContextScope, wordClass) VALUES (?, ?, ?, ?, ?);
 SQL;
       $this->_db->exec($sql, array($this->_filename, $this->_id, $preScope, $postScope, $this->getWordClass()));
+      $this->_auto_id = $this->_db->getLastInsertId();
+      $this->_saveSlipMorph();    //save the defaults to the DB
     }
     $sql = <<<SQL
         SELECT * FROM slips 
@@ -42,7 +46,36 @@ SQL;
     $result = $this->_db->fetch($sql, array($this->_filename, $this->_id));
     $slipData = $result[0];
     $this->_populateClass($slipData);
+    $this->_loadSlipMorph();  //load the slipMorph data from the DB
     return $this;
+  }
+
+  private function _loadSlipMorph() {
+    $sql = <<<SQL
+        SELECT * FROM slipMorph WHERE slip_id = ?
+SQL;
+    $results = $this->_db->fetch($sql, array($this->_auto_id));
+    foreach ($results as $result) {
+      $this->_slipMorph->setProp($result["relation"], $result["value"]);
+    }
+  }
+  
+  private function _saveSlipMorph() {
+    $this->_clearSlipMorphEntries();
+    $props = $this->_slipMorph->getProps();
+    foreach ($props as $relation => $value) {
+      $sql = <<<SQL
+        INSERT INTO slipMorph(slip_id, relation, value) VALUES(?, ?, ?)
+SQL;
+      $this->_db->exec($sql, array($this->_auto_id, $relation, $value));
+    }
+  }
+
+  private function _clearSlipMorphEntries() {
+    $sql = <<<SQL
+      DELETE FROM slipMorph WHERE slip_id = ?
+SQL;
+    $this->_db->exec($sql, array($this->_auto_id));
   }
 
   /**
@@ -58,6 +91,10 @@ SQL;
         $this->_wordClass = $class;
       }
     }
+  }
+
+  public function getSlipMorph() {
+    return $this->_slipMorph;
   }
 
   public function getAutoId() {
@@ -121,6 +158,8 @@ SQL;
   public function saveSlip($params) {
     $params["starred"] = isset($params["starred"]) ? 1 : 0;
     $this->_populateClass($params);
+    $this->_slipMorph->populateClass($params);
+    $this->_saveSlipMorph();
     $sql = <<<SQL
         UPDATE slips 
             SET starred = ?, translation = ?, notes = ?, preContextScope = ?, postContextScope = ?,

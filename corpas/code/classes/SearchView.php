@@ -344,7 +344,7 @@ HTML;
         
             <input type="hidden" id="slipFilename">
             <input type="hidden" id="slipId">
-            <!--input type="hidden" id="auto_id"-->
+            <input type="hidden" id="auto_id">
             <input type="hidden" id="slipPOS">
            
         <!--

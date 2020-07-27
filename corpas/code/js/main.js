@@ -23,6 +23,7 @@ $(function () {
     var title       = $(this).attr('data-title');
     var page        = $(this).attr('data-page');
     var index       = $(this).attr('data-resultindex');   //the index of the result in the results array
+    var auto_id     = $(this).attr('data-auto_id');
     $('#slipTextNum').html('Text ' + textId);
     $('#slipFilename').val(filename);
     $('#slipId').val(id);
@@ -31,7 +32,7 @@ $(function () {
     $('#slipTextRef').html(date + ' <span class="slipFooterTitle">' + title + '</span> ' + page);
     $('#slipPOS').val(pos);
     $.getJSON('ajax.php?action=loadSlip&filename='+filename+'&id='+id+'&index='+index
-      +'&preContextScope='+$('#slipContext').attr('data-precontextscope')
+      +'&preContextScope='+$('#slipContext').attr('data-precontextscope')+'&auto_id='+auto_id
       +'&postContextScope='+$('#slipContext').attr('data-postcontextscope') + '&pos=' + pos, function (data) {
       if (data.wordClass) {
         $('#slipHeadword').html(headword);
