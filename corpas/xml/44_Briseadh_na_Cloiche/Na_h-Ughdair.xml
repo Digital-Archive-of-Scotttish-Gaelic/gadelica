@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../texts.rnc" schematypens="https://relaxng.org/ns/structure/1.0?>
-<text xmlns="https://dasg.ac.uk/corpus/" ref="https://dasg.ac.uk/corpus/_44-12" status="tagged">
+<text xmlns="https://dasg.ac.uk/corpus/" ref="https://dasg.ac.uk/corpus/_44-12" status="raw">
   <pb n="83"/>
   <h>
     <w id="d1e8" pos="d" lemma="the">NA</w>
-    <o>H</o>
-    <pc join="both">-</pc>
-    <w id="d1e17" pos="ns" lemma="ughdar">UGHDAIR</w>
+    <w id="d1e17" pos="ns" lemma="ughdar">H-UGHDAIR</w>
   </h>
   <h>
     <w id="d1e23" pos="N" lemma="Anna">ANNA</w>
@@ -20,7 +18,7 @@
       <w id="d1e43" pos="N" lemma="Caimbeul">Chaimbeul</w>
       <pc join="right">(</pc>
       <w id="d1e49" pos="N">Anna</w>
-      <w id="d1e53" pos="n+n+N" lemma="MacGilleÌosa">Nic’Ill’Iosa</w>
+      <w id="d1e53" pos="N" lemma="MacGilleÌosa">Nic’Ill’Iosa</w>
       <w id="d1e56">mus</w>
       <w id="d1e59" pos="P">do</w>
       <w id="d1e62" pos="V" lemma="pòs">phòs</w>
@@ -34,8 +32,8 @@
       <pc join="left">,</pc>
       <w id="d1e91">ach</w>
       <w id="d1e94" pos="V" lemma="s">’s</w>
-      <w id="d1e97" pos="p+D">ann</w>
-      <w id="d1e100" pos="p+d" lemma="san">’san</w>
+      <w id="d1e97" pos="P">ann</w>
+      <w id="d1e100" pos="p" lemma="san">’san</w>
       <w id="d1e103" pos="N" lemma="Òban">Oban</w>
       <w id="d1e106" lemma="rx">a</w>
       <w id="d1e110" pos="V" lemma="faigh">fhuair</w>
@@ -93,7 +91,7 @@
       <pc join="left">,</pc>
       <w id="d1e269" lemma="agus">’s</w>
       <w id="d1e273" pos="D">i</w>
-      <w id="d1e276" pos="p+d" lemma="ann">’na</w>
+      <w id="d1e276" pos="p" lemma="ann">’na</w>
       <w id="d1e279" pos="n">nighean</w>
       <w id="d1e282" pos="a">òg</w>
       <pc join="left">.</pc>
@@ -130,7 +128,7 @@
       <pc join="left">,</pc>
       <w id="d1e373" pos="p" lemma="ann">an</w>
       <w id="d1e376" pos="n" lemma="sgoil">Sgoil</w>
-      <w id="d1e379" pos="nx+Nx" lemma="MacNeacail">MhicNeacail</w>
+      <w id="d1e379" pos="Nx" lemma="MacNeacail">MhicNeacail</w>
       <pc join="right">(</pc>
       <w id="d1e385">far</w>
       <w id="d1e388" lemma="ax">a</w>
@@ -202,7 +200,7 @@
       <w id="d1e590" pos="n">corra</w>
       <w id="d1e593" pos="n" lemma="pìos">phìos</w>
       <w id="d1e596" pos="n">bàrdachd</w>
-      <w id="d1e599" pos="p+D" lemma="le">leis</w>
+      <w id="d1e599" pos="P" lemma="le">leis</w>
       <w id="d1e602" pos="p">ann</w>
       <o>an</o>
       <w id="d1e609" pos="N" lemma="Gairm">Gairm</w>
@@ -233,7 +231,7 @@
       <w id="d1e676" pos="p" lemma="air">air</w>
       <w id="d1e679" lemma="x">a</w>
       <w id="d1e682" pos="vn" lemma="rach">dhol</w>
-      <w id="d1e685" pos="p+d" lemma="na">’na</w>
+      <w id="d1e685" pos="p" lemma="na">’na</w>
       <w id="d1e689" pos="n" lemma="Tiristeach">Thirisdeach</w>
       <w id="d1e692" pos="p">bho</w>
       <w id="d1e695" pos="nx" lemma="ceann">chionn</w>
@@ -350,7 +348,7 @@
       <w id="d1e1024" pos="n">mach</w>
       <w id="d1e1027" pos="n">corra</w>
       <w id="d1e1030" pos="n">sgeulachd</w>
-      <w id="d1e1034" pos="p+D" lemma="le">leis</w>
+      <w id="d1e1034" pos="P" lemma="le">leis</w>
       <w id="d1e1037" pos="p">air</w>
       <w id="d1e1040" pos="d" lemma="the">an</w>
       <w id="d1e1043" pos="n" lemma="rèidio">réidio</w>
@@ -360,7 +358,7 @@
   <h>
     <w id="d1e1054" pos="N" lemma="Dòmhnall">DOMHNALL</w>
     <w id="d1e1057" pos="N" lemma="Iain">IAIN</w>
-    <w id="d1e1060" pos="n+Nx" lemma="MacAidh">MACAIDH</w>
+    <w id="d1e1060" pos="Nx" lemma="MacAidh">MACAIDH</w>
     <pc join="left">.</pc>
   </h>
   <p>
