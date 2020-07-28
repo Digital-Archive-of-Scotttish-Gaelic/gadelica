@@ -61,6 +61,26 @@ $(function () {
       });
   });
 
+  $('#slipModal').on('show.bs.modal', function (event) { // added by MM
+    var slipLink = $(event.relatedTarget);
+    var slipId = slipLink.data('auto_id');
+    var headword = slipLink.data('headword');
+    var pos = slipLink.data('pos');
+    var id = slipLink.data('id');
+    var xml = slipLink.data('xml');
+    var uri = slipLink.data('uri');
+    var date = slipLink.data('date');
+    var title = slipLink.data('title');
+    var page = slipLink.data('page');
+    var resultindex = slipLink.data('resultindex');
+    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+    var modal = $(this);
+    modal.find('.modal-title').text(slipId);
+    modal.find('.modal-body').text(headword+' '+pos+' '+id+' '+xml+' '+uri+' '+date+' '+title+' '+page+' '+resultindex);
+    //modal.find('.modal-body input').val(recipient)
+  })
+
   $('.updateContext').on('click', function () {
     var preScope = $('#slipContext').attr('data-precontextscope');
     var postScope = $('#slipContext').attr('data-postcontextscope');
@@ -229,4 +249,3 @@ $(function () {
     });
   }
 });
-

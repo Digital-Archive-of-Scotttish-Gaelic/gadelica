@@ -197,7 +197,7 @@ HTML;
     $lastDisplayedRowNum = $rowNum + $this->_perpage - 1;
     $lastDisplayedRowNum = ($lastDisplayedRowNum > $resultTotal) ? $resultTotal : $lastDisplayedRowNum;
     $html = <<<HTML
-        <h4>Showing results {$rowNum} - {$lastDisplayedRowNum} of {$resultTotal} for {$this->_mode} {$this->_search}
+        <p>[Showing results {$rowNum}–{$lastDisplayedRowNum} of {$resultTotal} for {$this->_mode} <strong>{$this->_search}</strong>
 HTML;
     if (!empty($_GET["pos"][0])) {
       $posString = implode(", ", $_GET["pos"]);
@@ -209,7 +209,7 @@ HTML;
     if ($_GET["selectedDates"]) {
       $html .= " {$_GET["selectedDates"]}";
     }
-    $html .= "</h4>";
+    $html .= "]</p>";
     echo $html;
   }
 
@@ -234,9 +234,9 @@ HTML;
         Date: {$result["date_of_lang"]}<br>
         Title: {$result["title"]}<br>
         Page No: {$result["page"]}<br><br>
-        {$this->_xmlFile->getFilename()}<br>{$result["id"]}      
+        {$this->_xmlFile->getFilename()}<br>{$result["id"]}
 HTML;
-    //check if there is an exisitng slip for this entry
+    //check if there is an existing slip for this entry
     if ($result["auto_id"] != null) {
       $slipLinkText = "view slip";
       $createSlipStyle = "";
@@ -255,13 +255,31 @@ HTML;
         <td>{$context["post"]["output"]}</td>
         <td>
             <small>
-                <a href="#" data-toggle="tooltip" data-html="true" title="test" 
+                <a href="#" data-toggle="tooltip" data-html="true" title="test"
                     class="slipLink {$createSlipStyle}" data-uri="{$context["uri"]}"
                     data-headword="{$result["lemma"]}" data-pos="{$result["pos"]}"
                     data-id="{$result["id"]}" data-xml="{$this->_xmlFile->getFilename()}"
                     data-date="{$result["date_of_lang"]}" data-title="{$result["title"]}"
                     data-page="{$result["page"]}" data-resultindex="{$index}"
                     data-auto_id="{$result["auto_id"]}">
+                    {$slipLinkText}
+                </a>
+            </small>
+        </td>
+        <td> <!-- added by MM -->
+            <small>
+                <a href="#" class="slipLink2 {$createSlipStyle}"
+                    data-toggle="modal" data-target="#slipModal"
+                    data-auto_id="{$result["auto_id"]}"
+                    data-headword="{$result["lemma"]}"
+                    data-pos="{$result["pos"]}"
+                    data-id="{$result["id"]}"
+                    data-xml="{$this->_xmlFile->getFilename()}"
+                    data-uri="{$context["uri"]}"
+                    data-date="{$result["date_of_lang"]}"
+                    data-title="{$result["title"]}"
+                    data-page="{$result["page"]}"
+                    data-resultindex="{$index}">
                     {$slipLinkText}
                 </a>
             </small>
@@ -320,7 +338,7 @@ HTML;
 
   private function _writeSlipDiv() {
     echo <<<HTML
-        <div id="slip"> 
+        <div id="slip">
             <div id="slipHeader">
               <div id="slipTopRight">
                   <div id="slipChecked">
@@ -328,42 +346,42 @@ HTML;
                   <input type="checkbox" name="slipStarred" id="slipStarred"-->
                   </div>
                   <div id="slipNumber"></div>
-              </div> 
+              </div>
               <div id="slipHeadwordContainer">
                 <span id="slipHeadword"></span>
                 <span id="slipWordClass"></span>
               </div>
               <div id="slipTextNum"></div>
             </div>  <!-- end slipHeader -->
-        
+
             <div id="slipBody">
               <!--div>
                 <span><a href="#" class="updateContext btn-link" id="decrementPre">-</a></span>
                 <span><a href="#" class="updateContext" id="incrementPre">+</a></span>
               </div-->
-              
+
               <span data-precontextscope="20" data-postcontextscope="20" id="slipContext"></span>
-              
+
               <!--div>
                 <span><a href="#" class="updateContext btn-link" id="decrementPost">-</a></span>
                 <span><a href="#" class="updateContext" id="incrementPost">+</a></span>
               </div-->
               <div id="slipTranslation"></div>
             </div>
-            
+
             <div id="slipFooter">
                 <div id="slipTextRefContainer">
                     <div id="slipTextRef"></div>
                 </div>
                 <div id="slipDate"></div>
             </div>
-            
-        
+
+
             <input type="hidden" id="slipFilename">
             <input type="hidden" id="slipId">
             <input type="hidden" id="auto_id">
             <input type="hidden" id="slipPOS">
-           
+
         <!--
             <div>
                 <label for="slipNotes">Notes:</label><br>
@@ -376,6 +394,27 @@ HTML;
             </div>
 
         </div>
+
+       <!-- added by MM -->
+        <div class="modal fade" id="slipModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
 HTML;
   }
 
@@ -416,12 +455,12 @@ HTML;
 		              items: {$resultTotal},
 		              itemsOnPage: {$this->_perpage},
 		              cssStyle: "light-theme",
-		              onPageClick: function(pageNum) {  
+		              onPageClick: function(pageNum) {
 				            /*var url = 'search.php?action=runSearch&mode={$this->_mode}&pp={$this->_perpage}&page=' + pageNum + '&search={$this->_search}';
 				            url += '&case={$this->_case}&accent={$this->_accent}&lenition={$this->_lenition}';
 				            url += '&hits={$this->_hits}&view={$this->_view}';
 				            url += '&date={$this->_date}';*/
-                    var url = 'search.php?action=runSearch&mode={$this->_mode}&pp={$this->_perpage}&page=' + pageNum + '&search={$this->_search}';		
+                    var url = 'search.php?action=runSearch&mode={$this->_mode}&pp={$this->_perpage}&page=' + pageNum + '&search={$this->_search}';
                     url += '&hits={$this->_hits}&origin={$this->_origin}';
                     window.location.assign(url);
 		              }
