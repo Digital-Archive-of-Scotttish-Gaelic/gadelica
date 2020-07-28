@@ -178,7 +178,8 @@ HTML;
 
   public function writeSavedState() {
     $this->_writeHeader();
-    $editUrl = "slipEdit.php?action=show&filename={$this->_slip->getFilename()}&id={$this->_slip->getId()}&headword={$_GET["headword"]}&pos={$_GET["pos"]}";
+    $editUrl = "slipEdit.php?action=show&filename={$this->_slip->getFilename()}&id={$this->_slip->getId()}
+      &headword={$_GET["headword"]}&pos={$_GET["pos"]}&auto_id={$this->_slip->getAutoId()}";
     echo <<<HTML
         <div>
             <h2>Slip saved</h2>

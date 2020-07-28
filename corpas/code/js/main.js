@@ -31,6 +31,7 @@ $(function () {
     $('#slipDate').html(date);
     $('#slipTextRef').html(date + ' <span class="slipFooterTitle">' + title + '</span> ' + page);
     $('#slipPOS').val(pos);
+    $('#auto_id').val(auto_id);
     $.getJSON('ajax.php?action=loadSlip&filename='+filename+'&id='+id+'&index='+index
       +'&preContextScope='+$('#slipContext').attr('data-precontextscope')+'&auto_id='+auto_id
       +'&postContextScope='+$('#slipContext').attr('data-postcontextscope') + '&pos=' + pos, function (data) {
@@ -101,6 +102,7 @@ $(function () {
     var headword = $('#slipHeadword').text();
     var pos = $('#slipPOS').val();
     var auto_id = $('#auto_id').val();
+    alert(auto_id);
     var url = 'slipEdit.php?filename=' + filename + '&id=' + id + '&headword=' + headword;
     url += '&pos=' + pos + '&auto_id=' + auto_id;
     var win = window.open(url, '_blank');
