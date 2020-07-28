@@ -159,11 +159,7 @@ HTML;
             <tbody>
 HTML;
     if (count($results)) {
-      $lastDisplayedRowNum = $rowNum + $this->_perpage - 1;
-      $lastDisplayedRowNum = ($lastDisplayedRowNum > $resultTotal) ? $resultTotal : $lastDisplayedRowNum;
-      echo <<<HTML
-        <h4>Showing results {$rowNum} - {$lastDisplayedRowNum} of {$resultTotal}</h4>
-HTML;
+      $this->_writeResultsHeader($rowNum, $resultTotal);
       $filename = "";
       foreach ($results as $result) {
         if ($filename != $result["filename"]) {
@@ -195,6 +191,26 @@ HTML;
     }
     $this->_writeSlipDiv();
     $this->_writeResultsJavascript($resultTotal);
+  }
+
+  private function _writeResultsHeader($rowNum, $resultTotal) {
+    $lastDisplayedRowNum = $rowNum + $this->_perpage - 1;
+    $lastDisplayedRowNum = ($lastDisplayedRowNum > $resultTotal) ? $resultTotal : $lastDisplayedRowNum;
+    $html = <<<HTML
+        <h4>Showing results {$rowNum} - {$lastDisplayedRowNum} of {$resultTotal} for {$this->_mode} {$this->_search}
+HTML;
+    if (!empty($_GET["pos"][0])) {
+      $posString = implode(", ", $_GET["pos"]);
+      $html .= "({$posString})";
+    }
+    if (count($_GET["medium"]) < 3) {
+      $html .= " in " . implode(", ", $_GET["medium"]);
+    }
+    if ($_GET["selectedDates"]) {
+      $html .= " {$_GET["selectedDates"]}";
+    }
+    $html .= "</h4>";
+    echo $html;
   }
 
   private function _writeViewSwitch() {
