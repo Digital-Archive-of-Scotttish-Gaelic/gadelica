@@ -7,6 +7,10 @@ $(function () {
     selector: '[data-toggle=tooltip]'
   });
 
+  $(document).on('mouseenter', '.slipLink', function () {
+    $(this).attr('title', 'new title');
+  });
+
   $(document).on('click', '.slipLink', function () {
     //reset the slip form
     resetSlip();

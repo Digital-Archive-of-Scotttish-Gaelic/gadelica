@@ -255,7 +255,8 @@ HTML;
         <td>{$context["post"]["output"]}</td>
         <td>
             <small>
-                <a href="#" class="slipLink {$createSlipStyle}" data-uri="{$context["uri"]}"
+                <a href="#" data-toggle="tooltip" data-html="true" title="test" 
+                    class="slipLink {$createSlipStyle}" data-uri="{$context["uri"]}"
                     data-headword="{$result["lemma"]}" data-pos="{$result["pos"]}"
                     data-id="{$result["id"]}" data-xml="{$this->_xmlFile->getFilename()}"
                     data-date="{$result["date_of_lang"]}" data-title="{$result["title"]}"
