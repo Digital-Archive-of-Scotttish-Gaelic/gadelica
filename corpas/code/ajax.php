@@ -17,6 +17,11 @@ switch ($_REQUEST["action"]) {
       "notes"=>$slip->getNotes(), "preContextScope"=>$slip->getPreContextScope(),
       "postContextScope"=>$slip->getPostContextScope(), "wordClass"=>$slip->getWordClass(),
       "lastUpdated"=>$slip->getLastUpdated(), "textId"=>$textId);
+    //test code
+    $handler = new XmlFileHandler($_GET["filename"]);
+    $context = $handler->getContext($_GET["id"], $_GET["preContextScope"], $_GET["postContextScope"]);
+    $results["context"] = $context;
+    //
     echo json_encode($results);
     break;
   case "saveSlip":

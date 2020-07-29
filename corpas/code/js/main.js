@@ -7,10 +7,6 @@ $(function () {
     selector: '[data-toggle=tooltip]'
   });
 
-  $(document).on('mouseenter', '.slipLink', function () {
-    $(this).attr('title', 'new title');
-  });
-
   $(document).on('click', '.slipLink', function () {
     //reset the slip form
     resetSlip();
@@ -62,6 +58,7 @@ $(function () {
   });
 
   $('#slipModal').on('show.bs.modal', function (event) { // added by MM
+    var modal = $(this);
     var slipLink = $(event.relatedTarget);
     var slipId = slipLink.data('auto_id');
     var headword = slipLink.data('headword');
@@ -73,13 +70,29 @@ $(function () {
     var title = slipLink.data('title');
     var page = slipLink.data('page');
     var resultindex = slipLink.data('resultindex');
-    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-    var modal = $(this);
-    modal.find('.modal-title').text(slipId);
-    modal.find('.modal-body').text(headword+' '+pos+' '+id+' '+xml+' '+uri+' '+date+' '+title+' '+page+' '+resultindex);
-    //modal.find('.modal-body input').val(recipient)
-  })
+    var auto_id = slipLink.data('auto_id');
+    var html = '';
+   $.getJSON('ajax.php?action=loadSlip&filename='+xml+'&id='+id+'&index='+resultindex
+      +'&preContextScope='+$('#slipContext').attr('data-precontextscope')+'&auto_id='+auto_id
+      +'&postContextScope='+$('#slipContext').attr('data-postcontextscope') + '&pos=' + pos, function (data) {
+      html += 'headword: ' + headword + '<br>';
+      if (data.wordClass) {
+        html += 'wordclass: (' + data.wordClass + ')<br>';
+      }
+      html += 'slip number: ' + data.auto_id + '<br>';
+      if (data.starred == 1) {
+        html += 'Ch&check;<br>';
+      }
+      html += 'translation: ' + data.translation + '<br>';
+      html += 'notes: ' + data.notes + '<br>';
+      var context = data.context.pre["output"] + ' <strong>' + data.context.word + '</strong> ' + data.context.post["output"];
+      html += 'citation: ' + context + '<br>';
+    })
+      .done(function () {
+        modal.find('.modal-title').text(auto_id);
+        modal.find('.modal-body').html(html);
+      });
+  });
 
   $('.updateContext').on('click', function () {
     var preScope = $('#slipContext').attr('data-precontextscope');
@@ -210,11 +223,12 @@ $(function () {
   });
 
   function writeSlipContext(filename, id) {
+    var html = '';
     var preScope  = $('#slipContext').attr('data-precontextscope');
     var postScope = $('#slipContext').attr('data-postcontextscope');
     $.getJSON("ajax.php?action=getContext&filename="+filename+"&id="+id+"&preScope="+preScope+"&postScope="+postScope, function (data) {
 
-      var html = data.pre["output"];
+      html = data.pre["output"];
       if (data.pre["endJoin"] != "right" && data.pre["endJoin"] != "both") {
         html += ' ';
       }

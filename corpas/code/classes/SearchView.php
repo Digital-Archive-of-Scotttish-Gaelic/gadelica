@@ -255,7 +255,7 @@ HTML;
         <td>{$context["post"]["output"]}</td>
         <td>
             <small>
-                <a href="#" data-toggle="tooltip" data-html="true" title="test"
+                <a href="#"
                     class="slipLink {$createSlipStyle}" data-uri="{$context["uri"]}"
                     data-headword="{$result["lemma"]}" data-pos="{$result["pos"]}"
                     data-id="{$result["id"]}" data-xml="{$this->_xmlFile->getFilename()}"
@@ -405,7 +405,7 @@ HTML;
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body">
+              <div class="modal-body">         
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
