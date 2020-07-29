@@ -57,6 +57,11 @@ $(function () {
       });
   });
 
+  $('.slipLink2').on('click', function () {
+    $(this).removeClass('createSlipLink');
+    $(this).html('view slip');
+  });
+
   $('#slipModal').on('show.bs.modal', function (event) { // added by MM
     var modal = $(this);
     var slipLink = $(event.relatedTarget);
@@ -72,7 +77,14 @@ $(function () {
     var resultindex = slipLink.data('resultindex');
     var auto_id = slipLink.data('auto_id');
     var html = '';
-   $.getJSON('ajax.php?action=loadSlip&filename='+xml+'&id='+id+'&index='+resultindex
+    //write the hidden info needed for slip edit
+    $('#slipFilename').val(xml);
+    $('#slipId').val(id);
+    $('#slipPOS').val(pos);
+    $('#auto_id').val(auto_id);
+    $('#slipHeadword').html(headword);
+    //get the slip info from the DB
+    $.getJSON('ajax.php?action=loadSlip&filename='+xml+'&id='+id+'&index='+resultindex
       +'&preContextScope='+$('#slipContext').attr('data-precontextscope')+'&auto_id='+auto_id
       +'&postContextScope='+$('#slipContext').attr('data-postcontextscope') + '&pos=' + pos, function (data) {
       html += 'headword: ' + headword + '<br>';
@@ -133,7 +145,7 @@ $(function () {
     saveSlip();
   });
 
-  $('#editSlip').on('click', function () {
+  $(document).on('click', '#editSlip', function () {
     var filename = $('#slipFilename').val();
     var id = $('#slipId').val();
     var headword = $('#slipHeadword').text();

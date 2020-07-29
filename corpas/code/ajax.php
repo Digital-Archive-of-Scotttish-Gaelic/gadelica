@@ -10,14 +10,14 @@ switch ($_REQUEST["action"]) {
     break;
   case "loadSlip":
     $slip = new Slip($_GET["filename"], $_GET["id"], $_GET["auto_id"], $_GET["pos"], $_GET["preContextScope"], $_GET["postContextScope"]);
-    $slip->updateResults($_GET["index"]); //ensure that the "view slip" (and not "create slip") displays
+    $slip->updateResults($_GET["index"]); //ensure that "view slip" (and not "create slip") displays
     $filenameElems = explode('_', $slip->getFilename());
     $textId = $filenameElems[0];
     $results = array("auto_id"=>$slip->getAutoId(), "starred"=>$slip->getStarred(), "translation"=>$slip->getTranslation(),
       "notes"=>$slip->getNotes(), "preContextScope"=>$slip->getPreContextScope(),
       "postContextScope"=>$slip->getPostContextScope(), "wordClass"=>$slip->getWordClass(),
       "lastUpdated"=>$slip->getLastUpdated(), "textId"=>$textId);
-    //test code
+    //code required for modal slips
     $handler = new XmlFileHandler($_GET["filename"]);
     $context = $handler->getContext($_GET["id"], $_GET["preContextScope"], $_GET["postContextScope"]);
     $results["context"] = $context;
