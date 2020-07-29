@@ -70,13 +70,16 @@ $(function () {
     var pos = slipLink.data('pos');
     var id = slipLink.data('id');
     var xml = slipLink.data('xml');
+    //var filenameElems = xml.split('_');
+    var textId = xml.split('_')[0];
     var uri = slipLink.data('uri');
     var date = slipLink.data('date');
     var title = slipLink.data('title');
     var page = slipLink.data('page');
     var resultindex = slipLink.data('resultindex');
     var auto_id = slipLink.data('auto_id');
-    var html = '';
+    var body = '';
+    var header = headword;
     //write the hidden info needed for slip edit
     $('#slipFilename').val(xml);
     $('#slipId').val(id);
@@ -87,22 +90,33 @@ $(function () {
     $.getJSON('ajax.php?action=loadSlip&filename='+xml+'&id='+id+'&index='+resultindex
       +'&preContextScope='+$('#slipContext').attr('data-precontextscope')+'&auto_id='+auto_id
       +'&postContextScope='+$('#slipContext').attr('data-postcontextscope') + '&pos=' + pos, function (data) {
-      html += 'headword: ' + headword + '<br>';
       if (data.wordClass) {
-        html += 'wordclass: (' + data.wordClass + ')<br>';
+        var wc = data.wordClass;
+        if (wc=='noun') {
+          header += ' <em>n.</em>';
+        }
+        else if (wc=='verb') {
+          header += ' <em>v.</em>';
+        }
       }
-      html += 'slip number: ' + data.auto_id + '<br>';
+      /*
       if (data.starred == 1) {
         html += 'Ch&check;<br>';
       }
-      html += 'translation: ' + data.translation + '<br>';
       html += 'notes: ' + data.notes + '<br>';
-      var context = data.context.pre["output"] + ' <strong>' + data.context.word + '</strong> ' + data.context.post["output"];
-      html += 'citation: ' + context + '<br>';
+      */
+      var context = data.context.pre["output"] + ' <mark>' + data.context.word + '</mark> ' + data.context.post["output"];
+      body += '<p>' + context + '</p>';
+      body += '<p><small class="text-muted">' + data.translation + '</small></p>';
+      //body += '<p class="small">[#' + textId + ': <em>' + title + '</em> p.' + page + ']</p>';
+      body += '<p class="text-muted"><span data-toggle="tooltip" data-html="true" title="' + '<em>' + title + '</em> p.' + page + '">#' + textId + ': ' + date + '</span></p>';
+      body += '<hr/>';
+      body += '<p>Morphological information goes here</p>';
     })
       .done(function () {
-        modal.find('.modal-title').text(auto_id);
-        modal.find('.modal-body').html(html);
+        modal.find('.modal-title').html(header);
+        modal.find('#slipNo').text('§'+slipId);
+        modal.find('.modal-body').html(body);
       });
   });
 
