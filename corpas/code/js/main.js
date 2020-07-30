@@ -112,6 +112,10 @@ $(function () {
       body += '<p class="text-muted"><span data-toggle="tooltip" data-html="true" title="' + '<em>' + title + '</em> p.' + page + '">#' + textId + ': ' + date + '</span></p>';
       body += '<hr/>';
       body += '<p>Morphological information goes here</p>';
+      $.each(data.slipMorph, function(k, v) {
+        body += '<p>' + k + ' : ' + v + '</p>';
+      });
+      slipId = data.auto_id;
     })
       .done(function () {
         modal.find('.modal-title').html(header);

@@ -151,7 +151,6 @@ SQL;
     $this->_postContextScope = $params["postContextScope"];
     $this->_wordClass = $params["wordClass"];
     $this->_lastUpdated = isset($params["lastUpdated"]) ? $params["lastUpdated"] : "";
-
     return $this;
   }
 
