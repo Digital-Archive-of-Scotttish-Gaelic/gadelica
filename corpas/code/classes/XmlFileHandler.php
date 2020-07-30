@@ -22,12 +22,18 @@ class XmlFileHandler
     $xpath = '/dasg:text/@ref';
     $out = $this->_xml->xpath($xpath);
     $context["uri"] = (string)$out[0];
-    $xpath = "//dasg:w[@id='{$id}']/preceding::*";
+    $xpath = "//dasg:w[@id='{$id}']/preceding::*[@id]"; //TODO: SB check with MM that adding [@id] here is OK
     $words = $this->_xml->xpath($xpath);
     /* preContext processing */
     $context["pre"] = "";
     if ($preScope) {
       $pre = array_slice($words, -$preScope);
+      //check if we're one token away from the start of the document
+      $nextIndex = $preScope + 1;
+      $limitCheck = array_slice($words, -$nextIndex);
+      if (count($limitCheck) != count($pre)+1) {
+        $context["prelimit"] = count($pre);
+      }
       if ($normalisePunc) {
         $context["pre"] = $this->_normalisePunctuation($pre);
       } else {
@@ -44,10 +50,20 @@ class XmlFileHandler
     $context["post"] = "";
     if ($postScope) {
       $post = array_slice($words,0, $postScope);
+      //check if we're one token away from the end of the document
+      $nextIndex = $postScope + 1;
+      $limitCheck = array_slice($words, 0, $nextIndex);
+      if (count($limitCheck) != count($post)+1) {
+        $context["postlimit"] = count($post);
+      }
       if ($normalisePunc) {
         $context["post"] = $this->_normalisePunctuation($post);
       } else {
         $context["post"]["output"] = implode(' ', $post);
+      }
+      //check if the scope has reached the end of the document
+      if (count($post) < $postScope) {
+        $context["post"]["limit"] = count($post);
       }
     }
     return $context;

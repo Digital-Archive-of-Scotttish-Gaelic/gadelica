@@ -25,8 +25,9 @@ switch ($_REQUEST["action"]) {
     echo json_encode($results);
     break;
   case "saveSlip":
-    $slip = new Slip($_POST["filename"], $_POST["id"], $_POST["starred"], $_POST["translation"],
-      $_POST["notes"], $_POST["preContextScope"], $_POST["postContextScope"], $_POST["wordClass"]);
+    //$filename, $id, $auto_id = null, $pos, $preScope = 20, $postScope = 20
+    $slip = new Slip($_POST["filename"], $_POST["id"], $_POST["auto_id"], $_POST["pos"],
+      $_POST["preContextScope"], $_POST["postContextScope"]);
     unset($_POST["action"]);
     $slip->saveSlip($_POST);
     echo "success"; //TODO: remove or replace with something more useful ...

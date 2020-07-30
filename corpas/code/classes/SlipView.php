@@ -44,8 +44,8 @@ HTML;
           <div class="input-group">
             <input type="hidden" name="filename" value="{$_REQUEST["filename"]}">
             <input type="hidden" name="id" value="{$_REQUEST["id"]}">
-            <input type="hidden" name="auto_id" value="{$this->_slip->getAutoId()}">
-            <input type="hidden" name="pos" value="{$_REQUEST["pos"]}">
+            <input type="hidden" id="auto_id" name="auto_id" value="{$this->_slip->getAutoId()}">
+            <input type="hidden" id="pos" name="pos" value="{$_REQUEST["pos"]}">
             <input type="hidden" id="preContextScope" name="preContextScope" value="{$this->_slip->getPreContextScope()}">
             <input type="hidden" id="postContextScope" name="postContextScope" value="{$this->_slip->getPostContextScope()}">
             <input type="hidden" name="action" value="save"/>
@@ -158,6 +158,7 @@ HTML;
 
   private function _writeWordClassesSelect(){
     $classes = $this->_slip->getWordClasses();
+    echo "<h1>{$this->_slip->getWordClass()}</h1>";
     $optionHtml = "";
     foreach ($classes as $class => $posArray) {
       $selected = $class == $this->_slip->getWordClass() ? "selected" : "";
@@ -199,6 +200,12 @@ HTML;
     $preScope = $this->_slip->getPreContextScope();
     $postScope = $this->_slip->getPostContextScope();
     $context = $handler->getContext($this->_slip->getId(), $preScope, $postScope);
+    $preHref = "href=\"#\"";
+    //check for start/end of document
+    if (isset($context["prelimit"])) {
+      $preScope = $context["prelimit"];
+      $preHref = "";
+    }
     $contextHtml = $context["pre"]["output"];
     if ($context["pre"]["endJoin"] != "right" && $context["pre"]["endJoin"] != "both") {
       $contextHtml .= ' ';
@@ -212,7 +219,7 @@ HTML;
             <div id="slipContextContainer">
               <div>
                 <span><a href="#" class="updateContext btn-link" id="decrementPre">-</a></span>
-                <span><a href="#" class="updateContext" id="incrementPre">+</a></span>
+                <span><a {$preHref} class="updateContext" id="incrementPre">+</a></span>
               </div>
               <span data-precontextscope="{$preScope}" data-postcontextscope="{$postScope}" id="slipContext">
                 {$contextHtml}

@@ -57,7 +57,7 @@ class SlipMorphFeature
   }
 
   public function populateClass($params) {
-    foreach ($this->_propTitles[$this->getType()] as $relation) {
+    foreach ($this->_propTitles[$this->_type] as $relation) {
       if (!empty($params[$relation])) {
         $this->setProp($relation, $params[$relation]);
       }

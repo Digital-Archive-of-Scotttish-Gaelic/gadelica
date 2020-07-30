@@ -137,8 +137,10 @@ $(function () {
         }
         break;
       case "incrementPre":
-        preScope++;
-        $('#decrementPre').removeClass("disabled");
+        if ($(this).attr('href')) {
+          preScope++;
+          $('#decrementPre').removeClass("disabled");
+        }
         break;
       case "decrementPost":
         postScope--;
@@ -257,7 +259,16 @@ $(function () {
     var preScope  = $('#slipContext').attr('data-precontextscope');
     var postScope = $('#slipContext').attr('data-postcontextscope');
     $.getJSON("ajax.php?action=getContext&filename="+filename+"&id="+id+"&preScope="+preScope+"&postScope="+postScope, function (data) {
-
+      if (data.prelimit) {
+        $('#incrementPre').removeAttr("href");
+      } else {
+        $('#incrementPre').attr("href", "#");
+      }
+      if (data.postlimit) {
+        $('#incrementPost').removeAttr("href");
+      } else {
+        $('#incrementPost').attr("href", "#");
+      }
       html = data.pre["output"];
       if (data.pre["endJoin"] != "right" && data.pre["endJoin"] != "both") {
         html += ' ';
@@ -286,8 +297,9 @@ $(function () {
     var translation = $('#slipTranslation').val();
     var notes = $('#slipNotes').val();
     $.post("ajax.php", {action: "saveSlip", filename: $('#slipFilename').text(), id: $('#slipId').text(),
+      auto_id: $('#auto_id').val(), pos: $('#pos').val(),
       starred: starred, translation: translation, notes: notes, preContextScope: $('#slipContext').attr('data-precontextscope'),
-      postContextScope: $('#slipContext').attr('data-postcontextscope')
+      postContextScope: $('#slipContext').attr('data-postcontextscope'), wordClass: $('#wordClass').val()
     }, function (data) {
       console.log(data);        //TODO: add some response code on successful save
     });
