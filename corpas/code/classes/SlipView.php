@@ -72,6 +72,7 @@ HTML;
     $label = $_REQUEST["pos"] ? " ({$pos->getLabel()})" : "";
     echo <<<HTML
         <div>
+            slip ID:<span id="auto_id">{$_REQUEST["auto_id"]}</span><br>
             POS tag:<span id="slipPOS">{$_REQUEST["pos"]}{$label}</span><br><br>
             filename: <span id="slipFilename">{$this->_slip->getFilename()}</span><br>
             id: <span id="slipId">{$this->_slip->getId()}</span><br>

@@ -76,7 +76,7 @@ $(function () {
     var date = slipLink.data('date');
     var title = slipLink.data('title');
     var page = slipLink.data('page');
-    var resultindex = slipLink.data('resultindex');
+    var resultindex = slipLink.data('resultindex'); 
     var auto_id = slipLink.data('auto_id');
     var body = '';
     var header = headword;
@@ -259,6 +259,22 @@ $(function () {
     var preScope  = $('#slipContext').attr('data-precontextscope');
     var postScope = $('#slipContext').attr('data-postcontextscope');
     $.getJSON("ajax.php?action=getContext&filename="+filename+"&id="+id+"&preScope="+preScope+"&postScope="+postScope, function (data) {
+      var preOutput = data.pre["output"];
+      var postOutput = data.post["output"];
+      //handle zero pre/post context sizes
+      if (typeof preOutput == "undefined") {
+        preOutput = "";
+        $('#decrementPre').removeAttr("href");
+      } else {
+        $('#decrementPre').attr("href", "#");
+      }
+      if (typeof postOutput == "undefined") {
+        postOutput = "";
+        $('#decrementPost').removeAttr("href");
+      } else {
+        $('#decrementPost').attr("href", "#");
+      }
+      //handle reaching the start/end of the document
       if (data.prelimit) {
         $('#incrementPre').removeAttr("href");
       } else {
@@ -269,7 +285,7 @@ $(function () {
       } else {
         $('#incrementPost').attr("href", "#");
       }
-      html = data.pre["output"];
+      html = preOutput;
       if (data.pre["endJoin"] != "right" && data.pre["endJoin"] != "both") {
         html += ' ';
       }
@@ -277,7 +293,7 @@ $(function () {
       if (data.post["startJoin"] != "left" && data.post["startJoin"] != "both") {
         html += ' ';
       }
-      html += data.post["output"];
+      html += postOutput;
       $('#slipContext').html(html);
       $('#slip').show();
     });
