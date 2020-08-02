@@ -17,16 +17,18 @@ echo <<<HTML
 <body style="padding-top: 80px;">
   <div class="container-fluid">
     <nav class="navbar navbar-dark bg-primary fixed-top navbar-expand-lg">
-      <a class="navbar-brand" href="http://localhost/~mark/gadelica/gramar/index.php">DASG/GnaG</a>
+      <a class="navbar-brand" href="https://dasg.ac.uk/gadelica/gramar/index.php">DASG/GnaG</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
+          <!--
           <a class="nav-item nav-link" href="browseCorpus.php">browse</a>
           <a class="nav-item nav-link" href="search.php?action=newSearch">search</a>
           <a class="nav-item nav-link" href="generateForms.php">forms</a>
           <a class="nav-item nav-link" href="generateHeadwords.php">headwords</a>
+        -->
         </div>
       </div>
     </nav>
