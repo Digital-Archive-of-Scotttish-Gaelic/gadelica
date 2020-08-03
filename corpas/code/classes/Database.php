@@ -19,6 +19,10 @@ class Database {
     }
   }
 
+  public function getDatabaseHandle() {
+    return $this->_dbh;
+  }
+
   public function __destruct() {
     $this->_dbh = null;
     $this->_sth = null;
