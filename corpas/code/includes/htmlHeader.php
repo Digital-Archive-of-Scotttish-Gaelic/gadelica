@@ -2,6 +2,19 @@
 
 require_once "include.php";
 
+$loginControl = new LoginController();
+
+//check login state
+if ($loginControl->isLoggedIn()) {
+  $loginLinkHtml = <<<HTML
+    <a class="nav-item nav-link" href="?">logout</a>
+HTML;
+} else {
+  $loginLinkHtml = <<<HTML
+    <a class="nav-item nav-link" data-toggle="modal" data-target="#loginModal" id="loginLink" href="#">login</a>
+HTML;
+}
+
 echo <<<HTML
 
 <!doctype html>
@@ -18,6 +31,7 @@ echo <<<HTML
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="js/jquery.simplePagination.js"></script>
 	<script src="https://cdn.ckeditor.com/4.14.1/basic/ckeditor.js"></script>
@@ -35,7 +49,13 @@ echo <<<HTML
           <a class="nav-item nav-link" href="search.php?action=newSearch">search</a>
           <a class="nav-item nav-link" href="generateForms.php">forms</a>
           <a class="nav-item nav-link" href="generateHeadwords.php">headwords</a>
+          {$loginLinkHtml}
         </div>
       </div>
     </nav>
 HTML;
+
+//write the login modal
+if (!$loginControl->isLoggedIn()) {
+  $loginControl->writeFormModal();
+}

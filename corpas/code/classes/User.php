@@ -2,7 +2,7 @@
 
 class User
 {
-  private $email, $username, $password, $salt, $firstName, $lastName, 
+  private $email, $password, $salt, $firstName, $lastName,
     $isSlipAdmin, $passwordAuth, $lastLoggedIn, $updated;
 
   public function __construct($email) {
@@ -11,10 +11,6 @@ class User
 
   public function getEmail() {
     return $this->email;
-  }
-
-  public function getUsername() {
-    return $this->username;
   }
 
   public function getPassword() {
@@ -34,10 +30,6 @@ class User
 
   public function checkPassword($password) {
     return md5($this->getSalt() . $password) == $this->getPassword() ? 1 : 0;
-  }
-
-  public function setUsername($username) {
-    $this->username = $username;
   }
 
   public function setPassword($password) {
