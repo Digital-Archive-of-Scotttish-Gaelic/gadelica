@@ -22,6 +22,9 @@ class LoginView
                   <input type="password" id="password" name="password" class="form-control validate">
                   <label data-error="wrong" data-success="right" for="password">password</label>
                 </div>
+                <div>
+                    <a href="forgotPassword.php" title="Forgot my password">Forgot my password</a>
+                </div>
               </div>
               <div class="modal-footer">
                 <input type="hidden" name="loginAction" value="login">

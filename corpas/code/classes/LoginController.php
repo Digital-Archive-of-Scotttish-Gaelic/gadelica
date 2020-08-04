@@ -3,6 +3,8 @@
 
 class LoginController
 {
+  private $_user;
+
   public function __construct() {
 
     if (!isset($_REQUEST["loginAction"])) {
@@ -11,6 +13,14 @@ class LoginController
 
     switch ($_REQUEST["loginAction"]) {
       case "login":
+        if (!$this->_authenticateUser($_POST)) {
+          echo "<h3>Email/password combination not recognised</h3>";
+        } else {
+          echo "logged-in";   //just some simple test code for now
+        }
+        break;
+      case "logout":
+        $this->_logout();
         break;
       default:
         break;
@@ -26,13 +36,23 @@ class LoginController
     if (empty($user) || !$user->checkPassword($params["password"])) {
       return false;
     }
+    $this->_user = $user;
     $_SESSION["user"] = $user->getEmail();
     Users::saveUser($user);   //update last login in DB
     return true;
   }
 
+  public function getUser() {
+    return $this->_user;
+  }
+
   public function isLoggedIn() {
-    return isset($_SESSION["email"]);
+    return isset($_SESSION["user"]);
+  }
+
+  private function _logout() {
+    unset($this->_user);
+    unset($_SESSION["user"]);
   }
 
   public function writeFormModal() {

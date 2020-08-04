@@ -3,11 +3,10 @@
 require_once "include.php";
 
 $loginControl = new LoginController();
-
 //check login state
 if ($loginControl->isLoggedIn()) {
   $loginLinkHtml = <<<HTML
-    <a class="nav-item nav-link" href="?">logout</a>
+    <a class="nav-item nav-link" href="?loginAction=logout">logout</a>
 HTML;
 } else {
   $loginLinkHtml = <<<HTML
