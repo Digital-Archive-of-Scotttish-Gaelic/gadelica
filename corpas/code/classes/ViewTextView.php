@@ -12,7 +12,7 @@ class ViewTextView extends SearchView
   public function printText() {
     echo <<<HTML
         <h3>{$this->_text->getTitle()}</h3>
-        <table class="table" id="meta" data-hi="{$this->_text->getId()}">
+        <table class="table" id="meta" data-hi="{$_GET["id"]}">
           <tbody>
             {$this->_getWritersHtml()}
             {$this->_getMediaHtml()}
@@ -188,9 +188,10 @@ HTML;
     <script>
       $(function () {
         $('[data-toggle="tooltip"]').tooltip();
-        hi = $('#meta').attr('data-hi');
+        hi = $('#meta').attr('data-hi');  
         $('#'+hi).css('background-color', 'yellow');
-        $('body').animate({scrollTop: $('#'+hi).offset().top - 180},500);
+       //$('body').animate({scrollTop: $('#'+hi).offset().top - 180},500);
+       document.getElementById(hi).scrollIntoView()
       });
     </script>
 HTML;

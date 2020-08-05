@@ -203,7 +203,7 @@ HTML;
       $posString = implode(", ", $_GET["pos"]);
       $html .= "({$posString})";
     }
-    if (count($_GET["medium"]) < 3) {
+    if (isset($_GET["medium"]) && count($_GET["medium"]) < 3) {
       $html .= " in " . implode(", ", $_GET["medium"]);
     }
     if ($_GET["selectedDates"]) {
