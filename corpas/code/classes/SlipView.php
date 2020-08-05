@@ -33,8 +33,8 @@ HTML;
           <textarea class="form-control" name="translation" id="translation" rows="3">{$this->_slip->getTranslation()}</textarea>
           <script>
             CKEDITOR.replace('translation', {
-              customConfig: 'https://dasg.ac.uk/gadelica/corpas/code/js/ckConfig.js',
-              customCss: 'https://dasg.ac.uk/gadelica/corpas/code/css/ckCSS.js'
+              contentsCss: 'https://dasg.ac.uk/gadelica/corpas/code/css/ckCSS.css',
+              customConfig: 'https://dasg.ac.uk/gadelica/corpas/code/js/ckConfig.js'
             });
           </script>
         </div>
@@ -45,6 +45,7 @@ HTML;
           </span>
           <script>
             CKEDITOR.replace('notes', {
+              contentsCss: 'https://dasg.ac.uk/gadelica/corpas/code/css/ckCSS.css',
               customConfig: 'https://dasg.ac.uk/gadelica/corpas/code/js/ckConfig.js'
             });
           </script>
