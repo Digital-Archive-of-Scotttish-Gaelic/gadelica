@@ -48,6 +48,10 @@ class SlipMorphFeature
     return $this->_type;
   }
 
+  public function setType($type) {
+    $this->_type = $type;
+  }
+
   public function getProps() {
     return $this->_props;
   }
@@ -57,6 +61,7 @@ class SlipMorphFeature
   }
 
   public function populateClass($params) {
+    $this->_props = [];
     foreach ($this->_propTitles[$this->_type] as $relation) {
       if (!empty($params[$relation])) {
         $this->setProp($relation, $params[$relation]);

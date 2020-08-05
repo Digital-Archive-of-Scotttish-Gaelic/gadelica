@@ -61,7 +61,6 @@ SQL;
   }
   
   private function _saveSlipMorph() {
-    $this->_clearSlipMorphEntries();
     $props = $this->_slipMorph->getProps();
     foreach ($props as $relation => $value) {
       $sql = <<<SQL
@@ -163,6 +162,8 @@ SQL;
     $params["starred"] = isset($params["starred"]) ? 1 : 0;
     $params["updatedBy"] = $_SESSION["user"];
     $this->_populateClass($params);
+    $this->_clearSlipMorphEntries();
+    $this->_slipMorph->setType($this->getWordClass());
     $this->_slipMorph->populateClass($params);
     $this->_saveSlipMorph();
     $sql = <<<SQL

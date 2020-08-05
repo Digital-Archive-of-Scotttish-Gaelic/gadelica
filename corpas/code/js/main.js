@@ -184,18 +184,6 @@ $(function () {
     }
   });
 
-  $('.windowClose').on('click', function () {
-    window.close();
-  });
-
-  $('#savedClose').on('click', function () {
-    saveSlip();
-    $('#slipSavedModal').modal();
-    setTimeout(function() {
-      window.close();
-      }, 2000);
-  });
-
   /*
       Load the dictionary results
    */
@@ -262,6 +250,18 @@ $(function () {
     $('#wordformOptions').hide();
   });
 
+  $('.windowClose').on('click', function () {
+    window.close();
+  });
+
+  $('#savedClose').on('click', function () {
+    saveSlip();
+    $('#slipSavedModal').modal();
+    setTimeout(function() {
+      window.close();
+    }, 2000);
+  });
+
   function writeSlipContext(filename, id) {
     var html = '';
     var preScope  = $('#slipContext').attr('data-precontextscope');
@@ -320,11 +320,21 @@ $(function () {
     var starred = $('#slipStarred').prop('checked') ? 1 : 0;
     var translation = CKEDITOR.instances['slipTranslation'].getData();
     var notes = CKEDITOR.instances['slipNotes'].getData();
-    $.post("ajax.php", {action: "saveSlip", filename: $('#slipFilename').text(), id: $('#slipId').text(),
-      auto_id: $('#auto_id').val(), pos: $('#pos').val(),
-      starred: starred, translation: translation, notes: notes, preContextScope: $('#slipContext').attr('data-precontextscope'),
-      postContextScope: $('#slipContext').attr('data-postcontextscope'), wordClass: $('#wordClass').val()
-    }, function (data) {
+    var data = {action: "saveSlip", filename: $('#slipFilename').text(), id: $('#slipId').text(),
+      auto_id: $('#auto_id').val(), pos: $('#pos').val(), starred: starred, translation: translation,
+      notes: notes, preContextScope: $('#slipContext').attr('data-precontextscope'),
+      postContextScope: $('#slipContext').attr('data-postcontextscope'), wordClass: $('#wordClass').val()};
+    if ($('#wordClass').val() == "noun") {      //noun data
+      data['numgen'] = $('#posNumberGender').val();
+      data['case'] = $('#posCase').val();
+    } else {                                    //verb data
+      data['status'] = $('#posStatus').val();
+      if ($('#posStatus').val() != "verbal noun") {
+        data['tense'] = $('#posTense').val();
+        data['mood'] = $('#posMood').val();
+      }
+    }
+    $.post("ajax.php", data, function (data) {
       console.log(data);        //TODO: add some response code on successful save
     });
   }
