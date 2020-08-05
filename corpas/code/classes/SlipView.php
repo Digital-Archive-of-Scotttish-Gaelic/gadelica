@@ -12,6 +12,9 @@ class SlipView
   public function writeEditForm() {
     $checked = $this->_slip->getStarred() ? "checked" : "";
     echo <<<HTML
+        <div>
+            {$this->_writeContext()}
+        </div>
         <form method="post">
         <div class="form-group" id="slipChecked">
           <div class="form-check form-check-inline">
@@ -19,18 +22,19 @@ class SlipView
             <label class="form-check-label" for="slipStarred">checked</label>
           </div>
         </div>
+         <div>
+            headword: <span id="slipHeadword">{$_REQUEST["headword"]}</span>
+        </div>
 HTML;
-    $this->_writeHeader();
     $this->_writePartOfSpeechSelects();
     echo <<<HTML
-      <div>
-        {$this->_writeContext()}
-      </div>
         <div class="form-group">
           <label for="translation">English translation:</label>
           <textarea class="form-control" name="translation" id="translation" rows="3">{$this->_slip->getTranslation()}</textarea>
           <script>
-            CKEDITOR.replace('translation');
+            CKEDITOR.replace('translation', {
+              customConfig: 'https://dasg.ac.uk/gadelica/corpas/code/js/ckConfig.js'
+            });
           </script>
         </div>
         <div class="form-group">
@@ -57,14 +61,6 @@ HTML;
       </form>
 HTML;
     $this->_writeFooter();;
-  }
-
-  private function _writeHeader() {
-    echo <<<HTML
-        <div>
-            headword: <span id="slipHeadword">{$_REQUEST["headword"]}</span>
-        </div>
-HTML;
   }
 
   private function _writeFooter() {
@@ -179,7 +175,6 @@ HTML;
   }
 
   public function writeSavedState() {
-    $this->_writeHeader();
     $editUrl = "slipEdit.php?action=show&filename={$this->_slip->getFilename()}&id={$this->_slip->getId()}
       &headword={$_GET["headword"]}&pos={$_GET["pos"]}&auto_id={$this->_slip->getAutoId()}";
     echo <<<HTML
