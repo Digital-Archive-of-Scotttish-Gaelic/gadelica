@@ -5,7 +5,7 @@ class Slip
 {
   private $_auto_id, $_filename, $_id, $_pos, $_db;
   private $_starred, $_translation, $_notes;
-  private $_preContextScope, $_postContextScope, $_wordClass, $_lastUpdated;
+  private $_preContextScope, $_postContextScope, $_wordClass, $_lastUpdatedBy, $_lastUpdated;
   private $_isNew;
   private $_wordClasses = array(
     'noun' => array("n", "nx", "ns", "N", "Nx"),
@@ -137,6 +137,10 @@ SQL;
     return $this->_wordClass;
   }
 
+  public function getLastUpdatedBy() {
+    return $this->_lastUpdatedBy;
+  }
+
   public function getLastUpdated() {
     return $this->_lastUpdated;
   }
@@ -150,23 +154,26 @@ SQL;
     $this->_preContextScope = $params["preContextScope"];
     $this->_postContextScope = $params["postContextScope"];
     $this->_wordClass = $params["wordClass"];
+    $this->_lastUpdatedBy = $params["updatedBy"];
     $this->_lastUpdated = isset($params["lastUpdated"]) ? $params["lastUpdated"] : "";
     return $this;
   }
 
   public function saveSlip($params) {
     $params["starred"] = isset($params["starred"]) ? 1 : 0;
+    $params["updatedBy"] = $_SESSION["user"];
     $this->_populateClass($params);
     $this->_slipMorph->populateClass($params);
     $this->_saveSlipMorph();
     $sql = <<<SQL
         UPDATE slips 
             SET starred = ?, translation = ?, notes = ?, preContextScope = ?, postContextScope = ?,
-                wordClass = ?
+                wordClass = ?, updatedBy = ?
             WHERE filename = ? AND id = ?
 SQL;
     $this->_db->exec($sql, array($this->getStarred(), $this->getTranslation(), $this->getNotes(),
       $this->getPreContextScope(), $this->getPostContextScope(), $this->getWordClass(),
+      $this->getLastUpdatedBy(),
       $this->getFilename(), $this->getId()));
     return $this;
   }

@@ -15,7 +15,6 @@ class SlipView
         <div>
             {$this->_writeContext()}
         </div>
-        <form method="post">
         <div class="form-group" id="slipChecked">
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="checkbox" name="starred" id="slipStarred" {$checked}>
@@ -29,22 +28,20 @@ HTML;
     $this->_writePartOfSpeechSelects();
     echo <<<HTML
         <div class="form-group">
-          <label for="translation">English translation:</label>
-          <textarea class="form-control" name="translation" id="translation" rows="3">{$this->_slip->getTranslation()}</textarea>
+          <label for="slipTranslation">English translation:</label>
+          <textarea class="form-control" name="slipTranslation" id="slipTranslation" rows="3">{$this->_slip->getTranslation()}</textarea>
           <script>
-            CKEDITOR.replace('translation', {
+            CKEDITOR.replace('slipTranslation', {
               contentsCss: 'https://dasg.ac.uk/gadelica/corpas/code/css/ckCSS.css',
               customConfig: 'https://dasg.ac.uk/gadelica/corpas/code/js/ckConfig.js'
             });
           </script>
         </div>
         <div class="form-group">
-          <label for="notes">Notes:</label>
-          <span class="text-big">
-            <textarea class="form-control" name="notes" id="notes" rows="3">{$this->_slip->getNotes()}</textarea>
-          </span>
+          <label for="slipNotes">Notes:</label>
+          <textarea class="form-control" name="slipNotes" id="slipNotes" rows="3">{$this->_slip->getNotes()}</textarea>
           <script>
-            CKEDITOR.replace('notes', {
+            CKEDITOR.replace('slipNotes', {
               contentsCss: 'https://dasg.ac.uk/gadelica/corpas/code/css/ckCSS.css',
               customConfig: 'https://dasg.ac.uk/gadelica/corpas/code/js/ckConfig.js'
             });
@@ -59,14 +56,44 @@ HTML;
             <input type="hidden" id="preContextScope" name="preContextScope" value="{$this->_slip->getPreContextScope()}">
             <input type="hidden" id="postContextScope" name="postContextScope" value="{$this->_slip->getPostContextScope()}">
             <input type="hidden" name="action" value="save"/>
-            <div class="input-group">
-              <button name="submit" class="btn btn-primary" type="submit">save</button>
+            <div class="mx-2">
+              <button name="close" class="windowClose btn btn-secondary">close</button>
+              <button name="submit" id="savedClose" class="btn btn-primary">save</button>
+             </div>
+          </div>
+        </div>
+HTML;
+    $this->_writeUpdatedBy();
+    $this->_writeFooter();;
+    $this->_writeSavedModal();
+  }
+
+  private function _writeUpdatedBy() {
+    $email = $this->_slip->getLastUpdatedBy();
+    if (!$email) {
+      return;
+    }
+    $user = Users::getUser($email);
+    $time = $this->_slip->getLastUpdated();
+    echo <<<HTML
+        <div>
+            <p>Last updated {$time} by {$user->getFirstName()} {$user->getLastName()}</p>
+        </div>
+HTML;
+  }
+
+  private function _writeSavedModal() {
+    echo <<<HTML
+        <div id="slipSavedModal" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h2>Slip Saved</h2>
+                </div>
             </div>
           </div>
         </div>
-      </form>
 HTML;
-    $this->_writeFooter();;
   }
 
   private function _writeFooter() {
@@ -180,9 +207,11 @@ HTML;
     return $html;
   }
 
+  /*
   public function writeSavedState() {
-    $editUrl = "slipEdit.php?action=show&filename={$this->_slip->getFilename()}&id={$this->_slip->getId()}
-      &headword={$_GET["headword"]}&pos={$_GET["pos"]}&auto_id={$this->_slip->getAutoId()}";
+    $editUrl = "slipEdit.php?action=show&filename={$this->_slip->getFilename()}&id={$this->_slip->getId()}";
+    $editUrl .= "&headword={$_GET["headword"]}&pos={$_GET["pos"]}&auto_id={$this->_slip->getAutoId()}";
+    $this->_writeSavedModal();
     echo <<<HTML
         <div>
             <h2>Slip saved</h2>
@@ -194,8 +223,8 @@ HTML;
             </div> 
         </div>
 HTML;
-
   }
+  */
 
   private function _writeContext() {
     $handler = new XmlFileHandler($this->_slip->getFilename());

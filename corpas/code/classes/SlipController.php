@@ -23,8 +23,6 @@ class SlipController
       case "save":
         $slip = new Slip($_POST["filename"], $_POST["id"], $_POST["auto_id"], $_POST["pos"]);
         $slip->saveSlip($_POST);
-        $slipView = new SlipView($slip);
-        $slipView->writeSavedState();
         break;
     }
   }

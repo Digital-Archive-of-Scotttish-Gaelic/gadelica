@@ -184,8 +184,16 @@ $(function () {
     }
   });
 
-  $('#savedClose').on('click', function () {
+  $('.windowClose').on('click', function () {
     window.close();
+  });
+
+  $('#savedClose').on('click', function () {
+    saveSlip();
+    $('#slipSavedModal').modal();
+    setTimeout(function() {
+      window.close();
+      }, 2000);
   });
 
   /*
@@ -310,8 +318,8 @@ $(function () {
 
   function saveSlip() {
     var starred = $('#slipStarred').prop('checked') ? 1 : 0;
-    var translation = $('#slipTranslation').val();
-    var notes = $('#slipNotes').val();
+    var translation = CKEDITOR.instances['slipTranslation'].getData();
+    var notes = CKEDITOR.instances['slipNotes'].getData();
     $.post("ajax.php", {action: "saveSlip", filename: $('#slipFilename').text(), id: $('#slipId').text(),
       auto_id: $('#auto_id').val(), pos: $('#pos').val(),
       starred: starred, translation: translation, notes: notes, preContextScope: $('#slipContext').attr('data-precontextscope'),
