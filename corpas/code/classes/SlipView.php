@@ -33,15 +33,20 @@ HTML;
           <textarea class="form-control" name="translation" id="translation" rows="3">{$this->_slip->getTranslation()}</textarea>
           <script>
             CKEDITOR.replace('translation', {
-              customConfig: 'https://dasg.ac.uk/gadelica/corpas/code/js/ckConfig.js'
+              customConfig: 'https://dasg.ac.uk/gadelica/corpas/code/js/ckConfig.js',
+              customCss: 'https://dasg.ac.uk/gadelica/corpas/code/css/ckCSS.js'
             });
           </script>
         </div>
         <div class="form-group">
           <label for="notes">Notes:</label>
-          <textarea class="form-control" name="notes" id="notes" rows="3">{$this->_slip->getNotes()}</textarea>
+          <span class="text-big">
+            <textarea class="form-control" name="notes" id="notes" rows="3">{$this->_slip->getNotes()}</textarea>
+          </span>
           <script>
-            CKEDITOR.replace('notes');
+            CKEDITOR.replace('notes', {
+              customConfig: 'https://dasg.ac.uk/gadelica/corpas/code/js/ckConfig.js'
+            });
           </script>
         </div>
         <div class="form-group">
