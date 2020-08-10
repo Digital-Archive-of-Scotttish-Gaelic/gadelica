@@ -61,7 +61,7 @@ if (!$loginControl->isLoggedIn() && !isset($skipLogin)) {
   $loginControl->writeFormModal();
   echo <<<HTML
     <script>
-        $('#loginModal').show();
+        $('#loginModal').modal();
     </script>
 HTML;
 

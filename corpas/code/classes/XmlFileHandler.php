@@ -22,7 +22,7 @@ class XmlFileHandler
     $xpath = '/dasg:text/@ref';
     $out = $this->_xml->xpath($xpath);
     $context["uri"] = (string)$out[0];
-    $xpath = "//dasg:w[@id='{$id}']/preceding::*[@id]"; //TODO: SB check with MM that adding [@id] here is OK
+    $xpath = "//dasg:w[@id='{$id}']/preceding::*";
     $words = $this->_xml->xpath($xpath);
     /* preContext processing */
     $context["pre"] = "";
