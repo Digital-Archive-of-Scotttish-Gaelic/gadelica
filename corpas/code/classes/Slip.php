@@ -159,7 +159,6 @@ SQL;
   }
 
   public function saveSlip($params) {
-    $params["starred"] = isset($params["starred"]) ? 1 : 0;
     $params["updatedBy"] = $_SESSION["user"];
     $this->_populateClass($params);
     $this->_clearSlipMorphEntries();
@@ -169,7 +168,7 @@ SQL;
     $sql = <<<SQL
         UPDATE slips 
             SET starred = ?, translation = ?, notes = ?, preContextScope = ?, postContextScope = ?,
-                wordClass = ?, updatedBy = ?
+                wordClass = ?, updatedBy = ?, lastUpdated = now()
             WHERE filename = ? AND id = ?
 SQL;
     $this->_db->exec($sql, array($this->getStarred(), $this->getTranslation(), $this->getNotes(),

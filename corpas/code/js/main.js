@@ -161,10 +161,6 @@ $(function () {
     saveSlip();
   });
 
-  $('#slipStarred').on('click', function () {
-    saveSlip();
-  });
-
   $(document).on('click', '#editSlip', function () {
     $('#slipModal').modal('hide');
     var filename = $('#slipFilename').val();
@@ -177,7 +173,6 @@ $(function () {
     var win = window.open(url, '_blank');
     if (win) {
       //Browser has allowed it to be opened
-      //$('#slip').hide();
       win.focus();
     } else {
       //Browser has blocked it
