@@ -51,6 +51,7 @@ SQL;
   }
 
   private function _loadSlipMorph() {
+    $this->_slipMorph->resetProps();
     $sql = <<<SQL
         SELECT * FROM slipMorph WHERE slip_id = ?
 SQL;
