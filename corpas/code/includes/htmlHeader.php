@@ -3,15 +3,17 @@
 require_once "include.php";
 
 $loginControl = new LoginController();
+if (!isset($skipLogin)) {
 //check login state
-if ($loginControl->isLoggedIn()) {
-  $loginLinkHtml = <<<HTML
+  if ($loginControl->isLoggedIn()) {
+    $loginLinkHtml = <<<HTML
     <a class="nav-item nav-link" href="?loginAction=logout">logout</a>
 HTML;
-} else {
-  $loginLinkHtml = <<<HTML
+  } else {
+    $loginLinkHtml = <<<HTML
     <a class="nav-item nav-link" data-toggle="modal" data-target="#loginModal" id="loginLink" href="#">login</a>
 HTML;
+  }
 }
 
 echo <<<HTML
@@ -55,6 +57,12 @@ echo <<<HTML
 HTML;
 
 //write the login modal
-if (!$loginControl->isLoggedIn()) {
+if (!$loginControl->isLoggedIn() && !isset($skipLogin)) {
   $loginControl->writeFormModal();
+  echo <<<HTML
+    <script>
+        $('#loginModal').show();
+    </script>
+HTML;
+
 }

@@ -161,11 +161,8 @@ $(function () {
     saveSlip();
   });
 
-  $('#slipStarred').on('click', function () {
-    saveSlip();
-  });
-
   $(document).on('click', '#editSlip', function () {
+    $('#slipModal').modal('hide');
     var filename = $('#slipFilename').val();
     var id = $('#slipId').val();
     var headword = $('#slipHeadword').text();
@@ -176,7 +173,6 @@ $(function () {
     var win = window.open(url, '_blank');
     if (win) {
       //Browser has allowed it to be opened
-      $('#slip').hide();
       win.focus();
     } else {
       //Browser has blocked it
@@ -334,8 +330,8 @@ $(function () {
         data['mood'] = $('#posMood').val();
       }
     }
-    $.post("ajax.php", data, function (data) {
-      console.log(data);        //TODO: add some response code on successful save
+    $.post("ajax.php", data, function (response) {
+      console.log(response);        //TODO: add some response code on successful save
     });
   }
 });

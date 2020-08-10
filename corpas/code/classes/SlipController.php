@@ -20,10 +20,12 @@ class SlipController
         $slipView = new SlipView($slip);
         $slipView->writeEditForm();
         break;
-      case "save":
+      /* Currently handled by AJAX
+       * case "save":
         $slip = new Slip($_POST["filename"], $_POST["id"], $_POST["auto_id"], $_POST["pos"]);
         $slip->saveSlip($_POST);
         break;
+      */
     }
   }
 }

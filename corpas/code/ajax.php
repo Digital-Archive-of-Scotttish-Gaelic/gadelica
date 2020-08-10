@@ -29,7 +29,7 @@ switch ($_REQUEST["action"]) {
       $_POST["preContextScope"], $_POST["postContextScope"]);
     unset($_POST["action"]);
     $slip->saveSlip($_POST);
-    echo "success"; //TODO: remove or replace with something more useful ...
+    echo "success";
     break;
   case "getDictionaryResults":
     $locs = $_POST["locs"];
