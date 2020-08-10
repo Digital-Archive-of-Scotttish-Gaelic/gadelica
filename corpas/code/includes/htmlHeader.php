@@ -57,4 +57,10 @@ HTML;
 //write the login modal
 if (!$loginControl->isLoggedIn()) {
   $loginControl->writeFormModal();
+  echo <<<HTML
+    <script>
+        $('#loginModal').show();
+    </script>
+HTML;
+
 }

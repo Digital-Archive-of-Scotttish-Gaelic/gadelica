@@ -15,8 +15,6 @@ class LoginController
       case "login":
         if (!$this->_authenticateUser($_POST)) {
           echo "<h3>Email/password combination not recognised</h3>";
-        } else {
-          echo "logged-in";   //just some simple test code for now
         }
         break;
       case "logout":

@@ -166,6 +166,7 @@ $(function () {
   });
 
   $(document).on('click', '#editSlip', function () {
+    $('#slipModal').modal('hide');
     var filename = $('#slipFilename').val();
     var id = $('#slipId').val();
     var headword = $('#slipHeadword').text();
@@ -176,7 +177,7 @@ $(function () {
     var win = window.open(url, '_blank');
     if (win) {
       //Browser has allowed it to be opened
-      $('#slip').hide();
+      //$('#slip').hide();
       win.focus();
     } else {
       //Browser has blocked it
