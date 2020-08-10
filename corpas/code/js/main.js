@@ -330,8 +330,8 @@ $(function () {
         data['mood'] = $('#posMood').val();
       }
     }
-    $.post("ajax.php", data, function (data) {
-      console.log(data);        //TODO: add some response code on successful save
+    $.post("ajax.php", data, function (response) {
+      console.log(response);        //TODO: add some response code on successful save
     });
   }
 });

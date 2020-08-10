@@ -1,5 +1,6 @@
 <?php
 
+$skipLogin = true;
 require_once 'includes/htmlHeader.php';
 
 $params 	= explode('|', base64_decode($_GET["p"]));
