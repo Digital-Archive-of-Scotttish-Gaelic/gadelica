@@ -3,18 +3,18 @@
 require_once "include.php";
 
 $loginControl = new LoginController();
-if (!isset($skipLogin)) {
 //check login state
-  if ($loginControl->isLoggedIn()) {
-    $loginLinkHtml = <<<HTML
-    <a class="nav-item nav-link" href="?loginAction=logout">logout</a>
+if ($loginControl->isLoggedIn()) {
+  $loginLinkHtml = <<<HTML
+    <form method="post">
+        <button id="logoutLink" class="btn btn-link nav-link nav-item" role="link" type="submit" name="loginAction" value="logout">logout</button>
+    </form>
+    <!--a class="nav-item nav-link" href="?loginAction=logout">logout</a-->
 HTML;
-  } else {
-    $loginLinkHtml = <<<HTML
-    <a class="nav-item nav-link" data-toggle="modal" data-target="#loginModal" id="loginLink" href="#">login</a>
-HTML;
-  }
+} else {
+  $loginLinkHtml = "";
 }
+
 
 echo <<<HTML
 
@@ -48,21 +48,10 @@ echo <<<HTML
         <div class="navbar-nav">
           <a class="nav-item nav-link" href="browseCorpus.php">browse</a>
           <a class="nav-item nav-link" href="search.php?action=newSearch">search</a>
-          <a class="nav-item nav-link" href="generateForms.php">forms</a>
-          <a class="nav-item nav-link" href="generateHeadwords.php">headwords</a>
           {$loginLinkHtml}
         </div>
       </div>
     </nav>
 HTML;
 
-//write the login modal
-if (!$loginControl->isLoggedIn() && !isset($skipLogin)) {
-  $loginControl->writeFormModal();
-  echo <<<HTML
-    <script>
-        $('#loginModal').modal();
-    </script>
-HTML;
-
-}
+$loginControl->runAction();
