@@ -253,7 +253,7 @@ HTML;
             </a>
         </td>
         <td>{$context["post"]["output"]}</td>
-        <td>
+        <!--td>
             <small>
                 <a href="#"
                     class="slipLink {$createSlipStyle}" data-uri="{$context["uri"]}"
@@ -265,7 +265,7 @@ HTML;
                     {$slipLinkText}
                 </a>
             </small>
-        </td>
+        </td-->
         <td> <!-- added by MM -->
             <small>
                 <a href="#" class="slipLink2 {$createSlipStyle}"

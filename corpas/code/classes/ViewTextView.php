@@ -191,7 +191,7 @@ HTML;
         hi = $('#meta').attr('data-hi');  
         $('#'+hi).css('background-color', 'yellow');
        //$('body').animate({scrollTop: $('#'+hi).offset().top - 180},500);
-       document.getElementById(hi).scrollIntoView()
+        document.getElementById(hi).scrollIntoView({behavior: 'smooth', block: 'center'})
       });
     </script>
 HTML;

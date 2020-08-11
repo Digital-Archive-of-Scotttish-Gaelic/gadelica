@@ -15,6 +15,7 @@ class Slip
     "adverb" => array("A"),
     "other" => array("d", "c", "z", "o", "D", "Dx", "ax", "px", "q"));
   private $_slipMorph;  //an instance of SlipMorphFeature
+  private $_senseCategories = array();
 
   public function __construct($filename, $id, $auto_id = null, $pos, $preScope = 20, $postScope = 20) {
     $this->_filename = $filename;
@@ -47,6 +48,20 @@ SQL;
     $slipData = $result[0];
     $this->_populateClass($slipData);
     $this->_loadSlipMorph();  //load the slipMorph data from the DB
+    $this->_loadSenseCategories(); //load the senseCategory data from the DB
+    return $this;
+  }
+
+  private function _loadSenseCategories() {
+    $sql = <<<SQL
+        SELECT category from senseCategory 
+        WHERE slip_id = :auto_id 
+SQL;
+    $results = $this->_db->fetch($sql, array(":auto_id"=>$this->getAutoId()));
+    if ($results) {
+      foreach ($results as $key => $value)
+      $this->_senseCategories[] = $value["category"];
+    }
     return $this;
   }
 
@@ -55,7 +70,7 @@ SQL;
     $sql = <<<SQL
         SELECT * FROM slipMorph WHERE slip_id = ?
 SQL;
-    $results = $this->_db->fetch($sql, array($this->_auto_id));
+    $results = $this->_db->fetch($sql, array($this->getAutoId()));
     foreach ($results as $result) {
       $this->_slipMorph->setProp($result["relation"], $result["value"]);
     }
@@ -135,6 +150,10 @@ SQL;
 
   public function getWordClass() {
     return $this->_wordClass;
+  }
+
+  public function getSenseCategories() {
+    return $this->_senseCategories;
   }
 
   public function getLastUpdatedBy() {

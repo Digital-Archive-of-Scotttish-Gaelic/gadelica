@@ -31,6 +31,14 @@ switch ($_REQUEST["action"]) {
     $slip->saveSlip($_POST);
     echo "success";
     break;
+  case "saveCategory":
+    SenseCategories::saveCategory($_POST["slipId"], $_POST["categoryName"]);
+    echo "success";
+    break;
+  case "deleteCategory":
+    SenseCategories::deleteCategory($_POST["slipId"], $_POST["categoryName"]);
+    echo "success";
+    break;
   case "getDictionaryResults":
     $locs = $_POST["locs"];
     $locations = explode('|', $locs);

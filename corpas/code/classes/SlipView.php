@@ -27,6 +27,7 @@ class SlipView
 HTML;
     $this->_writePartOfSpeechSelects();
     echo <<<HTML
+        {$this->_writeSenseCategories()}
         <div class="form-group">
           <label for="slipTranslation">English translation:</label>
           <textarea class="form-control" name="slipTranslation" id="slipTranslation" rows="3">{$this->_slip->getTranslation()}</textarea>
@@ -188,7 +189,6 @@ HTML;
 
   private function _writeWordClassesSelect(){
     $classes = $this->_slip->getWordClasses();
-    echo "<h1>{$this->_slip->getWordClass()}</h1>";
     $optionHtml = "";
     foreach ($classes as $class => $posArray) {
       $selected = $class == $this->_slip->getWordClass() ? "selected" : "";
@@ -205,6 +205,55 @@ HTML;
       </div>
 HTML;
     return $html;
+  }
+
+  private function _writeSenseCategories() {
+    $categories = SenseCategories::getAllCategories();
+    $dropdownHtml = '<option value="">-- select a category --</option>';
+    foreach ($categories as $cat) {
+      $dropdownHtml .= <<<HTML
+        <option data-category="{$cat}" value="{$cat}">{$cat}</option>
+HTML;
+    }
+    $savedCategories = $this->_slip->getSenseCategories();
+    $savedCatHtml = "";
+    foreach ($savedCategories as $category) {
+      $savedCatHtml .= <<<HTML
+        <li data-category="{$category}">{$category} <a class="badge badge-danger deleteCat">X</a></li>
+HTML;
+    }
+    echo <<<HTML
+        <div class="senseCategoriesContainer">
+          <h5>Sense Categories</h5> 
+          <!--div class="form-group row">
+            <div class="col-md-3">
+                  <label for="senseCategorySelect">Choose existing sense category:</label>
+            </div>
+            <div>
+                <select id="senseCategorySelect">{$dropdownHtml}</select>  
+            </div>
+            <div class="col-md-1">
+                  <button type="button" class="form-control btn btn-success" id="chooseSenseCategory">Add</button>
+              </div>
+          </div-->
+          <div class="form-group row">
+              <div class="col-md-3">
+                  <label for="senseCategory">Assign to new sense category:</label>
+              </div>
+              <div class="col-md-3">
+                  <input type="text" class="form-control" id="senseCategory">
+              </div>
+              <div class="col-md-1">
+                  <button type="button" class="form-control btn btn-success" id="addSenseCategory">Add</button>
+              </div>
+          </div>
+          <div>
+            <ul id="senseCategories">
+                {$savedCatHtml}
+            </ul>
+          </div>
+        </div>
+HTML;
   }
 
   /*
@@ -248,6 +297,7 @@ HTML;
     $contextHtml .= $context["post"]["output"];
     echo <<<HTML
             <div id="slipContextContainer">
+              <h4>Adjust citation context</h4>
               <div>
                 <span><a href="#" class="updateContext btn-link" id="decrementPre">-</a></span>
                 <span><a {$preHref} class="updateContext" id="incrementPre">+</a></span>
@@ -265,7 +315,30 @@ HTML;
 
   private function _writeJavascript() {
     echo <<<HTML
-        <script>        
+        <script>    
+            $(document).on('click', '#addSenseCategory', function () {
+              var newCategory = $('#senseCategory').val();
+              var html = '<li data-category="' + newCategory + '">' + newCategory;
+              html += ' <a class="badge badge-danger deleteCat">X</a></li>';
+              $('#senseCategories').append(html);
+              $('#senseCategory').val('');
+              var data = {action: 'saveCategory', slipId: '{$this->_slip->getAutoId()}', 
+                categoryName: newCategory}
+              $.post("ajax.php", data, function (response) {
+                console.log(response);        //TODO: add some response code on successful save
+              });
+            });
+            
+            $(document).on('click', '.deleteCat', function () {
+              var cat = $(this).parent().attr('data-category');
+              $(this).parent().remove();
+              var data = {action: 'deleteCategory', slipId: '{$this->_slip->getAutoId()}',
+                categoryName: cat}
+              $.post("ajax.php", data, function (response) {
+                console.log(response);        //TODO: add some response code on successful save
+              });
+            });          
+            
             $('#wordClass').on('change', function() {
               if($(this).val() == "verb") {
                 $('#verbSelects').show();
