@@ -208,7 +208,7 @@ HTML;
   }
 
   private function _writeSenseCategories() {
-    $categories = SenseCategories::getAllCategories();
+    $categories = SenseCategories::getAllUnusedCategories($this->_slip->getAutoId());
     $dropdownHtml = '<option value="">-- select a category --</option>';
     foreach ($categories as $cat) {
       $dropdownHtml .= <<<HTML
@@ -219,13 +219,13 @@ HTML;
     $savedCatHtml = "";
     foreach ($savedCategories as $category) {
       $savedCatHtml .= <<<HTML
-        <li data-category="{$category}">{$category} <a class="badge badge-danger deleteCat">X</a></li>
+        <li class="badge badge-success" data-category="{$category}">{$category} <a class="badge badge-danger deleteCat">X</a></li>
 HTML;
     }
     echo <<<HTML
         <div class="senseCategoriesContainer">
           <h5>Sense Categories</h5> 
-          <!--div class="form-group row">
+          <div class="form-group row">
             <div class="col-md-3">
                   <label for="senseCategorySelect">Choose existing sense category:</label>
             </div>
@@ -235,7 +235,7 @@ HTML;
             <div class="col-md-1">
                   <button type="button" class="form-control btn btn-success" id="chooseSenseCategory">Add</button>
               </div>
-          </div-->
+          </div>
           <div class="form-group row">
               <div class="col-md-3">
                   <label for="senseCategory">Assign to new sense category:</label>
@@ -316,9 +316,24 @@ HTML;
   private function _writeJavascript() {
     echo <<<HTML
         <script>    
+            $("#chooseSenseCategory").on('click', function () {
+              var elem = $( "#senseCategorySelect option:selected" );
+              var category = elem.text();
+              var html = '<li class="badge badge-success" data-category="' + category + '">' + category;
+              html += ' <a class="badge badge-danger deleteCat">X</a></li>';
+              $('#senseCategories').append(html);
+              elem.remove();
+              var data = {action: 'saveCategory', slipId: '{$this->_slip->getAutoId()}', 
+                categoryName: category}
+              $.post("ajax.php", data, function (response) {
+                console.log(response);        //TODO: add some response code on successful save
+              });
+              console.log(category);
+            });
+            
             $(document).on('click', '#addSenseCategory', function () {
               var newCategory = $('#senseCategory').val();
-              var html = '<li data-category="' + newCategory + '">' + newCategory;
+              var html = '<li class="badge badge-success" data-category="' + newCategory + '">' + newCategory;
               html += ' <a class="badge badge-danger deleteCat">X</a></li>';
               $('#senseCategories').append(html);
               $('#senseCategory').val('');
@@ -330,10 +345,12 @@ HTML;
             });
             
             $(document).on('click', '.deleteCat', function () {
-              var cat = $(this).parent().attr('data-category');
+              var category = $(this).parent().attr('data-category');
               $(this).parent().remove();
+              var html = '<option data-category="' + category + '">' + category + '</option>';
+              $('#senseCategorySelect').append(html);
               var data = {action: 'deleteCategory', slipId: '{$this->_slip->getAutoId()}',
-                categoryName: cat}
+                categoryName: category}
               $.post("ajax.php", data, function (response) {
                 console.log(response);        //TODO: add some response code on successful save
               });

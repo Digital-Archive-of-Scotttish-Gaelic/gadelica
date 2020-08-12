@@ -111,6 +111,11 @@ $(function () {
       //body += '<p class="small">[#' + textId + ': <em>' + title + '</em> p.' + page + ']</p>';
       body += '<p class="text-muted"><span data-toggle="tooltip" data-html="true" title="' + '<em>' + title + '</em> p.' + page + '">#' + textId + ': ' + date + '</span></p>';
       body += '<hr/>';
+      body += '<ul>';
+      $.each(data.categories, function (key, value) {
+        body += '<li class="badge badge-success">' + value + '</li>';
+      });
+      body += '</ul>';
       body += '<p>Morphological information goes here</p>';
       $.each(data.slipMorph, function(k, v) {
         body += '<p>' + k + ' : ' + v + '</p>';

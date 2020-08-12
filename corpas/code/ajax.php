@@ -13,9 +13,10 @@ switch ($_REQUEST["action"]) {
     $slip->updateResults($_GET["index"]); //ensure that "view slip" (and not "create slip") displays
     $filenameElems = explode('_', $slip->getFilename());
     $textId = $filenameElems[0];
-    $results = array("auto_id"=>$slip->getAutoId(), "starred"=>$slip->getStarred(), "translation"=>$slip->getTranslation(),
-      "notes"=>$slip->getNotes(), "preContextScope"=>$slip->getPreContextScope(),
-      "postContextScope"=>$slip->getPostContextScope(), "wordClass"=>$slip->getWordClass(),
+    $results = array("auto_id"=>$slip->getAutoId(), "starred"=>$slip->getStarred(),
+      "translation"=>$slip->getTranslation(), "notes"=>$slip->getNotes(),
+      "preContextScope"=>$slip->getPreContextScope(), "postContextScope"=>$slip->getPostContextScope(),
+      "wordClass"=>$slip->getWordClass(), "categories"=>$slip->getSenseCategories(),
       "lastUpdated"=>$slip->getLastUpdated(), "textId"=>$textId, "slipMorph"=>$slip->getSlipMorph()->getProps());
     //code required for modal slips
     $handler = new XmlFileHandler($_GET["filename"]);
