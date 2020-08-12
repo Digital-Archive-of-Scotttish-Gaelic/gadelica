@@ -208,7 +208,8 @@ HTML;
   }
 
   private function _writeSenseCategories() {
-    $categories = SenseCategories::getAllUnusedCategories($this->_slip->getAutoId());
+    $categories = SenseCategories::getAllUnusedCategories($this->_slip->getAutoId(),
+        $_REQUEST["headword"], $this->_slip->getWordClass());
     $dropdownHtml = '<option value="">-- select a category --</option>';
     foreach ($categories as $cat) {
       $dropdownHtml .= <<<HTML
