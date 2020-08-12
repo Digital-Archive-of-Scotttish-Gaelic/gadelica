@@ -16,6 +16,7 @@ class Slip
     "other" => array("d", "c", "z", "o", "D", "Dx", "ax", "px", "q"));
   private $_slipMorph;  //an instance of SlipMorphFeature
   private $_senseCategories = array();
+  private $_lemma, $_wordform;
 
   public function __construct($filename, $id, $auto_id = null, $pos, $preScope = 20, $postScope = 20) {
     $this->_filename = $filename;
@@ -163,6 +164,27 @@ SQL;
   public function getLastUpdated() {
     return $this->_lastUpdated;
   }
+
+  /*
+   * Note these methods are additional to enable browse slip functionality
+   * lemma and wordform are not populated on instantiation or on _loadSLip()
+   */
+  public function setLemma($lemma) {
+    $this->_lemma = $lemma;
+  }
+
+  public function setWordform($wordform) {
+    $this->_wordform = $wordform;
+  }
+
+  public function getLemma() {
+    return $this->_lemma;
+  }
+
+  public function getWordform() {
+    return $this->_wordform;
+  }
+  /* ------ */
 
   private function _populateClass($params) {
     $this->_auto_id = $params["auto_id"];
