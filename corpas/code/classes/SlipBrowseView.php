@@ -19,7 +19,7 @@ HTML;
       $slipUrl .= "&headword={$slip["lemma"]}}&pos={$slip["pos"]}&auto_id={$slip["auto_id"]}";
       $tableBodyHtml .= <<<HTML
         <tr>
-            <td><a target="_blank" href="{$slipUrl}" title-="edit slip {$slip["auto_id"]}">
+            <td><a target="_blank" href="{$slipUrl}" title="edit slip {$slip["auto_id"]}">
                 {$slip["auto_id"]}
             </td>
             <td>{$slip["lemma"]}</td>
@@ -39,7 +39,7 @@ HTML;
                     <th data-sortable="true">ID</th>
                     <th data-sortable="true">Headword</th>
                     <th data-sortable="true">Wordform</th>
-                    <th data-sortable="true">Wordclass</th>
+                    <th data-sortable="true">Part-of-speech</th>
                     <th>Categories</th>
                     <th data-sortable="true">Updated By</th>
                     <th data-sortable="true">Date</th>

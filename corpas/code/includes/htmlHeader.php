@@ -9,7 +9,6 @@ if ($loginControl->isLoggedIn()) {
     <form method="post">
         <button id="logoutLink" class="btn btn-link nav-link nav-item" role="link" type="submit" name="loginAction" value="logout">logout</button>
     </form>
-    <!--a class="nav-item nav-link" href="?loginAction=logout">logout</a-->
 HTML;
 } else {
   $loginLinkHtml = "";
@@ -51,7 +50,8 @@ echo <<<HTML
         <div class="navbar-nav">
           <a class="nav-item nav-link" title="browse corpus" href="browseCorpus.php">browse</a>
           <a class="nav-item nav-link" title="search corpus" href="search.php?action=newSearch">search</a>
-          <a class="nav-item nav-link" title="browse slips" href="slipBrowse.php">slips</a>        
+          <a class="nav-item nav-link" title="browse slips" href="slipBrowse.php">slips</a>     
+          <a class="nav-item nav-link" title="browse entries" href="entries.php">entries</a> 
           {$loginLinkHtml}
         </div>
       </div>
