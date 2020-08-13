@@ -49,8 +49,9 @@ echo <<<HTML
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link" href="browseCorpus.php">browse</a>
-          <a class="nav-item nav-link" href="search.php?action=newSearch">search</a>
+          <a class="nav-item nav-link" title="browse corpus" href="browseCorpus.php">browse</a>
+          <a class="nav-item nav-link" title="search corpus" href="search.php?action=newSearch">search</a>
+          <a class="nav-item nav-link" title="browse slips" href="slipBrowse.php">slips</a>        
           {$loginLinkHtml}
         </div>
       </div>

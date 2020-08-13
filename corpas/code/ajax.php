@@ -34,10 +34,12 @@ switch ($_REQUEST["action"]) {
     break;
   case "saveCategory":
     SenseCategories::saveCategory($_POST["slipId"], $_POST["categoryName"]);
+    Slips::touchSlip($_POST["slipId"]);
     echo "success";
     break;
   case "deleteCategory":
     SenseCategories::deleteCategory($_POST["slipId"], $_POST["categoryName"]);
+    Slips::touchSlip($_POST["slipId"]);
     echo "success";
     break;
   case "getDictionaryResults":

@@ -15,11 +15,16 @@ class SlipBrowseView
 HTML;
         }
       }
+      $slipUrl = "slipEdit.php?filename={$slip["filename"]}&id={$slip["id"]}";
+      $slipUrl .= "&headword={$slip["lemma"]}}&pos={$slip["pos"]}&auto_id={$slip["auto_id"]}";
       $tableBodyHtml .= <<<HTML
         <tr>
-            <td>{$slip["auto_id"]}</td>
+            <td><a target="_blank" href="{$slipUrl}" title-="edit slip {$slip["auto_id"]}">
+                {$slip["auto_id"]}
+            </td>
             <td>{$slip["lemma"]}</td>
             <td>{$slip["wordform"]}</td>
+            <td>{$slip["wordclass"]}</td>
             <td>{$categoriesHtml}</td>
             <td>{$slip["firstname"]} {$slip["lastname"]}</td>
             <td>{$slip["lastUpdated"]}</td>
@@ -34,6 +39,7 @@ HTML;
                     <th data-sortable="true">ID</th>
                     <th data-sortable="true">Headword</th>
                     <th data-sortable="true">Wordform</th>
+                    <th data-sortable="true">Wordclass</th>
                     <th>Categories</th>
                     <th data-sortable="true">Updated By</th>
                     <th data-sortable="true">Date</th>

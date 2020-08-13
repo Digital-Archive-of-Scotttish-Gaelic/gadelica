@@ -44,7 +44,7 @@ SQL;
     try {
       $sql = <<<SQL
         SELECT s.filename as filename, s.id as id, auto_id, pos, lemma, wordform, firstname, lastname,
-                s.lastUpdated as lastUpdated, category as senseCat
+                s.wordclass as wordclass, l.pos as pos, s.lastUpdated as lastUpdated, category as senseCat
             FROM slips s
             JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
             LEFT JOIN senseCategory sc ON sc.slip_id = auto_id
@@ -64,6 +64,23 @@ SQL;
         }
       }
       return $slipInfo;
+    } catch (PDOException $e) {
+      echo $e->getMessage();
+    }
+  }
+
+  /**
+   * Updates user and date columns
+   */
+  public static function touchSlip($slipId) {
+    $db = new Database();
+    $dbh = $db->getDatabaseHandle();
+    try {
+      $sql = <<<SQL
+          UPDATE slips SET updatedBy = :user, lastUpdated = now() WHERE auto_id = :slipId
+SQL;
+      $sth = $dbh->prepare($sql);
+      $sth->execute(array(":user"=>$_SESSION["user"], ":slipId"=>$slipId));
     } catch (PDOException $e) {
       echo $e->getMessage();
     }
