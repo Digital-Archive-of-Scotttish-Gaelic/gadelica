@@ -25,7 +25,9 @@ HTML;
 	  $html = "<ul>";
 	  $i=0;
 	  foreach ($entry->getForms() as $form) {
-	  	$i++;
+		  $i++;
+	  	$morphValues = $entry->getSlipMorphValues($form);
+		  $morphHtml = "(" . implode(' ', $morphValues) . ")";
 	  	$slipData = $entry->getFormSlipData($form);
 			$slipList = "<ul>";
 			foreach($slipData as $row) {
@@ -49,8 +51,9 @@ HTML;
 					{$slipList}
 				</div>
 HTML;
+
 		  $html .= <<<HTML
-				<li>{$form} {$citationsHtml}</li>
+				<li>{$form} {$morphHtml} {$citationsHtml}</li>
 HTML;
 	  }
 	  $html .= "</ul>";

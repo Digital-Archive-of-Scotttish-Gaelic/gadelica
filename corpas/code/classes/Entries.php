@@ -29,8 +29,12 @@ SQL;
 				$entry->addForm($row["wordform"]);
 				$slipData = Slips::getSlipsByWordform($entry->getLemma(), $entry->getWordclass(), $row["wordform"]);
 				$entry->addFormSlipData($row["wordform"], $slipData);
-				$slipMorphData = Slips::getSlipMorphByWordform($entry->getLemma(), $entry->getWordclass(), $row["wordform"]);
-				$entry->addSlipMorphData($row["wordform"], $slipMorphData);
+				$slipMorphResults = Slips::getSlipMorphByWordform($entry->getLemma(), $entry->getWordclass(), $row["wordform"]);
+				$morphData = array();
+				foreach ($slipMorphResults as $result) {
+					$morphData[$result["relation"]] = $result["value"];
+				}
+				$entry->setSlipMorphData($row["wordform"], $morphData);
 			}
 		} catch (PDOException $e) {
 			echo $e->getMessage();

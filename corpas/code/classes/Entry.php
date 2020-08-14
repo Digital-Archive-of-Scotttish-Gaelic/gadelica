@@ -42,7 +42,15 @@ class Entry
 	}
 
 	public function getSlipMorphData($form) {
-		return $this->_slipMorphData;
+		return $this->_slipMorphData[$form];
+	}
+
+	public function getSlipMorphValues($form) {
+		$values = array();
+		foreach($this->getSlipMorphData($form) as $key => $value) {
+			$values[] = $value;
+		}
+		return array_unique($values);
 	}
 
 	//Setters
@@ -71,7 +79,7 @@ class Entry
 		$this->_senses[] = $sense;
 	}
 
-	public function addSlipMorphData($form, $data) {
+	public function setSlipMorphData($form, $data) {
 		$this->_slipMorphData[$form] = $data;
 	}
 }
