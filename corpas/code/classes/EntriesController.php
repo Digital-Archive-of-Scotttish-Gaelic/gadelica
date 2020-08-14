@@ -17,7 +17,7 @@ class EntriesController
         $this->_view->writeBrowseTable($entriesData);
         break;
       case "view":
-        $entry = $_GET;   //this is just for testing
+        $entry = Entries::getEntry($_GET["headword"], $_GET["wordclass"]);   //this is just for testing
         $this->_view->writeEntry($entry);
         break;
     }

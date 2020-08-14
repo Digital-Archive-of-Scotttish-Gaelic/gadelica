@@ -44,6 +44,99 @@ SQL;
     }
   }
 
+	/**
+	 * Gets slip info form the DB to populate an Entry with data required for citations
+	 * @param $lemma
+	 * @param $wordclass
+	 * @param $wordform
+	 * @return array of DB results
+	 */
+  public static function getSlipsByWordform($lemma, $wordclass, $wordform) {
+	  $slipInfo = array();
+	  $db = new Database();
+	  $dbh = $db->getDatabaseHandle();
+	  try {
+		  $sql = <<<SQL
+        SELECT s.filename as filename, s.id as id, auto_id, pos, lemma, preContextScope, postContextScope,
+                date_of_lang, title, page
+            FROM slips s
+            JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
+            WHERE lemma = :lemma AND wordclass = :wordclass AND wordform = :wordform
+            ORDER BY auto_id ASC
+SQL;
+		  $sth = $dbh->prepare($sql);
+		  $sth->execute(array(":lemma"=>$lemma, ":wordclass"=>$wordclass, ":wordform"=>$wordform));
+		  while ($row = $sth->fetch()) {
+			  $slipInfo[] = $row;
+		  }
+		  return $slipInfo;
+	  } catch (PDOException $e) {
+		  echo $e->getMessage();
+	  }
+  }
+
+	/**
+	 * Gets slip info from the DB to populate an Entry with data required for citations
+	 * @param $lemma
+	 * @param $wordclass
+	 * @param $wordform
+	 * @return array of DB results
+	 */
+	public static function getSlipMorphByWordform($lemma, $wordclass, $wordform) {
+		$morphInfo = array();
+		$db = new Database();
+		$dbh = $db->getDatabaseHandle();
+		try {
+			$sql = <<<SQL
+        SELECT relation, value
+            FROM slipMorph sm
+            JOIN slips s ON sm.slip_id = auto_id
+        		JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
+            WHERE lemma = :lemma AND wordclass = :wordclass AND wordform = :wordform
+SQL;
+			$sth = $dbh->prepare($sql);
+			$sth->execute(array(":lemma"=>$lemma, ":wordclass"=>$wordclass, ":wordform"=>$wordform));
+			while ($row = $sth->fetch()) {
+				$morphInfo[] = $row;
+			}
+			return $morphInfo;
+		} catch (PDOException $e) {
+			echo $e->getMessage();
+		}
+	}
+
+	/**
+	 * Gets slip info from the DB to populate an Entry with data required for citations
+	 * @param $lemma
+	 * @param $wordclass
+	 * @param $category : the sense category
+	 * @return array of DB results
+	 */
+	public static function getSlipsBySenseCategory($lemma, $wordclass, $category) {
+		$slipInfo = array();
+		$db = new Database();
+		$dbh = $db->getDatabaseHandle();
+		try {
+			$sql = <<<SQL
+        SELECT s.filename as filename, s.id as id, auto_id, pos, lemma, preContextScope, postContextScope,
+                wordform, date_of_lang, title, page
+            FROM slips s
+            JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
+            JOIN senseCategory sc on sc.slip_id = auto_id
+            WHERE lemma = :lemma AND wordclass = :wordclass AND sc.category = :category 
+            ORDER BY auto_id ASC
+SQL;
+			$sth = $dbh->prepare($sql);
+			$sth->execute(array(":lemma"=>$lemma, ":wordclass"=>$wordclass, ":category"=>$category));
+			while ($row = $sth->fetch()) {
+				$slipInfo[] = $row;
+			}
+			return $slipInfo;
+		} catch (PDOException $e) {
+			echo $e->getMessage();
+		}
+	}
+
   /**
    * Updates user and date columns
    */
