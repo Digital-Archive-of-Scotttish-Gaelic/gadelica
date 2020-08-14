@@ -15,6 +15,12 @@ class XmlFileHandler
     return $this->_filename;
   }
 
+  public function getUri() {
+    $xpath = '/dasg:text/@ref';
+    $out = $this->_xml->xpath($xpath);
+    return (string)$out[0];
+  }
+
   public function getContext($id, $preScope = 12, $postScope = 12, $normalisePunc = true) {
     $context = array();
     $context["id"] = $id;

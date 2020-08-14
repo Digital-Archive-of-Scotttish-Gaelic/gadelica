@@ -15,13 +15,26 @@ class SlipBrowseView
 HTML;
         }
       }
-      $slipUrl = "slipEdit.php?filename={$slip["filename"]}&id={$slip["id"]}";
-      $slipUrl .= "&headword={$slip["lemma"]}}&pos={$slip["pos"]}&auto_id={$slip["auto_id"]}";
+      $slipUrl = <<<HTML
+                <a href="#" class="slipLink2"
+                    data-toggle="modal" data-target="#slipModal"
+                    data-auto_id="{$slip["auto_id"]}"
+                    data-headword="{$slip["lemma"]}"
+                    data-pos="{$slip["pos"]}"
+                    data-id="{$slip["id"]}"
+                    data-xml="{$slip["filename"]}"
+                    data-uri="{$slip["uri"]}"
+                    data-date="{$slip["date_of_lang"]}"
+                    data-title="{$slip["title"]}"
+                    data-page="{$slip["page"]}"
+                    data-resultindex="-1"
+                    title="view slip {$slip["auto_id"]}">
+                    {$slip["auto_id"]}
+                </a>
+HTML;
       $tableBodyHtml .= <<<HTML
         <tr>
-            <td><a target="_blank" href="{$slipUrl}" title="edit slip {$slip["auto_id"]}">
-                {$slip["auto_id"]}
-            </td>
+            <td>{$slipUrl}</td>
             <td>{$slip["lemma"]}</td>
             <td>{$slip["wordform"]}</td>
             <td>{$slip["wordclass"]}</td>
@@ -48,5 +61,6 @@ HTML;
             {$tableBodyHtml}
         </table>
 HTML;
+    Slips::writeSlipDiv();
   }
 }

@@ -207,9 +207,10 @@ HTML;
     return $html;
   }
 
-  private function _writeSenseCategories() {
+  private function _writeSenseCategories()
+  {
     $categories = SenseCategories::getAllUnusedCategories($this->_slip->getAutoId(),
-        $_REQUEST["headword"], $this->_slip->getWordClass());
+      $_REQUEST["headword"], $this->_slip->getWordClass());
     $dropdownHtml = '<option value="">-- select a category --</option>';
     foreach ($categories as $cat) {
       $dropdownHtml .= <<<HTML
@@ -256,25 +257,6 @@ HTML;
         </div>
 HTML;
   }
-
-  /*
-  public function writeSavedState() {
-    $editUrl = "slipEdit.php?action=show&filename={$this->_slip->getFilename()}&id={$this->_slip->getId()}";
-    $editUrl .= "&headword={$_GET["headword"]}&pos={$_GET["pos"]}&auto_id={$this->_slip->getAutoId()}";
-    $this->_writeSavedModal();
-    echo <<<HTML
-        <div>
-            <h2>Slip saved</h2>
-        </div>
-        <div class="form-group">
-            <div class="input-group">
-                <a href="{$editUrl}" name="edit" id="savedEdit" class="btn btn-danger">edit</a>
-                <button name="close" id="savedClose" class="btn btn-success">close</button>
-            </div> 
-        </div>
-HTML;
-  }
-  */
 
   private function _writeContext() {
     $handler = new XmlFileHandler($this->_slip->getFilename());

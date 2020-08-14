@@ -58,8 +58,10 @@ $(function () {
   });
 
   $('.slipLink2').on('click', function () {
-    $(this).removeClass('createSlipLink');
-    $(this).html('view slip');
+    if ($(this).attr("data-resultindex") != -1) {   //test for use in non-search results pages
+      $(this).removeClass('createSlipLink');
+      $(this).html('view slip');
+    }
   });
 
   $('#slipModal').on('show.bs.modal', function (event) { // added by MM
