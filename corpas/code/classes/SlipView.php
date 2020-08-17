@@ -299,6 +299,36 @@ HTML;
   private function _writeJavascript() {
     echo <<<HTML
         <script>    
+            /*
+              Show the collocate dropdown
+             */
+            $('.collocateLink').on('click', function () {
+              $('.dropdown-item').removeClass('disabled');  //clear any previous entries
+              var wordId = $(this).parent().attr('data-wordid');
+              var filename = '{$this->_slip->getFilename()}';
+              $.getJSON('ajax.php?action=getGrammarInfo&id='+wordId+'&filename='+filename, function(data) {
+                $('.collocateHeadword').text(data.lemma);
+                if (data.grammar) {
+                  var id = data.grammar.replace(' ', '_') + '_' + wordId;
+                  $('#'+id).addClass('disabled');
+                }
+              }); 
+            });
+            
+            /*
+              Save the collocate grammar info
+             */
+            $('.collocateGrammar').on('click', function () {
+              var wordId = $(this).parents('div.collocate').attr('data-wordid');
+              $(this).parent().siblings('.collocateLink').addClass('existingCollocate');
+              var filename = '{$this->_slip->getFilename()}';
+              var url = 'ajax.php?action=saveLemmaGrammar&id='+wordId+'&filename='+filename;
+              url += '&grammar='+$(this).text();
+              $.getJSON(url, function(data) {
+                $('.collocateHeadword').text(data.lemma);
+              });
+            });
+            
             $("#chooseSenseCategory").on('click', function () {
               var elem = $( "#senseCategorySelect option:selected" );
               var category = elem.text();

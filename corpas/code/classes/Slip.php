@@ -165,27 +165,6 @@ SQL;
     return $this->_lastUpdated;
   }
 
-  /*
-   * Note these methods are additional to enable browse slip functionality
-   * lemma and wordform are not populated on instantiation or on _loadSLip()
-   */
-  public function setLemma($lemma) {
-    $this->_lemma = $lemma;
-  }
-
-  public function setWordform($wordform) {
-    $this->_wordform = $wordform;
-  }
-
-  public function getLemma() {
-    return $this->_lemma;
-  }
-
-  public function getWordform() {
-    return $this->_wordform;
-  }
-  /* ------ */
-
   private function _populateClass($params) {
     $this->_auto_id = $params["auto_id"];
     $this->_isNew = false;

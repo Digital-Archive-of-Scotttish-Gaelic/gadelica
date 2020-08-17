@@ -63,4 +63,13 @@ switch ($_REQUEST["action"]) {
     }
     echo json_encode($results);
     break;
+	case "getGrammarInfo":
+		$grammarInfo = Lemmas::getGrammarInfo($_GET["id"], $_GET["filename"]);
+		echo json_encode(($grammarInfo));
+		break;
+	case "saveLemmaGrammar":
+		echo Lemmas::saveLemmaGrammar($_GET["id"], $_GET["filename"], $_GET["grammar"]);
+		break;
+	default:
+		echo json_encode(array("error"=>"undefined action"));
 }

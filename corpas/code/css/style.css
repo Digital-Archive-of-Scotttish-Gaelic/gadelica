@@ -86,7 +86,7 @@
 }
 
 #slipContextContainer {
-    padding: 5px;
+    padding: 20px;
     margin-bottom: 20px;
     border: 1px solid black;
 }
@@ -138,6 +138,23 @@
 
 #slipFooterTitle {
     font-style: italic;
+}
+
+/* slip collocate styling */
+.collocateLink {
+    color: black;
+}
+
+.collocateLink::after {
+    content: none !important;
+}
+
+.existingCollocate {
+    text-decoration: underline;
+}
+
+.dropdown-menu a.disabled {
+    color: red;
 }
 
 /* Sense categories */

@@ -3,7 +3,7 @@
 
 class XmlFileHandler
 {
-  private $_filename, $_xml;
+  private $_filename, $_xml, $_collocateIds;
 
   public function __construct($filename) {
     $this->_filename = $filename;
@@ -49,7 +49,7 @@ class XmlFileHandler
     /* -- */
     $xpath = "//dasg:w[@id='{$id}']";
     $word = $this->_xml->xpath($xpath);
-    $context["word"] = (string)$word[0];
+    $context["word"] = $this->_getCollocateDropdown($word, $word[0]->attributes()["id"]);
     $xpath = "//dasg:w[@id='{$id}']/following::*";
     $words = $this->_xml->xpath($xpath);
     /* postContext processing */
@@ -83,33 +83,59 @@ class XmlFileHandler
   private function _normalisePunctuation (array $chunk) {
     $output = $startJoin = $endJoin = "";
     $rightJoin = true;
-    foreach ($chunk as $i => $word) {
+		$this->_collocateIds = Lemmas::getCollocateIds($this->getFilename());
+    foreach ($chunk as $i => $token) {
+	    $isWord = ($wordId = $token->attributes()["id"]) ? true : false;
       $followingWord = ($i < (count($chunk)-1)) ? $chunk[$i+1] : null;
       $followingJoin = $followingWord ? $followingWord->attributes()["join"] : "";
-      $attributes = $word->attributes();
+      $attributes = $token->attributes();
       if ($i == 0) {
         $startJoin = (string)$attributes["join"];
       } else if ($i == (count($chunk) -1)) {
         $endJoin = (string)$attributes["join"];
       }
+      $token = $isWord ? $this->_getCollocateDropdown($token, $wordId) : $token[0];
       switch ($attributes["join"]) {
         case "left":
-          $output .= $followingJoin == "right" || $followingJoin == "both" ? $word[0] : $word[0] . ' ';
+          $output .= $followingJoin == "right" || $followingJoin == "both" ? $token : $token . ' ';
           $rightJoin = false;
           break;
         case "right":
-          $output .= ' ' . $word[0];
+          $output .= ' ' . $token;
           $rightJoin = true;
           break;
         case "both":
-          $output .= $word[0];
+          $output .= $token;
           $rightJoin = true;
           break;
         default:
-          $output .= $rightJoin ? $word[0] : ' ' . $word[0];
+          $output .= $rightJoin ? $token : ' ' . $token;
           $rightJoin = false;
       }
     }
     return array("output" => $output, "startJoin" => $startJoin, "endJoin" => $endJoin);
+  }
+
+	/**
+	 * @param $token:
+	 * @param $wordId
+	 * @return string : the HTML required for dropdown options for the given word (collocate)
+	 */
+  private function _getCollocateDropdown($word, $wordId) {
+  	$existingCollocate = in_array($wordId, $this->_collocateIds) ? "existingCollocate" : "";
+	  return <<<HTML
+			<div class="dropdown show d-inline collocate" data-wordid="{$wordId}">
+		    <a class="dropdown-toggle collocateLink {$existingCollocate}" href="#" id="dropdown_{$wordId}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{$word[0]}</a>		
+			  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown_{$wordId}">
+			    <div class="dropdown-header">
+			      <h5><span class="collocateHeadword"></span></h5>
+					</div>
+					<div class="dropdown-divider"></div>  
+			    <a id="subject_{$wordId}" class="dropdown-item collocateGrammar" href="#">subject</a>
+			    <a id="direct_object_{$wordId}" class="dropdown-item collocateGrammar" href="#">direct object</a>
+			    <a id="indirect_object_{$wordId}" class="dropdown-item collocateGrammar" href="#">indirect object</a>
+			  </div>
+			</div>
+HTML;
   }
 }
