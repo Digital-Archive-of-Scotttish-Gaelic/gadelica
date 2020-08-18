@@ -5,13 +5,17 @@ require_once "include.php";
 $loginControl = new LoginController();
 //check login state
 if ($loginControl->isLoggedIn()) {
+	$user = $loginControl->getUser();
+	$loggedInHtml = <<<HTML
+		<a id="loggedInAs" class="nav-link disabled" href="#">logged in as {$user->getFirstname()} {$user->getLastname()}</a>
+HTML;
   $loginLinkHtml = <<<HTML
     <form method="post">
         <button id="logoutLink" class="btn btn-link nav-link nav-item" role="link" type="submit" name="loginAction" value="logout">logout</button>
     </form>
 HTML;
 } else {
-  $loginLinkHtml = "";
+  $loginLinkHtml = $loggedInHtml = "";
 }
 
 
@@ -53,6 +57,9 @@ echo <<<HTML
           <a class="nav-item nav-link" title="browse slips" href="slipBrowse.php">slips</a>     
           <a class="nav-item nav-link" title="browse entries" href="entries.php">entries</a> 
           {$loginLinkHtml}
+        </div>
+        <div class="navbar-nav ml-auto">
+          {$loggedInHtml}
         </div>
       </div>
     </nav>
