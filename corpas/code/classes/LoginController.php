@@ -106,6 +106,7 @@ HTML;
   }
 
   public function getUser() {
+  	$this->_user = Users::getUser($_SESSION["user"]);
     return $this->_user;
   }
 
