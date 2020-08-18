@@ -261,7 +261,7 @@ HTML;
     $handler = new XmlFileHandler($this->_slip->getFilename());
     $preScope = $this->_slip->getPreContextScope();
     $postScope = $this->_slip->getPostContextScope();
-    $context = $handler->getContext($this->_slip->getId(), $preScope, $postScope);
+    $context = $handler->getContext($this->_slip->getId(), $preScope, $postScope, true, true);
     $preHref = "href=\"#\"";
     //check for start/end of document
     if (isset($context["prelimit"])) {
@@ -272,7 +272,9 @@ HTML;
     if ($context["pre"]["endJoin"] != "right" && $context["pre"]["endJoin"] != "both") {
       $contextHtml .= ' ';
     }
-    $contextHtml .= '<span id="slipWordInContext">' . $context["word"] . '</span>';
+    $contextHtml .= <<<HTML
+			<span id="slipWordInContext" data-headwordid="{$context["headwordId"]}">{$context["word"]}</span>
+HTML;
     if ($context["post"]["startJoin"] != "left" && $context["post"]["startJoin"] != "both") {
       $contextHtml .= ' ';
     }
@@ -305,7 +307,8 @@ HTML;
               $('.dropdown-item').removeClass('disabled');  //clear any previous entries
               var wordId = $(this).parent().attr('data-wordid');
               var filename = '{$this->_slip->getFilename()}';
-              $.getJSON('ajax.php?action=getGrammarInfo&id='+wordId+'&filename='+filename, function(data) {
+              var url = 'ajax.php?action=getGrammarInfo&id='+wordId+'&filename='+filename;
+              $.getJSON(url, function(data) {
                 $('.collocateHeadword').text(data.lemma);
                 if (data.grammar) {
                   var id = data.grammar.replace(' ', '_') + '_' + wordId;
@@ -321,8 +324,10 @@ HTML;
               var wordId = $(this).parents('div.collocate').attr('data-wordid');
               $(this).parent().siblings('.collocateLink').addClass('existingCollocate');
               var filename = '{$this->_slip->getFilename()}';
+              var headwordId = $('#slipWordInContext').attr('data-headwordid');
+              var slipId = '{$this->_slip->getAutoId()}';
               var url = 'ajax.php?action=saveLemmaGrammar&id='+wordId+'&filename='+filename;
-              url += '&grammar='+$(this).text();
+              url += '&headwordId='+headwordId+'&slipId='+slipId+'&grammar='+$(this).text();
               $.getJSON(url, function(data) {
                 $('.collocateHeadword').text(data.lemma);
               });

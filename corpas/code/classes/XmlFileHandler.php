@@ -21,7 +21,7 @@ class XmlFileHandler
     return (string)$out[0];
   }
 
-  public function getContext($id, $preScope = 12, $postScope = 12, $normalisePunc = true) {
+  public function getContext($id, $preScope = 12, $postScope = 12, $normalisePunc = true, $tagCollocates = false) {
     $context = array();
     $context["id"] = $id;
     $context["filename"] = $this->getFilename();
@@ -41,7 +41,7 @@ class XmlFileHandler
         $context["prelimit"] = count($pre);
       }
       if ($normalisePunc) {
-        $context["pre"] = $this->_normalisePunctuation($pre);
+        $context["pre"] = $this->_normalisePunctuation($pre, $tagCollocates);
       } else {
         $context["pre"]["output"] = implode(' ', $pre);
       }
@@ -49,7 +49,10 @@ class XmlFileHandler
     /* -- */
     $xpath = "//dasg:w[@id='{$id}']";
     $word = $this->_xml->xpath($xpath);
-    $context["word"] = $this->_getCollocateDropdown($word, $word[0]->attributes()["id"]);
+    $context["word"] = $tagCollocates
+	    ? '<div style="display:inline; margin-left:4px;"><mark>' . (string)$word[0] . '</mark></div>'
+      : (string)$word[0];
+    $context["headwordId"] = $word[0]->attributes()["id"];
     $xpath = "//dasg:w[@id='{$id}']/following::*";
     $words = $this->_xml->xpath($xpath);
     /* postContext processing */
@@ -63,7 +66,7 @@ class XmlFileHandler
         $context["postlimit"] = count($post);
       }
       if ($normalisePunc) {
-        $context["post"] = $this->_normalisePunctuation($post);
+        $context["post"] = $this->_normalisePunctuation($post, $tagCollocates);
       } else {
         $context["post"]["output"] = implode(' ', $post);
       }
@@ -80,12 +83,16 @@ class XmlFileHandler
    * @param array $chunk : array of SimpleXML objects
    * @return array : an array containing output string and flags for start and end joins
    */
-  private function _normalisePunctuation (array $chunk) {
+  private function _normalisePunctuation (array $chunk, $tagCollocates = false) {
     $output = $startJoin = $endJoin = "";
     $rightJoin = true;
 		$this->_collocateIds = Lemmas::getCollocateIds($this->getFilename());
     foreach ($chunk as $i => $token) {
-	    $isWord = ($wordId = $token->attributes()["id"]) ? true : false;
+    	// !! $isWord is only used when we need to tag collocates
+	    $isWord = false;
+	    if ($tagCollocates) {
+		    $isWord = ($wordId = $token->attributes()["id"]) ? true : false;
+	    }
       $followingWord = ($i < (count($chunk)-1)) ? $chunk[$i+1] : null;
       $followingJoin = $followingWord ? $followingWord->attributes()["join"] : "";
       $attributes = $token->attributes();
@@ -95,13 +102,16 @@ class XmlFileHandler
         $endJoin = (string)$attributes["join"];
       }
       $token = $isWord ? $this->_getCollocateDropdown($token, $wordId) : $token[0];
+      $spacer = ($tagCollocates)
+	      ? '<div style="margin-right:-4px;display:inline;">&thinsp;</div>'
+	      : ' ';
       switch ($attributes["join"]) {
         case "left":
-          $output .= $followingJoin == "right" || $followingJoin == "both" ? $token : $token . ' ';
+          $output .= $followingJoin == "right" || $followingJoin == "both" ? $token : $token . $spacer;
           $rightJoin = false;
           break;
         case "right":
-          $output .= ' ' . $token;
+          $output .= $spacer . $token;
           $rightJoin = true;
           break;
         case "both":
@@ -109,7 +119,7 @@ class XmlFileHandler
           $rightJoin = true;
           break;
         default:
-          $output .= $rightJoin ? $token : ' ' . $token;
+          $output .= $rightJoin ? $token : $spacer . $token;
           $rightJoin = false;
       }
     }
@@ -131,9 +141,13 @@ class XmlFileHandler
 			      <h5><span class="collocateHeadword"></span></h5>
 					</div>
 					<div class="dropdown-divider"></div>  
-			    <a id="subject_{$wordId}" class="dropdown-item collocateGrammar" href="#">subject</a>
-			    <a id="direct_object_{$wordId}" class="dropdown-item collocateGrammar" href="#">direct object</a>
-			    <a id="indirect_object_{$wordId}" class="dropdown-item collocateGrammar" href="#">indirect object</a>
+				    <a id="subject_of_{$wordId}" class="dropdown-item collocateGrammar" href="#">subject of</a>
+				    <a id="complement_of_{$wordId}" class="dropdown-item collocateGrammar" href="#">complement of</a>
+				    <a id="modifier_of_{$wordId}" class="dropdown-item collocateGrammar" href="#">modifier of</a>
+				    <a id="specifier_of_{$wordId}" class="dropdown-item collocateGrammar" href="#">specifier of</a>
+				    <a id="has_subject_{$wordId}" class="dropdown-item collocateGrammar" href="#">has subject</a>
+				    <a id="has_modifier_{$wordId}" class="dropdown-item collocateGrammar" href="#">has modifier</a>
+				    <a id="has_specifier_{$wordId}" class="dropdown-item collocateGrammar" href="#">has specifier</a>
 			  </div>
 			</div>
 HTML;

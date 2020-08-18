@@ -26,7 +26,7 @@ SQL;
 		try {
 			$sql = <<<SQL
         SELECT lemma, grammar FROM lemmas l
-        	JOIN lemmaGrammar g ON l.id = g.id AND l.filename = g.filename
+        	LEFT JOIN lemmaGrammar g ON l.id = g.id AND l.filename = g.filename
             WHERE l.filename = :filename AND l.id = :id
 SQL;
 			$sth = $dbh->prepare($sql);
@@ -58,16 +58,17 @@ SQL;
 		}
 	}
 
-	public static function saveLemmaGrammar($id, $filename, $grammar) {
+	public static function saveLemmaGrammar($id, $filename, $headwordId, $slipId, $grammar) {
 		$db = new Database();
 		$dbh = $db->getDatabaseHandle();
 		try {
 			$sql = <<<SQL
-        REPLACE INTO lemmaGrammar (id, filename, grammar) 
-            VALUES(:id, :filename, :grammar)
+        REPLACE INTO lemmaGrammar (id, filename, headwordId, slipId, grammar) 
+            VALUES(:id, :filename, :headwordId, :slipId, :grammar)
 SQL;
 			$sth = $dbh->prepare($sql);
-			echo $sth->execute(array(":filename"=>$filename, ":id"=>$id, ":grammar"=>$grammar));
+			echo $sth->execute(array(":filename"=>$filename, ":id"=>$id, ":headwordId"=>$headwordId,
+				":slipId"=>$slipId, ":grammar"=>$grammar));
 		} catch (PDOException $e) {
 			echo $e->getMessage();
 		}
