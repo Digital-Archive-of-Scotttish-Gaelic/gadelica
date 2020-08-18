@@ -3,6 +3,10 @@
 require_once 'includes/include.php';
 
 switch ($_REQUEST["action"]) {
+	case "getUsername":
+		$user = Users::getUser($_GET["email"]);
+		echo json_encode(array("firstname"=>$user->getFirstName(), "lastname"=>$user->getLastName()));
+		break;
   case "getContext":
     $handler = new XmlFileHandler($_GET["filename"]);
     $context = $handler->getContext($_GET["id"], $_GET["preScope"], $_GET["postScope"]);

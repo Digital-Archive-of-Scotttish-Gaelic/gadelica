@@ -2,6 +2,27 @@ $(function () {
 
   $('[data-toggle="tooltip"]').tooltip();
 
+  /**
+   * Login handlers
+   */
+  $('#email').change(function () {
+    var email = $(this).children("option:selected").val();
+    $.getJSON('ajax.php?action=getUsername&email='+email, function (data) {
+      $('#selectedUser').text(data.firstname + ' ' + data.lastname);
+    })
+      .done(function () {
+        $('#emailSelectContainer').hide();
+        $('#passwordContainer').show();
+      });
+  });
+
+  $('#loginCancel').on('click', function () {
+    $('#email option:first').prop('selected',true);
+    $('#emailSelectContainer').show();
+    $('#passwordContainer').hide();
+  });
+  /** -- **/
+
   //bind the tooltips to the body for AJAX content
   $('body').tooltip({
     selector: '[data-toggle=tooltip]'
