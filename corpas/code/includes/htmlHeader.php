@@ -42,6 +42,7 @@ echo <<<HTML
 	<script type="text/javascript" src="js/jquery.simplePagination.js"></script>
 	<script src="https://unpkg.com/bootstrap-table@1.17.1/dist/bootstrap-table.min.js"></script>
 	<script src="https://cdn.ckeditor.com/4.14.1/basic/ckeditor.js"></script>
+	<script src="https://kit.fontawesome.com/0b481d2098.js" crossorigin="anonymous"></script>
 </head>
 <body style="padding-top: 80px;">
   <div class="container-fluid">

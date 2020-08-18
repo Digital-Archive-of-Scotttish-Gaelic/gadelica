@@ -12,9 +12,7 @@ class SlipView
   public function writeEditForm() {
     $checked = $this->_slip->getStarred() ? "checked" : "";
     echo <<<HTML
-        <div>
-            {$this->_writeContext()}
-        </div>
+				{$this->_writeContext()}
         <div class="form-group" id="slipChecked">
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="checkbox" name="starred" id="slipStarred" {$checked}>
@@ -26,8 +24,8 @@ class SlipView
         </div>
 HTML;
     $this->_writePartOfSpeechSelects();
+	  $this->_writeSenseCategories();
     echo <<<HTML
-        {$this->_writeSenseCategories()}
         <div class="form-group">
           <label for="slipTranslation">English translation:</label>
           <textarea class="form-control" name="slipTranslation" id="slipTranslation" rows="3">{$this->_slip->getTranslation()}</textarea>
@@ -155,7 +153,8 @@ HTML;
     $verbSelectHide = $this->_slip->getWordClass() == "verb" ? "" : "hide";
     $verbalNounHide = $props["status"] == "verbal noun" ? "hide" : "";
     echo <<<HTML
-        <div>
+        <div class="editSlipSectionContainer">
+          <h5>Morphological information</h5>
             <div id="nounSelects" class="{$nounSelectHide}">
                 <label for="posNumberGender">Number:</label>
                 <select name="numgen" id="posNumberGender" class="form-control col-2">      
@@ -197,8 +196,8 @@ HTML;
 HTML;
     }
     $html = <<<HTML
-        <div id="wordClassSelect" class="form-group">
-          <label for="wordClass">Part-of-speech:</label>
+        <div id="wordClassSelect" class="editSlipSectionContainer">
+          <label for="wordClass"><h5>Part-of-speech</h5></label>
           <select name="wordClass" id="wordClass" class="form-control col-3">      
             {$optionHtml}
           </select>
@@ -225,7 +224,7 @@ HTML;
 HTML;
     }
     echo <<<HTML
-        <div class="senseCategoriesContainer">
+        <div class="editSlipSectionContainer">
           <h5>Sense Categories</h5> 
           <div class="form-group row">
             <div class="col-md-3">
@@ -235,7 +234,7 @@ HTML;
                 <select id="senseCategorySelect">{$dropdownHtml}</select>  
             </div>
             <div class="col-md-1">
-                  <button type="button" class="form-control btn btn-success" id="chooseSenseCategory">Add</button>
+                  <button type="button" class="form-control btn btn-primary" id="chooseSenseCategory">Add</button>
               </div>
           </div>
           <div class="form-group row">
@@ -246,7 +245,7 @@ HTML;
                   <input type="text" class="form-control" id="senseCategory">
               </div>
               <div class="col-md-1">
-                  <button type="button" class="form-control btn btn-success" id="addSenseCategory">Add</button>
+                  <button type="button" class="form-control btn btn-primary" id="addSenseCategory">Add</button>
               </div>
           </div>
           <div>
@@ -279,18 +278,18 @@ HTML;
     }
     $contextHtml .= $context["post"]["output"];
     echo <<<HTML
-            <div id="slipContextContainer">
-              <h4>Adjust citation context</h4>
+            <div id="slipContextContainer" class="editSlipSectionContainer">
+              <h5>Adjust citation context</h5>
               <div>
-                <span><a href="#" class="updateContext btn-link" id="decrementPre">-</a></span>
-                <span><a {$preHref} class="updateContext" id="incrementPre">+</a></span>
+								<a class="updateContext" id="decrementPre"><i class="fas fa-minus"></i></a>
+								<a {$preHref} class="updateContext" id="incrementPre"><i class="fas fa-plus"></i></a>								    
               </div>
               <span data-precontextscope="{$preScope}" data-postcontextscope="{$postScope}" id="slipContext">
                 {$contextHtml}
               </span>
               <div>
-                <span><a href="#" class="updateContext btn-link" id="decrementPost">-</a></span>
-                <span><a href="#" class="updateContext" id="incrementPost">+</a></span>
+                <a class="updateContext" id="decrementPost"><i class="fas fa-minus"></i></a>
+								<a class="updateContext" id="incrementPost"><i class="fas fa-plus"></i></a>
               </div>
             </div>
 HTML;

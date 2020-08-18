@@ -89,19 +89,20 @@
     font-size: 14pt;
 }
 
-#wordClassSelect {
-    margin: 20px 0px;
-}
-
-#slipContextContainer {
-    padding: 20px;
-    margin-bottom: 20px;
-    border: 1px solid black;
-}
-
 #slipContext {
     font-size: 16pt;
 }
+
+.updateContext {
+    font-size: 20px;
+    cursor: pointer;
+    color: red !important;
+}
+
+a.updateContext:hover {
+    color: green !important;
+}
+
 
 #slipHeader {
     text-align: center;
@@ -165,8 +166,7 @@
     color: red;
 }
 
-/* Sense categories */
-.senseCategoriesContainer {
+.editSlipSectionContainer {
     margin: 10px;
     padding: 10px;
     background-color: #efefef;

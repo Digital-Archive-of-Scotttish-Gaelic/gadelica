@@ -104,7 +104,7 @@ HTML;
         <tr>
           <td>{$entry["lemma"]}</td>
           <td>{$entry["wordclass"]}</td>
-          <td><a target="_blank" href="{$entryUrl}" title="view entry for {$entry["lemma"]}">
+          <td><a href="{$entryUrl}" title="view entry for {$entry["lemma"]}">
             view entry
           </td>
         </tr>
