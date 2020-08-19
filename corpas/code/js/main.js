@@ -305,7 +305,12 @@ $(function () {
       var preScope  = $(this).attr('data-precontextscope');
       var postScope = $(this).attr('data-postcontextscope');
       var li = $(this);
-      $.getJSON("ajax.php?action=getContext&filename="+filename+"&id="+id+"&preScope="+preScope+"&postScope="+postScope, function (data) {
+      var title = li.prop('title');
+      console.log(li);
+      var url = 'ajax.php?action=getContext&filename='+filename+'&id='+id+'&preScope='+preScope;
+      url += '&postScope='+postScope;
+      $.getJSON(url, function (data) {
+        $('.spinner').show();
         var preOutput = data.pre["output"];
         var postOutput = data.post["output"];
         html = preOutput;
@@ -318,7 +323,11 @@ $(function () {
         }
         html += postOutput;
         li.html(html);
-      });
+      })
+        .then(function () {
+          $('.spinner').hide();
+        });
+
     });
     $(citationsContainerId).show();
     citationsLink.text('hide');

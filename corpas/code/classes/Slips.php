@@ -58,7 +58,7 @@ SQL;
 	  try {
 		  $sql = <<<SQL
         SELECT s.filename as filename, s.id as id, auto_id, pos, lemma, preContextScope, postContextScope,
-                date_of_lang, title, page
+                translation, date_of_lang, title, page
             FROM slips s
             JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
             WHERE lemma = :lemma AND wordclass = :wordclass AND wordform = :wordform
@@ -119,7 +119,7 @@ SQL;
 		try {
 			$sql = <<<SQL
         SELECT s.filename as filename, s.id as id, auto_id, pos, lemma, preContextScope, postContextScope,
-                wordform, date_of_lang, title, page
+                translation, wordform, date_of_lang, title, page
             FROM slips s
             JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
             JOIN senseCategory sc on sc.slip_id = auto_id

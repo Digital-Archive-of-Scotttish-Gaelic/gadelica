@@ -32,9 +32,11 @@ HTML;
 			$slipList = "<ul>";
 			foreach($slipData as $row) {
 				$filenameElems = explode('_', $row["filename"]);
+				$translation = $this->_formatTranslation($row["translation"]);
 				$slipList .= <<<HTML
-					<li id="#slip_{$row["auto_id"]}"
-						data-toggle="tooltip" title="#{$filenameElems[0]} p.{$row["page"]}: {$row["date_of_lang"]}"
+					<li id="#slip_{$row["auto_id"]}" data-slipid="{$row["auto_id"]}"
+						data-toggle="tooltip" 
+						title="#{$filenameElems[0]} p.{$row["page"]}: {$row["date_of_lang"]} : {$translation}"
 						data-filename="{$row["filename"]}"
 						data-id="{$row["id"]}"
 						data-precontextscope="{$row["preContextScope"]}"
@@ -48,6 +50,11 @@ HTML;
 						citations
 				</a>
 				<div id="form_citations{$i}" class="citation">
+					<div class="spinner">
+		        <div class="spinner-border" role="status">
+		          <span class="sr-only">Loading...</span>
+		        </div>
+					</div>
 					{$slipList}
 				</div>
 HTML;
@@ -69,9 +76,11 @@ HTML;
 			$slipList = "<ul>";
 			foreach($slipData as $row) {
 				$filenameElems = explode('_', $row["filename"]);
+				$translation = $this->_formatTranslation($row["translation"]);
 				$slipList .= <<<HTML
-					<li id="#slip_{$row["auto_id"]}"
-						data-toggle="tooltip" title="#{$filenameElems[0]} p.{$row["page"]}: {$row["date_of_lang"]}"
+					<li id="#slip_{$row["auto_id"]}" data-slipid="{$row["auto_id"]}"
+						data-toggle="tooltip" 
+						title="#{$filenameElems[0]} p.{$row["page"]}: {$row["date_of_lang"]} : {$translation}" 
 						data-filename="{$row["filename"]}"
 						data-id="{$row["id"]}"
 						data-precontextscope="{$row["preContextScope"]}"
@@ -94,6 +103,12 @@ HTML;
 		}
 		$html .= "</ul>";
 		return $html;
+	}
+
+	private function _formatTranslation($html) {
+  	$text = strip_tags($html);
+  	$text = addslashes($text);
+  	return $text;
 	}
 
   public function writeBrowseTable($entriesData) {
