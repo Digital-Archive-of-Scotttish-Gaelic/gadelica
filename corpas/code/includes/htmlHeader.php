@@ -56,6 +56,7 @@ echo <<<HTML
           <a class="nav-item nav-link" title="search corpus" href="search.php?action=newSearch">search</a>
           <a class="nav-item nav-link" title="browse slips" href="slipBrowse.php">slips</a>
           <a class="nav-item nav-link" title="browse entries" href="entries.php">entries</a>
+					<a class="nav-item nav-link" title="read the fucking manual" href="docs.php">docs</a>
           {$loginLinkHtml}
         </div>
         <div class="navbar-nav ml-auto">

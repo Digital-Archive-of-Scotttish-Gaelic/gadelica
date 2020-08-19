@@ -8,6 +8,7 @@ echo <<<HTML
   <a class="list-group-item list-group-item-action" href="browseCorpus.php">browse corpus</a>
   <a class="list-group-item list-group-item-action" href="slipBrowse.php">browse slips</a>
   <a class="list-group-item list-group-item-action" href="entries.php">browse entries</a>
+  <a class="list-group-item list-group-item-action" href="docs.php">technical documentation</a>
 </div>
 HTML;
 
