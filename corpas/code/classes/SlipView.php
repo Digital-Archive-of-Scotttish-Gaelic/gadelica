@@ -13,6 +13,7 @@ class SlipView
     $checked = $this->_slip->getStarred() ? "checked" : "";
     echo <<<HTML
 				{$this->_writeContext()}
+				{$this->_writeCollocatesView()}
         <div class="form-group" id="slipChecked">
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="checkbox" name="starred" id="slipStarred" {$checked}>
@@ -261,7 +262,7 @@ HTML;
     $handler = new XmlFileHandler($this->_slip->getFilename());
     $preScope = $this->_slip->getPreContextScope();
     $postScope = $this->_slip->getPostContextScope();
-    $context = $handler->getContext($this->_slip->getId(), $preScope, $postScope, true, true);
+    $context = $handler->getContext($this->_slip->getId(), $preScope, $postScope, true, false);
     $preHref = "href=\"#\"";
     //check for start/end of document
     if (isset($context["prelimit"])) {
@@ -281,12 +282,15 @@ HTML;
     $contextHtml .= $context["post"]["output"];
     echo <<<HTML
             <div id="slipContextContainer" class="editSlipSectionContainer">
+              <div class="floatRight">
+                <a href="#" class="btn btn-success" id="showCollocatesView">collocates view</a>
+              </div>
               <h5>Adjust citation context</h5>
               <div>
 								<a class="updateContext" id="decrementPre"><i class="fas fa-minus"></i></a>
 								<a {$preHref} class="updateContext" id="incrementPre"><i class="fas fa-plus"></i></a>								    
               </div>
-              <span data-precontextscope="{$preScope}" data-postcontextscope="{$postScope}" id="slipContext">
+              <span data-precontextscope="{$preScope}" data-postcontextscope="{$postScope}" id="slipContext" class="slipContext">
                 {$contextHtml}
               </span>
               <div>
@@ -297,9 +301,50 @@ HTML;
 HTML;
   }
 
+	private function _writeCollocatesView() {
+		$handler = new XmlFileHandler($this->_slip->getFilename());
+		$preScope = $this->_slip->getPreContextScope();
+		$postScope = $this->_slip->getPostContextScope();
+		$context = $handler->getContext($this->_slip->getId(), $preScope, $postScope, true, true);
+
+		$contextHtml = $context["pre"]["output"];
+		if ($context["pre"]["endJoin"] != "right" && $context["pre"]["endJoin"] != "both") {
+			$contextHtml .= ' ';    //  <div style="display:inline;">
+		}
+		$contextHtml .= <<<HTML
+			<span>{$context["word"]}</span>
+HTML;
+		if ($context["post"]["startJoin"] != "left" && $context["post"]["startJoin"] != "both") {
+			$contextHtml .= ' ';  //  <div style="display:inline;">
+		}
+		$contextHtml .= $context["post"]["output"];
+		echo <<<HTML
+            <div id="slipCollocatesContainer" class="hide editSlipSectionContainer">
+              <div class="floatRight">
+                <a class="btn btn-success" href="#" id="showCitationView">citation view</a>
+              </div>
+              <h5>Tag citation collocates</h5>        
+              <span class="slipContext"> 
+                {$contextHtml}
+              </span>
+            </div>
+HTML;
+	}
+
   private function _writeJavascript() {
     echo <<<HTML
         <script>    
+            $('#showCitationView').on('click', function () {
+              $('#slipCollocatesContainer').hide();
+              $('#slipContextContainer').show();
+            });
+            
+            $('#showCollocatesView').on('click', function () {
+              console.log('hit');
+              $('#slipContextContainer').hide();
+              $('#slipCollocatesContainer').show();
+            });
+            
             /*
               Show the collocate dropdown
              */
