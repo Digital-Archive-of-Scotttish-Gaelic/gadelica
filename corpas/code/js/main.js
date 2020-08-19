@@ -13,6 +13,8 @@ $(function () {
       .done(function () {
         $('#emailSelectContainer').hide();
         $('#passwordContainer').show();
+        $('#login').removeClass('loginButton');
+        $('#loginCancel').removeClass('loginButton');
       });
   });
 
@@ -20,6 +22,8 @@ $(function () {
     $('#email option:first').prop('selected',true);
     $('#emailSelectContainer').show();
     $('#passwordContainer').hide();
+    $('#login').addClass('loginButton');
+    $('#loginCancel').addClass('loginButton');
   });
   /** -- **/
 

@@ -20,17 +20,23 @@ class LoginController
     switch ($_REQUEST["loginAction"]) {
       case "login":
         if (!$this->_authenticateUser($_POST)) {
-          $this->_view->writeModal("login", "Email/Password combination not recognised");
+	        $user = Users::getUser($_SESSION["email"]);
+        	$error = <<<HTML
+						Password not recognised for {$user->getFirstname()} {$user->getLastname()}
+HTML;
+          $this->_view->writeModal("login", $error);
         }
         break;
       case "logout":
         $this->_logout();
         break;
       case "forgotPassword":
-        $this->_view->writeModal("forgotPassword");
+	      $user = Users::getUser($_SESSION["email"]);
+	      $name = $user->getFirstName() . ' ' . $user->getLastName();
+        $this->_view->writeModal("forgotPassword", $name);
         break;
       case "sendEmail":
-        if ($this->_user = Users::getUser($_POST["email"])) {
+        if ($this->_user = Users::getUser($_SESSION["email"])) {
           $this->_sendEmail();
           $this->_view->writeModal("emailSent");
         } else {
@@ -117,6 +123,7 @@ HTML;
   private function _logout() {
     unset($this->_user);
     unset($_SESSION["user"]);
+    unset($_SESSION["email"]);
     $this->_view->writeModal("login");
   }
 

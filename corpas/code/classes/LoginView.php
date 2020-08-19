@@ -3,46 +3,52 @@
 
 class LoginView
 {
-  public function writeModal($type, $error = "") {
+  public function writeModal($type, $msg = "") {
     $title = $body = $footer = $js = $formId = "";
     switch ($type) {
       case "login":
         $dropdownHtml = $this->_getUserSelectHtml();
         $title = "Login to Fleagsaidh";
-        if ($error) {
+        $emailHide = "";
+        $passwordHide = "hide";
+        $loginButton = "loginButton";
+        if ($msg) {
+        	$emailHide = "hide";
+        	$passwordHide = $loginButton = "";
           $body = <<<HTML
-            <h4>{$error}</h4>
+            <h5>{$msg}</h5>
 HTML;
         }
         $body .= <<<HTML
-            <div id="emailSelectContainer">
+            <div id="emailSelectContainer" class="{$emailHide}">
                 {$dropdownHtml}
             </div>
-            <div id="passwordContainer">
-              <label data-error="wrong" data-success="right" for="password">enter password for <span id="selectedUser"></span></label>
+            <div id="passwordContainer" class="{$passwordHide}">
+              <label class="{$emailHide}" data-error="wrong" data-success="right" for="password">enter password for <span id="selectedUser"></span></label>
               <input type="password" id="password" name="password" class="form-control validate">
-            </div>
-            <div>
+              <div>
                 <a href="?loginAction=forgotPassword" title="Forgot my password"><small>Forgot my password</small></a>
+              </div>
             </div>
 HTML;
         $footer = <<<HTML
             <input type="hidden" name="loginAction" value="login">
-            <button type="button" id="loginCancel" class="btn btn-secondary">cancel</button>
-            <button type="submit" id="login" class="btn btn-primary">login</button>
+						<button type="submit" id="login" class="{$loginButton} btn btn-primary">login</button>
+						<button type="button" id="loginCancel" class="{$loginButton} btn btn-secondary">cancel</button>
 HTML;
       break;
       case "forgotPassword":
         $title = "Forgot Password";
         $body = <<<HTML
             <div>
-                <label for="email">email address</label>
-                <input type="email" name="email" id="email">
+                <h5>Send password reset to {$msg}'s email address</h5>
+                <input type="hidden" name="email" id="email" value="{$_POST["email"]}">
             </div>
 HTML;
         $footer = <<<HTML
             <input type="hidden" name="loginAction" value="sendEmail">
-            <button type="submit" class="btn btn-primary">submit</button>
+            <a href="?" class="btn btn btn-secondary">cancel</a>
+            <button type="submit" class="btn btn-primary">send</button>
 HTML;
         break;
       case "emailSent":
