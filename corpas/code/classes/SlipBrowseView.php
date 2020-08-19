@@ -7,12 +7,21 @@ class SlipBrowseView
     $tableBodyHtml = "<tbody>";
     $slipInfo = Slips::getAllSlipInfo();
     foreach ($slipInfo as $slip) {
-      $categoriesHtml = "";
+      $categoriesHtml = $morphHtml = "";
       if ($slip["category"]) {
+      	$slip["category"] = array_unique($slip["category"]);
         foreach ($slip["category"] as $category) {
           $categoriesHtml .= <<<HTML
             <span class="badge badge-success">{$category}</span>
 HTML;
+        }
+        if ($slip["relation"]) {
+	        $slip["relation"] = array_unique($slip["relation"]);
+        	foreach ($slip["relation"] as $value) {
+		        $morphHtml .= <<<HTML
+              <span class="badge badge-secondary">{$value}</span>
+HTML;
+	        }
         }
       }
       $slipUrl = <<<HTML
@@ -39,6 +48,7 @@ HTML;
             <td>{$slip["wordform"]}</td>
             <td>{$slip["wordclass"]}</td>
             <td>{$categoriesHtml}</td>
+            <td>{$morphHtml}</td>
             <td>{$slip["firstname"]} {$slip["lastname"]}</td>
             <td>{$slip["lastUpdated"]}</td>
         </tr>
@@ -54,6 +64,7 @@ HTML;
                     <th data-sortable="true">Wordform</th>
                     <th data-sortable="true">Part-of-speech</th>
                     <th>Categories</th>
+                    <th>Morphological</th>
                     <th data-sortable="true">Updated By</th>
                     <th data-sortable="true">Date</th>
                 </tr>

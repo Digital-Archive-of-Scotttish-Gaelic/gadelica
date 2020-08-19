@@ -47,7 +47,7 @@ echo <<<HTML
 <body style="padding-top: 80px;">
   <div class="container-fluid">
     <nav class="navbar navbar-dark bg-primary fixed-top navbar-expand-lg">
-      <a class="navbar-brand" href="index.php">Fleagsaidh</a>
+      <a class="navbar-brand" href="index.php">Aileags</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

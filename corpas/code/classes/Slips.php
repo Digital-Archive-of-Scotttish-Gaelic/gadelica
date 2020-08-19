@@ -16,10 +16,12 @@ class Slips
       $sql = <<<SQL
         SELECT s.filename as filename, s.id as id, auto_id, pos, lemma, wordform, firstname, lastname,
                 date_of_lang, title, page,
-                s.wordclass as wordclass, l.pos as pos, s.lastUpdated as lastUpdated, category as senseCat
+                s.wordclass as wordclass, l.pos as pos, s.lastUpdated as lastUpdated, category as senseCat,
+                sm.relation as relation, sm.value as value
             FROM slips s
             JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
             LEFT JOIN senseCategory sc ON sc.slip_id = auto_id
+            LEFT JOIN slipMorph sm ON sm.slip_id = auto_id
             LEFT JOIN user u ON u.email = s.updatedBy
             ORDER BY auto_id ASC
 SQL;
@@ -31,8 +33,11 @@ SQL;
           $slipInfo[$slipId] = $row;
           $slipInfo[$slipId]["category"] = array();
           $slipInfo[$slipId]["category"][] = $row["senseCat"];
+	        $slipInfo[$slipId]["relation"] = array();
+	        $slipInfo[$slipId]["relation"][] = $row["value"];
         } else {
           $slipInfo[$slipId]["category"][] = $row["senseCat"];
+	        $slipInfo[$slipId]["relation"][] = $row["value"];
         }
         //get the context uri
         $file = new XmlFileHandler($row["filename"]);
