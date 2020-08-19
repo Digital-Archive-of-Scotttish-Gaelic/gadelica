@@ -32,8 +32,7 @@ echo <<<HTML
   <link rel="stylesheet" type="text/css" href="css/simplePagination.css">
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.17.1/dist/bootstrap-table.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-  
-  <title>Corpas na Gàidhlig</title>
+  <title>Aidhleags</title>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -47,7 +46,7 @@ echo <<<HTML
 <body style="padding-top: 80px;">
   <div class="container-fluid">
     <nav class="navbar navbar-dark bg-primary fixed-top navbar-expand-lg">
-      <a class="navbar-brand" href="index.php">Aileags</a>
+      <a class="navbar-brand" href="index.php">Aidhleags</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -55,8 +54,8 @@ echo <<<HTML
         <div class="navbar-nav">
           <a class="nav-item nav-link" title="browse corpus" href="browseCorpus.php">browse</a>
           <a class="nav-item nav-link" title="search corpus" href="search.php?action=newSearch">search</a>
-          <a class="nav-item nav-link" title="browse slips" href="slipBrowse.php">slips</a>     
-          <a class="nav-item nav-link" title="browse entries" href="entries.php">entries</a> 
+          <a class="nav-item nav-link" title="browse slips" href="slipBrowse.php">slips</a>
+          <a class="nav-item nav-link" title="browse entries" href="entries.php">entries</a>
           {$loginLinkHtml}
         </div>
         <div class="navbar-nav ml-auto">

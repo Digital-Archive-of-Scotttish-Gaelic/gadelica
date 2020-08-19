@@ -8,7 +8,7 @@ class LoginView
     switch ($type) {
       case "login":
         $dropdownHtml = $this->_getUserSelectHtml();
-        $title = "Login to Fleagsaidh";
+        $title = "Login to Aidhleags";
         $emailHide = "";
         $passwordHide = "hide";
         $loginButton = "loginButton";
@@ -98,7 +98,7 @@ HTML;
                   }
                 }
               });
-            });   
+            });
 HTML;
         break;
     }
@@ -121,8 +121,8 @@ HTML;
         </div>
         </form>
         <script>
-          $('#loginModal').modal({backdrop: 'static', keyboard: false});   
-          {$js}      
+          $('#loginModal').modal({backdrop: 'static', keyboard: false});
+          {$js}
         </script>
 HTML;
   }
