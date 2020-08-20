@@ -73,6 +73,7 @@ HTML;
     $user->encryptPassword();
     $user->setPasswordAuth(null);	//remove password auth
     Users::saveUser($user);
+	  $this->_authenticateUser(array("password"), $_POST["pass1"]);
   }
 
   private function _sendEmail() {
