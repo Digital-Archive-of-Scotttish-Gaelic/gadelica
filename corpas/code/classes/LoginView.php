@@ -16,7 +16,7 @@ class LoginView
         	$emailHide = "hide";
         	$passwordHide = $loginButton = "";
           $body = <<<HTML
-            <h5>{$msg}</h5>
+            <p class="loginMessage">{$msg}</p>
 HTML;
         }
         $body .= <<<HTML
@@ -24,7 +24,7 @@ HTML;
                 {$dropdownHtml}
             </div>
             <div id="passwordContainer" class="{$passwordHide}">
-              <label class="{$emailHide}" data-error="wrong" data-success="right" for="password">enter password for <span id="selectedUser"></span></label>
+              <label id="passwordLabel" class="{$emailHide}" data-error="wrong" data-success="right" for="password">enter password for <span id="selectedUser"></span></label>
               <input type="password" id="password" name="password" class="form-control validate">
               <div>
                 <a href="?loginAction=forgotPassword" title="Forgot my password"><small>Forgot my password</small></a>
@@ -41,7 +41,7 @@ HTML;
         $title = "Forgot Password";
         $body = <<<HTML
             <div>
-                <h5>Send password reset to {$msg}'s email address</h5>
+                <p>Send password reset to {$msg}'s email address?</p>
                 <input type="hidden" name="email" id="email" value="{$_POST["email"]}">
             </div>
 HTML;

@@ -11,6 +11,7 @@ $(function () {
       $('#selectedUser').text(data.firstname + ' ' + data.lastname);
     })
       .done(function () {
+        $('#passwordLabel').show();
         $('#emailSelectContainer').hide();
         $('#passwordContainer').show();
         $('#login').removeClass('loginButton');
@@ -24,6 +25,7 @@ $(function () {
     $('#passwordContainer').hide();
     $('#login').addClass('loginButton');
     $('#loginCancel').addClass('loginButton');
+    $('.loginMessage').text('');
   });
   /** -- **/
 
@@ -293,7 +295,7 @@ $(function () {
   /**
    * Load and show the citations for wordforms or senses
    */
-  $('.citationsLink').on('click', function () {
+ /* $('.citationsLink').on('click', function () {
     var citationsLink = $(this);
     var citationsContainerId = '#' + $(this).attr('data-type') + '_citations' + $(this).attr('data-index');
     if ($(this).hasClass('hideCitations')) {
@@ -337,6 +339,7 @@ $(function () {
     citationsLink.text('hide');
     citationsLink.addClass('hideCitations');
   });
+  */
 
   function writeSlipContext(filename, id) {
     var html = '';

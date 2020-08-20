@@ -22,7 +22,7 @@ class LoginController
         if (!$this->_authenticateUser($_POST)) {
 	        $user = Users::getUser($_SESSION["email"]);
         	$error = <<<HTML
-						Password not recognised for {$user->getFirstname()} {$user->getLastname()}
+						Password not recognised for {$user->getFirstname()} {$user->getLastname()}. Try again.
 HTML;
           $this->_view->writeModal("login", $error);
         }
@@ -73,7 +73,6 @@ HTML;
     $user->encryptPassword();
     $user->setPasswordAuth(null);	//remove password auth
     Users::saveUser($user);
-    unset($_SESSION["email"]);
   }
 
   private function _sendEmail() {
@@ -101,7 +100,8 @@ HTML;
    * @return bool : true on authentic user, otherwise false
    */
   private function _authenticateUser($params) {
-    $user = Users::getUser($params["email"]);
+  	$_SESSION["email"] = $params["email"] ? $params["email"] : $_SESSION["email"];
+    $user = Users::getUser($_SESSION["email"]);
     if (empty($user) || !$user->checkPassword($params["password"])) {
       return false;
     }
