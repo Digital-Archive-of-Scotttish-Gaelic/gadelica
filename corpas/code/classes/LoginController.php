@@ -57,7 +57,6 @@ HTML;
         break;
       case "savePassword":
           $this->_savePassword();
-          $this->_view->writeModal("login", "Password updated");
         break;
       default:
         if (!$this->isLoggedIn()) {
@@ -72,7 +71,6 @@ HTML;
     $user->setPassword($_POST["pass1"]);
     $user->encryptPassword();
     $user->setPasswordAuth(null);	//remove password auth
-    Users::saveUser($user);
 	  $this->_authenticateUser(array("password"), $_POST["pass1"]);
   }
 
