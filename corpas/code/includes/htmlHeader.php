@@ -6,8 +6,8 @@ $loginControl = new LoginController();
 $name = "";
 //check login state
 $loggedInHide = "hide";
-if ($loginControl->isLoggedIn()) {
-	$user = $loginControl->getUser();
+if ($_SESSION["user"]) {
+	$user = Users::getUser($_SESSION["email"]);
 	$name = $user->getFirstName() . ' ' . $user->getLastName();
 	$loggedInHide = "";
 }
