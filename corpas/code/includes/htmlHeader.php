@@ -57,10 +57,10 @@ echo <<<HTML
           <a class="nav-item nav-link" title="browse slips" href="slipBrowse.php">slips</a>
           <a class="nav-item nav-link" title="browse entries" href="entries.php">entries</a>
 					<a class="nav-item nav-link" title="read the fucking manual" href="docs.php">docs</a>
-          {$loginLinkHtml}
+          <span id="loginLink">{$loginLinkHtml}</span>
         </div>
         <div class="navbar-nav ml-auto">
-          {$loggedInHtml}
+          <span id="logoutHtml">{$loggedInHtml}</span>       
         </div>
       </div>
     </nav>

@@ -85,6 +85,7 @@ HTML;
             </div>
 HTML;
         $footer = <<<HTML
+						<input type="hidden" name="email" id="email" value="{$_SESSION["email"]}">
             <input type="hidden" name="loginAction" value="savePassword">
             <button type="submit" class="btn btn-primary">submit</button>
 HTML;
