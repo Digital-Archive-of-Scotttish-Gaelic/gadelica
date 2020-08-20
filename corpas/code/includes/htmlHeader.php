@@ -3,21 +3,14 @@
 require_once "include.php";
 
 $loginControl = new LoginController();
+$name = "";
 //check login state
+$loggedInHide = "hide";
 if ($loginControl->isLoggedIn()) {
 	$user = $loginControl->getUser();
-	$loggedInHtml = <<<HTML
-		<a id="loggedInAs" class="nav-link disabled" href="#">logged in as {$user->getFirstname()} {$user->getLastname()}</a>
-HTML;
-  $loginLinkHtml = <<<HTML
-    <form method="post">
-        <button id="logoutLink" class="btn btn-link nav-link nav-item" role="link" type="submit" name="loginAction" value="logout">logout</button>
-    </form>
-HTML;
-} else {
-  $loginLinkHtml = $loggedInHtml = "";
+	$name = $user->setFirstName() . ' ' . $user->getLastName();
+	$loggedInHide = "";
 }
-
 
 echo <<<HTML
 
@@ -57,10 +50,16 @@ echo <<<HTML
           <a class="nav-item nav-link" title="browse slips" href="slipBrowse.php">slips</a>
           <a class="nav-item nav-link" title="browse entries" href="entries.php">entries</a>
 					<a class="nav-item nav-link" title="read the fucking manual" href="docs.php">docs</a>
-          <span id="loginLink">{$loginLinkHtml}</span>
+          <span class="loggedIn {$loggedInHide}">
+            <form method="post">
+              <button id="logoutLink" class="btn btn-link nav-link nav-item" role="link" type="submit" name="loginAction" value="logout">logout</button>
+            </form>  
+					</span>
         </div>
         <div class="navbar-nav ml-auto">
-          <span id="logoutHtml">{$loggedInHtml}</span>       
+          <span class="loggedIn {$loggedInHide}">
+            <a id="loggedInAs" class="nav-link disabled" href="#">logged in as {$name}}</a>
+          </span>       
         </div>
       </div>
     </nav>
