@@ -34,6 +34,7 @@ $(function () {
     var logoutHtml = '<form method="post">';
     logoutHtml += '<button id="logoutLink" class="btn btn-link nav-link nav-item" role="link" type="submit" name="loginAction" value="logout">logout</button>';
     logoutHtml += '</form>';
+    alert('ajax.php?action=getUsername&email='+email);
     $.getJSON('ajax.php?action=getUsername&email='+email, function (data) {
       $('#selectedUser').text(data.firstname + ' ' + data.lastname);
       loginLink = '<a id="loggedInAs" class="nav-link disabled" href="#">logged in as ' + data.firstname + ' ' + data.lastname + '</a>';
