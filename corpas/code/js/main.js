@@ -1,6 +1,10 @@
 $(function () {
 
   $('[data-toggle="tooltip"]').tooltip();
+  //bind the tooltips to the body for AJAX content
+  $('body').tooltip({
+    selector: '[data-toggle=tooltip]'
+  });
 
   /**
    * Login handlers
@@ -29,10 +33,9 @@ $(function () {
   });
 
   $('#savePassword').on('submit', function () {
-
+    $('.loggedIn').removeClass('hide');
     return true;
-
-
+ /*
     var email = $('#email').val();
     var loginLink;
     var logoutHtml = '<form method="post">';
@@ -53,14 +56,9 @@ $(function () {
         alert('ajax call failed');
         return false;
       })
-    return false;
+    return false; */
   });
   /** -- **/
-
-  //bind the tooltips to the body for AJAX content
-  $('body').tooltip({
-    selector: '[data-toggle=tooltip]'
-  });
 
   $(document).on('click', '.slipLink', function () {
     //reset the slip form

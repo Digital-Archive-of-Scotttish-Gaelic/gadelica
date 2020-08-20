@@ -8,7 +8,7 @@ $name = "";
 $loggedInHide = "hide";
 if ($loginControl->isLoggedIn()) {
 	$user = $loginControl->getUser();
-	$name = $user->setFirstName() . ' ' . $user->getLastName();
+	$name = $user->getFirstName() . ' ' . $user->getLastName();
 	$loggedInHide = "";
 }
 
@@ -58,7 +58,7 @@ echo <<<HTML
         </div>
         <div class="navbar-nav ml-auto">
           <span class="loggedIn {$loggedInHide}">
-            <a id="loggedInAs" class="nav-link disabled" href="#">logged in as {$name}}</a>
+            <a id="loggedInAs" class="nav-link disabled" href="#">logged in as {$name}</a>
           </span>       
         </div>
       </div>
