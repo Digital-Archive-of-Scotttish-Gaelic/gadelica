@@ -29,7 +29,7 @@ $(function () {
   });
 
   $('#savePassword').on('submit', function () {
-    alert('called');
+    alert($('#email').val());
     var email = $('#email').val();
     var loginLink;
     var logoutHtml = '<form method="post">';
