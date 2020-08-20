@@ -43,7 +43,11 @@ $(function () {
         $('#loginLink').html(loginLink);
         $('#logoutHtml').html(logoutHtml);
         return true;
-      });
+      })
+      .fail(function () {
+        alert('ajax call failed');
+        return false;
+      })
   });
   /** -- **/
 
