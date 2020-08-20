@@ -31,7 +31,7 @@ class XmlFileHandler
     $xpath = "//dasg:w[@id='{$id}']/preceding::*";
     $words = $this->_xml->xpath($xpath);
     /* preContext processing */
-    $context["pre"] = "";
+    $context["pre"] = array("output"=>"");
     if ($preScope) {
       $pre = array_slice($words, -$preScope);
       //check if we're one token away from the start of the document
@@ -44,7 +44,7 @@ class XmlFileHandler
         $context["pre"] = $this->_normalisePunctuation($pre, $tagCollocates);
       } else {
         $context["pre"]["output"] = implode(' ', $pre);
-      }
+	    }
     }
     /* -- */
     $xpath = "//dasg:w[@id='{$id}']";
@@ -56,7 +56,7 @@ class XmlFileHandler
     $xpath = "//dasg:w[@id='{$id}']/following::*";
     $words = $this->_xml->xpath($xpath);
     /* postContext processing */
-    $context["post"] = "";
+    $context["post"] = array("output"=>"");
     if ($postScope) {
       $post = array_slice($words,0, $postScope);
       //check if we're one token away from the end of the document
