@@ -6,7 +6,7 @@ $loginControl = new LoginController();
 $name = "";
 //check login state
 $loggedInHide = "hide";
-if ($_SESSION["user"]) {
+if ($_SESSION["user"] || ($_SESSION["email"] && $_POST["loginAction"] == "savePassword")) {
 	$user = Users::getUser($_SESSION["email"]);
 	$name = $user->getFirstName() . ' ' . $user->getLastName();
 	$loggedInHide = "";
