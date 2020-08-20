@@ -72,7 +72,7 @@ HTML;
     $user->setPassword($_POST["pass1"]);
     $user->encryptPassword();
     $user->setPasswordAuth(null);	//remove password auth
-	  $this->_authenticateUser(array("password"), $_POST["pass1"]);
+	  $this->_authenticateUser(array("password" => $_POST["pass1"])); //login the user
   }
 
   private function _sendEmail() {
