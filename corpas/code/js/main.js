@@ -31,33 +31,6 @@ $(function () {
     $('#loginCancel').addClass('loginButton');
     $('.loginMessage').text('');
   });
-
-  $('#savePassword').on('submit', function () {
-    $('.loggedIn').removeClass('hide');
-    return true;
- /*
-    var email = $('#email').val();
-    var loginLink;
-    var logoutHtml = '<form method="post">';
-    logoutHtml += '<button id="logoutLink" class="btn btn-link nav-link nav-item" role="link" type="submit" name="loginAction" value="logout">logout</button>';
-    logoutHtml += '</form>';
-    alert('ajax.php?action=getUsername&email='+email);
-    $.getJSON('ajax.php?action=getUsername&email='+email, function (data) {
-      $('#selectedUser').text(data.firstname + ' ' + data.lastname);
-      loginLink = '<a id="loggedInAs" class="nav-link disabled" href="#">logged in as ' + data.firstname + ' ' + data.lastname + '</a>';
-    })
-      .done(function () {
-        alert("done");
-        $('#loginLink').html(loginLink);
-        $('#logoutHtml').html(logoutHtml);
-        return true;
-      })
-      .fail(function () {
-        alert('ajax call failed');
-        return false;
-      })
-    return false; */
-  });
   /** -- **/
 
   $(document).on('click', '.slipLink', function () {

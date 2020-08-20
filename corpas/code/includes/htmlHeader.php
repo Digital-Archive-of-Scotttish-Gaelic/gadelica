@@ -2,7 +2,6 @@
 
 require_once "include.php";
 
-$loginControl = new LoginController();
 $name = "";
 //check login state
 $loggedInHide = "hide";
@@ -65,6 +64,5 @@ echo <<<HTML
     </nav>
 HTML;
 
-print_r($_SESSION);
-
+$loginControl = new LoginController();
 $loginControl->runAction();
