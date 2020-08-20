@@ -57,6 +57,7 @@ HTML;
         break;
       case "savePassword":
           $this->_savePassword();
+          //do not write modal
         break;
       default:
         if (!$this->isLoggedIn()) {
