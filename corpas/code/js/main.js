@@ -29,7 +29,6 @@ $(function () {
   });
 
   $('#savePassword').on('submit', function () {
-    alert($('#email').val());
     var email = $('#email').val();
     var loginLink;
     var logoutHtml = '<form method="post">';
@@ -43,8 +42,8 @@ $(function () {
         alert("done");
         $('#loginLink').html(loginLink);
         $('#logoutHtml').html(logoutHtml);
+        return true;
       });
-    return true;
   });
   /** -- **/
 
