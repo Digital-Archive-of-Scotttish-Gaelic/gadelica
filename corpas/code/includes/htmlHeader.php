@@ -65,4 +65,6 @@ echo <<<HTML
     </nav>
 HTML;
 
+print_r($_SESSION);
+
 $loginControl->runAction();
