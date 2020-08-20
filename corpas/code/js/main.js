@@ -33,6 +33,7 @@ $(function () {
   });
 
   $('#savePassword').on('submit', function () {
+    alert('saved');
     $('.loggedIn').removeClass('hide');
     return true;
  /*
