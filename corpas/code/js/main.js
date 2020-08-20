@@ -29,6 +29,7 @@ $(function () {
   });
 
   $('#savePassword').on('submit', function () {
+    alert('called');
     var email = $('#email').val();
     var loginLink;
     var logoutHtml = '<form method="post">';
@@ -39,6 +40,7 @@ $(function () {
       loginLink = '<a id="loggedInAs" class="nav-link disabled" href="#">logged in as ' + data.firstname + ' ' + data.lastname + '</a>';
     })
       .done(function () {
+        alert("done");
         $('#loginLink').html(loginLink);
         $('#logoutHtml').html(logoutHtml);
       });
