@@ -19,6 +19,7 @@ class EntriesView
 				</div>
 			</div>
 HTML;
+    Slips::writeSlipDiv();
     $this->_writeJavascript();
   }
 
@@ -30,22 +31,36 @@ HTML;
 	  	$morphValues = $entry->getSlipMorphValues($form);
 		  $morphHtml = "(" . implode(' ', $morphValues) . ")";
 	  	$slipData = $entry->getFormSlipData($form);
-			$slipList = "<ul>";
+			$slipList = '<table class="table"><tbody>';
 			foreach($slipData as $row) {
-				$filenameElems = explode('_', $row["filename"]);
 				$translation = $this->_formatTranslation($row["translation"]);
+				$slipLinkData = array(
+					"auto_id" => $row["auto_id"],
+					"lemma" => $row["lemma"],
+          "pos" => $row["pos"],
+          "id" => $row["id"],
+					"filename" => $row["filename"],
+					"uri" => "",
+					"date_of_lang" => $row["date_of_lang"],
+          "title" => $row["title"],
+					"page" => $row["page"]
+				);
+				$filenameElems = explode('_', $row["filename"]);
 				$slipList .= <<<HTML
-					<li id="#slip_{$row["auto_id"]}" data-slipid="{$row["auto_id"]}"
-						data-toggle="tooltip" 
-						title="#{$filenameElems[0]} p.{$row["page"]}: {$row["date_of_lang"]} : {$translation}"
-						data-filename="{$row["filename"]}"
-						data-id="{$row["id"]}"
-						data-precontextscope="{$row["preContextScope"]}"
-						data-postcontextscope="{$row["postContextScope"]}"
-					></li>
+					<tr id="#slip_{$row["auto_id"]}" data-slipid="{$row["auto_id"]}"
+							data-filename="{$row["filename"]}"
+							data-id="{$row["id"]}"
+							data-precontextscope="{$row["preContextScope"]}"
+							data-postcontextscope="{$row["postContextScope"]}">
+						<td data-toggle="tooltip" 
+							title="#{$filenameElems[0]} p.{$row["page"]}: {$row["date_of_lang"]} : {$translation}" 
+							class="entryCitationContext"></td>
+						<td class="entryCitationSlipLink">{$this->_getSlipLink($slipLinkData)}</td>
+						<td class="entryCitationTextLink">link</td>
+					</tr>
 HTML;
 			}
-	  	$slipList .= "</ul>";
+	  	$slipList .= "</tbody></table>";
 	  	$citationsHtml = <<<HTML
 				<a href="#" class="citationsLink" data-type="form" data-index="{$i}">
 						citations
@@ -74,22 +89,36 @@ HTML;
 		foreach ($entry->getSenses() as $sense) {
 			$i++;
 			$slipData = $entry->getSenseSlipData($sense);
-			$slipList = "<ul>";
+			$slipList = '<table class="table"><tbody>';
 			foreach($slipData as $row) {
 				$filenameElems = explode('_', $row["filename"]);
 				$translation = $this->_formatTranslation($row["translation"]);
+				$slipLinkData = array(
+					"auto_id" => $row["auto_id"],
+					"lemma" => $row["lemma"],
+					"pos" => $row["pos"],
+					"id" => $row["id"],
+					"filename" => $row["filename"],
+					"uri" => "",
+					"date_of_lang" => $row["date_of_lang"],
+					"title" => $row["title"],
+					"page" => $row["page"]
+				);
 				$slipList .= <<<HTML
-					<li id="#slip_{$row["auto_id"]}" data-slipid="{$row["auto_id"]}"
-						data-toggle="tooltip" 
-						title="#{$filenameElems[0]} p.{$row["page"]}: {$row["date_of_lang"]} : {$translation}" 
-						data-filename="{$row["filename"]}"
-						data-id="{$row["id"]}"
-						data-precontextscope="{$row["preContextScope"]}"
-						data-postcontextscope="{$row["postContextScope"]}"
-					></li>
+					<tr id="#slip_{$row["auto_id"]}" data-slipid="{$row["auto_id"]}"
+							data-filename="{$row["filename"]}"
+							data-id="{$row["id"]}"
+							data-precontextscope="{$row["preContextScope"]}"
+							data-postcontextscope="{$row["postContextScope"]}">
+						<td data-toggle="tooltip" 
+							title="#{$filenameElems[0]} p.{$row["page"]}: {$row["date_of_lang"]} : {$translation}" 
+							class="entryCitationContext"></td>
+						<td class="entryCitationSlipLink">{$this->_getSlipLink($slipLinkData)}</td>
+						<td class="entryCitationTextLink">link</td>
+					</tr>
 HTML;
 			}
-			$slipList .= "</ul>";
+			$slipList .= "</tbody></table>";
 			$citationsHtml = <<<HTML
 				<a href="#" class="citationsLink" data-type="sense" data-index="{$i}">
 						citations
@@ -141,6 +170,27 @@ HTML;
 HTML;
   }
 
+  private function _getSlipLink($result) {
+		return <<<HTML
+						<small>
+                <a href="#" class="slipLink2"
+                    data-toggle="modal" data-target="#slipModal"
+                    data-auto_id="{$result["auto_id"]}"
+                    data-headword="{$result["lemma"]}"
+                    data-pos="{$result["pos"]}"
+                    data-id="{$result["id"]}"
+                    data-xml="{$result["filename"]}"
+                    data-uri="{$result["uri"]}"
+                    data-date="{$result["date_of_lang"]}"
+                    data-title="{$result["title"]}"
+                    data-page="{$result["page"]}"
+                    data-resultindex="">
+                      view slip
+                </a>
+            </small>
+HTML;
+  }
+
   private function _writeJavascript() {
   	echo <<<HTML
 			<script>
@@ -156,15 +206,15 @@ HTML;
 			      $(this).removeClass('hideCitations');
 			      return;
 			    }
-			    $(citationsContainerId + "> ul > li").each(function() {
+			    $(citationsContainerId + "> table > tbody > tr").each(function() {
 			      var html = '';
 			      var filename = $(this).attr('data-filename');
 			      var id = $(this).attr('data-id');
 			      var preScope  = $(this).attr('data-precontextscope');
 			      var postScope = $(this).attr('data-postcontextscope');
-			      var li = $(this);
-			      var title = li.prop('title');
-			      console.log(li);
+			      var tr = $(this);
+			      var title = tr.prop('title');
+			      console.log(tr);
 			      var url = 'ajax.php?action=getContext&filename='+filename+'&id='+id+'&preScope='+preScope;
 			      url += '&postScope='+postScope;
 			      $.getJSON(url, function (data) {
@@ -180,7 +230,7 @@ HTML;
 			          html += ' ';
 			        }
 			        html += postOutput;
-			        li.html(html);
+			        tr.find('.entryCitationContext').html(html);
 			      })
 			        .then(function () {
 			          $('.spinner').hide();

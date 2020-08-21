@@ -5,7 +5,10 @@ require_once "include.php";
 $name = "";
 //check login state
 $loggedInHide = "hide";
+
+
 if ($_SESSION["user"] || ($_SESSION["email"] && $_POST["loginAction"] == "savePassword")) {
+
 	$user = Users::getUser($_SESSION["email"]);
 	$name = $user->getFirstName() . ' ' . $user->getLastName();
 	$loggedInHide = "";

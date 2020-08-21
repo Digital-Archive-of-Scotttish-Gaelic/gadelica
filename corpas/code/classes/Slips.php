@@ -191,15 +191,12 @@ SQL;
               </div-->
               <div id="slipTranslation"></div>
             </div>
-
             <div id="slipFooter">
                 <div id="slipTextRefContainer">
                     <div id="slipTextRef"></div>
                 </div>
                 <div id="slipDate"></div>
             </div>
-
-
             <input type="hidden" id="slipFilename">
             <input type="hidden" id="slipId">
             <input type="hidden" id="auto_id">
@@ -215,7 +212,6 @@ SQL;
                 <button type="button" id="editSlip" class="btn btn-primary">edit</button>
                 <a id="closeSlipLink" href="#">close</a>
             </div>
-
         </div>
 
        <!-- added by MM -->
