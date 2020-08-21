@@ -56,7 +56,7 @@ HTML;
 							title="#{$filenameElems[0]} p.{$row["page"]}: {$row["date_of_lang"]} : {$translation}" 
 							class="entryCitationContext"></td>
 						<td class="entryCitationSlipLink">{$this->_getSlipLink($slipLinkData)}</td>
-						<td class="entryCitationTextLink">link</td>
+						<td><a target="_blank" href="#" class="entryCitationTextLink"><small>view in text</small></td>
 					</tr>
 HTML;
 			}
@@ -114,7 +114,7 @@ HTML;
 							title="#{$filenameElems[0]} p.{$row["page"]}: {$row["date_of_lang"]} : {$translation}" 
 							class="entryCitationContext"></td>
 						<td class="entryCitationSlipLink">{$this->_getSlipLink($slipLinkData)}</td>
-						<td class="entryCitationTextLink">link</td>
+						<td><a target="_blank" href="#" class="entryCitationTextLink"><small>view in text</small></td>
 					</tr>
 HTML;
 			}
@@ -214,13 +214,14 @@ HTML;
 			      var postScope = $(this).attr('data-postcontextscope');
 			      var tr = $(this);
 			      var title = tr.prop('title');
-			      console.log(tr);
 			      var url = 'ajax.php?action=getContext&filename='+filename+'&id='+id+'&preScope='+preScope;
 			      url += '&postScope='+postScope;
 			      $.getJSON(url, function (data) {
 			        $('.spinner').show();
 			        var preOutput = data.pre["output"];
 			        var postOutput = data.post["output"];
+			        var url = 'viewText.php?uri=' + data.uri + '&id=' + id; //with the wordId
+			        tr.find('.entryCitationTextLink').attr('href', url); //add the link to text url
 			        html = preOutput;
 			        if (data.pre["endJoin"] != "right" && data.pre["endJoin"] != "both") {
 			          html += ' ';
