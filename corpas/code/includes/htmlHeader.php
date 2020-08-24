@@ -6,10 +6,11 @@ $name = "";
 //check login state
 $loggedInHide = "hide";
 
+$loginControl = new LoginController();
 
-if ($_SESSION["user"] || ($_SESSION["email"] && $_POST["loginAction"] == "savePassword")) {
-
-	$user = Users::getUser($_SESSION["email"]);
+//if ($_SESSION["user"] || ($_SESSION["email"] && $_POST["loginAction"] == "savePassword")) {
+if ($loginControl->isLoggedIn()) {
+	$user = Users::getUser($_SESSION["user"]);
 	$name = $user->getFirstName() . ' ' . $user->getLastName();
 	$loggedInHide = "";
 }
@@ -67,5 +68,4 @@ echo <<<HTML
     </nav>
 HTML;
 
-$loginControl = new LoginController();
 $loginControl->runAction();

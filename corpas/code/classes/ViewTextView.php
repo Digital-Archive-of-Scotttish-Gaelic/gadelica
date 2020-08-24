@@ -189,7 +189,7 @@ HTML;
       $(function () {
         $('[data-toggle="tooltip"]').tooltip();
         hi = $('#meta').attr('data-hi');  
-        $('#'+hi).css('background-color', 'yellow');
+        $('#'+hi).css('background-color', '#fcf8e3');
        //$('body').animate({scrollTop: $('#'+hi).offset().top - 180},500);
         document.getElementById(hi).scrollIntoView({behavior: 'smooth', block: 'center'})
       });

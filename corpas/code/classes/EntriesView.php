@@ -51,10 +51,12 @@ HTML;
 							data-filename="{$row["filename"]}"
 							data-id="{$row["id"]}"
 							data-precontextscope="{$row["preContextScope"]}"
-							data-postcontextscope="{$row["postContextScope"]}">
-						<td data-toggle="tooltip" 
+							data-postcontextscope="{$row["postContextScope"]}"
+							data-date="{$row["date_of_lang"]}">
+						<!--td data-toggle="tooltip" 
 							title="#{$filenameElems[0]} p.{$row["page"]}: {$row["date_of_lang"]} : {$translation}" 
-							class="entryCitationContext"></td>
+							class="entryCitationContext"></td-->
+						<td class="entryCitationContext"></td>
 						<td class="entryCitationSlipLink">{$this->_getSlipLink($slipLinkData)}</td>
 						<td><a target="_blank" href="#" class="entryCitationTextLink"><small>view in text</small></td>
 					</tr>
@@ -109,10 +111,12 @@ HTML;
 							data-filename="{$row["filename"]}"
 							data-id="{$row["id"]}"
 							data-precontextscope="{$row["preContextScope"]}"
-							data-postcontextscope="{$row["postContextScope"]}">
-						<td data-toggle="tooltip" 
+							data-postcontextscope="{$row["postContextScope"]}"
+							data-date="{$row["date_of_lang"]}">
+						<!--td data-toggle="tooltip" 
 							title="#{$filenameElems[0]} p.{$row["page"]}: {$row["date_of_lang"]} : {$translation}" 
-							class="entryCitationContext"></td>
+							class="entryCitationContext"></td-->
+						<td  class="entryCitationContext"></td>
 						<td class="entryCitationSlipLink">{$this->_getSlipLink($slipLinkData)}</td>
 						<td><a target="_blank" href="#" class="entryCitationTextLink"><small>view in text</small></td>
 					</tr>
@@ -207,7 +211,8 @@ HTML;
 			      return;
 			    }
 			    $(citationsContainerId + "> table > tbody > tr").each(function() {
-			      var html = '';
+			      var date = $(this).attr('data-date');
+			      var html = date + '. ';
 			      var filename = $(this).attr('data-filename');
 			      var id = $(this).attr('data-id');
 			      var preScope  = $(this).attr('data-precontextscope');
@@ -222,7 +227,7 @@ HTML;
 			        var postOutput = data.post["output"];
 			        var url = 'viewText.php?uri=' + data.uri + '&id=' + id; //with the wordId
 			        tr.find('.entryCitationTextLink').attr('href', url); //add the link to text url
-			        html = preOutput;
+			        html += preOutput;
 			        if (data.pre["endJoin"] != "right" && data.pre["endJoin"] != "both") {
 			          html += ' ';
 			        }
