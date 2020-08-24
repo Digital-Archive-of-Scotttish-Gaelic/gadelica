@@ -59,6 +59,9 @@ HTML;
                 <p>Please click the link in the email to reset your password.</p>
             </div>
 HTML;
+	      $footer = <<<HTML
+            <button type="button" class="btn btn-primary closeTab">close tab</button>
+HTML;
         break;
       case "emailAddressError":
         $title = "Email Address Error";

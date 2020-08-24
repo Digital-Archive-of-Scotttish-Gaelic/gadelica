@@ -55,7 +55,7 @@ echo <<<HTML
 					<a class="nav-item nav-link" title="read the fucking manual" href="docs.php">docs</a>
           <span class="loggedIn {$loggedInHide}">
             <form method="post">
-              <button id="logoutLink" class="btn btn-link nav-link nav-item" role="link" type="submit" name="loginAction" value="logout">logout</button>
+              <a id="logoutLink" href="index.php?loginAction=logout" class="btn btn-link nav-link nav-item">logout</a>
             </form>  
 					</span>
         </div>
