@@ -4,7 +4,9 @@ class SlipMorphFeature
 {
   private $_abbr, $_type;
   private $_props = array();
-  private $_propTitles = array("noun"=>array("numgen", "case"), "verb"=>array("status", "tense", "mood"));
+  private $_propTitles = array("noun"=>array("numgen", "case"),
+	  "verb"=>array("mode", "status", "imp_number", "fin_number",
+		  "imp_person", "fin_person", "tense", "mood"));
 
   public function __construct($abbr) {
     $this->_abbr = $abbr;

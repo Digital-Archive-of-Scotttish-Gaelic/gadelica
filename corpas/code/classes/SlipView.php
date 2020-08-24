@@ -112,74 +112,87 @@ HTML;
 
   private function _writePartOfSpeechSelects() {
     echo $this->_writeWordClassesSelect();
-    $props = $this->_slip->getSlipMorph()->getProps();
-    $numgenOptions = array("masculine singular", "feminine singular", "plural", "singular (gender unclear)",
+    $props = $this->_slip->getSlipMorph()->getProps();  //the morph data
+    $relations = array("numgen", "case", "mode", "fin_person", "imp_person", "fin_number",
+	    "imp_number", "status", "tense", "mood");
+    $options["numgen"] = array("masculine singular", "feminine singular", "plural", "singular (gender unclear)",
       "feminine dual", "unclear");
-    $caseOptions = array("nominative", "genitive", "dative", "unclear");
-    $statusOptions = array("dependent", "independent", "dative", "unclear", "verbal noun");
-    $tenseOptions = array("present", "future", "past", "conditional", "unclear");
-    $moodOptions = array("active", "passive", "unclear");
-    $numgenOptionHtml = $caseOptionHtml = $statusOptionHtml = $tenseOptionHtml = $moodOptionHtml = "";
-    foreach ($numgenOptions as $numgen) {
-      $selected = $numgen == $props["numgen"] ? "selected" : "";
-      $numgenOptionHtml .= <<<HTML
-        <option value="{$numgen}" {$selected}>{$numgen}</option>
+    $options["case"] = array("nominative", "genitive", "dative", "unclear");
+    $options["mode"] = array("unclear mode", "imperative", "finite", "verbal noun");
+	  $options["imp_person"] = array("second person", "first person", "third person", "unclear person");
+    $options["fin_person"] = array("unmarked person", "first person", "second person", "third person");
+    $options["imp_number"] = array("singular", "plural", "unclear number");
+    $options["fin_number"] = array("unmarked number", "singular", "plural");
+    $options["status"] = array("unclear status", "dependent", "independent", "relative");
+    $options["tense"] = array("unclear tense", "present", "future", "past", "conditional");
+    $options["mood"] = array("active", "impersonal", "unclear mood");
+		//create the HTML options for each relation
+	  $optionsHtml = array();
+    foreach ($relations as $relation) {
+    	$optionsHtml[$relation] = "";
+    	foreach ($options[$relation] as $option) {
+    		$selected = $option == $props[$relation] ? "selected" : "";
+    		$optionsHtml[$relation] .= <<<HTML
+					<option value="{$option}" {$selected}>{$option}</option>
 HTML;
-    }
-    foreach ($caseOptions as $case) {
-      $selected = $case == $props["case"] ? "selected" : "";
-      $caseOptionHtml .= <<<HTML
-        <option value="{$case}" {$selected}>{$case}</option>
-HTML;
-    }
-    foreach ($statusOptions as $status) {
-      $selected = $status == $props["status"] ? "selected" : "";
-      $statusOptionHtml .= <<<HTML
-        <option value="{$status}" {$selected}>{$status}</option>
-HTML;
-    }
-    foreach ($tenseOptions as $tense) {
-      $selected = $tense== $props["tense"] ? "selected" : "";
-      $tenseOptionHtml .= <<<HTML
-        <option value="{$tense}" {$selected}>{$tense}</option>
-HTML;
-    }
-    foreach ($moodOptions as $mood) {
-      $selected = $mood == $props["mood"] ? "selected" : "";
-      $moodOptionHtml .= <<<HTML
-        <option value="{$mood}" {$selected}>{$mood}</option>
-HTML;
+	    }
     }
     $nounSelectHide = $this->_slip->getWordClass() == "noun" ? "" : "hide";
     $verbSelectHide = $this->_slip->getWordClass() == "verb" ? "" : "hide";
-    $verbalNounHide = $props["status"] == "verbal noun" ? "hide" : "";
+	  $impVerbSelectHide = $props["mode"] == "imperative" ? "" : "hide";
+	  $finVerbSelectHide = $props["mode"] == "finite" ? "" : "hide";
+    $verbalNounHide = $props["mode"] == "verbal noun" ? "hide" : "";
     echo <<<HTML
         <div class="editSlipSectionContainer">
           <h5>Morphological information</h5>
             <div id="nounSelects" class="{$nounSelectHide}">
                 <label for="posNumberGender">Number:</label>
                 <select name="numgen" id="posNumberGender" class="form-control col-2">      
-                  {$numgenOptionHtml}
+                  {$optionsHtml["numgen"]}
                 </select>  
                 <label for="posCase">Case:</label>
                 <select name="case" id="posCase" class="form-control col-2">      
-                  {$caseOptionHtml}
+                  {$optionsHtml["case"]}
                 </select>      
             </div>
             <div id="verbSelects" class="{$verbSelectHide}">
-                <label for="posStatus">Status:</label>
-                <select name="status" id="posStatus" class="form-control col-2">      
-                  {$statusOptionHtml}
-                </select>  
+                <label for="posMode">Mode:</label>
+                <select name="mode" id="posMode" class="form-control col-2">      
+                  {$optionsHtml["mode"]}
+                </select>   
                 <span id="nonVerbalNounOptions" class="{$verbalNounHide}">
-                  <label for="posTense">Tense:</label>
-                  <select name="tense" id="posTense" class="form-control col-2">      
-                    {$tenseOptionHtml}
-                  </select>   
-                  <label for="posMood">Mood:</label>
-                  <select name="mood" id="posMood" class="form-control col-2">      
-                    {$moodOptionHtml}
-                  </select>
+                  <span id="imperativeVerbOptions" class="{$impVerbSelectHide}">
+	                  <label for="posImpPerson">Person:</label>
+		                <select name="imp_person" id="posImpPerson" class="form-control col-2">      
+		                  {$optionsHtml["imp_person"]}
+		                </select> 
+		                <label for="posImpNumber">Number:</label>
+		                <select name="imp_number" id="posImpNumber" class="form-control col-2">      
+		                  {$optionsHtml["imp_number"]}
+		                </select> 
+	                </span>
+	                <span id="finiteVerbOptions" class="{$finVerbSelectHide}">
+	                  <label for="posFinPerson">Person:</label>
+		                <select name="fin_person" id="posFinPerson" class="form-control col-2">      
+		                  {$optionsHtml["fin_person"]}
+		                </select> 
+		                <label for="posFinNumber">Number:</label>
+		                <select name="fin_number" id="posFinNumber" class="form-control col-2">      
+		                  {$optionsHtml["fin_number"]}
+		                </select> 
+		                <label for="posStatus">Status:</label>
+		                <select name="status" id="posStatus" class="form-control col-2">      
+		                  {$optionsHtml["status"]}
+		                </select> 
+	                  <label for="posTense">Tense:</label>
+	                  <select name="tense" id="posTense" class="form-control col-2">      
+	                    {$optionsHtml["tense"]}
+	                  </select>   
+	                  <label for="posMood">Mood:</label>
+	                  <select name="mood" id="posMood" class="form-control col-2">      
+	                    {$optionsHtml["mood"]}
+	                  </select>
+                  </span>
                 </span>      
             </div>
         </div>
@@ -432,11 +445,19 @@ HTML;
               }
             });
             
-            $('#posStatus').on('change', function() {
-              if($(this).val() == "verbal noun") {
+            $('#posMode').on('change', function() {
+              var mode = $(this).val();
+              if(mode == "verbal noun" || mode == "unclear mode") {
                 $('#nonVerbalNounOptions').hide();
               } else {
                 $('#nonVerbalNounOptions').show();
+              }
+              if (mode == "imperative") {
+                $('#imperativeVerbOptions').show();
+                $('#finiteVerbOptions').hide();
+              } else if (mode == "finite") { 
+                $('#finiteVerbOptions').show();
+                $('#imperativeVerbOptions').hide();
               }
             });
         </script>

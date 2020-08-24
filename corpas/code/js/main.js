@@ -291,55 +291,6 @@ $(function () {
     }, 2000);
   });
 
-  /**
-   * Load and show the citations for wordforms or senses
-   */
- /* $('.citationsLink').on('click', function () {
-    var citationsLink = $(this);
-    var citationsContainerId = '#' + $(this).attr('data-type') + '_citations' + $(this).attr('data-index');
-    if ($(this).hasClass('hideCitations')) {
-      $(citationsContainerId).hide();
-      $(this).text('citations');
-      $(this).removeClass('hideCitations');
-      return;
-    }
-    $(citationsContainerId + "> ul > li").each(function() {
-      var html = '';
-      var filename = $(this).attr('data-filename');
-      var id = $(this).attr('data-id');
-      var preScope  = $(this).attr('data-precontextscope');
-      var postScope = $(this).attr('data-postcontextscope');
-      var li = $(this);
-      var title = li.prop('title');
-      console.log(li);
-      var url = 'ajax.php?action=getContext&filename='+filename+'&id='+id+'&preScope='+preScope;
-      url += '&postScope='+postScope;
-      $.getJSON(url, function (data) {
-        $('.spinner').show();
-        var preOutput = data.pre["output"];
-        var postOutput = data.post["output"];
-        html = preOutput;
-        if (data.pre["endJoin"] != "right" && data.pre["endJoin"] != "both") {
-          html += ' ';
-        }
-        html += '<span id="slipWordInContext">' + data.word + '</span>';
-        if (data.post["startJoin"] != "left" && data.post["startJoin"] != "both") {
-          html += ' ';
-        }
-        html += postOutput;
-        li.html(html);
-      })
-        .then(function () {
-          $('.spinner').hide();
-        });
-
-    });
-    $(citationsContainerId).show();
-    citationsLink.text('hide');
-    citationsLink.addClass('hideCitations');
-  });
-  */
-
   function writeSlipContext(filename, id) {
     var html = '';
     var preScope  = $('#slipContext').attr('data-precontextscope');
@@ -406,8 +357,15 @@ $(function () {
       data['numgen'] = $('#posNumberGender').val();
       data['case'] = $('#posCase').val();
     } else {                                    //verb data
-      data['status'] = $('#posStatus').val();
-      if ($('#posStatus').val() != "verbal noun") {
+      var mode = $('#posMode').val();
+      data['mode'] = mode;
+      if (mode == "imperative") {
+        data['imp_person'] = $('#posImpPerson').val();
+        data['imp_number'] = $('#posImpNumber').val();
+      } else if (mode == "finite") {
+        data['fin_person'] = $('#posFinPerson').val();
+        data['fin_number'] = $('#posFinNumber').val();
+        data['status'] = $('#posStatus').val();
         data['tense'] = $('#posTense').val();
         data['mood'] = $('#posMood').val();
       }
