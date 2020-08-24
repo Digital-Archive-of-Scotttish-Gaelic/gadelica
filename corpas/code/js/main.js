@@ -33,7 +33,7 @@ $(function () {
   });
 
   $('.closeTab').on('click', function () {
-    window.close();
+    window.open('','_self').close()
   });
   /** -- **/
 
