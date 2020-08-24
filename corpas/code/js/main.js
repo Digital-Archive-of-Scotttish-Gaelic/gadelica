@@ -104,7 +104,7 @@ $(function () {
     var date = slipLink.data('date');
     var title = slipLink.data('title');
     var page = slipLink.data('page');
-    var resultindex = slipLink.data('resultindex'); 
+    var resultindex = slipLink.data('resultindex');
     var auto_id = slipLink.data('auto_id');
     var body = '';
     var header = headword;
@@ -326,7 +326,8 @@ $(function () {
       if (data.pre["endJoin"] != "right" && data.pre["endJoin"] != "both") {
         html += ' ';
       }
-      html += '<span id="slipWordInContext">' + data.word + '</span>';
+      //html += '<span id="slipWordInContext">' + data.word + '</span>';
+      html += '<mark id="slipWordInContext">' + data.word + '</mark>'; // MM
       if (data.post["startJoin"] != "left" && data.post["startJoin"] != "both") {
         html += ' ';
       }

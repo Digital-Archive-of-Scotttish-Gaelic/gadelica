@@ -147,53 +147,53 @@ HTML;
           <h5>Morphological information</h5>
             <div id="nounSelects" class="{$nounSelectHide}">
                 <label for="posNumberGender">Number:</label>
-                <select name="numgen" id="posNumberGender" class="form-control col-2">      
+                <select name="numgen" id="posNumberGender" class="form-control col-2">
                   {$optionsHtml["numgen"]}
-                </select>  
+                </select>
                 <label for="posCase">Case:</label>
-                <select name="case" id="posCase" class="form-control col-2">      
+                <select name="case" id="posCase" class="form-control col-2">
                   {$optionsHtml["case"]}
-                </select>      
+                </select>
             </div>
             <div id="verbSelects" class="{$verbSelectHide}">
                 <label for="posMode">Mode:</label>
-                <select name="mode" id="posMode" class="form-control col-2">      
+                <select name="mode" id="posMode" class="form-control col-2">
                   {$optionsHtml["mode"]}
-                </select>   
+                </select>
                 <span id="nonVerbalNounOptions" class="{$verbalNounHide}">
                   <span id="imperativeVerbOptions" class="{$impVerbSelectHide}">
 	                  <label for="posImpPerson">Person:</label>
-		                <select name="imp_person" id="posImpPerson" class="form-control col-2">      
+		                <select name="imp_person" id="posImpPerson" class="form-control col-2">
 		                  {$optionsHtml["imp_person"]}
-		                </select> 
+		                </select>
 		                <label for="posImpNumber">Number:</label>
-		                <select name="imp_number" id="posImpNumber" class="form-control col-2">      
+		                <select name="imp_number" id="posImpNumber" class="form-control col-2">
 		                  {$optionsHtml["imp_number"]}
-		                </select> 
+		                </select>
 	                </span>
 	                <span id="finiteVerbOptions" class="{$finVerbSelectHide}">
 	                  <label for="posFinPerson">Person:</label>
-		                <select name="fin_person" id="posFinPerson" class="form-control col-2">      
+		                <select name="fin_person" id="posFinPerson" class="form-control col-2">
 		                  {$optionsHtml["fin_person"]}
-		                </select> 
+		                </select>
 		                <label for="posFinNumber">Number:</label>
-		                <select name="fin_number" id="posFinNumber" class="form-control col-2">      
+		                <select name="fin_number" id="posFinNumber" class="form-control col-2">
 		                  {$optionsHtml["fin_number"]}
-		                </select> 
+		                </select>
 		                <label for="posStatus">Status:</label>
-		                <select name="status" id="posStatus" class="form-control col-2">      
+		                <select name="status" id="posStatus" class="form-control col-2">
 		                  {$optionsHtml["status"]}
-		                </select> 
+		                </select>
 	                  <label for="posTense">Tense:</label>
-	                  <select name="tense" id="posTense" class="form-control col-2">      
+	                  <select name="tense" id="posTense" class="form-control col-2">
 	                    {$optionsHtml["tense"]}
-	                  </select>   
+	                  </select>
 	                  <label for="posMood">Mood:</label>
-	                  <select name="mood" id="posMood" class="form-control col-2">      
+	                  <select name="mood" id="posMood" class="form-control col-2">
 	                    {$optionsHtml["mood"]}
 	                  </select>
                   </span>
-                </span>      
+                </span>
             </div>
         </div>
 HTML;
@@ -212,7 +212,7 @@ HTML;
     $html = <<<HTML
         <div id="wordClassSelect" class="editSlipSectionContainer">
           <label for="wordClass"><h5>Part-of-speech</h5></label>
-          <select name="wordClass" id="wordClass" class="form-control col-3">      
+          <select name="wordClass" id="wordClass" class="form-control col-3">
             {$optionHtml}
           </select>
       </div>
@@ -239,13 +239,13 @@ HTML;
     }
     echo <<<HTML
         <div class="editSlipSectionContainer">
-          <h5>Sense Categories</h5> 
+          <h5>Sense Categories</h5>
           <div class="form-group row">
             <div class="col-md-3">
                   <label for="senseCategorySelect">Choose existing sense category:</label>
             </div>
             <div>
-                <select id="senseCategorySelect">{$dropdownHtml}</select>  
+                <select id="senseCategorySelect">{$dropdownHtml}</select>
             </div>
             <div class="col-md-1">
                   <button type="button" class="form-control btn btn-primary" id="chooseSenseCategory">Add</button>
@@ -286,8 +286,13 @@ HTML;
     if ($context["pre"]["endJoin"] != "right" && $context["pre"]["endJoin"] != "both") {
       $contextHtml .= ' ';
     }
+/*
     $contextHtml .= <<<HTML
 			<span id="slipWordInContext" data-headwordid="{$context["headwordId"]}">{$context["word"]}</span>
+HTML;
+*/
+    $contextHtml .= <<<HTML
+      <mark id="slipWordInContext" data-headwordid="{$context["headwordId"]}">{$context["word"]}</mark>
 HTML;
     if ($context["post"]["startJoin"] != "left" && $context["post"]["startJoin"] != "both") {
       $contextHtml .= ' ';
@@ -301,7 +306,7 @@ HTML;
               <h5>Adjust citation context</h5>
               <div>
 								<a class="updateContext" id="decrementPre"><i class="fas fa-minus"></i></a>
-								<a {$preHref} class="updateContext" id="incrementPre"><i class="fas fa-plus"></i></a>								    
+								<a {$preHref} class="updateContext" id="incrementPre"><i class="fas fa-plus"></i></a>
               </div>
               <span data-precontextscope="{$preScope}" data-postcontextscope="{$postScope}" id="slipContext" class="slipContext">
                 {$contextHtml}
@@ -336,8 +341,8 @@ HTML;
               <div class="floatRight">
                 <a class="btn btn-success" href="#" id="showCitationView">citation view</a>
               </div>
-              <h5>Tag citation collocates</h5>        
-              <span class="slipContext"> 
+              <h5>Tag citation collocates</h5>
+              <span class="slipContext">
                 {$contextHtml}
               </span>
             </div>
@@ -346,18 +351,18 @@ HTML;
 
   private function _writeJavascript() {
     echo <<<HTML
-        <script>    
+        <script>
             $('#showCitationView').on('click', function () {
               $('#slipCollocatesContainer').hide();
               $('#slipContextContainer').show();
             });
-            
+
             $('#showCollocatesView').on('click', function () {
               console.log('hit');
               $('#slipContextContainer').hide();
               $('#slipCollocatesContainer').show();
             });
-            
+
             /*
               Show the collocate dropdown
              */
@@ -372,9 +377,9 @@ HTML;
                   var id = data.grammar.replace(' ', '_') + '_' + wordId;
                   $('#'+id).addClass('disabled');
                 }
-              }); 
+              });
             });
-            
+
             /*
               Save the collocate grammar info
              */
@@ -390,7 +395,7 @@ HTML;
                 $('.collocateHeadword').text(data.lemma);
               });
             });
-            
+
             $("#chooseSenseCategory").on('click', function () {
               var elem = $( "#senseCategorySelect option:selected" );
               var category = elem.text();
@@ -398,27 +403,27 @@ HTML;
               html += ' <a class="badge badge-danger deleteCat">X</a></li>';
               $('#senseCategories').append(html);
               elem.remove();
-              var data = {action: 'saveCategory', slipId: '{$this->_slip->getAutoId()}', 
+              var data = {action: 'saveCategory', slipId: '{$this->_slip->getAutoId()}',
                 categoryName: category}
               $.post("ajax.php", data, function (response) {
                 console.log(response);        //TODO: add some response code on successful save
               });
               console.log(category);
             });
-            
+
             $(document).on('click', '#addSenseCategory', function () {
               var newCategory = $('#senseCategory').val();
               var html = '<li class="badge badge-success" data-category="' + newCategory + '">' + newCategory;
               html += ' <a class="badge badge-danger deleteCat">X</a></li>';
               $('#senseCategories').append(html);
               $('#senseCategory').val('');
-              var data = {action: 'saveCategory', slipId: '{$this->_slip->getAutoId()}', 
+              var data = {action: 'saveCategory', slipId: '{$this->_slip->getAutoId()}',
                 categoryName: newCategory}
               $.post("ajax.php", data, function (response) {
                 console.log(response);        //TODO: add some response code on successful save
               });
             });
-            
+
             $(document).on('click', '.deleteCat', function () {
               var category = $(this).parent().attr('data-category');
               $(this).parent().remove();
@@ -429,8 +434,8 @@ HTML;
               $.post("ajax.php", data, function (response) {
                 console.log(response);        //TODO: add some response code on successful save
               });
-            });          
-            
+            });
+
             $('#wordClass').on('change', function() {
               if($(this).val() == "verb") {
                 $('#verbSelects').show();
@@ -444,7 +449,7 @@ HTML;
                 $('#verbSelects').hide();
               }
             });
-            
+
             $('#posMode').on('change', function() {
               var mode = $(this).val();
               if(mode == "verbal noun" || mode == "unclear mode") {
@@ -455,7 +460,7 @@ HTML;
               if (mode == "imperative") {
                 $('#imperativeVerbOptions').show();
                 $('#finiteVerbOptions').hide();
-              } else if (mode == "finite") { 
+              } else if (mode == "finite") {
                 $('#finiteVerbOptions').show();
                 $('#imperativeVerbOptions').hide();
               }

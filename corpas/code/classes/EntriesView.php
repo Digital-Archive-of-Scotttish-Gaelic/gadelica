@@ -53,8 +53,8 @@ HTML;
 							data-precontextscope="{$row["preContextScope"]}"
 							data-postcontextscope="{$row["postContextScope"]}"
 							data-date="{$row["date_of_lang"]}">
-						<!--td data-toggle="tooltip" 
-							title="#{$filenameElems[0]} p.{$row["page"]}: {$row["date_of_lang"]} : {$translation}" 
+						<!--td data-toggle="tooltip"
+							title="#{$filenameElems[0]} p.{$row["page"]}: {$row["date_of_lang"]} : {$translation}"
 							class="entryCitationContext"></td-->
 						<td class="entryCitationContext"></td>
 						<td class="entryCitationSlipLink">{$this->_getSlipLink($slipLinkData)}</td>
@@ -113,8 +113,8 @@ HTML;
 							data-precontextscope="{$row["preContextScope"]}"
 							data-postcontextscope="{$row["postContextScope"]}"
 							data-date="{$row["date_of_lang"]}">
-						<!--td data-toggle="tooltip" 
-							title="#{$filenameElems[0]} p.{$row["page"]}: {$row["date_of_lang"]} : {$translation}" 
+						<!--td data-toggle="tooltip"
+							title="#{$filenameElems[0]} p.{$row["page"]}: {$row["date_of_lang"]} : {$translation}"
 							class="entryCitationContext"></td-->
 						<td  class="entryCitationContext"></td>
 						<td class="entryCitationSlipLink">{$this->_getSlipLink($slipLinkData)}</td>
@@ -231,7 +231,8 @@ HTML;
 			        if (data.pre["endJoin"] != "right" && data.pre["endJoin"] != "both") {
 			          html += ' ';
 			        }
-			        html += '<span id="slipWordInContext">' + data.word + '</span>';
+			        //html += '<span id="slipWordInContext">' + data.word + '</span>';
+              html += '<mark>' + data.word + '</mark>'; // MM
 			        if (data.post["startJoin"] != "left" && data.post["startJoin"] != "both") {
 			          html += ' ';
 			        }
@@ -241,7 +242,7 @@ HTML;
 			        .then(function () {
 			          $('.spinner').hide();
 			        });
-			
+
 			    });
 			    $(citationsContainerId).show();
 			    citationsLink.text('hide');
