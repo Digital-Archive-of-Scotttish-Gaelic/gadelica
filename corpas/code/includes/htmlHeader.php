@@ -9,7 +9,8 @@ $loggedInHide = "hide";
 $loginControl = new LoginController();
 
 if ($loginControl->isLoggedIn() || ($_SESSION["email"] && $_POST["loginAction"] == "savePassword")) {
-	$user = Users::getUser($_SESSION["user"]);
+	$email = $_SESSION["user"] ? $_SESSION["user"] : $_SESSION["email"];
+	$user = Users::getUser($email);
 	$name = $user->getFirstName() . ' ' . $user->getLastName();
 	$loggedInHide = "";
 }
