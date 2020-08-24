@@ -116,7 +116,7 @@ HTML;
     $numgenOptions = array("masculine singular", "feminine singular", "plural", "singular (gender unclear)",
       "feminine dual", "unclear");
     $caseOptions = array("nominative", "genitive", "dative", "unclear");
-    $statusOptions = array("dependent", "independent", "relative", "verbal noun", "unclear");
+    $statusOptions = array("dependent", "independent", "dative", "unclear", "verbal noun");
     $tenseOptions = array("present", "future", "past", "conditional", "unclear");
     $moodOptions = array("active", "passive", "unclear");
     $numgenOptionHtml = $caseOptionHtml = $statusOptionHtml = $tenseOptionHtml = $moodOptionHtml = "";
