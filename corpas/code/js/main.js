@@ -31,10 +31,6 @@ $(function () {
     $('#loginCancel').addClass('loginButton');
     $('.loginMessage').text('');
   });
-
-  $('.closeTab').on('click', function () {
-    window.open('','_self').close()
-  });
   /** -- **/
 
   $(document).on('click', '.slipLink', function () {
