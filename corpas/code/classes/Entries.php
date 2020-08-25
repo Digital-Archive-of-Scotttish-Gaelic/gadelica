@@ -18,23 +18,27 @@ class Entries
 		$dbh = $db->getDatabaseHandle();
 		try {
 			$sql = <<<SQL
-        SELECT DISTINCT wordform FROM lemmas l
+        SELECT wordform, auto_id FROM lemmas l
             JOIN slips s ON s.filename = l.filename AND s.id = l.id
             WHERE lemma = :lemma AND wordclass = :wordclass
-            ORDER BY lemma ASC
+            ORDER BY wordform ASC
 SQL;
 			$sth = $dbh->prepare($sql);
 			$sth->execute(array(":lemma"=>$entry->getLemma(), ":wordclass"=>$entry->getWordclass()));
 			while ($row = $sth->fetch()) {
-				$entry->addForm($row["wordform"]);
-				$slipData = Slips::getSlipsByWordform($entry->getLemma(), $entry->getWordclass(), $row["wordform"]);
+				$entry->addForm($row["auto_id"], $row["wordform"]);
+
+				$slipMorphResults = Slips::getSlipMorphBySlipId($row["auto_id"]);
+				$entry->setSlipMorphString($row["wordform"], implode(' ', $slipMorphResults));
+
+				$slipData = Slips::getSlipsByWordform($entry->getLemma(), $entry->getWordclass(),
+					$row["wordform"], $slipMorphResults);
 				$entry->addFormSlipData($row["wordform"], $slipData);
-				$slipMorphResults = Slips::getSlipMorphByWordform($entry->getLemma(), $entry->getWordclass(), $row["wordform"]);
-				$morphData = array();
+				/*$morphData = array();
 				foreach ($slipMorphResults as $result) {
-					$morphData[$result["relation"]] = $result["value"];
-				}
-				$entry->setSlipMorphData($row["wordform"], $morphData);
+					$morphData[$result["auto_id"]][$result["relation"]] = $result["value"];
+				}*/
+				//$entry->setSlipMorphData($row["wordform"], $slipMorphResults);
 			}
 		} catch (PDOException $e) {
 			echo $e->getMessage();

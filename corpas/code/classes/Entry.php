@@ -3,12 +3,13 @@
 
 class Entry
 {
-	private $_lemma, $_wordclass;
+	private $_lemma, $_wordclass, $_slipMorphString;
 	private $_forms = array();
 	private $_formSlipData = array();
 	private $_senses = array();
 	private $_senseSlipData = array();
 	private $_slipMorphData = array();
+	private $_formSlipIds = array();
 
 	public function __construct($lemma, $wordclass) {
 		$this->_lemma = $lemma;
@@ -45,12 +46,28 @@ class Entry
 		return $this->_slipMorphData[$form];
 	}
 
+	public function getSlipMorphString($form) {
+		return $this->_slipMorphString[$form];
+	}
+
 	public function getSlipMorphValues($form) {
 		$values = array();
-		foreach($this->getSlipMorphData($form) as $key => $value) {
+		foreach($this->getSlipMorphData($form) as $value) {
 			$values[] = $value;
 		}
-		return array_unique($values);
+		return $values;
+	}
+
+	public function getFormSlipIds($form) {
+		return $this->_formSlipIds[$form];
+	}
+
+	public function getUniqueForms() {
+		$forms = array();
+		foreach ($this->getForms() as $form) {
+			$forms[] = $form . "|" . $this->getSlipMorphString($form);
+		}
+		return array_unique($forms);
 	}
 
 	//Setters
@@ -59,8 +76,9 @@ class Entry
 		$this->_forms = $forms;
 	}
 
-	public function addForm($form) {
-		$this->_forms[] = $form;
+	public function addForm($slipId, $form) {
+		$this->_forms[$slipId] = $form;
+		$this->_formSlipIds[$form][] = $slipId;
 	}
 
 	public function addFormSlipData($form, $data) {
@@ -81,5 +99,9 @@ class Entry
 
 	public function setSlipMorphData($form, $data) {
 		$this->_slipMorphData[$form] = $data;
+	}
+
+	public function setSlipMorphString($form, $string) {
+		$this->_slipMorphString[$form] = $string;
 	}
 }

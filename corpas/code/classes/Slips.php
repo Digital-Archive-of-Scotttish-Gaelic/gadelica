@@ -81,13 +81,39 @@ SQL;
   }
 
 	/**
+	 * Gets morph info from the DB to populate an Entry with data required for citations
+	 * @param $slipId
+	 * @return array of DB results
+	 */
+	public static function getSlipMorphBySlipId($slipId) {
+		$morphInfo = array();
+		$db = new Database();
+		$dbh = $db->getDatabaseHandle();
+		try {
+			$sql = <<<SQL
+        SELECT relation, value
+        	FROM slipMorph
+        	WHERE slip_id = :slipId
+SQL;
+			$sth = $dbh->prepare($sql);
+			$sth->execute(array(":slipId"=>$slipId));
+			while ($row = $sth->fetch()) {
+				$morphInfo[$row["relation"]] = $row["value"];
+			}
+			return $morphInfo;
+		} catch (PDOException $e) {
+			echo $e->getMessage();
+		}
+	}
+
+	/**
 	 * Gets slip info from the DB to populate an Entry with data required for citations
 	 * @param $lemma
 	 * @param $wordclass
 	 * @param $wordform
 	 * @return array of DB results
 	 */
-	public static function getSlipMorphByWordform($lemma, $wordclass, $wordform) {
+/*	public static function getSlipMorphByWordform($lemma, $wordclass, $wordform) {
 		$morphInfo = array();
 		$db = new Database();
 		$dbh = $db->getDatabaseHandle();
@@ -102,13 +128,13 @@ SQL;
 			$sth = $dbh->prepare($sql);
 			$sth->execute(array(":lemma"=>$lemma, ":wordclass"=>$wordclass, ":wordform"=>$wordform));
 			while ($row = $sth->fetch()) {
-				$morphInfo[] = $row;
+				$morphInfo[$row["relation"]] = $row["value"];
 			}
 			return $morphInfo;
 		} catch (PDOException $e) {
 			echo $e->getMessage();
 		}
-	}
+	}*/
 
 	/**
 	 * Gets slip info from the DB to populate an Entry with data required for citations

@@ -26,13 +26,21 @@ HTML;
   private function _getFormsHtml($entry) {
 	  $html = "<ul>";
 	  $i=0;
-	  foreach ($entry->getForms() as $form) {
+
+	  foreach ($entry->getUniqueForms() as $slipId => $formString) {
 		  $i++;
-	  	$morphValues = $entry->getSlipMorphValues($form);
-		  $morphHtml = "(" . implode(' ', $morphValues) . ")";
+			$formElems = explode('|', $formString);
+			$form = $formElems[0];
+			$morph = $formElems[1];
+		  $morphHtml = "(" . $morph . ")";
+
 	  	$slipData = $entry->getFormSlipData($form);
+	  	$formSlipIds = $entry->getFormSlipIds($form);
 			$slipList = '<table class="table"><tbody>';
 			foreach($slipData as $row) {
+				if (!in_array($row["auto_id"], $formSlipIds)) {
+					continue;
+				}
 				$translation = $this->_formatTranslation($row["translation"]);
 				$slipLinkData = array(
 					"auto_id" => $row["auto_id"],
