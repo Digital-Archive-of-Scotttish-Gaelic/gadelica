@@ -46,8 +46,8 @@ class Entry
 		return $this->_slipMorphData[$form];
 	}
 
-	public function getSlipMorphString($form) {
-		return $this->_slipMorphString[$form];
+	public function getSlipMorphString($form, $slipId) {
+		return $this->_slipMorphString[$form][$slipId];
 	}
 
 	public function getSlipMorphValues($form) {
@@ -64,8 +64,8 @@ class Entry
 
 	public function getUniqueForms() {
 		$forms = array();
-		foreach ($this->getForms() as $form) {
-			$forms[] = $form . "|" . $this->getSlipMorphString($form);
+		foreach ($this->getForms() as $slipId => $form) {
+			$forms[] = $form . "|" . $this->getSlipMorphString($form, $slipId);
 		}
 		return array_unique($forms);
 	}
@@ -101,7 +101,7 @@ class Entry
 		$this->_slipMorphData[$form] = $data;
 	}
 
-	public function setSlipMorphString($form, $string) {
-		$this->_slipMorphString[$form] = $string;
+	public function addSlipMorphString($form, $slipId, $string) {
+		$this->_slipMorphString[$form][$slipId] = $string;
 	}
 }
