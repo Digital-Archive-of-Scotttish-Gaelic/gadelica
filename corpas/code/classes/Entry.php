@@ -30,8 +30,8 @@ class Entry
 		return $this->_forms;
 	}
 
-	public function getFormSlipData($form) {
-		return $this->_formSlipData[$form];
+	public function getFormSlipData($form, $slipId) {
+		return $this->_formSlipData[$form][$slipId];
 	}
 
 	public function getSenses() {
@@ -46,8 +46,8 @@ class Entry
 		return $this->_slipMorphData[$form];
 	}
 
-	public function getSlipMorphString($form) {
-		return $this->_slipMorphString[$form];
+	public function getSlipMorphString($form, $slipId) {
+		return $this->_slipMorphString[$form][$slipId];
 	}
 
 	public function getSlipMorphValues($form) {
@@ -58,14 +58,26 @@ class Entry
 		return $values;
 	}
 
-	public function getFormSlipIds($form) {
-		return $this->_formSlipIds[$form];
+	public function getFormSlipIds($slipId) {
+		return $this->_formSlipIds[$slipId];
 	}
 
+	/**
+	 * Groups the forms by morphological info
+	 * Adds the IDs of the grouped slips into _formSlipIds for parsing in citations
+	 * @return array of strings with wordform and morph info delimited by '|'
+	 */
 	public function getUniqueForms() {
 		$forms = array();
-		foreach ($this->getForms() as $form) {
-			$forms[] = $form . "|" . $this->getSlipMorphString($form);
+		foreach ($this->getForms() as $slipId => $form) {
+			$morphString = $form . "|" . $this->getSlipMorphString($form, $slipId);
+			if (in_array($morphString, $forms)) {
+				$id = array_search($morphString, $forms);
+				array_push($this->_formSlipIds[$id], $slipId);
+			} else {
+				$this->_formSlipIds[$slipId] = array($slipId);
+			}
+			$forms[$slipId] = $form . "|" . $this->getSlipMorphString($form, $slipId);
 		}
 		return array_unique($forms);
 	}
@@ -76,13 +88,12 @@ class Entry
 		$this->_forms = $forms;
 	}
 
-	public function addForm($slipId, $form) {
+	public function addForm($form, $slipId) {
 		$this->_forms[$slipId] = $form;
-		$this->_formSlipIds[$form][] = $slipId;
 	}
 
-	public function addFormSlipData($form, $data) {
-		$this->_formSlipData[$form] = $data;
+	public function addFormSlipData($form, $slipId, $data) {
+		$this->_formSlipData[$form][$slipId] = $data;
 	}
 
 	public function setSenses($senses) {
@@ -101,7 +112,7 @@ class Entry
 		$this->_slipMorphData[$form] = $data;
 	}
 
-	public function setSlipMorphString($form, $string) {
-		$this->_slipMorphString[$form] = $string;
+	public function addSlipMorphString($form, $slipId, $string) {
+		$this->_slipMorphString[$form][$slipId] = $string;
 	}
 }

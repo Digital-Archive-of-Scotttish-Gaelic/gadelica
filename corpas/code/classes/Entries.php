@@ -26,19 +26,11 @@ SQL;
 			$sth = $dbh->prepare($sql);
 			$sth->execute(array(":lemma"=>$entry->getLemma(), ":wordclass"=>$entry->getWordclass()));
 			while ($row = $sth->fetch()) {
-				$entry->addForm($row["auto_id"], $row["wordform"]);
-
-				$slipMorphResults = Slips::getSlipMorphBySlipId($row["auto_id"]);
-				$entry->setSlipMorphString($row["wordform"], implode(' ', $slipMorphResults));
-
-				$slipData = Slips::getSlipsByWordform($entry->getLemma(), $entry->getWordclass(),
-					$row["wordform"], $slipMorphResults);
-				$entry->addFormSlipData($row["wordform"], $slipData);
-				/*$morphData = array();
-				foreach ($slipMorphResults as $result) {
-					$morphData[$result["auto_id"]][$result["relation"]] = $result["value"];
-				}*/
-				//$entry->setSlipMorphData($row["wordform"], $slipMorphResults);
+				$wordform = mb_strtolower($row["wordform"]);  //make all forms lowercase
+				$slipId = $row["auto_id"];
+				$entry->addForm($wordform, $slipId);
+				$slipMorphResults = Slips::getSlipMorphBySlipId($slipId);
+				$entry->addSlipMorphString($wordform, $slipId, implode(' ', $slipMorphResults));
 			}
 		} catch (PDOException $e) {
 			echo $e->getMessage();
