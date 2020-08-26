@@ -26,23 +26,11 @@ SQL;
 			$sth = $dbh->prepare($sql);
 			$sth->execute(array(":lemma"=>$entry->getLemma(), ":wordclass"=>$entry->getWordclass()));
 			while ($row = $sth->fetch()) {
-
-				$wordform = $row["wordform"];
+				$wordform = mb_strtolower($row["wordform"]);  //make all forms lowercase
 				$slipId = $row["auto_id"];
-
-				$entry->addForm($slipId, $wordform);
-
+				$entry->addForm($wordform, $slipId);
 				$slipMorphResults = Slips::getSlipMorphBySlipId($slipId);
 				$entry->addSlipMorphString($wordform, $slipId, implode(' ', $slipMorphResults));
-
-				$slipData = Slips::getSlipsByWordform($entry->getLemma(), $entry->getWordclass(),
-					$wordform, $slipMorphResults);
-				$entry->addFormSlipData($wordform, $slipData);
-				/*$morphData = array();
-				foreach ($slipMorphResults as $result) {
-					$morphData[$result["auto_id"]][$result["relation"]] = $result["value"];
-				}*/
-				//$entry->setSlipMorphData($row["wordform"], $slipMorphResults);
 			}
 		} catch (PDOException $e) {
 			echo $e->getMessage();

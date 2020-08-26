@@ -56,7 +56,7 @@ SQL;
 	 * @param $wordform
 	 * @return array of DB results
 	 */
-  public static function getSlipsByWordform($lemma, $wordclass, $wordform) {
+ /* public static function getSlipsByWordform($lemma, $wordclass, $wordform) {
 	  $slipInfo = array();
 	  $db = new Database();
 	  $dbh = $db->getDatabaseHandle();
@@ -78,7 +78,36 @@ SQL;
 	  } catch (PDOException $e) {
 		  echo $e->getMessage();
 	  }
-  }
+  }*/
+
+	/**
+	 * Gets slip info from the DB
+	 * @param $slipId
+	 * @return array of DB results
+	 */
+	public static function getSlipInfoBySlipId($slipId) {
+		$slipInfo = array();
+		$db = new Database();
+		$dbh = $db->getDatabaseHandle();
+		try {
+			$sql = <<<SQL
+        SELECT s.filename as filename, s.id as id, auto_id, pos, lemma, preContextScope, postContextScope,
+                translation, date_of_lang, title, page
+            FROM slips s
+            JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
+            WHERE s.auto_id = :slipId
+            ORDER BY auto_id ASC
+SQL;
+			$sth = $dbh->prepare($sql);
+			$sth->execute(array(":slipId"=>$slipId));
+			while ($row = $sth->fetch()) {
+				$slipInfo[] = $row;
+			}
+			return $slipInfo;
+		} catch (PDOException $e) {
+			echo $e->getMessage();
+		}
+	}
 
 	/**
 	 * Gets morph info from the DB to populate an Entry with data required for citations

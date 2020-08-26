@@ -33,28 +33,28 @@ HTML;
 			$form = $formElems[0];
 			$morph = $formElems[1];
 		  $morphHtml = "(" . $morph . ")";
-
-	  	$slipData = $entry->getFormSlipData($form);
-	  	$formSlipIds = $entry->getFormSlipIds($form);
+		  $slipData = array();
+	  	$formSlipIds = $entry->getFormSlipIds($slipId);
+			foreach ($formSlipIds as $id) {
+				$slipData[] = Slips::getSlipInfoBySlipId($id);
+			}
 			$slipList = '<table class="table"><tbody>';
-			foreach($slipData as $row) {
-				if (!in_array($row["auto_id"], $formSlipIds)) {
-					continue;
-				}
-				$translation = $this->_formatTranslation($row["translation"]);
-				$slipLinkData = array(
-					"auto_id" => $row["auto_id"],
-					"lemma" => $row["lemma"],
-          "pos" => $row["pos"],
-          "id" => $row["id"],
-					"filename" => $row["filename"],
-					"uri" => "",
-					"date_of_lang" => $row["date_of_lang"],
-          "title" => $row["title"],
-					"page" => $row["page"]
-				);
-				$filenameElems = explode('_', $row["filename"]);
-				$slipList .= <<<HTML
+			foreach($slipData as $data) {
+				foreach ($data as $row) {
+					$translation = $this->_formatTranslation($row["translation"]);
+					$slipLinkData = array(
+						"auto_id" => $row["auto_id"],
+						"lemma" => $row["lemma"],
+						"pos" => $row["pos"],
+						"id" => $row["id"],
+						"filename" => $row["filename"],
+						"uri" => "",
+						"date_of_lang" => $row["date_of_lang"],
+						"title" => $row["title"],
+						"page" => $row["page"]
+					);
+					$filenameElems = explode('_', $row["filename"]);
+					$slipList .= <<<HTML
 					<tr id="#slip_{$row["auto_id"]}" data-slipid="{$row["auto_id"]}"
 							data-filename="{$row["filename"]}"
 							data-id="{$row["id"]}"
@@ -69,6 +69,7 @@ HTML;
 						<td><a target="_blank" href="#" class="entryCitationTextLink"><small>view in text</small></td>
 					</tr>
 HTML;
+				}
 			}
 	  	$slipList .= "</tbody></table>";
 	  	$citationsHtml = <<<HTML
