@@ -29,9 +29,12 @@ class SlipMorphFeature
         break;
       case "v":
         $this->_type = "verb";
-        $this->_props["status"] = "dependent";
-        $this->_props["tense"] = "unclear";
-        $this->_props["mood"] = "active";
+	      $this->_props["mode"] = "finite";
+	      $this->_props["fin_person"] = "unmarked person";
+	      $this->_props["fin_number"] = "unmarked number";
+	      $this->_props["status"] = "dependent";
+	      $this->_props["tense"] = "unclear tense";
+	      $this->_props["mood"] = "active";
         break;
       case "vn":
         $this->_type = "verb";
@@ -39,8 +42,11 @@ class SlipMorphFeature
         break;
       case "V":
         $this->_type = "verb";
+        $this->_props["mode"] = "finite";
+        $this->_props["fin_person"] = "unmarked person";
+        $this->_props["fin_number"] = "unmarked number";
         $this->_props["status"] = "independent";
-        $this->_props["tense"] = "unclear";
+        $this->_props["tense"] = "unclear tense";
         $this->_props["mood"] = "active";
         break;
     }
