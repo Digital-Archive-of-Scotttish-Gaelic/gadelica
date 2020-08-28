@@ -26,7 +26,6 @@ HTML;
   private function _getFormsHtml($entry) {
 	  $html = "<ul>";
 	  $i=0;
-
 	  foreach ($entry->getUniqueForms() as $slipId => $formString) {
 		  $i++;
 			$formElems = explode('|', $formString);
@@ -97,25 +96,30 @@ HTML;
 	private function _getSensesHtml($entry) {
 		$html = "<ul>";
 		$i = 0;
-		foreach ($entry->getSenses() as $sense) {
+		foreach ($entry->getUniqueSenses() as $slipId => $sense) {
 			$i++;
-			$slipData = $entry->getSenseSlipData($sense);
+			$slipData = array();
+			$senseSlipIds = $entry->getSenseSlipIds($slipId);
+			foreach ($senseSlipIds as $id) {
+				$slipData[] = Slips::getSlipInfoBySlipId($id);
+			}
 			$slipList = '<table class="table"><tbody>';
-			foreach($slipData as $row) {
-				$filenameElems = explode('_', $row["filename"]);
-				$translation = $this->_formatTranslation($row["translation"]);
-				$slipLinkData = array(
-					"auto_id" => $row["auto_id"],
-					"lemma" => $row["lemma"],
-					"pos" => $row["pos"],
-					"id" => $row["id"],
-					"filename" => $row["filename"],
-					"uri" => "",
-					"date_of_lang" => $row["date_of_lang"],
-					"title" => $row["title"],
-					"page" => $row["page"]
-				);
-				$slipList .= <<<HTML
+			foreach($slipData as $data) {
+				foreach ($data as $row) {
+					$filenameElems = explode('_', $row["filename"]);
+					$translation = $this->_formatTranslation($row["translation"]);
+					$slipLinkData = array(
+						"auto_id" => $row["auto_id"],
+						"lemma" => $row["lemma"],
+						"pos" => $row["pos"],
+						"id" => $row["id"],
+						"filename" => $row["filename"],
+						"uri" => "",
+						"date_of_lang" => $row["date_of_lang"],
+						"title" => $row["title"],
+						"page" => $row["page"]
+					);
+					$slipList .= <<<HTML
 					<tr id="#slip_{$row["auto_id"]}" data-slipid="{$row["auto_id"]}"
 							data-filename="{$row["filename"]}"
 							data-id="{$row["id"]}"
@@ -130,6 +134,7 @@ HTML;
 						<td><a target="_blank" href="#" class="entryCitationTextLink"><small>view in text</small></td>
 					</tr>
 HTML;
+				}
 			}
 			$slipList .= "</tbody></table>";
 			$citationsHtml = <<<HTML
