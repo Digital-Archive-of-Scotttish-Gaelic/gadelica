@@ -6,10 +6,7 @@ class Entries
 	public static function getEntry($lemma, $wordclass) {
 		$entry = new Entry($lemma, $wordclass);
 		$entry = self::_getWordforms($entry);
-		$entry->setSenses(SenseCategories::getAllUsedCategories($lemma, $wordclass));
-		foreach ($entry->getSenses() as $sense) {
-			$entry->addSenseSlipData($sense, Slips::getSlipsBySenseCategory($lemma, $wordclass, $sense));
-		}
+		$entry = self::_getSenses($entry);
 		return $entry;
 	}
 
@@ -33,6 +30,35 @@ SQL;
 				$entry->addSlipMorphString($wordform, $slipId, implode(' ', $slipMorphResults));
 			}
 		} catch (PDOException $e) {
+			echo $e->getMessage();
+		}
+		return $entry;
+	}
+
+	private static function _getSenses($entry) {
+/*		$entry->setSenses(SenseCategories::getAllUsedCategories($entry->getLemma(), $entry->getWordclass()));
+		foreach ($entry->getSenses() as $sense) {
+			$entry->addSenseSlipData($sense, Slips::getSlipsBySenseCategory($entry->getLemma(), $entry->getWordclass(), $sense));
+		}
+		return $entry;
+*/
+		$db = new Database();
+		$dbh = $db->getDatabaseHandle();
+		try {
+			$sql = <<<SQL
+        SELECT category, auto_id FROM senseCategory sc
+        JOIN slips s ON s.auto_id = sc.slip_id
+        JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
+        WHERE lemma = :lemma AND wordclass = :wordclass
+            ORDER BY auto_id ASC
+SQL;
+			$sth = $dbh->prepare($sql);
+			$sth->execute(array(":lemma"=>$entry->getLemma(), ":wordclass"=>$entry->getWordclass()));
+			while ($row = $sth->fetch()) {
+				$sense = $row["category"];
+				$slipId = $row["auto_id"];
+				$entry->addSense($sense, $slipId);
+			} } catch (PDOException $e) {
 			echo $e->getMessage();
 		}
 		return $entry;
