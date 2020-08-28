@@ -90,26 +90,27 @@ This embedded clause can be a <em>declarative clause</em> introduced by the part
     <small class="text-muted">‘My wife was in the hospital, where she would not see (notice) what I was doing.’ [#2 120]</small></li>
 </ul>
 <hr/>
-<p>Other examples:</p>
+<p>The following examples need further consideration:</p>
 <ul>
-  <li><strong>“Dèilig ri seo mar a chì thu iomchaidh,” sgrìobh e.</strong><br/>
-    <small class="text-muted">‘’ [#2 116]</small></li>
-  <li><strong>Mar a chì thu, bha comharradh eile gun nochdadh.</strong><br/>
+  <li><strong>“Dèilig ri seo <mark>mar a chì thu iomchaidh</mark>.”</strong><br/>
+    <small class="text-muted">‘“Deal with this as you see fit.”’ [#2 116]</small></li>
+  <li><strong><mark>Mar a chì thu</mark>, bha comharradh eile gun nochdadh.</strong><br/>
     <small class="text-muted">‘As you will see, there was another sign that would appear.’ [#2 121]</small></li>
-  <li><strong>’S e seòrsa de cheartas fiadhaich a th’ anns an dìoghaltas, agus sin mar a chunnaic Syd a’ chùis.</strong><br/>
-    <small class="text-muted">‘’ [#2 61]</small></li>
-  <li><strong>Dhìrich e gu bàrr a’ bhalla cloiche a bha timcheall an taighe agus thog e deilbh dhen a h-uile càil a chitheadh e tro na craobhan.</strong><br/>
-    <small class="text-muted">‘’ [#2 66]</small></li>
-  <li><strong>Leig e an uair sin às a ghrèim. Chunnaic feadhainn mar a thachair agus chaidh Pàdraig a shàbhaladh.</strong><br/>
-    <small class="text-muted">‘’ [#2 45]</small></li>
-  <li><strong></strong><br/>
-    <small class="text-muted">‘’ [#2 ]</small></li>
+  <li><strong>’S e seòrsa de cheartas fiadhaich a th’ anns an dìoghaltas, agus sin <mark>mar a chunnaic Syd a’ chùis</mark>.</strong><br/>
+    <small class="text-muted">‘Revenge is a sort of wild justice, and that is how Syd saw the matter.’ [#2 61]</small></li>
+  <li><strong>Dhìrich e gu bàrr a’ bhalla cloiche a bha timcheall an taighe agus thog e deilbh dhen a h-uile càil a <mark>chitheadh e tro na craobhan</mark>.</strong><br/>
+    <small class="text-muted">‘He climbed to the top of the stone wall that was around the house and he took pictures of everything that he would see through the trees.’ [#2 66]</small></li>
+  <li><strong>Leig e an uair sin às a ghrèim. <mark>Chunnaic feadhainn mar a thachair</mark> agus chaidh Pàdraig a shàbhaladh.</strong><br/>
+    <small class="text-muted">‘He then let go. Some people saw wht happened and Peter was saved.’ [#2 45]</small></li>
 </ul>
 <hr/>
-<p><strong>faic</strong> does not appear to occur in the progressive, suggesting that it is an inchoative verb, involving an instantaneous change of state.</p>
-<p><strong>faic</strong> occurs rarely in the imperative and in intentional constructions (chaidh mi a dh’fhaicinn ...), suggesting that it is a non-volitional verb.</p>
-<p>It is unclear if pseudo-transitive <strong>faic</strong> can occur with embedded direct questions (chì mi a bheil ...).</p>
-
+<p>Notes:</p>
+<ul>
+  <li><strong>faic</strong> does not appear to occur in the progressive (e.g. <em>tha mi a’ faicinn ...</em>), suggesting that it is an ‘inchoative verb’, involving an instantaneous change of state.</li>
+  <li><strong>faic</strong> occurs rarely in the imperative and in intentional constructions (e.g. <em>chaidh mi a dh’fhaicinn ...</em>), suggesting that it is a ‘non-volitional’ verb.</li>
+  <li>Volitional, potentially progressive alternatives to <strong>faic</strong> are <strong><a href="seall.php">seall</a></strong>, <strong><a href="coimhead.php">coimhead</a></strong>.</li>
+  <li>It is unclear if pseudo-transitive <strong>faic</strong> can occur with embedded direct questions (e.g. <em>chì mi a bheil ...</em>).</li>
+</ul>
 
 
 

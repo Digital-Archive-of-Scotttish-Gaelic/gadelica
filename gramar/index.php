@@ -23,10 +23,12 @@ require_once "includes/htmlHeader.php";
       <a href="xx/copula.php">is</a>, 
       <a href="gd/conjunctions/ma.php">ma</a>, 
       <a href="gd/adjectives/moor.php">mòr</a>,
+      <a href="gd/verbs/mothaich.php">mothaich</a>,
       <a href="gd/conjunctions/mura.php">mura</a>, 
       <a href="gd/particles/nach.php">nach</a>, 
       <a href="gd/conjunctions/nan.php">nan</a>,
       <a href="gd/verbs/rach.php">rach</a>,
+      <a href="gd/verbs/seall.php">seall</a>,
       <a href="gd/adverbs/seachad.php">seachad</a>,
       <a href="gd/verbs/theab.php">theab</a>,
       <a href="gd/verbs/thig.php">thig</a>
@@ -40,9 +42,11 @@ require_once "includes/htmlHeader.php";
       <a href="gd/verbs/rach.php">go</a>, 
       <a href="xx/degreeExpressions.php">hardly</a>, 
       <a href="en/if.php">if</a>, 
+      <a href="gd/verbs/seall.php">look</a>,
       <a href="xx/degreeExpressions.php">nearly</a>, 
       <a href="xx/degreeExpressions.php">scarcely</a>,
       <a href="gd/verbs/faic.php">see</a>,
+      <a href="gd/verbs/seall.php">show</a>,
     </p>
     
 <?php
