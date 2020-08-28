@@ -15,6 +15,7 @@ require_once "includes/htmlHeader.php";
       <a href="xx/copula.php">bu</a>, 
       <a href="gd/particles/cha.php">cha</a>, 
       <a href="gd/prepositions/an_deeidh.php">dèidh</a>, 
+      <a href="gd/verbs/faic.php">faic</a>,
       <a href="gd/verbs/faigh.php">faigh</a>,
       <a href="gd/adjectives/gann.php">gann</a>,
       <a href="gd/particles/gun.php">gun</a>,
@@ -40,7 +41,8 @@ require_once "includes/htmlHeader.php";
       <a href="xx/degreeExpressions.php">hardly</a>, 
       <a href="en/if.php">if</a>, 
       <a href="xx/degreeExpressions.php">nearly</a>, 
-      <a href="xx/degreeExpressions.php">scarcely</a>
+      <a href="xx/degreeExpressions.php">scarcely</a>,
+      <a href="gd/verbs/faic.php">see</a>,
     </p>
     
 <?php
