@@ -73,13 +73,7 @@ When the complement is a person, the meaning is something like ‘go/come to vis
   <li><strong>Bha am poileas a’ <mark>coimhead airson Fiat bheag dhearg</mark>.</strong><br/>
     <small class="text-muted">‘The police were looking for a little red Fiat.’ [#2 59]</small></li>
 </ul>
-
-
-
-
-IDIOM?
-dh’fhàs an là cho garbh ’s gun deach Dan ga coimhead dhachaigh sàbhailt. [126]
-<p>Note that these three idioms are very close to being Beurlachas,</p>
+<p>Note that these two idioms are very close to being Beurlachas,</p>
 <hr/>
 <h3>Transitive uses</h3>
 <p>‘see, notice someone/something’</p>
@@ -102,38 +96,51 @@ dh’fhàs an là cho garbh ’s gun deach Dan ga coimhead dhachaigh sàbhailt. 
 TRANS + AG
 Anns a’ chùirt thuirt e gu robh e gan coimhead a’ gàireachdainn, a’ fanaid air. [75]
 
+IDIOM?
+dh’fhàs an là cho garbh ’s gun deach Dan ga coimhead dhachaigh sàbhailt. [126]
+
+
+
+
+
+
+
+
+
+
+
+
+
 <li><strong>Saoilidh mise gur e balach liugach a th’ ann.” Rinn Syd dealbh air na inntinn, ach cha b’ ann liugach a bha esan ga choimhead idir.</strong><br/>
     <small class="text-muted">‘’ [#2 60]</small></li>
+<hr/>
+<h3>Pseudo-transitive</h3>
 
-Pseudo-transitive
-
-GUN/NACH
-Tha mi coimhead gu bheil tinneas craicinn ort. [67]
- “Tha mi coimhead gu bheil thu a’ dèanamh nam pools,” [10]
- “Tha mi a’ coimhead gu bheil mi aig an taigh cheàrr. [13]
-Ach bha feadhainn a’ coimhead nach freagradh poileasaidh an t-siorraidh a h-uile eucoir. [74]
-
-QUESTION
-Bha e ag ràdh gur ann airson coimhead càit an laigheadh na geòidh a bha e. [79]
-
-
+<p>embedded declarative clause, i.e. <strong>bi a’ coimhead gun/nach</strong>:</p>
 <ul>
-  <li>Mar a tha thu a’ coimhead, ghlac an teine mi, ach fhuair mi air falbh, agus thog eathar mi.</li>
+  <li><strong>“Tha mi <mark>coimhead gu bheil</mark> tinneas craicinn ort.”</strong><br/>
+    <small class="text-muted">‘I see that you have a skin complaint.’ [#2 67]</small></li>
+  <li><strong>“Tha mi a’ <mark>coimhead gu bheil</mark> mi aig an taigh cheàrr.”</strong><br/>
+    <small class="text-muted">“I see that I am at the wrong house.” [#2 13]</small></li>
+  <li><strong>Ach bha feadhainn a’ <mark>coimhead nach freagradh</mark> poileasaidh an t-siorraidh a h-uile eucoir.</strong><br/>
+    <small class="text-muted">‘But some people saw that the sheriff’s policy would not suit every crime.’ [#2 74]</small></li>
+</ul>
+<p>This usage is clearly related to <strong><a href="faic.php">faic gu (bheil)</a></strong> and <strong><a href="mothaich.php">mothaich gu (bheil)</a></strong>.
+The following example also appears to be related to this usage:</p>
+<ul>
+  <li><strong>“<mark>Mar a tha thu a’ coimhead</mark>, ghlac an teine mi, ach fhuair mi air falbh, agus thog eathar mi.”</strong><br/>
+    <small class="text-muted">“As you can see, the fire caught me, but I got away, and a boat picked me up.” [#2 46]</small></li>
 </ul>
 
+<p>embedded constituent question</p>
+<ul>
+  <li><strong>Bha e ag ràdh gur ann airson <mark>coimhead càit an laigheadh</mark> na geòidh a bha e.</strong><br/>
+    <small class="text-muted">‘He was saying that it was for seeing where the geese would lay [their eggs].’ [#2 79]</small></li>
+</ul>
+<p>cf. faic càite an</p>
+
+
 <hr/>
-
-
-
-
-
-
-
-
-
-
-
-
 <?php
 require_once "../../includes/htmlFooter.php";
 ?>
