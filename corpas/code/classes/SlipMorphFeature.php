@@ -4,9 +4,11 @@ class SlipMorphFeature
 {
   private $_abbr, $_type;
   private $_props = array();
-  private $_propTitles = array("noun"=>array("numgen", "case"),
-	  "verb"=>array("mode", "status", "imp_number", "fin_number",
-		  "imp_person", "fin_person", "tense", "mood"));
+  private $_propTitles = array(
+  	  "noun"=>array("numgen", "case"),
+	    "verb"=>array("mode", "status", "imp_number", "fin_number",
+		    "imp_person", "fin_person", "tense", "mood"),
+		  "preposition"=>array("prep_mode", "prep_person", "prep_number", "prep_gender"));
 
   public function __construct($abbr) {
     $this->_abbr = $abbr;
@@ -29,9 +31,12 @@ class SlipMorphFeature
         break;
       case "v":
         $this->_type = "verb";
-        $this->_props["status"] = "dependent";
-        $this->_props["tense"] = "unclear";
-        $this->_props["mood"] = "active";
+	      $this->_props["mode"] = "finite";
+	      $this->_props["fin_person"] = "unmarked person";
+	      $this->_props["fin_number"] = "unmarked number";
+	      $this->_props["status"] = "dependent";
+	      $this->_props["tense"] = "unclear tense";
+	      $this->_props["mood"] = "active";
         break;
       case "vn":
         $this->_type = "verb";
@@ -39,10 +44,22 @@ class SlipMorphFeature
         break;
       case "V":
         $this->_type = "verb";
+        $this->_props["mode"] = "finite";
+        $this->_props["fin_person"] = "unmarked person";
+        $this->_props["fin_number"] = "unmarked number";
         $this->_props["status"] = "independent";
-        $this->_props["tense"] = "unclear";
+        $this->_props["tense"] = "unclear tense";
         $this->_props["mood"] = "active";
         break;
+	    case "p":
+	    	$this->_props["prep_mode"] = "basic";
+	    	break;
+	    case "P":
+		    $this->_props["prep_mode"] = "conjugated";
+		    $this->_props["prep_person"] = "third person";
+		    $this->_props["prep_number"] = "singular";
+		    $this->_props["prep_gender"] = "masculine";
+		    break;
     }
   }
 

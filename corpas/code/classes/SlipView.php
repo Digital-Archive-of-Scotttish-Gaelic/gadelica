@@ -114,7 +114,7 @@ HTML;
     echo $this->_writeWordClassesSelect();
     $props = $this->_slip->getSlipMorph()->getProps();  //the morph data
     $relations = array("numgen", "case", "mode", "fin_person", "imp_person", "fin_number",
-	    "imp_number", "status", "tense", "mood");
+	    "imp_number", "status", "tense", "mood", "prep_mode", "prep_person", "prep_number", "prep_gender");
     $options["numgen"] = array("masculine singular", "feminine singular", "plural", "singular (gender unclear)",
       "feminine dual", "unclear");
     $options["case"] = array("nominative", "genitive", "dative", "unclear");
@@ -126,6 +126,11 @@ HTML;
     $options["status"] = array("unclear status", "dependent", "independent", "relative");
     $options["tense"] = array("unclear tense", "present", "future", "past", "conditional");
     $options["mood"] = array("active", "impersonal", "unclear mood");
+    //prepositions
+	  $options["prep_mode"] = array("basic", "augmented", "conjugated", "possessive", "unclear mode");
+	  $options["prep_person"] = array("first person", "second person", "third person", "unclear person");
+	  $options["prep_number"] = array("singular", "plural", "unclear number");
+	  $options["prep_gender"] = array("masculine", "feminine", "unclear gender");
 		//create the HTML options for each relation
 	  $optionsHtml = array();
     foreach ($relations as $relation) {
@@ -139,12 +144,41 @@ HTML;
     }
     $nounSelectHide = $this->_slip->getWordClass() == "noun" ? "" : "hide";
     $verbSelectHide = $this->_slip->getWordClass() == "verb" ? "" : "hide";
+    $prepSelectHide = $this->_slip->getWordClass() == "preposition" ? "" : "hide";
 	  $impVerbSelectHide = $props["mode"] == "imperative" ? "" : "hide";
 	  $finVerbSelectHide = $props["mode"] == "finite" ? "" : "hide";
     $verbalNounHide = $props["mode"] == "verbal noun" ? "hide" : "";
+    $conjPosPrepHide = $props["prep_mode"] != "conjugated" && $props["prep_mode"] != "possessive" ? "hide" : "";
+    $genderPrepHide = "hide";
+    //show/hide gender dropdown
+    if ($conjPosPrepHide != "hide") {
+    	$genderPrepHide = ($props["prep_person"] != "third person") || ($props["prep_number"] != "singular") ? "hide" : "";
+    }
     echo <<<HTML
         <div class="editSlipSectionContainer">
           <h5>Morphological information</h5>
+            <div id="prepSelects" class="{$prepSelectHide}">
+                <label for="posPrepMode">Mode:</label>
+                <select name="prep_mode" id="posPrepMode" class="form-control col-2">
+                  {$optionsHtml["prep_mode"]}
+                </select>
+                <span id="conjPosPrepOptions" class="{$conjPosPrepHide}">
+                  <label for="posPrepPerson">Person:</label>
+                  <select name="prep_person" id="posPrepPerson" class="form-control col-2">
+                    {$optionsHtml["prep_person"]}
+                  </select>
+                  <label for="posPrepNumber">Number:</label>
+                  <select name="prep_number" id="posPrepNumber" class="form-control col-2">
+                    {$optionsHtml["prep_number"]}
+                  </select>
+                  <span id="genderPrepOptions" class="{$genderPrepHide}">
+                    <label for="posPrepGender">Gender:</label>
+                    <select name="prep_gender" id="posPrepGender" class="form-control col-2">
+                      {$optionsHtml["prep_gender"]}
+										</select>
+									</span>
+								</span>
+            </div>
             <div id="nounSelects" class="{$nounSelectHide}">
                 <label for="posNumberGender">Number:</label>
                 <select name="numgen" id="posNumberGender" class="form-control col-2">
@@ -437,16 +471,28 @@ HTML;
             });
 
             $('#wordClass').on('change', function() {
-              if($(this).val() == "verb") {
-                $('#verbSelects').show();
-                $('#nonVerbalNounOptions').show();
-                $('#nounSelects').hide();
-              } else if ($(this).val() == "noun") {
-                $('#nounSelects').show();
-                $('#verbSelects').hide();
-              } else {
-                $('#nounSelects').hide();
-                $('#verbSelects').hide();
+              var wordclass = $(this).val();
+              switch (wordclass) {
+                case "verb":
+                  $('#verbSelects').show();
+                  $('#nonVerbalNounOptions').show();
+                  $('#nounSelects').hide();
+                  $('#prepSelects').hide();
+                  break;
+                case "noun":
+                  $('#nounSelects').show();
+                  $('#verbSelects').hide();
+                  $('#prepSelects').hide();
+                  break;
+                case "preposition":
+                  $('#prepSelects').show();
+                  $('#nounSelects').hide();
+                  $('#verbSelects').hide();
+                  break;
+                default:
+                  $('#nounSelects').hide();
+                  $('#verbSelects').hide();
+                  $('#prepSelects').hide();
               }
             });
 
@@ -463,6 +509,35 @@ HTML;
               } else if (mode == "finite") {
                 $('#finiteVerbOptions').show();
                 $('#imperativeVerbOptions').hide();
+              }
+            });
+            
+            $('#posPrepMode').on('change', function () {
+              var mode = $(this).val();
+              if (mode == "conjugated" || mode == "possessive") {
+                $('#conjPosPrepOptions').show();
+              } else {
+                $('#conjPosPrepOptions').hide();
+              }
+            });
+            
+            $('#posPrepPerson').on('change', function () {
+              var person = $(this).val();
+              var number = $('#posPrepNumber').val();
+              if (person == 'third person' && number == 'singular') {
+                $('#genderPrepOptions').show();
+              } else {
+                $('#genderPrepOptions').hide();
+              }
+            });
+            
+            $('#posPrepNumber').on('change', function () {
+              var number = $(this).val();
+              var person = $('#posPrepPerson').val();
+              if (person == 'third person' && number == 'singular') {
+                $('#genderPrepOptions').show();
+              } else {
+                $('#genderPrepOptions').hide();
               }
             });
         </script>

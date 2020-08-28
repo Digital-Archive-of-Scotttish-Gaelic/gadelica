@@ -347,29 +347,43 @@ $(function () {
   }
 
   function saveSlip() {
+    var wordclass = $('#wordClass').val();
     var starred = $('#slipStarred').prop('checked') ? 1 : 0;
     var translation = CKEDITOR.instances['slipTranslation'].getData();
     var notes = CKEDITOR.instances['slipNotes'].getData();
     var data = {action: "saveSlip", filename: $('#slipFilename').text(), id: $('#slipId').text(),
       auto_id: $('#auto_id').val(), pos: $('#pos').val(), starred: starred, translation: translation,
       notes: notes, preContextScope: $('#slipContext').attr('data-precontextscope'),
-      postContextScope: $('#slipContext').attr('data-postcontextscope'), wordClass: $('#wordClass').val()};
-    if ($('#wordClass').val() == "noun") {      //noun data
-      data['numgen'] = $('#posNumberGender').val();
-      data['case'] = $('#posCase').val();
-    } else {                                    //verb data
-      var mode = $('#posMode').val();
-      data['mode'] = mode;
-      if (mode == "imperative") {
-        data['imp_person'] = $('#posImpPerson').val();
-        data['imp_number'] = $('#posImpNumber').val();
-      } else if (mode == "finite") {
-        data['fin_person'] = $('#posFinPerson').val();
-        data['fin_number'] = $('#posFinNumber').val();
-        data['status'] = $('#posStatus').val();
-        data['tense'] = $('#posTense').val();
-        data['mood'] = $('#posMood').val();
-      }
+      postContextScope: $('#slipContext').attr('data-postcontextscope'), wordClass: wordclass};
+    switch (wordclass) {
+      case "noun":
+        data['numgen'] = $('#posNumberGender').val();
+        data['case'] = $('#posCase').val();
+        break;
+      case "verb":
+        var mode = $('#posMode').val();
+        data['mode'] = mode;
+        if (mode == "imperative") {
+          data['imp_person'] = $('#posImpPerson').val();
+          data['imp_number'] = $('#posImpNumber').val();
+        } else if (mode == "finite") {
+          data['fin_person'] = $('#posFinPerson').val();
+          data['fin_number'] = $('#posFinNumber').val();
+          data['status'] = $('#posStatus').val();
+          data['tense'] = $('#posTense').val();
+          data['mood'] = $('#posMood').val();
+        }
+        break;
+      case "preposition":
+          data["prep_mode"] = $('#posPrepMode').val();
+          if (data["prep_mode"] == 'conjugated' || data["prep_mode"] == 'possessive') {
+            data["prep_person"] = $('#posPrepPerson').val();
+            data["prep_number"] = $('#posPrepNumber').val();
+            if (data["prep_person"] == 'third person' && data["prep_number"] == 'singular') {
+              data["prep_gender"] = $('#posPrepGender').val();
+            }
+          }
+        break;
     }
     $.post("ajax.php", data, function (response) {
       console.log(response);        //TODO: add some response code on successful save

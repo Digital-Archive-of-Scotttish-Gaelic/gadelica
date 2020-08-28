@@ -26,7 +26,7 @@ SQL;
 			$sth = $dbh->prepare($sql);
 			$sth->execute(array(":lemma"=>$entry->getLemma(), ":wordclass"=>$entry->getWordclass()));
 			while ($row = $sth->fetch()) {
-				$wordform = mb_strtolower($row["wordform"]);  //make all forms lowercase
+				$wordform = mb_strtolower($row["wordform"], "UTF-8");  //make all forms lowercase and ensure Unicode
 				$slipId = $row["auto_id"];
 				$entry->addForm($wordform, $slipId);
 				$slipMorphResults = Slips::getSlipMorphBySlipId($slipId);
