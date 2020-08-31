@@ -144,6 +144,7 @@ HTML;
   }
 
   public function writeSearchResults($results, $resultTotal) {
+	  Slips::writeSlipDiv();
     //Add a back link to originating script
     echo <<<HTML
         <p><a href="{$this->_origin}" title="Back to search">&lt; Back to search</a></p>
@@ -189,7 +190,6 @@ HTML;
 HTML;
 
     }
-    Slips::writeSlipDiv();
     $this->_writeResultsJavascript($resultTotal);
   }
 
