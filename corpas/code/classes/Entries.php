@@ -50,7 +50,7 @@ SQL;
         JOIN slips s ON s.auto_id = sc.slip_id
         JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
         WHERE lemma = :lemma AND wordclass = :wordclass
-            ORDER BY auto_id ASC
+            ORDER BY category ASC
 SQL;
 			$sth = $dbh->prepare($sql);
 			$sth->execute(array(":lemma"=>$entry->getLemma(), ":wordclass"=>$entry->getWordclass()));
