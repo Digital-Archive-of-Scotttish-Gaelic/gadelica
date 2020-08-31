@@ -3,7 +3,8 @@ require_once "../../includes/htmlHeader.php";
 ?>
 <h1>coimhead</h1>
 <p><strong>coimhead</strong> is a <a href="../../xx/regularVerbs.php">regular verb</a> of visual attention/perception corresponding to the English ‘look, see’.
-It is closely related to the other visual verbs <strong><a href="faic.php">faic</a></strong> ‘see’, <strong><a href="seall.php">seall</a></strong> ‘look, show’, <strong><a href="mothaich.php">mothaich</a></strong> ‘notice’.
+It is closely related to the other visual verbs <strong><a href="faic.php">faic</a></strong> ‘see’, <strong><a href="seall.php">seall</a></strong> ‘look, show’, <strong><a href="mothaich.php">mothaich</a></strong> ‘notice’,
+and the idiom <strong><a href="../nouns/suuil.php#thoir_suuil_air">thoir sùil (air)</a></strong> ‘look (at)’.
 It is also closely related to the verb of auditory attention <strong><a href="eeist.php">èist</a></strong> ‘listen’.</p>
 <p>The verbal noun form of <strong>coimhead</strong> is <strong>coimhead</strong>, and this appears to be by far the most common form of the verb.</p>
 <hr/>
