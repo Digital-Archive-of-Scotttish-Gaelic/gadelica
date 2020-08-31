@@ -40,7 +40,7 @@ class SlipMorphFeature
         break;
       case "vn":
         $this->_type = "verb";
-        $this->_props['mode'] = "verbal noun";
+	        $this->_props['mode'] = "verbal noun";
         break;
       case "V":
         $this->_type = "verb";
