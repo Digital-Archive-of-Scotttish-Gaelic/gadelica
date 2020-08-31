@@ -2,7 +2,7 @@
 require_once "../../includes/htmlHeader.php";
 ?>
 <h1>mothaich</h1>
-<p><strong>mothaich</strong> is a regular verb visual perception corresponding to the English ‘notice’. 
+<p><strong>mothaich</strong> is a regular verb of visual perception corresponding to the English ‘notice’. 
 It is closely related to the verb <strong><a href="faic.php">faic</a></strong> ‘see’.</p>
 <p>The main uses of <strong>mothaich</strong> are:</p>
 <ul>
