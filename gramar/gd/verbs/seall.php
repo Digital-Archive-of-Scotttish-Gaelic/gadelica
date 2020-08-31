@@ -17,7 +17,7 @@ It is also closely related to the verb of auditory attention <strong><a href="ee
   </li>
   <li>transitive
     <ul>
-      <li><a href="#do">with preposition <em>do</em></a> e.g. <em>faic rud do dhuine</em></li>
+      <li><a href="#do">with preposition <em>do</em></a> e.g. <em>seall rud do dhuine</em></li>
     </ul>
   </li>
 </ul>
