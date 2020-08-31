@@ -33,7 +33,10 @@ $(function () {
   });
   /** -- **/
 
-  $(document).on('click', '.slipLink', function () {
+  /**
+   * SB This should now be deprecated??
+   */
+  /*$(document).on('click', '.slipLink', function () {
     //reset the slip form
     resetSlip();
     //update link to view link
@@ -82,8 +85,9 @@ $(function () {
         writeSlipContext(filename, id);
       });
   });
+*/
 
-  $('.slipLink2').on('click', function () {
+  $(document).on('click', '.slipLink2',  function () {
     if ($(this).attr("data-resultindex") != -1) {   //test for use in non-search results pages
       $(this).removeClass('createSlipLink');
       $(this).html('view slip');
@@ -236,13 +240,31 @@ $(function () {
           slipLinkText = 'view slip';
           createSlipStyle = '';
         }
+        /*
+            <a href="#" class="slipLink2 {$createSlipStyle}"
+                    data-toggle="modal" data-target="#slipModal"
+                    data-auto_id="{$result["auto_id"]}"
+                    data-headword="{$result["lemma"]}"
+                    data-pos="{$result["pos"]}"
+                    data-id="{$result["id"]}"
+                    data-xml="{$this->_xmlFile->getFilename()}"
+                    data-uri="{$context["uri"]}"
+                    data-date="{$result["date_of_lang"]}"
+                    data-title="{$result["title"]}"
+                    data-page="{$result["page"]}"
+                    data-resultindex="{$index}">
+                    {$slipLinkText}
+                </a>
+            </small>
+         */
         html = '<tr>';
         html += '<td style="text-align: right;">'+val.pre.output + '</td>';
         html += '<td><a href="viewText.php?uri=' + val.uri + '&id=' + val.id + '"';
         html += ' data-toggle="tooltip" data-html="true" title="' + title + '">';
         html += val.word + '</a>';
         html += '<td>' + val.post.output + '</td>';
-        html += '<td><small><a href="#" class="slipLink ' + createSlipStyle + '" data-uri="' + val.uri + '"';
+        html += '<td><small><a href="#" class="slipLink2 ' + createSlipStyle + '" data-uri="' + val.uri + '"';
+        html += ' data-toggle="modal" data-target="#slipModal" ';
         html += ' data-headword="' + headword + '" data-pos="' + pos + '"';
         html += ' data-id="' + val.id + '" data-xml="' + val.filename + '"';
         html += ' data-date="' + val.date + '" data-title="' + val.title + '" data-page="' + val.page + '"';
