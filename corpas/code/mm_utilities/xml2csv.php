@@ -71,7 +71,6 @@ foreach ($dates as $key => $value) {
 }
 */
 
-
 $it = new RecursiveDirectoryIterator('../../xml');
 foreach (new RecursiveIteratorIterator($it) as $nextFile) {
   if ($nextFile->getExtension()=='xml') {
@@ -79,7 +78,7 @@ foreach (new RecursiveIteratorIterator($it) as $nextFile) {
     $xml->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/');
     foreach ($xml->xpath("//dasg:w") as $nextWord) {
       $lemma = (string)$nextWord['lemma'];
-      if ($lemma /*&& !strpos($lemma,' ')*/) { echo $lemma . ','; }
+      if ($lemma  /*&& !strpos($lemma,' ')*/ ) { echo $lemma . ','; }
       else { echo $nextWord . ','; }
       $filename = substr($nextFile,10);
       echo $filename . ',';
