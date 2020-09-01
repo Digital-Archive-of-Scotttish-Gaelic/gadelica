@@ -92,7 +92,7 @@ SQL;
 		try {
 			$sql = <<<SQL
         SELECT s.filename as filename, s.id as id, auto_id, pos, lemma, preContextScope, postContextScope,
-                translation, date_of_lang, title, page
+                translation, date_of_lang, title, page, starred
             FROM slips s
             JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
             WHERE s.auto_id = :slipId

@@ -1,5 +1,6 @@
 <?php
 
+require_once "includes/include.php";
 require_once "TCPDF/tcpdf.php";
 
 class PrintSlipView
@@ -8,71 +9,93 @@ class PrintSlipView
 		return $this;
 	}
 
-	public function write() {
+	public function write($slipIds) {
 		$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 		// set document information
 		$pdf->SetCreator(PDF_CREATOR);
-		$pdf->SetAuthor('Stephen Barrett');
+		$pdf->SetAuthor('Faclair Excerpting System');
 		$pdf->SetTitle('Faclair Slips');
-		//$pdf->SetSubject('TCPDF Tutorial');
-		//$pdf->SetKeywords('TCPDF, PDF, example, test, guide');
-
-// set header data
-		$pdf->SetHeaderData("", 1, "Faclair Slips Output", "Some subheading", array(0,64,255), array(0,64,128));
-		$pdf->setFooterData(array(0,64,0), array(0,64,128));
-
-// set header and footer fonts
-		$pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
-		$pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
-
 // set default monospaced font
 		$pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-
 // set margins
 		$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
-		$pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
-		$pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
-
 // set auto page breaks
-		$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-
-// set image scale factor
-		$pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
-
-// set some language-dependent strings (optional)
-		if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
-			require_once(dirname(__FILE__).'/lang/eng.php');
-			$pdf->setLanguageArray($l);
-		}
-
-// ---------------------------------------------------------
-
+		$pdf->SetAutoPageBreak(FALSE, PDF_MARGIN_BOTTOM);
+// remove default header/footer
+		$pdf->setPrintHeader(false);
+		$pdf->setPrintFooter(false);
 // set default font subsetting mode
 		$pdf->setFontSubsetting(true);
-
-// Set font
+// Set fonts
 // dejavusans is a UTF-8 Unicode font, if you only need to
 // print standard ASCII chars, you can use core fonts like
 // helvetica or times to reduce file size.
+		$pdf->AddFont('times', '', 'times.php');
+		$pdf->AddFont('dejavusans', '', 'dejavusans.php');
 		$pdf->SetFont('times', '', 14, '', true);
-
-// Add a page
-// This method has several options, check the source code documentation for more information.
 		$pdf->AddPage();
+		$i= 0;
+		foreach ($slipIds as $slipId) {
+			$i++;
+			$slipInfo = Slips::getSlipInfoBySlipId($slipId)[0];
+			$headword = $slipInfo["lemma"];
+			$filename = $slipInfo["filename"];
+			$filenameElems = explode('_', $filename);
+			$textNum = $filenameElems[0];
+			$checkmark = "";
+			if ($slipInfo["starred"]) {
+				$checkmark = $pdf->unhtmlentities("&#x2713;");
+			}
+			$checked = 'Ch <span style="font-family:dejavusans;">' . $checkmark . '</span>';
+			$id = $slipInfo["auto_id"];
+			$fileHandler = new XmlFileHandler($filename);
+			$context = $fileHandler->getContext($slipInfo["id"], $slipInfo["preContextScope"], $slipInfo["postContextScope"]);
+			$citation = $context["pre"]["output"]
+				. ' <span style="background-color: #CCCCCC">' . $context["word"] . '</span> '
+				. $context["post"]["output"];
+			$translation = $slipInfo["translation"];
+			$date = $slipInfo["date_of_lang"];
+			$reference = $date . ' <em>' . $slipInfo["title"] . '</em> ' . $slipInfo["page"];
 
-// set text shadow effect
-//		$pdf->setTextShadow(array('enabled'=>true, 'depth_w'=>0.2, 'depth_h'=>0.2, 'color'=>array(196,196,196), 'opacity'=>1, 'blend_mode'=>'Normal'));
 
-// Set some content to print
-		$html = <<<EOD
-			<h1>Output Test</h1>
-			<p>this is just some test text to ensure the PDF is appearing as it should.</p>
-</h1>
+			$html = <<<EOD
+			<table>
+				<tr>
+					<td>{$headword}</td>			<td style="text-align: center;">Text {$textNum}</td>				<td style="text-align: right;">{$checked}</td>
+				</tr>
+				<tr>
+					<td></td>                 <td></td>                       <td style="text-align: right;">{$id}</td>
+				</tr>
+				<tr><td colspan="3"><br></td></tr>
+				<tr>
+					<td colspan="3">{$citation}</td>
+				</tr>
+				<tr>
+					<td colspan="3" style="color:green;font-style:italic;">{$translation}</td>
+				</tr>
+				<tr><td colspan="3"><br></td></tr>
+				<tr>
+		                <td colspan="3" style="text-align: center;">{$reference}</td>
+				</tr>
+				<tr>
+					<td>{$date}</td>          <td></td>                     <td></td>
+				</tr>
+			</table>
 EOD;
 
-// Print text using writeHTMLCell()
-		$pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
+			$width = $pdf->pixelsToUnits(500);  //5 inches
+			$height = $pdf->pixelsToUnits(300); //3 inches
 
+			// MultiCell($w, $h, $txt, $border=0, $align='J', $fill=0, $ln=1, $x='', $y='', $reseth=true, $stretch=0, $ishtml=false, $autopadding=true, $maxh=0)
+			$pdf->MultiCell($width, $height, $html, 1, 'L', 0, 1, '', '', true, 0, true, true, $height);
+			if (!($i & 1) && $i != count($slipIds)) {  //2 slips per page
+				// Add a page
+				// This method has several options, check the source code documentation for more information.
+				$pdf->AddPage();
+			} else {
+				$pdf->Ln(16);
+			}
+		}
 // ---------------------------------------------------------
 
 // Close and output PDF document
