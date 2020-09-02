@@ -81,7 +81,7 @@ foreach (new RecursiveIteratorIterator($it) as $nextFile) {
       $lemma = (string)$nextWord['lemma'];
       if ($lemma /*&& !strpos($lemma,' ')*/) { echo $lemma . ','; }
       else { echo $nextWord . ','; }
-      $filename = substr($nextFile,10);
+      $filename = substr($nextFile,58);
       echo $filename . ',';
       echo $nextWord['id'] . ',';
       echo $nextWord . ',';
