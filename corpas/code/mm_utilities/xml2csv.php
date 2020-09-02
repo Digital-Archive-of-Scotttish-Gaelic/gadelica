@@ -1,6 +1,8 @@
 <?php
 /* converts the corpus into a csv file for import to lemma database */
 
+error_reporting(E_ERROR);
+
 //create ass array from filenames to years
 $query = <<<SPQR
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
