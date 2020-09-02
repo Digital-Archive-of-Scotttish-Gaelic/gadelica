@@ -15,6 +15,10 @@ switch ($_REQUEST["action"]) {
     $context = $handler->getContext($_GET["id"], $_GET["preScope"], $_GET["postScope"]);
     echo json_encode($context);
     break;
+	case "getSlips":
+		$slipInfo = Slips::getAllSlipInfo();
+		echo json_encode($slipInfo);
+		break;
   case "loadSlip":
     $slip = new Slip($_GET["filename"], $_GET["id"], $_GET["auto_id"], $_GET["pos"], $_GET["preContextScope"], $_GET["postContextScope"]);
     $slip->updateResults($_GET["index"]); //ensure that "view slip" (and not "create slip") displays

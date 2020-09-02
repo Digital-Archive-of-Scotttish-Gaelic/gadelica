@@ -4,8 +4,8 @@
 class SlipBrowseView
 {
   public function writeBrowseTable() {
-    $tableBodyHtml = "<tbody>";
-    $slipInfo = Slips::getAllSlipInfo();
+    //$tableBodyHtml = "<tbody>";
+    /*$slipInfo = Slips::getAllSlipInfo();
     foreach ($slipInfo as $slip) {
       $categoriesHtml = $morphHtml = "";
       if ($slip["category"]) {
@@ -51,26 +51,51 @@ HTML;
             <td>{$morphHtml}</td>
             <td>{$slip["firstname"]} {$slip["lastname"]}</td>
             <td>{$slip["lastUpdated"]}</td>
+            <td><input type="checkbox" name="printSlips[{$slip["auto_id"]}]"></td>
         </tr>
 HTML;
-    }
-    $tableBodyHtml .= "</tbody>";
+    }*/
+    //$tableBodyHtml .= "</tbody>";
     echo <<<HTML
-        <table id="browseSlipsTable" data-toggle="table" data-pagination="true" data-search="true">
+			<form target="_blank" action="printSlip.php">
+        <table id="table" data-toggle="table" data-ajax="ajaxRequest"
+          data-search="true"
+          data-side-pagination="server"
+          data-pagination="true">
             <thead>
                 <tr>
-                    <th data-sortable="true">ID</th>
-                    <th data-sortable="true">Headword</th>
-                    <th data-sortable="true">Wordform</th>
-                    <th data-sortable="true">Part-of-speech</th>
+                    <th data-field="auto_id" data-sortable="true">ID</th>
+                    <th data-field="lemma" data-sortable="true">Headword</th>
+                    <th data-field="wordform" data-sortable="true">Wordform</th>
+                    <th data-field="wordclass" data-sortable="true">Part-of-speech</th>
                     <th>Categories</th>
                     <th>Morphological</th>
-                    <th data-sortable="true">Updated By</th>
-                    <th data-sortable="true">Date</th>
+                    <th data-field="fullname" data-sortable="true">Updated By</th>
+                    <th data-field="lastUpdated" data-sortable="true">Date</th>
+                    <th data-checkbox="true">Print</th>
                 </tr>
             </thead>
-            {$tableBodyHtml}
         </table>
+        <input type="hidden" name="action" value="print">
+        <button type="submit" class="btn btn-primary">print</button>
+      </form>
+
+<script>
+  function ajaxRequest(params) {
+    
+    $.getJSON( 'ajax.php?action=getSlips&' + $.param(params.data), {format: 'json'}).then(function (res) {
+      console.log(typeof res);
+      params.success(res)
+		});
+     
+    /*var url = 'ajax.php'
+    $.get(url + '?action=getSlips&' + $.param(params.data)).then(function (res) {
+      console.log(typeof res);
+      params.success(res)
+    });*/
+  }
+</script>
+
 HTML;
     Slips::writeSlipDiv();
   }

@@ -13,7 +13,7 @@ class Slips
     $db = new Database();
     $dbh = $db->getDatabaseHandle();
     try {
-      $sql = <<<SQL
+    /*  $sql = <<<SQL
         SELECT s.filename as filename, s.id as id, auto_id, pos, lemma, wordform, firstname, lastname,
                 date_of_lang, title, page,
                 s.wordclass as wordclass, l.pos as pos, s.lastUpdated as lastUpdated, category as senseCat,
@@ -24,10 +24,24 @@ class Slips
             LEFT JOIN slipMorph sm ON sm.slip_id = auto_id
             LEFT JOIN user u ON u.email = s.updatedBy
             ORDER BY auto_id ASC
+            LIMIT 20
+SQL;*/
+
+	    $sql = <<<SQL
+        SELECT s.filename as filename, s.id as id, auto_id, pos, lemma, wordform, firstname, lastname,
+                date_of_lang, title, page, CONCAT(firstname, ' ', lastname) as fullname,
+                s.wordclass as wordclass, l.pos as pos, s.lastUpdated as lastUpdated
+            FROM slips s
+            JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
+            LEFT JOIN user u ON u.email = s.updatedBy
+            ORDER BY auto_id ASC
+            LIMIT 10;
 SQL;
       $sth = $dbh->prepare($sql);
       $sth->execute();
-      while ($row = $sth->fetch()) {
+      $rows = $sth->fetchAll(PDO::FETCH_ASSOC);
+      return array("total"=>10, "totalNotFiltered"=>10, "rows"=>$rows);
+      /*while ($row = $sth->fetch()) {
         $slipId = $row["auto_id"];
         if (!isset($slipInfo[$slipId])) {
           $slipInfo[$slipId] = $row;
@@ -42,7 +56,7 @@ SQL;
         //get the context uri
         $file = new XmlFileHandler($row["filename"]);
         $slipInfo[$slipId]["uri"] = $file->getUri();
-      }
+      }*/
       return $slipInfo;
     } catch (PDOException $e) {
       echo $e->getMessage();

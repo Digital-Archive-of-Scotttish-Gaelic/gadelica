@@ -8,7 +8,7 @@ class PrintSlipController
 		$action = $_REQUEST["action"] ? $_REQUEST["action"] : "print";
 		switch ($action) {
 			case "print":
-				$slipIds = array(908, 912, 877, 875, 598, 735);
+				$slipIds = array_keys($_REQUEST["printSlips"]);
 				$view = new PrintSlipView();
 				$view->write($slipIds);
 				break;
