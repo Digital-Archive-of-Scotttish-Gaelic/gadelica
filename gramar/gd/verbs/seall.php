@@ -3,12 +3,27 @@ require_once "../../includes/htmlHeader.php";
 ?>
 <h1>seall</h1>
 <p><strong>seall</strong> is a <a href="../../xx/regularVerbs.php">regular verb</a> of visual attention corresponding to the English ‘look’, ‘show’.
-It is closely related to the other visual verbs <strong><a href="faic.php">faic</a></strong> ‘see’, <strong><a href="coimhead.php">coimhead</a></strong> ‘look’, <strong><a href="mothaich.php">mothaich</a></strong> ‘notice’.
+It is closely related to the other visual verbs <strong><a href="faic.php">faic</a></strong> ‘see’, <strong><a href="coimhead.php">coimhead</a></strong> ‘look’, <strong><a href="mothaich.php">mothaich</a></strong> ‘notice’,
+and the idiom <strong><a href="../nouns/suuil.php#thoir_suuil_air">thoir sùil (air)</a></strong> ‘look (at)’.
 It is also closely related to the verb of auditory attention <strong><a href="eeist.php">èist</a></strong> ‘listen’.</p>
 <p>The verbal noun form of <strong>seall</strong> is <strong>sealltainn</strong>.</p>
+<p>The main uses of <strong>seall</strong> are:</p>
+<ul>
+  <li>intransitive
+    <ul>
+      <li><a href="#ri">with preposition <em>ri</em></a> e.g. <em>seall ri duine/rud</em></li>
+      <li><a href="#path">with a path expression</a> e.g. <em>seall tro ...</em></li>  
+    </ul>
+  </li>
+  <li>transitive
+    <ul>
+      <li><a href="#do">with preposition <em>do</em></a> e.g. <em>seall rud do dhuine</em></li>
+    </ul>
+  </li>
+</ul>
 <hr/>
-<h3>Intransitive uses – ‘look (at)’</h3>
-<p>When used intransitively, <strong>seall</strong> usually means ‘look (at)’, with the object or person under observation being introduced by the preposition <strong><a href="../prepositions/ri.php">ri</a></strong>,
+<h3 id="intransitive">Intransitive uses – ‘look (at)’</h3>
+<p id="ri">When used intransitively, <strong>seall</strong> usually means ‘look (at)’, with the object or person under observation being introduced by the preposition <strong><a href="../prepositions/ri.php">ri</a></strong>,
 i.e. <strong>seall ri rud/duine</strong>:</p>
 <ul>
   <li><strong>“<mark>Seall ri cas</mark> a’ bheathaich, ma-tà.”</strong><br/>
@@ -18,14 +33,14 @@ i.e. <strong>seall ri rud/duine</strong>:</p>
   <li><strong><mark>Sheall Diana gu feargach ri Màiri</mark>.</strong><br/>
     <small class="text-muted">‘Diana looked angrily at Mary.’ [#2 42]</small></li>
 </ul>
-<p><strong>seall</strong> can also be used with a <a href="../../xx/pathExpressions.php">path expression</a> in the sense of directing one’s gaze along a trajectory:</p>
+<p id="path"><strong>seall</strong> can also be used with a <a href="../../xx/pathExpressions.php">path expression</a> in the sense of directing one’s gaze along a trajectory:</p>
 <ul>
   <li><strong><mark>Sheall Eilidh tron phrosbaig</mark>.</strong><br/>
     <small class="text-muted">‘Helen looked through the telescope.’ [#2 81]</small></li>
   <li><strong>“<mark>Seall a-mach air an uinneig</mark>.”</strong><br/>
     <small class="text-muted">“Look out the window.” [#2 27]</small></li>
 </ul>
-<p><strong>seall</strong> can take an embedded direct question, in the sense of ‘check if’, ‘(look and) see if’:</p>
+<p id=""><strong>seall</strong> can take an embedded direct question, in the sense of ‘check if’, ‘(look and) see if’:</p>
 <ul>
   <li><strong>“Na <mark>sheall thu a bheil</mark> duine anns an taigh sin?”</strong><br/>
     <small class="text-muted">“Did you check if anyone is in that house?” [#2 49]</small></li>
@@ -51,7 +66,7 @@ i.e. <strong>seall ri rud/duine</strong>:</p>
 </ul>
 <hr/>
 <h3>Transitive uses – ‘show’</h3>
-<p>When used as a transitive verb, <strong>seall</strong> has the meaning ‘show someone something’ and the indirect object is introduced by the preposition <strong><a href="../prepositions/do.php">do</a></strong>, 
+<p id="do">When used as a transitive verb, <strong>seall</strong> has the meaning ‘show someone something’ and the indirect object is introduced by the preposition <strong><a href="../prepositions/do.php">do</a></strong>, 
 i.e. <strong>seall rud do dhuine</strong> – ‘show someone something’:</p>
 <ul>
   <li><strong><mark>Sheall am poileasman dealbh Mhangain do Ruairidh Beag</mark>.</strong><br/>

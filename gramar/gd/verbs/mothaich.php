@@ -2,10 +2,16 @@
 require_once "../../includes/htmlHeader.php";
 ?>
 <h1>mothaich</h1>
-<p><strong>mothaich</strong> is a regular verb visual perception corresponding to the English ‘notice’. 
+<p><strong>mothaich</strong> is a regular verb of visual perception corresponding to the English ‘notice’. 
 It is closely related to the verb <strong><a href="faic.php">faic</a></strong> ‘see’.</p>
+<p>The main uses of <strong>mothaich</strong> are:</p>
+<ul>
+  <li><a href="#do">with preposition <em>do</em></a> e.g. <em>mothaich do rud</em></li>
+  <li><a href="#gun">with a declarative clause</a> e.g. <em>mothaich gu bheil / nach eil ...</em></li>  
+  <li><a href="#question">with a question</a> e.g. <em>mothaich a bheil / nach eil / cò a tha ...</em></li>
+</ul>
 <hr/>
-<h3>mothaich do</h3>
+<h3 id="do">mothaich do</h3>
 <p><strong>mothaich</strong> is an intransitive verb whose noun phrase complement is introduced by the preposition <strong><a href="../prepositions/do.php">do</a></strong>:</p>
 <ul>
   <li><strong>Sheall Seòras ri mhàthair agus <mark>mhothaich i dhan cheist</mark> a bha na shùilean.</strong><br/>
@@ -15,8 +21,9 @@ It is closely related to the verb <strong><a href="faic.php">faic</a></strong> �
   <li><strong><mark>Mhothaich Monica dha rudan</mark> a bha feumail dhan phoileas.</strong><br/>
     <small class="text-muted">‘Monica noticed (saw) things which were useful to the police.’ [#2 59]</small></li>
 </ul>
+<p>cf. the strict transitive use of <strong>faic</strong> i.e. <strong><a href="faic.php#strict_transitive">faic rud</a></strong> ‘see something’.</p>
 <hr/>
-<h3>mothaich gun</h3>
+<h3 id="gun">mothaich gun</h3>
 <p>The complement of <strong>mothaich</strong> can also be an embedded declarative clause:</p>
 <ul>
   <li><strong>Chaidh trì uairean a thìde seachad mus do <mark>mhothaich duine gu robh</mark> Harry Heyford a dhìth.</strong><br/>
@@ -26,8 +33,9 @@ It is closely related to the verb <strong><a href="faic.php">faic</a></strong> �
   <li><strong>Ach nuair a chuala iad mo sgeulachd, <mark>mhothaich mi gun tug</mark> iad sùil air a chèile.</strong><br/>
     <small class="text-muted">‘But when they heard my story, I noticed that they looked at each other.’ [#2 15]</small></li>
 </ul>
+<p>cf. the pseudo-transitive use of <strong>faic</strong> i.e. <strong><a href="faic.php#declarative_clause">faic gu bheil ...</a></strong> ‘see that ...’.</p>
 <hr/>
-<h3>mothaich + question</h3>
+<h3 id="question">mothaich + question</h3>
 <p>The complement of <strong>mothaich</strong> can also be an embedded question, either direct (negative or interrogative contexts only) or constituent:</p>
 <ul>
   <li><strong>Nuair a bha iad a’ falbh, dh’fhaighnich fear aca dhomh na <mark>mhothaich mi an robh</mark> miotagan air na daoine, agus thuirt mi gu robh.</strong><br/>
@@ -36,6 +44,7 @@ It is closely related to the verb <strong><a href="faic.php">faic</a></strong> �
     <small class="text-muted">‘But we heard about Frank. Some people from the mainland noticed how skillful he was at football, and it was not long until he was in the Avis Rovers team.’ [#2 23]</small></li>
 </ul>
 <p>Note the latter example is equivalent to <em>mhothaich iad <strong>dè</strong> cho sgileil ’s a bha e ...</em>.</p>
+<p>cf. the pseudo-transitive use of <strong>faic</strong> i.e. <strong><a href="faic.php#question">faic dè a tha ...</a></strong> ‘see what ...’.</p>
 <hr/>
 <p>Notes:</p>
 <ul>

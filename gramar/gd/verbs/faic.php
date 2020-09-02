@@ -3,7 +3,8 @@ require_once "../../includes/htmlHeader.php";
 ?>
 <h1>faic</h1>
 <p><strong>faic</strong> is an <a href="../../xx/irregularVerbs.php">irregular verb</a> of visual perception corresponding to the English ‘see’. 
-It is closely related to the other visual verbs <strong><a href="seall.php">seall</a></strong> ‘look’, ‘show’, <strong><a href="coimhead.php">coimhead</a></strong> ‘look’, <strong><a href="mothaich.php">mothaich</a></strong> ‘notice’.
+It is closely related to the other visual verbs <strong><a href="seall.php">seall</a></strong> ‘look’, ‘show’, <strong><a href="coimhead.php">coimhead</a></strong> ‘look’, <strong><a href="mothaich.php">mothaich</a></strong> ‘notice’,
+and the idiom <strong><a href="../nouns/suuil.php#thoir_suuil_air">thoir sùil (air)</a></strong> ‘look (at)’.
 It is also closely related to the verb of auditory perception <strong><a href="cluinn.php">cluinn</a></strong> ‘hear’.</p>
 <p>The forms of <strong>faic</strong> are:</p>
 <table class="table table-bordered text-center" style="max-width:800px;">
@@ -19,10 +20,25 @@ It is also closely related to the verb of auditory perception <strong><a href="c
     <tr><th>nominal</th><td colspan="6"><mark>faicinn</mark></td></tr>
   </tbody>
 </table>
+<p>The main uses of <strong>faic</strong> are:</p>
+<ul>
+  <li>transitive
+    <ul>
+      <li><a href="#strict_transitive">strict transitive</a> e.g. <em>faic duine</em></li>
+      <li><a href="#object_control">with an object-controlled predicate</a> e.g. <em>faic duine a’ dèanamh rud</em></li>  
+    </ul>
+  </li>
+  <li>pseudo-transitive
+    <ul>
+      <li><a href="#declarative_clause">with a declarative clause</a> e.g. <em>faic gu bheil / nach eil ...</em></li>
+      <li><a href="#question">with a (constituent) question</a> e.g. <em>faic dè a tha ...</em></li>
+    </ul>
+  </li>
+</ul>
 <hr/>
-<h3>Transitive uses</h3>
+<h3 id="transitive">Transitive uses</h3>
 <p><strong>faic</strong> is usually used as a transitive verb, with an explicit direct object noun phrase denoting the person or object visually perceived (or otherwise encountered).</p>
-<h5>Strict transitive</h5>
+<h5 id="strict_transitive">Strict transitive</h5>
 <p>The most basic use of <strong>faic</strong> is as a <em>strict</em> transitive verb, with just the direct object and no other arguments.</p>
 <ul>
   <li><strong><mark>Chunna mi an taigh</mark> agus leum mi a-mach a’ smaoineachadh gum biodh fòn ann.</strong><br/>
@@ -32,7 +48,8 @@ It is also closely related to the verb of auditory perception <strong><a href="c
   <li><strong>“Theirig gu talla a’ bhaile mhòir agus <mark>faic an duine sin</mark>.”</strong><br/>
     <small class="text-muted">‘“Go to the city hall and see (talk to) that man.”’ [#2 10]</small></li>
 </ul>
-<h5>With object-controlled predicate</h5>
+<p>cf. <strong><a href="mothaich.php#do">mothaich do rud</a></strong> ‘notice something’.</p>
+<h5 id="object_control">With object-controlled predicate</h5>
 <p>Transitive <strong>faic</strong> can also govern a predicate phrase describing some aspect of the direct object. 
 For example, this predicate can be a prepositional phrase denoting the <em>location</em> of the object:</p>
 <ul>
@@ -70,7 +87,7 @@ For example, this predicate can be a prepositional phrase denoting the <em>locat
 </ul>
 <hr/>
 <h3>Pseudo-transitive uses</h3>
-<p><strong>faic</strong> is also commonly used pseudo-transitively, with the direct object replaced by some kind of embedded clause. 
+<p id="declarative_clause"><strong>faic</strong> is also commonly used pseudo-transitively, with the direct object replaced by some kind of embedded clause. 
 This embedded clause can be a <em>declarative clause</em> introduced by the particle <strong>gun</strong> or <strong>nach</strong>:</p>
 <ul>
   <li><strong>Anns an dol seachad dhomh <mark>chunna mi gu robh</mark> nighean sa chàr agus duine ri taobh.</strong><br/>
@@ -82,13 +99,18 @@ This embedded clause can be a <em>declarative clause</em> introduced by the part
   <li><strong>Ged a bha Aonghas cho suilbhir ’s a b’ àbhaist, <mark>chunna mi nach robh</mark> e gu math idir.</strong><br/>
     <small class="text-muted">‘Although Angus was as cheerful as ever, I saw that he was not at all well.’ [#2 35]</small></li>
 </ul>
-<p><strong>faic</strong> can also be used pseudo-transitively with an embedded constituent question:</p>
+<p>cf. <strong><a href="mothaich.php#gun">mothaich gu bheil / nach eil ...</a></strong> ‘notice that ...’.</p>
+<p id="question"><strong>faic</strong> can also be used pseudo-transitively with an embedded constituent question:</p>
 <ul>
   <li><strong>“Nach eil thu airson <mark>faicinn dè tha</mark> sinn a’ dèanamh?”</strong><br/>
     <small class="text-muted">‘“Do you not want to see (find out) what we are doing?”’ [#2 67]</small></li>
   <li><strong>Bha mo bhean san ospadal, far nach <mark>fhaiceadh i dè bha</mark> mi a’ dèanamh.</strong><br/>
     <small class="text-muted">‘My wife was in the hospital, where she would not see (notice) what I was doing.’ [#2 120]</small></li>
+  <li><strong>Leig e an uair sin às a ghrèim. <mark>Chunnaic feadhainn mar a thachair</mark> agus chaidh Pàdraig a shàbhaladh.</strong><br/>
+    <small class="text-muted">‘He then let go. Some people saw how (it) happened and Peter was saved.’ [#2 45]</small></li>
 </ul>
+<p>We can assume that the third example is equivalent to <em>chunnaic feadhainn ciamar a thachair e</em>.</p>
+<p>cf. <strong><a href="mothaich.php#question">mothaich dè a tha ...</a></strong> ‘notice what ...’.</p>
 <hr/>
 <p>The following examples need further consideration:</p>
 <ul>
@@ -100,15 +122,13 @@ This embedded clause can be a <em>declarative clause</em> introduced by the part
     <small class="text-muted">‘Revenge is a sort of wild justice, and that is how Syd saw the matter.’ [#2 61]</small></li>
   <li><strong>Dhìrich e gu bàrr a’ bhalla cloiche a bha timcheall an taighe agus thog e deilbh dhen a h-uile càil a <mark>chitheadh e tro na craobhan</mark>.</strong><br/>
     <small class="text-muted">‘He climbed to the top of the stone wall that was around the house and he took pictures of everything that he would see through the trees.’ [#2 66]</small></li>
-  <li><strong>Leig e an uair sin às a ghrèim. <mark>Chunnaic feadhainn mar a thachair</mark> agus chaidh Pàdraig a shàbhaladh.</strong><br/>
-    <small class="text-muted">‘He then let go. Some people saw wht happened and Peter was saved.’ [#2 45]</small></li>
 </ul>
 <hr/>
 <p>Notes:</p>
 <ul>
   <li><strong>faic</strong> does not appear to occur in the progressive (e.g. <em>tha mi a’ faicinn ...</em>), suggesting that it is an ‘inchoative verb’, involving an instantaneous change of state.</li>
   <li><strong>faic</strong> occurs rarely in the imperative and in intentional constructions (e.g. <em>chaidh mi a dh’fhaicinn ...</em>), suggesting that it is a ‘non-volitional’ verb.</li>
-  <li>Volitional, potentially progressive alternatives to <strong>faic</strong> are <strong><a href="seall.php">seall</a></strong>, <strong><a href="coimhead.php">coimhead</a></strong>.</li>
+  <li>Volitional, potentially progressive alternatives to <strong>faic</strong> are <strong><a href="seall.php">seall</a></strong>, <strong><a href="coimhead.php">coimhead</a></strong>, <strong><a href="../nouns/suuil.php#thoir_suuil_air">thoir sùil (air)</a></strong>.</li>
   <li>It is unclear if pseudo-transitive <strong>faic</strong> can occur with embedded direct questions (e.g. <em>chì mi a bheil ...</em>).</li>
 </ul>
 
