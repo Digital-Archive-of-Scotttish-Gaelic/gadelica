@@ -72,7 +72,7 @@ foreach ($dates as $key => $value) {
 */
 
 
-$it = new RecursiveDirectoryIterator('../../xml');
+$it = new RecursiveDirectoryIterator('/var/www/html/dasg.arts.gla.ac.uk/www/gadelica/corpas/xml');
 foreach (new RecursiveIteratorIterator($it) as $nextFile) {
   if ($nextFile->getExtension()=='xml') {
     $xml = simplexml_load_file($nextFile);
