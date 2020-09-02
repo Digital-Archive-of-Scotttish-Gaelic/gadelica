@@ -1,4 +1,7 @@
 <?php
+
+error_reporting(E_ERROR);
+
 /* converts the corpus into a csv file for import to lemma database */
 
 //create ass array from filenames to years
