@@ -1,7 +1,4 @@
 <?php
-
-error_reporting(E_ERROR);
-
 /* converts the corpus into a csv file for import to lemma database */
 
 //create ass array from filenames to years
@@ -74,14 +71,15 @@ foreach ($dates as $key => $value) {
 }
 */
 
-$it = new RecursiveDirectoryIterator('/var/www/html/dasg.arts.gla.ac.uk/www/gadelica/corpas/xml');
+
+$it = new RecursiveDirectoryIterator('../../xml');
 foreach (new RecursiveIteratorIterator($it) as $nextFile) {
   if ($nextFile->getExtension()=='xml') {
     $xml = simplexml_load_file($nextFile);
     $xml->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/');
     foreach ($xml->xpath("//dasg:w") as $nextWord) {
       $lemma = (string)$nextWord['lemma'];
-      if ($lemma  /*&& !strpos($lemma,' ')*/ ) { echo $lemma . ','; }
+      if ($lemma /*&& !strpos($lemma,' ')*/) { echo $lemma . ','; }
       else { echo $nextWord . ','; }
       $filename = substr($nextFile,10);
       echo $filename . ',';
