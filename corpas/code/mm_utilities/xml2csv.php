@@ -1,8 +1,7 @@
 <?php
+/* converts the corpus into a csv file for import to lemma database */
 
 error_reporting(E_ERROR);
-
-/* converts the corpus into a csv file for import to lemma database */
 
 //create ass array from filenames to years
 $query = <<<SPQR
@@ -74,7 +73,7 @@ foreach ($dates as $key => $value) {
 }
 */
 
-//$it = new RecursiveDirectoryIterator('../../xml');
+
 $it = new RecursiveDirectoryIterator('/var/www/html/dasg.arts.gla.ac.uk/www/gadelica/corpas/xml');
 foreach (new RecursiveIteratorIterator($it) as $nextFile) {
   if ($nextFile->getExtension()=='xml') {
@@ -82,9 +81,9 @@ foreach (new RecursiveIteratorIterator($it) as $nextFile) {
     $xml->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/');
     foreach ($xml->xpath("//dasg:w") as $nextWord) {
       $lemma = (string)$nextWord['lemma'];
-      if ($lemma  /*&& !strpos($lemma,' ')*/ ) { echo $lemma . ','; }
+      if ($lemma /*&& !strpos($lemma,' ')*/) { echo $lemma . ','; }
       else { echo $nextWord . ','; }
-      $filename = substr($nextFile,10);
+      $filename = substr($nextFile,58);
       echo $filename . ',';
       echo $nextWord['id'] . ',';
       echo $nextWord . ',';
