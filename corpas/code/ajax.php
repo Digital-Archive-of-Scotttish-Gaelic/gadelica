@@ -62,6 +62,9 @@ switch ($_REQUEST["action"]) {
     Slips::touchSlip($_POST["slipId"]);
     echo "success";
     break;
+	case "renameSense":
+		Entries::renameSense($_GET["lemma"], $_GET["wordclass"], $_GET["oldName"], $_GET["newName"]);
+		break;
   case "getDictionaryResults":
     $locs = $_POST["locs"];
     $locations = explode('|', $locs);
