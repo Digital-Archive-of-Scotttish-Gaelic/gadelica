@@ -19,6 +19,15 @@ switch ($_REQUEST["action"]) {
 		$slipInfo = Slips::getAllSlipInfo($_GET["offset"], $_GET["limit"], $_GET["search"], $_GET["sort"], $_GET["order"]);
 		echo json_encode($slipInfo);
 		break;
+	case "updatePrintList":
+			if ($_GET["addSlip"]) {
+				$_SESSION["printSlips"][$_GET["addSlip"]] = $_GET["addSlip"];
+			} else if ($_GET["removeSlip"]) {
+				unset($_SESSION["printSlips"][$_GET["removeSlip"]]);
+			}
+			//return the size of the array
+			echo json_encode(array("count" => count($_SESSION["printSlips"])));
+		break;
   case "loadSlip":
     $slip = new Slip($_GET["filename"], $_GET["id"], $_GET["auto_id"], $_GET["pos"], $_GET["preContextScope"], $_GET["postContextScope"]);
     $slip->updateResults($_GET["index"]); //ensure that "view slip" (and not "create slip") displays

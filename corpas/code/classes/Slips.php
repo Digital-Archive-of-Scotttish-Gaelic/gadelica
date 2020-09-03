@@ -70,6 +70,10 @@ SQL;
 	      foreach ($senseRows as $sense) {
 		      $rows[$index]["senses"] .= '<span class="badge badge-secondary">' . $sense["value"] . '</span> ';
 	      }
+	      $checked = in_array($slipId, $_SESSION["printSlips"]) ? "checked" : "";
+				$rows[$index]["printSlip"] = <<<HTML
+					<input type="checkbox" class="chooseSlip" {$checked} id="printSlip_{$slipId}"> 
+HTML;
 
       	//create the slip link code
 	      $slipUrl = <<<HTML

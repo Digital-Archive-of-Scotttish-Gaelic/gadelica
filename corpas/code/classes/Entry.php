@@ -94,7 +94,7 @@ class Entry
 	 */
 	public function getUniqueSenses() {
 		foreach ($this->getSenses() as $slipId => $senses) {
-			$this->_slipSenseStrings[$slipId] = implode(', ', $senses);
+			$this->_slipSenseStrings[$slipId] = implode('|', $senses);
 		}
 		$senses = array();
 		foreach ($this->_slipSenseStrings as $slipId => $senseString) {

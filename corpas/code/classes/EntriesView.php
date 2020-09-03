@@ -145,8 +145,16 @@ HTML;
 					{$slipList}
 				</div>
 HTML;
+			$senses = explode('|', $sense);
+			$senseString = "";
+			foreach ($senses as $s) {
+				$senseString .= <<<HTML
+					<span class="badge badge-primary entrySense">{$s}</span> 
+HTML;
+
+			}
 			$html .= <<<HTML
-				<li>{$sense} {$citationsHtml}</li>
+				<li>{$senseString} {$citationsHtml}</li>
 HTML;
 		}
 		$html .= "</ul>";
@@ -212,6 +220,10 @@ HTML;
   private function _writeJavascript() {
   	echo <<<HTML
 			<script>
+				$('.entrySense').on('click', function() {
+					console.log($(this).text());  
+				});
+				
 				/**
         *  Load and show the citations for wordforms or senses
         */
