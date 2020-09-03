@@ -74,7 +74,11 @@ foreach ($dates as $key => $value) {
 */
 
 
-$it = new RecursiveDirectoryIterator('/var/www/html/dasg.arts.gla.ac.uk/www/gadelica/corpas/xml');
+$path = '/var/www/html/dasg.arts.gla.ac.uk/www/gadelica/corpas/xml';
+if (getcwd()=='/Users/mark/Sites/gadelica/corpas/code/mm_utilities') {
+  $path = '../../xml';
+}
+$it = new RecursiveDirectoryIterator($path);
 foreach (new RecursiveIteratorIterator($it) as $nextFile) {
   if ($nextFile->getExtension()=='xml') {
     $xml = simplexml_load_file($nextFile);
@@ -83,7 +87,12 @@ foreach (new RecursiveIteratorIterator($it) as $nextFile) {
       $lemma = (string)$nextWord['lemma'];
       if ($lemma /*&& !strpos($lemma,' ')*/) { echo $lemma . ','; }
       else { echo $nextWord . ','; }
-      $filename = substr($nextFile,58);
+      if (getcwd()=='/Users/mark/Sites/gadelica/corpas/code/mm_utilities') {
+        $filename = substr($nextFile,10);
+      }
+      else {
+        $filename = substr($nextFile,58);
+      }
       echo $filename . ',';
       echo $nextWord['id'] . ',';
       echo $nextWord . ',';
