@@ -75,7 +75,7 @@ HTML;
               </tr>
           </thead>
       </table>
-      <a href="printSlip?action=print" target="_blank" type="button" id="printSlips" class="btn btn-primary disabled">print</a>
+      <a href="printSlip.php?action=print" target="_blank" id="printSlips" class="btn btn-primary disabled">print</a>
 HTML;
 
     Slips::writeSlipDiv();
