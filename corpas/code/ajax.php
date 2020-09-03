@@ -16,7 +16,7 @@ switch ($_REQUEST["action"]) {
     echo json_encode($context);
     break;
 	case "getSlips":
-		$slipInfo = Slips::getAllSlipInfo();
+		$slipInfo = Slips::getAllSlipInfo($_GET["offset"], $_GET["limit"], $_GET["search"], $_GET["sort"], $_GET["order"]);
 		echo json_encode($slipInfo);
 		break;
   case "loadSlip":

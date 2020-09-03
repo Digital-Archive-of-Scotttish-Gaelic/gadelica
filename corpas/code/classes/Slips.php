@@ -8,56 +8,90 @@ class Slips
    *
    * @return array of DB results
    */
-  public static function getAllSlipInfo() {
-    $slipInfo = array();
+  public static function getAllSlipInfo($offset = 0, $limit = 10, $search = "", $sort, $order) {
+  	$sort = $sort ? $sort : "auto_id";
+  	$order = $order ? $order : "ASC";
+  	$params = array(":limit" => (int)$limit, ":offset" => (int)$offset);
     $db = new Database();
     $dbh = $db->getDatabaseHandle();
     try {
-    /*  $sql = <<<SQL
-        SELECT s.filename as filename, s.id as id, auto_id, pos, lemma, wordform, firstname, lastname,
-                date_of_lang, title, page,
-                s.wordclass as wordclass, l.pos as pos, s.lastUpdated as lastUpdated, category as senseCat,
-                sm.relation as relation, sm.value as value
-            FROM slips s
-            JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
-            LEFT JOIN senseCategory sc ON sc.slip_id = auto_id
-            LEFT JOIN slipMorph sm ON sm.slip_id = auto_id
-            LEFT JOIN user u ON u.email = s.updatedBy
-            ORDER BY auto_id ASC
-            LIMIT 20
-SQL;*/
-
+			$whereClause = "";
+			if (mb_strlen($search) > 1) {     //there is a search to run
+				$sth = $dbh->prepare("SET @search = :search");  //set a MySQL variable for the searchterm
+				$sth->execute(array(":search" => "%{$search}%"));
+				$whereClause = <<<SQL
+					WHERE auto_id LIKE @search	
+            	OR lemma LIKE @search
+            	OR wordform LIKE @search
+            	OR wordclass LIKE @search
+            	OR lemma LIKE @search
+            	OR firstname LIKE @search
+            	OR lastname LIKE @search
+SQL;
+			}
+	    $dbh->setAttribute( PDO::ATTR_EMULATE_PREPARES, false );
 	    $sql = <<<SQL
-        SELECT s.filename as filename, s.id as id, auto_id, pos, lemma, wordform, firstname, lastname,
+        SELECT SQL_CALC_FOUND_ROWS s.filename as filename, s.id as id, auto_id, pos, lemma, wordform, firstname, lastname,
                 date_of_lang, title, page, CONCAT(firstname, ' ', lastname) as fullname,
                 s.wordclass as wordclass, l.pos as pos, s.lastUpdated as lastUpdated
             FROM slips s
             JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
             LEFT JOIN user u ON u.email = s.updatedBy
-            ORDER BY auto_id ASC
-            LIMIT 10;
+            {$whereClause}
+            ORDER BY {$sort} {$order}
+            LIMIT :limit OFFSET :offset;
 SQL;
-      $sth = $dbh->prepare($sql);
-      $sth->execute();
+			$sth = $dbh->prepare($sql);
+      $sth->execute($params);
       $rows = $sth->fetchAll(PDO::FETCH_ASSOC);
-      return array("total"=>10, "totalNotFiltered"=>10, "rows"=>$rows);
-      /*while ($row = $sth->fetch()) {
-        $slipId = $row["auto_id"];
-        if (!isset($slipInfo[$slipId])) {
-          $slipInfo[$slipId] = $row;
-          $slipInfo[$slipId]["category"] = array();
-          $slipInfo[$slipId]["category"][] = $row["senseCat"];
-	        $slipInfo[$slipId]["relation"] = array();
-	        $slipInfo[$slipId]["relation"][] = $row["value"];
-        } else {
-          $slipInfo[$slipId]["category"][] = $row["senseCat"];
-	        $slipInfo[$slipId]["relation"][] = $row["value"];
-        }
-        //get the context uri
-        $file = new XmlFileHandler($row["filename"]);
-        $slipInfo[$slipId]["uri"] = $file->getUri();
-      }*/
-      return $slipInfo;
+      $hits = $db->fetch("SELECT FOUND_ROWS() as hits;");
+      foreach ($rows as $index => $slip) {
+      	$slipId = $slip["auto_id"];
+      	//get the categories
+	      $sql = <<<SQL
+					SELECT category as senseCat
+						FROM senseCategory sc
+						LEFT JOIN slips s ON sc.slip_id = auto_id
+						WHERE slip_id = :slipId
+SQL;
+	      $catRows = $db->fetch($sql, array(":slipId" => $slipId));
+	      foreach ($catRows as $cat) {
+	      	$rows[$index]["categories"] .= '<span class="badge badge-success">' . $cat["senseCat"] . '</span> ';
+	      }
+
+	      //get the senses
+	      $sql = <<<SQL
+					SELECT value
+						FROM slipMorph sm
+						LEFT JOIN slips s ON sm.slip_id = auto_id
+						WHERE slip_id = :slipId
+SQL;
+	      $senseRows = $db->fetch($sql, array(":slipId" => $slipId));
+	      foreach ($senseRows as $sense) {
+		      $rows[$index]["senses"] .= '<span class="badge badge-secondary">' . $sense["value"] . '</span> ';
+	      }
+
+      	//create the slip link code
+	      $slipUrl = <<<HTML
+                <a href="#" class="slipLink2"
+                    data-toggle="modal" data-target="#slipModal"
+                    data-auto_id="{$slip["auto_id"]}"
+                    data-headword="{$slip["lemma"]}"
+                    data-pos="{$slip["pos"]}"
+                    data-id="{$slip["id"]}"
+                    data-xml="{$slip["filename"]}"
+                    data-uri="{$slip["uri"]}"
+                    data-date="{$slip["date_of_lang"]}"
+                    data-title="{$slip["title"]}"
+                    data-page="{$slip["page"]}"
+                    data-resultindex="-1"
+                    title="view slip {$slip["auto_id"]}">
+                    {$slip["auto_id"]}
+                </a>
+HTML;
+	      $rows[$index]["auto_id"] = $slipUrl;
+      }
+      return array("total"=>(int)$hits[0]["hits"], "totalNotFiltered"=>count($rows), "rows"=>$rows);
     } catch (PDOException $e) {
       echo $e->getMessage();
     }
