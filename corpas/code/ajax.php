@@ -63,7 +63,7 @@ switch ($_REQUEST["action"]) {
     echo "success";
     break;
 	case "renameSense":
-		Entries::renameSense($_GET["lemma"], $_GET["wordclass"], $_GET["oldName"], $_GET["newName"]);
+		SenseCategories::renameSense($_GET["lemma"], $_GET["wordclass"], $_GET["oldName"], $_GET["newName"]);
 		break;
   case "getDictionaryResults":
     $locs = $_POST["locs"];

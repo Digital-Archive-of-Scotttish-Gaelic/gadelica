@@ -58,25 +58,6 @@ SQL;
 		return $entry;
 	}
 
-	public static function renameSense($lemma, $wordclass, $oldName, $newName) {
-		$db = new Database();
-		$dbh = $db->getDatabaseHandle();
-		try {
-			$sql = <<<SQL
-        UPDATE senseCategory sc
-        JOIN slips s ON s.auto_id = sc.slip_id
-        JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
-        SET category = :newName WHERE category = :oldName
-        AND lemma = :lemma AND wordclass = :wordclass
-SQL;
-			$sth = $dbh->prepare($sql);
-			$sth->execute(array(":lemma"=>$lemma, ":wordclass"=>$wordclass,
-				":newName" => $newName, ":oldName" => $oldName));
-			} catch (PDOException $e) {
-			echo $e->getMessage();
-		}
-	}
-
   public static function getAllEntries() {
     $entries = array();
     $db = new Database();
