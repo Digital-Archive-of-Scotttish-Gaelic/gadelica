@@ -4,10 +4,15 @@
 class EntriesView
 {
   public function writeEntry($entry) {
+  	$lemma = $entry->getLemma();
+  	$wordclass = $entry->getWordclass();
+  	$abbr = Functions::getWordclassAbbrev($wordclass);
     echo <<<HTML
       <div id="#entryContainer">
         <div>
-          <h4>{$entry->getLemma()} ({$entry->getWordclass()})</h4>
+          <h4>{$lemma} <em>{$abbr}</em></h4>
+          <input type="hidden" id="lemma" value="{$lemma}">
+          <input type="hidden" id="wordclass" value="{$wordclass}">
         </div>
         <div>
           <h5>Forms:</h5>
@@ -20,6 +25,7 @@ class EntriesView
 			</div>
 HTML;
     Slips::writeSlipDiv();
+    $this->_writeSenseModal();
     $this->_writeJavascript();
   }
 
@@ -31,6 +37,8 @@ HTML;
 			$formElems = explode('|', $formString);
 			$form = $formElems[0];
 			$morph = $formElems[1];
+			$hideText = array("unmarked person", "unmarked number");
+			$morph = str_replace($hideText, "", $morph);
 		  $morphHtml = "(" . $morph . ")";
 		  $slipData = array();
 	  	$formSlipIds = $entry->getFormSlipIds($slipId);
@@ -72,9 +80,9 @@ HTML;
 			}
 	  	$slipList .= "</tbody></table>";
 	  	$citationsHtml = <<<HTML
-				<a href="#" class="citationsLink" data-type="form" data-index="{$i}">
+				<small><a href="#" class="citationsLink" data-type="form" data-index="{$i}">
 						citations
-				</a>
+				</a></small>
 				<div id="form_citations{$i}" class="citation">
 					<div class="spinner">
 		        <div class="spinner-border" role="status">
@@ -138,9 +146,9 @@ HTML;
 			}
 			$slipList .= "</tbody></table>";
 			$citationsHtml = <<<HTML
-				<a href="#" class="citationsLink" data-type="sense" data-index="{$i}">
+				<small><a href="#" class="citationsLink" data-type="sense" data-index="{$i}">
 						citations
-				</a>
+				</a></small>
 				<div id="sense_citations{$i}" class="citation">
 					{$slipList}
 				</div>
@@ -149,7 +157,7 @@ HTML;
 			$senseString = "";
 			foreach ($senses as $s) {
 				$senseString .= <<<HTML
-					<span class="badge badge-primary entrySense">{$s}</span> 
+					<span data-toggle="modal" data-target="#senseModal" title="rename this sense" class="badge badge-success entrySense">{$s}</span> 
 HTML;
 
 			}
@@ -196,6 +204,30 @@ HTML;
 HTML;
   }
 
+  private function _writeSenseModal() {
+  	echo <<<HTML
+			<div class="modal fade" id="senseModal" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Rename Sense</h5>
+              </div>
+              <div class="modal-body">
+                <h5><span id="oldSenseName"></span></h5>
+                <label for="newSenseName">New Sense Name:</label>
+                <input type="text" id="newSenseName">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+                <button type="button" id="editSense" class="btn btn-primary">save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+HTML;
+
+  }
+
   private function _getSlipLink($result) {
 		return <<<HTML
 						<small>
@@ -221,9 +253,26 @@ HTML;
   	echo <<<HTML
 			<script>
 				$('.entrySense').on('click', function() {
-					console.log($(this).text());  
+				  var oldName = $(this).text();
+				  $('#oldSenseName').text(oldName);
 				});
 				
+				$('#editSense').on('click', function () {
+				  var oldName = $('#oldSenseName').text();
+				  var newName = $('#newSenseName').val();
+				  var lemma = $('#lemma').val();
+				  var wordclass = $('#wordclass').val();
+					var url = 'ajax.php?action=renameSense&lemma=' + lemma + '&wordclass=' + wordclass;
+					url += ' &oldName=' + oldName + '&newName=' + newName;
+					$('.entrySense').each(function(index) {
+					  if ($(this).text() == oldName) {
+					    $(this).text(newName);
+					  }
+					});
+					$('#senseModal').modal('hide');
+					$.ajax({url: url});
+				});
+								
 				/**
         *  Load and show the citations for wordforms or senses
         */
@@ -238,7 +287,7 @@ HTML;
 			    }
 			    $(citationsContainerId + "> table > tbody > tr").each(function() {
 			      var date = $(this).attr('data-date');
-			      var html = date + '. ';
+			      var html = '<span class="text-muted">' + date + '.</span> ';
 			      var filename = $(this).attr('data-filename');
 			      var id = $(this).attr('data-id');
 			      var preScope  = $(this).attr('data-precontextscope');

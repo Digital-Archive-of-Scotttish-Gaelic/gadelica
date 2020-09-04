@@ -42,6 +42,7 @@ switch ($_REQUEST["action"]) {
     $handler = new XmlFileHandler($_GET["filename"]);
     $context = $handler->getContext($_GET["id"], $results["preContextScope"], $results["postContextScope"]);
     $results["context"] = $context;
+    $results["canEdit"] = $slip->getLastUpdatedBy() == $_SESSION["user"] ? 1 : 0;
     //
     echo json_encode($results);
     break;
@@ -62,6 +63,9 @@ switch ($_REQUEST["action"]) {
     Slips::touchSlip($_POST["slipId"]);
     echo "success";
     break;
+	case "renameSense":
+		SenseCategories::renameSense($_GET["lemma"], $_GET["wordclass"], $_GET["oldName"], $_GET["newName"]);
+		break;
   case "getDictionaryResults":
     $locs = $_POST["locs"];
     $locations = explode('|', $locs);

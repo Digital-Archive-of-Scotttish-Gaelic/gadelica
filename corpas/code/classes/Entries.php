@@ -36,12 +36,6 @@ SQL;
 	}
 
 	private static function _getSenses($entry) {
-/*		$entry->setSenses(SenseCategories::getAllUsedCategories($entry->getLemma(), $entry->getWordclass()));
-		foreach ($entry->getSenses() as $sense) {
-			$entry->addSenseSlipData($sense, Slips::getSlipsBySenseCategory($entry->getLemma(), $entry->getWordclass(), $sense));
-		}
-		return $entry;
-*/
 		$db = new Database();
 		$dbh = $db->getDatabaseHandle();
 		try {
