@@ -118,6 +118,7 @@ $(function () {
     $('#slipPOS').val(pos);
     $('#auto_id').val(auto_id);
     $('#slipHeadword').html(headword);
+    var canEdit;
     //get the slip info from the DB
     $.getJSON('ajax.php?action=loadSlip&filename='+xml+'&id='+id+'&index='+resultindex
       +'&preContextScope='+$('#slipContext').attr('data-precontextscope')+'&auto_id='+auto_id
@@ -131,6 +132,8 @@ $(function () {
           header += ' <em>v.</em>';
         }
       }
+      //check if user can edit slip
+      canEdit = data.canEdit ? true : false;
       /*
       if (data.starred == 1) {
         html += 'Ch&check;<br>';
@@ -158,6 +161,11 @@ $(function () {
         modal.find('.modal-title').html(header);
         modal.find('#slipNo').text('§'+slipId);
         modal.find('.modal-body').html(body);
+        if (canEdit) {
+          $('.modal').find('button#editSlip').removeProp('disabled');
+        } else {
+          $('.modal').find('button#editSlip').prop('disabled', 'disabled');
+        }
       });
   });
 

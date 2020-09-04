@@ -3,7 +3,9 @@
 
 class Entry
 {
-	private $_lemma, $_wordclass, $_slipMorphStrings, $_slipSenseStrings;
+	private $_lemma, $_wordclass;
+	private $_slipMorphStrings = array();
+	private $_slipSenseStrings = array();
 	private $_forms = array();
 	private $_formSlipData = array();
 	private $_senses = array();

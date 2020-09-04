@@ -6,10 +6,11 @@ class EntriesView
   public function writeEntry($entry) {
   	$lemma = $entry->getLemma();
   	$wordclass = $entry->getWordclass();
+  	$abbr = Functions::getWordclassAbbrev($wordclass);
     echo <<<HTML
       <div id="#entryContainer">
         <div>
-          <h4>{$lemma} ({$wordclass})</h4>
+          <h4>{$lemma} <em>{$abbr}</em></h4>
           <input type="hidden" id="lemma" value="{$lemma}">
           <input type="hidden" id="wordclass" value="{$wordclass}">
         </div>
@@ -36,6 +37,8 @@ HTML;
 			$formElems = explode('|', $formString);
 			$form = $formElems[0];
 			$morph = $formElems[1];
+			$hideText = array("unmarked person", "unmarked number");
+			$morph = str_replace($hideText, "", $morph);
 		  $morphHtml = "(" . $morph . ")";
 		  $slipData = array();
 	  	$formSlipIds = $entry->getFormSlipIds($slipId);
@@ -77,9 +80,9 @@ HTML;
 			}
 	  	$slipList .= "</tbody></table>";
 	  	$citationsHtml = <<<HTML
-				<a href="#" class="citationsLink" data-type="form" data-index="{$i}">
+				<small><a href="#" class="citationsLink" data-type="form" data-index="{$i}">
 						citations
-				</a>
+				</a></small>
 				<div id="form_citations{$i}" class="citation">
 					<div class="spinner">
 		        <div class="spinner-border" role="status">
@@ -143,9 +146,9 @@ HTML;
 			}
 			$slipList .= "</tbody></table>";
 			$citationsHtml = <<<HTML
-				<a href="#" class="citationsLink" data-type="sense" data-index="{$i}">
+				<small><a href="#" class="citationsLink" data-type="sense" data-index="{$i}">
 						citations
-				</a>
+				</a></small>
 				<div id="sense_citations{$i}" class="citation">
 					{$slipList}
 				</div>
@@ -284,7 +287,7 @@ HTML;
 			    }
 			    $(citationsContainerId + "> table > tbody > tr").each(function() {
 			      var date = $(this).attr('data-date');
-			      var html = date + '. ';
+			      var html = '<span class="text-muted">' + date + '.</span> ';
 			      var filename = $(this).attr('data-filename');
 			      var id = $(this).attr('data-id');
 			      var preScope  = $(this).attr('data-precontextscope');
