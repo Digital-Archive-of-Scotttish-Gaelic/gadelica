@@ -4,7 +4,8 @@
 class CorpusText
 {
   private $_uri;
-  private $_id, $_title, $_date, $_publisher, $_rating, $_superuri, $_supertitle, $_filename, $_transformedText;
+  private $_id, $_title, $_date, $_publisher, $_rating, $_superuri, $_supertitle, $_filename, $_transformedText,
+		$_textId;
   private $_writers, $_media, $_genres, $_subURIs = [];  //arrays
 
   public function __construct($uri) {
@@ -66,6 +67,12 @@ SPQR;
     $this->_setSubURIs($results);
     $this->_filename = $results[0]->xml->value;
     $this->_transformedText = $this->_applyXSLT($results);
+    $this->_setTextId();
+  }
+
+  private function _setTextId() {
+		preg_match('/_(\d+)/', $this->getURI(), $matches);
+		$this->_textId = $matches[1];
   }
 
   private function _setWriters($results) {
@@ -239,6 +246,10 @@ SPQR;
   }
 
   //Getters
+
+	public function getTextId() {
+  	return $this->_textId;
+	}
 
   public function getURI() {
     return $this->_uri;
