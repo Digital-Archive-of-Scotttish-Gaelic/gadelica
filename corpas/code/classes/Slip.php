@@ -35,9 +35,10 @@ class Slip
       $this->_isNew = true;
       $this->_extractWordClass($this->_pos);
       $sql = <<<SQL
-        INSERT INTO slips (filename, id, preContextScope, postContextScope, wordClass) VALUES (?, ?, ?, ?, ?);
+        INSERT INTO slips (filename, id, preContextScope, postContextScope, wordClass, updatedBy) VALUES (?, ?, ?, ?, ?, ?);
 SQL;
-      $this->_db->exec($sql, array($this->_filename, $this->_id, $preScope, $postScope, $this->getWordClass()));
+      $this->_db->exec($sql, array($this->_filename, $this->_id, $preScope, $postScope, $this->getWordClass(),
+	      $_SESSION["user"]));
       $this->_auto_id = $this->_db->getLastInsertId();
       $this->_saveSlipMorph();    //save the defaults to the DB
     }

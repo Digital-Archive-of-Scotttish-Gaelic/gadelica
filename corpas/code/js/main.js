@@ -160,6 +160,7 @@ $(function () {
       .done(function () {
         modal.find('.modal-title').html(header);
         modal.find('#slipNo').text('§'+slipId);
+        $('#auto_id').val(slipId);
         modal.find('.modal-body').html(body);
         if (canEdit) {
           $('.modal').find('button#editSlip').removeProp('disabled');
