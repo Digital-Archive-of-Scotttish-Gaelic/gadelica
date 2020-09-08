@@ -163,7 +163,7 @@ $(function () {
         $('#auto_id').val(slipId);
         modal.find('.modal-body').html(body);
         if (canEdit) {
-          $('.modal').find('button#editSlip').removeProp('disabled');
+          $('.modal').find('button#editSlip').prop('disabled', false);
         } else {
           $('.modal').find('button#editSlip').prop('disabled', 'disabled');
         }
