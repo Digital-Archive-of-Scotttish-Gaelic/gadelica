@@ -4,7 +4,7 @@
 class Slip
 {
   private $_auto_id, $_filename, $_id, $_pos, $_db;
-  private $_starred, $_translation, $_notes;
+  private $_starred, $_translation, $_notes, $_locked, $_ownedBy;
   private $_preContextScope, $_postContextScope, $_wordClass, $_lastUpdatedBy, $_lastUpdated;
   private $_isNew;
   private $_wordClasses = array(
@@ -35,7 +35,7 @@ class Slip
       $this->_isNew = true;
       $this->_extractWordClass($this->_pos);
       $sql = <<<SQL
-        INSERT INTO slips (filename, id, preContextScope, postContextScope, wordClass, updatedBy) VALUES (?, ?, ?, ?, ?, ?);
+        INSERT INTO slips (filename, id, preContextScope, postContextScope, wordClass, ownedBy) VALUES (?, ?, ?, ?, ?, ?);
 SQL;
       $this->_db->exec($sql, array($this->_filename, $this->_id, $preScope, $postScope, $this->getWordClass(),
 	      $_SESSION["user"]));
@@ -158,6 +158,14 @@ SQL;
     return $this->_senseCategories;
   }
 
+  public function getIsLocked() {
+  	return $this->_locked == 1;
+  }
+
+  public function getOwnedBy() {
+  	return $this->_ownedBy;
+  }
+
   public function getLastUpdatedBy() {
     return $this->_lastUpdatedBy;
   }
@@ -175,6 +183,8 @@ SQL;
     $this->_preContextScope = $params["preContextScope"];
     $this->_postContextScope = $params["postContextScope"];
     $this->_wordClass = $params["wordClass"];
+    $this->_locked = $params["locked"];
+    $this->_ownedBy = $params["ownedBy"];
     $this->_lastUpdatedBy = $params["updatedBy"];
     $this->_lastUpdated = isset($params["lastUpdated"]) ? $params["lastUpdated"] : "";
     return $this;

@@ -32,11 +32,11 @@ SQL;
 	    $dbh->setAttribute( PDO::ATTR_EMULATE_PREPARES, false );
 	    $sql = <<<SQL
         SELECT SQL_CALC_FOUND_ROWS s.filename as filename, s.id as id, auto_id, pos, lemma, wordform, firstname, lastname,
-                date_of_lang, title, page, CONCAT(firstname, ' ', lastname) as fullname,
-                s.wordclass as wordclass, l.pos as pos, s.lastUpdated as lastUpdated
+                date_of_lang, title, page, CONCAT(firstname, ' ', lastname) as fullname, locked,
+                s.wordclass as wordclass, l.pos as pos, s.lastUpdated as lastUpdated, updatedBy
             FROM slips s
             JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
-            LEFT JOIN user u ON u.email = s.updatedBy
+            LEFT JOIN user u ON u.email = s.ownedBy
             {$whereClause}
             ORDER BY {$sort} {$order}
             LIMIT :limit OFFSET :offset;

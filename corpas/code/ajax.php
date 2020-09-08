@@ -42,7 +42,7 @@ switch ($_REQUEST["action"]) {
     $handler = new XmlFileHandler($_GET["filename"]);
     $context = $handler->getContext($_GET["id"], $results["preContextScope"], $results["postContextScope"]);
     $results["context"] = $context;
-    $results["canEdit"] = $slip->getLastUpdatedBy() == $_SESSION["user"] ? 1 : 0;
+    $results["canEdit"] = ($slip->getOwnedBy() == $_SESSION["user"]) || (!$slip->getIsLocked()) ? 1 : 0;
     //
     echo json_encode($results);
     break;
