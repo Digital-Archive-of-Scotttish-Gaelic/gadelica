@@ -3989,7 +3989,7 @@ c:_44-9
   :xml "44_Briseadh_na_Cloiche/An_Cluaisean.xml" ;
   :genre "literature" ;
   :medium "prose" ;
-  dc:author "Fionnladh MacLeoid" ;
+  dc:creator "Fionnladh MacLeoid" ;
   dc:isPartOf c:_44 .
 
 c:_44-10
@@ -4139,7 +4139,7 @@ c:_54-11
 c:_54-12
   dc:title "Leodhas" ;
   dc:identifier 12 ;
-  dc:author p:James_Thomson__ ;
+  dc:creator p:James_Thomson__ ;
   :genre "literature" ;
   :medium "prose" ;
   :xml "54_Am_Measg_Nam_Bodach/Leodhas.xml" ;
@@ -4148,7 +4148,7 @@ c:_54-12
 c:_54-13
   dc:title "Barraidh" ;
   dc:identifier 13 ;
-  dc:author p:Father_John_MacMillan__ ;
+  dc:creator p:Father_John_MacMillan__ ;
   :genre "literature" ;
   :medium "prose" ;
   :xml "54_Am_Measg_Nam_Bodach/Barraidh.xml" ;
@@ -4157,7 +4157,7 @@ c:_54-13
 c:_54-14
   dc:title "Beinn A’ Bhaoghla" ;
   dc:identifier 14 ;
-  dc:author p:Rev_James_MacDonald__ ;
+  dc:creator p:Rev_James_MacDonald__ ;
   :genre "literature" ;
   :medium "prose" ;
   :xml "54_Am_Measg_Nam_Bodach/Beinn_A_Bhaoghla.xml" ;
@@ -4166,7 +4166,7 @@ c:_54-14
 c:_54-15
   dc:title "Na Hearradh" ;
   dc:identifier 15 ;
-  dc:author p:James_MacKenzie__ ;
+  dc:creator p:James_MacKenzie__ ;
   :genre "literature" ;
   :medium "prose" ;
   :xml "54_Am_Measg_Nam_Bodach/Na_Hearradh.xml" ;
@@ -4175,7 +4175,7 @@ c:_54-15
 c:_54-16
   dc:title "Eirisgeidh agus Uidhist a Deas" ;
   dc:identifier 16 ;
-  dc:author p:Donald_MacDonald__ ;
+  dc:creator p:Donald_MacDonald__ ;
   :genre "literature" ;
   :medium "prose" ;
   :xml "54_Am_Measg_Nam_Bodach/Eirisgeidh.xml" ;
@@ -4184,7 +4184,7 @@ c:_54-16
 c:_54-17
   dc:title "Eisdeal agus Luinn" ;
   dc:identifier 17 ;
-  dc:author p:Lucy_MacKenzie__ ;
+  dc:creator p:Lucy_MacKenzie__ ;
   :genre "literature" ;
   :medium "prose" ;
   :xml "54_Am_Measg_Nam_Bodach/Eisdeal_agus_Luinn.xml" ;
@@ -4193,13 +4193,126 @@ c:_54-17
 c:_54-18
   dc:title "An Ceard Mor" ;
   dc:identifier 18 ;
-  dc:author p:Rev_Kenneth_MacLeod__ ;
+  dc:creator p:Rev_Kenneth_MacLeod__ ;
   :genre "literature" ;
   :medium "prose" ;
   :xml "54_Am_Measg_Nam_Bodach/An_Ceard_Mor.xml" ;
   dc:isPartOf c:_54 .
 
+c:_160
+  dc:title "Leabhraiche an t-Seann Tiomnaidh" ;
+  dc:identifier 160 ;
+  dc:creator p:Rev_John_Stuart_1743_1821 , p:Rev_John_Smith_1747_ ;
+  dc:date "1783" ;
+  :internalDate "1783" ;
+  :genre "literature" ;
+  :medium "prose" ;
+  :rating "A" .
 
+c:_160-1
+  dc:title "Earrann I" ;
+  dc:identifier 1 ;
+  dc:isPartOf c:_160 .
+
+c:_160-1-1
+  dc:title "Genesis" ;
+  dc:identifier 1 ;
+  dc:isPartOf c:_160-1 .
+
+c:_160-1-1-1
+  dc:title "Caibideil I" ;
+  dc:identifier 1 ;
+  :xml "160_Seann_Tiomnadh/1/1_Genesis/1.xml" ;
+  dc:isPartOf c:_160-1-1 .
+
+c:_160-1-1-2
+  dc:title "Caibideil II" ;
+  dc:identifier 2 ;
+  :xml "160_Seann_Tiomnadh/1/1_Genesis/2.xml" ;
+  dc:isPartOf c:_160-1-1 .
+
+c:_160-1-1-3
+  dc:title "Caibideil III" ;
+  dc:identifier 3 ;
+  :xml "160_Seann_Tiomnadh/1/1_Genesis/3.xml" ;
+  dc:isPartOf c:_160-1-1 .
+
+c:_160-1-1-4
+  dc:title "Caibideil IV" ;
+  dc:identifier 4 ;
+  :xml "160_Seann_Tiomnadh/1/1_Genesis/4.xml" ;
+  dc:isPartOf c:_160-1-1 .
+
+c:_160-1-1-5
+  dc:title "Caibideil V" ;
+  dc:identifier 5 ;
+  :xml "160_Seann_Tiomnadh/1/1_Genesis/5.xml" ;
+  dc:isPartOf c:_160-1-1 .
+
+c:_160-1-1-6
+  dc:title "Caibideil VI" ;
+  dc:identifier 6 ;
+  :xml "160_Seann_Tiomnadh/1/1_Genesis/6.xml" ;
+  dc:isPartOf c:_160-1-1 .
+
+c:_160-1-1-7
+  dc:title "Caibideil VII" ;
+  dc:identifier 7 ;
+  :xml "160_Seann_Tiomnadh/1/1_Genesis/7.xml" ;
+  dc:isPartOf c:_160-1-1 .
+
+c:_160-1-1-8
+  dc:title "Caibideil VIII" ;
+  dc:identifier 8 ;
+  :xml "160_Seann_Tiomnadh/1/1_Genesis/8.xml" ;
+  dc:isPartOf c:_160-1-1 .
+
+c:_160-1-1-9
+  dc:title "Caibideil IX" ;
+  dc:identifier 9 ;
+  :xml "160_Seann_Tiomnadh/1/1_Genesis/9.xml" ;
+  dc:isPartOf c:_160-1-1 .
+
+c:_160-1-1-10
+  dc:title "Caibideil X" ;
+  dc:identifier 10 ;
+  :xml "160_Seann_Tiomnadh/1/1_Genesis/10.xml" ;
+  dc:isPartOf c:_160-1-1 .
+
+c:_160-1-2
+  dc:title "Ecsodus" ;
+  dc:identifier 2 ;
+  dc:isPartOf c:_160-1 .
+
+c:_160-1-3
+  dc:title "Lebhiticus" ;
+  dc:identifier 3 ;
+  dc:isPartOf c:_160-1 .
+
+c:_160-1-4
+  dc:title "Aireamh" ;
+  dc:identifier 4 ;
+  dc:isPartOf c:_160-1 .
+
+c:_160-1-5
+  dc:title "Deuteronomi" ;
+  dc:identifier 5 ;
+  dc:isPartOf c:_160-1 .
+
+c:_160-2
+  dc:title "Earrann II" ;
+  dc:identifier 2 ;
+  dc:isPartOf c:_160 .
+
+c:_160-3
+  dc:title "Earrann III" ;
+  dc:identifier 3 ;
+  dc:isPartOf c:_160 .
+
+c:_160-4
+  dc:title "Earrann IV" ;
+  dc:identifier 4 ;
+  dc:isPartOf c:_160 .
 
 c:_198
   dc:title "An t-Aonaran" ;
@@ -4440,6 +4553,66 @@ c:_321-19
   dc:identifier 19 ;
   :xml "321_An_Sgaile_Dhorcha/19_Deireadh_an_Fhoghair.xml" ;
   dc:isPartOf c:_321 .
+
+c:329
+  dc:title "Shrapnel" ;
+  dc:identifier 329 ;
+  dc:date "2006" ;
+  dc:publisher "CLÀR, Inverness" ;
+  dc:creator p:Norman_Campbell_1942_2015 ;
+  :genre "literature" ;
+  :medium "prose" ;
+  :shortTitle "Shrapnel" ;
+  :internalDate "2006" ;
+  :rating "" .
+
+c:_329-1
+  dc:title "Donati’s" ;
+  dc:identifier 1 ;
+  :xml "329_Shrapnel/1_Donatis.xml" ;
+  dc:isPartOf c:_329 .
+
+c:_329-2
+  dc:title "Infirmary" ;
+  dc:identifier 2 ;
+  :xml "329_Shrapnel/2_Infirmary.xml" ;
+  dc:isPartOf c:_329 .
+
+c:_329-3
+  dc:title "Dosser" ;
+  dc:identifier 3 ;
+  :xml "329_Shrapnel/3_Dosser.xml" ;
+  dc:isPartOf c:_329 .
+
+c:_329-4
+  dc:title "Riach" ;
+  dc:identifier 4 ;
+  :xml "329_Shrapnel/4_Riach.xml" ;
+  dc:isPartOf c:_329 .
+
+c:_329-5
+  dc:title "Shrapnel" ;
+  dc:identifier 5 ;
+  :xml "329_Shrapnel/5_Shrapnel.xml" ;
+  dc:isPartOf c:_329 .
+
+c:_329-6
+  dc:title "6 Snapshots" ;
+  dc:identifier 6 ;
+  :xml "329_Shrapnel/6_Snapshots.xml" ;
+  dc:isPartOf c:_329 .
+
+c:_329-7
+  dc:title "7 Sure by Tummel" ;
+  dc:identifier 7 ;
+  :xml "329_Shrapnel/7_Sure_by_Tummel.xml" ;
+  dc:isPartOf c:_329 .
+
+c:_329-8
+  dc:title "8 OK Corral" ;
+  dc:identifier 8 ;
+  :xml "329_Shrapnel/8_OK_Coral.xml" ;
+  dc:isPartOf c:_329 .
 
 c:_333
   dc:title "Steall à Iomadh Lòn" ;
