@@ -257,7 +257,7 @@ SQL;
 	public static function requestUnlock($slipId, $ownerEmail) {
 		$owner = Users::getUser($ownerEmail);
 		$user = Users::getUser($_SESSION["user"]);
-		$slip = self::getSlipInfoBySlipId($slipId);
+		$slip = self::getSlipInfoBySlipId($slipId)[0];
 		$editUrl = "https://dasg.ac.uk/gadelica/corpas/code/slipEdit.php";
 		$editUrl .= <<<HTML
 			?{$slip["filename"]}&id={$slip["id"]}&headword={$slip["lemma"]}&pos={$slip["pos"]}&auto_id={$slipId}
