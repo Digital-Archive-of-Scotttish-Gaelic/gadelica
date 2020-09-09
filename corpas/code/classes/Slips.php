@@ -249,6 +249,31 @@ SQL;
 		}
 	}
 
+	/**
+	 * Sends an email to slip owner to request a slip unlock
+	 * @param $slipId
+	 * @param $ownerEmail
+	 */
+	public static function requestUnlock($slipId, $ownerEmail) {
+		$owner = Users::getUser($ownerEmail);
+		$user = Users::getUser($_SESSION["user"]);
+		$slip = self::getSlipInfoBySlipId($slipId);
+		$editUrl = "https://dasg.ac.uk/gadelica/corpas/code/slipEdit.php";
+		$editUrl .= <<<HTML
+			?{$slip["filename"]}&id={$slip["id"]}&headword={$slip["lemma"]}&pos={$slip["pos"]}&auto_id={$slipId}
+HTML;
+		$emailText = <<<HTML
+			<p>Dear {$owner->getFirstName()},</p>
+			<p>{$user->getFirstName()} {$user->getLastName()} has requested that slip #{$slipId} be unlocked.</p>
+			<p>You can view and update the slip <a href="{$editUrl}">here</a></p>
+			<p>If you have received this email in error or have any other queries please contact <a title="Email DASG" href="mailto:mail@dasg.ac.uk">mail@dasg.ac.uk</a>.</p>	
+			<p>Kind regards</p>
+			<p>The DASG team</p>
+HTML;
+		$email = new Email($ownerEmail, "Slip Unlock Request", $emailText, "mail@dasg.ac.uk");
+		$email->send();
+	}
+
   /**
    * Updates user and date columns
    */
@@ -332,6 +357,10 @@ SQL;
               <div class="modal-body">
               </div>
               <div class="modal-footer">
+                <a id="lockedBtn" data-toggle="tooltip" data-owner="" data-slipid="" title="Slip is locked - click to request unlock" class="d-none lockBtn locked btn btn-large btn-danger" href="#">
+                  <i class="fa fa-lock" aria-hidden="true"></i></a>
+                <a data-toggle="tooltip" title="Slip is unlocked" class="d-none lockBtn unlocked btn btn-large btn-success" href="#">
+                  <i class="fa fa-unlock" aria-hidden="true"></i></a>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
                 <button type="button" id="editSlip" class="btn btn-primary">edit</button>
               </div>

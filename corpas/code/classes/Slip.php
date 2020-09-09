@@ -158,6 +158,10 @@ SQL;
     return $this->_senseCategories;
   }
 
+  public function getLocked() {
+  	return $this->_locked;
+  }
+
   public function getIsLocked() {
   	return $this->_locked == 1;
   }
@@ -199,12 +203,12 @@ SQL;
     $this->_saveSlipMorph();
     $sql = <<<SQL
         UPDATE slips 
-            SET starred = ?, translation = ?, notes = ?, preContextScope = ?, postContextScope = ?,
+            SET locked = ?, starred = ?, translation = ?, notes = ?, preContextScope = ?, postContextScope = ?,
                 wordClass = ?, updatedBy = ?, lastUpdated = now()
             WHERE filename = ? AND id = ?
 SQL;
-    $this->_db->exec($sql, array($this->getStarred(), $this->getTranslation(), $this->getNotes(),
-      $this->getPreContextScope(), $this->getPostContextScope(), $this->getWordClass(),
+    $this->_db->exec($sql, array($this->getLocked(), $this->getStarred(), $this->getTranslation(),
+	    $this->getNotes(), $this->getPreContextScope(), $this->getPostContextScope(), $this->getWordClass(),
       $this->getLastUpdatedBy(),
       $this->getFilename(), $this->getId()));
     return $this;
