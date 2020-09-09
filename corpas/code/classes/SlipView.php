@@ -158,74 +158,102 @@ HTML;
         <div class="editSlipSectionContainer">
           <h5>Morphological information</h5>
             <div id="prepSelects" class="{$prepSelectHide}">
-                <label for="posPrepMode">Mode:</label>
+              <div class="row form-group form-inline">
+                <label for="posPrepMode" class="col-form-label col-sm-1">Mode:</label>
                 <select name="prep_mode" id="posPrepMode" class="form-control col-2">
                   {$optionsHtml["prep_mode"]}
                 </select>
-                <span id="conjPosPrepOptions" class="{$conjPosPrepHide}">
-                  <label for="posPrepPerson">Person:</label>
+              </div>
+              <span id="conjPosPrepOptions" class="{$conjPosPrepHide}">
+                <div class="row form-group form-inline">
+                  <label for="posPrepPerson" class="col-form-label col-sm-1">Person:</label>
                   <select name="prep_person" id="posPrepPerson" class="form-control col-2">
                     {$optionsHtml["prep_person"]}
                   </select>
-                  <label for="posPrepNumber">Number:</label>
+                </div>
+                <div class="row form-group form-inline">
+                  <label for="posPrepNumber" class="col-form-label col-sm-1">Number:</label>
                   <select name="prep_number" id="posPrepNumber" class="form-control col-2">
                     {$optionsHtml["prep_number"]}
                   </select>
+                </div>
                   <span id="genderPrepOptions" class="{$genderPrepHide}">
-                    <label for="posPrepGender">Gender:</label>
-                    <select name="prep_gender" id="posPrepGender" class="form-control col-2">
-                      {$optionsHtml["prep_gender"]}
-										</select>
+                    <div class="row form-group form-inline">
+                      <label for="posPrepGender" class="col-form-label col-sm-1">Gender:</label>
+                      <select name="prep_gender" id="posPrepGender" class="form-control col-2">
+                        {$optionsHtml["prep_gender"]}
+											</select>
+										</div>
 									</span>
 								</span>
             </div>
             <div id="nounSelects" class="{$nounSelectHide}">
-                <label for="posNumberGender">Number:</label>
-                <select name="numgen" id="posNumberGender" class="form-control col-2">
-                  {$optionsHtml["numgen"]}
-                </select>
-                <label for="posCase">Case:</label>
-                <select name="case" id="posCase" class="form-control col-2">
-                  {$optionsHtml["case"]}
-                </select>
+                <div class="row form-group form-inline">
+	                <label for="posNumberGender" class="col-form-label col-sm-1">Number:</label>
+	                <select name="numgen" id="posNumberGender" class="form-control col-2">
+	                  {$optionsHtml["numgen"]}
+	                </select>
+	              </div>
+	              <div class="row form-group form-inline">
+	                <label for="posCase" class="col-form-label col-sm-1">Case:</label>
+	                <select name="case" id="posCase" class="form-control col-2">
+	                  {$optionsHtml["case"]}
+	                </select>
+	              </div>
             </div>
             <div id="verbSelects" class="{$verbSelectHide}">
-                <label for="posMode">Mode:</label>
-                <select name="mode" id="posMode" class="form-control col-2">
-                  {$optionsHtml["mode"]}
-                </select>
+                <div class="row form-group form-inline">
+	                <label for="posMode" class="col-form-label col-sm-1">Mode:</label>
+	                <select name="mode" id="posMode" class="form-control col-2">
+	                  {$optionsHtml["mode"]}
+	                </select>
+	              </div>
                 <span id="nonVerbalNounOptions" class="{$verbalNounHide}">
                   <span id="imperativeVerbOptions" class="{$impVerbSelectHide}">
-	                  <label for="posImpPerson">Person:</label>
-		                <select name="imp_person" id="posImpPerson" class="form-control col-2">
-		                  {$optionsHtml["imp_person"]}
-		                </select>
-		                <label for="posImpNumber">Number:</label>
-		                <select name="imp_number" id="posImpNumber" class="form-control col-2">
-		                  {$optionsHtml["imp_number"]}
-		                </select>
+                    <div class="row form-group form-inline">
+	                    <label for="posImpPerson" class="col-form-label col-sm-1">Person:</label>
+		                  <select name="imp_person" id="posImpPerson" class="form-control col-2">
+		                    {$optionsHtml["imp_person"]}
+		                  </select>
+		                </div>
+		                <div class="row form-group form-inline">
+		                  <label for="posImpNumber" class="col-form-label col-sm-1">Number:</label>
+		                  <select name="imp_number" id="posImpNumber" class="form-control col-2">
+		                    {$optionsHtml["imp_number"]}
+		                  </select>
+		                </div>
 	                </span>
 	                <span id="finiteVerbOptions" class="{$finVerbSelectHide}">
-	                  <label for="posFinPerson">Person:</label>
-		                <select name="fin_person" id="posFinPerson" class="form-control col-2">
-		                  {$optionsHtml["fin_person"]}
-		                </select>
-		                <label for="posFinNumber">Number:</label>
-		                <select name="fin_number" id="posFinNumber" class="form-control col-2">
-		                  {$optionsHtml["fin_number"]}
-		                </select>
-		                <label for="posStatus">Status:</label>
-		                <select name="status" id="posStatus" class="form-control col-2">
-		                  {$optionsHtml["status"]}
-		                </select>
-	                  <label for="posTense">Tense:</label>
-	                  <select name="tense" id="posTense" class="form-control col-2">
-	                    {$optionsHtml["tense"]}
-	                  </select>
-	                  <label for="posMood">Mood:</label>
-	                  <select name="mood" id="posMood" class="form-control col-2">
-	                    {$optionsHtml["mood"]}
-	                  </select>
+	                  <div class="row form-group form-inline">
+	                    <label for="posFinPerson" class="col-form-label col-sm-1">Person:</label>
+		                  <select name="fin_person" id="posFinPerson" class="form-control col-2">
+		                    {$optionsHtml["fin_person"]}
+		                  </select>
+		                </div>
+		                <div class="row form-group form-inline">
+		                  <label for="posFinNumber" class="col-form-label col-sm-1">Number:</label>
+		                  <select name="fin_number" id="posFinNumber" class="form-control col-2">
+		                    {$optionsHtml["fin_number"]}
+		                  </select>
+		                </div>
+		                <div class="row form-group form-inline">
+		                  <label for="posStatus" class="col-form-label col-sm-1">Status:</label>
+		                  <select name="status" id="posStatus" class="form-control col-2">
+		                    {$optionsHtml["status"]}
+		                  </select>
+		                </div>
+		                <div class="row form-group form-inline">
+	                    <label for="posTense" class="col-form-label col-sm-1">Tense:</label>
+	                    <select name="tense" id="posTense" class="form-control col-2">
+	                      {$optionsHtml["tense"]}
+	                    </select>
+	                  </div>
+	                  <div class="row form-group form-inline">
+	                    <label for="posMood" class="col-form-label col-sm-1">Mood:</label>
+	                    <select name="mood" id="posMood" class="form-control col-2">
+	                      {$optionsHtml["mood"]}
+	                    </select>
+	                  </div>
                   </span>
                 </span>
             </div>
@@ -244,8 +272,8 @@ HTML;
 HTML;
     }
     $html = <<<HTML
-        <div id="wordClassSelect" class="editSlipSectionContainer">
-          <label for="wordClass"><h5>Part-of-speech</h5></label>
+        <div id="wordClassSelect" class="editSlipSectionContainer row form-group form-inline">
+          <label for="wordClass" class="col-form-label col-sm-2"><h5>Part-of-speech:</h5></label>
           <select name="wordClass" id="wordClass" class="form-control col-3">
             {$optionHtml}
           </select>

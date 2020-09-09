@@ -69,7 +69,7 @@ HTML;
                   <th data-field="wordclass" data-sortable="true">Part-of-speech</th>
                   <th data-field="categories">Categories</th>
                   <th data-field="senses">Senses</th>
-                  <th data-field="fullname" data-sortable="true">Updated By</th>
+                  <th data-field="fullname" data-sortable="true">Owned By</th>
                   <th data-field="lastUpdated" data-sortable="true">Date</th>
                   <th data-field="printSlip">Print</th>
               </tr>

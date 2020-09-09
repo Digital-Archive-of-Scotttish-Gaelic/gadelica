@@ -22,6 +22,7 @@ class ViewTextView extends SearchView
             {$this->_getRatingHtml()}
             {$this->_getSuperURIHtml()}
             <tr><td>URI</td><td>{$this->_text->getURI()}</td></tr>
+            {$this->_getMetadataLinkHtml()}
           </tbody>
         </table>
         <p>&nbsp;</p>
@@ -182,6 +183,18 @@ HTML;
     $html .= '</div>';
     return $html;
   }
+
+	private function  _getMetadataLinkHtml() {
+  	$textId = $this->_text->getTextId();
+		$html = <<<HTML
+			<tr>
+				<td colspan="2">
+					<a href="https://dasg.ac.uk/corpus/textmeta.php?text={$textId}&uT=y" target="_blank">more info</a>
+				</td>
+			</tr>
+HTML;
+		return $html;
+	}
 
   private function _writeJavascript() {
     echo <<<HTML
