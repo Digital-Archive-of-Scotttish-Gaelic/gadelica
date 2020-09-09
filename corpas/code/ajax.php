@@ -33,8 +33,8 @@ switch ($_REQUEST["action"]) {
     $slip->updateResults($_GET["index"]); //ensure that "view slip" (and not "create slip") displays
     $filenameElems = explode('_', $slip->getFilename());
     $textId = $filenameElems[0];
-    $results = array("auto_id"=>$slip->getAutoId(), "starred"=>$slip->getStarred(),
-      "translation"=>$slip->getTranslation(), "notes"=>$slip->getNotes(),
+    $results = array("locked"=>$slip->getLocked(), "auto_id"=>$slip->getAutoId(), "owner"=>$slip->getOwnedBy(),
+	    "starred"=>$slip->getStarred(), "translation"=>$slip->getTranslation(), "notes"=>$slip->getNotes(),
       "preContextScope"=>$slip->getPreContextScope(), "postContextScope"=>$slip->getPostContextScope(),
       "wordClass"=>$slip->getWordClass(), "categories"=>$slip->getSenseCategories(),
       "lastUpdated"=>$slip->getLastUpdated(), "textId"=>$textId, "slipMorph"=>$slip->getSlipMorph()->getProps());
@@ -94,6 +94,9 @@ switch ($_REQUEST["action"]) {
 	case "saveLemmaGrammar":
 		echo Lemmas::saveLemmaGrammar($_GET["id"], $_GET["filename"], $_GET["headwordId"],
 			$_GET["slipId"], $_GET["grammar"]);
+		break;
+	case "requestUnlock":
+			Slips::requestUnlock($_GET["slipId"], $_GET["owner"]);
 		break;
 	default:
 		echo json_encode(array("error"=>"undefined action"));

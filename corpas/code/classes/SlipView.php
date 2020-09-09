@@ -11,6 +11,13 @@ class SlipView
 
   public function writeEditForm() {
     $checked = $this->_slip->getStarred() ? "checked" : "";
+    $locked = $this->_slip->getLocked();
+    $lockHide = $unlockHide = "";
+    if ($locked) {
+    	$unlockHide = "d-none";
+    } else {
+	    $lockHide = "d-none";
+    }
     echo <<<HTML
 				{$this->_writeContext()}
 				{$this->_writeCollocatesView()}
@@ -51,11 +58,18 @@ HTML;
           <div class="input-group">
             <input type="hidden" name="filename" value="{$_REQUEST["filename"]}">
             <input type="hidden" name="id" value="{$_REQUEST["id"]}">
+            <input type="hidden" id="locked" name="locked" value="{$locked}";
             <input type="hidden" id="auto_id" name="auto_id" value="{$this->_slip->getAutoId()}">
             <input type="hidden" id="pos" name="pos" value="{$_REQUEST["pos"]}">
             <input type="hidden" id="preContextScope" name="preContextScope" value="{$this->_slip->getPreContextScope()}">
             <input type="hidden" id="postContextScope" name="postContextScope" value="{$this->_slip->getPostContextScope()}">
             <input type="hidden" name="action" value="save"/>
+            <div>
+              <a data-toggle="tooltip" title="Click to unlock" class="{$lockHide} lockBtn locked btn btn-large btn-danger" href="#">
+                <i class="fa fa-lock" aria-hidden="true"></i></a>
+              <a data-toggle="tooltip" title="Click to lock" class="{$unlockHide} lockBtn unlocked btn btn-large btn-success" href="#">
+                <i class="fa fa-unlock" aria-hidden="true"></i></a>
+						</div>
             <div class="mx-2">
               <button name="close" class="windowClose btn btn-secondary">close</button>
               <button name="submit" id="savedClose" class="btn btn-primary">save</button>
@@ -414,6 +428,17 @@ HTML;
   private function _writeJavascript() {
     echo <<<HTML
         <script>
+            $('.lockBtn').on('click', function (e) {
+              e.preventDefault();
+              $(this).addClass('d-none');
+              $(this).siblings().removeClass('d-none');
+              if ($(this).hasClass('unlocked')) {
+                $('#locked').val('1');
+              } else {
+                $('#locked').val('0');
+              }  
+            });
+            
             $('#showCitationView').on('click', function () {
               $('#slipCollocatesContainer').hide();
               $('#slipContextContainer').show();

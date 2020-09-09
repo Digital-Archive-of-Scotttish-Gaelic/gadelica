@@ -94,9 +94,16 @@ $(function () {
     }
   });
 
+  /**
+   * Load and display slip data in a modal
+   */
   $('#slipModal').on('show.bs.modal', function (event) { // added by MM
     var modal = $(this);
     var slipLink = $(event.relatedTarget);
+    //reset lock buttons
+    $('.lockBtn').addClass('d-none');
+    var locked = "";
+    var owner = "";
     var slipId = slipLink.data('auto_id');
     var headword = slipLink.data('headword');
     var pos = slipLink.data('pos');
@@ -156,6 +163,9 @@ $(function () {
       });
       body += '</ul>';
       slipId = data.auto_id;
+      //check the slip lock status
+      locked = data.locked;
+      owner = data.owner;
     })
       .done(function () {
         modal.find('.modal-title').html(header);
@@ -167,6 +177,26 @@ $(function () {
         } else {
           $('.modal').find('button#editSlip').prop('disabled', 'disabled');
         }
+        //show the correct lock icon
+        if (locked == 1) {
+          $('.locked').removeClass('d-none');
+          $('.locked').attr('data-owner', owner);
+          $('.locked').attr('data-slipid', slipId);
+        } else {
+          $('.unlocked').removeClass('d-none');
+        }
+      });
+  });
+
+  /**
+   * Send email to request slip unlock
+   */
+  $('#lockedBtn').on('click', function () {
+    var owner = $(this).attr('data-owner');
+    var slipId = $(this).attr('data-slipid');
+    $.ajax({url: 'ajax.php?action=requestUnlock&slipId='+slipId+'&owner='+owner})
+      .done(function () {
+        alert('email sent');
       });
   });
 
@@ -380,12 +410,14 @@ $(function () {
   function saveSlip() {
     var wordclass = $('#wordClass').val();
     var starred = $('#slipStarred').prop('checked') ? 1 : 0;
+    var locked = $('#locked').val();
     var translation = CKEDITOR.instances['slipTranslation'].getData();
     var notes = CKEDITOR.instances['slipNotes'].getData();
     var data = {action: "saveSlip", filename: $('#slipFilename').text(), id: $('#slipId').text(),
       auto_id: $('#auto_id').val(), pos: $('#pos').val(), starred: starred, translation: translation,
       notes: notes, preContextScope: $('#slipContext').attr('data-precontextscope'),
-      postContextScope: $('#slipContext').attr('data-postcontextscope'), wordClass: wordclass};
+      postContextScope: $('#slipContext').attr('data-postcontextscope'), wordClass: wordclass,
+      locked: locked};
     switch (wordclass) {
       case "noun":
         data['numgen'] = $('#posNumberGender').val();
