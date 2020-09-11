@@ -84,7 +84,7 @@ SQL;
       $sql = <<<SQL
         INSERT INTO slipMorph(slip_id, relation, value) VALUES(?, ?, ?)
 SQL;
-      $this->_db->exec($sql, array($this->_auto_id, $relation, $value));
+      $this->_db->exec($sql, array($this->getAutoId(), $relation, $value));
     }
   }
 
@@ -179,7 +179,7 @@ SQL;
   }
 
   private function _populateClass($params) {
-    $this->_auto_id = $params["auto_id"];
+    $this->_auto_id = $this->getAutoId() ? $this->getAutoId() : $params["auto_id"];
     $this->_isNew = false;
     $this->_starred = $params["starred"] ? 1 : 0;
     $this->_translation = $params["translation"];
