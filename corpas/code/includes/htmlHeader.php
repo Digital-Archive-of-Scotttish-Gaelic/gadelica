@@ -6,11 +6,14 @@ $name = "";
 //check login state
 $loggedInHide = "hide";
 
-$loginControl = new LoginController();
+$groupTheme = "007bff"; //default colour scheme (Faclair theme)
 
+$loginControl = new LoginController();
 if ($loginControl->isLoggedIn() || ($_SESSION["email"] && $_POST["loginAction"] == "savePassword")) {
 	$email = $_SESSION["user"] ? $_SESSION["user"] : $_SESSION["email"];
 	$user = Users::getUser($email);
+	$userGroups = $user->getGroups();
+	$groupTheme = $userGroups[1]->getTheme();
 	$name = $user->getFirstName() . ' ' . $user->getLastName();
 	$loggedInHide = "";
 }
@@ -41,7 +44,7 @@ echo <<<HTML
 </head>
 <body style="padding-top: 80px;">
   <div class="container-fluid">
-    <nav class="navbar navbar-dark bg-primary fixed-top navbar-expand-lg">
+    <nav class="navbar navbar-dark fixed-top navbar-expand-lg" style="background-color: #{$groupTheme};">
       <a class="navbar-brand" href="index.php">Aidhleags</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
