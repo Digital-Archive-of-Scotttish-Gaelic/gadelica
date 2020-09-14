@@ -102,6 +102,8 @@ $(function () {
     var slipLink = $(event.relatedTarget);
     //reset lock buttons
     $('.lockBtn').addClass('d-none');
+    $('#lockedBtn').attr('title', 'Slip is locked - click to request unlock');
+    $('#lockedBtn').removeClass('disabled');
     var locked = "";
     var owner = "";
     var slipId = slipLink.data('auto_id');
@@ -126,6 +128,7 @@ $(function () {
     $('#auto_id').val(auto_id);
     $('#slipHeadword').html(headword);
     var canEdit;
+    var isOwner;
     //get the slip info from the DB
     $.getJSON('ajax.php?action=loadSlip&filename='+xml+'&id='+id+'&index='+resultindex
       +'&preContextScope='+$('#slipContext').attr('data-precontextscope')+'&auto_id='+auto_id
@@ -166,6 +169,7 @@ $(function () {
       //check the slip lock status
       locked = data.locked;
       owner = data.owner;
+      isOwner = data.isOwner;
     })
       .done(function () {
         modal.find('.modal-title').html(header);
@@ -182,6 +186,10 @@ $(function () {
           $('.locked').removeClass('d-none');
           $('.locked').attr('data-owner', owner);
           $('.locked').attr('data-slipid', slipId);
+          if (isOwner) {
+            $('#lockedBtn').attr('title', 'Slip is locked');
+            $('#lockedBtn').addClass('disabled');
+          }
         } else {
           $('.unlocked').removeClass('d-none');
         }
