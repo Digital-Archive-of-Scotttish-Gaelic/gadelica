@@ -9,7 +9,9 @@
   <xsl:output encoding="UTF-8" method="html"/>
   
   <xsl:template match="/">
-    <xsl:apply-templates/>
+    <div style="width: 800px;">
+      <xsl:apply-templates/>
+    </div>
   </xsl:template>
 
   <xsl:template match="dasg:text">
@@ -59,7 +61,7 @@
     <br/>
   </xsl:template>
   
-  <xsl:template match="dasg:o[name(following-sibling::*[1])='w']">
+  <xsl:template match="dasg:o[name(following-sibling::*[1])='w' or name(following-sibling::*[1])='s']">
     <span class="text-muted">
       <xsl:apply-templates/>
     </span>
@@ -72,7 +74,7 @@
     </span>
   </xsl:template>
 
-  <xsl:template match="dasg:w[name(following-sibling::*[1])='w' or name(following-sibling::*[1])='o' or name(following-sibling::*[1])='i']">
+  <xsl:template match="dasg:w[name(following-sibling::*[1])='w' or name(following-sibling::*[1])='o' or name(following-sibling::*[1])='i' or name(following-sibling::*[1])='footnote']">
     <span class="word" data-toggle="tooltip" data-placement="top">
       <xsl:attribute name="id">
         <xsl:value-of select="@id"/>
@@ -172,6 +174,14 @@
         <p class="text-muted">[p. <xsl:value-of select="@n"/>]</p>
       </xsl:otherwise>
     </xsl:choose>
+  </xsl:template>
+  
+  <xsl:template match="dasg:footnote">
+    <sup class="text-muted" >
+      <xsl:text>[</xsl:text>
+      <xsl:apply-templates select="dasg:p/*"/>
+      <xsl:text>] </xsl:text>
+    </sup>
   </xsl:template>
   
 </xsl:stylesheet>
