@@ -99,6 +99,9 @@ switch ($_REQUEST["action"]) {
 	case "requestUnlock":
 			Slips::requestUnlock($_GET["slipId"], $_GET["owner"]);
 		break;
+	case "setGroup":
+		Users::updateGroupLastUsed($_GET["groupId"]);
+		break;
 	default:
 		echo json_encode(array("error"=>"undefined action"));
 }

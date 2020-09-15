@@ -203,7 +203,7 @@ SQL;
     $this->_saveSlipMorph();
     $sql = <<<SQL
         UPDATE slips 
-            SET locked = ?, starred = ?, translation = ?, notes = ?, preContextScope = ?, postContextScope = ?,
+            SET group_id = {$_SESSION["groupId"]}, locked = ?, starred = ?, translation = ?, notes = ?, preContextScope = ?, postContextScope = ?,
                 wordClass = ?, updatedBy = ?, lastUpdated = now()
             WHERE filename = ? AND id = ?
 SQL;

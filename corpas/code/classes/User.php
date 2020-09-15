@@ -4,6 +4,7 @@ class User
 {
   private $email, $password, $salt, $firstName, $lastName,
     $isSlipAdmin, $passwordAuth, $lastLoggedIn, $updated;
+  private $_lastUsedGroup;  //an instance of UserGroup
   private $_groups = array(); //an array of UserGroup objects
 
   public function __construct($email) {
@@ -95,5 +96,13 @@ class User
 
   public function addGroup($group) {
   	array_push($this->_groups, $group);
+  }
+
+  public function getLastUsedGroup() {
+  	return $this->_lastUsedGroup;
+  }
+
+  public function setLastUsedGroup($group) {
+  	$this->_lastUsedGroup = $group;
   }
 }

@@ -12,8 +12,25 @@ $loginControl = new LoginController();
 if ($loginControl->isLoggedIn() || ($_SESSION["email"] && $_POST["loginAction"] == "savePassword")) {
 	$email = $_SESSION["user"] ? $_SESSION["user"] : $_SESSION["email"];
 	$user = Users::getUser($email);
+
+	$groupHtml = "";
 	$userGroups = $user->getGroups();
-	$groupTheme = $userGroups[1]->getTheme();
+	if (count($userGroups ) > 1) {
+		$groupHtml = <<<HTML
+			<select class="selectpicker show-tick" data-width="150px">
+HTML;
+
+		foreach ($userGroups as $group) {
+			$groupHtml .= <<<HTML
+				<option style="background:#{$group->getTheme()}; color:#fff;" value="{$group->getId()}">{$group->getName()}</option>
+HTML;
+		}
+		$groupHtml .= "</select>";
+	}
+	$lastUsedGroup = $user->getLastUsedGroup();
+	$groupTheme = $lastUsedGroup->getTheme();
+	$_SESSION["groupId"] = $lastUsedGroup->getId() ? $lastUsedGroup->getId() : 1;
+
 	$name = $user->getFirstName() . ' ' . $user->getLastName();
 	$loggedInHide = "";
 }
@@ -31,6 +48,7 @@ echo <<<HTML
   <link rel="stylesheet" type="text/css" href="css/simplePagination.css">
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.17.1/dist/bootstrap-table.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
   <title>Aidhleags</title>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
@@ -41,6 +59,17 @@ echo <<<HTML
 	<script src="https://unpkg.com/bootstrap-table@1.17.1/dist/bootstrap-table.min.js"></script>
 	<script src="https://cdn.ckeditor.com/4.14.1/basic/ckeditor.js"></script>
 	<script src="https://kit.fontawesome.com/0b481d2098.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+	<script>
+		$(function () {
+		  $('.selectpicker').change(function () {
+		    var groupId = $(this).children("option:selected"). val();
+		    $.ajax({url: 'ajax.php?action=setGroup&groupId='+groupId});
+		    window.location.reload(true);
+		    return false;
+		  });
+		});
+	</script>
 </head>
 <body style="padding-top: 80px;">
   <div class="container-fluid">
@@ -61,6 +90,9 @@ echo <<<HTML
               <a id="logoutLink" href="index.php?loginAction=logout" class="btn btn-link nav-link nav-item">logout</a>
             </form>  
 					</span>
+					<div class="navbar-nav>">
+						{$groupHtml}
+					</div>
         </div>
         <div class="navbar-nav ml-auto">
           <span class="loggedIn {$loggedInHide}">

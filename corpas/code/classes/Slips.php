@@ -15,12 +15,13 @@ class Slips
     $db = new Database();
     $dbh = $db->getDatabaseHandle();
     try {
-			$whereClause = "";
+			$whereClause = "WHERE group_id = {$_SESSION["groupId"]} ";
 			if (mb_strlen($search) > 1) {     //there is a search to run
 				$sth = $dbh->prepare("SET @search = :search");  //set a MySQL variable for the searchterm
 				$sth->execute(array(":search" => "%{$search}%"));
-				$whereClause = <<<SQL
-					WHERE auto_id LIKE @search	
+				$whereClause .= <<<SQL
+					AND 
+					 		auto_id LIKE @search	
             	OR lemma LIKE @search
             	OR wordform LIKE @search
             	OR wordclass LIKE @search
@@ -147,7 +148,7 @@ SQL;
                 translation, date_of_lang, title, page, starred
             FROM slips s
             JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
-            WHERE s.auto_id = :slipId
+            WHERE group_id = {$_SESSION["groupId"]} AND s.auto_id = :slipId
             ORDER BY auto_id ASC
 SQL;
 			$sth = $dbh->prepare($sql);
@@ -174,7 +175,7 @@ SQL;
 			$sql = <<<SQL
         SELECT relation, value
         	FROM slipMorph
-        	WHERE slip_id = :slipId
+        	WHERE group_id = {$_SESSION["groupId"]} AND slip_id = :slipId
 SQL;
 			$sth = $dbh->prepare($sql);
 			$sth->execute(array(":slipId"=>$slipId));
@@ -235,7 +236,7 @@ SQL;
             FROM slips s
             JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
             JOIN senseCategory sc on sc.slip_id = auto_id
-            WHERE lemma = :lemma AND wordclass = :wordclass AND sc.category = :category 
+            WHERE group_id = {$_SESSION["groupId"]} AND lemma = :lemma AND wordclass = :wordclass AND sc.category = :category 
             ORDER BY auto_id ASC
 SQL;
 			$sth = $dbh->prepare($sql);
@@ -282,7 +283,7 @@ HTML;
     $dbh = $db->getDatabaseHandle();
     try {
       $sql = <<<SQL
-          UPDATE slips SET updatedBy = :user, lastUpdated = now() WHERE auto_id = :slipId
+          UPDATE slips SET updatedBy = :user, lastUpdated = now() WHERE group_id = {$_SESSION["groupId"]} AND auto_id = :slipId
 SQL;
       $sth = $dbh->prepare($sql);
       $sth->execute(array(":user"=>$_SESSION["user"], ":slipId"=>$slipId));

@@ -70,7 +70,7 @@ SQL;
         SELECT DISTINCT category FROM senseCategory sc
         JOIN slips s ON s.auto_id = sc.slip_id
         JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
-        WHERE lemma = :lemma AND wordclass = :wordclass
+        WHERE lemma = :lemma AND wordclass = :wordclass AND group_id = {$_SESSION["groupId"]}
             ORDER BY category ASC
 SQL;
 			$sth = $dbh->prepare($sql);
@@ -97,7 +97,7 @@ SQL;
 		try {
 			$sql = <<<SQL
         UPDATE senseCategory sc
-        JOIN slips s ON s.auto_id = sc.slip_id
+        JOIN slips s ON s.auto_id = sc.slip_id AND group_id = {$_SESSION["groupId"]}
         JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
         SET category = :newName WHERE category = :oldName
         AND lemma = :lemma AND wordclass = :wordclass

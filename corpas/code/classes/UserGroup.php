@@ -5,7 +5,7 @@ class UserGroup
 {
 	private $_id, $_name, $_theme;
 
-	public function __construct($id, $name, $theme) {
+	public function __construct($id, $name, $theme, $lastUsed) {
 		$this->setId($id);
 		$this->setName($name);
 		$this->setTheme($theme);
@@ -38,4 +38,5 @@ class UserGroup
 	public function setTheme($theme) {
 		$this->_theme = $theme;
 	}
+
 }
