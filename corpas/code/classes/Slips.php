@@ -15,19 +15,18 @@ class Slips
     $db = new Database();
     $dbh = $db->getDatabaseHandle();
     try {
-			$whereClause = "WHERE group_id = {$_SESSION["groupId"]} ";
+			$whereClause = "WHERE (group_id = {$_SESSION["groupId"]}) ";
 			if (mb_strlen($search) > 1) {     //there is a search to run
 				$sth = $dbh->prepare("SET @search = :search");  //set a MySQL variable for the searchterm
 				$sth->execute(array(":search" => "%{$search}%"));
 				$whereClause .= <<<SQL
-					AND 
-					 		auto_id LIKE @search	
+					AND (auto_id LIKE @search	
             	OR lemma LIKE @search
             	OR wordform LIKE @search
             	OR wordclass LIKE @search
             	OR lemma LIKE @search
             	OR firstname LIKE @search
-            	OR lastname LIKE @search
+            	OR lastname LIKE @search)
 SQL;
 			}
 	    $dbh->setAttribute( PDO::ATTR_EMULATE_PREPARES, false );
