@@ -21,11 +21,8 @@ class Slip
   public function __construct($filename, $id, $auto_id = null, $pos, $preScope = 20, $postScope = 20) {
     $this->_filename = $filename;
     $this->_id = $id;
-    if ($auto_id) {
-	    $this->_auto_id = $auto_id;
-    } else {
-	    $this->_auto_id = Slips::slipExists($_SESSION["groupId"], $filename, $id);
-    }
+    //test if a slip already exists (and if there is a slip with the same groupId, filename, id combination
+    $this->_auto_id = $auto_id ? $auto_id : Slips::slipExists($_SESSION["groupId"], $filename, $id);
     $this->_pos = $pos;
     if (!isset($this->_db)) {
       $this->_db = new Database();
