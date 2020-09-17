@@ -101,36 +101,25 @@ HTML;
     }
   }
 
-	/**
-	 * Gets slip info form the DB to populate an Entry with data required for citations
-	 * @param $lemma
-	 * @param $wordclass
-	 * @param $wordform
-	 * @return array of DB results
-	 */
- /* public static function getSlipsByWordform($lemma, $wordclass, $wordform) {
-	  $slipInfo = array();
+  public static function slipExists($groupId, $filename, $id) {
 	  $db = new Database();
 	  $dbh = $db->getDatabaseHandle();
 	  try {
 		  $sql = <<<SQL
-        SELECT s.filename as filename, s.id as id, auto_id, pos, lemma, preContextScope, postContextScope,
-                translation, date_of_lang, title, page
-            FROM slips s
-            JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
-            WHERE lemma = :lemma AND wordclass = :wordclass AND wordform = :wordform
-            ORDER BY auto_id ASC
+        SELECT auto_id FROM slips WHERE group_id = :groupId AND filename = :filename AND id = :id
 SQL;
 		  $sth = $dbh->prepare($sql);
-		  $sth->execute(array(":lemma"=>$lemma, ":wordclass"=>$wordclass, ":wordform"=>$wordform));
-		  while ($row = $sth->fetch()) {
-			  $slipInfo[] = $row;
+		  $sth->execute(array(":groupId"=>$groupId, ":filename"=>$filename, ":id"=>$id));
+		  $row = $sth->fetch();
+		  if ($autoId = $row["auto_id"]) {
+			  return $autoId;
+		  } else {
+		  	return false;
 		  }
-		  return $slipInfo;
 	  } catch (PDOException $e) {
 		  echo $e->getMessage();
 	  }
-  }*/
+  }
 
 	/**
 	 * Gets slip info from the DB
@@ -174,7 +163,7 @@ SQL;
 			$sql = <<<SQL
         SELECT relation, value
         	FROM slipMorph
-        	WHERE group_id = {$_SESSION["groupId"]} AND slip_id = :slipId
+        	WHERE slip_id = :slipId
 SQL;
 			$sth = $dbh->prepare($sql);
 			$sth->execute(array(":slipId"=>$slipId));

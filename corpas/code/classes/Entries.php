@@ -17,7 +17,7 @@ class Entries
 			$sql = <<<SQL
         SELECT wordform, auto_id FROM lemmas l
             JOIN slips s ON s.filename = l.filename AND s.id = l.id
-            WHERE lemma = :lemma AND wordclass = :wordclass
+            WHERE s.group_id = {$_SESSION["groupId"]} AND lemma = :lemma AND wordclass = :wordclass
             ORDER BY wordform ASC
 SQL;
 			$sth = $dbh->prepare($sql);
@@ -43,7 +43,7 @@ SQL;
         SELECT category, auto_id FROM senseCategory sc
         JOIN slips s ON s.auto_id = sc.slip_id
         JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
-        WHERE lemma = :lemma AND wordclass = :wordclass
+        WHERE s.group_id = {$_SESSION["groupId"]} AND  lemma = :lemma AND wordclass = :wordclass
             ORDER BY category ASC
 SQL;
 			$sth = $dbh->prepare($sql);
@@ -66,6 +66,7 @@ SQL;
       $sql = <<<SQL
         SELECT DISTINCT lemma, wordclass FROM lemmas l
             JOIN slips s ON s.filename = l.filename AND s.id = l.id
+            WHERE s.group_id = {$_SESSION["groupId"]}
             ORDER BY lemma ASC
 SQL;
       $sth = $dbh->prepare($sql);

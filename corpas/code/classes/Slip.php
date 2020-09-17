@@ -21,7 +21,11 @@ class Slip
   public function __construct($filename, $id, $auto_id = null, $pos, $preScope = 20, $postScope = 20) {
     $this->_filename = $filename;
     $this->_id = $id;
-    $this->_auto_id = $auto_id;
+    if ($auto_id) {
+	    $this->_auto_id = $auto_id;
+    } else {
+	    $this->_auto_id = Slips::slipExists($_SESSION["groupId"], $filename, $id);
+    }
     $this->_pos = $pos;
     if (!isset($this->_db)) {
       $this->_db = new Database();
@@ -35,9 +39,9 @@ class Slip
       $this->_isNew = true;
       $this->_extractWordClass($this->_pos);
       $sql = <<<SQL
-        INSERT INTO slips (filename, id, preContextScope, postContextScope, wordClass, ownedBy) VALUES (?, ?, ?, ?, ?, ?);
+        INSERT INTO slips (filename, id, group_id, preContextScope, postContextScope, wordClass, ownedBy) VALUES (?, ?, ?, ?, ?, ?, ?);
 SQL;
-      $this->_db->exec($sql, array($this->_filename, $this->_id, $preScope, $postScope, $this->getWordClass(),
+      $this->_db->exec($sql, array($this->_filename, $this->_id, $_SESSION["groupId"], $preScope, $postScope, $this->getWordClass(),
 	      $_SESSION["user"]));
       $this->_auto_id = $this->_db->getLastInsertId();
       $this->_saveSlipMorph();    //save the defaults to the DB
