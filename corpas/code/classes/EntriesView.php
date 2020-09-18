@@ -102,6 +102,11 @@ HTML;
   }
 
 	private function _getSensesHtml($entry) {
+
+  	//TODO: this is the call I'll need for individual senses
+  	//print_r($entry->getIndividualSenses()); die();
+
+
 		$html = "<ul>";
 		$i = 0;
 		/* Get any citations without senses */
