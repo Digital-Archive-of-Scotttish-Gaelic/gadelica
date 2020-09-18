@@ -85,6 +85,35 @@ SQL;
 	}
 
 	/**
+	 * Fetches all the slipIds without a sense for a given lemma/wordclass combination
+	 * @param $lemma
+	 * @param $wordclass
+	 * @return array of slipIds
+	 */
+	public static function getNonCategorisedSlipIds($lemma, $wordclass) {
+		$slipIds = array();
+		$db = new Database();
+		$dbh = $db->getDatabaseHandle();
+		try {
+			$sql = <<<SQL
+        SELECT auto_id FROM slips s 
+        	JOIN lemmas l ON s.filename = l.filename AND s.id = l.id 
+        	WHERE auto_id NOT IN (SELECT slip_id FROM senseCategory) AND lemma = :lemma AND wordclass= :wordclass 
+        	AND group_id = {$_SESSION["groupId"]}
+        	ORDER by auto_id ASC
+SQL;
+			$sth = $dbh->prepare($sql);
+			$sth->execute(array(":lemma"=>$lemma, ":wordclass"=>$wordclass));
+			while ($row = $sth->fetch()) {
+				$slipIds[] = $row["auto_id"];
+			}
+			return $slipIds;
+		} catch (PDOException $e) {
+			echo $e->getMessage();
+		}
+	}
+
+	/**
 	 * Renames a sense category
 	 * @param $lemma
 	 * @param $wordclass

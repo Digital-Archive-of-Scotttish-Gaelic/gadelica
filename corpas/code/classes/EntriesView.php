@@ -104,6 +104,15 @@ HTML;
 	private function _getSensesHtml($entry) {
 		$html = "<ul>";
 		$i = 0;
+		/* Get any citations without senses */
+		$nonSenseSlipIds = SenseCategories::getNonCategorisedSlipIds($entry->getLemma(), $entry->getWordclass());
+		$slipData = array();
+		foreach ($nonSenseSlipIds as $slipId) {
+			$i++;
+			$slipData[] = Slips::getSlipInfoBySlipId($slipId);
+			$html .= $this->_getSlipListHtml($slipData, "uncategorised", $i);
+		}
+		/* Get the citations with senses */
 		foreach ($entry->getUniqueSenses() as $slipId => $sense) {
 			$i++;
 			$slipData = array();
@@ -111,23 +120,30 @@ HTML;
 			foreach ($senseSlipIds as $id) {
 				$slipData[] = Slips::getSlipInfoBySlipId($id);
 			}
-			$slipList = '<table class="table"><tbody>';
-			foreach($slipData as $data) {
-				foreach ($data as $row) {
-					$filenameElems = explode('_', $row["filename"]);
-					$translation = $this->_formatTranslation($row["translation"]);
-					$slipLinkData = array(
-						"auto_id" => $row["auto_id"],
-						"lemma" => $row["lemma"],
-						"pos" => $row["pos"],
-						"id" => $row["id"],
-						"filename" => $row["filename"],
-						"uri" => "",
-						"date_of_lang" => $row["date_of_lang"],
-						"title" => $row["title"],
-						"page" => $row["page"]
-					);
-					$slipList .= <<<HTML
+			$html .= $this->_getSlipListHtml($slipData, $sense, $i);
+		}
+		$html .= "</ul>";
+		return $html;
+	}
+
+	private function _getSlipListHtml($slipData, $sense, $index) {
+		$slipList = '<table class="table"><tbody>';
+		foreach($slipData as $data) {
+			foreach ($data as $row) {
+				$filenameElems = explode('_', $row["filename"]);
+				$translation = $this->_formatTranslation($row["translation"]);
+				$slipLinkData = array(
+					"auto_id" => $row["auto_id"],
+					"lemma" => $row["lemma"],
+					"pos" => $row["pos"],
+					"id" => $row["id"],
+					"filename" => $row["filename"],
+					"uri" => "",
+					"date_of_lang" => $row["date_of_lang"],
+					"title" => $row["title"],
+					"page" => $row["page"]
+				);
+				$slipList .= <<<HTML
 					<tr id="#slip_{$row["auto_id"]}" data-slipid="{$row["auto_id"]}"
 							data-filename="{$row["filename"]}"
 							data-id="{$row["id"]}"
@@ -142,30 +158,29 @@ HTML;
 						<td><a target="_blank" href="#" class="entryCitationTextLink"><small>view in text</small></td>
 					</tr>
 HTML;
-				}
 			}
-			$slipList .= "</tbody></table>";
-			$citationsHtml = <<<HTML
-				<small><a href="#" class="citationsLink" data-type="sense" data-index="{$i}">
+		}
+		$slipList .= "</tbody></table>";
+		$citationsHtml = <<<HTML
+				<small><a href="#" class="citationsLink" data-type="sense" data-index="{$index}">
 						citations
 				</a></small>
-				<div id="sense_citations{$i}" class="citation">
+				<div id="sense_citations{$index}" class="citation">
 					{$slipList}
 				</div>
 HTML;
-			$senses = explode('|', $sense);
-			$senseString = "";
-			foreach ($senses as $s) {
-				$senseString .= <<<HTML
-					<span data-toggle="modal" data-target="#senseModal" title="rename this sense" class="badge badge-success entrySense">{$s}</span> 
+		$senses = explode('|', $sense);
+		$senseString = "";
+		foreach ($senses as $s) {
+			$badge = ($s == "uncategorised") ? "badge-secondary" : "badge-success";
+			$senseString .= <<<HTML
+					<span data-toggle="modal" data-target="#senseModal" title="rename this sense" class="badge {$badge} entrySense">{$s}</span> 
 HTML;
 
-			}
-			$html .= <<<HTML
+		}
+		$html = <<<HTML
 				<li>{$senseString} {$citationsHtml}</li>
 HTML;
-		}
-		$html .= "</ul>";
 		return $html;
 	}
 
