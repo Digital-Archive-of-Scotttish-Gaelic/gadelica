@@ -31,16 +31,15 @@ foreach ($words as $nextWord) {
     $lexicon[$nextWord] = 1;
   }
 }
+
 $lexicon2 = [];
 foreach ($lexicon as $nextWord => $nextCount) {
   $bits = explode('|',$nextWord);
   if ($lexicon2[$bits[0]]) {
     $bits2 = explode('|',$lexicon2[$bits[0]]);
-
     if ($nextCount > $bits2[2]) {
       $lexicon2[$bits[0]] = $bits[1] . '|' . $bits[2] . '|' . $nextCount;
     }
-
   }
   else {
     $lexicon2[$bits[0]] = $bits[1] . '|' . $bits[2] . '|' . $nextCount;
@@ -72,11 +71,6 @@ foreach (new RecursiveIteratorIterator($it) as $nextFile) {
   }
 }
 
-/*
-foreach ($lexicon2 as $nextForm => $nextTag) {
-  echo $nextForm . ' ' . $nextTag . PHP_EOL;
-}
-*/
 
 
 
