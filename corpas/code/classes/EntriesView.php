@@ -102,34 +102,69 @@ HTML;
   }
 
 	private function _getSensesHtml($entry) {
+  	$html = <<<HTML
+			<div id="groupedSenses">
+				<h5>Grouped Senses <a id="showIndividual" href="#" title="show individual senses"><small>show individual</small></a></h5> 
+				<ul>
+HTML;
+		$html .= $this->_getOrphanSensesHtml($entry);
+		$html .= $this->_getGroupedSensesHtml($entry);
+		$html .= '</ul></div>';
 
-  	//TODO: this is the call I'll need for individual senses
-  	//print_r($entry->getIndividualSenses()); die();
+		$html .= <<<HTML
+			<div id="individualSenses" class="hide">
+				<h5>Indivdual Senses <a id="showGrouped" href="#" title="show grouped senses"><small>show grouped</small></a></h5> 
+				<ul>
+HTML;
+		$html .= $this->_getOrphanSensesHtml($entry);
+		$html .= $this->_getIndividualSensesHtml($entry);
+		$html .= '</ul></div>';
+		return $html;
+	}
 
-
-		$html = "<ul>";
-		$i = 0;
+	private function _getOrphanSensesHtml($entry) {
 		/* Get any citations without senses */
 		$nonSenseSlipIds = SenseCategories::getNonCategorisedSlipIds($entry->getLemma(), $entry->getWordclass());
 		$slipData = array();
+		$index = 0;
 		foreach ($nonSenseSlipIds as $slipId) {
-			$i++;
+			$index++;
 			$slipData[] = Slips::getSlipInfoBySlipId($slipId);
-			$html .= $this->_getSlipListHtml($slipData, "uncategorised", $i);
+			$html .= $this->_getSlipListHtml($slipData, "uncategorised", "orp_".$index);
 		}
-		/* Get the citations with senses */
+		return $html;
+	}
+
+	private function _getIndividualSensesHtml($entry) {
+		/* Get citations for individual senses */
+		$individualSenses = $entry->getIndividualSenses();
+		$index = 0;
+		foreach ($individualSenses as $sense => $slipIds) {
+			$slipData = array();
+			foreach ($slipIds as $slipId) {
+				$index++;
+				$slipData[] = Slips::getSlipInfoBySlipId($slipId);
+			}
+			$html .= $this->_getSlipListHtml($slipData, $sense, "ind_".$index);
+		}
+		return $html;
+	}
+
+	private function _getGroupedSensesHtml($entry) {
+  	/* Get the citations with grouped senses */
+		$index = 0;
 		foreach ($entry->getUniqueSenses() as $slipId => $sense) {
-			$i++;
 			$slipData = array();
 			$senseSlipIds = $entry->getSenseSlipIds($slipId);
 			foreach ($senseSlipIds as $id) {
+				$index++;
 				$slipData[] = Slips::getSlipInfoBySlipId($id);
 			}
-			$html .= $this->_getSlipListHtml($slipData, $sense, $i);
+			$html .= $this->_getSlipListHtml($slipData, $sense, "grp_".$index);
 		}
-		$html .= "</ul>";
 		return $html;
 	}
+
 
 	private function _getSlipListHtml($slipData, $sense, $index) {
 		$slipList = '<table class="table"><tbody>';
@@ -272,6 +307,18 @@ HTML;
   private function _writeJavascript() {
   	echo <<<HTML
 			<script>
+				$('#showIndividual').on('click', function () {
+				  $('#groupedSenses').hide();
+				  $('#individualSenses').show();
+				  return false;
+				});
+				
+				$('#showGrouped').on('click', function () {
+				  $('#individualSenses').hide();
+				  $('#groupedSenses').show();
+				  return false;
+				});
+				
 				$('.entrySense').on('click', function() {
 				  var oldName = $(this).text();
 				  $('#oldSenseName').text(oldName);
