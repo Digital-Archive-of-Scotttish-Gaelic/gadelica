@@ -281,11 +281,15 @@ $(function () {
         title += 'Title: ' + val.title + '<br>';
         title += 'Page No:: ' + val.page + '<br><br>';
         title += val.filename + '<br>' + val.id;
+        var slipClass = 'editSlipLink';
         var slipLinkText = 'create slip';
         var createSlipStyle = 'createSlipLink';
-        if (val.auto_id) {  //if a slip exists for this entry
+        var slipUrl = 'slipEdit.php?filename='+val.filename+'&id='+val.id+'&headword='+headword+'&pos='+pos+'&auto_id='+val.auto_id;
+        if (val.auto_id) {    //if a slip exists for this entry
           slipLinkText = 'view slip';
+          slipClass = 'slipLink2';
           createSlipStyle = '';
+          slipUrl = '#';
         }
         /*
             <a href="#" class="slipLink2 {$createSlipStyle}"
@@ -310,8 +314,10 @@ $(function () {
         html += ' data-toggle="tooltip" data-html="true" title="' + title + '">';
         html += val.word + '</a>';
         html += '<td>' + val.post.output + '</td>';
-        html += '<td><small><a href="#" class="slipLink2 ' + createSlipStyle + '" data-uri="' + val.uri + '"';
-        html += ' data-toggle="modal" data-target="#slipModal" ';
+        html += '<td><small><a href="'+slipUrl+'" target="_blank" class="' + slipClass + ' ' + createSlipStyle + '" data-uri="' + val.uri + '"';
+        if (slipClass == 'slipLink2') {   //only use the modal for existing slips
+          html += ' data-toggle="modal" data-target="#slipModal" ';
+        }
         html += ' data-headword="' + headword + '" data-pos="' + pos + '"';
         html += ' data-id="' + val.id + '" data-xml="' + val.filename + '"';
         html += ' data-date="' + val.date + '" data-title="' + val.title + '" data-page="' + val.page + '"';

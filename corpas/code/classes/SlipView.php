@@ -286,7 +286,7 @@ HTML;
 HTML;
     }
     $html = <<<HTML
-        <div id="wordClassSelect" class="editSlipSectionContainer row form-group form-inline">
+        <div id="wordClassSelect" class="editSlipSectionContainer form-group form-inline">
           <label for="wordClass" class="col-form-label col-sm-2"><h5>Part-of-speech:</h5></label>
           <select name="wordClass" id="wordClass" class="form-control col-3">
             {$optionHtml}
@@ -300,7 +300,7 @@ HTML;
   {
     $categories = SenseCategories::getAllUnusedCategories($this->_slip->getAutoId(),
       $_REQUEST["headword"], $this->_slip->getWordClass());
-    $dropdownHtml = '<option value="">-- select a category --</option>';
+    $dropdownHtml = '<option data-category="">-- select a category --</option>';
     foreach ($categories as $cat) {
       $dropdownHtml .= <<<HTML
         <option data-category="{$cat}" value="{$cat}">{$cat}</option>
@@ -486,6 +486,9 @@ HTML;
             $("#chooseSenseCategory").on('click', function () {
               var elem = $( "#senseCategorySelect option:selected" );
               var category = elem.text();
+              if (elem.attr('data-category') == "") {
+                return false;
+              }
               var html = '<li class="badge badge-success" data-category="' + category + '">' + category;
               html += ' <a class="badge badge-danger deleteCat">X</a></li>';
               $('#senseCategories').append(html);
@@ -500,6 +503,9 @@ HTML;
 
             $(document).on('click', '#addSenseCategory', function () {
               var newCategory = $('#senseCategory').val();
+              if (newCategory == "") {
+                return false;
+              }
               var html = '<li class="badge badge-success" data-category="' + newCategory + '">' + newCategory;
               html += ' <a class="badge badge-danger deleteCat">X</a></li>';
               $('#senseCategories').append(html);
