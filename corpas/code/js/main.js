@@ -242,7 +242,6 @@ $(function () {
     $('#preContextScope').val(preScope);
     $('#postContextScope').val(postScope);
     writeSlipContext(filename, id);
-    saveSlip();
   });
 
   $(document).on('click', '#editSlip', function () {

@@ -362,11 +362,6 @@ HTML;
     if ($context["pre"]["endJoin"] != "right" && $context["pre"]["endJoin"] != "both") {
       $contextHtml .= ' ';
     }
-/*
-    $contextHtml .= <<<HTML
-			<span id="slipWordInContext" data-headwordid="{$context["headwordId"]}">{$context["word"]}</span>
-HTML;
-*/
     $contextHtml .= <<<HTML
       <mark id="slipWordInContext" data-headwordid="{$context["headwordId"]}">{$context["word"]}</mark>
 HTML;
@@ -427,7 +422,7 @@ HTML;
 
   private function _writeJavascript() {
     echo <<<HTML
-        <script>
+        <script>     
             $('.lockBtn').on('click', function (e) {
               e.preventDefault();
               $(this).addClass('d-none');
