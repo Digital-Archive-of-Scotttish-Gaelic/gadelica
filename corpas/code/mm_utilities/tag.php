@@ -1,8 +1,9 @@
 <?php
 
-require_once "includes/include.php";
+require_once "../includes/include.php";
+require_once "../classes/Functions.php";
 
-$it = new RecursiveDirectoryIterator(INPUT_FILEPATH);
+$it = new RecursiveDirectoryIterator("../../xmlTest/");
 $words = [];
 foreach (new RecursiveIteratorIterator($it) as $nextFile) {
   if ($nextFile->getExtension()=='xml') {
@@ -67,7 +68,8 @@ foreach (new RecursiveIteratorIterator($it) as $nextFile) {
           }
         }
       }
-      echo $xml->asXML();
+      //echo $xml->asXML();
+      $xml->asXML($nextFile);
     }
   }
 }
