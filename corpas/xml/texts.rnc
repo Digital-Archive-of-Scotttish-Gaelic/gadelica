@@ -23,5 +23,6 @@ Token = (
           | element o { text } 
           | element t { attribute resp {text}?, text }
           | element pause { text }
+          | element footnote { attribute n { text }, Paragraph }
         )
 
