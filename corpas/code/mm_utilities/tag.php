@@ -3,7 +3,7 @@
 require_once "../includes/include.php";
 require_once "../classes/Functions.php";
 
-$it = new RecursiveDirectoryIterator("../../xmlTest/");
+$it = new RecursiveDirectoryIterator("../../xml/");
 $words = [];
 foreach (new RecursiveIteratorIterator($it) as $nextFile) {
   if ($nextFile->getExtension()=='xml') {
@@ -37,11 +37,9 @@ foreach ($lexicon as $nextWord => $nextCount) {
   $bits = explode('|',$nextWord);
   if ($lexicon2[$bits[0]]) {
     $bits2 = explode('|',$lexicon2[$bits[0]]);
-
     if ($nextCount > $bits2[2]) {
       $lexicon2[$bits[0]] = $bits[1] . '|' . $bits[2] . '|' . $nextCount;
     }
-
   }
   else {
     $lexicon2[$bits[0]] = $bits[1] . '|' . $bits[2] . '|' . $nextCount;
@@ -67,8 +65,30 @@ foreach (new RecursiveIteratorIterator($it) as $nextFile) {
             $nextWord['pos'] = False;
           }
         }
+        else if ($lexicon2[strtolower((string)$nextWord)]) {
+          $bits = explode('|',$lexicon2[strtolower((string)$nextWord)]);
+          $nextWord['lemma'] = $bits[0];
+          if ($bits[1]!='') {
+            $nextWord['pos'] = $bits[1];
+          }
+          else {
+            $nextWord['pos'] = False;
+          }
+        }
+        else if (substr((string)$nextWord,1,1)==='h') {
+          $delenited = substr((string)$nextWord,0,1) . substr((string)$nextWord,2);
+          if ($lexicon2[$delenited]) {
+            $bits = explode('|',$lexicon2[$delenited]);
+            $nextWord['lemma'] = $bits[0];
+            if ($bits[1]!='') {
+              $nextWord['pos'] = $bits[1];
+            }
+            else {
+              $nextWord['pos'] = False;
+            }
+          }
+        }
       }
-      //echo $xml->asXML();
       $xml->asXML($nextFile);
     }
   }
