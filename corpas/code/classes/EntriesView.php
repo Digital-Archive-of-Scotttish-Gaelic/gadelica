@@ -102,21 +102,23 @@ HTML;
   }
 
 	private function _getSensesHtml($entry) {
-  	$html = <<<HTML
+  	$orphanedSensesHtml = $this->_getOrphanSensesHtml($entry);
+  	if ($orphanedSensesHtml != "") {
+		  $html = "<ul>" . $orphanedSensesHtml . "</ul>";
+	  }
+  	$html .= <<<HTML
 			<div id="groupedSenses">
-				<h5>Grouped Senses <a id="showIndividual" href="#" title="show individual senses"><small>show individual</small></a></h5> 
+				<h6>Grouped Senses <a id="showIndividual" href="#" title="show individual senses"><small>show individual</small></a></h6> 
 				<ul>
 HTML;
-		$html .= $this->_getOrphanSensesHtml($entry);
 		$html .= $this->_getGroupedSensesHtml($entry);
 		$html .= '</ul></div>';
 
 		$html .= <<<HTML
 			<div id="individualSenses" class="hide">
-				<h5>Indivdual Senses <a id="showGrouped" href="#" title="show grouped senses"><small>show grouped</small></a></h5> 
+				<h6>Indivdual Senses <a id="showGrouped" href="#" title="show grouped senses"><small>show grouped</small></a></h6> 
 				<ul>
 HTML;
-		$html .= $this->_getOrphanSensesHtml($entry);
 		$html .= $this->_getIndividualSensesHtml($entry);
 		$html .= '</ul></div>';
 		return $html;
@@ -124,13 +126,16 @@ HTML;
 
 	private function _getOrphanSensesHtml($entry) {
 		/* Get any citations without senses */
+		$html = "";
 		$nonSenseSlipIds = SenseCategories::getNonCategorisedSlipIds($entry->getLemma(), $entry->getWordclass());
-		$slipData = array();
-		$index = 0;
-		foreach ($nonSenseSlipIds as $slipId) {
-			$index++;
-			$slipData[] = Slips::getSlipInfoBySlipId($slipId);
-			$html .= $this->_getSlipListHtml($slipData, "uncategorised", "orp_".$index);
+		if (count($nonSenseSlipIds)) {
+			$slipData = array();
+			$index = 0;
+			foreach ($nonSenseSlipIds as $slipId) {
+				$index++;
+				$slipData[] = Slips::getSlipInfoBySlipId($slipId);
+			}
+			$html .= $this->_getSlipListHtml($slipData, "uncategorised", "orp_" . $index);
 		}
 		return $html;
 	}
