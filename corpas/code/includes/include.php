@@ -3,7 +3,9 @@
 session_start();
 
 //TODO: consider relocating this SB
-$_SESSION["printSlips"] = array();
+if (!$_SESSION["printSlips"]) {
+  $_SESSION["printSlips"] = array();
+}
 
 //ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_reporting(E_ALL);
 
