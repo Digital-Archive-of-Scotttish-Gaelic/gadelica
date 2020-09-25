@@ -237,12 +237,19 @@ HTML;
         {$this->_xmlFile->getFilename()}<br>{$result["id"]}
 HTML;
     //check if there is an existing slip for this entry
+	  $slipUrl = "#";
+	  $slipClass = "slipLink2";
+	  $modalCode = "";
     if ($result["auto_id"] != null) {
       $slipLinkText = "view slip";
       $createSlipStyle = "";
+      $modalCode = 'data-toggle="modal" data-target="#slipModal"';
     } else {
+	    $slipUrl = "slipEdit.php?filename=" . $this->_xmlFile->getFilename() . "&id=".$result["id"];
+	    $slipUrl .= "&headword=".$result["lemma"] . "&pos=" . $result["pos"];
       $slipLinkText = "create slip";
       $createSlipStyle = "createSlipLink";
+      $slipClass = "editSlipLink";
     }
     echo <<<HTML
         <td style="text-align: right;">{$context["pre"]["output"]}</td>
@@ -268,8 +275,8 @@ HTML;
         </td-->
         <td> <!-- added by MM -->
             <small>
-                <a href="#" class="slipLink2 {$createSlipStyle}"
-                    data-toggle="modal" data-target="#slipModal"
+                <a href="{$slipUrl}" target="_blank" class="{$slipClass} {$createSlipStyle}"
+                    {$modalCode}
                     data-auto_id="{$result["auto_id"]}"
                     data-headword="{$result["lemma"]}"
                     data-pos="{$result["pos"]}"

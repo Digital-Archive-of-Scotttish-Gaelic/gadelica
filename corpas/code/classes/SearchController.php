@@ -92,7 +92,7 @@ class SearchController
     $selectFields =  "lemma, l.filename AS filename, l.id AS id, wordform, pos, date_of_lang, title, page, medium, s.auto_id AS auto_id";
     $sql = <<<SQL
         SELECT {$selectFields} FROM lemmas AS l
-          LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id
+          LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id AND group_id = {$_SESSION["groupId"]}
           WHERE {$whereClause}
 SQL;
     return array("sql" => $sql, "search" => $search);
@@ -123,7 +123,7 @@ SQL;
         SELECT l.filename AS filename, l.id AS id, wordform, pos, lemma, date_of_lang, title, 
                 page, medium, s.auto_id as auto_id, s.wordClass as wordClass 
             FROM lemmas AS l
-            LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id
+            LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id AND group_id = {$_SESSION["groupId"]}
             WHERE lemma = ?
 SQL;
     } else {                               //wordform

@@ -102,32 +102,93 @@ HTML;
   }
 
 	private function _getSensesHtml($entry) {
-		$html = "<ul>";
-		$i = 0;
+  	$orphanedSensesHtml = $this->_getOrphanSensesHtml($entry);
+  	if ($orphanedSensesHtml != "") {
+		  $html = "<ul>" . $orphanedSensesHtml . "</ul>";
+	  }
+  	$html .= <<<HTML
+			<div id="groupedSenses">
+				<h6>Grouped Senses <a id="showIndividual" href="#" title="show individual senses"><small>show individual</small></a></h6> 
+				<ul>
+HTML;
+		$html .= $this->_getGroupedSensesHtml($entry);
+		$html .= '</ul></div>';
+
+		$html .= <<<HTML
+			<div id="individualSenses" class="hide">
+				<h6>Indivdual Senses <a id="showGrouped" href="#" title="show grouped senses"><small>show grouped</small></a></h6> 
+				<ul>
+HTML;
+		$html .= $this->_getIndividualSensesHtml($entry);
+		$html .= '</ul></div>';
+		return $html;
+	}
+
+	private function _getOrphanSensesHtml($entry) {
+		/* Get any citations without senses */
+		$html = "";
+		$nonSenseSlipIds = SenseCategories::getNonCategorisedSlipIds($entry->getLemma(), $entry->getWordclass());
+		if (count($nonSenseSlipIds)) {
+			$slipData = array();
+			$index = 0;
+			foreach ($nonSenseSlipIds as $slipId) {
+				$index++;
+				$slipData[] = Slips::getSlipInfoBySlipId($slipId);
+			}
+			$html .= $this->_getSlipListHtml($slipData, "uncategorised", "orp_" . $index);
+		}
+		return $html;
+	}
+
+	private function _getIndividualSensesHtml($entry) {
+		/* Get citations for individual senses */
+		$individualSenses = $entry->getIndividualSenses();
+		$index = 0;
+		foreach ($individualSenses as $sense => $slipIds) {
+			$slipData = array();
+			foreach ($slipIds as $slipId) {
+				$index++;
+				$slipData[] = Slips::getSlipInfoBySlipId($slipId);
+			}
+			$html .= $this->_getSlipListHtml($slipData, $sense, "ind_".$index);
+		}
+		return $html;
+	}
+
+	private function _getGroupedSensesHtml($entry) {
+  	/* Get the citations with grouped senses */
+		$index = 0;
 		foreach ($entry->getUniqueSenses() as $slipId => $sense) {
-			$i++;
 			$slipData = array();
 			$senseSlipIds = $entry->getSenseSlipIds($slipId);
 			foreach ($senseSlipIds as $id) {
+				$index++;
 				$slipData[] = Slips::getSlipInfoBySlipId($id);
 			}
-			$slipList = '<table class="table"><tbody>';
-			foreach($slipData as $data) {
-				foreach ($data as $row) {
-					$filenameElems = explode('_', $row["filename"]);
-					$translation = $this->_formatTranslation($row["translation"]);
-					$slipLinkData = array(
-						"auto_id" => $row["auto_id"],
-						"lemma" => $row["lemma"],
-						"pos" => $row["pos"],
-						"id" => $row["id"],
-						"filename" => $row["filename"],
-						"uri" => "",
-						"date_of_lang" => $row["date_of_lang"],
-						"title" => $row["title"],
-						"page" => $row["page"]
-					);
-					$slipList .= <<<HTML
+			$html .= $this->_getSlipListHtml($slipData, $sense, "grp_".$index);
+		}
+		return $html;
+	}
+
+
+	private function _getSlipListHtml($slipData, $sense, $index) {
+		$slipList = '<table class="table"><tbody>';
+		foreach($slipData as $data) {
+			foreach ($data as $row) {
+				$filenameElems = explode('_', $row["filename"]);
+				$translation = $this->_formatTranslation($row["translation"]);
+				$slipLinkData = array(
+					"auto_id" => $row["auto_id"],
+					"lemma" => $row["lemma"],
+					"pos" => $row["pos"],
+					"id" => $row["id"],
+					"filename" => $row["filename"],
+					"uri" => "",
+					"date_of_lang" => $row["date_of_lang"],
+					"title" => $row["title"],
+					"page" => $row["page"]
+				);
+				$slipList .= <<<HTML
 					<tr id="#slip_{$row["auto_id"]}" data-slipid="{$row["auto_id"]}"
 							data-filename="{$row["filename"]}"
 							data-id="{$row["id"]}"
@@ -142,30 +203,29 @@ HTML;
 						<td><a target="_blank" href="#" class="entryCitationTextLink"><small>view in text</small></td>
 					</tr>
 HTML;
-				}
 			}
-			$slipList .= "</tbody></table>";
-			$citationsHtml = <<<HTML
-				<small><a href="#" class="citationsLink" data-type="sense" data-index="{$i}">
+		}
+		$slipList .= "</tbody></table>";
+		$citationsHtml = <<<HTML
+				<small><a href="#" class="citationsLink" data-type="sense" data-index="{$index}">
 						citations
 				</a></small>
-				<div id="sense_citations{$i}" class="citation">
+				<div id="sense_citations{$index}" class="citation">
 					{$slipList}
 				</div>
 HTML;
-			$senses = explode('|', $sense);
-			$senseString = "";
-			foreach ($senses as $s) {
-				$senseString .= <<<HTML
-					<span data-toggle="modal" data-target="#senseModal" title="rename this sense" class="badge badge-success entrySense">{$s}</span> 
+		$senses = explode('|', $sense);
+		$senseString = "";
+		foreach ($senses as $s) {
+			$badge = ($s == "uncategorised") ? "badge-secondary" : "badge-success";
+			$senseString .= <<<HTML
+					<span data-toggle="modal" data-target="#senseModal" title="rename this sense" class="badge {$badge} entrySense">{$s}</span> 
 HTML;
 
-			}
-			$html .= <<<HTML
+		}
+		$html = <<<HTML
 				<li>{$senseString} {$citationsHtml}</li>
 HTML;
-		}
-		$html .= "</ul>";
 		return $html;
 	}
 
@@ -252,6 +312,18 @@ HTML;
   private function _writeJavascript() {
   	echo <<<HTML
 			<script>
+				$('#showIndividual').on('click', function () {
+				  $('#groupedSenses').hide();
+				  $('#individualSenses').show();
+				  return false;
+				});
+				
+				$('#showGrouped').on('click', function () {
+				  $('#individualSenses').hide();
+				  $('#groupedSenses').show();
+				  return false;
+				});
+				
 				$('.entrySense').on('click', function() {
 				  var oldName = $(this).text();
 				  $('#oldSenseName').text(oldName);

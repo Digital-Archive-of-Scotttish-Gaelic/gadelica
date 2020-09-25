@@ -28,7 +28,7 @@ class XmlFileHandler
     $xpath = '/dasg:text/@ref';
     $out = $this->_xml->xpath($xpath);
     $context["uri"] = (string)$out[0];
-    $xpath = "//dasg:w[@id='{$id}']/preceding::*";
+    $xpath = "//dasg:w[@id='{$id}']/preceding::*[not(name()='s') and not(name()='p')]";
     $words = $this->_xml->xpath($xpath);
     /* preContext processing */
     $context["pre"] = array("output"=>"");
@@ -53,7 +53,7 @@ class XmlFileHandler
 	    ? '<div style="display:inline; margin-left:4px;"><mark>' . (string)$word[0] . '</mark></div>'
       : (string)$word[0];
     $context["headwordId"] = $word[0]->attributes()["id"];
-    $xpath = "//dasg:w[@id='{$id}']/following::*";
+    $xpath = "//dasg:w[@id='{$id}']/following::*[not(name()='s') and not(name()='p')]";
     $words = $this->_xml->xpath($xpath);
     /* postContext processing */
     $context["post"] = array("output"=>"");

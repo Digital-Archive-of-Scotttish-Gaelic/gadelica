@@ -41,7 +41,7 @@ class SenseCategories
         SELECT DISTINCT category FROM senseCategory sc
         JOIN slips s ON s.auto_id = sc.slip_id
         JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
-        WHERE lemma = :lemma AND wordclass = :wordclass
+        WHERE s.group_id = {$_SESSION["groupId"]} AND lemma = :lemma AND wordclass = :wordclass
             AND slip_id != :slip_id
             ORDER BY category ASC
 SQL;
@@ -68,9 +68,9 @@ SQL;
 		try {
 			$sql = <<<SQL
         SELECT DISTINCT category FROM senseCategory sc
-        JOIN slips s ON s.auto_id = sc.slip_id
-        JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
-        WHERE lemma = :lemma AND wordclass = :wordclass
+        	JOIN slips s ON s.auto_id = sc.slip_id 
+        	JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
+        	WHERE s.group_id = {$_SESSION["groupId"]} AND lemma = :lemma AND wordclass = :wordclass
             ORDER BY category ASC
 SQL;
 			$sth = $dbh->prepare($sql);
@@ -79,6 +79,35 @@ SQL;
 				$categories[] = $row["category"];
 			}
 			return $categories;
+		} catch (PDOException $e) {
+			echo $e->getMessage();
+		}
+	}
+
+	/**
+	 * Fetches all the slipIds without a sense for a given lemma/wordclass combination
+	 * @param $lemma
+	 * @param $wordclass
+	 * @return array of slipIds
+	 */
+	public static function getNonCategorisedSlipIds($lemma, $wordclass) {
+		$slipIds = array();
+		$db = new Database();
+		$dbh = $db->getDatabaseHandle();
+		try {
+			$sql = <<<SQL
+        SELECT auto_id FROM slips s 
+        	JOIN lemmas l ON s.filename = l.filename AND s.id = l.id 
+        	WHERE auto_id NOT IN (SELECT slip_id FROM senseCategory) AND lemma = :lemma AND wordclass= :wordclass 
+        	AND group_id = {$_SESSION["groupId"]}
+        	ORDER by auto_id ASC
+SQL;
+			$sth = $dbh->prepare($sql);
+			$sth->execute(array(":lemma"=>$lemma, ":wordclass"=>$wordclass));
+			while ($row = $sth->fetch()) {
+				$slipIds[] = $row["auto_id"];
+			}
+			return $slipIds;
 		} catch (PDOException $e) {
 			echo $e->getMessage();
 		}
@@ -97,7 +126,7 @@ SQL;
 		try {
 			$sql = <<<SQL
         UPDATE senseCategory sc
-        JOIN slips s ON s.auto_id = sc.slip_id
+        JOIN slips s ON s.auto_id = sc.slip_id AND group_id = {$_SESSION["groupId"]}
         JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
         SET category = :newName WHERE category = :oldName
         AND lemma = :lemma AND wordclass = :wordclass

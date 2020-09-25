@@ -6,6 +6,7 @@ class Entry
 	private $_lemma, $_wordclass;
 	private $_slipMorphStrings = array();
 	private $_slipSenseStrings = array();
+	private $_individualSenses = array();
 	private $_forms = array();
 	private $_formSlipData = array();
 	private $_senses = array();
@@ -111,6 +112,10 @@ class Entry
 		return array_unique($senses);
 	}
 
+	public function getIndividualSenses() {
+		return $this->_individualSenses;
+	}
+
 	//Setters
 
 	public function setForms($forms) {
@@ -127,6 +132,7 @@ class Entry
 
 	public function addSense($sense, $slipId) {
 		$this->_senses[$slipId][] = $sense;
+		$this->_individualSenses[$sense][] = $slipId;
 	}
 
 	public function setSlipMorphData($form, $data) {

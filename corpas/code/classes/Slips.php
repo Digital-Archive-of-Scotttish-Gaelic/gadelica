@@ -15,18 +15,18 @@ class Slips
     $db = new Database();
     $dbh = $db->getDatabaseHandle();
     try {
-			$whereClause = "";
+			$whereClause = "WHERE (group_id = {$_SESSION["groupId"]}) ";
 			if (mb_strlen($search) > 1) {     //there is a search to run
 				$sth = $dbh->prepare("SET @search = :search");  //set a MySQL variable for the searchterm
 				$sth->execute(array(":search" => "%{$search}%"));
-				$whereClause = <<<SQL
-					WHERE auto_id LIKE @search	
+				$whereClause .= <<<SQL
+					AND (auto_id LIKE @search	
             	OR lemma LIKE @search
             	OR wordform LIKE @search
             	OR wordclass LIKE @search
             	OR lemma LIKE @search
             	OR firstname LIKE @search
-            	OR lastname LIKE @search
+            	OR lastname LIKE @search)
 SQL;
 			}
 	    $dbh->setAttribute( PDO::ATTR_EMULATE_PREPARES, false );
@@ -101,36 +101,25 @@ HTML;
     }
   }
 
-	/**
-	 * Gets slip info form the DB to populate an Entry with data required for citations
-	 * @param $lemma
-	 * @param $wordclass
-	 * @param $wordform
-	 * @return array of DB results
-	 */
- /* public static function getSlipsByWordform($lemma, $wordclass, $wordform) {
-	  $slipInfo = array();
+  public static function slipExists($groupId, $filename, $id) {
 	  $db = new Database();
 	  $dbh = $db->getDatabaseHandle();
 	  try {
 		  $sql = <<<SQL
-        SELECT s.filename as filename, s.id as id, auto_id, pos, lemma, preContextScope, postContextScope,
-                translation, date_of_lang, title, page
-            FROM slips s
-            JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
-            WHERE lemma = :lemma AND wordclass = :wordclass AND wordform = :wordform
-            ORDER BY auto_id ASC
+        SELECT auto_id FROM slips WHERE group_id = :groupId AND filename = :filename AND id = :id
 SQL;
 		  $sth = $dbh->prepare($sql);
-		  $sth->execute(array(":lemma"=>$lemma, ":wordclass"=>$wordclass, ":wordform"=>$wordform));
-		  while ($row = $sth->fetch()) {
-			  $slipInfo[] = $row;
+		  $sth->execute(array(":groupId"=>$groupId, ":filename"=>$filename, ":id"=>$id));
+		  $row = $sth->fetch();
+		  if ($autoId = $row["auto_id"]) {
+			  return $autoId;
+		  } else {
+		  	return false;
 		  }
-		  return $slipInfo;
 	  } catch (PDOException $e) {
 		  echo $e->getMessage();
 	  }
-  }*/
+  }
 
 	/**
 	 * Gets slip info from the DB
@@ -147,7 +136,7 @@ SQL;
                 translation, date_of_lang, title, page, starred
             FROM slips s
             JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
-            WHERE s.auto_id = :slipId
+            WHERE group_id = {$_SESSION["groupId"]} AND s.auto_id = :slipId
             ORDER BY auto_id ASC
 SQL;
 			$sth = $dbh->prepare($sql);
@@ -191,36 +180,6 @@ SQL;
 	 * Gets slip info from the DB to populate an Entry with data required for citations
 	 * @param $lemma
 	 * @param $wordclass
-	 * @param $wordform
-	 * @return array of DB results
-	 */
-/*	public static function getSlipMorphByWordform($lemma, $wordclass, $wordform) {
-		$morphInfo = array();
-		$db = new Database();
-		$dbh = $db->getDatabaseHandle();
-		try {
-			$sql = <<<SQL
-        SELECT relation, value
-            FROM slipMorph sm
-            JOIN slips s ON sm.slip_id = auto_id
-        		JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
-            WHERE lemma = :lemma AND wordclass = :wordclass AND wordform = :wordform
-SQL;
-			$sth = $dbh->prepare($sql);
-			$sth->execute(array(":lemma"=>$lemma, ":wordclass"=>$wordclass, ":wordform"=>$wordform));
-			while ($row = $sth->fetch()) {
-				$morphInfo[$row["relation"]] = $row["value"];
-			}
-			return $morphInfo;
-		} catch (PDOException $e) {
-			echo $e->getMessage();
-		}
-	}*/
-
-	/**
-	 * Gets slip info from the DB to populate an Entry with data required for citations
-	 * @param $lemma
-	 * @param $wordclass
 	 * @param $category : the sense category
 	 * @return array of DB results
 	 */
@@ -235,7 +194,7 @@ SQL;
             FROM slips s
             JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
             JOIN senseCategory sc on sc.slip_id = auto_id
-            WHERE lemma = :lemma AND wordclass = :wordclass AND sc.category = :category 
+            WHERE group_id = {$_SESSION["groupId"]} AND lemma = :lemma AND wordclass = :wordclass AND sc.category = :category 
             ORDER BY auto_id ASC
 SQL;
 			$sth = $dbh->prepare($sql);
@@ -282,7 +241,7 @@ HTML;
     $dbh = $db->getDatabaseHandle();
     try {
       $sql = <<<SQL
-          UPDATE slips SET updatedBy = :user, lastUpdated = now() WHERE auto_id = :slipId
+          UPDATE slips SET updatedBy = :user, lastUpdated = now() WHERE group_id = {$_SESSION["groupId"]} AND auto_id = :slipId
 SQL;
       $sth = $dbh->prepare($sql);
       $sth->execute(array(":user"=>$_SESSION["user"], ":slipId"=>$slipId));

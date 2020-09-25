@@ -32,6 +32,7 @@ foreach ($words as $nextWord) {
     $lexicon[$nextWord] = 1;
   }
 }
+
 $lexicon2 = [];
 foreach ($lexicon as $nextWord => $nextCount) {
   $bits = explode('|',$nextWord);
@@ -94,11 +95,6 @@ foreach (new RecursiveIteratorIterator($it) as $nextFile) {
   }
 }
 
-/*
-foreach ($lexicon2 as $nextForm => $nextTag) {
-  echo $nextForm . ' ' . $nextTag . PHP_EOL;
-}
-*/
 
 
 
