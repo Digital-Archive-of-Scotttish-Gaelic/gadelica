@@ -2,13 +2,12 @@
 
 class BrowseCorpusController2 {
 
-  public $model = null;
+    public $model = null;
 
-  public function __construct() {
-      $this->model = new BrowseCorpusModel();
-      $textList = $this->model->textList;
-      new BrowseCorpusView2($textList);
-  }
+    public function __construct() {
+        $this->model = new BrowseCorpusModel();
+        new BrowseCorpusView2($this->model->textList);
+    }
 
 
 }
