@@ -2,11 +2,12 @@
 
 require_once "includes/htmlHeader.php";
 
-include_once 'classes/controllers/BrowseCorpusController2.php';
-include_once 'classes/controllers/SearchCorpusController.php';
-include_once 'classes/models/BrowseCorpusModel.php';
-include_once 'classes/models/SearchCorpusModel.php';
-include_once 'classes/views/BrowseCorpusView2.php';
+include_once 'controllers/BrowseCorpusController2.php';
+include_once 'controllers/SearchCorpusController.php';
+include_once 'models/CorpusModel.php';
+include_once 'models/TextModel.php';
+include_once 'models/SearchCorpusModel.php';
+include_once 'views/BrowseCorpusView2.php';
 
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
 $module = isset($_GET['module']) ? $_GET['module'] : '';

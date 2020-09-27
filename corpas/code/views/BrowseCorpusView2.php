@@ -3,13 +3,18 @@
 
 class BrowseCorpusView2 {
 
-    public function __construct($results) {
+    public function __construct($corpus) {
         echo <<<HTML
             <table class="table">
                 <tbody>
 HTML;
-        foreach ($results as $rank => $result) {
+/*
+        foreach ($corpus->texts as $rank => $result) {
             $this->_writeRow($rank, $result);
+        }
+*/
+        foreach ($corpus->texts as $nextText) {
+          $this->_writeRow($nextText);
         }
         echo <<<HTML
                 </tbody>
@@ -17,6 +22,23 @@ HTML;
 HTML;
     }
 
+    private function _writeRow($textModel) {
+        //$writerHtml = $this->_formatWriters($result["writer"]);
+        echo <<<HTML
+            <tr>
+                <td>#{$textModel->getId()}</td>
+                <!--
+                <td class="browseListTitle">
+                    <a href="viewText.php?uri={$result["textUri"]}">{$result["title"]}</a>
+                </td>
+                <td>{$writerHtml}</td>
+                <td>{$result["date"]}</td>
+              -->
+            </tr>
+HTML;
+    }
+
+/*
     private function _writeRow($rank, $result) {
         $writerHtml = $this->_formatWriters($result["writer"]);
         echo <<<HTML
@@ -30,6 +52,7 @@ HTML;
             </tr>
 HTML;
     }
+*/
 
     private function _formatWriters($writers) {
         if (!isset($writers)) {

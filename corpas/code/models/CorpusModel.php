@@ -1,10 +1,8 @@
 <?php
 
-class BrowseCorpusModel {
+class CorpusModel {
 
-    // rename this CorpusModel ??
-
-    public $textList; // an array of TextModels
+    public $texts = []; // an array of TextModels
 
     public function __construct() {
         $spqr = new SPARQLQuery();
@@ -32,11 +30,14 @@ class BrowseCorpusModel {
           ORDER BY ?rank
 SPQR;
           $results = $spqr->getQueryResults($query);
-          $texts = [];
-          $textList = [];
+          //$texts = [];
+          //$textList = [];
           foreach ($results as $nextResult) {
-            $texts[] = $nextResult->uri->value;
+            $this->texts[] = new TextModel($nextResult->uri->value);
+            //$texts[] = $nextResult->uri->value;
           }
+
+          /*
           $texts = array_unique($texts);
           foreach ($texts as $nextText) {
             $rank = '';
@@ -87,7 +88,8 @@ SPQR;
               }
             }
           }
-          $this->textList = $textList;
+          $this->texts = $textList;
+          */
     }
 
 }
