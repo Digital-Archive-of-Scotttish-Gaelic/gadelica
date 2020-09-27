@@ -1,32 +1,11 @@
 <?php
 
+class TextView {
 
-class BrowseCorpusView2 {
-
-    public function __construct($corpus) {
-        echo <<<HTML
-            <table class="table">
-                <tbody>
-HTML;
-/*
-        foreach ($corpus->texts as $rank => $result) {
-            $this->_writeRow($rank, $result);
-        }
-*/
-        foreach ($corpus->texts as $nextText) {
-          $this->_writeRow($nextText);
-        }
-        echo <<<HTML
-                </tbody>
-            </table>
-HTML;
-    }
-
-    private function _writeRow($textModel) {
-        //$writerHtml = $this->_formatWriters($result["writer"]);
+    public function __construct($text) {
         echo <<<HTML
             <tr>
-                <td>#{$textModel->getId()}</td>
+                <td>#{$text->getId()}</td>
                 <!--
                 <td class="browseListTitle">
                     <a href="viewText.php?uri={$result["textUri"]}">{$result["title"]}</a>
@@ -37,6 +16,7 @@ HTML;
             </tr>
 HTML;
     }
+
 
 /*
     private function _writeRow($rank, $result) {
@@ -52,7 +32,6 @@ HTML;
             </tr>
 HTML;
     }
-*/
 
     private function _formatWriters($writers) {
         if (!isset($writers)) {
@@ -71,8 +50,9 @@ HTML;
         }
         return implode(", ", $writerList);
     }
+*/
+
 
 }
-
 
 ?>
