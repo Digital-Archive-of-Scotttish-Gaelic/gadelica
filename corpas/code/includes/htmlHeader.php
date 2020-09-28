@@ -12,9 +12,11 @@ $loginControl = new LoginController();
 if ($loginControl->isLoggedIn() || ($_SESSION["email"] && $_POST["loginAction"] == "savePassword")) {
 	$email = $_SESSION["user"] ? $_SESSION["user"] : $_SESSION["email"];
 	$user = Users::getUser($email);
-
-	$groupHtml = "";
 	$userGroups = $user->getGroups();
+	$lastUsedGroup = $user->getLastUsedGroup();
+	$groupTheme = $lastUsedGroup->getTheme();
+	$_SESSION["groupId"] = $lastUsedGroup->getId() ? $lastUsedGroup->getId() : 1;
+	$groupHtml = "";
 	if (count($userGroups ) > 1) {
 		$groupHtml = <<<HTML
 			<select class="selectpicker show-tick" data-width="150px">
@@ -27,10 +29,6 @@ HTML;
 		}
 		$groupHtml .= "</select>";
 	}
-	$lastUsedGroup = $user->getLastUsedGroup();
-	$groupTheme = $lastUsedGroup->getTheme();
-	$_SESSION["groupId"] = $lastUsedGroup->getId() ? $lastUsedGroup->getId() : 1;
-
 	$name = $user->getFirstName() . ' ' . $user->getLastName();
 	$loggedInHide = "";
 }
@@ -64,8 +62,10 @@ echo <<<HTML
 		$(function () {
 		  $('.selectpicker').change(function () {
 		    var groupId = $(this).children("option:selected"). val();
-		    $.ajax({url: 'ajax.php?action=setGroup&groupId='+groupId});
-		    window.location.reload(true);
+		    $.ajax({url: 'ajax.php?action=setGroup&groupId='+groupId})
+		      .done(function () {
+		        window.location.reload(true);
+		    });	    
 		    return false;
 		  });
 		});
