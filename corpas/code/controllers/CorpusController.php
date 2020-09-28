@@ -2,14 +2,11 @@
 
 class CorpusController {
 
-    public $corpus = []; // an array of TextModels
+    private $_corpusModel = null;
 
     public function __construct() {
-        $this->corpus = new CorpusModel();
-        new CorpusView($this->corpus);
+        $this->_corpusModel = new CorpusModel();
+        new CorpusView($this->_corpusModel);
     }
 
-
 }
-
-?>

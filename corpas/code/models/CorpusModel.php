@@ -2,7 +2,7 @@
 
 class CorpusModel {
 
-    public $textModels = []; // an array of TextModels
+    private $_textModels = []; // an array of TextModels
 
     public function __construct() {
         $spqr = new SPARQLQuery();
@@ -33,7 +33,7 @@ SPQR;
           //$texts = [];
           //$textList = [];
           foreach ($results as $nextResult) {
-            $this->textModels[] = new TextModel($nextResult->uri->value);
+            $this->_textModels[] = new TextModel($nextResult->uri->value);
             //$texts[] = $nextResult->uri->value;
           }
 
@@ -90,6 +90,10 @@ SPQR;
           }
           $this->texts = $textList;
           */
+    }
+
+    public function getTextModels() {
+      return $this->_textModels;
     }
 
 }

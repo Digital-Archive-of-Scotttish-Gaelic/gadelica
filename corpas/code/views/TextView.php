@@ -2,10 +2,10 @@
 
 class TextView {
 
-    public function __construct($text) {
+    public function __construct($textModel) {
         echo <<<HTML
             <tr>
-                <td>#{$text->getId()}</td>
+                <td><a href="index2.php?module=viewText&&id={$textModel->getId()}">#{$textModel->getId()}</a></td>
                 <!--
                 <td class="browseListTitle">
                     <a href="viewText.php?uri={$result["textUri"]}">{$result["title"]}</a>
@@ -54,5 +54,3 @@ HTML;
 
 
 }
-
-?>

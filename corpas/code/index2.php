@@ -18,6 +18,9 @@ switch($module) {
     case 'browseCorpus':
         $controller = new CorpusController();
         break;
+    case 'viewText':
+        $controller = new TextController(); // start here
+        break;
     case 'searchCorpus':
         $controller = new SearchCorpusController();
         break;
@@ -31,5 +34,3 @@ HTML;
 }
 
 require_once "includes/htmlFooter.php";
-
-?>

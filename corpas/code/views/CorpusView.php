@@ -8,7 +8,7 @@ class CorpusView {
             <table class="table">
                 <tbody>
 HTML;
-        foreach ($corpusModel->textModels as $nextTextModel) {
+        foreach ($corpusModel->getTextModels() as $nextTextModel) {
             new TextView($nextTextModel);
         }
         echo <<<HTML
@@ -18,6 +18,3 @@ HTML;
     }
 
 }
-
-
-?>
