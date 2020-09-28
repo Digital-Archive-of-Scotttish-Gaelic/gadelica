@@ -6,9 +6,11 @@ class XmlFileHandler
   private $_filename, $_xml, $_collocateIds;
 
   public function __construct($filename) {
-    $this->_filename = $filename;
-    $this->_xml = simplexml_load_file(INPUT_FILEPATH . $this->_filename);
-    $this->_xml->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/');
+  	if ($filename != $this->_filename) {  //check if the file has already been loaded
+  		$this->_filename = $filename;
+  		$this->_xml = simplexml_load_file(INPUT_FILEPATH . $this->_filename);
+		  $this->_xml->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/');
+	  }
   }
 
   public function getFilename() {
