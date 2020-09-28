@@ -5,6 +5,7 @@ class TextModel {
 
   //private $_uri;
   private $_id; // the ID number of the text
+  private $_subTextModels = [];
   /*
   private $_title; // the title of the text
   private $_xml = ''; // the XML file in which the contents of the text are encoded
@@ -22,9 +23,20 @@ class TextModel {
   private $_subURIs = [];
 */
 
-  public function __construct($uri) {
-    $this->_id = $uri;
-    //$this->_load();
+  public function __construct($id) {
+    $this->_id = $id;
+    $query = <<<SPQR
+      SELECT DISTINCT ?id
+      WHERE
+      {
+        ?id dc:isPartOf <{$id}> .
+      }
+SPQR;
+    $spqr = new SPARQLQuery();
+    $results = $spqr->getQueryResults($query);
+    foreach ($results as $nextResult) {
+      $this->_subTextModels[] = new TextModel($nextResult->id->value);
+    }
   }
 
 /*
@@ -277,6 +289,10 @@ SPQR;
 
   public function getId() {
     return $this->_id;
+  }
+
+  public function getSubTextModels() {
+    return $this->_subTextModels;
   }
 
   public function getTitle() {

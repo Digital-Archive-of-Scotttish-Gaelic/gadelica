@@ -5,7 +5,18 @@ class TextView {
     public function __construct($textModel) {
         echo <<<HTML
             <tr>
-                <td><a href="index2.php?module=viewText&&id={$textModel->getId()}">#{$textModel->getId()}</a></td>
+                <td><a href="index2.php?module=viewText&&id={$textModel->getId()}">{$textModel->getId()}</a></td>
+                <td>
+                    <table class="table">
+                        <tbody>
+HTML;
+        foreach ($textModel->getSubTextModels() as $nextSubTextModel) {
+          new TextView($nextSubTextModel);
+        }
+        echo <<<HTML
+                        </tbody>
+                    </table>
+                </td>
                 <!--
                 <td class="browseListTitle">
                     <a href="viewText.php?uri={$result["textUri"]}">{$result["title"]}</a>

@@ -2,11 +2,11 @@
 
 class CorpusController {
 
-    private $_corpusModel = null;
+    private $_rootTextModel = null;
 
     public function __construct() {
-        $this->_corpusModel = new CorpusModel();
-        new CorpusView($this->_corpusModel);
+        $this->_rootTextModel = new TextModel('https://dasg.ac.uk/corpus/_0');
+        new TextView($this->_rootTextModel);
     }
 
 }
