@@ -2,7 +2,7 @@
 
 require_once "includes/htmlHeader.php";
 
-include_once 'controllers/CorpusController.php';
+include_once 'controllers/TextController.php';
 include_once 'controllers/SearchCorpusController.php';
 include_once 'models/CorpusModel.php';
 include_once 'models/TextModel.php';
@@ -16,7 +16,7 @@ $module = isset($_GET['module']) ? $_GET['module'] : '';
 
 switch($module) {
     case 'browseCorpus':
-        $controller = new CorpusController();
+        $controller = new TextController('https://dasg.ac.uk/corpus/_0');
         break;
     case 'viewText':
         $controller = new TextController(); // start here

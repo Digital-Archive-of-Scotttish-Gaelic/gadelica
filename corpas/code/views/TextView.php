@@ -3,30 +3,56 @@
 class TextView {
 
     public function __construct($textModel) {
-        echo <<<HTML
-            <tr>
-                <td><a href="index2.php?module=viewText&&id={$textModel->getId()}">{$textModel->getId()}</a></td>
-                <td>
-                    <table class="table">
-                        <tbody>
+        $id = substr($textModel->getId(),27);
+        $stms = $textModel->getSubTextModels();
+        if ($id=='0') {
+            echo <<<HTML
+                <table class="table">
+                    <tbody>
 HTML;
-        foreach ($textModel->getSubTextModels() as $nextSubTextModel) {
-          new TextView($nextSubTextModel);
+            foreach ($textModel->getSubTextModels() as $nextSubTextModel) {
+                new TextView($nextSubTextModel);
+            }
+            echo <<<HTML
+                    </tbody>
+                </table>
+HTML;
         }
-        echo <<<HTML
-                        </tbody>
-                    </table>
-                </td>
-                <!--
-                <td class="browseListTitle">
-                    <a href="viewText.php?uri={$result["textUri"]}">{$result["title"]}</a>
-                </td>
-                <td>{$writerHtml}</td>
-                <td>{$result["date"]}</td>
-              -->
-            </tr>
+        else if (count($stms)) {
+            echo <<<HTML
+                <tr>
+                    <td>
+                        <a data-toggle="collapse" href="#t{$id}">
+                            #{$id}
+                        </a>
+                    </td>
+                    <td>
+                        <table class="table collapse" id="t{$id}">
+                            <tbody>
 HTML;
+            foreach ($stms as $nextSubTextModel) {
+                new TextView($nextSubTextModel);
+            }
+            echo <<<HTML
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+HTML;
+        }
+        else {
+            echo <<<HTML
+                <tr>
+                    <td>#{$id}</td>
+                    <td></td>
+                </tr>
+HTML;
+        }
+
     }
+
+
+
 
 
 /*
