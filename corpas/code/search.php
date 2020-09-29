@@ -4,7 +4,7 @@ require_once "includes/htmlHeader.php";
 
 $origin = $_GET["origin"] ? $_GET["origin"] : "search.php";   //originating script for back link
 
-$controller = new SearchController($origin);
+$controller = new controllers\CorpusSearch($origin);
 
 require_once "includes/htmlFooter.php";
 

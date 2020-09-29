@@ -1,5 +1,7 @@
 <?php
 
+namespace models;
+
 require_once 'includes/include.php';
 
 switch ($_REQUEST["action"]) {

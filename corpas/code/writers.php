@@ -2,6 +2,6 @@
 
 require_once "includes/htmlHeader.php";
 
-$controller = new WriterController("list");
+$controller = new controllers\Writer("list");
 
 require_once "includes/htmlFooter.php";

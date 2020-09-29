@@ -22,9 +22,8 @@ define("DB_HOST", "130.209.99.241");
 define("DB_USER", "corpas");
 define("DB_PASSWORD", "XmlCraobh2020");
 
-/* autoload classes anonymous function */
-spl_autoload_register(function ($class) {
-  include 'classes/' . $class . '.php';
-});
+//autoload classes
+spl_autoload_extensions(".php"); // comma-separated list
+spl_autoload_register();
 
 ?>

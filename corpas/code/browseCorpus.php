@@ -2,6 +2,6 @@
 
 require_once "includes/htmlHeader.php";
 
-$controller = new BrowseCorpusController();
+$controller = new controllers\BrowseCorpus();
 
 require_once "includes/htmlFooter.php";

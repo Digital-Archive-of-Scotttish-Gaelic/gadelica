@@ -2,7 +2,7 @@
 
 require_once "includes/htmlHeader.php";
 
-$controller = new EntriesController();
+$controller = new controllers\Entries();
 
 require_once "includes/htmlFooter.php";
 

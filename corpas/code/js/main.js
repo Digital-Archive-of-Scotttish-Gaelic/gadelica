@@ -33,60 +33,6 @@ $(function () {
   });
   /** -- **/
 
-  /**
-   * SB This should now be deprecated??
-   */
-  /*$(document).on('click', '.slipLink', function () {
-    //reset the slip form
-    resetSlip();
-    //update link to view link
-    $(this).removeClass('createSlipLink');
-    $(this).html('view slip');
-    var filename    = $(this).attr('data-xml');
-    var filenameElems = filename.split('_');
-    var textId = filenameElems[0];
-    var id          = $(this).attr('data-id');
-    var headword    = $(this).attr('data-headword');
-    var pos         = $(this).attr('data-pos');
-    var date        = $(this).attr('data-date');
-    var title       = $(this).attr('data-title');
-    var page        = $(this).attr('data-page');
-    var index       = $(this).attr('data-resultindex');   //the index of the result in the results array
-    var auto_id     = $(this).attr('data-auto_id');
-    $('#slipTextNum').html('Text ' + textId);
-    $('#slipFilename').val(filename);
-    $('#slipId').val(id);
-    $('#slipHeadword').html(headword);
-    $('#slipDate').html(date);
-    $('#slipTextRef').html(date + ' <span class="slipFooterTitle">' + title + '</span> ' + page);
-    $('#slipPOS').val(pos);
-    $('#auto_id').val(auto_id);
-    $.getJSON('ajax.php?action=loadSlip&filename='+filename+'&id='+id+'&index='+index
-      +'&preContextScope='+$('#slipContext').attr('data-precontextscope')+'&auto_id='+auto_id
-      +'&postContextScope='+$('#slipContext').attr('data-postcontextscope') + '&pos=' + pos, function (data) {
-      if (data.wordClass) {
-        $('#slipHeadword').html(headword);
-        $('#slipWordClass').html('(' + data.wordClass + ')');
-      }
-  //    if (data.isNew != true) {
-        $('#slipNumber').html(data.auto_id);
-        $('#slipContext').attr('data-precontextscope', data.preContextScope);
-        $('#slipContext').attr('data-postcontextscope', data.postContextScope);
-        if (data.starred == 1) {
-          $('#slipChecked').html('Ch&check;');
-        } else {
-          $('#slipChecked').html('');
-        }
-        $('#slipTranslation').html(data.translation);
-        $('#slipNotes').html(data.notes);
-//      }
-    })
-      .done(function () {
-        writeSlipContext(filename, id);
-      });
-  });
-*/
-
   $(document).on('click', '.slipLink2',  function () {
     if ($(this).attr("data-resultindex") != -1) {   //test for use in non-search results pages
       $(this).removeClass('createSlipLink');
@@ -144,12 +90,6 @@ $(function () {
       }
       //check if user can edit slip
       canEdit = data.canEdit ? true : false;
-      /*
-      if (data.starred == 1) {
-        html += 'Ch&check;<br>';
-      }
-      html += 'notes: ' + data.notes + '<br>';
-      */
       var context = data.context.pre["output"] + ' <mark>' + data.context.word + '</mark> ' + data.context.post["output"];
       body += '<p>' + context + '</p>';
       body += '<p><small class="text-muted">' + data.translation + '</small></p>';
@@ -209,6 +149,7 @@ $(function () {
   });
 
   $('.updateContext').on('click', function () {
+    alert('clicked');
     var preScope = $('#slipContext').attr('data-precontextscope');
     var postScope = $('#slipContext').attr('data-postcontextscope');
     var filename = $('#slipFilename').text();

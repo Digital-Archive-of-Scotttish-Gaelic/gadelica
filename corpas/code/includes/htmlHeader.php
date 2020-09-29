@@ -8,10 +8,10 @@ $loggedInHide = "hide";
 
 $groupTheme = "007bff"; //default colour scheme (Faclair theme)
 
-$loginControl = new LoginController();
+$loginControl = new controllers\Login();
 if ($loginControl->isLoggedIn() || ($_SESSION["email"] && $_POST["loginAction"] == "savePassword")) {
 	$email = $_SESSION["user"] ? $_SESSION["user"] : $_SESSION["email"];
-	$user = Users::getUser($email);
+	$user = models\Users::getUser($email);
 	$userGroups = $user->getGroups();
 	$lastUsedGroup = $user->getLastUsedGroup();
 	$groupTheme = $lastUsedGroup->getTheme();

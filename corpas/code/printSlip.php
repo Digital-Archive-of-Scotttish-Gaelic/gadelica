@@ -1,8 +1,7 @@
 <?php
 
-require_once "classes/PrintSlipController.php";
-require_once "classes/PrintSlipView.php";
+require_once "includes/include.php";
 
-$controller = new PrintSlipController();
+$controller = new controllers\PrintSlip();
 
 
