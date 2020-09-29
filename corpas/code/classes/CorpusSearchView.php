@@ -251,7 +251,10 @@ HTML;
 			$createSlipStyle = "createSlipLink";
 			$slipClass = "editSlipLink";
 		}
+		$textNum = stristr($result["filename"], "_", true);
 		echo <<<HTML
+				<td>#{$textNum}</td>
+				<td>{$result["date_of_lang"]}</td>
         <td style="text-align: right;">{$context["pre"]["output"]}</td>
         <td style="text-align: center;">
             <a href="viewText.php?uri={$context["uri"]}&id={$result["id"]}"
