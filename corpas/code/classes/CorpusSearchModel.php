@@ -1,7 +1,7 @@
 <?php
 
 
-class AjaxSearchModel
+class CorpusSearchModel
 {
 	private $_db;
 

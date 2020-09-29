@@ -1,6 +1,6 @@
 <?php
 
-class AjaxSearchController
+class CorpusSearchController
 {
 	private $_origin;   //used to track the initial search page
 
@@ -14,12 +14,12 @@ class AjaxSearchController
 
 		switch ($_REQUEST["action"]) {
 			case "newSearch":
-				$searchView = new AjaxSearchView(); // gets parameters from URL
+				$searchView = new CorpusSearchView(); // gets parameters from URL
 				$searchView->writeSearchForm(); // prints HTML for form
 				break;
 			case "runSearch":
-				$searchView = new AjaxSearchView();
-				$searchModel = new AjaxSearchModel();
+				$searchView = new CorpusSearchView();
+				$searchModel = new CorpusSearchModel();
 				//check if there is an existing result set, if not then run the query
 				$searchResults = $searchModel->getDBSearchResults($_GET);
 				$resultCount = $searchResults["hits"];

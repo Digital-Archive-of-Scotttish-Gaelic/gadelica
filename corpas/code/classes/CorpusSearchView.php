@@ -1,7 +1,7 @@
 <?php
 
 
-class AjaxSearchView
+class CorpusSearchView
 {
 	private $_page = 1; // results page number
 	private $_hits = 0;
