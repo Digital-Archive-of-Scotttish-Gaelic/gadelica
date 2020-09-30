@@ -119,9 +119,11 @@ SQL;
 		$query["sql"] .= <<<SQL
         ORDER BY {$orderBy}
 SQL;
-		$query["sql"] .= <<<SQL
+		if ($perpage) {
+			$query["sql"] .= <<<SQL
 				LIMIT {$perpage} OFFSET {$offset}
 SQL;
+		}
 
 		$results = $this->_db->fetch($query["sql"], array($query["search"]));
 		$hits = $this->_db->fetch("SELECT FOUND_ROWS() as hits;");

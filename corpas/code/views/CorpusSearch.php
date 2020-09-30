@@ -301,10 +301,14 @@ HTML;
 	}
 
 	private function _writeDictionaryView() { // added by MM
-		echo '<h4>' . $_SESSION["results"][0]['lemma'] . '</h4>';
-		echo '<h5>' . count($_SESSION["results"]) .' results</h5>';
+		$model = new models\CorpusSearch();
+		$params = $_GET;
+		$params["pp"] = null; //don't limit the results - fetch them all
+		$searchResults = $model->getDBSearchResults($params);
+		echo '<h4>' . $searchResults["results"][0]['lemma'] . '</h4>';
+		echo '<h5>' . $searchResults["hits"] .' results</h5>';
 		$forms = [];
-		foreach ($_SESSION["results"] as $nextResult) {
+		foreach ($searchResults["results"] as $nextResult) {
 			$forms[] = $nextResult['wordform'] . '|' . $nextResult['pos'];
 		}
 		$forms = array_unique($forms);
@@ -319,7 +323,7 @@ HTML;
 			echo '<tr><td>' . $array[0] . '</td><td>' . $array[1] . '</td><td>';
 			$i=0;
 			$locations = array();
-			foreach ($_SESSION["results"] as $nextResult) {
+			foreach ($searchResults["results"] as $nextResult) {
 				if ($nextResult['wordform']==$array[0] && $nextResult['pos']==$array[1]) {
 					$i++;
 					$locations[] = $nextResult['filename'] . ' ' . $nextResult['id'] . ' '
