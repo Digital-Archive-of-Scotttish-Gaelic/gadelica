@@ -3,7 +3,7 @@
 namespace views;
 use models;
 
-class SearchView
+class Search
 {
   private $_page = 1; // results page number
   private $_hits = 0;

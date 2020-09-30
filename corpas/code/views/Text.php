@@ -2,7 +2,7 @@
 
 namespace views;
 
-class ViewText extends SearchView
+class Text extends Search
 {
   private $_text;   //an instance of CorpusText
 

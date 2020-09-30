@@ -1,6 +1,7 @@
 <?php
 
 namespace views;
+use models;
 
 class Login
 {
@@ -130,7 +131,7 @@ HTML;
   }
 
   private function _getUserSelectHtml() {
-    $users = Users::getAllUsers();
+    $users = models\Users::getAllUsers();
     $dropdownHtml = '<option value="">-- select a user --</option>';
     foreach ($users as $user) {
       $dropdownHtml .= <<<HTML

@@ -1,5 +1,7 @@
 <?php
 
+namespace views;
+
 class TextView {
 
     public function __construct($text) {

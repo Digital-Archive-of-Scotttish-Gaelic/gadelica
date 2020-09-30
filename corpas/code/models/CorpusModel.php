@@ -1,5 +1,7 @@
 <?php
 
+namespace models;
+
 class CorpusModel {
 
     public $textModels = []; // an array of TextModels
