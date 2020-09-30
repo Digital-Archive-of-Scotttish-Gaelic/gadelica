@@ -18,7 +18,8 @@ class Slip
 
     switch ($_REQUEST["action"]) {
       case "show":
-        $slip = new models\Slip($_GET["filename"], $_GET["id"], $_GET["auto_id"], $_GET["pos"]);
+      	$slipId = !empty($_GET["auto_id"]) ? $_GET["auto_id"] : false;
+        $slip = new models\Slip($_GET["filename"], $_GET["id"], $slipId, $_GET["pos"]);
         $slipView = new views\Slip($slip);
         $slipView->writeEditForm();
         break;

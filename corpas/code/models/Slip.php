@@ -22,7 +22,7 @@ class Slip
   public function __construct($filename, $id, $auto_id = null, $pos, $preScope = 20, $postScope = 20) {
     $this->_filename = $filename;
     $this->_id = $id;
-    //test if a slip already exists (and if there is a slip with the same groupId, filename, id combination
+    //test if a slip already exists (if there is a slip with the same groupId, filename, id combination)
     $this->_auto_id = $auto_id ? $auto_id : Slips::slipExists($_SESSION["groupId"], $filename, $id);
     $this->_pos = $pos;
     if (!isset($this->_db)) {
@@ -207,12 +207,12 @@ SQL;
         UPDATE slips 
             SET group_id = {$_SESSION["groupId"]}, locked = ?, starred = ?, translation = ?, notes = ?, preContextScope = ?, postContextScope = ?,
                 wordClass = ?, updatedBy = ?, lastUpdated = now()
-            WHERE filename = ? AND id = ?
+            WHERE auto_id = ?
 SQL;
     $this->_db->exec($sql, array($this->getLocked(), $this->getStarred(), $this->getTranslation(),
 	    $this->getNotes(), $this->getPreContextScope(), $this->getPostContextScope(), $this->getWordClass(),
       $this->getLastUpdatedBy(),
-      $this->getFilename(), $this->getId()));
+      $this->getAutoId()));
     return $this;
   }
 

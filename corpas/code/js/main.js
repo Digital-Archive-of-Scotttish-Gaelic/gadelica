@@ -149,7 +149,6 @@ $(function () {
   });
 
   $('.updateContext').on('click', function () {
-    alert('clicked');
     var preScope = $('#slipContext').attr('data-precontextscope');
     var postScope = $('#slipContext').attr('data-postcontextscope');
     var filename = $('#slipFilename').text();

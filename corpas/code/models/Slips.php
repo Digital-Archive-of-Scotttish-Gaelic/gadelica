@@ -112,8 +112,8 @@ SQL;
 		  $sth = $dbh->prepare($sql);
 		  $sth->execute(array(":groupId"=>$groupId, ":filename"=>$filename, ":id"=>$id));
 		  $row = $sth->fetch();
-		  if ($autoId = $row["auto_id"]) {
-			  return $autoId;
+		  if ($row["auto_id"]) {
+			  return $row["auto_id"];
 		  } else {
 		  	return false;
 		  }
