@@ -219,7 +219,7 @@ HTML;
 		$alternateView = ($this->_view == "corpus") ? "dictionary" : "corpus";
 		echo <<<HTML
         <div id="viewSwitch">
-            <a href="search.php?action=runSearch&search={$this->_search}&view={$alternateView}&hits={$this->_hits}&origin={$this->_origin}">
+            <a href="search.php?action=runSearch&mode={$this->_mode}&search={$this->_search}&view={$alternateView}&hits={$this->_hits}&origin={$this->_origin}">
                 switch to {$alternateView} view
             </a>
         </div>
