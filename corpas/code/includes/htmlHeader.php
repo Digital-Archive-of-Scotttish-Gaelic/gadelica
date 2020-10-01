@@ -81,11 +81,11 @@ echo <<<HTML
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link" title="browse corpus" href="browseCorpus.php">browse</a>
-          <a class="nav-item nav-link" title="search corpus" href="search.php?action=newSearch">search</a>
-          <a class="nav-item nav-link" title="browse slips" href="slipBrowse.php">slips</a>
-          <a class="nav-item nav-link" title="browse entries" href="entries.php">entries</a>
-					<a class="nav-item nav-link" title="read the fucking manual" href="docs.php">docs</a>
+					<a class="nav-item nav-link" title="browse corpus" href="?m=corpus&action=browse">browse</a>
+          <a class="nav-item nav-link" title="search corpus" href="?m=search&a=newSearch">search</a>
+			    <a class="nav-item nav-link" title="browse slips" href="?m=slips&a=browse">slips</a>
+			    <a class="nav-item nav-link" title="browse entries" href="?m=entries&a=browse">entries</a>
+			    <a class="nav-item nav-link" title="RTFM" href="?m=docs&action=view">docs</a>
           <span class="loggedIn {$loggedInHide}">
             <form method="post">
               <a id="logoutLink" href="index.php?loginAction=logout" class="btn btn-link nav-link nav-item">logout</a>

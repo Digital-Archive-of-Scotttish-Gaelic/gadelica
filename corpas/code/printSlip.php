@@ -1,7 +1,9 @@
 <?php
+namespace controllers;
 
 require_once "includes/include.php";
 
-$controller = new controllers\PrintSlip();
+$controller = new PrintSlip();
+$controller->run("writePDF");
 
 

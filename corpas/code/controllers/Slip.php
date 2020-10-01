@@ -5,24 +5,21 @@ use models, views;
 
 class Slip
 {
-  private $_db;
+  private $_db, $_slip;
 
-  public function __construct() {
-    if (!isset($this->_db)) {
-      $this->_db = new models\Database();
-    }
+  public function __construct($slipId) {
+	  $this->_slip = new models\Slip($_GET["filename"], $_GET["id"], $slipId, $_GET["pos"]);
+  }
 
-    if (!isset($_REQUEST["action"])) {
-      $_REQUEST["action"] = "show";
-    }
-
-    switch ($_REQUEST["action"]) {
-      case "show":
-      	$slipId = !empty($_GET["auto_id"]) ? $_GET["auto_id"] : false;
-        $slip = new models\Slip($_GET["filename"], $_GET["id"], $slipId, $_GET["pos"]);
-        $slipView = new views\Slip($slip);
-        $slipView->writeEditForm();
-        break;
-    }
+  public function run($action) {
+	  if (empty($action)) {
+		  $action = "edit";
+	  }
+	  switch ($action) {
+		  case "edit":
+			  $slipView = new views\Slip($this->_slip);
+			  $slipView->writeEditForm();
+			  break;
+	  }
   }
 }

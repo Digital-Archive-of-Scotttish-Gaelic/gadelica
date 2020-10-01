@@ -1,18 +1,19 @@
 <?php
 
-namespace views;
-use models;
+
+namespace models;
 
 require_once "includes/include.php";
 require_once "TCPDF/tcpdf.php";
 
 class PrintSlip
 {
-	public function __construct() {
-		return $this;
-	}
-
-	public function write($slipIds) {
+	/**
+	 * TODO: break this up - especially the output call SB
+	 * Formats a PDF and writes the output to file
+	 * @param array $slipIds
+	 */
+	public function writePDF($slipIds) {
 		$pdf = new \TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 		// set document information
 		$pdf->SetCreator(PDF_CREATOR);
@@ -40,7 +41,7 @@ class PrintSlip
 		$i= 0;
 		foreach ($slipIds as $slipId) {
 			$i++;
-			$slipInfo = models\Slips::getSlipInfoBySlipId($slipId)[0];
+			$slipInfo = Slips::getSlipInfoBySlipId($slipId)[0];
 			$headword = $slipInfo["lemma"];
 			$filename = $slipInfo["filename"];
 			$filenameElems = explode('_', $filename);
@@ -51,7 +52,7 @@ class PrintSlip
 			}
 			$checked = 'Ch <span style="font-family:dejavusans;">' . $checkmark . '</span>';
 			$id = $slipInfo["auto_id"];
-			$fileHandler = new models\XmlFileHandler($filename);
+			$fileHandler = new XmlFileHandler($filename);
 			$context = $fileHandler->getContext($slipInfo["id"], $slipInfo["preContextScope"], $slipInfo["postContextScope"]);
 			$citation = $context["pre"]["output"]
 				. ' <span style="background-color: #CCCCCC">' . $context["word"] . '</span> '
@@ -103,6 +104,5 @@ EOD;
 // Close and output PDF document
 // This method has several options, check the source code documentation for more information.
 		$pdf->Output('slips.pdf', 'I');
-
 	}
 }

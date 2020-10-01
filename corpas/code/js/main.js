@@ -45,16 +45,6 @@ $(function () {
       });
   });
 
- /*
-  $(document).on('click', '.slipLink2',  function () {
-    if ($(this).attr("data-resultindex") != -1) {   //test for use in non-search results pages
-      $(this).removeClass('createSlipLink');
-      $(this).html('view slip');
-    }
-  });
-*/
-
-
   /**
    * Load and display slip data in a modal
    */
@@ -194,7 +184,7 @@ $(function () {
     var headword = $('#slipHeadword').text();
     var pos = $('#slipPOS').val();
     var auto_id = $('#auto_id').val();
-    var url = 'slipEdit.php?filename=' + filename + '&id=' + id + '&headword=' + headword;
+    var url = '?m=slip&filename=' + filename + '&id=' + id + '&headword=' + headword;
     url += '&pos=' + pos + '&auto_id=' + auto_id;
     var win = window.open(url, '_blank');
     if (win) {
@@ -226,30 +216,13 @@ $(function () {
         var slipClass = 'editSlipLink';
         var slipLinkText = 'create slip';
         var createSlipStyle = 'createSlipLink';
-        var slipUrl = 'slipEdit.php?filename='+val.filename+'&id='+val.id+'&headword='+headword+'&pos='+pos+'&auto_id='+val.auto_id;
+        var slipUrl = '?m=slip&filename='+val.filename+'&id='+val.id+'&headword='+headword+'&pos='+pos+'&auto_id='+val.auto_id;
         if (val.auto_id) {    //if a slip exists for this entry
           slipLinkText = 'view slip';
           slipClass = 'slipLink2';
           createSlipStyle = '';
           slipUrl = '#';
         }
-        /*
-            <a href="#" class="slipLink2 {$createSlipStyle}"
-                    data-toggle="modal" data-target="#slipModal"
-                    data-auto_id="{$result["auto_id"]}"
-                    data-headword="{$result["lemma"]}"
-                    data-pos="{$result["pos"]}"
-                    data-id="{$result["id"]}"
-                    data-xml="{$this->_xmlFile->getFilename()}"
-                    data-uri="{$context["uri"]}"
-                    data-date="{$result["date_of_lang"]}"
-                    data-title="{$result["title"]}"
-                    data-page="{$result["page"]}"
-                    data-resultindex="{$index}">
-                    {$slipLinkText}
-                </a>
-            </small>
-         */
         html = '<tr>';
         html += '<td style="text-align: right;">'+val.pre.output + '</td>';
         html += '<td><a href="viewText.php?uri=' + val.uri + '&id=' + val.id + '"';

@@ -248,7 +248,7 @@ HTML;
 			$createSlipStyle = "";
 			$modalCode = 'data-toggle="modal" data-target="#slipModal"';
 		} else {
-			$slipUrl = "slipEdit.php?filename=" . $this->_xmlFile->getFilename() . "&id=".$result["id"];
+			$slipUrl = "?m=slip&filename=" . $this->_xmlFile->getFilename() . "&id=".$result["id"];
 			$slipUrl .= "&headword=".$result["lemma"] . "&pos=" . $result["pos"];
 			$slipLinkText = "create slip";
 			$createSlipStyle = "createSlipLink";

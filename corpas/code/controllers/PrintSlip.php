@@ -1,21 +1,28 @@
 <?php
 
 namespace controllers;
-use views;
+use models;
 
-require_once "includes/include.php";
+//require_once "includes/include.php";
 
 class PrintSlip
 {
+	private $_model;
+
 	public function __construct() {
-		$action = $_GET["action"] ? $_GET["action"] : "print";
+		$this->_model = new models\PrintSlip();
+	}
+
+	public function run($action) {
+		if (empty($action)) {
+			$action = "writePDF";
+		}
 		switch ($action) {
-			case "print":
+			case "writePDF":
 				$slipIds = array_keys($_SESSION["printSlips"]);
 				//reset the array
 				$_SESSION["printSlips"] = array() ;
-				$view = new views\PrintSlip();
-				$view->write($slipIds);
+				$this->_model->writePDF($slipIds);
 				break;
 		}
 	}

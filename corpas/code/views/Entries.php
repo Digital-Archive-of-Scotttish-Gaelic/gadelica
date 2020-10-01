@@ -240,7 +240,7 @@ HTML;
   public function writeBrowseTable($entriesData) {
     $tableBodyHtml = "<tbody>";
     foreach ($entriesData as $entry) {
-      $entryUrl = "?action=view&headword={$entry["lemma"]}&wordclass={$entry["wordclass"]}";
+      $entryUrl = "?m=entries&a=view&headword={$entry["lemma"]}&wordclass={$entry["wordclass"]}";
       $tableBodyHtml .= <<<HTML
         <tr>
           <td>{$entry["lemma"]}</td>

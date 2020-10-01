@@ -5,8 +5,14 @@ use views;
 
 class SlipBrowse
 {
-  public function __construct() {
+  public function run($action) {
     $view = new views\SlipBrowse();
-    $view->writeBrowseTable();
+    switch ($action) {
+	    case "browse":
+		    $view->writeBrowseTable();
+		    break;
+	    default:
+		    $view->writeBrowseTable();  //TODO: revisit as this is a duplicate SB
+    }
   }
 }

@@ -5,8 +5,10 @@ use models, views;
 
 class Writer
 {
-  public function __construct($action = "list") {
-
+  public function run($action) {
+  	if (empty($action)) {
+  		$action = "list";
+	  }
     switch ($action) {
       case "view":
         $writer = new models\Writer($_GET["uri"]);

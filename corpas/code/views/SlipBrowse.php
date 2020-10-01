@@ -25,7 +25,7 @@ class SlipBrowse
               </tr>
           </thead>
       </table>
-      <a href="printSlip.php?action=print" target="_blank" id="printSlips" class="btn btn-primary disabled">print</a>
+      <a href="printSlip.php?action=writePDF" target="_blank" id="printSlips" class="btn btn-primary disabled">print</a>
 HTML;
 
     models\Slips::writeSlipDiv();

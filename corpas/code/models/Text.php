@@ -2,7 +2,7 @@
 
 namespace models;
 
-class CorpusText
+class Text
 {
   private $_uri;
   private $_id, $_title, $_date, $_publisher, $_rating, $_superuri, $_supertitle, $_filename, $_transformedText,

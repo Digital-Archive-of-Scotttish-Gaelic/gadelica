@@ -2,7 +2,7 @@
 
 namespace views;
 
-class BrowseCorpus
+class Corpus
 {
   public function writeTable($results) {
     echo <<<HTML
@@ -24,7 +24,7 @@ HTML;
         <tr>
             <td>#{$rank}</td>
             <td class="browseListTitle">
-                <a href="viewText.php?uri={$result["textUri"]}">{$result["title"]}</a>
+                <a href="?m=text&a=view&uri={$result["textUri"]}">{$result["title"]}</a>
             </td>
             <td>{$writerHtml}</td>
             <td>{$result["date"]}</td>
@@ -44,7 +44,7 @@ HTML;
       } else {
         $nickname = (empty($writer["nickname"])) ? "" : " (" . $writer["nickname"] . ")";
         $writerList[$index] = <<<HTML
-            <a href="viewWriter.php?uri={$writer["writerUri"]}">{$writer["forenames"]} {$writer["surname"]}</a> {$nickname}
+            <a href="?m=writer&a=view&uri={$writer["writerUri"]}">{$writer["forenames"]} {$writer["surname"]}</a> {$nickname}
 HTML;
       }
     }

@@ -5,18 +5,25 @@ use models, views;
 
 class Text
 {
-  public function __construct() {
-    $show = isset($_GET["show"]) ? $_GET["show"] : "view";
-    switch ($show) {
-      case "view":
-        $text = new models\CorpusText($_GET["uri"]);
-        $view = new views\Text($text);
-        $view->printText();
-        break;
-      case "search":
-        $origin = "viewText.php?uri={$_GET["uri"]}";   //the originating script
-        new CorpusSearch($origin);
-        break;
-    }
+	private $_model;
+
+  public function __construct($uri) {
+  	$this->_model = new models\Text($uri);
+  }
+
+  public function run($action) {
+	  if (empty($action)) {
+	  	$action = "view";
+	  }
+	  switch ($action) {
+		  case "view":
+			  $view = new views\Text($this->_model);
+			  $view->printText();
+			  break;
+		  case "search":
+			  $origin = "?m=text&a=view&uri={$_GET["uri"]}";   //the originating script
+			  new CorpusSearch($origin);
+			  break;
+	  }
   }
 }

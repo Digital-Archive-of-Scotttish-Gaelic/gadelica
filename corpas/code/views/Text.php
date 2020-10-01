@@ -4,7 +4,7 @@ namespace views;
 
 class Text extends Search
 {
-  private $_text;   //an instance of CorpusText
+  private $_text;   //an instance of models\Text
 
   public function __construct($text) {
     $this->_text = $text;
@@ -115,7 +115,7 @@ HTML;
       return "";
     }
     $html = '<tr><td>part of</td><td>';
-    $html .= '<a href="viewText.php?uri=' . $this->_text->getSuperURI() . '">';
+    $html .= '<a href="?m=text&a=view&uri=' . $this->_text->getSuperURI() . '">';
     $html .= $this->_text->getSuperTitle();
     $html .= '</a></td></tr>';
     return $html;
@@ -128,7 +128,7 @@ HTML;
     $html = '<tr><td>writer</td><td>';
     foreach ($this->_text->getWriters() as $nextWriter => $nextName) {
       if (substr($nextWriter,0,8)=='https://') {
-        $html .= '<a href="viewWriter.php?uri=' . $nextWriter . '">';
+        $html .= '<a href="?m=writer&a=view&uri=' . $nextWriter . '">';
         $html .= $nextName;
         $html .= '</a>';
       }
@@ -178,7 +178,7 @@ HTML;
     $html = '<div class="list-group list-group-flush">';
     foreach ($this->_text->getSubURIs() as $nextSubURI) {
       $html .= '<div class="list-group-item list-group-item-action">';
-      $html .= '#' . $nextSubURI["rank"] . ': <a href="viewText.php?uri=' . $nextSubURI["uri"] .'">' . $nextSubURI["title"];
+      $html .= '#' . $nextSubURI["rank"] . ': <a href="?m=text&a=view&uri=' . $nextSubURI["uri"] .'">' . $nextSubURI["title"];
       $html .= '</a></div>';
     }
     $html .= '</div>';
