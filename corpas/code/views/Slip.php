@@ -425,6 +425,9 @@ HTML;
   private function _writeJavascript() {
     echo <<<HTML
         <script>     
+            //refresh the results page that brought use here to change "create slip" to "view slip"
+            window.opener.location.reload(true);
+            
             $('.lockBtn').on('click', function (e) {
               e.preventDefault();
               $(this).addClass('d-none');

@@ -33,12 +33,27 @@ $(function () {
   });
   /** -- **/
 
+  /**
+   * Send email to request slip unlock
+   */
+  $('#lockedBtn').on('click', function () {
+    var owner = $(this).attr('data-owner');
+    var slipId = $(this).attr('data-slipid');
+    $.ajax({url: 'ajax.php?action=requestUnlock&slipId='+slipId+'&owner='+owner})
+      .done(function () {
+        alert('email sent');
+      });
+  });
+
+ /*
   $(document).on('click', '.slipLink2',  function () {
     if ($(this).attr("data-resultindex") != -1) {   //test for use in non-search results pages
       $(this).removeClass('createSlipLink');
       $(this).html('view slip');
     }
   });
+*/
+
 
   /**
    * Load and display slip data in a modal
@@ -133,18 +148,6 @@ $(function () {
         } else {
           $('.unlocked').removeClass('d-none');
         }
-      });
-  });
-
-  /**
-   * Send email to request slip unlock
-   */
-  $('#lockedBtn').on('click', function () {
-    var owner = $(this).attr('data-owner');
-    var slipId = $(this).attr('data-slipid');
-    $.ajax({url: 'ajax.php?action=requestUnlock&slipId='+slipId+'&owner='+owner})
-      .done(function () {
-        alert('email sent');
       });
   });
 

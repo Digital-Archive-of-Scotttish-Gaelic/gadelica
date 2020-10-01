@@ -265,20 +265,7 @@ HTML;
             </a>
         </td>
         <td>{$context["post"]["output"]}</td>
-        <!--td>
-            <small>
-                <a href="#"
-                    class="slipLink {$createSlipStyle}" data-uri="{$context["uri"]}"
-                    data-headword="{$result["lemma"]}" data-pos="{$result["pos"]}"
-                    data-id="{$result["id"]}" data-xml="{$this->_xmlFile->getFilename()}"
-                    data-date="{$result["date_of_lang"]}" data-title="{$result["title"]}"
-                    data-page="{$result["page"]}" data-resultindex="{$index}"
-                    data-auto_id="{$result["auto_id"]}">
-                    {$slipLinkText}
-                </a>
-            </small>
-        </td-->
-        <td> <!-- added by MM -->
+        <td> <!-- the slip link -->
             <small>
                 <a href="{$slipUrl}" target="_blank" class="{$slipClass} {$createSlipStyle}"
                     {$modalCode}

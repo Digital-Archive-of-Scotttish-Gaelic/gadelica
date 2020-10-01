@@ -46,9 +46,9 @@ SQL;
     }
     $sql = <<<SQL
         SELECT * FROM slips 
-        WHERE filename = ? AND id = ?
+        WHERE auto_id = :auto_id
 SQL;
-    $result = $this->_db->fetch($sql, array($this->_filename, $this->_id));
+    $result = $this->_db->fetch($sql, array(":auto_id" => $this->_auto_id));
     $slipData = $result[0];
     $this->_populateClass($slipData);
     $this->_loadSlipMorph();  //load the slipMorph data from the DB
@@ -99,6 +99,7 @@ SQL;
 
   /**
    * Updates the results stored in the SESSION with the new auto_id
+   * TODO: this no longer works within the new search engine - need to revisit SB
    */
   public function updateResults($index) {
     $_SESSION["results"][$index]["auto_id"] = $this->getAutoId();
