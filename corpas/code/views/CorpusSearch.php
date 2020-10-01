@@ -38,11 +38,12 @@ class CorpusSearch
           <div class="input-group">
             <input type="text" name="search"/>
             <div class="input-group-append">
+              <input type="hidden" name="m" value="search">
+              <input type="hidden" name="a" value="runSearch"/>
               <button name="submit" class="btn btn-primary" type="submit">search</button>
             </div>
           </div>
         </div>
-        <input type="hidden" name="action" value="runSearch"/>
         <div class="form-group">
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="mode" id="headwordRadio" value="headword" checked>
@@ -219,7 +220,7 @@ HTML;
 		$alternateView = ($this->_view == "corpus") ? "dictionary" : "corpus";
 		echo <<<HTML
         <div id="viewSwitch">
-            <a href="search.php?action=runSearch&mode={$this->_mode}&search={$this->_search}&view={$alternateView}&hits={$this->_hits}&origin={$this->_origin}">
+            <a href="?m=search&a=runSearch&mode={$this->_mode}&search={$this->_search}&view={$alternateView}&hits={$this->_hits}&origin={$this->_origin}">
                 switch to {$alternateView} view
             </a>
         </div>
@@ -377,7 +378,7 @@ HTML;
 		              cssStyle: "light-theme",
 		              onPageClick: function(pageNum) {
 				            //var url = 'search.php?action=runSearch&mode={$this->_mode}&pp={$this->_perpage}&page=' + pageNum + '&search={$this->_search}';
-                    var url = 'searchAjax.php?action=runSearch&mode={$this->_mode}&pp={$this->_perpage}&page=' + pageNum + '&search={$this->_search}';
+                    var url = '?m=search&a=runSearch&mode={$this->_mode}&pp={$this->_perpage}&page=' + pageNum + '&search={$this->_search}';
                     url += '&case={$this->_case}&accent={$this->_accent}&lenition={$this->_lenition}';
 				            url += '&hits={$this->_hits}&view={$this->_view}';
 				            url += '&date={$this->_date}&selectedDates={$_GET["selectedDates"]}';
