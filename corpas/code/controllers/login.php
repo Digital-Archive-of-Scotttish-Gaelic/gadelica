@@ -3,12 +3,12 @@
 namespace controllers;
 use views, models;
 
-class Login
+class login
 {
   private $_user, $_view;
 
   public function __construct() {
-    $this->_view = new views\Login();
+    $this->_view = new views\login();
     if (!isset($_REQUEST["loginAction"])) {
       $_REQUEST["loginAction"] = "";
     } else if ($_REQUEST["loginAction"] == "login") {

@@ -4,7 +4,7 @@
 namespace models;
 
 
-class Login
+class login
 {
 
 }
