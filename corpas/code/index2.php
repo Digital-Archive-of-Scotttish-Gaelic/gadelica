@@ -2,13 +2,13 @@
 
 require_once "includes/htmlHeader.php";
 
-/*include_once 'controllers/CorpusController.php';
+include_once 'controllers/TextController.php';
 include_once 'controllers/SearchCorpusController.php';
 include_once 'models/CorpusModel.php';
 include_once 'models/TextModel.php';
 include_once 'models/SearchCorpusModel.php';
 include_once 'views/CorpusView.php';
-include_once 'views/TextView.php';*/
+include_once 'views/TextView.php';
 
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
 $module = isset($_GET['module']) ? $_GET['module'] : '';
@@ -16,10 +16,13 @@ $module = isset($_GET['module']) ? $_GET['module'] : '';
 
 switch($module) {
     case 'browseCorpus':
-        $controller = new controllers\CorpusController();
+        $controller = new TextController('https://dasg.ac.uk/corpus/_0');
+        break;
+    case 'viewText':
+        $controller = new TextController(); // start here
         break;
     case 'searchCorpus':
-        $controller = new controllers\SearchCorpusController();
+        $controller = new SearchCorpusController();
         break;
     default:
       echo <<<HTML
@@ -31,5 +34,3 @@ HTML;
 }
 
 require_once "includes/htmlFooter.php";
-
-?>
