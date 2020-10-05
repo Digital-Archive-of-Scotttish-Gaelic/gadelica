@@ -3,7 +3,7 @@
 namespace controllers;
 use views, models;
 
-class Login
+class login
 {
   private $_user, $_view;
 
