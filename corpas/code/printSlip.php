@@ -3,7 +3,7 @@ namespace controllers;
 
 require_once "includes/include.php";
 
-$controller = new PrintSlip();
+$controller = new slipprint();
 $controller->run("writePDF");
 
 

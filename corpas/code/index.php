@@ -9,34 +9,34 @@ $controller = null;
 
 switch ($module) {
 	case "corpus":
-		$controller = new Corpus();
+		$controller = new corpus();
 		break;
 	case "text":
 		$uri = $_GET["uri"];
-		$controller = new Text($uri);
+		$controller = new text($uri);
 		break;
 	case "writer":
-		$controller = new Writer();
+		$controller = new writer();
 		break;
 	case "search":
 		$origin = "index.php?m=search";
-		$controller = new CorpusSearch($origin);
+		$controller = new corpussearch($origin);
 		break;
 	case "slips":
-		$controller = new SlipBrowse();
+		$controller = new slipbrowse();
 		break;
 	case "slip":
 		$slipId = !empty($_GET["auto_id"]) ? $_GET["auto_id"] : false;
-		$controller = new Slip($slipId);
+		$controller = new slip($slipId);
 		break;
 	case "entries":
-		$controller = new Entries();
+		$controller = new entries();
 		break;
 	case "docs":
-		$controller = new Documentation();
+		$controller = new documentation();
 		break;
 	default:
-		$controller = new Index();
+		$controller = new index();
 }
 
 $controller->run($action);

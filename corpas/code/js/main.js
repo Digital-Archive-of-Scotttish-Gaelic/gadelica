@@ -225,7 +225,7 @@ $(function () {
         }
         html = '<tr>';
         html += '<td style="text-align: right;">'+val.pre.output + '</td>';
-        html += '<td><a href="viewText.php?uri=' + val.uri + '&id=' + val.id + '"';
+        html += '<td><a href="?m=text&a=view&uri=' + val.uri + '&id=' + val.id + '"';
         html += ' data-toggle="tooltip" data-html="true" title="' + title + '">';
         html += val.word + '</a>';
         html += '<td>' + val.post.output + '</td>';

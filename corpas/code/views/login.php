@@ -131,7 +131,7 @@ HTML;
   }
 
   private function _getUserSelectHtml() {
-    $users = models\Users::getAllUsers();
+    $users = models\users::getAllUsers();
     $dropdownHtml = '<option value="">-- select a user --</option>';
     foreach ($users as $user) {
       $dropdownHtml .= <<<HTML

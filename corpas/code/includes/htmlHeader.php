@@ -11,7 +11,7 @@ $groupTheme = "007bff"; //default colour scheme (Faclair theme)
 $loginControl = new controllers\login();
 if ($loginControl->isLoggedIn() || ($_SESSION["email"] && $_POST["loginAction"] == "savePassword")) {
 	$email = $_SESSION["user"] ? $_SESSION["user"] : $_SESSION["email"];
-	$user = models\Users::getUser($email);
+	$user = models\users::getUser($email);
 	$userGroups = $user->getGroups();
 	$lastUsedGroup = $user->getLastUsedGroup();
 	$groupTheme = $lastUsedGroup->getTheme();

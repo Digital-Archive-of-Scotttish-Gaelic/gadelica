@@ -22,7 +22,7 @@ class login
     switch ($_REQUEST["loginAction"]) {
       case "login":
         if (!$this->_authenticateUser($_POST)) {
-	        $user = models\Users::getUser($_SESSION["email"]);
+	        $user = models\users::getUser($_SESSION["email"]);
         	$error = <<<HTML
 						Password not recognised for {$user->getFirstname()} {$user->getLastname()}. Try again.
 HTML;
@@ -33,12 +33,12 @@ HTML;
         $this->_logout();
         break;
       case "forgotPassword":
-	      $user = models\Users::getUser($_SESSION["email"]);
+	      $user = models\users::getUser($_SESSION["email"]);
 	      $name = $user->getFirstName() . ' ' . $user->getLastName();
         $this->_view->writeModal("forgotPassword", $name);
         break;
       case "sendEmail":
-        if ($this->_user = models\Users::getUser($_SESSION["email"])) {
+        if ($this->_user = models\users::getUser($_SESSION["email"])) {
           $this->_sendEmail();
           $this->_view->writeModal("emailSent");
         } else {
@@ -70,7 +70,7 @@ HTML;
   }
 
   private function _savePassword() {
-    $user = models\Users::getUser($_SESSION["email"]);
+    $user = models\users::getUser($_SESSION["email"]);
     $user->setPassword($_POST["pass1"]);
     $user->encryptPassword();
     $user->setPasswordAuth(null);	//remove password auth
@@ -82,7 +82,7 @@ HTML;
     //set password change authorisation in the DB
     $passwordAuth = time();
     $this->_user->setPasswordAuth($passwordAuth);
-    models\Users::saveUser($this->_user);
+    models\users::saveUser($this->_user);
     $changeParams = array($this->_user->getEmail(), $passwordAuth);
     $changeParams = base64_encode(implode('|', $changeParams));
     $url = "https://" . $_SERVER["HTTP_HOST"] . "/gadelica/corpas/code/?loginAction=resetPassword&p=" . $changeParams;
@@ -94,7 +94,7 @@ HTML;
 			<p>Kind regards</p>
 			<p>The DASG team</p>
 HTML;
-    $email = new models\Email($this->_user->getEmail(), "Faclair Corpus Password Reset", $emailText, "mail@dasg.ac.uk");
+    $email = new models\email($this->_user->getEmail(), "Faclair Corpus Password Reset", $emailText, "mail@dasg.ac.uk");
     $email->send();
   }
 
@@ -104,18 +104,18 @@ HTML;
    */
   private function _authenticateUser($params) {
   	$_SESSION["email"] = $params["email"] ? $params["email"] : $_SESSION["email"];
-    $user = models\Users::getUser($_SESSION["email"]);
+    $user = models\users::getUser($_SESSION["email"]);
     if (empty($user) || !$user->checkPassword($params["password"])) {
       return false;
     }
     $this->_user = $user;
     $_SESSION["user"] = $user->getEmail();
-    models\Users::saveUser($user);   //update last login in DB
+    models\users::saveUser($user);   //update last login in DB
     return true;
   }
 
   public function getUser() {
-  	$this->_user = models\Users::getUser($_SESSION["user"]);
+  	$this->_user = models\users::getUser($_SESSION["user"]);
     return $this->_user;
   }
 
