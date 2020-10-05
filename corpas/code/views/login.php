@@ -3,7 +3,7 @@
 namespace views;
 use models;
 
-class Login
+class login
 {
   public function writeModal($type, $msg = "") {
     $title = $body = $footer = $js = $formId = "";
