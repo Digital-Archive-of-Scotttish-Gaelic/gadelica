@@ -10,7 +10,6 @@ class database {
    * Creates and initialises a new Database object
    */
   public function __construct($dbName = DB) {
-
     try {
       $this->_dbh = new \PDO(
         "mysql:host=" . DB_HOST . ";dbname=" . $dbName . ";charset=utf8;", DB_USER, DB_PASSWORD, array(
@@ -38,7 +37,6 @@ class database {
    * @return array $results  : The results array
    */
   public function fetch($sql, array $values = array()) {
-    $results = array();
     try {
       $this->_sth = $this->_dbh->prepare($sql);
       $this->_sth->execute($values);

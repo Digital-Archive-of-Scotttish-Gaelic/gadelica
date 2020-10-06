@@ -9,14 +9,14 @@ $controller = null;
 
 switch ($module) {
 	case "corpus":
-		$controller = new corpus();
+		$controller = new corpus_sql();
 		break;
 	case "text":
-		$uri = $_GET["uri"];
-		$controller = new text($uri);
+		$textId = $_GET["textId"];
+		$controller = new text_sql($textId);
 		break;
 	case "writer":
-		$controller = new writer();
+		$controller = new writer_sql();
 		break;
 	case "search":
 		$origin = "index.php?m=search";
