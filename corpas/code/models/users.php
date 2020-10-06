@@ -98,7 +98,7 @@ SQL;
     $db = new database();
     $dbh = $db->getDatabaseHandle();
     try {
-      $sth = $dbh->prepare("SELECT email FROM user;");
+      $sth = $dbh->prepare("SELECT email, firstname FROM user ORDER BY firstname ASC;");
       $sth->execute();
       while ($row = $sth->fetch()) {
         $users[] = self::getUser($row["email"]);
