@@ -49,7 +49,7 @@ HTML;
         $params 	= explode('|', base64_decode($_GET["p"]));
         $email 		= $params[0];
         $passAuth	= $params[1];
-        $user = Users::getUser($email);
+        $user = models\users::getUser($email);
         if ($passAuth != $user->getPasswordAuth() || time() > $passAuth+300) {  //set a limit of five mins on auth
           $this->_view->writeModal("login", "This link has expired");
         } else {
