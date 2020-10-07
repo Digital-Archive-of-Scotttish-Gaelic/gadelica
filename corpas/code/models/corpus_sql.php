@@ -7,20 +7,29 @@ namespace models;
 class corpus_sql
 {
 	private $_db; //an instance of models\database
-	private $_texts = array();  //an array of models\text objects
 
 	public function __construct() {
 		$this->_db = isset($this->_db) ? $this->_db : new database();
 	}
 
+	/**
+	 * Queries the DB for a list of text info
+	 * @return array of text and writer information
+	 */
 	public function getTextList() {
 		$sql = <<<SQL
-			SELECT id FROM text WHERE partOf = '' ORDER BY CAST(id AS UNSIGNED) ASC
+			SELECT * FROM text WHERE partOf = '' ORDER BY CAST(id AS UNSIGNED) ASC
 SQL;
-		$results = $this->_db->fetch($sql);
-		foreach ($results as $result) {
-			$this->_texts[] = new text_sql($result["id"]);
+		foreach ($this->_db->fetch($sql) as $textResult) {
+			$textsInfo[$textResult["id"]] = $textResult;
+			$sql = <<<SQL
+				SELECT * FROM writer 
+					JOIN text_writer ON writer_id = id
+					WHERE text_id = :textId
+SQL;
+			$writerResults = $this->_db->fetch($sql, array(":textId" => $textResult["id"]));
+			$textsInfo[$textResult["id"]]["writers"] = $writerResults;
 		}
-		return $this->_texts;
+		return $textsInfo;
 	}
 }

@@ -6,13 +6,13 @@ namespace views;
 
 class corpus_sql
 {
-	public function writeTable($texts) {
+	public function writeTable($textsInfo) {
 		echo <<<HTML
         <table class="table">
             <tbody>
 HTML;
-		foreach ($texts as $text) {
-			$this->_writeRow($text);
+		foreach ($textsInfo as $textInfo) {
+			$this->_writeRow($textInfo);
 		}
 		echo <<<HTML
             </tbody>
@@ -20,31 +20,31 @@ HTML;
 HTML;
 	}
 
-	private function _writeRow($text) {
-		$writerHtml = $this->_formatWriters($text);
+	private function _writeRow($textInfo) {
+		$writerHtml = $this->_formatWriters($textInfo);
 		echo <<<HTML
         <tr>
-            <td>#{$text->getId()}</td>
+            <td>#{$textInfo["id"]}</td>
             <td class="browseListTitle">
-                <a href="?m=text&a=view&textId={$text->getId()}">{$text->getTitle()}</a>
+                <a href="?m=text&a=view&textId={$textInfo["id"]}">{$textInfo["title"]}</a>
             </td>
             <td>{$writerHtml}</td>
-            <td>{$text->getDate()}</td>
+            <td>{$textInfo["date"]}</td>
         </tr>
 HTML;
 	}
 
-	private function _formatWriters($text) {
-		$writers = $text->getWriters();
-		if (empty($writers)) {
+	private function _formatWriters($textInfo) {
+		$writersInfo = $textInfo["writers"];
+		if (empty($writersInfo)) {
 			return;
 		}
 		$writerList = [];
-		foreach ($writers as $writer) {
-			$nickname = (empty($writer->getNickname())) ? "" : " (" . $writer->getNickname() . ")";
+		foreach ($writersInfo as $writerInfo) {
+			$nickname = (empty($writerInfo["nickname"])) ? "" : " (" . $writerInfo["nickname"] . ")";
 			$writerList[] = <<<HTML
-            <a href="?m=writer&a=view&id={$writer->getId()}">
-							{$writer->getForenamesGD()} {$writer->getSurnameGD()}
+            <a href="?m=writer&a=view&writerId={$writerInfo["id"]}">
+							{$writerInfo["forenames_gd"]} {$writerInfo["surname_gd"]}
 						</a> {$nickname}
 HTML;
 

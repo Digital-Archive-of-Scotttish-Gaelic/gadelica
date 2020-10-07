@@ -118,4 +118,22 @@ SQL;
 	public function getOrigin() {
 		return $this->_origin;
 	}
+
+	/**
+	 * Queries the database (on the fly to aid performance),
+	 *  creates and returns text objects for this writer
+	 * @return array of models\text objects
+	 */
+	public function getTexts() {
+		$texts = array();
+		$sql = <<<SQL
+			SELECT text_id FROM text_writer WHERE writer_id = :writerId
+SQL;
+		$results = $this->_db->fetch($sql, array(":writerId" => $this->getId()));
+		foreach ($results as $result) {
+			$texts[$result["text_id"]] = new text_sql($result["text_id"]);
+		}
+		return $texts;
+	}
+
 }
