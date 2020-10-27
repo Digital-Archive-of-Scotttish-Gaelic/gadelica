@@ -1,36 +1,49 @@
 <?php
+namespace controllers;
 
 require_once "includes/htmlHeader.php";
 
-include_once 'controllers/TextController.php';
-include_once 'controllers/SearchCorpusController.php';
-include_once 'models/CorpusModel.php';
-include_once 'models/TextModel.php';
-include_once 'models/SearchCorpusModel.php';
-include_once 'views/CorpusView.php';
-include_once 'views/TextView.php';
+//$action = isset($_GET["a"]) ? $_GET["a"] : "";
+$module = isset($_GET["m"]) ? $_GET["m"] : "";
+$controller = null;
 
-$action = isset($_GET['action']) ? $_GET['action'] : 'index';
-$module = isset($_GET['module']) ? $_GET['module'] : '';
-//$id =
+switch ($module) {
+	case "corpus":
+		$controller = new corpus2();
+		break;
 
-switch($module) {
-    case 'browseCorpus':
-        $controller = new TextController('https://dasg.ac.uk/corpus/_0');
-        break;
-    case 'viewText':
-        $controller = new TextController(); // start here
-        break;
-    case 'searchCorpus':
-        $controller = new SearchCorpusController();
-        break;
-    default:
-      echo <<<HTML
-        <div class="list-group list-group-flush">
-          <a class="list-group-item list-group-item-action" href="index2.php?module=browseCorpus">browse corpus</a>
-          <a class="list-group-item list-group-item-action" href="index2.php?module=searchCorpus&action=newSearch">search corpus</a>
-        </div>
-HTML;
+	/*
+	case "text":
+		$textId = $_GET["textId"];
+		$controller = new text_sql($textId);
+		break;
+	case "writer":
+		$controller = new writer_sql();
+		break;
+	case "search":
+		$origin = "index.php?m=search";
+		$controller = new corpussearch($origin);
+		break;
+	case "slips":
+		$controller = new slipbrowse();
+		break;
+	case "slip":
+		$slipId = !empty($_GET["auto_id"]) ? $_GET["auto_id"] : false;
+		$controller = new slip($slipId);
+		break;
+	case "entries":
+		$controller = new entries();
+		break;
+	case "docs":
+		$controller = new documentation();
+		break;
+	*/
+	default:
+		$controller = new index2();
 }
 
+//$controller->run($action);
+
 require_once "includes/htmlFooter.php";
+
+?>
