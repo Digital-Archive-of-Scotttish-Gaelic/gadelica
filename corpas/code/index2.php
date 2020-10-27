@@ -25,7 +25,7 @@ switch ($module) {
 		break;
 	*/
 	default:
-		$controller = new index2();
+		new index2();
 }
 
 //$controller->run($action);
