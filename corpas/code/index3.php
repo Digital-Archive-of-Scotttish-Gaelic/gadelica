@@ -3,7 +3,7 @@ namespace controllers;
 
 require_once "includes/htmlHeader.php";
 
-$action = isset($_GET["a"]) ? $_GET["a"] : "";
+$param = isset($_GET["p"]) ? $_GET["p"] : "";
 $module = isset($_GET["m"]) ? $_GET["m"] : "";
 $controller = null;
 
@@ -25,9 +25,9 @@ switch ($module) {
 		break;
 	*/
 	default:
-		$controller = new index();
+		$controller = new index3();
 }
 
-$controller->run($action);
+$controller->run($param);
 
 require_once "includes/htmlFooter.php";

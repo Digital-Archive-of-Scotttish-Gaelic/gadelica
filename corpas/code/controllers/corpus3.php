@@ -13,19 +13,19 @@ class corpus3
 		$_GET["page"] = ($_GET["page"]) ? $_GET["page"] : 1; // results page number
 	}
 
-	public function run($action) {
-		switch ($action) {
-			case "viewText":
+	public function run($param) {
+		switch ($param) {
+			case "text":
 				$model = new models\text_sql($_GET["id"]);
 				$view = new views\text_sql($model);
 				$view->printText();
 				break;
-			case "viewWriter":
+			case "writer":
 				$model = new models\writer_sql($_GET["id"]);
 				$view = new views\writer_sql();
 				$view->printWriter($model);
 				break;
-			case "viewWriters":
+			case "writers":
 				$writers = models\writers_sql::getWriters();
 				$view = new views\writer_sql();
 				$view->listWriters($writers);
