@@ -7,8 +7,9 @@ use views;
 class index2
 {
 
-	public function __construct() {
-		new views\index2();
+	public function run() {
+		$view = new views\index2();
+		$view->show();
 	}
 
 }
