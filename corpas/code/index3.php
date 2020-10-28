@@ -3,13 +3,13 @@ namespace controllers;
 
 require_once "includes/htmlHeader.php";
 
-//$action = isset($_GET["a"]) ? $_GET["a"] : "";
+$action = isset($_GET["a"]) ? $_GET["a"] : "";
 $module = isset($_GET["m"]) ? $_GET["m"] : "";
-//$controller = null;
+$controller = null;
 
 switch ($module) {
 	case "corpus":
-		new corpus2();
+		$controller = new corpus3();
 		break;
 
 	/*
@@ -25,9 +25,9 @@ switch ($module) {
 		break;
 	*/
 	default:
-		new index2();
+		$controller = new index();
 }
 
-//$controller->run($action);
+$controller->run($action);
 
 require_once "includes/htmlFooter.php";
