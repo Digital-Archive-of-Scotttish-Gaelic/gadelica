@@ -1,7 +1,7 @@
 <?php
 
-
 namespace views;
+use models;
 
 class writer2
 {
@@ -12,12 +12,21 @@ class writer2
 		$this->_model = $model;
 	}
 
+  public function show() {
+		if ($this->_model->getId() == "0") {
+			$writers = models\writer2::getWriters();
+			$this->_showWriters($writers);
+		}
+		else {
+      $this->_showWriter();
+		}
+	}
 
 	/**
 	 * Outputs a table of all writers
 	 * @param $writers an array of models\writer objects
 	 */
-	public function listWriters($writers) {
+	private function _showWriters($writers) {
 		$html = "";
 		foreach ($writers as $writer) {
 			$html .= <<<HTML
@@ -51,20 +60,13 @@ HTML;
 	/**
 	 * @param $writer an instance of models\writer
 	 */
-	public function show() {
+	private function _showWriter() {
 		$writer = $this->_model;
 		$html = <<<HTML
 			<table class="table">
 				<tbody>
-					<tr>
-						<td>firstname(s) (gaelic)</td>
-						<td>{$writer->getForenamesGD()}</td>
-					</tr>
-					<tr>
-						<td>surname (gaelic}</td>
-						<td>{$writer->getSurnameGD()}</td>
-					</tr>
-					{$this->_getEnglishNamesHtml($writer)}
+					{$this->_getSurnameHtml($writer)}
+					{$this->_getForenamesHtml($writer)}
 					{$this->_getNicknameHtml($writer)}
 					{$this->_getYearOfBirthHtml($writer)}
 					{$this->_getYearOfDeathHtml($writer)}
@@ -76,22 +78,45 @@ HTML;
 		echo $html;
 	}
 
-	private function _getEnglishNamesHtml($writer) {
-		$html = "";
-		if (empty($writer->getSurnameEN())) {
-			return $html;
-		} else {
-			$html = <<<HTML
-				<tr>
-					<td>firstname(s) (english)</td>
-					<td>{$writer->getForenamesEN()}</td>
-				</tr>
-				<tr>
-					<td>firstname(s) (english)</td>
-					<td>{$writer->getSurnameEN()}</td>
-				</tr>
-HTML;
+	private function _getSurnameHtml($writer) {
+		$snEN = $writer->getSurnameEN();
+		$snGD = $writer->getSurnameGD();
+		if ($snEN != "" && $snGD != "") {
+			$sn = $snEN . " / " . $snGD;
 		}
+    else if ($snEN != "") {
+			$sn = $snEN;
+		}
+		else {
+			$sn = $snGD;
+		}
+		$html = <<<HTML
+			<tr>
+				<td>surname</td>
+				<td>{$sn}</td>
+			</tr>
+HTML;
+		return $html;
+	}
+
+	private function _getForenamesHtml($writer) {
+		$fnEN = $writer->getForenamesEN();
+		$fnGD = $writer->getForenamesGD();
+		if ($fnEN != "" && $fnGD != "") {
+			$fn = $fnEN . " / " . $fnGD;
+		}
+		else if ($fnEN != "") {
+			$fn = $fnEN;
+		}
+		else {
+			$fn = $fnGD;
+		}
+		$html = <<<HTML
+			<tr>
+				<td>forenames</td>
+				<td>{$fn}</td>
+			</tr>
+HTML;
 		return $html;
 	}
 
@@ -117,7 +142,7 @@ HTML;
 		} else {
 			$html = <<<HTML
 				<tr>
-					<td>year of birth</td>
+					<td>birth</td>
 					<td>{$writer->getYearOfBirth()}</td>
 				</tr>
 HTML;
@@ -132,7 +157,7 @@ HTML;
 		} else {
 			$html = <<<HTML
 				<tr>
-					<td>year of death</td>
+					<td>death</td>
 					<td>{$writer->getYearOfDeath()}</td>
 				</tr>
 HTML;
@@ -158,17 +183,17 @@ HTML;
 	private function _getTextsHtml($writer) {
 		$html = "";
 		if ($texts = $writer->getTexts()) {
-			$html = "<tr><td>texts</td><td><ul>";
+			$html = "<tr><td>works</td><td><div class='list-group list-group-flush'>";
 			foreach ($texts as $text) {
 				$html .= <<<HTML
-					<li>
+					<div class="list-group-item list-group-item-action">
 						<a href="?m=corpus&a=browse&id={$text->getId()}">
 							{$text->getTitle()}
 						</a>
-					</li>
+					</div>
 HTML;
 			}
-			$html .= "</ul></td></tr>";
+			$html .= "</div></td></tr>";
 		}
 		return $html;
 	}

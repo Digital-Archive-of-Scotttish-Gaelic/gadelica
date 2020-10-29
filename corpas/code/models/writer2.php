@@ -1,21 +1,29 @@
 <?php
 
-
 namespace models;
-
 
 class writer2
 {
 
-	private $_id, $_surnameGD, $_forenamesGD, $_surnameEN, $_forenamesEN, $_title;
-	private $_nickname, $_yearOfBirth, $_yearOfDeath, $_origin;
+	private $_id;
+	private $_surnameGD;
+	private $_forenamesGD;
+	private $_surnameEN;
+	private $_forenamesEN;
+	private $_title;
+	private $_nickname;
+	private $_yearOfBirth;
+	private $_yearOfDeath;
+	private $_origin;
 
   private $_db; //an instance of models\database
 
 	public function __construct($id) {
 		$this->_db = isset($this->_db) ? $this->_db : new database();
 		$this->_id = $id;
-		$this->_load();
+		if ($id != "0") {
+			$this->_load();
+		}
 	}
 
 	/**
@@ -40,7 +48,7 @@ SQL;
 		$this->_setOrigin($writerData["where"]);
 	}
 
-	// Setters
+	// SETTERS
 
 	private function _setSurnameGD($name) {
 		$this->_surnameGD = $name;
@@ -78,7 +86,7 @@ SQL;
 		$this->_origin = $place;
 	}
 
-	// Getters
+	// GETTERS
 
 	public function getId() {
 		return $this->_id;
@@ -135,6 +143,19 @@ SQL;
 			$texts[$result["text_id"]] = new text_sql($result["text_id"]);
 		}
 		return $texts;
+	}
+
+	public static function getWriters() {
+		$writers = array();
+		$db = new database();
+		$sql = <<<SQL
+			SELECT id, surname_gd FROM writer ORDER by surname_gd ASC
+SQL;
+		$results = $db->fetch($sql);
+		foreach ($results as $result) {
+			$writers[] = new writer2($result["id"]);
+		}
+		return $writers;
 	}
 
 }
