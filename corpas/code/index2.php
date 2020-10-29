@@ -10,6 +10,7 @@ $controller = null;
 switch ($module) {
 	case "corpus":
 		$controller = new corpus2();
+		$controller->run($action);
 		break;
 	/*
 	// TO COME
@@ -28,8 +29,7 @@ switch ($module) {
 	*/
 	default:
 		$controller = new home2();
+		$controller->run($action);
 }
-
-$controller->run($action);
 
 require_once "includes/htmlFooter.php"; // ditto
