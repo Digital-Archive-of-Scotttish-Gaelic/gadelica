@@ -2,9 +2,9 @@
 
 namespace views;
 
-class corpus2 extends search
+class corpus_browse2 extends search
 {
-	private $_text;   //an instance of models\text
+	private $_text;   //an instance of models\corpus_browse2
 
 	public function __construct($text) {
 		$this->_text = $text;

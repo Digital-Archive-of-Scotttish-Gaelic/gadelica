@@ -1,7 +1,7 @@
 <?php
 namespace controllers;
 
-require_once "includes/htmlHeader.php";
+require_once "includes/htmlHeader.php"; // what do we think?
 
 $module = isset($_GET["m"]) ? $_GET["m"] : ""; // this doesn't do anything!
 $action = isset($_GET["a"]) ? $_GET["a"] : "";
@@ -13,6 +13,9 @@ switch ($module) {
 		break;
 	/*
 	// TO COME
+	case "writers":
+		$controller = new writers();
+		break;
 	case "collection":
 		$controller = new collection();
 		break;
@@ -24,9 +27,9 @@ switch ($module) {
 		break;
 	*/
 	default:
-		$controller = new index2();
+		$controller = new home2();
 }
 
 $controller->run($action);
 
-require_once "includes/htmlFooter.php";
+require_once "includes/htmlFooter.php"; // ditto

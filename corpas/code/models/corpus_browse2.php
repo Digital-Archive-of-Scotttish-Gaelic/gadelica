@@ -4,7 +4,7 @@
 namespace models;
 
 
-class corpus2
+class corpus_browse2
 {
 
 	private $_db;   //an instance of models\database
@@ -15,7 +15,7 @@ class corpus2
 	public function __construct($id) {
 		$this->_db = isset($this->_db) ? $this->_db : new database();
 		$this->_id = $id;
-		if ($id != "0") { // MMMMMMM
+		if ($id != "0") { // not the root corpus node, i.e. a text
 			$this->_load();
 		}
 	}
@@ -54,7 +54,7 @@ SQL;
 	 * @param $id
 	 */
 	private function _setParent($id) {
-		$this->_parent = new corpus2($id);
+		$this->_parent = new corpus_browse2($id);
 	}
 
 	private function _setTitle($title) {
