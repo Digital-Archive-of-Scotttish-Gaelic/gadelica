@@ -12,7 +12,7 @@ class corpus_browse2
 
 	public function show() {
     echo <<<HTML
-		<ul class="nav nav-pills nav-justified">
+		<ul class="nav nav-pills nav-justified" style="padding-bottom: 20px;">
 		  <li class="nav-item"><a class="nav-link active" href="#">browse</a></li>
 		  <li class="nav-item"><a class="nav-link" href="?m=corpus&a=search&id={$this->_model->getId()}">search</a></li>
 		</ul>
@@ -74,17 +74,16 @@ HTML;
 
   private function _showText() {
 		echo <<<HTML
-		  <h3>{$this->_model->getTitle()}</h3>
 			<table class="table" id="meta" data-hi="{$_GET["id"]}">
 				<tbody>
+					<tr><td>title</td><td>{$this->_model->getTitle()}</td></tr>
 					{$this->_getWritersHtml()}
 					{$this->_getDateHtml()}
 					{$this->_getParentTextHtml()}
 					{$this->_getMetadataLinkHtml()}
+					{$this->_getChildTextsHtml()}
 				</tbody>
 			</table>
-			<p>&nbsp;</p>
-			{$this->_getChildTextsHtml()}
 			{$this->_model->getTransformedText()}
 HTML;
 	}
@@ -93,16 +92,18 @@ HTML;
 		if (!$this->_model->getDate()) {
 			return "";
 		}
-		return "<tr><td>publication year</td><td>{$this->_model->getDate()}</td></tr>";
+		return "<tr><td>date</td><td>{$this->_model->getDate()}</td></tr>";
 	}
 
 	private function _getParentTextHtml() {
-		if (!$this->_model->getParentText()) {
+		$parentText = $this->_model->getParentText();
+		$pid = $parentText->getId();
+		if ($pid == "0") {
 			return "";
 		}
-		$html = '<tr><td>part of</td><td>';
-		$html .= '<a href="?m=corpus&a=browse&id=' . $this->_model->getParentText()->getId() . '">';
-		$html .= $this->_model->getParentText()->getTitle();
+		$html = '<tr><td>parent text</td><td>';
+		$html .= '<a href="?m=corpus&a=browse&id=' . $pid . '">';
+		$html .= $parentText->getTitle();
 		$html .= '</a></td></tr>';
 		return $html;
 	}
@@ -111,10 +112,10 @@ HTML;
 		if (!count($this->_model->getWriters())) {
 			return "";
 		}
-		$html = '<tr><td>writer</td><td>';
+		$html = '<tr><td>writers</td><td>';
 		foreach ($this->_model->getWriters() as $writer) {
 			$html .= '<a href="?m=writers&a=browse&id=' . $writer->getId() . '">';
-			$html .= $writer->getForenamesGD() . ' ' . $writer->getSurnameGD();
+			$html .= $writer->getForenamesEN() . ' ' . $writer->getSurnameEN();
 			$html .= '</a>';
 			$html .= ', ';
 		}
@@ -129,24 +130,25 @@ HTML;
 			return "";
 		}
 		else {
-			$html = '<div class="list-group list-group-flush">';
+			$html = '<tr><td>contents</td><td>';
+			$html .= '<div class="list-group list-group-flush">';
 			foreach ($this->_model->getChildTexts() as $childId => $childTitle) {
 				$html .= '<div class="list-group-item list-group-item-action">';
 				$html .= '#' . $childId .
 					': <a href="?m=corpus&a=browse&id=' . $childId .'">' . $childTitle;
 				$html .= '</a></div>';
 			}
-			$html .= '</div>';
+			$html .= '</div></td></tr>';
 		}
 		return $html;
 	}
 
-	private function  _getMetadataLinkHtml() {
+	private function _getMetadataLinkHtml() {
 		$textId = $this->_model->getId();
 		$html = <<<HTML
 			<tr>
 				<td colspan="2">
-					<a href="https://dasg.ac.uk/corpus/textmeta.php?text={$textId}&uT=y" target="_blank">more info</a>
+					<small><a href="https://dasg.ac.uk/corpus/textmeta.php?text={$textId}&uT=y" target="_blank">more</a></small>
 				</td>
 			</tr>
 HTML;
