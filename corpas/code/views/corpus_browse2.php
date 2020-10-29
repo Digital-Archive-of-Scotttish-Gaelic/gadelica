@@ -2,15 +2,21 @@
 
 namespace views;
 
-class corpus_browse2 extends search
+class corpus_browse2
 {
 	private $_model;   // an instance of models\corpus_browse2
 
-	public function __construct($text) {
-		$this->_model = $text;
+	public function __construct($model) {
+		$this->_model = $model;
 	}
 
 	public function show() {
+    echo <<<HTML
+		<ul class="nav nav-pills nav-justified">
+		  <li class="nav-item"><a class="nav-link active" href="#">browse</a></li>
+		  <li class="nav-item"><a class="nav-link" href="?m=corpus&a=search&id={$this->_model->getId()}">search</a></li>
+		</ul>
+HTML;
     if ($this->_model->getId() == "0") {
 			$this->_showCorpus();
 		}
@@ -25,9 +31,9 @@ class corpus_browse2 extends search
 			<table class="table">
 				<tbody>
 HTML;
-    $textsInfo = $this->_model->getTextList();
-		foreach ($textsInfo as $textInfo) {
-			$this->_writeRow($textInfo);
+    $texts = $this->_model->getTextList();
+		foreach ($texts as $text) {
+			$this->_writeRow($text);
 		}
 		echo <<<HTML
 				</tbody>
@@ -35,22 +41,22 @@ HTML;
 HTML;
   }
 
-	private function _writeRow($textInfo) {
-		$writerHtml = $this->_formatWriters($textInfo);
+	private function _writeRow($text) {
+		$writerHtml = $this->_formatWriters($text);
 		echo <<<HTML
-        <tr>
-            <td>#{$textInfo["id"]}</td>
-            <td class="browseListTitle">
-                <a href="?m=text&a=view&textId={$textInfo["id"]}">{$textInfo["title"]}</a>
-            </td>
-            <td>{$writerHtml}</td>
-            <td>{$textInfo["date"]}</td>
-        </tr>
+      <tr>
+        <td>#{$text["id"]}</td>
+        <td class="browseListTitle">
+          <a href="?m=corpus&a=browse&id={$text["id"]}">{$text["title"]}</a>
+        </td>
+        <td>{$writerHtml}</td>
+        <td>{$text["date"]}</td>
+      </tr>
 HTML;
 	}
 
-	private function _formatWriters($textInfo) {
-		$writersInfo = $textInfo["writers"];
+	private function _formatWriters($text) {
+		$writersInfo = $text["writers"];
 		if (empty($writersInfo)) {
 			return;
 		}
@@ -58,7 +64,7 @@ HTML;
 		foreach ($writersInfo as $writerInfo) {
 			$nickname = (empty($writerInfo["nickname"])) ? "" : " (" . $writerInfo["nickname"] . ")";
 			$writerList[] = <<<HTML
-            <a href="?m=writer&a=view&writerId={$writerInfo["id"]}">
+            <a href="?m=writers&a=browse&id={$writerInfo["id"]}">
 							{$writerInfo["forenames_gd"]} {$writerInfo["surname_gd"]}
 						</a> {$nickname}
 HTML;
@@ -95,7 +101,7 @@ HTML;
 			return "";
 		}
 		$html = '<tr><td>part of</td><td>';
-		$html .= '<a href="?m=text&a=view&textId=' . $this->_model->getParentText()->getId() . '">';
+		$html .= '<a href="?m=corpus&a=browse&id=' . $this->_model->getParentText()->getId() . '">';
 		$html .= $this->_model->getParentText()->getTitle();
 		$html .= '</a></td></tr>';
 		return $html;
@@ -107,7 +113,7 @@ HTML;
 		}
 		$html = '<tr><td>writer</td><td>';
 		foreach ($this->_model->getWriters() as $writer) {
-			$html .= '<a href="?m=writer&a=view&writerId=' . $writer->getId() . '">';
+			$html .= '<a href="?m=writers&a=browse&id=' . $writer->getId() . '">';
 			$html .= $writer->getForenamesGD() . ' ' . $writer->getSurnameGD();
 			$html .= '</a>';
 			$html .= ', ';
@@ -127,7 +133,7 @@ HTML;
 			foreach ($this->_model->getChildTexts() as $childId => $childTitle) {
 				$html .= '<div class="list-group-item list-group-item-action">';
 				$html .= '#' . $childId .
-					': <a href="?m=text&a=view&textId=' . $childId .'">' . $childTitle;
+					': <a href="?m=corpus&a=browse&id=' . $childId .'">' . $childTitle;
 				$html .= '</a></div>';
 			}
 			$html .= '</div>';

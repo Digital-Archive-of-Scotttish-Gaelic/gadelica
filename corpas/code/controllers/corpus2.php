@@ -21,7 +21,7 @@ class corpus2
 
 	public function run($action) {
 
-    $id = isset($_GET["id"]) ? $_GET["id"] : "0"; // MMMMM
+    $id = isset($_GET["id"]) ? $_GET["id"] : "0"; // the root corpus has id = 0
 
 		switch ($action) {
       case "search":

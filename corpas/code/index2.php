@@ -12,11 +12,12 @@ switch ($module) {
 		$controller = new corpus2();
 		$controller->run($action);
 		break;
+	case "writers":
+		$controller = new writers2();
+		$controller->run($action);
+		break;
 	/*
 	// TO COME
-	case "writers":
-		$controller = new writers();
-		break;
 	case "collection":
 		$controller = new collection();
 		break;
