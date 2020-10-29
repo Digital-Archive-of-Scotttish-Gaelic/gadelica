@@ -5,6 +5,7 @@ use models, views;
 
 class corpus3
 {
+	/*
 	private $_origin;
 
 	public function __construct($origin = null) {
@@ -12,14 +13,15 @@ class corpus3
 		$_GET["pp"] = ($_GET["pp"]) ? $_GET["pp"] : 10; // number of results per page
 		$_GET["page"] = ($_GET["page"]) ? $_GET["page"] : 1; // results page number
 	}
+	*/
 
-	public function run($param) {
-		switch ($param) {
+	public function run($action) {
+		switch ($action) {
 			case "text":
-				$model = new models\text_sql($_GET["id"]);
-				$view = new views\text_sql($model);
-				$view->printText();
+				$controller = new text_sql();
+				$controller->run($action);
 				break;
+				/*
 			case "writer":
 				$model = new models\writer_sql($_GET["id"]);
 				$view = new views\writer_sql();
@@ -47,11 +49,10 @@ class corpus3
 				$results = ($_GET["view"] == "corpus") ? $searchModel->getFileSearchResults($dbResults) : $dbResults;
 				$searchView->writeSearchResults($results, $resultCount);
 				break;
+			*/
 			default:  //default to browsing texts
-				$model = new models\corpus_sql();
-				$textList = $model->getTextList();
-				$view = new views\corpus_sql();
-				$view->writeTable($textList);
+				$controller = new corpus_sql();
+				$controller->run($action);
 		}
 	}
 }
