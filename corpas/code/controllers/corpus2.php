@@ -5,11 +5,7 @@ use models, views;
 
 class corpus2
 {
-
-	private $_origin;
-
-	public function __construct($origin = null) {
-		$this->_origin = $origin;
+	public function __construct() {
 		$_GET["pp"] = ($_GET["pp"]) ? $_GET["pp"] : 10; // number of results per page
 		$_GET["page"] = ($_GET["page"]) ? $_GET["page"] : 1; // results page number
 	}
@@ -35,7 +31,6 @@ class corpus2
 				$searchResults = $searchModel->getDBSearchResults($_GET);
 				$resultCount = $searchResults["hits"];
 				$searchView->setHits($resultCount);
-				$searchView->setOrigin($this->_origin);   //to allow linking back to originating script
 				//fetch the results required for this page
 				$dbResults = $searchResults["results"];
 				//fetch the results from file if corpus view

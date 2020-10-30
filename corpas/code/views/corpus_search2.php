@@ -7,7 +7,6 @@ class corpus_search2
 {
 	private $_page = 1; // results page number
 	private $_hits = 0;
-	private $_origin; //used to track the launch page of the search
 	private $_perpage; // how many results per page
 	private $_search; // search term
 	private $_date; // how are results to be ordered
@@ -151,7 +150,7 @@ HTML;
 		models\slips::writeSlipDiv();
 		//Add a back link to originating script
 		echo <<<HTML
-        <p><a href="{$this->_origin}" title="Back to search">&lt; Back to search</a></p>
+        <p><a href="index2.php?m=corpus&a=search&id={$_GET["id"]}" title="Back to search">&lt; Back to search</a></p>
 HTML;
 
 		if ($this->_view == "dictionary") {
@@ -221,7 +220,7 @@ HTML;
 		$alternateView = ($this->_view == "corpus") ? "dictionary" : "corpus";
 		echo <<<HTML
         <div id="viewSwitch">
-            <a href="?m=corpush&a=search&mode={$this->_mode}&term={$this->_search}&id={$_GET["id"]}&view={$alternateView}&hits={$this->_hits}&origin={$this->_origin}">
+            <a href="?m=corpush&a=search&mode={$this->_mode}&term={$this->_search}&id={$_GET["id"]}&view={$alternateView}&hits={$this->_hits}}">
                 switch to {$alternateView} view
             </a>
         </div>
@@ -345,10 +344,6 @@ HTML;
 		$this->_hits = $num;
 	}
 
-	public function setOrigin($origin) {
-		$this->_origin = $origin;
-	}
-
 	/**
 	 * Writes the Javascript required for the pagination
 	 */
@@ -382,7 +377,7 @@ HTML;
                     url += '&id={$_GET["id"]}&case={$this->_case}&accent={$this->_accent}&lenition={$this->_lenition}';
 				            url += '&hits={$this->_hits}&view={$this->_view}';
 				            url += '&date={$this->_date}&selectedDates={$_GET["selectedDates"]}';
-                    url += '&hits={$this->_hits}&origin={$this->_origin}';
+                    url += '&hits={$this->_hits}';
                     window.location.assign(url);
 		              }
 		          });
