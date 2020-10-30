@@ -4,11 +4,27 @@ namespace models;
 
 class corpus_search2
 {
-	private $_db;
 
-	public function __construct() {
+	//private $_id; // the id number for the text in the corpus being searched (obligatory)
+	//private $_term; // the word being searched for (optional?)
+
+	private $_db; // an instance of models\database
+
+	public function __construct($id,$term) {
 		$this->_db = $this->_db ? $this->_db : new database();
+		//$this->_id = $id;
+		//$this->_term = $term;
 	}
+
+/*
+	public function getId() {
+		return $this->_id;
+	}
+
+	public function getTerm() {
+		return $this->_term;
+	}
+*/
 
 	/**
 	 * Takes an array of database results and searches through the XML corpus for matches
@@ -78,7 +94,7 @@ SQL;
 
 	/**
 	 * Runs the query to get the corpus database result set
-	 * @param $params: the array of parameters for the query
+	 * @param $params: the array of parameters for the query, i.e. pp, page, date, mode, term, id,
 	 * @return array ("hits" => number of hits, "results" => the result set)
 	 */
 	public function getDBSearchResults($params) {
@@ -105,7 +121,7 @@ SQL;
 			$textJoinSql = "";
 			if ($params["id"]) {    //restrict to this text
 				$textJoinSql = <<<SQL
-				JOIN text t ON t.filepath = l.filename AND (t.id = '{$params["id"]}' OR t.id LIKE '{$params["id"]}-%') 
+				JOIN text t ON t.filepath = l.filename AND (t.id = '{$params["id"]}' OR t.id LIKE '{$params["id"]}-%')
 SQL;
 			}
 

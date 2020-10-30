@@ -65,7 +65,7 @@ HTML;
 			$nickname = (empty($writerInfo["nickname"])) ? "" : " (" . $writerInfo["nickname"] . ")";
 			$writerList[] = <<<HTML
             <a href="?m=writers&a=browse&id={$writerInfo["id"]}">
-							{$writerInfo["forenames_gd"]} {$writerInfo["surname_gd"]}
+							{$writerInfo["forenames_en"]} {$writerInfo["surname_en"]}
 						</a> {$nickname}
 HTML;
 		}

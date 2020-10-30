@@ -5,6 +5,7 @@ use models;
 
 class corpus_search2
 {
+
 	private $_page = 1; // results page number
 	private $_hits = 0;
 	private $_perpage; // how many results per page
@@ -14,15 +15,15 @@ class corpus_search2
 	private $_xmlFile;
 
 	public function __construct() {
-		$this->_search      = isset($_GET["term"]) ? $_GET["term"] : null;
+		$this->_search      = isset($_GET["term"]) ? $_GET["term"] : null; // model?
 		$this->_perpage     = isset($_GET["pp"]) ? $_GET["pp"] : 10;
 		$this->_page        = isset($_GET["page"]) ? $_GET["page"] : 1;
-		$this->_mode        = $_GET["mode"] == "wordform" ? "wordform" : "headword";
-		$this->_case        = $_GET["case"];
-		$this->_accent      = $_GET["accent"];
-		$this->_lenition    = $_GET["lenition"];
+		$this->_mode        = $_GET["mode"] == "wordform" ? "wordform" : "headword"; // model?
+		$this->_case        = $_GET["case"]; // model?
+		$this->_accent      = $_GET["accent"]; // model?
+		$this->_lenition    = $_GET["lenition"];  // model?
 		$this->_view        = (isset($_GET["view"])) ? $_GET["view"] : "corpus";
-		$this->_date        = (isset($_GET["date"])) ? $_GET["date"] : "random"; // MM: Shouldn't default be "off" here?
+		$this->_date        = (isset($_GET["date"])) ? $_GET["date"] : "random"; // model?
 	}
 
 	public function getView() {
@@ -30,8 +31,13 @@ class corpus_search2
 	}
 
 	public function writeSearchForm() {
-		$minMaxDates = models\corpus_search2::getMinMaxDates();
+		$minMaxDates = models\corpus_search2::getMinMaxDates(); // needs a rethink for individual texts
 		echo <<<HTML
+		  <ul class="nav nav-pills nav-justified" style="padding-bottom: 20px;">
+			  <li class="nav-item"><a class="nav-link" href="?m=corpus&a=browse&id={$_GET["id"]}">browse</a></li>
+				<li class="nav-item"><div class="nav-link active">search</div></li>
+		  </ul>
+			<hr/>
       <form>
         <div class="form-group">
           <div class="input-group">

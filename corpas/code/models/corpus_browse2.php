@@ -83,7 +83,7 @@ SQL;
 SQL;
 		$results = $this->_db->fetch($sql, array(":id" => $this->getId()));
 		foreach ($results as $result) {
-			$this->_writers[] = new writer_sql($result["writer_id"]);
+			$this->_writers[] = new writer2($result["writer_id"]);
 		}
 	}
 
@@ -152,7 +152,7 @@ SQL;
    * Queries the DB for a list of text info
    * @return array of text and writer information
    */
-  public function getTextList() { // static method
+  public function getTextList() {
     $sql = <<<SQL
       SELECT * FROM text WHERE partOf = '' ORDER BY CAST(id AS UNSIGNED) ASC
 SQL;

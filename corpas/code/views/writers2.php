@@ -3,79 +3,63 @@
 namespace views;
 use models;
 
-class writer2
+class writers2
 {
 
-	private $_model;   // an instance of models\writer2
+	private $_model;   // an instance of models\writers2
 
 	public function __construct($model) {
 		$this->_model = $model;
 	}
 
   public function show() {
-		if ($this->_model->getId() == "0") {
-			$writers = models\writer2::getWriters();
-			$this->_showWriters($writers);
-		}
-		else {
-      $this->_showWriter();
-		}
-	}
-
-	/**
-	 * Outputs a table of all writers
-	 * @param $writers an array of models\writer objects
-	 */
-	private function _showWriters($writers) {
-		$html = "";
-		foreach ($writers as $writer) {
-			$html .= <<<HTML
-				<tr>
-					<td>{$writer->getForenamesGD()} {$writer->getSurnameGD()}</td>
-					<td>{$writer->getNickname()}</td>
-					<td>{$writer->getForenamesEN()} {$writer->getSurnameEN()}</td>
-					<td>{$writer->getYearOfBirth()} - {$writer->getYearOfDeath()}</td>
-					<td>{$writer->getOrigin()}</td>
-				</tr>
-HTML;
-		}
-		echo <<<HTML
-			<table class="table">
-				<thead>
+		if ($this->_model->getId() == "0") { // list all writers
+			$html = "";
+			foreach ($this->_model->getAllWriters() as $writer) {
+				$html .= <<<HTML
 					<tr>
-						<th>Gaelic name</th>
-						<th>Nickname</th>
-						<th>English name</th>
-						<th>Years</th>
-						<th>Origin</th>
+						<td>{$writer->getForenamesGD()} {$writer->getSurnameGD()}</td>
+						<td>{$writer->getNickname()}</td>
+						<td>{$writer->getForenamesEN()} {$writer->getSurnameEN()}</td>
+						<td>{$writer->getYearOfBirth()} - {$writer->getYearOfDeath()}</td>
+						<td>{$writer->getOrigin()}</td>
 					</tr>
-				</thead>
-				<tbody>
-					{$html}
-				</tbody>
-			</table>
 HTML;
-	}
-
-	/**
-	 * @param $writer an instance of models\writer
-	 */
-	private function _showWriter() {
-		$writer = $this->_model;
-		$html = <<<HTML
-			<table class="table">
-				<tbody>
-					{$this->_getSurnameHtml($writer)}
-					{$this->_getForenamesHtml($writer)}
-					{$this->_getNicknameHtml($writer)}
-					{$this->_getYearOfBirthHtml($writer)}
-					{$this->_getYearOfDeathHtml($writer)}
-					{$this->_getOriginHtml($writer)}
-					{$this->_getTextsHtml($writer)}
-				</tbody>
-			</table>
+			}
+			echo <<<HTML
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Gaelic name</th>
+							<th>Nickname</th>
+							<th>English name</th>
+							<th>Years</th>
+							<th>Origin</th>
+						</tr>
+					</thead>
+					<tbody>
+						{$html}
+					</tbody>
+				</table>
 HTML;
-		echo $html;
+		}
+		else { // display individual writer
+			$writer = $this->_model;
+			$html = <<<HTML
+				<table class="table">
+					<tbody>
+						{$this->_getSurnameHtml($writer)}
+						{$this->_getForenamesHtml($writer)}
+						{$this->_getNicknameHtml($writer)}
+						{$this->_getYearOfBirthHtml($writer)}
+						{$this->_getYearOfDeathHtml($writer)}
+						{$this->_getOriginHtml($writer)}
+						{$this->_getTextsHtml($writer)}
+					</tbody>
+				</table>
+HTML;
+			echo $html;
+		}
 	}
 
 	private function _getSurnameHtml($writer) {

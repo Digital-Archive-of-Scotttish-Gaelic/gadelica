@@ -2,10 +2,10 @@
 
 namespace models;
 
-class writer2
+class writers2
 {
 
-	private $_id;
+	private $_id; // obligatory
 	private $_surnameGD;
 	private $_forenamesGD;
 	private $_surnameEN;
@@ -16,20 +16,41 @@ class writer2
 	private $_yearOfDeath;
 	private $_origin;
 
+	private $_allWriters; // list of all writers, when id = 0 – an array of models\writers2 objects
+
   private $_db; //an instance of models\database
 
 	public function __construct($id) {
 		$this->_db = isset($this->_db) ? $this->_db : new database();
 		$this->_id = $id;
-		if ($id != "0") {
-			$this->_load();
-		}
+		$this->_load();
 	}
 
 	/**
 	 * Populates the object with info from the DB
 	 */
 	private function _load() {
+		if ($this->getId()=="0") { // list all writers
+      $this->_loadAllWriters();
+		}
+		else { // create a specific individual writer
+      $this->_loadSpecificWriter();
+		}
+	}
+
+  private function _loadAllWriters() {
+		$writers = array();
+		$sql = <<<SQL
+			SELECT id, surname_gd FROM writer ORDER by surname_gd ASC
+SQL;
+		$results = $this->_db->fetch($sql);
+		foreach ($results as $result) {
+			$writers[] = new writers2($result["id"]);
+		}
+		$this->$_allWriters = $writers;
+	}
+
+  private function _loadSpecificWriter() {
 		$sql = <<<SQL
 			SELECT surname_gd, forenames_gd, surname_en, forenames_en, title, nickname, yob, yod, `where`
 				FROM writer
@@ -47,6 +68,7 @@ SQL;
 		$this->_setYearOfDeath($writerData["yod"]);
 		$this->_setOrigin($writerData["where"]);
 	}
+
 
 	// SETTERS
 
@@ -112,6 +134,14 @@ SQL;
 		return $this->_title;
 	}
 
+  public function getFullNameEN() {
+		return $this->getTitle() . ' ' . $this->getForenamesEN() . ' ' . $this->getSurnameEN();
+	}
+
+	public function getFullNameGD() {
+		return $this->getTitle() . ' ' . $this->getForenamesGD() . ' ' . $this->getSurnameGD();
+	}
+
 	public function getNickname() {
 		return $this->_nickname;
 	}
@@ -124,8 +154,16 @@ SQL;
 		return $this->_yearOfDeath;
 	}
 
+	public function getLifeSpan() {
+		return $this->getYearOfBirth . '–' . $this->getYearOfDeath;
+	}
+
 	public function getOrigin() {
 		return $this->_origin;
+	}
+
+	public function getAllWriters() {
+		return $this->$_allWriters;
 	}
 
 	/**
@@ -143,19 +181,6 @@ SQL;
 			$texts[$result["text_id"]] = new text_sql($result["text_id"]);
 		}
 		return $texts;
-	}
-
-	public static function getWriters() {
-		$writers = array();
-		$db = new database();
-		$sql = <<<SQL
-			SELECT id, surname_gd FROM writer ORDER by surname_gd ASC
-SQL;
-		$results = $db->fetch($sql);
-		foreach ($results as $result) {
-			$writers[] = new writer2($result["id"]);
-		}
-		return $writers;
 	}
 
 }

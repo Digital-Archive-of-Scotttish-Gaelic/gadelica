@@ -5,6 +5,7 @@ use models, views;
 
 class corpus2
 {
+
 	public function __construct() {
 		$_GET["pp"] = ($_GET["pp"]) ? $_GET["pp"] : 10; // number of results per page
 		$_GET["page"] = ($_GET["page"]) ? $_GET["page"] : 1; // results page number
@@ -21,21 +22,21 @@ class corpus2
 				$view->show();
 			  break;
 			case "search":
-				$searchView = new views\corpus_search2(); // gets parameters from URL
+				$view = new views\corpus_search2(); // gets parameters from URL
 				if (empty($_GET["term"])) {   //no search term so print the form
-					$searchView->writeSearchForm(); // prints HTML for form
+					$view->writeSearchForm(); // prints HTML for form
 					break;
 				}
 				//there is a search term so run the search
 				$searchModel = new models\corpus_search2();
-				$searchResults = $searchModel->getDBSearchResults($_GET);
+				$searchResults = $searchModel->getDBSearchResults($_GET); // move to model?
 				$resultCount = $searchResults["hits"];
-				$searchView->setHits($resultCount);
+				$view->setHits($resultCount);
 				//fetch the results required for this page
 				$dbResults = $searchResults["results"];
 				//fetch the results from file if corpus view
 				$results = ($_GET["view"] == "corpus") ? $searchModel->getFileSearchResults($dbResults) : $dbResults;
-				$searchView->writeSearchResults($results, $resultCount);
+				$view->writeSearchResults($results, $resultCount);
 				break;
 		}
   }

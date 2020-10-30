@@ -12,8 +12,8 @@ class writers2
 
 		switch ($action) {
       case "browse":
-				$model = new models\writer2($id);
-				$view = new views\writer2($model);
+				$model = new models\writers2($id);
+				$view = new views\writers2($model);
 				$view->show();
 			  break;
 		}
