@@ -3,9 +3,9 @@ namespace controllers;
 
 require_once "includes/htmlHeader.php"; // what do we think?
 
-$module = isset($_GET["m"]) ? $_GET["m"] : ""; // this doesn't do anything!
+$module = isset($_GET["m"]) ? $_GET["m"] : ""; // this doesn't do anything surely
 $action = isset($_GET["a"]) ? $_GET["a"] : "";
-$controller = null;
+//$controller = null;
 
 switch ($module) {
 	case "corpus":
