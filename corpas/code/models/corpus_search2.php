@@ -39,7 +39,7 @@ class corpus_search2
 	 * @return array: ("sql" => the SQL, "search" => the search term)
 	 */
 	private function _getWordformQuery($params) {
-		$search = $params["search"];
+		$search = $params["term"];
 		$searchPrefix = "[[:<:]]";  //default to word boundary at start
 		if ($params["accent"] != "sensitive") {
 			$search = functions::getAccentInsensitive($search, $params["case"] == "sensitive");
@@ -58,10 +58,19 @@ class corpus_search2
 		} else {                              //case insensitive
 			$whereClause .= "wordform REGEXP ?";
 		}
-		$selectFields =  "lemma, l.filename AS filename, l.id AS id, wordform, pos, date_of_lang, title, page, medium, s.auto_id AS auto_id";
+		$selectFields =  "lemma, l.filename AS filename, l.id AS id, wordform, pos, date_of_lang, l.title, page, medium, s.auto_id AS auto_id";
+
+		$textJoinSql = "";
+		if ($params["id"]) {    //restrict to this text
+			$textJoinSql = <<<SQL
+				JOIN text t ON t.filepath = l.filename AND (t.id = '{$params["id"]}' OR t.id LIKE '{$params["id"]}-%')
+SQL;
+		}
+
 		$sql = <<<SQL
         SELECT SQL_CALC_FOUND_ROWS  {$selectFields} FROM lemmas AS l
           LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id AND group_id = {$_SESSION["groupId"]}
+          {$textJoinSql}
           WHERE {$whereClause}
 SQL;
 		return array("sql" => $sql, "search" => $search);
@@ -90,13 +99,23 @@ SQL;
 			default:
 				$orderBy = "filename, id";
 		}
-		if ($params["mode"] == "headword") {    //lemma
-			$query["search"] = $params["search"];
+		if ($params["mode"] != "wordform") {    //lemma
+			$query["search"] = $params["term"];
+
+			$textJoinSql = "";
+			if ($params["id"]) {    //restrict to this text
+				$textJoinSql = <<<SQL
+				JOIN text t ON t.filepath = l.filename AND (t.id = '{$params["id"]}' OR t.id LIKE '{$params["id"]}-%') 
+SQL;
+			}
+
+
 			$query["sql"] = <<<SQL
-        SELECT SQL_CALC_FOUND_ROWS l.filename AS filename, l.id AS id, wordform, pos, lemma, date_of_lang, title,
+        SELECT SQL_CALC_FOUND_ROWS l.filename AS filename, l.id AS id, wordform, pos, lemma, date_of_lang, l.title,
                 page, medium, s.auto_id as auto_id, s.wordClass as wordClass
             FROM lemmas AS l
             LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id AND group_id = {$_SESSION["groupId"]}
+            {$textJoinSql}
             WHERE lemma = ?
 
 SQL;
@@ -110,12 +129,7 @@ SQL;
 		if ($params["pos"][0] != "") {
 			$query["sql"] .= $this->_getPOSWhereClause($params);  //restrict by POS
 		}
-		if ($params["filename"]) {    //restrict to single file
-			$query["sql"] .= " AND l.filename = '{$params["filename"]}' ";
-		} else if ($params["uri"]) {  //restrict to all files in this text
-			$parts = explode("_", $params["uri"]);
-			$query["sql"] .= " AND l.filename LIKE('{$parts[1]}\_%') ";
-		}
+
 		$query["sql"] .= <<<SQL
         ORDER BY {$orderBy}
 SQL;

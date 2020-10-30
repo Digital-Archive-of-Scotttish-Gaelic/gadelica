@@ -26,10 +26,11 @@ class corpus2
 			  break;
 			case "search":
 				$searchView = new views\corpus_search2(); // gets parameters from URL
-				$searchView->writeSearchForm(); // prints HTML for form
-				break;
-			case "runSearch":
-				$searchView = new views\corpus_search2();
+				if (empty($_GET["term"])) {   //no search term so print the form
+					$searchView->writeSearchForm(); // prints HTML for form
+					break;
+				}
+				//there is a search term so run the search
 				$searchModel = new models\corpus_search2();
 				$searchResults = $searchModel->getDBSearchResults($_GET);
 				$resultCount = $searchResults["hits"];

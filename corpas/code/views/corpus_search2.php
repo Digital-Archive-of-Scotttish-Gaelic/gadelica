@@ -15,7 +15,7 @@ class corpus_search2
 	private $_xmlFile;
 
 	public function __construct() {
-		$this->_search      = isset($_GET["search"]) ? $_GET["search"] : null;
+		$this->_search      = isset($_GET["term"]) ? $_GET["term"] : null;
 		$this->_perpage     = isset($_GET["pp"]) ? $_GET["pp"] : 10;
 		$this->_page        = isset($_GET["page"]) ? $_GET["page"] : 1;
 		$this->_mode        = $_GET["mode"] == "wordform" ? "wordform" : "headword";
@@ -36,10 +36,11 @@ class corpus_search2
       <form>
         <div class="form-group">
           <div class="input-group">
-            <input type="text" name="search"/>
+            <input type="text" name="term"/>
             <div class="input-group-append">
-              <input type="hidden" name="m" value="search">
-              <input type="hidden" name="a" value="runSearch"/>
+              <input type="hidden" name="m" value="corpus">
+              <input type="hidden" name="a" value="search"/>
+              <input type="hidden" name="id" value="{$_GET["id"]}">
               <button name="submit" class="btn btn-primary" type="submit">search</button>
             </div>
           </div>
@@ -220,7 +221,7 @@ HTML;
 		$alternateView = ($this->_view == "corpus") ? "dictionary" : "corpus";
 		echo <<<HTML
         <div id="viewSwitch">
-            <a href="?m=search&a=runSearch&mode={$this->_mode}&search={$this->_search}&view={$alternateView}&hits={$this->_hits}&origin={$this->_origin}">
+            <a href="?m=corpush&a=search&mode={$this->_mode}&term={$this->_search}&id={$_GET["id"]}&view={$alternateView}&hits={$this->_hits}&origin={$this->_origin}">
                 switch to {$alternateView} view
             </a>
         </div>
@@ -377,9 +378,8 @@ HTML;
 		              itemsOnPage: {$this->_perpage},
 		              cssStyle: "light-theme",
 		              onPageClick: function(pageNum) {
-				            //var url = 'search.php?action=runSearch&mode={$this->_mode}&pp={$this->_perpage}&page=' + pageNum + '&search={$this->_search}';
-                    var url = '?m=search&a=runSearch&mode={$this->_mode}&pp={$this->_perpage}&page=' + pageNum + '&search={$this->_search}';
-                    url += '&case={$this->_case}&accent={$this->_accent}&lenition={$this->_lenition}';
+                    var url = '?m=corpus&a=search&mode={$this->_mode}&pp={$this->_perpage}&page=' + pageNum + '&term={$this->_search}';
+                    url += '&id={$_GET["id"]}&case={$this->_case}&accent={$this->_accent}&lenition={$this->_lenition}';
 				            url += '&hits={$this->_hits}&view={$this->_view}';
 				            url += '&date={$this->_date}&selectedDates={$_GET["selectedDates"]}';
                     url += '&hits={$this->_hits}&origin={$this->_origin}';
