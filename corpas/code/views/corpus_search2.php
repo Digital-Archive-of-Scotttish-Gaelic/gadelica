@@ -33,7 +33,7 @@ class corpus_search2
 	public function writeSearchForm() {
 		$minMaxDates = models\corpus_search2::getMinMaxDates(); // needs a rethink for individual texts
 		echo <<<HTML
-		  <ul class="nav nav-pills nav-justified" style="padding-bottom: 20px;">
+		  <ul class="nav nav-pills nav-justified" style="padding-bottom: 0px;">
 			  <li class="nav-item"><a class="nav-link" href="?m=corpus&a=browse&id={$_GET["id"]}">browse</a></li>
 				<li class="nav-item"><div class="nav-link active">search</div></li>
 		  </ul>
@@ -250,13 +250,13 @@ HTML;
 		$slipClass = "slipLink2";
 		$modalCode = "";
 		if ($result["auto_id"] != null) {
-			$slipLinkText = "view slip";
+			$slipLinkText = "view";
 			$createSlipStyle = "";
 			$modalCode = 'data-toggle="modal" data-target="#slipModal"';
 		} else {
 			$slipUrl = "?m=slip&filename=" . $this->_xmlFile->getFilename() . "&id=".$result["id"];
 			$slipUrl .= "&headword=".$result["lemma"] . "&pos=" . $result["pos"];
-			$slipLinkText = "create slip";
+			$slipLinkText = "add";
 			$createSlipStyle = "createSlipLink";
 			$slipClass = "editSlipLink";
 		}

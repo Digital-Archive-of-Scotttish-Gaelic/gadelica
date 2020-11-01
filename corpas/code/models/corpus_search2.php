@@ -10,7 +10,7 @@ class corpus_search2
 
 	private $_db; // an instance of models\database
 
-	public function __construct($id,$term) {
+	public function __construct() {
 		$this->_db = $this->_db ? $this->_db : new database();
 		//$this->_id = $id;
 		//$this->_term = $term;

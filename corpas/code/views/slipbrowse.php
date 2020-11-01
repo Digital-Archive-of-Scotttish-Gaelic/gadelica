@@ -35,7 +35,7 @@ HTML;
   private function _writeJavascript() {
     echo <<<HTML
 			<script>
-			
+
 				$(function () {
 					$(document). on('change', '.chooseSlip', function () {
 					  var elemId = $(this).attr('id');
@@ -45,7 +45,7 @@ HTML;
 						if ($(this).prop('checked')) {  //add to the print list
 						  url += '&addSlip=' + slipId;
 						} else {    //remove from the print list
-							url += '&removeSlip=' + slipId; 
+							url += '&removeSlip=' + slipId;
 						}
 						var count = null;
 						$.getJSON(url, function (data) {
@@ -59,7 +59,7 @@ HTML;
 						});
 					});
 				});
-				
+
 				/**
 				* Clear the checkboxes when the print button is clicked
 				*/
@@ -67,7 +67,7 @@ HTML;
 				  $(this).addClass('disabled');
 				  $('.chooseSlip').prop('checked', '');
 				});
-				
+
 				/**
 				* Runs an AJAX request to populate the Bootstrap table
 				* @param params
