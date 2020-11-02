@@ -7,39 +7,46 @@ class writer2
 {
 
 	private $_model;   // an instance of models\writer2
+	private $_type; // browse or edit?
 
-	public function __construct($model) {
+	public function __construct($model,$type) {
 		$this->_model = $model;
+		$this->_type = $type;
 	}
 
   public function show() {
-			$writer = $this->_model;
-			$html = <<<HTML
-			  <ul class="nav nav-pills nav-justified" style="padding-bottom: 20px;">
-				  <li class="nav-item"><div class="nav-link active">browse</div></li>
-				  <li class="nav-item"><a class="nav-link" href="?m=writers&a=edit&id={$this->_model->getId()}">edit</a></li>
-			  </ul>
-				<table class="table">
-					<tbody>
-						{$this->_getSurnameHtml($writer)}
-						{$this->_getForenamesHtml($writer)}
-						{$this->_getNicknameHtml($writer)}
-						{$this->_getYearOfBirthHtml($writer)}
-						{$this->_getYearOfDeathHtml($writer)}
-						{$this->_getDistrict1Html($writer)}
-						{$this->_getTextsHtml($writer)}
-					</tbody>
-				</table>
-HTML;
-			echo $html;
+    if ($this->_type ==  "edit") {
+			$this->_showEdit();
+		}
+		else {
+			$this->_showBrowse();
+		}
 	}
 
-	public function edit() {
+  private function _showBrowse() {
 		$writer = $this->_model;
-		$this->_writeForm($writer);
+		$html = <<<HTML
+			<ul class="nav nav-pills nav-justified" style="padding-bottom: 20px;">
+				<li class="nav-item"><div class="nav-link active">view</div></li>
+				<li class="nav-item"><a class="nav-link" href="?m=writers&a=edit&id={$this->_model->getId()}">edit</a></li>
+			</ul>
+			<table class="table">
+				<tbody>
+					{$this->_getSurnameHtml($writer)}
+					{$this->_getForenamesHtml($writer)}
+					{$this->_getNicknameHtml($writer)}
+					{$this->_getYearOfBirthHtml($writer)}
+					{$this->_getYearOfDeathHtml($writer)}
+					{$this->_getDistrict1Html($writer)}
+					{$this->_getTextsHtml($writer)}
+				</tbody>
+			</table>
+HTML;
+		echo $html;
 	}
 
-	private function _writeForm($writer) {
+	private function _showEdit() {
+		$writer = $this->_model;
 		$preferredNameOptions = array("gd"=>"Gaelic", "en"=>"English", "nk"=>"Nickname");
 		$preferredNameHtml = "";
 		foreach ($preferredNameOptions as $abbr => $option) {
@@ -49,105 +56,61 @@ HTML;
 HTML;
 		}
 		$html = <<<HTML
-			<form action="index2.php?m=writers&a=save" method="post">
-				<div class="form-group">
-					<label for="surname_gd">Surname (Gaelic)</label>
-					<input type="text" name="surname_gd" id="surname_gd" value="{$writer->getSurnameGD()}">
+		  <ul class="nav nav-pills nav-justified">
+			  <li class="nav-item"><a class="nav-link" href="?m=writers&a=browse&id={$this->_model->getId()}">view</a></li>
+				<li class="nav-item"><div class="nav-link active">edit</div></li>
+		  </ul>
+			<hr/>
+			<form action="index2.php?m=writers&a=save&id={$writer->getId()}" method="post">
+				<div class="form-group row">
+					<label for="surname_gd" class="col-sm-2 col-form-label">Gaelic surname</label>
+					<input type="text" class="form-control col-sm-4" name="surname_gd" id="surname_gd" value="{$writer->getSurnameGD()}">
 				</div>
-				<div class="form-group">
-					<label for="forenames_gd">Forename(s) (Gaelic)</label>
-					<input type="text" name="forenames_gd" id="forenames_gd" value="{$writer->getForenamesGD()}">
+				<div class="form-group row">
+					<label for="forenames_gd" class="col-sm-2 col-form-label">Gaelic forenames</label>
+					<input type="text" class="form-control col-sm-4" name="forenames_gd" id="forenames_gd" value="{$writer->getForenamesGD()}">
 				</div>
-				
-				<div class="form-group">
-					<label for="surname_en">Surname (English)</label>
-					<input type="text" name="surname_en" id="surname_en" value="{$writer->getSurnameEN()}">
+				<div class="form-group row">
+					<label for="surname_en" class="col-sm-2 col-form-label">English surname</label>
+					<input type="text" class="form-control col-sm-4" name="surname_en" id="surname_en" value="{$writer->getSurnameEN()}">
 				</div>
-				<div class="form-group">
-					<label for="forenames_gd">Forename(s) (English)</label>
-					<input type="text" name="forenames_en" id="forenames_en" value="{$writer->getForenamesEN()}">
+				<div class="form-group row">
+					<label for="forenames_gd" class="col-sm-2 col-form-label">English forenames</label>
+					<input type="text" class="form-control col-sm-4" name="forenames_en" id="forenames_en" value="{$writer->getForenamesEN()}">
 				</div>
-				
-				<div class="form-group">
-					<label for="preferred_name">Preferred Name</label>
-					<select id="preferred_name" name="preferred_name">
+				<div class="form-group row">
+					<label for="preferred_name" class="col-sm-2 col-form-label">Preferred name</label>
+					<select id="preferred_name" class="form-control col-sm-4" name="preferred_name">
 						{$preferredNameHtml}
 					</select>
 				</div>
-				
-				<div class="form-group">
-					<label for="title">Title</label>
-					<input type="text" name="title" id="title" value="{$writer->getTitle()}">
+				<div class="form-group row">
+					<label for="title" class="col-sm-2 col-form-label">Title</label>
+					<input type="text" class="form-control col-sm-4" name="title" id="title" value="{$writer->getTitle()}">
 				</div>
-				
-				<div class="form-group">
-					<label for="nickname">Nickname</label>
-					<input type="text" name="nickname" id="nickname" value="{$writer->getNickname()}">
+				<div class="form-group row">
+					<label for="nickname" class="col-sm-2 col-form-label">Nickname</label>
+					<input type="text" class="form-control col-sm-4" name="nickname" id="nickname" value="{$writer->getNickname()}">
 				</div>
-				
-				<div class="form-group">
-					<label for="yob">Year of Birth</label>
-					<input type="text" name="yob" id="yob" value="{$writer->getYearOfBirth()}">
+				<div class="form-group row">
+					<label for="yob" class="col-sm-2 col-form-label">Year of birth</label>
+					<input type="text" class="form-control col-sm-4" name="yob" id="yob" value="{$writer->getYearOfBirth()}">
 				</div>
-				
-				<div class="form-group">
-					<label for="yod">Year of Death</label>
-					<input type="text" name="yod" id="yod" value="{$writer->getYearOfDeath()}">
+				<div class="form-group row">
+					<label for="yod" class="col-sm-2 col-form-label">Year of death</label>
+					<input type="text" class="form-control col-sm-4" name="yod" id="yod" value="{$writer->getYearOfDeath()}">
 				</div>
-				
 				{$this->_getDistrictsHtml($writer)}
-				
-				<div class="form-group">
-					<label for="notes">Notes</label>
-					<textarea id="notes" name="notes">{$writer->getNotes()}</textarea>
+				<div class="form-group row">
+					<label for="notes" class="col-sm-2 col-form-label">Notes</label>
+					<textarea id="notes" name="notes" class="form-control col-sm-4" rows="10">{$writer->getNotes()}</textarea>
 				</div>
-				
 				<input type="hidden" name="id" value="{$writer->getId()}">
 				<button type="submit" class="btn btn-primary">save</button>
 			</form>
+			<p>&nbsp;</p>
 HTML;
 		echo $html;
-	}
-
-	private function _getDistrictsHtml($writer) {
-		$districts = models\writers2::getDistrictInfo();
-		$html = <<<HTML
-			<div class="form-group">
-				<label for="district_1_id">District 1</label>
-				<select name="district_1_id">
-					<option value="">-----</option>
-HTML;
-		foreach ($districts as $district) {
-			$selected = "";
-			if ($district["id"] == $writer->getDistrict1Id()) {
-				$selected = "selected";
-			}
-			$html .= <<<HTML
-				<option value="{$district["id"]}" {$selected}>{$district["name"]}</option>
-HTML;
-		}
-		$html .= <<<HTML
-				</select>
-			</div>
-			<div class="form-group">
-				<label for="district_2_id">District 2</label>
-				<select name="district_2_id">
-					<option value="">-----</option>
-HTML;
-		foreach ($districts as $district) {
-			$selected = "";
-			if ($district["id"] == $writer->getDistrict2Id()) {
-				$selected = "selected";
-			}
-			$html .= <<<HTML
-				<option value="{$district["id"]}" {$selected}>{$district["name"]}</option>
-HTML;
-		}
-		$html .= <<<HTML
-				</select>
-			</div>
-HTML;
-		return $html;
 	}
 
 	private function _getSurnameHtml($writer) {
@@ -234,6 +197,47 @@ HTML;
 				</tr>
 HTML;
 		}
+		return $html;
+	}
+
+	private function _getDistrictsHtml($writer) {
+		$districts = models\writers2::getDistrictInfo();
+		$html = <<<HTML
+			<div class="form-group row">
+				<label for="district_1_id" class="col-sm-2 col-form-label">Origin</label>
+				<select name="district_1_id" class="form-control col-sm-4">
+					<option value="">-----</option>
+HTML;
+		foreach ($districts as $district) {
+			$selected = "";
+			if ($district["id"] == $writer->getDistrict1Id()) {
+				$selected = "selected";
+			}
+			$html .= <<<HTML
+				<option value="{$district["id"]}" {$selected}>{$district["name"]}</option>
+HTML;
+		}
+		$html .= <<<HTML
+				</select>
+			</div>
+			<div class="form-group row">
+				<label for="district_2_id" class="col-sm-2 col-form-label">Secondary origin</label>
+				<select name="district_2_id" class="form-control col-sm-4">
+					<option value="">-----</option>
+HTML;
+		foreach ($districts as $district) {
+			$selected = "";
+			if ($district["id"] == $writer->getDistrict2Id()) {
+				$selected = "selected";
+			}
+			$html .= <<<HTML
+				<option value="{$district["id"]}" {$selected}>{$district["name"]}</option>
+HTML;
+		}
+		$html .= <<<HTML
+				</select>
+			</div>
+HTML;
 		return $html;
 	}
 

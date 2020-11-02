@@ -18,24 +18,27 @@ class writers2
 					$view->show();
 				} else {
 					$model = new models\writer2($id);
-					$view = new views\writer2($model);
+					$view = new views\writer2($model,"browse");
 					$view->show();
 				}
 				break;
 			case "add":
 				$model = new models\writer2(null); //create a dummy writer object
-				$view = new views\writer2($model);
-				$view->edit();
+				$view = new views\writer2($model,"edit");
+				$view->show();
 				break;
 			case "edit":
 				$model = new models\writer2($id);
-				$view = new views\writer2($model);
-				$view->edit();
+				$view = new views\writer2($model,"edit");
+				$view->show();
 				break;
 			case "save":
-				echo "<h1>saved</h1>";    //just for testing purposes
+				//echo "<h1>saved</h1>";    //just for testing purposes
 				models\writers2::save($_POST);
 				//TODO: need a view here
+				$model = new models\writer2($id);
+				$view = new views\writer2($model,"browse");
+				$view->show();
 				break;
 		}
 	}

@@ -41,7 +41,7 @@ SQL;
 	}
 
 	/**
-	 * Updates an exisiting writer record in the database or adds a new one if required
+	 * Updates an existing writer record in the database or adds a new one if required
 	 * @param $data the form data for the writer record
 	 */
 	public static function save($data) {
