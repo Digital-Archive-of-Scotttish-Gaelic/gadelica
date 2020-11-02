@@ -14,19 +14,25 @@ class writer2
 	private $_nickname;
 	private $_yearOfBirth;
 	private $_yearOfDeath;
-	private $_origin;
+	private $_district1Id, $_district2Id;
+	private $_preferredName;
+	private $_notes;
+	private $_lastUpdated;
 
   private $_db; //an instance of models\database
 
 	public function __construct($id) {
 		$this->_db = isset($this->_db) ? $this->_db : new database();
 		$this->_id = $id;
-		$this->_load();
+		if ($this->_id) {
+			$this->_load();   //loads data if there is an existing record
+		}
 	}
 
   private function _load() {
 		$sql = <<<SQL
-			SELECT surname_gd, forenames_gd, surname_en, forenames_en, title, nickname, yob, yod, `where`
+			SELECT surname_gd, forenames_gd, surname_en, forenames_en, title, nickname, yob, yod,
+					district_1_id, district_2_id, preferred_name, notes, lastUpdated
 				FROM writer
 				WHERE id = :id
 SQL;
@@ -40,7 +46,11 @@ SQL;
 		$this->_setNickname($writerData["nickname"]);
 		$this->_setYearOfBirth($writerData["yob"]);
 		$this->_setYearOfDeath($writerData["yod"]);
-		$this->_setOrigin($writerData["where"]);
+		$this->_setDistrict1Id($writerData["district_1_id"]);
+	  $this->_setDistrict2Id($writerData["district_2_id"]);
+		$this->_setPreferredName($writerData["preferred_name"]);
+		$this->_setNotes($writerData["notes"]);
+		$this->_setLastUpdated($writerData["lastUpdated"]);
 	}
 
 	// SETTERS
@@ -77,8 +87,24 @@ SQL;
 		$this->_yearOfDeath = $year;
 	}
 
-	private function _setOrigin($place) {
-		$this->_origin = $place;
+	private function _setDistrict1Id($id) {
+		$this->_district1Id = $id;
+	}
+
+	private function _setDistrict2Id($id) {
+		$this->_district2Id = $id;
+	}
+
+	private function _setPreferredName($name) {
+		$this->_preferredName = $name;
+	}
+
+	private function _setNotes($notes) {
+		$this->_notes = $notes;
+	}
+
+	private function _setLastUpdated($timestamp) {
+		$this->_lastUpdated = $timestamp;
 	}
 
 	// GETTERS
@@ -131,8 +157,24 @@ SQL;
 		return $this->getYearOfBirth . '–' . $this->getYearOfDeath;
 	}
 
-	public function getOrigin() {
-		return $this->_origin;
+	public function getDistrict1Id() {
+		return $this->_district1Id;
+	}
+
+	public function getDistrict2Id() {
+		return $this->_district2Id;
+	}
+
+	public function getPreferredName() {
+		return $this->_preferredName;
+	}
+
+	public function getNotes() {
+		return $this->_notes;
+	}
+
+	public function getLastUpdated() {
+		return $this->_lastUpdated;
 	}
 
 	/**
