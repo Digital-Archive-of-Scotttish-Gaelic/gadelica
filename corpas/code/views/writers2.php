@@ -22,7 +22,7 @@ class writers2
 						<td>{$writer->getNickname()}</td>
 						<td>{$writer->getForenamesEN()} {$writer->getSurnameEN()}</td>
 						<td>{$writer->getYearOfBirth()} - {$writer->getYearOfDeath()}</td>
-						<td>{$writer->getOrigin()}</td>
+						<td>{$writer->getDistrict1Id()}</td>
 					</tr>
 HTML;
 			}
@@ -39,7 +39,7 @@ HTML;
 							<th>Nickname</th>
 							<th>English name</th>
 							<th>Years</th>
-							<th>Origin</th>
+							<th>District 1 ID</th>
 						</tr>
 					</thead>
 					<tbody>

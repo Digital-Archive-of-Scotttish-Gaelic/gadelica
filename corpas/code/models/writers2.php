@@ -9,7 +9,7 @@ class writers2
 
 	private $_db; //an instance of models\database
 
-	public function __construct($id) {
+	public function __construct() {
 		$this->_db = isset($this->_db) ? $this->_db : new database();
 		$this->_load();
 	}

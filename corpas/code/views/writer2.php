@@ -26,7 +26,7 @@ class writer2
 						{$this->_getNicknameHtml($writer)}
 						{$this->_getYearOfBirthHtml($writer)}
 						{$this->_getYearOfDeathHtml($writer)}
-						{$this->_getOriginHtml($writer)}
+						{$this->_getDistrict1Html($writer)}
 						{$this->_getTextsHtml($writer)}
 					</tbody>
 				</table>
@@ -237,15 +237,15 @@ HTML;
 		return $html;
 	}
 
-	private function _getOriginHtml($writer) {
+	private function _getDistrict1Html($writer) {
 		$html = "";
-		if (empty($writer->getOrigin())) {
+		if (empty($writer->getDistrict1Id())) {
 			return $html;
 		} else {
 			$html = <<<HTML
 				<tr>
 					<td>origin</td>
-					<td>{$writer->getOrigin()}</td>
+					<td>{$writer->getDistrict1Id()}</td>
 				</tr>
 HTML;
 		}
