@@ -251,14 +251,16 @@ HTML;
 		if (empty($origin)) {
 			return $html;
 		} else {
+			$district = new models\district($origin);
 			$html = <<<HTML
 				<tr>
 					<td>origin</td>
-					<td>{$origin}
+					<td>{$district->getName()}
 HTML;
     $origin2 = $writer->getOrigin2();
     if (!empty($origin2)) {
-			$html .= " (" . $origin2 . ")";
+    	$district2 = new models\district($origin2);
+			$html .= " (" . $district2->getName() . ")";
 		}
     $html .= <<<HTML
 					</td>

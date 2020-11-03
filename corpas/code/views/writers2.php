@@ -15,6 +15,12 @@ class writers2
   public function show() {
 			$html = "";
 			foreach ($this->_model->getAllWriters() as $writer) {
+				$origin = $writer->getOrigin();
+				$districtHtml = "";
+				if (isset($origin)) {
+					$district = new models\district($origin);
+					$districtHtml = $district->getName();
+				}
 				$html .= <<<HTML
 					<tr>
 						<td><a href="?m=writers&a=browse&id={$writer->getId()}">@{$writer->getId()}</a></td>
@@ -22,7 +28,7 @@ class writers2
 						<td>{$writer->getNickname()}</td>
 						<td>{$writer->getForenamesEN()} {$writer->getSurnameEN()}</td>
 						<td>{$writer->getYearOfBirth()} - {$writer->getYearOfDeath()}</td>
-						<td>{$writer->getOrigin()}</td>
+						<td>{$districtHtml}</td>
 					</tr>
 HTML;
 			}
@@ -39,7 +45,7 @@ HTML;
 							<th>Nickname</th>
 							<th>English name</th>
 							<th>Years</th>
-							<th>District 1 ID</th>
+							<th>District</th>
 						</tr>
 					</thead>
 					<tbody>
