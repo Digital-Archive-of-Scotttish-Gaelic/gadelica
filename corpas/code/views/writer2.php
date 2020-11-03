@@ -7,19 +7,18 @@ class writer2
 {
 
 	private $_model;   // an instance of models\writer2
-	private $_type; // browse or edit?
 
-	public function __construct($model,$type) {
+	public function __construct($model) {
 		$this->_model = $model;
-		$this->_type = $type;
 	}
 
-  public function show() {
-    if ($this->_type ==  "edit") {
-			$this->_showEdit();
-		}
-		else {
-			$this->_showBrowse();
+  public function show($type = "browse") {
+		switch ($type) {
+			case "edit":
+				$this->_showEdit();
+				break;
+			default:
+				$this->_showBrowse();
 		}
 	}
 
