@@ -247,13 +247,21 @@ HTML;
 
 	private function _getOriginHtml($writer) {
 		$html = "";
-		if (empty($writer->getOrigin())) {
+		$origin = $writer->getOrigin();
+		if (empty($origin)) {
 			return $html;
 		} else {
 			$html = <<<HTML
 				<tr>
 					<td>origin</td>
-					<td>{$writer->getOrigin()}</td>
+					<td>{$origin}
+HTML;
+    $origin2 = $writer->getOrigin2();
+    if (!empty($origin2)) {
+			$html .= " (" . $origin2 . ")";
+		}
+    $html .= <<<HTML
+					</td>
 				</tr>
 HTML;
 		}
