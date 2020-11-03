@@ -16,18 +16,23 @@ class writers2
 			$html = "";
 			foreach ($this->_model->getAllWriters() as $writer) {
 				$origin = $writer->getOrigin();
+				$origin2 = $writer->getOrigin2();
 				$districtHtml = "";
 				if (isset($origin)) {
-					$district = new models\district($origin);
+					$district = new models\district2($origin);
 					$districtHtml = $district->getName();
+					if (isset($origin2)) {
+						$district2 = new models\district2($origin2);
+						$districtHtml .= " / " . $district2->getName();
+					}
 				}
 				$html .= <<<HTML
 					<tr>
 						<td><a href="?m=writers&a=browse&id={$writer->getId()}">@{$writer->getId()}</a></td>
-						<td>{$writer->getForenamesGD()} {$writer->getSurnameGD()}</td>
+						<td>{$writer->getFullNameEN()}</td>
+						<td>{$writer->getFullnameGD()}</td>
 						<td>{$writer->getNickname()}</td>
-						<td>{$writer->getForenamesEN()} {$writer->getSurnameEN()}</td>
-						<td>{$writer->getYearOfBirth()} - {$writer->getYearOfDeath()}</td>
+						<td>{$writer->getLifeSpan()}</td>
 						<td>{$districtHtml}</td>
 					</tr>
 HTML;
@@ -38,16 +43,6 @@ HTML;
 				  <li class="nav-item"><a class="nav-link" href="?m=writers&a=add">add</a></li>
 			  </ul>
 				<table class="table">
-					<thead>
-						<tr>
-							<th>id</th>
-							<th>Gaelic name</th>
-							<th>Nickname</th>
-							<th>English name</th>
-							<th>Years</th>
-							<th>District</th>
-						</tr>
-					</thead>
 					<tbody>
 						{$html}
 					</tbody>

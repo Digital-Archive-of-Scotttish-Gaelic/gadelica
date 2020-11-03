@@ -36,6 +36,8 @@ class corpus_search2
 		  <ul class="nav nav-pills nav-justified" style="padding-bottom: 0px;">
 			  <li class="nav-item"><a class="nav-link" href="?m=corpus&a=browse&id={$_GET["id"]}">browse</a></li>
 				<li class="nav-item"><div class="nav-link active">search</div></li>
+HTML;
+		echo <<<HTML
 		  </ul>
 			<hr/>
       <form>

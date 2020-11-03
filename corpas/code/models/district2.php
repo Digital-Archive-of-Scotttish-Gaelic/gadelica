@@ -1,13 +1,12 @@
 <?php
 
-
 namespace models;
 
-
-class district
+class district2
 {
 	private $_id;
 	private $_name, $_notes;
+
 	private $_db;   //an instance of models\database
 
 	public function __construct($id) {
@@ -45,4 +44,20 @@ SQL;
 	public function getNotes() {
 		return $this->_notes;
 	}
+
+	/**
+	 * Queries the database for district info
+	 * @return array of results
+	 */
+	public static function getDistrictInfo() {
+		$db = new database();
+		$sql = <<<SQL
+			SELECT id, name, notes FROM districts ORDER BY id ASC
+SQL;
+		$results = $db->fetch($sql);
+		return $results;
+	}
+
+
+
 }

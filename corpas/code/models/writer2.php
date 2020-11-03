@@ -134,11 +134,11 @@ SQL;
 	}
 
   public function getFullNameEN() {
-		return $this->getTitle() . ' ' . $this->getForenamesEN() . ' ' . $this->getSurnameEN();
+		return $this->getTitle() . ' ' . $this->getForenamesEN() . ' <strong>' . $this->getSurnameEN() . '</strong>';
 	}
 
 	public function getFullNameGD() {
-		return $this->getTitle() . ' ' . $this->getForenamesGD() . ' ' . $this->getSurnameGD();
+		return $this->getForenamesGD() . ' <strong>' . $this->getSurnameGD() . '</strong>';
 	}
 
 	public function getNickname() {
@@ -154,6 +154,7 @@ SQL;
 	}
 
 	public function getLifeSpan() {
+		if ($this->getYearOfBirth() == "" && $this->getYearOfDeath() == "") { return ""; }
 		return $this->getYearOfBirth() . '–' . $this->getYearOfDeath();
 	}
 

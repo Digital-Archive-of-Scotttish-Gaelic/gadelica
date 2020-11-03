@@ -21,7 +21,7 @@ class writers2
 	private function _load() {
 		$writers = array();
 		$sql = <<<SQL
-			SELECT id FROM writer ORDER by id ASC
+			SELECT id, surname_en FROM writer ORDER by surname_en ASC
 SQL;
 		$results = $this->_db->fetch($sql);
 		foreach ($results as $result) {
@@ -58,17 +58,4 @@ SQL;
 			":district_1_id"=>$data["district_1_id"], ":district_2_id"=>$data["district_2_id"], ":notes"=>$data["notes"]));
 	}
 
-	/**
-	 * Queries the database for district info
-	 * TODO: this should probably be somewhere else, but where? SB
-	 * @return array of results
-	 */
-	public static function getDistrictInfo() {
-		$db = new database();
-		$sql = <<<SQL
-			SELECT id, name, notes FROM districts ORDER BY id ASC
-SQL;
-		$results = $db->fetch($sql);
-		return $results;
-	}
 }

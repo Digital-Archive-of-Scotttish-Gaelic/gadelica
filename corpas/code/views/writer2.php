@@ -205,7 +205,7 @@ HTML;
 	}
 
 	private function _getDistrictsHtml($writer) {
-		$districts = models\writers2::getDistrictInfo();
+		$districts = models\district2::getDistrictInfo();
 		$html = <<<HTML
 			<div class="form-group row">
 				<label for="district_1_id" class="col-sm-2 col-form-label">Origin</label>
@@ -251,7 +251,7 @@ HTML;
 		if (empty($origin)) {
 			return $html;
 		} else {
-			$district = new models\district($origin);
+			$district = new models\district2($origin);
 			$html = <<<HTML
 				<tr>
 					<td>origin</td>
@@ -259,7 +259,7 @@ HTML;
 HTML;
     $origin2 = $writer->getOrigin2();
     if (!empty($origin2)) {
-    	$district2 = new models\district($origin2);
+    	$district2 = new models\district2($origin2);
 			$html .= " (" . $district2->getName() . ")";
 		}
     $html .= <<<HTML

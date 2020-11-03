@@ -13,8 +13,13 @@ class corpus_browse2
 	public function show() {
     echo <<<HTML
 		<ul class="nav nav-pills nav-justified" style="padding-bottom: 20px;">
-		  <li class="nav-item"><div class="nav-link active">browse</div></li>
+		  <li class="nav-item"><div class="nav-link active">view</div></li>
 		  <li class="nav-item"><a class="nav-link" href="?m=corpus&a=search&id={$this->_model->getId()}">search</a></li>
+HTML;
+    if (!$this->_model->getFilepath()) {
+			echo '<li class="nav-item"><a class="nav-link" href="?m=corpus&a=add&id=' . $this->_model->getId() . '">add</a></li>';
+		}
+		echo <<<HTML
 		</ul>
 HTML;
     if ($this->_model->getId() == "0") {
