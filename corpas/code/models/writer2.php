@@ -14,7 +14,7 @@ class writer2
 	private $_nickname;
 	private $_yearOfBirth;
 	private $_yearOfDeath;
-	private $_district1Id, $_district2Id;
+	private $_origin, $_origin2;
 	private $_preferredName;
 	private $_notes;
 	private $_lastUpdated;
@@ -46,8 +46,8 @@ SQL;
 		$this->_setNickname($writerData["nickname"]);
 		$this->_setYearOfBirth($writerData["yob"]);
 		$this->_setYearOfDeath($writerData["yod"]);
-		$this->_setDistrict1Id($writerData["district_1_id"]);
-	  $this->_setDistrict2Id($writerData["district_2_id"]);
+		$this->_setOrigin($writerData["district_1_id"]);
+	  $this->_setOrigin2($writerData["district_2_id"]);
 		$this->_setPreferredName($writerData["preferred_name"]);
 		$this->_setNotes($writerData["notes"]);
 		$this->_setLastUpdated($writerData["lastUpdated"]);
@@ -87,12 +87,12 @@ SQL;
 		$this->_yearOfDeath = $year;
 	}
 
-	private function _setDistrict1Id($id) {
-		$this->_district1Id = $id;
+	private function _setOrigin($id) {
+		$this->_origin = $id;
 	}
 
-	private function _setDistrict2Id($id) {
-		$this->_district2Id = $id;
+	private function _setOrigin2($id) {
+		$this->_origin2 = $id;
 	}
 
 	private function _setPreferredName($name) {
@@ -154,15 +154,15 @@ SQL;
 	}
 
 	public function getLifeSpan() {
-		return $this->getYearOfBirth . '–' . $this->getYearOfDeath;
+		return $this->getYearOfBirth() . '–' . $this->getYearOfDeath();
 	}
 
-	public function getDistrict1Id() {
-		return $this->_district1Id;
+	public function getOrigin() {
+		return $this->_origin;
 	}
 
-	public function getDistrict2Id() {
-		return $this->_district2Id;
+	public function getOrigin2() {
+		return $this->_origin2;
 	}
 
 	public function getPreferredName() {

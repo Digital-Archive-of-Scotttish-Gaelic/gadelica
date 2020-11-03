@@ -33,10 +33,11 @@ class writer2
 				<tbody>
 					{$this->_getSurnameHtml($writer)}
 					{$this->_getForenamesHtml($writer)}
+					{$this->_getTitleHtml($writer)}
 					{$this->_getNicknameHtml($writer)}
-					{$this->_getYearOfBirthHtml($writer)}
-					{$this->_getYearOfDeathHtml($writer)}
-					{$this->_getDistrict1Html($writer)}
+					{$this->_getLifeSpanHtml($writer)}
+					{$this->_getOriginHtml($writer)}
+					{$this->_getNotesHtml($writer)}
 					{$this->_getTextsHtml($writer)}
 				</tbody>
 			</table>
@@ -154,6 +155,21 @@ HTML;
 		return $html;
 	}
 
+	private function _getTitleHtml($writer) {
+		$html = "";
+		if (empty($writer->getTitle())) {
+			return $html;
+		} else {
+			$html = <<<HTML
+				<tr>
+					<td>title</td>
+					<td>{$writer->getTitle()}</td>
+				</tr>
+HTML;
+		}
+		return $html;
+	}
+
 	private function _getNicknameHtml($writer) {
 		$html = "";
 		if (empty($writer->getNickname())) {
@@ -169,33 +185,22 @@ HTML;
 		return $html;
 	}
 
-	private function _getYearOfBirthHtml($writer) {
+	private function _getLifeSpanHtml($writer) {
 		$html = "";
-		if (empty($writer->getYearOfBirth())) {
+		/*
+		if (empty($writer->getLifeSpan())) {
 			return $html;
 		} else {
+		*/
 			$html = <<<HTML
 				<tr>
-					<td>birth</td>
-					<td>{$writer->getYearOfBirth()}</td>
+					<td>life</td>
+					<td>{$writer->getLifeSpan()}</td>
 				</tr>
 HTML;
+/*
 		}
-		return $html;
-	}
-
-	private function _getYearOfDeathHtml($writer) {
-		$html = "";
-		if (empty($writer->getYearOfDeath())) {
-			return $html;
-		} else {
-			$html = <<<HTML
-				<tr>
-					<td>death</td>
-					<td>{$writer->getYearOfDeath()}</td>
-				</tr>
-HTML;
-		}
+		*/
 		return $html;
 	}
 
@@ -209,7 +214,7 @@ HTML;
 HTML;
 		foreach ($districts as $district) {
 			$selected = "";
-			if ($district["id"] == $writer->getDistrict1Id()) {
+			if ($district["id"] == $writer->getOrigin()) {
 				$selected = "selected";
 			}
 			$html .= <<<HTML
@@ -226,7 +231,7 @@ HTML;
 HTML;
 		foreach ($districts as $district) {
 			$selected = "";
-			if ($district["id"] == $writer->getDistrict2Id()) {
+			if ($district["id"] == $writer->getOrigin2()) {
 				$selected = "selected";
 			}
 			$html .= <<<HTML
@@ -240,15 +245,30 @@ HTML;
 		return $html;
 	}
 
-	private function _getDistrict1Html($writer) {
+	private function _getOriginHtml($writer) {
 		$html = "";
-		if (empty($writer->getDistrict1Id())) {
+		if (empty($writer->getOrigin())) {
 			return $html;
 		} else {
 			$html = <<<HTML
 				<tr>
 					<td>origin</td>
-					<td>{$writer->getDistrict1Id()}</td>
+					<td>{$writer->getOrigin()}</td>
+				</tr>
+HTML;
+		}
+		return $html;
+	}
+
+	private function _getNotesHtml($writer) {
+		$html = "";
+		if (empty($writer->getNotes())) {
+			return $html;
+		} else {
+			$html = <<<HTML
+				<tr>
+					<td>notes</td>
+					<td>{$writer->getNotes()}</td>
 				</tr>
 HTML;
 		}
