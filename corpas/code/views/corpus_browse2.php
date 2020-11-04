@@ -31,6 +31,28 @@ HTML;
 		$this->_writeJavascript();
 	}
 
+	public function add() {
+		$textId = $this->_model->getID();
+		echo <<<HTML
+			<form action="index2.php?m=corpus&a=save&id={$textId}" method="post">
+				<div class="form-group">
+					<label for="subTextId">Subtext ID</label>
+					{$textId}_<input type="text" name="subTextId" id="subTextId">
+				</div>
+				<div class="form-group">
+					<label for="title">Title</label>
+					<input type="text" name="title" id="title">
+				</div>
+				<div class="form-group">
+					<label for="date">Date</label>
+					<input type="text" name="date" id="date">
+				</div>
+				<input type="hidden" name="filepath" value="">
+				<button type="submit" class="btn btn-success">add</button>
+			</form>
+HTML;
+	}
+
   private function _showCorpus() {
 		echo <<<HTML
 			<table class="table">

@@ -38,6 +38,17 @@ class corpus2
 				$results = ($_GET["view"] == "corpus") ? $searchModel->getFileSearchResults($dbResults) : $dbResults;
 				$view->writeSearchResults($results, $resultCount);
 				break;
+			case "add":
+				$model = new models\corpus_browse2($id);
+				$view = new views\corpus_browse2($model);
+				$view->add();
+				break;
+			case "save":
+				$model = new models\corpus_browse2($id);
+				$model->saveSubText($_POST);
+				$view = new views\corpus_browse2($model);
+				$view->show();
+				break;
 		}
   }
 

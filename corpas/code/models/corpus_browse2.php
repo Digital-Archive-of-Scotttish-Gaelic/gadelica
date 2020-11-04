@@ -169,7 +169,18 @@ SQL;
     return $textsInfo;
   }
 
-
-
-
+	/**
+	 * Saves a new subtext record to the database
+	 * @param $data the form data for the new subtext record
+	 */
+	public function saveSubText($data) {
+		$id = $this->getId() . "-" . $data["subTextId"];
+		$sql = <<<SQL
+			INSERT INTO text (id, title, partOf, filepath, date)
+				VALUES(:id, :title, :partOf, :filepath, :date)
+SQL;
+		$this->_db->exec($sql, array(
+			":id"=>$id, ":title"=>$data["title"], ":partOf"=>$this->getId(), ":filepath"=>$data["filepath"],
+				":date"=>$data["date"]));
+	}
 }
