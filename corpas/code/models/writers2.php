@@ -46,6 +46,9 @@ SQL;
 	 */
 	public static function save($data) {
 		$db = new database();
+		//set null values if empty
+		$data["district_1_id"] = $data["district_1_id"] == "" ? null : $data["district_1_id"];
+		$data["district_2_id"] = $data["district_2_id"] == "" ? null : $data["district_2_id"];
 		$sql = <<<SQL
 			REPLACE INTO writer (id, surname_gd, forenames_gd, surname_en, forenames_en, preferred_name, title,
 					nickname, yob, yod, district_1_id, district_2_id, notes)
