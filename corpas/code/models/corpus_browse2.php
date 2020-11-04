@@ -174,13 +174,20 @@ SQL;
 	 * @param $data the form data for the new subtext record
 	 */
 	public function saveSubText($data) {
-		$id = $this->getId() . "-" . $data["subTextId"];
+		$partOf = "";
+		//check if top level text or not
+		if ($this->getId() == 0) {  //top level text
+			$id = $data["subTextId"];
+		} else {       //not a top level text
+			$id = $this->getId() . "-" . $data["subTextId"];
+			$partOf = $this->getId();
+		}
 		$sql = <<<SQL
 			INSERT INTO text (id, title, partOf, filepath, date)
 				VALUES(:id, :title, :partOf, :filepath, :date)
 SQL;
 		$this->_db->exec($sql, array(
-			":id"=>$id, ":title"=>$data["title"], ":partOf"=>$this->getId(), ":filepath"=>$data["filepath"],
+			":id"=>$id, ":title"=>$data["title"], ":partOf"=>$partOf, ":filepath"=>$data["filepath"],
 				":date"=>$data["date"]));
 	}
 }
