@@ -38,7 +38,7 @@ class corpus2
 				$results = ($_GET["view"] == "corpus") ? $searchModel->getFileSearchResults($dbResults) : $dbResults;
 				$view->writeSearchResults($results, $resultCount);
 				break;
-			case "add":
+			case "edit":
 				$model = new models\corpus_browse2($id);
 				$view = new views\corpus_browse2($model);
 				$view->add();
