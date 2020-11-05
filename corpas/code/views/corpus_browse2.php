@@ -56,7 +56,7 @@ HTML;
 	}
 
 	private function _getFormMetadataSectionHtml() {
-		$writersOptionsHtml = $this->_getWritersOptionsHtml();
+		$writersHtml = $this->_getWritersFormHtml();
 		$html = <<<HTML
 					<div>
 						Text ID : {$this->_model->getID()}
@@ -66,11 +66,9 @@ HTML;
 						<input class="form-control" type="text" name="textTitle" id="textTitle" value="{$this->_model->getTitle()}">
 					</div>
 
-					<div class="form-group">
-						<label for="writers">Writers</label>
-						<select class="form-control"  name="writers" id="writers" multiple>
-							{$writersOptionsHtml}
-						</select>
+					<div>
+						<h4>Writers</h4>
+							{$writersHtml}
 					</div>
 
 					<div class="form-group">
@@ -160,23 +158,28 @@ HTML;
 	 * Generates an option list of writers for a multiple select
 	 * @return string $html
 	 */
-	private function _getWritersOptionsHtml() {
-		$html = "";
+	private function _getWritersFormHtml() {
+		$html = "<ul>";
 		$writerIds = $this->_model->getWriterIds();
-		$writersInfo = models\writers2::getAllWritersInfo();
-		foreach ($writersInfo as $writerInfo) {
-			$writerId = $writerInfo["id"];
-			$selected = in_array($writerId, $writerIds) ? "selected" : "";
-			$name = empty($writerInfo["forenames_gd"]) || empty($writerInfo["surname_gd"])
-				? $writerInfo["forenames_en"] . " " . $writerInfo["surname_en"]
-				: $writerInfo["forenames_gd"] . " " . $writerInfo["surname_gd"];
-			if (!empty($writerInfo["nickname"])) {
-				$name .= " - " . $writerInfo["nickname"];
+		foreach($writerIds as $writerId) {
+			$writer = new models\writer2($writerId);
+			$name = empty($writer->getForenamesGD()) || empty($writer->getSurnameGD())
+				? $writer->getForenamesEN() . " " . $writer->getSurnameGD()
+				: $writer->getForenamesGD() . " " . $writer->getSurnameGD();
+			if (!empty($writer->getNickname())) {
+				$name .= " - " . $writer->getNickname();
 			}
 			$html .= <<<HTML
-				<option value="{$writerId}" $selected>{$name}</option>
+				<li>{$name} ({$writerId})</li>
 HTML;
 		}
+		$html .= <<<HTML
+			<div class="form-group">
+				<label for="writerId">New writer ID</label>
+				<input class="form-control" type="text" id="writerId" name="writerId">
+			</div>
+HTML;
+
 		return $html;
 	}
 
