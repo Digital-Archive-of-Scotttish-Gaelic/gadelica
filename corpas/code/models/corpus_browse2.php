@@ -175,8 +175,14 @@ SQL;
     return $textsInfo;
   }
 
-
+	/**
+	 * Saves text info to the database
+	 * @param array $data the post data from the form
+	 */
   public function save($data) {
+  	if (!isset($data["filepath"])) {
+  		$data["filepath"] = "";
+	  }
   	//add a subText if required
 		if (!empty($data["subTextId"])) {
 			$this->_insertSubText($data);
@@ -186,7 +192,14 @@ SQL;
 			UPDATE text SET title = :title, date = :date, filepath = :filepath WHERE id = :id
 SQL;
 		$this->_db->exec($sql, array(":id"=>$this->getId(), ":title"=>$data["title"], ":date"=>$data["date"],
-			":filepath"=>data["filepath"]));
+			":filepath"=>$data["filepath"]));
+		//save new writer ID
+	  if ($data["writerId"]) {
+	  	$sql = <<<SQL
+				INSERT INTO text_writer (text_id, writer_id	) VALUES(:textId, :writerId)
+SQL;
+	  	$this->_db->exec($sql, array(":textId"=>$this->getId(), ":writerId"=>$data["writerId"]));
+	  }
   }
 
 	/**
