@@ -155,7 +155,7 @@ HTML;
 	}
 
 	/**
-	 * Generates an option list of writers for a multiple select
+	 * Generates alist of existing writers and an input field for a new writer ID
 	 * @return string $html
 	 */
 	private function _getWritersFormHtml() {
