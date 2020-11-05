@@ -44,6 +44,8 @@ HTML;
 			$formHtml = $this->_getFormMetadataSectionHtml() . $this->_getFormSubTextSectionHtml();
 		} else if ($this->_model->getFilepath()) { //text has a filepath
 			$formHtml = $this->_getFormMetadataSectionHtml() . $this->_getFormFilepathSectionHtml();
+		} else {
+		  $formHtml = $this->_getFormMetadataSectionHtml() . $this->_getFormSubTextSectionHtml() . $this->_getFormFilepathSectionHtml();
 		}
 		echo <<<HTML
 			<form action="index2.php?m=corpus&a=save&id={$this->_model->getID()}" method="post">
@@ -63,14 +65,14 @@ HTML;
 						<label for="textTtle">Title</label>
 						<input class="form-control" type="text" name="textTitle" id="textTitle" value="{$this->_model->getTitle()}">
 					</div>
-					
+
 					<div class="form-group">
 						<label for="writers">Writers</label>
 						<select class="form-control"  name="writers" id="writers" multiple>
 							{$writersOptionsHtml}
 						</select>
 					</div>
-					
+
 					<div class="form-group">
 						<label for="textDate">Date</label>
 						<input class="form-control" type="text" name="textDate" id="textDate" value="{$this->_model->getDate()}">
@@ -89,7 +91,7 @@ HTML;
 				<div class="form-group">
 					<label for="subTextTitle">SubText Title</label>
 					<input class="form-control" type="text" name="subTextTitle" id="subTextTitle">
-				</div>				
+				</div>
 				<div class="form-group">
 					<label for="subTextDate">SubText Date</label>
 					<input class="form-control" type="text" name="subTextDate" id="subTextDate">
