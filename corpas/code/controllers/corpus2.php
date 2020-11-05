@@ -45,7 +45,7 @@ class corpus2
 				break;
 			case "save":
 				$model = new models\corpus_browse2($id);
-				$model->saveSubText($_POST);
+				$model->save($_POST);
 				$view = new views\corpus_browse2($model);
 				$view->show();
 				break;
