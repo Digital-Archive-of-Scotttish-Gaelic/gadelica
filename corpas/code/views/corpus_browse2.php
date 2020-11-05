@@ -2,6 +2,8 @@
 
 namespace views;
 
+use models;
+
 class corpus_browse2
 {
 	private $_model;   // an instance of models\corpus_browse2
@@ -34,30 +36,76 @@ HTML;
 		$this->_writeJavascript();
 	}
 
-	public function add() {
-		$textId = $this->_model->getID();
-		$prefix = ($textId == 0) ? "" : $textId . "-";
+	public function edit() {
+		$formHtml = "";
+		if ($this->_model->getID() == "0") {
+			$formHtml = $this->_getFormSubTextSectionHtml();
+		} else if ($this->_model->getChildTextsInfo()) { //text has subTexts
+			$formHtml = $this->_getFormMetadataSectionHtml() . $this->_getFormSubTextSectionHtml();
+		} else if ($this->_model->getFilepath()) { //text has a filepath
+			$formHtml = $this->_getFormMetadataSectionHtml() . $this->_getFormFilepathSectionHtml();
+		}
 		echo <<<HTML
-			<form action="index2.php?m=corpus&a=save&id={$textId}" method="post">
-				<div class="form-group">
-					<label for="subTextId">Subtext ID</label>
-					{$prefix}<input type="text" name="subTextId" id="subTextId">
-				</div>
-				<div class="form-group">
-					<label for="title">Title</label>
-					<input type="text" name="title" id="title">
-				</div>
-				<div class="form-group">
-					<label for="filepath">Filepath</label>
-					<input type="text" name="filepath" id="filepath">
-				</div>
-				<div class="form-group">
-					<label for="date">Date</label>
-					<input type="text" name="date" id="date">
-				</div>
-				<button type="submit" class="btn btn-success">add</button>
+			<form action="index2.php?m=corpus&a=save&id={$this->_model->getID()}" method="post">
+				{$formHtml}
+				<button type="submit" class="btn btn-success">edit</button>
 			</form>
 HTML;
+	}
+
+	private function _getFormMetadataSectionHtml() {
+		$writersOptionsHtml = $this->_getWritersOptionsHtml();
+		$html = <<<HTML
+					<div>
+						Text ID : {$this->_model->getID()}
+					</div>
+					<div class="form-group">
+						<label for="textTtle">Title</label>
+						<input class="form-control" type="text" name="textTitle" id="textTitle" value="{$this->_model->getTitle()}">
+					</div>
+					
+					<div class="form-group">
+						<label for="writers">Writers</label>
+						<select class="form-control"  name="writers" id="writers" multiple>
+							{$writersOptionsHtml}
+						</select>
+					</div>
+					
+					<div class="form-group">
+						<label for="textDate">Date</label>
+						<input class="form-control" type="text" name="textDate" id="textDate" value="{$this->_model->getDate()}">
+					</div>
+HTML;
+		return $html;
+	}
+
+	private function _getFormSubTextSectionHtml() {
+		$prefix = ($this->_model->getID() == 0) ? "" : $this->_model->getID() . "-";
+		$html = <<<HTML
+				<div class="form-group">
+					<label for="subTextId">SubText ID</label>
+					{$prefix}<input class="form-control"  type="text" name="subTextId" id="subTextId">
+				</div>
+				<div class="form-group">
+					<label for="subTextTitle">SubText Title</label>
+					<input class="form-control" type="text" name="subTextTitle" id="subTextTitle">
+				</div>				
+				<div class="form-group">
+					<label for="subTextDate">SubText Date</label>
+					<input class="form-control" type="text" name="subTextDate" id="subTextDate">
+				</div>
+HTML;
+		return $html;
+	}
+
+	private function _getFormFilepathSectionHtml() {
+		$html = <<<HTML
+				<div class="form-group">
+					<label for="filepath">Filepath</label>
+					<input class="form-control" type="text" name="filepath" id="filepath" value="{$this->_model->getFilepath()}">
+				</div>
+HTML;
+		return $html;
 	}
 
   private function _showCorpus() {
@@ -104,6 +152,30 @@ HTML;
 HTML;
 		}
 		return implode(", ", $writerList);
+	}
+
+	/**
+	 * Generates an option list of writers for a multiple select
+	 * @return string $html
+	 */
+	private function _getWritersOptionsHtml() {
+		$html = "";
+		$writerIds = $this->_model->getWriterIds();
+		$writersInfo = models\writers2::getAllWritersInfo();
+		foreach ($writersInfo as $writerInfo) {
+			$writerId = $writerInfo["id"];
+			$selected = in_array($writerId, $writerIds) ? "selected" : "";
+			$name = empty($writerInfo["forenames_gd"]) || empty($writerInfo["surname_gd"])
+				? $writerInfo["forenames_en"] . " " . $writerInfo["surname_en"]
+				: $writerInfo["forenames_gd"] . " " . $writerInfo["surname_gd"];
+			if (!empty($writerInfo["nickname"])) {
+				$name .= " - " . $writerInfo["nickname"];
+			}
+			$html .= <<<HTML
+				<option value="{$writerId}" $selected>{$name}</option>
+HTML;
+		}
+		return $html;
 	}
 
   private function _showText() {
@@ -160,13 +232,13 @@ HTML;
 	}
 
 	private function _getChildTextsHtml() {
-		if (!count($this->_model->getChildTexts())) {
+		if (!count($this->_model->getChildTextsInfo())) {
 			return "";
 		}
 		else {
 			$html = '<tr><td>contents</td><td>';
 			$html .= '<div class="list-group list-group-flush">';
-			foreach ($this->_model->getChildTexts() as $childId => $childTitle) {
+			foreach ($this->_model->getChildTextsInfo() as $childId => $childTitle) {
 				$html .= '<div class="list-group-item list-group-item-action">';
 				$html .= '#' . $childId .
 					': <a href="?m=corpus&a=browse&id=' . $childId .'">' . $childTitle;

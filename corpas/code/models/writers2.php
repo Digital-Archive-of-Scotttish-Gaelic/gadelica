@@ -18,7 +18,8 @@ class writers2
 	 * Populates the object with info from the DB
 	 */
 
-	private function _load() {
+	private function _load()
+	{
 		$writers = array();
 		$sql = <<<SQL
 			SELECT id, surname_en FROM writer ORDER by surname_en ASC
@@ -38,6 +39,19 @@ SQL;
 
 	public function getAllWriters() {
 		return $this->_members;
+	}
+
+	/**
+	 * Queries the database for writer info
+	 * @return array of results
+	 */
+	public static function getAllWritersInfo() {
+		$db = new database();
+		$sql = <<<SQL
+			SELECT * FROM writer ORDER BY forenames_gd ASC, forenames_en ASC
+SQL;
+		$results = $db->fetch($sql);
+		return $results;
 	}
 
 	/**

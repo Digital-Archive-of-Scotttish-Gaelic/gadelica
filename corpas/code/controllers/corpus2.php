@@ -41,7 +41,7 @@ class corpus2
 			case "edit":
 				$model = new models\corpus_browse2($id);
 				$view = new views\corpus_browse2($model);
-				$view->add();
+				$view->edit();
 				break;
 			case "save":
 				$model = new models\corpus_browse2($id);

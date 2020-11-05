@@ -12,6 +12,7 @@ class corpus_browse2 // models a corpus text or subtext
   private $_filepath; // the path to the text XML (simple texts only)
   private $_transformedText; // simple texts only
   private $_writers = array();  //array of models\writer objects
+	private $_writerIds = array();  //array of writer IDs for quicker performance when required
 
 	private $_db;   // an instance of models\database
 
@@ -83,6 +84,7 @@ SQL;
 SQL;
 		$results = $this->_db->fetch($sql, array(":id" => $this->getId()));
 		foreach ($results as $result) {
+			$this->_writerIds[] = $result["writer_id"];
 			$this->_writers[] = new writer2($result["writer_id"]);
 		}
 	}
@@ -112,6 +114,10 @@ SQL;
     return $this->_writers;
   }
 
+  public function getWriterIds() {
+		return $this->_writerIds;
+  }
+
   public function getFilepath() {
     return $this->_filepath;
   }
@@ -136,16 +142,16 @@ SQL;
 	 * Get child text info (on the fly to cut down on memory overhead)
 	 * @return array of associative info ("id" => "title")
 	 */
-	public function getChildTexts() {
-		$childTexts = array();
+	public function getChildTextsInfo() {
+		$childTextsInfo = array();
 		$sql = <<<SQL
 			SELECT id, title FROM text WHERE partOf = :id ORDER BY id ASC
 SQL;
 		$results = $this->_db->fetch($sql, array(":id" => $this->getId()));
 		foreach ($results as $result) {
-			$childTexts[$result["id"]] = $result["title"];
+			$childTextsInfo[$result["id"]] = $result["title"];
 		}
-		return $childTexts;
+		return $childTextsInfo;
 	}
 
   /**
@@ -169,11 +175,25 @@ SQL;
     return $textsInfo;
   }
 
+
+  public function save($data) {
+  	//add a subText if required
+		if (!empty($data["subTextId"])) {
+			$this->_insertSubText($data);
+		}
+		//save the metadata
+		$sql = <<<SQL
+			UPDATE text SET title = :title, date = :date, filepath = :filepath WHERE id = :id
+SQL;
+		$this->_db->exec($sql, array(":id"=>$this->getId(), ":title"=>$data["title"], ":date"=>$data["date"],
+			":filepath"=>data["filepath"]));
+  }
+
 	/**
 	 * Saves a new subtext record to the database
-	 * @param $data the form data for the new subtext record
+	 * @param array $data the form data for the new subtext record
 	 */
-	public function saveSubText($data) {
+	private function _insertSubText($data) {
 		$partOf = "";
 		//check if top level text or not
 		if ($this->getId() == 0) {  //top level text
@@ -187,7 +207,7 @@ SQL;
 				VALUES(:id, :title, :partOf, :filepath, :date)
 SQL;
 		$this->_db->exec($sql, array(
-			":id"=>$id, ":title"=>$data["title"], ":partOf"=>$partOf, ":filepath"=>$data["filepath"],
-				":date"=>$data["date"]));
+			":id"=>$id, ":title"=>$data["subTextTitle"], ":partOf"=>$partOf, ":filepath"=>$data["filepath"],
+				":date"=>$data["subTextDate"]));
 	}
 }
