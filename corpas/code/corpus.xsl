@@ -167,6 +167,9 @@
   <xsl:template match="dasg:pb">
     <hr/>
     <xsl:choose>
+      <xsl:when test="@img and starts-with(@img,'http')">
+        <p><a href="{@img}" target="_new">[p. <xsl:value-of select="@n"/>]</a></p>
+      </xsl:when>
       <xsl:when test="@img">
         <p><a href="{concat('https://dasg.ac.uk/images/cnag/pages/',@img)}" target="_new">[p. <xsl:value-of select="@n"/>]</a></p>
       </xsl:when>
