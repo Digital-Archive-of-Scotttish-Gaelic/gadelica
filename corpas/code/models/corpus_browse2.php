@@ -190,13 +190,14 @@ SQL;
 		//save the metadata
 	  if (!empty($data["textTitle"])) { //ensure there are form data to be saved
 			$sql = <<<SQL
-				UPDATE text SET title = :title, date = :date WHERE id = :id
+				UPDATE text SET title = :title, date = :date, filepath = :filepath WHERE id = :id
 SQL;
-			$this->_db->exec($sql, array(":id"=>$this->getId(), ":title"=>$data["textTitle"], ":date"=>$data["textDate"]));
+			$this->_db->exec($sql, array(":id"=>$this->getId(), ":title"=>$data["textTitle"], ":date"=>$data["textDate"],
+				":filepath"=>$data["filepath"]));
 			//save new writer ID
 		  if ($data["writerId"]) {
 			  $sql = <<<SQL
-					INSERT INTO text_writer (text_id, writer_id	) VALUES(:textId, :writerId)
+					INSERT INTO text_writer (text_id, writer_id, filepath) VALUES(:textId, :writerId, :filepath)
 SQL;
 			  $this->_db->exec($sql, array(":textId" => $this->getId(), ":writerId" => $data["writerId"]));
 	    }
