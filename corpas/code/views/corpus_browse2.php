@@ -57,6 +57,17 @@ HTML;
 
 	private function _getFormMetadataSectionHtml() {
 		$writersHtml = $this->_getWritersFormHtml();
+		$levelHtml = <<<HTML
+			<select name="textLevel" id="textLevel">
+				<option value="0">-----</option>
+HTML;
+		for ($i=1; $i<4; $i++) {
+			$selected = $this->_model->getLevel() == $i ? "selected" : "";
+			$levelHtml .= <<<HTML
+				<option value="{$i}" {$selected}>{$i}</option>
+HTML;
+		}
+		$levelHtml .= "</select>";
 		$html = <<<HTML
 					<div>
 						Text ID : {$this->_model->getID()}
@@ -65,15 +76,17 @@ HTML;
 						<label for="textTtle">Title</label>
 						<input class="form-control" type="text" name="textTitle" id="textTitle" value="{$this->_model->getTitle()}">
 					</div>
-
 					<div>
 						<h4>Writers</h4>
 							{$writersHtml}
 					</div>
-
 					<div class="form-group">
 						<label for="textDate">Date</label>
 						<input class="form-control" type="text" name="textDate" id="textDate" value="{$this->_model->getDate()}">
+					</div>
+					<div class="form-group">
+						<label for="textLevel">Text Level</label>
+						{$levelHtml}
 					</div>
 HTML;
 		return $html;
@@ -81,6 +94,16 @@ HTML;
 
 	private function _getFormSubTextSectionHtml() {
 		$prefix = ($this->_model->getID() == 0) ? "" : $this->_model->getID() . "-";
+		$levelHtml = <<<HTML
+			<select name="subTextLevel" id="subTextextLevel">
+				<option value="0">-----</option>
+HTML;
+		for ($i=1; $i<4; $i++) {
+			$levelHtml .= <<<HTML
+				<option value="{$i}">{$i}</option>
+HTML;
+		}
+		$levelHtml .= "</select>";
 		$html = <<<HTML
 				<div class="form-group">
 					<label for="subTextId">SubText ID</label>
@@ -93,6 +116,10 @@ HTML;
 				<div class="form-group">
 					<label for="subTextDate">SubText Date</label>
 					<input class="form-control" type="text" name="subTextDate" id="subTextDate">
+				</div>
+				<div>
+					<label for="subTextLevel">SubText Level</label>
+					{$levelHtml}
 				</div>
 HTML;
 		return $html;

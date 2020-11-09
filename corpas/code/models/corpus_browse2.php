@@ -8,7 +8,7 @@ class corpus_browse2 // models a corpus text or subtext
   private $_id; // the id number for the text in the corpus (obligatory)
 	private $_parentText; // the parent text of this text (optional) – an instance of models\corpus_browse2
   private $_title; // the title of the text (optional)
-  private $_date;
+  private $_date, $_level;
   private $_filepath; // the path to the text XML (simple texts only)
   private $_transformedText; // simple texts only
   private $_writers = array();  //array of models\writer objects
@@ -29,7 +29,7 @@ class corpus_browse2 // models a corpus text or subtext
 	 */
 	private function _load() {
 		$sql = <<<SQL
-			SELECT title, partOf, filepath, date
+			SELECT title, partOf, filepath, date, level
 				FROM text
 				WHERE id = :id
 SQL;
@@ -47,6 +47,9 @@ SQL;
 		}
 		if ($date = $textData["date"]) {
 			$this->_setDate($date);
+		}
+		if ($level = $textData["level"]) {
+			$this->_setLevel($level);
 		}
 		$this->_setWriters();
 	}
@@ -71,6 +74,10 @@ SQL;
 
 	private function _setDate($date) {
 		$this->_date = $date;
+	}
+
+	private function _setLevel($level) {
+		$this->_level = $level;
 	}
 
 	/**
@@ -101,6 +108,10 @@ SQL;
 
 	public function getDate() {
 		return $this->_date;
+	}
+
+	public function getLevel() {
+		return $this->_level;
 	}
 
 	/**
@@ -190,14 +201,14 @@ SQL;
 		//save the metadata
 	  if (!empty($data["textTitle"])) { //ensure there are form data to be saved
 			$sql = <<<SQL
-				UPDATE text SET title = :title, date = :date, filepath = :filepath WHERE id = :id
+				UPDATE text SET title = :title, date = :date, filepath = :filepath, level = :level WHERE id = :id
 SQL;
 			$this->_db->exec($sql, array(":id"=>$this->getId(), ":title"=>$data["textTitle"], ":date"=>$data["textDate"],
-				":filepath"=>$data["filepath"]));
+				":filepath"=>$data["filepath"], ":level"=>$data["textLevel"]));
 			//save new writer ID
 		  if ($data["writerId"]) {
 			  $sql = <<<SQL
-					INSERT INTO text_writer (text_id, writer_id, filepath) VALUES(:textId, :writerId, :filepath)
+					INSERT INTO text_writer (text_id, writer_id) VALUES(:textId, :writerId)
 SQL;
 			  $this->_db->exec($sql, array(":textId" => $this->getId(), ":writerId" => $data["writerId"]));
 	    }
@@ -218,11 +229,11 @@ SQL;
 			$partOf = $this->getId();
 		}
 		$sql = <<<SQL
-			INSERT INTO text (id, title, partOf, filepath, date)
-				VALUES(:id, :title, :partOf, :filepath, :date)
+			INSERT INTO text (id, title, partOf, filepath, date, level)
+				VALUES(:id, :title, :partOf, :filepath, :date, :level)
 SQL;
 		$this->_db->exec($sql, array(
 			":id"=>$id, ":title"=>$data["subTextTitle"], ":partOf"=>$partOf, ":filepath"=>$data["filepath"],
-				":date"=>$data["subTextDate"]));
+				":date"=>$data["subTextDate"], ":level"=>$data["subTextLevel"]));
 	}
 }
