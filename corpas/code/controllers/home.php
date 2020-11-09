@@ -1,13 +1,14 @@
 <?php
 
-
 namespace controllers;
 use views;
 
-class index
+class home
 {
+
 	public function run() {
-		$view = new views\index();
+		$view = new views\home();
 		$view->show();
 	}
+
 }

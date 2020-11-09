@@ -3,7 +3,7 @@
 namespace views;
 use models;
 
-class corpus_search2
+class corpus_search
 {
 
 	private $_page = 1; // results page number
@@ -31,7 +31,7 @@ class corpus_search2
 	}
 
 	public function writeSearchForm() {
-		$minMaxDates = models\corpus_search2::getMinMaxDates(); // needs a rethink for individual texts
+		$minMaxDates = models\corpus_search::getMinMaxDates(); // needs a rethink for individual texts
 		echo <<<HTML
 		  <ul class="nav nav-pills nav-justified" style="padding-bottom: 0px;">
 			  <li class="nav-item"><a class="nav-link" href="?m=corpus&a=browse&id={$_GET["id"]}">browse</a></li>
@@ -158,7 +158,7 @@ HTML;
 		models\slips::writeSlipDiv();
 		//Add a back link to originating script
 		echo <<<HTML
-        <p><a href="index2.php?m=corpus&a=search&id={$_GET["id"]}" title="Back to search">&lt; Back to search</a></p>
+        <p><a href="index.php?m=corpus&a=search&id={$_GET["id"]}" title="Back to search">&lt; Back to search</a></p>
 HTML;
 
 		if ($this->_view == "dictionary") {
@@ -297,7 +297,7 @@ HTML;
 	}
 
 	private function _writeDictionaryView() { // added by MM
-		$model = new models\corpus_search2();
+		$model = new models\corpus_search();
 		$params = $_GET;
 		$params["pp"] = null; //don't limit the results - fetch them all
 		$searchResults = $model->getDBSearchResults($params);

@@ -3,7 +3,7 @@
 namespace views;
 use models;
 
-class writer2
+class writer
 {
 
 	private $_model;   // an instance of models\writer2
@@ -61,7 +61,7 @@ HTML;
 				<li class="nav-item"><div class="nav-link active">edit</div></li>
 		  </ul>
 			<hr/>
-			<form action="index2.php?m=writers&a=save&id={$writer->getId()}" method="post">
+			<form action="index.php?m=writers&a=save&id={$writer->getId()}" method="post">
 				<div class="form-group row">
 					<label for="surname_gd" class="col-sm-2 col-form-label">Gaelic surname</label>
 					<input type="text" class="form-control col-sm-4" name="surname_gd" id="surname_gd" value="{$writer->getSurnameGD()}">
@@ -205,7 +205,7 @@ HTML;
 	}
 
 	private function _getDistrictsHtml($writer) {
-		$districts = models\district2::getDistrictInfo();
+		$districts = models\district::getDistrictInfo();
 		$html = <<<HTML
 			<div class="form-group row">
 				<label for="district_1_id" class="col-sm-2 col-form-label">Origin</label>
@@ -251,7 +251,7 @@ HTML;
 		if (empty($origin)) {
 			return $html;
 		} else {
-			$district = new models\district2($origin);
+			$district = new models\district($origin);
 			$html = <<<HTML
 				<tr>
 					<td>origin</td>
@@ -259,7 +259,7 @@ HTML;
 HTML;
     $origin2 = $writer->getOrigin2();
     if (!empty($origin2)) {
-    	$district2 = new models\district2($origin2);
+    	$district2 = new models\district($origin2);
 			$html .= " (" . $district2->getName() . ")";
 		}
     $html .= <<<HTML

@@ -4,138 +4,195 @@ namespace models;
 
 class writer
 {
-  private $_uri, $_forenames, $_surname, $_nickname, $_yearOfBirth, $_yearOfDeath, $_origin;
-  private $_parent = [], $_children = [],  $_works = [];
 
-  public function __construct($uri) {
-    $this->_uri = $uri;
-    $this->_load();
-  }
+	private $_id; // obligatory
+	private $_surnameGD;
+	private $_forenamesGD;
+	private $_surnameEN;
+	private $_forenamesEN;
+	private $_title;
+	private $_nickname;
+	private $_yearOfBirth;
+	private $_yearOfDeath;
+	private $_origin, $_origin2;
+	private $_preferredName;
+	private $_notes;
+	private $_lastUpdated;
 
-  /**
-   * Loads the info from Fuseki and sets the class properties accordingly
-   */
+  private $_db; //an instance of models\database
+
+	public function __construct($id) {
+		$this->_db = isset($this->_db) ? $this->_db : new database();
+		$this->_id = $id;
+		if ($this->_id) {
+			$this->_load();   //loads data if there is an existing record
+		}
+	}
+
   private function _load() {
-    $uri = $this->_uri;
-    $query = <<<SPQR
-      SELECT DISTINCT ?surname ?forenames ?yob ?yod ?origin ?work ?title ?nickname ?parent ?psur ?pfore ?pnick ?sprog ?ssur ?sfore ?snick
-      WHERE
-      {
-        <{$uri}> :surnameGD ?surname .
-        <{$uri}> :forenamesGD ?forenames .
-        OPTIONAL { <{$uri}> :nickname ?nickname . }
-        OPTIONAL {
-          <{$uri}> :parent ?parent .
-          ?parent :surnameGD ?psur .
-          ?parent :forenamesGD ?pfore .
-          OPTIONAL { ?parent :nickname ?pnick . }
-        }
-        OPTIONAL { <{$uri}> :yob ?yob . }
-        OPTIONAL { <{$uri}> :yod ?yod . }
-        OPTIONAL { <{$uri}> :where ?origin . }
-        OPTIONAL {
-          ?work dc:creator <{$uri}> .
-          ?work dc:title ?title .
-        }
-        OPTIONAL {
-          ?sprog :parent <{$uri}> .
-          ?sprog :surnameGD ?ssur .
-          ?sprog :forenamesGD ?sfore .
-          OPTIONAL { ?sprog :nickname ?snick . }
-        }
-      }
-SPQR;
-    $spqr = new sparqlquery();
-    $results = $spqr->getQueryResults($query);
-    $this->_forenames = $results[0]->forenames->value;
-    $this->_surname = $results[0]->surname->value;
-    $this->_nickname = $results[0]->nickname->value;
-    $this->_yearOfBirth = $results[0]->yob->value;
-    $this->_yearOfDeath = $results[0]->yod->value;
-    $this->_origin = $results[0]->origin->value;
-    $this->_setParent($results);
-    $this->_setChildren($results);
-    $this->_setWorks($results);
-  }
+		$sql = <<<SQL
+			SELECT surname_gd, forenames_gd, surname_en, forenames_en, title, nickname, yob, yod,
+					district_1_id, district_2_id, preferred_name, notes, lastUpdated
+				FROM writer
+				WHERE id = :id
+SQL;
+		$results = $this->_db->fetch($sql, array(":id" => $this->getId()));
+		$writerData = $results[0];
+		$this->_setSurnameGD($writerData["surname_gd"]);
+		$this->_setForenamesGD($writerData["forenames_gd"]);
+		$this->_setSurnameEN($writerData["surname_en"]);
+		$this->_setForenamesEN($writerData["forenames_en"]);
+		$this->_setTitle($writerData["title"]);
+		$this->_setNickname($writerData["nickname"]);
+		$this->_setYearOfBirth($writerData["yob"]);
+		$this->_setYearOfDeath($writerData["yod"]);
+		$this->_setOrigin($writerData["district_1_id"]);
+	  $this->_setOrigin2($writerData["district_2_id"]);
+		$this->_setPreferredName($writerData["preferred_name"]);
+		$this->_setNotes($writerData["notes"]);
+		$this->_setLastUpdated($writerData["lastUpdated"]);
+	}
 
-  private function _setParent($results) {
-    if (!$results[0]->parent->value) {
-      return;
-    }
-    $this->_parent["uri"] = $results[0]->parent->value;
-    $this->_parent["forenames"] = $results[0]->pfore->value;
-    $this->_parent["surname"] = $results[0]->psur->value;
-    $this->_parent["nickname"] = $results[0]->pnick->value;
-  }
+	// SETTERS
 
-  private function _setChildren($results) {
-    foreach ($results as $nextResult) {
-      if ($uri = $nextResult->sprog->value) {
-        $this->_children[$uri]["forenames"] = $nextResult->sfore->value;
-        $this->_children[$uri]["surname"] = $nextResult->ssur->value;
-        if ($nextResult->snick->value!='') {
-          $this->_children[$uri]["nickname"] = $nextResult->snick->value;
-        }
-      }
-    }
-  }
+	private function _setSurnameGD($name) {
+		$this->_surnameGD = $name;
+	}
 
-  private function _setWorks($results) {
-    foreach ($results as $nextResult) {
-      if ($nextResult->work->value!='') {
-        $this->_works[$nextResult->work->value] = $nextResult->title->value;
-      }
-    }
-  }
+	private function _setForenamesGD($names) {
+		$this->_forenamesGD = $names;
+	}
 
-  //Getters
+	private function _setSurnameEN($name) {
+		$this->_surnameEN = $name;
+	}
 
-  public function getURI() {
-    return $this->_uri;
-  }
+	private function _setForenamesEN($names) {
+		$this->_forenamesEN = $names;
+	}
 
-  public function getForenames() {
-    return $this->_forenames;
-  }
+	private function _setTitle($title) {
+		$this->_title = $title;
+	}
 
-  public function getSurname() {
-    return $this->_surname;
-  }
+	private function _setNickname($name) {
+		$this->_nickname = $name;
+	}
 
-  public function getNickname() {
-    return $this->_nickname;
-  }
+	private function _setYearOfBirth($year) {
+		$this->_yearOfBirth = $year;
+	}
 
-  public function getYearOfBirth() {
-    return $this->_yearOfBirth;
-  }
+	private function _setYearOfDeath($year) {
+		$this->_yearOfDeath = $year;
+	}
 
-  public function getYearOfDeath() {
-    return $this->_yearOfDeath;
-  }
+	private function _setOrigin($id) {
+		$this->_origin = $id;
+	}
 
-  public function getOrigin() {
-    return $this->_origin;
-  }
+	private function _setOrigin2($id) {
+		$this->_origin2 = $id;
+	}
 
-  /**
-   * @return array
-   */
-  public function getParent() {
-    return $this->_parent;
-  }
+	private function _setPreferredName($name) {
+		$this->_preferredName = $name;
+	}
 
-  /**
-   * @return array indexed by URI
-   */
-  public function getChildren() {
-    return $this->_children;
-  }
+	private function _setNotes($notes) {
+		$this->_notes = $notes;
+	}
 
-  /**
-   * @return array indexed by URI
-   */
-  public function getWorks() {
-    return $this->_works;
-  }
+	private function _setLastUpdated($timestamp) {
+		$this->_lastUpdated = $timestamp;
+	}
+
+	// GETTERS
+
+	public function getId() {
+		return $this->_id;
+	}
+
+	public function getSurnameGD() {
+		return $this->_surnameGD;
+	}
+
+	public function getForenamesGD() {
+		return $this->_forenamesGD;
+	}
+
+	public function getSurnameEN() {
+		return $this->_surnameEN;
+	}
+
+	public function getForenamesEN() {
+		return $this->_forenamesEN;
+	}
+
+	public function getTitle() {
+		return $this->_title;
+	}
+
+  public function getFullNameEN() {
+		return $this->getTitle() . ' ' . $this->getForenamesEN() . ' <strong>' . $this->getSurnameEN() . '</strong>';
+	}
+
+	public function getFullNameGD() {
+		return $this->getForenamesGD() . ' <strong>' . $this->getSurnameGD() . '</strong>';
+	}
+
+	public function getNickname() {
+		return $this->_nickname;
+	}
+
+	public function getYearOfBirth() {
+		return $this->_yearOfBirth;
+	}
+
+	public function getYearOfDeath() {
+		return $this->_yearOfDeath;
+	}
+
+	public function getLifeSpan() {
+		if ($this->getYearOfBirth() == "" && $this->getYearOfDeath() == "") { return ""; }
+		return $this->getYearOfBirth() . '–' . $this->getYearOfDeath();
+	}
+
+	public function getOrigin() {
+		return $this->_origin;
+	}
+
+	public function getOrigin2() {
+		return $this->_origin2;
+	}
+
+	public function getPreferredName() {
+		return $this->_preferredName;
+	}
+
+	public function getNotes() {
+		return $this->_notes;
+	}
+
+	public function getLastUpdated() {
+		return $this->_lastUpdated;
+	}
+
+	/**
+	 * Queries the database (on the fly to aid performance),
+	 *  creates and returns text objects for this writer
+	 * @return array of models\text objects
+	 */
+	public function getTexts() {
+		$texts = array();
+		$sql = <<<SQL
+			SELECT text_id FROM text_writer WHERE writer_id = :writerId
+SQL;
+		$results = $this->_db->fetch($sql, array(":writerId" => $this->getId()));
+		foreach ($results as $result) {
+			$texts[$result["text_id"]] = new corpus_browse($result["text_id"]);
+		}
+		return $texts;
+	}
+
 }

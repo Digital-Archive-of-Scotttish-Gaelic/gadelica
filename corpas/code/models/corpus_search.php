@@ -2,7 +2,7 @@
 
 namespace models;
 
-class corpus_search2
+class corpus_search
 {
 
 	//private $_id; // the id number for the text in the corpus being searched (obligatory)

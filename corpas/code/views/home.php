@@ -2,7 +2,7 @@
 
 namespace views;
 
-class home2
+class home
 {
 
 	public function show() {

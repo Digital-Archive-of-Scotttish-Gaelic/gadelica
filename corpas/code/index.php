@@ -1,46 +1,36 @@
 <?php
 namespace controllers;
 
-require_once "includes/htmlHeader.php";
+require_once "includes/htmlHeader.php"; // what do we think?
 
+$module = isset($_GET["m"]) ? $_GET["m"] : ""; // this doesn't do anything surely
 $action = isset($_GET["a"]) ? $_GET["a"] : "";
-$module = isset($_GET["m"]) ? $_GET["m"] : "";
-$controller = null;
+//$controller = null;
 
 switch ($module) {
 	case "corpus":
-		$controller = new corpus_sql();
+		$controller = new corpus();
+		$controller->run($action);
 		break;
-	case "text":
-		$textId = $_GET["textId"];
-		$controller = new text_sql($textId);
+	case "writers":
+		$controller = new writers();
+		$controller->run($action);
 		break;
-	case "writer":
-		$controller = new writer_sql();
+	/*
+	// TO COME
+	case "collection":
+		$controller = new collection();
 		break;
-	case "search":
-		$origin = "index.php?m=search";
-		$controller = new corpussearch($origin);
+	case "dictionary":
+		$controller = new dictionary();
 		break;
-	case "slips":
-		$controller = new slipbrowse();
-		break;
-	case "slip":
-		$slipId = !empty($_GET["auto_id"]) ? $_GET["auto_id"] : false;
-		$controller = new slip($slipId);
-		break;
-	case "entries":
-		$controller = new entries();
-		break;
-	case "docs":
+	case "documentation":
 		$controller = new documentation();
 		break;
+	*/
 	default:
-		$controller = new index();
+		$controller = new home();
+		$controller->run($action);
 }
 
-$controller->run($action);
-
-require_once "includes/htmlFooter.php";
-
-?>
+require_once "includes/htmlFooter.php"; // ditto

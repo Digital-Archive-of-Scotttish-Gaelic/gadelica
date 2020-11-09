@@ -4,7 +4,7 @@ namespace views;
 
 use models;
 
-class corpus_browse2
+class corpus_browse
 {
 	private $_model;   // an instance of models\corpus_browse2
 
@@ -48,7 +48,7 @@ HTML;
 		  $formHtml = $this->_getFormMetadataSectionHtml() . $this->_getFormSubTextSectionHtml() . $this->_getFormFilepathSectionHtml();
 		}
 		echo <<<HTML
-			<form action="index2.php?m=corpus&a=save&id={$this->_model->getID()}" method="post">
+			<form action="index.php?m=corpus&a=save&id={$this->_model->getID()}" method="post">
 				{$formHtml}
 				<button type="submit" class="btn btn-success">edit</button>
 			</form>
@@ -194,7 +194,7 @@ HTML;
 		$html = "<ul>";
 		$writerIds = $this->_model->getWriterIds();
 		foreach($writerIds as $writerId) {
-			$writer = new models\writer2($writerId);
+			$writer = new models\writer($writerId);
 			$name = empty($writer->getForenamesGD()) || empty($writer->getSurnameGD())
 				? $writer->getForenamesEN() . " " . $writer->getSurnameGD()
 				: $writer->getForenamesGD() . " " . $writer->getSurnameGD();

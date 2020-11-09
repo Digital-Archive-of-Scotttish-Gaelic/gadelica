@@ -2,7 +2,7 @@
 
 namespace models;
 
-class district2
+class district
 {
 	private $_id;
 	private $_name, $_notes;

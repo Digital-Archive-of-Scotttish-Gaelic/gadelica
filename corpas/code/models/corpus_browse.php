@@ -2,7 +2,7 @@
 
 namespace models;
 
-class corpus_browse2 // models a corpus text or subtext
+class corpus_browse // models a corpus text or subtext
 {
 
   private $_id; // the id number for the text in the corpus (obligatory)
@@ -61,7 +61,7 @@ SQL;
 	 * @param $id
 	 */
 	private function _setParentText($id) {
-		$this->_parentText = new corpus_browse2($id);
+		$this->_parentText = new corpus_browse($id);
 	}
 
 	private function _setTitle($title) {
@@ -92,7 +92,7 @@ SQL;
 		$results = $this->_db->fetch($sql, array(":id" => $this->getId()));
 		foreach ($results as $result) {
 			$this->_writerIds[] = $result["writer_id"];
-			$this->_writers[] = new writer2($result["writer_id"]);
+			$this->_writers[] = new writer($result["writer_id"]);
 		}
 	}
 
