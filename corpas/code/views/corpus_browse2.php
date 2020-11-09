@@ -152,9 +152,14 @@ HTML;
 
 	private function _writeRow($text) {
 		$writerHtml = $this->_formatWriters($text);
+		$levelColours = array(1 => "gold", 2 => "silver", 3 => "bronze");
+		$levelHtml = $text["level"] == 0 ? "" : <<<HTML
+			<i class="fas fa-star {$levelColours[$text["level"]]}"></i>
+HTML;
 		echo <<<HTML
       <tr>
         <td>#{$text["id"]}</td>
+        <td>{$levelHtml}</td>
         <td class="browseListTitle">
           <a href="?m=corpus&a=browse&id={$text["id"]}">{$text["title"]}</a>
         </td>
@@ -217,6 +222,7 @@ HTML;
 					<tr><td>title</td><td>{$this->_model->getTitle()}</td></tr>
 					{$this->_getWritersHtml()}
 					{$this->_getDateHtml()}
+					{$this->_getLevelHtml()}
 					{$this->_getParentTextHtml()}
 					{$this->_getMetadataLinkHtml()}
 					{$this->_getChildTextsHtml()}
@@ -224,6 +230,18 @@ HTML;
 			</table>
 			{$this->_model->getTransformedText()}
 HTML;
+	}
+
+	private function _getLevelHtml() {
+		if (!$this->_model->getLevel()) {
+			return "";
+		}
+		$levelColours = array(1 => "gold", 2 => "silver", 3 => "bronze");
+		$level = $this->_model->getLevel();
+		$levelHtml = <<<HTML
+			<i class="fas fa-star {$levelColours[$level]}"></i>
+HTML;
+		return "<tr><td>level</td><td>{$levelHtml}</td></tr>";
 	}
 
 	private function _getDateHtml() {
