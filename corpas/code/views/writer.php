@@ -117,13 +117,13 @@ HTML;
 		$snEN = $writer->getSurnameEN();
 		$snGD = $writer->getSurnameGD();
 		if ($snEN != "" && $snGD != "") {
-			$sn = $snEN . " / " . $snGD;
+			$sn = "<strong>" . $snEN . "</strong> / <strong>" . $snGD . "</strong>";
 		}
     else if ($snEN != "") {
-			$sn = $snEN;
+			$sn = "<strong>" . $snEN . "</strong>";
 		}
 		else {
-			$sn = $snGD;
+			$sn = "<strong>" . $snGD . "</strong>";
 		}
 		$html = <<<HTML
 			<tr>
@@ -138,13 +138,13 @@ HTML;
 		$fnEN = $writer->getForenamesEN();
 		$fnGD = $writer->getForenamesGD();
 		if ($fnEN != "" && $fnGD != "") {
-			$fn = $fnEN . " / " . $fnGD;
+			$fn = "<strong>" . $fnEN . "</strong> / <strong>" . $fnGD . "</strong>";
 		}
 		else if ($fnEN != "") {
-			$fn = $fnEN;
+			$fn = "<strong>" . $fnEN . "</strong>";
 		}
 		else {
-			$fn = $fnGD;
+			$fn = "<strong>" . $fnGD . "</strong>";
 		}
 		$html = <<<HTML
 			<tr>
@@ -187,7 +187,7 @@ HTML;
 
 	private function _getLifeSpanHtml($writer) {
 		$html = "";
-		/*
+		/* ???????????
 		if (empty($writer->getLifeSpan())) {
 			return $html;
 		} else {
@@ -260,7 +260,7 @@ HTML;
     $origin2 = $writer->getOrigin2();
     if (!empty($origin2)) {
     	$district2 = new models\district($origin2);
-			$html .= " (" . $district2->getName() . ")";
+			$html .= " / " . $district2->getName();
 		}
     $html .= <<<HTML
 					</td>

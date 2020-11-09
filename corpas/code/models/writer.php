@@ -14,7 +14,8 @@ class writer
 	private $_nickname;
 	private $_yearOfBirth;
 	private $_yearOfDeath;
-	private $_origin, $_origin2;
+	private $_origin;
+	private $_origin2;
 	private $_preferredName;
 	private $_notes;
 	private $_lastUpdated;
@@ -31,8 +32,7 @@ class writer
 
   private function _load() {
 		$sql = <<<SQL
-			SELECT surname_gd, forenames_gd, surname_en, forenames_en, title, nickname, yob, yod,
-					district_1_id, district_2_id, preferred_name, notes, lastUpdated
+			SELECT *
 				FROM writer
 				WHERE id = :id
 SQL;

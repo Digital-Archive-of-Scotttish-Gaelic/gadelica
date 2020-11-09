@@ -12,14 +12,14 @@ class writers
 
 		switch ($action) {
 			case "browse":
-				if ($id == "0") {
+				if ($id == "0") { // list all writers
 					$model = new models\writers();
 					$view = new views\writers($model);
 					$view->show();
-				} else {
+				} else { // view particular writer
 					$model = new models\writer($id);
-					$view = new views\writer($model,"browse");
-					$view->show();
+					$view = new views\writer($model);
+					$view->show("browse");
 				}
 				break;
 			case "add":

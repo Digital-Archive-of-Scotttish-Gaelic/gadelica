@@ -15,23 +15,37 @@ class writers
   public function show() {
 			$html = "";
 			foreach ($this->_model->getAllWritersInfo() as $writerInfo) {
-				$origin = $writerInfo["district_1"];
-				$origin2 = $writerInfo["district_2"];
+				$origin = $writerInfo["district_1_id"];
+				$origin2 = $writerInfo["district_2_id"];
 				$districtHtml = "";
 				if (isset($origin)) {
 					$district = new models\district($origin);
-					$districtHtml = $district->getName();
-					if (isset($origin2)) {
+					$districtHtml = '<a href="?m=districts&a=browse&id=' . $origin . '">' . $district->getName() . '</a>';
+					if (isset($origin2) && $origin2 != "0") {
 						$district2 = new models\district($origin2);
-						$districtHtml .= " / " . $district2->getName();
+						$districtHtml .= ' / <a href="?m=districts&a=browse&id=' . $origin2 . '">' . $district2->getName() . '</a>';
 					}
+				}
+				$nameHtml = $writerInfo["title"] . " " . $writerInfo["forenames_en"] . " <strong>" . $writerInfo["surname_en"] . "</strong>";
+        $nameGdHtml = $writerInfo["forenames_gd"] . " " . $writerInfo["surname_gd"];
+        $nkname = $writerInfo["nickname"];
+				if ($nameGdHtml!=" " || $nkname!="") {
+					$nameHtml .= ' <span class="text-muted">(';
+					if ($nameGdHtml!=" ") {
+						$nameHtml .= $nameGdHtml;
+						if ($nkname!="") {
+							$nameHtml .= " / " . $nkname;
+						}
+					}
+					else {
+						$nameHtml .= $nkname;
+					}
+					$nameHtml .= ")</span>";
 				}
 				$html .= <<<HTML
 					<tr>
 						<td><a href="?m=writers&a=browse&id={$writerInfo["id"]}">@{$writerInfo["id"]}</a></td>
-						<td>{$writerInfo["title"]} {$writerInfo["forenames_en"]} <strong>{$writerInfo["surname_en"]}</strong></td>
-						<td>{$writerInfo["forenames_gd"]} <strong>{$writerInfo["surname_gd"]}</strong></td>
-						<td>{$writerInfo["nickname"]}</td>
+						<td>{$nameHtml}</td>
 						<td>{$this->_getLifeSpan($writerInfo)}</td>
 						<td>{$districtHtml}</td>
 					</tr>
@@ -39,7 +53,7 @@ HTML;
 			}
 			echo <<<HTML
 			  <ul class="nav nav-pills nav-justified" style="padding-bottom: 20px;">
-				  <li class="nav-item"><div class="nav-link active">browse</div></li>
+				  <li class="nav-item"><div class="nav-link active">view</div></li>
 				  <li class="nav-item"><a class="nav-link" href="?m=writers&a=add">add</a></li>
 			  </ul>
 				<table class="table">

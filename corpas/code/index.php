@@ -1,11 +1,10 @@
 <?php
 namespace controllers;
 
-require_once "includes/htmlHeader.php"; // what do we think?
+require_once "includes/htmlHeader.php";
 
 $module = isset($_GET["m"]) ? $_GET["m"] : ""; // this doesn't do anything surely
 $action = isset($_GET["a"]) ? $_GET["a"] : "";
-//$controller = null;
 
 switch ($module) {
 	case "corpus":
@@ -16,11 +15,15 @@ switch ($module) {
 		$controller = new writers();
 		$controller->run($action);
 		break;
-	/*
-	// TO COME
-	case "collection":
-		$controller = new collection();
+	case "districts":
+		$controller = new districts();
+		$controller->run($action);
 		break;
+	case "collection":
+		$controller = new collection(); // START HERE
+		$controller->run($action);
+		break;
+  /*
 	case "dictionary":
 		$controller = new dictionary();
 		break;

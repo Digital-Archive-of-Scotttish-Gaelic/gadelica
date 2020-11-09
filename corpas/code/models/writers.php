@@ -4,6 +4,7 @@ namespace models;
 
 class writers
 {
+
 	/**
 	 * Queries the database for writer info
 	 * @return array of results
@@ -11,7 +12,7 @@ class writers
 	public static function getAllWritersInfo() {
 		$db = new database();
 		$sql = <<<SQL
-			SELECT * FROM writer ORDER BY id ASC
+			SELECT * FROM writer ORDER BY surname_en ASC
 SQL;
 		$results = $db->fetch($sql);
 		return $results;
@@ -37,4 +38,5 @@ SQL;
 			":title"=>$data["title"], ":nickname"=>$data["nickname"], ":yob"=>$data["yob"], ":yod"=>$data["yod"],
 			":district_1_id"=>$data["district_1_id"], ":district_2_id"=>$data["district_2_id"], ":notes"=>$data["notes"]));
 	}
+
 }
