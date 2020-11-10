@@ -31,6 +31,21 @@ switch ($module) {
 		$controller = new documentation();
 		break;
 	*/
+	case "slips":
+		$controller = new slipbrowse();
+		$controller->run($action);
+		break;
+	case "slip":
+		$slipId = !empty($_GET["auto_id"]) ? $_GET["auto_id"] : false;
+		$controller = new slip($slipId);
+		$controller->run($action);
+		break;
+	case "entries":
+		$controller = new entries();
+		$controller->run($action);
+		break;
+	/**
+	**/
 	default:
 		$controller = new home();
 		$controller->run($action);

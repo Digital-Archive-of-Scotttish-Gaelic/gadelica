@@ -19,8 +19,7 @@ class writers
 				$origin2 = $writerInfo["district_2_id"];
 				$districtHtml = "";
 				if (isset($origin)) {
-					$district = new models\district($origin);
-					$districtHtml = '<a href="?m=districts&a=browse&id=' . $origin . '">' . $district->getName() . '</a>';
+					$districtHtml = '<a href="?m=districts&a=browse&id=' . $origin . '">' . $writerInfo["district1"]  . '</a>';
 					if (isset($origin2) && $origin2 != "0") {
 						$district2 = new models\district($origin2);
 						$districtHtml .= ' / <a href="?m=districts&a=browse&id=' . $origin2 . '">' . $district2->getName() . '</a>';

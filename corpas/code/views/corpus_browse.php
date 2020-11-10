@@ -94,6 +94,10 @@ HTML;
 						<label for="textLevel">Text Level</label>
 						{$levelHtml}
 					</div>
+					<div class="form-group">
+						<label for="textNotes">Text Notes</label>
+						<textarea id="textNotes" name="textNotes">{$this->_model->getNotes()}</textarea>
+					</div>
 HTML;
 		return $html;
 	}
@@ -123,10 +127,14 @@ HTML;
 					<label for="subTextDate">SubText Date</label>
 					<input class="form-control" type="text" name="subTextDate" id="subTextDate">
 				</div>
-				<div>
+				<div class="form-group">
 					<label for="subTextLevel">SubText Level</label>
 					{$levelHtml}
 				</div>
+				<div class="form-group">
+					<label for="textNotes">SubText Notes</label>
+					<textarea id="subTextNotes" name="subTextNotes"></textarea>
+				</div> 
 HTML;
 		return $html;
 	}
@@ -229,6 +237,7 @@ HTML;
 					{$this->_getWritersHtml()}
 					{$this->_getDateHtml()}
 					{$this->_getLevelHtml()}
+					{$this->_getNotesHtml()}
 					{$this->_getParentTextHtml()}
 					{$this->_getMetadataLinkHtml()}
 					{$this->_getChildTextsHtml()}
@@ -249,6 +258,14 @@ HTML;
 HTML;
 		return "<tr><td>level</td><td>{$levelHtml}</td></tr>";
 	}
+
+	private function _getNotesHtml() {
+		if (!$this->_model->getNotes()) {
+			return "";
+		}
+		return "<tr><td>notes</td><td>{$this->_model->getNotes()}</td></tr>";
+	}
+
 
 	private function _getDateHtml() {
 		if (!$this->_model->getDate()) {

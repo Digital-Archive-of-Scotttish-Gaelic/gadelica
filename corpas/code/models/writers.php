@@ -12,7 +12,10 @@ class writers
 	public static function getAllWritersInfo() {
 		$db = new database();
 		$sql = <<<SQL
-			SELECT * FROM writer ORDER BY surname_en ASC
+			SELECT w.id as id, surname_gd, forenames_gd, surname_en, forenames_en, preferred_name, title,
+					nickname, yob, yod, w.notes, district_1_id, district_2_id, d.name as district1 FROM writer w
+					JOIN districts d ON district_1_id = d.id
+					ORDER BY surname_en ASC
 SQL;
 		$results = $db->fetch($sql);
 		return $results;

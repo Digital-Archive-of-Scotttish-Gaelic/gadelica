@@ -6,7 +6,7 @@ use models;
 class writer
 {
 
-	private $_model;   // an instance of models\writer2
+	private $_model;   // an instance of models\writer
 
 	public function __construct($model) {
 		$this->_model = $model;
@@ -199,25 +199,21 @@ HTML;
 
 	private function _getLifeSpanHtml($writer) {
 		$html = "";
-		/* ???????????
 		if (empty($writer->getLifeSpan())) {
 			return $html;
 		} else {
-		*/
 			$html = <<<HTML
 				<tr>
 					<td>life</td>
 					<td>{$writer->getLifeSpan()}</td>
 				</tr>
 HTML;
-/*
 		}
-		*/
 		return $html;
 	}
 
 	private function _getDistrictsHtml($writer) {
-		$districts = models\district::getDistrictInfo();
+		$districts = models\districts::getAllDistrictsInfo();
 		$html = <<<HTML
 			<div class="form-group row">
 				<label for="district_1_id" class="col-sm-2 col-form-label">Origin</label>

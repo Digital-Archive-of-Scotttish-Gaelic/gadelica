@@ -8,7 +8,7 @@ class corpus_browse // models a corpus text or subtext
   private $_id; // the id number for the text in the corpus (obligatory)
 	private $_parentText; // the parent text of this text (optional) – an instance of models\corpus_browse2
   private $_title; // the title of the text (optional)
-  private $_date, $_level;
+  private $_date, $_level, $_notes;
   private $_filepath; // the path to the text XML (simple texts only)
   private $_transformedText; // simple texts only
   private $_writers = array();  //array of models\writer objects
@@ -29,7 +29,7 @@ class corpus_browse // models a corpus text or subtext
 	 */
 	private function _load() {
 		$sql = <<<SQL
-			SELECT title, partOf, filepath, date, level
+			SELECT title, partOf, filepath, date, level, notes
 				FROM text
 				WHERE id = :id
 SQL;
@@ -50,6 +50,9 @@ SQL;
 		}
 		if ($level = $textData["level"]) {
 			$this->_setLevel($level);
+		}
+		if ($notes = $textData["notes"]) {
+			$this->_setNotes($notes);
 		}
 		$this->_setWriters();
 	}
@@ -78,6 +81,10 @@ SQL;
 
 	private function _setLevel($level) {
 		$this->_level = $level;
+	}
+
+	private function _setNotes($notes) {
+		$this->_notes = $notes;
 	}
 
 	/**
@@ -112,6 +119,10 @@ SQL;
 
 	public function getLevel() {
 		return $this->_level;
+	}
+
+	public function getNotes() {
+		return $this->_notes;
 	}
 
 	/**
@@ -201,10 +212,11 @@ SQL;
 		//save the metadata
 	  if (!empty($data["textTitle"])) { //ensure there are form data to be saved
 			$sql = <<<SQL
-				UPDATE text SET title = :title, date = :date, filepath = :filepath, level = :level WHERE id = :id
+				UPDATE text SET title = :title, date = :date, filepath = :filepath, level = :level, notes = :notes 
+					WHERE id = :id
 SQL;
 			$this->_db->exec($sql, array(":id"=>$this->getId(), ":title"=>$data["textTitle"], ":date"=>$data["textDate"],
-				":filepath"=>$data["filepath"], ":level"=>$data["textLevel"]));
+				":filepath"=>$data["filepath"], ":level"=>$data["textLevel"], ":notes"=>$data["textNotes"]));
 			//save new writer ID
 		  if ($data["writerId"]) {
 			  $sql = <<<SQL
@@ -229,11 +241,11 @@ SQL;
 			$partOf = $this->getId();
 		}
 		$sql = <<<SQL
-			INSERT INTO text (id, title, partOf, filepath, date, level)
-				VALUES(:id, :title, :partOf, :filepath, :date, :level)
+			INSERT INTO text (id, title, partOf, filepath, date, level, notes)
+				VALUES(:id, :title, :partOf, :filepath, :date, :level, :notes)
 SQL;
 		$this->_db->exec($sql, array(
 			":id"=>$id, ":title"=>$data["subTextTitle"], ":partOf"=>$partOf, ":filepath"=>$data["filepath"],
-				":date"=>$data["subTextDate"], ":level"=>$data["subTextLevel"]));
+				":date"=>$data["subTextDate"], ":level"=>$data["subTextLevel"], ":notes"=>$data["subTextNotes"]));
 	}
 }

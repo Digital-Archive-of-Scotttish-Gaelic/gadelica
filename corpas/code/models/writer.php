@@ -195,4 +195,18 @@ SQL;
 		return $texts;
 	}
 
+	/**
+	 * Queries the database for text titles written by this writer
+	 * @return array of database results
+	 */
+	public function getTextTitles() {
+		$sql = <<<SQL
+			SELECT title FROM text t
+				JOIN text_writer tw ON tw.text_id = t.id
+				WHERE tw.writer_id = :writerId
+SQL;
+		$results = $this->_db->fetch($sql, array(":writerId" => $this->getId()));
+		return $results[0];
+	}
+
 }

@@ -37,6 +37,10 @@ SQL;
 
 	//Getters
 
+	public function getID() {
+		return $this->_id;
+	}
+
 	public function getName() {
 		return $this->_name;
 	}
@@ -44,20 +48,4 @@ SQL;
 	public function getNotes() {
 		return $this->_notes;
 	}
-
-	/**
-	 * Queries the database for district info
-	 * @return array of results
-	 */
-	public static function getDistrictInfo() {
-		$db = new database();
-		$sql = <<<SQL
-			SELECT id, name, notes FROM districts ORDER BY id ASC
-SQL;
-		$results = $db->fetch($sql);
-		return $results;
-	}
-
-
-
 }
