@@ -22,21 +22,27 @@ class writers
 					$view->show("browse");
 				}
 				break;
-			case "add":
-				$model = new models\writer(null); //create a dummy writer object
-				$view = new views\writer($model);
-				$view->show("edit");
-				break;
 			case "edit":
-				$model = new models\writer($id);
+			  if ($id == "0") { // add new writer
+				  $model = new models\writer(null); //create a dummy writer object
+			  } else { // edit existing writer
+				  $model = new models\writer($id);
+			  }
 				$view = new views\writer($model);
 				$view->show("edit");
 				break;
 			case "save":
 				models\writers::save($_POST);
-				$model = new models\writer($id);
-				$view = new views\writer($model);
-				$view->show("browse");
+				if (!$id) {
+					$model = new models\writers();
+					$view = new views\writers($model);
+					$view->show();
+				}
+				else {
+					$model = new models\writer($id);
+					$view = new views\writer($model);
+					$view->show("browse");
+				}
 				break;
 		}
 	}

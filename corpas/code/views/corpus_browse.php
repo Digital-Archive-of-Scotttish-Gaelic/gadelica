@@ -15,14 +15,20 @@ class corpus_browse
 	public function show() {
     echo <<<HTML
 		<ul class="nav nav-pills nav-justified" style="padding-bottom: 20px;">
-		  <li class="nav-item"><div class="nav-link active">view</div></li>
-		  <li class="nav-item"><a class="nav-link" href="?m=corpus&a=search&id={$this->_model->getId()}">search</a></li>
 HTML;
     if ($this->_model->getId()=="0") {
-			echo '<li class="nav-item"><a class="nav-link" href="?m=corpus&a=edit&id=' . $this->_model->getId() . '">add</a></li>';
+			echo <<<HTML
+			  <li class="nav-item"><div class="nav-link active">view corpus</div></li>
+		    <li class="nav-item"><a class="nav-link" href="?m=corpus&a=search&id=0">search corpus</a></li>
+			  <li class="nav-item"><a class="nav-link" href="?m=corpus&a=edit&id=0">add text</a></li>
+HTML;
 		}
 		else {
-			echo '<li class="nav-item"><a class="nav-link" href="?m=corpus&a=edit&id=' . $this->_model->getId() . '">edit</a></li>';
+			echo <<<HTML
+			<li class="nav-item"><div class="nav-link active">view text #{$this->_model->getId()}</div></li>
+		  <li class="nav-item"><a class="nav-link" href="?m=corpus&a=search&id={$this->_model->getId()}">search text #{$this->_model->getId()}</a></li>
+			<li class="nav-item"><a class="nav-link" href="?m=corpus&a=edit&id={$this->_model->getId()}">edit text #{$this->_model->getId()}</a></li>
+HTML;
 		}
 		echo <<<HTML
 		</ul>

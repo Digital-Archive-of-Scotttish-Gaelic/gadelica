@@ -26,8 +26,8 @@ class writer
 		$writer = $this->_model;
 		$html = <<<HTML
 			<ul class="nav nav-pills nav-justified" style="padding-bottom: 20px;">
-				<li class="nav-item"><div class="nav-link active">view</div></li>
-				<li class="nav-item"><a class="nav-link" href="?m=writers&a=edit&id={$this->_model->getId()}">edit</a></li>
+				<li class="nav-item"><div class="nav-link active">view writer @{$writer->getId()}</div></li>
+				<li class="nav-item"><a class="nav-link" href="?m=writers&a=edit&id={$this->_model->getId()}">edit writer @{$writer->getId()}</a></li>
 			</ul>
 			<table class="table">
 				<tbody>
@@ -57,8 +57,20 @@ HTML;
 		}
 		$html = <<<HTML
 		  <ul class="nav nav-pills nav-justified">
-			  <li class="nav-item"><a class="nav-link" href="?m=writers&a=browse&id={$this->_model->getId()}">view</a></li>
-				<li class="nav-item"><div class="nav-link active">edit</div></li>
+HTML;
+    if (!$writer->getId()) {
+			$html .= <<<HTML
+			<li class="nav-item"><a class="nav-link" href="?m=writers&a=browse">view writers</a></li>
+			<li class="nav-item"><div class="nav-link active">add writer</div></li>
+HTML;
+		}
+		else {
+			$html .= <<<HTML
+			<li class="nav-item"><a class="nav-link" href="?m=writers&a=browse&id={$this->_model->getId()}">view writer @{$this->_model->getId()}</a></li>
+			<li class="nav-item"><div class="nav-link active">edit writer @{$this->_model->getId()}</div></li>
+HTML;
+		}
+    $html .= <<<HTML
 		  </ul>
 			<hr/>
 			<form action="index.php?m=writers&a=save&id={$writer->getId()}" method="post">
@@ -255,12 +267,12 @@ HTML;
 			$html = <<<HTML
 				<tr>
 					<td>origin</td>
-					<td>{$district->getName()}
+					<td><a href="?m=districts&a=browse&id={$origin}">{$district->getName()}</a>
 HTML;
     $origin2 = $writer->getOrigin2();
     if (!empty($origin2)) {
     	$district2 = new models\district($origin2);
-			$html .= " / " . $district2->getName();
+			$html .= ' / <a href="?m=district&a=browse&id=' . $origin2 . '">' . $district2->getName();
 		}
     $html .= <<<HTML
 					</td>
