@@ -33,10 +33,22 @@ class corpus_search
 	public function writeSearchForm() {
 		$minMaxDates = models\corpus_search::getMinMaxDates(); // needs a rethink for individual texts
 		echo <<<HTML
-		  <ul class="nav nav-pills nav-justified" style="padding-bottom: 0px;">
-			  <li class="nav-item"><a class="nav-link" href="?m=corpus&a=browse&id={$_GET["id"]}">browse</a></li>
-				<li class="nav-item"><div class="nav-link active">search</div></li>
+		<ul class="nav nav-pills nav-justified" style="padding-bottom: 20px;">
 HTML;
+    if ($_GET["id"]=="0") {
+			echo <<<HTML
+			  <li class="nav-item"><a class="nav-link" href="?m=corpus&a=browse&id=0">view corpus</a></li>
+			  <li class="nav-item"><div class="nav-link active">searching corpus</div></li>
+			  <li class="nav-item"><a class="nav-link" href="?m=corpus&a=edit&id=0">add text</a></li>
+HTML;
+		}
+		else {
+			echo <<<HTML
+			  <li class="nav-item"><a class="nav-link" href="?m=corpus&a=browse&id={$_GET["id"]}">view text #{$_GET["id"]}</a></li>
+			  <li class="nav-item"><div class="nav-link active">searching text #{$_GET["id"]}</div></li>
+			  <li class="nav-item"><a class="nav-link" href="?m=corpus&a=edit&id={$_GET["id"]}">edit text #{$_GET["id"]}</a></li>
+HTML;
+    }
 		echo <<<HTML
 		  </ul>
 			<hr/>

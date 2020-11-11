@@ -52,7 +52,7 @@ HTML;
 			}
 			echo <<<HTML
 			  <ul class="nav nav-pills nav-justified" style="padding-bottom: 20px;">
-				  <li class="nav-item"><div class="nav-link active">view writers</div></li>
+				  <li class="nav-item"><div class="nav-link active">viewing writers</div></li>
 				  <li class="nav-item"><a class="nav-link" href="?m=writers&a=edit">add writer</a></li>
 			  </ul>
 				<table class="table">

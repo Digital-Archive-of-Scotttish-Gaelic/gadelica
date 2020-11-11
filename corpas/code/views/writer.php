@@ -26,7 +26,7 @@ class writer
 		$writer = $this->_model;
 		$html = <<<HTML
 			<ul class="nav nav-pills nav-justified" style="padding-bottom: 20px;">
-				<li class="nav-item"><div class="nav-link active">view writer @{$writer->getId()}</div></li>
+				<li class="nav-item"><div class="nav-link active">viewing writer @{$writer->getId()}</div></li>
 				<li class="nav-item"><a class="nav-link" href="?m=writers&a=edit&id={$this->_model->getId()}">edit writer @{$writer->getId()}</a></li>
 			</ul>
 			<table class="table">
@@ -61,13 +61,13 @@ HTML;
     if (!$writer->getId()) {
 			$html .= <<<HTML
 			<li class="nav-item"><a class="nav-link" href="?m=writers&a=browse">view writers</a></li>
-			<li class="nav-item"><div class="nav-link active">add writer</div></li>
+			<li class="nav-item"><div class="nav-link active">adding writer</div></li>
 HTML;
 		}
 		else {
 			$html .= <<<HTML
 			<li class="nav-item"><a class="nav-link" href="?m=writers&a=browse&id={$this->_model->getId()}">view writer @{$this->_model->getId()}</a></li>
-			<li class="nav-item"><div class="nav-link active">edit writer @{$this->_model->getId()}</div></li>
+			<li class="nav-item"><div class="nav-link active">editing writer @{$this->_model->getId()}</div></li>
 HTML;
 		}
     $html .= <<<HTML
