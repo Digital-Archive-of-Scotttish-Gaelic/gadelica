@@ -43,7 +43,6 @@ HTML;
 	}
 
 	public function edit() {
-		$formHtml = "";
 		if ($this->_model->getID() == "0") {
 			$formHtml = $this->_getFormSubTextSectionHtml();
 		} else if ($this->_model->getChildTextsInfo()) { //text has subTexts
@@ -54,10 +53,22 @@ HTML;
 		  $formHtml = $this->_getFormMetadataSectionHtml() . $this->_getFormSubTextSectionHtml() . $this->_getFormFilepathSectionHtml();
 		}
 		echo <<<HTML
-			<form action="index.php?m=corpus&a=save&id={$this->_model->getID()}" method="post">
+			<form id="corpusEdit" action="index.php?m=corpus&a=save&id={$this->_model->getID()}" method="post">
 				{$formHtml}
 				<button type="submit" class="btn btn-success">edit</button>
 			</form>
+
+		<!-- check to see if a user tries to leave the page without saving changes -->
+		<script>
+			let formChanged = false;
+			let corpusEdit = document.getElementById('corpusEdit');
+			corpusEdit.addEventListener('change', () => formChanged = true);
+			window.addEventListener('beforeunload', (event) => {
+        if (formChanged) {
+          event.returnValue = 'You have unsaved changes!';
+        }
+			});
+		</script>
 HTML;
 	}
 
@@ -337,7 +348,7 @@ HTML;
 	private function _writeJavascript() {
 		echo <<<HTML
     <script>
-      $(function () {
+      $(function () { 
         $('[data-toggle="tooltip"]').tooltip();
         hi = $('#meta').attr('data-hi');
         $('#'+hi).css('background-color', '#fcf8e3');

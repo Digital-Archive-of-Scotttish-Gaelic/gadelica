@@ -150,7 +150,7 @@ HTML;
 			$slipData = array();
 			foreach ($slipIds as $slipId) {
 				$index++;
-				$slipData[] = Slips::getSlipInfoBySlipId($slipId);
+				$slipData[] = models\slips::getSlipInfoBySlipId($slipId);
 			}
 			$html .= $this->_getSlipListHtml($slipData, $sense, "ind_".$index);
 		}
@@ -165,7 +165,7 @@ HTML;
 			$senseSlipIds = $entry->getSenseSlipIds($slipId);
 			foreach ($senseSlipIds as $id) {
 				$index++;
-				$slipData[] = Slips::getSlipInfoBySlipId($id);
+				$slipData[] = models\slips::getSlipInfoBySlipId($id);
 			}
 			$html .= $this->_getSlipListHtml($slipData, $sense, "grp_".$index);
 		}
