@@ -3,44 +3,52 @@ namespace controllers;
 
 require_once "includes/htmlHeader.php";
 
+$module = isset($_GET["m"]) ? $_GET["m"] : ""; // this doesn't do anything surely
 $action = isset($_GET["a"]) ? $_GET["a"] : "";
-$module = isset($_GET["m"]) ? $_GET["m"] : "";
-$controller = null;
 
 switch ($module) {
 	case "corpus":
 		$controller = new corpus();
+		$controller->run($action);
 		break;
-	case "text":
-		$uri = $_GET["uri"];
-		$controller = new text($uri);
+	case "writers":
+		$controller = new writers();
+		$controller->run($action);
 		break;
-	case "writer":
-		$controller = new writer();
+	case "districts":
+		$controller = new districts();
+		$controller->run($action);
 		break;
-	case "search":
-		$origin = "index.php?m=search";
-		$controller = new corpussearch($origin);
+	case "collection":
+		$controller = new collection(); // START HERE
+		$controller->run($action);
 		break;
+  /*
+	case "dictionary":
+		$controller = new dictionary();
+		break;
+	case "documentation":
+		$controller = new documentation();
+		break;
+	*/
 	case "slips":
 		$controller = new slipbrowse();
+		$controller->run($action);
 		break;
 	case "slip":
 		$slipId = !empty($_GET["auto_id"]) ? $_GET["auto_id"] : false;
 		$controller = new slip($slipId);
+		$controller->run($action);
 		break;
 	case "entries":
 		$controller = new entries();
+		$controller->run($action);
 		break;
-	case "docs":
-		$controller = new documentation();
-		break;
+	/**
+	**/
 	default:
-		$controller = new index();
+		$controller = new home();
+		$controller->run($action);
 }
 
-$controller->run($action);
-
-require_once "includes/htmlFooter.php";
-
-?>
+require_once "includes/htmlFooter.php"; // ditto
