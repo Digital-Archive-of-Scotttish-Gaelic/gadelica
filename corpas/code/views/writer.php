@@ -27,7 +27,13 @@ class writer
 		$html = <<<HTML
 			<ul class="nav nav-pills nav-justified" style="padding-bottom: 20px;">
 				<li class="nav-item"><div class="nav-link active">viewing writer @{$writer->getId()}</div></li>
-				<li class="nav-item"><a class="nav-link" href="?m=writers&a=edit&id={$this->_model->getId()}">edit writer @{$writer->getId()}</a></li>
+HTML;
+    if (TRUE) { // change to check for superuser
+			$html .= <<<HTML
+        <li class="nav-item"><a class="nav-link" href="?m=writers&a=edit&id={$this->_model->getId()}">edit writer @{$writer->getId()}</a></li>
+HTML;
+		}
+		$html .= <<<HTML
 			</ul>
 			<table class="table">
 				<tbody>
