@@ -167,7 +167,7 @@ HTML;
 	}
 
 	public function writeSearchResults($results, $resultTotal) {
-		models\slips::writeSlipDiv();
+		models\collection::writeSlipDiv();
 		//Add a back link to originating script
 		echo <<<HTML
         <p><a href="index.php?m=corpus&a=search&id={$_GET["id"]}" title="Back to search">&lt; Back to search</a></p>
@@ -355,7 +355,7 @@ HTML;
         </tbody>
       </table>
 HTML;
-		models\slips::writeSlipDiv();
+		models\collection::writeSlipDiv();
 		$this->_writeViewSwitch();
 		return;
 	}

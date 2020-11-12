@@ -18,7 +18,7 @@ switch ($_REQUEST["action"]) {
     echo json_encode($context);
     break;
 	case "getSlips":
-		$slipInfo = slips::getAllSlipInfo($_GET["offset"], $_GET["limit"], $_GET["search"], $_GET["sort"], $_GET["order"]);
+		$slipInfo = collection::getAllSlipInfo($_GET["offset"], $_GET["limit"], $_GET["search"], $_GET["sort"], $_GET["order"]);
 		echo json_encode($slipInfo);
 		break;
 	case "updatePrintList":
@@ -58,12 +58,12 @@ switch ($_REQUEST["action"]) {
     break;
   case "saveCategory":
     sensecategories::saveCategory($_POST["slipId"], $_POST["categoryName"]);
-    slips::touchSlip($_POST["slipId"]);
+    collection::touchSlip($_POST["slipId"]);
     echo "success";
     break;
   case "deleteCategory":
     sensecategories::deleteCategory($_POST["slipId"], $_POST["categoryName"]);
-    slips::touchSlip($_POST["slipId"]);
+    collection::touchSlip($_POST["slipId"]);
     echo "success";
     break;
 	case "renameSense":
@@ -99,7 +99,7 @@ switch ($_REQUEST["action"]) {
 			$_GET["slipId"], $_GET["grammar"]);
 		break;
 	case "requestUnlock":
-			slips::requestUnlock($_GET["slipId"], $_GET["owner"]);
+			collection::requestUnlock($_GET["slipId"], $_GET["owner"]);
 		break;
 	case "setGroup":
 		users::updateGroupLastUsed($_GET["groupId"]);

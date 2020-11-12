@@ -2,7 +2,7 @@
 
 namespace models;
 
-class slips
+class collection
 {
   /**
    * Get the slip info required for a browse table from the DB

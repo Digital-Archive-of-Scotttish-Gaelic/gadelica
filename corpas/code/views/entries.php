@@ -26,7 +26,7 @@ class entries
 				</div>
 			</div>
 HTML;
-    models\slips::writeSlipDiv();
+    models\collection::writeSlipDiv();
     $this->_writeSenseModal();
     $this->_writeJavascript();
   }
@@ -45,7 +45,7 @@ HTML;
 		  $slipData = array();
 	  	$formSlipIds = $entry->getFormSlipIds($slipId);
 			foreach ($formSlipIds as $id) {
-				$slipData[] = models\slips::getSlipInfoBySlipId($id);
+				$slipData[] = models\collection::getSlipInfoBySlipId($id);
 			}
 			$slipList = '<table class="table"><tbody>';
 			foreach($slipData as $data) {
@@ -135,7 +135,7 @@ HTML;
 			$index = 0;
 			foreach ($nonSenseSlipIds as $slipId) {
 				$index++;
-				$slipData[] = models\slips::getSlipInfoBySlipId($slipId);
+				$slipData[] = models\collection::getSlipInfoBySlipId($slipId);
 			}
 			$html .= $this->_getSlipListHtml($slipData, "uncategorised", "orp_" . $index);
 		}
@@ -150,7 +150,7 @@ HTML;
 			$slipData = array();
 			foreach ($slipIds as $slipId) {
 				$index++;
-				$slipData[] = models\slips::getSlipInfoBySlipId($slipId);
+				$slipData[] = models\collection::getSlipInfoBySlipId($slipId);
 			}
 			$html .= $this->_getSlipListHtml($slipData, $sense, "ind_".$index);
 		}
@@ -165,7 +165,7 @@ HTML;
 			$senseSlipIds = $entry->getSenseSlipIds($slipId);
 			foreach ($senseSlipIds as $id) {
 				$index++;
-				$slipData[] = models\slips::getSlipInfoBySlipId($id);
+				$slipData[] = models\collection::getSlipInfoBySlipId($id);
 			}
 			$html .= $this->_getSlipListHtml($slipData, $sense, "grp_".$index);
 		}
@@ -305,7 +305,7 @@ HTML;
                     data-title="{$result["title"]}"
                     data-page="{$result["page"]}"
                     data-resultindex="">
-                      view slip
+                      view
                 </a>
             </small>
 HTML;

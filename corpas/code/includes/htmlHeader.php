@@ -81,9 +81,9 @@ echo <<<HTML
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-					<a class="nav-item nav-link" title="browse corpus" href="?m=corpus&action=browse">browse</a>
-          <a class="nav-item nav-link" title="search corpus" href="?m=search&a=newSearch">search</a>
-			    <a class="nav-item nav-link" title="browse slips" href="?m=slips&a=browse">slips</a>
+					<a class="nav-item nav-link" title="browse corpus" href="?m=corpus&a=browse">browse</a>
+          <a class="nav-item nav-link" title="search corpus" href="?m=corpus&a=search&id=0">search</a>
+			    <a class="nav-item nav-link" title="browse collection" href="?m=collection&a=browse">collection</a>
 			    <a class="nav-item nav-link" title="browse entries" href="?m=entries&a=browse">entries</a>
 			    <a class="nav-item nav-link" title="RTFM" href="?m=docs&action=view">docs</a>
           <span class="loggedIn {$loggedInHide}">
