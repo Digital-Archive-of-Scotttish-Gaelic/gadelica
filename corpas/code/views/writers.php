@@ -13,6 +13,7 @@ class writers
 	}
 
   public function show() {
+		  $user = models\users::getUser($_SESSION["user"]);
 			$html = "";
 			foreach ($this->_model->getAllWritersInfo() as $writerInfo) {
 				$origin = $writerInfo["district_1_id"];
@@ -53,7 +54,13 @@ HTML;
 			echo <<<HTML
 			  <ul class="nav nav-pills nav-justified" style="padding-bottom: 20px;">
 				  <li class="nav-item"><div class="nav-link active">viewing writers</div></li>
+HTML;
+      if ($user->getSuperuser()) {
+        echo <<<HTML
 				  <li class="nav-item"><a class="nav-link" href="?m=writers&a=edit">add writer</a></li>
+HTML;
+      }
+      echo <<<HTML
 			  </ul>
 				<table class="table">
 					<tbody>

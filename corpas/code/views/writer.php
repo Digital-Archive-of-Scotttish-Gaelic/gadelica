@@ -30,7 +30,7 @@ class writer
 				<li class="nav-item"><div class="nav-link active">viewing writer @{$writer->getId()}</div></li>
 HTML;
 
-    if ($user->getSuperuser()) { // change to check for superuser
+    if ($user->getSuperuser()) {
 			$html .= <<<HTML
         <li class="nav-item"><a class="nav-link" href="?m=writers&a=edit&id={$this->_model->getId()}">edit writer @{$writer->getId()}</a></li>
 HTML;
@@ -54,6 +54,17 @@ HTML;
 	}
 
 	private function _showEdit() {
+		$user = models\users::getUser($_SESSION["user"]);
+		if (!$user->getSuperuser()) {
+      if (!$this->_model->getId()) {
+				$model = new models\writers();
+				$view = new writers($model);
+				$view->show();
+			} else {
+				$this->_showBrowse();
+			}
+			return;
+		}
 		$writer = $this->_model;
 		$preferredNameOptions = array("gd"=>"Gaelic", "en"=>"English", "nk"=>"Nickname");
 		$preferredNameHtml = "";

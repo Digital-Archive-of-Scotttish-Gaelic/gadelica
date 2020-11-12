@@ -50,6 +50,11 @@ class corpus
 				$view = new views\corpus_browse($model);
 				$view->show();
 				break;
+			case "generate":
+        $model = new models\corpus_generate($id);
+				$view = new views\corpus_generate($model);
+				$view->show();
+			  break;
 		}
   }
 

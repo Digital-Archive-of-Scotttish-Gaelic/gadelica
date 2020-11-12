@@ -13,6 +13,7 @@ class corpus_browse
 	}
 
 	public function show() {
+		$user = models\users::getUser($_SESSION["user"]);
     echo <<<HTML
 		<ul class="nav nav-pills nav-justified" style="padding-bottom: 20px;">
 HTML;
@@ -20,18 +21,32 @@ HTML;
 			echo <<<HTML
 			  <li class="nav-item"><div class="nav-link active">viewing corpus</div></li>
 		    <li class="nav-item"><a class="nav-link" href="?m=corpus&a=search&id=0">search corpus</a></li>
-			  <li class="nav-item"><a class="nav-link" href="?m=corpus&a=edit&id=0">add text</a></li>
+HTML;
+      if ($user->getSuperuser()) {
+				echo <<<HTML
+			    <li class="nav-item"><a class="nav-link" href="?m=corpus&a=edit&id=0">add text</a></li>
+HTML;
+      }
+			echo <<<HTML
+				<li class="nav-item"><a class="nav-link" href="?m=corpus&a=generate&id=0">corpus wordlist</a></li>
 HTML;
 		}
 		else {
 			echo <<<HTML
 			<li class="nav-item"><div class="nav-link active">viewing text #{$this->_model->getId()}</div></li>
 		  <li class="nav-item"><a class="nav-link" href="?m=corpus&a=search&id={$this->_model->getId()}">search text #{$this->_model->getId()}</a></li>
-			<li class="nav-item"><a class="nav-link" href="?m=corpus&a=edit&id={$this->_model->getId()}">edit text #{$this->_model->getId()}</a></li>
+HTML;
+      if ($user->getSuperuser()) {
+				echo <<<HTML
+			    <li class="nav-item"><a class="nav-link" href="?m=corpus&a=edit&id={$this->_model->getId()}">edit text #{$this->_model->getId()}</a></li>
+HTML;
+      }
+      echo <<<HTML
+			<li class="nav-item"><a class="nav-link" href="?m=corpus&a=generate&id={$this->_model->getId()}">text #{$this->_model->getId()} wordlist</a></li>
 HTML;
 		}
 		echo <<<HTML
-		</ul>
+		  </ul>
 HTML;
     if ($this->_model->getId() == "0") {
 			$this->_showCorpus();
@@ -43,6 +58,11 @@ HTML;
 	}
 
 	public function edit() {
+		$user = models\users::getUser($_SESSION["user"]);
+		if (!$user->getSuperuser()) {
+			$this->show();
+			return;
+		}
 		echo <<<HTML
 		<ul class="nav nav-pills nav-justified" style="padding-bottom: 20px;">
 HTML;
@@ -51,6 +71,7 @@ HTML;
 				<li class="nav-item"><a class="nav-link" href="?m=corpus&a=browse&id=0">view corpus</a></li>
 				<li class="nav-item"><a class="nav-link" href="?m=corpus&a=search&id=0">search corpus</a></li>
 				<li class="nav-item"><div class="nav-link active">adding text</div></li>
+				<li class="nav-item"><a class="nav-link" href="?m=corpus&a=generate&id=0">corpus wordlist</a></li>
 HTML;
 		}
 		else {
@@ -58,6 +79,7 @@ HTML;
 			  <li class="nav-item"><a class="nav-link" href="?m=corpus&a=browse&id={$this->_model->getId()}">view text #{$this->_model->getId()}</a></li>
 			  <li class="nav-item"><a class="nav-link" href="?m=corpus&a=search&id={$this->_model->getId()}">search text #{$this->_model->getId()}</a></li>
 			  <li class="nav-item"><div class="nav-link active">editing text #{$this->_model->getId()}</div></li>
+				<li class="nav-item"><a class="nav-link" href="?m=corpus&a=generate&id={$this->_model->getId()}">text #{$this->_model->getId()} wordlist</a></li>
 HTML;
 		}
 		echo <<<HTML
