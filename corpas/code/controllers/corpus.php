@@ -46,6 +46,7 @@ class corpus
 			case "save":
 				$model = new models\corpus_browse($id);
 				$model->save($_POST);
+				$model = new models\corpus_browse($id);
 				$view = new views\corpus_browse($model);
 				$view->show();
 				break;
