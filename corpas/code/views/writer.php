@@ -23,12 +23,14 @@ class writer
 	}
 
   private function _showBrowse() {
+	  $user = models\users::getUser($_SESSION["user"]);
 		$writer = $this->_model;
 		$html = <<<HTML
 			<ul class="nav nav-pills nav-justified" style="padding-bottom: 20px;">
 				<li class="nav-item"><div class="nav-link active">viewing writer @{$writer->getId()}</div></li>
 HTML;
-    if (TRUE) { // change to check for superuser
+
+    if ($user->getSuperuser()) { // change to check for superuser
 			$html .= <<<HTML
         <li class="nav-item"><a class="nav-link" href="?m=writers&a=edit&id={$this->_model->getId()}">edit writer @{$writer->getId()}</a></li>
 HTML;
