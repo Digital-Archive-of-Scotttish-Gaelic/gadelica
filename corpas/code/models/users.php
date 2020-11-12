@@ -9,7 +9,7 @@ class users
     $dbh = $db->getDatabaseHandle();
     try {
       $sth = $dbh->prepare("SELECT `password`, `salt`, `firstname`, `lastname`, `slip_admin`, 
-        `passwordAuth`, UNIX_TIMESTAMP(`last_logged_in`) AS last_logged_in, 
+        `passwordAuth`, `superuser`, UNIX_TIMESTAMP(`last_logged_in`) AS last_logged_in, 
 				UNIX_TIMESTAMP(`updated`) AS updated FROM user WHERE email = :email;");
       $sth->execute(array(":email"=>$email));
       $row = $sth->fetch();
@@ -20,6 +20,7 @@ class users
       $user->setLastName($row['lastname']);
       $user->setIsSlipAdmin($row['slip_admin']);
       $user->setPasswordAuth($row['passwordAuth']);
+      $user->setSuperuser($row["superuser"]);
       $user->setUpdated($row["updated"]);
       self::_setGroups($user);  //set the user's groups
       return $user;
@@ -83,11 +84,11 @@ SQL;
     $dbh = $db->getDatabaseHandle();
     try {
       $sth = $dbh->prepare("REPLACE INTO user(email, password, salt, firstname, lastname, slip_admin, passwordAuth, last_logged_in) VALUES 
-				(:email, :password, :salt, :firstname, :lastname, :slip_admin, :passwordAuth, now())");
+				(:email, :password, :salt, :firstname, :lastname, :slip_admin, :passwordAuth, :superuser, now())");
       $sth->execute(array(":email"=>$user->getEmail(),
         ":password"=>$user->getPassword(), ":salt"=>$user->getSalt(), ":firstname"=>$user->getFirstName(),
-        ":lastname"=>$user->getLastName(),
-        ":slip_admin"=>$user->getIsSlipAdmin(), ":passwordAuth"=>$user->getPasswordAuth()));
+        ":lastname"=>$user->getLastName(), ":slip_admin"=>$user->getIsSlipAdmin(),
+        ":superuser"=>$user->getSuperuser(), ":passwordAuth"=>$user->getPasswordAuth()));
     } catch (PDOException $e) {
       echo $e->getMessage();
     }

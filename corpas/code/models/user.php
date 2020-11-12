@@ -5,7 +5,7 @@ namespace models;
 class user
 {
   private $email, $password, $salt, $firstName, $lastName,
-    $isSlipAdmin, $passwordAuth, $lastLoggedIn, $updated;
+    $isSlipAdmin, $passwordAuth, $superuser, $lastLoggedIn, $updated;
   private $_lastUsedGroup;  //an instance of UserGroup
   private $_groups = array(); //an array of UserGroup objects
 
@@ -74,6 +74,14 @@ class user
 
   public function getPasswordAuth() {
     return $this->passwordAuth;
+  }
+
+  public function getSuperuser() {
+  	return $this->superuser;
+  }
+
+  public function setSuperuser($flag) {
+  	$this->superuser = $flag;
   }
 
   public function setPasswordAuth($auth) {
