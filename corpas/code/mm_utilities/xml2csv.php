@@ -5,6 +5,8 @@ namespace models;
 require_once "../includes/include.php";
 require_once "../models/database.php";
 
+ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_reporting(E_ALL);
+
 $titles = array();
 $media = array();
 $dates = array();
