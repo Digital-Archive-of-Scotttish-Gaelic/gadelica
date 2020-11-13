@@ -98,6 +98,7 @@ if (getcwd()=='/Users/stephenbarrett/Sites/gadelica/corpas/code/mm_utilities') {
 }
 else if (getcwd()=='/Users/mark/Sites/gadelica/corpas/code/mm_utilities') {
 	$path = '../../xml';
+	//$path = '../../xml/83_Mairi_Mhor_nan_Oran';
 }
 $it = new \RecursiveDirectoryIterator($path);
 foreach (new \RecursiveIteratorIterator($it) as $nextFile) {
@@ -135,7 +136,7 @@ foreach (new \RecursiveIteratorIterator($it) as $nextFile) {
 				$medium = "prose";
 			}
 			echo $medium;
-			
+
 			echo PHP_EOL;
 		}
 	}
