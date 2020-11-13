@@ -48,7 +48,9 @@ HTML;
 		echo <<<HTML
 		  </ul>
 HTML;
-		foreach ($this->_model->getLexemes() as $nextLexeme) {
+    $lexemes = $this->_model->getLexemes();
+		echo count($lexemes) . '<br/><br/>';
+		foreach ($lexemes as $nextLexeme) {
     	echo $nextLexeme . '<br/>';
     }
 
