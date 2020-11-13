@@ -72,25 +72,33 @@ SQL;
         $lemma = $nextResult["lemma"];
         $pos = $nextResult["pos"];
         if (substr($pos,0,1)=='n') {
-          $oot[] = $lemma . '|' . 'n';
+          $oot[] = $lemma . '|' . 'noun';
         }
         else if (substr($pos,0,1)=='v' || substr($pos,0,1)=='V') {
-          $oot[] = $lemma . '|' . 'v';
+          $oot[] = $lemma . '|' . 'verb';
         }
         else if (substr($pos,0,1)=='a') {
-          $oot[] = $lemma . '|' . 'a';
+          $oot[] = $lemma . '|' . 'adjective';
         }
         else if (substr($pos,0,1)=='A') {
-          $oot[] = $lemma . '|' . 'adv';
+          $oot[] = $lemma . '|' . 'adverb';
         }
         else if (substr($pos,0,1)=='p' || substr($pos,0,1)=='P') {
-          $oot[] = $lemma . '|' . 'p';
+          $oot[] = $lemma . '|' . 'preposition';
         }
       }
-
     }
-    $oot2 = array_unique($oot);
-    usort($oot2,'models\functions::gdSort');
+    //usort($oot,'models\functions::gdSort');
+    $oot2 = [];
+    foreach ($oot as $nextLexeme) {
+      if ($oot2[$nextLexeme]) {
+        $oot2[$nextLexeme]++;
+      }
+      else {
+        $oot2[$nextLexeme] = 1;
+      }
+    }
+    arsort($oot2);
     return $oot2;
   }
 

@@ -49,11 +49,20 @@ HTML;
 		  </ul>
 HTML;
 		$lexemes = $this->_model->getLexemes();
-		echo count($lexemes) . '<br/><br/>';
-		foreach ($lexemes as $nextLexeme) {
-    	echo $nextLexeme . '<br/>';
+		$count = count($lexemes);
+    echo <<<HTML
+		  <p>{$count} lexemes</p>
+      <table class="table">
+				<tbody>
+HTML;
+		foreach ($lexemes as $nextLexeme=>$nextCount) {
+			$bits = explode('|',$nextLexeme);
+    	echo '<tr><td><strong>' . $bits[0] . '</strong></td><td>' . $bits[1] . '</td><td>' . $nextCount . '</td></tr>';
     }
-
+		echo <<<HTML
+	      </tbody>
+      </table>
+HTML;
 	}
 
 }
