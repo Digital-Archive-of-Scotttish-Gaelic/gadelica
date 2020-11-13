@@ -48,12 +48,9 @@ HTML;
 		echo <<<HTML
 		  </ul>
 HTML;
-    if ($this->_model->getId() == "0") {
-
-		}
-		else {
-
-		}
+		foreach ($this->_model->getLexemes() as $nextLexeme) {
+    	echo $nextLexeme . '<br/>';
+    }
 
 	}
 

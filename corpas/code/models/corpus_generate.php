@@ -6,23 +6,83 @@ class corpus_generate
 {
 
   private $_id; // the id number for the text in the corpus (obligatory)
-	private $_parentText; // the parent text of this text (optional) – an instance of models\corpus_browse2
-  private $_title; // the title of the text (optional)
-  private $_date, $_level, $_notes;
-  private $_filepath; // the path to the text XML (simple texts only)
-  private $_transformedText; // simple texts only
-  private $_writers = array();  //array of models\writer objects
-	private $_writerIds = array();  //array of writer IDs for quicker performance when required
+  private $_filepaths = []; // an array of XML filepaths
+  private $_lexemes = []; // an array of headwords
 
 	private $_db;   // an instance of models\database
 
 	public function __construct($id) {
 		$this->_db = isset($this->_db) ? $this->_db : new database();
 		$this->_id = $id;
-		if ($id != "0") { // not the root corpus node, i.e. a text
-			$this->_load();
-		}
+		$this->_filepaths = $this->_getFilepaths($id);
+    $this->_lexemes = $this->_getLexemes();
 	}
+
+  private function _getFilepaths($id) {
+    $sql = <<<SQL
+      SELECT filepath
+        FROM text
+        WHERE id = :id
+SQL;
+    $results = $this->_db->fetch($sql, array(":id" => $id));
+    $textData = $results[0];
+    if ($textData["filepath"]) {
+      return [$textData["filepath"]];
+    }
+    else if ($id=="0") {
+      $oot = [];
+      $sql = <<<SQL
+        SELECT filepath
+          FROM text
+SQL;
+      $results = $this->_db->fetch($sql, array());
+      foreach ($results as $nextResult) {
+        if ($nextResult["filepath"]) {
+          $oot[] = $nextResult["filepath"];
+        }
+      }
+      return $oot;
+    }
+    else {
+      $oot = [];
+      $sql = <<<SQL
+        SELECT id
+          FROM text
+          WHERE partOf = :id
+SQL;
+      $results = $this->_db->fetch($sql, array(":id" => $id));
+      foreach ($results as $nextResult) {
+        $oot2 = array_merge($oot,$this->_getFilepaths($nextResult["id"]));
+        $oot = $oot2;
+      }
+      return $oot;
+    }
+  }
+
+  private function _getLexemes() {
+    $oot = [];
+    foreach ($this->_filepaths as $nextFilepath) {
+      $text = new \SimpleXMLElement("../xml/" . $nextFilepath, 0, true);
+      $text->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/');
+  		foreach ($text->xpath("//dasg:w") as $nextWord) {
+        $lemma = (string)$nextWord["lemma"];
+        $pos = (string)$nextWord["pos"];
+        if (substr($pos,0,1)=='n') {
+          $oot[] = $lemma . '|' . 'n';
+        }
+        else if (substr($pos,0,1)=='v' || substr($pos,0,1)=='V') {
+          $oot[] = $lemma . '|' . 'v';
+        }
+
+
+      }
+    }
+    //usort($oot,'Functions::gdSort'); ??????????/
+    sort($oot);
+    $oot2 = array_unique($oot);
+    return $oot2;
+  }
+
 
 	/**
 	 * Populates the object from the DB
@@ -59,105 +119,18 @@ SQL;
 
 	// SETTERS
 
-	/**
-	 * Creates a new text instance for parent text
-	 * @param $id
-	 */
-	private function _setParentText($id) {
-		$this->_parentText = new corpus_browse($id);
-	}
-
-	private function _setTitle($title) {
-		$this->_title = $title;
-	}
-
-	private function _setFilepath($filepath) {
-		$this->_filepath = $filepath;
-	}
-
-	private function _setDate($date) {
-		$this->_date = $date;
-	}
-
-	private function _setLevel($level) {
-		$this->_level = $level;
-	}
-
-	private function _setNotes($notes) {
-		$this->_notes = $notes;
-	}
-
-	/**
-	 * Populates the array of models\writer objects for this text
-	 */
-	private function _setWriters() {
-		$sql = <<<SQL
-			SELECT writer_id
-				FROM text_writer
-				WHERE text_id = :id
-SQL;
-		$results = $this->_db->fetch($sql, array(":id" => $this->getId()));
-		foreach ($results as $result) {
-			$this->_writerIds[] = $result["writer_id"];
-			$this->_writers[] = new writer($result["writer_id"]);
-		}
-	}
-
 	// GETTERS
 
 	public function getId() {
 		return $this->_id;
 	}
 
-	public function getTitle() {
-		return $this->_title;
-	}
-
-	public function getDate() {
-		return $this->_date;
-	}
-
-	public function getLevel() {
-		return $this->_level;
-	}
-
-	public function getNotes() {
-		return $this->_notes;
-	}
-
-	/**
-	 * @return models\text object
-	 */
-	public function getParentText() {
-		return $this->_parentText;
-	}
-
-  public function getWriters() {
-    return $this->_writers;
+  public function getFilepaths() {
+    return $this->_filepaths;
   }
 
-  public function getWriterIds() {
-		return $this->_writerIds;
-  }
-
-  public function getFilepath() {
-    return $this->_filepath;
-  }
-
-  public function getTransformedText() {
-    $this->_transformedText = $this->_applyXSLT();
-    return $this->_transformedText;
-  }
-
-  private function _applyXSLT() {
-    if ($this->getFilepath() != '') {
-      $text = new \SimpleXMLElement("../xml/" . $this->getFilepath(), 0, true);
-      $xsl = new \DOMDocument;
-      $xsl->load('corpus.xsl');
-      $proc = new \XSLTProcessor;
-      $proc->importStyleSheet($xsl);
-      return $proc->transformToXML($text);
-    }
+  public function getLexemes() {
+    return $this->_lexemes;
   }
 
 	/**
@@ -176,76 +149,5 @@ SQL;
 		return $childTextsInfo;
 	}
 
-  /**
-   * Queries the DB for a list of text info
-   * @return array of text and writer information
-   */
-  public function getTextList() {
-    $sql = <<<SQL
-      SELECT * FROM text WHERE partOf = '' ORDER BY CAST(id AS UNSIGNED) ASC
-SQL;
-    foreach ($this->_db->fetch($sql) as $textResult) {
-      $textsInfo[$textResult["id"]] = $textResult;
-      $sql = <<<SQL
-        SELECT * FROM writer
-          JOIN text_writer ON writer_id = id
-          WHERE text_id = :textId
-SQL;
-      $writerResults = $this->_db->fetch($sql, array(":textId" => $textResult["id"]));
-      $textsInfo[$textResult["id"]]["writers"] = $writerResults;
-    }
-    return $textsInfo;
-  }
 
-	/**
-	 * Saves text info to the database
-	 * @param array $data the post data from the form
-	 */
-  public function save($data) {
-  	if (!isset($data["filepath"])) {
-  		$data["filepath"] = "";
-	  }
-  	//add a subText if required
-		if (!empty($data["subTextId"])) {
-			$this->_insertSubText($data);
-		}
-		//save the metadata
-	  if (!empty($data["textTitle"])) { //ensure there are form data to be saved
-			$sql = <<<SQL
-				UPDATE text SET title = :title, date = :date, filepath = :filepath, level = :level, notes = :notes
-					WHERE id = :id
-SQL;
-			$this->_db->exec($sql, array(":id"=>$this->getId(), ":title"=>$data["textTitle"], ":date"=>$data["textDate"],
-				":filepath"=>$data["filepath"], ":level"=>$data["textLevel"], ":notes"=>$data["textNotes"]));
-			//save new writer ID
-		  if ($data["writerId"]) {
-			  $sql = <<<SQL
-					INSERT INTO text_writer (text_id, writer_id) VALUES(:textId, :writerId)
-SQL;
-			  $this->_db->exec($sql, array(":textId" => $this->getId(), ":writerId" => $data["writerId"]));
-	    }
-	  }
-  }
-
-	/**
-	 * Saves a new subtext record to the database
-	 * @param array $data the form data for the new subtext record
-	 */
-	private function _insertSubText($data) {
-		$partOf = "";
-		//check if top level text or not
-		if ($this->getId() == 0) {  //top level text
-			$id = $data["subTextId"];
-		} else {       //not a top level text
-			$id = $this->getId() . "-" . $data["subTextId"];
-			$partOf = $this->getId();
-		}
-		$sql = <<<SQL
-			INSERT INTO text (id, title, partOf, filepath, date, level, notes)
-				VALUES(:id, :title, :partOf, :filepath, :date, :level, :notes)
-SQL;
-		$this->_db->exec($sql, array(
-			":id"=>$id, ":title"=>$data["subTextTitle"], ":partOf"=>$partOf, ":filepath"=>$data["filepath"],
-				":date"=>$data["subTextDate"], ":level"=>$data["subTextLevel"], ":notes"=>$data["subTextNotes"]));
-	}
 }
