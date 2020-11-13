@@ -134,9 +134,10 @@ SQL;
 		try {
 			$sql = <<<SQL
         SELECT s.filename as filename, s.id as id, auto_id, pos, lemma, preContextScope, postContextScope,
-                translation, date_of_lang, title, page, starred
+                translation, date_of_lang, l.title AS title, page, starred, t.id AS tid
             FROM slips s
             JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
+            JOIN text t ON s.filename = t.filepath
             WHERE group_id = {$_SESSION["groupId"]} AND s.auto_id = :slipId
             ORDER BY auto_id ASC
 SQL;

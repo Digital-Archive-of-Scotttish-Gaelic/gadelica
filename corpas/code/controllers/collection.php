@@ -15,7 +15,7 @@ class collection
 		    $view->show();
 		    break;
 	    case "edit":
-		    $slip = new models\slip($_GET["filename"], $_GET["lemma_id"], $id, $_GET["pos"]);
+		    $slip = new models\slip($_GET["filename"], $_GET["wid"], $id, $_GET["pos"]);
 		    $view = new views\slip($slip);
 		    $view->show("edit");
 	    	break;

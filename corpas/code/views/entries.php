@@ -67,6 +67,7 @@ HTML;
 					<tr id="#slip_{$row["auto_id"]}" data-slipid="{$row["auto_id"]}"
 							data-filename="{$row["filename"]}"
 							data-id="{$row["id"]}"
+							data-tid="{$row["tid"]}"
 							data-precontextscope="{$row["preContextScope"]}"
 							data-postcontextscope="{$row["postContextScope"]}"
 							data-date="{$row["date_of_lang"]}">
@@ -194,6 +195,7 @@ HTML;
 					<tr id="#slip_{$row["auto_id"]}" data-slipid="{$row["auto_id"]}"
 							data-filename="{$row["filename"]}"
 							data-id="{$row["id"]}"
+							data-tid="{$row["tid"]}"
 							data-precontextscope="{$row["preContextScope"]}"
 							data-postcontextscope="{$row["postContextScope"]}"
 							data-date="{$row["date_of_lang"]}">
@@ -363,18 +365,19 @@ HTML;
 			      var date = $(this).attr('data-date');
 			      var html = '<span class="text-muted">' + date + '.</span> ';
 			      var filename = $(this).attr('data-filename');
-			      var id = $(this).attr('data-id');
+			      var wid = $(this).attr('data-id');
+			      var tid = $(this).attr('data-tid');
 			      var preScope  = $(this).attr('data-precontextscope');
 			      var postScope = $(this).attr('data-postcontextscope');
 			      var tr = $(this);
 			      var title = tr.prop('title');
-			      var url = 'ajax.php?action=getContext&filename='+filename+'&id='+id+'&preScope='+preScope;
+			      var url = 'ajax.php?action=getContext&filename='+filename+'&id='+wid+'&preScope='+preScope;
 			      url += '&postScope='+postScope;
 			      $.getJSON(url, function (data) {
 			        $('.spinner').show();
 			        var preOutput = data.pre["output"];
 			        var postOutput = data.post["output"];
-			        var url = 'viewText.php?uri=' + data.uri + '&id=' + id; //with the wordId
+			        var url = 'index.php?m=corpus&a=browse&id=' + tid + '&wid=' + wid; //title id and word id
 			        tr.find('.entryCitationTextLink').attr('href', url); //add the link to text url
 			        html += preOutput;
 			        if (data.pre["endJoin"] != "right" && data.pre["endJoin"] != "both") {

@@ -185,7 +185,7 @@ $(function () {
     var pos = $('#slipPOS').val();
     var auto_id = $('#auto_id').val();
     var url = '?m=collection&a=edit&id=' + auto_id + '&filename=' + filename + '&&headword=' + headword;
-    url += '&pos=' + pos + '&lemma_id=' + id;
+    url += '&pos=' + pos + '&wid=' + id;
     var win = window.open(url, '_blank');
     if (win) {
       //Browser has allowed it to be opened

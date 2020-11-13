@@ -280,7 +280,7 @@ HTML;
 				<td>{$result["date_of_lang"]}</td>
         <td style="text-align: right;">{$context["pre"]["output"]}</td>
         <td style="text-align: center;">
-            <a href="?m=text&a=view&uri={$context["uri"]}&id={$result["id"]}"
+            <a href="?m=corpus&a=browse&id={$result["tid"]}&wid={$result["id"]}"
                     data-toggle="tooltip" data-html="true" title="{$title}">
                 {$context["word"]}
             </a>
