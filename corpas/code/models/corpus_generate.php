@@ -62,20 +62,32 @@ SQL;
   private function _getLexemes() {
     $oot = [];
     foreach ($this->_filepaths as $nextFilepath) {
-      $text = new \SimpleXMLElement("../xml/" . $nextFilepath, 0, true);
-      $text->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/');
-  		foreach ($text->xpath("//dasg:w") as $nextWord) {
-        $lemma = (string)$nextWord["lemma"];
-        $pos = (string)$nextWord["pos"];
+      $sql = <<<SQL
+        SELECT lemma, pos
+          FROM lemmas
+          WHERE filename = :fp
+SQL;
+      $results = $this->_db->fetch($sql, array(":fp" => $nextFilepath));
+      foreach ($results as $nextResult) {
+        $lemma = $nextResult["lemma"];
+        $pos = $nextResult["pos"];
         if (substr($pos,0,1)=='n') {
           $oot[] = $lemma . '|' . 'n';
         }
         else if (substr($pos,0,1)=='v' || substr($pos,0,1)=='V') {
           $oot[] = $lemma . '|' . 'v';
         }
-
-
+        else if (substr($pos,0,1)=='a') {
+          $oot[] = $lemma . '|' . 'a';
+        }
+        else if (substr($pos,0,1)=='A') {
+          $oot[] = $lemma . '|' . 'adv';
+        }
+        else if (substr($pos,0,1)=='p' || substr($pos,0,1)=='P') {
+          $oot[] = $lemma . '|' . 'p';
+        }
       }
+
     }
     $oot2 = array_unique($oot);
     usort($oot2,'models\functions::gdSort');
