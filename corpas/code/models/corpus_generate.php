@@ -77,9 +77,8 @@ SQL;
 
       }
     }
-    //usort($oot,'Functions::gdSort'); ??????????/
-    sort($oot);
     $oot2 = array_unique($oot);
+    usort($oot2,'models\functions::gdSort');
     return $oot2;
   }
 
