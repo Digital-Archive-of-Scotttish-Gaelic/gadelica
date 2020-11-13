@@ -6,7 +6,7 @@ require_once "../includes/include.php";
 require_once "../models/database.php";
 
 $titles = array();
-$media = array();
+//$media = array();
 $dates = array();
 
 //get all the text info
@@ -96,6 +96,9 @@ $path = '/var/www/html/dasg.arts.gla.ac.uk/www/gadelica/corpas/xml';
 if (getcwd()=='/Users/stephenbarrett/Sites/gadelica/corpas/code/mm_utilities') {
 	$path = '../../xml';
 }
+else if (getcwd()=='/Users/mark/Sites/gadelica/corpas/code/mm_utilities') {
+	$path = '../../xml';
+}
 $it = new \RecursiveDirectoryIterator($path);
 foreach (new \RecursiveIteratorIterator($it) as $nextFile) {
 	if ($nextFile->getExtension()=='xml') {
@@ -106,6 +109,8 @@ foreach (new \RecursiveIteratorIterator($it) as $nextFile) {
 			if ($lemma) { echo $lemma . ','; }
 			else { echo $nextWord . ','; }
 			if (getcwd()=='/Users/stephenbarrett/Sites/gadelica/corpas/code/mm_utilities') {
+				$filename = substr($nextFile,10);
+			} else if (getcwd()=='/Users/mark/Sites/gadelica/corpas/code/mm_utilities') {
 				$filename = substr($nextFile,10);
 			} else {
 				$filename = substr($nextFile,58);
@@ -122,8 +127,15 @@ foreach (new \RecursiveIteratorIterator($it) as $nextFile) {
 			$nextWord->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/');
 			$pageNum = $nextWord->xpath("preceding::dasg:pb[1]/@n");
 			echo $pageNum[0] . ",";
-			if ($media[$filename]) { echo $media[$filename]; }
-			else { echo '7777'; }
+			$medium = "other";
+			if ($nextWord->xpath("ancestor::dasg:lg")) {
+				$medium = "verse";
+			}
+			else if ($nextWord->xpath("ancestor::dasg:p")) {
+				$medium = "prose";
+			}
+			echo $medium;
+			
 			echo PHP_EOL;
 		}
 	}
