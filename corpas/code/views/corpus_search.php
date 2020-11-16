@@ -14,9 +14,9 @@ class corpus_search
 
 	public function show() {
 		if ($this->_model->getTerm()) {
-			$this->_writeSearchResults();
+			$this->_writeSearchResults();   //there is a search term so run the search
 		} else {
-			$this->_writeSearchForm();
+			$this->_writeSearchForm();  //no search term so show the form
 		}
 	}
 

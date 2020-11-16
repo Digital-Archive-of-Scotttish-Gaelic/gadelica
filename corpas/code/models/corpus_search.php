@@ -101,6 +101,7 @@ class corpus_search
 */
 
 	/**
+	 * TODO: add in the actual XML file handling here (currently in the view)
 	 * Processes the array of database results and searches through the XML corpus for matches
 	 * @return array of results
 	 */
