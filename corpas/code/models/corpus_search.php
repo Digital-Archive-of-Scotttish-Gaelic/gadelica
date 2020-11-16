@@ -87,7 +87,7 @@ SQL;
 
 		$sql = <<<SQL
         SELECT SQL_CALC_FOUND_ROWS  {$selectFields} FROM lemmas AS l
-          LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id AND group_id = {$_SESSION["groupId"]}
+          LEFT JOIN slip s ON l.filename = s.filename AND l.id = s.id AND group_id = {$_SESSION["groupId"]}
           JOIN text t ON t.filepath = l.filename {$textJoinSql}
           WHERE {$whereClause}
 SQL;
