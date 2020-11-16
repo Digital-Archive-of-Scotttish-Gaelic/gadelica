@@ -267,8 +267,8 @@ HTML;
 			$slipLinkText = "view";
 			$createSlipStyle = "";
 			$modalCode = 'data-toggle="modal" data-target="#slipModal"';
-		} else {
-			$slipUrl = "?m=slip&filename=" . $this->_xmlFile->getFilename() . "&id=".$result["id"];
+		} else {    //there is no slip so show link for adding one
+			$slipUrl = "?m=collection&a=add&filename=" . $this->_xmlFile->getFilename() . "&wid=".$result["id"];
 			$slipUrl .= "&headword=".$result["lemma"] . "&pos=" . $result["pos"];
 			$slipLinkText = "add";
 			$createSlipStyle = "createSlipLink";

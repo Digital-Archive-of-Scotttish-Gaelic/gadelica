@@ -19,6 +19,11 @@ class collection
 		    $view = new views\slip($slip);
 		    $view->show("edit");
 	    	break;
+	    case "add":
+	    	$slip = new models\slip($_GET["filename"], $_GET["wid"], null, $_GET["pos"]);
+	    	$view = new views\slip($slip);
+	    	$view->show("edit");
+	    	break;
     }
   }
 }
