@@ -23,7 +23,7 @@ switch ($module) {
 		$controller = new corpussearch($origin);
 		break;
 	case "slips":
-		$controller = new slipbrowse();
+		$controller = new collection();
 		break;
 	case "slip":
 		$slipId = !empty($_GET["auto_id"]) ? $_GET["auto_id"] : false;

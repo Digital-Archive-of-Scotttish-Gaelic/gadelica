@@ -23,7 +23,7 @@ class slip
     $this->_filename = $filename;
     $this->_id = $id;
     //test if a slip already exists (if there is a slip with the same groupId, filename, id combination)
-    $this->_auto_id = $auto_id ? $auto_id : slips::slipExists($_SESSION["groupId"], $filename, $id);
+    $this->_auto_id = $auto_id ? $auto_id : collection::slipExists($_SESSION["groupId"], $filename, $id);
     $this->_pos = $pos;
     if (!isset($this->_db)) {
       $this->_db = new database();

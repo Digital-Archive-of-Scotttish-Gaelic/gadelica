@@ -29,7 +29,7 @@ class corpus_search
 	/**
 	 * Takes an array of database results and searches through the XML corpus for matches
 	 * @param $dbResults: the database result set
-	 * @return array
+	 * @return array of results
 	 */
 	public function getFileSearchResults($dbResults) {
 		$fileResults = array();
@@ -37,6 +37,7 @@ class corpus_search
 		foreach ($dbResults as $result) {
 			$id = $result["id"];
 			$fileResults[$i]["id"] = $id;
+			$fileResults[$i]["tid"] = $result["tid"];
 			$fileResults[$i]["lemma"] = $result["lemma"];
 			$fileResults[$i]["pos"] = $result["pos"];
 			$fileResults[$i]["date_of_lang"] = $result["date_of_lang"];
@@ -74,19 +75,20 @@ class corpus_search
 		} else {                              //case insensitive
 			$whereClause .= "wordform REGEXP ?";
 		}
-		$selectFields =  "lemma, l.filename AS filename, l.id AS id, wordform, pos, date_of_lang, l.title, page, medium, s.auto_id AS auto_id";
+		$selectFields =  "lemma, l.filename AS filename, l.id AS id, wordform, pos, date_of_lang, l.title, 
+			page, medium, s.auto_id AS auto_id, t.id AS tid";
 
 		$textJoinSql = "";
 		if ($params["id"]) {    //restrict to this text
 			$textJoinSql = <<<SQL
-				JOIN text t ON t.filepath = l.filename AND (t.id = '{$params["id"]}' OR t.id LIKE '{$params["id"]}-%')
+				 AND (t.id = '{$params["id"]}' OR t.id LIKE '{$params["id"]}-%')
 SQL;
 		}
 
 		$sql = <<<SQL
         SELECT SQL_CALC_FOUND_ROWS  {$selectFields} FROM lemmas AS l
           LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id AND group_id = {$_SESSION["groupId"]}
-          {$textJoinSql}
+          JOIN text t ON t.filepath = l.filename {$textJoinSql}
           WHERE {$whereClause}
 SQL;
 		return array("sql" => $sql, "search" => $search);
@@ -121,17 +123,16 @@ SQL;
 			$textJoinSql = "";
 			if ($params["id"]) {    //restrict to this text
 				$textJoinSql = <<<SQL
-				JOIN text t ON t.filepath = l.filename AND (t.id = '{$params["id"]}' OR t.id LIKE '{$params["id"]}-%')
+				 AND (t.id = '{$params["id"]}' OR t.id LIKE '{$params["id"]}-%')
 SQL;
 			}
 
-
 			$query["sql"] = <<<SQL
         SELECT SQL_CALC_FOUND_ROWS l.filename AS filename, l.id AS id, wordform, pos, lemma, date_of_lang, l.title,
-                page, medium, s.auto_id as auto_id, s.wordClass as wordClass
+                page, medium, s.auto_id as auto_id, s.wordClass as wordClass, t.id AS tid
             FROM lemmas AS l
             LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id AND group_id = {$_SESSION["groupId"]}
-            {$textJoinSql}
+            JOIN text t ON t.filepath = l.filename {$textJoinSql}
             WHERE lemma = ?
 
 SQL;

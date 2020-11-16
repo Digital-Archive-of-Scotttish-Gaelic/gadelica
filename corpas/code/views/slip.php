@@ -11,7 +11,15 @@ class slip
     $this->_slip = $slip;
   }
 
-  public function writeEditForm() {
+  public function show($action) {
+		switch ($action) {
+			case "edit":
+				$this->_writeEditForm();
+				break;
+		}
+  }
+
+  private function _writeEditForm() {
     $checked = $this->_slip->getStarred() ? "checked" : "";
     $locked = $this->_slip->getLocked();
     $lockHide = $unlockHide = "";

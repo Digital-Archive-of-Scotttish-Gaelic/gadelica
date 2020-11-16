@@ -184,8 +184,8 @@ $(function () {
     var headword = $('#slipHeadword').text();
     var pos = $('#slipPOS').val();
     var auto_id = $('#auto_id').val();
-    var url = '?m=slip&filename=' + filename + '&id=' + id + '&headword=' + headword;
-    url += '&pos=' + pos + '&auto_id=' + auto_id;
+    var url = '?m=collection&a=edit&id=' + auto_id + '&filename=' + filename + '&&headword=' + headword;
+    url += '&pos=' + pos + '&wid=' + id;
     var win = window.open(url, '_blank');
     if (win) {
       //Browser has allowed it to be opened

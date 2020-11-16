@@ -182,7 +182,7 @@ HTML;
 	}
 
 	public function writeSearchResults($results, $resultTotal) {
-		models\slips::writeSlipDiv();
+		models\collection::writeSlipDiv();
 		//Add a back link to originating script
 		echo <<<HTML
         <p><a href="index.php?m=corpus&a=search&id={$_GET["id"]}" title="Back to search">&lt; Back to search</a></p>
@@ -282,8 +282,8 @@ HTML;
 			$slipLinkText = "view";
 			$createSlipStyle = "";
 			$modalCode = 'data-toggle="modal" data-target="#slipModal"';
-		} else {
-			$slipUrl = "?m=slip&filename=" . $this->_xmlFile->getFilename() . "&id=".$result["id"];
+		} else {    //there is no slip so show link for adding one
+			$slipUrl = "?m=collection&a=add&filename=" . $this->_xmlFile->getFilename() . "&wid=".$result["id"];
 			$slipUrl .= "&headword=".$result["lemma"] . "&pos=" . $result["pos"];
 			$slipLinkText = "add";
 			$createSlipStyle = "createSlipLink";
@@ -295,7 +295,7 @@ HTML;
 				<td>{$result["date_of_lang"]}</td>
         <td style="text-align: right;">{$context["pre"]["output"]}</td>
         <td style="text-align: center;">
-            <a href="?m=text&a=view&uri={$context["uri"]}&id={$result["id"]}"
+            <a href="?m=corpus&a=browse&id={$result["tid"]}&wid={$result["id"]}"
                     data-toggle="tooltip" data-html="true" title="{$title}">
                 {$context["word"]}
             </a>
@@ -370,7 +370,7 @@ HTML;
         </tbody>
       </table>
 HTML;
-		models\slips::writeSlipDiv();
+		models\collection::writeSlipDiv();
 		$this->_writeViewSwitch();
 		return;
 	}
