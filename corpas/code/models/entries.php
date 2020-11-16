@@ -27,7 +27,7 @@ SQL;
 				$wordform = mb_strtolower($row["wordform"], "UTF-8");  //make all forms lowercase and ensure Unicode
 				$slipId = $row["auto_id"];
 				$entry->addForm($wordform, $slipId);
-				$slipMorphResults = slips::getSlipMorphBySlipId($slipId);
+				$slipMorphResults = collection::getSlipMorphBySlipId($slipId);
 				$entry->addSlipMorphString($wordform, $slipId, implode(' ', $slipMorphResults));
 			}
 		} catch (PDOException $e) {

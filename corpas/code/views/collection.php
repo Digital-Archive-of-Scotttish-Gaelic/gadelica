@@ -3,9 +3,17 @@
 namespace views;
 use models;
 
-class slipbrowse
+class collection
 {
-  public function writeBrowseTable() {
+	public function show($action = "browse", $id = null) {
+		switch ($action) {
+			case "browse":
+				$this->_writeBrowseTable();
+				break;
+		}
+	}
+
+  private function _writeBrowseTable() {
     echo <<<HTML
       <table id="table" data-toggle="table" data-ajax="ajaxRequest"
         data-search="true"
@@ -28,7 +36,7 @@ class slipbrowse
       <a href="printSlip.php?action=writePDF" target="_blank" id="printSlips" class="btn btn-primary disabled">print</a>
 HTML;
 
-    models\slips::writeSlipDiv();
+    models\collection::writeSlipDiv();
     $this->_writeJavascript();
   }
 
