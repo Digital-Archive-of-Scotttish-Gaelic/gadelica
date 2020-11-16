@@ -22,22 +22,29 @@ class corpus
 				$view->show();
 			  break;
 			case "search":
-				$view = new views\corpus_search(); // gets parameters from URL
+				$model = new models\corpus_search($_GET);
+				$view = new views\corpus_search($model);
+				$view->show();
+				break;
+
+/*
 				if (empty($_GET["term"])) {   //no search term so print the form
 					$view->writeSearchForm(); // prints HTML for form
 					break;
 				}
 				//there is a search term so run the search
-				$searchModel = new models\corpus_search();
-				$searchResults = $searchModel->getDBSearchResults($_GET); // move to model?
-				$resultCount = $searchResults["hits"];
-				$view->setHits($resultCount);
+				$searchModel = new models\corpus_search($_GET);
+//				$searchResults = $searchModel->getDBSearchResults($_GET); // move to model?
+//				$resultCount = $searchResults["hits"];
+//				$view->setHits($resultCount);
 				//fetch the results required for this page
-				$dbResults = $searchResults["results"];
+//				$dbResults = $searchResults["results"];
 				//fetch the results from file if corpus view
-				$results = ($_GET["view"] == "corpus") ? $searchModel->getFileSearchResults($dbResults) : $dbResults;
+//				$results = ($_GET["view"] == "corpus") ? $searchModel->getFileSearchResults($dbResults) : $dbResults;
+	$results = $searchModel->getResults();
+	$resultCount = count($results);
 				$view->writeSearchResults($results, $resultCount);
-				break;
+				break; */
 			case "edit":
 				$model = new models\corpus_browse($id);
 				$view = new views\corpus_browse($model);

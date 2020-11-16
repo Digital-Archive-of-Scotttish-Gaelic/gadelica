@@ -6,35 +6,111 @@ class corpus_search
 {
 
 	//private $_id; // the id number for the text in the corpus being searched (obligatory)
-	//private $_term; // the word being searched for (optional?)
+	private $_term; // the word being searched for (optional?)
 
 	private $_db; // an instance of models\database
+	private $_params; // an array of query string paramaters
+	private $_dbResults;  // an array of search results from the database
+	private $_perpage, $_page, $_mode, $_case, $_accent, $_lenition, $_view, $_date;
 
-	public function __construct() {
+	public function __construct($params) {
 		$this->_db = $this->_db ? $this->_db : new database();
+		$this->_params = $params;
+		if (!empty($params["term"])) {  //only run the search if there is a search term
+			$this->_dbResults = $this->_getDBSearchResults();
+		}
+		$this->_init();
 		//$this->_id = $id;
-		//$this->_term = $term;
+	}
+
+	/**
+	 * Sets the class properties
+	 */
+	private function _init() {
+		$params = $this->_params;
+		$this->_term        = isset($params["term"]) ? $params["term"] : null;
+		$this->_perpage     = isset($params["pp"]) ? $params["pp"] : 10;
+		$this->_page        = isset($params["page"]) ? $params["page"] : 1;
+		$this->_mode        = $params["mode"] == "wordform" ? "wordform" : "headword";
+		$this->_case        = $params["case"]; // model?
+		$this->_accent      = $params["accent"]; // model?
+		$this->_lenition    = $params["lenition"];  // model?
+		$this->_view        = (isset($params["view"])) ? $params["view"] : "corpus";
+		$this->_date        = (isset($params["date"])) ? $params["date"] : "random";
+	}
+
+	// GETTERS
+
+	public function getTerm() {
+		return $this->_term;
+	}
+
+	public function getPerPage() {
+		return $this->_perpage;
+	}
+
+	public function getPage() {
+		return $this->_page;
+	}
+
+	public function getMode() {
+		return $this->_mode;
+	}
+
+	public function getCase() {
+		return $this->_case;
+	}
+
+	public function getAccent() {
+		return $this->_accent;
+	}
+
+	public function getLenition() {
+		return $this->_lenition;
+	}
+
+	public function getView() {
+		return $this->_view;
+	}
+
+	public function getDate() {
+		return $this->_date;
+	}
+
+	/**
+	 * Returns an array of search results
+	 * -- If the view is "corpus" it returns the file results, otherwise it returns the
+	 *  database results --
+	 * @return array of results
+	 */
+	public function getResults() {
+		if ($this->_params["view"] == "corpus") {
+			return $this->_getFileSearchResults();
+		}
+		return $this->_dbResults["results"];
+	}
+
+	public function getResultCount() {
+		return $this->_dbResults["hits"];
 	}
 
 /*
 	public function getId() {
 		return $this->_id;
 	}
-
-	public function getTerm() {
-		return $this->_term;
-	}
 */
 
 	/**
-	 * Takes an array of database results and searches through the XML corpus for matches
-	 * @param $dbResults: the database result set
+	 * Processes the array of database results and searches through the XML corpus for matches
 	 * @return array of results
 	 */
-	public function getFileSearchResults($dbResults) {
+	private function _getFileSearchResults() {
 		$fileResults = array();
 		$i = 0;
-		foreach ($dbResults as $result) {
+
+		$filename = "";
+
+		foreach ($this->_dbResults["results"] as $result) {
 			$id = $result["id"];
 			$fileResults[$i]["id"] = $id;
 			$fileResults[$i]["tid"] = $result["tid"];
@@ -52,10 +128,10 @@ class corpus_search
 
 	/**
 	 * Form and return the query required for a wordform search
-	 * @param $params: the parameters required for the query
 	 * @return array: ("sql" => the SQL, "search" => the search term)
 	 */
-	private function _getWordformQuery($params) {
+	private function _getWordformQuery() {
+		$params = $this->_params;
 		$search = $params["term"];
 		$searchPrefix = "[[:<:]]";  //default to word boundary at start
 		if ($params["accent"] != "sensitive") {
@@ -99,7 +175,8 @@ SQL;
 	 * @param $params: the array of parameters for the query, i.e. pp, page, date, mode, term, id,
 	 * @return array ("hits" => number of hits, "results" => the result set)
 	 */
-	public function getDBSearchResults($params) {
+	private function _getDBSearchResults() {
+		$params = $this->_params;
 		$perpage = $params["pp"];
 		$pagenum = $params["page"];
 		$offset = $pagenum == 1 ? 0 : ($perpage * $pagenum) - $perpage;
@@ -161,19 +238,19 @@ SQL;
 		return array("results" => $results, "hits" => $hits[0]["hits"]);
 	}
 
-	private function _getDateWhereClause($params) {
-		$dates = explode('-', $params["selectedDates"]);
+	private function _getDateWhereClause() {
+		$dates = explode('-', $this->_params["selectedDates"]);
 		$whereClause = " AND date_of_lang >= {$dates[0]} AND date_of_lang <= {$dates[1]} ";
 		return $whereClause;
 	}
 
-	private function _getMediumWhereClause($params) {
+	private function _getMediumWhereClause() {
 		$whereClause = "";
-		if (!$params["medium"] || count($params["medium"]) == 3) {
+		if (!$this->_params["medium"] || count($this->_params["medium"]) == 3) {
 			return $whereClause;    //don't bother with restrictions if all selected
 		}
 		$whereClause = " AND (";
-		foreach ($params["medium"] as $medium) {
+		foreach ($this->_params["medium"] as $medium) {
 			$mediumString[] = " medium = '{$medium}' ";
 		}
 		$whereClause .= implode(" OR ", $mediumString);
@@ -181,9 +258,9 @@ SQL;
 		return $whereClause;
 	}
 
-	private function _getPOSWhereClause($params) {
+	private function _getPOSWhereClause() {
 		$whereClause = " AND (";
-		foreach ($params["pos"] as $pos) {
+		foreach ($this->_params["pos"] as $pos) {
 			$posString[] = " BINARY pos REGEXP '{$pos}\$|{$pos}[[:space:]]' ";
 		}
 		$whereClause .= implode(" OR ", $posString);

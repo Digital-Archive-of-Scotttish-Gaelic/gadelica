@@ -5,32 +5,22 @@ use models;
 
 class corpus_search
 {
-
-	private $_page = 1; // results page number
-	private $_hits = 0;
-	private $_perpage; // how many results per page
-	private $_search; // search term
-	private $_date; // how are results to be ordered
-	private $_mode, $_case, $_accent, $_lenition, $_view; // various other input parameters from search form
+	private $_model;  //an instance of models\corpus_search
 	private $_xmlFile;
 
-	public function __construct() {
-		$this->_search      = isset($_GET["term"]) ? $_GET["term"] : null; // model?
-		$this->_perpage     = isset($_GET["pp"]) ? $_GET["pp"] : 10;
-		$this->_page        = isset($_GET["page"]) ? $_GET["page"] : 1;
-		$this->_mode        = $_GET["mode"] == "wordform" ? "wordform" : "headword"; // model?
-		$this->_case        = $_GET["case"]; // model?
-		$this->_accent      = $_GET["accent"]; // model?
-		$this->_lenition    = $_GET["lenition"];  // model?
-		$this->_view        = (isset($_GET["view"])) ? $_GET["view"] : "corpus";
-		$this->_date        = (isset($_GET["date"])) ? $_GET["date"] : "random"; // model?
+	public function __construct($model) {
+		$this->_model = $model;
 	}
 
-	public function getView() {
-		return $this->_view;
+	public function show() {
+		if ($this->_model->getTerm()) {
+			$this->_writeSearchResults();
+		} else {
+			$this->_writeSearchForm();
+		}
 	}
 
-	public function writeSearchForm() {
+	private function _writeSearchForm() {
 		$user = models\users::getUser($_SESSION["user"]);
 		$minMaxDates = models\corpus_search::getMinMaxDates(); // needs a rethink for individual texts
 		echo <<<HTML
@@ -181,7 +171,9 @@ HTML;
 		return $posHtml;
 	}
 
-	public function writeSearchResults($results, $resultTotal) {
+	private function _writeSearchResults() {
+		$results = $this->_model->getResults();
+		$resultTotal = $this->_model->getResultCount();
 		models\collection::writeSlipDiv();
 		//Add a back link to originating script
 		echo <<<HTML
