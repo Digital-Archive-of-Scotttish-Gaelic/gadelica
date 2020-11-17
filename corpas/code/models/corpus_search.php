@@ -5,13 +5,13 @@ namespace models;
 class corpus_search
 {
 
-	//private $_id; // the id number for the text in the corpus being searched (obligatory)
-	private $_term; // the word being searched for (optional?)
-
+	private $_id; // the id number for the text in the corpus being searched
+	private $_term; // the word being searched for
 	private $_db; // an instance of models\database
-	private $_params; // an array of query string paramaters
+	private $_params; // an array of query string parameters
 	private $_dbResults;  // an array of search results from the database
 	private $_perpage, $_page, $_mode, $_case, $_accent, $_lenition, $_view, $_date;
+	private $_hits;
 
 	public function __construct($params) {
 		$this->_db = $this->_db ? $this->_db : new database();
@@ -20,7 +20,6 @@ class corpus_search
 			$this->_dbResults = $this->_getDBSearchResults();
 		}
 		$this->_init();
-		//$this->_id = $id;
 	}
 
 	/**
@@ -28,18 +27,23 @@ class corpus_search
 	 */
 	private function _init() {
 		$params = $this->_params;
+		$this->_id          = isset($params["id"]) ? $params["id"] : null;
 		$this->_term        = isset($params["term"]) ? $params["term"] : null;
 		$this->_perpage     = isset($params["pp"]) ? $params["pp"] : 10;
 		$this->_page        = isset($params["page"]) ? $params["page"] : 1;
 		$this->_mode        = $params["mode"] == "wordform" ? "wordform" : "headword";
-		$this->_case        = $params["case"]; // model?
-		$this->_accent      = $params["accent"]; // model?
-		$this->_lenition    = $params["lenition"];  // model?
+		$this->_case        = $params["case"];
+		$this->_accent      = $params["accent"];
+		$this->_lenition    = $params["lenition"];
 		$this->_view        = (isset($params["view"])) ? $params["view"] : "corpus";
 		$this->_date        = (isset($params["date"])) ? $params["date"] : "random";
 	}
 
 	// GETTERS
+
+	public function getId() {
+		return $this->_id;
+	}
 
 	public function getTerm() {
 		return $this->_term;
@@ -84,21 +88,15 @@ class corpus_search
 	 * @return array of results
 	 */
 	public function getResults() {
-		if ($this->_params["view"] == "corpus") {
+		if ($this->getView() == "corpus") {
 			return $this->_getFileSearchResults();
 		}
-		return $this->_dbResults["results"];
+		return $this->_dbResults;
 	}
 
-	public function getResultCount() {
-		return $this->_dbResults["hits"];
+	public function getHits() {
+		return $this->_hits;
 	}
-
-/*
-	public function getId() {
-		return $this->_id;
-	}
-*/
 
 	/**
 	 * TODO: add in the actual XML file handling here (currently in the view)
@@ -111,7 +109,7 @@ class corpus_search
 
 		$filename = "";
 
-		foreach ($this->_dbResults["results"] as $result) {
+		foreach ($this->_dbResults as $result) {
 			$id = $result["id"];
 			$fileResults[$i]["id"] = $id;
 			$fileResults[$i]["tid"] = $result["tid"];
@@ -173,8 +171,9 @@ SQL;
 
 	/**
 	 * Runs the query to get the corpus database result set
-	 * @param $params: the array of parameters for the query, i.e. pp, page, date, mode, term, id,
-	 * @return array ("hits" => number of hits, "results" => the result set)
+	 * Sets the number of hits in the results set
+	 * @param $params: the array of parameters for the query, e.g. pp, page, date, mode, term
+	 * @return array of database results
 	 */
 	private function _getDBSearchResults() {
 		$params = $this->_params;
@@ -236,7 +235,8 @@ SQL;
 
 		$results = $this->_db->fetch($query["sql"], array($query["search"]));
 		$hits = $this->_db->fetch("SELECT FOUND_ROWS() as hits;");
-		return array("results" => $results, "hits" => $hits[0]["hits"]);
+		$this->_hits = $hits[0]["hits"];
+		return $results;
 	}
 
 	private function _getDateWhereClause() {

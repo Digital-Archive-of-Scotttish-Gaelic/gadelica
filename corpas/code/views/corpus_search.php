@@ -173,18 +173,18 @@ HTML;
 
 	private function _writeSearchResults() {
 		$results = $this->_model->getResults();
-		$resultTotal = $this->_model->getResultCount();
+		$resultTotal = $this->_model->getHits();
 		models\collection::writeSlipDiv();
 		//Add a back link to originating script
 		echo <<<HTML
         <p><a href="index.php?m=corpus&a=search&id={$_GET["id"]}" title="Back to search">&lt; Back to search</a></p>
 HTML;
 
-		if ($this->_view == "dictionary") {
+		if ($this->_model->getView() == "dictionary") {
 			$this->_writeDictionaryView();
 			return;
 		}
-		$rowNum = $this->_page * $this->_perpage - $this->_perpage + 1;
+		$rowNum = $this->_model->getPage() * $this->_model->getPerPage() - $this->_model->getPerPage() + 1;
 		echo <<<HTML
         <table class="table">
             <tbody>
@@ -195,7 +195,7 @@ HTML;
 			foreach ($results as $result) {
 				if ($filename != $result["filename"]) {
 					$filename = $result["filename"];
-					$this->_xmlFile = new models\xmlfilehandler($filename);
+		//			$this->_xmlFile = new models\xmlfilehandler($filename);
 				}
 				echo <<<HTML
                 <tr>
@@ -224,10 +224,11 @@ HTML;
 	}
 
 	private function _writeResultsHeader($rowNum, $resultTotal) {
-		$lastDisplayedRowNum = $rowNum + $this->_perpage - 1;
+		$lastDisplayedRowNum = $rowNum + $this->_model->getPerPage() - 1;
 		$lastDisplayedRowNum = ($lastDisplayedRowNum > $resultTotal) ? $resultTotal : $lastDisplayedRowNum;
 		$html = <<<HTML
-        <p>[Showing results {$rowNum}–{$lastDisplayedRowNum} of {$resultTotal} for {$this->_mode} <strong>{$this->_search}</strong>
+        <p>[Showing results {$rowNum}–{$lastDisplayedRowNum} of {$resultTotal} 
+        for {$this->_model->getMode()} <strong>{$this->_model->getTerm()}</strong>
 HTML;
 		if (!empty($_GET["pos"][0])) {
 			$posString = implode(", ", $_GET["pos"]);
@@ -244,10 +245,13 @@ HTML;
 	}
 
 	private function _writeViewSwitch() {
-		$alternateView = ($this->_view == "corpus") ? "dictionary" : "corpus";
+		$alternateView = ($this->_model->getView() == "corpus") ? "dictionary" : "corpus";
+		$url = "index.php?m=corpus&a=search&mode={$this->_model->getMode()}";
+		$url .= "&term={$this->_model->getTerm()}&id={$this->_model->getId()}";
+		$url .= "&view={$alternateView}&hits={$this->_model->getHits()}";
 		echo <<<HTML
         <div id="viewSwitch">
-            <a href="?m=corpush&a=search&mode={$this->_mode}&term={$this->_search}&id={$_GET["id"]}&view={$alternateView}&hits={$this->_hits}}">
+            <a href="{$url}">
                 switch to {$alternateView} view
             </a>
         </div>
@@ -316,14 +320,13 @@ HTML;
 	}
 
 	private function _writeDictionaryView() { // added by MM
-		$model = new models\corpus_search();
-		$params = $_GET;
-		$params["pp"] = null; //don't limit the results - fetch them all
-		$searchResults = $model->getDBSearchResults($params);
-		echo '<h4>' . $searchResults["results"][0]['lemma'] . '</h4>';
-		echo '<h5>' . $searchResults["hits"] .' results</h5>';
+		$_GET["pp"] = null;   //don't limit the results - fetch them all
+		$model = new models\corpus_search($_GET);   //not at all sure about this approach - rethink
+		$searchResults = $model->getResults();
+		echo '<h4>' . $searchResults[0]['lemma'] . '</h4>';
+		echo '<h5>' . $this->_model->getHits() .' results</h5>';
 		$forms = [];
-		foreach ($searchResults["results"] as $nextResult) {
+		foreach ($searchResults as $nextResult) {
 			$forms[] = $nextResult['wordform'] . '|' . $nextResult['pos'];
 		}
 		$forms = array_unique($forms);
@@ -338,7 +341,7 @@ HTML;
 			echo '<tr><td>' . $array[0] . '</td><td>' . $array[1] . '</td><td>';
 			$i=0;
 			$locations = array();
-			foreach ($searchResults["results"] as $nextResult) {
+			foreach ($searchResults as $nextResult) {
 				if ($nextResult['wordform']==$array[0] && $nextResult['pos']==$array[1]) {
 					$i++;
 					$locations[] = $nextResult['filename'] . ' ' . $nextResult['id'] . ' '
@@ -395,16 +398,18 @@ HTML;
 				    Pagination handler
 			     */
 		          $("#pagination").pagination({
-				          currentPage: {$this->_page},
-		              items: {$resultTotal},
-		              itemsOnPage: {$this->_perpage},
+				          currentPage: {$this->_model->getPage()},
+		              items: {$this->_model->getHits()},
+		              itemsOnPage: {$this->_model->getPerPage()},
 		              cssStyle: "light-theme",
 		              onPageClick: function(pageNum) {
-                    var url = '?m=corpus&a=search&mode={$this->_mode}&pp={$this->_perpage}&page=' + pageNum + '&term={$this->_search}';
-                    url += '&id={$_GET["id"]}&case={$this->_case}&accent={$this->_accent}&lenition={$this->_lenition}';
-				            url += '&hits={$this->_hits}&view={$this->_view}';
-				            url += '&date={$this->_date}&selectedDates={$_GET["selectedDates"]}';
-                    url += '&hits={$this->_hits}';
+                    var url = '?m=corpus&a=search&mode={$this->_model->getMode()}';
+                    url += '&pp={$this->_model->getPerPage()}&page=' + pageNum + '&';
+                    url += 'term={$this->_model->getTerm()}';
+                    url += '&id={$this->_model->getId()}&case={$this->_model->getCase()}&';
+                    url += 'accent={$this->_model->getAccent()}&lenition={$this->_model->getLenition()}';
+				            url += '&hits={$this->_model->getHits()}&view={$this->_model->getView()}';
+				            url += '&date={$this->_model->getDate()}&selectedDates={$_GET["selectedDates"]}';
                     window.location.assign(url);
 		              }
 		          });
