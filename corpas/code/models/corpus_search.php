@@ -99,18 +99,21 @@ class corpus_search
 	}
 
 	/**
-	 * TODO: add in the actual XML file handling here (currently in the view)
-	 * Processes the array of database results and searches through the XML corpus for matches
+	 * Processes the array of database results and searches through the XML corpus to get the context
 	 * @return array of results
 	 */
 	private function _getFileSearchResults() {
 		$fileResults = array();
-		$i = 0;
-
 		$filename = "";
-
+		$fh = null; //an instance of xmlfilehandler
+		$i = 0;
 		foreach ($this->_dbResults as $result) {
 			$id = $result["id"];
+			if ($filename != $result["filename"]) { //check for the next file in the results list
+				$filename = $result["filename"];
+				$fh = new xmlfilehandler($filename);
+			}
+			$fileResults[$i]["context"] = $fh->getContext($id, 12, 12);
 			$fileResults[$i]["id"] = $id;
 			$fileResults[$i]["tid"] = $result["tid"];
 			$fileResults[$i]["lemma"] = $result["lemma"];

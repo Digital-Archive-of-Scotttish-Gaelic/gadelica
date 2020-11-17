@@ -6,7 +6,6 @@ use models;
 class corpus_search
 {
 	private $_model;  //an instance of models\corpus_search
-	private $_xmlFile;
 
 	public function __construct($model) {
 		$this->_model = $model;
@@ -193,10 +192,6 @@ HTML;
 			$this->_writeResultsHeader($rowNum, $resultTotal);
 			$filename = "";
 			foreach ($results as $result) {
-				if ($filename != $result["filename"]) {
-					$filename = $result["filename"];
-		//			$this->_xmlFile = new models\xmlfilehandler($filename);
-				}
 				echo <<<HTML
                 <tr>
                     <th scope="row">{$rowNum}</th>
@@ -216,7 +211,7 @@ HTML;
 			$this->_writeViewSwitch();
 		} else {
 			echo <<<HTML
-                <tr><th>Sorry, there were No results for <em>{$this->_search}</em></th></tr>
+                <tr><th>Sorry, there were No results for <em>{$this->_model->getTerm()}</em></th></tr>
 HTML;
 
 		}
@@ -260,7 +255,7 @@ HTML;
 
 	/* print out search result as table row */
 	private function _writeSearchResult($result, $index) {
-		$context = $this->_xmlFile->getContext($result["id"], 12, 12);
+		$context = $result["context"];
 		$pos = new models\partofspeech($result["pos"]);
 		$title = <<<HTML
         Headword: {$result["lemma"]}<br>
@@ -268,7 +263,7 @@ HTML;
         Date: {$result["date_of_lang"]}<br>
         Title: {$result["title"]}<br>
         Page No: {$result["page"]}<br><br>
-        {$this->_xmlFile->getFilename()}<br>{$result["id"]}
+        {$result["filename"]}<br>{$result["id"]}
 HTML;
 		//check if there is an existing slip for this entry
 		$slipUrl = "#";
@@ -279,7 +274,7 @@ HTML;
 			$createSlipStyle = "";
 			$modalCode = 'data-toggle="modal" data-target="#slipModal"';
 		} else {    //there is no slip so show link for adding one
-			$slipUrl = "?m=collection&a=add&filename=" . $this->_xmlFile->getFilename() . "&wid=".$result["id"];
+			$slipUrl = "?m=collection&a=add&filename=" . $result["filename"] . "&wid=".$result["id"];
 			$slipUrl .= "&headword=".$result["lemma"] . "&pos=" . $result["pos"];
 			$slipLinkText = "add";
 			$createSlipStyle = "createSlipLink";
@@ -305,7 +300,7 @@ HTML;
                     data-headword="{$result["lemma"]}"
                     data-pos="{$result["pos"]}"
                     data-id="{$result["id"]}"
-                    data-xml="{$this->_xmlFile->getFilename()}"
+                    data-xml="{$result["filename"]}"
                     data-uri="{$context["uri"]}"
                     data-date="{$result["date_of_lang"]}"
                     data-title="{$result["title"]}"
@@ -321,7 +316,8 @@ HTML;
 
 	private function _writeDictionaryView() { // added by MM
 		$_GET["pp"] = null;   //don't limit the results - fetch them all
-		$model = new models\corpus_search($_GET);   //not at all sure about this approach - rethink
+		//instantiate a new model to set the per page to null
+		$model = new models\corpus_search($_GET);
 		$searchResults = $model->getResults();
 		echo '<h4>' . $searchResults[0]['lemma'] . '</h4>';
 		echo '<h5>' . $this->_model->getHits() .' results</h5>';
