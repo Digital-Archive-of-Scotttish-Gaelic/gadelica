@@ -215,7 +215,7 @@ HTML;
 HTML;
 
 		}
-		$this->_writeResultsJavascript($resultTotal);
+		$this->_writeResultsJavascript();
 	}
 
 	private function _writeResultsHeader($rowNum, $resultTotal) {
@@ -273,9 +273,10 @@ HTML;
 			$slipLinkText = "view";
 			$createSlipStyle = "";
 			$modalCode = 'data-toggle="modal" data-target="#slipModal"';
+			$dataUrl = "";
 		} else {    //there is no slip so show link for adding one
-			$slipUrl = "?m=collection&a=add&filename=" . $result["filename"] . "&wid=".$result["id"];
-			$slipUrl .= "&headword=".$result["lemma"] . "&pos=" . $result["pos"];
+			$dataUrl = "index.php?m=collection&a=add&filename=" . $result["filename"] . "&wid=".$result["id"];
+			$dataUrl .= "&headword=".$result["lemma"] . "&pos=" . $result["pos"];
 			$slipLinkText = "add";
 			$createSlipStyle = "createSlipLink";
 			$slipClass = "editSlipLink";
@@ -294,7 +295,7 @@ HTML;
         <td>{$context["post"]["output"]}</td>
         <td> <!-- the slip link -->
             <small>
-                <a href="{$slipUrl}" target="_blank" class="{$slipClass} {$createSlipStyle}"
+                <a href="{$slipUrl}" data-url="{$dataUrl}" class="{$slipClass} {$createSlipStyle}"
                     {$modalCode}
                     data-auto_id="{$result["auto_id"]}"
                     data-headword="{$result["lemma"]}"
@@ -373,10 +374,25 @@ HTML;
 	/**
 	 * Writes the Javascript required for the pagination
 	 */
-	private function _writeResultsJavascript($resultTotal) {
+	private function _writeResultsJavascript() {
 		echo <<<HTML
-            <script>
-                $(function() {
+        <script>
+        $(function() {
+                  
+          /*
+            Open the add new slip form in a new tab        
+           */
+             $('.createSlipLink').on('click', function() {
+               var url = $(this).attr('data-url');
+               var win = window.open(url, '_blank');
+               if (win) {
+						      //Browser has allowed it to be opened
+						      win.focus();
+						    } else {
+						      //Browser has blocked it
+						      alert('Please allow popups for this website');
+						    }
+             });
           /*
             Date range slider
            */
