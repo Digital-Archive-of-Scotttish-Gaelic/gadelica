@@ -219,9 +219,9 @@ SQL;
 		$owner = users::getUser($ownerEmail);
 		$user = users::getUser($_SESSION["user"]);
 		$slip = self::getSlipInfoBySlipId($slipId)[0];
-		$editUrl = "https://dasg.ac.uk/gadelica/corpas/code/slipEdit.php";
+		$editUrl = "https://dasg.ac.uk/gadelica/corpas/code/index.php?m=collection&a=edit";
 		$editUrl .= <<<HTML
-			?filename={$slip["filename"]}&id={$slip["id"]}&headword={$slip["lemma"]}&pos={$slip["pos"]}&auto_id={$slipId}
+			&filename={$slip["filename"]}&wid={$slip["id"]}&headword={$slip["lemma"]}&pos={$slip["pos"]}&id={$slipId}
 HTML;
 		$emailText = <<<HTML
 			<p>Dear {$owner->getFirstName()},</p>
