@@ -54,7 +54,7 @@ switch ($_REQUEST["action"]) {
 		$result = collection::getSlipInfoBySlipId($_GET["id"]);
 		$slipInfo = $result[0];
 		$handler = new xmlfilehandler($slipInfo["filename"]);
-		$context = $handler->getContext($slipInfo["id"], 12, 12);
+		$context = $handler->getContext($slipInfo["id"], $slipInfo["preContextScope"], $slipInfo["postContextScope"]);
 		$slipInfo["context"] = $context;
 		echo json_encode($slipInfo);
 		break;
