@@ -49,6 +49,15 @@ switch ($_REQUEST["action"]) {
     //
     echo json_encode($results);
     break;
+    //the following used for the gramar site
+	case "loadSlipData":
+		$result = collection::getSlipInfoBySlipId($_GET["id"]);
+		$slipInfo = $result[0];
+		$handler = new xmlfilehandler($slipInfo["filename"]);
+		$context = $handler->getContext($slipInfo["id"], 12, 12);
+		$slipInfo["context"] = $context;
+		echo json_encode($slipInfo);
+		break;
   case "saveSlip":
     $slip = new slip($_POST["filename"], $_POST["id"], $_POST["auto_id"], $_POST["pos"],
       $_POST["preContextScope"], $_POST["postContextScope"]);
