@@ -12,7 +12,11 @@ class corpus_browse
 		$this->_model = $model;
 	}
 
-	public function show() {
+	public function show($action = null) {
+		if ($action == "edit") {
+			$this->_writeEditForm();
+			return;
+		}
 		$user = models\users::getUser($_SESSION["user"]);
     echo <<<HTML
 		<ul class="nav nav-pills nav-justified" style="padding-bottom: 20px;">
@@ -57,7 +61,7 @@ HTML;
 		$this->_writeJavascript();
 	}
 
-	public function edit() {
+	private function _writeEditForm() {
 		$user = models\users::getUser($_SESSION["user"]);
 		if (!$user->getSuperuser()) {
 			$this->show();

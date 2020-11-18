@@ -5,32 +5,21 @@ use models;
 
 class corpus_search
 {
+	private $_model;  //an instance of models\corpus_search
 
-	private $_page = 1; // results page number
-	private $_hits = 0;
-	private $_perpage; // how many results per page
-	private $_search; // search term
-	private $_date; // how are results to be ordered
-	private $_mode, $_case, $_accent, $_lenition, $_view; // various other input parameters from search form
-	private $_xmlFile;
-
-	public function __construct() {
-		$this->_search      = isset($_GET["term"]) ? $_GET["term"] : null; // model?
-		$this->_perpage     = isset($_GET["pp"]) ? $_GET["pp"] : 10;
-		$this->_page        = isset($_GET["page"]) ? $_GET["page"] : 1;
-		$this->_mode        = $_GET["mode"] == "wordform" ? "wordform" : "headword"; // model?
-		$this->_case        = $_GET["case"]; // model?
-		$this->_accent      = $_GET["accent"]; // model?
-		$this->_lenition    = $_GET["lenition"];  // model?
-		$this->_view        = (isset($_GET["view"])) ? $_GET["view"] : "corpus";
-		$this->_date        = (isset($_GET["date"])) ? $_GET["date"] : "random"; // model?
+	public function __construct($model) {
+		$this->_model = $model;
 	}
 
-	public function getView() {
-		return $this->_view;
+	public function show() {
+		if ($this->_model->getTerm()) {
+			$this->_writeSearchResults();   //there is a search term so run the search
+		} else {
+			$this->_writeSearchForm();  //no search term so show the form
+		}
 	}
 
-	public function writeSearchForm() {
+	private function _writeSearchForm() {
 		$user = models\users::getUser($_SESSION["user"]);
 		$minMaxDates = models\corpus_search::getMinMaxDates(); // needs a rethink for individual texts
 		echo <<<HTML
@@ -181,18 +170,20 @@ HTML;
 		return $posHtml;
 	}
 
-	public function writeSearchResults($results, $resultTotal) {
+	private function _writeSearchResults() {
+		$results = $this->_model->getResults();
+		$resultTotal = $this->_model->getHits();
 		models\collection::writeSlipDiv();
 		//Add a back link to originating script
 		echo <<<HTML
         <p><a href="index.php?m=corpus&a=search&id={$_GET["id"]}" title="Back to search">&lt; Back to search</a></p>
 HTML;
 
-		if ($this->_view == "dictionary") {
+		if ($this->_model->getView() == "dictionary") {
 			$this->_writeDictionaryView();
 			return;
 		}
-		$rowNum = $this->_page * $this->_perpage - $this->_perpage + 1;
+		$rowNum = $this->_model->getPage() * $this->_model->getPerPage() - $this->_model->getPerPage() + 1;
 		echo <<<HTML
         <table class="table">
             <tbody>
@@ -201,10 +192,6 @@ HTML;
 			$this->_writeResultsHeader($rowNum, $resultTotal);
 			$filename = "";
 			foreach ($results as $result) {
-				if ($filename != $result["filename"]) {
-					$filename = $result["filename"];
-					$this->_xmlFile = new models\xmlfilehandler($filename);
-				}
 				echo <<<HTML
                 <tr>
                     <th scope="row">{$rowNum}</th>
@@ -224,18 +211,19 @@ HTML;
 			$this->_writeViewSwitch();
 		} else {
 			echo <<<HTML
-                <tr><th>Sorry, there were No results for <em>{$this->_search}</em></th></tr>
+                <tr><th>Sorry, there were No results for <em>{$this->_model->getTerm()}</em></th></tr>
 HTML;
 
 		}
-		$this->_writeResultsJavascript($resultTotal);
+		$this->_writeResultsJavascript();
 	}
 
 	private function _writeResultsHeader($rowNum, $resultTotal) {
-		$lastDisplayedRowNum = $rowNum + $this->_perpage - 1;
+		$lastDisplayedRowNum = $rowNum + $this->_model->getPerPage() - 1;
 		$lastDisplayedRowNum = ($lastDisplayedRowNum > $resultTotal) ? $resultTotal : $lastDisplayedRowNum;
 		$html = <<<HTML
-        <p>[Showing results {$rowNum}–{$lastDisplayedRowNum} of {$resultTotal} for {$this->_mode} <strong>{$this->_search}</strong>
+        <p>[Showing results {$rowNum}–{$lastDisplayedRowNum} of {$resultTotal} 
+        for {$this->_model->getMode()} <strong>{$this->_model->getTerm()}</strong>
 HTML;
 		if (!empty($_GET["pos"][0])) {
 			$posString = implode(", ", $_GET["pos"]);
@@ -252,10 +240,13 @@ HTML;
 	}
 
 	private function _writeViewSwitch() {
-		$alternateView = ($this->_view == "corpus") ? "dictionary" : "corpus";
+		$alternateView = ($this->_model->getView() == "corpus") ? "dictionary" : "corpus";
+		$url = "index.php?m=corpus&a=search&mode={$this->_model->getMode()}";
+		$url .= "&term={$this->_model->getTerm()}&id={$this->_model->getId()}";
+		$url .= "&view={$alternateView}&hits={$this->_model->getHits()}";
 		echo <<<HTML
         <div id="viewSwitch">
-            <a href="?m=corpush&a=search&mode={$this->_mode}&term={$this->_search}&id={$_GET["id"]}&view={$alternateView}&hits={$this->_hits}}">
+            <a href="{$url}">
                 switch to {$alternateView} view
             </a>
         </div>
@@ -264,7 +255,7 @@ HTML;
 
 	/* print out search result as table row */
 	private function _writeSearchResult($result, $index) {
-		$context = $this->_xmlFile->getContext($result["id"], 12, 12);
+		$context = $result["context"];
 		$pos = new models\partofspeech($result["pos"]);
 		$title = <<<HTML
         Headword: {$result["lemma"]}<br>
@@ -272,7 +263,7 @@ HTML;
         Date: {$result["date_of_lang"]}<br>
         Title: {$result["title"]}<br>
         Page No: {$result["page"]}<br><br>
-        {$this->_xmlFile->getFilename()}<br>{$result["id"]}
+        {$result["filename"]}<br>{$result["id"]}
 HTML;
 		//check if there is an existing slip for this entry
 		$slipUrl = "#";
@@ -282,9 +273,10 @@ HTML;
 			$slipLinkText = "view";
 			$createSlipStyle = "";
 			$modalCode = 'data-toggle="modal" data-target="#slipModal"';
+			$dataUrl = "";
 		} else {    //there is no slip so show link for adding one
-			$slipUrl = "?m=collection&a=add&filename=" . $this->_xmlFile->getFilename() . "&wid=".$result["id"];
-			$slipUrl .= "&headword=".$result["lemma"] . "&pos=" . $result["pos"];
+			$dataUrl = "index.php?m=collection&a=add&filename=" . $result["filename"] . "&wid=".$result["id"];
+			$dataUrl .= "&headword=".$result["lemma"] . "&pos=" . $result["pos"];
 			$slipLinkText = "add";
 			$createSlipStyle = "createSlipLink";
 			$slipClass = "editSlipLink";
@@ -303,13 +295,13 @@ HTML;
         <td>{$context["post"]["output"]}</td>
         <td> <!-- the slip link -->
             <small>
-                <a href="{$slipUrl}" target="_blank" class="{$slipClass} {$createSlipStyle}"
+                <a href="{$slipUrl}" data-url="{$dataUrl}" class="{$slipClass} {$createSlipStyle}"
                     {$modalCode}
                     data-auto_id="{$result["auto_id"]}"
                     data-headword="{$result["lemma"]}"
                     data-pos="{$result["pos"]}"
                     data-id="{$result["id"]}"
-                    data-xml="{$this->_xmlFile->getFilename()}"
+                    data-xml="{$result["filename"]}"
                     data-uri="{$context["uri"]}"
                     data-date="{$result["date_of_lang"]}"
                     data-title="{$result["title"]}"
@@ -324,14 +316,14 @@ HTML;
 	}
 
 	private function _writeDictionaryView() { // added by MM
-		$model = new models\corpus_search();
-		$params = $_GET;
-		$params["pp"] = null; //don't limit the results - fetch them all
-		$searchResults = $model->getDBSearchResults($params);
-		echo '<h4>' . $searchResults["results"][0]['lemma'] . '</h4>';
-		echo '<h5>' . $searchResults["hits"] .' results</h5>';
+		$_GET["pp"] = null;   //don't limit the results - fetch them all
+		//instantiate a new model to set the per page to null
+		$model = new models\corpus_search($_GET);
+		$searchResults = $model->getResults();
+		echo '<h4>' . $searchResults[0]['lemma'] . '</h4>';
+		echo '<h5>' . $this->_model->getHits() .' results</h5>';
 		$forms = [];
-		foreach ($searchResults["results"] as $nextResult) {
+		foreach ($searchResults as $nextResult) {
 			$forms[] = $nextResult['wordform'] . '|' . $nextResult['pos'];
 		}
 		$forms = array_unique($forms);
@@ -346,7 +338,7 @@ HTML;
 			echo '<tr><td>' . $array[0] . '</td><td>' . $array[1] . '</td><td>';
 			$i=0;
 			$locations = array();
-			foreach ($searchResults["results"] as $nextResult) {
+			foreach ($searchResults as $nextResult) {
 				if ($nextResult['wordform']==$array[0] && $nextResult['pos']==$array[1]) {
 					$i++;
 					$locations[] = $nextResult['filename'] . ' ' . $nextResult['id'] . ' '
@@ -382,10 +374,25 @@ HTML;
 	/**
 	 * Writes the Javascript required for the pagination
 	 */
-	private function _writeResultsJavascript($resultTotal) {
+	private function _writeResultsJavascript() {
 		echo <<<HTML
-            <script>
-                $(function() {
+        <script>
+        $(function() {
+                  
+          /*
+            Open the add new slip form in a new tab        
+           */
+             $('.createSlipLink').on('click', function() {
+               var url = $(this).attr('data-url');
+               var win = window.open(url, '_blank');
+               if (win) {
+						      //Browser has allowed it to be opened
+						      win.focus();
+						    } else {
+						      //Browser has blocked it
+						      alert('Please allow popups for this website');
+						    }
+             });
           /*
             Date range slider
            */
@@ -403,16 +410,18 @@ HTML;
 				    Pagination handler
 			     */
 		          $("#pagination").pagination({
-				          currentPage: {$this->_page},
-		              items: {$resultTotal},
-		              itemsOnPage: {$this->_perpage},
+				          currentPage: {$this->_model->getPage()},
+		              items: {$this->_model->getHits()},
+		              itemsOnPage: {$this->_model->getPerPage()},
 		              cssStyle: "light-theme",
 		              onPageClick: function(pageNum) {
-                    var url = '?m=corpus&a=search&mode={$this->_mode}&pp={$this->_perpage}&page=' + pageNum + '&term={$this->_search}';
-                    url += '&id={$_GET["id"]}&case={$this->_case}&accent={$this->_accent}&lenition={$this->_lenition}';
-				            url += '&hits={$this->_hits}&view={$this->_view}';
-				            url += '&date={$this->_date}&selectedDates={$_GET["selectedDates"]}';
-                    url += '&hits={$this->_hits}';
+                    var url = '?m=corpus&a=search&mode={$this->_model->getMode()}';
+                    url += '&pp={$this->_model->getPerPage()}&page=' + pageNum + '&';
+                    url += 'term={$this->_model->getTerm()}';
+                    url += '&id={$this->_model->getId()}&case={$this->_model->getCase()}&';
+                    url += 'accent={$this->_model->getAccent()}&lenition={$this->_model->getLenition()}';
+				            url += '&hits={$this->_model->getHits()}&view={$this->_model->getView()}';
+				            url += '&date={$this->_model->getDate()}&selectedDates={$_GET["selectedDates"]}';
                     window.location.assign(url);
 		              }
 		          });
