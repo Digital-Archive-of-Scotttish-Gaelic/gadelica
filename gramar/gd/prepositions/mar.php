@@ -9,8 +9,8 @@ and typically corresponding to the English preposition ‘like’.</p>
 <h5>1.1. <em>bi mar</em></h5>
 <p>The most basic use of the preposition <strong>mar</strong> is as predicate of the copula verb <strong>bi</strong>, i.e. ‘be like’.
 In this construction, the entity denoted by the subject of the verb is claimed to be similar in some significant way to the entity 
-denoted by the noun governed by <strong>mar</strong>.</p>
-<ul>
+denoted by the noun governed by <strong>mar</strong>. <small><a href="#l1" data-toggle="collapse">show/hide examples</a></small></p>
+<ul class="collapse" id="l1">
   <li class="ex" data-slip="2787"></li>
   <li class="ex" data-slip="2789"></li>
   <li class="ex" data-slip="2793"></li>
