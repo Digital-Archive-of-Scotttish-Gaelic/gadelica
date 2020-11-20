@@ -37,6 +37,7 @@ rather than two distinct but similar entities:</p>
 <ul>
   <li class="ex" data-slip="2805"></li>
 </ul>
+<p>cf. <strong>coltach ri</strong></p>
 <hr/>
 <h3>2. Manner adverbal uses of <em>mar</em></h3>
 <p>Another common use of <strong>mar</strong> is as a kind of subordinating conjunction expressing a concept similar to a manner adverb, 
@@ -44,23 +45,33 @@ i.e. modifying a verb and describing in more detail <em>how</em> the action deno
 When used as a conjunction, <strong>mar</strong> itself governs a verb rather than a noun, and asserts that the action denoted by 
 the superordinate verb is similar in manner to the action denoted by the subordinate verb.</p>
 <p>In its first manner adverbal use, <strong>mar</strong> governs a (positive) relative clause, introduced by the relative particle <strong>a</strong>.
-The verb within the relative clause denotes an event which is assumed to have actually happened or which is going to actually happen.</p>
+The verb within the relative clause denotes an event which is assumed to have actually happened or which is going to actually happen. For example:</p>
 <ul>
   <li class="ex" data-slip="2779"></li>
   <li class="ex" data-slip="2889"></li>
   <li class="ex" data-slip="2880"></li>
 </ul>
-
-
-<p>In its second manner adverbal use, <strong>mar</strong> governs a (positive) complement, introduced by the dependent verb particle <strong>gun</strong>. 
-Usually a conditional form of bi (or a past tense form with conditional force).</p>
+<p>In its second manner adverbal use, <strong>mar</strong> governs a (positive) complement clause, introduced by the dependent verb particle <strong>gun</strong>. 
+The subordinate verb is usually a conditional form of bi (or a past tense form with conditional force). 
+Here the assumption is that the state denoted by the subordinate clause is purely hypothetical. For example:</p>
+<ul>
+  <li class="ex" data-slip="2841"></li>
+  <li class="ex" data-slip="2840"></li>
+</ul>
+<p>Here are two examples involving cleft constructions:</p>
 <ul>
   <li class="ex" data-slip="2838"></li>
   <li class="ex" data-slip="2839"></li>
-  <li class="ex" data-slip="2840"></li>
-  <li class="ex" data-slip="2841"></li>
 </ul>
-<p>Or a cleft construction with that as the main verb.</p>
+<p>closely related i.e. as if they were ...</p>
+<ul>
+  <li class="ex" data-slip="2786"></li>
+  <li class="ex" data-slip="2794"></li>
+  <li class="ex" data-slip="2806"></li>
+  <li class="ex" data-slip="2790"></li>
+</ul>
+
+
 <hr/>
 
 
