@@ -20,8 +20,11 @@ echo <<<HTML
 		    var li = $(this);
 	      var url = '../../../corpas/code/ajax.php?action=loadSlipData&id='+$(this).attr('data-slip');
 	      $.getJSON(url, function (data) {
-	        var text = data.context.pre["output"] + ' <mark>' + data.context.word + '</mark> ' + data.context.post["output"];
-	        text += '<em>' + data.translation + '</em>' + '[' + data.tid + ']';
+	        var text = '<strong>' + data.context.pre["output"] + ' <mark>' + data.context.word + '</mark> ' + data.context.post["output"] + '</strong><br/>';
+          trans = data.translation;
+          trans = trans.replace('<p>','');
+          trans = trans.replace('</p>','');
+	        text += '<small class="text-muted">' + trans + ' [#' + data.tid + ']</small>';
 	        li.html(text);
 	      });
 		  });
