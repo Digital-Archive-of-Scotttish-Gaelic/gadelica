@@ -4,40 +4,47 @@ require_once "../../includes/htmlHeader.php";
 <h1>mar</h1>
 <hr/>
 <h3>1. Predicative uses of <em>mar</em></h3>
-<p><a data-toggle="collapse" href="#predicative">show/hide</a></p>
-<div class="collapse" id="predicative">
+<h5>1.1. <em>bi mar</em></h5>
+<p>Tha Dòmhnall mar seann chù. Tha Màiri mar mo mhàthair.</p>
+<p><a data-toggle="collapse" href="#predicative-bi">show/hide</a></p>
+<div class="collapse" id="predicative-bi">
 <p>A common use of <strong>mar</strong> is as a preposition-like word governing a noun in the nominative case, 
 and corresponding to the English preposition ‘like’. In this sense, <strong>mar</strong> often appears as the predicate of the copular verb <strong>bi</strong>, 
 i.e. ‘be like’ – asserting that the entity denoted by the subject of <strong>bi</strong> is <em>similar</em> in some significant way to the entity 
 denoted by the noun that <strong>mar</strong> governs. For example:</p>
-<ul>
-  <li class="ex" data-slip="2789"></li>
-  <li class="ex" data-slip="2825"></li>
+<ul class="list-group list-group-flush mb-3">
+  <li class="ex list-group-item list-group-item-primary" data-slip="2789"></li>
+  <li class="ex list-group-item list-group-item-primary" data-slip="2825"></li>
 </ul>
 <p>These two examples involve similes – the garden is compared to an oasis, and the man to a lump of iron. 
 In the following example, the target of the comparison is a definite noun, the legendary Lewis outlaw <em>Mac an t-Srònaich</em>:</p>
-<ul>
-  <li class="ex" data-slip="2828"></li>
+<ul class="list-group list-group-flush mb-3">
+  <li class="ex list-group-item list-group-item-primary" data-slip="2828"></li>
 </ul>
 <p>The preposition <strong>mar</strong> can be intensified with the adverb <strong>dìreach</strong> ‘just like’:</p>
-<ul>
-  <li class="ex" data-slip="2808"></li>
+<ul class="list-group list-group-flush mb-3">
+  <li class="ex list-group-item list-group-item-primary" data-slip="2808"></li>
 </ul>
 <p>Sometimes the copular verb is to be understood as being implicit:</p>
-<ul>
-  <li class="ex" data-slip="2833"></li>
+<ul class="list-group list-group-flush mb-3">
+  <li class="ex list-group-item list-group-item-primary" data-slip="2833"></li>
 </ul>
+</div>
+<h5>1.2. Adnominal <em>mar</em></h5>
+<p>ceann mar snèap mhòr</p>
+<p><a data-toggle="collapse" href="#predicative-adnominal">show/hide</a></p>
+<div class="collapse" id="predicative-adnominal">
 <p>Closely related to this predicative use of the preposition <strong>mar</strong> is its adnominal use, directly modifying another noun. 
 Here, it is usually asserted that the entity denoted by the modified noun is similar to the entity denoted by the noun that <strong>mar</strong> governs.
 For example:</p>
-<ul>
-  <li class="ex" data-slip="2792"></li>
-  <li class="ex" data-slip="2846"></li>
+<ul class="list-group list-group-flush mb-3">
+  <li class="ex list-group-item list-group-item-primary" data-slip="2792"></li>
+  <li class="ex list-group-item list-group-item-primary" data-slip="2846"></li>
 </ul>
 <p>The following adnominal example is deceptive in that it is asserted that the two nouns denote the <em>same</em> entity, 
 rather than two distinct but similar entities. It may be an example of English influence:</p>
-<ul>
-  <li class="ex" data-slip="2805"></li>
+<ul class="list-group list-group-flush mb-3">
+  <li class="ex list-group-item list-group-item-primary" data-slip="2805"></li>
 </ul>
 <p>cf. <strong>coltach ri</strong></p>
 </div>
@@ -114,52 +121,89 @@ in favour of either forms of the regular verb <strong>can</strong> or progressiv
   <li class="ex" data-slip="2783"></li>
   <li class="ex" data-slip="2780"></li>
   <li class="ex" data-slip="2781"></li>
+  <li class="ex" data-slip="2917"></li>
+  <li class="ex" data-slip="2791"></li>
+  <li class="ex" data-slip="2888"></li>
+  <li class="ex" data-slip="2921"></li>
+  <li class="ex" data-slip="2807"></li>
+  <li class="ex" data-slip="2924"></li>
+  <li class="ex" data-slip="2926"></li>
 </ul>
 </div>
+<h3>4. Complement uses of <em>mar</em></h3>
+<p><a data-toggle="collapse" href="#complement">show/hide</a></p>
+<div class="collapse" id="complement">
+<p>Prepositional <strong>mar</strong> can also be used to introduce the complement of a verb, noun or adjective.</p>
+<p>Many of these cases involve the semantic domain of ‘employment’:</p>
+<table class="table">
+  <tbody>
+    <tr>
+      <td><strong>ag obair mar</strong> ‘working as’</td>
+      <td>
+        <ul class="list-group list-group-flush">
+          <li class="ex list-group-item list-group-item-primary" data-slip="2837"></li>
+          <li class="ex list-group-item list-group-item-primary" data-slip="2801"></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>suidhich mar</strong> ‘appoint as’</td>
+      <td>
+        <ul class="list-group list-group-flush">
+          <li class="ex list-group-item list-group-item-primary" data-slip="2835"></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>dreuchd mar</strong> ‘a job/career as’</td>
+      <td>
+        <ul class="list-group list-group-flush">
+          <li class="ex list-group-item list-group-item-primary" data-slip="2803"></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>dèan beòshlaint mar</strong> ‘make a living as’</td>
+      <td>
+        <ul class="list-group list-group-flush">
+          <li class="ex list-group-item list-group-item-primary" data-slip="2782"></li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p>Other examples involve ‘manner of perception verbs’:</p>
+<table class="table">
+  <tbody>
+    <tr>
+      <td><strong>meas mar</strong> ‘regard something as’</td>
+      <td>
+        <ul class="list-group list-group-flush">
+          <li class="ex list-group-item list-group-item-primary" data-slip="2830"></li>
+          <li class="ex list-group-item list-group-item-primary" data-slip="2784"></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>coimhead air ... mar</strong> ‘see something as’</td>
+      <td>
+        <ul class="list-group list-group-flush">
+          <li class="ex list-group-item list-group-item-primary" data-slip="2831"></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>smaoinich air ... mar</strong> ‘think of something as’</td>
+      <td>
+        <ul class="list-group list-group-flush">
+          <li class="ex list-group-item list-group-item-primary" data-slip="2834"></li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-<hr/>
-
-
-<!--
-<h5>Idiomatic uses</h5>
-<ul>
-  <li><strong>ag obair mar</strong> ‘working as’
-    <ul>
-      <li class="ex" data-slip="2801"></li>
-      <li class="ex" data-slip="2837"></li>
-    </ul>
-  </li>
-  <li><strong>suidhich mar</strong> ‘appoint as’
-    <ul>
-      <li class="ex" data-slip="2835"></li>
-    </ul>
-  </li>
-  <li><strong>dreuchd mar</strong> ‘a job/career as’
-    <ul>
-      <li class="ex" data-slip="2803"></li>
-    </ul>
-  </li>
-  <li><strong>dèan beòshlaint mar</strong> ‘make a living as’
-    <ul>
-      <li class="ex" data-slip="2782"></li>
-    </ul>
-  </li>
-  <li><strong>meas mar</strong> ‘regard something as’
-    <ul>
-      <li class="ex" data-slip="2730"></li>
-      <li class="ex" data-slip="2784"></li>
-    </ul>
-  </li>
-  <li><strong>coimhead air ... mar</strong> ‘see something as’
-    <ul>
-      <li class="ex" data-slip="2831"></li>
-    </ul>
-  </li>
-  <li><strong>smaoinich air ... mar</strong> ‘think of something as’
-    <ul>
-      <li class="ex" data-slip="2834"></li>
-    </ul>
-  </li>
+<!--  
   <li><strong>ainmeil mar</strong> ‘famous as’
     <ul>
       <li class="ex" data-slip="2802"></li>
@@ -189,6 +233,7 @@ in favour of either forms of the regular verb <strong>can</strong> or progressiv
   </li>
 </ul>
 -->
+</div>
 
 
 
