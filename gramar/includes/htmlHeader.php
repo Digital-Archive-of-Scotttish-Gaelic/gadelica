@@ -16,6 +16,10 @@ echo <<<HTML
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <script>
 	  $(function() {
+	    $('ul').addClass('list-group list-group-flush mb-3');
+	    $('.ex').addClass('list-group-item list-group-item-primary');
+	    $('h3, h5').addClass('mb-3 mt-4');
+	    
 		  $('.ex').each(function () {
 		    var li = $(this);
 	      var url = '../../../corpas/code/ajax.php?action=loadSlipData&id='+$(this).attr('data-slip');

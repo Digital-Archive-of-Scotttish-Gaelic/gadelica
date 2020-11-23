@@ -13,22 +13,22 @@ require_once "../../includes/htmlHeader.php";
 and corresponding to the English preposition ‘like’. In this sense, <strong>mar</strong> often appears as the predicate of the copular verb <strong>bi</strong>, 
 i.e. ‘be like’ – asserting that the entity denoted by the subject of <strong>bi</strong> is <em>similar</em> in some significant way to the entity 
 denoted by the noun that <strong>mar</strong> governs. For example:</p>
-<ul class="list-group list-group-flush mb-3">
-  <li class="ex list-group-item list-group-item-primary" data-slip="2789"></li>
-  <li class="ex list-group-item list-group-item-primary" data-slip="2825"></li>
+<ul>
+  <li class="ex" data-slip="2789"></li>
+  <li class="ex" data-slip="2825"></li>
 </ul>
 <p>These two examples involve similes – the garden is compared to an oasis, and the man to a lump of iron. 
 In the following example, the target of the comparison is a definite noun, the legendary Lewis outlaw <em>Mac an t-Srònaich</em>:</p>
-<ul class="list-group list-group-flush mb-3">
-  <li class="ex list-group-item list-group-item-primary" data-slip="2828"></li>
+<ul>
+  <li class="ex" data-slip="2828"></li>
 </ul>
 <p>The preposition <strong>mar</strong> can be intensified with the adverb <strong>dìreach</strong> ‘just like’:</p>
-<ul class="list-group list-group-flush mb-3">
-  <li class="ex list-group-item list-group-item-primary" data-slip="2808"></li>
+<ul>
+  <li class="ex" data-slip="2808"></li>
 </ul>
 <p>Sometimes the copular verb is to be understood as being implicit:</p>
-<ul class="list-group list-group-flush mb-3">
-  <li class="ex list-group-item list-group-item-primary" data-slip="2833"></li>
+<ul>
+  <li class="ex" data-slip="2833"></li>
 </ul>
 </div>
 <h5>(b) Adnominal <em>mar</em></h5>
@@ -39,14 +39,14 @@ In the following example, the target of the comparison is a definite noun, the l
 <p>Closely related to the predicative use of the preposition <strong>mar</strong> is its adnominal use, directly modifying another noun. 
 Here, it is usually asserted that the entity denoted by the modified noun is similar to the entity denoted by the noun that <strong>mar</strong> governs.
 For example:</p>
-<ul class="list-group list-group-flush mb-3">
-  <li class="ex list-group-item list-group-item-primary" data-slip="2792"></li>
-  <li class="ex list-group-item list-group-item-primary" data-slip="2846"></li>
+<ul>
+  <li class="ex" data-slip="2792"></li>
+  <li class="ex" data-slip="2846"></li>
 </ul>
 <p>The following adnominal example is deceptive in that it is asserted that the two nouns denote the <em>same</em> entity, 
 rather than two distinct but similar entities. It may be an example of English influence:</p>
-<ul class="list-group list-group-flush mb-3">
-  <li class="ex list-group-item list-group-item-primary" data-slip="2805"></li>
+<ul>
+  <li class="ex" data-slip="2805"></li>
 </ul>
 <p>cf. <strong>coltach ri</strong></p>
 </div>
@@ -65,10 +65,10 @@ the superordinate verb is similar in manner to the action denoted by the subordi
 <p>In its first manner adverbal use, <strong>mar</strong> governs a (positive) relative clause, introduced by the relative particle <strong>a</strong>.
 The verb within the relative clause denotes an event which is assumed to have actually happened or which is going to actually happen. 
 This usage corresponds to the English conjunction ‘as’. For example:</p>
-<ul class="list-group list-group-flush mb-3">
-  <li class="ex list-group-item list-group-item-primary" data-slip="2779"></li>
-  <li class="ex list-group-item list-group-item-primary" data-slip="2889"></li>
-  <li class="ex list-group-item list-group-item-primary" data-slip="2880"></li>
+<ul>
+  <li class="ex" data-slip="2779"></li>
+  <li class="ex" data-slip="2889"></li>
+  <li class="ex" data-slip="2880"></li>
 </ul>
 </div>
 <h5>(b) Governing a complement clause – <em>mar gum</em></h5>
@@ -79,14 +79,14 @@ This usage corresponds to the English conjunction ‘as’. For example:</p>
 <p>In its second manner adverbal use, <strong>mar</strong> governs a (positive) complement clause, introduced by the dependent verb particle <strong>gun</strong>. 
 The subordinate verb is usually a conditional form of <strong>bi</strong> (or a past tense form with conditional force). 
 Here the assumption is that the state denoted by the subordinate clause is purely hypothetical. For example:</p>
-<ul class="list-group list-group-flush mb-3">
-  <li class="ex list-group-item list-group-item-primary" data-slip="2841"></li>
-  <li class="ex list-group-item list-group-item-primary" data-slip="2840"></li>
+<ul>
+  <li class="ex" data-slip="2841"></li>
+  <li class="ex" data-slip="2840"></li>
 </ul>
 <p>Here are two examples involving cleft constructions:</p>
-<ul class="list-group list-group-flush mb-3">
-  <li class="ex list-group-item list-group-item-primary" data-slip="2838"></li>
-  <li class="ex list-group-item list-group-item-primary" data-slip="2839"></li>
+<ul>
+  <li class="ex" data-slip="2838"></li>
+  <li class="ex" data-slip="2839"></li>
 </ul>
 </div>
 <h5>(c) Governing a noun</h5>
@@ -94,9 +94,9 @@ Here the assumption is that the state denoted by the subordinate clause is purel
 <small><a data-toggle="collapse" href="#manner-preposition">more/less</a></small></p>
 <div class="collapse" id="manner-preposition">
 <p>Prepositional <strong>mar</strong> can also be used to introduce a hypothetical manner adverb, for example:</p>
-<ul class="list-group list-group-flush mb-3">
-  <li class="ex list-group-item list-group-item-primary" data-slip="2794"></li>
-  <li class="ex list-group-item list-group-item-primary" data-slip="2790"></li>
+<ul>
+  <li class="ex" data-slip="2794"></li>
+  <li class="ex" data-slip="2790"></li>
 </ul>
 <p>The manner phrases in these examples can be paraphrased as ‘as if he were a lawyer’ and ‘as if we were a squad of soldiers’.</p>
 </div>
@@ -143,121 +143,147 @@ Here the assumption is that the state denoted by the subordinate clause is purel
 in favour of either forms of the regular verb <strong>can</strong> or progressive constructions with the verbal noun <strong>ràdh</strong>.</p>
 <h5>Others</h5>
 <ul>
-  <li class="ex" data-slip="2783"></li>
   <li class="ex" data-slip="2780"></li>
   <li class="ex" data-slip="2781"></li>
   <li class="ex" data-slip="2917"></li>
-  <li class="ex" data-slip="2791"></li>
   <li class="ex" data-slip="2888"></li>
   <li class="ex" data-slip="2921"></li>
-  <li class="ex" data-slip="2807"></li>
   <li class="ex" data-slip="2924"></li>
   <li class="ex" data-slip="2926"></li>
 </ul>
-</div>
-<h3>4. Complement uses of <em>mar</em></h3>
-<p><a data-toggle="collapse" href="#complement">show/hide</a></p>
-<div class="collapse" id="complement">
-<p>Prepositional <strong>mar</strong> can also be used to introduce the complement of a verb, noun or adjective.</p>
-<p>Many of these cases involve the semantic domain of ‘employment’:</p>
-<table class="table">
-  <tbody>
-    <tr>
-      <td><strong>ag obair mar</strong> ‘working as’</td>
-      <td>
-        <ul class="list-group list-group-flush">
-          <li class="ex list-group-item list-group-item-primary" data-slip="2837"></li>
-          <li class="ex list-group-item list-group-item-primary" data-slip="2801"></li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td><strong>suidhich mar</strong> ‘appoint as’</td>
-      <td>
-        <ul class="list-group list-group-flush">
-          <li class="ex list-group-item list-group-item-primary" data-slip="2835"></li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td><strong>dreuchd mar</strong> ‘a job/career as’</td>
-      <td>
-        <ul class="list-group list-group-flush">
-          <li class="ex list-group-item list-group-item-primary" data-slip="2803"></li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td><strong>dèan beòshlaint mar</strong> ‘make a living as’</td>
-      <td>
-        <ul class="list-group list-group-flush">
-          <li class="ex list-group-item list-group-item-primary" data-slip="2782"></li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<p>Other examples involve ‘manner of perception verbs’:</p>
-<table class="table">
-  <tbody>
-    <tr>
-      <td><strong>meas mar</strong> ‘regard something as’</td>
-      <td>
-        <ul class="list-group list-group-flush">
-          <li class="ex list-group-item list-group-item-primary" data-slip="2830"></li>
-          <li class="ex list-group-item list-group-item-primary" data-slip="2784"></li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td><strong>coimhead air ... mar</strong> ‘see something as’</td>
-      <td>
-        <ul class="list-group list-group-flush">
-          <li class="ex list-group-item list-group-item-primary" data-slip="2831"></li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td><strong>smaoinich air ... mar</strong> ‘think of something as’</td>
-      <td>
-        <ul class="list-group list-group-flush">
-          <li class="ex list-group-item list-group-item-primary" data-slip="2834"></li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-<!--  
-  <li><strong>ainmeil mar</strong> ‘famous as’
-    <ul>
-      <li class="ex" data-slip="2802"></li>
-    </ul>
-  </li>
-  <li><strong>iomraiteach mar</strong> ‘renowned as’
-    <ul>
-      <li class="ex" data-slip="2809"></li>
-    </ul>
-  </li>
-  <li><strong>air a sgeadachadh mar</strong> ‘dressed as’
-    <ul>
-      <li class="ex" data-slip="2804"></li>
-      <li class="ex" data-slip="2810"></li>
-      <li class="ex" data-slip="2824"></li>
-    </ul>
-  </li>
-  <li><strong>sgrìobh mar</strong> ‘write as’
-    <ul>
-      <li class="ex" data-slip="2832"></li>
-    </ul>
-  </li>
-  <li><strong>tachartasan mar</strong> ‘one’s exploits as’
-    <ul>
-      <li class="ex" data-slip="2826"></li>
-    </ul>
-  </li>
+<p>Prepositional:</p>
+<ul>
+  <li class="ex" data-slip="2783"></li>
+  <li class="ex" data-slip="2791"></li>
+  <li class="ex" data-slip="2807"></li>
 </ul>
--->
+</div>
+
+<!-- -->
+
+<h3>4. Complement uses of <em>mar</em></h3>
+<h5>(a) Employment ‘as’</h5>
+<p><mark>Tha mo bhean ag obair mar thidsear.</mark> <small class="text-muted">‘My wife works as a teacher.’</small>
+<small><a data-toggle="collapse" href="#complement-employment">more/less</a></small></p>
+<div class="collapse" id="complement-employment">
+<p>Prepositional <strong>mar</strong> can also be used to introduce the complement of a verb, noun or adjective.
+Many of these cases involve the semantic domain of ‘employment’:</p>
+<table class="table">
+  <tbody>
+    <tr>
+      <td><strong>ag obair mar</strong> <small class="text-muted">‘working as’</small></td>
+      <td>
+        <ul>
+          <li class="ex" data-slip="2837"></li>
+          <li class="ex" data-slip="2801"></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>suidhich mar</strong> <small class="text-muted">‘appoint as’</small></td>
+      <td>
+        <ul>
+          <li class="ex" data-slip="2835"></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>dreuchd mar</strong> <small class="text-muted">‘a job/career as’</small></td>
+      <td>
+        <ul>
+          <li class="ex" data-slip="2803"></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>dèan beòshlaint mar</strong> <small class="text-muted">‘make a living as’</small></td>
+      <td>
+        <ul>
+          <li class="ex" data-slip="2782"></li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<h5>(b) Evaluation/perception/reputation ‘as’</h5>
+<p><mark>Tha Raonaid a’ meas a’ Phrìomh Mhinisteir mar dearg-amadan.</mark> <small class="text-muted">‘Rachel regards the Prime Minister as a complete fool.’</small>
+<small><a data-toggle="collapse" href="#complement-evaluation">more/less</a></small></p>
+<div class="collapse" id="complement-evaluation">
+<p>Other examples involve ‘evaluation’, ‘perception’ and ‘reputation’ words:</p>
+<table class="table">
+  <tbody>
+    <tr>
+      <td><strong>meas mar</strong> <small class="text-muted">‘regard something as’</small></td>
+      <td>
+        <ul>
+          <li class="ex" data-slip="2830"></li>
+          <li class="ex" data-slip="2784"></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>coimhead air ... mar</strong> <small class="text-muted">‘see something as’</small></td>
+      <td>
+        <ul>
+          <li class="ex" data-slip="2831"></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>smaoinich air ... mar</strong> <small class="text-muted">‘think of something as’</small></td>
+      <td>
+        <ul>
+          <li class="ex" data-slip="2834"></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>ainmeil / iomraiteach mar</strong> <small class="text-muted">‘well-known as’</small></td>
+      <td>
+        <ul>
+          <li class="ex" data-slip="2802"></li>
+          <li class="ex" data-slip="2809"></li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<h5>(c) Others</h5>
+<p><mark></mark> <small class="text-muted">‘.’</small>
+<small><a data-toggle="collapse" href="#complement-other">more/less</a></small></p>
+<div class="collapse" id="complement-other">
+<table class="table">
+  <tbody>
+    <tr>
+      <td><strong>air a sgeadachadh mar</strong> ‘dressed as’</td>
+      <td>
+        <ul>
+          <li class="ex" data-slip="2804"></li>
+          <li class="ex" data-slip="2810"></li>
+          <li class="ex" data-slip="2824"></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>sgrìobh mar</strong> ‘write as’</td>
+      <td>
+        <ul>
+          <li class="ex" data-slip="2832"></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>tachartasan mar</strong> ‘one’s exploits as’</td>
+      <td>
+        <ul>
+          <li class="ex" data-slip="2826"></li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 </div>
 
 
