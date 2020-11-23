@@ -4,9 +4,10 @@ require_once "../../includes/htmlHeader.php";
 <h1>mar</h1>
 <hr/>
 <h3>1. Predicative uses of <em>mar</em></h3>
-<h5>1.1. <em>bi mar</em></h5>
-<p>Tha Dòmhnall mar seann chù. Tha Màiri mar mo mhàthair.</p>
-<p><a data-toggle="collapse" href="#predicative-bi">show/hide</a></p>
+<h5>(a) With the copular verb <em>bi</em></h5>
+<p><mark>Tha Dòmhnall mar seann chù.</mark> <small class="text-muted">‘Donald is like an old dog.’</small></p>
+<p><mark>Tha Màiri mar mo mhàthair.</mark> <small class="text-muted">‘Mary is like my mother.’</small> 
+<small><a data-toggle="collapse" href="#predicative-bi">more/less</a></small></p>
 <div class="collapse" id="predicative-bi">
 <p>A common use of <strong>mar</strong> is as a preposition-like word governing a noun in the nominative case, 
 and corresponding to the English preposition ‘like’. In this sense, <strong>mar</strong> often appears as the predicate of the copular verb <strong>bi</strong>, 
@@ -30,11 +31,12 @@ In the following example, the target of the comparison is a definite noun, the l
   <li class="ex list-group-item list-group-item-primary" data-slip="2833"></li>
 </ul>
 </div>
-<h5>1.2. Adnominal <em>mar</em></h5>
-<p>ceann mar snèap mhòr</p>
-<p><a data-toggle="collapse" href="#predicative-adnominal">show/hide</a></p>
+<h5>(b) Adnominal <em>mar</em></h5>
+<p><mark>ceann mar snèap mhòr</mark> <small class="text-muted">‘a head like a large turnip’</small></p>
+<p><mark>duine mar d’ athair</mark> <small class="text-muted">‘a man like your father’</small>
+<small><a data-toggle="collapse" href="#predicative-adnominal">more/less</a></small></p>
 <div class="collapse" id="predicative-adnominal">
-<p>Closely related to this predicative use of the preposition <strong>mar</strong> is its adnominal use, directly modifying another noun. 
+<p>Closely related to the predicative use of the preposition <strong>mar</strong> is its adnominal use, directly modifying another noun. 
 Here, it is usually asserted that the entity denoted by the modified noun is similar to the entity denoted by the noun that <strong>mar</strong> governs.
 For example:</p>
 <ul class="list-group list-group-flush mb-3">
@@ -49,41 +51,64 @@ rather than two distinct but similar entities. It may be an example of English i
 <p>cf. <strong>coltach ri</strong></p>
 </div>
 
+<!-- mmmmmmmmmmmm -->
+
 <h3>2. Manner adverbal uses of <em>mar</em></h3>
-<p><a data-toggle="collapse" href="#manner">show/hide</a></p>
-<div class="collapse" id="manner">
+<h5>(a) Governing a relative clause – <em>mar a</em></h5>
+<p><mark>Sgrìobh Calum an litir mar a rùisg e na caoraich.</mark> <small class="text-muted">‘Calum wrote the letter as he had sheared the sheep.’</small> 
+<small><a data-toggle="collapse" href="#manner-mar-a">more/less</a></small></p>
+<div class="collapse" id="manner-mar-a">
 <p>Another common use of <strong>mar</strong> is as a kind of subordinating conjunction expressing a concept similar to a manner adverb, 
 i.e. modifying a verb and describing in more detail <em>how</em> the action denoted by that verb was carried out. 
 When used as a conjunction, <strong>mar</strong> itself governs a verb rather than a noun, and asserts that the action denoted by 
 the superordinate verb is similar in manner to the action denoted by the subordinate verb.</p>
 <p>In its first manner adverbal use, <strong>mar</strong> governs a (positive) relative clause, introduced by the relative particle <strong>a</strong>.
-The verb within the relative clause denotes an event which is assumed to have actually happened or which is going to actually happen. For example:</p>
-<ul>
-  <li class="ex" data-slip="2779"></li>
-  <li class="ex" data-slip="2889"></li>
-  <li class="ex" data-slip="2880"></li>
+The verb within the relative clause denotes an event which is assumed to have actually happened or which is going to actually happen. 
+This usage corresponds to the English conjunction ‘as’. For example:</p>
+<ul class="list-group list-group-flush mb-3">
+  <li class="ex list-group-item list-group-item-primary" data-slip="2779"></li>
+  <li class="ex list-group-item list-group-item-primary" data-slip="2889"></li>
+  <li class="ex list-group-item list-group-item-primary" data-slip="2880"></li>
 </ul>
+</div>
+<h5>(b) Governing a complement clause – <em>mar gum</em></h5>
+<p><mark>Dh’ith Mairead an t-ubhal mar gun robh e nimheil.</mark> <small class="text-muted">‘Margaret ate the apple as if it were poisonous.’</small></p>
+<p><mark>Thàinig mo phiuthar dhan t-seòmar mar gum b’ e bana-phrionnsa a bhiodh innte.</mark> <small class="text-muted">‘My sister came into the room as if she were a princess.’</small> 
+<small><a data-toggle="collapse" href="#manner-mar-gun">more/less</a></small></p>
+<div class="collapse" id="manner-mar-gun">
 <p>In its second manner adverbal use, <strong>mar</strong> governs a (positive) complement clause, introduced by the dependent verb particle <strong>gun</strong>. 
 The subordinate verb is usually a conditional form of <strong>bi</strong> (or a past tense form with conditional force). 
 Here the assumption is that the state denoted by the subordinate clause is purely hypothetical. For example:</p>
-<ul>
-  <li class="ex" data-slip="2841"></li>
-  <li class="ex" data-slip="2840"></li>
+<ul class="list-group list-group-flush mb-3">
+  <li class="ex list-group-item list-group-item-primary" data-slip="2841"></li>
+  <li class="ex list-group-item list-group-item-primary" data-slip="2840"></li>
 </ul>
 <p>Here are two examples involving cleft constructions:</p>
-<ul>
-  <li class="ex" data-slip="2838"></li>
-  <li class="ex" data-slip="2839"></li>
+<ul class="list-group list-group-flush mb-3">
+  <li class="ex list-group-item list-group-item-primary" data-slip="2838"></li>
+  <li class="ex list-group-item list-group-item-primary" data-slip="2839"></li>
 </ul>
+</div>
+<h5>(c) Governing a noun</h5>
+<p><mark>Thàinig mo phiuthar dhan t-seòmar mar bhana-phrionnsa.</mark> <small class="text-muted">‘My sister came into the room like a princess.’</small>
+<small><a data-toggle="collapse" href="#manner-preposition">more/less</a></small></p>
+<div class="collapse" id="manner-preposition">
 <p>Prepositional <strong>mar</strong> can also be used to introduce a hypothetical manner adverb, for example:</p>
-<ul>
-  <li class="ex" data-slip="2794"></li>
-  <li class="ex" data-slip="2790"></li>
+<ul class="list-group list-group-flush mb-3">
+  <li class="ex list-group-item list-group-item-primary" data-slip="2794"></li>
+  <li class="ex list-group-item list-group-item-primary" data-slip="2790"></li>
 </ul>
 <p>The manner phrases in these examples can be paraphrased as ‘as if he were a lawyer’ and ‘as if we were a squad of soldiers’.</p>
 </div>
+
+<!-- mmmmmmmmmmmm -->
+
 <h3>3. Other adverbal uses of <em>mar</em></h3>
-<p><a data-toggle="collapse" href="#other-adverbal">show/hide</a></p>
+<p><mark>mar sin</mark> <small class="text-muted">‘therefore’</small>, 
+<mark>mar as àbhaist</mark> <small class="text-muted">‘as usual’</small>, 
+<mark>mar as trice</mark> <small class="text-muted">‘usually’</small>, 
+<mark>mar a thuirt i</mark> <small class="text-muted">‘as she said’</small>, etc. 
+<small><a data-toggle="collapse" href="#other-adverbal">more/less</a></small></p>
 <div class="collapse" id="other-adverbal">
 <p>Both as a preposition and a conjunction, <strong>mar</strong> is used in a range of other, more idiomatic adverbal expressions.</p>
 <h5><em>mar sin</em></h5>
