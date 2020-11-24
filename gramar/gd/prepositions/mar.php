@@ -3,6 +3,9 @@ require_once "../../includes/htmlHeader.php";
 ?>
 <h1>mar</h1>
 <hr/>
+<p>The Gaelic particle <strong>mar</strong> is usually used as a kind of preposition or conjunction. 
+It corresponds to various senses of the English particles ‘like’, ‘as’, and ‘how’.</p>
+<hr/>
 <h3>1. Predicative uses of <em>mar</em></h3>
 <h5>(a) With the copular verb <em>bi</em></h5>
 <p><mark>Tha Dòmhnall mar seann chù.</mark> <small class="text-muted">‘Donald is like an old dog.’</small></p>
@@ -286,9 +289,36 @@ Many of these cases involve the semantic domain of ‘employment’:</p>
 </table>
 </div>
 
+<!-- -->
 
-
-
+<h3>5. Embedded questions / free relatives</h3>
+<p>Free relatives (as dialectal alternative to <strong>na</strong>):</p>
+<ul>
+  <li class="ex" data-slip="2844"></li>
+  <li class="ex" data-slip=""></li>
+  <li class="ex" data-slip=""></li>
+  <li class="ex" data-slip=""></li>
+  <li class="ex" data-slip=""></li>
+  <li class="ex" data-slip=""></li>
+</ul>
+<p>Embedded questions (as dialectal alternative to <strong>ciamar a</strong>):</p>
+<ul>
+  <li class="ex" data-slip="2886"></li>
+  <li class="ex" data-slip="2883"></li>
+  <li class="ex" data-slip="2800"></li>
+  <li class="ex" data-slip="2778"></li>
+  <li class="ex" data-slip="2912"></li>
+  <li class="ex" data-slip="2929"></li>
+</ul>
+<p>Unclear:</p>
+<ul>
+  <li class="ex" data-slip="2882"></li>
+  <li class="ex" data-slip="2911"></li>
+  <li class="ex" data-slip="2913"></li>
+  <li class="ex" data-slip="2847"></li>
+  <li class="ex" data-slip="2885"></li>
+  <li class="ex" data-slip=""></li>
+</ul>
 
 <?php
 require_once "../../includes/htmlFooter.php";
