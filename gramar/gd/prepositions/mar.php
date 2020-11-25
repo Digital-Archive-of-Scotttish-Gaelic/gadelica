@@ -3,32 +3,62 @@ require_once "../../includes/htmlHeader.php";
 ?>
 <h1>mar</h1>
 <hr/>
-<p>The Gaelic particle <strong>mar</strong> is usually used as a kind of preposition or conjunction. 
-It corresponds to various senses of the English particles ‘like’, ‘as’, and ‘how’.</p>
-<p>Internally, the particle <strong>mar</strong> governs one of the following as its complement:</p>
+<p>The Gaelic particle <strong>mar</strong> is used as a kind of preposition or conjunction,
+and corresponds to various senses of the English particles ‘like’, ‘as’, and ‘how’.</p>
+<p>Internally, <strong>mar</strong> governs one of the following as its complement:</p>
 <ul>
   <li>a (nominative) noun or pronoun, e.g. <mark>mar chù</mark> <small class="text-muted">‘like a dog’</small>, <mark>mar seo</mark> <small class="text-muted">‘like this’</small></li>
-  <li>the (positive) relative clause particle <strong>a</strong>, e.g. <mark>mar a rinn Màiri</mark> <small class="text-muted">‘like Mary did’</small></li>
-  <li>the (positive) dependent particle <strong>gun</strong>, e.g. <mark>mar gum biodh iad sgìth</mark> <small class="text-muted">‘as if they were tired’</small></li>
+  <li>a (positive) relative clause introduced by the particle <strong>a</strong>, e.g. <mark>mar a sheinn Màiri</mark> <small class="text-muted">‘like Mary sang’</small></li>
+  <li>a (positive) noun clause introduced by the particle <strong>gun</strong>, e.g. <mark>mar gum biodh iad sgìth</mark> <small class="text-muted">‘as if they were tired’</small></li>
 </ul>
 <p>Externally, <strong>mar</strong> is governed in one the following ways:</p>
 <ul>
-  <li>as the complement of the copular verb <strong>bi</strong>, e.g. <mark>Tha Iain mar chù.</mark> <small class="text-muted">‘John is like a dog.’</small></li>
-  <li>as a modifier of a (common) noun, e.g. <mark>aodann mar chù</mark> <small class="text-muted">‘a face like a dog’</small></li>
-  <li>as a modifier of a verb, e.g. <mark>Dh’ith e mar chù.</mark> <small class="text-muted">‘He ate like a dog.’</small></li>
-  <li>as a parenthetical, e.g. <mark>Mar a h-uile cù, is toil leis isbeanan.</mark> <small class="text-muted">‘Like all dogs, he likes sausages.’</small></li>
-  <li>as the complement of a verb, adjective or noun, e.g. <mark>Tha e ag obair mar sgrìobhadair.</mark> <small class="text-muted">‘He is working as a writer.’</small></li>
+  <li>as the complement of the copular verb <strong>bi</strong>, e.g. 
+    <mark>Tha Iain mar chù.</mark> <small class="text-muted">‘John is like a dog.’</small> 
+    <small><a data-toggle="modal" data-target="#predicative-bi" href="#">[more]</a></small>
+  </li>
+  <li>as a modifier of a (common) noun, e.g. <mark>aodann mar chù</mark> <small class="text-muted">‘a face like a dog’</small>
+    <small><a data-toggle="modal" data-target="#adnominal" href="#">[more]</a></small>
+  </li>
+  <li>as a ‘manner’ modifier of a verb, 
+    <ul>
+      <li><strong>mar a</strong>, e.g. e.g. <mark>Dh’ith e mar a sheinn Màiri.</mark> <small class="text-muted">‘He ate like Mary sang.’</small>
+        <small><a data-toggle="modal" data-target="#manner-relative" href="#">[more]</a></small>
+      </li>
+      <li><strong>mar gun</strong>, e.g. e.g. <mark>Dh’ith e mar gun robh an t-uisge ann.</mark> <small class="text-muted">‘He ate as if it were raining.’</small>
+        <small><a data-toggle="modal" data-target="#manner-noun-clause" href="#">[more]</a></small>
+      </li>
+      <li>prepositional, e.g. <mark>Dh’ith e mar chù.</mark> <small class="text-muted">‘He ate like a dog.’</small>
+        <small><a data-toggle="modal" data-target="#manner-prepositional" href="#">[more]</a></small>
+      </li>
+    </ul>
+  </li>
+  <li>as a ‘parenthetical’ adjunct to a clause, e.g. <mark>Mar a h-uile cù, is toil leis isbeanan.</mark> <small class="text-muted">‘Like all dogs, he likes sausages.’</small>
+    <ul>
+      <li><mark>mar sin</mark> <small class="text-muted">‘therefore’</small></li>
+      <li><mark>mar as àbhaist</mark> <small class="text-muted">‘as usual’</small></li>
+      <li><mark>mar as trice</mark> <small class="text-muted">‘usually’</small></li>
+    </ul>
+  </li>
+  <li>as the complement of certain verbs, adjectives and nouns, e.g. <mark>Tha e ag obair mar sgrìobhadair.</mark> <small class="text-muted">‘He is working as a writer.’</small></li>
+  <li>as the complement of a copular pronoun, e.g.  <mark>Sin mar a sheinn Màiri.</mark> <small class="text-muted">‘That is how Mary sang.’</small></li>
 </ul>
-<p>Each of these different modes of external government is exemplified in more detail below.</p>
+<p>Note that <strong>mar</strong> can, in most of its uses, be intensified with the adverb <strong>dìreach</strong>, i.e. <mark>dìreach mar</mark> <small class="text-muted">‘just like’</small>.</p>
 <hr/>
-<h3>1. Predicative <em>mar</em> as the complement of <em>bi</em></h3>
-<p><mark>Tha Dòmhnall mar seann chù.</mark> <small class="text-muted">‘Donald is like an old dog.’</small></p>
-<p><mark>Tha Màiri mar mo mhàthair.</mark> <small class="text-muted">‘Mary is like my mother.’</small> 
-<small><a data-toggle="collapse" href="#predicative-bi">more/less</a></small></p>
-<div class="collapse" id="predicative-bi">
+
+<div class="modal fade" id="predicative-bi" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><em>mar</em> as the complement of <em>bi</em></h5>
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
 <p>When <strong>mar</strong> governs a (nominative) noun or pronoun, it commonly occurs in a context where it is the predicative complement of the 
-copular verb <strong>bi</strong>, and corresponds to the English preposition ‘like’, i.e. <strong>bi mar</strong> ‘be like’ – 
-asserting that the entity denoted by the subject of <strong>bi</strong> is <em>similar</em> in some significant way to the entity 
+copular verb <strong>bi</strong>, and corresponds to the English preposition ‘like’, i.e. <strong>bi mar</strong> ‘be like’. This construction 
+asserts that the entity denoted by the subject of <strong>bi</strong> is <em>similar</em> in some significant way to the entity 
 denoted by the noun that <strong>mar</strong> governs. For example:</p>
 <ul>
   <li class="ex" data-slip="2789"></li>
@@ -39,29 +69,36 @@ In the following example, the target of the comparison is a definite noun, the l
 <ul>
   <li class="ex" data-slip="2828"></li>
 </ul>
-<p>The preposition <strong>mar</strong> can be intensified with the adverb <strong>dìreach</strong> ‘just like’:</p>
-<ul>
-  <li class="ex" data-slip="2808"></li>
-</ul>
 <p>When <strong>mar</strong> occurs in an ungoverned context, the copular verb is usually understood as being implicit:</p>
 <ul>
   <li class="ex" data-slip="2833"></li>
 </ul>
-<p>When <strong>mar</strong> is governed by <strong>bi</strong>, it usually itself governs a noun or pronoun. 
-However, occasionally examples are found where it governs a relative pronoun:</p>
+<p>When <strong>mar</strong> is governed by <strong>bi</strong>, it is usually itself prepositional, governing a noun or pronoun. 
+However, occasional examples are found where it governs a relative clause:</p>
 <ul>
   <li class="ex" data-slip="2919"></li>
 </ul>
-<p>[Note: this relative caluse contains a ‘gap’, i.e. bu chòir dha bhith mar sin]</p>
+<p>[Note: this relative clause contains a ‘gap’, i.e. bu chòir dha bhith mar sin]</p>
 <p>cf. <strong>coltach ri</strong></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
 
-<h3>2. Adnominal <em>mar</em> – modifier of a common noun</h3>
-<p><mark>ceann mar snèap mhòr</mark> <small class="text-muted">‘a head like a large turnip’</small></p>
-<p><mark>duine mar d’ athair</mark> <small class="text-muted">‘a man like your father’</small>
-<small><a data-toggle="collapse" href="#adnominal">more/less</a></small></p>
-<div class="collapse" id="adnominal">
-<p>Closely related to the predicative use of the particle <strong>mar</strong> is its adnominal use, directly modifying another noun. 
+<div class="modal fade" id="adnominal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Adnominal <em>mar</em></h5>
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+<p>Another common use of prepositional <strong>mar</strong> is as an adnominal, directly modifying another noun. 
 Here, it is usually asserted that the entity denoted by the modified noun is similar to the entity denoted by the noun that <strong>mar</strong> governs.
 For example:</p>
 <ul>
@@ -73,19 +110,29 @@ rather than two distinct but similar entities. It may be an example of English i
 <ul>
   <li class="ex" data-slip="2805"></li>
 </ul>
-<p>When used adnominally, <strong>mar</strong> is usually used as a preposition, governing a (nominative) noun or pronoun. However:</p>
+<p>When used adnominally, <strong>mar</strong> is usually used as a preposition, governing a (nominative) noun or pronoun. 
+However, in the following example, it governs a relative clause and appears to modify the noun <strong>cuideachadh</strong> <small class="text-muted">‘assistance’</small>:</p>
 <ul>
   <li class="ex" data-slip="2923"></li>
 </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- mmmmmmmmmmmm -->
-
-<h3>3. Adverbal <em>mar</em> – modifier of a verb</h3>
-<h5>(a) Governing a relative clause – <em>mar a</em></h5>
-<p><mark>Sgrìobh Calum an litir mar a rùisg e na caoraich.</mark> <small class="text-muted">‘Calum wrote the letter as he had sheared the sheep.’</small> 
-<small><a data-toggle="collapse" href="#manner-mar-a">more/less</a></small></p>
-<div class="collapse" id="manner-mar-a">
+<div class="modal fade" id="manner-relative" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><em>mar</em> as the complement of <em>bi</em></h5>
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
 <p>Another common use of <strong>mar</strong> is as a kind of subordinating conjunction expressing a concept similar to a manner adverb, 
 i.e. modifying a verb and describing in more detail <em>how</em> the action denoted by that verb was carried out. 
 When used as a conjunction, <strong>mar</strong> itself governs a verb rather than a noun, and asserts that the action denoted by 
@@ -98,12 +145,24 @@ This usage corresponds to the English conjunction ‘as’. For example:</p>
   <li class="ex" data-slip="2889"></li>
   <li class="ex" data-slip="2880"></li>
 </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
-<h5>(b) Governing a complement clause – <em>mar gum</em></h5>
-<p><mark>Dh’ith Mairead an t-ubhal mar gun robh e nimheil.</mark> <small class="text-muted">‘Margaret ate the apple as if it were poisonous.’</small></p>
-<p><mark>Thàinig mo phiuthar dhan t-seòmar mar gum b’ e bana-phrionnsa a bhiodh innte.</mark> <small class="text-muted">‘My sister came into the room as if she were a princess.’</small> 
-<small><a data-toggle="collapse" href="#manner-mar-gun">more/less</a></small></p>
-<div class="collapse" id="manner-mar-gun">
+
+<div class="modal fade" id="manner-noun-clause" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><em>mar</em> as the complement of <em>bi</em></h5>
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
 <p>In its second manner adverbal use, <strong>mar</strong> governs a (positive) complement clause, introduced by the dependent verb particle <strong>gun</strong>. 
 The subordinate verb is usually a conditional form of <strong>bi</strong> (or a past tense form with conditional force). 
 Here the assumption is that the state denoted by the subordinate clause is purely hypothetical. For example:</p>
@@ -116,17 +175,36 @@ Here the assumption is that the state denoted by the subordinate clause is purel
   <li class="ex" data-slip="2838"></li>
   <li class="ex" data-slip="2839"></li>
 </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
-<h5>(c) Governing a noun</h5>
-<p><mark>Thàinig mo phiuthar dhan t-seòmar mar bhana-phrionnsa.</mark> <small class="text-muted">‘My sister came into the room like a princess.’</small>
-<small><a data-toggle="collapse" href="#manner-preposition">more/less</a></small></p>
-<div class="collapse" id="manner-preposition">
+
+<div class="modal fade" id="manner-prepositional" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><em>mar</em> as the complement of <em>bi</em></h5>
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
 <p>Prepositional <strong>mar</strong> can also be used to introduce a hypothetical manner adverb, for example:</p>
 <ul>
   <li class="ex" data-slip="2794"></li>
   <li class="ex" data-slip="2790"></li>
 </ul>
 <p>The manner phrases in these examples can be paraphrased as ‘as if he were a lawyer’ and ‘as if we were a squad of soldiers’.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- mmmmmmmmmmmm -->
