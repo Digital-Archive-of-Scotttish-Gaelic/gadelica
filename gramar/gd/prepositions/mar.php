@@ -5,16 +5,30 @@ require_once "../../includes/htmlHeader.php";
 <hr/>
 <p>The Gaelic particle <strong>mar</strong> is usually used as a kind of preposition or conjunction. 
 It corresponds to various senses of the English particles ‘like’, ‘as’, and ‘how’.</p>
+<p>Internally, the particle <strong>mar</strong> governs one of the following as its complement:</p>
+<ul>
+  <li>a (nominative) noun or pronoun, e.g. <mark>mar chù</mark> <small class="text-muted">‘like a dog’</small>, <mark>mar seo</mark> <small class="text-muted">‘like this’</small></li>
+  <li>the (positive) relative clause particle <strong>a</strong>, e.g. <mark>mar a rinn Màiri</mark> <small class="text-muted">‘like Mary did’</small></li>
+  <li>the (positive) dependent particle <strong>gun</strong>, e.g. <mark>mar gum biodh iad sgìth</mark> <small class="text-muted">‘as if they were tired’</small></li>
+</ul>
+<p>Externally, <strong>mar</strong> is governed in one the following ways:</p>
+<ul>
+  <li>as the complement of the copular verb <strong>bi</strong>, e.g. <mark>Tha Iain mar chù.</mark> <small class="text-muted">‘John is like a dog.’</small></li>
+  <li>as a modifier of a (common) noun, e.g. <mark>aodann mar chù</mark> <small class="text-muted">‘a face like a dog’</small></li>
+  <li>as a modifier of a verb, e.g. <mark>Dh’ith e mar chù.</mark> <small class="text-muted">‘He ate like a dog.’</small></li>
+  <li>as a parenthetical, e.g. <mark>Mar a h-uile cù, is toil leis isbeanan.</mark> <small class="text-muted">‘Like all dogs, he likes sausages.’</small></li>
+  <li>as the complement of a verb, adjective or noun, e.g. <mark>Tha e ag obair mar sgrìobhadair.</mark> <small class="text-muted">‘He is working as a writer.’</small></li>
+</ul>
+<p>Each of these different modes of external government is exemplified in more detail below.</p>
 <hr/>
-<h3>1. Predicative uses of <em>mar</em></h3>
-<h5>(a) With the copular verb <em>bi</em></h5>
+<h3>1. Predicative <em>mar</em> as the complement of <em>bi</em></h3>
 <p><mark>Tha Dòmhnall mar seann chù.</mark> <small class="text-muted">‘Donald is like an old dog.’</small></p>
 <p><mark>Tha Màiri mar mo mhàthair.</mark> <small class="text-muted">‘Mary is like my mother.’</small> 
 <small><a data-toggle="collapse" href="#predicative-bi">more/less</a></small></p>
 <div class="collapse" id="predicative-bi">
-<p>A common use of <strong>mar</strong> is as a preposition-like word governing a noun in the nominative case, 
-and corresponding to the English preposition ‘like’. In this sense, <strong>mar</strong> often appears as the predicate of the copular verb <strong>bi</strong>, 
-i.e. ‘be like’ – asserting that the entity denoted by the subject of <strong>bi</strong> is <em>similar</em> in some significant way to the entity 
+<p>When <strong>mar</strong> governs a (nominative) noun or pronoun, it commonly occurs in a context where it is the predicative complement of the 
+copular verb <strong>bi</strong>, and corresponds to the English preposition ‘like’, i.e. <strong>bi mar</strong> ‘be like’ – 
+asserting that the entity denoted by the subject of <strong>bi</strong> is <em>similar</em> in some significant way to the entity 
 denoted by the noun that <strong>mar</strong> governs. For example:</p>
 <ul>
   <li class="ex" data-slip="2789"></li>
@@ -29,17 +43,25 @@ In the following example, the target of the comparison is a definite noun, the l
 <ul>
   <li class="ex" data-slip="2808"></li>
 </ul>
-<p>Sometimes the copular verb is to be understood as being implicit:</p>
+<p>When <strong>mar</strong> occurs in an ungoverned context, the copular verb is usually understood as being implicit:</p>
 <ul>
   <li class="ex" data-slip="2833"></li>
 </ul>
+<p>When <strong>mar</strong> is governed by <strong>bi</strong>, it usually itself governs a noun or pronoun. 
+However, occasionally examples are found where it governs a relative pronoun:</p>
+<ul>
+  <li class="ex" data-slip="2919"></li>
+</ul>
+<p>[Note: this relative caluse contains a ‘gap’, i.e. bu chòir dha bhith mar sin]</p>
+<p>cf. <strong>coltach ri</strong></p>
 </div>
-<h5>(b) Adnominal <em>mar</em></h5>
+
+<h3>2. Adnominal <em>mar</em> – modifier of a common noun</h3>
 <p><mark>ceann mar snèap mhòr</mark> <small class="text-muted">‘a head like a large turnip’</small></p>
 <p><mark>duine mar d’ athair</mark> <small class="text-muted">‘a man like your father’</small>
-<small><a data-toggle="collapse" href="#predicative-adnominal">more/less</a></small></p>
-<div class="collapse" id="predicative-adnominal">
-<p>Closely related to the predicative use of the preposition <strong>mar</strong> is its adnominal use, directly modifying another noun. 
+<small><a data-toggle="collapse" href="#adnominal">more/less</a></small></p>
+<div class="collapse" id="adnominal">
+<p>Closely related to the predicative use of the particle <strong>mar</strong> is its adnominal use, directly modifying another noun. 
 Here, it is usually asserted that the entity denoted by the modified noun is similar to the entity denoted by the noun that <strong>mar</strong> governs.
 For example:</p>
 <ul>
@@ -51,12 +73,15 @@ rather than two distinct but similar entities. It may be an example of English i
 <ul>
   <li class="ex" data-slip="2805"></li>
 </ul>
-<p>cf. <strong>coltach ri</strong></p>
+<p>When used adnominally, <strong>mar</strong> is usually used as a preposition, governing a (nominative) noun or pronoun. However:</p>
+<ul>
+  <li class="ex" data-slip="2923"></li>
+</ul>
 </div>
 
 <!-- mmmmmmmmmmmm -->
 
-<h3>2. Manner adverbal uses of <em>mar</em></h3>
+<h3>3. Adverbal <em>mar</em> – modifier of a verb</h3>
 <h5>(a) Governing a relative clause – <em>mar a</em></h5>
 <p><mark>Sgrìobh Calum an litir mar a rùisg e na caoraich.</mark> <small class="text-muted">‘Calum wrote the letter as he had sheared the sheep.’</small> 
 <small><a data-toggle="collapse" href="#manner-mar-a">more/less</a></small></p>
