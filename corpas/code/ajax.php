@@ -58,6 +58,11 @@ switch ($_REQUEST["action"]) {
 		$slipInfo["context"] = $context;
 		echo json_encode($slipInfo);
 		break;
+	case "getSenseCategories":
+		$categories = sensecategories::getAllUnusedCategories($_GET["slipId"],
+			$_GET["headword"], $_GET["wordclass"]);
+		echo json_encode($categories);
+		break;
   case "saveSlip":
     $slip = new slip($_POST["filename"], $_POST["id"], $_POST["auto_id"], $_POST["pos"],
       $_POST["preContextScope"], $_POST["postContextScope"]);
