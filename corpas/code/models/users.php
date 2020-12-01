@@ -83,7 +83,7 @@ SQL;
     $db = new database();
     $dbh = $db->getDatabaseHandle();
     try {
-      $sth = $dbh->prepare("REPLACE INTO user(email, password, salt, firstname, lastname, slip_admin, passwordAuth, last_logged_in) VALUES 
+      $sth = $dbh->prepare("REPLACE INTO user(email, password, salt, firstname, lastname, slip_admin, passwordAuth, superuser, last_logged_in) VALUES 
 				(:email, :password, :salt, :firstname, :lastname, :slip_admin, :passwordAuth, :superuser, now())");
       $sth->execute(array(":email"=>$user->getEmail(),
         ":password"=>$user->getPassword(), ":salt"=>$user->getSalt(), ":firstname"=>$user->getFirstName(),
