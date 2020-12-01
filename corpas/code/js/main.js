@@ -121,12 +121,13 @@ $(function () {
         modal.find('#slipNo').text('§'+slipId);
         $('#auto_id').val(slipId);
         modal.find('.modal-body').html(body);
-        if (canEdit) {
+        /*if (canEdit) {
           $('.modal').find('button#editSlip').prop('disabled', false);
         } else {
           $('.modal').find('button#editSlip').prop('disabled', 'disabled');
-        }
+        }*/
         //show the correct lock icon
+        /*
         if (locked == 1) {
           $('.locked').removeClass('d-none');
           $('.locked').attr('data-owner', owner);
@@ -138,6 +139,7 @@ $(function () {
         } else {
           $('.unlocked').removeClass('d-none');
         }
+        */
       });
   });
 
@@ -342,11 +344,12 @@ $(function () {
     var locked = $('#locked').val();
     var translation = CKEDITOR.instances['slipTranslation'].getData();
     var notes = CKEDITOR.instances['slipNotes'].getData();
-    var data = {action: "saveSlip", filename: $('#slipFilename').text(), id: $('#slipId').text(),
-      auto_id: $('#auto_id').val(), pos: $('#pos').val(), starred: starred, translation: translation,
+    var data = {action: "saveSlip", filename: $('#slipFilename').text(), id: $('#wordId').text(),
+      auto_id: $('#auto_id').text(), pos: $('#pos').val(), starred: starred, translation: translation,
       notes: notes, preContextScope: $('#slipContext').attr('data-precontextscope'),
       postContextScope: $('#slipContext').attr('data-postcontextscope'), wordClass: wordclass,
       locked: locked};
+    console.log(data);
     switch (wordclass) {
       case "noun":
         data['numgen'] = $('#posNumberGender').val();
