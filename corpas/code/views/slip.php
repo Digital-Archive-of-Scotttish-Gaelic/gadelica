@@ -435,7 +435,7 @@ HTML;
         <script>     
             //refresh the results page that brought us here to change "create slip" to "view slip"
 		        window.opener.document.location.reload(true);
-                        
+               
             $('.lockBtn').on('click', function (e) {
               e.preventDefault();
               $(this).addClass('d-none');
@@ -561,6 +561,16 @@ HTML;
                   $('#verbSelects').hide();
                   $('#prepSelects').hide();
               }
+              //update the sense categories
+              $('#senseCategorySelect').empty();
+              $('#senseCategorySelect').append('<option data-category="">-- select a category --</option>');
+              var url = 'ajax.php?action=getSenseCategories';
+              url += '&slipId={$_GET["id"]}&headword={$_GET["headword"]}&wordclass=' + wordclass;
+              $.getJSON(url, function (data) {
+                  $.each(data, function (index, value) {
+                    $('#senseCategorySelect').append('<option data-category="' + value + '" value="' + value + '">' + value + '</option>');
+                  });
+              });
             });
 
             $('#posMode').on('change', function() {
