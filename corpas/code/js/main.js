@@ -147,7 +147,7 @@ $(function () {
     var preScope = $('#slipContext').attr('data-precontextscope');
     var postScope = $('#slipContext').attr('data-postcontextscope');
     var filename = $('#slipFilename').text();
-    var id = $('#slipId').text();
+    var id = $('#wordId').text();
     switch ($(this).attr('id')) {
       case "decrementPre":
         preScope--;
