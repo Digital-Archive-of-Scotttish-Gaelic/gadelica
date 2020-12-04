@@ -6,15 +6,15 @@ require_once "../../includes/htmlHeader.php";
 <p>In additional to its straightforward nominal uses, <strong>fad</strong> can also be used to introduce a time adverbial, somewhat like a preposition or conjunction.</p>
 <hr/>
 <p>The main uses of <strong>fad</strong> are –</p>
-<ul>
-  <li>as an abstract noun meaning <span class="text-muted">'length'</span>, the quality of being <span class="text-muted">‘long’</span> <small><a data-toggle="modal" data-target="#noun" href="#">[more]</a></small></li>
-  <li>as a pseudo-preposition introducing a time adverbial
-    <ul>
-      <li>governing an <em>indefinite</em> time noun, e.g. <mark>fad bliadhna</mark> <span class="text-muted">‘for a year’</span> <small><a data-toggle="modal" data-target="#preposition-indefinite" href="#">[more]</a></small></li>
-      <li>governing a <em>definite</em> time noun, e.g. <mark>fad na bliadhna</mark> <span class="text-muted">‘all year (long)’</span> <small><a data-toggle="modal" data-target="#preposition-definite" href="#">[more]</a></small></li>
-    </ul>
-  <li>as a pseudo-conjunction introducing a time adverbial, e.g. <mark>fhad ’s a bha mi a-muigh</mark> <span class="text-muted">‘while / as long as I was out’</span> <small><a data-toggle="modal" data-target="#conjunction" href="#">[more]</a></small></li>
-</ul>
+<ol>
+  <li>As an abstract noun meaning <span class="text-muted">'length'</span>, the quality of being <span class="text-muted">‘long’</span> <small><a data-toggle="modal" data-target="#noun" href="#">[more]</a></small></li>
+  <li>As a pseudo-preposition introducing a time adverbial
+    <ol type="a">
+      <li>Governing an <em>indefinite</em> time noun, e.g. <mark>fad bliadhna</mark> <span class="text-muted">‘for a year’</span> <small><a data-toggle="modal" data-target="#preposition-indefinite" href="#">[more]</a></small></li>
+      <li>Governing a <em>definite</em> time noun, e.g. <mark>fad na bliadhna</mark> <span class="text-muted">‘all year (long)’</span> <small><a data-toggle="modal" data-target="#preposition-definite" href="#">[more]</a></small></li>
+    </ol>
+  <li>As a pseudo-conjunction introducing a time adverbial, e.g. <mark>fhad ’s a bha mi a-muigh</mark> <span class="text-muted">‘while / as long as I was out’</span> <small><a data-toggle="modal" data-target="#conjunction" href="#">[more]</a></small></li>
+</ol>
 
 <div class="modal fade" id="noun" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-lg" role="document">
