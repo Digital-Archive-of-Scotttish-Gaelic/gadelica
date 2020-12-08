@@ -14,7 +14,7 @@ switch ($_REQUEST["action"]) {
 		break;
   case "getContext":
     $handler = new xmlfilehandler($_GET["filename"]);
-    $context = $handler->getContext($_GET["id"], $_GET["preScope"], $_GET["postScope"]);
+    $context = $handler->getContext($_GET["id"], $_GET["preScope"], $_GET["postScope"], true, false, true);
     echo json_encode($context);
     break;
 	case "getSlips":

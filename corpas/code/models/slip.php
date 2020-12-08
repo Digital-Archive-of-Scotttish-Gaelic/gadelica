@@ -19,7 +19,7 @@ class slip
   private $_senseCategories = array();
   private $_lemma, $_wordform;
 
-  public function __construct($filename, $id, $auto_id = null, $pos, $preScope = 20, $postScope = 20) {
+  public function __construct($filename, $id, $auto_id = null, $pos, $preScope = 80, $postScope = 80) {
     $this->_filename = $filename;
     $this->_id = $id;
     //test if a slip already exists (if there is a slip with the same groupId, filename, id combination)

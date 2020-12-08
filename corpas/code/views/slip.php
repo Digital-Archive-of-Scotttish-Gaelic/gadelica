@@ -361,7 +361,7 @@ HTML;
     $handler = new models\xmlfilehandler($this->_slip->getFilename());
     $preScope = $this->_slip->getPreContextScope();
     $postScope = $this->_slip->getPostContextScope();
-    $context = $handler->getContext($this->_slip->getId(), $preScope, $postScope, true, false);
+    $context = $handler->getContext($this->_slip->getId(), $preScope, $postScope, true, false, true);
     $preHref = "href=\"#\"";
     //check for start/end of document
     if (isset($context["prelimit"])) {
@@ -435,7 +435,30 @@ HTML;
         <script>     
             //refresh the results page that brought us here to change "create slip" to "view slip"
 		        window.opener.document.location.reload(true);
-               
+            
+		        //update the slip context on click of token
+		        $(document).on('click', '.contextLink',  function () {
+		          var preScope = $('#preContextScope').val();
+		          var postScope = $('#postContextScope').val();
+		        
+		          if ($(this).hasClass('pre')) {
+		            preScope = $(this).attr('data-position');
+		          } else {
+		            postScope = $(this).attr('data-position');
+		          }
+		          
+		          var filename = $('#slipFilename').text();
+              var id = $('#wordId').text();
+		          
+		          
+		          $('#slipContext').attr('data-precontextscope', preScope);
+					    $('#slipContext').attr('data-postcontextscope', postScope);
+					    $('#preContextScope').val(preScope);
+					    $('#postContextScope').val(postScope);
+					    writeSlipContext(filename, id);
+		        });
+		        
+						//lock slip functionality
             $('.lockBtn').on('click', function (e) {
               e.preventDefault();
               $(this).addClass('d-none');
@@ -617,6 +640,52 @@ HTML;
                 $('#genderPrepOptions').hide();
               }
             });
+            
+            function writeSlipContext(filename, id) {
+					    var html = '';
+					    var preScope  = $('#slipContext').attr('data-precontextscope');
+					    var postScope = $('#slipContext').attr('data-postcontextscope');
+					    $.getJSON("ajax.php?action=getContext&filename="+filename+"&id="+id+"&preScope="+preScope+"&postScope="+postScope, function (data) {
+					      var preOutput = data.pre["output"];
+					      var postOutput = data.post["output"];
+					      //handle zero pre/post context sizes
+					      if (typeof preOutput == "undefined") {
+					        preOutput = "";
+					        $('#decrementPre').removeAttr("href");
+					      } else {
+					        $('#decrementPre').attr("href", "#");
+					      }
+					      if (typeof postOutput == "undefined") {
+					        postOutput = "";
+					        $('#decrementPost').removeAttr("href");
+					      } else {
+					        $('#decrementPost').attr("href", "#");
+					      }
+					      //handle reaching the start/end of the document
+					      if (data.prelimit) {
+					        $('#incrementPre').removeAttr("href");
+					      } else {
+					        $('#incrementPre').attr("href", "#");
+					      }
+					      if (data.postlimit) {
+					        $('#incrementPost').removeAttr("href");
+					      } else {
+					        $('#incrementPost').attr("href", "#");
+					      }
+					      html = preOutput;
+					      if (data.pre["endJoin"] != "right" && data.pre["endJoin"] != "both") {
+					        html += ' ';
+					      }
+					      //html += '<span id="slipWordInContext">' + data.word + '</span>';
+					      html += '<mark id="slipWordInContext">' + data.word + '</mark>'; // MM
+					      if (data.post["startJoin"] != "left" && data.post["startJoin"] != "both") {
+					        html += ' ';
+					      }
+					      html += postOutput;
+					      $('#slipContext').html(html);
+					      $('#slip').show();
+					    });
+					  }
         </script>
 HTML;
   }

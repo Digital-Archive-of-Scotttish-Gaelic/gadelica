@@ -283,52 +283,6 @@ $(function () {
     }, 2000);
   });
 
-  function writeSlipContext(filename, id) {
-    var html = '';
-    var preScope  = $('#slipContext').attr('data-precontextscope');
-    var postScope = $('#slipContext').attr('data-postcontextscope');
-    $.getJSON("ajax.php?action=getContext&filename="+filename+"&id="+id+"&preScope="+preScope+"&postScope="+postScope, function (data) {
-      var preOutput = data.pre["output"];
-      var postOutput = data.post["output"];
-      //handle zero pre/post context sizes
-      if (typeof preOutput == "undefined") {
-        preOutput = "";
-        $('#decrementPre').removeAttr("href");
-      } else {
-        $('#decrementPre').attr("href", "#");
-      }
-      if (typeof postOutput == "undefined") {
-        postOutput = "";
-        $('#decrementPost').removeAttr("href");
-      } else {
-        $('#decrementPost').attr("href", "#");
-      }
-      //handle reaching the start/end of the document
-      if (data.prelimit) {
-        $('#incrementPre').removeAttr("href");
-      } else {
-        $('#incrementPre').attr("href", "#");
-      }
-      if (data.postlimit) {
-        $('#incrementPost').removeAttr("href");
-      } else {
-        $('#incrementPost').attr("href", "#");
-      }
-      html = preOutput;
-      if (data.pre["endJoin"] != "right" && data.pre["endJoin"] != "both") {
-        html += ' ';
-      }
-      //html += '<span id="slipWordInContext">' + data.word + '</span>';
-      html += '<mark id="slipWordInContext">' + data.word + '</mark>'; // MM
-      if (data.post["startJoin"] != "left" && data.post["startJoin"] != "both") {
-        html += ' ';
-      }
-      html += postOutput;
-      $('#slipContext').html(html);
-      $('#slip').show();
-    });
-  }
-
   function resetSlip() {
     $('#slipNumber').html('');
     $('#slipContext').attr('data-precontextscope', 20);

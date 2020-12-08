@@ -4,7 +4,7 @@ namespace models;
 
 class xmlfilehandler
 {
-  private $_filename, $_xml, $_collocateIds;
+  private $_filename, $_xml, $_collocateIds, $_preScope, $_postScope;
 
   public function __construct($filename) {
   	if ($filename != $this->_filename) {  //check if the file has already been loaded
@@ -24,7 +24,9 @@ class xmlfilehandler
     return (string)$out[0];
   }
 
-  public function getContext($id, $preScope = 12, $postScope = 12, $normalisePunc = true, $tagCollocates = false) {
+  public function getContext($id, $preScope = 12, $postScope = 12, $normalisePunc = true, $tagCollocates = false, $tagContext = false) {
+  	$this->_preScope = $preScope;
+  	$this->_postScope = $postScope;
     $context = array();
     $context["id"] = $id;
     $context["filename"] = $this->getFilename();
@@ -44,7 +46,7 @@ class xmlfilehandler
         $context["prelimit"] = count($pre);
       }
       if ($normalisePunc) {
-        $context["pre"] = $this->_normalisePunctuation($pre, $tagCollocates);
+        $context["pre"] = $this->_normalisePunctuation($pre, $tagCollocates, $tagContext, $section = "pre");
       } else {
         $context["pre"]["output"] = implode(' ', $pre);
 	    }
@@ -52,7 +54,7 @@ class xmlfilehandler
     /* -- */
     $xpath = "//dasg:w[@id='{$id}']";
     $word = $this->_xml->xpath($xpath);
-    $context["word"] = $tagCollocates
+    $context["word"] = ($tagCollocates || $tagContext)
 	    ? '<div style="display:inline; margin-left:4px;"><mark>' . (string)$word[0] . '</mark></div>'
       : (string)$word[0];
     $context["headwordId"] = $word[0]->attributes()["id"];
@@ -69,7 +71,7 @@ class xmlfilehandler
         $context["postlimit"] = count($post);
       }
       if ($normalisePunc) {
-        $context["post"] = $this->_normalisePunctuation($post, $tagCollocates);
+        $context["post"] = $this->_normalisePunctuation($post, $tagCollocates, $tagContext, $section = "post");
       } else {
         $context["post"]["output"] = implode(' ', $post);
       }
@@ -86,28 +88,39 @@ class xmlfilehandler
    * @param array $chunk : array of SimpleXML objects
    * @return array : an array containing output string and flags for start and end joins
    */
-  private function _normalisePunctuation (array $chunk, $tagCollocates = false) {
+  private function _normalisePunctuation (array $chunk, $tagCollocates, $tagContext, $section = null) {
     $output = $startJoin = $endJoin = "";
     $rightJoin = true;
 		$this->_collocateIds = lemmas::getCollocateIds($this->getFilename());
-    foreach ($chunk as $i => $token) {
+		//used to track the position of each token in the pre/post context
+		$position = $section == "pre" ? $this->_preScope : 1;
+    foreach ($chunk as $i => $element) {
     	// !! $isWord is only used when we need to tag collocates
 	    $isWord = false;
 	    if ($tagCollocates) {
-		    $isWord = ($wordId = $token->attributes()["id"]) ? true : false;
+		    $isWord = ($wordId = $element->attributes()["id"]) ? true : false;
 	    }
       $followingWord = ($i < (count($chunk)-1)) ? $chunk[$i+1] : null;
       $followingJoin = $followingWord ? $followingWord->attributes()["join"] : "";
-      $attributes = $token->attributes();
+      $attributes = $element->attributes();
       if ($i == 0) {
         $startJoin = (string)$attributes["join"];
       } else if ($i == (count($chunk) -1)) {
         $endJoin = (string)$attributes["join"];
       }
-      $token = $isWord ? $this->_getCollocateDropdown($token, $wordId) : $token[0];
-      $spacer = ($tagCollocates)
-	      ? '<div style="margin-right:-4px;display:inline;">&thinsp;</div>'
-	      : ' ';
+
+      $spacer = ' ';
+			if ($tagCollocates) {
+				$token = $isWord ? $this->_getCollocateDropdown($element, $wordId) : $element[0];
+				$spacer = '<div style="margin-right:-4px;display:inline;">&thinsp;</div>';
+			} else if ($tagContext) {
+				$token = '<a class="contextLink ' . $section . '" data-position="' .$position . '">' . $element[0] . '</a>';
+			} else {
+				$token = $element[0];
+			}
+			//decrement/increment the position in the context
+			$position = $section == "pre" ? $position - 1 : $position + 1;
+
       switch ($attributes["join"]) {
         case "left":
           $output .= $followingJoin == "right" || $followingJoin == "both" ? $token : $token . $spacer;
