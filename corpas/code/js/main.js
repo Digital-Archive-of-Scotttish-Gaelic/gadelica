@@ -97,7 +97,9 @@ $(function () {
       canEdit = data.canEdit ? true : false;
       var context = data.context.pre["output"] + ' <mark>' + data.context.word + '</mark> ' + data.context.post["output"];
       body += '<p>' + context + '</p>';
-      body += '<p><small class="text-muted">' + data.translation + '</small></p>';
+      if (data.translation) {
+        body += '<p><small class="text-muted">' + data.translation + '</small></p>';
+      }
       //body += '<p class="small">[#' + textId + ': <em>' + title + '</em> p.' + page + ']</p>';
       body += '<p class="text-muted"><span data-toggle="tooltip" data-html="true" title="' + '<em>' + title + '</em> p.' + page + '">#' + textId + ': ' + date + '</span></p>';
       body += '<hr/>';
@@ -110,6 +112,9 @@ $(function () {
         body += '<li class="list-inline-item badge badge-secondary">' + v + '</li>';
       });
       body += '</ul>';
+      if (data.notes) {
+        body += '<p><small class="text-muted">' + data.notes + '</small></p>';
+      }
       slipId = data.auto_id;
       //check the slip lock status
       locked = data.locked;

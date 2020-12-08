@@ -114,7 +114,9 @@ class xmlfilehandler
 				$token = $isWord ? $this->_getCollocateDropdown($element, $wordId) : $element[0];
 				$spacer = '<div style="margin-right:-4px;display:inline;">&thinsp;</div>';
 			} else if ($tagContext) {
-				$token = '<a class="contextLink ' . $section . '" data-position="' .$position . '">' . $element[0] . '</a>';
+				$verb = $section == "pre" ? "start" : "end";
+				$token = '<a data-toggle="tooltip" data-html="true" class="contextLink ' . $section . '" data-position=' . $position . '"';
+				$token .= ' title="' . $verb . ' context with <em><strong>' . $element[0] . '</strong></em>">' . $element[0] . '</a>';
 			} else {
 				$token = $element[0];
 			}

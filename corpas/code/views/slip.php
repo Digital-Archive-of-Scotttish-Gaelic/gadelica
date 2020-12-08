@@ -396,6 +396,9 @@ HTML;
                 <a class="updateContext" id="decrementPost"><i class="fas fa-minus"></i></a>
 								<a class="updateContext" id="incrementPost"><i class="fas fa-plus"></i></a>
               </div>
+              <div>
+                <button id="resetContext" class="btn btn-primary">reset context</button>
+							</div>
             </div>
 HTML;
   }
@@ -438,6 +441,9 @@ HTML;
             
 		        //update the slip context on click of token
 		        $(document).on('click', '.contextLink',  function () {
+		          $(this).tooltip('hide')
+		          var filename = $('#slipFilename').text();
+              var id = $('#wordId').text();
 		          var preScope = $('#preContextScope').val();
 		          var postScope = $('#postContextScope').val();
 		        
@@ -445,13 +451,21 @@ HTML;
 		            preScope = $(this).attr('data-position');
 		          } else {
 		            postScope = $(this).attr('data-position');
-		          }
-		          
+		          }  
+		          $('#slipContext').attr('data-precontextscope', preScope);
+					    $('#slipContext').attr('data-postcontextscope', postScope);
+					    $('#preContextScope').val(preScope);
+					    $('#postContextScope').val(postScope);
+					    writeSlipContext(filename, id);
+		        });
+		        
+		        //reset the context
+		        $('#resetContext').on('click', function () {
 		          var filename = $('#slipFilename').text();
               var id = $('#wordId').text();
-		          
-		          
-		          $('#slipContext').attr('data-precontextscope', preScope);
+              var preScope = '{$this->_slip->getPreContextScope()}';
+              var postScope = '{$this->_slip->getPostContextScope()}';
+              $('#slipContext').attr('data-precontextscope', preScope);
 					    $('#slipContext').attr('data-postcontextscope', postScope);
 					    $('#preContextScope').val(preScope);
 					    $('#postContextScope').val(postScope);
