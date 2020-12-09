@@ -37,11 +37,19 @@ class slip
             <label class="form-check-label" for="slipStarred">checked</label>
           </div>
         </div>
-         <div>
+        <a href="#morphoSyntactic" id="toggleMorphoSyntactic" data-toggle="collapse" aria-expanded="true" aria-controls="morphoSyntactic">
+          show/hide morphosyntax
+        </a>
+        <div id="morphoSyntactic" class="collapse show editSlipSectionContainer">
+          <div>
             headword: <span id="slipHeadword">{$_REQUEST["headword"]}</span>
-        </div>
+          </div>
 HTML;
     $this->_writePartOfSpeechSelects();
+    echo <<<HTML
+				</div> <!-- end morphoSyntactic -->
+HTML;
+
 	  $this->_writeSenseCategories();
     echo <<<HTML
         <div class="form-group">
@@ -179,7 +187,7 @@ HTML;
     	$genderPrepHide = ($props["prep_person"] != "third person") || ($props["prep_number"] != "singular") ? "hide" : "";
     }
     echo <<<HTML
-        <div class="editSlipSectionContainer">
+        <div>
           <h5>Morphological information</h5>
             <div id="prepSelects" class="{$prepSelectHide}">
               <div class="row form-group form-inline">
@@ -296,8 +304,8 @@ HTML;
 HTML;
     }
     $html = <<<HTML
-        <div id="wordClassSelect" class="editSlipSectionContainer form-group form-inline">
-          <label for="wordClass" class="col-form-label col-sm-2"><h5>Part-of-speech:</h5></label>
+        <div id="wordClassSelect" class="form-group form-inline">
+          <label for="wordClass" class="col-form-label"><h5>Part-of-speech:</h5></label>
           <select name="wordClass" id="wordClass" class="form-control col-3">
             {$optionHtml}
           </select>
@@ -396,8 +404,8 @@ HTML;
                 <a class="updateContext" id="decrementPost"><i class="fas fa-minus"></i></a>
 								<a class="updateContext" id="incrementPost"><i class="fas fa-plus"></i></a>
               </div>
-              <div>
-                <button id="resetContext" class="btn btn-primary">reset context</button>
+              <div style="height: 20px;">
+                <a href="#" class="float-right" id="resetContext">reset context</a>
 							</div>
             </div>
 HTML;
