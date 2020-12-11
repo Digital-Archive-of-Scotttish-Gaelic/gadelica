@@ -6,12 +6,13 @@ start = Text
 Text = element text {
   attribute ref { xsd:anyURI } ,
   attribute status { "tagged"|"raw" } ,
-  ( Paragraph | Heading | Verse | Utterance | Text | Page )+
+  ( Paragraph | Heading | Verse | List | Utterance | Text | Page )+
 }
 
 Paragraph = element p { (Token | Page | Sentence | Note)+ }
 Heading = element h { Token+ }
 Verse = element lg { (element l { Token+ } | Page)+ }
+List = element list { (element label { Token+ }, element item { Token+ })+ }
 Utterance = element u { attribute ref { xsd:anyURI }?, Token+ }
 Page = element pb {attribute n { text }, attribute img { text }? }
 Sentence = element s { (Token | Page | element i { Token+ } )+ }
@@ -25,4 +26,5 @@ Token = (
           | element pause { text }
           | element footnote { attribute n { text }, Paragraph }
         )
+
 

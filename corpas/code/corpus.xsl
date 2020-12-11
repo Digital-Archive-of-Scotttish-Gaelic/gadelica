@@ -180,11 +180,32 @@
   </xsl:template>
   
   <xsl:template match="dasg:footnote">
-    <sup class="text-muted" >
+    <sup class="text-muted">
       <xsl:text>[</xsl:text>
       <xsl:apply-templates select="dasg:p/*"/>
       <xsl:text>] </xsl:text>
     </sup>
   </xsl:template>
+  
+  <xsl:template match="dasg:list">
+    <table class="table">
+      <tbody>
+        <xsl:apply-templates select="dasg:label"/>
+      </tbody>
+    </table>
+  </xsl:template>
+  
+  <xsl:template match="dasg:label">
+    <tr>
+      <th>
+        <xsl:apply-templates/>
+      </th>
+      <td>
+        <xsl:apply-templates select="following-sibling::dasg:item[1]"/>
+      </td>
+    </tr>
+  </xsl:template>
+  
+  
   
 </xsl:stylesheet>
