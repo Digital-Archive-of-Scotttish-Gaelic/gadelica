@@ -456,10 +456,10 @@
       <o>‘of, from’</o>
       <pc join="left">:</pc>
       <o>pron. 3pl.</o>
-      <w id="d1e1164">dhiubh</w>
+      <w id="d1e1164" pos="P" lemma="de">dhiubh</w>
       <pc join="left">.</pc>
-      <w id="d1e1171">cuid</w>
-      <w id="d1e1174">dhiubh</w>
+      <w id="d1e1171" pos="n" lemma="cuid">cuid</w>
+      <w id="d1e1174" pos="P" lemma="de">dhiubh</w>
       <o>[khuʧ ju]</o>
       <pc join="left">.</pc>
     </item>
@@ -469,9 +469,9 @@
     <item>
       <o>‘[medical] doctor’</o>
       <pc join="left">:</pc>
-      <w id="d1e1198">leis</w>
-      <w id="d1e1201">an</w>
-      <w id="d1e1204">doctair</w>
+      <w id="d1e1198" pos="p" lemma="le">leis</w>
+      <w id="d1e1201" pos="d" lemma="the">an</w>
+      <w id="d1e1204" pos="n" lemma="dotair">doctair</w>
       <o>[lɛʃ ən dɔktɛr ́]</o>
       <pc join="left">.</pc>
     </item>
@@ -482,12 +482,12 @@
     <item>
       <o>‘harm’</o>
       <pc join="left">:</pc>
-      <w id="d1e1233">mar</w>
-      <w id="d1e1236">chaidh</w>
-      <w id="d1e1239">an</w>
-      <w id="d1e1243">càl</w>
-      <w id="d1e1246">a</w>
-      <w id="d1e1249">dholaigh</w>
+      <w id="d1e1233" pos="p" lemma="mar">mar</w>
+      <w id="d1e1236" pos="V" lemma="rach">chaidh</w>
+      <w id="d1e1239" pos="d" lemma="the">an</w>
+      <w id="d1e1243" pos="n" lemma="càl">càl</w>
+      <w id="d1e1246" pos="d" lemma="a">a</w>
+      <w id="d1e1249" pos="n" lemma="dolaigh">dholaigh</w>
       <o>[ə ɣɔʁ̫iç]</o>
     </item>
   </list>
@@ -495,211 +495,524 @@
     <o>F</o>
   </h>
   <list>
-    <label><w id="d1e1266">fàirnich</w> vb.</label>
-    <item>‘fail’: past indep. <w id="d1e1272">dh’fhàirnich</w>, <w id="d1e1275">dh’fhàirnich</w>
-      <w id="d1e1278">cuid</w>
-      <w id="d1e1281">dhiubh</w> ɣɑ:ɽɳiç khuʧ ju ‘some of them failed’.</item>
-    <label><w id="d1e1286">fearsaid</w> fɛɽʂit ́ n.</label>
-    <item>‘spindle’.</item>
-    <label><w id="d1e1294">fiche</w> num.</label>
-    <item>‘twenty’: <w id="d1e1301">còig</w> ... <w id="d1e1304">fichead</w>, <w id="d1e1307">tha</w>
-      <w id="d1e1310">còig</w>
-      <w id="d1e1313">cearca</w>
-      <w id="d1e1317">fichead</w>
-      <w id="d1e1320">a</w>
-      <w id="d1e1323">chearcan</w>
-      <w id="d1e1326">aig</w>
-      <w id="d1e1329">Calum</w> hɑ kho:k ́ k ́hɑr̥ kə fiçət ə çɑr̥ kən ɛk ́ khɑʁ̫ əm.</item>
-    <label><w id="d1e1334">fimir</w> vb.</label>
-    <item>‘must, have to’: cond. 1sg. <w id="d1e1340">dh’fhimirinn</w> jimiriɲ.</item>
+    <label>
+      <w id="d1e1266" pos="v" lemma="fàilnich">fàirnich</w>
+      <o>vb.</o>
+    </label>
+    <item>
+      <o>‘fail’</o>
+      <pc join="left">:</pc>
+      <o>past indep.</o>
+      <w id="d1e1272" pos="V" lemma="fàilnich">dh’fhàirnich</w>
+      <pc join="left">,</pc>
+      <w id="d1e1275" pos="V" lemma="fàilnich">dh’fhàirnich</w>
+      <w id="d1e1278" pos="n" lemma="cuid">cuid</w>
+      <w id="d1e1281" pos="P" lemma="de">dhiubh</w>
+      <o>[ɣɑ:ɽɳiç khuʧ ju] ‘some of them failed’</o>
+      <pc join="left">.</pc>
+    </item>
+    <label>
+      <w id="d1e1286" pos="n" lemma="fearsaid">fearsaid</w>
+      <o>n.</o>
+    </label>
+    <item>
+      <o>[fɛɽʂit]́ ‘spindle’</o>
+      <pc join="left">.</pc>
+    </item>
+    <label>
+      <w id="d1e1294" pos="n" lemma="fichead">fiche</w>
+      <o>num.</o>
+    </label>
+    <item>
+      <o>‘twenty’</o>
+      <pc join="left">:</pc>
+      <w id="d1e1301" pos="c" lemma="còig">còig</w>
+      <pc join="no">...</pc>
+      <w id="d1e1304" pos="n" lemma="fichead">fichead</w>
+      <pc join="left">,</pc>
+      <w id="d1e1307" pos="V" lemma="bi">tha</w>
+      <w id="d1e1310" pos="c" lemma="còig">còig</w>
+      <w id="d1e1313" pos="ns" lemma="cearcan">cearca</w>
+      <w id="d1e1317" pos="n" lemma="fichead">fichead</w>
+      <w id="d1e1320" pos="p" lemma="de">a</w>
+      <w id="d1e1323" pos="ns" lemma="cearc">chearcan</w>
+      <w id="d1e1326" pos="p" lemma="aig">aig</w>
+      <w id="d1e1329" pos="N" lemma="Calum">Calum</w>
+      <o>[hɑ kho:k ́ k ́hɑr̥kə fiçət ə çɑr̥kən ɛk ́ khɑʁ̫əm]</o>
+      <pc join="left">.</pc>
+    </item>
+    <label>
+      <w id="d1e1334" pos="v" lemma="feum">fimir</w>
+      <o>vb.</o>
+    </label>
+    <item>
+      <o>‘must, have to’</o>
+      <pc join="left">:</pc>
+      <o>cond. 1sg.</o>
+      <w id="d1e1340" pos="V" lemma="feum">dh’fhimirinn</w>
+      <o>[jimiriɲ]</o>
+      <pc join="left">.</pc>
+    </item>
   </list>
   <h>
     <o>G</o>
   </h>
   <list>
-    <label><w id="d1e1354">goirmein</w> kørø̀ mɛɲ n.</label>
-    <item>‘bluing [dark blue die]’.</item>
+    <label>
+      <w id="d1e1354" pos="n" lemma="guirmean">goirmein</w>
+      <o>n.</o>
+    </label>
+    <item>
+      <o>[kørø̀mɛɲ] ‘bluing [dark blue die]’</o>
+      <pc join="left">.</pc>
+    </item>
   </list>
   <h>
     <o>I</o>
   </h>
   <list>
-    <label><w id="d1e1372">iarna</w> n.</label>
-    <item>˻iə˼ɽɳə ‘skein’. SEE ALSO <w id="d1e1378">crois</w>-<w id="d1e1381">iarna</w>.</item>
-    <label><w id="d1e1386">inis</w> vb.</label>
-    <item>‘tell’: cond. <w id="d1e1392">dh’innseadh</w>
-      <w id="d1e1395">e</w>
-      <w id="d1e1398">dha</w> jı̃:ʃəv ɑ ɣɑ.</item>
-    <label><w id="d1e1403">Ìosa</w> pers. n.</label>
-    <item>‘Jesus’: voc. <w id="d1e1410">~</w>
-      <w id="d1e1413">’s</w>
-      <w id="d1e1416">Moir’</w>! ˻iə˼s mɔi̯j.</item>
+    <label>
+      <w id="d1e1372" pos="n" lemma="iarna">iarna</w>
+      <o>n.</o>
+    </label>
+    <item>
+      <o>[˻iə˼ɽɳə] ‘skein’</o>
+      <pc join="left">.</pc>
+      <o>SEE ALSO</o>
+      <w id="d1e1378" pos="n" lemma="crois">crois</w>
+      <pc join="left">-</pc>
+      <w id="d1e1381" pos="n" lemma="iarna">iarna</w>
+      <pc join="left">.</pc>
+    </item>
+    <label>
+      <w id="d1e1386" pos="v" lemma="innis">inis</w>
+      <o>vb.</o>
+    </label>
+    <item>
+      <o>‘tell’: cond.</o>
+      <w id="d1e1392" pos="V" lemma="innis">dh’innseadh</w>
+      <w id="d1e1395" pos="D" lemma="e">e</w>
+      <w id="d1e1398" pos="P" lemma="do">dha</w>
+      <o>[jı̃:ʃəv ɑ ɣɑ]</o>
+      <pc join="left">.</pc>
+    </item>
+    <label>
+      <w id="d1e1403" pos="N" lemma="Ìosa">Ìosa</w>
+      <o>pers. n.</o>
+    </label>
+    <item>
+      <o>‘Jesus’</o>
+      <pc join="left">:</pc>
+      <o>voc.</o>
+      <w id="d1e1410" pos="N" lemma="Ìosa">Ìosa</w>
+      <w id="d1e1413" lemma="agus">’s</w>
+      <w id="d1e1416" pos="N" lemma="Moire">Moir’</w>
+      <pc join="left">!</pc>
+      <o>[˻iə˼s mɔi̯j]</o>
+      <pc join="left">.</pc>
+    </item>
   </list>
   <h>
     <o>L</o>
   </h>
   <list>
-    <label><w id="d1e1430">le</w> prep.</label>
-    <item>‘by, with, to’: with art. sg. <w id="d1e1436">leis</w>
-      <w id="d1e1439">an</w>
-      <w id="d1e1442">doctair</w> lɛʃ ən dɔktɛr ́; pron. 3sg.m. <w id="d1e1445">leis</w>, <w id="d1e1448">thubhairt</w>
-      <w id="d1e1452">mi</w>
-      <w id="d1e1455">~</w> liʃ.</item>
-    <label><w id="d1e1460">leumadair</w> ʎemətɛr ́ n.</label>
-    <item>‘grasshopper’.</item>
-    <label><w id="d1e1468">lively</w> adj.</label>
-    <item>‘spry, active’: cpv. <w id="d1e1475">nas</w>
-      <w id="d1e1478">~</w> nɑs l˻ai˼vli.</item>
+    <label>
+      <w id="d1e1430" pos="p" lemma="le">le</w>
+      <o>prep.</o>
+    </label>
+    <item>
+      <o>‘by, with, to’</o>
+      <pc join="left">:</pc>
+      <o>with art. sg.</o>
+      <w id="d1e1436" pos="p" lemma="le">leis</w>
+      <w id="d1e1439" pos="d" lemma="the">an</w>
+      <w id="d1e1442" pos="n" lemma="dotair">doctair</w>
+      <o>[lɛʃ ən dɔktɛr ́]</o>
+      <pc join="left">;</pc>
+      <o>pron. 3sg.m.</o>
+      <w id="d1e1445" pos="P" lemma="le">leis</w>
+      <pc join="left">,</pc>
+      <w id="d1e1448" pos="V" lemma="abair">thubhairt</w>
+      <w id="d1e1452" pos="D" lemma="mi">mi</w>
+      <w id="d1e1455" pos="P" lemma="le">leis</w>
+      <o>[liʃ]</o>
+      <pc join="left">.</pc>
+    </item>
+    <label>
+      <w id="d1e1460" pos="n" lemma="leumadair">leumadair</w>
+      <o>n.</o>
+    </label>
+    <item>
+      <o>[ʎemətɛr ́] ‘grasshopper’</o>
+      <pc join="left">.</pc>
+    </item>
+    <label>
+      <w id="d1e1468" pos="a">lively</w>
+      <o>adj.</o>
+    </label>
+    <item>
+      <o>‘spry, active’</o>
+      <pc join="left">:</pc>
+      <o>cpv.</o>
+      <w id="d1e1475" lemma="rx">nas</w>
+      <w id="d1e1478" pos="a">lively</w>
+      <o>[nɑs l˻ai˼vli]</o>
+      <pc join="left">.</pc>
+    </item>
   </list>
   <h>
     <o>M</o>
   </h>
   <list>
-    <label><w id="d1e1492">màs</w> n.</label>
-    <item>‘bottom, base’: <w id="d1e1498">màs</w> mɑ:s <w id="d1e1501">a’</w>
-      <w id="d1e1504">choire</w>.</item>
     <label>
-      <w id="d1e1510">meadhg</w>
+      <w id="d1e1492" pos="n" lemma="màs">màs</w>
+      <o>n.</o>
     </label>
-    <item>mɛ̯uk ‘whey’. SEE ALSO <w id="d1e1516">miodhg</w>.</item>
-    <label><w id="d1e1521">meigead</w> n.</label>
-    <item>‘bleating of kid (?)’: gen. sg. <w id="d1e1528">~eid</w>: <w id="d1e1531">tha</w>
-      <w id="d1e1534">e</w>
-      <w id="d1e1537">’</w>
-      <w id="d1e1540">ciarachadh</w>
-      <w id="d1e1544">a’</w>
-      <w id="d1e1547">mheigeid</w> (?) ə vɩkɑʧ.</item>
+    <item>
+      <o>‘bottom, base’</o>
+      <pc join="left">:</pc>
+      <w id="d1e1498" pos="n" lemma="màs">màs</w>
+      <o>[mɑ:s]</o>
+      <w id="d1e1501" pos="d" lemma="the">a’</w>
+      <w id="d1e1504" pos="n" lemma="coire">choire</w>
+      <pc join="left">.</pc>
+    </item>
     <label>
-      <w id="d1e1553">miodhg</w>
+      <w id="d1e1510" pos="n" lemma="miùg">meadhg</w>
     </label>
-    <item>mi̯uk ‘whey’. SEE ALSO <w id="d1e1559">meadhg</w>.</item>
-    <label><w id="d1e1564">Moire</w> pers. n.</label>
-    <item>‘Blessed Virgin Mary’: voc. <w id="d1e1570">Ìos’</w>
-      <w id="d1e1573">’s</w>
-      <w id="d1e1576">~</w> ˻iə˼s mɔi̯j.</item>
+    <item>
+      <o>[mɛ̯uk] ‘whey’</o>
+      <pc join="left">.</pc>
+      <o>SEE ALSO</o>
+      <w id="d1e1516" pos="n" lemma="miùg">miodhg</w>
+      <pc join="left">.</pc>
+    </item>
+    <label>
+      <w id="d1e1521" pos="n" lemma="meigead">meigead</w>
+      <o>n.</o>
+    </label>
+    <item>
+      <o>‘bleating of kid (?)’</o>
+      <pc join="left">:</pc>
+      <o>gen. sg.</o>
+      <w id="d1e1528" pos="nx" lemma="meigead">meigeid</w>
+      <pc join="left">:</pc>
+      <w id="d1e1531" pos="V" lemma="bi">tha</w>
+      <w id="d1e1534" pos="D" lemma="e">e</w>
+      <w id="d1e1537" lemma="ag">’</w>
+      <w id="d1e1540" pos="vn" lemma="ciaraich">ciarachadh</w>
+      <w id="d1e1544" pos="d" lemma="the">a’</w>
+      <w id="d1e1547" pos="nx" lemma="meigead">mheigeid</w>
+      <o>(?) [ə vɩkɑʧ]</o>
+      <pc join="left">.</pc>
+    </item>
+    <label>
+      <w id="d1e1553" pos="n" lemma="miùg">miodhg</w>
+    </label>
+    <item>
+      <o>[mi̯uk] ‘whey’</o>
+      <pc join="left">.</pc>
+      <o>SEE ALSO</o>
+      <w id="d1e1559" pos="n" lemma="miùg">meadhg</w>
+      <pc join="left">.</pc>
+    </item>
+    <label>
+      <w id="d1e1564" pos="N" lemma="Moire">Moire</w>
+      <o>pers. n.</o>
+    </label>
+    <item>
+      <o>‘Blessed Virgin Mary’</o>
+      <pc join="left">:</pc>
+      <o>voc.</o>
+      <w id="d1e1570" pos="N" lemma="Ìosa">Ìos’</w>
+      <w id="d1e1573" lemma="agus">’s</w>
+      <w id="d1e1576" pos="N" lemma="Moire">Moire</w>
+      <o>[˻iə˼s mɔi̯j]</o>
+      <pc join="left">.</pc>
+    </item>
   </list>
   <h>
     <o>N</o>
   </h>
   <list>
-    <label><w id="d1e1591">Niall</w> ɲ˻ia˼ʁ̫ pers. n.</label>
-    <item>‘Neil’.</item>
+    <label>
+      <w id="d1e1591" pos="N" lemma="Niall">Niall</w>
+      <o>pers. n.</o>
+    </label>
+    <item>
+      <o>[ɲ˻ia˼ʁ̫] ‘Neil’</o>
+      <pc join="left">.</pc>
+    </item>
   </list>
   <h>
     <o>P</o>
   </h>
   <list>
-    <label><w id="d1e1608">poit</w>-<w id="d1e1611">tì</w> n.f</label>
-    <item>‘teapot’: <w id="d1e1617">a’</w>
-      <w id="d1e1620">ph.</w> ə ˌfɔt 'ti:.</item>
+    <label>
+      <w id="d1e1608" pos="n" lemma="poit">poit</w>
+      <pc join="both">-</pc>
+      <w id="d1e1611" pos="n" lemma="tì">tì</w>
+      <o>n.f</o>
+    </label>
+    <item>
+      <o>‘teapot’</o>
+      <pc join="left">:</pc>
+      <w id="d1e1617" pos="d" lemma="the">a’</w>
+      <w id="d1e1620" pos="n" lemma="poit">phoit</w>
+      <pc join="both">-</pc>
+      <w id="d1e1621" pos="n" lemma="tì">tì</w>
+      <o>[ə ˌfɔt 'ti:]</o>
+      <pc join="left">.</pc>
+    </item>
   </list>
   <h>
     <o>R</o>
   </h>
   <list>
-    <label><w id="d1e1634">rèidh</w> re: adj.</label>
-    <item>‘ready’; in Mabou rɛ:; substituted by <w id="d1e1640">ullamh</w> uʁ̫ əv (q.v.) in Scotsville.</item>
+    <label>
+      <w id="d1e1634" pos="a" lemma="rèidh">rèidh</w>
+      <o>adj.</o>
+    </label>
+    <item>
+      <o>[re:] ‘ready’</o>
+      <pc join="left">;</pc>
+      <o>in Mabou [rɛ:]</o>
+      <pc join="left">;</pc>
+      <o>substituted by</o>
+      <w id="d1e1640" pos="a" lemma="ullamh">ullamh</w>
+      <o>[uʁ̫əv] (q.v.) in Scotsville</o>
+      <pc join="left">.</pc>
+    </item>
   </list>
   <h>
     <o>S</o>
   </h>
   <list>
-    <label><w id="d1e1655">sabhal</w> sa-uʁ̫ n.</label>
-    <item>‘barn’; pl. <w id="d1e1661">sabhail</w> sahiʎ.</item>
-    <label><w id="d1e1666">seachd</w> num.</label>
-    <item>‘seven’: <w id="d1e1672">tha</w>
-      <w id="d1e1675">mi</w>
-      <w id="d1e1678">~</w>
-      <w id="d1e1681">searbh</w>
-      <w id="d1e1684">dhiubh</w> ʃɑxk ʃɑrɑ̀ v ju ‘quite fed up with them’.</item>
-    <label><w id="d1e1689">searbh</w> adj.</label>
-    <item>‘fed up’: <w id="d1e1696">tha</w>
-      <w id="d1e1699">mi</w>
-      <w id="d1e1702">seachd</w>
-      <w id="d1e1705">~</w>
-      <w id="d1e1708">dhiubh</w> ʃɑxk ʃɑrɑ̀ v ju ‘quite fed up with them’.</item>
-    <label><w id="d1e1713">sgallte</w> adj.</label>
-    <item>‘scalded’: <w id="d1e1719">aig</w>
-      <w id="d1e1722">na</w>
-      <w id="d1e1725">bodaich</w>
-      <w id="d1e1728">~</w> .</item>
-    <label><w id="d1e1733">sgrath</w> sgrɔ n.</label>
-    <item>‘bark of tree’: in Mabou sgrɑ.</item>
-    <label><w id="d1e1741">sgùr</w> vb.</label>
-    <item>‘scour’: vbl. n. <w id="d1e1748">~adh</w>, <w id="d1e1751">~adh</w>
-      <w id="d1e1754">le</w>
-      <w id="d1e1757">gainmheach</w> sku:rəɣ lɛ kɛnɛ̀ -əx; gen. SEE <w id="d1e1760">brèid</w> / <w id="d1e1764">bruis</w>
-      <w id="d1e1767">sgùraidh</w>.</item>
-    <label><w id="d1e1772">stick</w> vb.</label>
-    <item>‘stick’: past indep. <w id="d1e1778">stick</w> stik ́<w id="d1e1781">a’</w>
-      <w id="d1e1784">mhin</w>
-      <w id="d1e1787">ri</w>
-      <w id="d1e1790">màs</w>
-      <w id="d1e1794">a’</w>
-      <w id="d1e1797">choire</w>.</item>
+    <label>
+      <w id="d1e1655" pos="n" lemma="sabhal">sabhal</w>
+      <o>n.</o>
+    </label>
+    <item>
+      <o>[sa-uʁ̫] ‘barn’</o>
+      <pc join="left">;</pc>
+      <o>pl.</o>
+      <w id="d1e1661" pos="nx" lemma="sabhal">sabhail</w>
+      <o>[sahiʎ]</o>
+      <pc join="left">.</pc>
+    </item>
+    <label>
+      <w id="d1e1666" pos="c" lemma="seachd">seachd</w>
+      <o>num.</o>
+    </label>
+    <item>
+      <o>‘seven’</o>
+      <pc join="left">:</pc>
+      <w id="d1e1672" pos="V" lemma="bi">tha</w>
+      <w id="d1e1675" pos="D" lemma="mi">mi</w>
+      <w id="d1e1678" pos="c" lemma="seachd">seachd</w>
+      <w id="d1e1681" pos="a" lemma="searbh">searbh</w>
+      <w id="d1e1684" pos="P" lemma="de">dhiubh</w>
+      <o>[ʃɑxk ʃɑrɑ̀ v ju] ‘quite fed up with them’</o>
+      <pc join="left">.</pc>
+    </item>
+    <label>
+      <w id="d1e1689" pos="a" lemma="searbh">searbh</w>
+      <o>adj.</o>
+    </label>
+    <item>
+      <o>‘fed up’</o>
+      <pc join="left">:</pc>
+      <w id="d1e1696" pos="V" lemma="bi">tha</w>
+      <w id="d1e1699" pos="D" lemma="mi">mi</w>
+      <w id="d1e1702" pos="c" lemma="seachd">seachd</w>
+      <w id="d1e1705" pos="a" lemma="searbh">searbh</w>
+      <w id="d1e1708" pos="P" lemma="de">dhiubh</w>
+      <o>[ʃɑxk ʃɑrɑ̀ v ju] ‘quite fed up with them’</o>
+      <pc join="left">.</pc>
+    </item>
+    <label>
+      <w id="d1e1713" pos="a" lemma="sgallte">sgallte</w>
+      <o>adj.</o>
+    </label>
+    <item>
+      <o>‘scalded’</o>
+      <pc join="left">:</pc>
+      <w id="d1e1719" pos="p" lemma="aig">aig</w>
+      <w id="d1e1722" pos="d" lemma="the">na</w>
+      <w id="d1e1725" pos="ns" lemma="bodach">bodaich</w>
+      <w id="d1e1728" pos="a" lemma="sgallte">sgallte</w>
+      <pc join="left">.</pc>
+    </item>
+    <label>
+      <w id="d1e1733" pos="n" lemma="sgrath">sgrath</w>
+      <o>n.</o>
+    </label>
+    <item>
+      <o>[sgrɔ] ‘bark of tree’</o>
+      <pc join="left">:</pc>
+      <o>in Mabou [sgrɑ]</o>
+      <pc join="left">.</pc>
+    </item>
+    <label>
+      <w id="d1e1741" pos="v" lemma="sgùr">sgùr</w>
+      <o>vb.</o>
+    </label>
+    <item>
+      <o>‘scour’</o>
+      <pc join="left">:</pc>
+      <o>vbl. n.</o>
+      <w id="d1e1748" pos="vn" lemma="sgùr">sgùradh</w>
+      <pc join="left">,</pc>
+      <w id="d1e1751" pos="vn" lemma="sgùr">sgùradh</w>
+      <w id="d1e1754" pos="p" lemma="le">le</w>
+      <w id="d1e1757" pos="n" lemma="gainmheach">gainmheach</w>
+      <o>[sku:rəɣ lɛ kɛnɛ̀-əx]</o>
+      <pc join="left">;</pc>
+      <o>gen. SEE</o>
+      <w id="d1e1760" pos="n" lemma="brèid">brèid</w>
+      <pc join="no">/</pc>
+      <w id="d1e1764" pos="n" lemma="bruis">bruis</w>
+      <w id="d1e1767" pos="nx" lemma="sgùradh">sgùraidh</w>
+      <pc join="left">.</pc>
+    </item>
+    <label>
+      <w id="d1e1772" pos="n" lemma="stiog">stick</w>
+      <o>vb.</o>
+    </label>
+    <item>
+      <o>‘stick’: past indep.</o>
+      <w id="d1e1778" pos="n" lemma="stiog">stick</w>
+      <o>[stik ́]</o>
+      <w id="d1e1781" lemma="ag">a’</w>
+      <w id="d1e1784" pos="n" lemma="min">mhin</w>
+      <w id="d1e1787" pos="p" lemma="ri">ri</w>
+      <w id="d1e1790" pos="n" lemma="màs">màs</w>
+      <w id="d1e1794" pos="d" lemma="the">a’</w>
+      <w id="d1e1797" pos="n" lemma="coire">choire</w>
+      <pc join="left">.</pc>
+    </item>
   </list>
   <h>
     <o>T</o>
   </h>
   <list>
-    <label><w id="d1e1811">tachrais</w> vb.</label>
-    <item>‘wind yarn’: cond. <w id="d1e1817">thachraiseadh</w>
-      <w id="d1e1820">iad</w>
-      <w id="d1e1823">e</w> hɑxrəʃəɣ ɑt.</item>
-    <label><w id="d1e1828">tachrasan</w> tɑxrəsɑn n.</label>
-    <item>‘yarn reel’.</item>
-    <label><w id="d1e1836">tè</w> n.f.</label>
-    <item>‘woman, girl; animal, object of fem. ref.: t ́he: in Mabou t ́hɛ:.</item>
-    <label><w id="d1e1845">teann</w> t ́˻ɛu˼m adj.</label>
-    <item>‘close, near’: <w id="d1e1851">bheil</w>
-      <w id="d1e1854">e</w>
-      <w id="d1e1857">~</w> vɛl ɑ ~; substituted by <w id="d1e1860">faisg</w> fɑʃt ́ in Middle River.</item>
-    <label><w id="d1e1865">their</w> vb.</label>
-    <item>‘say’: past indep. emph. <w id="d1e1871">thubhairt</w> hu-iɽsʧ, <w id="d1e1874">thubhairt</w>
-      <w id="d1e1877">mi</w>
-      <w id="d1e1880">leis</w>.</item>
-    <label><w id="d1e1885">tog</w> vb.</label>
-    <item>‘lift, raise’: vbl. n. <w id="d1e1892">~ail</w>: <w id="d1e1895">thug</w>
-      <w id="d1e1898">e</w>
-      <w id="d1e1901">~ail</w>
-      <w id="d1e1904">air</w> huk ɑ tokɑl ɛr ́.</item>
+    <label>
+      <w id="d1e1811" pos="v" lemma="tachrais">tachrais</w>
+      <o>vb.</o>
+    </label>
+    <item>
+      <o>‘wind yarn’</o>
+      <pc join="left">:</pc>
+      <o>cond.</o>
+      <w id="d1e1817" pos="V" lemma="tachrais">thachraiseadh</w>
+      <w id="d1e1820" pos="D" lemma="iad">iad</w>
+      <w id="d1e1823" pos="D" lemma="e">e</w>
+      <o>[hɑxrəʃəɣ ɑt]</o>
+      <pc join="left">.</pc>
+    </item>
+    <label>
+      <w id="d1e1828" pos="n" lemma="tachrasan">tachrasan</w>
+      <o>n.</o>
+    </label>
+    <item>
+      <o>[tɑxrəsɑn] ‘yarn reel’</o>
+      <pc join="left">.</pc>
+    </item>
+    <label>
+      <w id="d1e1836" pos="n" lemma="tè">tè</w>
+      <o>n.f.</o>
+    </label>
+    <item>
+      <o>‘woman, girl; animal, object of fem. ref.: [t ́he:] in Mabou [t ́hɛ:]</o>
+      <pc join="left">.</pc>
+    </item>
+    <label>
+      <w id="d1e1845" pos="a" lemma="teann">teann</w>
+      <o>adj.</o>
+    </label>
+    <item>
+      <o>[t ́˻ɛu˼m] ‘close, near’</o>
+      <pc join="left">:</pc>
+      <w id="d1e1851" pos="v" lemma="bi">bheil</w>
+      <w id="d1e1854" pos="D" lemma="e">e</w>
+      <w id="d1e1857" pos="a" lemma="teann">teann</w>
+      <o>[vɛl ɑ ~]</o>
+      <pc join="left">;</pc>
+      <o>substituted by</o>
+      <w id="d1e1860" pos="a" lemma="faisg">faisg</w>
+      <o>[fɑʃt ́] in Middle River</o>
+      <pc join="left">.</pc>
+    </item>
+    <label>
+      <w id="d1e1865" pos="v" lemma="abair">their</w>
+      <o>vb.</o>
+    </label>
+    <item>
+      <o>‘say’</o>
+      <pc join="left">:</pc>
+      <o>past indep. emph.</o>
+      <w id="d1e1871" pos="V" lemma="abair">thubhairt</w>
+      <o>hu-iɽsʧ</o>
+      <pc join="left">,</pc>
+      <w id="d1e1874" pos="V" lemma="abair">thubhairt</w>
+      <w id="d1e1877" pos="D" lemma="mi">mi</w>
+      <w id="d1e1880" pos="P" lemma="le">leis</w>
+      <pc join="left">.</pc>
+    </item>
+    <label>
+      <w id="d1e1885" pos="v" lemma="tog">tog</w>
+      <o>vb.</o>
+    </label>
+    <item>
+      <o>‘lift, raise’</o>
+      <pc join="left">:</pc>
+      <o>vbl. n.</o>
+      <w id="d1e1892" pos="vn" lemma="tog">togail</w>
+      <pc join="left">:</pc>
+      <w id="d1e1895" pos="V" lemma="thoir">thug</w>
+      <w id="d1e1898" pos="D" lemma="e">e</w>
+      <w id="d1e1901" pos="vn" lemma="tog">togail</w>
+      <w id="d1e1904" pos="P" lemma="air">air</w>
+      <o>[huk ɑ tokɑl ɛr ́]</o>
+      <pc join="left">.</pc>
+    </item>
   </list>
   <h>
     <o>U</o>
   </h>
   <list>
     <label>
-      <w id="d1e1918">uile</w>
+      <w id="d1e1918" lemma="uile">uile</w>
       <o>adj.</o>
     </label>
     <item>
       <o>‘all’</o>
       <pc join="left">:</pc>
-      <w id="d1e1924">tha</w>
-      <w id="d1e1927">còig</w>
-      <w id="d1e1930">cearca</w>
-      <w id="d1e1933">fichead</w>
-      <w id="d1e1936">a</w>
-      <w id="d1e1940">chearcan</w>
-      <w id="d1e1943">aig</w>
-      <w id="d1e1946">Calum</w>
-      <w id="d1e1949">’s</w>
-      <w id="d1e1952">iad</w>
-      <w id="d1e1955">uil’</w>
-      <w id="d1e1959">a’</w>
-      <w id="d1e1962">breith</w>
+      <w id="d1e1924" pos="V" lemma="bi">tha</w>
+      <w id="d1e1927" pos="c" lemma="còig">còig</w>
+      <w id="d1e1930" pos="ns" lemma="cearc">cearca</w>
+      <w id="d1e1933" pos="n" lemma="fichead">fichead</w>
+      <w id="d1e1936" pos="p" lemma="de">a</w>
+      <w id="d1e1940" pos="ns" lemma="cearc">chearcan</w>
+      <w id="d1e1943" pos="p" lemma="aig">aig</w>
+      <w id="d1e1946" pos="N" lemma="Calum">Calum</w>
+      <w id="d1e1949" lemma="agus">’s</w>
+      <w id="d1e1952" pos="D" lemma="iad">iad</w>
+      <w id="d1e1955" lemma="uile">uil’</w>
+      <w id="d1e1959" lemma="ag">a’</w>
+      <w id="d1e1962" pos="vn" lemma="beir">breith</w>
       <o>[s ɑt ul ə prɛh]</o>
       <pc join="left">.</pc>
     </item>
     <label>
-      <w id="d1e1967">ullamh</w>
+      <w id="d1e1967" pos="a" lemma="ullamh">ullamh</w>
       <o>adj.</o>
     </label>
     <item>
       <o>[uʁ̫əv] ‘ready’</o>
       <pc join="left">,</pc>
       <o>substituted for</o>
-      <w id="d1e1973">rèidh</w>
+      <w id="d1e1973" pos="a" lemma="rèidh">rèidh</w>
       <o>(q.v.) in Scotsville</o>
       <pc join="left">.</pc>
     </item>
