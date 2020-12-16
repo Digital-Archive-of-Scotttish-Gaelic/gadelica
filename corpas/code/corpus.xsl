@@ -165,16 +165,20 @@
   </xsl:template>
   
   <xsl:template match="dasg:pb">
-    <hr/>
+    <xsl:if test="not(name(following-sibling::*[1])='pb')">
+      <hr/>
+    </xsl:if>
     <xsl:choose>
       <xsl:when test="@img and starts-with(@img,'http')">
-        <p><a href="{@img}" target="_new">[p. <xsl:value-of select="@n"/>]</a></p>
+        <a href="{@img}" target="_new">[<xsl:value-of select="@n"/>]</a>
+        <xsl:text>&#32;</xsl:text>
       </xsl:when>
       <xsl:when test="@img">
-        <p><a href="{concat('https://dasg.ac.uk/images/cnag/pages/',@img)}" target="_new">[p. <xsl:value-of select="@n"/>]</a></p>
+        <a href="{concat('https://dasg.ac.uk/images/cnag/pages/',@img)}" target="_new">[<xsl:value-of select="@n"/>]</a>
+        <xsl:text>&#32;</xsl:text>
       </xsl:when>
       <xsl:otherwise>
-        <p class="text-muted">[p. <xsl:value-of select="@n"/>]</p>
+        <span class="text-muted">[<xsl:value-of select="@n"/>] </span>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
