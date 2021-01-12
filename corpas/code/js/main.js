@@ -97,7 +97,9 @@ $(function () {
       canEdit = data.canEdit ? true : false;
       var context = data.context.pre["output"] + ' <mark>' + data.context.word + '</mark> ' + data.context.post["output"];
       body += '<p>' + context + '</p>';
-      body += '<p><small class="text-muted">' + data.translation + '</small></p>';
+      if (data.translation) {
+        body += '<p><small class="text-muted">' + data.translation + '</small></p>';
+      }
       //body += '<p class="small">[#' + textId + ': <em>' + title + '</em> p.' + page + ']</p>';
       body += '<p class="text-muted"><span data-toggle="tooltip" data-html="true" title="' + '<em>' + title + '</em> p.' + page + '">#' + textId + ': ' + date + '</span></p>';
       body += '<hr/>';
@@ -110,6 +112,9 @@ $(function () {
         body += '<li class="list-inline-item badge badge-secondary">' + v + '</li>';
       });
       body += '</ul>';
+      if (data.notes) {
+        body += '<p><small class="text-muted">' + data.notes + '</small></p>';
+      }
       slipId = data.auto_id;
       //check the slip lock status
       locked = data.locked;
@@ -282,52 +287,6 @@ $(function () {
       window.close();
     }, 2000);
   });
-
-  function writeSlipContext(filename, id) {
-    var html = '';
-    var preScope  = $('#slipContext').attr('data-precontextscope');
-    var postScope = $('#slipContext').attr('data-postcontextscope');
-    $.getJSON("ajax.php?action=getContext&filename="+filename+"&id="+id+"&preScope="+preScope+"&postScope="+postScope, function (data) {
-      var preOutput = data.pre["output"];
-      var postOutput = data.post["output"];
-      //handle zero pre/post context sizes
-      if (typeof preOutput == "undefined") {
-        preOutput = "";
-        $('#decrementPre').removeAttr("href");
-      } else {
-        $('#decrementPre').attr("href", "#");
-      }
-      if (typeof postOutput == "undefined") {
-        postOutput = "";
-        $('#decrementPost').removeAttr("href");
-      } else {
-        $('#decrementPost').attr("href", "#");
-      }
-      //handle reaching the start/end of the document
-      if (data.prelimit) {
-        $('#incrementPre').removeAttr("href");
-      } else {
-        $('#incrementPre').attr("href", "#");
-      }
-      if (data.postlimit) {
-        $('#incrementPost').removeAttr("href");
-      } else {
-        $('#incrementPost').attr("href", "#");
-      }
-      html = preOutput;
-      if (data.pre["endJoin"] != "right" && data.pre["endJoin"] != "both") {
-        html += ' ';
-      }
-      //html += '<span id="slipWordInContext">' + data.word + '</span>';
-      html += '<mark id="slipWordInContext">' + data.word + '</mark>'; // MM
-      if (data.post["startJoin"] != "left" && data.post["startJoin"] != "both") {
-        html += ' ';
-      }
-      html += postOutput;
-      $('#slipContext').html(html);
-      $('#slip').show();
-    });
-  }
 
   function resetSlip() {
     $('#slipNumber').html('');

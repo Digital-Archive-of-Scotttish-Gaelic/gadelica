@@ -37,11 +37,19 @@ class slip
             <label class="form-check-label" for="slipStarred">checked</label>
           </div>
         </div>
-         <div>
+        <a href="#morphoSyntactic" id="toggleMorphoSyntactic" data-toggle="collapse" aria-expanded="true" aria-controls="morphoSyntactic">
+          show/hide morphosyntax
+        </a>
+        <div id="morphoSyntactic" class="collapse show editSlipSectionContainer">
+          <div>
             headword: <span id="slipHeadword">{$_REQUEST["headword"]}</span>
-        </div>
+          </div>
 HTML;
     $this->_writePartOfSpeechSelects();
+    echo <<<HTML
+				</div> <!-- end morphoSyntactic -->
+HTML;
+
 	  $this->_writeSenseCategories();
     echo <<<HTML
         <div class="form-group">
@@ -179,7 +187,7 @@ HTML;
     	$genderPrepHide = ($props["prep_person"] != "third person") || ($props["prep_number"] != "singular") ? "hide" : "";
     }
     echo <<<HTML
-        <div class="editSlipSectionContainer">
+        <div>
           <h5>Morphological information</h5>
             <div id="prepSelects" class="{$prepSelectHide}">
               <div class="row form-group form-inline">
@@ -296,8 +304,8 @@ HTML;
 HTML;
     }
     $html = <<<HTML
-        <div id="wordClassSelect" class="editSlipSectionContainer form-group form-inline">
-          <label for="wordClass" class="col-form-label col-sm-2"><h5>Part-of-speech:</h5></label>
+        <div id="wordClassSelect" class="form-group form-inline">
+          <label for="wordClass" class="col-form-label"><h5>Part-of-speech:</h5></label>
           <select name="wordClass" id="wordClass" class="form-control col-3">
             {$optionHtml}
           </select>
@@ -361,7 +369,7 @@ HTML;
     $handler = new models\xmlfilehandler($this->_slip->getFilename());
     $preScope = $this->_slip->getPreContextScope();
     $postScope = $this->_slip->getPostContextScope();
-    $context = $handler->getContext($this->_slip->getId(), $preScope, $postScope, true, false);
+    $context = $handler->getContext($this->_slip->getId(), $preScope, $postScope, true, false, true);
     $preHref = "href=\"#\"";
     //check for start/end of document
     if (isset($context["prelimit"])) {
@@ -396,6 +404,9 @@ HTML;
                 <a class="updateContext" id="decrementPost"><i class="fas fa-minus"></i></a>
 								<a class="updateContext" id="incrementPost"><i class="fas fa-plus"></i></a>
               </div>
+              <div style="height: 20px;">
+                <a href="#" class="float-right" id="resetContext">reset context</a>
+							</div>
             </div>
 HTML;
   }
@@ -435,7 +446,41 @@ HTML;
         <script>     
             //refresh the results page that brought us here to change "create slip" to "view slip"
 		        window.opener.document.location.reload(true);
-               
+            
+		        //update the slip context on click of token
+		        $(document).on('click', '.contextLink',  function () {
+		          $(this).tooltip('hide')
+		          var filename = $('#slipFilename').text();
+              var id = $('#wordId').text();
+		          var preScope = $('#preContextScope').val();
+		          var postScope = $('#postContextScope').val();
+		        
+		          if ($(this).hasClass('pre')) {
+		            preScope = $(this).attr('data-position');
+		          } else {
+		            postScope = $(this).attr('data-position');
+		          }  
+		          $('#slipContext').attr('data-precontextscope', preScope);
+					    $('#slipContext').attr('data-postcontextscope', postScope);
+					    $('#preContextScope').val(preScope);
+					    $('#postContextScope').val(postScope);
+					    writeSlipContext(filename, id);
+		        });
+		        
+		        //reset the context
+		        $('#resetContext').on('click', function () {
+		          var filename = $('#slipFilename').text();
+              var id = $('#wordId').text();
+              var preScope = '{$this->_slip->getPreContextScope()}';
+              var postScope = '{$this->_slip->getPostContextScope()}';
+              $('#slipContext').attr('data-precontextscope', preScope);
+					    $('#slipContext').attr('data-postcontextscope', postScope);
+					    $('#preContextScope').val(preScope);
+					    $('#postContextScope').val(postScope);
+					    writeSlipContext(filename, id);
+		        });
+		        
+						//lock slip functionality
             $('.lockBtn').on('click', function (e) {
               e.preventDefault();
               $(this).addClass('d-none');
@@ -617,6 +662,52 @@ HTML;
                 $('#genderPrepOptions').hide();
               }
             });
+            
+            function writeSlipContext(filename, id) {
+					    var html = '';
+					    var preScope  = $('#slipContext').attr('data-precontextscope');
+					    var postScope = $('#slipContext').attr('data-postcontextscope');
+					    $.getJSON("ajax.php?action=getContext&filename="+filename+"&id="+id+"&preScope="+preScope+"&postScope="+postScope, function (data) {
+					      var preOutput = data.pre["output"];
+					      var postOutput = data.post["output"];
+					      //handle zero pre/post context sizes
+					      if (typeof preOutput == "undefined") {
+					        preOutput = "";
+					        $('#decrementPre').removeAttr("href");
+					      } else {
+					        $('#decrementPre').attr("href", "#");
+					      }
+					      if (typeof postOutput == "undefined") {
+					        postOutput = "";
+					        $('#decrementPost').removeAttr("href");
+					      } else {
+					        $('#decrementPost').attr("href", "#");
+					      }
+					      //handle reaching the start/end of the document
+					      if (data.prelimit) {
+					        $('#incrementPre').removeAttr("href");
+					      } else {
+					        $('#incrementPre').attr("href", "#");
+					      }
+					      if (data.postlimit) {
+					        $('#incrementPost').removeAttr("href");
+					      } else {
+					        $('#incrementPost').attr("href", "#");
+					      }
+					      html = preOutput;
+					      if (data.pre["endJoin"] != "right" && data.pre["endJoin"] != "both") {
+					        html += ' ';
+					      }
+					      //html += '<span id="slipWordInContext">' + data.word + '</span>';
+					      html += '<mark id="slipWordInContext">' + data.word + '</mark>'; // MM
+					      if (data.post["startJoin"] != "left" && data.post["startJoin"] != "both") {
+					        html += ' ';
+					      }
+					      html += postOutput;
+					      $('#slipContext').html(html);
+					      $('#slip').show();
+					    });
+					  }
         </script>
 HTML;
   }
