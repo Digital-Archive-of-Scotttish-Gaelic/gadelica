@@ -147,6 +147,21 @@ HTML;
             </div>
         </div>
         <div class="form-group">
+            <p>Restrict by importance:</p>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="level[]" id="level1Check" value="1" checked>
+                <label class="form-check-label" for="level1Check"><i class="fas fa-star gold"></i></label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="level[]" id="level2Check" value="2" checked>
+                <label class="form-check-label" for="level2Check"><i class="fas fa-star silver"></i></label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="level[]" id="level3Check" value="3" checked>
+                <label class="form-check-label" for="level2Check"><i class="fas fa-star bronze"></i></label>
+            </div>
+        </div>
+        <div class="form-group">
             <p>Restrict by part-of-speech:</p>
             {$this->_getSelectPosHtml()}
         </div>
@@ -283,8 +298,8 @@ HTML;
 		}
 		$textNum = stristr($result["filename"], "_", true);
 		echo <<<HTML
-				<td>#{$textNum}</td>
 				<td>{$result["date_of_lang"]}</td>
+				<td>#{$textNum}</td>
         <td style="text-align: right;">{$context["pre"]["output"]}</td>
         <td style="text-align: center;">
             <a href="?m=corpus&a=browse&id={$result["tid"]}&wid={$result["id"]}"
