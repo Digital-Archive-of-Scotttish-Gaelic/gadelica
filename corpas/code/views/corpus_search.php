@@ -164,6 +164,7 @@ HTML;
         <div class="form-group">
             <p>Restrict by part-of-speech:</p>
             {$this->_getSelectPosHtml()}
+            <note><em>Select multiple options by using CTRL key (Windows) or Command key (Mac)</em></note>
         </div>
       </form>
 HTML;
