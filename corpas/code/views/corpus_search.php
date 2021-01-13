@@ -272,6 +272,19 @@ HTML;
 	private function _writeSearchResult($result, $index) {
 		$context = $result["context"];
 		$pos = new models\partofspeech($result["pos"]);
+
+		/**
+		 * !Experimental short title code - to be reconsidered and possibly moved SB
+		 */
+		$shortTitleElems = explode(' ', $result["title"]);
+		foreach ($shortTitleElems as $elem) {
+			if ($elem == '–') {
+				break;
+			}
+			$shortTitle .= mb_substr($elem, 0, 1);
+		}
+		/* --- */
+
 		$title = <<<HTML
         Headword: {$result["lemma"]}<br>
         POS: {$result["pos"]} ({$pos->getLabel()})<br>
@@ -299,7 +312,7 @@ HTML;
 		$textNum = stristr($result["filename"], "_", true);
 		echo <<<HTML
 				<td>{$result["date_of_lang"]}</td>
-				<td>#{$textNum}</td>
+				<td>#{$textNum} {$shortTitle}</td>
         <td style="text-align: right;">{$context["pre"]["output"]}</td>
         <td style="text-align: center;">
             <a href="?m=corpus&a=browse&id={$result["tid"]}&wid={$result["id"]}"

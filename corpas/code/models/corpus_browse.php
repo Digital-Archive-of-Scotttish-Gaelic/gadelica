@@ -6,7 +6,7 @@ class corpus_browse // models a corpus text or subtext
 {
 
   private $_id; // the id number for the text in the corpus (obligatory)
-	private $_parentText; // the parent text of this text (optional) – an instance of models\corpus_browse2
+	private $_parentText; // the parent text of this text (optional) – an instance of models\corpus_browse
   private $_title; // the title of the text (optional)
   private $_date, $_level, $_notes;
   private $_filepath; // the path to the text XML (simple texts only)
