@@ -4,7 +4,6 @@ namespace models;
 
 class corpus_search
 {
-
 	private $_id; // the id number for the text in the corpus being searched
 	private $_term; // the word being searched for
 	private $_db; // an instance of models\database
@@ -123,6 +122,7 @@ class corpus_search
 			$fileResults[$i]["auto_id"] = $result["auto_id"];
 			$fileResults[$i]["title"] = $result["title"];
 			$fileResults[$i]["page"] = $result["page"];
+			$fileResults[$i]["level"] = $result["level"];
 			$i++;
 		}
 		return $fileResults;
@@ -154,7 +154,7 @@ class corpus_search
 			$whereClause .= "wordform REGEXP ?";
 		}
 		$selectFields =  "lemma, l.filename AS filename, l.id AS id, wordform, pos, date_of_lang, l.title, 
-			page, medium, s.auto_id AS auto_id, t.id AS tid";
+			page, medium, s.auto_id AS auto_id, t.id AS tid, t.level as level";
 
 		$textJoinSql = "";
 		if ($params["id"]) {    //restrict to this text
@@ -165,7 +165,7 @@ SQL;
 
 		$sql = <<<SQL
         SELECT SQL_CALC_FOUND_ROWS  {$selectFields} FROM lemmas AS l
-          LEFT JOIN slip s ON l.filename = s.filename AND l.id = s.id AND group_id = {$_SESSION["groupId"]}
+          LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id AND group_id = {$_SESSION["groupId"]}
           JOIN text t ON t.filepath = l.filename {$textJoinSql}
           WHERE {$whereClause}
 SQL;
@@ -209,7 +209,7 @@ SQL;
 
 			$query["sql"] = <<<SQL
         SELECT SQL_CALC_FOUND_ROWS l.filename AS filename, l.id AS id, wordform, pos, lemma, date_of_lang, l.title,
-                page, medium, s.auto_id as auto_id, s.wordClass as wordClass, t.id AS tid
+                page, medium, s.auto_id as auto_id, s.wordClass as wordClass, t.id AS tid, t.level as level
             FROM lemmas AS l
             LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id AND group_id = {$_SESSION["groupId"]}
             JOIN text t ON t.filepath = l.filename {$textJoinSql}
@@ -217,14 +217,17 @@ SQL;
 
 SQL;
 		} else {                               //wordform
-			$query = $this->_getWordformQuery($params);
+			$query = $this->_getWordformQuery();
 		}
 		if ($params["selectedDates"]) {       //restrict by date
-			$query["sql"] .= $this->_getDateWhereClause($params);
+			$query["sql"] .= $this->_getDateWhereClause();
 		}
-		$query["sql"] .= $this->_getMediumWhereClause($params); //restrict by medium
+		if ($params["level"]) {   //restrict by level ("importance")
+			$query["sql"] .= $this->_getLevelWhereClause();
+		}
+		$query["sql"] .= $this->_getMediumWhereClause(); //restrict by medium
 		if ($params["pos"][0] != "") {
-			$query["sql"] .= $this->_getPOSWhereClause($params);  //restrict by POS
+			$query["sql"] .= $this->_getPOSWhereClause();  //restrict by POS
 		}
 
 		$query["sql"] .= <<<SQL
@@ -245,6 +248,20 @@ SQL;
 	private function _getDateWhereClause() {
 		$dates = explode('-', $this->_params["selectedDates"]);
 		$whereClause = " AND date_of_lang >= {$dates[0]} AND date_of_lang <= {$dates[1]} ";
+		return $whereClause;
+	}
+
+	private function _getLevelWhereClause() {
+		$whereClause = "";
+		if (!$this->_params["level"] || count($this->_params["level"]) == 3) {
+			return $whereClause;    //don't bother with restrictions if all selected
+		}
+		$whereClause = " AND (";
+		foreach ($this->_params["level"] as $level) {
+			$levelString[] = " level = '{$level}' ";
+		}
+		$whereClause .= implode(" OR ", $levelString);
+		$whereClause .= ") ";
 		return $whereClause;
 	}
 

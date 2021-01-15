@@ -6,7 +6,7 @@ use models;
 
 class corpus_browse
 {
-	private $_model;   // an instance of models\corpus_browse2
+	private $_model;   // an instance of models\corpus_browse
 
 	public function __construct($model) {
 		$this->_model = $model;
@@ -124,7 +124,6 @@ HTML;
 		$writersHtml = $this->_getWritersFormHtml();
 		$levelHtml = <<<HTML
 			<select name="textLevel" id="textLevel">
-				<option value="0">-----</option>
 HTML;
 		for ($i=1; $i<4; $i++) {
 			$selected = $this->_model->getLevel() == $i ? "selected" : "";
@@ -163,13 +162,14 @@ HTML;
 
 	private function _getFormSubTextSectionHtml() {
 		$prefix = ($this->_model->getID() == 0) ? "" : $this->_model->getID() . "-";
+		$defaultLevel = $this->_model->getLevel() ? $this->_model->getLevel() : 3;
 		$levelHtml = <<<HTML
 			<select name="subTextLevel" id="subTextextLevel">
-				<option value="0">-----</option>
 HTML;
 		for ($i=1; $i<4; $i++) {
+			$selected = $defaultLevel == $i ? "selected" : "";
 			$levelHtml .= <<<HTML
-				<option value="{$i}">{$i}</option>
+				<option value="{$i}" {$selected}>{$i}</option>
 HTML;
 		}
 		$levelHtml .= "</select>";
