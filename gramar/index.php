@@ -1,54 +1,59 @@
 <?php
-require_once "includes/htmlHeader.php";
-?>
-    <p>Thematic index: 
-      <a href="xx/copula.php">copula forms</a>, 
-      <a href="xx/degreeExpressions.php">degree expressions</a>, 
-      <a href="xx/irregularVerbs.php">irregular verbs</a>, 
-      <a href="xx/subordinatingConjunctions.php">subordinating conjunctions</a>, 
-      <a href="xx/verbParticles.php">verb particles</a>
-    </p>
+namespace controllers;
+session_start();
+$_SESSION["groupId"] = 2; //need to set this for the database queries
+spl_autoload_extensions(".php"); // comma-separated list
+spl_autoload_register();
 
-    <p>Gaelic index: 
-      <a href="gd/particles/an.php">an</a>, 
-      <a href="gd/verbs/bi.php">bi</a>, 
-      <a href="xx/copula.php">bu</a>, 
-      <a href="gd/particles/cha.php">cha</a>, 
-      <a href="gd/prepositions/an_deeidh.php">dèidh</a>, 
-      <a href="gd/verbs/faic.php">faic</a>,
-      <a href="gd/verbs/faigh.php">faigh</a>,
-      <a href="gd/adjectives/gann.php">gann</a>,
-      <a href="gd/particles/gun.php">gun</a>,
-      <a href="gd/prepositions/gu.php">gu</a>, 
-      <a href="xx/copula.php">is</a>, 
-      <a href="gd/conjunctions/ma.php">ma</a>, 
-      <a href="gd/adjectives/moor.php">mòr</a>,
-      <a href="gd/verbs/mothaich.php">mothaich</a>,
-      <a href="gd/conjunctions/mura.php">mura</a>, 
-      <a href="gd/particles/nach.php">nach</a>, 
-      <a href="gd/conjunctions/nan.php">nan</a>,
-      <a href="gd/verbs/rach.php">rach</a>,
-      <a href="gd/verbs/seall.php">seall</a>,
-      <a href="gd/adverbs/seachad.php">seachad</a>,
-      <a href="gd/verbs/theab.php">theab</a>,
-      <a href="gd/verbs/thig.php">thig</a>
-    </p>
+echo <<<HTML
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title>Gràmar na Gàidhlig</title>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script>
+	  $(function() {
+		  $('.ex').each(function () {
+		    var li = $(this);
+	      var url = '../corpas/code/ajax.php?action=loadSlipData&id='+$(this).attr('data-slip');
+	      $.getJSON(url, function (data) {
+	        var text = '<strong>' + data.context.pre["output"] + ' <mark>' + data.context.word + '</mark> ' + data.context.post["output"] + '</strong><br/>';
+          trans = data.translation;
+          trans = trans.replace('<p>','');
+          trans = trans.replace('</p>','');
+	        text += '<small class="text-muted">' + trans + ' [#' + data.tid + ']</small>';
+	        li.html(text);
+	      });
+		  });
+		});
+	</script>
+</head>
+<body style="padding-top: 80px;">
+  <div class="container-fluid">
+    <nav class="navbar navbar-dark bg-primary fixed-top navbar-expand-lg">
+      <a class="navbar-brand" href="index.php">Gràmar na Gàidhlig</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <!--
+          <a class="nav-item nav-link" href="browseCorpus.php">browse</a>
+        -->
+        </div>
+      </div>
+    </nav>
+HTML;
 
-    <p>English index: 
-      <a href="gd/prepositions/an_deeidh.php">after</a>, 
-      <a href="xx/degreeExpressions.php">almost</a>, 
-      <a href="xx/degreeExpressions.php">barely</a>, 
-      <a href="gd/verbs/thig.php">come</a>, 
-      <a href="gd/verbs/rach.php">go</a>, 
-      <a href="xx/degreeExpressions.php">hardly</a>, 
-      <a href="en/if.php">if</a>, 
-      <a href="gd/verbs/seall.php">look</a>,
-      <a href="xx/degreeExpressions.php">nearly</a>, 
-      <a href="xx/degreeExpressions.php">scarcely</a>,
-      <a href="gd/verbs/faic.php">see</a>,
-      <a href="gd/verbs/seall.php">show</a>,
-    </p>
-    
-<?php
-require_once "includes/htmlFooter.php";
-?> 
+new gaelic();
+
+echo <<<HTML
+      <hr/><hr/>
+    </div>
+</body>
+</html>
+HTML;

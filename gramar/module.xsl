@@ -49,9 +49,6 @@
             <h2 class="modal-title">
               <xsl:apply-templates select="title"/>
             </h2>
-            <button type="button" class="close" data-dismiss="modal">
-              <span aria-hidden="true">×</span>
-            </button>
           </div>
           <div class="modal-body">
             <xsl:apply-templates select="*[name()!='title']"/>
@@ -65,13 +62,13 @@
   </xsl:template>
 
   <xsl:template match="xl">
-    <ul>
+    <ul class="list-group list-group-flush mb-3">
       <xsl:apply-templates/>
     </ul>
   </xsl:template>
   
   <xsl:template match="xl/li">
-    <li class="ex" data-slip="{.}"/>
+    <li class="ex list-group-item list-group-item-secondary" data-slip="{.}"/>
   </xsl:template>
   
 </xsl:stylesheet>
