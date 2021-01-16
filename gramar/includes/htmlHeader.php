@@ -17,8 +17,8 @@ echo <<<HTML
   <script>
 	  $(function() {
 	    $('.ex').parent().addClass('list-group list-group-flush mb-3');
-	    $('.ex').addClass('list-group-item list-group-item-primary');
-	    $('h3, h5').addClass('mb-3 mt-4');
+	    $('.ex').addClass('list-group-item list-group-item-secondary');
+	    //$('h3, h5').addClass('mb-3 mt-4');
 
 		  $('.ex').each(function () {
 		    var li = $(this);
@@ -38,7 +38,7 @@ echo <<<HTML
 <body style="padding-top: 80px;">
   <div class="container-fluid">
     <nav class="navbar navbar-dark bg-primary fixed-top navbar-expand-lg">
-      <a class="navbar-brand" href="../../index.php">DASG/GnaG</a>
+      <a class="navbar-brand" href="../../index.php">Gràmar na Gàidhlig</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
