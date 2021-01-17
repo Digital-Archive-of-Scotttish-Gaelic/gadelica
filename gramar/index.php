@@ -29,6 +29,12 @@ echo <<<HTML
 	        li.html(text);
 	      });
 		  });
+HTML;
+$box = $_GET["box"];
+if ($box) {
+  echo '$("#' . $box . '").modal("show");';
+}
+echo <<<HTML
 		});
 	</script>
 </head>
