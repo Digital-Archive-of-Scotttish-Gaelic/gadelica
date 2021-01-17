@@ -18,7 +18,7 @@
   
   <xsl:template match="meta"/>
   
-  <xsl:template match="p|strong|hr|em|ol|li|a|mark">
+  <xsl:template match="p|strong|hr|em|ol|li|a|mark|h1|h2|h3|h4">
     <xsl:copy>
       <xsl:if test="@type">
         <xsl:attribute name="type"><xsl:value-of select="@type"/></xsl:attribute>
