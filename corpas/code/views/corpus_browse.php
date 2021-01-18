@@ -368,12 +368,13 @@ HTML;
 			return "";
 		}
 		else {
+			$levelColours = array(1 => "gold", 2 => "silver", 3 => "bronze");
 			$html = '<tr><td>contents</td><td>';
 			$html .= '<div class="list-group list-group-flush">';
-			foreach ($this->_model->getChildTextsInfo() as $childId => $childTitle) {
+			foreach ($this->_model->getChildTextsInfo() as $childId => $childInfo) {
 				$html .= '<div class="list-group-item list-group-item-action">';
-				$html .= '#' . $childId .
-					': <a href="?m=corpus&a=browse&id=' . $childId .'">' . $childTitle;
+				$html .= '<i class="fas fa-star ' . $levelColours[$childInfo["level"]] . '"></i>' . ' #' . $childId .
+					': <a href="?m=corpus&a=browse&id=' . $childId .'">' . $childInfo["title"];
 				$html .= '</a></div>';
 			}
 			$html .= '</div></td></tr>';

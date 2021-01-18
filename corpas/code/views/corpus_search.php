@@ -22,6 +22,20 @@ class corpus_search
 	private function _writeSearchForm() {
 		$user = models\users::getUser($_SESSION["user"]);
 		$minMaxDates = models\corpus_search::getMinMaxDates(); // needs a rethink for individual texts
+		$dateRangeBlock = <<<HTML
+			<div class="form-group">
+            <p>Restrict by date range:</p>
+            <div id="selectedDatesDisplay">{$minMaxDates["min"]}-{$minMaxDates["max"]}</div>
+            <input type="hidden" class="form-control col-2" name="selectedDates" id="selectedDates">
+            <div id="dateRangeSelector" class="col-6">
+                <label id="dateRangeMin">{$minMaxDates["min"]}</label>
+                <label id="dateRangeMax">{$minMaxDates["max"]}</label>
+            </div>
+        </div>
+HTML;
+		if ($_GET["id"]) {    //if this is a subtext don't write the date range block
+			$dateRangeBlock = "";
+		}
 		echo <<<HTML
 		<ul class="nav nav-pills nav-justified" style="padding-bottom: 20px;">
 HTML;
@@ -121,15 +135,7 @@ HTML;
             <label class="form-check-label" for="randomDateRadio">random</label>
           </div>
         </div>
-        <div class="form-group">
-            <p>Restrict by date range:</p>
-            <div id="selectedDatesDisplay">{$minMaxDates["min"]}-{$minMaxDates["max"]}</div>
-            <input type="hidden" class="form-control col-2" name="selectedDates" id="selectedDates">
-            <div id="dateRangeSelector" class="col-6">
-                <label id="dateRangeMin">{$minMaxDates["min"]}</label>
-                <label id="dateRangeMax">{$minMaxDates["max"]}</label>
-            </div>
-        </div>
+        {$dateRangeBlock}
         <br>
         <div class="form-group">
             <p>Restrict by medium:</p>

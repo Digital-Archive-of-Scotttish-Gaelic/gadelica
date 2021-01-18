@@ -162,16 +162,16 @@ SQL;
 
 	/**
 	 * Get child text info (on the fly to cut down on memory overhead)
-	 * @return array of associative info ("id" => "title")
+	 * @return array of associative info ("id" => array("title", "level")
 	 */
 	public function getChildTextsInfo() {
 		$childTextsInfo = array();
 		$sql = <<<SQL
-			SELECT id, title FROM text WHERE partOf = :id ORDER BY id ASC
+			SELECT id, title, level FROM text WHERE partOf = :id ORDER BY id ASC
 SQL;
 		$results = $this->_db->fetch($sql, array(":id" => $this->getId()));
 		foreach ($results as $result) {
-			$childTextsInfo[$result["id"]] = $result["title"];
+			$childTextsInfo[$result["id"]] = array("title" => $result["title"], "level" => $result["level"]);
 		}
 		return $childTextsInfo;
 	}
