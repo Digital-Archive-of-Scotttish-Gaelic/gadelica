@@ -207,12 +207,23 @@ SQL;
 SQL;
 			}
 
+			$writerJoinSql = "";
+			if ($params["district"]) {
+				if (count($params["district"]) < 15) {   //restrict by district (location)
+					$writerJoinSql = <<<SQL
+						JOIN text_writer tw ON t.id = tw.text_id
+						JOIN writer w ON tw.writer_id = w.id
+SQL;
+				}
+			}
+
 			$query["sql"] = <<<SQL
         SELECT SQL_CALC_FOUND_ROWS l.filename AS filename, l.id AS id, wordform, pos, lemma, date_of_lang, l.title,
                 page, medium, s.auto_id as auto_id, s.wordClass as wordClass, t.id AS tid, t.level as level
             FROM lemmas AS l
             LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id AND group_id = {$_SESSION["groupId"]}
             JOIN text t ON t.filepath = l.filename {$textJoinSql}
+        		{$writerJoinSql}
             WHERE lemma = ?
 
 SQL;
@@ -230,6 +241,12 @@ SQL;
 			$query["sql"] .= $this->_getPOSWhereClause();  //restrict by POS
 		}
 
+		if ($params["district"]) {
+			if (count($params["district"]) != 15) {   //restrict by district (location)
+				$query["sql"] .= $this->_getDistrictWhereClause();
+			}
+		}
+
 		$query["sql"] .= <<<SQL
         ORDER BY {$orderBy}
 SQL;
@@ -238,7 +255,6 @@ SQL;
 				LIMIT {$perpage} OFFSET {$offset}
 SQL;
 		}
-
 		$results = $this->_db->fetch($query["sql"], array($query["search"]));
 		$hits = $this->_db->fetch("SELECT FOUND_ROWS() as hits;");
 		$this->_hits = $hits[0]["hits"];
@@ -285,6 +301,16 @@ SQL;
 			$posString[] = " BINARY pos REGEXP '{$pos}\$|{$pos}[[:space:]]' ";
 		}
 		$whereClause .= implode(" OR ", $posString);
+		$whereClause .= ") ";
+		return $whereClause;
+	}
+
+	private function _getDistrictWhereClause() {
+		$whereClause = " AND (";
+		foreach ($this->_params["district"] as $districtId) {
+			$districtString[] = " district_1_id = {$districtId} OR district_2_id = {$districtId} ";
+		}
+		$whereClause .= implode(" OR ", $districtString);
 		$whereClause .= ") ";
 		return $whereClause;
 	}

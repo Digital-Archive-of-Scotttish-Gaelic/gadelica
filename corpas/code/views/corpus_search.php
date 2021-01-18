@@ -33,8 +33,9 @@ class corpus_search
             </div>
         </div>
 HTML;
+		$districtBlock = $this->_getDistrictHtml();
 		if ($_GET["id"]) {    //if this is a subtext don't write the date range block
-			$dateRangeBlock = "";
+			$dateRangeBlock = $districtBlock = "";
 		}
 		echo <<<HTML
 		<ul class="nav nav-pills nav-justified" style="padding-bottom: 20px;">
@@ -137,6 +138,7 @@ HTML;
         </div>
         {$dateRangeBlock}
         <br>
+        {$districtBlock}
         <div class="form-group">
             <p>Restrict by medium:</p>
             <div class="form-check form-check-inline">
@@ -190,6 +192,34 @@ HTML;
         </select>
 HTML;
 		return $posHtml;
+	}
+
+	protected function _getDistrictHtml() {
+		$districts = models\districts::getAllDistrictsInfo();
+		foreach ($districts as $district) {
+			$id = $district["id"];
+			$districtsHtml .= <<<HTML
+				<div class="form-check form-check-inline">
+            <input class="form-check-input district" type="checkbox" name="district[]" id="district{$id}Check" value="{$id}" checked>
+            <label class="form-check-label" for="district{$id}Check">
+              {$district["name"]}
+						</label>
+        </div>
+HTML;
+		}
+		$html = <<<HTML
+			<div class="form-group">
+            <p>Restrict by location:</p>
+            <div>
+              {$districtsHtml}
+            </div>
+            <div>
+              <a href="#" id="uncheckAllDistricts">uncheck all</a>
+              <a href="#" id="checkAllDistricts">check all</a>
+						</div>
+        </div>
+HTML;
+		return $html;
 	}
 
 	private function _writeSearchResults() {
@@ -485,6 +515,15 @@ HTML;
           $('#selectedDatesDisplay').html(output);
         }
       });
+      
+      $('#uncheckAllDistricts').on('click', function() {
+        $('.district').prop('checked', false);
+      });
+      
+      $('#checkAllDistricts').on('click', function() {
+        $('.district').prop('checked', true);
+      });
+      
     });
     </script>
 HTML;
