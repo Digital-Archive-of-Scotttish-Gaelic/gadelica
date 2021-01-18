@@ -4,6 +4,8 @@ namespace models;
 
 class slip
 {
+	const SCOPE_DEFAULT = 80;
+
   private $_auto_id, $_filename, $_id, $_pos, $_db;
   private $_starred, $_translation, $_notes, $_locked, $_ownedBy;
   private $_preContextScope, $_postContextScope, $_wordClass, $_lastUpdatedBy, $_lastUpdated;
@@ -19,7 +21,7 @@ class slip
   private $_senseCategories = array();
   private $_lemma, $_wordform;
 
-  public function __construct($filename, $id, $auto_id = null, $pos, $preScope = 80, $postScope = 80) {
+  public function __construct($filename, $id, $auto_id = null, $pos, $preScope = self::SCOPE_DEFAULT, $postScope = self::SCOPE_DEFAULT) {
     $this->_filename = $filename;
     $this->_id = $id;
     //test if a slip already exists (if there is a slip with the same groupId, filename, id combination)
@@ -111,6 +113,10 @@ SQL;
         $this->_wordClass = $class;
       }
     }
+  }
+
+  public function getScopeDefault() {
+  	return self::SCOPE_DEFAULT;
   }
 
   public function getSlipMorph() {

@@ -471,8 +471,8 @@ HTML;
 		        $('#resetContext').on('click', function () {
 		          var filename = $('#slipFilename').text();
               var id = $('#wordId').text();
-              var preScope = '{$this->_slip->getPreContextScope()}';
-              var postScope = '{$this->_slip->getPostContextScope()}';
+              var preScope = '{$this->_slip->getScopeDefault()}';
+              var postScope = '{$this->_slip->getScopeDefault()}';
               $('#slipContext').attr('data-precontextscope', preScope);
 					    $('#slipContext').attr('data-postcontextscope', postScope);
 					    $('#preContextScope').val(preScope);
