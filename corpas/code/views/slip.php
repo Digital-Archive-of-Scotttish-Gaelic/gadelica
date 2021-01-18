@@ -394,15 +394,15 @@ HTML;
               </div>
               <h5>Adjust citation context</h5>
               <div>
-								<a class="updateContext" id="decrementPre"><i class="fas fa-minus"></i></a>
-								<a {$preHref} class="updateContext" id="incrementPre"><i class="fas fa-plus"></i></a>
+								<a class="updateContext btn-link" id="decrementPre"><i class="fas fa-minus"></i></a>
+								<a {$preHref} class="updateContext btn-link" id="incrementPre"><i class="fas fa-plus"></i></a>
               </div>
               <span data-precontextscope="{$preScope}" data-postcontextscope="{$postScope}" id="slipContext" class="slipContext">
                 {$contextHtml}
               </span>
               <div>
-                <a class="updateContext" id="decrementPost"><i class="fas fa-minus"></i></a>
-								<a class="updateContext" id="incrementPost"><i class="fas fa-plus"></i></a>
+                <a class="updateContext btn-link" id="decrementPost"><i class="fas fa-minus"></i></a>
+								<a class="updateContext btn-link" id="incrementPost"><i class="fas fa-plus"></i></a>
               </div>
               <div style="height: 20px;">
                 <a href="#" class="float-right" id="resetContext">reset context</a>
@@ -671,17 +671,18 @@ HTML;
 					      var preOutput = data.pre["output"];
 					      var postOutput = data.post["output"];
 					      //handle zero pre/post context sizes
-					      if (typeof preOutput == "undefined") {
+					      console.log('preOutput:' + preOutput + ' / postOutput:'+postOutput);
+					      if (preScope == 0) {
 					        preOutput = "";
-					        $('#decrementPre').removeAttr("href");
+					        $('#decrementPre').addClass("disabled");
 					      } else {
-					        $('#decrementPre').attr("href", "#");
+					        $('#decrementPre').removeClass("disabled");
 					      }
-					      if (typeof postOutput == "undefined") {
+					      if (postScope == 1) {
 					        postOutput = "";
-					        $('#decrementPost').removeAttr("href");
+					        $('#decrementPost').addClass("disabled");
 					      } else {
-					        $('#decrementPost').attr("href", "#");
+					        $('#decrementPost').removeClass("disabled");
 					      }
 					      //handle reaching the start/end of the document
 					      if (data.prelimit) {
