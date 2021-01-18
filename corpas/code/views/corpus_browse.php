@@ -399,9 +399,10 @@ HTML;
     <script>
       $(function () {
         $('[data-toggle="tooltip"]').tooltip();
-        hi = '{$_GET["wid"]}';
-        $('#'+hi).addClass('mark');
-        document.getElementById(hi).scrollIntoView({behavior: 'smooth', block: 'center'})
+        if (hi = '{$_GET["wid"]}') {
+          $('#'+hi).addClass('mark');
+          document.getElementById(hi).scrollIntoView({behavior: 'smooth', block: 'center'})
+        }
       });
     </script>
 HTML;

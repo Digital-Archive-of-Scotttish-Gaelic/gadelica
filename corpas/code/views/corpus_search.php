@@ -33,23 +33,25 @@ class corpus_search
             </div>
         </div>
 HTML;
+		$districtBlock = "";  //delete once using the following line again SB
+		//$districtBlock = $this->_getDistrictHtml();
 		if ($_GET["id"]) {    //if this is a subtext don't write the date range block
-			$dateRangeBlock = "";
+			$dateRangeBlock = $districtBlock = "";
 		}
 		echo <<<HTML
 		<ul class="nav nav-pills nav-justified" style="padding-bottom: 20px;">
 HTML;
-    if ($_GET["id"]=="0") {
+		if ($_GET["id"]=="0") {
 			echo <<<HTML
 			  <li class="nav-item"><a class="nav-link" href="?m=corpus&a=browse&id=0">view corpus</a></li>
 			  <li class="nav-item"><div class="nav-link active">searching corpus</div></li>
 HTML;
-      if ($user->getSuperuser()) {
+			if ($user->getSuperuser()) {
 				echo <<<HTML
 				  <li class="nav-item"><a class="nav-link" href="?m=corpus&a=edit&id=0">add text</a></li>
 HTML;
 			}
-      echo <<<HTML
+			echo <<<HTML
 				<li class="nav-item"><a class="nav-link" href="?m=corpus&a=generate&id=0">corpus wordlist</a></li>
 HTML;
 		}
@@ -58,15 +60,15 @@ HTML;
 			  <li class="nav-item"><a class="nav-link" href="?m=corpus&a=browse&id={$_GET["id"]}">view text #{$_GET["id"]}</a></li>
 			  <li class="nav-item"><div class="nav-link active">searching text #{$_GET["id"]}</div></li>
 HTML;
-				if ($user->getSuperuser()) {
-					echo <<<HTML
+			if ($user->getSuperuser()) {
+				echo <<<HTML
 			      <li class="nav-item"><a class="nav-link" href="?m=corpus&a=edit&id={$_GET["id"]}">edit text #{$_GET["id"]}</a></li>
 HTML;
-				}
-				echo <<<HTML
+			}
+			echo <<<HTML
 				  <li class="nav-item"><a class="nav-link" href="?m=corpus&a=generate&id={$_GET["id"]}">text #{$_GET["id"]} wordlist</a></li>
 HTML;
-    }
+		}
 		echo <<<HTML
 		  </ul>
 			<hr/>
@@ -137,6 +139,7 @@ HTML;
         </div>
         {$dateRangeBlock}
         <br>
+        {$districtBlock}
         <div class="form-group">
             <p>Restrict by medium:</p>
             <div class="form-check form-check-inline">
@@ -190,6 +193,34 @@ HTML;
         </select>
 HTML;
 		return $posHtml;
+	}
+
+	protected function _getDistrictHtml() {
+		$districts = models\districts::getAllDistrictsInfo();
+		foreach ($districts as $district) {
+			$id = $district["id"];
+			$districtsHtml .= <<<HTML
+				<div class="form-check form-check-inline">
+            <input class="form-check-input district" type="checkbox" name="district[]" id="district{$id}Check" value="{$id}" checked>
+            <label class="form-check-label" for="district{$id}Check">
+              {$district["name"]}
+						</label>
+        </div>
+HTML;
+		}
+		$html = <<<HTML
+			<div class="form-group">
+            <p>Restrict by location:</p>
+            <div>
+              {$districtsHtml}
+            </div>
+            <div>
+              <a href="#" id="uncheckAllDistricts">uncheck all</a>
+              <a href="#" id="checkAllDistricts">check all</a>
+						</div>
+        </div>
+HTML;
+		return $html;
 	}
 
 	private function _writeSearchResults() {
@@ -485,6 +516,15 @@ HTML;
           $('#selectedDatesDisplay').html(output);
         }
       });
+      
+      $('#uncheckAllDistricts').on('click', function() {
+        $('.district').prop('checked', false);
+      });
+      
+      $('#checkAllDistricts').on('click', function() {
+        $('.district').prop('checked', true);
+      });
+      
     });
     </script>
 HTML;
