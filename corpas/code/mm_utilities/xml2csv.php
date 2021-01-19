@@ -11,8 +11,9 @@ define("DB_PASSWORD", "XmlCraobh2020");
 $titles = array();
 //$media = array();
 $dates = array();
+$districts = array();
 
-//get all the text info
+//get the texts
 $db = new database();
 $sql = <<<SQL
 		SELECT id, filepath, title, date, partOf FROM text
@@ -21,6 +22,15 @@ $results = $db->fetch($sql);
 
 //iterate through each text
 foreach ($results as $result) {
+	//query for district
+	$sql = <<<SQL
+		SELECT district_1_id as district FROM writer w 
+		JOIN text_writer tw ON w.id = tw.writer_id
+		WHERE tw.text_id = '{$result["id"]}'
+SQL;
+	$districtResult = $db->fetchRow($sql);
+	$district = $districtResult["district"];
+
 	$filepath = $result["filepath"];
 	$title = $result["title"];
 	$date = $result["date"];
@@ -39,6 +49,12 @@ foreach ($results as $result) {
 		$titles[$filepath] = getParentTitle($title, $partOf);
 	} else {
 		$titles[$filepath] = $title;
+	}
+	//populate the districts array
+	if ($district && $filepath) {
+		$districts[$filepath] = $district;
+	} else if ($partOf) {
+		$districts[$filepath] = getParentDistrict($partOf);
 	}
 }
 
@@ -67,15 +83,16 @@ SQL;
 
 /**
  * Recursive function to get the date for a text from its ancestor(s)
- * @param int $id the parent ID
+ * @param int $parentId the parent ID
  * @return string the date
  */
-function getParentDate($parentId) {
+function getParentDate($parentId)
+{
 	global $db;
 	$sql = <<<SQL
 		SELECT filepath, partOf, date FROM text WHERE id = :id
 SQL;
-	$results = $db->fetch($sql, array(":id"=>$parentId));
+	$results = $db->fetch($sql, array(":id" => $parentId));
 	$result = $results[0];
 	$filepath = $result["filepath"];
 	$date = $result["date"];
@@ -90,6 +107,38 @@ SQL;
 	} else {
 		if ($date = getParentDate($partOf)) {
 			return $date;
+		}
+	}
+}
+
+/**
+ * Recursive function to get the district for a writer from its text's ancestor(s)
+ * @param int $parentId the parent text ID
+ * @return string the date
+ */
+function getParentDistrict($parentId) {
+	global $db;
+	$sql = <<<SQL
+		SELECT filepath, partOf, district_1_id as district FROM text t 
+			LEFT JOIN text_writer tw ON t.id = tw.text_id
+			LEFT JOIN writer w ON w.id = tw.writer_id
+			WHERE t.id = :id
+SQL;
+	$results = $db->fetch($sql, array(":id"=>$parentId));
+	$result = $results[0];
+	$filepath = $result["filepath"];
+	$district = $result["district"];
+	$partOf = $result["partOf"];
+
+	if (!$partOf && !$filepath && !$district) {
+		return "";
+	}
+
+	if ($district) {
+		return $district;
+	} else {
+		if ($district = getParentDistrict($partOf)) {
+			return $district;
 		}
 	}
 }
@@ -138,7 +187,9 @@ foreach (new \RecursiveIteratorIterator($it) as $nextFile) {
 			else if ($nextWord->xpath("ancestor::dasg:p")) {
 				$medium = "prose";
 			}
-			echo $medium;
+			echo $medium . ',';
+			if ($districts[$filename]) { echo $districts[$filename];}
+			else { echo '3333'; }
 
 			echo PHP_EOL;
 		}
@@ -174,6 +225,17 @@ class database
 	{
 		$this->_dbh = null;
 		$this->_sth = null;
+	}
+
+	public function fetchRow($sql, array $values = array()) {
+		try {
+			$this->_sth = $this->_dbh->prepare($sql);
+			$this->_sth->execute($values);
+			$result = $this->_sth->fetch();
+			return $result;
+		} catch (PDOException $e) {
+			echo $e->getMessage();
+		}
 	}
 
 	/**

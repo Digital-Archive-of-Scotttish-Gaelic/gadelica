@@ -115,7 +115,7 @@ class xmlfilehandler
 				$spacer = '<div style="margin-right:-4px;display:inline;">&thinsp;</div>';
 			} else if ($tagContext) {
 				$verb = $section == "pre" ? "start" : "end";
-				$token = '<a data-toggle="tooltip" data-html="true" class="contextLink ' . $section . '" data-position=' . $position . '"';
+				$token = '<a data-toggle="tooltip" data-html="true" class="contextLink ' . $section . '" data-position="' . $position . '"';
 				$token .= ' title="' . $verb . ' context with <em><strong>' . $element[0] . '</strong></em>">' . $element[0] . '</a>';
 			} else {
 				$token = $element[0];

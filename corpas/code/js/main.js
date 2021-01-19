@@ -37,9 +37,8 @@ $(function () {
    * Send email to request slip unlock
    */
   $('#lockedBtn').on('click', function () {
-    var owner = $(this).attr('data-owner');
     var slipId = $(this).attr('data-slipid');
-    $.ajax({url: 'ajax.php?action=requestUnlock&slipId='+slipId+'&owner='+owner})
+    $.ajax({url: 'ajax.php?action=requestUnlock&slipId='+slipId})
       .done(function () {
         alert('email sent');
       });
@@ -126,13 +125,13 @@ $(function () {
         modal.find('#slipNo').text('§'+slipId);
         $('#auto_id').val(slipId);
         modal.find('.modal-body').html(body);
-        /*if (canEdit) {
+        if (canEdit) {
           $('.modal').find('button#editSlip').prop('disabled', false);
         } else {
           $('.modal').find('button#editSlip').prop('disabled', 'disabled');
-        }*/
+        }
         //show the correct lock icon
-        /*
+
         if (locked == 1) {
           $('.locked').removeClass('d-none');
           $('.locked').attr('data-owner', owner);
@@ -141,47 +140,11 @@ $(function () {
             $('#lockedBtn').attr('title', 'Slip is locked');
             $('#lockedBtn').addClass('disabled');
           }
-        } else {
+        } /* else {
           $('.unlocked').removeClass('d-none');
         }
         */
       });
-  });
-
-  $('.updateContext').on('click', function () {
-    var preScope = $('#slipContext').attr('data-precontextscope');
-    var postScope = $('#slipContext').attr('data-postcontextscope');
-    var filename = $('#slipFilename').text();
-    var id = $('#wordId').text();
-    switch ($(this).attr('id')) {
-      case "decrementPre":
-        preScope--;
-        if (preScope == 0) {
-          $('#decrementPre').addClass("disabled");
-        }
-        break;
-      case "incrementPre":
-        if ($(this).attr('href')) {
-          preScope++;
-          $('#decrementPre').removeClass("disabled");
-        }
-        break;
-      case "decrementPost":
-        postScope--;
-        if (postScope == 0) {
-          $('#decrementPost').addClass("disabled");
-        }
-        break;
-      case "incrementPost":
-        postScope++;
-        $('#decrementPost').removeClass("disabled");
-        break;
-    }
-    $('#slipContext').attr('data-precontextscope', preScope);
-    $('#slipContext').attr('data-postcontextscope', postScope);
-    $('#preContextScope').val(preScope);
-    $('#postContextScope').val(postScope);
-    writeSlipContext(filename, id);
   });
 
   $(document).on('click', '#editSlip', function () {
