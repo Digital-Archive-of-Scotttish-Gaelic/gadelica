@@ -4,7 +4,7 @@ namespace models;
 
 class slip
 {
-	const SCOPE_DEFAULT = 10;
+	const SCOPE_DEFAULT = 80;
 
   private $_auto_id, $_filename, $_id, $_pos, $_db;
   private $_starred, $_translation, $_notes, $_locked, $_ownedBy;

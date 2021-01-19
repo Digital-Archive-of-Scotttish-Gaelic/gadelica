@@ -109,4 +109,20 @@ SQL;
       echo $e->getMessage();
     }
   }
+
+  public static function getAllSuperusers() {
+	  $users = array();
+	  $db = new database();
+	  $dbh = $db->getDatabaseHandle();
+	  try {
+		  $sth = $dbh->prepare("SELECT email FROM user WHERE superuser = 1 ;");
+		  $sth->execute();
+		  while ($row = $sth->fetch()) {
+			  $users[] = self::getUser($row["email"]);
+		  }
+		  return $users;
+	  } catch (PDOException $e) {
+		  echo $e->getMessage();
+	  }
+  }
 }
