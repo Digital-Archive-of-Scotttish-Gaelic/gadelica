@@ -1,6 +1,6 @@
 <?php
 
-require_once "includes/htmlHeader.php";
+require_once "../includes/htmlHeader.php";
 
 $it = new RecursiveDirectoryIterator(INPUT_FILEPATH);
 $words = [];
@@ -61,6 +61,6 @@ echo <<<HTML
       </table>
 HTML;
 
-require_once "includes/htmlFooter.php";
+require_once "../includes/htmlFooter.php";
 
 ?>
