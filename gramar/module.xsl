@@ -30,6 +30,10 @@
     </xsl:copy>
   </xsl:template>
   
+  <xsl:template match="table">
+    <xsl:copy-of select="."/>
+  </xsl:template>
+  
   <xsl:template match="en">
     <span class="text-muted">
       <xsl:text>‘</xsl:text><xsl:apply-templates/><xsl:text>’</xsl:text>
