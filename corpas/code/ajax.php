@@ -47,7 +47,7 @@ switch ($_REQUEST["action"]) {
     $results['isOwner'] = $slip->getOwnedBy() == $_SESSION["user"];
     $user = users::getUser($_SESSION["user"]);
     $superuser = $user->getSuperuser();
-    $results["canEdit"] =  $slip->getOwnedBy() == $_SESSION["user"] || $superuser || (!$slip->getIsLocked()) ? 1 : 0;
+    $results["canEdit"] =  $superuser || (!$slip->getIsLocked()) ? 1 : 0;
     //
     echo json_encode($results);
     break;

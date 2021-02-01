@@ -126,6 +126,8 @@ $(function () {
         $('#auto_id').val(slipId);
         modal.find('.modal-body').html(body);
         if (canEdit) {
+          $('#lockedBtn').attr('title', 'Slip is locked');
+          $('#lockedBtn').addClass('disabled');
           $('.modal').find('button#editSlip').prop('disabled', false);
         } else {
           $('.modal').find('button#editSlip').prop('disabled', 'disabled');
@@ -136,10 +138,10 @@ $(function () {
           $('.locked').removeClass('d-none');
           $('.locked').attr('data-owner', owner);
           $('.locked').attr('data-slipid', slipId);
-          if (isOwner) {
+          /*if (isOwner) {
             $('#lockedBtn').attr('title', 'Slip is locked');
             $('#lockedBtn').addClass('disabled');
-          }
+          }*/
         } /* else {
           $('.unlocked').removeClass('d-none');
         }
