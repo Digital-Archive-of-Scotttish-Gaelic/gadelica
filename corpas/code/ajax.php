@@ -13,8 +13,9 @@ switch ($_REQUEST["action"]) {
 		echo json_encode(array("firstname"=>$user->getFirstName(), "lastname"=>$user->getLastName()));
 		break;
   case "getContext":
+  	$tagContext = $_GET["simpleContext"] ? false : true;
     $handler = new xmlfilehandler($_GET["filename"]);
-    $context = $handler->getContext($_GET["id"], $_GET["preScope"], $_GET["postScope"], true, false, true);
+    $context = $handler->getContext($_GET["id"], $_GET["preScope"], $_GET["postScope"], true, false, $tagContext);
     echo json_encode($context);
     break;
 	case "getSlips":
