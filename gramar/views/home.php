@@ -13,6 +13,7 @@ class home {
     foreach ($this->_model->getGds() as $nextGd) {
     	echo "<li><a href=\"?gd=" . $nextGd . "\">". $nextGd . "</a></li>";
     }
+    echo "<li><a href=\"?en=the\">the</a></li>";
 		echo "</ul>";
 	}
 
