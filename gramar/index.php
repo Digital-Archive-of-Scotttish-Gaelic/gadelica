@@ -58,7 +58,7 @@ HTML;
 if ($_GET["gd"]) {
   new gaelic();
 }
-if ($_GET["en"]) {
+else if ($_GET["en"]) {
   new english();
 }
 else {
