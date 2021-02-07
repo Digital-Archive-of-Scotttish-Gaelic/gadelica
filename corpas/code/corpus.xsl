@@ -210,6 +210,11 @@
     </tr>
   </xsl:template>
   
+  <xsl:template match="dasg:note">
+    <p class="text-muted small">
+      <xsl:apply-templates/>
+    </p>
+  </xsl:template>
   
   
 </xsl:stylesheet>

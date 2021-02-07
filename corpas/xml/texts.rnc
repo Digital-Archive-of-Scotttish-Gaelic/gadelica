@@ -6,7 +6,7 @@ start = Text
 Text = element text {
   attribute ref { xsd:anyURI } ,
   attribute status { "tagged"|"raw" } ,
-  ( Paragraph | Heading | Verse | List | Utterance | Text | Page )+
+  ( Paragraph | Heading | Verse | List | Utterance | Text | Page | Note )+
 }
 
 Paragraph = element p { (Token | Page | Sentence | Note)+ }
