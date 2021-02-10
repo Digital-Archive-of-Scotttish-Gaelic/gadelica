@@ -2,11 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/corpas/code/CorpasXMLParser/inputFiles/1_Daain_do_Eimhir.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/corpas/code/CorpasXMLParser/inputFiles/2_Sgeulachdan_Dhoomhnaill_Alasdair.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/corpas/code/CorpasXMLParser/inputFiles/3_Smuaintean_fo_EEiseabhal.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/corpas/code/CorpasXMLParser/inputFiles/4_Baardachd_Dhoomhnaill_Alasdair.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/corpas/code/CorpasXMLParser/inputFiles/5_Inbhe_Thearainte_Dhan_Ghaaidhlig.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corpas/code/CorpasXMLLemmatiser/classes/Lemmatiser_DB.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/CorpasXMLLemmatiser/classes/FileHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/CorpasXMLLemmatiser/classes/FileHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/CorpasXMLLemmatiser/classes/Lemmatiser.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/CorpasXMLLemmatiser/classes/Lemmatiser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/CorpasXMLLemmatiser/includes.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/CorpasXMLLemmatiser/includes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/CorpasXMLLemmatiser/inputFiles/1_thog_sinn_an_deo-ghreine_ri_crann.xml" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/CorpasXMLLemmatiser/inputFiles/1_thog_sinn_an_deo-ghreine_ri_crann.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/CorpasXMLLemmatiser/inputFiles/2_a_ghaidhealtachd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/CorpasXMLLemmatiser/inputFiles/2_a_ghaidhealtachd.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/CorpasXMLLemmatiser/inputFiles/3_na_cunnartan_a_tha_bagradh_na_gaidhlig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/CorpasXMLLemmatiser/inputFiles/3_na_cunnartan_a_tha_bagradh_na_gaidhlig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/CorpasXMLLemmatiser/lemmatise.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/CorpasXMLLemmatiser/lemmatise.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/CorpasXMLParser/classes/XMLOutput.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/CorpasXMLParser/classes/XMLOutput.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/CorpasXMLParser/includes.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/CorpasXMLParser/includes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/models/xmlfilehandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/xmlfilehandler.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +97,7 @@
       <workItem from="1610613949868" duration="7976000" />
       <workItem from="1610957364500" duration="21365000" />
       <workItem from="1612169524005" duration="7881000" />
-      <workItem from="1612773655399" duration="5537000" />
+      <workItem from="1612773655399" duration="13729000" />
     </task>
     <task id="LOCAL-00001" summary="Renamed xml2csv files in order to use new SQL version">
       <created>1605188305941</created>
@@ -372,14 +379,20 @@
       <option name="project" value="LOCAL" />
       <updated>1612797712438</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Added directories for input and output files in CorpasXMLParser">
+      <created>1612946124036</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1612946124036</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Changing POS in edit slip now repopulates the sense categories dropdown." />
     <MESSAGE value="Removed slip locking mechanism (commented out code)&#10;Fixed bug whereby some slips were not saving properly" />
     <MESSAGE value="Attempted bug fix for reset password issue following code refactor" />
     <MESSAGE value="Bug fix for citation context not working" />
@@ -404,6 +417,7 @@
     <MESSAGE value="fixed bug where citation context was editable within entries&#10;added English tranlsation beneath each entry citation" />
     <MESSAGE value="Added a prototype PDF viewer for directories - much work needed" />
     <MESSAGE value="Fixed a minor issue with the constant definitions that was generating some warnings." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed a minor issue with the constant definitions that was generating some warnings." />
+    <MESSAGE value="Added directories for input and output files in CorpasXMLParser" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added directories for input and output files in CorpasXMLParser" />
   </component>
 </project>

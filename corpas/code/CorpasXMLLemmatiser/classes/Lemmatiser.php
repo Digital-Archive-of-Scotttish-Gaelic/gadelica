@@ -3,76 +3,103 @@
 
 class Lemmatiser
 {
-  private $_inputXml;
-  private $_dbh;
+	private $_lexicon = [];
+	private $_iterator;
 
-  public function __construct($xml) {
-    $this->_inputXml = $xml;
-    //connect to the database
-    $this->_dbh = Database::getDatabaseHandle(DB_NAME);
-  }
+	public function __construct() {
+		$this->_iterator = new RecursiveDirectoryIterator(INPUT_FILEPATH);
+	}
 
-  /*
-   * Main processor for XML generateion
-   * Can deal with multiple level texts
-   */
-  public function getProcessedXml() {
-    $text = new SimpleXMLElement($this->_inputXml);
-    if (isset($text->text)) {             //check texts within texts
-      $xml = "";
-      foreach ($text->text as $subtext) {
-        $xml .= "\n" . $this->_processTextXml($subtext);
-      }
-      return $xml;
-    } else {
-      return $this->_processTextXml($text);    //single text
-    }
-  }
+	public function createLexicon() {
+		$words = [];
+		foreach (new RecursiveIteratorIterator($this->_iterator) as $nextFile) {
+			if ($nextFile->getExtension()=='xml') {
+				$xml = simplexml_load_file($nextFile);
+				$xml->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/');
+				$status = $xml->xpath("/dasg:text/@status")[0];
+				if ($status == 'tagged') {
+					foreach ($xml->xpath("//dasg:w") as $nextWord) {
+						$form = $nextWord;
+						$lemma = (string)$nextWord['lemma'];
+						if ($lemma=='') { $lemma = $form; }
+						if (strtolower($lemma[0]) == $lemma[0]) { $form = strtolower($form); }
+						$pos = (string)$nextWord['pos'];
+						$words[] = $form . '|' . $lemma . '|' . $pos;
+					}
+				}
+			}
+		}
+		usort($words,'gdSort');
+		$lexicon = [];
+		foreach ($words as $nextWord) {
+			if ($lexicon[$nextWord]) {
+				$lexicon[$nextWord]++;
+			}
+			else {
+				$lexicon[$nextWord] = 1;
+			}
+		}
 
-  /*
-   * Private function to process individual text
-   */
-  private function _processTextXml($text) {
-    foreach ($text->p as $p) {
-      if (isset($p->w)) {
-        foreach ($p->w as $word) {
-          $wordform = (string)$word;
-          $hits = $this->_getLemmas($wordform);
-          $lemmasGlued = implode(' ', $hits["lemma"]);
-          $pos1Glued = implode(' ', $hits["pos1"]);
-          $word["lemma"] = $lemmasGlued;
-          $word["pos"] = $pos1Glued;
-        }
-      }
-    }
-    return $text->asXML();
-  }
+		foreach ($lexicon as $nextWord => $nextCount) {
+			$bits = explode('|',$nextWord);
+			if ($this->_lexicon[$bits[0]]) {
+				$bits2 = explode('|',$this->_lexicon[$bits[0]]);
+				if ($nextCount > $bits2[2]) {
+					$this->_lexicon[$bits[0]] = $bits[1] . '|' . $bits[2] . '|' . $nextCount;
+				}
+			}
+			else {
+				$this->_lexicon[$bits[0]] = $bits[1] . '|' . $bits[2] . '|' . $nextCount;
+			}
+		}
+		return $this->_lexicon;
+	}
 
-  private function _getLemmas($wordform) {
-    $wordform = $this->_prepareWordform($wordform);
-    $hits["lemma"] = array();
-    $hits["pos1"] = array();
-    //Searches the multidict DB in MySQL
-    $query = <<<SQL
-        SELECT DISTINCT lemma, pos1 FROM lemmas WHERE wordform = :wordform
-SQL;
-    $sth = $this->_dbh->prepare($query);
-    $sth->execute(array(":wordform" => $wordform));
-    $results = $sth->fetchAll();
-    if (count($results)) {
-      $i = 0;
-      foreach ($results as $result) {
-        $hits["lemma"][$i] = $result["lemma"];
-        $hits["pos1"][$i] = $result["pos1"];
-        $i++;
-      }
-    }
-    return $hits;
-  }
-
-  private function _prepareWordform($wordform) {
-    $wordform = mb_strtolower($wordform);
-    $wordform = preg_replace('/^([a-z]{1})h([a-z]+)/', "$1$2", $wordform);
-    return $wordform;
-  }
+	public function tagFiles() {
+		foreach (new RecursiveIteratorIterator($this->_iterator) as $nextFile) {
+			if ($nextFile->getExtension()=='xml') {
+				$xml = simplexml_load_file($nextFile);
+				$xml->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/');
+				$status = $xml->xpath("/dasg:text/@status")[0];
+				if ($status == 'raw') {
+					foreach ($xml->xpath("//dasg:w") as $nextWord) {
+						if ($this->_lexicon[(string)$nextWord]) {
+							$bits = explode('|',$this->_lexicon[(string)$nextWord]);
+							$nextWord['lemma'] = $bits[0];
+							if ($bits[1]!='') {
+								$nextWord['pos'] = $bits[1];
+							}
+							else {
+								$nextWord['pos'] = False;
+							}
+						}
+						else if ($this->_lexicon[strtolower((string)$nextWord)]) {
+							$bits = explode('|',$this->_lexicon[strtolower((string)$nextWord)]);
+							$nextWord['lemma'] = $bits[0];
+							if ($bits[1]!='') {
+								$nextWord['pos'] = $bits[1];
+							}
+							else {
+								$nextWord['pos'] = False;
+							}
+						}
+						else if (substr((string)$nextWord,1,1)==='h') {
+							$delenited = substr((string)$nextWord,0,1) . substr((string)$nextWord,2);
+							if ($this->_lexicon[$delenited]) {
+								$bits = explode('|',$this->_lexicon[$delenited]);
+								$nextWord['lemma'] = $bits[0];
+								if ($bits[1]!='') {
+									$nextWord['pos'] = $bits[1];
+								}
+								else {
+									$nextWord['pos'] = False;
+								}
+							}
+						}
+					}
+					$xml->asXML($nextFile);
+				}
+			}
+		}
+	}
 }
