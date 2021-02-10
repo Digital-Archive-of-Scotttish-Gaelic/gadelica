@@ -1,7 +1,7 @@
 <?php
 
 //constants
-define("INPUT_FILEPATH", "/Users/stephenbarrett/Desktop/xml");   //for local testing only
+define("INPUT_FILEPATH", "../../xml");   //for local testing only
 //define("INPUT_FILEPATH", "inputFiles");
 
 //DB
