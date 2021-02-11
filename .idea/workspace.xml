@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/includes/htmlHeader.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/includes/htmlHeader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/models/corpus_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/corpus_search.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/views/corpus_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/corpus_search.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +88,7 @@
       <workItem from="1610613949868" duration="7976000" />
       <workItem from="1610957364500" duration="21365000" />
       <workItem from="1612169524005" duration="7881000" />
-      <workItem from="1612773655399" duration="17548000" />
+      <workItem from="1612773655399" duration="23089000" />
     </task>
     <task id="LOCAL-00001" summary="Renamed xml2csv files in order to use new SQL version">
       <created>1605188305941</created>
@@ -384,14 +384,20 @@
       <option name="project" value="LOCAL" />
       <updated>1612969182848</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Initial code for basic/extended search results switching">
+      <created>1613040107224</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1613040107224</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Attempted bug fix for reset password issue following code refactor" />
     <MESSAGE value="Bug fix for citation context not working" />
     <MESSAGE value="Finally (!) a working prototype of a new method of selecting citation context." />
     <MESSAGE value="Updates to the new citation context functionality." />
@@ -416,6 +422,7 @@
     <MESSAGE value="Fixed a minor issue with the constant definitions that was generating some warnings." />
     <MESSAGE value="Added directories for input and output files in CorpasXMLParser" />
     <MESSAGE value="Reworking of lemmatisation and parsing code.&#10;Fixed issue where xml note tag could cause issue with citation context" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reworking of lemmatisation and parsing code.&#10;Fixed issue where xml note tag could cause issue with citation context" />
+    <MESSAGE value="Initial code for basic/extended search results switching" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial code for basic/extended search results switching" />
   </component>
 </project>

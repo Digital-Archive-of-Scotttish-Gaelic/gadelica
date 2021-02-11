@@ -34,8 +34,8 @@ class corpus_search
         </div>
 HTML;
 		$districtBlock = "";  //delete once using the following line again SB
-		//$districtBlock = $this->_getDistrictHtml();
-		if ($_GET["id"]) {    //if this is a subtext don't write the date range block
+		$districtBlock = $this->_getDistrictHtml();
+		if ($_GET["id"]) {    //if this is a subtext don't write the date range or district blocks
 			$dateRangeBlock = $districtBlock = "";
 		}
 		echo <<<HTML
@@ -289,17 +289,9 @@ HTML;
 			$html .= " {$_GET["selectedDates"]}";
 		}
 		$html .= "]</p>";
-
-/*		$basicHide = $extendedHide = "";
-		if ($_COOKIE["resultsPref"] == "basic") {
-			$basicHide = "hide";
-		} else {
-			$extendedHide = "hide";
-		}
-	*/
 		$html .= <<<HTML
-			<a href="#" id="basicSwitch" class="resultsSwitch" data-value="basic">basic</a>
-			<a href="#" id="extendedSwitch" class="resultsSwitch" data-value="advanced">advanced</a>
+			<a href="#" id="basicSwitch" class="resultsSwitch float-right" data-value="basic">basic view</a>
+			<a href="#" id="extendedSwitch" class="resultsSwitch float-right" data-value="advanced">extended view</a>
 HTML;
 		echo $html;
 	}
@@ -323,17 +315,12 @@ HTML;
 		$context = $result["context"];
 		$pos = new models\partofspeech($result["pos"]);
 
-		/**
-		 * !Experimental short title code - to be reconsidered and possibly moved SB
-		 */
+
 		$shortTitleElems = explode(' ', $result["title"]);
-		foreach ($shortTitleElems as $elem) {
-			if ($elem == '–') {
-				break;
-			}
-			$shortTitle .= mb_substr($elem, 0, 1);
-		}
-		/* --- */
+
+		$shortTitle = mb_strlen($result["title"]) < 30
+			? $result["title"]
+			: mb_substr($result["title"], 0, 29) . "...";
 
 		$title = <<<HTML
         Headword: {$result["lemma"]}<br>
@@ -453,6 +440,30 @@ HTML;
 	 * Writes the Javascript required for the pagination
 	 */
 	private function _writeResultsJavascript() {
+		//assemble the query string array elements back into URL format for pagination
+		$arrayParams = "";
+		if ($_GET["medium"]) {
+			foreach ($_GET["medium"] as $medium) {
+				$arrayParams .= "&medium[]=" . $medium;
+			}
+		}
+		if ($_GET["district"]) {
+			foreach ($_GET["district"] as $district) {
+				$arrayParams .= "&district[]=" . $district;
+			}
+		}
+		if ($_GET["level"]) {
+			foreach ($_GET["level"] as $level) {
+				$arrayParams .= "&level[]=" . $level;
+			}
+		}
+		if ($_GET["pos"]) {
+			foreach ($_GET["pos"] as $pos) {
+				$arrayParams .= "&pos[]=" . $pos;
+			}
+		}
+
+		//write the Javascript
 		echo <<<HTML
         <script>
         $(function() {
@@ -517,6 +528,8 @@ HTML;
                     url += 'accent={$this->_model->getAccent()}&lenition={$this->_model->getLenition()}';
 				            url += '&hits={$this->_model->getHits()}&view={$this->_model->getView()}';
 				            url += '&date={$this->_model->getDate()}&selectedDates={$_GET["selectedDates"]}';
+				            
+				            url += '{$arrayParams}';
                     window.location.assign(url);
 		              }
 		          });
