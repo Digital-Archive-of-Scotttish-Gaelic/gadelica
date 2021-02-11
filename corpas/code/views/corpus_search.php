@@ -289,6 +289,18 @@ HTML;
 			$html .= " {$_GET["selectedDates"]}";
 		}
 		$html .= "]</p>";
+
+/*		$basicHide = $extendedHide = "";
+		if ($_COOKIE["resultsPref"] == "basic") {
+			$basicHide = "hide";
+		} else {
+			$extendedHide = "hide";
+		}
+	*/
+		$html .= <<<HTML
+			<a href="#" id="basicSwitch" class="resultsSwitch" data-value="basic">basic</a>
+			<a href="#" id="extendedSwitch" class="resultsSwitch" data-value="advanced">advanced</a>
+HTML;
 		echo $html;
 	}
 
@@ -349,8 +361,8 @@ HTML;
 		}
 		$textNum = stristr($result["filename"], "_", true);
 		echo <<<HTML
-				<td>{$result["date_of_lang"]}</td>
-				<td>#{$textNum} {$shortTitle}</td>
+				<td class="extendedField">{$result["date_of_lang"]}</td>
+				<td class="extendedField">#{$textNum} {$shortTitle}</td>
         <td style="text-align: right;">{$context["pre"]["output"]}</td>
         <td style="text-align: center;">
             <a href="?m=corpus&a=browse&id={$result["tid"]}&wid={$result["id"]}"
@@ -444,7 +456,24 @@ HTML;
 		echo <<<HTML
         <script>
         $(function() {
-                  
+            
+		      /**
+		      * Basic/advanced results  
+					*/
+		      if (Cookies.get('resultsPref') == "basic") {
+		        setBasicResultsView();
+		      } else {
+		        setExtendedResultsView();
+		      }
+		      
+		      $('.resultsSwitch').on('click', function() {
+		        if ($(this).attr('data-value') == 'basic') {
+		          setBasicResultsView();
+		        } else {
+		          setExtendedResultsView();
+		        }
+		      });
+      
           /*
             Open the add new slip form in a new tab        
            */
@@ -492,6 +521,20 @@ HTML;
 		              }
 		          });
 		      });
+        
+          function setBasicResultsView() {
+            $('.extendedField').hide();
+			      $('#basicSwitch').hide();
+			      $('#extendedSwitch').show();
+			      Cookies.set('resultsPref', 'basic', { expires: 365 });
+			    }
+			    
+			    function setExtendedResultsView() {
+            $('.extendedField').show();
+			      $('#extendedSwitch').hide();
+			      $('#basicSwitch').show();
+			      Cookies.set('resultsPref', 'extended', { expires: 365 });
+			    }
 	       </script>
 HTML;
 	}

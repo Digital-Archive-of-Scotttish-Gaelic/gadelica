@@ -59,6 +59,7 @@ echo <<<HTML
 	<script src="https://cdn.ckeditor.com/4.14.1/basic/ckeditor.js"></script>
 	<script src="https://kit.fontawesome.com/0b481d2098.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js"></script>
 	<script>
 		$(function () {
 		  $('.selectpicker').change(function () {
