@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/corpas/code/CorpasXMLLemmatiser/classes/Lemmatiser_DB.php" afterDir="false" />
+    <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="Initial refactoring for MVC">
+      <change afterPath="$PROJECT_DIR$/faclair/code/controllers/home.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/faclair/code/includes/htmlFooter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/faclair/code/includes/htmlHeader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/faclair/code/includes/include.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/faclair/code/index2.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/faclair/code/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/faclair/code/models/database.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/faclair/code/views/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_02_2021,_08_40_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_02_2021__08_40__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/CorpasXMLLemmatiser/classes/FileHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/CorpasXMLLemmatiser/classes/FileHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/CorpasXMLLemmatiser/classes/Lemmatiser.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/CorpasXMLLemmatiser/classes/Lemmatiser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/CorpasXMLLemmatiser/includes.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/CorpasXMLLemmatiser/includes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/CorpasXMLLemmatiser/inputFiles/1_thog_sinn_an_deo-ghreine_ri_crann.xml" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/CorpasXMLLemmatiser/inputFiles/1_thog_sinn_an_deo-ghreine_ri_crann.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/CorpasXMLLemmatiser/inputFiles/2_a_ghaidhealtachd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/CorpasXMLLemmatiser/inputFiles/2_a_ghaidhealtachd.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/CorpasXMLLemmatiser/inputFiles/3_na_cunnartan_a_tha_bagradh_na_gaidhlig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/CorpasXMLLemmatiser/inputFiles/3_na_cunnartan_a_tha_bagradh_na_gaidhlig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/CorpasXMLLemmatiser/lemmatise.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/CorpasXMLLemmatiser/lemmatise.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/CorpasXMLParser/classes/XMLOutput.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/CorpasXMLParser/classes/XMLOutput.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/CorpasXMLParser/includes.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/CorpasXMLParser/includes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/xmlfilehandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/xmlfilehandler.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,10 +22,17 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="searchByDistrict" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -40,6 +46,9 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="1kBy8g9t5W8EZnvL6KcXY84x3us" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -98,6 +107,8 @@
       <workItem from="1610957364500" duration="21365000" />
       <workItem from="1612169524005" duration="7881000" />
       <workItem from="1612773655399" duration="13729000" />
+      <workItem from="1613129353148" duration="48000" />
+      <workItem from="1613130765631" duration="263000" />
     </task>
     <task id="LOCAL-00001" summary="Renamed xml2csv files in order to use new SQL version">
       <created>1605188305941</created>
