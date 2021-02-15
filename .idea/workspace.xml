@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="Initial refactoring for MVC">
-      <change afterPath="$PROJECT_DIR$/faclair/code/controllers/home.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/faclair/code/includes/htmlFooter.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/faclair/code/includes/htmlHeader.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/faclair/code/includes/include.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/faclair/code/index2.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/faclair/code/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/faclair/code/models/database.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/faclair/code/views/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_02_2021,_08_40_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_02_2021__08_40__Default_Changelist_.xml" beforeDir="false" />
+    <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/faclair/code/index-hw.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/faclair/code/viewMhw.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/faclair/code/includes/htmlFooter.php" beforeDir="false" afterPath="$PROJECT_DIR$/faclair/code/includes/htmlFooter.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +101,7 @@
       <workItem from="1612169524005" duration="7881000" />
       <workItem from="1612773655399" duration="13729000" />
       <workItem from="1613129353148" duration="48000" />
-      <workItem from="1613130765631" duration="263000" />
+      <workItem from="1613130765631" duration="4835000" />
     </task>
     <task id="LOCAL-00001" summary="Renamed xml2csv files in order to use new SQL version">
       <created>1605188305941</created>
@@ -397,14 +390,20 @@
       <option name="project" value="LOCAL" />
       <updated>1612946124036</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Initial refactoring for MVC">
+      <created>1613134707553</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1613134707553</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Removed slip locking mechanism (commented out code)&#10;Fixed bug whereby some slips were not saving properly" />
     <MESSAGE value="Attempted bug fix for reset password issue following code refactor" />
     <MESSAGE value="Bug fix for citation context not working" />
     <MESSAGE value="Finally (!) a working prototype of a new method of selecting citation context." />
@@ -429,6 +428,7 @@
     <MESSAGE value="Added a prototype PDF viewer for directories - much work needed" />
     <MESSAGE value="Fixed a minor issue with the constant definitions that was generating some warnings." />
     <MESSAGE value="Added directories for input and output files in CorpasXMLParser" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added directories for input and output files in CorpasXMLParser" />
+    <MESSAGE value="Initial refactoring for MVC" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial refactoring for MVC" />
   </component>
 </project>
