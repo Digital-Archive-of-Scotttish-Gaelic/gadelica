@@ -18,23 +18,33 @@ SQL;
 $results = $db->fetch($sql, array(":mhw" => $_GET["mhw"], ":mpos" => $_GET["mpos"], ":msub" => $_GET["msub"]));
 foreach ($results as $result) {
 	$html .= <<<HTML
-		<li>[{$result["source"]}] <strong>{$result["hw"]}</strong> <em>{$result["pos"]}</em> (#{$result["id"]})
+		<li>[{$result["source"]}] <strong>{$result["hw"]}</strong> <em>{$result["pos"]}</em>
+			<small><a href="editHw.php?id={$result["id"]}">[edit]</a></small>
 			<ul>
-				<!-- subquery to get forms ??
-SELECT  `form` ,  `morph` ,  `id`
-FROM  `forms`
-WHERE  `source` =  {$result["source"]}
-AND  `hw` =  {$result["hw"]}
-AND  `pos` =  {$result["pos"]}
-AND  `sub` =  {$result["sub"]}
-			  -->
+HTML;
+  $sql = <<<SQL
+    SELECT  `form` ,  `morph` ,  `id`
+      FROM  `forms`
+      WHERE  `source` =  {$result["source"]}
+      AND  `hw` =  :hw
+      AND  `pos` =  :pos
+      AND  `sub` =  :sub
+SQL;
+  $results2 = $db->fetch($sql, array(":hw" => $result["hw"], ":pos" => $result["pos"], ":sub" => $result["sub"]));
+	if ($results2) {
+    $html .= <<<HTML
 				<li>Forms:
 					<ul>
-						<li>[form 1]</li>
-						<li>[form 2]</li>
-						<li>[...]</li>
+HTML;
+    foreach ($results2 as $nextResult2) {
+  	  $html .= "<li>" . $nextResult2["form"] . " <em>" . $nextResult2["morph"] . "</em></li>";
+    }
+	  $html .= <<<HTML
 					</ul>
 				</li>
+HTML;
+  }
+	$html .= <<<HTML
         <li>Translations:
 					<ul>
 						<li>[eng 1]</li>
