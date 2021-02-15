@@ -25,12 +25,12 @@ HTML;
   $sql = <<<SQL
     SELECT  `form` ,  `morph` ,  `id`
       FROM  `forms`
-      WHERE  `source` =  {$result["source"]}
+      WHERE  `source` = :source
       AND  `hw` =  :hw
       AND  `pos` =  :pos
       AND  `sub` =  :sub
 SQL;
-  $results2 = $db->fetch($sql, array(":hw" => $result["hw"], ":pos" => $result["pos"], ":sub" => $result["sub"]));
+  $results2 = $db->fetch($sql, array(":source" => $result["source"], ":hw" => $result["hw"], ":pos" => $result["pos"], ":sub" => $result["sub"]));
 	if ($results2) {
     $html .= <<<HTML
 				<li>Forms:
@@ -44,21 +44,51 @@ HTML;
 				</li>
 HTML;
   }
-	$html .= <<<HTML
-        <li>Translations:
+	$sql = <<<SQL
+		SELECT  `en` ,  `id`
+			FROM  `english`
+			WHERE  `source` = :source
+			AND  `hw` =  :hw
+			AND  `pos` =  :pos
+			AND  `sub` =  :sub
+SQL;
+	$results2 = $db->fetch($sql, array(":source" => $result["source"], ":hw" => $result["hw"], ":pos" => $result["pos"], ":sub" => $result["sub"]));
+	if ($results2) {
+		$html .= <<<HTML
+				<li>Translations:
 					<ul>
-						<li>[eng 1]</li>
-						<li>[eng 2]</li>
-						<li>[...]</li>
+HTML;
+		foreach ($results2 as $nextResult2) {
+			$html .= "<li>" . $nextResult2["en"] . "</li>";
+		}
+		$html .= <<<HTML
 					</ul>
 				</li>
+HTML;
+	}
+	$sql = <<<SQL
+		SELECT  `note` ,  `id`
+			FROM  `notes`
+			WHERE  `source` = :source
+			AND  `hw` =  :hw
+			AND  `pos` =  :pos
+			AND  `sub` =  :sub
+	SQL;
+	$results2 = $db->fetch($sql, array(":source" => $result["source"], ":hw" => $result["hw"], ":pos" => $result["pos"], ":sub" => $result["sub"]));
+	if ($results2) {
+		$html .= <<<HTML
 				<li>Notes:
 					<ul>
-						<li>[note 1]</li>
-						<li>[note 2]</li>
-						<li>[...]</li>
+	HTML;
+		foreach ($results2 as $nextResult2) {
+			$html .= "<li>" . $nextResult2["note"] . "</li>";
+		}
+		$html .= <<<HTML
 					</ul>
 				</li>
+	HTML;
+	}
+	$html .= <<<HTML
 			</ul>
 		</li>
 HTML;
