@@ -20,7 +20,7 @@ $results = $db->fetch($sql, array(":mhw" => $_GET["mhw"], ":mpos" => $_GET["mpos
 foreach ($results as $result) {
 	$html .= <<<HTML
 		<li>[{$result["source"]}] <strong>{$result["hw"]}</strong> <em>{$result["pos"]}</em>
-			<small><a href="editLexeme.php?id={$result["id"]}">[edit]</a></small>
+			<small><a href="editLexeme.php?id={$result["id"]}" target="_new">[edit]</a></small>
 			<ul>
 HTML;
   $sql = <<<SQL
