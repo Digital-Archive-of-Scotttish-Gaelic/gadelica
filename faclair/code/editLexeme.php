@@ -4,20 +4,59 @@ require_once 'includes/htmlHeader2.php';
 
 $db = new models\database();
 
+/**
+ * Save the form data on submit
+ */
 if (isset($_GET["a"]) && $_GET["a"] == "save") {
 
+	//save the lexeme data
 	$sql = <<<SQL
 		UPDATE lexemes 
 			SET `hw` = :hw, `pos` = :pos, `sub` = :sub, `m-hw` = :mhw, `m-pos` = :mpos, `m-sub` = :msub 
 			WHERE id = :id
 SQL;
-
 	$db->exec($sql, array(":hw"=>$_GET["hw"], ":pos"=>$_GET["pos"], ":sub"=>$_GET["sub"], ":mhw"=>$_GET["mhw"],
 		":mpos"=>$_GET["mpos"], ":msub"=>$_GET["msub"], ":id"=>$_GET["id"]));
+
+	//save the forms
+	if (!empty($_GET["form"])) {
+		foreach ($_GET["form"] as $id => $value) {
+			$sql = <<<SQL
+				UPDATE forms SET `form` = :form, `morph` = :morph
+					WHERE id = :id
+SQL;
+			$db->exec($sql, array(":form" => $value, ":morph" => $_GET["morph"][$id], ":id" => $id));
+		}
+	}
+
+	//save the translations
+	if (!empty($_GET["en"])) {
+		foreach ($_GET["en"] as $id => $value) {
+			$sql = <<<SQL
+				UPDATE english SET `en` = :en
+					WHERE id = :id
+SQL;
+			$db->exec($sql, array(":en" => $value, ":id" => $id));
+		}
+	}
+
+	//save the notes
+	if (!empty($_GET["note"])) {
+		foreach ($_GET["note"] as $id => $value) {
+			$sql = <<<SQL
+				UPDATE notes SET `note` = :note
+					WHERE id = :id
+SQL;
+			$db->exec($sql, array(":note" => $value, ":id" => $id));
+		}
+	}
 
 	die( "<h2>Saved</h2>" );
 }
 
+/**
+ * Write the form and form data
+ */
 $sql = <<<SQL
 	SELECT * FROM lexemes
 		WHERE id = :id
@@ -62,7 +101,7 @@ $html = <<<HTML
 		</div>
 HTML;
 
-/*
+// -- Forms
 $html .= "<h2>Forms –</h2>";
 $sql = <<<SQL
 	SELECT * FROM forms 
@@ -71,18 +110,20 @@ SQL;
 $formResults = $db->fetch($sql, array(":source"=>$result["source"], ":hw"=>$result["hw"],
 	":pos"=>$result["pos"], ":sub"=>$result["sub"]));
 foreach ($formResults as $form) {
+	$id = $form["id"];
 	$html .= <<<HTML
 		<div class="form-group">
-			<label for="form">form</label>
-			<input type="text" name="form" id="form" value="{$form["form"]}">
+			<label for="form{$id}">form</label>
+			<input type="text" name="form[{$id}]" id="form{$id}" value="{$form["form"]}">
 		</div>
 		<div class="form-group">
 			<label for="morph">morph</label>
-			<input type="text" name="morph" id="morph" value="{$form["morph"]}">
+			<input type="text" name="morph[{$id}]" id="morph{$id}" value="{$form["morph"]}">
 		</div>
 HTML;
 }
 
+// -- Translations
 $html .= "<h2>Translations –</h2>";
 $sql = <<<SQL
 	SELECT * FROM english 
@@ -91,15 +132,16 @@ SQL;
 $englishResults = $db->fetch($sql, array(":source"=>$result["source"], ":hw"=>$result["hw"],
 	":pos"=>$result["pos"], ":sub"=>$result["sub"]));
 foreach($englishResults as $english) {
+	$id = $english["id"];
 	$html .= <<<HTML
 		<div class="form-group">
-			<label for="en">en</label>
-			<input type="text" name="en" id="" value="{$english["en"]}">
+			<label for="en{$id}">en</label>
+			<input type="text" name="en[{$id}]" id="en{$id}" value="{$english["en"]}">
 		</div>
 HTML;
 }
 
-
+// -- Notes
 $html .= "<h2>Notes –</h2>";
 $sql = <<<SQL
 	SELECT * FROM notes 
@@ -108,14 +150,15 @@ SQL;
 $notesResults = $db->fetch($sql, array(":source"=>$result["source"], ":hw"=>$result["hw"],
 	":pos"=>$result["pos"], ":sub"=>$result["sub"]));
 foreach ($notesResults as $note) {
+	$id = $note["id"];
 	$html .= <<<HTML
 		<div class="form-group">
-			<label for="note">note</label>
-			<input type="text" name="note" id="note" value="{$note["note"]}">
+			<label for="note{$id}">note</label>
+			<input type="text" name="note[{$id}]" id="note{$id}" value="{$note["note"]}">
 		</div>
 HTML;
 }
-*/
+
 
 $html .= <<<HTML
 		<div>
