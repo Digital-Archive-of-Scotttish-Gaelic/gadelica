@@ -104,7 +104,17 @@ SQL;
 		}
 	}
 
-	die( "<h2>Saved</h2>" );
+	$html = <<<HTML
+		<h2>Saved</h2>
+		<script>
+			window.opener.document.location.reload(true); //reload parent page
+			setTimeout(function() {
+        window.close();
+      }, 2000);
+		</script>
+HTML;
+	echo $html;
+	die();
 }
 
 /**
@@ -250,12 +260,16 @@ $html .= <<<HTML
 		<div>
 			<input type="hidden" name="a" value="save">
 			<input type="submit" class="btn btn-primary" value="save"></input>
-			<button class="btn btn-secondary">cancel</button>
+			<button type="button" class="btn btn-secondary windowClose">cancel</button>
 		</div>
 	</form>
 
 <script>
 	$(function () {
+	  $('.windowClose').on('click', function () {
+      window.close();
+    });
+	  
 	  $('.new-form').hide();
 	  $('.new-en').hide();
 	  $('.new-note').hide();

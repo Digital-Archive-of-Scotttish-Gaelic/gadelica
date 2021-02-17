@@ -26,12 +26,9 @@ HTML;
   $sql = <<<SQL
     SELECT  `form` ,  `morph` ,  `id`
       FROM  `forms`
-      WHERE  `source` = :source
-      AND  `hw` =  :hw
-      AND  `pos` =  :pos
-      AND  `sub` =  :sub
+      WHERE  `lexeme_id` = :lexemeId
 SQL;
-  $results2 = $db->fetch($sql, array(":source" => $result["source"], ":hw" => $result["hw"], ":pos" => $result["pos"], ":sub" => $result["sub"]));
+  $results2 = $db->fetch($sql, array(":lexemeId" => $result["id"]));
 	if ($results2) {
     $html .= <<<HTML
 				<li>Forms:
@@ -48,12 +45,9 @@ HTML;
 	$sql = <<<SQL
 		SELECT  `en` ,  `id`
 			FROM  `english`
-			WHERE  `source` = :source
-			AND  `hw` =  :hw
-			AND  `pos` =  :pos
-			AND  `sub` =  :sub
+			WHERE  `lexeme_id` = :lexemeId
 SQL;
-	$results2 = $db->fetch($sql, array(":source" => $result["source"], ":hw" => $result["hw"], ":pos" => $result["pos"], ":sub" => $result["sub"]));
+	$results2 = $db->fetch($sql, array(":lexemeId" => $result["id"]));
 	if ($results2) {
 		$html .= <<<HTML
 				<li>Translations:
@@ -70,24 +64,21 @@ HTML;
 	$sql = <<<SQL
 		SELECT  `note` ,  `id`
 			FROM  `notes`
-			WHERE  `source` = :source
-			AND  `hw` =  :hw
-			AND  `pos` =  :pos
-			AND  `sub` =  :sub
-	SQL;
-	$results2 = $db->fetch($sql, array(":source" => $result["source"], ":hw" => $result["hw"], ":pos" => $result["pos"], ":sub" => $result["sub"]));
+			WHERE  `lexeme_id` = :lexemeId
+SQL;
+	$results2 = $db->fetch($sql, array(":lexemeId" => $result["id"]));
 	if ($results2) {
 		$html .= <<<HTML
 				<li>Notes:
 					<ul>
-	HTML;
+HTML;
 		foreach ($results2 as $nextResult2) {
 			$html .= "<li>" . $nextResult2["note"] . "</li>";
 		}
 		$html .= <<<HTML
 					</ul>
 				</li>
-	HTML;
+HTML;
 	}
 	$html .= <<<HTML
 			</ul>
