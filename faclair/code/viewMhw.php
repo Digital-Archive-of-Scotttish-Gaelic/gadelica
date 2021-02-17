@@ -26,12 +26,9 @@ HTML;
   $sql = <<<SQL
     SELECT  `form` ,  `morph` ,  `id`
       FROM  `forms`
-      WHERE  `source` = :source
-      AND  `hw` =  :hw
-      AND  `pos` =  :pos
-      AND  `sub` =  :sub
+      WHERE  `lexeme_id` = :lexemeId
 SQL;
-  $results2 = $db->fetch($sql, array(":source" => $result["source"], ":hw" => $result["hw"], ":pos" => $result["pos"], ":sub" => $result["sub"]));
+  $results2 = $db->fetch($sql, array(":lexemeId" => $result["id"]));
 	if ($results2) {
     $html .= <<<HTML
 				<li>Forms:
@@ -48,12 +45,9 @@ HTML;
 	$sql = <<<SQL
 		SELECT  `en` ,  `id`
 			FROM  `english`
-			WHERE  `source` = :source
-			AND  `hw` =  :hw
-			AND  `pos` =  :pos
-			AND  `sub` =  :sub
+			WHERE  `lexeme_id` = :lexemeId
 SQL;
-	$results2 = $db->fetch($sql, array(":source" => $result["source"], ":hw" => $result["hw"], ":pos" => $result["pos"], ":sub" => $result["sub"]));
+	$results2 = $db->fetch($sql, array(":lexemeId" => $result["id"]));
 	if ($results2) {
 		$html .= <<<HTML
 				<li>Translations:
@@ -70,24 +64,21 @@ HTML;
 	$sql = <<<SQL
 		SELECT  `note` ,  `id`
 			FROM  `notes`
-			WHERE  `source` = :source
-			AND  `hw` =  :hw
-			AND  `pos` =  :pos
-			AND  `sub` =  :sub
-	SQL;
-	$results2 = $db->fetch($sql, array(":source" => $result["source"], ":hw" => $result["hw"], ":pos" => $result["pos"], ":sub" => $result["sub"]));
+			WHERE  `lexeme_id` = :lexemeId
+SQL;
+	$results2 = $db->fetch($sql, array(":lexemeId" => $result["id"]));
 	if ($results2) {
 		$html .= <<<HTML
 				<li>Notes:
 					<ul>
-	HTML;
+HTML;
 		foreach ($results2 as $nextResult2) {
 			$html .= "<li>" . $nextResult2["note"] . "</li>";
 		}
 		$html .= <<<HTML
 					</ul>
 				</li>
-	HTML;
+HTML;
 	}
 	$html .= <<<HTML
 			</ul>
@@ -95,7 +86,7 @@ HTML;
 HTML;
 }
 $html .= <<<HTML
-      <li><small><a href="addLexeme.php?mhw={$_GET["mhw"]}&mpos={$_GET["mpos"]}&msub={$_GET["msub"]}">[add]</a></small></li>
+      <li><small><a target="_new" href="addLexeme.php?mhw={$_GET["mhw"]}&mpos={$_GET["mpos"]}&msub={$_GET["msub"]}">[add]</a></small></li>
     </ul>
 HTML;
 
@@ -116,11 +107,19 @@ $results = $db->fetch($sql, array(":mhw" => $_GET["mhw"], ":mpos" => $_GET["mpos
 foreach ($results as $result) {
 	$url = "viewMhw.php?mhw={$result["m-p-hw"]}&mpos={$result["m-p-pos"]}&msub={$result["m-p-sub"]}";
 	$html .= <<<HTML
-		<li><a href="{$url}">{$result["m-p-hw"]}</a> <em>{$result["m-p-pos"]}</em> <small><a href="deletePart.php?id={$result["id"]}">[delete]</a></small></li>
+		<li><a href="{$url}">{$result["m-p-hw"]}</a> <em>{$result["m-p-pos"]}</em> 
+			<small>
+				<a target="_new" onclick="return confirm('Are you sure?');" href="deletePart.php?id={$result["id"]}">[delete]</a>
+			</small>
+		</li>
 HTML;
 }
 $html .= <<<HTML
-    <li><small><a href="addPart.php?mhw={$_GET["mhw"]}&mpos={$_GET["mpos"]}&msub={$_GET["msub"]}">[add]</a></small></li>
+    <li>
+      <small>
+        <a target="_new" href="addPart.php?mhw={$_GET["mhw"]}&mpos={$_GET["mpos"]}&msub={$_GET["msub"]}">[add]</a>
+      </small>
+     </li>
 	</ul>
 HTML;
 
