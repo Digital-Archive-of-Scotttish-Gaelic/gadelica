@@ -86,7 +86,7 @@ HTML;
 HTML;
 }
 $html .= <<<HTML
-      <li><small><a href="addLexeme.php?mhw={$_GET["mhw"]}&mpos={$_GET["mpos"]}&msub={$_GET["msub"]}">[add]</a></small></li>
+      <li><small><a target="_new" href="addLexeme.php?mhw={$_GET["mhw"]}&mpos={$_GET["mpos"]}&msub={$_GET["msub"]}">[add]</a></small></li>
     </ul>
 HTML;
 
@@ -107,11 +107,19 @@ $results = $db->fetch($sql, array(":mhw" => $_GET["mhw"], ":mpos" => $_GET["mpos
 foreach ($results as $result) {
 	$url = "viewMhw.php?mhw={$result["m-p-hw"]}&mpos={$result["m-p-pos"]}&msub={$result["m-p-sub"]}";
 	$html .= <<<HTML
-		<li><a href="{$url}">{$result["m-p-hw"]}</a> <em>{$result["m-p-pos"]}</em> <small><a href="deletePart.php?id={$result["id"]}">[delete]</a></small></li>
+		<li><a href="{$url}">{$result["m-p-hw"]}</a> <em>{$result["m-p-pos"]}</em> 
+			<small>
+				<a target="_new" onclick="return confirm('Are you sure?');" href="deletePart.php?id={$result["id"]}">[delete]</a>
+			</small>
+		</li>
 HTML;
 }
 $html .= <<<HTML
-    <li><small><a href="addPart.php?mhw={$_GET["mhw"]}&mpos={$_GET["mpos"]}&msub={$_GET["msub"]}">[add]</a></small></li>
+    <li>
+      <small>
+        <a target="_new" href="addPart.php?mhw={$_GET["mhw"]}&mpos={$_GET["mpos"]}&msub={$_GET["msub"]}">[add]</a>
+      </small>
+     </li>
 	</ul>
 HTML;
 
