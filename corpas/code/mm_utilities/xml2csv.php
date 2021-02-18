@@ -150,7 +150,6 @@ if (getcwd()=='/Users/stephenbarrett/Sites/gadelica/corpas/code/mm_utilities') {
 }
 else if (getcwd()=='/Users/mark/Sites/gadelica/corpas/code/mm_utilities') {
 	$path = '../../xml';
-	//$path = '../../xml/83_Mairi_Mhor_nan_Oran';
 }
 $it = new \RecursiveDirectoryIterator($path);
 foreach (new \RecursiveIteratorIterator($it) as $nextFile) {
@@ -158,6 +157,7 @@ foreach (new \RecursiveIteratorIterator($it) as $nextFile) {
 		$xml = simplexml_load_file($nextFile);
 		$xml->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/');
 		foreach ($xml->xpath("//dasg:w") as $nextWord) {
+
 			$lemma = (string)$nextWord['lemma'];
 			if ($lemma) { echo $lemma . ','; }
 			else { echo $nextWord . ','; }
@@ -190,8 +190,10 @@ foreach (new \RecursiveIteratorIterator($it) as $nextFile) {
 			echo $medium . ',';
 			if ($districts[$filename]) { echo $districts[$filename];}
 			else { echo '3333'; }
-
+			echo ',' . end($nextWord->xpath("preceding-sibling::dasg:w"));
+			echo ',' . $nextWord->xpath("following-sibling::dasg:w")[0];
 			echo PHP_EOL;
+
 		}
 	}
 }

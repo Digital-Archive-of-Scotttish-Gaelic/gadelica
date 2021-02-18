@@ -14,6 +14,7 @@ $dates = array();
 $districts = array();
 
 //get the texts
+/*
 $db = new database();
 $sql = <<<SQL
 		SELECT id, filepath, title, date, partOf FROM text
@@ -57,6 +58,7 @@ SQL;
 		$districts[$filepath] = getParentDistrict($partOf);
 	}
 }
+*/
 
 /**
  * Recursive function to assemble a title string based on a text title's ancestor(s)
@@ -149,7 +151,7 @@ if (getcwd()=='/Users/stephenbarrett/Sites/gadelica/corpas/code/mm_utilities') {
 	$path = '../../xml';
 }
 else if (getcwd()=='/Users/mark/Sites/gadelica/corpas/code/mm_utilities') {
-	$path = '../../xml';
+	$path = '../../xml/2_Sgeulachdan_Dhoomhnaill_Alasdair';
 }
 $it = new \RecursiveDirectoryIterator($path);
 foreach (new \RecursiveIteratorIterator($it) as $nextFile) {
@@ -190,10 +192,26 @@ foreach (new \RecursiveIteratorIterator($it) as $nextFile) {
 			echo $medium . ',';
 			if ($districts[$filename]) { echo $districts[$filename];}
 			else { echo '3333'; }
-			echo ',' . end($nextWord->xpath("preceding-sibling::dasg:w"));
-			echo ',' . $nextWord->xpath("following-sibling::dasg:w")[0];
-			echo PHP_EOL;
+			$ps = end($nextWord->xpath("preceding-sibling::dasg:w"));
+			if ($ps) {
+				echo ',' . $ps;
+			}
+			else {echo ',ZZ';}
+			$fs = $nextWord->xpath("following-sibling::dasg:w")[0];
+			if ($fs) {
+				echo ',' . $fs;
+			}
+			else {echo ',ZZ';}
+			if ($ps) {
+				echo ',' . $ps['lemma'];
+			}
+			else {echo ',ZZ';}
+			if ($fs) {
+				echo ',' . $fs['lemma'];
+			}
+			else {echo ',ZZ';}
 
+			echo PHP_EOL;
 		}
 	}
 }
