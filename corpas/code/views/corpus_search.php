@@ -33,8 +33,7 @@ class corpus_search
             </div>
         </div>
 HTML;
-		$districtBlock = "";  //delete once using the following line again SB
-		//$districtBlock = $this->_getDistrictHtml();
+		$districtBlock = $this->_getDistrictHtml();
 		if ($_GET["id"]) {    //if this is a subtext don't write the date range block
 			$dateRangeBlock = $districtBlock = "";
 		}
