@@ -3,10 +3,10 @@
 namespace controllers;
 use views;
 
-class home
+class sources
 {
 	public function run() {
-		$view = new views\home();
+		$view = new views\sources();
 		$view->show();
 	}
 }
