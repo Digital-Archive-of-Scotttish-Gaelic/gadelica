@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_02_2021,_08_41_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_02_2021__08_41__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_02_2021,_08_30_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_02_2021__08_30__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/models/corpus_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/corpus_search.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/views/corpus_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/corpus_search.php" afterDir="false" />
@@ -105,7 +101,7 @@
       <workItem from="1612773655399" duration="13729000" />
       <workItem from="1613129353148" duration="48000" />
       <workItem from="1613130765631" duration="4835000" />
-      <workItem from="1613635197677" duration="4243000" />
+      <workItem from="1613635197677" duration="5274000" />
     </task>
     <task id="LOCAL-00001" summary="Renamed xml2csv files in order to use new SQL version">
       <created>1605188305941</created>
@@ -436,14 +432,20 @@
       <option name="project" value="LOCAL" />
       <updated>1613573850838</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Added search restrictions for preceding and following context">
+      <created>1613651942542</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1613651942542</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Just updates to the Joe Watson XML files." />
     <MESSAGE value="First pass at searching by level (&quot;importance&quot;) functionality" />
     <MESSAGE value="Added code to handle and set default level as required for new &quot;top level&quot; texts as well as subtexts" />
     <MESSAGE value="Added multi-select option and text to POS search" />
@@ -468,6 +470,7 @@
     <MESSAGE value="Added code to add/delete forms, translations, and notes" />
     <MESSAGE value="Recoded viewMhw.php to use new foreign key &quot;lexeme_id&quot;" />
     <MESSAGE value="Created addLexeme.php, addPart.php, deletePart.php. Some edits in viewMhw.php to handle foreign keys and make links work." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created addLexeme.php, addPart.php, deletePart.php. Some edits in viewMhw.php to handle foreign keys and make links work." />
+    <MESSAGE value="Added search restrictions for preceding and following context" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added search restrictions for preceding and following context" />
   </component>
 </project>

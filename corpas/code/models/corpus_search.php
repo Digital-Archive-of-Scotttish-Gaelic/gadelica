@@ -197,6 +197,9 @@ SQL;
 			case "precedingWord":
 				$orderBy = "preceding_word ASC";
 				break;
+			case "precedingWordReverse":
+				$orderBy = "REVERSE(preceding_word) ASC";
+				break;
 			case "followingWord":
 				$orderBy = "following_word ASC";
 				break;

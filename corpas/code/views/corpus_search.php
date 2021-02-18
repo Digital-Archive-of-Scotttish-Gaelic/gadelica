@@ -140,6 +140,10 @@ HTML;
             <label class="form-check-label" for="precedingWordRadio">preceding word</label>
           </div>
           <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="order" id="precedingWordReverseRadio" value="precedingWordReverse">
+            <label class="form-check-label" for="precedingWordReverseRadio">reverse preceding word</label>
+          </div>
+          <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="order" id="followingWordRadio" value="followingWord">
             <label class="form-check-label" for="followingWordRadio">following word</label>
           </div>
