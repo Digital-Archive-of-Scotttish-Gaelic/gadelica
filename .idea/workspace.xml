@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/views/corpus_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/corpus_search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/models/corpus_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/corpus_search.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,14 +100,7 @@
       <workItem from="1612773655399" duration="13729000" />
       <workItem from="1613129353148" duration="48000" />
       <workItem from="1613130765631" duration="4835000" />
-      <workItem from="1613635197677" duration="7914000" />
-    </task>
-    <task id="LOCAL-00001" summary="Renamed xml2csv files in order to use new SQL version">
-      <created>1605188305941</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1605188305941</updated>
+      <workItem from="1613635197677" duration="11202000" />
     </task>
     <task id="LOCAL-00002" summary="Refactored slips code into collection classes">
       <created>1605193192695</created>
@@ -445,14 +438,20 @@
       <option name="project" value="LOCAL" />
       <updated>1613654621759</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Basic form with some jQuery for multi-word (preceding and following) search inputs">
+      <created>1613657317954</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1613657317955</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added code to handle and set default level as required for new &quot;top level&quot; texts as well as subtexts" />
     <MESSAGE value="Added multi-select option and text to POS search" />
     <MESSAGE value="Added some temporary code to enable the renaming of files in a given directory - renameFiles.php - and a temporary directory for testing - tmp/" />
     <MESSAGE value="Reworked renameFiles to handle many directories" />
@@ -477,6 +476,7 @@
     <MESSAGE value="Created addLexeme.php, addPart.php, deletePart.php. Some edits in viewMhw.php to handle foreign keys and make links work." />
     <MESSAGE value="Added search restrictions for preceding and following context" />
     <MESSAGE value="Added option to order search results by reverse preceding word." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added option to order search results by reverse preceding word." />
+    <MESSAGE value="Basic form with some jQuery for multi-word (preceding and following) search inputs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Basic form with some jQuery for multi-word (preceding and following) search inputs" />
   </component>
 </project>

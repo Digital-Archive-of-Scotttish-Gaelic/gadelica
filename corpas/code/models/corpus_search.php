@@ -149,9 +149,9 @@ class corpus_search
 		$whereClause = "";
 		$search = $searchPrefix . $search . "[[:>:]]";  //word boundary
 		if ($params["case"] == "sensitive") {   //case sensitive
-			$whereClause .= "wordform_bin REGEXP ?";
+			$whereClause .= "wordform_bin REGEXP :term";
 		} else {                              //case insensitive
-			$whereClause .= "wordform REGEXP ?";
+			$whereClause .= "wordform REGEXP :term";
 		}
 		$selectFields =  "lemma, l.filename AS filename, l.id AS id, wordform, pos, date_of_lang, l.title, 
 			page, medium, s.auto_id AS auto_id, t.id AS tid, t.level as level, preceding_word, following_word";
@@ -234,12 +234,13 @@ SQL;
             LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id AND group_id = {$_SESSION["groupId"]}
             JOIN text t ON t.filepath = l.filename {$textJoinSql}
         		{$writerJoinSql}
-            WHERE lemma = ?
+            WHERE lemma = :term
 
 SQL;
 		} else {                               //wordform
 			$query = $this->_getWordformQuery();
 		}
+		$pdoParams = array(":term" => $query["search"]);    //params required to pass for the PDO DB query
 		if ($params["selectedDates"]) {       //restrict by date
 			$query["sql"] .= $this->_getDateWhereClause();
 		}
@@ -250,11 +251,18 @@ SQL;
 		if ($params["pos"][0] != "") {
 			$query["sql"] .= $this->_getPOSWhereClause();  //restrict by POS
 		}
-
 		if ($params["district"]) {
 			if (count($params["district"]) != 15) {   //restrict by district (location)
 				$query["sql"] .= $this->_getDistrictWhereClause();
 			}
+		}
+		if ($params["precedingWord"] != "") {         //multi word search for preceding word
+			$query["sql"] .= " AND preceding_word = :pw";
+			$pdoParams[":pw"] = $params["precedingWord"];
+		}
+		if ($params["followingWord"] != "") {         //multi word search for following word
+			$query["sql"] .= " AND following_word = :fw";
+			$pdoParams[":fw"] = $params["followingWord"];
 		}
 
 		$query["sql"] .= <<<SQL
@@ -265,7 +273,7 @@ SQL;
 				LIMIT {$perpage} OFFSET {$offset}
 SQL;
 		}
-		$results = $this->_db->fetch($query["sql"], array($query["search"]));
+		$results = $this->_db->fetch($query["sql"], $pdoParams);
 		$hits = $this->_db->fetch("SELECT FOUND_ROWS() as hits;");
 		$this->_hits = $hits[0]["hits"];
 		return $results;
