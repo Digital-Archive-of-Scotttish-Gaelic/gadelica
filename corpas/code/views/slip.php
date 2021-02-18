@@ -20,14 +20,10 @@ class slip
   }
 
   private function _writeEditForm() {
+  	$user = models\users::getUser($_SESSION["user"]);
+	  $locked = $this->_slip->getLocked();
+		$lockedHtml = $user->getSuperuser() ? $this->_getLockedDiv($locked) : '';
   	$checked = $this->_slip->getStarred() ? "checked" : "";
-    $locked = $this->_slip->getLocked();
-    $lockHide = $unlockHide = "";
-    if ($locked) {
-    	$unlockHide = "d-none";
-    } else {
-	    $lockHide = "d-none";
-    }
     echo <<<HTML
 				{$this->_writeContext()}
 				{$this->_writeCollocatesView()}
@@ -82,12 +78,7 @@ HTML;
             <input type="hidden" id="preContextScope" name="preContextScope" value="{$this->_slip->getPreContextScope()}">
             <input type="hidden" id="postContextScope" name="postContextScope" value="{$this->_slip->getPostContextScope()}">
             <input type="hidden" name="action" value="save"/>
-            <!--div>
-              <a data-toggle="tooltip" title="Click to unlock" class="{$lockHide} lockBtn locked btn btn-large btn-danger" href="#">
-                <i class="fa fa-lock" aria-hidden="true"></i></a>
-              <a data-toggle="tooltip" title="Click to lock" class="{$unlockHide} lockBtn unlocked btn btn-large btn-success" href="#">
-                <i class="fa fa-unlock" aria-hidden="true"></i></a>
-						</div-->
+            {$lockedHtml}
             <div class="mx-2">
               <button name="close" class="windowClose btn btn-secondary">close</button>
               <button name="submit" id="savedClose" class="btn btn-primary">save</button>
@@ -98,6 +89,25 @@ HTML;
     $this->_writeUpdatedBy();
     $this->_writeFooter();;
     $this->_writeSavedModal();
+  }
+
+  private function _getLockedDiv($locked) {
+  	$lockHide = $unlockHide = "";
+	  if ($locked) {
+		  $unlockHide = "d-none";
+	  } else {
+		  $lockHide = "d-none";
+	  }
+
+  	$html = <<<HTML
+			<div>
+        <a data-toggle="tooltip" title="Click to unlock" class="{$lockHide} lockBtn locked btn btn-large btn-danger" href="#">
+        <i class="fa fa-lock" aria-hidden="true"></i></a>
+        <a data-toggle="tooltip" title="Click to lock" class="{$unlockHide} lockBtn unlocked btn btn-large btn-success" href="#">
+        <i class="fa fa-unlock" aria-hidden="true"></i></a>
+			</div>
+HTML;
+  	return $html;
   }
 
   private function _writeUpdatedBy() {
@@ -394,15 +404,15 @@ HTML;
               </div>
               <h5>Adjust citation context</h5>
               <div>
-								<a class="updateContext" id="decrementPre"><i class="fas fa-minus"></i></a>
-								<a {$preHref} class="updateContext" id="incrementPre"><i class="fas fa-plus"></i></a>
+								<a class="updateContext btn-link" id="decrementPre"><i class="fas fa-minus"></i></a>
+								<a {$preHref} class="updateContext btn-link" id="incrementPre"><i class="fas fa-plus"></i></a>
               </div>
               <span data-precontextscope="{$preScope}" data-postcontextscope="{$postScope}" id="slipContext" class="slipContext">
                 {$contextHtml}
               </span>
               <div>
-                <a class="updateContext" id="decrementPost"><i class="fas fa-minus"></i></a>
-								<a class="updateContext" id="incrementPost"><i class="fas fa-plus"></i></a>
+                <a class="updateContext btn-link" id="decrementPost"><i class="fas fa-minus"></i></a>
+								<a class="updateContext btn-link" id="incrementPost"><i class="fas fa-plus"></i></a>
               </div>
               <div style="height: 20px;">
                 <a href="#" class="float-right" id="resetContext">reset context</a>
@@ -471,8 +481,8 @@ HTML;
 		        $('#resetContext').on('click', function () {
 		          var filename = $('#slipFilename').text();
               var id = $('#wordId').text();
-              var preScope = '{$this->_slip->getPreContextScope()}';
-              var postScope = '{$this->_slip->getPostContextScope()}';
+              var preScope = {$this->_slip->getScopeDefault()};
+              var postScope = {$this->_slip->getScopeDefault()};
               $('#slipContext').attr('data-precontextscope', preScope);
 					    $('#slipContext').attr('data-postcontextscope', postScope);
 					    $('#preContextScope').val(preScope);
@@ -663,6 +673,42 @@ HTML;
               }
             });
             
+            $('.updateContext').on('click', function () {
+					    var preScope = $('#slipContext').attr('data-precontextscope');
+					    var postScope = $('#slipContext').attr('data-postcontextscope');
+					    var filename = $('#slipFilename').text();
+					    var id = $('#wordId').text();
+					    switch ($(this).attr('id')) {
+					      case "decrementPre":
+					        preScope--;
+					        if (preScope == 0) {
+					          $('#decrementPre').addClass("disabled");
+					        }
+					        break;
+					      case "incrementPre":
+					        if ($(this).attr('href')) {
+					          preScope++;
+					          $('#decrementPre').removeClass("disabled");
+					        }
+					        break;
+					      case "decrementPost":
+					        postScope--;
+					        if (postScope == 0) {
+					          $('#decrementPost').addClass("disabled");
+					        }
+					        break;
+					      case "incrementPost":
+					        postScope++;
+					        $('#decrementPost').removeClass("disabled");
+					        break;
+					    }
+					    $('#slipContext').attr('data-precontextscope', preScope);
+					    $('#slipContext').attr('data-postcontextscope', postScope);
+					    $('#preContextScope').val(preScope);
+					    $('#postContextScope').val(postScope);
+					    writeSlipContext(filename, id);
+					  });
+            
             function writeSlipContext(filename, id) {
 					    var html = '';
 					    var preScope  = $('#slipContext').attr('data-precontextscope');
@@ -671,17 +717,17 @@ HTML;
 					      var preOutput = data.pre["output"];
 					      var postOutput = data.post["output"];
 					      //handle zero pre/post context sizes
-					      if (typeof preOutput == "undefined") {
+					      if (preScope == 0) {
 					        preOutput = "";
-					        $('#decrementPre').removeAttr("href");
+					        $('#decrementPre').addClass("disabled");
 					      } else {
-					        $('#decrementPre').attr("href", "#");
+					        $('#decrementPre').removeClass("disabled");
 					      }
-					      if (typeof postOutput == "undefined") {
+					      if (postScope == 1) {
 					        postOutput = "";
-					        $('#decrementPost').removeAttr("href");
+					        $('#decrementPost').addClass("disabled");
 					      } else {
-					        $('#decrementPost').attr("href", "#");
+					        $('#decrementPost').removeClass("disabled");
 					      }
 					      //handle reaching the start/end of the document
 					      if (data.prelimit) {

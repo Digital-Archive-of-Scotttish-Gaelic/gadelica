@@ -66,7 +66,7 @@ echo <<<HTML
 		    $.ajax({url: 'ajax.php?action=setGroup&groupId='+groupId})
 		      .done(function () {
 		        window.location.reload(true);
-		    });	    
+		    });
 		    return false;
 		  });
 		});
@@ -75,7 +75,7 @@ echo <<<HTML
 <body style="padding-top: 80px;">
   <div class="container-fluid">
     <nav class="navbar navbar-dark fixed-top navbar-expand-lg" style="background-color: #{$groupTheme};">
-      <a class="navbar-brand" href="index.php"> MABAG 𐄫</a>
+      <a class="navbar-brand" href="index.php">Fearas 𐄫</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -89,7 +89,7 @@ echo <<<HTML
           <span class="loggedIn {$loggedInHide}">
             <form method="post">
               <a id="logoutLink" href="index.php?loginAction=logout" class="btn btn-link nav-link nav-item">logout</a>
-            </form>  
+            </form>
 					</span>
 					<div class="navbar-nav>">
 						{$groupHtml}
@@ -98,7 +98,7 @@ echo <<<HTML
         <div class="navbar-nav ml-auto">
           <span class="loggedIn {$loggedInHide}">
             <a id="loggedInAs" class="nav-link disabled" href="#">logged in as {$name}</a>
-          </span>       
+          </span>
         </div>
       </div>
     </nav>

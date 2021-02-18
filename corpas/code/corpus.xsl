@@ -174,7 +174,7 @@
         <xsl:text>&#32;</xsl:text>
       </xsl:when>
       <xsl:when test="@img">
-        <a href="{concat('https://dasg.ac.uk/images/cnag/pages/',@img)}" target="_new">[<xsl:value-of select="@n"/>]</a>
+        <a href="{concat('https://dasg.ac.uk/gadelica/corpas/scans/',@img)}" target="_new">[<xsl:value-of select="@n"/>]</a>
         <xsl:text>&#32;</xsl:text>
       </xsl:when>
       <xsl:otherwise>
@@ -210,6 +210,11 @@
     </tr>
   </xsl:template>
   
+  <xsl:template match="dasg:note">
+    <p class="text-muted small">
+      <xsl:apply-templates/>
+    </p>
+  </xsl:template>
   
   
 </xsl:stylesheet>

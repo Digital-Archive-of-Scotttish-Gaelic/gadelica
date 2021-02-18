@@ -213,26 +213,27 @@ SQL;
 	/**
 	 * Sends an email to slip owner to request a slip unlock
 	 * @param $slipId
-	 * @param $ownerEmail
 	 */
-	public static function requestUnlock($slipId, $ownerEmail) {
-		$owner = users::getUser($ownerEmail);
+	public static function requestUnlock($slipId) {
+		$superusers = users::getAllSuperusers();
 		$user = users::getUser($_SESSION["user"]);
 		$slip = self::getSlipInfoBySlipId($slipId)[0];
 		$editUrl = "https://dasg.ac.uk/gadelica/corpas/code/index.php?m=collection&a=edit";
 		$editUrl .= <<<HTML
 			&filename={$slip["filename"]}&wid={$slip["id"]}&headword={$slip["lemma"]}&pos={$slip["pos"]}&id={$slipId}
 HTML;
-		$emailText = <<<HTML
-			<p>Dear {$owner->getFirstName()},</p>
-			<p>{$user->getFirstName()} {$user->getLastName()} has requested that slip #{$slipId} be unlocked.</p>
-			<p>You can view and update the slip <a href="{$editUrl}">here</a></p>
-			<p>If you have received this email in error or have any other queries please contact <a title="Email DASG" href="mailto:mail@dasg.ac.uk">mail@dasg.ac.uk</a>.</p>	
-			<p>Kind regards</p>
-			<p>The DASG team</p>
+		foreach ($superusers as $superuser) {
+			$emailText = <<<HTML
+				<p>Dear {$superuser->getFirstName()},</p>
+				<p>{$user->getFirstName()} {$user->getLastName()} has requested that slip #{$slipId} be unlocked.</p>
+				<p>You can view and update the slip <a href="{$editUrl}">here</a></p>
+				<p>If you have received this email in error or have any other queries please contact <a title="Email DASG" href="mailto:mail@dasg.ac.uk">mail@dasg.ac.uk</a>.</p>	
+				<p>Kind regards</p>
+				<p>The DASG team</p>
 HTML;
-		$email = new email($ownerEmail, "Slip Unlock Request", $emailText, "mail@dasg.ac.uk");
-		$email->send();
+			$email = new email($superuser->getEmail(), "Slip Unlock Request", $emailText, "mail@dasg.ac.uk");
+			$email->send();
+		}
 	}
 
   /**

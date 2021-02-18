@@ -1,6 +1,10 @@
 <?php
 
-
+/**
+ * Class FileHandler
+ *
+ * !! This has been deprecated - remains just in case it's needed for future reference !!
+ */
 class FileHandler
 {
   private $_filename;

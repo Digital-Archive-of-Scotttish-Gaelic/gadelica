@@ -18,13 +18,16 @@
   
   <xsl:template match="meta"/>
   
-  <xsl:template match="p|strong|hr|em|ol|li|a|mark|h1|h2|h3|h4">
+  <xsl:template match="p|strong|hr|em|ol|ul|li|a|mark|h1|h2|h3|h4|table|thead|tbody|tr|td|th|u">
     <xsl:copy>
       <xsl:if test="@type">
         <xsl:attribute name="type"><xsl:value-of select="@type"/></xsl:attribute>
       </xsl:if>
       <xsl:if test="@href">
         <xsl:attribute name="href"><xsl:value-of select="@href"/></xsl:attribute>
+      </xsl:if>
+      <xsl:if test="@class">
+        <xsl:attribute name="class"><xsl:value-of select="@class"/></xsl:attribute>
       </xsl:if>
       <xsl:apply-templates/>
     </xsl:copy>
@@ -39,6 +42,12 @@
   <xsl:template match="boxlink">
     <xsl:text> </xsl:text>
     <small><a data-toggle="modal" data-target="{@ref}" href="#">[more]</a></small>
+  </xsl:template>
+  
+  <xsl:template match="boxlink2">
+    <a data-toggle="modal" data-target="{@ref}" href="#">
+      <xsl:apply-templates/>
+    </a>
   </xsl:template>
   
   <xsl:template match="box">

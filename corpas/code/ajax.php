@@ -13,8 +13,9 @@ switch ($_REQUEST["action"]) {
 		echo json_encode(array("firstname"=>$user->getFirstName(), "lastname"=>$user->getLastName()));
 		break;
   case "getContext":
+  	$tagContext = $_GET["simpleContext"] ? false : true;
     $handler = new xmlfilehandler($_GET["filename"]);
-    $context = $handler->getContext($_GET["id"], $_GET["preScope"], $_GET["postScope"], true, false, true);
+    $context = $handler->getContext($_GET["id"], $_GET["preScope"], $_GET["postScope"], true, false, $tagContext);
     echo json_encode($context);
     break;
 	case "getSlips":
@@ -45,7 +46,9 @@ switch ($_REQUEST["action"]) {
     $context = $handler->getContext($_GET["id"], $results["preContextScope"], $results["postContextScope"]);
     $results["context"] = $context;
     $results['isOwner'] = $slip->getOwnedBy() == $_SESSION["user"];
-    $results["canEdit"] =  $slip->getOwnedBy() == $_SESSION["user"] || (!$slip->getIsLocked()) ? 1 : 0;
+    $user = users::getUser($_SESSION["user"]);
+    $superuser = $user->getSuperuser();
+    $results["canEdit"] =  $superuser || (!$slip->getIsLocked()) ? 1 : 0;
     //
     echo json_encode($results);
     break;
@@ -113,7 +116,7 @@ switch ($_REQUEST["action"]) {
 			$_GET["slipId"], $_GET["grammar"]);
 		break;
 	case "requestUnlock":
-			collection::requestUnlock($_GET["slipId"], $_GET["owner"]);
+			collection::requestUnlock($_GET["slipId"]);
 		break;
 	case "setGroup":
 		users::updateGroupLastUsed($_GET["groupId"]);

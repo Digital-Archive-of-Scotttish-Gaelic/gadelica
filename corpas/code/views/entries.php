@@ -70,6 +70,7 @@ HTML;
 							data-tid="{$row["tid"]}"
 							data-precontextscope="{$row["preContextScope"]}"
 							data-postcontextscope="{$row["postContextScope"]}"
+							data-translation="{$translation}"
 							data-date="{$row["date_of_lang"]}">
 						<!--td data-toggle="tooltip"
 							title="#{$filenameElems[0]} p.{$row["page"]}: {$row["date_of_lang"]} : {$translation}"
@@ -198,11 +199,12 @@ HTML;
 							data-tid="{$row["tid"]}"
 							data-precontextscope="{$row["preContextScope"]}"
 							data-postcontextscope="{$row["postContextScope"]}"
+							data-translation="{$translation}"
 							data-date="{$row["date_of_lang"]}">
 						<!--td data-toggle="tooltip"
 							title="#{$filenameElems[0]} p.{$row["page"]}: {$row["date_of_lang"]} : {$translation}"
 							class="entryCitationContext"></td-->
-						<td  class="entryCitationContext"></td>
+						<td class="entryCitationContext"></td>
 						<td class="entryCitationSlipLink">{$this->_getSlipLink($slipLinkData)}</td>
 						<td><a target="_blank" href="#" class="entryCitationTextLink"><small>view in text</small></td>
 					</tr>
@@ -369,10 +371,11 @@ HTML;
 			      var tid = $(this).attr('data-tid');
 			      var preScope  = $(this).attr('data-precontextscope');
 			      var postScope = $(this).attr('data-postcontextscope');
+			      var translation = $(this).attr('data-translation');
 			      var tr = $(this);
 			      var title = tr.prop('title');
 			      var url = 'ajax.php?action=getContext&filename='+filename+'&id='+wid+'&preScope='+preScope;
-			      url += '&postScope='+postScope;
+			      url += '&postScope='+postScope+'&simpleContext=1';
 			      $.getJSON(url, function (data) {
 			        $('.spinner').show();
 			        var preOutput = data.pre["output"];
@@ -389,6 +392,7 @@ HTML;
 			          html += ' ';
 			        }
 			        html += postOutput;
+			        html += '<br><small class="text-muted">'+translation+'</small>';
 			        tr.find('.entryCitationContext').html(html);
 			      })
 			        .then(function () {

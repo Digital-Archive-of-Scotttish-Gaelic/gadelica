@@ -55,7 +55,16 @@ echo <<<HTML
     </nav>
 HTML;
 
-new gaelic();
+if ($_GET["gd"]) {
+  new gaelic();
+}
+else if ($_GET["en"]) {
+  new english();
+}
+else {
+  new home();
+}
+
 
 echo <<<HTML
       <hr/><hr/>

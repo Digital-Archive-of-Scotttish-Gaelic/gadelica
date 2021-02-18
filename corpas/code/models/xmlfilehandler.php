@@ -33,7 +33,7 @@ class xmlfilehandler
     $xpath = '/dasg:text/@ref';
     $out = $this->_xml->xpath($xpath);
     $context["uri"] = (string)$out[0];
-    $xpath = "//dasg:w[@id='{$id}']/preceding::*[not(name()='s') and not(name()='p')]";
+    $xpath = "//dasg:w[@id='{$id}']/preceding::*[not(name()='s') and not(name()='p') and not(name()='note')]";
     $words = $this->_xml->xpath($xpath);
     /* preContext processing */
     $context["pre"] = array("output"=>"");
@@ -58,7 +58,7 @@ class xmlfilehandler
 	    ? '<div style="display:inline; margin-left:4px;"><mark>' . (string)$word[0] . '</mark></div>'
       : (string)$word[0];
     $context["headwordId"] = $word[0]->attributes()["id"];
-    $xpath = "//dasg:w[@id='{$id}']/following::*[not(name()='s') and not(name()='p')]";
+    $xpath = "//dasg:w[@id='{$id}']/following::*[not(name()='s') and not(name()='p') and not(name()='note')]";
     $words = $this->_xml->xpath($xpath);
     /* postContext processing */
     $context["post"] = array("output"=>"");
@@ -115,7 +115,7 @@ class xmlfilehandler
 				$spacer = '<div style="margin-right:-4px;display:inline;">&thinsp;</div>';
 			} else if ($tagContext) {
 				$verb = $section == "pre" ? "start" : "end";
-				$token = '<a data-toggle="tooltip" data-html="true" class="contextLink ' . $section . '" data-position=' . $position . '"';
+				$token = '<a data-toggle="tooltip" data-html="true" class="contextLink ' . $section . '" data-position="' . $position . '"';
 				$token .= ' title="' . $verb . ' context with <em><strong>' . $element[0] . '</strong></em>">' . $element[0] . '</a>';
 			} else {
 				$token = $element[0];
