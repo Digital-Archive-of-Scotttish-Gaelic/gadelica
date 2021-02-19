@@ -154,7 +154,7 @@ class corpus_search
 			$whereClause .= "wordform REGEXP :term";
 		}
 		$selectFields =  "lemma, l.filename AS filename, l.id AS id, wordform, pos, date_of_lang, l.title, 
-			page, medium, s.auto_id AS auto_id, t.id AS tid, t.level as level, preceding_word, following_word";
+			page, medium, s.auto_id AS auto_id, t.id AS tid, t.level as level";
 
 		$textJoinSql = "";
 		if ($params["id"]) {    //restrict to this text
@@ -164,7 +164,7 @@ SQL;
 		}
 
 		$sql = <<<SQL
-        SELECT SQL_CALC_FOUND_ROWS  {$selectFields} FROM lemmas AS l
+        SELECT SQL_CALC_FOUND_ROWS {$selectFields} FROM lemmas AS l
           LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id AND group_id = {$_SESSION["groupId"]}
           JOIN text t ON t.filepath = l.filename {$textJoinSql}
           WHERE {$whereClause}
@@ -187,6 +187,7 @@ SQL;
 		switch ($params["order"]) {
 			case "random":
 				$orderBy = "RAND()";
+			//	$orderBy = "0.1513579619350810";
 				break;
 			case "dateAsc":
 				$orderBy = "date_of_lang ASC";
@@ -228,8 +229,7 @@ SQL;
 
 			$query["sql"] = <<<SQL
         SELECT SQL_CALC_FOUND_ROWS l.filename AS filename, l.id AS id, wordform, pos, lemma, date_of_lang, l.title,
-                page, medium, s.auto_id as auto_id, s.wordClass as wordClass, t.id AS tid, t.level as level,
-               	preceding_word, following_word
+                page, medium, s.auto_id as auto_id, s.wordClass as wordClass, t.id AS tid, t.level as level
             FROM lemmas AS l
             LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id AND group_id = {$_SESSION["groupId"]}
             JOIN text t ON t.filepath = l.filename {$textJoinSql}
@@ -256,13 +256,17 @@ SQL;
 				$query["sql"] .= $this->_getDistrictWhereClause();
 			}
 		}
-		if ($params["precedingWord"] != "") {         //multi word search for preceding word
-			$query["sql"] .= " AND preceding_word = :pw";
-			$pdoParams[":pw"] = $params["precedingWord"];
+		if ($params["pw"] != "") {         //multi word search for preceding word
+			$query["sql"] .= $params["preMode"] == "wordform"
+				? " AND preceding_word = :pw"
+				: " AND preceding_lemma = :pw";
+			$pdoParams[":pw"] = $params["pw"];
 		}
-		if ($params["followingWord"] != "") {         //multi word search for following word
-			$query["sql"] .= " AND following_word = :fw";
-			$pdoParams[":fw"] = $params["followingWord"];
+		if ($params["fw"] != "") {         //multi word search for following word
+			$query["sql"] .= $params["postMode"] == "wordform"
+				? " AND following_word = :fw"
+				: " AND following_lemma = :fw";
+			$pdoParams[":fw"] = $params["fw"];
 		}
 
 		$query["sql"] .= <<<SQL

@@ -100,7 +100,7 @@ HTML;
         <div id="multiWord" style="padding:20px; display: none;">
           <div class="form-group">
             <label for="precedingWord">preceding word</label>
-            <input type="text" id="precedingWord" name="precedingWord">
+            <input type="text" id="precedingWord" name="pw">
 					</div>
 					<div class="form-group">
 	          <div class="form-check form-check-inline">
@@ -114,7 +114,7 @@ HTML;
 	        </div>
           <div class="form-group">
             <label for="precedingWord">following word</label>
-            <input type="text" id="followingWord" name="followingWord">
+            <input type="text" id="followingWord" name="fw">
 					</div>
 					<div class="form-group">
 	          <div class="form-check form-check-inline">
@@ -533,6 +533,7 @@ HTML;
                     url += 'accent={$this->_model->getAccent()}&lenition={$this->_model->getLenition()}';
 				            url += '&hits={$this->_model->getHits()}&view={$this->_model->getView()}';
 				            url += '&order={$this->_model->getOrder()}&selectedDates={$_GET["selectedDates"]}';
+				            url += '&pw={$_GET["pw"]}&preMode={$_GET["preMode"]}&fw={$_GET["fw"]}&postMode={$_GET["postMode"]}';
                     window.location.assign(url);
 		              }
 		          });
