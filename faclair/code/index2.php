@@ -17,6 +17,12 @@ switch ($module) {
 	case "sources":
 		$controller = new sources();
 		break;
+	case "source":
+		$controller = new source();
+		break;
+	case "entry_instance":
+		$controller = new entry_instance();
+		break;
 	default:
 		$controller = new home();
 }

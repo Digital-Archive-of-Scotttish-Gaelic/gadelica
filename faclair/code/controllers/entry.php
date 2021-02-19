@@ -3,8 +3,7 @@
 namespace controllers;
 use models, views;
 
-class entry
-{
+class entry {
 
 	public function run() {
 		$model = new models\entry($_GET["mhw"],$_GET["mpos"],$_GET["msub"]);

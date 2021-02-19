@@ -32,7 +32,6 @@ class entry {
 		  }
 		  echo '</ul>';
 	  }
-		echo '<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>';
 	}
 
 }
