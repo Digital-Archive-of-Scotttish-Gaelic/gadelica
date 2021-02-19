@@ -3,8 +3,8 @@
 
 namespace views;
 
-class home
-{
+class home {
+
 	public function show() {
     $html = <<<HTML
       <ul>
@@ -14,4 +14,5 @@ class home
 HTML;
 		echo $html;
 	}
+
 }

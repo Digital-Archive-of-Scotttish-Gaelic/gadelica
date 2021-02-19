@@ -21,4 +21,5 @@ class entries
     $html .= '</div>';
 		echo $html;
 	}
+
 }

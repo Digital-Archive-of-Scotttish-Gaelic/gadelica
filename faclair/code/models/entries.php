@@ -5,7 +5,6 @@ namespace models;
 class entries {
 
   private $_entries = array();
-
   private $_db;   // an instance of models\database
 
 	public function __construct() {
@@ -23,12 +22,10 @@ SQL;
 		foreach ($results as $nextResult) {
 			$this->_entries[] = [$nextResult["m-hw"], $nextResult["m-pos"], $nextResult["m-sub"]];
 		}
-
 	}
 
   public function getEntries() {
     return $this->_entries;
 	}
-
 
 }

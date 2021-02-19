@@ -3,8 +3,7 @@
 namespace controllers;
 use models, views;
 
-class entries
-{
+class entries {
 
 	public function run() {
 		$model = new models\entries();
