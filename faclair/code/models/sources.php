@@ -28,22 +28,38 @@ SQL;
     return $this->_sources;
 	}
 
+  public static function getShortRef($id) {
+    switch ($id) {
+    	case "1":
+    		return 'Eaglais na h-Alba';
+    		break;
+    	case "22":
+    		return 'Dwelly';
+    		break;
+    	case "23":
+    		return 'DASG supplement';
+    		break;
+    	default:
+    		return '[unknown]';
+    }
+	}
+
   public static function getRef($id) {
     switch ($id) {
     	case "1":
-    		$title = 'Eaglais na h-Alba – <em>Handbook of Biblical and Ecclesiastical Gaelic</em>';
+    		return 'Eaglais na h-Alba – <em>Handbook of Biblical and Ecclesiastical Gaelic</em>';
     		break;
     	case "22":
-    		$title = 'Dwelly – <em>Faclair Gàidhlig gu Beurla le Dealbhan</em>';
+    		return 'Dwelly – <em>Faclair Gàidhlig gu Beurla le Dealbhan</em>';
     		break;
     	case "23":
-    		$title = 'DASG supplement';
+    		return 'DASG supplement';
     		break;
     	default:
-    		$title = '[unknown]';
+    		return '[unknown]';
     }
-    return sources::getEmoji($id) . '  ' . $title;
 	}
+
 
   public static function getEmoji($id) {
     switch ($id) {
@@ -54,7 +70,7 @@ SQL;
         return '🧩';
         break;
       default:
-        return '[unknown]';
+        return '';
     }
   }
 

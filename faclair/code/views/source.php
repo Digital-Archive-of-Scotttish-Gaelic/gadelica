@@ -12,7 +12,7 @@ class source {
 	}
 
 	public function show() {
-		echo '<h1>' . models\Sources::getRef($this->_model->getId()) . '</h1>';
+		echo '<h1>' . models\Sources::getEmoji($this->_model->getId()). ' ' . models\Sources::getRef($this->_model->getId()) . '</h1>';
     echo '<div class="list-group list-group-flush">';
 		$link = models\Sources::getExtLink($this->_model->getId());
 		if ($link) {
