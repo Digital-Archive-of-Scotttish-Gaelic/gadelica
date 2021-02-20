@@ -17,7 +17,7 @@ class sources {
 			$url = '?m=source&id=' . $nextSource;
 			$html .= '<a href="' . $url . '" class="list-group-item list-group-item-action">' . models\Sources::getRef($nextSource) . '</a>';
 		}
-		//$html .= "<small><a href=\"#\">[add]</a></small>";
+		$html .= "<div class=\"list-group-item\"><small><a href=\"#\">[add]</a></small></div>";
 		$html .= '</div>';
 		echo $html;
 	}

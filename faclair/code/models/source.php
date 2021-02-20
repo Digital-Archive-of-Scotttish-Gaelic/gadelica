@@ -5,7 +5,7 @@ namespace models;
 class source {
 
   private $_id;
-  private $_instances = array();
+  private $_instances = array(); // array of id-hw-pos triples
   private $_db;   // an instance of models\database
 
 	public function __construct($id) {

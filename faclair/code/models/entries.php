@@ -4,7 +4,7 @@ namespace models;
 
 class entries {
 
-  private $_entries = array();
+  private $_entries = array(); // an array of hw-pos-sub triples
   private $_db;   // an instance of models\database
 
 	public function __construct() {

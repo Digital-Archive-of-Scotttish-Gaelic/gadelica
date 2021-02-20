@@ -4,7 +4,7 @@ namespace models;
 
 class sources {
 
-  private $_sources = array();
+  private $_sources = array(); // an array of source ids
   private $_db;   // an instance of models\database
 
 	public function __construct() {
@@ -31,16 +31,40 @@ SQL;
   public static function getRef($id) {
     switch ($id) {
     	case "1":
-    		return 'Eaglais na h-Alba';
+    		$title = 'Eaglais na h-Alba – <em>Handbook of Biblical and Ecclesiastical Gaelic</em>';
     		break;
     	case "22":
-    		return 'Dwelly';
+    		$title = 'Dwelly – <em>Faclair Gàidhlig gu Beurla le Dealbhan</em>';
     		break;
     	case "23":
-    		return 'DASG supplement';
+    		$title = 'DASG supplement';
     		break;
     	default:
-    		return '[unknown]';
+    		$title = '[unknown]';
+    }
+    return sources::getEmoji($id) . '  ' . $title;
+	}
+
+  public static function getEmoji($id) {
+    switch ($id) {
+      case "1":
+        return '⛪️';
+        break;
+      case "22":
+        return '🧩';
+        break;
+      default:
+        return '[unknown]';
+    }
+  }
+
+  public static function getExtLink($id) {
+    switch ($id) {
+    	case "1":
+    		return 'https://www.churchofscotland.org.uk/__data/assets/pdf_file/0011/68708/ER-Gaelic-HANDBOOK-V5.pdf';
+    		break;
+    	default:
+    		return '';
     }
 	}
 
