@@ -1,6 +1,7 @@
 <?php
 
 namespace views;
+use models;
 
 class source {
 
@@ -11,7 +12,7 @@ class source {
 	}
 
 	public function show() {
-		echo '<h1>' . $this->_model->getId() . '</h1>';
+		echo '<h1>' . models\Sources::getRef($this->_model->getId()) . '</h1>';
     echo '<div class="list-group list-group-flush">';
     foreach ($this->_model->getInstances() as $nextInstance) {
 			$url = '?m=entry_instance&id=' . $nextInstance[0];

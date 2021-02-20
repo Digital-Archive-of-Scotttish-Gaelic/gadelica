@@ -12,12 +12,15 @@ class entry {
   private $_compounds = array();
   private $_db;   // an instance of models\database
 
-	public function __construct($mhw,$mpos,$msub) {
+	public function __construct($mhw,$mpos,$msub,$db) {
     $this->_mhw = $mhw;
     $this->_mpos = $mpos;
     $this->_msub = $msub;
-		$this->_db = isset($this->_db) ? $this->_db : new database();
-		$this->_load();
+
+    if ($db) {
+      $this->_db = isset($this->_db) ? $this->_db : new database();
+  		$this->_load();
+    }
 	}
 
   private function _load() {

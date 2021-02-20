@@ -28,4 +28,20 @@ SQL;
     return $this->_sources;
 	}
 
+  public static function getRef($id) {
+    switch ($id) {
+    	case "1":
+    		return 'Eaglais na h-Alba';
+    		break;
+    	case "22":
+    		return 'Dwelly';
+    		break;
+    	case "23":
+    		return 'DASG supplement';
+    		break;
+    	default:
+    		return '[unknown]';
+    }
+	}
+
 }

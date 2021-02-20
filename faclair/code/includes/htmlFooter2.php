@@ -15,6 +15,11 @@ echo <<<HTML
 		    </div>
 	    </nav>
 	  </div>
+    <script>
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+    </script>
 	</body>
 </html>
 HTML;
