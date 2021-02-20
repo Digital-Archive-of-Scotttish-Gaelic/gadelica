@@ -46,7 +46,7 @@ SQL;
 SQL;
     $results = $this->_db->fetch($sql, array(":lexemeId" => $this->_id));
     foreach ($results as $nextResult) {
-      $this->_forms[] = [$nextResult["form"], $nextResult["morph"]];
+      $this->_forms[] = [$nextResult["form"], $nextResult["morph"], $nextResult["id"]];
     }
     $sql = <<<SQL
   		SELECT `en`, `id`
@@ -55,7 +55,7 @@ SQL;
 SQL;
     $results = $this->_db->fetch($sql, array(":lexemeId" => $this->_id));
     foreach ($results as $nextResult) {
-      $this->_translations[] = $nextResult["en"];
+      $this->_translations[] = [$nextResult["en"],$nextResult["id"]];
     }
     $sql = <<<SQL
       SELECT `note`, `id`
@@ -64,7 +64,7 @@ SQL;
 SQL;
     $results = $this->_db->fetch($sql, array(":lexemeId" => $this->_id));
     foreach ($results as $nextResult) {
-      $this->_notes[] = $nextResult["note"];
+      $this->_notes[] = [$nextResult["note"],$nextResult["id"]];
     }
 	}
 

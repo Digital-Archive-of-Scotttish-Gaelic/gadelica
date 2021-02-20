@@ -48,7 +48,7 @@ class entry {
 		echo '<div class="list-group list-group-flush">';
 		foreach ($this->_model->getInstances() as $nextInstance) {
 			$view = new entry_instance($nextInstance);
-			$view->show(true);
+			$view->show('embedded');
 		}
 		echo '<div class="list-group-item"><small><a href="addLexeme.php?mhw=' . $this->_model->getMhw() . '&mpos=' . $this->_model->getMpos() . '&msub=' . $this->_model->getMsub() . '" target="_new">[add]</a></small></div>';
 		echo '</div>';
