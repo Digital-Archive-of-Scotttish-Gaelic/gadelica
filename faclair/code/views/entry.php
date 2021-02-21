@@ -50,7 +50,7 @@ class entry {
 			$view = new entry_instance($nextInstance);
 			$view->show('embedded');
 		}
-		echo '<div class="list-group-item"><small><a href="addLexeme.php?mhw=' . $this->_model->getMhw() . '&mpos=' . $this->_model->getMpos() . '&msub=' . $this->_model->getMsub() . '" target="_new">[add]</a></small></div>';
+		echo '<div class="list-group-item"><small><a href="?m=entry_instance&a=add&mhw=' . $this->_model->getMhw() . '&mpos=' . $this->_model->getMpos() . '&msub=' . $this->_model->getMsub() . '">[add]</a></small></div>';
 		echo '</div>';
 	}
 

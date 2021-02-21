@@ -19,6 +19,9 @@ class entry_instance {
 			case "edit":
 				$this->_writeEditForm();
 				break;
+			case "add":
+				$this->_writeAddForm();
+				break;
 			default:
 			  $this->_writeInfo();
 		}
@@ -189,7 +192,7 @@ HTML;
 		$html .= <<<HTML
 				<div>
 					<input type="hidden" name="m" value="entry_instance">
-					<input type="hidden" name="a" value="save">
+					<input type="hidden" name="a" value="update">
 					<input type="submit" class="btn btn-primary" value="save"></input>
 					<button type="button" class="btn btn-secondary windowClose">cancel</button>
 				</div>
@@ -200,7 +203,6 @@ HTML;
 			  $('.windowClose').on('click', function () {
 		      window.close();
 		    });
-
 			  $('.new-form').hide();
 			  $('.new-en').hide();
 			  $('.new-note').hide();
@@ -219,12 +221,63 @@ HTML;
 			});
 		</script>
 HTML;
-
 		echo $html;
-
-
-
-
 	}
+
+   private function _writeAddForm() {
+		 $html = <<<HTML
+		 	<form method="get">
+		 		<div class="form-group">
+		 			<label for="id">mhw</label>
+		 			<input type="text" id="mhw" disabled value="{$this->_model->getMhw()}">
+		 			<input type="hidden" name="mhw" value="{$this->_model->getMhw()}">
+		 		</div>
+		 		<div class="form-group">
+		 			<label for="id">mpos</label>
+		 			<input type="text" id="mpos" disabled value="{$this->_model->getMpos()}">
+		 			<input type="hidden" name="mpos" value="{$this->_model->getMpos()}">
+		 		</div>
+		 		<div class="form-group">
+		 			<label for="id">msub</label>
+		 			<input type="text" id="msub" disabled value="{$this->_model->getMsub()}">
+		 			<input type="hidden" name="msub" value="{$this->_model->getMsub()}">
+		 		</div>
+		 		<div class="form-group">
+		 			<label for="source">source</label>
+		 			<input type="text" name="source" id="source">
+		 		</div>
+		 		<div class="form-group">
+		 			<label for="hw">hw</label>
+		 			<input type="text" name="hw" id="hw">
+		 		</div>
+		 		<div class="form-group">
+		 			<label for="pos">pos</label>
+		 			<input type="text" name="pos" id="pos">
+		 		</div>
+		 		<div class="form-group">
+		 			<label for="sub">sub</label>
+		 			<input type="text" name="sub" id="sub">
+		 		</div>
+HTML;
+		 $html .= <<<HTML
+		 		<div>
+		 			<input type="hidden" name="a" value="save_new">
+					<input type="hidden" name="m" value="entry_instance">
+		 			<input type="submit" class="btn btn-primary" value="save"></input>
+		 			<button type="button" class="btn btn-secondary windowClose">cancel</button>
+		 		</div>
+		 	</form>
+
+		 <script>
+		 	$(function () {
+		 	  $('.windowClose').on('click', function () {
+		       window.close();
+		     });
+		 	});
+		 </script>
+HTML;
+
+		 echo $html;
+	 }
 
 }
