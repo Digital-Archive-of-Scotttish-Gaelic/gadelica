@@ -30,7 +30,7 @@ class entry {
 		echo '<p>↗️ ';
 		$ps = $this->_model->getParts();
 		foreach ($ps as $nextPart) {
-			echo '<a href="?m=entry&mhw=' . $nextPart[0] . '&mpos=' . $nextPart[1] . '&msub=' . $nextPart[2] . '">' . $nextPart[0] . '</a> <em>' . models\entries::getShortGd($nextPart[1]) . '</em>';
+			echo '<a href="?m=entry&mhw=' . $nextPart[0] . '&mpos=' . $nextPart[1] . '&msub=' . $nextPart[2] . '">' . $nextPart[0] . '</a> <em>' . models\entries::getShortGd($nextPart[1]) . '</em> ';
 			echo '<small><a href="?m=entry&a=delete_part&id=' . $nextPart[3] . '&mhw=' . $this->_model->getMhw() . '&mpos=' . $this->_model->getMpos() . '&msub=' . $this->_model->getMsub() . '">[delete]</a></small>';
 			if ($nextPart!=end($ps)) { echo ' | '; }
 		}
