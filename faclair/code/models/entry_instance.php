@@ -124,6 +124,10 @@ SQL;
     $this->_msub = $s;
 	}
 
+  public function setSource($s) {
+    $this->_source = $s;
+	}
+
   public static function update_basics($id,$hw,$pos,$sub,$mhw,$mpos,$msub) {
     $db = new database();
     $sql = <<<SQL

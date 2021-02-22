@@ -42,7 +42,7 @@ class entry_instance {
 		}
 		echo '<div class="list-group-item">[' . models\sources::getRef($this->_model->getSource()) . ']</div>';
 		echo '<div class="list-group-item"><small><a href="?m=entry_instance&a=edit&id=' . $this->_model->getId() . '" target="_new">[edit]</a></small></div>';
-		echo '<div class="list-group-item">➡️ <a href="?m=entry&mhw=' . $this->_model->getMhw() . '&mpos=' . $this->_model->getMpos() . '&msub=' . $this->_model->getMsub() . '">' . $this->_model->getMhw() . ' <em>' . models\entries::getShortGd($this->_model->getMpos()) . '</em></a></div>';
+		echo '<div class="list-group-item">⚓️ <a href="?m=entry&mhw=' . $this->_model->getMhw() . '&mpos=' . $this->_model->getMpos() . '&msub=' . $this->_model->getMsub() . '">' . $this->_model->getMhw() . ' <em>' . models\entries::getShortGd($this->_model->getMpos()) . '</em></a></div>';
 		echo '</div>';
 	}
 
@@ -227,25 +227,62 @@ HTML;
    private function _writeAddForm() {
 		 $html = <<<HTML
 		 	<form method="get">
-		 		<div class="form-group">
-		 			<label for="id">mhw</label>
-		 			<input type="text" id="mhw" disabled value="{$this->_model->getMhw()}">
-		 			<input type="hidden" name="mhw" value="{$this->_model->getMhw()}">
-		 		</div>
-		 		<div class="form-group">
-		 			<label for="id">mpos</label>
-		 			<input type="text" id="mpos" disabled value="{$this->_model->getMpos()}">
-		 			<input type="hidden" name="mpos" value="{$this->_model->getMpos()}">
-		 		</div>
-		 		<div class="form-group">
-		 			<label for="id">msub</label>
-		 			<input type="text" id="msub" disabled value="{$this->_model->getMsub()}">
-		 			<input type="hidden" name="msub" value="{$this->_model->getMsub()}">
-		 		</div>
-		 		<div class="form-group">
-		 			<label for="source">source</label>
-		 			<input type="text" name="source" id="source">
-		 		</div>
+HTML;
+     $mhw = $this->_model->getMhw();
+     if ($mhw) {
+			 $html .= <<<HTML
+			 <div class="form-group">
+				 <label for="id">mhw</label>
+			   <input type="text" id="mhw" disabled value="{$mhw}">
+			   <input type="hidden" name="mhw" value="{$mhw}">
+			 </div>
+			 <div class="form-group">
+				 <label for="id">mpos</label>
+				 <input type="text" id="mpos" disabled value="{$this->_model->getMpos()}">
+				 <input type="hidden" name="mpos" value="{$this->_model->getMpos()}">
+			 </div>
+			 <div class="form-group">
+				 <label for="id">msub</label>
+				 <input type="text" id="msub" disabled value="{$this->_model->getMsub()}">
+				 <input type="hidden" name="msub" value="{$this->_model->getMsub()}">
+			 </div>
+HTML;
+		 }
+		 else {
+			 $html .= <<<HTML
+			 <div class="form-group">
+			 	<label for="id">mhw</label>
+			 	<input type="text" name="mhw" id="mhw">
+			 </div>
+			 <div class="form-group">
+			 	<label for="id">mpos</label>
+			 	<input type="text" name="mpos" id="mpos">
+			 </div>
+			 <div class="form-group">
+			 	<label for="id">msub</label>
+			 	<input type="text" name="msub" id="msub">
+			 </div>
+HTML;
+		 }
+		 $src = $this->_model->getSource();
+     if ($src) {
+       $html .= <<<HTML
+		 		 <div class="form-group">
+		 			 <label for="source">source</label>
+		 			 <input type="text" id="source" disabled value={$src}>
+					 <input type="hidden" name="source" value="{$src}">
+		 		 </div>
+HTML;
+     }
+		 else {
+			 $html .= <<<HTML
+		 		 <div class="form-group">
+		 			 <label for="source">source</label>
+		 			 <input type="text" name="source" id="source">
+		 		 </div>
+HTML;
+		 }
+     $html .= <<<HTML
 		 		<div class="form-group">
 		 			<label for="hw">hw</label>
 		 			<input type="text" name="hw" id="hw">
@@ -261,7 +298,7 @@ HTML;
 HTML;
 		 $html .= <<<HTML
 		 		<div>
-		 			<input type="hidden" name="a" value="save_new">
+		 			<input type="hidden" name="a" value="insert">
 					<input type="hidden" name="m" value="entry_instance">
 		 			<input type="submit" class="btn btn-primary" value="save"></input>
 		 			<button type="button" class="btn btn-secondary windowClose">cancel</button>
@@ -271,12 +308,12 @@ HTML;
 		 <script>
 		 	$(function () {
 		 	  $('.windowClose').on('click', function () {
-		       window.close();
+		       //window.close();
+					 window.history.back();
 		     });
 		 	});
 		 </script>
 HTML;
-
 		 echo $html;
 	 }
 

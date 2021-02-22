@@ -14,9 +14,14 @@ class entry_instance {
         break;
 			case "add":
 			  $model = new models\entry_instance(null);
-				$model->setMhw($_GET["mhw"]);
-				$model->setMpos($_GET["mpos"]);
-				$model->setMsub($_GET["msub"]);
+				if (isset($_GET["mhw"])) { // add to entry
+					$model->setMhw($_GET["mhw"]);
+					$model->setMpos($_GET["mpos"]);
+					$model->setMsub($_GET["msub"]);
+				}
+				else if (isset($_GET["source"])) { // add to source
+					$model->setSource($_GET["source"]);
+				}
 			  $view = new views\entry_instance($model);
 			  $view->show('add');
 	      break;
@@ -41,7 +46,7 @@ class entry_instance {
 			  $view = new views\entry_instance($model);
 			  $view->show('');
         break;
-			case "save_new":
+			case "insert":
 			  $db = new models\database();
 			  $sql = <<<SQL
 				  INSERT INTO lexemes (`source`, `hw`, `pos`, `sub`, `m-hw`, `m-pos`, `m-sub`)

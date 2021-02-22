@@ -17,7 +17,7 @@ class sources {
 			$url = '?m=source&id=' . $nextSource;
 			$html .= '<a href="' . $url . '" class="list-group-item list-group-item-action">' . models\Sources::getEmoji($nextSource) . ' ' . models\Sources::getRef($nextSource) . '</a>';
 		}
-		$html .= "<div class=\"list-group-item\"><small><a href=\"#\">[add]</a></small></div>";
+		$html .= '<div class="list-group-item"><small><a href="?m=entry_instance&a=add">[add]</a></small></div>';
 		$html .= '</div>';
 		echo $html;
 	}
