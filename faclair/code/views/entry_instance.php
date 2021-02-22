@@ -157,7 +157,7 @@ HTML;
 					<label for="delete-en{$id}">delete</label>
 					<input type="checkbox" id="delete-en[{$id}]" name="delete-en[{$id}]">
 				</div>
-		HTML;
+HTML;
 		}
 		$html .= <<<HTML
 				<button type="button" class="btn btn-success add-en">add</button>
