@@ -526,14 +526,7 @@ HTML;
 		              itemsOnPage: {$this->_model->getPerPage()},
 		              cssStyle: "light-theme",
 		              onPageClick: function(pageNum) {
-                    var url = '?m=corpus&a=search&mode={$this->_model->getMode()}';
-                    url += '&pp={$this->_model->getPerPage()}&page=' + pageNum + '&';
-                    url += 'term={$this->_model->getTerm()}';
-                    url += '&id={$this->_model->getId()}&case={$this->_model->getCase()}&';
-                    url += 'accent={$this->_model->getAccent()}&lenition={$this->_model->getLenition()}';
-				            url += '&hits={$this->_model->getHits()}&view={$this->_model->getView()}';
-				            url += '&order={$this->_model->getOrder()}&selectedDates={$_GET["selectedDates"]}';
-				            url += '&pw={$_GET["pw"]}&preMode={$_GET["preMode"]}&fw={$_GET["fw"]}&postMode={$_GET["postMode"]}';
+				            var url = 'index.php?{$_SERVER["QUERY_STRING"]}&page=' + pageNum;
                     window.location.assign(url);
 		              }
 		          });
