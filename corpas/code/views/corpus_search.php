@@ -300,6 +300,10 @@ HTML;
 			$html .= " {$_GET["selectedDates"]}";
 		}
 		$html .= "]</p>";
+		$html .= <<<HTML
+			<a href="#" id="basicSwitch" class="resultsSwitch float-right" data-value="basic">basic view</a>
+			<a href="#" id="extendedSwitch" class="resultsSwitch float-right" data-value="advanced">extended view</a>
+HTML;
 		echo $html;
 	}
 
@@ -322,17 +326,12 @@ HTML;
 		$context = $result["context"];
 		$pos = new models\partofspeech($result["pos"]);
 
-		/**
-		 * !Experimental short title code - to be reconsidered and possibly moved SB
-		 */
+
 		$shortTitleElems = explode(' ', $result["title"]);
-		foreach ($shortTitleElems as $elem) {
-			if ($elem == '–') {
-				break;
-			}
-			$shortTitle .= mb_substr($elem, 0, 1);
-		}
-		/* --- */
+
+		$shortTitle = mb_strlen($result["title"]) < 30
+			? $result["title"]
+			: mb_substr($result["title"], 0, 29) . "...";
 
 		$title = <<<HTML
         Headword: {$result["lemma"]}<br>
@@ -360,8 +359,8 @@ HTML;
 		}
 		$textNum = stristr($result["filename"], "_", true);
 		echo <<<HTML
-				<td>{$result["date_of_lang"]}</td>
-				<td>#{$textNum} {$shortTitle}</td>
+				<td class="extendedField">{$result["date_of_lang"]}</td>
+				<td class="extendedField">#{$textNum} {$shortTitle}</td>
         <td style="text-align: right;">{$context["pre"]["output"]}</td>
         <td style="text-align: center;">
             <a href="?m=corpus&a=browse&id={$result["tid"]}&wid={$result["id"]}"
@@ -452,10 +451,51 @@ HTML;
 	 * Writes the Javascript required for the pagination
 	 */
 	private function _writeResultsJavascript() {
+		//assemble the query string array elements back into URL format for pagination
+		$arrayParams = "";
+		if ($_GET["medium"]) {
+			foreach ($_GET["medium"] as $medium) {
+				$arrayParams .= "&medium[]=" . $medium;
+			}
+		}
+		if ($_GET["district"]) {
+			foreach ($_GET["district"] as $district) {
+				$arrayParams .= "&district[]=" . $district;
+			}
+		}
+		if ($_GET["level"]) {
+			foreach ($_GET["level"] as $level) {
+				$arrayParams .= "&level[]=" . $level;
+			}
+		}
+		if ($_GET["pos"]) {
+			foreach ($_GET["pos"] as $pos) {
+				$arrayParams .= "&pos[]=" . $pos;
+			}
+		}
+
+		//write the Javascript
 		echo <<<HTML
         <script>
         $(function() {
-                  
+            
+		      /**
+		      * Basic/advanced results  
+					*/
+		      if (Cookies.get('resultsPref') == "basic") {
+		        setBasicResultsView();
+		      } else {
+		        setExtendedResultsView();
+		      }
+		      
+		      $('.resultsSwitch').on('click', function() {
+		        if ($(this).attr('data-value') == 'basic') {
+		          setBasicResultsView();
+		        } else {
+		          setExtendedResultsView();
+		        }
+		      });
+      
           /*
             Open the add new slip form in a new tab        
            */
@@ -492,17 +532,24 @@ HTML;
 		              itemsOnPage: {$this->_model->getPerPage()},
 		              cssStyle: "light-theme",
 		              onPageClick: function(pageNum) {
-                    var url = '?m=corpus&a=search&mode={$this->_model->getMode()}';
-                    url += '&pp={$this->_model->getPerPage()}&page=' + pageNum + '&';
-                    url += 'term={$this->_model->getTerm()}';
-                    url += '&id={$this->_model->getId()}&case={$this->_model->getCase()}&';
-                    url += 'accent={$this->_model->getAccent()}&lenition={$this->_model->getLenition()}';
-				            url += '&hits={$this->_model->getHits()}&view={$this->_model->getView()}';
-				            url += '&order={$this->_model->getOrder()}&selectedDates={$_GET["selectedDates"]}';
                     window.location.assign(url);
 		              }
 		          });
 		      });
+        
+          function setBasicResultsView() {
+            $('.extendedField').hide();
+			      $('#basicSwitch').hide();
+			      $('#extendedSwitch').show();
+			      Cookies.set('resultsPref', 'basic', { expires: 365 });
+			    }
+			    
+			    function setExtendedResultsView() {
+            $('.extendedField').show();
+			      $('#extendedSwitch').hide();
+			      $('#basicSwitch').show();
+			      Cookies.set('resultsPref', 'extended', { expires: 365 });
+			    }
 	       </script>
 HTML;
 	}

@@ -154,7 +154,7 @@ class corpus_search
 			$whereClause .= "wordform REGEXP ?";
 		}
 		$selectFields =  "lemma, l.filename AS filename, l.id AS id, wordform, pos, date_of_lang, l.title, 
-			page, medium, s.auto_id AS auto_id, t.id AS tid, t.level as level, preceding_word, following_word";
+			page, medium, s.auto_id AS auto_id, t.id AS tid, t.level as level, district_id, preceding_word, following_word";
 
 		$textJoinSql = "";
 		if ($params["id"]) {    //restrict to this text
@@ -228,7 +228,7 @@ SQL;
 
 			$query["sql"] = <<<SQL
         SELECT SQL_CALC_FOUND_ROWS l.filename AS filename, l.id AS id, wordform, pos, lemma, date_of_lang, l.title,
-                page, medium, s.auto_id as auto_id, s.wordClass as wordClass, t.id AS tid, t.level as level,
+                page, medium, s.auto_id as auto_id, s.wordClass as wordClass, t.id AS tid, t.level as level, district_id,
                	preceding_word, following_word
             FROM lemmas AS l
             LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id AND group_id = {$_SESSION["groupId"]}
@@ -247,6 +247,9 @@ SQL;
 			$query["sql"] .= $this->_getLevelWhereClause();
 		}
 		$query["sql"] .= $this->_getMediumWhereClause(); //restrict by medium
+		if ($params["district"] && count($params["district"]) != 15) {
+			$query["sql"] .= $this->_getDistrictWhereClause();  //restrict by district
+		}
 		if ($params["pos"][0] != "") {
 			$query["sql"] .= $this->_getPOSWhereClause();  //restrict by POS
 		}
@@ -301,6 +304,17 @@ SQL;
 			$mediumString[] = " medium = '{$medium}' ";
 		}
 		$whereClause .= implode(" OR ", $mediumString);
+		$whereClause .= ") ";
+		return $whereClause;
+	}
+
+	private function _getDistrictWhereClause() {
+		$whereClause = "";
+		$whereClause = " AND (";
+		foreach ($this->_params["district"] as $district) {
+			$districtString[] = " district_id = '{$district}' ";
+		}
+		$whereClause .= implode(" OR ", $districtString);
 		$whereClause .= ") ";
 		return $whereClause;
 	}
