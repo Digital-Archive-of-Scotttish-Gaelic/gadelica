@@ -1,6 +1,5 @@
 <?php
 
-
 namespace views;
 
 class home {
@@ -10,6 +9,7 @@ class home {
       <div class-"list-group list-group-flush">
         <a class="list-group-item list-group-item-action" href="?m=entries">faclan</a>
 				<a class="list-group-item list-group-item-action" href="?m=sources">faclairean</a>
+				<a class="list-group-item list-group-item-action" href="?m=englishes">beurla</a>
 			</div>
 HTML;
 		echo $html;

@@ -23,6 +23,12 @@ switch ($module) {
 	case "entry_instance":
 		$controller = new entry_instance();
 		break;
+	case "englishes":
+		$controller = new englishes();
+		break;
+	case "english":
+		$controller = new english();
+		break;
 	default:
 		$controller = new home();
 }
