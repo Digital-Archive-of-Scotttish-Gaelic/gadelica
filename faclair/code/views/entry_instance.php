@@ -41,17 +41,21 @@ class entry_instance {
 			echo '<div class="list-group-item">' . $nextNote[0] . '</div>';
 		}
 		echo '<div class="list-group-item">[' . models\sources::getRef($this->_model->getSource()) . ']</div>';
-		echo '<div class="list-group-item"><small><a href="?m=entry_instance&a=edit&id=' . $this->_model->getId() . '" target="_new">[edit]</a></small></div>';
-		echo '<div class="list-group-item">⚓️ <a href="?m=entry&mhw=' . $this->_model->getMhw() . '&mpos=' . $this->_model->getMpos() . '&msub=' . $this->_model->getMsub() . '">' . $this->_model->getMhw() . ' <em>' . models\entries::getShortGd($this->_model->getMpos()) . '</em></a></div>';
+		if (SUPERUSER) {
+			echo '<div class="list-group-item"><small><a href="?m=entry_instance&a=edit&id=' . $this->_model->getId() . '">[edit]</a></small></div>';
+		}
+		echo '<div class="list-group-item">⚓️&nbsp;&nbsp;<a href="?m=entry&mhw=' . $this->_model->getMhw() . '&mpos=' . $this->_model->getMpos() . '&msub=' . $this->_model->getMsub() . '">' . $this->_model->getMhw() . ' <em>' . models\entries::getShortGd($this->_model->getMpos()) . '</em></a></div>';
 		echo '</div>';
 	}
 
   private function _writeEmbedded() {
 		echo '<div class="list-group-item">';
 		echo models\sources::getEmoji($this->_model->getSource());
-		echo ' <strong>' . $this->_model->getHw() . '</strong> ';
+		echo '&nbsp;&nbsp;<strong>' . $this->_model->getHw() . '</strong> ';
 		echo '<em>' . $this->_model->getPos() . '</em> ';
-		echo '<small><a href="?m=entry_instance&a=edit&id=' . $this->_model->getId() . '">[edit]</a></small>';
+		if (SUPERUSER) {
+			echo '<small><a href="?m=entry_instance&a=edit&id=' . $this->_model->getId() . '">[edit]</a></small>';
+		}
 		echo '<ul style="list-style-type:none;">';
 		if ($this->_model->getForms()) {
 			echo '<li>';
@@ -201,7 +205,8 @@ HTML;
 		<script>
 			$(function () {
 			  $('.windowClose').on('click', function () {
-		      window.close();
+		      //window.close();
+					window.history.back();
 		    });
 			  $('.new-form').hide();
 			  $('.new-en').hide();

@@ -27,20 +27,27 @@ class entry {
   private function _writeInfo() {
 		echo '<h1>' . $this->_model->getMhw() . '</h1>';
 		echo '<p><em class="text-muted" data-toggle="tooltip" title="' . models\entries::getLongEn($this->_model->getMpos()) . '">' . models\entries::getLongGd($this->_model->getMpos()) . '</em></p>';
-		echo '<p>↗️ ';
 		$ps = $this->_model->getParts();
-		foreach ($ps as $nextPart) {
-			echo '<a href="?m=entry&mhw=' . $nextPart[0] . '&mpos=' . $nextPart[1] . '&msub=' . $nextPart[2] . '">' . $nextPart[0] . '</a> <em>' . models\entries::getShortGd($nextPart[1]) . '</em> ';
-			echo '<small><a href="?m=entry&a=delete_part&id=' . $nextPart[3] . '&mhw=' . $this->_model->getMhw() . '&mpos=' . $this->_model->getMpos() . '&msub=' . $this->_model->getMsub() . '">[delete]</a></small>';
-			if ($nextPart!=end($ps)) { echo ' | '; }
-		}
-		echo ' <span class="text-muted">|</span> <small><a href="?m=entry&a=add_part&mhw=' . $this->_model->getMhw() . '&mpos=' . $this->_model->getMpos() . '&msub=' . $this->_model->getMsub() . '">[add]</a></small>';
-		echo '</p>';
+    if (SUPERUSER || $ps) {
+		  echo '<p>↗️ ';
+		  foreach ($ps as $nextPart) {
+			  echo '<a href="?m=entry&mhw=' . $nextPart[0] . '&mpos=' . $nextPart[1] . '&msub=' . $nextPart[2] . '">' . $nextPart[0] . '</a> <em>' . models\entries::getShortGd($nextPart[1]) . '</em> ';
+        if (SUPERUSER) {
+			    echo '<small><a href="?m=entry&a=delete_part&id=' . $nextPart[3] . '&mhw=' . $this->_model->getMhw() . '&mpos=' . $this->_model->getMpos() . '&msub=' . $this->_model->getMsub() . '">[delete]</a></small>';
+        }
+			  if ($nextPart!=end($ps)) { echo ' | '; }
+		  }
+		  if (SUPERUSER) {
+		    echo ' <span class="text-muted">|</span> <small><a href="?m=entry&a=add_part&mhw=' . $this->_model->getMhw() . '&mpos=' . $this->_model->getMpos() . '&msub=' . $this->_model->getMsub() . '">[add]</a></small>';
+      }
+		  echo '</p>';
+    }
 		$cs = $this->_model->getCompounds();
 		if ($cs) {
 			echo '<p>↘️ ';
 			foreach ($cs as $nextCompound) {
 				echo '<a href="?m=entry&mhw=' . $nextCompound[0] . '&mpos=' . $nextCompound[1] . '&msub=' . $nextCompound[2] . '">' . $nextCompound[0] . '</a> <em>' . models\entries::getShortGd($nextCompound[1]) . '</em>';
+        if ($nextCompound!=end($cs)) { echo ' <span class="text-muted">|</span> '; }
 			}
 			echo '</p>';
 		}
@@ -50,7 +57,9 @@ class entry {
 			$view = new entry_instance($nextInstance);
 			$view->show('embedded');
 		}
-		echo '<div class="list-group-item"><small><a href="?m=entry_instance&a=add&mhw=' . $this->_model->getMhw() . '&mpos=' . $this->_model->getMpos() . '&msub=' . $this->_model->getMsub() . '">[add]</a></small></div>';
+		if (SUPERUSER) {
+		  echo '<div class="list-group-item"><small><a href="?m=entry_instance&a=add&mhw=' . $this->_model->getMhw() . '&mpos=' . $this->_model->getMpos() . '&msub=' . $this->_model->getMsub() . '">[add]</a></small></div>';
+    }
 		echo '</div>';
 	}
 

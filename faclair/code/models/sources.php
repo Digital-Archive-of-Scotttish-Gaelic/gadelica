@@ -69,6 +69,9 @@ SQL;
       case "22":
         return '🧩';
         break;
+      case "23":
+        return '📌';
+        break;
       default:
         return '';
     }

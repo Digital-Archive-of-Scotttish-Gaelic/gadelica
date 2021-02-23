@@ -8,24 +8,29 @@ class entry_instance {
 	public function run($action) {
 		switch ($action) {
 			case "edit":
-			  $model = new models\entry_instance($_GET["id"]);
-			  $view = new views\entry_instance($model);
-			  $view->show('edit');
+			  if (SUPERUSER) {
+			    $model = new models\entry_instance($_GET["id"]);
+			    $view = new views\entry_instance($model);
+			    $view->show('edit');
+			  }
         break;
 			case "add":
-			  $model = new models\entry_instance(null);
-				if (isset($_GET["mhw"])) { // add to entry
-					$model->setMhw($_GET["mhw"]);
-					$model->setMpos($_GET["mpos"]);
-					$model->setMsub($_GET["msub"]);
-				}
-				else if (isset($_GET["source"])) { // add to source
-					$model->setSource($_GET["source"]);
-				}
-			  $view = new views\entry_instance($model);
-			  $view->show('add');
+			  if (SUPERUSER) {
+			    $model = new models\entry_instance(null);
+				  if (isset($_GET["mhw"])) { // add to entry
+					  $model->setMhw($_GET["mhw"]);
+					  $model->setMpos($_GET["mpos"]);
+					  $model->setMsub($_GET["msub"]);
+				  }
+				  else if (isset($_GET["source"])) { // add to source
+					  $model->setSource($_GET["source"]);
+				  }
+			    $view = new views\entry_instance($model);
+			    $view->show('add');
+			  }
 	      break;
 			case "update":
+			  if (SUPERUSER) {
 			  models\entry_instance::update_basics($_GET["id"],$_GET["hw"],$_GET["pos"],$_GET["sub"],$_GET["mhw"],$_GET["mpos"],$_GET["msub"]);
         if (!empty($_GET["form"])) {
 					$deleted = [];
@@ -45,8 +50,10 @@ class entry_instance {
 			  $model = new models\entry_instance($_GET["id"]);
 			  $view = new views\entry_instance($model);
 			  $view->show('');
+			  }
         break;
 			case "insert":
+			  if (SUPERUSER) {
 			  $db = new models\database();
 			  $sql = <<<SQL
 				  INSERT INTO lexemes (`source`, `hw`, `pos`, `sub`, `m-hw`, `m-pos`, `m-sub`)
@@ -57,6 +64,7 @@ SQL;
 				$model = new models\entry($_GET["mhw"],$_GET["mpos"],$_GET["msub"],true);
 			  $view = new views\entry($model);
 			  $view->show('');
+			  }
         break;
 			default:
 		    $model = new models\entry_instance($_GET["id"]);
