@@ -3,10 +3,11 @@
 namespace controllers;
 use views;
 
-class home
-{
+class home {
+
 	public function run() {
 		$view = new views\home();
 		$view->show();
 	}
+
 }

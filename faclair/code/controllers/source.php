@@ -3,12 +3,12 @@
 namespace controllers;
 use models, views;
 
-class entries {
+class source {
 
 	public function run() {
-		$model = new models\entries();
-		$view = new views\entries($model);
+		$model = new models\source($_GET["id"]);
+		$view = new views\source($model);
 		$view->show();
 	}
-	
+
 }

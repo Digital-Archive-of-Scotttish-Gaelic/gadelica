@@ -1,12 +1,14 @@
 <?php
 
 namespace controllers;
-use views;
+use views, models;
 
-class sources
-{
+class sources {
+
 	public function run() {
-		$view = new views\sources();
+		$model = new models\sources();
+		$view = new views\sources($model);
 		$view->show();
 	}
+
 }
