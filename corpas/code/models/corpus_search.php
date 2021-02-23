@@ -342,16 +342,6 @@ SQL;
 		return $whereClause;
 	}
 
-	private function _getDistrictWhereClause() {
-		$whereClause = " AND (";
-		foreach ($this->_params["district"] as $districtId) {
-			$districtString[] = " district_1_id = {$districtId} OR district_2_id = {$districtId} ";
-		}
-		$whereClause .= implode(" OR ", $districtString);
-		$whereClause .= ") ";
-		return $whereClause;
-	}
-
 	//Retrieves the minimum and maximum dates of language in the database
 	public static function getMinMaxDates() {
 		$db = new database();
