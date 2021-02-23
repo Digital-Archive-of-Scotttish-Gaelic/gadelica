@@ -43,6 +43,11 @@ class corpus
 				$view = new views\corpus_generate($model);
 				$view->show();
 			  break;
+			case "slow_search":
+				$model = new models\slow_search();
+				$view = new views\slow_search($model);
+				$view->show();
+				break;
 		}
   }
 
