@@ -93,6 +93,40 @@ HTML;
             <label class="form-check-label" for="wordformRadio">wordform</label>
           </div>
         </div>
+        <div class="form-group">
+          <a href="#" id="multiWordShow">show multi-word options</a>
+          <a href="#" id="multiWordHide">hide multi-word options</a>
+				</div>
+        <div id="multiWord" style="padding:20px; display: none;">
+          <div class="form-group">
+            <label for="precedingWord">preceding word</label>
+            <input type="text" id="precedingWord" name="pw">
+					</div>
+					<div class="form-group">
+	          <div class="form-check form-check-inline">
+	            <input class="form-check-input" type="radio" name="preMode" id="preHeadwordRadio" value="headword" checked>
+	            <label class="form-check-label" for="preHeadwordRadio">headword</label>
+	          </div>
+	          <div class="form-check form-check-inline">
+	            <input class="form-check-input" type="radio" name="preMode" id="preWordformRadio" value="wordform">
+	            <label class="form-check-label" for="preWordformRadio">wordform</label>
+	          </div>
+	        </div>
+          <div class="form-group">
+            <label for="precedingWord">following word</label>
+            <input type="text" id="followingWord" name="fw">
+					</div>
+					<div class="form-group">
+	          <div class="form-check form-check-inline">
+	            <input class="form-check-input" type="radio" name="postMode" id="postHeadwordRadio" value="headword" checked>
+	            <label class="form-check-label" for="postHeadwordRadio">headword</label>
+	          </div>
+	          <div class="form-check form-check-inline">
+	            <input class="form-check-input" type="radio" name="postMode" id="postWordformRadio" value="wordform">
+	            <label class="form-check-label" for="postWordformRadio">wordform</label>
+	          </div>
+	        </div>
+				</div>  <!-- //end multiWord -->
         <div id="wordformOptions" class="form-group">
           <div class="form-check form-check-inline">
               <input class="form-check-input" type="checkbox" id="caseSensitiveRadio" name="case" value="sensitive">
@@ -532,6 +566,7 @@ HTML;
 		              itemsOnPage: {$this->_model->getPerPage()},
 		              cssStyle: "light-theme",
 		              onPageClick: function(pageNum) {
+				            var url = 'index.php?{$_SERVER["QUERY_STRING"]}&page=' + pageNum;
                     window.location.assign(url);
 		              }
 		          });
@@ -563,6 +598,18 @@ HTML;
 
     <script>
     $(function() {
+      $('#multiWordHide').hide();
+      $('#multiWordShow').on('click', function () {
+        $('#multiWord').show();
+        $('#multiWordShow').hide();
+        $('#multiWordHide').show();
+      });
+      $('#multiWordHide').on('click', function () {
+        $('#multiWord').hide();
+        $('#multiWordHide').hide();
+        $('#multiWordShow').show();
+      });
+      
       $( "#dateRangeSelector" ).slider({
         range:true,
         min: {$params["min"]},
