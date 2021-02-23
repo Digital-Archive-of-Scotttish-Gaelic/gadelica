@@ -33,9 +33,8 @@ class corpus_search
             </div>
         </div>
 HTML;
-		$districtBlock = "";  //delete once using the following line again SB
 		$districtBlock = $this->_getDistrictHtml();
-		if ($_GET["id"]) {    //if this is a subtext don't write the date range or district blocks
+		if ($_GET["id"]) {    //if this is a subtext don't write the date range block
 			$dateRangeBlock = $districtBlock = "";
 		}
 		echo <<<HTML
@@ -119,22 +118,34 @@ HTML;
           </div>
         </div>
         <div class="form-group">
-          <p>Order results by date:</p>
+          <p>Order results:</p>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="date" id="offDateRadio" value="off" checked>
+            <input class="form-check-input" type="radio" name="order" id="offDateRadio" value="off" checked>
             <label class="form-check-label" for="offDateRadio">off</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="date" id="ascDateRadio" value="asc">
-            <label class="form-check-label" for="ascDateRadio">ascending</label>
+            <input class="form-check-input" type="radio" name="order" id="ascDateRadio" value="dateAsc">
+            <label class="form-check-label" for="ascDateRadio">date ascending</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="date" id="descDateRadio" value="desc">
-            <label class="form-check-label" for="ascDateRadio">descending</label>
+            <input class="form-check-input" type="radio" name="order" id="descDateRadio" value="dateDesc">
+            <label class="form-check-label" for="ascDateRadio">date descending</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="date" id="randomDateRadio" value="random">
+            <input class="form-check-input" type="radio" name="order" id="randomDateRadio" value="random">
             <label class="form-check-label" for="randomDateRadio">random</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="order" id="precedingWordRadio" value="precedingWord">
+            <label class="form-check-label" for="precedingWordRadio">preceding word</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="order" id="precedingWordReverseRadio" value="precedingWordReverse">
+            <label class="form-check-label" for="precedingWordReverseRadio">reverse preceding word</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="order" id="followingWordRadio" value="followingWord">
+            <label class="form-check-label" for="followingWordRadio">following word</label>
           </div>
         </div>
         {$dateRangeBlock}
@@ -521,15 +532,6 @@ HTML;
 		              itemsOnPage: {$this->_model->getPerPage()},
 		              cssStyle: "light-theme",
 		              onPageClick: function(pageNum) {
-                    var url = '?m=corpus&a=search&mode={$this->_model->getMode()}';
-                    url += '&pp={$this->_model->getPerPage()}&page=' + pageNum + '&';
-                    url += 'term={$this->_model->getTerm()}';
-                    url += '&id={$this->_model->getId()}&case={$this->_model->getCase()}&';
-                    url += 'accent={$this->_model->getAccent()}&lenition={$this->_model->getLenition()}';
-				            url += '&hits={$this->_model->getHits()}&view={$this->_model->getView()}';
-				            url += '&date={$this->_model->getDate()}&selectedDates={$_GET["selectedDates"]}';
-				            
-				            url += '{$arrayParams}';
                     window.location.assign(url);
 		              }
 		          });

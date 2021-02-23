@@ -9,7 +9,7 @@ class corpus_search
 	private $_db; // an instance of models\database
 	private $_params; // an array of query string parameters
 	private $_dbResults;  // an array of search results from the database
-	private $_perpage, $_page, $_mode, $_case, $_accent, $_lenition, $_view, $_date;
+	private $_perpage, $_page, $_mode, $_case, $_accent, $_lenition, $_view, $_order;
 	private $_hits;
 
 	public function __construct($params) {
@@ -35,7 +35,7 @@ class corpus_search
 		$this->_accent      = $params["accent"];
 		$this->_lenition    = $params["lenition"];
 		$this->_view        = (isset($params["view"])) ? $params["view"] : "corpus";
-		$this->_date        = (isset($params["date"])) ? $params["date"] : "random";
+		$this->_order       = (isset($params["order"])) ? $params["order"] : "random";
 	}
 
 	// GETTERS
@@ -76,8 +76,8 @@ class corpus_search
 		return $this->_view;
 	}
 
-	public function getDate() {
-		return $this->_date;
+	public function getOrder() {
+		return $this->_order;
 	}
 
 	/**
@@ -154,7 +154,7 @@ class corpus_search
 			$whereClause .= "wordform REGEXP ?";
 		}
 		$selectFields =  "lemma, l.filename AS filename, l.id AS id, wordform, pos, date_of_lang, l.title, 
-			page, medium, s.auto_id AS auto_id, t.id AS tid, t.level as level, district_id";
+			page, medium, s.auto_id AS auto_id, t.id AS tid, t.level as level, district_id, preceding_word, following_word";
 
 		$textJoinSql = "";
 		if ($params["id"]) {    //restrict to this text
@@ -175,7 +175,7 @@ SQL;
 	/**
 	 * Runs the query to get the corpus database result set
 	 * Sets the number of hits in the results set
-	 * @param $params: the array of parameters for the query, e.g. pp, page, date, mode, term
+	 * @param $params: the array of parameters for the query, e.g. pp, page, order, mode, term
 	 * @return array of database results
 	 */
 	private function _getDBSearchResults() {
@@ -184,15 +184,24 @@ SQL;
 		$pagenum = $params["page"];
 		$offset = $pagenum == 1 ? 0 : ($perpage * $pagenum) - $perpage;
 
-		switch ($params["date"]) {
+		switch ($params["order"]) {
 			case "random":
 				$orderBy = "RAND()";
 				break;
-			case "asc":
+			case "dateAsc":
 				$orderBy = "date_of_lang ASC";
 				break;
-			case "desc":
+			case "dateDesc":
 				$orderBy = "date_of_lang DESC";
+				break;
+			case "precedingWord":
+				$orderBy = "preceding_word ASC";
+				break;
+			case "precedingWordReverse":
+				$orderBy = "REVERSE(preceding_word) ASC";
+				break;
+			case "followingWord":
+				$orderBy = "following_word ASC";
 				break;
 			default:
 				$orderBy = "filename, id";
@@ -207,12 +216,24 @@ SQL;
 SQL;
 			}
 
+			$writerJoinSql = "";
+			if ($params["district"]) {
+				if (count($params["district"]) < 15) {   //restrict by district (location)
+					$writerJoinSql = <<<SQL
+						JOIN text_writer tw ON t.id = tw.text_id
+						JOIN writer w ON tw.writer_id = w.id
+SQL;
+				}
+			}
+
 			$query["sql"] = <<<SQL
         SELECT SQL_CALC_FOUND_ROWS l.filename AS filename, l.id AS id, wordform, pos, lemma, date_of_lang, l.title,
-                page, medium, s.auto_id as auto_id, s.wordClass as wordClass, t.id AS tid, t.level as level, district_id
+                page, medium, s.auto_id as auto_id, s.wordClass as wordClass, t.id AS tid, t.level as level, district_id,
+               	preceding_word, following_word
             FROM lemmas AS l
             LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id AND group_id = {$_SESSION["groupId"]}
             JOIN text t ON t.filepath = l.filename {$textJoinSql}
+        		{$writerJoinSql}
             WHERE lemma = ?
 
 SQL;
@@ -233,6 +254,12 @@ SQL;
 			$query["sql"] .= $this->_getPOSWhereClause();  //restrict by POS
 		}
 
+		if ($params["district"]) {
+			if (count($params["district"]) != 15) {   //restrict by district (location)
+				$query["sql"] .= $this->_getDistrictWhereClause();
+			}
+		}
+
 		$query["sql"] .= <<<SQL
         ORDER BY {$orderBy}
 SQL;
@@ -241,7 +268,6 @@ SQL;
 				LIMIT {$perpage} OFFSET {$offset}
 SQL;
 		}
-
 		$results = $this->_db->fetch($query["sql"], array($query["search"]));
 		$hits = $this->_db->fetch("SELECT FOUND_ROWS() as hits;");
 		$this->_hits = $hits[0]["hits"];
@@ -299,6 +325,16 @@ SQL;
 			$posString[] = " BINARY pos REGEXP '{$pos}\$|{$pos}[[:space:]]' ";
 		}
 		$whereClause .= implode(" OR ", $posString);
+		$whereClause .= ") ";
+		return $whereClause;
+	}
+
+	private function _getDistrictWhereClause() {
+		$whereClause = " AND (";
+		foreach ($this->_params["district"] as $districtId) {
+			$districtString[] = " district_1_id = {$districtId} OR district_2_id = {$districtId} ";
+		}
+		$whereClause .= implode(" OR ", $districtString);
 		$whereClause .= ") ";
 		return $whereClause;
 	}

@@ -98,7 +98,7 @@ echo '>';
       <p>&nbsp;</p>
       <p>&nbsp;</p>
       <nav class="navbar navbar-dark bg-primary fixed-bottom navbar-expand-lg">
-        <a class="navbar-brand" href="index.php">🏛 Briathradan</a>
+        <a class="navbar-brand" href="index.php">🍒 Briathradan</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
