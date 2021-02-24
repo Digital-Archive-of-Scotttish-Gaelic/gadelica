@@ -103,6 +103,7 @@ switch ($_REQUEST["action"]) {
       $context["auto_id"] = $elems[3]; //return the auto_id (slip id)
       $context["title"] = str_replace("\\", " ", $elems[4]);   //return the title
       $context["page"] = $elems[5]; //return the page no
+	    $context["tid"] = $elems[6];  //return the text ID
       $results[] = $context;
     }
     echo json_encode($results);

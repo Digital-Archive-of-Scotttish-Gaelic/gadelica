@@ -186,18 +186,18 @@ $(function () {
         title += 'Page No:: ' + val.page + '<br><br>';
         title += val.filename + '<br>' + val.id;
         var slipClass = 'editSlipLink';
-        var slipLinkText = 'create slip';
+        var slipLinkText = 'add';
         var createSlipStyle = 'createSlipLink';
-        var slipUrl = '?m=slip&filename='+val.filename+'&id='+val.id+'&headword='+headword+'&pos='+pos+'&auto_id='+val.auto_id;
+        var slipUrl = '?m=collection&a=add&filename='+val.filename+'&wid='+val.id+'&headword='+headword+'&pos'+pos;
         if (val.auto_id) {    //if a slip exists for this entry
-          slipLinkText = 'view slip';
+          slipLinkText = 'view';
           slipClass = 'slipLink2';
           createSlipStyle = '';
           slipUrl = '#';
         }
         html = '<tr>';
         html += '<td style="text-align: right;">'+val.pre.output + '</td>';
-        html += '<td><a href="?m=text&a=view&uri=' + val.uri + '&id=' + val.id + '"';
+        html += '<td><a href="?m=corpus&a=browse&id=' + val.tid + '&wid=' + val.id + '"';
         html += ' data-toggle="tooltip" data-html="true" title="' + title + '">';
         html += val.word + '</a>';
         html += '<td>' + val.post.output + '</td>';

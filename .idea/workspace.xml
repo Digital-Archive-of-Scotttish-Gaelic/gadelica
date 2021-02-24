@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/views/slow_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/slow_search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/ajax.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/includes/include.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/includes/include.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/views/corpus_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/corpus_search.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,13 +104,6 @@
       <workItem from="1613129353148" duration="48000" />
       <workItem from="1613130765631" duration="4835000" />
       <workItem from="1613635197677" duration="15236000" />
-    </task>
-    <task id="LOCAL-00004" summary="Removed debug code from xml2csv.php">
-      <created>1605265612874</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1605265612874</updated>
     </task>
     <task id="LOCAL-00005" summary="Reworked code to enable view in text links to work">
       <created>1605280921596</created>
@@ -445,14 +441,20 @@
       <option name="project" value="LOCAL" />
       <updated>1614080631350</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Some basic introductory pagination code for slow_search">
+      <created>1614175157587</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1614175157587</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Reworked renameFiles to handle many directories" />
     <MESSAGE value="Removed renameFiles.php and deleted tmp dir" />
     <MESSAGE value="Added level (&quot;importance&quot;) icons (stars) to subtext list in corpus browse" />
     <MESSAGE value="Date range block now no longer written in search from for subtexts" />
@@ -477,6 +479,7 @@
     <MESSAGE value="Basic form with some jQuery for multi-word (preceding and following) search inputs" />
     <MESSAGE value="First pass at code to enable searching by preceding and following word.&#10;TODO; break up Wordform code in corpus_search.php to allow it to work with new code. Add pagination code for results." />
     <MESSAGE value="Some bug fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some bug fixes" />
+    <MESSAGE value="Some basic introductory pagination code for slow_search" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some basic introductory pagination code for slow_search" />
   </component>
 </project>

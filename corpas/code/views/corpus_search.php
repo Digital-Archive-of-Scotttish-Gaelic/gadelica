@@ -453,7 +453,8 @@ HTML;
 					$i++;
 					$locations[] = $nextResult['filename'] . ' ' . $nextResult['id'] . ' '
 						. $nextResult['date_of_lang'] . ' ' . $nextResult["auto_id"] . ' '
-						. str_replace(" ", "\\", $nextResult['title']) . ' ' . $nextResult["page"];
+						. str_replace(" ", "\\", $nextResult['title']) . ' ' . $nextResult["page"]
+						. ' ' . $nextResult["tid"];
 				}
 			}
 			$locs = implode('|', $locations);
