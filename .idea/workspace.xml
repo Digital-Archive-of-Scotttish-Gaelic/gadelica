@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="New solution to">
+    <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/corpus_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/corpus_search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/views/slow_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/slow_search.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,13 +101,6 @@
       <workItem from="1613129353148" duration="48000" />
       <workItem from="1613130765631" duration="4835000" />
       <workItem from="1613635197677" duration="15236000" />
-    </task>
-    <task id="LOCAL-00003" summary="Added debug code to xml2csv.php">
-      <created>1605265119145</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1605265119145</updated>
     </task>
     <task id="LOCAL-00004" summary="Removed debug code from xml2csv.php">
       <created>1605265612874</created>
@@ -445,14 +438,20 @@
       <option name="project" value="LOCAL" />
       <updated>1613661108500</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Some bug fixes">
+      <created>1614080631350</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1614080631350</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added some temporary code to enable the renaming of files in a given directory - renameFiles.php - and a temporary directory for testing - tmp/" />
     <MESSAGE value="Reworked renameFiles to handle many directories" />
     <MESSAGE value="Removed renameFiles.php and deleted tmp dir" />
     <MESSAGE value="Added level (&quot;importance&quot;) icons (stars) to subtext list in corpus browse" />
@@ -477,6 +476,7 @@
     <MESSAGE value="Added option to order search results by reverse preceding word." />
     <MESSAGE value="Basic form with some jQuery for multi-word (preceding and following) search inputs" />
     <MESSAGE value="First pass at code to enable searching by preceding and following word.&#10;TODO; break up Wordform code in corpus_search.php to allow it to work with new code. Add pagination code for results." />
-    <option name="LAST_COMMIT_MESSAGE" value="First pass at code to enable searching by preceding and following word.&#10;TODO; break up Wordform code in corpus_search.php to allow it to work with new code. Add pagination code for results." />
+    <MESSAGE value="Some bug fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some bug fixes" />
   </component>
 </project>
