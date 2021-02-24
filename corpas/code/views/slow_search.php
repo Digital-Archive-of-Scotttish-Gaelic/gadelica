@@ -49,7 +49,7 @@ HTML;
 					} else if (getcwd()=='/Users/mark/Sites/gadelica/corpas/code') {
 						$filename = substr($nextFile,7);
 					} else {
-						$filename = substr($nextFile,55);
+						$filename = substr($nextFile,58);
 					}
 					$xml = simplexml_load_file($nextFile);
 					$xml->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/');
