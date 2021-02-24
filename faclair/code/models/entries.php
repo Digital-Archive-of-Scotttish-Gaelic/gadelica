@@ -36,6 +36,12 @@ SQL;
       case "f":
         return 'boir.';
         break;
+      case "F":
+        return 'boir.';
+        break;
+      case "n":
+        return 'ainm.';
+        break;
       case "v":
         return 'gn.';
         break;
@@ -57,6 +63,12 @@ SQL;
         break;
       case "f":
         return 'ainmear boireann';
+        break;
+      case "F":
+        return 'ainm boireann';
+        break;
+      case "n":
+        return 'ainmear (fireann/boireann)';
         break;
       case "v":
         return 'gnìomhair';
@@ -80,6 +92,12 @@ SQL;
       case "f":
         return 'feminine noun';
         break;
+      case "F":
+        return 'feminine proper noun';
+        break;
+      case "n":
+        return 'noun (masculine/feminine)';
+        break;
       case "v":
         return 'verb';
         break;
@@ -93,6 +111,5 @@ SQL;
         return $pos;
     }
   }
-
 
 }

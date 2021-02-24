@@ -36,6 +36,9 @@ SQL;
       case "2":
       	return 'Faclair Rianachd Phoblaich';
       	break;
+      case "3":
+      	return 'An Seotal';
+      	break;
     	case "22":
     		return 'Dwelly';
     		break;
@@ -55,6 +58,9 @@ SQL;
       case "2":
       	return 'Faclair Rianachd Phoblaich';
       	break;
+      case "3":
+      	return 'An Seotal';
+      	break;
     	case "22":
     		return 'Dwelly – <em>Faclair Gàidhlig gu Beurla le Dealbhan</em>';
     		break;
@@ -73,6 +79,9 @@ SQL;
         break;
       case "2":
         return '📎';
+        break;
+      case "3":
+        return '🧒🏻';
         break;
       case "22":
         return '🧩';
