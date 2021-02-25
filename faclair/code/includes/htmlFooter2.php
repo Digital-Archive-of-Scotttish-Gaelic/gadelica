@@ -9,7 +9,13 @@ echo <<<HTML
 		    </button>
 		    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 			    <div class="navbar-nav">
-				    <!-- <a class="nav-item nav-link" href="about.html" data-toggle="tooltip" title="About this site">fios</a> -->
+HTML;
+if (SUPERUSER) {
+  echo <<<HTML
+      <a class="nav-item nav-link" href="?m=admin" data-toggle="tooltip" title="">rianachd</a>
+HTML;
+}
+echo <<<HTML
 				    <!-- <a class="nav-item nav-link" href="viewRandomEntry.php" data-toggle="tooltip" title="View random entry">sonas</a> -->
 			    </div>
 		    </div>

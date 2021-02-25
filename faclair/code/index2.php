@@ -29,6 +29,9 @@ switch ($module) {
 	case "english":
 		$controller = new english();
 		break;
+	case "admin":
+		$controller = new admin();
+		break;
 	default:
 		$controller = new home();
 }

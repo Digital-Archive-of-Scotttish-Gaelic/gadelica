@@ -1,12 +1,13 @@
 <?php
 
 namespace controllers;
-use views;
+use models, views;
 
 class home {
 
 	public function run() {
-		$view = new views\home();
+		$model = new models\home();
+		$view = new views\home($model);
 		$view->show();
 	}
 
