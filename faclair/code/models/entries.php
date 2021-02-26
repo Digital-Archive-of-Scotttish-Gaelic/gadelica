@@ -55,7 +55,7 @@ SQL;
       FROM `lexemes`
       WHERE `hw` = :gd
       ORDER BY `m-hw`
-  SQL;
+SQL;
     $results = $this->_db->fetch($sql, array(":gd" => $this->_search));
     $oot = [];
     foreach ($results as $nextResult) {
@@ -71,7 +71,7 @@ SQL;
       JOIN `forms` f ON l.`id` = f.`lexeme_id`
       WHERE f.`form` = :gd
       ORDER BY `m-hw`
-  SQL;
+SQL;
     $results = $this->_db->fetch($sql, array(":gd" => $this->_search));
     $oot = [];
     foreach ($results as $nextResult) {
@@ -87,7 +87,7 @@ SQL;
       JOIN `english` e ON l.`id` = e.`lexeme_id`
       WHERE e.`en` LIKE :en
       ORDER BY LENGTH(`m-hw`), `m-hw`
-  SQL;
+SQL;
     $results = $this->_db->fetch($sql, array(":en" => $this->_search . '%'));
     $oot = [];
     foreach ($results as $nextResult) {
