@@ -33,12 +33,30 @@ HTML;
 			echo '<div class="list-group list-group-flush">';
 			foreach ($entries as $nextEntry) {
 				$url = '?m=entry&mhw=' . $nextEntry[0] . '&mpos=' . $nextEntry[1] . '&msub=' . $nextEntry[2];
-	    	echo '<a href="' . $url . '" class="list-group-item list-group-item-action"><strong>' . $nextEntry[0] . '</strong> <em>' . models\entries::getShortGd($nextEntry[1]) . '</em></a>';
+	    	echo '<a href="' . $url . '" class="list-group-item list-group-item-action"><strong>';
+				echo search::_hi($nextEntry[0],$search) . '</strong> <em>' . models\entries::getShortGd($nextEntry[1]) . '</em>';
+				echo ' ' . search::_hi($nextEntry[3],$search) . '</a>';
 			}
 			echo '</div>';
 		}
 		else if (isset($_GET["search"])) {
 			echo "???";
+		}
+	}
+
+	private static function _hi($string,$search) {
+		if (strpos($string,$search)>-1) {
+			return str_replace($search,'<span style="text-decoration:underline;text-decoration-color:red;">'.$search.'</span>',$string);
+		}
+    else {
+      $search = ucfirst($search);
+			//return $search;
+			if (strpos($string,$search)>-1) {
+				return str_replace($search,'<span style="text-decoration:underline;text-decoration-color:red;">'.$search.'</span>',$string);
+			}
+		  else {
+			  return $string;
+		  }
 		}
 	}
 
