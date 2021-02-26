@@ -33,7 +33,7 @@ switch ($module) {
 		$controller = new admin();
 		break;
 	default:
-		$controller = new home();
+		$controller = new search();
 }
 
 $controller->run($action);

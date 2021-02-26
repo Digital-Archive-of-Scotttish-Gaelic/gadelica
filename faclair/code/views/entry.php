@@ -19,9 +19,16 @@ class entry {
 			case "delete_part":
 				//$controller = new entry();
 				break;
+			case "summary":
+				$this->_writeSummary();
+				break;
 			default:
 			  $this->_writeInfo();
 		  }
+	}
+
+  private function _writeSummary() {
+		echo '<strong>' . $this->_model->getMhw() . '</strong>';
 	}
 
   private function _writeInfo() {

@@ -16,8 +16,7 @@ class entry {
     $this->_mhw = $mhw;
     $this->_mpos = $mpos;
     $this->_msub = $msub;
-
-    if ($db) {
+    if ($db) { // check the database?
       $this->_db = isset($this->_db) ? $this->_db : new database();
   		$this->_load();
     }
@@ -30,7 +29,7 @@ class entry {
     		WHERE `m-hw` = :mhw
     		AND `m-pos` = :mpos
     		AND `m-sub` = :msub
-        ORDER BY `hw`
+        ORDER BY LENGTH(`hw`), `hw`, `source`
 SQL;
     $results = $this->_db->fetch($sql, array(":mhw" => $this->_mhw, ":mpos" => $this->_mpos, ":msub" => $this->_msub));
     foreach ($results as $nextResult) {
@@ -53,6 +52,7 @@ SQL;
     		WHERE `m-p-hw` = :mhw
     		AND `m-p-pos` = :mpos
     		AND `m-p-sub` = :msub
+        ORDER BY LENGTH(`m-hw`)
 SQL;
     $results = $this->_db->fetch($sql, array(":mhw" => $this->_mhw, ":mpos" => $this->_mpos, ":msub" => $this->_msub));
     foreach ($results as $nextResult) {

@@ -81,13 +81,13 @@ SQL;
         return '📎';
         break;
       case "3":
-        return '🧒🏻';
+        return '🎒';
         break;
       case "22":
         return '🧩';
         break;
       case "23":
-        return '📌';
+        return '👽';
         break;
       default:
         return '';

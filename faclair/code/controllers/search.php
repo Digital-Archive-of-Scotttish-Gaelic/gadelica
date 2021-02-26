@@ -3,11 +3,11 @@
 namespace controllers;
 use models, views;
 
-class home {
+class search {
 
 	public function run() {
-		$model = new models\home();
-		$view = new views\home($model);
+		$model = new models\entries();
+		$view = new views\search($model);
 		$view->show();
 	}
 
