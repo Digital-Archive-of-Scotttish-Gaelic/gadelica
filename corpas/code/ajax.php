@@ -88,11 +88,15 @@ switch ($_REQUEST["action"]) {
 		break;
   case "getDictionaryResults":
     $locs = $_POST["locs"];
+    $pagenum = $_POST["pageNumber"];
+    $perpage = $_POST["pageSize"];
+    $offset = $pagenum == 1 ? 0 : ($perpage * $pagenum) - $perpage;
     $locations = explode('|', $locs);
     $filename = "";
     $fileHandler = null;
-    $results = array();
-    foreach ($locations as $location) {
+    $results["hits"] = count($locations);
+    $paginatedLocations = array_slice($locations, $offset, $perpage);
+    foreach ($paginatedLocations as $location) {
       $elems = explode(' ', $location);
       if ($filename != $elems[0]) {
         $filename = $elems[0];
@@ -104,7 +108,7 @@ switch ($_REQUEST["action"]) {
       $context["title"] = str_replace("\\", " ", $elems[4]);   //return the title
       $context["page"] = $elems[5]; //return the page no
 	    $context["tid"] = $elems[6];  //return the text ID
-      $results[] = $context;
+      $results["results"][] = $context;
     }
     echo json_encode($results);
     break;
