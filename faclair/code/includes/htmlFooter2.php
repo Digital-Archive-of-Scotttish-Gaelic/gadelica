@@ -16,7 +16,7 @@ if (SUPERUSER) {
 HTML;
 }
 echo <<<HTML
-				    <!-- <a class="nav-item nav-link" href="viewRandomEntry.php" data-toggle="tooltip" title="View random entry">sonas</a> -->
+				    <a class="nav-item nav-link" href="?m=entry&a=random" data-toggle="tooltip" title="View random entry">sonas</a>
 			    </div>
 		    </div>
 	    </nav>

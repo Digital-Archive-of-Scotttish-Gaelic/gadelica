@@ -19,16 +19,9 @@ class entry {
 			case "delete_part":
 				//$controller = new entry();
 				break;
-			case "summary":
-				$this->_writeSummary();
-				break;
 			default:
 			  $this->_writeInfo();
 		  }
-	}
-
-  private function _writeSummary() {
-		echo '<strong>' . $this->_model->getMhw() . '</strong>';
 	}
 
   private function _writeInfo() {
@@ -49,6 +42,16 @@ class entry {
       }
 		  echo '</p>';
     }
+		echo '<div class="list-group">';
+		foreach ($this->_model->getInstances() as $nextInstance) {
+			$view = new entry_instance($nextInstance);
+			$view->show('embedded');
+		}
+		if (SUPERUSER) {
+		  echo '<div class="list-group-item"><small><a href="?m=entry_instance&a=add&mhw=' . $this->_model->getMhw() . '&mpos=' . $this->_model->getMpos() . '&msub=' . $this->_model->getMsub() . '">[add]</a></small></div>';
+    }
+		echo '</div>';
+		echo '<p> </p>';
 		$cs = $this->_model->getCompounds();
 		if ($cs) {
 			echo '<p>↘️ ';
@@ -58,16 +61,6 @@ class entry {
 			}
 			echo '</p>';
 		}
-		//echo '<h5>Sources</h5>';
-		echo '<div class="list-group list-group-flush">';
-		foreach ($this->_model->getInstances() as $nextInstance) {
-			$view = new entry_instance($nextInstance);
-			$view->show('embedded');
-		}
-		if (SUPERUSER) {
-		  echo '<div class="list-group-item"><small><a href="?m=entry_instance&a=add&mhw=' . $this->_model->getMhw() . '&mpos=' . $this->_model->getMpos() . '&msub=' . $this->_model->getMsub() . '">[add]</a></small></div>';
-    }
-		echo '</div>';
 	}
 
 	private function _writeAddPartForm() {

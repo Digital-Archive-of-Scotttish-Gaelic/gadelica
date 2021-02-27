@@ -50,7 +50,6 @@ HTML;
 		}
     else {
       $search = ucfirst($search);
-			//return $search;
 			if (strpos($string,$search)>-1) {
 				return str_replace($search,'<span style="text-decoration:underline;text-decoration-color:red;">'.$search.'</span>',$string);
 			}

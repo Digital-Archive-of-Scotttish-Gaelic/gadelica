@@ -13,13 +13,29 @@ class entry {
   private $_db;   // an instance of models\database
 
 	public function __construct($mhw,$mpos,$msub,$db) {
-    $this->_mhw = $mhw;
-    $this->_mpos = $mpos;
-    $this->_msub = $msub;
-    if ($db) { // check the database?
+    if ($mhw!=null) {
+      $this->_mhw = $mhw;
+      $this->_mpos = $mpos;
+      $this->_msub = $msub;
+      if ($db) { // check the database?
+        $this->_db = isset($this->_db) ? $this->_db : new database();
+    		$this->_load();
+      }
+    } else {
       $this->_db = isset($this->_db) ? $this->_db : new database();
-  		$this->_load();
+      $sql = <<<SQL
+      	SELECT `m-hw`, `m-pos`, `m-sub`
+      		FROM `lexemes`
+          ORDER BY RAND()
+          LIMIT 1
+SQL;
+      $results = $this->_db->fetch($sql);
+      $this->_mhw = $results[0]["m-hw"];
+      $this->_mpos = $results[0]["m-pos"];
+      $this->_msub = $results[0]["m-sub"];
+      $this->_load();
     }
+
 	}
 
   private function _load() {

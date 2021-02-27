@@ -80,7 +80,11 @@ class entry_instance {
 			}
 			echo '</ul></li>';
 		}
-		echo '<li><small><a href="?m=source&id=' . $this->_model->getSource() . '">' . models\sources::getShortRef($this->_model->getSource()) . '</a></small></li>';
+		if (SUPERUSER) {
+			echo '<li><small><a href="?m=source&id=' . $this->_model->getSource() . '">' . models\sources::getShortRef($this->_model->getSource()) . '</a></small></li>';
+		} else {
+			echo '<li><small>' . models\sources::getShortRef($this->_model->getSource()) . '</small></li>';
+		}
 		echo '</ul>';
 		echo '</div>';
 	}

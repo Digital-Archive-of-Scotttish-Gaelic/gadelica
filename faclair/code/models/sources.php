@@ -39,6 +39,9 @@ SQL;
       case "3":
       	return 'An Seotal';
       	break;
+      case "4":
+      	return 'Dualchas Nàdair na h-Alba';
+      	break;
     	case "22":
     		return 'Dwelly';
     		break;
@@ -60,6 +63,9 @@ SQL;
       	break;
       case "3":
       	return 'An Seotal';
+      	break;
+      case "4":
+      	return 'Dualchas Nàdair na h-Alba – <em>Faclan Nàdair</em>';
       	break;
     	case "22":
     		return 'Dwelly – <em>Faclair Gàidhlig gu Beurla le Dealbhan</em>';
@@ -83,11 +89,14 @@ SQL;
       case "3":
         return '🎒';
         break;
+      case "4":
+        return '🦆';
+        break;
       case "22":
         return '🧩';
         break;
       case "23":
-        return '👽';
+        return '♒️';
         break;
       default:
         return '';

@@ -37,7 +37,7 @@ class entries {
       $results16 = array_merge($results15,$this->_englishInfixSpaceRightSearch());
       $results17 = array_merge($results16,$this->_gaelicInfixHwSpaceRightSearch());
       // GD forms as infixes etc??
-      // lenition on suffixes and infixes??
+      // GD lenition on suffixes and infixes??
       $results = $results17;
     }
     else if (isset($_GET["m"])) {
