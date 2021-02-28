@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module>
-  <title><mark>the</mark> – definite article</title>
-  <p>Simply put, there are four basic forms of the definite article in Gaelic –</p>
+  <title xml:lang="en"><mark>the</mark> – definite article</title>
+  <title xml:lang="gd">an t-alt cinnteach</title>
+  <p xml:lang="en">There are four <u>basic</u> forms of the definite article in Gaelic –</p>
+  <p xml:lang="gd">Tha ceithir bun-sheòrsachan an uilt chinntich anns a’ Ghàidhlig –</p>
   <ol>
-    <li>leniting <strong>an</strong></li>
+    <li xml:lang="en">leniting <strong>an</strong></li>
+    <li xml:lang="gd"><strong>an</strong> so-shèimheachadh</li>
     <li>non-leniting <strong>an</strong></li>
+    <li xml:lang="gd"><strong>an</strong> do-shèimheachadh</li>
     <li><strong>na</strong></li>
     <li><strong>nan</strong></li>
   </ol>
@@ -27,7 +31,7 @@
       </tr>
     </tbody>
   </table>
-  <p>The precise realisation of each form of the Gaelic definite article depends on the phonological nature of the start of the following word –</p>
+  <p>The precise realisation of each form of the Gaelic definite article depends on the initial sound of the following word –</p>
   <ul>
     <li>leniting <strong>an</strong> –
       <ul>
@@ -72,24 +76,26 @@
       <boxlink2 ref="#eilean">eilean</boxlink2>, 
       <boxlink2 ref="#fear">fear</boxlink2>, 
       <boxlink2 ref="#gille">gille</boxlink2>, 
-      i, loch, manach, neul, òran, p, reul, s, ubhal</li>
+      <boxlink2 ref="#ionad">ionad</boxlink2>, 
+      <boxlink2 ref="#loch">loch</boxlink2>, 
+      manach, neul, òran, p, reul, s, ubhal</li>
     <li>feminine nouns – <boxlink2 ref="#abhainn">abhainn</boxlink2>, 
       <boxlink2 ref="#buthaid">buthaid</boxlink2>, 
       <boxlink2 ref="#bliadhna">bliadhna</boxlink2>, <boxlink2 ref="#braiste">bràiste</boxlink2>,
       <boxlink2 ref="#caileag">caileag</boxlink2>, 
       <boxlink2 ref="#clach">clach</boxlink2>, làmh, sùil, </li>
-    <li>ordinals – <boxlink2 ref="#dàrna">dàrna</boxlink2>, treas, <boxlink2 ref="#ceathramh">ceathramh</boxlink2>, còigeamh, siathamh, <boxlink2 ref="#seachdamh">seachdamh</boxlink2>, <boxlink2 ref="#ochdamh">ochdamh</boxlink2>, naoidheamh, deicheamh, aonamh, ficheadamh, dà fhicheadamh, ceudamh</li>
+    <li>ordinals – <boxlink2 ref="#dàrna">dàrna</boxlink2>, 
+      <boxlink2 ref="#treas">treas</boxlink2>, 
+      <boxlink2 ref="#ceathramh">ceathramh</boxlink2>, 
+      <boxlink2 ref="#còigeamh">còigeamh</boxlink2>, 
+      <boxlink2 ref="#siathamh">siathamh</boxlink2>, 
+      <boxlink2 ref="#seachdamh">seachdamh</boxlink2>, 
+      <boxlink2 ref="#ochdamh">ochdamh</boxlink2>,
+      <boxlink2 ref="#naoidheamh">naoidheamh</boxlink2>,
+      <boxlink2 ref="#deicheamh">deicheamh</boxlink2>,
+      aonamh, ficheadamh, dà fhicheadamh, trì/ceithir ficheadamh, ceudamh, dà cheudamh etc., mìleamh, tritheadamh, etc.</li>
   </ul>
   <hr/>
-  <p>When an ordinal numeral or adjective intervenes between the definite article and the noun, 
-    the realisation of the article is usually determined by the initial phonology of the ordinal, according to the same rules, for example –</p>
-  <ul>
-    <li><mark>a’ bhliadhna</mark> <en>the year</en> but <mark>an treas bliadhna</mark> <en>the third year</en>, 
-      <mark>a’ cheathramh bliadhna</mark> <en>the fourth year</en>, 
-      <mark>an t-siathamh bliadhna</mark> <en>the sixth year</en>, <mark>an fhicheadamh bliadhna</mark> <en>the twentieth year</en></li>
-    <li><mark>ceann na bliadhna</mark> <en>the year’s end</en> but <mark>ceann na h-ochdamh bliadhna</mark> <en>the eighth year’s end</en>, 
-      <mark>ceann na h-ath bhliadhna</mark> <en>the next year’s end</en></li>
-  </ul>
   <p>However –</p>
   <ol>
     <li>ath – ?an t-ath bhaile</li>
@@ -113,13 +119,13 @@
       </thead>
       <tbody>
         <tr>
-          <th>nominative</th><td><mark>an t-</mark>ainm <en>the name</en></td><td><mark>na h-</mark>ainmean <en>the names</en></td>
+          <th>nominative</th><td><mark>an t-</mark>ainm</td><td><mark>na h-</mark>ainmean</td>
         </tr>
         <tr>
-          <th>dative</th><td>(leis) <mark>an</mark> ainm <en>(with) the name</en></td><td>(leis) <mark>na h-</mark>ainmean <en>(with) the names</en></td>
+          <th>dative</th><td>(leis) <mark>an</mark> ainm</td><td>(leis) <mark>na h-</mark>ainmean</td>
         </tr>
         <tr>
-          <th>genitive</th><td>(tùs) <mark>an</mark> ainm <en>the name’s (origin)</en></td><td>(tùs) <mark>nan</mark> ainmean <en>the names’ (origin)</en></td>
+          <th>genitive</th><td>(tùs) <mark>an</mark> ainm</td><td>(tùs) <mark>nan</mark> ainmean</td>
         </tr>
       </tbody>
     </table>
@@ -136,13 +142,13 @@
       </thead>
       <tbody>
         <tr>
-          <th>nominative</th><td><mark>a<u>m</u></mark> balach <en>the boy</en></td><td><mark>na</mark> balaich <en>the boys</en></td>
+          <th>nominative</th><td><mark>a<u>m</u></mark> balach</td><td><mark>na</mark> balaich</td>
         </tr>
         <tr>
-          <th>dative</th><td>(leis) <mark>a’</mark> b<u>h</u>alach <en>(with) the boy</en></td><td>(leis) <mark>na</mark> balaich <en>(with) the boys</en></td>
+          <th>dative</th><td>(leis) <mark>a’</mark> b<u>h</u>alach</td><td>(leis) <mark>na</mark> balaich</td>
         </tr>
         <tr>
-          <th>genitive</th><td>(cù) <mark>a’</mark> b<u>h</u>alaich <en>the boy’s (dog)</en></td><td>(cù) <mark>na<u>m</u></mark> balach <en>the boys’ (dog)</en></td>
+          <th>genitive</th><td>(cù) <mark>a’</mark> b<u>h</u>alaich</td><td>(cù) <mark>na<u>m</u></mark> balach</td>
         </tr>
       </tbody>
     </table>
@@ -159,13 +165,13 @@
       </thead>
       <tbody>
         <tr>
-          <th>nominative</th><td><mark>a<u>m</u></mark> blaigeard <en>the scoundrel</en></td><td><mark>na</mark> blaigeardan <en>the scoundrels</en></td>
+          <th>nominative</th><td><mark>a<u>m</u></mark> blaigeard</td><td><mark>na</mark> blaigeardan</td>
         </tr>
         <tr>
-          <th>dative</th><td>(leis) <mark>a’</mark> b<u>h</u>laigeard <en>(with) the scoundrel</en></td><td>(leis) <mark>na</mark> blaigeardan <en>(with) the scoundrels</en></td>
+          <th>dative</th><td>(leis) <mark>a’</mark> b<u>h</u>laigeard</td><td>(leis) <mark>na</mark> blaigeardan</td>
         </tr>
         <tr>
-          <th>genitive</th><td>(cù) <mark>a’</mark> b<u>h</u>laigeird <en>the scoundrel’s (dog)</en></td><td>(cù) <mark>na<u>m</u></mark> blaigeardan <en>the scoundrels’ (dog)</en></td>
+          <th>genitive</th><td>(cù) <mark>a’</mark> b<u>h</u>laigeird</td><td>(cù) <mark>na<u>m</u></mark> blaigeardan</td>
         </tr>
       </tbody>
     </table>
@@ -182,13 +188,13 @@
       </thead>
       <tbody>
         <tr>
-          <th>nominative</th><td><mark>a<u>m</u></mark> broc <en>the badger</en></td><td><mark>na</mark> bruic <en>the badgers</en></td>
+          <th>nominative</th><td><mark>a<u>m</u></mark> broc</td><td><mark>na</mark> bruic</td>
         </tr>
         <tr>
-          <th>dative</th><td>(leis) <mark>a’</mark> b<u>h</u>roc <en>(with) the badger</en></td><td>(leis) <mark>na</mark> bruic <en>(with) the badgers</en></td>
+          <th>dative</th><td>(leis) <mark>a’</mark> b<u>h</u>roc</td><td>(leis) <mark>na</mark> bruic</td>
         </tr>
         <tr>
-          <th>genitive</th><td>(ceann) <mark>a’</mark> b<u>h</u>ruic <en>the badger’s (head)</en></td><td>(cinn) <mark>na<u>m</u></mark> broc <en>the badgers’ (heads)</en></td>
+          <th>genitive</th><td>(ceann) <mark>a’</mark> b<u>h</u>ruic</td><td>(cinn) <mark>na<u>m</u></mark> broc</td>
         </tr>
       </tbody>
     </table>
@@ -389,17 +395,66 @@
       </thead>
       <tbody>
         <tr>
-          <th>nominative</th><td><mark>an</mark> gille <en>the boy</en></td><td><mark>na</mark> gillean <en>the boys</en></td>
+          <th>nominative</th><td><mark>an</mark> gille</td><td><mark>na</mark> gillean</td>
         </tr>
         <tr>
-          <th>dative</th><td>(leis) <mark>a’</mark> g<u>h</u>ille <en>(with) the boy</en></td><td>(leis) <mark>na</mark> gillean <en>(with) the boys</en></td>
+          <th>dative</th><td>(leis) <mark>a’</mark> g<u>h</u>ille</td><td>(leis) <mark>na</mark> gillean</td>
         </tr>
         <tr>
-          <th>genitive</th><td>(ceann) <mark>a’</mark> g<u>h</u>ille <en>the boy’s (head)</en></td><td>(cinn) <mark>nan</mark> gillean <en>the boys’ (heads)</en></td>
+          <th>genitive</th><td>(ceann) <mark>a’</mark> g<u>h</u>ille</td><td>(cinn) <mark>nan</mark> gillean</td>
         </tr>
       </tbody>
     </table>
   </box>
+  
+  <box id="ionad">
+    <title>ionad</title>
+    <p><strong>ionad</strong> <en>centre</en> is a masculine noun.</p>
+    <table class="table w-auto">
+      <thead>
+        <tr>
+          <td></td><th>singular</th><th>plural</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>nominative</th><td><mark>an t-</mark>ionad</td><td><mark>na h-</mark>ionadan</td>
+        </tr>
+        <tr>
+          <th>dative</th><td>(anns) <mark>an</mark> ionad</td><td>(anns) <mark>na h-</mark>ionadan</td>
+        </tr>
+        <tr>
+          <th>genitive</th><td>(ri taobh) <mark>an</mark> ionad</td><td>(ri taobh) <mark>nan</mark> ionadan</td>
+        </tr>
+      </tbody>
+    </table>
+  </box>
+  
+  <box id="loch">
+    <title>loch</title>
+    <p><strong>loch</strong> <en>lake</en> is a masculine noun.</p>
+    <table class="table w-auto">
+      <thead>
+        <tr>
+          <td></td><th>singular</th><th>plural</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>nominative</th><td><mark>an</mark> loch</td><td><mark>na</mark> lochan</td>
+        </tr>
+        <tr>
+          <th>dative</th><td>(anns) <mark>an</mark> loch</td><td>(anns) <mark>na</mark> lochan</td>
+        </tr>
+        <tr>
+          <th>genitive</th><td>(ri taobh) <mark>an</mark> locha</td><td>(ri taobh) <mark>nan</mark> lochan</td>
+        </tr>
+      </tbody>
+    </table>
+  </box>
+  
+  
+  
   
   
   <box id="abhainn">
@@ -540,6 +595,9 @@
     </table>
   </box>
   
+  
+  <!-- ORDINALS -->
+  
   <box id="dàrna">
     <title>dàrna</title>
     <p><strong>dàrna</strong> <en>second</en> is an ordinal numeral.</p>
@@ -551,13 +609,36 @@
       </thead>
       <tbody>
         <tr>
-          <th>nominative</th><td><mark>an</mark> dàrna fear <en>the second one</en></td><td><mark>an</mark> dàrna tè <en>the second one</en></td>
+          <th>nominative</th><td><mark>an</mark> dàrna fear</td><td><mark>an</mark> dàrna tè</td>
         </tr>
         <tr>
-          <th>dative</th><td>(leis) <mark>an</mark> dàrna fear <en>(with) the second one</en></td><td>(leis) <mark>an</mark> dàrna tè <en>(with) the second one</en></td>
+          <th>dative</th><td>(leis) <mark>an</mark> dàrna fear</td><td>(leis) <mark>an</mark> dàrna tè</td>
         </tr>
         <tr>
-          <th>genitive</th><td>(ainm) <mark>an</mark> dàrna fir <en>the second one’s (name)</en></td><td>(ainm) <mark>na</mark> dàrna tè <en>the second one’s (name)</en></td>
+          <th>genitive</th><td>(ainm) <mark>an</mark> dàrna fir</td><td>(ainm) <mark>na</mark> dàrna tè</td>
+        </tr>
+      </tbody>
+    </table>
+  </box>
+  
+  <box id="treas">
+    <title>treas</title>
+    <p><strong>treas</strong> <en>third</en> is an ordinal numeral.</p>
+    <table class="table w-auto">
+      <thead>
+        <tr>
+          <td></td><th>masculine</th><th>feminine</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>nominative</th><td><mark>an</mark> treas fear</td><td><mark>an</mark> treas tè</td>
+        </tr>
+        <tr>
+          <th>dative</th><td>(leis) <mark>an</mark> treas fear</td><td>(leis) <mark>an</mark> treas tè</td>
+        </tr>
+        <tr>
+          <th>genitive</th><td>(ainm) <mark>an</mark> treas fir</td><td>(ainm) <mark>na</mark> treas tè</td>
         </tr>
       </tbody>
     </table>
@@ -574,17 +655,64 @@
       </thead>
       <tbody>
         <tr>
-          <th>nominative</th><td><mark>an</mark> ceathramh fear <en>the fourth one</en></td><td><mark>a’</mark> cheathramh tè <en>the fourth one</en></td>
+          <th>nominative</th><td><mark>an</mark> ceathramh fear</td><td><mark>a’</mark> c<u>h</u>eathramh tè</td>
         </tr>
         <tr>
-          <th>dative</th><td>(leis) <mark>a’</mark> c<u>h</u>eathramh fear <en>(with) the fourth one</en></td><td>(leis) <mark>a’</mark> cheathramh tè <en>(with) the fourth one</en></td>
+          <th>dative</th><td>(leis) <mark>a’</mark> c<u>h</u>eathramh fear</td><td>(leis) <mark>a’</mark> c<u>h</u>eathramh tè</td>
         </tr>
         <tr>
-          <th>genitive</th><td>(ainm) <mark>a’</mark> c<u>h</u>eathramh fir <en>the fourth one’s (name)</en></td><td>(ainm) <mark>na</mark> ceathramh tè <en>the fourth one’s (name)</en></td>
+          <th>genitive</th><td>(ainm) <mark>a’</mark> c<u>h</u>eathramh fir</td><td>(ainm) <mark>na</mark> ceathramh tè</td>
         </tr>
       </tbody>
     </table>
   </box>
+  
+  <box id="còigeamh">
+    <title>còigeamh</title>
+    <p><strong>còigeamh</strong> <en>fifth</en> is an ordinal numeral.</p>
+    <table class="table w-auto">
+      <thead>
+        <tr>
+          <td></td><th>masculine</th><th>feminine</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>nominative</th><td><mark>an</mark> còigeamh fear</td><td><mark>a’</mark> c<u>h</u>òigeamh tè</td>
+        </tr>
+        <tr>
+          <th>dative</th><td>(leis) <mark>a’</mark> c<u>h</u>òigeamh fear</td><td>(leis) <mark>a’</mark> c<u>h</u>òigeamh tè</td>
+        </tr>
+        <tr>
+          <th>genitive</th><td>(ainm) <mark>a’</mark> c<u>h</u>òigeamh fir</td><td>(ainm) <mark>na</mark> còigeamh tè</td>
+        </tr>
+      </tbody>
+    </table>
+  </box>
+  
+  <box id="siathamh">
+    <title>siathamh</title>
+    <p><strong>siathamh</strong> <en>sixth</en> is an ordinal numeral.</p>
+    <table class="table w-auto">
+      <thead>
+        <tr>
+          <td></td><th>masculine</th><th>feminine</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>nominative</th><td><mark>an</mark> siathamh fear</td><td><mark>an t-</mark>siathamh tè</td>
+        </tr>
+        <tr>
+          <th>dative</th><td>(leis) <mark>an t-</mark>siathamh fear</td><td>(leis) <mark>an t-</mark>siathamh tè</td>
+        </tr>
+        <tr>
+          <th>genitive</th><td>(ainm) <mark>an t-</mark>siathamh fir</td><td>(ainm) <mark>na</mark> siathamh tè</td>
+        </tr>
+      </tbody>
+    </table>
+  </box>
+  
   
   <box id="seachdamh">
     <title>seachdamh</title>
@@ -597,13 +725,13 @@
       </thead>
       <tbody>
         <tr>
-          <th>nominative</th><td><mark>an</mark> seachdamh fear <en>the seventh one</en></td><td><mark>an t-</mark>seachdamh tè <en>the seventh one</en></td>
+          <th>nominative</th><td><mark>an</mark> seachdamh fear</td><td><mark>an t-</mark>seachdamh tè</td>
         </tr>
         <tr>
-          <th>dative</th><td>(leis) <mark>an t-</mark>seachdamh fear <en>(with) the seventh one</en></td><td>(leis) <mark>an t-</mark>seachdamh tè <en>(with) the seventh one</en></td>
+          <th>dative</th><td>(leis) <mark>an t-</mark>seachdamh fear</td><td>(leis) <mark>an t-</mark>seachdamh tè</td>
         </tr>
         <tr>
-          <th>genitive</th><td>(ainm) <mark>an t-</mark>seachdamh fir <en>the seventh one’s (name)</en></td><td>(ainm) <mark>na</mark> seachdamh tè <en>the seventh one’s (name)</en></td>
+          <th>genitive</th><td>(ainm) <mark>an t-</mark>seachdamh fir</td><td>(ainm) <mark>na</mark> seachdamh tè</td>
         </tr>
       </tbody>
     </table>
@@ -620,13 +748,59 @@
       </thead>
       <tbody>
         <tr>
-          <th>nominative</th><td><mark>an t-</mark>ochdamh fear <en>the eighth one</en></td><td><mark>an</mark> ochdamh tè <en>the eighth one</en></td>
+          <th>nominative</th><td><mark>an t-</mark>ochdamh fear</td><td><mark>an</mark> ochdamh tè</td>
         </tr>
         <tr>
-          <th>dative</th><td>(leis) <mark>an</mark> ochdamh fear <en>(with) the eighth one</en></td><td>(leis) <mark>an</mark> ochdamh tè <en>(with) the eighth one</en></td>
+          <th>dative</th><td>(leis) <mark>an</mark> ochdamh fear</td><td>(leis) <mark>an</mark> ochdamh tè</td>
         </tr>
         <tr>
-          <th>genitive</th><td>(ainm) <mark>an</mark> ochdamh fir <en>the eighth one’s (name)</en></td><td>(ainm) <mark>na h-</mark>ochdamh tè <en>the eighth one’s (name)</en></td>
+          <th>genitive</th><td>(ainm) <mark>an</mark> ochdamh fir</td><td>(ainm) <mark>na h-</mark>ochdamh tè</td>
+        </tr>
+      </tbody>
+    </table>
+  </box>
+  
+  <box id="naoidheamh">
+    <title>naoidheamh</title>
+    <p><strong>naoidheamh</strong> <en>ninth</en> is an ordinal numeral.</p>
+    <table class="table w-auto">
+      <thead>
+        <tr>
+          <td></td><th>masculine</th><th>feminine</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>nominative</th><td><mark>an</mark> naoidheamh fear</td><td><mark>an</mark> naoidheamh tè</td>
+        </tr>
+        <tr>
+          <th>dative</th><td>(leis) <mark>an</mark> naoidheamh fear</td><td>(leis) <mark>an</mark> naoidheamh tè</td>
+        </tr>
+        <tr>
+          <th>genitive</th><td>(ainm) <mark>an</mark> naoidheamh fir</td><td>(ainm) <mark>na</mark> naoidheamh tè</td>
+        </tr>
+      </tbody>
+    </table>
+  </box>
+  
+  <box id="deicheamh">
+    <title>deicheamh</title>
+    <p><strong>deicheamh</strong> <en>tenth</en> is an ordinal numeral.</p>
+    <table class="table w-auto">
+      <thead>
+        <tr>
+          <td></td><th>masculine</th><th>feminine</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>nominative</th><td><mark>an</mark> deicheamh fear</td><td><mark>an</mark> deicheamh tè</td>
+        </tr>
+        <tr>
+          <th>dative</th><td>(leis) <mark>an</mark> deicheamh fear</td><td>(leis) <mark>an</mark> deicheamh tè</td>
+        </tr>
+        <tr>
+          <th>genitive</th><td>(ainm) <mark>an</mark> deicheamh fir</td><td>(ainm) <mark>na</mark> deicheamh tè</td>
         </tr>
       </tbody>
     </table>

@@ -47,8 +47,10 @@ echo <<<HTML
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
+          <button class="btn btn-success">English</button>
+          <button class="btn btn-success">Gàidhlig</button>
           <!--
-          <a class="nav-item nav-link" href="browseCorpus.php">browse</a>
+          <a class="nav-item nav-link" href="browseCorpus.php"></a>
         -->
         </div>
       </div>
