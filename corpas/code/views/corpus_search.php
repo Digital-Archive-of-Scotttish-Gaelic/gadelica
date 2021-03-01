@@ -650,8 +650,7 @@ HTML;
 				  var headword = params.headword;
 				  var pos = params.pos;
 				  var html = '<tbody>';
-				  $.each(data, function(key, val){
-		/*		    
+				  $.each(data, function(key, val){		    
 				    var title = 'Headword: ' + headword + '<br>';
 		        title += 'POS: ' + pos + '<br>';
 		        title += 'Date: ' + val.date + '<br>';
@@ -668,9 +667,9 @@ HTML;
 		          createSlipStyle = '';
 		          slipUrl = '#';
 		        }
-		*/        html += '<tr>';
+		        html += '<tr>';
 		        html += '<td>' + val.date + '</td>'; 
-		/*        html += '<td style="text-align: right;">'+val.pre.output + '</td>';
+		        html += '<td style="text-align: right;">'+val.pre.output + '</td>';
 		        html += '<td><a href="?m=corpus&a=browse&id=' + val.tid + '&wid=' + val.id + '"';
 		        html += ' data-toggle="tooltip" data-html="true" title="' + title + '">';
 		        html += val.word + '</a>';
@@ -685,7 +684,7 @@ HTML;
 		        html += ' data-auto_id="' + val.auto_id + '"';
 		        html += '>' + slipLinkText + '</a></small>';
 		        html += '</td>';
-		*/      html += '</tr>';
+		        html += '</tr>';
           });
 				  html += '</tbody>';
 				  return html;;
@@ -710,9 +709,10 @@ HTML;
 					    ajax: {
 					        type: "POST",
 					        data: {action: "getDictionaryResults", locs: locations},
-					        beforeSend: function() {
+					        //do something else here
+					       /* beforeSend: function() {
 					            table.html('Loading data from DASG ...');
-					        }
+					        }*/
 					    },
 					    callback: function(data, pagination) {
 					        var html = template(data, params);					        
