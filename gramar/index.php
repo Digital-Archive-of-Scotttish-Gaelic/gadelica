@@ -63,6 +63,9 @@ if ($_GET["gd"]) {
 else if ($_GET["en"]) {
   new english();
 }
+else if ($_GET["xx"]) {
+  new thematic();
+}
 else {
   new home();
 }

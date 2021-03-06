@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module>
-  <title xml:lang="en"><mark>the</mark> – definite article</title>
+  <title xml:lang="en"><mark>the</mark> – definite article 🥈</title>
   <!--  <title xml:lang="gd">an t-alt cinnteach</title>-->
   <p xml:lang="en">There are four <u>basic</u> forms of the definite article in Gaelic –</p>
   <!--<p xml:lang="gd">Tha ceithir bun-sheòrsachan an uilt chinntich anns a’ Ghàidhlig –</p>-->
@@ -96,16 +96,18 @@
     <li>feminine nouns – <boxlink2 ref="#abhainn">abhainn</boxlink2>, <boxlink2 ref="#buthaid">buthaid</boxlink2>, <boxlink2 ref="#bliadhna">bliadhna</boxlink2>, <boxlink2 ref="#braiste"
         >bràiste</boxlink2>, <boxlink2 ref="#caileag">caileag</boxlink2>, <boxlink2 ref="#clach">clach</boxlink2>, <boxlink2 ref="#cnò">cnò</boxlink2>, <boxlink2 ref="#croit">croit</boxlink2>,
         <boxlink2 ref="#deoch">deoch</boxlink2>, <boxlink2 ref="#dlòth">dlòth</boxlink2>, <boxlink2 ref="#drochaid">drochaid</boxlink2>, <boxlink2 ref="#eaglais">eaglais</boxlink2>, <boxlink2
-        ref="#fairge">fairge</boxlink2>, <boxlink2 ref="#fleasg">fleasg</boxlink2>, <boxlink2 ref="#fras">fras</boxlink2>, làmh, sùil, </li>
+        ref="#fairge">fairge</boxlink2>, <boxlink2 ref="#fleasg">fleasg</boxlink2>, <boxlink2 ref="#fras">fras</boxlink2>, <boxlink2 ref="#geug">geug</boxlink2>, <boxlink2 ref="#glùn">glùn</boxlink2>,
+        <boxlink2 ref="#gnùis">gnùis</boxlink2>, <boxlink2 ref="#greis">greis</boxlink2>, <boxlink2 ref="#iuchair">iuchair</boxlink2>, làmh, sùil, </li>
     <li>ordinals – <boxlink2 ref="#dàrna">dàrna</boxlink2>, <boxlink2 ref="#treas">treas</boxlink2>, <boxlink2 ref="#ceathramh">ceathramh</boxlink2>, <boxlink2 ref="#còigeamh">còigeamh</boxlink2>,
         <boxlink2 ref="#siathamh">siathamh</boxlink2>, <boxlink2 ref="#seachdamh">seachdamh</boxlink2>, <boxlink2 ref="#ochdamh">ochdamh</boxlink2>, <boxlink2 ref="#naoidheamh">naoidheamh</boxlink2>,
-        <boxlink2 ref="#deicheamh">deicheamh</boxlink2>, <boxlink2 ref="#aonamh">aonamh</boxlink2>, <boxlink2 ref="#ficheadamh">ficheadamh</boxlink2>, <boxlink2 ref="#ceudamh">ceudamh</boxlink2>,
-        <boxlink2 ref="#mìleamh">mìleamh</boxlink2></li>
+        <boxlink2 ref="#deicheamh">deicheamh</boxlink2>, <boxlink2 ref="#aonamh">aonamh</boxlink2>, <boxlink2 ref="#ficheadamh">ficheadamh</boxlink2>, <boxlink2 ref="#lethcheudamh"
+        >lethcheudamh</boxlink2>, <boxlink2 ref="#ceudamh">ceudamh</boxlink2>, <boxlink2 ref="#mìleamh">mìleamh</boxlink2></li>
     <li>new ordinals – tritheadamh, ceathradamh, caogadamh, seasgadamh, seachdadamh, ochadamh, naochadamh</li>
-    <li>cardinals – <boxlink2 ref="#aon">aon</boxlink2>, <boxlink2 ref="#dà">dà</boxlink2>, <boxlink2 ref="#trì">trì</boxlink2>, <boxlink2 ref="#ceithir">ceithir</boxlink2>, còig, sia, seachd, ochd, naoi, deich</li>
+    <li>cardinals – <boxlink2 ref="#aon">aon</boxlink2>, <boxlink2 ref="#dà">dà</boxlink2>, <boxlink2 ref="#trì">trì</boxlink2>, <boxlink2 ref="#ceithir">ceithir</boxlink2>, còig, sia, seachd, ochd,
+      naoi, deich</li>
     <li>adjectives – deagh, droch, seann, dearbh, fìor, sàr</li>
   </ul>
-  <p>However, there are some notable <u>exceptions</u> to these rules in modern Gaelic –</p>
+  <p>However, there are some notable <u>exceptions</u> to these rules regarding definite article agreement in modern Gaelic –</p>
   <ol>
     <li>When followed by the ordinal numeral <strong>ciad</strong>
       <en>first</en>, the nominative singular definite article is always <strong>a’</strong>, even when it specifies a masculine noun, e.g. <mark>thàinig a’ chiad fhear a-steach</mark>
@@ -117,9 +119,11 @@
       <boxlink ref="#ath"/></li>
   </ol>
   <hr/>
+  <!--
   <p>Adjective jumping lenition</p>
   <p>Fused prepositions e.g. tron (a’) bhaile</p>
-
+  <p>Double definite article</p>
+-->
 
 
 
@@ -2020,12 +2024,172 @@
     </table>
   </box>
 
+  <box id="geug">
+    <title>definite article + <mark>geug</mark></title>
+    <p><strong>geug</strong>
+      <en>branch</en> is a feminine noun starting with the velar consonant <strong>g-</strong>.</p>
+    <table class="table w-auto">
+      <thead>
+        <tr>
+          <td/>
+          <th>singular</th>
+          <th>plural</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>nominative</th>
+          <td><mark>a’</mark> g<u>h</u>eug</td>
+          <td><mark>na</mark> geugan</td>
+        </tr>
+        <tr>
+          <th>dative</th>
+          <td>(leis) <mark>a’</mark> g<u>h</u>èig</td>
+          <td>(leis) <mark>na</mark> geugan</td>
+        </tr>
+        <tr>
+          <th>genitive</th>
+          <td>(fad) <mark>na</mark> gèige</td>
+          <td>(fad) <mark>nan</mark> geugan</td>
+        </tr>
+      </tbody>
+    </table>
+  </box>
+
+  <box id="glùn">
+    <title>definite article + <mark>glùn</mark></title>
+    <p><strong>glùn</strong>
+      <en>knee</en> is a feminine noun starting with the velar consonant <strong>g(l)-</strong>.</p>
+    <table class="table w-auto">
+      <thead>
+        <tr>
+          <td/>
+          <th>singular</th>
+          <th>plural</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>nominative</th>
+          <td><mark>a’</mark> g<u>h</u>lùn</td>
+          <td><mark>na</mark> glùintean</td>
+        </tr>
+        <tr>
+          <th>dative</th>
+          <td>(leis) <mark>a’</mark> g<u>h</u>lùin</td>
+          <td>(leis) <mark>na</mark> glùintean</td>
+        </tr>
+        <tr>
+          <th>genitive</th>
+          <td>(fad) <mark>na</mark> glùine</td>
+          <td>(fad) <mark>nan</mark> glùintean</td>
+        </tr>
+      </tbody>
+    </table>
+  </box>
+
+  <box id="gnùis">
+    <title>definite article + <mark>gnùis</mark></title>
+    <p><strong>gnùis</strong>
+      <en>face</en> is a feminine noun starting with the velar consonant <strong>g(n)-</strong>.</p>
+    <table class="table w-auto">
+      <thead>
+        <tr>
+          <td/>
+          <th>singular</th>
+          <th>plural</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>nominative</th>
+          <td><mark>a’</mark> g<u>h</u>nùis</td>
+          <td><mark>na</mark> gnùisean</td>
+        </tr>
+        <tr>
+          <th>dative</th>
+          <td>(leis) <mark>a’</mark> g<u>h</u>nùis</td>
+          <td>(leis) <mark>na</mark> gnùisean</td>
+        </tr>
+        <tr>
+          <th>genitive</th>
+          <td>(fad) <mark>na</mark> gnùise</td>
+          <td>(fad) <mark>nan</mark> gnùisean</td>
+        </tr>
+      </tbody>
+    </table>
+  </box>
+
+  <box id="greis">
+    <title>definite article + <mark>greis</mark></title>
+    <p><strong>greis</strong>
+      <en>while</en> is a feminine noun starting with the velar consonant <strong>g(r)-</strong>.</p>
+    <table class="table w-auto">
+      <thead>
+        <tr>
+          <td/>
+          <th>singular</th>
+          <th>plural</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>nominative</th>
+          <td><mark>a’</mark> g<u>h</u>reis</td>
+          <td><mark>na</mark> greisean</td>
+        </tr>
+        <tr>
+          <th>dative</th>
+          <td>(leis) <mark>a’</mark> g<u>h</u>reis</td>
+          <td>(leis) <mark>na</mark> greisean</td>
+        </tr>
+        <tr>
+          <th>genitive</th>
+          <td>(fad) <mark>na</mark> greise</td>
+          <td>(fad) <mark>nan</mark> greisean</td>
+        </tr>
+      </tbody>
+    </table>
+  </box>
+
+  <box id="iuchair">
+    <title>definite article + <mark>iuchair</mark></title>
+    <p><strong>iuchair</strong>
+      <en>key</en> is a feminine noun starting with the vowel <strong>i(u)-</strong>.</p>
+    <table class="table w-auto">
+      <thead>
+        <tr>
+          <td/>
+          <th>singular</th>
+          <th>plural</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>nominative</th>
+          <td><mark>an</mark> iuchair</td>
+          <td><mark>na h-</mark>iuchraichean</td>
+        </tr>
+        <tr>
+          <th>dative</th>
+          <td>(leis) <mark>an</mark> iuchair</td>
+          <td>(leis) <mark>na h-</mark>iuchraichean</td>
+        </tr>
+        <tr>
+          <th>genitive</th>
+          <td>(fad) <mark>na h-</mark>iuchrach</td>
+          <td>(fad) <mark>nan</mark> iuchraichean</td>
+        </tr>
+      </tbody>
+    </table>
+  </box>
+
 
   <!-- ORDINALS -->
 
   <box id="dàrna">
     <title>definite article + <mark>dàrna</mark></title>
-    <p><strong>dàrna</strong>
+    <p><strong><a href="?gd=dàrna">dàrna</a></strong>
       <en>second</en> is an ordinal numeral, starting with the dental consonant <strong>d-</strong></p>
     <table class="table w-auto">
       <thead>
@@ -2061,7 +2225,7 @@
 
   <box id="treas">
     <title>definite article + <mark>treas</mark></title>
-    <p><strong>treas</strong>
+    <p><strong><a href="?gd=treas">treas</a></strong>
       <en>third</en> is an ordinal numeral, starting with the dental consonant <strong>t(r)-</strong></p>
     <table class="table w-auto">
       <thead>
@@ -2097,7 +2261,7 @@
 
   <box id="ceathramh">
     <title>definite article + <mark>ceathramh</mark></title>
-    <p><strong>ceathramh</strong>
+    <p><strong><a href="?gd=ceathramh">ceathramh</a></strong>
       <en>fourth</en> is an ordinal numeral, starting with the velar consonant <strong>c-</strong></p>
     <table class="table w-auto">
       <thead>
@@ -2133,7 +2297,7 @@
 
   <box id="còigeamh">
     <title>definite article + <mark>còigeamh</mark></title>
-    <p><strong>còigeamh</strong>
+    <p><strong><a href="?gd=còigeamh">còigeamh</a></strong>
       <en>fifth</en> is an ordinal numeral, starting with the velar consonant <strong>c-</strong></p>
     <table class="table w-auto">
       <thead>
@@ -2169,7 +2333,7 @@
 
   <box id="siathamh">
     <title>definite article + <mark>siathamh</mark></title>
-    <p><strong>siathamh</strong>
+    <p><strong><a href="?gd=siathamh">siathamh</a></strong>
       <en>sixth</en> is an ordinal numeral, starting with the soft sybillant <strong>s-</strong></p>
     <table class="table w-auto">
       <thead>
@@ -2205,7 +2369,7 @@
 
   <box id="seachdamh">
     <title>definite article + <mark>seachdamh</mark></title>
-    <p><strong>seachdamh</strong>
+    <p><strong><a href="?gd=seachdamh">seachdamh</a></strong>
       <en>seventh</en> is an ordinal numeral, starting with the soft sybillant <strong>s-</strong></p>
     <table class="table w-auto">
       <thead>
@@ -2241,7 +2405,7 @@
 
   <box id="ochdamh">
     <title>definite article + <mark>ochdamh</mark></title>
-    <p><strong>ochdamh</strong>
+    <p><strong><a href="?gd=ochdamh">ochdamh</a></strong>
       <en>eighth</en> is an ordinal numeral, starting with the vowel <strong>o-</strong></p>
     <table class="table w-auto">
       <thead>
@@ -2277,7 +2441,7 @@
 
   <box id="naoidheamh">
     <title>definite article + <mark>naoidheamh</mark></title>
-    <p><strong>naoidheamh</strong>
+    <p><strong><a href="?gd=naoidheamh">naoidheamh</a></strong>
       <en>ninth</en> is an ordinal numeral, starting with the dental consonant <strong>n-</strong></p>
     <table class="table w-auto">
       <thead>
@@ -2313,7 +2477,7 @@
 
   <box id="deicheamh">
     <title>definite article + <mark>deicheamh</mark></title>
-    <p><strong>deicheamh</strong>
+    <p><strong><a href="?gd=deicheamh">deicheamh</a></strong>
       <en>tenth</en> is an ordinal numeral, starting with the dental consonant <strong>d-</strong></p>
     <table class="table w-auto">
       <thead>
@@ -2349,8 +2513,8 @@
 
   <box id="aonamh">
     <title>definite article + <mark>aonamh</mark></title>
-    <p><strong>aonamh</strong>
-      <en>first</en> is an ordinal numeral, starting with the vowel <strong>ao-</strong></p>
+    <p><strong><a href="?gd=aonamh">aonamh</a></strong>
+      <en>first</en> is an ordinal numeral, starting with the vowel <strong>a(o)-</strong></p>
     <table class="table w-auto">
       <thead>
         <tr>
@@ -2385,7 +2549,7 @@
 
   <box id="ficheadamh">
     <title>definite article + <mark>ficheadamh</mark></title>
-    <p><strong>ficheadamh</strong>
+    <p><strong><a href="?gd=ficheadamh">ficheadamh</a></strong>
       <en>twentieth</en> is an ordinal numeral, starting with the labial consonant <strong>f-</strong></p>
     <table class="table w-auto">
       <thead>
@@ -2419,9 +2583,45 @@
     </table>
   </box>
 
+  <box id="lethcheudamh">
+    <title>definite article + <mark>lethcheudamh</mark></title>
+    <p><strong><a href="?gd=lethcheudamh">lethcheudamh</a></strong>
+      <en>fiftieth</en> is an ordinal numeral, starting with the dental consonant <strong>l-</strong></p>
+    <table class="table w-auto">
+      <thead>
+        <tr>
+          <td/>
+          <th>masculine</th>
+          <th>feminine</th>
+          <th>plural</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>nominative</th>
+          <td><mark>an</mark> lethcheudamh fear</td>
+          <td><mark>an</mark> lethcheudamh tè</td>
+          <td><mark>na</mark> lethcheudamh trì fir</td>
+        </tr>
+        <tr>
+          <th>dative</th>
+          <td>(leis) <mark>an</mark> lethcheudamh fear</td>
+          <td>(leis) <mark>an</mark> lethcheudamh tè</td>
+          <td>(leis) <mark>na</mark> lethcheudamh trì fir</td>
+        </tr>
+        <tr>
+          <th>genitive</th>
+          <td>(ainm) <mark>an</mark> lethcheudamh fir</td>
+          <td>(ainm) <mark>na</mark> lethcheudamh tè</td>
+          <td>(ainmean) <mark>nan</mark> lethcheudamh trì fear</td>
+        </tr>
+      </tbody>
+    </table>
+  </box>
+
   <box id="ceudamh">
     <title>definite article + <mark>ceudamh</mark></title>
-    <p><strong>ceudamh</strong>
+    <p><strong><a href="?gd=ceudamh">ceudamh</a></strong>
       <en>hundredth</en> is an ordinal numeral, starting with the velar consonant <strong>c-</strong></p>
     <table class="table w-auto">
       <thead>
@@ -2454,10 +2654,10 @@
       </tbody>
     </table>
   </box>
-  
+
   <box id="mìleamh">
     <title>definite article + <mark>mìleamh</mark></title>
-    <p><strong>mìleamh</strong>
+    <p><strong><a href="?gd=mìleamh">mìleamh</a></strong>
       <en>thousandth</en> is an ordinal numeral, starting with the labial consonant <strong>m-</strong></p>
     <table class="table w-auto">
       <thead>

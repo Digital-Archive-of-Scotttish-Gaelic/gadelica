@@ -14,6 +14,7 @@ class home {
     	echo "<li><a href=\"?gd=" . $nextGd . "\">". $nextGd . "</a></li>";
     }
     echo "<li><a href=\"?en=the\">the</a></li>";
+		echo "<li><a href=\"?xx=cardinals\">cardinal numbers</a></li>";
 		echo "</ul>";
 	}
 
