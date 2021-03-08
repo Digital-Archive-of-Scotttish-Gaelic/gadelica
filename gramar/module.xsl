@@ -18,7 +18,7 @@
   
   <xsl:template match="meta"/>
   
-  <xsl:template match="p|strong|hr|em|ol|ul|li|a|mark|h1|h2|h3|h4|table|thead|tbody|tr|td|th|u">
+  <xsl:template match="p|strong|hr|em|ol|ul|li|a|mark|h1|h2|h3|h4|h5|table|thead|tbody|tr|td|th|u">
     <xsl:copy>
       <xsl:if test="@type">
         <xsl:attribute name="type"><xsl:value-of select="@type"/></xsl:attribute>
@@ -78,6 +78,38 @@
   
   <xsl:template match="xl/li">
     <li class="ex list-group-item list-group-item-secondary" data-slip="{.}"/>
+  </xsl:template>
+  
+  <xsl:template match="xlx">
+    <ul class="list-group list-group-flush mb-3">
+      <xsl:for-each select="li">
+        <li class="list-group-item list-group-item-secondary">
+          <xsl:apply-templates/>
+        </li>
+      </xsl:for-each>
+    </ul>
+  </xsl:template>
+  
+  <xsl:template match="gd">
+    <strong>
+      <xsl:apply-templates/>
+    </strong>
+  </xsl:template>
+  
+  <xsl:template match="en2">
+    <br/>
+    <small class="text-muted">
+      <xsl:apply-templates/>
+    </small>
+  </xsl:template>
+  
+  <xsl:template match="ref">
+    <br/>
+    <small class="text-muted">
+      <xsl:text>[</xsl:text>
+      <xsl:apply-templates/>
+      <xsl:text>]</xsl:text>
+    </small>
   </xsl:template>
   
 </xsl:stylesheet>
