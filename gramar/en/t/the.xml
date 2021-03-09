@@ -104,9 +104,8 @@
         <boxlink2 ref="#deicheamh">deicheamh</boxlink2>, <boxlink2 ref="#aonamh">aonamh</boxlink2>, <boxlink2 ref="#ficheadamh">ficheadamh</boxlink2>, <boxlink2 ref="#lethcheudamh"
         >lethcheudamh</boxlink2>, <boxlink2 ref="#ceudamh">ceudamh</boxlink2>, <boxlink2 ref="#mìleamh">mìleamh</boxlink2></li>
     <li>new ordinals – tritheadamh, ceathradamh, caogadamh, seasgadamh, seachdadamh, ochadamh, naochadamh</li>
-    <li>cardinals – <boxlink2 ref="#aon">aon</boxlink2>, <boxlink2 ref="#dà">dà</boxlink2>, <boxlink2 ref="#trì">trì</boxlink2>, <boxlink2 ref="#ceithir">ceithir</boxlink2>, <boxlink2 ref="#còig"
-        >còig</boxlink2>, <boxlink2 ref="#sia">sia</boxlink2>, <boxlink2 ref="#seachd">seachd</boxlink2>, <boxlink2 ref="#ochd">ochd</boxlink2>, <boxlink2 ref="#naoi">naoi</boxlink2>, <boxlink2
-        ref="#deich">deich</boxlink2></li>
+    <li>cardinals – <boxlink2 ref="#trì">trì</boxlink2>, <boxlink2 ref="#ceithir">ceithir</boxlink2>, <boxlink2 ref="#còig">còig</boxlink2>, <boxlink2 ref="#sia"
+        >sia</boxlink2>, <boxlink2 ref="#seachd">seachd</boxlink2>, <boxlink2 ref="#ochd">ochd</boxlink2>, <boxlink2 ref="#naoi">naoi</boxlink2>, <boxlink2 ref="#deich">deich</boxlink2></li>
     <li>adjectives – deagh, droch, seann, dearbh, fìor, sàr</li>
   </ul>
   <p>However, there are some notable <u>exceptions</u> to these rules regarding definite article agreement in modern Gaelic –</p>
@@ -116,9 +115,16 @@
       <en>the first man came in</en>
       <boxlink ref="#ciad"/></li>
     <li>The ordinal adjective <strong>ath</strong>
-      <en>next</en> is no longer preceded by <strong>t-</strong> when the specified noun is masculine nominative singular, e.g. <mark>thàinig an ath fhear a-steach</mark>
+      <en>next</en> is no longer preceded by <strong>t-</strong> when the following noun is masculine nominative singular, e.g. <mark>thàinig an ath fhear a-steach</mark>
       <en>the next man came in</en>
       <boxlink ref="#ath"/></li>
+    <li>The cardinal numeral <strong>aon</strong>
+      <en>one, only, same</en> is usually not preceded by <strong>t-</strong> when the following noun is masculine nominative singular, e.g. <mark>thàinig an aon fhear a-steach</mark>
+      <en>the same man came in</en>
+      <boxlink ref="#aon"/></li>
+    <li>When followed by the cardinal numeral <strong>dà</strong>, the genitive feminine definite article is nowadays <strong>an</strong> rather than <strong>na</strong>, e.g. <mark>comar an dà
+        aibhne</mark>
+      <en>the confluence of the two rivers</en><boxlink ref="#dà"/></li>
   </ol>
   <hr/>
   <!--
@@ -2824,8 +2830,8 @@
 
   <box id="aon">
     <title>definite article + <mark>aon</mark></title>
-    <p><strong>aon</strong>
-      <en>one, same</en> is a cardinal numeral starting wth the vowel <strong>a(o)-</strong></p>
+    <p>The cardinal numeral <strong><a href="?gd=aon">aon</a></strong>
+      <en>one, only, same</en> starts with the vowel <strong>a(o)-</strong> and interacts with the definite article as follows –</p>
     <table class="table w-auto">
       <thead>
         <tr>
@@ -2837,7 +2843,7 @@
       <tbody>
         <tr>
           <th>nominative</th>
-          <td><mark>an t-</mark>aon fhear</td>
+          <td><mark>an</mark>aon fhear</td>
           <td><mark>an</mark> aon tè</td>
         </tr>
         <tr>
@@ -2852,6 +2858,28 @@
         </tr>
       </tbody>
     </table>
+    <h5>Nominative masculine singular</h5>
+    <p>The most common nominative masculine form nowadays is <strong>an aon ...</strong></p>
+    <xlx>
+      <li>
+        <gd>’S e Tòmas <mark>an aon chroitear</mark> as aithne dhomh a dh’èirich gu inbhe taidhcùn.</gd>
+        <en2>Thomas is the one crofter I have known who rose to the level of a tycoon.</en2>
+        <ref text="2">Dòmhnall Alasdair Dòmhnallach (2001) <em>Sgeulachdan Dhòmhnaill Alasdair</em> 5</ref>
+      </li>
+      <li>
+        <gd>Gu mì-fhortanach cha b’ e MacRath <mark>an aon mhinistear</mark> a dh’fheuch ri coimhearsnachd anns na h-eileanan a chumail fo spòig.</gd>
+        <en2>Unfortunately MacRae was not the only minister who tried to keep a community in the islands in his claws.</en2>
+        <ref text="333">Seonaidh Ailig Mac a’ Phearsain (2011) <em>Steall à Iomadh Lòn</em> 35</ref>
+      </li>
+    </xlx>
+    <p>But <strong>an t-aon</strong> can still be found sometimes as well –</p>
+    <xlx>
+      <li>
+        <gd>Bha e turas anns an Sutha ann an Dun Eideann agus stad e aig ionad nan tìgearan. Cha robh ann ach <mark>an t-aon tìgear mòr</mark> agus e-fhèin ga choimhead.</gd>
+        <en2>He was once in Edinburgh Zoo and he stood in the tiger enclosure. There was nobody there but the one large tiger and himself watching it.</en2>
+        <ref text="321">Iain MacLeòid (1992) <em>An Sgaile Dhorcha</em> 19</ref>
+      </li>
+    </xlx>
   </box>
 
   <box id="dà">
@@ -2911,7 +2939,7 @@
         <ref text="400-20">Seòras Hay (1957) ‘Tìr nan Craobh 's nan Loch’ <em>Gairm</em> 20: 305</ref>
       </li>
     </xlx>
-    
+
   </box>
 
   <box id="trì">
@@ -3201,7 +3229,7 @@
       <li>
         <gd>Aig deireadh <mark>na ciad seachdain</mark>, air latha brèagha geamhraidh, choisich Muriel a-steach dhan ionad inntinneil.</gd>
         <en2>At the end of the first week, on a beautiful winter’s day, Muriel walked into the mental centre.</en2>
-        <ref text="330">Norma MicLeòid (2006) <em>Dìleas Donn</em> 93</ref>
+        <ref text="330">Norma NicLeòid (2006) <em>Dìleas Donn</em> 93</ref>
       </li>
     </xlx>
     <p>However, <strong>... a’ chiad ...</strong> is often found here –</p>
@@ -3226,8 +3254,10 @@
         <ref text="19">Pol Mac a’ Bhreatunnaich (1987) <em>Air Druim an Eich Sgiathaich</em> 15</ref>
       </li>
       <li>
-        <gd>Thòisich iasgairean nan Eileanan ri dol air chuairt gu Tìr-Mòr a ruith an sgadain an toiseach le bhith ghan gabhail air mar chriutha ann an Steòrnabhagh leis <mark>na ciad bhataichean</mark> Bucach a thainig air tòir an sgadain anns na h-1820an.</gd>
-        <en2>The fishermen of the Islands started to travel to the Mainland to chase the herring ... taking them on in Stornoway with the first boats from Buckie that came to catch the herring in the 1820s.</en2>
+        <gd>Thòisich iasgairean nan Eileanan ri dol air chuairt gu Tìr-Mòr a ruith an sgadain an toiseach le bhith ghan gabhail air mar chriutha ann an Steòrnabhagh leis <mark>na ciad
+            bhataichean</mark> Bucach a thainig air tòir an sgadain anns na h-1820an.</gd>
+        <en2>Island fishermen started going to the mainland in search of the herring first by being taken on as crew in Stornoway by the first Buckie boats who came looking for herring in the
+          1820s.</en2>
         <ref text="250">Tormod Calum Dòmhnallach (1987) <em>Clann-nighean an Sgadain</em> 50</ref>
       </li>
       <li>
@@ -3239,8 +3269,8 @@
     <p>Again, however, <strong>a’ chiad ...</strong> is occasionally found here –</p>
     <xlx>
       <li slip="3662">
-        <gd>Ged nach bu sgoilear mo sheanair ’s ann bhuaithe dh’ionnsaich mi <mark>a’ chiad fhaclan Laidinn</mark> a chunna mi riamh [...]</gd> 
-        <en2>Although my grandfather was not a scholar it was from him that I learned the first words of Latin I ever saw [...]</en2> 
+        <gd>Ged nach bu sgoilear mo sheanair ’s ann bhuaithe dh’ionnsaich mi <mark>a’ chiad fhaclan Laidinn</mark> a chunna mi riamh [...]</gd>
+        <en2>Although my grandfather was not a scholar it was from him that I learned the first words of Latin I ever saw [...]</en2>
         <ref text="333">Seonaidh Ailig Mac a’ Phearsain (2011) <em>Steall à Iomadh Lòn</em> 4</ref>
       </li>
       <li>
@@ -3253,14 +3283,15 @@
 
   <box id="ath">
     <title>definite article + <mark>ath</mark></title>
-    <p><strong><a href="?gd=ath">ath</a></strong>
-      <en>next</en> is an ordinal modifier.</p>
+    <p>The ordinal adjective <strong><a href="?gd=ath">ath</a></strong>
+      <en>next</en> starts with the vowel <strong>a-</strong> and occurs with the definite article as follows –</p>
     <table class="table w-auto">
       <thead>
         <tr>
           <td/>
           <th>masculine</th>
           <th>feminine</th>
+          <th>plural</th>
         </tr>
       </thead>
       <tbody>
@@ -3268,23 +3299,103 @@
           <th>nominative</th>
           <td><mark>an</mark> ath fhear</td>
           <td><mark>an</mark> ath tè</td>
+          <td><mark>na h-</mark>ath trì fir</td>
         </tr>
         <tr>
           <th>dative</th>
           <td>(leis) <mark>an</mark> ath fhear</td>
           <td>(leis) <mark>an</mark> ath tè</td>
+          <td>(leis) <mark>na h-</mark>ath trì fir</td>
         </tr>
         <tr>
           <th>genitive</th>
           <td>(ainm) <mark>an</mark> ath fhir</td>
           <td>(ainm) <mark>na h-</mark>ath tè</td>
+          <td>(ainmean) <mark>nan</mark>ath trì fear</td>
         </tr>
       </tbody>
     </table>
-    <p>Archaic: an t-ath fhear</p>
-    <p>Progressive: (ainm) an ath tè ???</p>
-    <p>Plural examples?</p>
-
+    <h5>Nominative masculine singular</h5>
+    <p>The most common nominative masculine form nowadays is <strong>an ath ...</strong></p>
+    <xlx>
+      <li>
+        <gd>Chan fhaigheadh a’ chlann-nighean air an càr a leigeil seachad, oir bha an rathad ro chaol agus bha <mark>an ath àite</mark> airson sin a dhèanamh ceum math air falbh.</gd>
+        <en2>The girls had not let the car past, because the road was too narrow and the next place for doing that was a good way away.</en2>
+        <ref text="2">Dòmhnall Alasdair Dòmhnallach (2001) <em>Sgeulachdan Dhòmhnaill Alasdair</em> 75</ref>
+      </li>
+      <li>
+        <gd>“Uill, dè <mark>an ath cheum</mark>? Dè tha thu smaoineachadh?” </gd>
+        <en2>“Well, what is the next step? What do you think?”</en2>
+        <ref text="328">Tormod MacGill-Eain (2005) <em>Dacha mo Ghaoil</em> 40</ref>
+      </li>
+    </xlx>
+    <p>The traditional nominative masculine form <strong>an t-ath ...</strong> is nowadays archaic –</p>
+    <xlx>
+      <li>
+        <gd>Cha b’ fhada gus an do lean Dùn-àluinn i; agus mu ’n deach <mark>an t-ath earrach</mark> gu math ’na thigh, thàinig an dithis dachaidh, guala air ghuala, ’s iad pòsda [...]</gd>
+        <en2>Dunallen soon followed her; and before the next spring had long passed, the pair of them had come home, shoulder to shoulder, married [...]</en2>
+        <ref text="64">Iain MacCormaic (1912) <em>Dùn-Àluinn</em> 81</ref>
+      </li>
+    </xlx>
+    <p>However, when used as a prefix meaning <en>re-</en>, rather than as an adjective, <strong>an t-ath</strong> is still common (but not ubiquitous) in the nominative masculine –</p>
+    <xlx>
+      <li>
+        <gd>Anns an t-siathamh linn deug thàinig <mark>an t-Ath-leasachadh</mark> [...]</gd>
+        <en2>In the sixteenth century the Reformation came [...]</en2>
+        <ref text="400-58">Tòmas M. MacCalmain (1967) ‘Ath-aonadh nan Eaglais’ <em>Gairm</em> 58: 140</ref>
+      </li>
+      <li>
+        <gd>Ghabh <mark>an Ath-leasachadh</mark> àite ann an 1560.</gd>
+        <en2>The Reformation took place in 1560.</en2>
+        <ref text="327">Fionnlagh MacLeòid (2000) <em>Tobraichean sláinte anns na h-Eileanan an Iar</em> 67</ref>
+      </li>
+    </xlx>
+    <h5>Genitive feminine singular</h5>
+    <p>The genitive feminine is generally the expected <strong>na h-ath ...</strong></p>
+    <xlx>
+      <li>
+        <gd>Ach trì latha roimhe sin fhuair mi fios gu robh dàil air na coinneamhan chun an robh mi dol <mark>chun na h-ath sheachdain</mark>.</gd>
+        <en2>But three days before that I found out that the meetings I was going to were postponed until the next week.</en2>
+        <ref text="333">Seonaidh Ailig Mac a’ Phearsain (2011) <em>Steall à Iomadh Lòn</em> 309</ref>
+      </li>
+      <li>
+        <gd>Nuair a ràinig e <mark>mullach na h-ath uchdaich</mark> chunnaic e bhuaithe solais a’ chàmpa [...]</gd>
+        <en2>When he reached the top of the next slope he saw the lights from the camp [...]</en2>
+        <ref text="321">Iain MacLeòid (1992) <em>An Sgaile Dhorcha</em> 69</ref>
+      </li>
+    </xlx>
+    <p>But instances of <strong>an ath ...</strong> are occasionally found here –</p>
+    <xlx>
+      <li>
+        <gd><mark>Fad an ath sheachdain</mark> bha e ro thrang ag ionnsachadh mun obair ùir aige airson cus dragh a bhith air mu dheidhinn Diack.</gd>
+        <en2>All the next week he was too busy learning about his new job to worry too much about Diack.</en2>
+        <ref text="16">Iain MacLeòid (1989) <em>Spuirean na h-Iolaire</em> 8</ref>
+      </li>
+    </xlx>
+    <h5>Plural</h5>
+    <p>Plural forms are usually, as expected, <strong>na h-ath ...</strong> (or <strong>nan ath ...</strong> in the genitive) –</p>
+    <xlx>
+      <li>
+        <gd>Leis an tòir gun tàmh ’na dhéidh, chuir am Prionnsa seachad <mark>na h-ath trì mìosan</mark> a’ gluasad o àite-falaich gu àite-falaich an Innse-Gall [...]</gd>
+        <en2>Incessantly pursued, the Prince spent the next three months moving from hiding place to hiding place in the Hebrides [...]</en2>
+        <ref text="400-25">Anna Fhriseal (1958) ‘Am Prionnsa ann am Mùideart’ <em>Gairm</em> 25: 64</ref>
+      </li>
+      <li>
+        <gd>’Se taighean cloiche den t-seòrsa ris a robh iad cleachdte san t-seann dùthaich a thog na ciad eilthirich [...] ach thòisich <mark>na h-ath ghinealachan</mark> air na taighean fiodha as
+          minige chithear sa’ chòrr de Chanada is Amaireaga.</gd>
+        <en2>The first immigrants built stone houses of the kind they were used to in the old country [...] but the following generations adopted the wooden houses frequently seen in the rest of Canada
+          and America.</en2>
+        <ref text="400-74">Dòmhnall Iain MacLeòid (1971) ‘Albainn Nuadh’ <em>Gairm</em> 74: 169</ref>
+      </li>
+    </xlx>
+    <p>However, plurals in <strong>an ath ...</strong> are occasionally encountered –</p>
+    <xlx>
+      <li>
+        <gd>B’e <mark>an ath fhianuisean</mark> aig a’ Chrùn an dà sgrìobhadair-naidheachd a chaidh do’n champ còmhla ri MacRath.</gd>
+        <en2>The next witnesses for the Crown were the two news reporters who had gone to the camp with MacRae.</en2>
+        <ref text="37">Tormod Domhnallach (1973) <em>Creach Mhor nam Fiadh</em> 71</ref>
+      </li>
+    </xlx>
   </box>
 
 </module>
