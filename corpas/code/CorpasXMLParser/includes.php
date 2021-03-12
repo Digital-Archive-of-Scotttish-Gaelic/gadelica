@@ -4,7 +4,7 @@
 
 //test dirs
 define('INPUT_FILEPATH', "./inputFiles/");
-define('OUTPUT_FILEPATH', "../CorpasXMLLemmatiser/inputFiles/");
+define('OUTPUT_FILEPATH', "./outputFiles/");
 
 //define('INPUT_FILEPATH', "../../editableTXT/");
 //define('OUTPUT_FILEPATH', "../../outXML/");
