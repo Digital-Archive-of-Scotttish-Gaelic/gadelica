@@ -154,7 +154,7 @@ HTML;
 					</div>
 					<div class="form-group">
 						<label for="textNotes">Text Notes</label>
-						<textarea id="textNotes" name="textNotes">{$this->_model->getNotes()}</textarea>
+						<textarea id="textNotes" name="textNotes" rows="10" cols="100">{$this->_model->getNotes()}</textarea>
 					</div>
 HTML;
 		return $html;
