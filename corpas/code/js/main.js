@@ -171,6 +171,7 @@ $(function () {
   /*
       Load the dictionary results
    */
+  /*
   $('.loadDictResults').on('click', function () {
     var formNum = $(this).attr('data-formNum');
     $('#form-' + formNum + ' tbody').empty();   //clear any previous results
@@ -221,6 +222,7 @@ $(function () {
         $('#hide-' + formNum).show();
       });
   });
+   */
 
   $('.hideDictResults').on('click', function () {
     var formNum = $(this).attr('data-formNum');
