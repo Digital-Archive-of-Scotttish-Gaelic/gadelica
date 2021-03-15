@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="../../texts.rnc" schematypens="https://relaxng.org/ns/structure/1.0?>
 <text xmlns="https://dasg.ac.uk/corpus/" ref="https://dasg.ac.uk/corpus/_802-2-10" status="raw">
   <p>
-    <w id="d1e6" pos="n" lemma="Mòr">Mòr</w>
-    <w id="d1e9" pos="n" lemma="Chaimbeul">Chaimbeul</w>
-    <pc join="left">:</pc>
     <w id="d1e15" pos="n" lemma="Nighean">Nighean</w>
     <pc join="left">,</pc>
     <w id="d1e22" pos="n" lemma="tha">tha</w>
@@ -124,7 +121,8 @@
     <w id="d1e386" pos="n" lemma="dhan">dhan</w>
     <w id="d1e389" pos="n" lemma="bheinn">bheinn</w>
     <pc join="left">.</pc>
-    <lb/>
+  </p>
+  <p>
     <pc join="right">“</pc>
     <w id="d1e401" pos="n" lemma="Càit">Càit</w>
     <w id="d1e404" pos="n" lemma="a">a</w>
@@ -271,11 +269,9 @@
     <w id="d1e843" pos="n" lemma="Chan">Chan</w>
     <w id="d1e846" pos="n" lemma="fhaca">fhaca</w>
     <w id="d1e849" pos="n" lemma="i">i</w>
-    <pc join="left">.</pc>
-    <pc join="both">.</pc>
-    <pc join="left">.</pc> [ <pc join="both">?</pc>
-    <pc join="left">?</pc>
-    <pc join="both">?</pc> ] <w id="d1e871" pos="n" lemma="cù">cù</w>
+    <pc join="no">...</pc>
+    <o>[???]</o>
+    <w id="d1e871" pos="n" lemma="cù">cù</w>
     <w id="d1e874" pos="n" lemma="no">no</w>
     <w id="d1e878" pos="n" lemma="duine">duine</w>
     <w id="d1e881" pos="n" lemma="nuair">nuair</w>
@@ -334,7 +330,8 @@
     <w id="d1e1049" pos="n" lemma="siud">siud</w>
     <pc join="both">.</pc>
     <pc join="left">”</pc>
-    <lb/>
+  </p>
+  <p>
     <pc join="right">“</pc>
     <w id="d1e1063" pos="n" lemma="O">O</w>
     <w id="d1e1067" pos="n" lemma="seagh">seagh</w>
@@ -415,7 +412,8 @@
     <w id="d1e1304" pos="n" lemma="fhèin">fhèin</w>
     <pc join="both">.</pc>
     <pc join="left">”</pc>
-    <lb/>
+  </p>
+  <p>
     <pc join="right">’</pc>
     <w id="d1e1319" pos="n" lemma="S">S</w>
     <w id="d1e1322" pos="n" lemma="dh">dh</w>
@@ -437,6 +435,5 @@
     <w id="d1e1373" pos="n" lemma="na">na</w>
     <w id="d1e1376" pos="n" lemma="sùl">sùl</w>
     <pc join="left">.</pc>
-    <lb/>
   </p>
 </text>

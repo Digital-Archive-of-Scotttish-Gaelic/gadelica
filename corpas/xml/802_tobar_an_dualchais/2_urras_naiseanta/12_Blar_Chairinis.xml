@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="../../texts.rnc" schematypens="https://relaxng.org/ns/structure/1.0?>
 <text xmlns="https://dasg.ac.uk/corpus/" ref="https://dasg.ac.uk/corpus/_802-2-12" status="raw">
   <p>
-    <w id="d1e6" pos="n" lemma="Fear">Fear</w>
-    <w id="d1e9" pos="n" lemma="neo">neo</w>
-    <pc join="both">-</pc>
-    <w id="d1e15" pos="n" lemma="ainmichte">ainmichte</w>
-    <pc join="left">:</pc>
-    <pc join="left">.</pc>
-    <pc join="both">.</pc>
-    <pc join="right">.</pc>
+    <pc join="no">...</pc>
     <w id="d1e31" pos="n" lemma="air">air</w>
     <w id="d1e34" pos="n" lemma="a">a</w>
     <w id="d1e37" pos="n" lemma="chèile">chèile</w>
@@ -20,22 +13,20 @@
     <w id="d1e56" pos="n" lemma="Tuath">Tuath</w>
     <pc join="left">.</pc>
     <w id="d1e63" pos="n" lemma="Agus">Agus</w>
-    <pc join="right">’</pc>
-    <w id="d1e69" pos="n" lemma="s">s</w>
+    <w id="d1e69" pos="n" lemma="s">’s</w>
     <w id="d1e72" pos="n" lemma="ann">ann</w>
     <w id="d1e75" pos="n" lemma="mar">mar</w>
     <w id="d1e79" pos="n" lemma="a">a</w>
     <w id="d1e82" pos="n" lemma="thòisich">thòisich</w>
     <w id="d1e85" pos="n" lemma="an">an</w>
-    <w id="d1e88" pos="n" lemma="t">t</w>
-    <pc join="both">-</pc> sabaid[ <pc join="both">?</pc> ] <w id="d1e98" pos="n" lemma="a">a</w>
+    <w id="d1e88" pos="n" lemma="t">t-sabaid</w>
+    <w id="d1e98" pos="n" lemma="a">a</w>
     <w id="d1e101" pos="n" lemma="bha">bha</w>
     <w id="d1e104" pos="n" lemma="seo">seo</w>
     <w id="d1e107" pos="n" lemma="an">an</w>
     <w id="d1e110" pos="n" lemma="toiseach">toiseach</w>
     <pc join="left">,</pc>
-    <pc join="right">’</pc>
-    <w id="d1e120" pos="n" lemma="s">s</w>
+    <w id="d1e120" pos="n" lemma="s">’s</w>
     <w id="d1e123" pos="n" lemma="ann">ann</w>
     <w id="d1e126" pos="n" lemma="ann">ann</w>
     <w id="d1e129" pos="n" lemma="an">an</w>
@@ -786,7 +777,7 @@
     <pc join="both">-</pc>
     <w id="d1e2480" pos="n" lemma="fairidh">fairidh</w>
     <pc join="left">,</pc>
-    <eng/>watchman<gai/>
+    <o>watchman</o>
     <w id="d1e2491" pos="n" lemma="mar">mar</w>
     <w id="d1e2494" pos="n" lemma="a">a</w>
     <w id="d1e2497" pos="n" lemma="chanas">chanas</w>
@@ -1147,7 +1138,8 @@
     <w id="d1e3612" pos="n" lemma="e">e</w>
     <w id="d1e3615" pos="n" lemma="dèanamh">dèanamh</w>
     <pc join="left">.</pc>
-    <lb/>
+  </p>
+  <p>
     <pc join="right">“</pc>
     <w id="d1e3626" pos="n" lemma="Ach">Ach</w>
     <w id="d1e3630" pos="n" lemma="mura">mura</w>
@@ -1250,9 +1242,9 @@
     <w id="d1e3933" pos="n" lemma="do">do</w>
     <w id="d1e3937" pos="n" lemma="ràinig">ràinig</w>
     <w id="d1e3940" pos="n" lemma="e">e</w>
-    <w id="d1e3943" pos="n" lemma="an">an</w> [ <pc join="both">?</pc>
-    <pc join="left">?</pc>
-    <pc join="both">?</pc> ] <pc join="left">,</pc>
+    <w id="d1e3943" pos="n" lemma="an">an</w>
+    <o>[???]</o>
+    <pc join="left">,</pc>
     <w id="d1e3959" pos="n" lemma="agus">agus</w>
     <w id="d1e3962" pos="n" lemma="Mac">Mac</w>
     <w id="d1e3965" pos="n" lemma="Iain">Iain</w>
@@ -1599,7 +1591,8 @@
     <w id="d1e5034" pos="n" lemma="treis">treis</w>
     <w id="d1e5037" pos="n" lemma="mhòr">mhòr</w>
     <pc join="left">.</pc>
-    <lb/>
+  </p>
+  <p>
     <pc join="right">’</pc>
     <w id="d1e5048" pos="n" lemma="S">S</w>
     <w id="d1e5052" pos="n" lemma="i">i</w>
@@ -1674,6 +1667,5 @@
     <w id="d1e5268" pos="n" lemma="Bhlàr">Bhlàr</w>
     <w id="d1e5271" pos="n" lemma="Chàirinis">Chàirinis</w>
     <pc join="left">.</pc>
-    <lb/>
   </p>
 </text>
