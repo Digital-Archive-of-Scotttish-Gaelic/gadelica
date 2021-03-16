@@ -33,49 +33,38 @@ HTML;
 			<p><a href="?m=corpus&a=slow_search">new slow search</a></p>
 			<p>Searching for: {$xpath}</p>
 HTML;
-			$path = '/var/www/html/dasg.arts.gla.ac.uk/www/gadelica/corpas/xml';
-			if (getcwd()=='/Users/stephenbarrett/Sites/gadelica/corpas/code') {
-				$path = '../xml';
-			}
-			else if (getcwd()=='/Users/mark/Sites/gadelica/corpas/code') {
-				$path = '../xml';
-			}
 
+			$count = 0;
+			$results = $this->_model->search($xpath);
 			$html = <<<HTML
 				<table id="table" class="table">					
 					<tbody>
 HTML;
 
-			$count = 0;
-			$it = new \RecursiveDirectoryIterator($path);
-			foreach (new \RecursiveIteratorIterator($it) as $nextFile) {
-				if ($nextFile->getExtension()=='xml') {
-					$filename = "";
-					if (getcwd()=='/Users/stephenbarrett/Sites/gadelica/corpas/code') {
-						$filename = substr($nextFile,7);
-					} else if (getcwd()=='/Users/mark/Sites/gadelica/corpas/code') {
-						$filename = substr($nextFile,7);
-					} else {
-						$filename = substr($nextFile,58);
-					}
-					$xml = simplexml_load_file($nextFile);
-					$xml->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/');
-					foreach ($xml->xpath($xpath) as $nextWordId) {
+
+					foreach ($results as $result) {
+						$data = $result["data"];
+						$context = $result["context"];
 						$count++;
             $html .= <<<HTML
 							<tr>						
 								<th scope="row">{$count}</th>
-								<td>{$filename} {$nextWordId}</td>
+								<td>{$data["key"]}</td>
+								<td>{$data["date_of_lang"]}</td>
+								<td style="text-align: right;">{$context["pre"]["output"]}</td>
+								<td>{$context["word"]}</td>
+								<td>{$context["post"]["output"]}</td>
 							</tr>
 HTML;
           }
-        }
-      }
+
+
 			$html .= <<<HTML
 					</tbody>
 				</table>
 				<div class="pagination"></div>
-
+				
+				<script type="text/javascript" src="js/jquery.simplePagination.js"></script>
 				<script>
 					$(function () {
 					  	var items = $("table tr");

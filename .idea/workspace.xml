@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/models/corpus_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/corpus_search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/views/corpus_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/corpus_search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/models/slow_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/slow_search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/views/slow_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/slow_search.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,13 +103,6 @@
       <workItem from="1613130765631" duration="4835000" />
       <workItem from="1613635197677" duration="15236000" />
       <workItem from="1614588458833" duration="844000" />
-    </task>
-    <task id="LOCAL-00007" summary="Reworked xml2csv.php to avoid requiring external files">
-      <created>1605527681755</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1605527681755</updated>
     </task>
     <task id="LOCAL-00008" summary="Fix for old URL structure in &quot;request unlock&quot; functionlaity">
       <created>1605534824285</created>
@@ -447,14 +440,20 @@
       <option name="project" value="LOCAL" />
       <updated>1615886550350</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Refactored wordform search into the main search function and added REGEXP support for all searches&#10;Tidied up loading of dictionary view results&#10;Bug fix in switching between corpus and dictionary views">
+      <created>1615890560163</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1615890560163</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Date range block now no longer written in search from for subtexts" />
     <MESSAGE value="First pass at searching by district (location)&#10;Bug fix for jQuery error in browse corpus" />
     <MESSAGE value="Some placeholder code on search form for restricting by district.&#10;Fixed jQuery bug in corpus browse" />
     <MESSAGE value="Fixed bug whereby citation scope would reset to database value instead of default." />
@@ -479,6 +478,7 @@
     <MESSAGE value="Some basic introductory pagination code for slow_search" />
     <MESSAGE value="New approach to chunked dictionary search results using pagination.min.js.&#10;Basic structure working returning dates." />
     <MESSAGE value="Added loading image for dictionary view results&#10;Sorted out showing/hiding behaviour for dictionary view results&#10;Tidied up some bits and pieces in dictionary view results" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added loading image for dictionary view results&#10;Sorted out showing/hiding behaviour for dictionary view results&#10;Tidied up some bits and pieces in dictionary view results" />
+    <MESSAGE value="Refactored wordform search into the main search function and added REGEXP support for all searches&#10;Tidied up loading of dictionary view results&#10;Bug fix in switching between corpus and dictionary views" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored wordform search into the main search function and added REGEXP support for all searches&#10;Tidied up loading of dictionary view results&#10;Bug fix in switching between corpus and dictionary views" />
   </component>
 </project>

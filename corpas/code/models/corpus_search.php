@@ -397,4 +397,24 @@ SQL;
 		}
 		return $distinctPOS;
 	}
+
+	/**
+	 * Queries the database based on filename and ID to get data pertaining to a particular lemma
+	 * @param $filename
+	 * @param $id
+	 * @return array of fields in the database
+	 */
+	public static function getDataById($filename, $id) {
+		$db = new database();
+		$sql = <<<SQL
+			SELECT wordform, pos, lemma, date_of_lang, l.title, page, medium, s.auto_id as auto_id, 
+			       s.wordClass as wordClass, t.id AS tid, t.level as level, district_id
+            FROM lemmas AS l
+            LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id AND group_id = {$_SESSION["groupId"]}
+            JOIN text t ON t.filepath = l.filename
+            WHERE l.filename = :filename AND l.id = :id
+SQL;
+		$result = $db->fetch($sql, array(":filename" => $filename, ":id" => $id));
+		return $result[0];
+	}
 }
