@@ -335,8 +335,10 @@ HTML;
 		}
 		$html .= "]</p>";
 		$html .= <<<HTML
-			<a href="#" id="basicSwitch" class="resultsSwitch float-right" data-value="basic">basic view</a>
-			<a href="#" id="extendedSwitch" class="resultsSwitch float-right" data-value="advanced">extended view</a>
+			<small>
+				<a href="#" id="basicSwitch" class="resultsSwitch float-right" data-value="basic">basic view</a>
+				<a href="#" id="extendedSwitch" class="resultsSwitch float-right" data-value="advanced">extended view</a>
+			</small>
 HTML;
 		echo $html;
 	}
@@ -459,13 +461,16 @@ HTML;
 			}
 			$locs = implode('|', $locations);
 			echo <<<HTML
-            <button href="#" id="show-{$formNum}" data-formNum="{$formNum}" data-locs="{$locs}"
-                data-pos="{$array[1]}" data-lemma="{$array[0]}"
+            <a href="#" id="show-{$formNum}" data-formNum="{$formNum}" data-locs="{$locs}"
+                data-pos="{$array[1]}" data-lemma="{$array[0]}" data-action="show"
                  class="loadDictResults">
-                show {$i} result(s)
-            </button>
-            <button href="#" id="hide-{$formNum}" data-formNum="{$formNum}" class="hideDictResults">hide results</button>
-            <table id="form-{$formNum}"></table><div id="pag-{$formNum}"></div>
+                <span class="actionToggle">show</span> {$i} result(s)
+            </a>
+            <div id="results-{$formNum}">
+              <img id="loadingImage-{$formNum}" src="https://dasg.ac.uk/images/loading.gif" width="400" style="display: none;">
+              <table id="form-{$formNum}"></table>
+              <div id="pag-{$formNum}"></div>
+            </div>
         </td></tr>
 HTML;
 		}
@@ -645,7 +650,6 @@ HTML;
 </style>
 			<script src="js/pagination.min.js"></script>
 			<script>
-			
 				function template(data, params) {
 				  var headword = params.headword;
 				  var pos = params.pos;
@@ -687,18 +691,28 @@ HTML;
 		        html += '</tr>';
           });
 				  html += '</tbody>';
-				  return html;;
+				  return html;
 				}
 				
 				$(function () {
 				  $('.loadDictResults').on('click', function () {
 				    var formNum = $(this).attr('data-formnum');
+				    var action = $(this).attr('data-action');
+				    if (action == 'hide') {
+				      $('#results-'+formNum).hide();
+				      $(this).attr('data-action', 'show');
+				      $(this).find('.actionToggle').text('show'); //switch the toggle text to "show"
+				      return;
+				    }
+				    $('#results-'+formNum).show();
+				    $(this).find('.actionToggle').text('hide'); //switch the toggle text to "hide"
+				    $('#loadingImage-'+formNum).show();
 				    var locations = $(this).attr('data-locs');
 				    var headword = $(this).attr('data-lemma');
             var pos = $(this).attr('data-pos');
 				    var table = $('#form-'+formNum);	
 				    var params = {headword: headword, pos: pos}
-
+						$(this).attr('data-action', 'hide');  //link to hide the results
 				    $('#pag-'+formNum).pagination({
 					    dataSource: 'ajax.php',
 					    locator: 'results',
@@ -715,7 +729,8 @@ HTML;
 					        }*/
 					    },
 					    callback: function(data, pagination) {
-					        var html = template(data, params);					        
+					        var html = template(data, params);	
+					        $('#loadingImage-'+formNum).hide();
 					        table.html(html);
 					    }
 						})
