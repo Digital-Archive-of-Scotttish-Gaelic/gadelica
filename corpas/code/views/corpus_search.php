@@ -345,12 +345,12 @@ HTML;
 
 	private function _writeViewSwitch() {
 		$alternateView = ($this->_model->getView() == "corpus") ? "dictionary" : "corpus";
-		$url = "index.php?m=corpus&a=search&mode={$this->_model->getMode()}";
-		$url .= "&term={$this->_model->getTerm()}&id={$this->_model->getId()}";
-		$url .= "&view={$alternateView}&hits={$this->_model->getHits()}";
+		$queryString = $alternateView == "corpus"
+			? str_replace("view=dictionary", "view=corpus", $_SERVER["QUERY_STRING"])
+			: str_replace("view=corpus", "view=dictionary", $_SERVER["QUERY_STRING"]);
 		echo <<<HTML
         <div id="viewSwitch">
-            <a href="{$url}">
+            <a href="index.php?{$queryString}">
                 switch to {$alternateView} view
             </a>
         </div>
@@ -492,29 +492,6 @@ HTML;
 	 * Writes the Javascript required for the pagination
 	 */
 	private function _writeResultsJavascript() {
-		//assemble the query string array elements back into URL format for pagination
-		$arrayParams = "";
-		if ($_GET["medium"]) {
-			foreach ($_GET["medium"] as $medium) {
-				$arrayParams .= "&medium[]=" . $medium;
-			}
-		}
-		if ($_GET["district"]) {
-			foreach ($_GET["district"] as $district) {
-				$arrayParams .= "&district[]=" . $district;
-			}
-		}
-		if ($_GET["level"]) {
-			foreach ($_GET["level"] as $level) {
-				$arrayParams .= "&level[]=" . $level;
-			}
-		}
-		if ($_GET["pos"]) {
-			foreach ($_GET["pos"] as $pos) {
-				$arrayParams .= "&pos[]=" . $pos;
-			}
-		}
-
 		//write the Javascript
 		echo <<<HTML
 				<script type="text/javascript" src="js/jquery.simplePagination.js"></script>

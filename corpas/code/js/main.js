@@ -168,62 +168,6 @@ $(function () {
     }
   });
 
-  /*
-      Load the dictionary results
-   */
-  /*
-  $('.loadDictResults').on('click', function () {
-    var formNum = $(this).attr('data-formNum');
-    $('#form-' + formNum + ' tbody').empty();   //clear any previous results
-    var locations  = $(this).attr('data-locs');
-    var headword = $(this).attr('data-lemma');
-    var pos = $(this).attr('data-pos');
-    $.post("ajax.php", {action: "getDictionaryResults", locs: locations}, function (data)  {
-      $.each(data, function (key, val) {
-        var title = 'Headword: ' + headword + '<br>';
-        title += 'POS: ' + pos + '<br>';
-        title += 'Date: ' + val.date + '<br>';
-        title += 'Title: ' + val.title + '<br>';
-        title += 'Page No:: ' + val.page + '<br><br>';
-        title += val.filename + '<br>' + val.id;
-        var slipClass = 'editSlipLink';
-        var slipLinkText = 'add';
-        var createSlipStyle = 'createSlipLink';
-        var slipUrl = '?m=collection&a=add&filename='+val.filename+'&wid='+val.id+'&headword='+headword+'&pos'+pos;
-        if (val.auto_id) {    //if a slip exists for this entry
-          slipLinkText = 'view';
-          slipClass = 'slipLink2';
-          createSlipStyle = '';
-          slipUrl = '#';
-        }
-        html = '<tr>';
-        html += '<td style="text-align: right;">'+val.pre.output + '</td>';
-        html += '<td><a href="?m=corpus&a=browse&id=' + val.tid + '&wid=' + val.id + '"';
-        html += ' data-toggle="tooltip" data-html="true" title="' + title + '">';
-        html += val.word + '</a>';
-        html += '<td>' + val.post.output + '</td>';
-        html += '<td><small><a href="'+slipUrl+'" target="_blank" class="' + slipClass + ' ' + createSlipStyle + '" data-uri="' + val.uri + '"';
-        if (slipClass == 'slipLink2') {   //only use the modal for existing slips
-          html += ' data-toggle="modal" data-target="#slipModal" ';
-        }
-        html += ' data-headword="' + headword + '" data-pos="' + pos + '"';
-        html += ' data-id="' + val.id + '" data-xml="' + val.filename + '"';
-        html += ' data-date="' + val.date + '" data-title="' + val.title + '" data-page="' + val.page + '"';
-        html += ' data-auto_id="' + val.auto_id + '"';
-        html += '>' + slipLinkText + '</a></small>';
-        html += '</td>';
-        html += '</tr>';
-        $('#form-' + formNum + ' tbody').append(html);
-      });
-    }, "json")
-      .done(function () {
-        $('#form-' + formNum).show();
-        $('#show-' + formNum).hide();
-        $('#hide-' + formNum).show();
-      });
-  });
-   */
-
   $('.hideDictResults').on('click', function () {
     var formNum = $(this).attr('data-formNum');
     $('#show-' + formNum).show();
