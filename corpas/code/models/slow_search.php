@@ -50,7 +50,7 @@ class slow_search
 					$results[$i]["index"] = $index;
 
 					//limit results to chunk size
-					if ($i === $chunkSize) {return $results;}
+					if ($i == $chunkSize) {return $results;}
 					$i++;
 				}
 			}

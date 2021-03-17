@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/ajax.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/models/slow_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/slow_search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/views/slow_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/slow_search.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,14 +102,7 @@
       <workItem from="1613635197677" duration="15236000" />
       <workItem from="1614588458833" duration="844000" />
       <workItem from="1615970019581" duration="47000" />
-      <workItem from="1615970093454" duration="18618000" />
-    </task>
-    <task id="LOCAL-00012" summary="Further refactoring of corpus_search classes">
-      <created>1605617764362</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1605617764362</updated>
+      <workItem from="1615970093454" duration="19214000" />
     </task>
     <task id="LOCAL-00013" summary="Bug fix for javascript issues with adding: add link not updating to view and inability to add sense categories to new slips. (All browser specific.)">
       <created>1605625046956</created>
@@ -449,14 +440,20 @@
       <option name="project" value="LOCAL" />
       <updated>1615989262349</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Added option on search form to choose between searching for all results and chunking results. Added option to choose chunk size.&#10;Fixed issues with full results not paginating.">
+      <created>1615993562251</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1615993562251</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added code to xml2csv.php to handle districts (recursively if needed)&#10;Bug fix in slip citation: reset context working&#10;Slip lock functionality: &#10;1. slips can only be locked/unlocked by superusers&#10;2. slips are unlocked by default (database change)&#10;3. lock icon displays in slips modal if slip is locked&#10;4. locked slips can only be edited by superusers&#10;5. unlock request emails should go to superusers (not &quot;owners&quot;)&#10;TODO: disable email functionality for superusers and remove ownership code so that any user can edit any unlocked slip" />
     <MESSAGE value="Some changes to the lock slip functionality for superusers." />
     <MESSAGE value="fixed bug where citation context was editable within entries&#10;added English tranlsation beneath each entry citation" />
     <MESSAGE value="Added a prototype PDF viewer for directories - much work needed" />
@@ -481,6 +478,7 @@
     <MESSAGE value="Added AJAX support to slow search. &#10;Many fixes for slow search." />
     <MESSAGE value="Additional AJAX work on slow search to handle slip links" />
     <MESSAGE value="Added index IDs to slip links in slow search to facilitate correct updating of slip links in results after slip creation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added index IDs to slip links in slow search to facilitate correct updating of slip links in results after slip creation" />
+    <MESSAGE value="Added option on search form to choose between searching for all results and chunking results. Added option to choose chunk size.&#10;Fixed issues with full results not paginating." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added option on search form to choose between searching for all results and chunking results. Added option to choose chunk size.&#10;Fixed issues with full results not paginating." />
   </component>
 </project>
