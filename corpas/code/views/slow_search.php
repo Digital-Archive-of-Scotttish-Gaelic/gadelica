@@ -15,7 +15,7 @@ class slow_search
 	}
 
 	public function show($xpath) {
-		if ($xpath=="") {
+		if ($xpath=="") {   //no results so write the form
 			echo <<<HTML
 		    <form>
 			    <input type="hidden" name="m" value="corpus"/>
@@ -30,7 +30,7 @@ class slow_search
 			    </div>
 		    </form>
 HTML;
-		} else {
+		} else {    //there are results so show them
 			models\collection::writeSlipDiv();
 			echo <<<HTML
 			<p><a href="?m=corpus&a=slow_search">new slow search</a></p>
@@ -43,39 +43,36 @@ HTML;
 					<tbody>
 HTML;
 
-
-					foreach ($results as $result) {
-						$data = $result["data"];
-						$context = $data["context"];
-						$count = $result["count"];
-						$slipLinkHtml = models\collection::getSlipLinkHtml($result);
-						$title = <<<HTML
-			        Headword: {$data["lemma"]}<br>
-			        POS: {$data["pos"]} ({$data["posLabel"]})<br>
-			        Date: {$data["date_of_lang"]}<br>
-			        Title: {$data["title"]}<br>
-			        Page No: {$data["page"]}<br><br>
-			        {$data["filename"]}<br>{$data["id"]}
+			foreach ($results as $result) {
+				$data = $result["data"];
+				$context = $data["context"];
+				$index = $result["index"];
+				$rowNum = $index+1;
+				$slipLinkHtml = models\collection::getSlipLinkHtml($result, $index);
+				$title = <<<HTML
+	        Headword: {$data["lemma"]}<br>
+	        POS: {$data["pos"]} ({$data["posLabel"]})<br>
+	        Date: {$data["date_of_lang"]}<br>
+	        Title: {$data["title"]}<br>
+	        Page No: {$data["page"]}<br><br>
+	        {$data["filename"]}<br>{$data["id"]}
 HTML;
-            $html .= <<<HTML
-							<tr data-filename="{$data["filename"]}" data-id="{$data["id"]}" data-count={$count}>						
-								<th scope="row">{$count}</th>
-								<td>{$data["date_of_lang"]}</td>
-								<td style="text-align: right;">{$context["pre"]["output"]}</td>
-								<td style="text-align: center;"><a href="?m=corpus&a=browse&id={$data["tid"]}&wid={$data["id"]}"
-                    data-toggle="tooltip" data-html="true" title="{$title}">
-                  {$context["word"]}
-                </a></td>
-								<td>{$context["post"]["output"]}</td>
-								<td><small>{$slipLinkHtml}</small></td>
-							</tr>
+        $html .= <<<HTML
+					<tr data-filename="{$data["filename"]}" data-id="{$data["id"]}" data-index={$index}>						
+						<th scope="row">{$rowNum}</th>
+						<td>{$data["date_of_lang"]}</td>
+						<td style="text-align: right;">{$context["pre"]["output"]}</td>
+						<td style="text-align: center;"><a href="?m=corpus&a=browse&id={$data["tid"]}&wid={$data["id"]}"
+                data-toggle="tooltip" data-html="true" title="{$title}">
+              {$context["word"]}
+            </a></td>
+						<td>{$context["post"]["output"]}</td>
+						<td><small>{$slipLinkHtml}</small></td>
+					</tr>
 HTML;
           }
 
-$finalResult = array_pop($results);
-
-
-			$html .= <<<HTML
+				$html .= <<<HTML
 					</tbody>
 				</table>
 				<div class="loading" style="display:none;"><img src="https://dasg.ac.uk/images/loading.gif" width="200" alt="loading"></div>
@@ -101,12 +98,13 @@ HTML;
 				    var xpath = '{$xpath}';
 				    var filename = $('table tr').last().attr('data-filename');
 				    var id = $('table tr').last().attr('data-id');
-				    var count = $('table tr').last().attr('data-count');
-				    $.getJSON('ajax.php', {action: 'getSlowSearchResults', xpath: xpath, filename: filename, id: id})
+				    var index = $('table tr').last().attr('data-index');
+				    $.getJSON('ajax.php', {action: 'getSlowSearchResults', xpath: xpath, filename: filename, id: id, index: index})
 				      .done(function (results) {
 				        $('.loading').hide();
 				        $.each(results, function (key, result) {
-				          count++;
+				          index++;
+				          var rowNum = index+1;
 				          var data = result.data;
 				          var context = data.context;
 				          var title = 'Headword: '+data.lemma+'<br>';
@@ -115,8 +113,8 @@ HTML;
 			            title += 'Title: '+data.title+'<br>';
 			            title += 'Page No: '+data.page+'<br><br>';
 			            title += data.filename+'<br>'+data.id;
-				          var html = '<tr data-filename="'+data.filename+'" data-id="'+data.id+'" data-count='+count+'>';
-				          html += '<th>'+count+'</th>';
+				          var html = '<tr data-filename="'+data.filename+'" data-id="'+data.id+'" data-index='+index+'>';
+				          html += '<th>'+rowNum+'</th>';
 				          html += '<td>'+data.date_of_lang+'</td>';
 				          html += '<td style="text-align:right;">'+context.pre.output+'</td>';
 				          html += '<td style="text-align: center;"><a href="?m=corpus&a=browse&id='+data.tid+'&wid='+data.id+'"';

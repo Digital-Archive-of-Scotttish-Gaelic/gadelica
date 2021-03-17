@@ -129,7 +129,7 @@ switch ($_REQUEST["action"]) {
 	case "getSlowSearchResults":
 		$slowSearch = new slow_search();
 		$xpath = urldecode($_GET["xpath"]);
-		$results = $slowSearch->search($xpath, $_GET["filename"], $_GET["id"]);
+		$results = $slowSearch->search($xpath, $_GET["filename"], $_GET["id"], $_GET["index"]);
 		echo json_encode($results);
 		break;
 	default:
