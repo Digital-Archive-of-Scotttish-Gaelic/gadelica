@@ -335,20 +335,22 @@ HTML;
 		}
 		$html .= "]</p>";
 		$html .= <<<HTML
-			<a href="#" id="basicSwitch" class="resultsSwitch float-right" data-value="basic">basic view</a>
-			<a href="#" id="extendedSwitch" class="resultsSwitch float-right" data-value="advanced">extended view</a>
+			<small>
+				<a href="#" id="basicSwitch" class="resultsSwitch float-right" data-value="basic">basic view</a>
+				<a href="#" id="extendedSwitch" class="resultsSwitch float-right" data-value="advanced">extended view</a>
+			</small>
 HTML;
 		echo $html;
 	}
 
 	private function _writeViewSwitch() {
 		$alternateView = ($this->_model->getView() == "corpus") ? "dictionary" : "corpus";
-		$url = "index.php?m=corpus&a=search&mode={$this->_model->getMode()}";
-		$url .= "&term={$this->_model->getTerm()}&id={$this->_model->getId()}";
-		$url .= "&view={$alternateView}&hits={$this->_model->getHits()}";
+		$queryString = $alternateView == "corpus"
+			? str_replace("view=dictionary", "view=corpus", $_SERVER["QUERY_STRING"])
+			: str_replace("view=corpus", "view=dictionary", $_SERVER["QUERY_STRING"]);
 		echo <<<HTML
         <div id="viewSwitch">
-            <a href="{$url}">
+            <a href="index.php?{$queryString}">
                 switch to {$alternateView} view
             </a>
         </div>
@@ -359,9 +361,6 @@ HTML;
 	private function _writeSearchResult($result, $index) {
 		$context = $result["context"];
 		$pos = new models\partofspeech($result["pos"]);
-
-
-		$shortTitleElems = explode(' ', $result["title"]);
 
 		$shortTitle = mb_strlen($result["title"]) < 30
 			? $result["title"]
@@ -375,23 +374,8 @@ HTML;
         Page No: {$result["page"]}<br><br>
         {$result["filename"]}<br>{$result["id"]}
 HTML;
-		//check if there is an existing slip for this entry
-		$slipUrl = "#";
-		$slipClass = "slipLink2";
-		$modalCode = "";
-		if ($result["auto_id"] != null) {
-			$slipLinkText = "view";
-			$createSlipStyle = "";
-			$modalCode = 'data-toggle="modal" data-target="#slipModal"';
-			$dataUrl = "";
-		} else {    //there is no slip so show link for adding one
-			$dataUrl = "index.php?m=collection&a=add&filename=" . $result["filename"] . "&wid=".$result["id"];
-			$dataUrl .= "&headword=".$result["lemma"] . "&pos=" . $result["pos"];
-			$slipLinkText = "add";
-			$createSlipStyle = "createSlipLink";
-			$slipClass = "editSlipLink";
-		}
 		$textNum = stristr($result["filename"], "_", true);
+		$slipLinkHtml = models\collection::getSlipLinkHtml($result, $index);
 		echo <<<HTML
 				<td class="extendedField">{$result["date_of_lang"]}</td>
 				<td class="extendedField">#{$textNum} {$shortTitle}</td>
@@ -404,22 +388,7 @@ HTML;
         </td>
         <td>{$context["post"]["output"]}</td>
         <td> <!-- the slip link -->
-            <small>
-                <a href="{$slipUrl}" data-url="{$dataUrl}" class="{$slipClass} {$createSlipStyle}"
-                    {$modalCode}
-                    data-auto_id="{$result["auto_id"]}"
-                    data-headword="{$result["lemma"]}"
-                    data-pos="{$result["pos"]}"
-                    data-id="{$result["id"]}"
-                    data-xml="{$result["filename"]}"
-                    data-uri="{$context["uri"]}"
-                    data-date="{$result["date_of_lang"]}"
-                    data-title="{$result["title"]}"
-                    data-page="{$result["page"]}"
-                    data-resultindex="{$index}">
-                    {$slipLinkText}
-                </a>
-            </small>
+            <small>{$slipLinkHtml}</small>
         </td>
 HTML;
 		return;
@@ -459,13 +428,16 @@ HTML;
 			}
 			$locs = implode('|', $locations);
 			echo <<<HTML
-            <button href="#" id="show-{$formNum}" data-formNum="{$formNum}" data-locs="{$locs}"
-                data-pos="{$array[1]}" data-lemma="{$array[0]}"
+            <a href="#" id="show-{$formNum}" data-formNum="{$formNum}" data-locs="{$locs}"
+                data-pos="{$array[1]}" data-lemma="{$array[0]}" data-action="show"
                  class="loadDictResults">
-                show {$i} result(s)
-            </button>
-            <button href="#" id="hide-{$formNum}" data-formNum="{$formNum}" class="hideDictResults">hide results</button>
-            <table id="form-{$formNum}"></table><div id="pag-{$formNum}"></div>
+                <span class="actionToggle">show</span> {$i} result(s)
+            </a>
+            <div id="results-{$formNum}">
+              <img id="loadingImage-{$formNum}" src="https://dasg.ac.uk/images/loading.gif" width="400" style="display: none;">
+              <table id="form-{$formNum}"></table>
+              <div id="pag-{$formNum}"></div>
+            </div>
         </td></tr>
 HTML;
 		}
@@ -487,29 +459,6 @@ HTML;
 	 * Writes the Javascript required for the pagination
 	 */
 	private function _writeResultsJavascript() {
-		//assemble the query string array elements back into URL format for pagination
-		$arrayParams = "";
-		if ($_GET["medium"]) {
-			foreach ($_GET["medium"] as $medium) {
-				$arrayParams .= "&medium[]=" . $medium;
-			}
-		}
-		if ($_GET["district"]) {
-			foreach ($_GET["district"] as $district) {
-				$arrayParams .= "&district[]=" . $district;
-			}
-		}
-		if ($_GET["level"]) {
-			foreach ($_GET["level"] as $level) {
-				$arrayParams .= "&level[]=" . $level;
-			}
-		}
-		if ($_GET["pos"]) {
-			foreach ($_GET["pos"] as $pos) {
-				$arrayParams .= "&pos[]=" . $pos;
-			}
-		}
-
 		//write the Javascript
 		echo <<<HTML
 				<script type="text/javascript" src="js/jquery.simplePagination.js"></script>
@@ -645,7 +594,6 @@ HTML;
 </style>
 			<script src="js/pagination.min.js"></script>
 			<script>
-			
 				function template(data, params) {
 				  var headword = params.headword;
 				  var pos = params.pos;
@@ -687,18 +635,28 @@ HTML;
 		        html += '</tr>';
           });
 				  html += '</tbody>';
-				  return html;;
+				  return html;
 				}
 				
 				$(function () {
 				  $('.loadDictResults').on('click', function () {
 				    var formNum = $(this).attr('data-formnum');
+				    var action = $(this).attr('data-action');
+				    if (action == 'hide') {
+				      $('#results-'+formNum).hide();
+				      $(this).attr('data-action', 'show');
+				      $(this).find('.actionToggle').text('show'); //switch the toggle text to "show"
+				      return;
+				    }
+				    $('#results-'+formNum).show();
+				    $(this).find('.actionToggle').text('hide'); //switch the toggle text to "hide"
+				    $('#loadingImage-'+formNum).show();
 				    var locations = $(this).attr('data-locs');
 				    var headword = $(this).attr('data-lemma');
             var pos = $(this).attr('data-pos');
 				    var table = $('#form-'+formNum);	
 				    var params = {headword: headword, pos: pos}
-
+						$(this).attr('data-action', 'hide');  //link to hide the results
 				    $('#pag-'+formNum).pagination({
 					    dataSource: 'ajax.php',
 					    locator: 'results',
@@ -715,7 +673,8 @@ HTML;
 					        }*/
 					    },
 					    callback: function(data, pagination) {
-					        var html = template(data, params);					        
+					        var html = template(data, params);	
+					        $('#loadingImage-'+formNum).hide();
 					        table.html(html);
 					    }
 						})

@@ -129,50 +129,6 @@ class corpus_search
 	}
 
 	/**
-	 * Form and return the query required for a wordform search
-	 * @return array: ("sql" => the SQL, "search" => the search term)
-	 */
-	private function _getWordformQuery() {
-		$params = $this->_params;
-		$search = $params["term"];
-		$searchPrefix = "[[:<:]]";  //default to word boundary at start
-		if ($params["accent"] != "sensitive") {
-			$search = functions::getAccentInsensitive($search, $params["case"] == "sensitive");
-		}
-		if ($params["lenition"] != "sensitive") {
-			$search = functions::getLenited($search);
-			$search = functions::addMutations($search);
-		} else {
-			//deal with h-, n-, t-
-			$searchPrefix = "^";  //don't use word boundary at start of search, but start of string instead
-		}
-		$whereClause = "";
-		$search = $searchPrefix . $search . "[[:>:]]";  //word boundary
-		if ($params["case"] == "sensitive") {   //case sensitive
-			$whereClause .= "wordform_bin REGEXP :term";
-		} else {                              //case insensitive
-			$whereClause .= "wordform REGEXP :term";
-		}
-		$selectFields =  "lemma, l.filename AS filename, l.id AS id, wordform, pos, date_of_lang, l.title, 
-			page, medium, s.auto_id AS auto_id, t.id AS tid, t.level as level, district_id, preceding_word, following_word";
-
-		$textJoinSql = "";
-		if ($params["id"]) {    //restrict to this text
-			$textJoinSql = <<<SQL
-				 AND (t.id = '{$params["id"]}' OR t.id LIKE '{$params["id"]}-%')
-SQL;
-		}
-
-		$sql = <<<SQL
-        SELECT SQL_CALC_FOUND_ROWS {$selectFields} FROM lemmas AS l
-          LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id AND group_id = {$_SESSION["groupId"]}
-          JOIN text t ON t.filepath = l.filename {$textJoinSql}
-          WHERE {$whereClause}
-SQL;
-		return array("sql" => $sql, "search" => $search);
-	}
-
-	/**
 	 * Runs the query to get the corpus database result set
 	 * Sets the number of hits in the results set
 	 * @param $params: the array of parameters for the query, e.g. pp, page, order, mode, term
@@ -183,11 +139,10 @@ SQL;
 		$perpage = $params["pp"];
 		$pagenum = $params["page"];
 		$offset = $pagenum == 1 ? 0 : ($perpage * $pagenum) - $perpage;
-
+		$whereClause = "";
 		switch ($params["order"]) {
 			case "random":
 				$orderBy = "RAND()";
-			//	$orderBy = "0.1513579619350810";
 				break;
 			case "dateAsc":
 				$orderBy = "date_of_lang ASC";
@@ -207,16 +162,14 @@ SQL;
 			default:
 				$orderBy = "filename, id";
 		}
-		if ($params["mode"] != "wordform") {    //lemma
+		if ($params["mode"] != "wordform") {    //lemma query build
 			$query["search"] = $params["term"];
-
 			$textJoinSql = "";
 			if ($params["id"]) {    //restrict to this text
 				$textJoinSql = <<<SQL
 				 AND (t.id = '{$params["id"]}' OR t.id LIKE '{$params["id"]}-%')
 SQL;
 			}
-
 			$writerJoinSql = "";
 			if ($params["district"]) {
 				if (count($params["district"]) < 15) {   //restrict by district (location)
@@ -226,8 +179,32 @@ SQL;
 SQL;
 				}
 			}
+			$whereClause = <<<SQL
+				lemma REGEXP :term
+SQL;
+							//end lemma query build
+		} else {                               //wordform query build
+			$search = $params["term"];
+			$searchPrefix = "[[:<:]]";  //default to word boundary at start
+			if ($params["accent"] != "sensitive") {
+				$search = functions::getAccentInsensitive($search, $params["case"] == "sensitive");
+			}
+			if ($params["lenition"] != "sensitive") {
+				$search = functions::getLenited($search);
+				$search = functions::addMutations($search);
+			} else {
+				//deal with h-, n-, t-
+				$searchPrefix = "^";  //don't use word boundary at start of search, but start of string instead
+			}
+			$query["search"] = $searchPrefix . $search . "[[:>:]]";  //word boundary
+			if ($params["case"] == "sensitive") {   //case sensitive
+				$whereClause = "wordform_bin REGEXP :term";
+			} else {                              //case insensitive
+				$whereClause = "wordform REGEXP :term";
+			}
+		}         //end wordform query build
 
-			$query["sql"] = <<<SQL
+		$query["sql"] = <<<SQL
         SELECT SQL_CALC_FOUND_ROWS l.filename AS filename, l.id AS id, wordform, pos, lemma, date_of_lang, l.title,
                 page, medium, s.auto_id as auto_id, s.wordClass as wordClass, t.id AS tid, t.level as level, district_id,
                	preceding_word, following_word
@@ -235,12 +212,10 @@ SQL;
             LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id AND group_id = {$_SESSION["groupId"]}
             JOIN text t ON t.filepath = l.filename {$textJoinSql}
         		{$writerJoinSql}
-            WHERE lemma = :term
+            WHERE {$whereClause}
 
 SQL;
-		} else {                               //wordform
-			$query = $this->_getWordformQuery();
-		}
+
 		$pdoParams = array(":term" => $query["search"]);    //params required to pass for the PDO DB query
 		if ($params["selectedDates"]) {       //restrict by date
 			$query["sql"] .= $this->_getDateWhereClause();
@@ -286,6 +261,54 @@ SQL;
 		$this->_hits = $hits[0]["hits"];
 		return $results;
 	}
+
+	/**
+	 * Form and return the where clause required for a wordform search
+	 * @return array: ("sql" => the SQL, "search" => the search term)
+	 */
+	/*
+	private function _getWordformWhereClause() {
+		$params = $this->_params;
+
+
+		$search = $params["term"];
+		$searchPrefix = "[[:<:]]";  //default to word boundary at start
+		if ($params["accent"] != "sensitive") {
+			$search = functions::getAccentInsensitive($search, $params["case"] == "sensitive");
+		}
+		if ($params["lenition"] != "sensitive") {
+			$search = functions::getLenited($search);
+			$search = functions::addMutations($search);
+		} else {
+			//deal with h-, n-, t-
+			$searchPrefix = "^";  //don't use word boundary at start of search, but start of string instead
+		}
+		$whereClause = "";
+		$search = $searchPrefix . $search . "[[:>:]]";  //word boundary
+		if ($params["case"] == "sensitive") {   //case sensitive
+			$whereClause .= "wordform_bin REGEXP :term";
+		} else {                              //case insensitive
+			$whereClause .= "wordform REGEXP :term";
+		}
+		$selectFields =  "lemma, l.filename AS filename, l.id AS id, wordform, pos, date_of_lang, l.title, 
+			page, medium, s.auto_id AS auto_id, t.id AS tid, t.level as level, district_id, preceding_word, following_word";
+
+		$textJoinSql = "";
+		if ($params["id"]) {    //restrict to this text
+			$textJoinSql = <<<SQL
+				 AND (t.id = '{$params["id"]}' OR t.id LIKE '{$params["id"]}-%')
+SQL;
+		}
+
+		$sql = <<<SQL
+        SELECT SQL_CALC_FOUND_ROWS {$selectFields} FROM lemmas AS l
+          LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id AND group_id = {$_SESSION["groupId"]}
+          JOIN text t ON t.filepath = l.filename {$textJoinSql}
+          WHERE {$whereClause}
+SQL;
+		return array("sql" => $sql, "search" => $search);
+	}
+	*/
 
 	private function _getDateWhereClause() {
 		$dates = explode('-', $this->_params["selectedDates"]);
@@ -373,5 +396,25 @@ SQL;
 			$distinctPOS[] = $result[0];
 		}
 		return $distinctPOS;
+	}
+
+	/**
+	 * Queries the database based on filename and ID to get data pertaining to a particular lemma
+	 * @param $filename
+	 * @param $id
+	 * @return array of fields in the database
+	 */
+	public static function getDataById($filename, $id) {
+		$db = new database();
+		$sql = <<<SQL
+			SELECT l.id as id, l.filename as filename, wordform, pos, lemma, date_of_lang, l.title, page, medium, s.auto_id as auto_id, 
+			       s.wordClass as wordClass, t.id AS tid, t.level as level, district_id
+            FROM lemmas AS l
+            LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id AND group_id = {$_SESSION["groupId"]}
+            JOIN text t ON t.filepath = l.filename
+            WHERE l.filename = :filename AND l.id = :id
+SQL;
+		$result = $db->fetch($sql, array(":filename" => $filename, ":id" => $id));
+		return $result[0];
 	}
 }

@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/views/corpus_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/corpus_search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/models/slow_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/slow_search.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,55 +101,8 @@
       <workItem from="1613130765631" duration="4835000" />
       <workItem from="1613635197677" duration="15236000" />
       <workItem from="1614588458833" duration="844000" />
-    </task>
-    <task id="LOCAL-00006" summary="Fixed bug with adding new slip to collection">
-      <created>1605524417198</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1605524417198</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Reworked xml2csv.php to avoid requiring external files">
-      <created>1605527681755</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1605527681755</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Fix for old URL structure in &quot;request unlock&quot; functionlaity">
-      <created>1605534824285</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1605534824285</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Some initial refactoring of browse_search classes">
-      <created>1605541862138</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1605541862138</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Tidy up">
-      <created>1605541986306</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1605541986306</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Further refactoring of corpus_search classes">
-      <created>1605610546278</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1605610546278</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Further refactoring of corpus_search classes">
-      <created>1605617764362</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1605617764362</updated>
+      <workItem from="1615970019581" duration="47000" />
+      <workItem from="1615970093454" duration="19214000" />
     </task>
     <task id="LOCAL-00013" summary="Bug fix for javascript issues with adding: add link not updating to view and inability to add sense categories to new slips. (All browser specific.)">
       <created>1605625046956</created>
@@ -445,20 +398,62 @@
       <option name="project" value="LOCAL" />
       <updated>1614347389584</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Added loading image for dictionary view results&#10;Sorted out showing/hiding behaviour for dictionary view results&#10;Tidied up some bits and pieces in dictionary view results">
+      <created>1615886550349</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1615886550350</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Refactored wordform search into the main search function and added REGEXP support for all searches&#10;Tidied up loading of dictionary view results&#10;Bug fix in switching between corpus and dictionary views">
+      <created>1615890560163</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1615890560163</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Initial work on fleshing out the slow search to display database information in results.&#10;Some initial basic refactoring of slow search in line with MVC">
+      <created>1615907529402</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1615907529402</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Added AJAX support to slow search. &#10;Many fixes for slow search.">
+      <created>1615980166468</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1615980166469</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Additional AJAX work on slow search to handle slip links">
+      <created>1615984514518</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1615984514519</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Added index IDs to slip links in slow search to facilitate correct updating of slip links in results after slip creation">
+      <created>1615989262349</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1615989262349</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Added option on search form to choose between searching for all results and chunking results. Added option to choose chunk size.&#10;Fixed issues with full results not paginating.">
+      <created>1615993562251</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1615993562251</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added level (&quot;importance&quot;) icons (stars) to subtext list in corpus browse" />
-    <MESSAGE value="Date range block now no longer written in search from for subtexts" />
-    <MESSAGE value="First pass at searching by district (location)&#10;Bug fix for jQuery error in browse corpus" />
-    <MESSAGE value="Some placeholder code on search form for restricting by district.&#10;Fixed jQuery bug in corpus browse" />
-    <MESSAGE value="Fixed bug whereby citation scope would reset to database value instead of default." />
-    <MESSAGE value="Fixed bugs with selection of citation context: &#10;1. Clicking a token to select start/end point stopped +/- buttons from working&#10;2. Taking the context down to &quot;zero&quot; for either pre/post would cause unexpected behaviour" />
-    <MESSAGE value="Added code to xml2csv.php to handle districts (recursively if needed)&#10;Bug fix in slip citation: reset context working&#10;Slip lock functionality: &#10;1. slips can only be locked/unlocked by superusers&#10;2. slips are unlocked by default (database change)&#10;3. lock icon displays in slips modal if slip is locked&#10;4. locked slips can only be edited by superusers&#10;5. unlock request emails should go to superusers (not &quot;owners&quot;)&#10;TODO: disable email functionality for superusers and remove ownership code so that any user can edit any unlocked slip" />
     <MESSAGE value="Some changes to the lock slip functionality for superusers." />
     <MESSAGE value="fixed bug where citation context was editable within entries&#10;added English tranlsation beneath each entry citation" />
     <MESSAGE value="Added a prototype PDF viewer for directories - much work needed" />
@@ -477,6 +472,13 @@
     <MESSAGE value="Some bug fixes" />
     <MESSAGE value="Some basic introductory pagination code for slow_search" />
     <MESSAGE value="New approach to chunked dictionary search results using pagination.min.js.&#10;Basic structure working returning dates." />
-    <option name="LAST_COMMIT_MESSAGE" value="New approach to chunked dictionary search results using pagination.min.js.&#10;Basic structure working returning dates." />
+    <MESSAGE value="Added loading image for dictionary view results&#10;Sorted out showing/hiding behaviour for dictionary view results&#10;Tidied up some bits and pieces in dictionary view results" />
+    <MESSAGE value="Refactored wordform search into the main search function and added REGEXP support for all searches&#10;Tidied up loading of dictionary view results&#10;Bug fix in switching between corpus and dictionary views" />
+    <MESSAGE value="Initial work on fleshing out the slow search to display database information in results.&#10;Some initial basic refactoring of slow search in line with MVC" />
+    <MESSAGE value="Added AJAX support to slow search. &#10;Many fixes for slow search." />
+    <MESSAGE value="Additional AJAX work on slow search to handle slip links" />
+    <MESSAGE value="Added index IDs to slip links in slow search to facilitate correct updating of slip links in results after slip creation" />
+    <MESSAGE value="Added option on search form to choose between searching for all results and chunking results. Added option to choose chunk size.&#10;Fixed issues with full results not paginating." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added option on search form to choose between searching for all results and chunking results. Added option to choose chunk size.&#10;Fixed issues with full results not paginating." />
   </component>
 </project>

@@ -332,4 +332,40 @@ SQL;
 
 HTML;
   }
+
+  public static function getSlipLinkHtml($data, $index = null) {
+	  //check if there is an existing slip for this entry
+	  $slipUrl = "#";
+	  $slipClass = "slipLink2";
+	  $modalCode = "";
+	  if ($data["auto_id"] != null) {
+		  $slipLinkText = "view";
+		  $createSlipStyle = "";
+		  $modalCode = 'data-toggle="modal" data-target="#slipModal"';
+		  $dataUrl = "";
+	  } else {    //there is no slip so show link for adding one
+		  $dataUrl = "index.php?m=collection&a=add&filename=" . $data["filename"] . "&wid=".$data["id"];
+		  $dataUrl .= "&headword=" . $data["lemma"] . "&pos=" . $data["pos"];
+		  $slipLinkText = "add";
+		  $createSlipStyle = "createSlipLink";
+		  $slipClass = "editSlipLink";
+	  }
+	  $html = <<<HTML
+        <a href="{$slipUrl}" data-url="{$dataUrl}" class="{$slipClass} {$createSlipStyle}"
+            {$modalCode}
+            data-auto_id="{$data["auto_id"]}"
+            data-headword="{$data["lemma"]}"
+            data-pos="{$data["pos"]}"
+            data-id="{$data["id"]}"
+            data-xml="{$data["filename"]}"
+            data-uri="{$data["context"]["uri"]}"
+            data-date="{$data["date_of_lang"]}"
+            data-title="{$data["title"]}"
+            data-page="{$data["page"]}"
+            data-resultindex="{$index}">
+            {$slipLinkText}
+        </a>
+HTML;
+  	return $html;
+  }
 }
