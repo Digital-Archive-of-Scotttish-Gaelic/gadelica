@@ -4,6 +4,8 @@
 namespace views;
 
 
+use models;
+
 class slow_search
 {
 	private $_model;  //an instance of models\slow_search
@@ -29,6 +31,7 @@ class slow_search
 		    </form>
 HTML;
 		} else {
+			models\collection::writeSlipDiv();
 			echo <<<HTML
 			<p><a href="?m=corpus&a=slow_search">new slow search</a></p>
 			<p>Searching for: {$xpath}</p>
@@ -43,15 +46,28 @@ HTML;
 
 					foreach ($results as $result) {
 						$data = $result["data"];
-						$context = $result["context"];
+						$context = $data["context"];
 						$count = $result["count"];
+						$slipLinkHtml = models\collection::getSlipLinkHtml($result);
+						$title = <<<HTML
+			        Headword: {$data["lemma"]}<br>
+			        POS: {$data["pos"]} ({$data["posLabel"]})<br>
+			        Date: {$data["date_of_lang"]}<br>
+			        Title: {$data["title"]}<br>
+			        Page No: {$data["page"]}<br><br>
+			        {$data["filename"]}<br>{$data["id"]}
+HTML;
             $html .= <<<HTML
 							<tr data-filename="{$data["filename"]}" data-id="{$data["id"]}" data-count={$count}>						
 								<th scope="row">{$count}</th>
 								<td>{$data["date_of_lang"]}</td>
 								<td style="text-align: right;">{$context["pre"]["output"]}</td>
-								<td>{$context["word"]}</td>
+								<td style="text-align: center;"><a href="?m=corpus&a=browse&id={$data["tid"]}&wid={$data["id"]}"
+                    data-toggle="tooltip" data-html="true" title="{$title}">
+                  {$context["word"]}
+                </a></td>
 								<td>{$context["post"]["output"]}</td>
+								<td><small>{$slipLinkHtml}</small></td>
 							</tr>
 HTML;
           }
@@ -92,13 +108,22 @@ HTML;
 				        $.each(results, function (key, result) {
 				          count++;
 				          var data = result.data;
-				          var context = result.context;
+				          var context = data.context;
+				          var title = 'Headword: '+data.lemma+'<br>';
+			            title += 'POS: '+data.pos+' '+ data.posLabel+'<br>';
+			            title += 'Date: '+data.date_of_lang+'<br>';
+			            title += 'Title: '+data.title+'<br>';
+			            title += 'Page No: '+data.page+'<br><br>';
+			            title += data.filename+'<br>'+data.id;
 				          var html = '<tr data-filename="'+data.filename+'" data-id="'+data.id+'" data-count='+count+'>';
 				          html += '<th>'+count+'</th>';
 				          html += '<td>'+data.date_of_lang+'</td>';
 				          html += '<td style="text-align:right;">'+context.pre.output+'</td>';
-				          html += '<td>'+context.word+'</td>';
+				          html += '<td style="text-align: center;"><a href="?m=corpus&a=browse&id='+data.tid+'&wid='+data.id+'"';
+                  html +=  ' data-toggle="tooltip" data-html="true" title="'+title+'">';
+                  html += context.word + '</a></td>';
 				          html += '<td>'+context.post.output+'</td>';
+				          html += '<td><small>'+data.slipLinkHtml+'</small></td>';
 				          html += '</tr>';
 				          $("table").append(html);
 				          paginate();
@@ -125,7 +150,7 @@ HTML;
 								}
 							});
 							var totalPages = $('.pagination').pagination('getPagesCount');
-							$('.pagination').pagination('selectPage', totalPages);
+							$('.pagination').pagination('selectPage', totalPages);    //jump to last page of results
 						}
 					}
 					

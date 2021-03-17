@@ -46,9 +46,10 @@ class slow_search
 					}
 
 					$results[$i]["data"] = corpus_search::getDataById($filename, $id);
-
-					$results[$i]["data"]["key"] = $it->key();
-					$results[$i]["context"] = $handler->getContext($id);
+					$results[$i]["data"]["context"] = $handler->getContext($id);
+					$results[$i]["data"]["slipLinkHtml"] = collection::getSlipLinkHtml($results[$i]["data"]);
+					$pos = new partofspeech($results[$i]["data"]["pos"]);
+					$results[$i]["data"]["posLabel"] = $pos->getLabel();
 					$results[$i]["count"] = $i;
 
 					//limit to 6 results

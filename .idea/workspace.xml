@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/ajax.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/corpus_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/corpus_search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/models/collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/collection.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/models/slow_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/slow_search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/views/corpus_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/corpus_search.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/views/slow_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/slow_search.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,14 +105,7 @@
       <workItem from="1613635197677" duration="15236000" />
       <workItem from="1614588458833" duration="844000" />
       <workItem from="1615970019581" duration="47000" />
-      <workItem from="1615970093454" duration="8140000" />
-    </task>
-    <task id="LOCAL-00009" summary="Some initial refactoring of browse_search classes">
-      <created>1605541862138</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1605541862138</updated>
+      <workItem from="1615970093454" duration="12134000" />
     </task>
     <task id="LOCAL-00010" summary="Tidy up">
       <created>1605541986306</created>
@@ -450,14 +443,20 @@
       <option name="project" value="LOCAL" />
       <updated>1615907529402</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Added AJAX support to slow search. &#10;Many fixes for slow search.">
+      <created>1615980166468</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1615980166469</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Some placeholder code on search form for restricting by district.&#10;Fixed jQuery bug in corpus browse" />
     <MESSAGE value="Fixed bug whereby citation scope would reset to database value instead of default." />
     <MESSAGE value="Fixed bugs with selection of citation context: &#10;1. Clicking a token to select start/end point stopped +/- buttons from working&#10;2. Taking the context down to &quot;zero&quot; for either pre/post would cause unexpected behaviour" />
     <MESSAGE value="Added code to xml2csv.php to handle districts (recursively if needed)&#10;Bug fix in slip citation: reset context working&#10;Slip lock functionality: &#10;1. slips can only be locked/unlocked by superusers&#10;2. slips are unlocked by default (database change)&#10;3. lock icon displays in slips modal if slip is locked&#10;4. locked slips can only be edited by superusers&#10;5. unlock request emails should go to superusers (not &quot;owners&quot;)&#10;TODO: disable email functionality for superusers and remove ownership code so that any user can edit any unlocked slip" />
@@ -482,6 +481,7 @@
     <MESSAGE value="Added loading image for dictionary view results&#10;Sorted out showing/hiding behaviour for dictionary view results&#10;Tidied up some bits and pieces in dictionary view results" />
     <MESSAGE value="Refactored wordform search into the main search function and added REGEXP support for all searches&#10;Tidied up loading of dictionary view results&#10;Bug fix in switching between corpus and dictionary views" />
     <MESSAGE value="Initial work on fleshing out the slow search to display database information in results.&#10;Some initial basic refactoring of slow search in line with MVC" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial work on fleshing out the slow search to display database information in results.&#10;Some initial basic refactoring of slow search in line with MVC" />
+    <MESSAGE value="Added AJAX support to slow search. &#10;Many fixes for slow search." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added AJAX support to slow search. &#10;Many fixes for slow search." />
   </component>
 </project>

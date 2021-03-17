@@ -362,9 +362,6 @@ HTML;
 		$context = $result["context"];
 		$pos = new models\partofspeech($result["pos"]);
 
-
-		$shortTitleElems = explode(' ', $result["title"]);
-
 		$shortTitle = mb_strlen($result["title"]) < 30
 			? $result["title"]
 			: mb_substr($result["title"], 0, 29) . "...";
@@ -377,23 +374,8 @@ HTML;
         Page No: {$result["page"]}<br><br>
         {$result["filename"]}<br>{$result["id"]}
 HTML;
-		//check if there is an existing slip for this entry
-		$slipUrl = "#";
-		$slipClass = "slipLink2";
-		$modalCode = "";
-		if ($result["auto_id"] != null) {
-			$slipLinkText = "view";
-			$createSlipStyle = "";
-			$modalCode = 'data-toggle="modal" data-target="#slipModal"';
-			$dataUrl = "";
-		} else {    //there is no slip so show link for adding one
-			$dataUrl = "index.php?m=collection&a=add&filename=" . $result["filename"] . "&wid=".$result["id"];
-			$dataUrl .= "&headword=".$result["lemma"] . "&pos=" . $result["pos"];
-			$slipLinkText = "add";
-			$createSlipStyle = "createSlipLink";
-			$slipClass = "editSlipLink";
-		}
 		$textNum = stristr($result["filename"], "_", true);
+		$slipLinkHtml = models\collection::getSlipLinkHtml($result, $index);
 		echo <<<HTML
 				<td class="extendedField">{$result["date_of_lang"]}</td>
 				<td class="extendedField">#{$textNum} {$shortTitle}</td>
@@ -406,22 +388,7 @@ HTML;
         </td>
         <td>{$context["post"]["output"]}</td>
         <td> <!-- the slip link -->
-            <small>
-                <a href="{$slipUrl}" data-url="{$dataUrl}" class="{$slipClass} {$createSlipStyle}"
-                    {$modalCode}
-                    data-auto_id="{$result["auto_id"]}"
-                    data-headword="{$result["lemma"]}"
-                    data-pos="{$result["pos"]}"
-                    data-id="{$result["id"]}"
-                    data-xml="{$result["filename"]}"
-                    data-uri="{$context["uri"]}"
-                    data-date="{$result["date_of_lang"]}"
-                    data-title="{$result["title"]}"
-                    data-page="{$result["page"]}"
-                    data-resultindex="{$index}">
-                    {$slipLinkText}
-                </a>
-            </small>
+            <small>{$slipLinkHtml}</small>
         </td>
 HTML;
 		return;
