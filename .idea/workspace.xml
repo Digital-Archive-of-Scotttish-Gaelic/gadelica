@@ -104,14 +104,7 @@
       <workItem from="1613635197677" duration="15236000" />
       <workItem from="1614588458833" duration="844000" />
       <workItem from="1615970019581" duration="47000" />
-      <workItem from="1615970093454" duration="14837000" />
-    </task>
-    <task id="LOCAL-00011" summary="Further refactoring of corpus_search classes">
-      <created>1605610546278</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1605610546278</updated>
+      <workItem from="1615970093454" duration="18618000" />
     </task>
     <task id="LOCAL-00012" summary="Further refactoring of corpus_search classes">
       <created>1605617764362</created>
@@ -449,14 +442,20 @@
       <option name="project" value="LOCAL" />
       <updated>1615984514519</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Added index IDs to slip links in slow search to facilitate correct updating of slip links in results after slip creation">
+      <created>1615989262349</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1615989262349</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed bugs with selection of citation context: &#10;1. Clicking a token to select start/end point stopped +/- buttons from working&#10;2. Taking the context down to &quot;zero&quot; for either pre/post would cause unexpected behaviour" />
     <MESSAGE value="Added code to xml2csv.php to handle districts (recursively if needed)&#10;Bug fix in slip citation: reset context working&#10;Slip lock functionality: &#10;1. slips can only be locked/unlocked by superusers&#10;2. slips are unlocked by default (database change)&#10;3. lock icon displays in slips modal if slip is locked&#10;4. locked slips can only be edited by superusers&#10;5. unlock request emails should go to superusers (not &quot;owners&quot;)&#10;TODO: disable email functionality for superusers and remove ownership code so that any user can edit any unlocked slip" />
     <MESSAGE value="Some changes to the lock slip functionality for superusers." />
     <MESSAGE value="fixed bug where citation context was editable within entries&#10;added English tranlsation beneath each entry citation" />
@@ -481,6 +480,7 @@
     <MESSAGE value="Initial work on fleshing out the slow search to display database information in results.&#10;Some initial basic refactoring of slow search in line with MVC" />
     <MESSAGE value="Added AJAX support to slow search. &#10;Many fixes for slow search." />
     <MESSAGE value="Additional AJAX work on slow search to handle slip links" />
-    <option name="LAST_COMMIT_MESSAGE" value="Additional AJAX work on slow search to handle slip links" />
+    <MESSAGE value="Added index IDs to slip links in slow search to facilitate correct updating of slip links in results after slip creation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added index IDs to slip links in slow search to facilitate correct updating of slip links in results after slip creation" />
   </component>
 </project>

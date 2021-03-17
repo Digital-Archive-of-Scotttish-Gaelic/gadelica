@@ -16,7 +16,7 @@ class slow_search
 		}
 	}
 
-	public function search($xpath, $offsetFilename="", $offsetId="", $index=-1) {
+	public function search($xpath, $chunkSize=null, $offsetFilename=null, $offsetId=null, $index=-1) {
 		$results = array();
 		$it = new \RecursiveDirectoryIterator($this->_path);
 		$i = 0;
@@ -32,7 +32,7 @@ class slow_search
 				$handler = new xmlfilehandler($filename);
 				$xml = simplexml_load_file($nextFile);
 				$xml->registerXPathNamespace('dasg', 'https://dasg.ac.uk/corpus/');
-				$result  = $xml->xpath($xpath);
+				$result = $xml->xpath($xpath);
 				foreach ($result as $id) {
 					//check for an offset ID and skip until we reach it if there is one
 					if ($offsetId && $offsetId != $id) {
@@ -49,8 +49,8 @@ class slow_search
 					$results[$i]["data"]["posLabel"] = $pos->getLabel();
 					$results[$i]["index"] = $index;
 
-					//limit to 6 results
-					if ($i == 6) {return $results;}
+					//limit results to chunk size
+					if ($i === $chunkSize) {return $results;}
 					$i++;
 				}
 			}

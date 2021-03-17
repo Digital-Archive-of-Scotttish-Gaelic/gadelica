@@ -28,16 +28,28 @@ class slow_search
 					    </div>
 				    </div>
 			    </div>
+			    <div class="form-group">
+	          <label class="form-check-label" for="chunkOff">Get all results</label>
+	          <input type="radio" id="chunkOff" class="form-control-default" aria-label="Get all results" name="chunk" value="off">
+					</div>
+					<div class="form-group">
+	          <label class="form-check-label" for="chunkOn">Chunk results</label>
+	          <input type="radio" id="chunkOn" class="form-control-default" aria-label="Chunk results" name="chunk" value="on" checked>
+	        </div>
+	        <div class="form-group">
+	          <label class="form-check-label" for="chunkValue">Results per chunk</label>
+	          <input type="text" id="chunkValue" class="form-control-sm" name="chunkValue" value="10">
+					</div>
 		    </form>
 HTML;
 		} else {    //there are results so show them
 			models\collection::writeSlipDiv();
 			echo <<<HTML
-			<p><a href="?m=corpus&a=slow_search">new slow search</a></p>
-			<p>Searching for: {$xpath}</p>
+				<p><a href="?m=corpus&a=slow_search">new slow search</a></p>
+				<p>Searching for: {$xpath}</p>
 HTML;
-
-			$results = $this->_model->search($xpath);
+			$chunkSize = ($_GET["chunk"] == "on") ? $_GET["chunkValue"]-1 : null;
+			$results = $this->_model->search($xpath, $chunkSize);
 			$html = <<<HTML
 				<table id="table" class="table">					
 					<tbody>
@@ -71,35 +83,48 @@ HTML;
 					</tr>
 HTML;
           }
-
+				$loadMoreResultsHtml = $chunkSize ? '<a href="#" id="loadMoreResults" title="load more">load more results ...</a>' : "";
 				$html .= <<<HTML
 					</tbody>
 				</table>
 				<div class="loading" style="display:none;"><img src="https://dasg.ac.uk/images/loading.gif" width="200" alt="loading"></div>
 				<div class="pagination"></div>
-
-				<a href="#" id="loadMoreResults" title="load more">load more results ...</a>
+				{$loadMoreResultsHtml}
 HTML;
 			echo $html;
     }
-		$this->_writeResultsJavascript($xpath);
+		$this->_writeResultsJavascript($xpath, $chunkSize);
 	}
 
-	private function _writeResultsJavascript($xpath) {
+	private function _writeResultsJavascript($xpath, $chunkSize) {
 		$xpath = urlencode($xpath);
+		$chunkSize = $chunkSize ? $chunkSize : 'null';
 		echo <<<HTML
 			<script type="text/javascript" src="js/jquery.simplePagination.js"></script>
 			<script>
 				$(function() {
-				  paginate();
+				  if ($('.pagination').length) {
+						paginate();
+						$('.pagination').pagination('selectPage', 1);    //jump to first page of results on page load
+					}
+				  
+				  $('#chunkOn').on('click', function() {
+				    $('#chunkValue').prop('disabled', false);
+				  });
+				  
+				  $('#chunkOff').on('click', function () {
+				    $('#chunkValue').prop('disabled', true);  
+				  });
 				  
 				  $('#loadMoreResults').on('click', document, function () {
 				    $('.loading').show();
 				    var xpath = '{$xpath}';
+				    var chunkSize = {$chunkSize};
 				    var filename = $('table tr').last().attr('data-filename');
 				    var id = $('table tr').last().attr('data-id');
 				    var index = $('table tr').last().attr('data-index');
-				    $.getJSON('ajax.php', {action: 'getSlowSearchResults', xpath: xpath, filename: filename, id: id, index: index})
+				    $.getJSON('ajax.php', {action: 'getSlowSearchResults', xpath: xpath, chunkSize: chunkSize, 
+				          filename: filename, id: id, index: index})
 				      .done(function (results) {
 				        $('.loading').hide();
 				        $.each(results, function (key, result) {
@@ -128,31 +153,29 @@ HTML;
 				        });				        
 				      });
 				  });
-				  
-				    
-				  /** Pagination for results */
-				  function paginate() {				    
-				    var items = $("table tr");
-						var numItems = items.length;
-						var perPage = 10;
-						items.slice(perPage).hide();
-						if(numItems != 0) {
-							$(".pagination").pagination({
-								items: numItems,
-								itemsOnPage: perPage,
-								cssStyle: "light-theme",
-								onPageClick: function(pageNumber) { 
-									var showFrom = perPage * (pageNumber - 1);
-									var showTo = showFrom + perPage;
-									items.hide().slice(showFrom, showTo).show();
-								}
-							});
-							var totalPages = $('.pagination').pagination('getPagesCount');
-							$('.pagination').pagination('selectPage', totalPages);    //jump to last page of results
-						}
+				});   //end of document load handler
+				
+				/** Pagination for results */
+			  function paginate() {				    
+			    var items = $("table tr");
+					var numItems = items.length;
+					var perPage = 10;
+					items.slice(perPage).hide();
+					if(numItems != 0) {
+						$(".pagination").pagination({
+							items: numItems,
+							itemsOnPage: perPage,
+							cssStyle: "light-theme",
+							onPageClick: function(pageNumber) { 
+								var showFrom = perPage * (pageNumber - 1);
+								var showTo = showFrom + perPage;
+								items.hide().slice(showFrom, showTo).show();
+							}
+						});
+						var totalPages = $('.pagination').pagination('getPagesCount');
+						$('.pagination').pagination('selectPage', totalPages);    //jump to last page of results
 					}
-					
-				});
+				}
 			</script>
 HTML;
 	}
