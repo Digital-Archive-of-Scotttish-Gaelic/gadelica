@@ -34,7 +34,6 @@ HTML;
 			<p>Searching for: {$xpath}</p>
 HTML;
 
-			$count = 0;
 			$results = $this->_model->search($xpath);
 			$html = <<<HTML
 				<table id="table" class="table">					
@@ -45,11 +44,10 @@ HTML;
 					foreach ($results as $result) {
 						$data = $result["data"];
 						$context = $result["context"];
-						$count++;
+						$count = $result["count"];
             $html .= <<<HTML
-							<tr>						
+							<tr data-filename="{$data["filename"]}" data-id="{$data["id"]}" data-count={$count}>						
 								<th scope="row">{$count}</th>
-								<td>{$data["key"]}</td>
 								<td>{$data["date_of_lang"]}</td>
 								<td style="text-align: right;">{$context["pre"]["output"]}</td>
 								<td>{$context["word"]}</td>
@@ -58,35 +56,81 @@ HTML;
 HTML;
           }
 
+$finalResult = array_pop($results);
+
 
 			$html .= <<<HTML
 					</tbody>
 				</table>
+				<div class="loading" style="display:none;"><img src="https://dasg.ac.uk/images/loading.gif" width="200" alt="loading"></div>
 				<div class="pagination"></div>
-				
-				<script type="text/javascript" src="js/jquery.simplePagination.js"></script>
-				<script>
-					$(function () {
-					  	var items = $("table tr");
-							var numItems = items.length;
-							var perPage = 10;
-							items.slice(perPage).hide();
-							if(numItems != 0){
-								$(".pagination").pagination({
-									items: numItems,
-									itemsOnPage: perPage,
-									cssStyle: "light-theme",
-									onPageClick: function(pageNumber) { 
-										var showFrom = perPage * (pageNumber - 1);
-										var showTo = showFrom + perPage;
-										items.hide().slice(showFrom, showTo).show();
-									}
-								});
-							}
-					});
-				</script>
+
+				<a href="#" id="loadMoreResults" title="load more">load more results ...</a>
 HTML;
 			echo $html;
     }
+		$this->_writeResultsJavascript($xpath);
+	}
+
+	private function _writeResultsJavascript($xpath) {
+		$xpath = urlencode($xpath);
+		echo <<<HTML
+			<script type="text/javascript" src="js/jquery.simplePagination.js"></script>
+			<script>
+				$(function() {
+				  paginate();
+				  
+				  $('#loadMoreResults').on('click', document, function () {
+				    $('.loading').show();
+				    var xpath = '{$xpath}';
+				    var filename = $('table tr').last().attr('data-filename');
+				    var id = $('table tr').last().attr('data-id');
+				    var count = $('table tr').last().attr('data-count');
+				    $.getJSON('ajax.php', {action: 'getSlowSearchResults', xpath: xpath, filename: filename, id: id})
+				      .done(function (results) {
+				        $('.loading').hide();
+				        $.each(results, function (key, result) {
+				          count++;
+				          var data = result.data;
+				          var context = result.context;
+				          var html = '<tr data-filename="'+data.filename+'" data-id="'+data.id+'" data-count='+count+'>';
+				          html += '<th>'+count+'</th>';
+				          html += '<td>'+data.date_of_lang+'</td>';
+				          html += '<td style="text-align:right;">'+context.pre.output+'</td>';
+				          html += '<td>'+context.word+'</td>';
+				          html += '<td>'+context.post.output+'</td>';
+				          html += '</tr>';
+				          $("table").append(html);
+				          paginate();
+				        });				        
+				      });
+				  });
+				  
+				    
+				  /** Pagination for results */
+				  function paginate() {				    
+				    var items = $("table tr");
+						var numItems = items.length;
+						var perPage = 10;
+						items.slice(perPage).hide();
+						if(numItems != 0) {
+							$(".pagination").pagination({
+								items: numItems,
+								itemsOnPage: perPage,
+								cssStyle: "light-theme",
+								onPageClick: function(pageNumber) { 
+									var showFrom = perPage * (pageNumber - 1);
+									var showTo = showFrom + perPage;
+									items.hide().slice(showFrom, showTo).show();
+								}
+							});
+							var totalPages = $('.pagination').pagination('getPagesCount');
+							$('.pagination').pagination('selectPage', totalPages);
+						}
+					}
+					
+				});
+			</script>
+HTML;
 	}
 }

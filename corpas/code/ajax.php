@@ -126,6 +126,12 @@ switch ($_REQUEST["action"]) {
 	case "setGroup":
 		users::updateGroupLastUsed($_GET["groupId"]);
 		break;
+	case "getSlowSearchResults":
+		$slowSearch = new slow_search();
+		$xpath = urldecode($_GET["xpath"]);
+		$results = $slowSearch->search($xpath, $_GET["filename"], $_GET["id"]);
+		echo json_encode($results);
+		break;
 	default:
 		echo json_encode(array("error"=>"undefined action"));
 }

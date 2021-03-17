@@ -407,7 +407,7 @@ SQL;
 	public static function getDataById($filename, $id) {
 		$db = new database();
 		$sql = <<<SQL
-			SELECT wordform, pos, lemma, date_of_lang, l.title, page, medium, s.auto_id as auto_id, 
+			SELECT l.id as id, l.filename as filename, wordform, pos, lemma, date_of_lang, l.title, page, medium, s.auto_id as auto_id, 
 			       s.wordClass as wordClass, t.id AS tid, t.level as level, district_id
             FROM lemmas AS l
             LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id AND group_id = {$_SESSION["groupId"]}

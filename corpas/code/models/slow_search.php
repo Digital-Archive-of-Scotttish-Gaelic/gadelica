@@ -16,24 +16,43 @@ class slow_search
 		}
 	}
 
-	public function search($xpath) {
+	public function search($xpath, $offsetFilename="", $offsetId="") {
 		$results = array();
 		$it = new \RecursiveDirectoryIterator($this->_path);
-		$i = 0;
+		$i = 1;
 		foreach (new \RecursiveIteratorIterator($it) as $nextFile) {
 			if ($nextFile->getExtension() == 'xml') {
 				$filename = substr($nextFile, $this->_filepathOffset);
+
+
+				if ($offsetFilename && ($offsetFilename != $filename)) {
+					continue;
+				} else if ($offsetFilename == $filename) {
+					$offsetFilename = "";
+				}
+
+
 				$handler = new xmlfilehandler($filename);
 				$xml = simplexml_load_file($nextFile);
 				$xml->registerXPathNamespace('dasg', 'https://dasg.ac.uk/corpus/');
 				$result  = $xml->xpath($xpath);
 				foreach ($result as $id) {
+
+					if ($offsetId && $offsetId != $id) {
+						continue;
+					} else if ($offsetId == $id) {
+						$offsetId = "";
+						continue;
+					}
+
 					$results[$i]["data"] = corpus_search::getDataById($filename, $id);
 
 					$results[$i]["data"]["key"] = $it->key();
 					$results[$i]["context"] = $handler->getContext($id);
+					$results[$i]["count"] = $i;
 
-					if ($i == 2) {return $results;}
+					//limit to 6 results
+					if ($i == 6) {return $results;}
 					$i++;
 				}
 			}

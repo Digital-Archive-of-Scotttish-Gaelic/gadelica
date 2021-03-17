@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/ajax.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/models/corpus_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/corpus_search.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/models/slow_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/slow_search.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/views/slow_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/slow_search.php" afterDir="false" />
@@ -103,13 +104,8 @@
       <workItem from="1613130765631" duration="4835000" />
       <workItem from="1613635197677" duration="15236000" />
       <workItem from="1614588458833" duration="844000" />
-    </task>
-    <task id="LOCAL-00008" summary="Fix for old URL structure in &quot;request unlock&quot; functionlaity">
-      <created>1605534824285</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1605534824285</updated>
+      <workItem from="1615970019581" duration="47000" />
+      <workItem from="1615970093454" duration="8140000" />
     </task>
     <task id="LOCAL-00009" summary="Some initial refactoring of browse_search classes">
       <created>1605541862138</created>
@@ -447,14 +443,20 @@
       <option name="project" value="LOCAL" />
       <updated>1615890560163</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Initial work on fleshing out the slow search to display database information in results.&#10;Some initial basic refactoring of slow search in line with MVC">
+      <created>1615907529402</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1615907529402</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="First pass at searching by district (location)&#10;Bug fix for jQuery error in browse corpus" />
     <MESSAGE value="Some placeholder code on search form for restricting by district.&#10;Fixed jQuery bug in corpus browse" />
     <MESSAGE value="Fixed bug whereby citation scope would reset to database value instead of default." />
     <MESSAGE value="Fixed bugs with selection of citation context: &#10;1. Clicking a token to select start/end point stopped +/- buttons from working&#10;2. Taking the context down to &quot;zero&quot; for either pre/post would cause unexpected behaviour" />
@@ -479,6 +481,7 @@
     <MESSAGE value="New approach to chunked dictionary search results using pagination.min.js.&#10;Basic structure working returning dates." />
     <MESSAGE value="Added loading image for dictionary view results&#10;Sorted out showing/hiding behaviour for dictionary view results&#10;Tidied up some bits and pieces in dictionary view results" />
     <MESSAGE value="Refactored wordform search into the main search function and added REGEXP support for all searches&#10;Tidied up loading of dictionary view results&#10;Bug fix in switching between corpus and dictionary views" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored wordform search into the main search function and added REGEXP support for all searches&#10;Tidied up loading of dictionary view results&#10;Bug fix in switching between corpus and dictionary views" />
+    <MESSAGE value="Initial work on fleshing out the slow search to display database information in results.&#10;Some initial basic refactoring of slow search in line with MVC" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial work on fleshing out the slow search to display database information in results.&#10;Some initial basic refactoring of slow search in line with MVC" />
   </component>
 </project>
