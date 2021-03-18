@@ -17,9 +17,10 @@ class slow_search
 	}
 
 	public function search($xpath, $chunkSize=null, $offsetFilename=null, $offsetId=null, $index=-1) {
+		$chunkSize = $chunkSize ? intval($chunkSize) : null;
 		$results = array();
 		$it = new \RecursiveDirectoryIterator($this->_path);
-		$i = 0;
+		$i = 0; //increment counter for results array
 		foreach (new \RecursiveIteratorIterator($it) as $nextFile) {
 			if ($nextFile->getExtension() == 'xml') {
 				$filename = substr($nextFile, $this->_filepathOffset);
@@ -50,7 +51,7 @@ class slow_search
 					$results[$i]["index"] = $index;
 
 					//limit results to chunk size
-					if ($i == $chunkSize) {return $results;}
+					if ($i === $chunkSize) {return $results;}
 					$i++;
 				}
 			}
