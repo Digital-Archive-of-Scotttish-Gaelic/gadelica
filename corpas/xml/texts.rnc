@@ -19,12 +19,13 @@ Sentence = element s { (Token | Page | element i { Token+ } )+ }
 Note = element note { text }
 
 Token = ( 
-            element w { attribute id {text}, attribute pos {text}?, attribute lemma {text}?, attribute spec {text}?, attribute mod {text}?, attribute comp {text}?, attribute pred {text}?, attribute en {text}?, text } 
+            element w { attribute id {text}, attribute pos {text}?, attribute lemma {text}?, attribute en {text}?, text } 
           | element pc {attribute join {"no"|"left"|"right"|"both"}, text} 
           | element o { text } 
           | element t { attribute resp {text}?, text }
           | element pause { text }
           | element footnote { attribute n { text }, Paragraph }
+          | element n { attribute type { "m"|"f"|"txt"|"org"|"top"|"time" }, Token+ }
         )
 
 

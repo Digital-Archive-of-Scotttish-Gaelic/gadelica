@@ -216,5 +216,17 @@
     </p>
   </xsl:template>
   
+  <xsl:template match="dasg:n">
+    <xsl:if test="not(name(preceding::*[1])='pc' and preceding::*[1]/@join='right')">
+      <xsl:text> </xsl:text>
+    </xsl:if>
+    <u style="text-decoration-color: red; text-decoration-style: dashed">
+      <xsl:apply-templates/>
+    </u>
+    <xsl:if test="not(name(following::*[1])='pc' and following::*[1]/@join='left')">
+      <xsl:text> </xsl:text>
+    </xsl:if>
+  </xsl:template>
+  
   
 </xsl:stylesheet>
