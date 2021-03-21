@@ -8,6 +8,7 @@ class corpus_generate
   private $_id; // the id number for the text in the corpus (obligatory)
   private $_filepaths = []; // an array of XML filepaths
   private $_lexemes = []; // an array of headwords
+  private $_names = []; // an array of names
 
 	private $_db;   // an instance of models\database
 
@@ -16,6 +17,7 @@ class corpus_generate
 		$this->_id = $id;
 		$this->_filepaths = $this->_getFilepaths($id);
     $this->_lexemes = $this->_getLexemes();
+    $this->_names = $this->_getNames();
 	}
 
   private function _getFilepaths($id) {
@@ -102,39 +104,19 @@ SQL;
     return $oot2;
   }
 
+  private function _getNames() {
+    $oot = [];
+    foreach ($this->_filepaths as $nextFilepath) {
+      $xml = simplexml_load_file('../xml/' . $nextFilepath);
+      $xml->registerXPathNamespace('dasg', 'https://dasg.ac.uk/corpus/');
+      $results = $xml->xpath('//dasg:n');
+      foreach ($results as $nextResult) {
+        $oot[] = $nextResult->asXML();
+      }
+    }
+    return $oot;
+  }
 
-	/**
-	 * Populates the object from the DB
-	 */
-	private function _load() {
-		$sql = <<<SQL
-			SELECT title, partOf, filepath, date, level, notes
-				FROM text
-				WHERE id = :id
-SQL;
-		$results = $this->_db->fetch($sql, array(":id" => $this->getId()));
-		$textData = $results[0];
-		$this->_setTitle($textData["title"]);
-		if ($parentTextId = $textData["partOf"]) {    // create a parent text
-			$this->_setParentText($parentTextId);
-		}
-		else {
-			$this->_setParentText("0"); // the root corpus
-		}
-		if ($filepath = $textData["filepath"]) {
-			$this->_setFilepath($filepath);
-		}
-		if ($date = $textData["date"]) {
-			$this->_setDate($date);
-		}
-		if ($level = $textData["level"]) {
-			$this->_setLevel($level);
-		}
-		if ($notes = $textData["notes"]) {
-			$this->_setNotes($notes);
-		}
-		$this->_setWriters();
-	}
 
 	// SETTERS
 
@@ -152,21 +134,9 @@ SQL;
     return $this->_lexemes;
   }
 
-	/**
-	 * Get child text info (on the fly to cut down on memory overhead)
-	 * @return array of associative info ("id" => "title")
-	 */
-	public function getChildTextsInfo() {
-		$childTextsInfo = array();
-		$sql = <<<SQL
-			SELECT id, title FROM text WHERE partOf = :id ORDER BY id ASC
-SQL;
-		$results = $this->_db->fetch($sql, array(":id" => $this->getId()));
-		foreach ($results as $result) {
-			$childTextsInfo[$result["id"]] = $result["title"];
-		}
-		return $childTextsInfo;
-	}
+  public function getNames() {
+    return $this->_names;
+  }
 
 
 }

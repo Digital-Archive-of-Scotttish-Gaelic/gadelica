@@ -48,6 +48,10 @@ HTML;
 		echo <<<HTML
 		  </ul>
 HTML;
+    $names = $this->_model->getNames();
+    foreach ($names as $nextName) {
+    	echo $nextName . '<br/>';
+    }
 		$lexemes = $this->_model->getLexemes();
 		$count = count($lexemes);
     echo <<<HTML
