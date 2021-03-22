@@ -4,6 +4,7 @@
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/models/slow_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/slow_search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/views/slow_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/slow_search.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,28 +103,7 @@
       <workItem from="1613635197677" duration="15236000" />
       <workItem from="1614588458833" duration="844000" />
       <workItem from="1615970019581" duration="47000" />
-      <workItem from="1615970093454" duration="20467000" />
-    </task>
-    <task id="LOCAL-00014" summary="Added AJAX functionality to gramar pages">
-      <created>1605698153613</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1605698153613</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Fix to show correct scope lengths for context in gramar pages">
-      <created>1605700506599</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1605700506599</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Changing POS in edit slip now repopulates the sense categories dropdown.">
-      <created>1606828796447</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1606828796447</updated>
+      <workItem from="1615970093454" duration="25655000" />
     </task>
     <task id="LOCAL-00017" summary="Removed slip locking mechanism (commented out code)&#10;Fixed bug whereby some slips were not saving properly">
       <created>1606833022713</created>
@@ -447,16 +427,34 @@
       <option name="project" value="LOCAL" />
       <updated>1615994006551</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Bug fix for all results and chunked results not playing nicely together.&#10;Many UI improvements">
+      <created>1616078750166</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1616078750166</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Reworked regular expression searching for headword (lemma) to ensure word boundary is respected">
+      <created>1616407084484</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1616407084484</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Ensured all word links in results open in new tab">
+      <created>1616408093518</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1616408093518</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed bug where citation context was editable within entries&#10;added English tranlsation beneath each entry citation" />
-    <MESSAGE value="Added a prototype PDF viewer for directories - much work needed" />
-    <MESSAGE value="Fixed a minor issue with the constant definitions that was generating some warnings." />
     <MESSAGE value="Added directories for input and output files in CorpasXMLParser" />
     <MESSAGE value="Initial refactoring for MVC" />
     <MESSAGE value="Working code for saving lexeme data&#10;TODO: forms, translations, notes; and correct window close behaviour" />
@@ -479,6 +477,9 @@
     <MESSAGE value="Added index IDs to slip links in slow search to facilitate correct updating of slip links in results after slip creation" />
     <MESSAGE value="Added option on search form to choose between searching for all results and chunking results. Added option to choose chunk size.&#10;Fixed issues with full results not paginating." />
     <MESSAGE value="Added option on search form to choose between searching for all results and chunking results. Added option to choose chunk size.&#10;Fixed issues with full results not paginating.&#10;Fixed issue where chunked results weren't working correctly due to conflict with &quot;all results&quot; functionality.&#10;TODO: fix &quot;all results&quot; functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added option on search form to choose between searching for all results and chunking results. Added option to choose chunk size.&#10;Fixed issues with full results not paginating.&#10;Fixed issue where chunked results weren't working correctly due to conflict with &quot;all results&quot; functionality.&#10;TODO: fix &quot;all results&quot; functionality" />
+    <MESSAGE value="Bug fix for all results and chunked results not playing nicely together.&#10;Many UI improvements" />
+    <MESSAGE value="Reworked regular expression searching for headword (lemma) to ensure word boundary is respected" />
+    <MESSAGE value="Ensured all word links in results open in new tab" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ensured all word links in results open in new tab" />
   </component>
 </project>

@@ -17,6 +17,7 @@ class slow_search
 	}
 
 	public function search($xpath, $chunkSize=null, $offsetFilename=null, $offsetId=null, $index=-1) {
+		$xpath = "//dasg:" . $xpath . "/@id";   //format the xpath
 		$chunkSize = $chunkSize ? intval($chunkSize) : null;
 		$results = array();
 		$it = new \RecursiveDirectoryIterator($this->_path);
