@@ -139,6 +139,7 @@ class corpus_search
 		$perpage = $params["pp"];
 		$pagenum = $params["page"];
 		$offset = $pagenum == 1 ? 0 : ($perpage * $pagenum) - $perpage;
+		$searchPrefix = "[[:<:]]";  //default to word boundary at start for REGEXP
 		$whereClause = "";
 		switch ($params["order"]) {
 			case "random":
@@ -162,7 +163,7 @@ class corpus_search
 			default:
 				$orderBy = "filename, id";
 		}
-		if ($params["mode"] != "wordform") {    //lemma query build
+		if ($params["mode"] != "wordform") {    //lemma query
 			$query["search"] = $params["term"];
 			$textJoinSql = "";
 			if ($params["id"]) {    //restrict to this text
@@ -183,9 +184,8 @@ SQL;
 				lemma REGEXP :term
 SQL;
 							//end lemma query build
-		} else {                               //wordform query build
+		} else {                               //wordform query
 			$search = $params["term"];
-			$searchPrefix = "[[:<:]]";  //default to word boundary at start
 			if ($params["accent"] != "sensitive") {
 				$search = functions::getAccentInsensitive($search, $params["case"] == "sensitive");
 			}
@@ -196,12 +196,12 @@ SQL;
 				//deal with h-, n-, t-
 				$searchPrefix = "^";  //don't use word boundary at start of search, but start of string instead
 			}
-			$query["search"] = $searchPrefix . $search . "[[:>:]]";  //word boundary
 			if ($params["case"] == "sensitive") {   //case sensitive
 				$whereClause = "wordform_bin REGEXP :term";
 			} else {                              //case insensitive
 				$whereClause = "wordform REGEXP :term";
 			}
+			$query["search"] = $search;
 		}         //end wordform query build
 
 		$query["sql"] = <<<SQL
@@ -215,7 +215,7 @@ SQL;
             WHERE {$whereClause}
 
 SQL;
-
+		$query["search"] = $searchPrefix . $query["search"] . "[[:>:]]";  //word boundary
 		$pdoParams = array(":term" => $query["search"]);    //params required to pass for the PDO DB query
 		if ($params["selectedDates"]) {       //restrict by date
 			$query["sql"] .= $this->_getDateWhereClause();
