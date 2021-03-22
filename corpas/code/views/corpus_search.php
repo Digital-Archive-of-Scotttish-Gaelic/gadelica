@@ -381,7 +381,7 @@ HTML;
 				<td class="extendedField">#{$textNum} {$shortTitle}</td>
         <td style="text-align: right;">{$context["pre"]["output"]}</td>
         <td style="text-align: center;">
-            <a href="?m=corpus&a=browse&id={$result["tid"]}&wid={$result["id"]}"
+            <a target="_blank" href="?m=corpus&a=browse&id={$result["tid"]}&wid={$result["id"]}"
                     data-toggle="tooltip" data-html="true" title="{$title}">
                 {$context["word"]}
             </a>
@@ -618,7 +618,7 @@ HTML;
 		        html += '<tr>';
 		        html += '<td>' + val.date + '</td>'; 
 		        html += '<td style="text-align: right;">'+val.pre.output + '</td>';
-		        html += '<td><a href="?m=corpus&a=browse&id=' + val.tid + '&wid=' + val.id + '"';
+		        html += '<td><a target="_blank" href="?m=corpus&a=browse&id=' + val.tid + '&wid=' + val.id + '"';
 		        html += ' data-toggle="tooltip" data-html="true" title="' + title + '">';
 		        html += val.word + '</a>';
 		        html += '<td>' + val.post.output + '</td>';

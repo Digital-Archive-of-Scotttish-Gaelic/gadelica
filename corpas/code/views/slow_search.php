@@ -74,7 +74,7 @@ HTML;
 						<th scope="row">{$rowNum}</th>
 						<td>{$data["date_of_lang"]}</td>
 						<td style="text-align: right;">{$context["pre"]["output"]}</td>
-						<td style="text-align: center;"><a href="?m=corpus&a=browse&id={$data["tid"]}&wid={$data["id"]}"
+						<td style="text-align: center;"><a target="_blank" href="?m=corpus&a=browse&id={$data["tid"]}&wid={$data["id"]}"
                 data-toggle="tooltip" data-html="true" title="{$title}">
               {$context["word"]}
             </a></td>
@@ -142,7 +142,8 @@ HTML;
 				          html += '<th>'+rowNum+'</th>';
 				          html += '<td>'+data.date_of_lang+'</td>';
 				          html += '<td style="text-align:right;">'+context.pre.output+'</td>';
-				          html += '<td style="text-align: center;"><a href="?m=corpus&a=browse&id='+data.tid+'&wid='+data.id+'"';
+				          html += '<td style="text-align: center;">';
+				          html += '<a target="_blank" href="?m=corpus&a=browse&id='+data.tid+'&wid='+data.id+'"';
                   html +=  ' data-toggle="tooltip" data-html="true" title="'+title+'">';
                   html += context.word + '</a></td>';
 				          html += '<td>'+context.post.output+'</td>';
