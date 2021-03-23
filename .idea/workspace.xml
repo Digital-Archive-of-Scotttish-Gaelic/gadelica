@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/slow_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/slow_search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/views/slow_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/slow_search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/models/corpus_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/corpus_search.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,14 +102,7 @@
       <workItem from="1613635197677" duration="15236000" />
       <workItem from="1614588458833" duration="844000" />
       <workItem from="1615970019581" duration="47000" />
-      <workItem from="1615970093454" duration="25655000" />
-    </task>
-    <task id="LOCAL-00017" summary="Removed slip locking mechanism (commented out code)&#10;Fixed bug whereby some slips were not saving properly">
-      <created>1606833022713</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1606833022713</updated>
+      <workItem from="1615970093454" duration="27970000" />
     </task>
     <task id="LOCAL-00018" summary="Attempted bug fix for reset password issue following code refactor">
       <created>1606833925362</created>
@@ -448,14 +440,31 @@
       <option name="project" value="LOCAL" />
       <updated>1616408093518</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Refactored slow search to work entirely asynchronously. &#10;Added check for end of results and added message for user&#10;Simplified XPath in search box and added necessary prefix and suffix in the model's search function">
+      <created>1616412468464</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1616412468464</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added directories for input and output files in CorpasXMLParser" />
     <MESSAGE value="Initial refactoring for MVC" />
     <MESSAGE value="Working code for saving lexeme data&#10;TODO: forms, translations, notes; and correct window close behaviour" />
     <MESSAGE value="Working code for saving lexeme data including forms, translations, notes.&#10;TODO: correct window close behaviour; create addlexeme.php; add/delete parts" />
@@ -480,6 +489,7 @@
     <MESSAGE value="Bug fix for all results and chunked results not playing nicely together.&#10;Many UI improvements" />
     <MESSAGE value="Reworked regular expression searching for headword (lemma) to ensure word boundary is respected" />
     <MESSAGE value="Ensured all word links in results open in new tab" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ensured all word links in results open in new tab" />
+    <MESSAGE value="Refactored slow search to work entirely asynchronously. &#10;Added check for end of results and added message for user&#10;Simplified XPath in search box and added necessary prefix and suffix in the model's search function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored slow search to work entirely asynchronously. &#10;Added check for end of results and added message for user&#10;Simplified XPath in search box and added necessary prefix and suffix in the model's search function" />
   </component>
 </project>

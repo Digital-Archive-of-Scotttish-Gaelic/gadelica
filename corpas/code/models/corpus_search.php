@@ -237,15 +237,15 @@ SQL;
 		}
 		if ($params["pw"] != "") {         //multi word search for preceding word
 			$query["sql"] .= $params["preMode"] == "wordform"
-				? " AND preceding_word = :pw"
-				: " AND preceding_lemma = :pw";
-			$pdoParams[":pw"] = $params["pw"];
+				? " AND preceding_word REGEXP :pw"
+				: " AND preceding_lemma REGEXP :pw";
+			$pdoParams[":pw"] = "[[:<:]]" . $params["pw"] . "[[:>:]]";
 		}
 		if ($params["fw"] != "") {         //multi word search for following word
 			$query["sql"] .= $params["postMode"] == "wordform"
-				? " AND following_word = :fw"
-				: " AND following_lemma = :fw";
-			$pdoParams[":fw"] = $params["fw"];
+				? " AND following_word REGEXP :fw"
+				: " AND following_lemma REGEXP :fw";
+			$pdoParams[":fw"] = "[[:<:]]" . $params["fw"] . "[[:>:]]";
 		}
 
 		$query["sql"] .= <<<SQL
