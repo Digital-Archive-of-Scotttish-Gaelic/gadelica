@@ -1,0 +1,32 @@
+datatypes xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
+
+start = Module
+
+Module = element module { 
+  Title,
+  ( Paragraph | Rule | List | Box | XList | Table | Heading )+
+}
+
+Title = element title { attribute xml:lang { "gd"|"en" }?, TextContent+ }
+Paragraph = element p { attribute xml:lang { "gd"|"en" }?, TextContent+ }
+Rule = element hr { empty }
+List = (element ol { attribute type { "1"|"a"|"i" }?, ListItem+ } | element ul { ListItem+ })
+ListItem = element li { (TextContent | List)+ }
+Box = element box { attribute id { text }, Title, ( Paragraph | Rule | List | XList | Table | Heading )+}
+XList = element xl { ListItem+ } | element xlx { element li { attribute slip { text }?, element gd { TextContent+ }, element en2 { text }, element ref { attribute text { text }, TextContent+ } }+ }
+Table = element table { attribute class { "table w-auto" }, element thead { TR }?, element tbody { TR+ } }
+TR = element tr { (element td { attribute colspan {"2"}?, TextContent+ } | element th { TextContent+ })+ }
+Heading = element h5 { TextContent+ }
+
+TextContent = (
+     text
+  |  element strong { TextContent+ }
+  |  element en { text }
+  |  element em { text }
+  |  element mark { TextContent+ }
+  |  element u { text }
+  |  element a { attribute href { xsd:anyURI }, text }
+  |  element boxlink { attribute ref { xsd:anyURI } }
+  |  element boxlink2 { attribute ref { xsd:anyURI }, text }
+)
+

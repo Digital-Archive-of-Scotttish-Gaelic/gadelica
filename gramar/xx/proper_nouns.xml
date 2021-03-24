@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../module.rnc" schematypens="https://relaxng.org/ns/structure/1.0?>
+<module>
+  <title>proper nouns</title>
+  <p>Proper nouns are <a href="?xx=nouns">nouns</a> which are also <a href="?xx=names">names</a>, identifying and referring to a single entity – a specific person, animal, place, organisation
+    &amp;c.</p>
+  <p>Like all nouns, proper nouns have a <strong>gender</strong> – they are either <strong>feminine</strong> or <strong>masculine</strong> –</p>
+  <ul>
+    <li><mark>Mairead</mark>
+      <en>Margaret</en> and <mark>Sasainn</mark>
+      <en>England</en> are examples of feminine proper nouns.</li>
+    <li><mark>Seumas</mark>
+      <en>James</en> and <mark>Bòd</mark>
+      <en>Bute</en> are example of masculine proper nouns.</li>
+  </ul>
+  <p>Since they refer to single entities, all proper nouns are <strong>singular</strong>. There are no <strong>plural</strong> proper nouns.</p>
+  <p>Like all nouns, proper nouns are declined for <strong>case</strong> – they can have <strong>nominative</strong>, <strong>dative</strong> and <strong>genitive</strong> forms –</p>
+  <ul>
+    <li>The dative and genitive forms of <em>Mairead</em> are both <mark>Maireid</mark>.</li>
+    <li>The genitive forms of <em>Seumas</em> and <em>Bòd</em> are <mark>Sheumais</mark> and <mark>Bhòid</mark> respectively.</li>
+  </ul>
+  <p>Like other nouns, proper nouns can be <strong>modified</strong> by an attributive adjective, e.g. <mark>Seumas Beag</mark>
+    <en>Little James</en>, <mark>Mairead Bhàn</mark>
+    <en>Fair Margaret</en>, <mark>Sasainn Nuadh</mark>
+    <en>New England</en>.</p>
+  <p>Like all names, proper nouns belong to different semantic classes, depending on the kind of entity they identify –</p>
+  <ol>
+    <li><strong>Anthroponymic</strong> proper nouns name people, e.g. <mark>Mairead</mark>, <mark>Seumas</mark>.</li>
+    <li><strong>Toponymic</strong> proper nouns name places (geographical entities), e.g. <mark>Bòd</mark>, <mark>Sasainn</mark>.</li>
+  </ol>
+  <h5>Anthroponymic proper nouns</h5>
+  <p>Feminine anthroponymic proper nouns name female persons, <mark>Mairead</mark>
+    <en>Margaret</en>, <mark>Caitrìona</mark>
+    <en>Catherine</en>. They are slenderised, but not (necessarily) lenited, in both the dative and genitive cases, e.g. <mark>le Maireid</mark>
+    <en>with Margaret</en>, <mark>taigh Maireid</mark>
+    <en>Margaret’s house</en>. <boxlink ref="#feminine_anthroponyms"/></p>
+  <box id="feminine_anthroponyms">
+    <title>feminine anthroponymic proper nouns</title>
+    <p>Feminine anthroponymic proper nouns name female persons. They are slenderised, but not (necessarily) lenited, in both the dative and genitive cases –</p>
+    <table class="table w-auto">
+      <tbody>
+        <tr>
+          <th>nominative</th>
+          <td><mark>Mairead</mark></td>
+          <td><mark>Sìne</mark></td>
+        </tr>
+        <tr>
+          <th>dative</th>
+          <td>(le) Maireid</td>
+          <td>(le) Sìne</td>
+        </tr>
+        <tr>
+          <th>genitive</th>
+          <td>(taigh) Maireid</td>
+          <td>(taigh) Sìne</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Note that feminine anthroponymic proper nouns ending with a vowel or slender consonant show no change in the dative or genitive.</p>
+    <p>Note also that genitive forms of feminine anthroponymic proper nouns are systematically lenited in some dialects, cf. ?<em>taigh Mhaireid</em>.</p>
+    <p>Here is a comprehensive list of traditional feminine anthroponymic proper nouns –</p>
+    <table class="table w-auto">
+      <thead>
+        <tr>
+          <th>nominative / dative</th>
+          <th>genitive</th>
+          <th>English</th>
+          <th>notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="2"><mark>Anna</mark></td>
+          <td><en>Anne</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td colspan="2"><mark>Cairistìona</mark></td>
+          <td><en>Christine</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td colspan="2"><mark>Caitrìona</mark></td>
+          <td><en>Catherine</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td colspan="2"><mark>Ealasaid</mark></td>
+          <td><en>Elizabeth</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td colspan="2"><mark>Eilidh</mark></td>
+          <td><en>Helen</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><mark>Mairead</mark></td>
+          <td>Maireid</td>
+          <td><en>Margaret</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td colspan="2"><mark>Màiri</mark></td>
+          <td><en>Mary</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td colspan="2"><mark>Marsaili</mark></td>
+          <td><en>Marjory</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><mark>Mòr</mark></td>
+          <td>Mòir</td>
+          <td><en>Sarah</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td colspan="2"><mark>Raonaid</mark></td>
+          <td><en>Rachel</en></td>
+          <td>Also: Raghnaid</td>
+        </tr>
+        <tr>
+          <td colspan="2"><mark>Seònaid</mark></td>
+          <td><en>Janet</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td colspan="2"><mark>Sìne</mark></td>
+          <td><en>Joan</en></td>
+          <td/>
+        </tr>
+      </tbody>
+    </table>
+  </box>
+  <p>Masculine anthroponymic proper nouns name male persons, e.g. <mark>Seumas</mark>
+    <en>James</en>, <mark>Dòmhnall</mark>
+    <en>Donald</en>. They are unchanged in the dative case, and are both slenderised and lenited in the genitive, e.g. <mark>le Seumas</mark>
+    <en>with James</en>, <mark>taigh Sheumais</mark>
+    <en>James’ house</en>. <boxlink ref="#masculine_anthroponyms"/></p>
+  <box id="masculine_anthroponyms">
+    <title>masculine anthroponymic proper nouns</title>
+    <p>Masculine anthroponymic proper nouns name male persons. They are unchanged in the dative case, and are both slenderised and lenited in the genitive –</p>
+    <table class="table w-auto">
+      <tbody>
+        <tr>
+          <th>nominative</th>
+          <td><mark>Dòmhnall</mark></td>
+          <td><mark>Murchadh</mark></td>
+          <td><mark>Aonghas</mark></td>
+        </tr>
+        <tr>
+          <th>dative</th>
+          <td>(le) Dòmhnall</td>
+          <td>(le) Murchadh</td>
+          <td>(le) Aonghas</td>
+        </tr>
+        <tr>
+          <th>genitive</th>
+          <td>(taigh) Dhòmhnaill</td>
+          <td>(taigh) Mhurchaidh</td>
+          <td>(taigh) Aonghais</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Note that masculine anthroponymic proper nouns starting with a vowel or non-lenitable consonant and ending with a vowel or slender consonant show no change in the genitive.</p>
+    <p>Here is a comprehensive list of traditional masculine anthroponymic proper nouns –</p>
+    <table class="table w-auto">
+      <thead>
+        <tr>
+          <th>nominative / dative</th>
+          <th>genitive</th>
+          <th>English</th>
+          <th>notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><mark>Ailean</mark></td>
+          <td>Ailein</td>
+          <td><en>Alan</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td colspan="2"><mark>Alastair</mark></td>
+          <td><en>Alexander</en></td>
+          <td>Also: Alasdair</td>
+        </tr>
+        <tr>
+          <td colspan="2"><mark>Anndra</mark></td>
+          <td><en>Andrew</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><mark>Aonghas</mark></td>
+          <td>Aonghais</td>
+          <td><en>Angus</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><mark>Cailean</mark></td>
+          <td>Chailein</td>
+          <td><en>Colin</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><mark>Calum</mark></td>
+          <td>Chaluim</td>
+          <td><en>Malcolm</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><mark>Coinneach</mark></td>
+          <td>Choinnich</td>
+          <td><en>Kenneth</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><mark>Dàibhidh</mark></td>
+          <td>Dhàibhidh</td>
+          <td><en>David</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><mark>Dòmhnall</mark></td>
+          <td>Dhòmhnaill</td>
+          <td><en>Donald</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><mark>Donnchadh</mark></td>
+          <td>Dhonnchaidh</td>
+          <td><en>Duncan</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><mark>Dùghall</mark></td>
+          <td>Dhùghaill</td>
+          <td><en>Douglas</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><mark>Eachann</mark></td>
+          <td>Eachainn</td>
+          <td><en>Hector</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><mark>Fionnlagh</mark></td>
+          <td>Fhionnlaigh</td>
+          <td><en>Finlay</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td colspan="2"><mark>Iain</mark></td>
+          <td><en>John</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><mark>Màrtainn</mark></td>
+          <td>Mhàrtainn</td>
+          <td><en>Martin</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><mark>Mìcheal</mark></td>
+          <td>Mhìcheil</td>
+          <td><en>Michael</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><mark>Murchadh</mark></td>
+          <td>Mhurchaidh</td>
+          <td><en>Murdo</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><mark>Niall</mark></td>
+          <td>Nèill</td>
+          <td><en>Neil</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><mark>Pàdraig</mark></td>
+          <td>Phàdraig</td>
+          <td><en>Peter</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><mark>Peadar</mark></td>
+          <td>Pheadair</td>
+          <td><en>Peter</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><mark>Pòl</mark></td>
+          <td>Phòil</td>
+          <td><en>Paul</en></td>
+        </tr>
+        <tr>
+          <td><mark>Raghnall</mark></td>
+          <td>Raghnaill</td>
+          <td><en>Ronald</en></td>
+        </tr>
+        <tr>
+          <td><mark>Raibeart</mark></td>
+          <td>Raibeirt</td>
+          <td><en>Robert</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td colspan="2"><mark>Ruairidh</mark></td>
+          <td><en>Derek, Roderick</en></td>
+          <td>Also: Ruaraidh</td>
+          <td/>
+        </tr>
+        <tr>
+          <td><mark>Seòras</mark></td>
+          <td>Sheòrais</td>
+          <td><en>George</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><mark>Seumas</mark></td>
+          <td>Sheumais</td>
+          <td><en>James</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><mark>Sìm</mark></td>
+          <td>Shìm</td>
+          <td><en>Simon</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><mark>Somhairle</mark></td>
+          <td>Shomhairle</td>
+          <td><en>Sorley</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><mark>Tòmas</mark></td>
+          <td>Thòmais</td>
+          <td><en>Thomas</en></td>
+          <td/>
+        </tr>
+        <tr>
+          <td><mark>Uilleam</mark></td>
+          <td>Uilleim</td>
+          <td><en>William</en></td>
+          <td/>
+        </tr>
+      </tbody>
+    </table>
+  </box>
+  <p>Some anthroponymic proper nouns have <strong>diminutive</strong> alternatives, e.g. <mark>Seumaidh</mark>
+    <en>Jimmy</en> and <mark>Peigi</mark>
+    <en>Peggy</en> are diminutive versions of <strong>Seumas</strong> and <strong>Mairead</strong> respectively. <boxlink ref="#diminutive_anthroponyms"/></p>
+  <box id="diminutive_anthroponyms">
+    <title>diminutive anthroponymic proper nouns</title>
+    <p>Diminutive anthroponymic proper nouns are informal, colloquial variants of more official anthroponymic proper nouns used to name people.</p>
+    <p>These are declined for case in the same way as other anthroponymic proper nouns.</p>
+    <p>Here is a comprehensive list of feminine diminutive anthroponymic proper nouns –</p>
+    <table class="table w-auto">
+      <thead>
+        <tr>
+          <th>diminutive</th>
+          <th>dative / genitive</th>
+          <th>formal version</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><mark>Curstag</mark></td>
+          <td>Curstaig</td>
+          <td>Cairistìona</td>
+        </tr>
+        <tr>
+          <td><mark>Mòrag</mark></td>
+          <td>Mòraig</td>
+          <td>Mòr</td>
+        </tr>
+        <tr>
+          <td><mark>Seònag</mark></td>
+          <td>Seònaig</td>
+          <td>Seònaid</td>
+        </tr>
+        <tr>
+          <td colspan="2"><mark>Ciorstaidh</mark></td>
+          <td>Cairistìona</td>
+        </tr>
+        <tr>
+          <td colspan="2"><mark>Peigi</mark></td>
+          <td>Mairead</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Here is a comprehensive list of masculine diminutive anthroponymic proper nouns –</p>
+    <table class="table w-auto">
+      <thead>
+        <tr>
+          <th>diminutive</th>
+          <th>genitive</th>
+          <th>formal version</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><mark>Dòmhnallan</mark></td>
+          <td>Dhòmhnallain</td>
+          <td>Dòmhnall</td>
+        </tr>
+        <tr>
+          <td><mark>Uilleagan</mark></td>
+          <td>Uilleagain</td>
+          <td>Uilleam</td>
+        </tr>
+        <tr>
+          <td><mark>Donaidh</mark></td>
+          <td>Dhonaidh</td>
+          <td>Dòmhnall</td>
+        </tr>
+        <tr>
+          <td><mark>Sandaidh</mark></td>
+          <td>Shandaidh</td>
+          <td>Alastair</td>
+        </tr>
+        <tr>
+          <td><mark>Seonaidh</mark></td>
+          <td>Sheonaidh</td>
+          <td>Iain</td>
+        </tr>
+        <tr>
+          <td><mark>Seumaidh</mark></td>
+          <td>Sheumaidh</td>
+          <td>Seumas</td>
+        </tr>
+        <tr>
+          <td colspan="2"><mark>Ailig</mark></td>
+          <td>Alastair</td>
+        </tr>
+      </tbody>
+    </table>
+  </box>
+  <p>Anthroponymic proper nouns maybe be juxtaposed with, modified or specified by other words as follows –</p>
+  <ol>
+    <li>Two anthroponymic proper nouns may be juxtaposed in apposition (i.e. agreeing in gender and case), e.g. <mark>Màiri Sìne</mark>
+      <en>Mary Jane</en>, <mark>Dòmhnall Uilleam</mark>
+      <en>Donald William</en>. <boxlink ref="#double-barrelled_names"/></li>
+    <li>An anthroponymic proper noun may be modified by a following adjective, agreeing in both gender and case, e.g. <mark>Mairead Bhàn</mark>
+      <en>Fair Margaret</en>, <mark>Seumas Mòr</mark>
+      <en>Big James</en>. <boxlink ref="#anthroponymic_adjectives"/></li>
+    <li>An anthroponymic proper noun (usually masculine) may be followed, in apposition, by a simple common noun denoting a job or profession, e.g. <mark>Dòmhnall Breabadair</mark>
+      <en>Donald the Weaver</en>
+      <boxlink ref="#anthroponymic_jobs"/></li>
+    <li>More apposition – Seumas mac Dhòmhnaill, Mairead nighean a’ Mhinisteir, Màiri bean Sheumais. And: Seumas mac Dhòmhnaill mhic Sheumais, Iain fear Chanaidh</li>
+    <li>An anthroponymic proper noun may be specified by a following common noun or proper noun. Seumas a’ Bhreabadair. Seumas Dhòmhnaill (Sheumais). Iain Chanaidh.</li>
+  </ol>
+  <box id="double-barrelled_names">
+    <title>‘double-barrelling’ of anthroponymic proper nouns</title>
+    <p>Two anthroponymic proper nouns may be combined in apposition to form a ‘double-barrelled’ personal name, e.g. <mark>Màiri Sìne</mark>
+      <en>Mary Jane</en>, <mark>Dòmhnall Uilleam</mark>
+      <en>Donald William</en>.</p>
+    <p>Since the two nouns are in apposition, they agree in both gender and case –</p>
+    <table class="table w-auto">
+      <tbody>
+        <tr>
+          <th>nominative</th>
+          <td><mark>Mòr Màiread</mark></td>
+          <td><mark>Dòmhnall Seumas</mark></td>
+        </tr>
+        <tr>
+          <th>dative</th>
+          <td>(le) Mòir Màireid</td>
+          <td>(le) Dòmhnall Seumas</td>
+        </tr>
+        <tr>
+          <th>genitive</th>
+          <td>(taigh) Mòir Màireid</td>
+          <td>(taigh) Dhòmhnaill Sheumais</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Note the following vocative examples from Cox (2017: 125) with regard to lenition of the second noun – <mark>A Thormoid C<u>h</u>aluim!</mark>
+      <mark>A Mhàiri Sìne!</mark></p>
+  </box>
+  <box id="anthroponymic_adjectives">
+    <title>anthroponymic proper nouns modified by adjectives</title>
+    <p>An anthroponymic proper noun may be modified by one or more following adjectives, e.g. <mark>Mairead Bhàn</mark>
+      <en>Fair Margaret</en>, <mark>Dòmhnall Beag Ruadh</mark>
+      <en>Little Red Donald</en>.</p>
+    <p>The adjectives agree with the proper noun in both gender and case –</p>
+    <table class="table w-auto">
+      <tbody>
+        <tr>
+          <th>nominative</th>
+          <td><mark>Màiread Dhonn</mark></td>
+          <td><mark>Dòmhnall Beag Ruadh</mark></td>
+        </tr>
+        <tr>
+          <th>dative</th>
+          <td>(le) Màireid Dhuinn</td>
+          <td>(le) Dòmhnall Beag Ruadh</td>
+        </tr>
+        <tr>
+          <th>genitive</th>
+          <td>(taigh) Màireid Duinne</td>
+          <td>(taigh) Dhòmhnaill Bhig Ruaidh</td>
+        </tr>
+      </tbody>
+    </table>
+  </box>
+  <box id="anthroponymic_jobs">
+    <title>anthroponymic proper nouns with nouns denoting jobs</title>
+    <p/>
+    <table class="table w-auto">
+      <tbody>
+        <tr>
+          <th>nominative</th>
+          <td><mark>Dòmhnall Breabadair</mark></td>
+          <td><mark>Aonghas Ruadh Saor</mark></td>
+        </tr>
+        <tr>
+          <th>dative</th>
+          <td>(le) Dòmhnall Breabadair</td>
+          <td>(le) Aonghas Ruadh Saor</td>
+        </tr>
+        <tr>
+          <th>genitive</th>
+          <td>(taigh) Dhòmhnaill Bhreabadair</td>
+          <td>(taigh) Aonghais Ruaidh Saoir</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Note the definite article is not used here, cf. *Dòmhnall am Breabadair.</p>
+  </box>
+
+  <h5>Toponymic proper nouns</h5>
+  <p/>
+
+
+</module>
