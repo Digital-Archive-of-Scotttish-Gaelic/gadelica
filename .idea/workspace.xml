@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/corpus_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/corpus_search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/models/slow_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/slow_search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/views/slow_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/slow_search.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,14 +103,9 @@
       <workItem from="1613635197677" duration="15236000" />
       <workItem from="1614588458833" duration="844000" />
       <workItem from="1615970019581" duration="47000" />
-      <workItem from="1615970093454" duration="27970000" />
-    </task>
-    <task id="LOCAL-00018" summary="Attempted bug fix for reset password issue following code refactor">
-      <created>1606833925362</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1606833925362</updated>
+      <workItem from="1615970093454" duration="28820000" />
+      <workItem from="1616571514686" duration="810000" />
+      <workItem from="1616660553342" duration="561000" />
     </task>
     <task id="LOCAL-00019" summary="Bug fix for citation context not working">
       <created>1606913095844</created>
@@ -447,7 +443,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616412468464</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Added REGEX functionality to preceding and following word search options">
+      <created>1616512183578</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1616512183578</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -463,9 +466,9 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial refactoring for MVC" />
     <MESSAGE value="Working code for saving lexeme data&#10;TODO: forms, translations, notes; and correct window close behaviour" />
     <MESSAGE value="Working code for saving lexeme data including forms, translations, notes.&#10;TODO: correct window close behaviour; create addlexeme.php; add/delete parts" />
     <MESSAGE value="Added code to add/delete forms, translations, and notes" />
@@ -490,6 +493,7 @@
     <MESSAGE value="Reworked regular expression searching for headword (lemma) to ensure word boundary is respected" />
     <MESSAGE value="Ensured all word links in results open in new tab" />
     <MESSAGE value="Refactored slow search to work entirely asynchronously. &#10;Added check for end of results and added message for user&#10;Simplified XPath in search box and added necessary prefix and suffix in the model's search function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored slow search to work entirely asynchronously. &#10;Added check for end of results and added message for user&#10;Simplified XPath in search box and added necessary prefix and suffix in the model's search function" />
+    <MESSAGE value="Added REGEX functionality to preceding and following word search options" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added REGEX functionality to preceding and following word search options" />
   </component>
 </project>

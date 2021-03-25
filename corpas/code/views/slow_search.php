@@ -22,7 +22,7 @@ class slow_search
 			    <input type="hidden" name="a" value="slow_search"/>
 			    <div class="form-group">
 				    <div class="input-group">
-					    <input type="text" class="form-control" name="xpath" value="w[@lemma='craobh']"/>
+					    <input type="text" class="form-control" name="xpath" value="@lemma='craobh'"/>
 					    <div class="input-group-append">
 						    <button class="btn btn-primary" type="submit">search</button>
 					    </div>
