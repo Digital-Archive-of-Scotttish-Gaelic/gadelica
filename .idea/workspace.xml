@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/ajax.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/controllers/corpus.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/controllers/corpus.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/models/slow_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/slow_search.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/views/slow_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/slow_search.php" afterDir="false" />
     </list>
@@ -105,14 +107,7 @@
       <workItem from="1615970019581" duration="47000" />
       <workItem from="1615970093454" duration="28820000" />
       <workItem from="1616571514686" duration="810000" />
-      <workItem from="1616660553342" duration="561000" />
-    </task>
-    <task id="LOCAL-00019" summary="Bug fix for citation context not working">
-      <created>1606913095844</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1606913095844</updated>
+      <workItem from="1616660553342" duration="14045000" />
     </task>
     <task id="LOCAL-00020" summary="Finally (!) a working prototype of a new method of selecting citation context.">
       <created>1607428593887</created>
@@ -450,7 +445,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616512183578</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Trimmed user facing XPath query in slow search box and added necessary back end code to model">
+      <created>1616665990694</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1616665990695</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -469,7 +471,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Working code for saving lexeme data&#10;TODO: forms, translations, notes; and correct window close behaviour" />
     <MESSAGE value="Working code for saving lexeme data including forms, translations, notes.&#10;TODO: correct window close behaviour; create addlexeme.php; add/delete parts" />
     <MESSAGE value="Added code to add/delete forms, translations, and notes" />
     <MESSAGE value="Recoded viewMhw.php to use new foreign key &quot;lexeme_id&quot;" />
@@ -494,6 +495,7 @@
     <MESSAGE value="Ensured all word links in results open in new tab" />
     <MESSAGE value="Refactored slow search to work entirely asynchronously. &#10;Added check for end of results and added message for user&#10;Simplified XPath in search box and added necessary prefix and suffix in the model's search function" />
     <MESSAGE value="Added REGEX functionality to preceding and following word search options" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added REGEX functionality to preceding and following word search options" />
+    <MESSAGE value="Trimmed user facing XPath query in slow search box and added necessary back end code to model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Trimmed user facing XPath query in slow search box and added necessary back end code to model" />
   </component>
 </project>

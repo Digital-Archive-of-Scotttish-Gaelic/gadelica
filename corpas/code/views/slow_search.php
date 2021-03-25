@@ -29,6 +29,10 @@ class slow_search
 				    </div>
 			    </div>
 			    <div class="form-group">
+	          <label class="form-check-label" for="id">Restrict by text ID</label>
+	          <input type="text" id="id" class="form-control-default" aria-label="text ID" name="id" value="0">
+					</div>
+			    <div class="form-group">
 	          <label class="form-check-label" for="chunkOff">Get all results</label>
 	          <input type="radio" id="chunkOff" class="form-control-default" aria-label="Get all results" name="chunk" value="off">
 					</div>
@@ -96,14 +100,14 @@ HTML;
 				  $('.loading').show();
 			    var xpath = '{$xpath}';
 			    var chunkSize = {$chunkSize};
-			    var filename = $('table tr').last().attr('data-filename');
-			    var id = $('table tr').last().attr('data-id');
+			    var offsetFilename = $('table tr').last().attr('data-filename');
+			    var offsetId = $('table tr').last().attr('data-id');
 			    var index = $('table tr').last().attr('data-index');
 			    if (!index) {
 			      index = -1;
 			    }
 			    $.getJSON('ajax.php', {action: 'getSlowSearchResults', xpath: xpath, chunkSize: chunkSize, 
-			          filename: filename, id: id, index: index})
+			          offsetFilename: offsetFilename, offsetId: offsetId, index: index, id: '{$_GET["id"]}'})
 			      .done(function (results) {
 			        $('.loading').hide();
 			        if (results.length == 0) {
