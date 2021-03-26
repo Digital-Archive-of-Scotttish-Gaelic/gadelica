@@ -25,6 +25,7 @@ TextContent = (
   |  element i { text }
   |  element m { TextContent+ }
   |  element u { text }
+  |  element bad { text } # ungrammatical example
   |  element a { attribute href { xsd:anyURI }, text }
   |  element boxlink { attribute ref { xsd:anyURI } }
   |  element boxlink2 { attribute ref { xsd:anyURI }, text }
