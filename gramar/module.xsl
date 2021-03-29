@@ -18,7 +18,7 @@
   
   <xsl:template match="meta"/>
   
-  <xsl:template match="p|strong|hr|ol|ul|li|a|h1|h2|h3|h4|h5|table|thead|tbody|tr|td|th|u">
+  <xsl:template match="p|strong|hr|ol|ul|li|a|h1|h2|h3|h4|h5|table|thead|tbody|tr|td|th|u|small">
     <xsl:copy>
       <xsl:if test="@type">
         <xsl:attribute name="type"><xsl:value-of select="@type"/></xsl:attribute>
@@ -28,6 +28,12 @@
       </xsl:if>
       <xsl:if test="@class">
         <xsl:attribute name="class"><xsl:value-of select="@class"/></xsl:attribute>
+      </xsl:if>
+      <xsl:if test="@id">
+        <xsl:attribute name="id"><xsl:value-of select="@id"/></xsl:attribute>
+      </xsl:if>
+      <xsl:if test="@data-toggle">
+        <xsl:attribute name="data-toggle"><xsl:value-of select="@data-toggle"/></xsl:attribute>
       </xsl:if>
       <xsl:if test="@colspan">
         <xsl:attribute name="colspan"><xsl:value-of select="@colspan"/></xsl:attribute>
@@ -125,6 +131,12 @@
       <xsl:apply-templates/>
       <xsl:text>]</xsl:text>
     </small>
+  </xsl:template>
+  
+  <xsl:template match="bad">
+    <span style="font-style: italic; text-decoration-line: underline; text-decoration-style: wavy; text-decoration-color: green;">
+      <xsl:apply-templates/>
+    </span>
   </xsl:template>
   
 </xsl:stylesheet>
