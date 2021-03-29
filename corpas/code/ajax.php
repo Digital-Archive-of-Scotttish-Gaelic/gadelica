@@ -62,9 +62,14 @@ switch ($_REQUEST["action"]) {
 		echo json_encode($slipInfo);
 		break;
 	case "getSenseCategories":
-		$categories = sensecategories::getAllUnusedCategories($_GET["slipId"],
-			$_GET["headword"], $_GET["wordclass"]);
-		echo json_encode($categories);
+
+
+		//$categories = sensecategories::getAllUnusedCategories($_GET["slipId"],
+		//	$_GET["headword"], $_GET["wordclass"]);
+
+		$slip = new slip($_GET["id"]);
+		$senses = $slip->getUnusedSenses();
+		echo json_encode($senses);
 		break;
   case "saveSlip":
     $slip = new slip($_POST["filename"], $_POST["id"], $_POST["auto_id"], $_POST["pos"],

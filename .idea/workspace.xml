@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/corpas/code/models/sense.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corpas/code/models/sensecategories.old.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/ajax.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/controllers/corpus.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/controllers/corpus.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/slow_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/slow_search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/views/slow_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/slow_search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/models/sensecategories.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/sensecategories.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/models/slip.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/slip.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/views/slip.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/slip.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +55,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/corpas/code/CorpasXMLParser/inputFiles" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/corpas/code/models" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -66,6 +68,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/corpas/code/models" />
       <recent name="$PROJECT_DIR$/corpas/code/CorpasXMLParser/inputFiles" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -107,14 +110,7 @@
       <workItem from="1615970019581" duration="47000" />
       <workItem from="1615970093454" duration="28820000" />
       <workItem from="1616571514686" duration="810000" />
-      <workItem from="1616660553342" duration="14045000" />
-    </task>
-    <task id="LOCAL-00020" summary="Finally (!) a working prototype of a new method of selecting citation context.">
-      <created>1607428593887</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1607428593887</updated>
+      <workItem from="1616660553342" duration="23833000" />
     </task>
     <task id="LOCAL-00021" summary="Updates to the new citation context functionality.">
       <created>1607439477331</created>
@@ -452,7 +448,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616665990695</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Finally (!!) completed a working version of slow search by text, including iteratively searching subtexts.&#10;Added text ID restrict field to slow search form just for testing just now">
+      <created>1616681055337</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1616681055337</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -471,7 +474,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Working code for saving lexeme data including forms, translations, notes.&#10;TODO: correct window close behaviour; create addlexeme.php; add/delete parts" />
     <MESSAGE value="Added code to add/delete forms, translations, and notes" />
     <MESSAGE value="Recoded viewMhw.php to use new foreign key &quot;lexeme_id&quot;" />
     <MESSAGE value="Created addLexeme.php, addPart.php, deletePart.php. Some edits in viewMhw.php to handle foreign keys and make links work." />
@@ -496,6 +498,7 @@
     <MESSAGE value="Refactored slow search to work entirely asynchronously. &#10;Added check for end of results and added message for user&#10;Simplified XPath in search box and added necessary prefix and suffix in the model's search function" />
     <MESSAGE value="Added REGEX functionality to preceding and following word search options" />
     <MESSAGE value="Trimmed user facing XPath query in slow search box and added necessary back end code to model" />
-    <option name="LAST_COMMIT_MESSAGE" value="Trimmed user facing XPath query in slow search box and added necessary back end code to model" />
+    <MESSAGE value="Finally (!!) completed a working version of slow search by text, including iteratively searching subtexts.&#10;Added text ID restrict field to slow search form just for testing just now" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finally (!!) completed a working version of slow search by text, including iteratively searching subtexts.&#10;Added text ID restrict field to slow search form just for testing just now" />
   </component>
 </project>

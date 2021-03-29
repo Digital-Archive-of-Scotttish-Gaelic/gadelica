@@ -304,7 +304,7 @@ HTML;
 
   }
 
-  private function _writeWordClassesSelect(){
+  private function _writeWordClassesSelect() {
     $classes = $this->_slip->getWordClasses();
     $optionHtml = "";
     foreach ($classes as $class => $posArray) {
@@ -324,21 +324,23 @@ HTML;
     return $html;
   }
 
-  private function _writeSenseCategories()
-  {
-    $categories = models\sensecategories::getAllUnusedCategories($this->_slip->getAutoId(),
-      $_REQUEST["headword"], $this->_slip->getWordClass());
+  private function _writeSenseCategories() {
+  	$unusedSenses = $this->_slip->getUnusedSenses();
+		$savedSenses = $this->_slip->getSenses();
     $dropdownHtml = '<option data-category="">-- select a category --</option>';
-    foreach ($categories as $cat) {
+    foreach ($unusedSenses as $sense) {
+    	$senseId = $sense->getId();
+    	$senseName = $sense->getName();
       $dropdownHtml .= <<<HTML
-        <option data-category="{$cat}" value="{$cat}">{$cat}</option>
+        <option data-sense="{$senseId}" value="{$senseId}">{$senseName}</option>
 HTML;
     }
-    $savedCategories = $this->_slip->getSenseCategories();
     $savedCatHtml = "";
-    foreach ($savedCategories as $category) {
+    foreach ($savedSenses as $sense) {
+    	$senseId = $sense->getId();
+    	$senseName = $sense->getName();
       $savedCatHtml .= <<<HTML
-        <li class="badge badge-success" data-category="{$category}">{$category} <a class="badge badge-danger deleteCat">X</a></li>
+        <li class="badge badge-success" data-sense="{$senseId}">{$senseName} <a class="badge badge-danger deleteCat">X</a></li>
 HTML;
     }
     echo <<<HTML
@@ -548,11 +550,12 @@ HTML;
 
             $("#chooseSenseCategory").on('click', function () {
               var elem = $( "#senseCategorySelect option:selected" );
-              var category = elem.text();
-              if (elem.attr('data-category') == "") {
+              var sense = elem.text();
+              if (elem.attr('data-sense') == "") {
                 return false;
               }
-              var html = '<li class="badge badge-success" data-category="' + category + '">' + category;
+              var senseId = elem.attr('data-sense');
+              var html = '<li class="badge badge-success" data-sense="' + senseId + '">' + sense;
               html += ' <a class="badge badge-danger deleteCat">X</a></li>';
               $('#senseCategories').append(html);
               elem.remove();

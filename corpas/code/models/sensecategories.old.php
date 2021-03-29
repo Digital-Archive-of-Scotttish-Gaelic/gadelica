@@ -4,42 +4,54 @@ namespace models;
 
 class sensecategories
 {
-	/**
-	 * Adds a new sense entry to the database and returns its ID
-	 * @param $name
-	 * @param $description
-	 * @param $headword
-	 * @param $wordclass
-	 * @return string : the ID of the newly created sense
-	 */
-  public static function addSense($name, $description, $headword, $wordclass) {
+  public static function saveCategory($slipId, $catName)
+  {
     $db = new database();
     $dbh = $db->getDatabaseHandle();
-    $sql = <<<SQL
-			INSERT INTO sense(name, description, headword, wordclass
-				VALUES (:name, :description, headword, wordclass)
-SQL;
     try {
-      $sth = $dbh->prepare($sql);
-      $sth->execute(array(":name"=>$name, ":description"=>$description, ":headword"=>$headword, ":wordclass"=>$wordclass));
-      return $db->getLastInsertId();
+      $sth = $dbh->prepare("INSERT INTO senseCategory VALUES(:slip_id, :cat_name)");
+      $sth->execute(array(":slip_id" => $slipId, ":cat_name" => $catName));
     } catch (PDOException $e) {
       echo $e->getMessage();
     }
   }
 
-	/**
-	 * Deletes a sense from the database and removes all its associated slip references also
-	 * @param $id : the sense ID
-	 */
-  public static function deleteSense($id) {
+  public static function deleteCategory($slipId, $catName)
+  {
     $db = new database();
     $dbh = $db->getDatabaseHandle();
     try {
-      $sth = $dbh->prepare("DELETE FROM sense WHERE id = :id");
-      $sth->execute(array(":id" => $id));
-      $sth2 = $dbh->prepare("DELETE FROM slip_sense WHERE sense_id = :id");
-      $sth2->execute(array(":id" => $id));
+      $sth = $dbh->prepare("DELETE FROM senseCategory WHERE slip_id = :slip_id AND category = :cat_name");
+      $sth->execute(array(":slip_id" => $slipId, ":cat_name" => $catName));
+    } catch (PDOException $e) {
+      echo $e->getMessage();
+    }
+  }
+
+  /**
+   * Fetches all the categories not used by the given slip
+   * @param $slipId
+   * @return array
+   */
+  public static function getAllUnusedCategories($slipId, $lemma, $wordclass) {
+    $categories = array();
+    $db = new database();
+    $dbh = $db->getDatabaseHandle();
+    try {
+      $sql = <<<SQL
+        SELECT DISTINCT category FROM senseCategory sc
+        JOIN slips s ON s.auto_id = sc.slip_id
+        JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
+        WHERE s.group_id = {$_SESSION["groupId"]} AND lemma = :lemma AND wordclass = :wordclass
+            AND slip_id != :slip_id
+            ORDER BY category ASC
+SQL;
+      $sth = $dbh->prepare($sql);
+      $sth->execute(array(":slip_id" => $slipId, ":lemma"=>$lemma, ":wordclass"=>$wordclass));
+      while ($row = $sth->fetch()) {
+        $categories[] = $row["category"];
+      }
+      return $categories;
     } catch (PDOException $e) {
       echo $e->getMessage();
     }
