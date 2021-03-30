@@ -39,7 +39,7 @@ switch ($_REQUEST["action"]) {
     $results = array("locked"=>$slip->getLocked(), "auto_id"=>$slip->getAutoId(), "owner"=>$slip->getOwnedBy(),
 	    "starred"=>$slip->getStarred(), "translation"=>$slip->getTranslation(), "notes"=>$slip->getNotes(),
       "preContextScope"=>$slip->getPreContextScope(), "postContextScope"=>$slip->getPostContextScope(),
-      "wordClass"=>$slip->getWordClass(), "categories"=>$slip->getSenseCategories(),
+      "wordClass"=>$slip->getWordClass(), "senses"=>$slip->getSensesInfo(),
       "lastUpdated"=>$slip->getLastUpdated(), "textId"=>$textId, "slipMorph"=>$slip->getSlipMorph()->getProps());
     //code required for modal slips
     $handler = new xmlfilehandler($_GET["filename"]);

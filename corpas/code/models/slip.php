@@ -19,6 +19,7 @@ class slip
     "other" => array("d", "c", "z", "o", "D", "Dx", "ax", "px", "q"));
   private $_slipMorph;  //an instance of SlipMorphFeature
   private $_senses = array();
+  private $_sensesInfo = array();   //used to store sense info (in place of object data) for AJAX use
   private $_lemma;
 
   public function __construct($filename, $id, $auto_id = null, $pos, $preScope = self::SCOPE_DEFAULT, $postScope = self::SCOPE_DEFAULT) {
@@ -65,8 +66,11 @@ SQL;
 SQL;
 		$results = $this->_db->fetch($sql, array(":auto_id"=>$this->getAutoId()));
 		if ($results) {
-			foreach ($results as $key => $value)
-				$this->_senses[$value["id"]] = new sense($value["id"]);
+			foreach ($results as $key => $value) {
+				$id = $value["id"];
+				$this->_senses[$id] = new sense($id); //create and store sense objects
+				$this->_sensesInfo[$id] = $this->_senses[$id]->getName();  //store id and name for AJAX use
+			}
 		}
 		return $this;
 	}
@@ -80,6 +84,7 @@ SQL;
     foreach ($results as $result) {
       $this->_slipMorph->setProp($result["relation"], $result["value"]);
     }
+    return $this;
   }
   
   private function _saveSlipMorph() {
@@ -169,6 +174,10 @@ SQL;
 
   public function getSenses() {
     return $this->_senses;
+  }
+
+  public function getSensesInfo() {
+  	return $this->_sensesInfo;
   }
 
   public function getLocked() {
