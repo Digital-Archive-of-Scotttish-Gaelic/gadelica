@@ -50,26 +50,26 @@ SQL;
       	$slipId = $slip["auto_id"];
       	//get the categories
 	      $sql = <<<SQL
-					SELECT category as senseCat
-						FROM senseCategory sc
-						LEFT JOIN slips s ON sc.slip_id = auto_id
+					SELECT name
+						FROM sense se
+						LEFT JOIN slip_sense ss ON ss.sense_id = se.id
 						WHERE slip_id = :slipId
 SQL;
-	      $catRows = $db->fetch($sql, array(":slipId" => $slipId));
-	      foreach ($catRows as $cat) {
-	      	$rows[$index]["categories"] .= '<span class="badge badge-success">' . $cat["senseCat"] . '</span> ';
+	      $senseRows = $db->fetch($sql, array(":slipId" => $slipId));
+	      foreach ($senseRows as $sense) {
+	      	$rows[$index]["senses"] .= '<span class="badge badge-success">' . $sense["name"] . '</span> ';
 	      }
 
-	      //get the senses
+	      //get the morph data
 	      $sql = <<<SQL
 					SELECT value
 						FROM slipMorph sm
 						LEFT JOIN slips s ON sm.slip_id = auto_id
 						WHERE slip_id = :slipId
 SQL;
-	      $senseRows = $db->fetch($sql, array(":slipId" => $slipId));
-	      foreach ($senseRows as $sense) {
-		      $rows[$index]["senses"] .= '<span class="badge badge-secondary">' . $sense["value"] . '</span> ';
+	      $morphRows = $db->fetch($sql, array(":slipId" => $slipId));
+	      foreach ($morphRows as $morph) {
+		      $rows[$index]["morph"] .= '<span class="badge badge-secondary">' . $morph["value"] . '</span> ';
 	      }
 	      $checked = in_array($slipId, $_SESSION["printSlips"]) ? "checked" : "";
 				$rows[$index]["printSlip"] = <<<HTML
@@ -185,7 +185,7 @@ SQL;
 	 * @param $category : the sense category
 	 * @return array of DB results
 	 */
-	public static function getSlipsBySenseCategory($lemma, $wordclass, $category) {
+	/*public static function getSlipsBySenseCategory($lemma, $wordclass, $category) {
 		$slipInfo = array();
 		$db = new database();
 		$dbh = $db->getDatabaseHandle();
@@ -208,7 +208,7 @@ SQL;
 		} catch (\PDOException $e) {
 			echo $e->getMessage();
 		}
-	}
+	}*/
 
 	/**
 	 * Sends an email to slip owner to request a slip unlock

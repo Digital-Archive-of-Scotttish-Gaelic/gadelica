@@ -77,6 +77,33 @@ SQL;
 		}
 	}
 
+	/**
+	 * Renames a sense
+	 * @param $lemma
+	 * @param $wordclass
+	 * @param $oldName
+	 * @param $newName
+	 */
+	public static function renameSense($lemma, $wordclass, $oldName, $newName) {
+		$db = new database();
+		$dbh = $db->getDatabaseHandle();
+		try {
+			$sql = <<<SQL
+				UPDATE sense SET name = :name WHERE id = :id
+
+        UPDATE senseCategory sc
+        JOIN slips s ON s.auto_id = sc.slip_id AND group_id = {$_SESSION["groupId"]}
+        JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
+        SET category = :newName WHERE category = :oldName
+        AND lemma = :lemma AND wordclass = :wordclass
+SQL;
+			$sth = $dbh->prepare($sql);
+			$sth->execute(array(":lemma"=>$lemma, ":wordclass"=>$wordclass,
+				":newName" => $newName, ":oldName" => $oldName));
+		} catch (PDOException $e) {
+			echo $e->getMessage();
+		}
+	}
 
 
 
@@ -132,32 +159,6 @@ SQL;
 				$slipIds[] = $row["auto_id"];
 			}
 			return $slipIds;
-		} catch (PDOException $e) {
-			echo $e->getMessage();
-		}
-	}
-
-	/**
-	 * Renames a sense category
-	 * @param $lemma
-	 * @param $wordclass
-	 * @param $oldName
-	 * @param $newName
-	 */
-	public static function renameSense($lemma, $wordclass, $oldName, $newName) {
-		$db = new database();
-		$dbh = $db->getDatabaseHandle();
-		try {
-			$sql = <<<SQL
-        UPDATE senseCategory sc
-        JOIN slips s ON s.auto_id = sc.slip_id AND group_id = {$_SESSION["groupId"]}
-        JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
-        SET category = :newName WHERE category = :oldName
-        AND lemma = :lemma AND wordclass = :wordclass
-SQL;
-			$sth = $dbh->prepare($sql);
-			$sth->execute(array(":lemma"=>$lemma, ":wordclass"=>$wordclass,
-				":newName" => $newName, ":oldName" => $oldName));
 		} catch (PDOException $e) {
 			echo $e->getMessage();
 		}

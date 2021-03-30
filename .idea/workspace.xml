@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/ajax.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/slip.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/slip.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/models/collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/collection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/models/entries.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/entries.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/models/sensecategories.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/sensecategories.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/views/collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/collection.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,14 +108,7 @@
       <workItem from="1615970019581" duration="47000" />
       <workItem from="1615970093454" duration="28820000" />
       <workItem from="1616571514686" duration="810000" />
-      <workItem from="1616660553342" duration="31340000" />
-    </task>
-    <task id="LOCAL-00023" summary="Just updates to the Joe Watson XML files.">
-      <created>1608125430748</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1608125430749</updated>
+      <workItem from="1616660553342" duration="35228000" />
     </task>
     <task id="LOCAL-00024" summary="First pass at searching by level (&quot;importance&quot;) functionality">
       <created>1610531674956</created>
@@ -452,7 +446,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617094131673</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="Completed refactor of slip links in results to use new sense model">
+      <created>1617105067843</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1617105067843</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -471,7 +472,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Created addLexeme.php, addPart.php, deletePart.php. Some edits in viewMhw.php to handle foreign keys and make links work." />
     <MESSAGE value="Added search restrictions for preceding and following context" />
     <MESSAGE value="Added option to order search results by reverse preceding word." />
     <MESSAGE value="Basic form with some jQuery for multi-word (preceding and following) search inputs" />
@@ -496,6 +496,7 @@
     <MESSAGE value="Finally (!!) completed a working version of slow search by text, including iteratively searching subtexts.&#10;Added text ID restrict field to slow search form just for testing just now" />
     <MESSAGE value="Created models\sense class to work with new sense database model&#10;Reworked models\slip class to work with new senses&#10;Initial work on views\slip to accommodate new code" />
     <MESSAGE value="Completed refactor of views\slip to use new sense model" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed refactor of views\slip to use new sense model" />
+    <MESSAGE value="Completed refactor of slip links in results to use new sense model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed refactor of slip links in results to use new sense model" />
   </component>
 </project>
