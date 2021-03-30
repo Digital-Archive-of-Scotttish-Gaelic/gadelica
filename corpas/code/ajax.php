@@ -62,11 +62,6 @@ switch ($_REQUEST["action"]) {
 		echo json_encode($slipInfo);
 		break;
 	case "getSenseCategories":
-
-
-		//$categories = sensecategories::getAllUnusedCategories($_GET["slipId"],
-		//	$_GET["headword"], $_GET["wordclass"]);
-
 		$slip = new slip($_GET["id"]);
 		$senses = $slip->getUnusedSenses();
 		echo json_encode($senses);
@@ -78,13 +73,19 @@ switch ($_REQUEST["action"]) {
     $slip->saveSlip($_POST);
     echo "success";
     break;
-  case "saveCategory":
-    sensecategories::saveCategory($_POST["slipId"], $_POST["categoryName"]);
+  case "saveSlipSense":
+    sensecategories::saveSlipSense($_POST["slipId"], $_POST["senseId"]);
     collection::touchSlip($_POST["slipId"]);
     echo "success";
     break;
-  case "deleteCategory":
-    sensecategories::deleteCategory($_POST["slipId"], $_POST["categoryName"]);
+	case "addSense":
+		$description = "";
+		$senseId = sensecategories::addSense($_POST["name"], $description, $_POST["headword"], $_POST["wordclass"]);
+		sensecategories::saveSlipSense($_POST["slipId"], $senseId);
+		echo json_encode(array("senseId" => $senseId));
+		break;
+  case "removeSense":
+    sensecategories::deleteSlipSense($_POST["slipId"], $_POST["senseId"]);
     collection::touchSlip($_POST["slipId"]);
     echo "success";
     break;

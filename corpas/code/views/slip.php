@@ -340,7 +340,9 @@ HTML;
     	$senseId = $sense->getId();
     	$senseName = $sense->getName();
       $savedCatHtml .= <<<HTML
-        <li class="badge badge-success" data-sense="{$senseId}">{$senseName} <a class="badge badge-danger deleteCat">X</a></li>
+        <li class="badge badge-success" data-sense="{$senseId}" data-sensename="{$senseName}">
+					{$senseName} <a style="cursor:pointer;" class="badge badge-danger removeSense">X</a>
+				</li>
 HTML;
     }
     echo <<<HTML
@@ -362,10 +364,10 @@ HTML;
                   <label for="senseCategory">Assign to new sense category:</label>
               </div>
               <div class="col-md-3">
-                  <input type="text" class="form-control" id="senseCategory">
+                  <input type="text" class="form-control" id="newSenseName">
               </div>
               <div class="col-md-1">
-                  <button type="button" class="form-control btn btn-primary" id="addSenseCategory">Add</button>
+                  <button type="button" class="form-control btn btn-primary" id="addSense">Add</button>
               </div>
           </div>
           <div>
@@ -556,40 +558,41 @@ HTML;
               }
               var senseId = elem.attr('data-sense');
               var html = '<li class="badge badge-success" data-sense="' + senseId + '">' + sense;
-              html += ' <a class="badge badge-danger deleteCat">X</a></li>';
+              html += ' <a style="cursor:pointer;" class="badge badge-danger removeSense">X</a></li>';
               $('#senseCategories').append(html);
               elem.remove();
-              var data = {action: 'saveCategory', slipId: '{$this->_slip->getAutoId()}',
-                categoryName: category}
+              var data = {action: 'saveSlipSense', slipId: '{$this->_slip->getAutoId()}',
+                senseId: senseId}
               $.post("ajax.php", data, function (response) {
                 console.log(response);        //TODO: add some response code on successful save
               });
-              console.log(category);
             });
 
-            $(document).on('click', '#addSenseCategory', function () {
-              var newCategory = $('#senseCategory').val();
-              if (newCategory == "") {
+            $(document).on('click', '#addSense', function () {
+              var newSenseName = $('#newSenseName').val();
+              if (newSenseName == "") {
                 return false;
               }
-              var html = '<li class="badge badge-success" data-category="' + newCategory + '">' + newCategory;
-              html += ' <a class="badge badge-danger deleteCat">X</a></li>';
-              $('#senseCategories').append(html);
-              $('#senseCategory').val('');
-              var data = {action: 'saveCategory', slipId: '{$this->_slip->getAutoId()}',
-                categoryName: newCategory}
+              $('#newSenseName').val('');
+              var data = {action: 'addSense', slipId: '{$this->_slip->getAutoId()}',
+                name: newSenseName, headword: '{$this->_slip->getLemma()}', 
+                wordclass: '{$this->_slip->getWordclass()}'
+              }
               $.post("ajax.php", data, function (response) {
-                console.log(response);        //TODO: add some response code on successful save
+                var html = '<li class="badge badge-success" data-sense="' + response.senseId + '">' + newSenseName;
+                html += ' <a style="cursor:pointer;" class="badge badge-danger deleteCat">X</a></li>';
+                $('#senseCategories').append(html);
               });
             });
 
-            $(document).on('click', '.deleteCat', function () {
-              var category = $(this).parent().attr('data-category');
+            $(document).on('click', '.removeSense', function () {
+              var senseId = $(this).parent().attr('data-sense');
+              var senseName = $(this).parent().attr('data-sensename');
               $(this).parent().remove();
-              var html = '<option data-category="' + category + '">' + category + '</option>';
+              var html = '<option data-sense="' + senseId + '">' + senseName + '</option>';
               $('#senseCategorySelect').append(html);
-              var data = {action: 'deleteCategory', slipId: '{$this->_slip->getAutoId()}',
-                categoryName: category}
+              var data = {action: 'removeSense', slipId: '{$this->_slip->getAutoId()}',
+                senseId: senseId}
               $.post("ajax.php", data, function (response) {
                 console.log(response);        //TODO: add some response code on successful save
               });

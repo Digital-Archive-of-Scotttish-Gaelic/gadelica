@@ -16,8 +16,8 @@ class sensecategories
     $db = new database();
     $dbh = $db->getDatabaseHandle();
     $sql = <<<SQL
-			INSERT INTO sense(name, description, headword, wordclass
-				VALUES (:name, :description, headword, wordclass)
+			INSERT INTO sense(name, description, headword, wordclass)
+				VALUES (:name, :description, :headword, :wordclass)
 SQL;
     try {
       $sth = $dbh->prepare($sql);
@@ -44,6 +44,41 @@ SQL;
       echo $e->getMessage();
     }
   }
+
+	/**
+	 * Adds a record to the slip_sense table matching a slip to a sense
+	 * @param $slipId
+	 * @param $senseId
+	 */
+  public static function saveSlipSense($slipId, $senseId) {
+	  $db = new database();
+	  $dbh = $db->getDatabaseHandle();
+	  try {
+		  $sth = $dbh->prepare("INSERT INTO slip_sense VALUES(:slipId, :senseId)");
+		  $sth->execute(array(":slipId" => $slipId, ":senseId" => $senseId));
+	  } catch (PDOException $e) {
+		  echo $e->getMessage();
+	  }
+  }
+
+	/**
+	 * Removes a record in the slip_sense table
+	 * @param $slipId
+	 * @param $senseId
+	 */
+	public static function deleteSlipSense($slipId, $senseId) {
+		$db = new database();
+		$dbh = $db->getDatabaseHandle();
+		try {
+			$sth = $dbh->prepare("DELETE FROM slip_sense WHERE slip_id = :slipId AND sense_id = :senseId");
+			$sth->execute(array(":slipId" => $slipId, ":senseId" => $senseId));
+		} catch (PDOException $e) {
+			echo $e->getMessage();
+		}
+	}
+
+
+
 
 	/**
 	 * Fetches all the categories used for a given lemma/wordclass combination
