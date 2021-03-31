@@ -79,27 +79,18 @@ SQL;
 
 	/**
 	 * Renames a sense
-	 * @param $lemma
-	 * @param $wordclass
-	 * @param $oldName
+	 * @param $id
 	 * @param $newName
 	 */
-	public static function renameSense($lemma, $wordclass, $oldName, $newName) {
+	public static function renameSense($id, $newName) {
 		$db = new database();
 		$dbh = $db->getDatabaseHandle();
 		try {
 			$sql = <<<SQL
 				UPDATE sense SET name = :name WHERE id = :id
-
-        UPDATE senseCategory sc
-        JOIN slips s ON s.auto_id = sc.slip_id AND group_id = {$_SESSION["groupId"]}
-        JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
-        SET category = :newName WHERE category = :oldName
-        AND lemma = :lemma AND wordclass = :wordclass
 SQL;
 			$sth = $dbh->prepare($sql);
-			$sth->execute(array(":lemma"=>$lemma, ":wordclass"=>$wordclass,
-				":newName" => $newName, ":oldName" => $oldName));
+			$sth->execute(array(":id" => $id, ":name" => $newName));
 		} catch (PDOException $e) {
 			echo $e->getMessage();
 		}
@@ -112,7 +103,7 @@ SQL;
 	 * @param $slipId
 	 * @return array
 	 */
-	public static function getAllUsedCategories($lemma, $wordclass) {
+/*	public static function getAllUsedCategories($lemma, $wordclass) {
 		$categories = array();
 		$db = new database();
 		$dbh = $db->getDatabaseHandle();
@@ -133,7 +124,7 @@ SQL;
 		} catch (PDOException $e) {
 			echo $e->getMessage();
 		}
-	}
+	}*/
 
 	/**
 	 * Fetches all the slipIds without a sense for a given lemma/wordclass combination
@@ -149,7 +140,7 @@ SQL;
 			$sql = <<<SQL
         SELECT auto_id FROM slips s 
         	JOIN lemmas l ON s.filename = l.filename AND s.id = l.id 
-        	WHERE auto_id NOT IN (SELECT slip_id FROM senseCategory) AND lemma = :lemma AND wordclass= :wordclass 
+        	WHERE auto_id NOT IN (SELECT slip_id FROM slip_sense) AND lemma = :lemma AND wordclass= :wordclass 
         	AND group_id = {$_SESSION["groupId"]}
         	ORDER by auto_id ASC
 SQL;

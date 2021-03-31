@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/ajax.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/models/entries.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/entries.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/models/entry.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/entry.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/models/sensecategories.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/sensecategories.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/views/entries.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/entries.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,14 +109,7 @@
       <workItem from="1615970019581" duration="47000" />
       <workItem from="1615970093454" duration="28820000" />
       <workItem from="1616571514686" duration="810000" />
-      <workItem from="1616660553342" duration="46319000" />
-    </task>
-    <task id="LOCAL-00025" summary="Added code to handle and set default level as required for new &quot;top level&quot; texts as well as subtexts">
-      <created>1610534453206</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1610534453206</updated>
+      <workItem from="1616660553342" duration="47693000" />
     </task>
     <task id="LOCAL-00026" summary="Added multi-select option and text to POS search">
       <created>1610539190201</created>
@@ -452,7 +447,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617109279881</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="Working code for grouped senses in entry">
+      <created>1617187658018</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1617187658019</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -471,7 +473,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added option to order search results by reverse preceding word." />
     <MESSAGE value="Basic form with some jQuery for multi-word (preceding and following) search inputs" />
     <MESSAGE value="First pass at code to enable searching by preceding and following word.&#10;TODO; break up Wordform code in corpus_search.php to allow it to work with new code. Add pagination code for results." />
     <MESSAGE value="Some bug fixes" />
@@ -496,6 +497,7 @@
     <MESSAGE value="Completed refactor of views\slip to use new sense model" />
     <MESSAGE value="Completed refactor of slip links in results to use new sense model" />
     <MESSAGE value="Collections recoded to work with new sense model.&#10;Initial work on recoding entries to work with new sense model. Still requires a fair bit of refactoring, mostly in sorting unique senses and grouping. Renaming of senses in entry page not yet functional." />
-    <option name="LAST_COMMIT_MESSAGE" value="Collections recoded to work with new sense model.&#10;Initial work on recoding entries to work with new sense model. Still requires a fair bit of refactoring, mostly in sorting unique senses and grouping. Renaming of senses in entry page not yet functional." />
+    <MESSAGE value="Working code for grouped senses in entry" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working code for grouped senses in entry" />
   </component>
 </project>

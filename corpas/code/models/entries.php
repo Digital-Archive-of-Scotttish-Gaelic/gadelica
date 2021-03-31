@@ -6,7 +6,7 @@ class entries
 {
 	public static function getEntry($lemma, $wordclass) {
 		$entry = new entry($lemma, $wordclass);
-//		$entry = self::_getWordforms($entry);
+		$entry = self::_getWordforms($entry);
 		$entry = self::_getSenses($entry);
 		return $entry;
 	}

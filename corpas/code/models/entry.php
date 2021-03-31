@@ -114,27 +114,6 @@ class entry
 		return array_unique($uniqueIds);
 	}
 
-	/**
-	 * Groups the senses together
-	 * Adds the IDs of the grouped slips into _senseSlipIds for parsing in citations
-	 *
-	public function getUniqueSenses() {
-		foreach ($this->getSenses() as $slipId => $senses) {
-			$this->_slipSenseStrings[$slipId] = implode('|', $senses);
-		}
-		$senses = array();
-		foreach ($this->_slipSenseStrings as $slipId => $senseString) {
-			if (in_array($senseString, $senses)) {
-				$id = array_search($senseString, $senses);
-				array_push($this->_senseSlipIds[$id], $slipId);
-			} else {
-				$this->_senseSlipIds[$slipId] = array($slipId);
-			}
-			$senses[$slipId] = $senseString;
-		}
-		return array_unique($senses);
-	}*/
-
 	public function getIndividualSenses() {
 		return $this->_individualSenses;
 	}
