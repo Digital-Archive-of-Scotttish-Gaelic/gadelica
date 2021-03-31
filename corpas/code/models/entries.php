@@ -6,7 +6,7 @@ class entries
 {
 	public static function getEntry($lemma, $wordclass) {
 		$entry = new entry($lemma, $wordclass);
-		$entry = self::_getWordforms($entry);
+//		$entry = self::_getWordforms($entry);
 		$entry = self::_getSenses($entry);
 		return $entry;
 	}
@@ -36,12 +36,17 @@ SQL;
 		return $entry;
 	}
 
+	/**
+	 * Queries DB for sense data and adds sense objects, indexed by slip ID, to entry object
+	 * @param $entry entry object
+	 * @return entry object
+	 */
 	private static function _getSenses($entry) {
 		$db = new database();
 		$dbh = $db->getDatabaseHandle();
 		try {
 			$sql = <<<SQL
-				SELECT se.name as name, auto_id AS slipId FROM sense se
+				SELECT se.id as id, auto_id AS slipId FROM sense se
 					JOIN slip_sense ss ON ss.sense_id = se.id
 					JOIN slips s ON s.auto_id = ss.slip_id
         	WHERE s.group_id = {$_SESSION["groupId"]} AND  se.headword = :lemma AND se.wordclass = :wordclass
@@ -50,7 +55,7 @@ SQL;
 			$sth = $dbh->prepare($sql);
 			$sth->execute(array(":lemma"=>$entry->getLemma(), ":wordclass"=>$entry->getWordclass()));
 			while ($row = $sth->fetch()) {
-				$sense = $row["name"];
+				$sense = new sense($row["id"]);
 				$slipId = $row["slipId"];
 				$entry->addSense($sense, $slipId);
 			} } catch (PDOException $e) {

@@ -139,7 +139,7 @@ HTML;
 				$index++;
 				$slipData[] = models\collection::getSlipInfoBySlipId($slipId);
 			}
-			$html .= $this->_getSlipListHtml($slipData, "uncategorised", "orp_" . $index);
+			$html .= $this->_getSlipListHtml($slipData, array("uncategorised"), "orp_" . $index);
 		}
 		return $html;
 	}
@@ -160,7 +160,23 @@ HTML;
 	}
 
 	private function _getGroupedSensesHtml($entry) {
-  	/* Get the citations with grouped senses */
+		/* Get the citations with grouped senses */
+		$index = 0;
+		foreach ($entry->getUniqueSenseIds() as $slipId => $senseIds) {
+			$slipData = array();
+			$senseSlipIds = $entry->getSenseSlipIds($slipId);
+			foreach ($senseSlipIds as $id) {
+				$index++;
+				$slipData[] = models\collection::getSlipInfoBySlipId($id);
+			}
+			$html .= $this->_getSlipListHtml($slipData, $senseIds, "grp_".$index);
+		}
+		return $html;
+	}
+
+/*
+	private function _getGroupedSensesHtml($entry) {
+  	// Get the citations with grouped senses
 		$index = 0;
 		foreach ($entry->getUniqueSenses() as $slipId => $sense) {
 			$slipData = array();
@@ -173,9 +189,9 @@ HTML;
 		}
 		return $html;
 	}
+*/
 
-
-	private function _getSlipListHtml($slipData, $sense, $index) {
+	private function _getSlipListHtml($slipData, $senseIds, $index) {
 		$slipList = '<table class="table"><tbody>';
 		foreach($slipData as $data) {
 			foreach ($data as $row) {
@@ -220,14 +236,23 @@ HTML;
 					{$slipList}
 				</div>
 HTML;
-		$senses = explode('|', $sense);
 		$senseString = "";
-		foreach ($senses as $s) {
-			$badge = ($s == "uncategorised") ? "badge-secondary" : "badge-success";
-			$senseString .= <<<HTML
-					<span data-toggle="modal" data-target="#senseModal" title="rename this sense" class="badge {$badge} entrySense">{$s}</span> 
+		if ($senseIds[0] == "uncategorised") {
+			$senseString = <<<HTML
+				<span data-toggle="modal" data-target="#senseModal" title="rename this sense" class="badge badge-secondary entrySense">
+						uncategorised
+					</span> 
 HTML;
-
+		} else {
+			$senseIds = explode('|', $senseIds);
+			foreach ($senseIds as $senseId) {
+				$sense = new models\sense($senseId);
+				$senseString .= <<<HTML
+					<span data-toggle="modal" data-target="#senseModal" title="rename this sense" class="badge badge-success entrySense">
+						{$sense->getName()}
+					</span> 
+HTML;
+			}
 		}
 		$html = <<<HTML
 				<li>{$senseString} {$citationsHtml}</li>
