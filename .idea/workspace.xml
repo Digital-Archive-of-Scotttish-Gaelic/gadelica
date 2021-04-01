@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/slow_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/slow_search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/views/slow_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/slow_search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/views/corpus_browse.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/corpus_browse.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,14 +106,7 @@
       <workItem from="1615970093454" duration="28820000" />
       <workItem from="1616571514686" duration="810000" />
       <workItem from="1616660553342" duration="47841000" />
-      <workItem from="1617260812978" duration="1925000" />
-    </task>
-    <task id="LOCAL-00028" summary="Reworked renameFiles to handle many directories">
-      <created>1610707152406</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1610707152406</updated>
+      <workItem from="1617260812978" duration="3312000" />
     </task>
     <task id="LOCAL-00029" summary="Removed renameFiles.php and deleted tmp dir">
       <created>1610711904136</created>
@@ -452,7 +444,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617261242933</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="Fixed issue with invalid text ID in slow_search. Added error handling and display.">
+      <created>1617277452182</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1617277452182</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -471,7 +470,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Some bug fixes" />
     <MESSAGE value="Some basic introductory pagination code for slow_search" />
     <MESSAGE value="New approach to chunked dictionary search results using pagination.min.js.&#10;Basic structure working returning dates." />
     <MESSAGE value="Added loading image for dictionary view results&#10;Sorted out showing/hiding behaviour for dictionary view results&#10;Tidied up some bits and pieces in dictionary view results" />
@@ -496,6 +494,7 @@
     <MESSAGE value="Working code for grouped senses in entry" />
     <MESSAGE value="Individual and orphaned senses now operational in entry.&#10;Bug fixes and code tidy." />
     <MESSAGE value="Bug fix for entry - grouped senses generating extra blank sense" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug fix for entry - grouped senses generating extra blank sense" />
+    <MESSAGE value="Fixed issue with invalid text ID in slow_search. Added error handling and display." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed issue with invalid text ID in slow_search. Added error handling and display." />
   </component>
 </project>
