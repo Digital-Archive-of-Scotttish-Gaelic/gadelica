@@ -98,7 +98,11 @@ class entry
 	public function getUniqueSenseIds() {
 		foreach ($this->getSenses() as $slipId => $senseGroup) {
 			foreach ($senseGroup as $sense) {
-				$this->_slipSenses[$slipId] .= $sense->getId() . '|';
+				if (!isset($this->_slipSenses[$slipId])) {
+					$this->_slipSenses[$slipId] .=  $sense->getId();
+				} else {
+					$this->_slipSenses[$slipId] .= '|' . $sense->getId();
+				}
 			}
 		}
 		$uniqueIds = array();
