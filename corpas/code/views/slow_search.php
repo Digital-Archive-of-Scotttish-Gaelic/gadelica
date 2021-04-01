@@ -109,6 +109,13 @@ HTML;
 			    $.getJSON('ajax.php', {action: 'getSlowSearchResults', xpath: xpath, chunkSize: chunkSize, 
 			          offsetFilename: offsetFilename, offsetId: offsetId, index: index, id: '{$_GET["id"]}'})
 			      .done(function (results) {
+			        if (error = results.error) {
+			          $('.loading').hide();
+			          $('#endOfResults').html('<h2>'+error+'</h2>');
+			          $('#loadMoreResults').hide();
+			          $('#endOfResults').show();
+			          return;
+			        }
 			        $('.loading').hide();
 			        if (results.length == 0) {
 			          $('#loadMoreResults').hide();

@@ -38,39 +38,44 @@ class slow_search
 		$chunkSize = $chunkSize ? intval($chunkSize) : null;
 		$results = array();
 		$i = 0; //increment counter for results array
-		foreach ($files as $filename) {
-			//check for an offset filename and skip until we reach it if there is one
-			if ($offsetFilename && ($offsetFilename != $filename)) {
-				continue;
-			} else if ($offsetFilename == $filename) {
-				$offsetFilename = "";
-			}
-			$handler = new xmlfilehandler($filename);
-			$xml = simplexml_load_file($this->_path . '/' . $filename);
-			$xml->registerXPathNamespace('dasg', 'https://dasg.ac.uk/corpus/');
-			$result = $xml->xpath($xpath);
-			foreach ($result as $id) {
-				//check for an offset ID and skip until we reach it if there is one
-				if ($offsetId && $offsetId != $id) {
+		if ($files) {
+			foreach ($files as $filename) {
+				//check for an offset filename and skip until we reach it if there is one
+				if ($offsetFilename && ($offsetFilename != $filename)) {
 					continue;
-				} else if ($offsetId == $id) {
-					$offsetId = "";
-					continue;
+				} else if ($offsetFilename == $filename) {
+					$offsetFilename = "";
 				}
-				$index++;
-				$results[$i]["data"] = corpus_search::getDataById($filename, $id);
-				$results[$i]["data"]["context"] = $handler->getContext($id);
-				$results[$i]["data"]["slipLinkHtml"] = collection::getSlipLinkHtml($results[$i]["data"], $index);
-				$pos = new partofspeech($results[$i]["data"]["pos"]);
-				$results[$i]["data"]["posLabel"] = $pos->getLabel();
-				$results[$i]["index"] = $index;
+				$handler = new xmlfilehandler($filename);
+				$xml = simplexml_load_file($this->_path . '/' . $filename);
+				$xml->registerXPathNamespace('dasg', 'https://dasg.ac.uk/corpus/');
+				$result = $xml->xpath($xpath);
+				foreach ($result as $id) {
+					//check for an offset ID and skip until we reach it if there is one
+					if ($offsetId && $offsetId != $id) {
+						continue;
+					} else if ($offsetId == $id) {
+						$offsetId = "";
+						continue;
+					}
+					$index++;
+					$results[$i]["data"] = corpus_search::getDataById($filename, $id);
+					$results[$i]["data"]["context"] = $handler->getContext($id);
+					$results[$i]["data"]["slipLinkHtml"] = collection::getSlipLinkHtml($results[$i]["data"], $index);
+					$pos = new partofspeech($results[$i]["data"]["pos"]);
+					$results[$i]["data"]["posLabel"] = $pos->getLabel();
+					$results[$i]["index"] = $index;
 
-				//limit results to chunk size
-				if ($i === $chunkSize) {return $results;}
-				$i++;
+					//limit results to chunk size
+					if ($i === $chunkSize) {
+						return $results;
+					}
+					$i++;
+				}
 			}
+			return $results;
 		}
-		return $results;
+		return array("error" => "Text ID not recognised");
 	}
 
 	private function getFilenamesFromId() {

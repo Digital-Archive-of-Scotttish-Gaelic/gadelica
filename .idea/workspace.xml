@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/entry.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/entry.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/models/slow_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/slow_search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/views/slow_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/slow_search.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,14 +107,7 @@
       <workItem from="1615970093454" duration="28820000" />
       <workItem from="1616571514686" duration="810000" />
       <workItem from="1616660553342" duration="47841000" />
-      <workItem from="1617260812978" duration="340000" />
-    </task>
-    <task id="LOCAL-00027" summary="Added some temporary code to enable the renaming of files in a given directory - renameFiles.php - and a temporary directory for testing - tmp/">
-      <created>1610639156977</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1610639156977</updated>
+      <workItem from="1617260812978" duration="1925000" />
     </task>
     <task id="LOCAL-00028" summary="Reworked renameFiles to handle many directories">
       <created>1610707152406</created>
@@ -451,7 +445,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617200740399</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="Bug fix for entry - grouped senses generating extra blank sense">
+      <created>1617261242932</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1617261242933</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -470,7 +471,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="First pass at code to enable searching by preceding and following word.&#10;TODO; break up Wordform code in corpus_search.php to allow it to work with new code. Add pagination code for results." />
     <MESSAGE value="Some bug fixes" />
     <MESSAGE value="Some basic introductory pagination code for slow_search" />
     <MESSAGE value="New approach to chunked dictionary search results using pagination.min.js.&#10;Basic structure working returning dates." />
@@ -495,6 +495,7 @@
     <MESSAGE value="Collections recoded to work with new sense model.&#10;Initial work on recoding entries to work with new sense model. Still requires a fair bit of refactoring, mostly in sorting unique senses and grouping. Renaming of senses in entry page not yet functional." />
     <MESSAGE value="Working code for grouped senses in entry" />
     <MESSAGE value="Individual and orphaned senses now operational in entry.&#10;Bug fixes and code tidy." />
-    <option name="LAST_COMMIT_MESSAGE" value="Individual and orphaned senses now operational in entry.&#10;Bug fixes and code tidy." />
+    <MESSAGE value="Bug fix for entry - grouped senses generating extra blank sense" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug fix for entry - grouped senses generating extra blank sense" />
   </component>
 </project>
