@@ -5,12 +5,12 @@
     i.e. they name people (and other personified entities like toys, boats, houses, pet animals, &amp;c).</p>
   <p>Anthroponymic proper nouns are divided into two classes according to <u>gender</u> –</p>
   <ol>
-    <li><u>Feminine</u> anthroponymic proper nouns name female persons, <m>Mairead</m>
+    <li><u>Feminine</u> anthroponymic proper nouns name female persons, e.g. <m>Mairead</m>
       <en>Margaret</en>, <m>Caitrìona</m>
       <en>Catherine</en>. They are slenderised, but not (necessarily) lenited, in both the dative and genitive cases, e.g. <m>le Maireid</m>
       <en>with Margaret</en>, <m>taigh Maireid</m>
       <en>Margaret’s house</en>. <boxlink ref="#feminine_anthroponyms"/></li>
-    <li><u>Masculine</u> anthroponymic proper nouns name male persons, e.g. <m>Seumas</m>
+    <li><u>Masculine</u> anthroponymic (andronymic) proper nouns name male persons, e.g. <m>Seumas</m>
       <en>James</en>, <m>Dòmhnall</m>
       <en>Donald</en>. They are unchanged in the dative case, and are both slenderised and lenited in the genitive, e.g. <m>le Seumas</m>
       <en>with James</en>, <m>taigh Sheumais</m>
@@ -19,28 +19,36 @@
   <p>Some anthroponymic proper nouns have <u>diminutive</u> variants, e.g. <m>Seumaidh</m>
     <en>Jimmy</en> and <m>Peigi</m>
     <en>Peggy</en> are diminutive versions of <i>Seumas</i> and <i>Mairead</i> respectively. <boxlink ref="#diminutive_anthroponyms"/></p>
-  <p>Anthroponymic proper nouns maybe be juxtaposed with, modified or specified by other words as follows –</p>
+  <p>Two anthroponymic proper nouns may be juxtaposed in strict apposition (i.e. agreeing in both gender and case), e.g. <m>Màiri Sìne</m>
+    <en>Mary Jane</en>, <m>Dòmhnall Uilleam</m>
+    <en>Donald William</en> (cf. <i>taigh Dhòmhnaill Uilleim</i> <en>Donald William’s house</en>, not <bad>taigh Dhòmhnaill Uilleam</bad>). 
+    <boxlink ref="#double-barrelled_names"/></p>
+  <p>Anthroponymic proper nouns may be modified by other words as follows –</p>
   <ol>
-    <li>Two anthroponymic proper nouns may be juxtaposed in apposition (i.e. agreeing in gender and case), e.g. <m>Màiri Sìne</m>
-      <en>Mary Jane</en>, <m>Dòmhnall Uilleam</m>
-      <en>Donald William</en>. <boxlink ref="#double-barrelled_names"/></li>
     <li>An anthroponymic proper noun may be modified by a following adjective, agreeing in both gender and case, e.g. <m>Mairead Bhàn</m>
       <en>Fair Margaret</en>, <m>Seumas Mòr</m>
       <en>Big James</en>. <boxlink ref="#anthroponymic_adjectives"/></li>
     <li>An anthroponymic proper noun may be followed, in apposition, by a simple indefinite common noun denoting a trade, profession or calling, 
       e.g. <m>Dòmhnall breabadair</m> <en>Donald the weaver</en> <m>Mairead dhubh bhanarach</m> <en>Margaret the dark-headed milkmaid</en> <boxlink ref="#anthroponymic_jobs"/></li>
+    <li>Surnames <boxlink ref="#surnames"/></li>
+  </ol>
+  
+  <p>Anthroponymic proper nouns may be juxtaposed with, modified or specified by other words as follows –</p>
+  <ol>
     <li>An anthroponymic proper noun may be <u>specified</u> by a following proper noun or definite common noun in the genitive case, 
       e.g. <m>Mairead Dhòmhnaill</m> <en>Donald’s Margaret</en>, <m>Iain Chanaidh</m> <en>John of Canna</en>, 
       <m>Anna a’ Bhreabadair</m> <en>the weaver’s Anna</en>. <boxlink ref="#anthroponymic_specifiers"/></li>
     <li>An anthroponymic proper noun may be followed, in apposition, by a definite noun (common or proper), 
       e.g. <m>Alasdair an ceard-umha</m> <en>Alexander the coppersmith</en>,  <m>Mairead nighean a’ Mhinisteir</m> <en>Margaret the Minister’s daughter</en>, 
       <m>Seumas mac Dhòmhnaill</m> <en>James son of Donald</en> <boxlink ref="#anthroponymic_appositives"/></li>
+    <li>Titles <boxlink ref="#titles"/></li>
   </ol>
   
   <box id="feminine_anthroponyms">
     <title>feminine anthroponymic proper nouns</title>
-    <p>Feminine anthroponymic proper nouns name female persons. They are slenderised, but not (necessarily) lenited, in both the dative and genitive cases –</p>
-    <table class="table w-auto">
+    <p><m>Mairead</m> and <m>Sìne</m> are examples of feminine anthroponymic proper nouns. 
+      They name female persons, and are slenderised, though not (necessarily) lenited, in both the dative and genitive cases –</p>
+    <table>
       <tbody>
         <tr>
           <th>nominative</th>
@@ -60,9 +68,9 @@
       </tbody>
     </table>
     <p>Note that feminine anthroponymic proper nouns ending with a vowel or slender consonant show no change in the dative or genitive.</p>
-    <p>Note also that genitive forms of feminine anthroponymic proper nouns are systematically lenited in certain dialects, cf. <i>taigh Mhaireid</i>.</p>
-    <p>Here is a comprehensive list of traditional feminine anthroponymic proper nouns –</p>
-    <table class="table w-auto">
+    <p>Note also that genitive forms of feminine anthroponymic proper nouns <i>are</i> systematically lenited in certain dialects, cf. <i>taigh Mhaireid</i>.</p>
+    <p>Here is a comprehensive list of traditional feminine anthroponymic proper nouns <toggle href="list_of_feminine_anthroponyms"/> –</p>
+    <ctable id="list_of_feminine_anthroponyms">
       <thead>
         <tr>
           <th>nominative / dative</th>
@@ -135,13 +143,14 @@
           <td/>
         </tr>
       </tbody>
-    </table>
+    </ctable>
   </box>
   
   <box id="masculine_anthroponyms">
     <title>masculine anthroponymic proper nouns</title>
-    <p>Masculine anthroponymic proper nouns name male persons. They are unchanged in the dative case, and are both slenderised and lenited in the genitive –</p>
-    <table  class="table w-auto">
+    <p><m>Dòmhnall</m> and <m>Murchadh</m> are examples of masculine anthroponymic proper nouns. 
+      They name male persons, are unchanged in the dative case, and are both slenderised and lenited in the genitive –</p>
+    <table>
       <tbody>
         <tr>
           <th>nominative</th>
@@ -160,9 +169,11 @@
         </tr>
       </tbody>
     </table>
-    <p>Note that masculine anthroponymic proper nouns starting with a vowel or non-lenitable consonant and ending with a vowel or slender consonant show no change in the genitive.</p>
-    <p>Here is a comprehensive list of traditional masculine anthroponymic proper nouns <small><a data-toggle="collapse" href="#list">[toggle]</a></small> –</p>
-    <table id="list" class="table w-auto collapse">
+    <p>Note that masculine anthroponymic proper nouns starting with a vowel or non-lenitable consonant 
+      and ending with a vowel or slender consonant show no change in the genitive, e.g.
+      </p>
+    <p>Here is a comprehensive list of traditional masculine anthroponymic proper nouns <toggle href="list_of_masculine_anthroponyms"/> –</p>
+    <ctable id="list_of_masculine_anthroponyms">
       <thead>
         <tr>
           <th>nominative / dative</th>
@@ -354,7 +365,7 @@
           <td/>
         </tr>
       </tbody>
-    </table>
+    </ctable>
     <p>Calder (1923: 138) –</p>
     <ul>
       <li><m>Mac dé</m> <en>a son of a god</en> versus <m>Mac Dhé</m> <en>the Son of God</en> – 
@@ -371,7 +382,7 @@
     <p>Diminutive anthroponymic proper nouns are informal, colloquial variants of more official anthroponymic proper nouns.</p>
     <p>These are declined for case in the same way as other anthroponymic proper nouns.</p>
     <p>Here is a comprehensive list of feminine diminutive anthroponymic proper nouns –</p>
-    <table class="table w-auto">
+    <table>
       <thead>
         <tr>
           <th>diminutive</th>
@@ -414,7 +425,7 @@
       </tbody>
     </table>
     <p>Here is a comprehensive list of masculine diminutive anthroponymic proper nouns –</p>
-    <table class="table w-auto">
+    <table>
       <thead>
         <tr>
           <th>diminutive</th>
@@ -471,8 +482,8 @@
     <p>Two anthroponymic proper nouns may be combined in apposition to form a ‘double-barrelled’ personal name, e.g. <m>Màiri Sìne</m>
       <en>Mary Jane</en>, <m>Dòmhnall Uilleam</m>
       <en>Donald William</en>.</p>
-    <p>Since the two nouns are in apposition, they agree in both gender and case –</p>
-    <table class="table w-auto">
+    <p>Since the two nouns are in strict apposition, they agree in both gender and case –</p>
+    <table>
       <thead>
         <tr><td/><th>feminine</th><th>masculine</th></tr>
       </thead>
@@ -504,7 +515,7 @@
       <en>Fair Margaret</en>, <m>Dòmhnall Beag Ruadh</m>
       <en>Little Red Donald</en>.</p>
     <p>The adjectives agree with the proper noun in both gender and case –</p>
-    <table class="table w-auto">
+    <table>
       <thead>
         <tr><td/><th>feminine</th><th>masculine</th></tr>
       </thead>
@@ -535,7 +546,7 @@
     <title>anthroponymic proper nouns with nouns denoting trades</title>
     <p>An anthroponymic proper noun may be followed, in apposition, by a simple indefinite common noun denoting a trade, profession or calling.</p>
     <p>Since the two nouns are in apposition, they agree in case and number.</p>
-    <table class="table w-auto">
+    <table>
       <thead>
         <tr><td/><th>feminine</th><th>masculine</th></tr>
       </thead>
@@ -597,10 +608,15 @@
     </ol>
   </box>
 
+  <box id="surnames">
+    <title>surnames</title>
+    <p></p>
+  </box>
+  
   <box id="anthroponymic_specifiers">
     <title>anthroponymic proper nouns with specifiers</title>
     <p>An anthroponymic proper noun may be <u>specified</u> by a following proper noun or definite common noun in the genitive case.</p>
-    <table class="table w-auto">
+    <table>
       <thead>
         <tr><td/><th>feminine</th><th>masculine</th></tr>
       </thead>
@@ -630,7 +646,7 @@
   <box id="anthroponymic_appositives">
     <title>anthroponymic proper nouns with appositives</title>
     <p></p>
-    <table class="table w-auto">
+    <table>
       <thead>
         <tr><td/><th>feminine</th><th>masculine</th></tr>
       </thead>
@@ -692,6 +708,35 @@
       <li><m>da bhràithribh uile, mic an rìgh</m> <en>to all his brothers, the King’s sons (1 Kings 1 9)</en></li>
       <li><m>ri Sarai, a bhean</m> <en>to Sarah, his wife (Genesis 12 11)</en>.</li>
     </ol>
+  </box>
+  
+  <box id="titles">
+    <title>titles</title>
+    <p>Calder (1923: 139) –</p>
+    <ul>
+      <li><m>Mac Rìgh Seumas, Tearlach Stiubhart</m> <en>Charles Stuart, son of King James</en> – cf. <bad>Mac Rìgh Sheumais</bad>.</li>
+      <li><m>Do theaghlach rìgh Fionghall</m> <en>to the family of King Fingal</en> – cf. <bad>do theaghlach Rìgh Fhionghaill</bad>.</li>
+      <li><m>Sin as onoir Shir Seumas</m> <en>that is the honour of Sir James</en> – cf. <bad>onoir Shir Sheumais</bad>.</li>
+      <li><m>ri linn ban-righ Màiri</m> <en>in Queen Mary’s reign</en>.</li>
+    </ul>
+    <p>Cox (2017: 129) –</p>
+    <ul>
+      <li>a’ Bhanrigh Bhioctòria</li>
+      <li>an (dàrna) Rìgh Seumas</li>
+      <li>a’ Bhana-phrionnsa Anna</li>
+      <li>leabhar an deadhain Seumas MacGrìogair cf. <bad>leabhar an deadhain Sheumais MhicGrìogair</bad></li>
+      <li>am Prionnsa Teàrlach</li>
+      <li>ciad mhac a’ Phrionnsa Teàrlach cf. <bad>ciad mhac a’ Phrionnsa Theàrlaich</bad></li>
+      <li>an Sagart MacLeòid</li>
+      <li>am Ministear NicAsgail</li>
+      <li>a’ Bhean-phòsta NicDhonnchaidh</li>
+      <li>a’ Mhaighdean Eilidh Ghreumach</li>
+      <li>a’ Bhean-uasal Oighrig NicDhòmhnaill</li>
+      <li>an t-Athair MacFhionghain</li>
+      <li>an t-Urramach Ailean Friseal</li>
+      <li>eaglais an Urramaich MacCoinnich cf. <bad>eaglais an Urramaich MhicCoinnich</bad></li>
+      
+    </ul>
   </box>
   
 </module>

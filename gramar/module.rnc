@@ -14,8 +14,10 @@ List = (element ol { attribute type { "1"|"a"|"i" }?, ListItem+ } | element ul {
 ListItem = element li { (TextContent | List)+ }
 Box = element box { attribute id { text }, Title, ( Paragraph | Rule | List | XList | Table | Heading )+}
 XList = element xl { ListItem+ } | element xlx { element li { attribute slip { text }?, element gd { TextContent+ }, element en2 { text }, element ref { attribute text { text }, TextContent+ } }+ }
-Table = element table { attribute class { "table w-auto" }, element thead { TR }?, element tbody { TR+ } }
-TR = element tr { (element td { attribute colspan {"2"}?, TextContent+ } | element th { TextContent+ })+ }
+Table = (   element table { element thead { TR }?, element tbody { TR+ } }
+          | element ctable { attribute id { xsd:ID }, element thead { TR }?, element tbody { TR+ } }
+        )
+TR = element tr { (element td { attribute colspan {"2"}?, TextContent+ } | element th { attribute colspan {"2"}?, TextContent+ })+ }
 Heading = element h5 { TextContent+ }
 
 TextContent = (
@@ -27,6 +29,7 @@ TextContent = (
   |  element u { text }
   |  element bad { text } # ungrammatical example
   |  element a { attribute href { xsd:anyURI }, text }
+  |  element toggle { attribute href { xsd:IDREF } } 
   |  element boxlink { attribute ref { xsd:anyURI } }
   |  element boxlink2 { attribute ref { xsd:anyURI }, text }
 )

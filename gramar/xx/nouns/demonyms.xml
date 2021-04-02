@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../../module.rnc" schematypens="https://relaxng.org/ns/structure/1.0?>
+<module>
+  <title>demonyms</title>
+  <p>Demonyms are adjectives and <a href="?xx=nouns/common_nouns">common nouns</a> which have been derived from <a href="?xx=nouns/toponymic_proper_nouns">toponymic proper nouns</a>, and describe a person (or
+    other entity) originating from, or otherwise associated with the place identified by the proper noun.</p>
+  <p>Demonyms are typically formed by adding the suffix <m>-(e)ach</m> to the place name root, e.g.</p> 
+  <ul>
+    <li><i>Leòdhas</i> <en>Lewis</en> ⇒ <m>Leòdhas<u>ach</u></m> <en>(person) from Lewis</en></li>
+    <li><i>Muile</i> <en>Mull</en> ⇒ <m>Muile<u>ach</u></m> <en>(person) from Mull</en></li>
+  </ul>
+  <p>Sometimes the root is simplified somewhat, e.g. <i>Moireibh</i> <en>Moray</en> ⇒ <m>Moire<u>ach</u></m> <en>(person) from Moray</en>.</p>
+  <hr/>
+  <p>When used as an <u>adjective</u>, a demonym declines in the usual way, e.g. <i>fear Muileach</i>
+    <en>Mull man</en>, <i>bean Mhuileach</i>
+    <en>Mull woman</en>
+    <boxlink ref="#adjective_declension"/>.</p>
+  <box id="adjective_declension">
+    <title>declension of denonymic adjectives</title>
+    <p>Denonymic adjectives in <m>-(e)ach</m> decline just like any other adjective –</p>
+    <table>
+      <thead>
+        <tr>
+          <td/>
+          <th>feminine</th>
+          <th>masculine</th>
+          <th>broad plural</th>
+          <th>slender plural</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>nominative</th>
+          <td>(caileag) <m>M<u>h</u>uileach</m></td>
+          <td>(balach) <m>Muileach</m></td>
+          <td>(caileagan) <m>Muileach</m></td>
+          <td>(balaich) <m>M<u>h</u>uileach</m></td>
+        </tr>
+        <tr>
+          <th>dative</th>
+          <td>(le caileig) <m>M<u>h</u>uil<u>i</u>ch</m></td>
+          <td>(le balach) <m>Muileach</m></td>
+          <td>(le caileagan) <m>Muileach</m></td>
+          <td>(le balaich) <m>M<u>h</u>uileach</m></td>
+        </tr>
+        <tr>
+          <th>genitive</th>
+          <td>(taigh caileige) <m>Muil<u>i</u>ch<u>e</u></m></td>
+          <td>(taigh balaich) <m>M<u>h</u>uil<u>i</u>ch</m></td>
+          <td>(taigh chaileagan) <m>Muileach</m></td>
+          <td>(taigh bhalach) <m>Muileach</m></td>
+        </tr>
+      </tbody>
+    </table>
+  </box>
+  <p>When used as a (masculine) <u>noun</u>, a demonym slenderises in the genitive singular and in the (non-genitive) plural, 
+    e.g. <i>Muileach</i> <en>Mull man</en>, <i>Muilich</i> <en>Mull men</en>, <i>bean Muilich</i> <en>a Mull man’s wife</en> 
+    <boxlink ref="#noun_declension"/>.</p>
+  <box id="noun_declension">
+    <title>declension of denonymic nouns</title>
+    <p>Denonymic masculine nouns in <m>-(e)ach</m> decline just like any other regular masculine noun, 
+      slenderising in the genitive singular and in the non-genitive plural –</p>
+    <table>
+      <thead>
+        <tr>
+          <td/>
+          <th>singular</th>
+          <th>plural</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>nominative</th>
+          <td><m>Muileach</m></td>
+          <td><m>Muil<u>i</u>ch</m></td>
+        </tr>
+        <tr>
+          <th>dative</th>
+          <td>(le) <m>Muileach</m></td>
+          <td>(le) <m>Muil<u>i</u>ch</m></td>
+        </tr>
+        <tr>
+          <th>genitive</th>
+          <td>(taigh) <m>Muil<u>i</u>ch</m></td>
+          <td>(taigh) <m>M<u>h</u>uileach</m></td>
+        </tr>
+      </tbody>
+    </table>
+  </box>
+  <p>The ‘femaleness’ of women described with a demonymic noun can be brought into focus with the traditional prefix <strong><a href="?gd=bana">ban(a)-</a></strong>, 
+    e.g. <m>ban-Albannach</m> <en>Scotswoman</en>, <m>bana-Hearach</m> <en>Harris woman</en>.</p>
+  <ul>
+    <li>list of Scottish demonyms <boxlink ref="#Scottish_list"/></li>
+    <li>list of foreign demonyms <boxlink ref="#foreign_list"/></li>
+  </ul>
+  <box id="Scottish_list">
+    <title>list of Scottish demonyms</title>
+    <table>
+      <thead>
+        <tr>
+          <th>demonym</th>
+          <th>root</th>
+          <th>English</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><m>Arcach</m></td>
+          <td>Arcaibh</td>
+          <td><en>from Orkney, Orcadian</en></td>
+        </tr>
+        <tr>
+          <td><m>Barrach</m></td>
+          <td>Barraigh</td>
+          <td><en>from Barra</en></td>
+        </tr>
+        <tr>
+          <td><m>Bhatarsach</m></td>
+          <td>Bhatarsaigh</td>
+          <td><en>from Vatersay</en></td>
+        </tr>
+        <tr>
+          <td><m>Catach</m></td>
+          <td>Cataibh</td>
+          <td><en>from Sutherland</en></td>
+        </tr>
+        <tr>
+          <td><m>Diùrach</m></td>
+          <td>Diùra</td>
+          <td><en>from Jura</en></td>
+        </tr>
+        <tr>
+          <td><m>Hearach</m></td>
+          <td>(Na) Hearadh</td>
+          <td><en>from Harris</en></td>
+        </tr>
+        <tr>
+          <td><m>Ìleach</m></td>
+          <td>Ìle</td>
+          <td><en>from Islay</en></td>
+        </tr>
+        <tr>
+          <td><m>Leòdhasach</m></td>
+          <td>Leòdhas</td>
+          <td><en>from Lewis</en></td>
+        </tr>
+        <tr>
+          <td><m>Moireach</m></td>
+          <td>Moireibh</td>
+          <td><en>from Moray</en></td>
+        </tr>
+        <tr>
+          <td><m>Sealtainneach</m></td>
+          <td>Sealtainn</td>
+          <td><en>from Shetland</en></td>
+        </tr>
+        <tr>
+          <td><m>Sgitheanach</m>, <m>Sgiathanach</m></td>
+          <td>-</td>
+          <td><en>from Skye</en></td>
+        </tr>
+        <tr>
+          <td><m>Tiristeach</m></td>
+          <td>Tiriodh</td>
+          <td><en>from Tiree</en></td>
+        </tr>
+        <tr>
+          <td><m>Uibhisteach</m></td>
+          <td>Uibhist</td>
+          <td><en>from Uist</en></td>
+        </tr>
+      </tbody>
+    </table>
+  </box>
+  <box id="foreign_list">
+    <title>list of foreign demonyms</title>
+    <table>
+      <thead>
+        <tr>
+          <th>demonym</th>
+          <th>root</th>
+          <th>English</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><m>Cuimreach</m></td>
+          <td>Cuimrigh</td>
+          <td><en>Welsh</en></td>
+        </tr>
+        <tr>
+          <td><m>Eadailteach</m></td>
+          <td>Eadailt</td>
+          <td><en>Italian</en></td>
+        </tr>
+        <tr>
+          <td><m>Eilbhiseach</m></td>
+          <td>Eilbhis</td>
+          <td><en>Swiss</en></td>
+        </tr>
+        <tr>
+          <td><m>Èireannach</m></td>
+          <td>Èirinn</td>
+          <td><en>Irish</en></td>
+        </tr>
+        <tr>
+          <td><m>Eòrpach</m></td>
+          <td>Eòrpa</td>
+          <td><en>Europe</en></td>
+        </tr>
+        <tr>
+          <td><m>Frangach</m></td>
+          <td>Fraing</td>
+          <td><en>French</en></td>
+        </tr>
+        <tr>
+          <td><m>Gearmailteach</m></td>
+          <td>Gearmailt</td>
+          <td><en>German</en></td>
+        </tr>
+        <tr>
+          <td><m>Lochlannach</m></td>
+          <td>Lochlann</td>
+          <td><en>Scandinavian</en></td>
+        </tr>
+        <tr>
+          <td><m>Nirribheach</m></td>
+          <td>Nirribhidh</td>
+          <td><en>Norwegian</en></td>
+        </tr>
+        <tr>
+          <td><m>Sasannach</m></td>
+          <td>Sasainn</td>
+          <td><en>English</en></td>
+        </tr>
+        <tr>
+          <td><m>Suaineach</m></td>
+          <td>Suain</td>
+          <td><en>Swedish</en></td>
+        </tr>
+      </tbody>
+    </table>
+  </box>
+  
+  <p>Note that demonyms should not be confused with pure <a href="?xx=nouns/ethnonyms">ethnonyms</a> like <m>Gàidheal</m> <en>Gael</en>, 
+    which are not derived from toponymic roots.</p>
+  
+</module>

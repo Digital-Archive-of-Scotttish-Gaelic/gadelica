@@ -18,19 +18,13 @@
   
   <xsl:template match="meta"/>
   
-  <xsl:template match="p|strong|hr|ol|ul|li|a|h1|h2|h3|h4|h5|table|thead|tbody|tr|td|th|u|small">
+  <xsl:template match="p|strong|hr|ol|ul|li|a|h1|h2|h3|h4|h5|thead|tbody|tr|td|th|u|small">
     <xsl:copy>
       <xsl:if test="@type">
         <xsl:attribute name="type"><xsl:value-of select="@type"/></xsl:attribute>
       </xsl:if>
       <xsl:if test="@href">
         <xsl:attribute name="href"><xsl:value-of select="@href"/></xsl:attribute>
-      </xsl:if>
-      <xsl:if test="@class">
-        <xsl:attribute name="class"><xsl:value-of select="@class"/></xsl:attribute>
-      </xsl:if>
-      <xsl:if test="@id">
-        <xsl:attribute name="id"><xsl:value-of select="@id"/></xsl:attribute>
       </xsl:if>
       <xsl:if test="@data-toggle">
         <xsl:attribute name="data-toggle"><xsl:value-of select="@data-toggle"/></xsl:attribute>
@@ -40,6 +34,24 @@
       </xsl:if>
       <xsl:apply-templates/>
     </xsl:copy>
+  </xsl:template>
+  
+  <xsl:template match="table">
+    <table class="table w-auto">
+      <xsl:apply-templates/>
+    </table>
+  </xsl:template>
+  
+  <xsl:template match="ctable">
+    <table class="table w-auto collapse" id="{@id}">
+      <xsl:apply-templates/>
+    </table>
+  </xsl:template>
+  
+  <xsl:template match="toggle">
+    <small>
+      <a data-toggle="collapse" href="{concat('#',@href)}">[toggle]</a>
+    </small>
   </xsl:template>
   
   <xsl:template match="m">
