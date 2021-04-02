@@ -139,7 +139,7 @@ HTML;
 				$index++;
 				$slipData[] = models\collection::getSlipInfoBySlipId($slipId);
 			}
-			$html .= $this->_getSlipListHtml($slipData, "uncategorised", "orp_" . $index);
+			$html .= $this->_getSlipListHtml($slipData, array("uncategorised"), "orp_" . $index);
 		}
 		return $html;
 	}
@@ -160,22 +160,21 @@ HTML;
 	}
 
 	private function _getGroupedSensesHtml($entry) {
-  	/* Get the citations with grouped senses */
+		/* Get the citations with grouped senses */
 		$index = 0;
-		foreach ($entry->getUniqueSenses() as $slipId => $sense) {
+		foreach ($entry->getUniqueSenseIds() as $slipId => $senseIds) {
 			$slipData = array();
 			$senseSlipIds = $entry->getSenseSlipIds($slipId);
 			foreach ($senseSlipIds as $id) {
 				$index++;
 				$slipData[] = models\collection::getSlipInfoBySlipId($id);
 			}
-			$html .= $this->_getSlipListHtml($slipData, $sense, "grp_".$index);
+			$html .= $this->_getSlipListHtml($slipData, $senseIds, "grp_".$index);
 		}
 		return $html;
 	}
 
-
-	private function _getSlipListHtml($slipData, $sense, $index) {
+	private function _getSlipListHtml($slipData, $senseIds, $index) {
 		$slipList = '<table class="table"><tbody>';
 		foreach($slipData as $data) {
 			foreach ($data as $row) {
@@ -220,14 +219,24 @@ HTML;
 					{$slipList}
 				</div>
 HTML;
-		$senses = explode('|', $sense);
 		$senseString = "";
-		foreach ($senses as $s) {
-			$badge = ($s == "uncategorised") ? "badge-secondary" : "badge-success";
-			$senseString .= <<<HTML
-					<span data-toggle="modal" data-target="#senseModal" title="rename this sense" class="badge {$badge} entrySense">{$s}</span> 
+		if ($senseIds[0] == "uncategorised") {
+			$senseString = <<<HTML
+				<span data-toggle="modal" data-target="#senseModal" title="rename this sense" class="badge badge-secondary entrySense">
+						uncategorised
+					</span> 
 HTML;
-
+		} else {
+			$senseIds = explode('|', $senseIds);
+			foreach ($senseIds as $senseId) {
+				$sense = new models\sense($senseId);
+				$senseString .= <<<HTML
+					<span data-toggle="modal" data-target="#senseModal" data-senseid="{$senseId}" 
+					title="rename this sense" class="badge badge-success entrySense">
+						{$sense->getName()}
+					</span> 
+HTML;
+			}
 		}
 		$html = <<<HTML
 				<li>{$senseString} {$citationsHtml}</li>
@@ -282,6 +291,7 @@ HTML;
                 <h5><span id="oldSenseName"></span></h5>
                 <label for="newSenseName">New Sense Name:</label>
                 <input type="text" id="newSenseName">
+                <input type="hidden" name="senseId" id="senseId">
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
@@ -331,6 +341,8 @@ HTML;
 				});
 				
 				$('.entrySense').on('click', function() {
+				  var senseid = $(this).attr('data-senseid');
+				  $('#senseId').val(senseid);
 				  var oldName = $(this).text();
 				  $('#oldSenseName').text(oldName);
 				});
@@ -338,9 +350,8 @@ HTML;
 				$('#editSense').on('click', function () {
 				  var oldName = $('#oldSenseName').text();
 				  var newName = $('#newSenseName').val();
-				  var lemma = $('#lemma').val();
-				  var wordclass = $('#wordclass').val();
-					var url = 'ajax.php?action=renameSense&lemma=' + lemma + '&wordclass=' + wordclass;
+				  var id = $('#senseId').val();
+					var url = 'ajax.php?action=renameSense&id=' + id;
 					url += ' &oldName=' + oldName + '&newName=' + newName;
 					$('.entrySense').each(function(index) {
 					  if ($(this).text() == oldName) {

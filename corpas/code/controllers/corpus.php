@@ -44,7 +44,7 @@ class corpus
 				$view->show();
 			  break;
 			case "slow_search":
-				$model = new models\slow_search();
+				$model = new models\slow_search($id);
 				$view = new views\slow_search($model);
 				$view->show($_GET["xpath"]);
 				break;

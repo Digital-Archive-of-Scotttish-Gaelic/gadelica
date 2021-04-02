@@ -36,22 +36,27 @@ SQL;
 		return $entry;
 	}
 
+	/**
+	 * Queries DB for sense data and adds sense objects, indexed by slip ID, to entry object
+	 * @param $entry entry object
+	 * @return entry object
+	 */
 	private static function _getSenses($entry) {
 		$db = new database();
 		$dbh = $db->getDatabaseHandle();
 		try {
 			$sql = <<<SQL
-        SELECT category, auto_id FROM senseCategory sc
-        JOIN slips s ON s.auto_id = sc.slip_id
-        JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
-        WHERE s.group_id = {$_SESSION["groupId"]} AND  lemma = :lemma AND wordclass = :wordclass
-            ORDER BY category ASC
+				SELECT se.id as id, auto_id AS slipId FROM sense se
+					JOIN slip_sense ss ON ss.sense_id = se.id
+					JOIN slips s ON s.auto_id = ss.slip_id
+        	WHERE s.group_id = {$_SESSION["groupId"]} AND  se.headword = :lemma AND se.wordclass = :wordclass
+            ORDER BY name ASC
 SQL;
 			$sth = $dbh->prepare($sql);
 			$sth->execute(array(":lemma"=>$entry->getLemma(), ":wordclass"=>$entry->getWordclass()));
 			while ($row = $sth->fetch()) {
-				$sense = $row["category"];
-				$slipId = $row["auto_id"];
+				$sense = new sense($row["id"]);
+				$slipId = $row["slipId"];
 				$entry->addSense($sense, $slipId);
 			} } catch (PDOException $e) {
 			echo $e->getMessage();

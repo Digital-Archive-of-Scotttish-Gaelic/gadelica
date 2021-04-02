@@ -39,7 +39,7 @@ switch ($_REQUEST["action"]) {
     $results = array("locked"=>$slip->getLocked(), "auto_id"=>$slip->getAutoId(), "owner"=>$slip->getOwnedBy(),
 	    "starred"=>$slip->getStarred(), "translation"=>$slip->getTranslation(), "notes"=>$slip->getNotes(),
       "preContextScope"=>$slip->getPreContextScope(), "postContextScope"=>$slip->getPostContextScope(),
-      "wordClass"=>$slip->getWordClass(), "categories"=>$slip->getSenseCategories(),
+      "wordClass"=>$slip->getWordClass(), "senses"=>$slip->getSensesInfo(),
       "lastUpdated"=>$slip->getLastUpdated(), "textId"=>$textId, "slipMorph"=>$slip->getSlipMorph()->getProps());
     //code required for modal slips
     $handler = new xmlfilehandler($_GET["filename"]);
@@ -62,9 +62,9 @@ switch ($_REQUEST["action"]) {
 		echo json_encode($slipInfo);
 		break;
 	case "getSenseCategories":
-		$categories = sensecategories::getAllUnusedCategories($_GET["slipId"],
-			$_GET["headword"], $_GET["wordclass"]);
-		echo json_encode($categories);
+		$slip = new slip($_GET["id"]);
+		$senses = $slip->getUnusedSenses();
+		echo json_encode($senses);
 		break;
   case "saveSlip":
     $slip = new slip($_POST["filename"], $_POST["id"], $_POST["auto_id"], $_POST["pos"],
@@ -73,18 +73,24 @@ switch ($_REQUEST["action"]) {
     $slip->saveSlip($_POST);
     echo "success";
     break;
-  case "saveCategory":
-    sensecategories::saveCategory($_POST["slipId"], $_POST["categoryName"]);
+  case "saveSlipSense":
+    sensecategories::saveSlipSense($_POST["slipId"], $_POST["senseId"]);
     collection::touchSlip($_POST["slipId"]);
     echo "success";
     break;
-  case "deleteCategory":
-    sensecategories::deleteCategory($_POST["slipId"], $_POST["categoryName"]);
+	case "addSense":
+		$description = "";
+		$senseId = sensecategories::addSense($_POST["name"], $description, $_POST["headword"], $_POST["wordclass"]);
+		sensecategories::saveSlipSense($_POST["slipId"], $senseId);
+		echo json_encode(array("senseId" => $senseId));
+		break;
+  case "removeSense":
+    sensecategories::deleteSlipSense($_POST["slipId"], $_POST["senseId"]);
     collection::touchSlip($_POST["slipId"]);
     echo "success";
     break;
 	case "renameSense":
-		sensecategories::renameSense($_GET["lemma"], $_GET["wordclass"], $_GET["oldName"], $_GET["newName"]);
+		sensecategories::renameSense($_GET["id"], $_GET["newName"]);
 		break;
   case "getDictionaryResults":
     $locs = $_POST["locs"];
@@ -127,9 +133,9 @@ switch ($_REQUEST["action"]) {
 		users::updateGroupLastUsed($_GET["groupId"]);
 		break;
 	case "getSlowSearchResults":
-		$slowSearch = new slow_search();
+		$slowSearch = new slow_search($_GET["id"]);
 		$xpath = urldecode($_GET["xpath"]);
-		$results = $slowSearch->search($xpath, $_GET["chunkSize"], $_GET["filename"], $_GET["id"], $_GET["index"]);
+		$results = $slowSearch->search($xpath, $_GET["chunkSize"], $_GET["offsetFilename"], $_GET["offsetId"], $_GET["index"]);
 		echo json_encode($results);
 		break;
 	default:

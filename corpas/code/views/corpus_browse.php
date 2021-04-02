@@ -103,7 +103,7 @@ HTML;
 		echo <<<HTML
 			<form id="corpusEdit" action="index.php?m=corpus&a=save&id={$this->_model->getID()}" method="post">
 				{$formHtml}
-				<button type="submit" class="btn btn-success">edit</button>
+				<button type="submit" class="btn btn-primary">save</button>
 			</form>
 
 		<!-- check to see if a user tries to leave the page without saving changes -->
@@ -123,7 +123,7 @@ HTML;
 	private function _getFormMetadataSectionHtml() {
 		$writersHtml = $this->_getWritersFormHtml();
 		$levelHtml = <<<HTML
-			<select name="textLevel" id="textLevel">
+			<select name="textLevel" id="textLevel" class="form-control col-sm-4">
 HTML;
 		for ($i=1; $i<4; $i++) {
 			$selected = $this->_model->getLevel() == $i ? "selected" : "";
@@ -133,28 +133,29 @@ HTML;
 		}
 		$levelHtml .= "</select>";
 		$html = <<<HTML
-					<div>
-						Text ID : {$this->_model->getID()}
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label" for="textId">Text ID :</label>
+						<input class="form-control col-sm-4" disabled type="text" name="textId" id="textId" value="{$this->_model->getID()}">	
 					</div>
-					<div class="form-group">
-						<label for="textTtle">Title</label>
-						<input class="form-control" type="text" name="textTitle" id="textTitle" value="{$this->_model->getTitle()}">
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label" for="textTtle">Title</label>
+						<input class="form-control col-sm-4" type="text" name="textTitle" id="textTitle" value="{$this->_model->getTitle()}">
 					</div>
 					<div>
 						<h4>Writers</h4>
 							{$writersHtml}
 					</div>
-					<div class="form-group">
-						<label for="textDate">Date</label>
-						<input class="form-control" type="text" name="textDate" id="textDate" value="{$this->_model->getDate()}">
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label" for="textDate">Date</label>
+						<input class="form-control col-sm-4" type="text" name="textDate" id="textDate" value="{$this->_model->getDate()}">
 					</div>
-					<div class="form-group">
-						<label for="textLevel">Text Level</label>
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label" for="textLevel">Text Level</label>
 						{$levelHtml}
 					</div>
-					<div class="form-group">
-						<label for="textNotes">Text Notes</label>
-						<textarea id="textNotes" name="textNotes" rows="10" cols="100">{$this->_model->getNotes()}</textarea>
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label" for="textNotes">Text Notes</label>
+						<textarea class="form-control col-sm-4" id="textNotes" name="textNotes" rows="10">{$this->_model->getNotes()}</textarea>
 					</div>
 HTML;
 		return $html;
@@ -164,7 +165,7 @@ HTML;
 		$prefix = ($this->_model->getID() == 0) ? "" : $this->_model->getID() . "-";
 		$defaultLevel = $this->_model->getLevel() ? $this->_model->getLevel() : 3;
 		$levelHtml = <<<HTML
-			<select name="subTextLevel" id="subTextextLevel">
+			<select name="subTextLevel" id="subTextextLevel" class="form-control col-sm-4">
 HTML;
 		for ($i=1; $i<4; $i++) {
 			$selected = $defaultLevel == $i ? "selected" : "";
@@ -174,25 +175,25 @@ HTML;
 		}
 		$levelHtml .= "</select>";
 		$html = <<<HTML
-				<div class="form-group">
-					<label for="subTextId">SubText ID</label>
-					{$prefix}<input class="form-control"  type="text" name="subTextId" id="subTextId">
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label" for="subTextId">SubText ID</label>
+					{$prefix}<input class="form-control col-sm-4" type="text" name="subTextId" id="subTextId">
 				</div>
-				<div class="form-group">
-					<label for="subTextTitle">SubText Title</label>
-					<input class="form-control" type="text" name="subTextTitle" id="subTextTitle">
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label" for="subTextTitle">SubText Title</label>
+					<input class="form-control col-sm-4" type="text" name="subTextTitle" id="subTextTitle">
 				</div>
-				<div class="form-group">
-					<label for="subTextDate">SubText Date</label>
-					<input class="form-control" type="text" name="subTextDate" id="subTextDate">
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label" for="subTextDate">SubText Date</label>
+					<input class="form-control col-sm-4" type="text" name="subTextDate" id="subTextDate">
 				</div>
-				<div class="form-group">
-					<label for="subTextLevel">SubText Level</label>
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label" for="subTextLevel">SubText Level</label>
 					{$levelHtml}
 				</div>
-				<div class="form-group">
-					<label for="textNotes">SubText Notes</label>
-					<textarea id="subTextNotes" name="subTextNotes"></textarea>
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label" for="textNotes">SubText Notes</label>
+					<textarea class="form-control col-sm-4" id="subTextNotes" name="subTextNotes" rows="10"></textarea>
 				</div>
 HTML;
 		return $html;
@@ -279,9 +280,10 @@ HTML;
 HTML;
 		}
 		$html .= <<<HTML
-			<div class="form-group">
-				<label for="writerId">New writer ID</label>
-				<input class="form-control" type="text" id="writerId" name="writerId">
+			</ul>
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label" for="writerId">New writer ID</label>
+				<input class="form-control col-sm-4" type="text" id="writerId" name="writerId">
 			</div>
 HTML;
 

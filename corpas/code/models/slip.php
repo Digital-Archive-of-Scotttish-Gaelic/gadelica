@@ -18,8 +18,9 @@ class slip
     "adverb" => array("A"),
     "other" => array("d", "c", "z", "o", "D", "Dx", "ax", "px", "q"));
   private $_slipMorph;  //an instance of SlipMorphFeature
-  private $_senseCategories = array();
-  private $_lemma, $_wordform;
+  private $_senses = array();
+  private $_sensesInfo = array();   //used to store sense info (in place of object data) for AJAX use
+  private $_lemma;
 
   public function __construct($filename, $id, $auto_id = null, $pos, $preScope = self::SCOPE_DEFAULT, $postScope = self::SCOPE_DEFAULT) {
     $this->_filename = $filename;
@@ -54,22 +55,25 @@ SQL;
     $slipData = $result[0];
     $this->_populateClass($slipData);
     $this->_loadSlipMorph();  //load the slipMorph data from the DB
-    $this->_loadSenseCategories(); //load the senseCategory data from the DB
+    $this->_loadSenses(); //load the sense objects
     return $this;
   }
 
-  private function _loadSenseCategories() {
-    $sql = <<<SQL
-        SELECT category from senseCategory 
-        WHERE slip_id = :auto_id 
+	private function _loadSenses() {
+		$sql = <<<SQL
+        SELECT sense_id as id FROM slip_sense
+        	WHERE slip_id = :auto_id 
 SQL;
-    $results = $this->_db->fetch($sql, array(":auto_id"=>$this->getAutoId()));
-    if ($results) {
-      foreach ($results as $key => $value)
-      $this->_senseCategories[] = $value["category"];
-    }
-    return $this;
-  }
+		$results = $this->_db->fetch($sql, array(":auto_id"=>$this->getAutoId()));
+		if ($results) {
+			foreach ($results as $key => $value) {
+				$id = $value["id"];
+				$this->_senses[$id] = new sense($id); //create and store sense objects
+				$this->_sensesInfo[$id] = $this->_senses[$id]->getName();  //store id and name for AJAX use
+			}
+		}
+		return $this;
+	}
 
   private function _loadSlipMorph() {
     $this->_slipMorph->resetProps();
@@ -80,6 +84,7 @@ SQL;
     foreach ($results as $result) {
       $this->_slipMorph->setProp($result["relation"], $result["value"]);
     }
+    return $this;
   }
   
   private function _saveSlipMorph() {
@@ -135,6 +140,10 @@ SQL;
     return $this->_id;
   }
 
+  public function getLemma() {
+  	return $this->_lemma;
+  }
+
   public function getIsNew() {
     return $this->_isNew;
   }
@@ -163,8 +172,12 @@ SQL;
     return $this->_wordClass;
   }
 
-  public function getSenseCategories() {
-    return $this->_senseCategories;
+  public function getSenses() {
+    return $this->_senses;
+  }
+
+  public function getSensesInfo() {
+  	return $this->_sensesInfo;
   }
 
   public function getLocked() {
@@ -187,7 +200,39 @@ SQL;
     return $this->_lastUpdated;
   }
 
+	/**
+	 * Fetches a list of all unused senses for this headword and wordclass combinations
+	 * @return array of sense objects
+	 */
+  public function getUnusedSenses() {
+  	$senses = array();
+		$sql = <<<SQL
+			SELECT DISTINCT se.id AS id FROM sense se
+				JOIN slip_sense ss ON ss.sense_id = se.id 
+				JOIN slips s ON ss.slip_id = s.auto_id
+				WHERE se.headword = :lemma AND se.wordclass = :wordclass AND group_id = '{$_SESSION["groupId"]}'
+SQL;
+		$results = $this->_db->fetch($sql, array(":lemma"=>$this->getLemma(), ":wordclass"=>$this->getWordClass()));
+		foreach ($results as $result) {
+			$id = $result["id"];
+			if (array_key_exists($id, $this->getSenses())) {
+				continue;
+			}
+			$senses[$id] = new sense($id);
+		}
+		return $senses;
+  }
+
+	private function _setLemma() {
+		$sql = <<<SQL
+			SELECT lemma FROM lemmas WHERE filename = :filename AND id = :id
+SQL;
+		$results = $this->_db->fetch($sql, array(":filename"=>$this->getFilename(), ":id"=>$this->getId()));
+		$this->_lemma = $results[0]["lemma"];
+	}
+
   private function _populateClass($params) {
+  	$this->_setLemma();
     $this->_auto_id = $this->getAutoId() ? $this->getAutoId() : $params["auto_id"];
     $this->_isNew = false;
     $this->_starred = $params["starred"] ? 1 : 0;
