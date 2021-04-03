@@ -1,24 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="../../module.rnc" schematypens="https://relaxng.org/ns/structure/1.0?>
 <module>
   <title>name-descriptions</title>
-  <p>Name-descriptions are <a href="?xx=nouns/names">names</a> which have been created from a definite 
+  <p>Name-descriptions are <a href="?xx=nouns/names">names</a> of specific people, places &amp;c which have been created from a definite 
     <a href="?xx=nouns/common_nouns">common noun</a> phrase.</p>
   <p>Name-descriptions can be classified into two distinct <u>grammatical</u> types, based on the kinds of words they are made out of –</p>
   <ol>
-    <li><u>pre-specified</u> name-descriptions – the common noun is specified by a form of the definite article, 
-      e.g. <m>Am Moireach</m> <en>The Duke of Atholl</en>, <m>Am Ploc</m> <en>Plockton</en>, <m>An Seann-Tiomnadh</m> <en>The Old Testament</en></li>
-    <li><u>post-specified</u> name-descriptions – the common noun is specified by a following genitive word or phrase, 
-      e.g. <m>Fear Chìosmuil</m> <en>MacNeil of Barra</en>, <m>Baile Ùr an t-Slèibhe</m> <en>Newtonmore</en>, <m>Òran na Cloiche</m> <en>[song title]</en></li>
+    <li><u>pre-specified</u> name-descriptions – the common noun is specified by a form of the definite article 
+      eg. <m>Am Moireach</m> <en>The Duke of Atholl</en>, <m>Am Ploc</m> <en>Plockton</en>, <m>An Seann-Tiomnadh</m> <en>The Old Testament</en></li>
+    <li><u>post-specified</u> name-descriptions – the common noun is specified by a following genitive word or phrase 
+      eg. <m>Fear Chìosmuil</m> <en>MacNeil of Barra</en>, <m>Baile Ùr an t-Slèibhe</m> <en>Newtonmore</en>, <m>Òran na Cloiche</m> <en>[song title]</en></li>
   </ol>
   <p>Like other names, name-descriptions can also be classified into a number of different <u>semantic</u> types, depending on the kind of entity named –</p>
   <ol>
-    <li><a href="?xx=nouns/anthroponymic_name_descriptions">Anthroponymic name-descriptions</a> name ...</li>
-    <li><a href="?xx=nouns/toponymic_name_descriptions">Toponymic name-descriptions</a> name ...</li>
-    <li>‘<a href="?xx=nouns/grouponyms">Grouponymic</a>’ name-descriptions name ...</li>
-    <li>‘<a href="?xx=nouns/textonyms">Textonymic</a>’ name-descriptions name ...</li>
-    <li><a href="?xx=nouns/glottonyms">Glottonymic</a> name-descriptions name ...</li>
+    <li><a href="?xx=nouns/anthroponymic_name_descriptions">Anthroponymic name-descriptions</a> name <u>people</u> (including personified entities) 
+      eg. <i>Am Moireach</i>, <i>Fear Chìosmuil</i>.</li>
+    <li><a href="?xx=nouns/toponymic_name_descriptions">Toponymic name-descriptions</a> name <u>places</u> (geographical entities) 
+      eg. <i>Am Ploc</i>, <i>Baile Ùr an t-Slèibhe</i>.</li>
+    <li>‘<a href="?xx=nouns/grouponyms">Grouponymic</a>’ name-descriptions name <u>groups</u>, teams, organisations, companies &amp;c 
+      eg. <m>An Comunn Gàidhealach</m> <en>The Highland Association</en>, <m>Comhairle nan Leabhraichean</m> <en>The Gaelic Books Council</en>.</li>
+    <li>‘<a href="?xx=nouns/textonyms">Textonymic</a>’ name-descriptions name scholarly and literary <u>texts</u> and other creative works 
+      eg. <i>An Seann-Tiomnadh</i>, <i>Òran na Cloiche</i>.</li>
+    <li><a href="?xx=nouns/glottonyms">Glottonymic</a> name-descriptions name <u>languages</u> and dialects 
+      eg. <m>A’ Ghreugais</m> <en>Greek</en>, <m>Gàidhlig na h-Èireann</m> <en>Irish</en>.</li>
+    <li><a href="?xx=nouns/eventonyms">Eventonymic</a> name-descriptions name <u>events</u> and historical eras 
+      eg. <m>An Cogadh Mòr</m> <en>The Great War</en>, <m>Linn an Umha</m> <en>The Bronze Age</en>.</li>
   </ol>
-  <p><m>An Fhraing</m> <en>France</en>, <m>An Fhraingis</m> <en>French</en> – <u>proper name-descriptions</u></p>
+  <p>Note that, in pre-specified name-descriptions, the definite article is <u>capitalised</u> in some contexts but not in others, 
+    depending on the grammatical/communicative context and the semantic class of the name.</p>
+  <p>Note also that a few pre-specified name-descriptions are notable in that the nouns involved appear to be more proper than common, 
+    in particular names of countries (eg. <m>A’ Ghreug</m> <en>Greece</en>) and languages (eg. <m>A’ Ghreugais</m> <en>Greek</en>). 
+    For convenience, we can call these <u>proper name-descriptions</u>.</p>
 </module>
 
 

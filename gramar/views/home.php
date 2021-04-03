@@ -16,6 +16,24 @@ class home {
     echo "<li><a href=\"?en=the\">the</a></li>";
 		echo "<li><a href=\"?xx=cardinals\">cardinal numbers</a></li>";
 		echo "</ul>";
+		echo <<<HTML
+      <ul>
+        <li><a href="?xx=nouns/nouns">nouns</a>
+          <ul>
+            <li><a href="?xx=nouns/common_nouns">common nouns</a></li>
+						<li><a href="?xx=nouns/proper_nouns">proper nouns</a></li>
+					</ul>
+				</li>
+				<li><a href="?xx=nouns/names">names</a>
+          <ul>
+            <li><a href="?xx=nouns/proper_nouns">proper nouns</a></li>
+						<li><a href="?xx=nouns/name_descriptions">name-descriptions</a></li>
+					</ul>
+				</li>
+			</ul>
+HTML;
+
+
 	}
 
 }

@@ -17,6 +17,9 @@ echo <<<HTML
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <script>
 	  $(function() {
+      var title = $('h1').first().text();
+      if (!title) {title = 'Gràmar';}
+      document.title = '🍒 ' + title;
 		  $('.ex').each(function () {
 		    var li = $(this);
 	      var url = '../corpas/code/ajax.php?action=loadSlipData&id='+$(this).attr('data-slip');
