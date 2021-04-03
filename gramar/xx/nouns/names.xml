@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="../../module.rnc" schematypens="https://relaxng.org/ns/structure/1.0?>
 <module>
   <title>names</title>
-  <p>See: <a href="?xx=nouns/proper_nouns">proper nouns</a>, <a href="?xx=nouns/namifications">namifications</a>, <a href="?xx=nouns/anthroponyms">anthroponyms</a>, <a href="?xx=nouns/toponyms">toponyms</a></p>
-  <p>Names of groups, organisations, institutions and companies.</p>
-  <p>Names of texts and other creative works.</p>
+  <p>Names are expressions which identify and refer to a single entity – a specific person, place, song &amp;c.</p>
+  <p>Names can be classified into two distinct <u>grammatical</u> types, based on the kinds of words they are made out of –</p>
+  <ul>
+    <li><a href="?xx=nouns/proper_nouns">proper nouns</a> – single, intrinsically definite, words (with optional modifiers), 
+      e.g. <m>Mairead</m> <en>Margaret</en>, <m>Glaschu</m> <en>Glasgow</en>, <m>Seumas Mòr</m> <en>Big James</en>,
+      <m>Alba Nuadh</m> <en>Nova Scotia</en>, <m>Gairm</m> <en>[name of quarterly periodical]</en></li>
+    <li><a href="?xx=nouns/name_descriptions">name-descriptions</a> – (capitalised) definite common noun expressions, 
+      e.g. <m>An Caiptean</m> <en>The Captain</en>, <m>Bean Alasdair</m> <en>Alexander’s Wife</en>, <m>Am Ploc</m> <en>Plockton</en>, 
+      <m>Ceann Loch Chille Chiarain</m> <en>Campbeltown</en>, <m>Òran na Cloiche</m> <en>[song title]</en></li>
+  </ul>
+  <p>Names can also be classified into a number of different <u>semantic</u> types, depending on the kind of entity named –</p>
+  <ul>
+    <li><a href="?xx=nouns/anthroponyms">anthroponyms</a> – names of <u>people</u>, e.g. <m>Mairead</m> <en>Margaret</en>, <m>An Caiptean</m> <en>The Captain</en></li>
+    <li><a href="?xx=nouns/toponyms">toponyms</a> – names of <u>places</u>, e.g. <m>Alba Nuadh</m> <en>Nova Scotia</en>, <m>Am Ploc</m> <en>Plockton</en></li>
+    <li>‘<a href="?xx=nouns/grouponyms">grouponyms</a>’ – names of <u>groups</u> of people – teams, organisations, institutions, companies, tribes &amp;c, 
+      e.g. <m>Misneachd</m> <en>[name of pressure group]</en>, <m>An Comunn Gàidhealach</m> <en>The Highland Association</en></li>
+    <li>‘<a href="?xx=nouns/textonyms">textonyms</a>’ – names of scholarly and literary <u>texts</u> and other creative works, 
+      e.g. <m>Gairm</m> <en>[name of quarterly periodical]</en>, <m>Am Bìoball</m> <en>The Bible</en>, <m>Òran na Cloiche</m> <en>[song title]</en></li>
+    <li><a href="?xx=nouns/glottonyms">glottonyms</a> – names of <u>languages</u> and dialects, 
+      e.g. <m>Laideann</m> <en>Latin</en>, <m>A’ Ghreugais</m> <en>Greek</en>, <m>Gàidhlig na h-Èireann</m> <en>Irish</en></li>
+    <li>‘eventonyms’ – names of <u>events</u> and historical eras, e.g. <m>An Cogadh Mòr</m> <en>The Great War</en>, <m>Bliadhna Theàrlaich</m> <en>1745-6</en>, 
+      <m>Linn an Umha</m> <en>The Bronze Age</en></li>
+  </ul>
 </module>
 

@@ -24,7 +24,7 @@ TextContent = (
      text
   |  element strong { TextContent+ }
   |  element en { text }
-  |  element i { text }
+  |  element i { TextContent+ }
   |  element m { TextContent+ }
   |  element u { text }
   |  element bad { text } # ungrammatical example
