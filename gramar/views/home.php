@@ -23,17 +23,43 @@ class home {
         <li><a href="?xx=nouns/nouns">nouns</a>
           <ul>
             <li><a href="?xx=nouns/common_nouns">common nouns</a></li>
-						<li><a href="?xx=nouns/proper_nouns">proper nouns</a></li>
+						<li><a href="?xx=nouns/proper_nouns">proper nouns</a>
+              <ul>
+                <li>
+									<a href="?xx=nouns/anthroponymic_proper_nouns">anthroponymic proper nouns</a>,
+									<a href="?xx=nouns/toponymic_proper_nouns">toponymic proper nouns</a>
+								</li>
+							</ul>
+						</li>
 					</ul>
 				</li>
 				<li><a href="?xx=nouns/names">names</a>
           <ul>
-            <li><a href="?xx=nouns/proper_nouns">proper nouns</a></li>
+            <li><a href="?xx=nouns/proper_nouns">proper nouns</a>
+							<ul>
+                <li>
+									<a href="?xx=nouns/anthroponymic_proper_nouns">anthroponymic proper nouns</a>,
+									<a href="?xx=nouns/toponymic_proper_nouns">toponymic proper nouns</a>
+								</li>
+							</ul>
+						</li>
 						<li><a href="?xx=nouns/name_descriptions">name-descriptions</a></li>
 					</ul>
 					<ul>
-            <li><a href="?xx=nouns/anthroponyms">anthroponyms</a></li>
-						<li><a href="?xx=nouns/toponyms">toponyms</a></li>
+            <li><a href="?xx=nouns/anthroponyms">anthroponyms</a>
+							<ul>
+								<li>
+									<a href="?xx=nouns/anthroponymic_proper_nouns">anthroponymic proper nouns</a>
+								</li>
+							</ul>
+						</li>
+						<li><a href="?xx=nouns/toponyms">toponyms</a>
+							<ul>
+								<li>
+									<a href="?xx=nouns/toponymic_proper_nouns">toponymic proper nouns</a>
+								</li>
+							</ul>
+						</li>
 						<li>
 							<a href="?xx=nouns/grouponyms">‘grouponyms’</a>,
 							<a href="?xx=nouns/textonyms">‘textonyms’</a>,
