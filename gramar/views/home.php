@@ -61,10 +61,10 @@ class home {
 							</ul>
 						</li>
 						<li>
-							<a href="?xx=nouns/grouponyms">‘grouponyms’</a>,
-							<a href="?xx=nouns/textonyms">‘textonyms’</a>,
+							<a href="?xx=nouns/ergonyms">ergonyms</a>,
+							<a href="?xx=nouns/chrematonyms">chrematonyms</a>,
 							<a href="?xx=nouns/glottonyms">glottonyms</a>,
-							<a href="?xx=nouns/eventonyms">‘eventonyms’</a>
+							<a href="?xx=nouns/chrononyms">chrononyms</a>
 						</li>
 					</ul>
 				</li>

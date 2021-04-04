@@ -2,18 +2,19 @@
 <module>
   <title>toponymic proper nouns</title>
   <p>Toponymic proper nouns are <a href="?xx=nouns/proper_nouns">proper nouns</a> which are also <a href="?xx=nouns/toponyms">toponyms</a>, i.e. they name places (geographical entities).</p>
-  <p>Toponymic proper nouns can be classified according to the kind of geographical entity they refer to –</p>
+  <p>Like other toponyms, toponymic proper nouns can be classified <u>semantically</u> according to the kind of geographical entity they refer to –</p>
   <ul>
     <li>islands and districts eg. <m>Cataibh</m> <en>Sutherland</en>, <m>Barraigh</m> <en>Barra</en> <boxlink ref="#districts"/></li>
     <li>towns and settlements eg. <m>Glaschu</m> <en>Glasgow</en>, <m>Siabost</m> <en>Shawbost</en> <boxlink ref="#settlements"/></li>
-    <li>countries and continents eg. <m>Alba</m> <en>Scotland</en>, </li>
+    <li>countries and continents eg. <m>Alba</m> <en>Scotland</en>, <boxlink ref="#countries"/></li>
   </ul>
   <p>Like other proper nouns, toponymic proper nouns can be modified by an attributive <u>adjective</u> eg. 
-    <m>Alba Nuadh</m> <en>Nova Scotia</en>, <m>Sasainn Nuadh</m> <en>New England</en>, <m>Beàrnaraigh Mòr</m> <en>Great Bernera</en>,
-    <m>Lodainn Meadhanach</m> <en>Midlothian</en>.</p>
+    <m>Alba Nuadh</m> <en>Nova Scotia</en>, <m>Sasainn Nuadh</m> <en>New England</en>, <m>Lannraig Ùr</m> <en>New Lanark</en>, 
+    <m>Beàrnaraigh Mòr</m> <en>Great Bernera</en>,
+    <m>Lodainn Meadhanach</m> <en>Midlothian</en> (but <i>Meadhan-Aimearaga</i> <en>Central America</en>).</p>
   <p>Toponymic proper nouns can be modified by one of the following four directional prepositional phrases –</p>
   <ul>
-    <li><strong>a Tuath</strong> <en>North(ern)</en> eg. <m>Uibhist a Tuath</m> <en>North Uist</en></li>
+    <li><strong>a Tuath</strong> <en>North(ern)</en> eg. <m>Uibhist a Tuath</m> <en>North Uist</en>, <m>Aimearaga a Tuath</m> <en>North America</en></li>
     <li><strong>a Deas</strong> <en>South(ern)</en> eg. <m>Uibhist a Deas</m> <en>South Uist</en>, <m>Afraga a Deas</m> <en>South(ern) Africa</en></li>
     <li><strong>an Ear</strong> <en>East(ern)</en> eg. <m>Ros an Ear</m> <en>Easter Ross</en>, <m>Lodainn an Ear</m> <en>East Lothian</en></li>
     <li><strong>an Iar</strong> <en>West(ern)</en> eg. <m>Ros an Iar</m> <en>Wester Ross</en>, <m>Lodainn an Iar</m> <en>West Lothian</en></li>
@@ -27,7 +28,7 @@
     adjectives and common nouns describing or referring to a person (or other entity) originating from, 
     or otherwise associated with the place identified by the proper noun eg. <m>Leòdhasach</m> <en>(person) from Lewis</en>, 
     <m>Albannach</m> <en>(person) from Scotland</en>.</p>
-  <p>[Glottonyms?]</p>
+  <p>[Note that toponymic name-descriptions can be modified too, e.g. <i>Port na Banrighinn a Tuath</i> <en>North Queensferry</en>.]</p>
   
   <box id="districts">
     <title>list of toponymic proper nouns – islands and districts</title>
@@ -82,7 +83,7 @@
   </box>
   
   <box id="settlements">
-    <title>list of Scottish toponymic proper nouns – towns and settlements</title>
+    <title>list of toponymic proper nouns – towns and settlements</title>
     <p></p>
     <table>
       <thead>
@@ -122,7 +123,9 @@
         <tr><td><m>Learaig</m></td><td>Lerwick</td><td>Also <i>Liùrabhaig</i></td></tr>
         <tr><td><m>Lionacleit</m></td><td>Linaclete</td><td></td></tr>
         <tr><td><m>Lite</m></td><td>Leith</td><td></td></tr>
+        <tr><td><m>Lunnainn</m></td><td>London</td><td></td></tr>
         <tr><td><m>Malaig</m></td><td>Mallaig</td><td></td></tr>
+        <tr><td><m>Mosgo</m></td><td>Moscow</td><td></td></tr>
         <tr><td><m>Pabail</m></td><td>Bayble</td><td></td></tr>
         <tr><td><m>Paislig</m></td><td>Paisley</td><td></td></tr>
         <tr><td><m>Peairt</m></td><td>Perth</td><td></td></tr>
@@ -139,21 +142,25 @@
     </table>
   </box>
   
-  <box id="foreign_list">
-    <title>list of foreign toponymic proper nouns</title>
+  <box id="countries">
+    <title>list of toponymic proper nouns – countries and continents</title>
     <table>
       <thead>
-        <tr><th>toponym</th><th>English</th><th>other forms &amp;c</th></tr>
+        <tr><th>toponym</th><th>English</th><th></th></tr>
       </thead>
       <tbody>
         <tr><td><m>Afraga</m>, <m>Afraca</m></td><td>Africa</td><td></td></tr>
+        <tr><td><m>Aimeireaga</m></td><td>America</td><td></td></tr>
+        <tr><td><m>Aràibia</m></td><td>Arabia</td><td></td></tr>
         <tr><td><m>Astràilia</m></td><td>Australia</td><td></td></tr>
         <tr><td><m>Breatann</m></td><td>Britain</td><td></td></tr>
         <tr><td><m>Èirinn</m></td><td>Ireland</td><td></td></tr>
         <tr><td><m>Eòrpa</m></td><td>Europe</td><td></td></tr>
+        <tr><td><m>Flannras</m></td><td>Flanders</td><td></td></tr>
+        <tr><td><m>Iosrael</m></td><td>Israel</td><td></td></tr>
         <tr><td><m>Lochlann</m></td><td>Scandinavia</td><td></td></tr>
-        <tr><td><m>Lunnainn</m></td><td>London</td><td></td></tr>
         <tr><td><m>Nirribhidh</m></td><td>Norway</td><td></td></tr>
+        <tr><td><m>Paileastain</m></td><td>Palestine</td><td></td></tr>
         <tr><td><m>Sasainn</m></td><td>England</td><td></td></tr>
         <tr><td><m>Ulaidh</m></td><td>Ulster</td><td></td></tr>
       </tbody>

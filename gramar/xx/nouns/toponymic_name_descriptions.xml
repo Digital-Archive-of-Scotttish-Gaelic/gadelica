@@ -1,11 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="../../module.rnc" schematypens="https://relaxng.org/ns/structure/1.0?>
 <module>
   <title>toponymic name-descriptions</title>
-  <p>Toponymic namifications are <a href="?xx=nouns/name_descriptions">name-descriptions</a> which are also <a href="?xx=nouns/toponyms">toponyms</a>, 
-    i.e. they are (usually definite) common noun phrases used to name places (geographical entities).</p>
-  <p>Pre-specified toponymic name-descriptions – <m>An t-Àth Leathann</m> <en>Broadford</en>, <m>A’ Chomraich</m> <en>Applecross</en>, <m>An Agaidh Mhòr</m> <en>Aviemore</en></p>
-  <p>Post-specified toponymic name-descriptions – <m>Baile Bhòid</m> <en>Rothesay</en>, <m>Baile nan Granndach</m> <en>Grantown-on-Spey</en>, <m>Baile Ailein</m> <en>Balallan</en>,
-    <m>Baile an t-Sealgair</m> <en>Hunterston</en>, <m>Baile Ùr an t-Slèibhe</m> <en>Newtonmore</en></p>
+  <p>Toponymic name-descriptions are <a href="?xx=nouns/name_descriptions">name-descriptions</a> which are also <a href="?xx=nouns/toponyms">toponyms</a>, 
+    i.e. they are definite common noun phrases used to name places and other geographical entities.</p>
+  <p>Like other name-descriptions, toponymic name-descriptions can be classified into two <u>grammatical</u> types –</p>
+  <ul>
+    <li><u>pre-specified</u> toponymic name-descriptions 
+      eg. <m>An t-Àth Leathann</m> <en>Broadford</en>, <m>A’ Chomraich</m> <en>Applecross</en>, <m>An Agaidh Mhòr</m> <en>Aviemore</en></li>
+    <li><u>post-specified</u> toponymic name-descriptions 
+      eg. <m>Baile Bhòid</m> <en>Rothesay</en>, <m>Baile nan Granndach</m> <en>Grantown-on-Spey</en>, <m>Baile Ailein</m> <en>Balallan</en>,
+      <m>Baile an t-Sealgair</m> <en>Hunterston</en>, <m>Baile Ùr an t-Slèibhe</m> <en>Newtonmore</en>
+    </li>
+  </ul>
+  <p>Like other toponyms, toponymic name-descriptions can be classified <u>semantically</u> according to the kind of geographical entity they refer to –</p>
+  <ul>
+    <li>islands and districts eg. </li>
+    <li>towns and settlements eg. </li>
+    <li>countries and continents eg. </li>
+  </ul>
+  
+  
+  <p>Pre-specified islands and districts <toggle href="pre-districts"/></p>
+  <ctable id="pre-districts">
+    <tbody>
+      <tr><td><m>Am Bac</m></td><td>Back</td><td></td></tr>
+      <tr><td><m>An t-Eilean Dubh</m></td><td>The Black Isle</td><td></td></tr>
+      <tr><td><m>An t-Eilean Fada</m></td><td>The Long Island (Lewis &amp; Harris)</td><td></td></tr>
+      <tr><td><m>An t-Eilean Sgitheanach</m></td><td>Skye</td><td>Also <i>An t-Eilean Sgiathanach</i></td></tr>
+      <tr><td><m>Na h-Eileanan a-muigh</m></td><td>The Outer Hebrides</td><td></td></tr>
+      <tr><td><m>Na h-Eileanan a-staigh</m></td><td>The Inner Hebrides</td><td></td></tr>
+      <tr><td><m>A’ Ghàidhealtachd</m></td><td>Gaeldom, The Scottish Highlands</td><td></td></tr>
+      <tr><td><m>A’ Ghalltachd</m></td><td>The Scottish Lowlands</td><td></td></tr>
+      <tr><td><m>Na Hearadh</m></td><td>Harris</td><td></td></tr>
+      <tr><td><m>Na Lochan</m></td><td>Lochs</td><td>district in Lewis</td></tr>
+      <tr><td><m>A’ Mhachair Ghallda</m></td><td>The Scottish Lowlands</td><td></td></tr>
+      <tr><td><m>Am Parbh</m></td><td>Cape Wrath</td><td>Also <i>An Carbh</i></td></tr>
+      <tr><td><m>An Rubha</m></td><td>Point</td><td></td></tr>
+      <tr><td></td><td></td><td></td></tr>
+    </tbody>
+  </ctable>
+  <p>Post-specified islands and districts <toggle href="post-districts"/></p>
+  <ctable id="post-districts">
+    <tbody>
+      <tr><td><m>Àrd nam Murchan</m></td><td>Ardnamurchan</td><td></td></tr>
+      <tr><td><m>Beinn nam Faola</m></td><td>Benbecula</td><td></td></tr>
+      <tr><td><m>Creag Ealasaid</m></td><td>Ailsa Craig</td><td></td></tr>
+      <tr><td><m>Duthaich MhicAoidh</m></td><td>Mackay Country, North Sutherland</td><td></td></tr>
+      <tr><td><m>Eilean a’ Cheò</m></td><td>The Isle of Mist, Skye</td><td></td></tr>
+      <tr><td><m>Eilean Cheap Breatainn</m></td><td>Cape Breton Island</td><td></td></tr>
+      <tr><td><m>Eilean Ì</m></td><td>Iona</td><td>Also <i>Eilean Idhe</i>, <i>Ì Chaluim Chille</i></td></tr>
+      <tr><td><m>Eilean Mhanainn</m></td><td>The Isle of Man</td><td></td></tr>
+      <tr><td><m>Eilean nam Muc</m></td><td>Muck</td><td></td></tr>
+      <tr><td><m>Eilean nan Caorach</m></td><td>Fair Isle</td><td></td></tr>
+      <tr><td><m>Eileanan a’ Chaolais</m></td><td>The Channel Islands</td><td></td></tr>
+      <tr><td><m>Gleann Comhainn</m></td><td>Glencoe</td><td></td></tr>
+      <tr><td><m>Gleann Fhionghuin</m></td><td>Glenfinnan</td><td></td></tr>
+      <tr><td><m>Gleann Sìth</m></td><td>Glenshee</td><td></td></tr>
+      <tr><td><m>Gleann Urchaidh</m></td><td>Glen Orchy</td><td></td></tr>
+      <tr><td><m>Loch Abar</m></td><td>Lochaber</td><td></td></tr>
+      <tr><td><m>Machair Aonghais</m></td><td>Angus</td><td></td></tr>
+      <tr><td><m>Machair Rois</m></td><td>Easter Ross</td><td></td></tr>
+      <tr><td><m>Sgìre nan Loch</m></td><td>Lochs</td><td>district in Lewis</td></tr>
+      <tr><td><m>Siorra(ma)chd Pheairt</m> &amp;c</td><td>Perthshire</td><td></td></tr>
+      <tr><td><m>Srath Chluaidh</m> &amp;c</td><td>Strathclyde</td><td></td></tr>
+      <tr><td><m>Srath Spè</m></td><td>Strathspey</td><td></td></tr>
+      <tr><td><m>Taobh Spè</m></td><td>Speyside</td><td></td></tr>
+      <tr><td><m>Taobh Tatha</m></td><td>Tayside</td><td></td></tr>
+      <tr><td><m>Tìr an Eòrna</m></td><td>Tiree, The Land of Barley</td><td></td></tr>
+    </tbody>
+  </ctable>
+  <p>[Ceann a Deas an Eilean Sgiathanach the South of Skye]</p>
+
+
+  
+  
   <p>Toponymic improper/uncommon nouns – <m>An Fhraing</m> <en>France</en>, <m>A’ Ghearmailt</m> <en>Germany</en>, 
     i.e. pre-specified toponymic name-descriptions where the noun does not appear to be a common noun. (cf. am Bìoball ???)</p>
   <p>Calder (1923) –</p>
