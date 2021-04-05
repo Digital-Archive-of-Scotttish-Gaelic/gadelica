@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="../../module.rnc" schematypens="https://relaxng.org/ns/structure/1.0?>
 <module>
   <title>common nouns</title>
-  <p>Common nouns are <a href="?xx=nouns/nouns">nouns</a> which refer to a class of entities and may be used when referring to instances of a specific class.</p>
-  <p>cf. <a href="?xx=nouns/demonyms">demonyms</a>, <a href="?xx=nouns/ethnonyms">ethnonyms</a></p>
+  <p>Common nouns are <a href="?xx=nouns/nouns">nouns</a> which refer to a <u>class</u> of entities and 
+    may be used when referring to instances of that specific class.</p>
+  <p>Common nouns can be classified into different <u>semantic</u> types, depending on the kind of entity they describe –</p>
+  <ul>
+    <li><u>Anthropological</u> common nouns refer to categories of human being –
+      <ul>
+        <li><a href="?xx=nouns/ethnonymic_common_nouns">Ethnonymic common nouns</a> classify people according to ethno-cultural heritage 
+          eg. <m>Gàidheal</m> <en>Gael</en>, <m>Cruithneach</m> <en>Pict</en>, <m>Leòdhasach</m> <en>person from Lewis</en>, 
+          <m>Lochlannach</m> <en>a Scandinavian</en>, <m>Frisealach</m> <en>member of the Fraser clan</en>, <m>Caimbeulach</m> <en>a Campbell</en>.</li>
+        <li>Professional common nouns classify people according to their job or social status
+          eg. <m>saor</m> <en>carpenter</en>, <m>sagart</m> <en>priest</en>, <m>gobha</m> <en>metalsmith</en>, 
+          <m>rìgh</m> <en>king</en>, <m>ceannard</m> <en>chief</en>.</li>
+        <li>Other anthropological common classify people according to their sex and/or age, 
+          eg. <m>cailleach</m> <en>old woman</en>, <m>bodach</m> <en>old man</en>, <m>bean</m> <en>woman</en>, 
+          <m>fear</m> <en>man</en>, <m>caileag</m> <en>girl</en>, <m>balach</m> <en>boy</en>, <m>paiste</m> <en>child</en>, <m>leanabh</m> <en>baby</en>.</li>
+        <li>Anthropological aggregate common nouns refer to non-bounded pluralities of people 
+          eg. <m>clann</m> <en>children</en>, <m>muinntir</m> <en>people</en>, <m>luchd</m> <en>people</en>.</li>
+        <li>Anthropological collective common nouns refer to bounded groups of people
+          eg. <m>sgioba</m> <en>team</en>, <m>buidheann</m> <en>group</en>, <m>comataidh</m> <en>committee</en>, <m>bòrd</m> <en>board</en>.</li>
+      </ul>
+    </li>
+    <li><u>Zoological</u> common nouns refer to categories of animal.</li>
+  </ul>
 </module>
 

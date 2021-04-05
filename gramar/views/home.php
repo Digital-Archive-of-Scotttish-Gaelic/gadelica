@@ -22,7 +22,11 @@ class home {
       <ul>
         <li><a href="?xx=nouns/nouns">nouns</a>
           <ul>
-            <li><a href="?xx=nouns/common_nouns">common nouns</a></li>
+            <li><a href="?xx=nouns/common_nouns">common nouns</a>
+              <ul>
+								<li><a href="?xx=nouns/ethnonymic_common_nouns">ethnonymic common nouns</a></li>
+							</ul>
+						</li>
 						<li><a href="?xx=nouns/proper_nouns">proper nouns</a>
               <ul>
                 <li>
