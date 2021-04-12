@@ -457,10 +457,7 @@ HTML;
 
   private function _writeJavascript() {
     echo <<<HTML
-        <script>     
-            //refresh the results page that brought us here to change "create slip" to "view slip"
-		        window.opener.document.location.reload(true);
-            
+        <script>            
 		        //update the slip context on click of token
 		        $(document).on('click', '.contextLink',  function () {
 		          $(this).tooltip('hide')
