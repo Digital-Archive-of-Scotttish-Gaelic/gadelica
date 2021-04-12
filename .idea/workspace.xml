@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
+    <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="reworked text edit form to make display clearer and more in-line with writer form">
+      <change afterPath="$PROJECT_DIR$/corpas/code/views/searchOld.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/views/corpus_browse.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/corpus_browse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/views/corpus_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/corpus_search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/views/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/views/slip.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/slip.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/views/slow_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/slow_search.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,14 +111,11 @@
       <workItem from="1615970093454" duration="28820000" />
       <workItem from="1616571514686" duration="810000" />
       <workItem from="1616660553342" duration="47841000" />
-      <workItem from="1617260812978" duration="3312000" />
-    </task>
-    <task id="LOCAL-00029" summary="Removed renameFiles.php and deleted tmp dir">
-      <created>1610711904136</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1610711904136</updated>
+      <workItem from="1617260812978" duration="3755000" />
+      <workItem from="1617694947034" duration="815000" />
+      <workItem from="1617875005426" duration="907000" />
+      <workItem from="1618213667766" duration="633000" />
+      <workItem from="1618216460208" duration="4845000" />
     </task>
     <task id="LOCAL-00030" summary="Added level (&quot;importance&quot;) icons (stars) to subtext list in corpus browse">
       <created>1610959236212</created>
@@ -451,7 +453,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617277452182</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="Fixed issue with invalid text ID in slow_search. Added error handling and display.">
+      <created>1617285566541</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1617285566542</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,7 +503,7 @@
     <MESSAGE value="Working code for grouped senses in entry" />
     <MESSAGE value="Individual and orphaned senses now operational in entry.&#10;Bug fixes and code tidy." />
     <MESSAGE value="Bug fix for entry - grouped senses generating extra blank sense" />
-    <MESSAGE value="Fixed issue with invalid text ID in slow_search. Added error handling and display." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed issue with invalid text ID in slow_search. Added error handling and display." />
+    <MESSAGE value="reworked text edit form to make display clearer and more in-line with writer form" />
+    <option name="LAST_COMMIT_MESSAGE" value="reworked text edit form to make display clearer and more in-line with writer form" />
   </component>
 </project>

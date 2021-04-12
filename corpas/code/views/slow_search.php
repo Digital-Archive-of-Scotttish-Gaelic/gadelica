@@ -6,7 +6,7 @@ namespace views;
 
 use models;
 
-class slow_search
+class slow_search extends search
 {
 	private $_model;  //an instance of models\slow_search
 
@@ -16,33 +16,34 @@ class slow_search
 
 	public function show($xpath) {
 		if ($xpath=="") {   //no results so write the form
+			parent::writeSubHeading();
 			echo <<<HTML
+				<div class="float-right">
+					<small><a href="?m=corpus&a=search&id={$_GET["id"]}">corpus search</a></small>
+				</div>
 		    <form>
-			    <input type="hidden" name="m" value="corpus"/>
-			    <input type="hidden" name="a" value="slow_search"/>
-			    <div class="form-group">
-				    <div class="input-group">
-					    <input type="text" class="form-control" name="xpath" value="@lemma='craobh'"/>
+			    <input type="hidden" name="m" value="corpus">
+			    <input type="hidden" name="a" value="slow_search">
+			    <input type="hidden" name="id" value="{$_GET["id"]}">
+			    <div class="form-group row">
+				    <div class="input-group col-sm-6">
+					    <input type="text" class="form-control" name="xpath" value="@lemma='craobh'">
 					    <div class="input-group-append">
 						    <button class="btn btn-primary" type="submit">search</button>
 					    </div>
 				    </div>
 			    </div>
-			    <div class="form-group">
-	          <label class="form-check-label" for="id">Restrict by text ID</label>
-	          <input type="text" id="id" class="form-control-default" aria-label="text ID" name="id" value="0">
+			    <div class="form-group row">
+	          <label class="form-check-label col-sm-1" for="chunkOff">Get all results</label>
+	          <input type="radio" id="chunkOff" class="form-control-default col-sm-1" aria-label="Get all results" name="chunk" value="off">
 					</div>
-			    <div class="form-group">
-	          <label class="form-check-label" for="chunkOff">Get all results</label>
-	          <input type="radio" id="chunkOff" class="form-control-default" aria-label="Get all results" name="chunk" value="off">
-					</div>
-					<div class="form-group">
-	          <label class="form-check-label" for="chunkOn">Chunk results</label>
-	          <input type="radio" id="chunkOn" class="form-control-default" aria-label="Chunk results" name="chunk" value="on" checked>
+					<div class="form-group row">
+	          <label class="form-check-label col-sm-1" for="chunkOn">Chunk results</label>
+	          <input type="radio" id="chunkOn" class="form-control-default col-sm-1" aria-label="Chunk results" name="chunk" value="on" checked>
 	        </div>
-	        <div class="form-group">
-	          <label class="form-check-label" for="chunkValue">Results per chunk</label>
-	          <input type="text" id="chunkValue" class="form-control-sm" name="chunkValue" value="10">
+	        <div class="form-group row">
+	          <label class="form-check-label col-sm-1" for="chunkValue">Results per chunk</label>
+	          <input type="text" id="chunkValue" class="form-control-sm col-sm-1" name="chunkValue" value="10">
 					</div>
 		    </form>
 HTML;

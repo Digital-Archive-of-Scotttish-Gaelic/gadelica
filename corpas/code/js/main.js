@@ -251,7 +251,8 @@ $(function () {
         break;
     }
     $.post("ajax.php", data, function (response) {
-      console.log(response);        //TODO: add some response code on successful save
+      //refresh the parent page to show updated slip info
+      window.opener.document.location.reload(true);
     });
   }
 });
