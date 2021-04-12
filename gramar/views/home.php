@@ -25,6 +25,7 @@ class home {
             <li><a href="?xx=nouns/common_nouns">common nouns</a>
               <ul>
 								<li><a href="?xx=nouns/ethnonymic_common_nouns">ethnonymic common nouns</a></li>
+								<li><a href="?xx=nouns/derived_common_nouns">derived common nouns</a></li>
 							</ul>
 						</li>
 						<li><a href="?xx=nouns/proper_nouns">proper nouns</a>
@@ -70,6 +71,16 @@ class home {
 							<a href="?xx=nouns/glottonyms">glottonyms</a>,
 							<a href="?xx=nouns/chrononyms">chrononyms</a>
 						</li>
+					</ul>
+				</li>
+				<li><a href="?xx=adjectives/adjectives">adjectives</a>
+          <ul>
+            <li><a href="?xx=adjectives/derived_adjectives">derived adjectives</a></li>
+					</ul>
+				</li>
+				<li><a href="?xx=verbs/verbs">verbs</a>
+					<ul>
+						<li><a href="?xx=verbs/derived_verbs">derived verbs</a></li>
 					</ul>
 				</li>
 			</ul>
