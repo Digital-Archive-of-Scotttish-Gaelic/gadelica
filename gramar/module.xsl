@@ -151,4 +151,15 @@
     </span>
   </xsl:template>
   
+  <xsl:template match="xref">
+    <xsl:choose>
+      <xsl:when test="@id='Gillies1902'">
+        <xsl:text>H. Cameron Gillies (1902)</xsl:text>
+        <em>The Elements of Gaelic Grammar</em>
+        <xsl:text> p.</xsl:text>
+        <xsl:value-of select="@p"/>
+      </xsl:when>
+    </xsl:choose>
+  </xsl:template>
+  
 </xsl:stylesheet>

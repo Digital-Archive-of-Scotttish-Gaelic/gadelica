@@ -32,5 +32,6 @@ TextContent = (
   |  element toggle { attribute href { xsd:IDREF } } 
   |  element boxlink { attribute ref { xsd:anyURI } }
   |  element boxlink2 { attribute ref { xsd:anyURI }, text }
+  |  element xref { attribute id { text } , attribute p { text } }
 )
 
