@@ -79,10 +79,9 @@ switch ($_REQUEST["action"]) {
     echo "success";
     break;
 	case "addSense":
-		$description = "";
-		$senseId = sensecategories::addSense($_POST["name"], $description, $_POST["headword"], $_POST["wordclass"]);
-		sensecategories::saveSlipSense($_POST["slipId"], $senseId);
-		echo json_encode(array("senseId" => $senseId));
+		$senseId = sensecategories::addSense($_GET["name"], $_GET["description"], $_GET["headword"], $_GET["wordclass"]);
+		sensecategories::saveSlipSense($_GET["slipId"], $senseId);
+		echo json_encode(array("senseId" => $senseId, "senseDescription" => $_GET["description"]));
 		break;
   case "removeSense":
     sensecategories::deleteSlipSense($_POST["slipId"], $_POST["senseId"]);
