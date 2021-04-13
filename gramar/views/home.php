@@ -25,7 +25,7 @@ class home {
             <li><a href="?xx=nouns/common_nouns">common nouns</a>
               <ul>
 								<li><a href="?xx=nouns/ethnonymic_common_nouns">ethnonymic common nouns</a></li>
-								<li><a href="?xx=nouns/derived_common_nouns">derived common nouns</a></li>
+								<li><a href="?xx=nouns/derived_common_nouns">derived common nouns</a>, <a href="?xx=nouns/compound_common_nouns">compound common nouns</a></li>
 							</ul>
 						</li>
 						<li><a href="?xx=nouns/proper_nouns">proper nouns</a>
@@ -80,7 +80,7 @@ class home {
 				</li>
 				<li><a href="?xx=verbs/verbs">verbs</a>
 					<ul>
-						<li><a href="?xx=verbs/derived_verbs">derived verbs</a></li>
+						<li><a href="?xx=verbs/derived_verbs">derived verbs</a>, <a href="?xx=verbs/compound_verbs">compound verbs</a></li>
 					</ul>
 				</li>
 			</ul>
