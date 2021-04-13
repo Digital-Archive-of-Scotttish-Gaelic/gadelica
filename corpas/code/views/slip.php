@@ -89,6 +89,7 @@ HTML;
     $this->_writeUpdatedBy();
     $this->_writeFooter();;
     $this->_writeSavedModal();
+    models\sensecategories::writeSenseModal();
   }
 
   private function _getLockedDiv($locked) {
@@ -339,8 +340,11 @@ HTML;
     foreach ($savedSenses as $sense) {
     	$senseId = $sense->getId();
     	$senseName = $sense->getName();
+    	$senseDescription = $sense->getDescription();
       $savedCatHtml .= <<<HTML
-        <li class="badge badge-success" data-sense="{$senseId}" data-sensename="{$senseName}">
+        <li class="badge badge-success senseBadge" title="{$senseDescription}"
+          data-toggle="modal" data-target="#senseModal" 
+          data-sense="{$senseId}" data-sensename="{$senseName}">
 					{$senseName} <a style="cursor:pointer;" class="badge badge-danger removeSense">X</a>
 				</li>
 HTML;
@@ -363,9 +367,14 @@ HTML;
               <div class="col-md-3">
                   <label for="senseCategory">Assign to new sense category:</label>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-2">
+									<label for="newSenseName">Name</label>
                   <input type="text" class="form-control" id="newSenseName">
               </div>
+              <div class="col-md-3">
+                  <label for="newSenseDefinition">Definition</label>
+                  <input type="text" class="form-control" id="newSenseDefinition">
+							</div>
               <div class="col-md-1">
                   <button type="button" class="form-control btn btn-primary" id="addSense">Add</button>
               </div>
@@ -567,16 +576,21 @@ HTML;
 
             $(document).on('click', '#addSense', function () {
               var newSenseName = $('#newSenseName').val();
+              var newSenseDefinition = $('#newSenseDefinition').val();
               if (newSenseName == "") {
                 return false;
               }
               $('#newSenseName').val('');
+              $('#newSenseDefinition').val('');
               var data = {action: 'addSense', slipId: '{$this->_slip->getAutoId()}',
-                name: newSenseName, headword: '{$this->_slip->getLemma()}', 
+                name: newSenseName, description: newSenseDefinition, headword: '{$this->_slip->getLemma()}', 
                 wordclass: '{$this->_slip->getWordclass()}'
               }
-              $.post("ajax.php", data, function (response) {
-                var html = '<li class="badge badge-success" data-sense="' + response.senseId + '">' + newSenseName;
+              $.getJSON("ajax.php", data, function (response) {
+                var html = '<li class="badge badge-success senseBadge" data-sense="' + response.senseId + '"';
+                html += ' title="' + response.senseDescription +'"';
+                html += ' data-toggle="modal" data-target="#senseModal"';
+                html += '>' + newSenseName;
                 html += ' <a style="cursor:pointer;" class="badge badge-danger deleteCat">X</a></li>';
                 $('#senseCategories').append(html);
               });

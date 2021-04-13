@@ -27,7 +27,7 @@ class entries
 			</div>
 HTML;
     models\collection::writeSlipDiv();
-    $this->_writeSenseModal();
+    models\sensecategories::writeSenseModal();
     $this->_writeJavascript();
   }
 
@@ -230,9 +230,10 @@ HTML;
 			$senseIds = explode('|', $senseIds);
 			foreach ($senseIds as $senseId) {
 				$sense = new models\sense($senseId);
+				$senseDefinition = $sense->getDescription();
 				$senseString .= <<<HTML
-					<span data-toggle="modal" data-target="#senseModal" data-senseid="{$senseId}" 
-					title="rename this sense" class="badge badge-success entrySense">
+					<span data-toggle="modal" data-target="#senseModal" data-sense="{$senseId}" 
+					title="{$senseDefinition}" class="badge badge-success senseBadge">
 						{$sense->getName()}
 					</span> 
 HTML;
@@ -279,31 +280,6 @@ HTML;
 HTML;
   }
 
-  private function _writeSenseModal() {
-  	echo <<<HTML
-			<div class="modal fade" id="senseModal" tabindex="-1" role="dialog">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Rename Sense</h5>
-              </div>
-              <div class="modal-body">
-                <h5><span id="oldSenseName"></span></h5>
-                <label for="newSenseName">New Sense Name:</label>
-                <input type="text" id="newSenseName">
-                <input type="hidden" name="senseId" id="senseId">
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
-                <button type="button" id="editSense" class="btn btn-primary">save</button>
-              </div>
-            </div>
-          </div>
-        </div>
-HTML;
-
-  }
-
   private function _getSlipLink($result) {
 		return <<<HTML
 						<small>
@@ -339,29 +315,7 @@ HTML;
 				  $('#groupedSenses').show();
 				  return false;
 				});
-				
-				$('.entrySense').on('click', function() {
-				  var senseid = $(this).attr('data-senseid');
-				  $('#senseId').val(senseid);
-				  var oldName = $(this).text();
-				  $('#oldSenseName').text(oldName);
-				});
-				
-				$('#editSense').on('click', function () {
-				  var oldName = $('#oldSenseName').text();
-				  var newName = $('#newSenseName').val();
-				  var id = $('#senseId').val();
-					var url = 'ajax.php?action=renameSense&id=' + id;
-					url += ' &oldName=' + oldName + '&newName=' + newName;
-					$('.entrySense').each(function(index) {
-					  if ($(this).text() == oldName) {
-					    $(this).text(newName);
-					  }
-					});
-					$('#senseModal').modal('hide');
-					$.ajax({url: url});
-				});
-								
+							
 				/**
         *  Load and show the citations for wordforms or senses
         */

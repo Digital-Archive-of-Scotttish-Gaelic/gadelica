@@ -154,4 +154,28 @@ SQL;
 			echo $e->getMessage();
 		}
 	}
+
+	public static function writeSenseModal() {
+		echo <<<HTML
+			<div class="modal fade" id="senseModal" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit Sense</h5>
+              </div>
+              <div class="modal-body">
+                <h5><span id="oldSenseName"></span></h5>
+                <label for="newSenseName">New Sense Name:</label>
+                <input type="text" id="newSenseName">
+                <input type="hidden" name="senseId" id="senseId">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+                <button type="button" id="editSense" class="btn btn-primary">save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+HTML;
+	}
 }

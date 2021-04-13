@@ -45,6 +45,31 @@ $(function () {
   });
 
   /**
+   * Sense category editing
+   */
+  $(document).on('click', '.senseBadge', function() {
+    var senseId = $(this).attr('data-sense');
+    $('#senseId').val(senseId);
+    var oldName = $(this).text();
+    $('#oldSenseName').text(oldName);
+  });
+
+  $('#editSense').on('click', function () {
+    var oldName = $('#oldSenseName').text();
+    var newName = $('#newSenseName').val();
+    var id = $('#senseId').val();
+    var url = 'ajax.php?action=renameSense&id=' + id;
+    url += '&newName=' + newName;
+    $('.senseBadge').each(function(index) {
+      if ($(this).text() == oldName) {
+        $(this).text(newName);
+      }
+    });
+    $('#senseModal').modal('hide');
+    $.ajax({url: url});
+  });
+
+  /**
    * Load and display slip data in a modal
    */
   $('#slipModal').on('show.bs.modal', function (event) { // added by MM
