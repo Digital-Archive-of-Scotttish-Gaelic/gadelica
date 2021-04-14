@@ -90,7 +90,6 @@ switch ($_REQUEST["action"]) {
 			sensecategories::deleteSlipSense($_GET["slipId"], $_GET["id"]);
 			collection::touchSlip($_GET["slipId"]);
 		}
-
 		break;
   case "getDictionaryResults":
     $locs = $_POST["locs"];

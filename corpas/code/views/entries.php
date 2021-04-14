@@ -230,11 +230,11 @@ HTML;
 			$senseIds = explode('|', $senseIds);
 			foreach ($senseIds as $senseId) {
 				$sense = new models\sense($senseId);
-				$senseDefinition = $sense->getDescription();
+				$senseDescription = $sense->getDescription();
 				$senseString .= <<<HTML
 					<span data-toggle="modal" data-target="#senseModal" data-sense="{$senseId}" 
 					data-sense-description="{$sense->getDescription()}" data-sense-name="{$sense->getName()}"
-					title="{$senseDefinition}" class="badge badge-success senseBadge">
+					data-title="{$senseDescription}" class="badge badge-success senseBadge">
 						{$sense->getName()}
 					</span> 
 HTML;

@@ -136,8 +136,10 @@ $(function () {
       body += '<p class="text-muted"><span data-toggle="tooltip" data-html="true" title="' + '<em>' + title + '</em> p.' + page + '">#' + textId + ': ' + date + '</span></p>';
       body += '<hr/>';
       body += '<ul class="list-inline">';
-      $.each(data.senses, function (id, name) {
-        body += '<li class="list-inline-item badge badge-success">' + name + '</li>';
+      $.each(data.senses, function (id, sense) {
+        body += '<li class="list-inline-item badge badge-success senseBadge"';
+        body += ' data-sense="' + id + '" data-title="' + sense.description + '"';
+        body += '>' + sense.name + '</li>';
       });
       body += '</ul><ul class="list-inline">';
       $.each(data.slipMorph, function(k, v) {

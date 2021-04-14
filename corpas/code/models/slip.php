@@ -69,7 +69,8 @@ SQL;
 			foreach ($results as $key => $value) {
 				$id = $value["id"];
 				$this->_senses[$id] = new sense($id); //create and store sense objects
-				$this->_sensesInfo[$id] = $this->_senses[$id]->getName();  //store id and name for AJAX use
+				$this->_sensesInfo[$id]["name"] = $this->_senses[$id]->getName();  //store id and name for AJAX use
+				$this->_sensesInfo[$id]["description"] = $this->_senses[$id]->getDescription();
 			}
 		}
 		return $this;
