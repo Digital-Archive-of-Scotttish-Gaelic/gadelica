@@ -75,7 +75,9 @@ class home {
 				</li>
 				<li><a href="?xx=adjectives/adjectives">adjectives</a>
           <ul>
-            <li><a href="?xx=adjectives/derived_adjectives">derived adjectives</a></li>
+            <li><a href="?xx=adjectives/derived_adjectives">derived adjectives</a>,
+						    <a href="?xx=adjectives/compound_adjectives">compound adjectives</a>
+						</li>
 					</ul>
 				</li>
 				<li><a href="?xx=verbs/verbs">verbs</a>
