@@ -37,6 +37,7 @@ class collection
 HTML;
 
     models\collection::writeSlipDiv();
+    models\sensecategories::writeSenseModal();
     $this->_writeJavascript();
   }
 

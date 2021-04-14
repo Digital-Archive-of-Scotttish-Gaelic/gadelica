@@ -83,13 +83,13 @@ switch ($_REQUEST["action"]) {
 		sensecategories::saveSlipSense($_GET["slipId"], $senseId);
 		echo json_encode(array("senseId" => $senseId, "senseDescription" => $_GET["description"]));
 		break;
-  case "removeSense":
-    sensecategories::deleteSlipSense($_POST["slipId"], $_POST["senseId"]);
-    collection::touchSlip($_POST["slipId"]);
-    echo "success";
-    break;
-	case "renameSense":
-		sensecategories::renameSense($_GET["id"], $_GET["newName"]);
+	case "editSense":
+		sensecategories::updateSense($_GET["id"], $_GET["name"], $_GET["description"]);
+		//remove association with slip
+		if ($_GET["slipId"]) {
+			sensecategories::deleteSlipSense($_GET["slipId"], $_GET["id"]);
+			collection::touchSlip($_GET["slipId"]);
+		}
 		break;
   case "getDictionaryResults":
     $locs = $_POST["locs"];

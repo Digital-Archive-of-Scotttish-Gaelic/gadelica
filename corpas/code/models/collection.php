@@ -50,14 +50,19 @@ SQL;
       	$slipId = $slip["auto_id"];
       	//get the categories
 	      $sql = <<<SQL
-					SELECT name
+					SELECT name, description, se.id as senseId
 						FROM sense se
 						LEFT JOIN slip_sense ss ON ss.sense_id = se.id
 						WHERE slip_id = :slipId
 SQL;
 	      $senseRows = $db->fetch($sql, array(":slipId" => $slipId));
 	      foreach ($senseRows as $sense) {
-	      	$rows[$index]["senses"] .= '<span class="badge badge-success">' . $sense["name"] . '</span> ';
+	      	$rows[$index]["senses"] .= <<<HTML
+						<span class="badge badge-success senseBadge" data-slip-id="{$slipId}" data-sense="  {$sense["senseId"]}"
+							data-toggle="modal" data-target="#senseModal" data-sense-description="{$sense["description"]}"
+							data-title="{$sense["description"]}" data-sense-name="{$sense["name"]}">
+							{$sense["name"]}</span>
+HTML;
 	      }
 
 	      //get the morph data

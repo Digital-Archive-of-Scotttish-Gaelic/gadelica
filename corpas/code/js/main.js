@@ -49,24 +49,32 @@ $(function () {
    */
   $(document).on('click', '.senseBadge', function() {
     var senseId = $(this).attr('data-sense');
+    var senseDescription = $(this).attr('data-sense-description');
+    var senseName = $(this).attr('data-sense-name');
+    var slipId = $(this).attr('data-slip-id');
     $('#senseId').val(senseId);
-    var oldName = $(this).text();
-    $('#oldSenseName').text(oldName);
+    if (slipId) {
+      $('#modalSlipId').val(slipId);
+      $('#modalSlipIdDisplay').text(slipId);
+      $('#modalSlipRemoveSection').show();
+    }
+    $('#modalSenseName').val(senseName);
+    $('#modalSenseDescription').val(senseDescription)
   });
 
   $('#editSense').on('click', function () {
-    var oldName = $('#oldSenseName').text();
-    var newName = $('#newSenseName').val();
+    var name = $('#modalSenseName').val();
+    var description = $('#modalSenseDescription').val();
     var id = $('#senseId').val();
-    var url = 'ajax.php?action=renameSense&id=' + id;
-    url += '&newName=' + newName;
-    $('.senseBadge').each(function(index) {
-      if ($(this).text() == oldName) {
-        $(this).text(newName);
-      }
-    });
+    var url = 'ajax.php?action=editSense&id=' + id;
+    url += '&name=' + name + '&description=' + description;
+    //check if a slip association is to be removed
+    if ($('#modalSenseSlipRemove').prop('checked')) {
+      url += '&slipId=' + $('#modalSlipId').val();
+    }
     $('#senseModal').modal('hide');
     $.ajax({url: url});
+    location.reload();  //refresh the page
   });
 
   /**
@@ -128,8 +136,10 @@ $(function () {
       body += '<p class="text-muted"><span data-toggle="tooltip" data-html="true" title="' + '<em>' + title + '</em> p.' + page + '">#' + textId + ': ' + date + '</span></p>';
       body += '<hr/>';
       body += '<ul class="list-inline">';
-      $.each(data.senses, function (id, name) {
-        body += '<li class="list-inline-item badge badge-success">' + name + '</li>';
+      $.each(data.senses, function (id, sense) {
+        body += '<li class="list-inline-item badge badge-success senseBadge"';
+        body += ' data-sense="' + id + '" data-title="' + sense.description + '"';
+        body += '>' + sense.name + '</li>';
       });
       body += '</ul><ul class="list-inline">';
       $.each(data.slipMorph, function(k, v) {
