@@ -233,6 +233,7 @@ HTML;
 				$senseDefinition = $sense->getDescription();
 				$senseString .= <<<HTML
 					<span data-toggle="modal" data-target="#senseModal" data-sense="{$senseId}" 
+					data-sense-description="{$sense->getDescription()}" data-sense-name="{$sense->getName()}"
 					title="{$senseDefinition}" class="badge badge-success senseBadge">
 						{$sense->getName()}
 					</span> 

@@ -333,7 +333,8 @@ HTML;
     	$senseId = $sense->getId();
     	$senseName = $sense->getName();
       $dropdownHtml .= <<<HTML
-        <option data-sense="{$senseId}" value="{$senseId}">{$senseName}</option>
+        <option data-sense="{$senseId}" data-sense-description="{$sense->getDescription()}" 
+          data-sense-name="{$senseName}" value="{$senseId}">{$senseName}</option>
 HTML;
     }
     $savedCatHtml = "";
@@ -342,10 +343,10 @@ HTML;
     	$senseName = $sense->getName();
     	$senseDescription = $sense->getDescription();
       $savedCatHtml .= <<<HTML
-        <li class="badge badge-success senseBadge" title="{$senseDescription}"
-          data-toggle="modal" data-target="#senseModal" 
-          data-sense="{$senseId}" data-sensename="{$senseName}">
-					{$senseName} <a style="cursor:pointer;" class="badge badge-danger removeSense">X</a>
+        <li class="badge badge-success senseBadge" data-title="{$senseDescription}"
+          data-toggle="modal" data-target="#senseModal" data-slip-id="{$this->_slip->getAutoId()}"
+          data-sense="{$senseId}" data-sense-name="{$senseName}" data-sense-description="{$senseDescription}">
+					{$senseName}
 				</li>
 HTML;
     }
@@ -563,8 +564,11 @@ HTML;
                 return false;
               }
               var senseId = elem.attr('data-sense');
-              var html = '<li class="badge badge-success" data-sense="' + senseId + '">' + sense;
-              html += ' <a style="cursor:pointer;" class="badge badge-danger removeSense">X</a></li>';
+              var senseName = elem.attr("data-sense-name");
+              var senseDescription = elem.attr('data-sense-description');
+              var html = '<li class="badge badge-success senseBadge" data-sense="' + senseId + '"';
+              html += ' data-toggle="modal" data-target="#senseModal"';
+              html += ' data-title="' + senseDescription +  '" data-sense-name="' + senseName + '">' + sense + '</li>';
               $('#senseCategories').append(html);
               elem.remove();
               var data = {action: 'saveSlipSense', slipId: '{$this->_slip->getAutoId()}',
@@ -588,14 +592,15 @@ HTML;
               }
               $.getJSON("ajax.php", data, function (response) {
                 var html = '<li class="badge badge-success senseBadge" data-sense="' + response.senseId + '"';
-                html += ' title="' + response.senseDescription +'"';
+                html += ' data-title="' + response.senseDescription +'"';
+                html += ' data-slip-id="{$this->_slip->getAutoId()}"';
+                html += ' data-sense-name="' + newSenseName + '" data-sense-description="' + newSenseDefinition + '"';
                 html += ' data-toggle="modal" data-target="#senseModal"';
-                html += '>' + newSenseName;
-                html += ' <a style="cursor:pointer;" class="badge badge-danger deleteCat">X</a></li>';
+                html += '>' + newSenseName + '</li>';
                 $('#senseCategories').append(html);
               });
             });
-
+/*
             $(document).on('click', '.removeSense', function () {
               var senseId = $(this).parent().attr('data-sense');
               var senseName = $(this).parent().attr('data-sensename');
@@ -608,7 +613,7 @@ HTML;
                 console.log(response);        //TODO: add some response code on successful save
               });
             });
-
+*/
             $('#wordClass').on('change', function() {
               var wordclass = $(this).val();
               switch (wordclass) {

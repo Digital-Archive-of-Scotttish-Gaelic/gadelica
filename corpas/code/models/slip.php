@@ -201,7 +201,7 @@ SQL;
   }
 
 	/**
-	 * Fetches a list of all unused senses for this headword and wordclass combinations
+	 * Fetches a list of all unused senses for this headword and wordclass combination
 	 * @return array of sense objects
 	 */
   public function getUnusedSenses() {

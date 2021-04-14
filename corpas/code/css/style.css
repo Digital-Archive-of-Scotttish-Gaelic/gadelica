@@ -227,6 +227,35 @@ a.updateContext:hover {
     display: none;
 }
 
-.entrySense {
+/* Senses */
+#modalSlipRemoveSection {
+    display: none;
+}
+
+.senseBadge {
     cursor: pointer;
 }
+
+[data-title]:hover:after {
+    opacity: 1;
+    transition: all 0.1s ease 0.5s;
+    visibility: visible;
+}
+[data-title]:after {
+    content: attr(data-title);
+    background-color: #000;
+    color: #fff;
+    font-size: 110%;
+    position: absolute;
+    padding: 7px;
+    bottom: -1.6em;
+    left: 100%;
+    white-space: nowrap;
+    opacity: 0.5;
+    z-index: 99999;
+    visibility: hidden;
+}
+[data-title] {
+    position: relative;
+}
+

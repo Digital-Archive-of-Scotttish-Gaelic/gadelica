@@ -78,19 +78,20 @@ SQL;
 	}
 
 	/**
-	 * Renames a sense
+	 * Updates a sense record
 	 * @param $id
-	 * @param $newName
+	 * @param $name
+	 * @param $description
 	 */
-	public static function renameSense($id, $newName) {
+	public static function updateSense($id, $name, $description) {
 		$db = new database();
 		$dbh = $db->getDatabaseHandle();
 		try {
 			$sql = <<<SQL
-				UPDATE sense SET name = :name WHERE id = :id
+				UPDATE sense SET name = :name, description = :description WHERE id = :id
 SQL;
 			$sth = $dbh->prepare($sql);
-			$sth->execute(array(":id" => $id, ":name" => $newName));
+			$sth->execute(array(":id" => $id, ":name" => $name, ":description" => $description));
 		} catch (PDOException $e) {
 			echo $e->getMessage();
 		}
@@ -164,9 +165,20 @@ SQL;
                 <h5 class="modal-title" id="exampleModalLabel">Edit Sense</h5>
               </div>
               <div class="modal-body">
-                <h5><span id="oldSenseName"></span></h5>
-                <label for="newSenseName">New Sense Name:</label>
-                <input type="text" id="newSenseName">
+								<div class="form-group row">							
+	                <label class="col-sm-3" for="newSenseName">Name:</label>
+	                <input class="col=sm-7" type="text" size="40" id="modalSenseName" name="modalSenseName">
+                </div>
+                <div class="form-group row">
+                  <label class="col-sm-3" for="modalSenseDescription">Description:</label>
+                  <textarea class="col-sm-8" id="modalSenseDescription" name="modalSenseDescription" cols="100" rows="6">                  
+                  </textarea>
+                </div>
+                <div id="modalSlipRemoveSection" class="form-group row">
+                  <label class="col-sm-3" for="modalSenseSlipRemove">Remove from §<span id="modalSlipIdDisplay"></span></label>
+                  <input type="checkbox" id="modalSenseSlipRemove" name="modalSenseSlipRemove">
+                  <input type="hidden" id="modalSlipId" name="modalSlipId">
+								</div>
                 <input type="hidden" name="senseId" id="senseId">
               </div>
               <div class="modal-footer">
