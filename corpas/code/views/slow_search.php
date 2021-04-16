@@ -19,7 +19,7 @@ class slow_search extends search
 			parent::writeSubHeading();
 			echo <<<HTML
 				<div class="float-right">
-					<small><a href="?m=corpus&a=search&id={$_GET["id"]}">corpus search</a></small>
+					<small><a href="?m=corpus&a=search&id={$_GET["id"]}">word search</a></small>
 				</div>
 		    <form>
 			    <input type="hidden" name="m" value="corpus">
@@ -50,7 +50,7 @@ HTML;
 		} else {    //there are results so show them
 			models\collection::writeSlipDiv();
 			echo <<<HTML
-				<p><a href="?m=corpus&a=slow_search">new slow search</a></p>
+				<p><a href="?m=corpus&a=slow_search&id={$_GET["id"]}">new xpath search</a></p>
 				<p>Searching for: {$xpath}</p>
 HTML;
 			$chunkSize = ($_GET["chunk"] == "on") ? $_GET["chunkValue"]-1 : null;

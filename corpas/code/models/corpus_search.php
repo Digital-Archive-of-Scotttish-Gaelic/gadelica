@@ -12,11 +12,11 @@ class corpus_search
 	private $_perpage, $_page, $_mode, $_case, $_accent, $_lenition, $_view, $_order;
 	private $_hits;
 
-	public function __construct($params) {
+	public function __construct($params, $limit=true) {
 		$this->_db = $this->_db ? $this->_db : new database();
 		$this->_params = $params;
 		if (!empty($params["term"])) {  //only run the search if there is a search term
-			$this->_dbResults = $this->_getDBSearchResults();
+			$this->_dbResults = $this->_getDBSearchResults($limit);
 		}
 		$this->_init();
 	}
@@ -134,11 +134,14 @@ class corpus_search
 	 * @param $params: the array of parameters for the query, e.g. pp, page, order, mode, term
 	 * @return array of database results
 	 */
-	private function _getDBSearchResults() {
+	private function _getDBSearchResults($limit) {
 		$params = $this->_params;
-		$perpage = $params["pp"];
-		$pagenum = $params["page"];
-		$offset = $pagenum == 1 ? 0 : ($perpage * $pagenum) - $perpage;
+		$perpage = "";
+		if ($limit) {
+			$perpage = $params["pp"];
+			$pagenum = $params["page"];
+			$offset = $pagenum == 1 ? 0 : ($perpage * $pagenum) - $perpage;
+		}
 		$searchPrefix = "[[:<:]]";  //default to word boundary at start for REGEXP
 		$whereClause = "";
 		switch ($params["order"]) {
@@ -248,6 +251,7 @@ SQL;
 			$pdoParams[":fw"] = "[[:<:]]" . $params["fw"] . "[[:>:]]";
 		}
 
+		$this->_queryAll = $query["sql"];
 		$query["sql"] .= <<<SQL
         ORDER BY {$orderBy}
 SQL;

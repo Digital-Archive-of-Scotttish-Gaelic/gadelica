@@ -13,7 +13,15 @@ class corpus_search extends search
 
 	public function show() {
 		if ($this->_model->getTerm()) {
+			echo <<<HTML
+				<div class="spinner"><img src="https://dasg.ac.uk/images/loading.gif"></div>
+				<div class="resultsContainer">
+HTML;
+
 			$this->_writeSearchResults();   //there is a search term so run the search
+			echo <<<HTML
+				</div>  <!-- //end results container -->
+HTML;
 		} else {
 			$this->_writeSearchForm();  //no search term so show the form
 		}
@@ -274,7 +282,7 @@ HTML;
 			echo <<<HTML
             </tbody>
         </table>
-
+				<div class="float-right"><small><a id="autoCreateRecords" href="#">Automatically create all records</a></small></div>
         <ul id="pagination" class="pagination-sm"></ul>
 HTML;
 			$this->_writeViewSwitch();
@@ -436,6 +444,23 @@ HTML;
         <script>
         $(function() {
             
+          $('#autoCreateRecords').on('click', function() {
+            $('.resultsContainer').hide();
+            $('.spinner').show();
+            let paramString = encodeURI('{$_SERVER["QUERY_STRING"]}');
+            let check = confirm('Are you absolutely sure you want to automatically create ca. {$this->_model->getHits()} records? (Previously created records will not be affected.)');
+            if (check) {
+              $.getJSON('ajax.php?action=autoCreateSlips&' + paramString , function() {
+              })
+              .done(function(data) {
+                if (data.success) {
+                  console.log("done");
+                  location.reload();
+                }       
+              })
+            }
+          });
+          
 		      /**
 		      * Basic/advanced results  
 					*/
