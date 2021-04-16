@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="New sense code with editing (and removing) modal and new tooltips working in collection, entry, and search results.">
+    <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/ajax.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/collection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/slip.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/slip.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/views/collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/collection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/views/entries.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/entries.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/views/corpus_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/corpus_search.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,28 +113,10 @@
       <workItem from="1617694947034" duration="815000" />
       <workItem from="1617875005426" duration="907000" />
       <workItem from="1618213667766" duration="633000" />
-      <workItem from="1618216460208" duration="23178000" />
-    </task>
-    <task id="LOCAL-00033" summary="Some placeholder code on search form for restricting by district.&#10;Fixed jQuery bug in corpus browse">
-      <created>1610975771761</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1610975771761</updated>
-    </task>
-    <task id="LOCAL-00034" summary="Fixed bug whereby citation scope would reset to database value instead of default.">
-      <created>1610979105605</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1610979105605</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Fixed bugs with selection of citation context: &#10;1. Clicking a token to select start/end point stopped +/- buttons from working&#10;2. Taking the context down to &quot;zero&quot; for either pre/post would cause unexpected behaviour">
-      <created>1610981625375</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1610981625375</updated>
+      <workItem from="1618216460208" duration="23790000" />
+      <workItem from="1618469748615" duration="10681000" />
+      <workItem from="1618566676516" duration="3045000" />
+      <workItem from="1618580302270" duration="59000" />
     </task>
     <task id="LOCAL-00036" summary="Added code to xml2csv.php to handle districts (recursively if needed)&#10;Bug fix in slip citation: reset context working&#10;Slip lock functionality: &#10;1. slips can only be locked/unlocked by superusers&#10;2. slips are unlocked by default (database change)&#10;3. lock icon displays in slips modal if slip is locked&#10;4. locked slips can only be edited by superusers&#10;5. unlock request emails should go to superusers (not &quot;owners&quot;)&#10;TODO: disable email functionality for superusers and remove ownership code so that any user can edit any unlocked slip">
       <created>1611068440138</created>
@@ -463,7 +440,28 @@
       <option name="project" value="LOCAL" />
       <updated>1618403455703</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="New sense code with editing (and removing) modal and new tooltips working in collection, entry, and search results.">
+      <created>1618410240138</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1618410240138</updated>
+    </task>
+    <task id="LOCAL-00083" summary="Progress towards automatically generating slips from all search results">
+      <created>1618572481904</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1618572481904</updated>
+    </task>
+    <task id="LOCAL-00084" summary="Progress towards automatically generating slips from all search results">
+      <created>1618578374106</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1618578374106</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -482,7 +480,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial work on fleshing out the slow search to display database information in results.&#10;Some initial basic refactoring of slow search in line with MVC" />
     <MESSAGE value="Added AJAX support to slow search. &#10;Many fixes for slow search." />
     <MESSAGE value="Additional AJAX work on slow search to handle slip links" />
     <MESSAGE value="Added index IDs to slip links in slow search to facilitate correct updating of slip links in results after slip creation" />
@@ -507,6 +504,7 @@
     <MESSAGE value="Added facility to add description to senses in slip edit page. Gradually extending functionality out to other pages.&#10;Description now shown on hover on some sense badges." />
     <MESSAGE value="Adding and removing senses working in slip edit page" />
     <MESSAGE value="New sense code with editing (and removing) modal and new tooltips working in collection, entry, and search results." />
-    <option name="LAST_COMMIT_MESSAGE" value="New sense code with editing (and removing) modal and new tooltips working in collection, entry, and search results." />
+    <MESSAGE value="Progress towards automatically generating slips from all search results" />
+    <option name="LAST_COMMIT_MESSAGE" value="Progress towards automatically generating slips from all search results" />
   </component>
 </project>

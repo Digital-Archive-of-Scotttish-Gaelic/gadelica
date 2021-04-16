@@ -73,6 +73,16 @@ switch ($_REQUEST["action"]) {
     $slip->saveSlip($_POST);
     echo "success";
     break;
+	case "autoCreateSlips":
+		$search = new corpus_search($_GET, false);
+		$results = $search->getResults();
+		foreach ($results as $result) {
+			if (!$result["auto_id"]) {
+				new slip($result["filename"], $result["id"], "", $result["pos"]);
+			}
+		}
+		echo json_encode(array("success" => true));
+		break;
   case "saveSlipSense":
     sensecategories::saveSlipSense($_POST["slipId"], $_POST["senseId"]);
     collection::touchSlip($_POST["slipId"]);
