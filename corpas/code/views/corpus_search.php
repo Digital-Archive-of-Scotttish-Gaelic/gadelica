@@ -445,11 +445,11 @@ HTML;
         $(function() {
             
           $('#autoCreateRecords').on('click', function() {
-            $('.resultsContainer').hide();
-            $('.spinner').show();
-            let paramString = encodeURI('{$_SERVER["QUERY_STRING"]}');
             let check = confirm('Are you absolutely sure you want to automatically create ca. {$this->_model->getHits()} records? (Previously created records will not be affected.)');
             if (check) {
+              let paramString = encodeURI('{$_SERVER["QUERY_STRING"]}');
+              $('.resultsContainer').hide();
+              $('.spinner').show();
               $.getJSON('ajax.php?action=autoCreateSlips&' + paramString , function() {
               })
               .done(function(data) {
