@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/ajax.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/corpus_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/corpus_search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/views/corpus_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/corpus_search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/views/slow_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/slow_search.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,14 +114,7 @@
       <workItem from="1618213667766" duration="633000" />
       <workItem from="1618216460208" duration="23790000" />
       <workItem from="1618469748615" duration="10681000" />
-      <workItem from="1618566676516" duration="676000" />
-    </task>
-    <task id="LOCAL-00034" summary="Fixed bug whereby citation scope would reset to database value instead of default.">
-      <created>1610979105605</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1610979105605</updated>
+      <workItem from="1618566676516" duration="2010000" />
     </task>
     <task id="LOCAL-00035" summary="Fixed bugs with selection of citation context: &#10;1. Clicking a token to select start/end point stopped +/- buttons from working&#10;2. Taking the context down to &quot;zero&quot; for either pre/post would cause unexpected behaviour">
       <created>1610981625375</created>
@@ -463,7 +452,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618410240138</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="Progress towards automatically generating slips from all search results">
+      <created>1618572481904</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1618572481904</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -482,7 +478,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial work on fleshing out the slow search to display database information in results.&#10;Some initial basic refactoring of slow search in line with MVC" />
     <MESSAGE value="Added AJAX support to slow search. &#10;Many fixes for slow search." />
     <MESSAGE value="Additional AJAX work on slow search to handle slip links" />
     <MESSAGE value="Added index IDs to slip links in slow search to facilitate correct updating of slip links in results after slip creation" />
@@ -507,6 +502,7 @@
     <MESSAGE value="Added facility to add description to senses in slip edit page. Gradually extending functionality out to other pages.&#10;Description now shown on hover on some sense badges." />
     <MESSAGE value="Adding and removing senses working in slip edit page" />
     <MESSAGE value="New sense code with editing (and removing) modal and new tooltips working in collection, entry, and search results." />
-    <option name="LAST_COMMIT_MESSAGE" value="New sense code with editing (and removing) modal and new tooltips working in collection, entry, and search results." />
+    <MESSAGE value="Progress towards automatically generating slips from all search results" />
+    <option name="LAST_COMMIT_MESSAGE" value="Progress towards automatically generating slips from all search results" />
   </component>
 </project>
