@@ -12,11 +12,16 @@ class corpus_search
 	private $_perpage, $_page, $_mode, $_case, $_accent, $_lenition, $_view, $_order;
 	private $_hits;
 
-	public function __construct($params, $limit=true) {
+	/**
+	 * corpus_search constructor.
+	 * @param $params
+	 * @param bool $fullSearch : a flag for switching to result set required for auto slip creation
+	 */
+	public function __construct($params, $fullSearch=true) {
 		$this->_db = $this->_db ? $this->_db : new database();
 		$this->_params = $params;
 		if (!empty($params["term"])) {  //only run the search if there is a search term
-			$this->_dbResults = $this->_getDBSearchResults($limit);
+			$this->_dbResults = $this->_getDBSearchResults($fullSearch);
 		}
 		$this->_init();
 	}
@@ -39,6 +44,10 @@ class corpus_search
 	}
 
 	// GETTERS
+
+	public function getDBResults() {
+		return $this->_dbResults;
+	}
 
 	public function getId() {
 		return $this->_id;
@@ -132,12 +141,13 @@ class corpus_search
 	 * Runs the query to get the corpus database result set
 	 * Sets the number of hits in the results set
 	 * @param $params: the array of parameters for the query, e.g. pp, page, order, mode, term
+	 * @param bool $fullSearch : a flag for switching to result set required for auto slip creation
 	 * @return array of database results
 	 */
-	private function _getDBSearchResults($limit) {
+	public function _getDBSearchResults($fullSearch) {
 		$params = $this->_params;
 		$perpage = "";
-		if ($limit) {
+		if ($fullSearch) {
 			$perpage = $params["pp"];
 			$pagenum = $params["page"];
 			$offset = $pagenum == 1 ? 0 : ($perpage * $pagenum) - $perpage;
@@ -208,9 +218,15 @@ SQL;
 		}         //end wordform query build
 
 		$query["sql"] = <<<SQL
-        SELECT SQL_CALC_FOUND_ROWS l.filename AS filename, l.id AS id, wordform, pos, lemma, date_of_lang, l.title,
+			SELECT SQL_CALC_FOUND_ROWS l.filename AS filename, l.id AS id, wordform, pos, lemma, date_of_lang, l.title,
                 page, medium, s.auto_id as auto_id, s.wordClass as wordClass, t.id AS tid, t.level as level, district_id,
                	preceding_word, following_word
+SQL;
+		if (!$fullSearch) {
+			//we need only these fields for auto slip creation
+			$query["sql"] = "SELECT s.auto_id AS auto_id, l.filename AS filename, l.id AS id, pos";
+		}
+		$query["sql"] .= <<<SQL
             FROM lemmas AS l
             LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id AND group_id = {$_SESSION["groupId"]}
             JOIN text t ON t.filepath = l.filename {$textJoinSql}
@@ -265,54 +281,6 @@ SQL;
 		$this->_hits = $hits[0]["hits"];
 		return $results;
 	}
-
-	/**
-	 * Form and return the where clause required for a wordform search
-	 * @return array: ("sql" => the SQL, "search" => the search term)
-	 */
-	/*
-	private function _getWordformWhereClause() {
-		$params = $this->_params;
-
-
-		$search = $params["term"];
-		$searchPrefix = "[[:<:]]";  //default to word boundary at start
-		if ($params["accent"] != "sensitive") {
-			$search = functions::getAccentInsensitive($search, $params["case"] == "sensitive");
-		}
-		if ($params["lenition"] != "sensitive") {
-			$search = functions::getLenited($search);
-			$search = functions::addMutations($search);
-		} else {
-			//deal with h-, n-, t-
-			$searchPrefix = "^";  //don't use word boundary at start of search, but start of string instead
-		}
-		$whereClause = "";
-		$search = $searchPrefix . $search . "[[:>:]]";  //word boundary
-		if ($params["case"] == "sensitive") {   //case sensitive
-			$whereClause .= "wordform_bin REGEXP :term";
-		} else {                              //case insensitive
-			$whereClause .= "wordform REGEXP :term";
-		}
-		$selectFields =  "lemma, l.filename AS filename, l.id AS id, wordform, pos, date_of_lang, l.title, 
-			page, medium, s.auto_id AS auto_id, t.id AS tid, t.level as level, district_id, preceding_word, following_word";
-
-		$textJoinSql = "";
-		if ($params["id"]) {    //restrict to this text
-			$textJoinSql = <<<SQL
-				 AND (t.id = '{$params["id"]}' OR t.id LIKE '{$params["id"]}-%')
-SQL;
-		}
-
-		$sql = <<<SQL
-        SELECT SQL_CALC_FOUND_ROWS {$selectFields} FROM lemmas AS l
-          LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id AND group_id = {$_SESSION["groupId"]}
-          JOIN text t ON t.filepath = l.filename {$textJoinSql}
-          WHERE {$whereClause}
-SQL;
-		return array("sql" => $sql, "search" => $search);
-	}
-	*/
 
 	private function _getDateWhereClause() {
 		$dates = explode('-', $this->_params["selectedDates"]);

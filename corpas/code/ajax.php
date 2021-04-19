@@ -75,7 +75,7 @@ switch ($_REQUEST["action"]) {
     break;
 	case "autoCreateSlips":
 		$search = new corpus_search($_GET, false);
-		$results = $search->getResults();
+		$results = $search->getDBResults();
 		foreach ($results as $result) {
 			if (!$result["auto_id"]) {
 				new slip($result["filename"], $result["id"], "", $result["pos"]);
