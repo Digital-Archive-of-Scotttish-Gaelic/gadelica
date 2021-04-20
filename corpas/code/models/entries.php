@@ -4,11 +4,106 @@ namespace models;
 
 class entries
 {
+	/*
 	public static function getEntry($lemma, $wordclass) {
 		$entry = new entry($lemma, $wordclass);
 		$entry = self::_getWordforms($entry);
 		$entry = self::_getSenses($entry);
 		return $entry;
+	}
+	*/
+
+	public static function getEntryByHeadwordAndWordclass($headword, $wordclass) {
+		$db = new database();
+		$dbh = $db->getDatabaseHandle();
+		try {
+			$sql = <<<SQL
+        SELECT * FROM entry WHERE headword = :headword AND wordclass = :wordclass 
+					AND group_id = :groupId
+SQL;
+			$sth = $dbh->prepare($sql);
+			$sth->execute(array(":headword" => $headword, ":wordclass" => $wordclass, ":groupId" => $_SESSION["groupId"]));
+			$result = $sth->fetch();
+			$entry = null;
+			if ($result) {
+				$entry = new entry($result["id"]);
+				$entry->setGroupId($result["group_id"]);
+				$entry->setHeadword($result["headword"]);
+				$entry->setWordclass($result["wordclass"]);
+				$entry->setNotes($result["notes"]);
+				$entry->setUpdated($result["updated"]);
+			} else {
+				$entry = self::createEntry(array("group_id" => $_SESSION["groupId"], "headword" => $headword,
+					"worclass" => $wordclass, "notes" => ""));
+			}
+			return $entry;
+		} catch (PDOException $e) {
+			echo $e->getMessage();
+		}
+	}
+
+	public static function getEntryById($id) {
+		$db = new database();
+		$dbh = $db->getDatabaseHandle();
+		try {
+			$sql = <<<SQL
+        SELECT * FROM entry WHERE id = :id 
+SQL;
+			$sth = $dbh->prepare($sql);
+			$sth->execute(array(":id"=>$id));
+			$result = $sth->fetch();
+			if ($result) {
+				$entry = new entry($id);
+				$entry->setGroupId($result["group_id"]);
+				$entry->setHeadword($result["headword"]);
+				$entry->setWordclass($result["wordclass"]);
+				$entry->setNotes($result["notes"]);
+				$entry->setUpdated($result["updated"]);
+				return $entry;
+			} else {
+				return false; //there is no entry with this ID
+			}
+		} catch (PDOException $e) {
+			echo $e->getMessage();
+		}
+	}
+
+	public static function createEntry($params) {
+		$db = new database();
+		$dbh = $db->getDatabaseHandle();
+		try {
+			$sql = <<<SQL
+        INSERT INTO entry (group_id, headword, wordclass, notes) 
+        	VALUES (:groupId, :headword, :wordclass, :notes) 
+SQL;
+			$sth = $dbh->prepare($sql);
+			$sth->execute(array(":group_id" => $params["groupId"], ":headword" => $params["headword"],
+				":wordclass" => $params["wordclass"], ":notes" => $params["notes"]));
+			$entryId = $dbh->lastInsertId();
+			$entry = new entry($entryId);
+			return $entry;
+		} catch (PDOException $e) {
+			echo $e->getMessage();
+		}
+	}
+
+	public static function updateEntry($params) {
+		$db = new database();
+		$dbh = $db->getDatabaseHandle();
+		try {
+			$sql = <<<SQL
+      UPDATE entry	 
+        SET group_id = :groupId, headword = :headword, wordlcass = :wordclass, notes = :notes
+				WHERE id = :id
+SQL;
+			$sth = $dbh->prepare($sql);
+			$sth->execute(array(":group_id" => $params["groupId"], ":headword" => $params["headword"],
+				":wordclass" => $params["wordclass"], ":notes" => $params["notes"], ":id" => $params["id"]));
+			$entry = new entry($entryId);
+			return $entry;
+		} catch (PDOException $e) {
+			echo $e->getMessage();
+		}
 	}
 
 	private static function _getWordforms($entry) {

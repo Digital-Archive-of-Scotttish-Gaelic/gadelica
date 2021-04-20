@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/corpas/code/models/entry.old.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/ajax.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/includes/include.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/includes/include.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/models/collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/collection.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/models/corpus_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/corpus_search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/models/entries.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/entries.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/models/entry.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/entry.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/models/slip.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/slip.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +68,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -119,14 +125,7 @@
       <workItem from="1618566676516" duration="3045000" />
       <workItem from="1618580302270" duration="645000" />
       <workItem from="1618818815767" duration="609000" />
-      <workItem from="1618821957091" duration="3952000" />
-    </task>
-    <task id="LOCAL-00037" summary="Some changes to the lock slip functionality for superusers.">
-      <created>1612191635429</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1612191635429</updated>
+      <workItem from="1618821957091" duration="15676000" />
     </task>
     <task id="LOCAL-00038" summary="fixed bug where citation context was editable within entries&#10;added English tranlsation beneath each entry citation">
       <created>1612362762465</created>
@@ -464,7 +463,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618580565134</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="Reworking of DB results query to speed up auto slip creation.">
+      <created>1618827096898</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1618827096899</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -483,7 +489,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Additional AJAX work on slow search to handle slip links" />
     <MESSAGE value="Added index IDs to slip links in slow search to facilitate correct updating of slip links in results after slip creation" />
     <MESSAGE value="Added option on search form to choose between searching for all results and chunking results. Added option to choose chunk size.&#10;Fixed issues with full results not paginating." />
     <MESSAGE value="Added option on search form to choose between searching for all results and chunking results. Added option to choose chunk size.&#10;Fixed issues with full results not paginating.&#10;Fixed issue where chunked results weren't working correctly due to conflict with &quot;all results&quot; functionality.&#10;TODO: fix &quot;all results&quot; functionality" />
@@ -508,6 +513,7 @@
     <MESSAGE value="New sense code with editing (and removing) modal and new tooltips working in collection, entry, and search results." />
     <MESSAGE value="Progress towards automatically generating slips from all search results" />
     <MESSAGE value="Bug fix for cancelling out of &quot;Create slips for all records&quot; dialog not behaving correctly" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug fix for cancelling out of &quot;Create slips for all records&quot; dialog not behaving correctly" />
+    <MESSAGE value="Reworking of DB results query to speed up auto slip creation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Reworking of DB results query to speed up auto slip creation." />
   </component>
 </project>

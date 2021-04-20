@@ -112,7 +112,9 @@ HTML;
 	  $dbh = $db->getDatabaseHandle();
 	  try {
 		  $sql = <<<SQL
-        SELECT auto_id FROM slips WHERE group_id = :groupId AND filename = :filename AND id = :id
+        SELECT auto_id FROM slips s
+        	JOIN entry e ON s.entry_id = e.id
+        	WHERE e.group_id = :groupId AND s.filename = :filename AND s.id = :id
 SQL;
 		  $sth = $dbh->prepare($sql);
 		  $sth->execute(array(":groupId"=>$groupId, ":filename"=>$filename, ":id"=>$id));
