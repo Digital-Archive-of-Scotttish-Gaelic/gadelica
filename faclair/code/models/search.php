@@ -231,7 +231,7 @@ SQL;
       JOIN `english` e ON l.`id` = e.`lexeme_id`
       WHERE e.`en` REGEXP :en
       ORDER BY LENGTH(`m-hw`), `m-hw`
-  SQL;
+SQL;
     $results = $this->_db->fetch($sql, array(":en" => '.*[ -]' . $this->_search . '[ -].*'));
     $oot = [];
     foreach ($results as $nextResult) {
@@ -246,7 +246,7 @@ SQL;
       FROM `lexemes`
       WHERE `hw` REGEXP :gd
       ORDER BY LENGTH(`m-hw`), `m-hw`
-  SQL;
+SQL;
     $results = $this->_db->fetch($sql, array(":gd" => '.*[ -]' . $this->_search . '[ -].*'));
     $oot = [];
     foreach ($results as $nextResult) {
@@ -279,7 +279,7 @@ SQL;
       FROM `lexemes`
       WHERE `hw` REGEXP :gd
       ORDER BY LENGTH(`m-hw`), `m-hw`
-  SQL;
+SQL;
     $results = $this->_db->fetch($sql, array(":gd" => '.*[ -]' . $this->_search . '[^ -].*'));
     $oot = [];
     foreach ($results as $nextResult) {
@@ -312,7 +312,7 @@ SQL;
       FROM `lexemes`
       WHERE `hw` REGEXP :gd
       ORDER BY LENGTH(`m-hw`), `m-hw`
-  SQL;
+SQL;
     $results = $this->_db->fetch($sql, array(":gd" => '.*[^ -]' . $this->_search . '[ -].*'));
     $oot = [];
     foreach ($results as $nextResult) {
