@@ -34,7 +34,7 @@ HTML;
 			foreach ($entries as $nextEntry) {
 				$url = '?m=entry&mhw=' . $nextEntry[0] . '&mpos=' . $nextEntry[1] . '&msub=' . $nextEntry[2];
 	    	echo '<a href="' . $url . '" class="list-group-item list-group-item-action"><strong>';
-				echo search::_hi($nextEntry[0],$search) . '</strong> <em>' . models\entries::getShortGd($nextEntry[1]) . '</em>';
+				echo search::_hi($nextEntry[0],$search) . '</strong> <em>' . models\search::getShortGd($nextEntry[1]) . '</em>';
 				echo ' ' . search::_hi($nextEntry[3],$search) . '</a>';
 			}
 			echo '</div>';
