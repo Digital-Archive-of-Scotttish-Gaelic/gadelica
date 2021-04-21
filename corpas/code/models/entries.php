@@ -23,6 +23,7 @@ SQL;
 			$result = $db->fetch($sql, array(":headword" => $headword, ":wordclass" => $wordclass, ":groupId" => $_SESSION["groupId"]));
 			$entry = null;
 			if ($result) {
+				$result = $result[0];
 				$entry = new entry($result["id"]);
 				$entry->setGroupId($result["group_id"]);
 				$entry->setHeadword($result["headword"]);
@@ -45,8 +46,9 @@ SQL;
 			$sql = <<<SQL
         SELECT * FROM entry WHERE id = :id 
 SQL;
-			$result = $db->fetch($sql, array(":id"=>$id));
+			$result = $db->fetch($sql, array(":id" => $id));
 			if ($result) {
+				$result = $result[0];
 				$entry = new entry($id);
 				$entry->setGroupId($result["group_id"]);
 				$entry->setHeadword($result["headword"]);
@@ -71,10 +73,6 @@ SQL;
 SQL;
 			$db->exec($sql, array(":groupId" => $params["groupId"], ":headword" => $params["headword"],
 				":wordclass" => $params["wordclass"], ":notes" => $params["notes"]));
-
-			print_r($params);
-			echo $sql;
-
 			$entryId = $db->getLastInsertId();
 			$entry = new entry($entryId);
 			return $entry;
