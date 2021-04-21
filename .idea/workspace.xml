@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/ajax.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/sense.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/sense.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/sensecategories.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/sensecategories.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/models/slip.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/slip.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/views/slip.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/slip.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,14 +119,7 @@
       <workItem from="1618566676516" duration="3045000" />
       <workItem from="1618580302270" duration="645000" />
       <workItem from="1618818815767" duration="609000" />
-      <workItem from="1618821957091" duration="22179000" />
-    </task>
-    <task id="LOCAL-00041" summary="Added directories for input and output files in CorpasXMLParser">
-      <created>1612946124036</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1612946124036</updated>
+      <workItem from="1618821957091" duration="24199000" />
     </task>
     <task id="LOCAL-00043" summary="Working code for saving lexeme data&#10;TODO: forms, translations, notes; and correct window close behaviour">
       <created>1613484702096</created>
@@ -469,7 +457,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618993085434</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="Fixed major bug where senses were not being added properly due to the new entry model">
+      <created>1618997919054</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1618997919054</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -488,7 +483,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Bug fix for all results and chunked results not playing nicely together.&#10;Many UI improvements" />
     <MESSAGE value="Reworked regular expression searching for headword (lemma) to ensure word boundary is respected" />
     <MESSAGE value="Ensured all word links in results open in new tab" />
     <MESSAGE value="Refactored slow search to work entirely asynchronously. &#10;Added check for end of results and added message for user&#10;Simplified XPath in search box and added necessary prefix and suffix in the model's search function" />
@@ -513,6 +507,7 @@
     <MESSAGE value="Initial code for new edit slip in entry refactor" />
     <MESSAGE value="Working code for creation of slip and related entry" />
     <MESSAGE value="Bug fix for 2nd slip not connecting with existing entry" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug fix for 2nd slip not connecting with existing entry" />
+    <MESSAGE value="Fixed major bug where senses were not being added properly due to the new entry model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed major bug where senses were not being added properly due to the new entry model" />
   </component>
 </project>

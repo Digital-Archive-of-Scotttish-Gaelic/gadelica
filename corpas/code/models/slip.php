@@ -220,15 +220,14 @@ SQL;
   public function getUnusedSenses() {
   	$senses = array();
 		$sql = <<<SQL
-			SELECT DISTINCT se.id AS id FROM sense se
-				JOIN slip_sense ss ON ss.sense_id = se.id 
-				JOIN slips s ON ss.slip_id = s.auto_id
-				WHERE se.headword = :lemma AND se.wordclass = :wordclass AND group_id = '{$_SESSION["groupId"]}'
+			SELECT se.id AS id FROM sense se
+				JOIN entry e ON e.id = se.entry_id
+			  WHERE e.group_id = {$_SESSION["groupId"]} 
 SQL;
-		$results = $this->_db->fetch($sql, array(":lemma"=>$this->getHeadword(), ":wordclass"=>$this->getWordClass()));
+		$results = $this->_db->fetch($sql, array(":slipId" => $this->getAutoId()));
 		foreach ($results as $result) {
 			$id = $result["id"];
-			if (array_key_exists($id, $this->getSenses())) {
+			if (array_key_exists($id, $this->getSenses())) {  //skip exisiting senses for this slip
 				continue;
 			}
 			$senses[$id] = new sense($id);
