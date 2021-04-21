@@ -21,7 +21,6 @@ class slip
   private $_slipMorph;  //an instance of models\slipmorphfeature
   private $_senses = array();
   private $_sensesInfo = array();   //used to store sense info (in place of object data) for AJAX use
-  private $_lemma;
 
   public function __construct($filename, $id, $auto_id = null, $pos, $preScope = self::SCOPE_DEFAULT, $postScope = self::SCOPE_DEFAULT) {
     $this->_filename = $filename;
@@ -57,7 +56,7 @@ SQL;
 SQL;
     $result = $this->_db->fetch($sql, array(":auto_id" => $this->_auto_id));
     $slipData = $result[0];
-	  $this->_entry = $this->_entry ? $this->_entry : entries::getEntryById($slipData["entry_id"]);
+	  $this->_entry = entries::getEntryById($slipData["entry_id"]);
     $this->_populateClass($slipData);
     $this->_loadSlipMorph();  //load the slipMorph data from the DB
     $this->_loadSenses(); //load the sense objects
@@ -146,10 +145,6 @@ SQL;
     return $this->_id;
   }
 
-  public function getLemma() {
-  	return $this->_lemma;
-  }
-
   public function getIsNew() {
     return $this->_isNew;
   }
@@ -175,7 +170,7 @@ SQL;
   }
 
   public function getEntryId() {
-  	return $this->_entryId;
+  	return $this->_entry->getId();
   }
 
   public function getEntry() {
@@ -230,7 +225,7 @@ SQL;
 				JOIN slips s ON ss.slip_id = s.auto_id
 				WHERE se.headword = :lemma AND se.wordclass = :wordclass AND group_id = '{$_SESSION["groupId"]}'
 SQL;
-		$results = $this->_db->fetch($sql, array(":lemma"=>$this->getLemma(), ":wordclass"=>$this->getWordClass()));
+		$results = $this->_db->fetch($sql, array(":lemma"=>$this->getHeadword(), ":wordclass"=>$this->getWordClass()));
 		foreach ($results as $result) {
 			$id = $result["id"];
 			if (array_key_exists($id, $this->getSenses())) {
@@ -241,16 +236,7 @@ SQL;
 		return $senses;
   }
 
-	private function _setLemma() {
-		$sql = <<<SQL
-			SELECT lemma FROM lemmas WHERE filename = :filename AND id = :id
-SQL;
-		$results = $this->_db->fetch($sql, array(":filename"=>$this->getFilename(), ":id"=>$this->getId()));
-		$this->_lemma = $results[0]["lemma"];
-	}
-
   private function _populateClass($params) {
-  	$this->_setLemma();
     $this->_auto_id = $this->getAutoId() ? $this->getAutoId() : $params["auto_id"];
     $this->_isNew = false;
     $this->_starred = $params["starred"] ? 1 : 0;
@@ -258,7 +244,7 @@ SQL;
     $this->_notes = $params["notes"];
     $this->_preContextScope = $params["preContextScope"];
     $this->_postContextScope = $params["postContextScope"];
-    $this->_wordClass = $params["wordClass"];
+    $this->_wordClass = $this->_entry->getWordclass();
     $this->_entryId = $params["entryId"];
     $this->_locked = $params["locked"];
     $this->_ownedBy = $params["ownedBy"];

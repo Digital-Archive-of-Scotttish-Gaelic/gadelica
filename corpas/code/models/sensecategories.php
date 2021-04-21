@@ -8,20 +8,17 @@ class sensecategories
 	 * Adds a new sense entry to the database and returns its ID
 	 * @param $name
 	 * @param $description
-	 * @param $headword
-	 * @param $wordclass
+	 * @param $entryId
 	 * @return string : the ID of the newly created sense
 	 */
-  public static function addSense($name, $description, $headword, $wordclass) {
+  public static function addSense($name, $description, $entryId) {
     $db = new database();
-    $dbh = $db->getDatabaseHandle();
     $sql = <<<SQL
-			INSERT INTO sense(name, description, headword, wordclass)
-				VALUES (:name, :description, :headword, :wordclass)
+			INSERT INTO sense(name, description, entry_id)
+				VALUES (:name, :description, :entryId)
 SQL;
     try {
-      $sth = $dbh->prepare($sql);
-      $sth->execute(array(":name"=>$name, ":description"=>$description, ":headword"=>$headword, ":wordclass"=>$wordclass));
+      $db->exec($sql, array(":name"=>$name, ":description"=>$description, ":entryId" => $entryId));
       return $db->getLastInsertId();
     } catch (PDOException $e) {
       echo $e->getMessage();
@@ -34,12 +31,9 @@ SQL;
 	 */
   public static function deleteSense($id) {
     $db = new database();
-    $dbh = $db->getDatabaseHandle();
     try {
-      $sth = $dbh->prepare("DELETE FROM sense WHERE id = :id");
-      $sth->execute(array(":id" => $id));
-      $sth2 = $dbh->prepare("DELETE FROM slip_sense WHERE sense_id = :id");
-      $sth2->execute(array(":id" => $id));
+      $db->exec("DELETE FROM sense WHERE id = :id", array(":id" => $id));
+      $db->exec("DELETE FROM slip_sense WHERE sense_id = :id", array(":id" => $id));
     } catch (PDOException $e) {
       echo $e->getMessage();
     }
@@ -52,10 +46,9 @@ SQL;
 	 */
   public static function saveSlipSense($slipId, $senseId) {
 	  $db = new database();
-	  $dbh = $db->getDatabaseHandle();
 	  try {
-		  $sth = $dbh->prepare("INSERT INTO slip_sense VALUES(:slipId, :senseId)");
-		  $sth->execute(array(":slipId" => $slipId, ":senseId" => $senseId));
+		  $sql = "INSERT INTO slip_sense VALUES(:slipId, :senseId)";
+		  $db->exec($sql, array(":slipId" => $slipId, ":senseId" => $senseId));
 	  } catch (PDOException $e) {
 		  echo $e->getMessage();
 	  }
@@ -68,10 +61,9 @@ SQL;
 	 */
 	public static function deleteSlipSense($slipId, $senseId) {
 		$db = new database();
-		$dbh = $db->getDatabaseHandle();
 		try {
-			$sth = $dbh->prepare("DELETE FROM slip_sense WHERE slip_id = :slipId AND sense_id = :senseId");
-			$sth->execute(array(":slipId" => $slipId, ":senseId" => $senseId));
+			$sql = "DELETE FROM slip_sense WHERE slip_id = :slipId AND sense_id = :senseId";
+			$db->exec($sql, array(":slipId" => $slipId, ":senseId" => $senseId));
 		} catch (PDOException $e) {
 			echo $e->getMessage();
 		}
@@ -85,13 +77,11 @@ SQL;
 	 */
 	public static function updateSense($id, $name, $description) {
 		$db = new database();
-		$dbh = $db->getDatabaseHandle();
 		try {
 			$sql = <<<SQL
 				UPDATE sense SET name = :name, description = :description WHERE id = :id
 SQL;
-			$sth = $dbh->prepare($sql);
-			$sth->execute(array(":id" => $id, ":name" => $name, ":description" => $description));
+			$db->exec($sql, array(":id" => $id, ":name" => $name, ":description" => $description));
 		} catch (PDOException $e) {
 			echo $e->getMessage();
 		}
@@ -136,7 +126,6 @@ SQL;
 	public static function getNonCategorisedSlipIds($lemma, $wordclass) {
 		$slipIds = array();
 		$db = new database();
-		$dbh = $db->getDatabaseHandle();
 		try {
 			$sql = <<<SQL
         SELECT auto_id FROM slips s 
@@ -145,9 +134,7 @@ SQL;
         	AND group_id = {$_SESSION["groupId"]}
         	ORDER by auto_id ASC
 SQL;
-			$sth = $dbh->prepare($sql);
-			$sth->execute(array(":lemma"=>$lemma, ":wordclass"=>$wordclass));
-			while ($row = $sth->fetch()) {
+			while ($row = $db->fetch($sql, array(":lemma"=>$lemma, ":wordclass"=>$wordclass))) {
 				$slipIds[] = $row["auto_id"];
 			}
 			return $slipIds;

@@ -557,6 +557,9 @@ HTML;
               });
             });
 
+            /**
+            * Senses
+						*/  
             $("#chooseSenseCategory").on('click', function () {
               var elem = $( "#senseCategorySelect option:selected" );
               var sense = elem.text();
@@ -587,8 +590,7 @@ HTML;
               $('#newSenseName').val('');
               $('#newSenseDefinition').val('');
               var data = {action: 'addSense', slipId: '{$this->_slip->getAutoId()}',
-                name: newSenseName, description: newSenseDefinition, headword: '{$this->_slip->getLemma()}', 
-                wordclass: '{$this->_slip->getWordclass()}'
+                name: newSenseName, description: newSenseDefinition, entryId: '{$this->_slip->getEntryId()}'
               }
               $.getJSON("ajax.php", data, function (response) {
                 var html = '<li class="badge badge-success senseBadge" data-sense="' + response.senseId + '"';
@@ -600,21 +602,9 @@ HTML;
                 $('#senseCategories').append(html);
               });
             });
-/*
-            $(document).on('click', '.removeSense', function () {
-              var senseId = $(this).parent().attr('data-sense');
-              var senseName = $(this).parent().attr('data-sensename');
-              $(this).parent().remove();
-              var html = '<option data-sense="' + senseId + '">' + senseName + '</option>';
-              $('#senseCategorySelect').append(html);
-              var data = {action: 'removeSense', slipId: '{$this->_slip->getAutoId()}',
-                senseId: senseId}
-              $.post("ajax.php", data, function (response) {
-                console.log(response);        //TODO: add some response code on successful save
-              });
-            });
-*/
+
             $('#wordClass').on('change', function() {
+              alert('Changing the wordclass will remove any senses');
               var wordclass = $(this).val();
               switch (wordclass) {
                 case "verb":

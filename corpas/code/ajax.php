@@ -89,7 +89,7 @@ switch ($_REQUEST["action"]) {
     echo "success";
     break;
 	case "addSense":
-		$senseId = sensecategories::addSense($_GET["name"], $_GET["description"], $_GET["headword"], $_GET["wordclass"]);
+		$senseId = sensecategories::addSense($_GET["name"], $_GET["description"], $_GET["entryId"]);
 		sensecategories::saveSlipSense($_GET["slipId"], $senseId);
 		echo json_encode(array("senseId" => $senseId, "senseDescription" => $_GET["description"]));
 		break;
