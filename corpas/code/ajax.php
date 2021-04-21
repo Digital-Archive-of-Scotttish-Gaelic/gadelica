@@ -61,10 +61,16 @@ switch ($_REQUEST["action"]) {
 		$slipInfo["context"] = $context;
 		echo json_encode($slipInfo);
 		break;
-	case "getSenseCategories":
-		$slip = new slip($_GET["id"]);
+	case "getSenseCategoriesForNewWordclass":
+		$slip = new slip($_GET["filename"], $_GET["id"], $_GET["auto_id"], $_GET["pos"]);
+		$slip->updateEntry($_GET["headword"], $_GET["wordclass"]);  //update entry with new wordclass
+		$slip->saveSlip($_GET);
 		$senses = $slip->getUnusedSenses();
-		echo json_encode($senses);
+		$unusedSenseInfo = array();
+		foreach ($senses as $sense) {
+			$unusedSenseInfo[$sense->getId()] = array("name" => $sense->getName(), "description" => $sense->getDescription());
+		}
+		echo json_encode($unusedSenseInfo);
 		break;
   case "saveSlip":
     $slip = new slip($_POST["filename"], $_POST["id"], $_POST["auto_id"], $_POST["pos"],

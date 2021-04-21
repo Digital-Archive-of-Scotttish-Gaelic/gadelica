@@ -141,6 +141,10 @@ SQL;
     return $this->_filename;
   }
 
+  public function getPOS() {
+  	return $this->_pos;
+  }
+
   public function getId() {
     return $this->_id;
   }
@@ -222,9 +226,10 @@ SQL;
 		$sql = <<<SQL
 			SELECT se.id AS id FROM sense se
 				JOIN entry e ON e.id = se.entry_id
-			  WHERE e.group_id = {$_SESSION["groupId"]} 
+			  WHERE e.group_id = {$_SESSION["groupId"]} AND e.headword = :headword AND e.wordclass = :wordclass
 SQL;
-		$results = $this->_db->fetch($sql, array(":slipId" => $this->getAutoId()));
+		$results = $this->_db->fetch($sql, array(":headword" => $this->getHeadword(),
+			":wordclass" => $this->getWordClass()));
 		foreach ($results as $result) {
 			$id = $result["id"];
 			if (array_key_exists($id, $this->getSenses())) {  //skip exisiting senses for this slip
@@ -270,6 +275,27 @@ SQL;
 	    $this->getNotes(), $this->getEntryId(), $this->getPreContextScope(), $this->getPostContextScope(),
 	    $this->getLastUpdatedBy(), $this->getAutoId()));
     return $this;
+  }
+
+  /*
+   * Changes the entry for this slip when the headword or wordclass is changed
+   * @param $headword
+   * @param $wordclass
+   */
+  public function updateEntry($headword, $wordclass) {
+  	if ($wordclass != $this->getWordClass()) {
+		  $this->_wordClass = $wordclass;
+		  //remove all the senses
+		  sensecategories::deleteSensesForSlip($this->getAutoId());
+		  //hack to workaround POS issues - TODO: discuss with MM
+		  $tempPOS = array("noun" => "n", "verb" => "v", "preposition" => "p", "verbal noun" => "vn", "adjective" => "a",
+			  "adverb" => "A");
+		  $this->_pos = $tempPOS[$wordclass];
+		  $this->_slipMorph = new slipmorphfeature($this->_pos);  //attach the morph data for the new POS
+		  $this->_clearSlipMorphEntries();
+	  }
+	  $this->_headword = $headword;
+	  $this->_entry = entries::getEntryByHeadwordAndWordclass($headword, $wordclass);
   }
 
   /**

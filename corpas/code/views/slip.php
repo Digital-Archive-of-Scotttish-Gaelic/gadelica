@@ -563,7 +563,7 @@ HTML;
             $("#chooseSenseCategory").on('click', function () {
               var elem = $( "#senseCategorySelect option:selected" );
               var sense = elem.text();
-              if (elem.attr('data-sense') == "") {
+              if (!elem.attr('data-sense')) {
                 return false;
               }
               var senseId = elem.attr('data-sense');
@@ -604,7 +604,11 @@ HTML;
             });
 
             $('#wordClass').on('change', function() {
-              alert('Changing the wordclass will remove any senses');
+              let check = confirm('Changing the wordclass will remove any senses. Are you sure you want to proceed?');
+              if (!check) {
+                $('#wordClass').val('{$this->_slip->getWordClass()}');
+                return;
+              }
               var wordclass = $(this).val();
               switch (wordclass) {
                 case "verb":
@@ -629,13 +633,17 @@ HTML;
                   $('#prepSelects').hide();
               }
               //update the sense categories
+              $('.senseBadge').remove();
               $('#senseCategorySelect').empty();
               $('#senseCategorySelect').append('<option data-category="">-- select a category --</option>');
-              var url = 'ajax.php?action=getSenseCategories';
-              url += '&slipId={$_GET["id"]}&headword={$_GET["headword"]}&wordclass=' + wordclass;
+              var url = 'ajax.php?action=getSenseCategoriesForNewWordclass';
+              url += '&filename={$this->_slip->getFilename()}&id={$this->_slip->getId()}&auto_id={$this->_slip->getAutoId()}';
+              url += '&pos={$this->_slip->getPOS()}&headword={$this->_slip->getHeadword()}&wordclass='+wordclass;
               $.getJSON(url, function (data) {
-                  $.each(data, function (index, value) {
-                    $('#senseCategorySelect').append('<option data-category="' + value + '" value="' + value + '">' + value + '</option>');
+                  $.each(data, function (index, sense) {
+                    var html = '<option data-sense="' + index + '" data-sense-description="' + sense.description + '"';
+                    html += ' data-sense-name="' + sense.name + '" value="' + index + '">' + sense.name + '</option>';
+                    $('#senseCategorySelect').append(html);
                   });
               });
             });
