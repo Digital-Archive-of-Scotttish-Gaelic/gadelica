@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/corpas/code/models/entry.old.php" afterDir="false" />
+    <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="Initial code for new edit slip in entry refactor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/includes/include.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/includes/include.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/collection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/corpus_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/corpus_search.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/models/entries.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/entries.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/entry.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/entry.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/models/slip.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/slip.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -125,14 +120,7 @@
       <workItem from="1618566676516" duration="3045000" />
       <workItem from="1618580302270" duration="645000" />
       <workItem from="1618818815767" duration="609000" />
-      <workItem from="1618821957091" duration="15676000" />
-    </task>
-    <task id="LOCAL-00038" summary="fixed bug where citation context was editable within entries&#10;added English tranlsation beneath each entry citation">
-      <created>1612362762465</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1612362762465</updated>
+      <workItem from="1618821957091" duration="17470000" />
     </task>
     <task id="LOCAL-00039" summary="Added a prototype PDF viewer for directories - much work needed">
       <created>1612430427663</created>
@@ -470,7 +458,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618827096899</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="Initial code for new edit slip in entry refactor">
+      <created>1618927085562</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1618927085562</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -489,7 +484,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added index IDs to slip links in slow search to facilitate correct updating of slip links in results after slip creation" />
     <MESSAGE value="Added option on search form to choose between searching for all results and chunking results. Added option to choose chunk size.&#10;Fixed issues with full results not paginating." />
     <MESSAGE value="Added option on search form to choose between searching for all results and chunking results. Added option to choose chunk size.&#10;Fixed issues with full results not paginating.&#10;Fixed issue where chunked results weren't working correctly due to conflict with &quot;all results&quot; functionality.&#10;TODO: fix &quot;all results&quot; functionality" />
     <MESSAGE value="Bug fix for all results and chunked results not playing nicely together.&#10;Many UI improvements" />
@@ -514,6 +508,7 @@
     <MESSAGE value="Progress towards automatically generating slips from all search results" />
     <MESSAGE value="Bug fix for cancelling out of &quot;Create slips for all records&quot; dialog not behaving correctly" />
     <MESSAGE value="Reworking of DB results query to speed up auto slip creation." />
-    <option name="LAST_COMMIT_MESSAGE" value="Reworking of DB results query to speed up auto slip creation." />
+    <MESSAGE value="Initial code for new edit slip in entry refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial code for new edit slip in entry refactor" />
   </component>
 </project>

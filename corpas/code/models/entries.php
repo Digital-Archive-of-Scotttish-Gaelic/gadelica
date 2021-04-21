@@ -15,15 +15,12 @@ class entries
 
 	public static function getEntryByHeadwordAndWordclass($headword, $wordclass) {
 		$db = new database();
-		$dbh = $db->getDatabaseHandle();
 		try {
 			$sql = <<<SQL
         SELECT * FROM entry WHERE headword = :headword AND wordclass = :wordclass 
 					AND group_id = :groupId
 SQL;
-			$sth = $dbh->prepare($sql);
-			$sth->execute(array(":headword" => $headword, ":wordclass" => $wordclass, ":groupId" => $_SESSION["groupId"]));
-			$result = $sth->fetch();
+			$result = $db->fetch($sql, array(":headword" => $headword, ":wordclass" => $wordclass, ":groupId" => $_SESSION["groupId"]));
 			$entry = null;
 			if ($result) {
 				$entry = new entry($result["id"]);
@@ -33,8 +30,8 @@ SQL;
 				$entry->setNotes($result["notes"]);
 				$entry->setUpdated($result["updated"]);
 			} else {
-				$entry = self::createEntry(array("group_id" => $_SESSION["groupId"], "headword" => $headword,
-					"worclass" => $wordclass, "notes" => ""));
+				$entry = self::createEntry(array("groupId" => $_SESSION["groupId"], "headword" => $headword,
+					"wordclass" => $wordclass, "notes" => ""));
 			}
 			return $entry;
 		} catch (PDOException $e) {
@@ -44,14 +41,11 @@ SQL;
 
 	public static function getEntryById($id) {
 		$db = new database();
-		$dbh = $db->getDatabaseHandle();
 		try {
 			$sql = <<<SQL
         SELECT * FROM entry WHERE id = :id 
 SQL;
-			$sth = $dbh->prepare($sql);
-			$sth->execute(array(":id"=>$id));
-			$result = $sth->fetch();
+			$result = $db->fetch($sql, array(":id"=>$id));
 			if ($result) {
 				$entry = new entry($id);
 				$entry->setGroupId($result["group_id"]);
@@ -70,16 +64,18 @@ SQL;
 
 	public static function createEntry($params) {
 		$db = new database();
-		$dbh = $db->getDatabaseHandle();
 		try {
 			$sql = <<<SQL
         INSERT INTO entry (group_id, headword, wordclass, notes) 
         	VALUES (:groupId, :headword, :wordclass, :notes) 
 SQL;
-			$sth = $dbh->prepare($sql);
-			$sth->execute(array(":group_id" => $params["groupId"], ":headword" => $params["headword"],
+			$db->exec($sql, array(":groupId" => $params["groupId"], ":headword" => $params["headword"],
 				":wordclass" => $params["wordclass"], ":notes" => $params["notes"]));
-			$entryId = $dbh->lastInsertId();
+
+			print_r($params);
+			echo $sql;
+
+			$entryId = $db->getLastInsertId();
 			$entry = new entry($entryId);
 			return $entry;
 		} catch (PDOException $e) {
@@ -89,17 +85,15 @@ SQL;
 
 	public static function updateEntry($params) {
 		$db = new database();
-		$dbh = $db->getDatabaseHandle();
 		try {
 			$sql = <<<SQL
       UPDATE entry	 
         SET group_id = :groupId, headword = :headword, wordlcass = :wordclass, notes = :notes
 				WHERE id = :id
 SQL;
-			$sth = $dbh->prepare($sql);
-			$sth->execute(array(":group_id" => $params["groupId"], ":headword" => $params["headword"],
+			$db->execute($sql, array(":group_id" => $params["groupId"], ":headword" => $params["headword"],
 				":wordclass" => $params["wordclass"], ":notes" => $params["notes"], ":id" => $params["id"]));
-			$entry = new entry($entryId);
+			$entry = new entry($params["id"]);
 			return $entry;
 		} catch (PDOException $e) {
 			echo $e->getMessage();

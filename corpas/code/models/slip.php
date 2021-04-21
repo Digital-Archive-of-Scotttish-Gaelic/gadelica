@@ -42,7 +42,7 @@ class slip
       $this->_isNew = true;
       $this->_extractWordClass($this->_pos);
       //get the entry
-	    $this->_entry = entries::getEntryByHeadwordAndWordclass($this->getWordClass(), $this->getHeadword());
+	    $this->_entry = entries::getEntryByHeadwordAndWordclass($this->getHeadword(), $this->getWordClass());
       $sql = <<<SQL
         INSERT INTO slips (filename, id, entry_id, preContextScope, postContextScope, ownedBy) VALUES (?, ?, ?, ?, ?, ?);
 SQL;
