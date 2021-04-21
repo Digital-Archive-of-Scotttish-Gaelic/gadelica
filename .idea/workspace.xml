@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/ajax.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/sensecategories.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/sensecategories.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/slip.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/slip.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/views/slip.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/slip.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,14 +119,7 @@
       <workItem from="1618566676516" duration="3045000" />
       <workItem from="1618580302270" duration="645000" />
       <workItem from="1618818815767" duration="609000" />
-      <workItem from="1618821957091" duration="32462000" />
-    </task>
-    <task id="LOCAL-00043" summary="Working code for saving lexeme data&#10;TODO: forms, translations, notes; and correct window close behaviour">
-      <created>1613484702096</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1613484702096</updated>
+      <workItem from="1618821957091" duration="32915000" />
     </task>
     <task id="LOCAL-00044" summary="Working code for saving lexeme data including forms, translations, notes.&#10;TODO: correct window close behaviour; create addlexeme.php; add/delete parts">
       <created>1613487743403</created>
@@ -467,7 +457,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619000125830</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="Bug fixes for sense dropdown adding empty sense, slip morph data not updating on wordclass change, sense list updating with senses not belonging to wordclass/headword combination.">
+      <created>1619009582447</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1619009582447</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -486,7 +483,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Ensured all word links in results open in new tab" />
     <MESSAGE value="Refactored slow search to work entirely asynchronously. &#10;Added check for end of results and added message for user&#10;Simplified XPath in search box and added necessary prefix and suffix in the model's search function" />
     <MESSAGE value="Added REGEX functionality to preceding and following word search options" />
     <MESSAGE value="Trimmed user facing XPath query in slow search box and added necessary back end code to model" />
@@ -511,6 +507,7 @@
     <MESSAGE value="Bug fix for 2nd slip not connecting with existing entry" />
     <MESSAGE value="Fixed major bug where senses were not being added properly due to the new entry model" />
     <MESSAGE value="Fixed a bug whereby senses were not being listed correctly in edit slip dropdown" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed a bug whereby senses were not being listed correctly in edit slip dropdown" />
+    <MESSAGE value="Bug fixes for sense dropdown adding empty sense, slip morph data not updating on wordclass change, sense list updating with senses not belonging to wordclass/headword combination." />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug fixes for sense dropdown adding empty sense, slip morph data not updating on wordclass change, sense list updating with senses not belonging to wordclass/headword combination." />
   </component>
 </project>

@@ -632,7 +632,7 @@ HTML;
                   $('#verbSelects').hide();
                   $('#prepSelects').hide();
               }
-              //update the sense categories
+              //update the sense categories 
               $('.senseBadge').remove();
               $('#senseCategorySelect').empty();
               $('#senseCategorySelect').append('<option data-category="">-- select a category --</option>');
