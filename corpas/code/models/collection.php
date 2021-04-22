@@ -24,7 +24,6 @@ class collection
 					AND (auto_id LIKE @search	
             	OR lemma LIKE @search
             	OR wordform LIKE @search
-            	OR wordclass LIKE @search
             	OR lemma LIKE @search
             	OR firstname LIKE @search
             	OR lastname LIKE @search)
@@ -34,9 +33,10 @@ SQL;
 	    $sql = <<<SQL
         SELECT SQL_CALC_FOUND_ROWS s.filename as filename, s.id as id, auto_id, pos, lemma, wordform, firstname, lastname,
                 date_of_lang, title, page, CONCAT(firstname, ' ', lastname) as fullname, locked,
-                s.wordclass as wordclass, l.pos as pos, s.lastUpdated as lastUpdated, updatedBy
+             		l.pos as pos, s.lastUpdated as lastUpdated, updatedBy
             FROM slips s
             JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
+            JOIN entry e ON e.id = s.entry_id
             LEFT JOIN user u ON u.email = s.ownedBy
             {$whereClause}
             ORDER BY {$sort} {$order}
@@ -157,6 +157,10 @@ SQL;
 		} catch (\PDOException $e) {
 			echo $e->getMessage();
 		}
+	}
+
+	public static function getWordformBYSlipId($slipId) {
+
 	}
 
 	/**

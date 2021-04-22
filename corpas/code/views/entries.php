@@ -6,14 +6,14 @@ use models;
 class entries
 {
   public function writeEntry($entry) {
-  	$lemma = $entry->getLemma();
+  	$headword = $entry->getHeadword();
   	$wordclass = $entry->getWordclass();
   	$abbr = models\functions::getWordclassAbbrev($wordclass);
     echo <<<HTML
       <div id="#entryContainer">
         <div>
-          <h4>{$lemma} <em>{$abbr}</em></h4>
-          <input type="hidden" id="lemma" value="{$lemma}">
+          <h4>{$headword} <em>{$abbr}</em></h4>
+          <input type="hidden" id="lemma" value="{$headword}">
           <input type="hidden" id="wordclass" value="{$wordclass}">
         </div>
         <div>
@@ -32,6 +32,7 @@ HTML;
   }
 
   private function _getFormsHtml($entry) {
+  	return "";
 	  $html = "<ul>";
 	  $i=0;
 	  foreach ($entry->getUniqueForms() as $slipId => $formString) {
@@ -106,6 +107,7 @@ HTML;
   }
 
 	private function _getSensesHtml($entry) {
+  	return "";
   	$orphanedSensesHtml = $this->_getOrphanSensesHtml($entry);
   	if ($orphanedSensesHtml != "") {
 		  $html = "<ul>" . $orphanedSensesHtml . "</ul>";
@@ -252,15 +254,16 @@ HTML;
   	return $text;
 	}
 
-  public function writeBrowseTable($entriesData) {
+  public function writeBrowseTable($entryIds) {
     $tableBodyHtml = "<tbody>";
-    foreach ($entriesData as $entry) {
-      $entryUrl = "?m=entries&a=view&headword={$entry["lemma"]}&wordclass={$entry["wordclass"]}";
+    foreach ($entryIds as $id) {
+    	$entry = models\entries::getEntryById($id);
+      $entryUrl = "?m=entries&a=view&id={$id}";
       $tableBodyHtml .= <<<HTML
         <tr>
-          <td>{$entry["lemma"]}</td>
-          <td>{$entry["wordclass"]}</td>
-          <td><a href="{$entryUrl}" title="view entry for {$entry["lemma"]}">
+          <td>{$entry->getHeadword()}</td>
+          <td>{$entry->getWordclass()}</td>
+          <td><a href="{$entryUrl}" title="view entry for {$entry->getHeadword()}">
             view entry
           </td>
         </tr>

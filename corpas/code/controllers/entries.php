@@ -17,11 +17,11 @@ class entries
 	  }
 	  switch ($action) {
 		  case "browse":
-			  $entriesData = models\entries::getAllEntries();
-			  $this->_view->writeBrowseTable($entriesData);
+			  $entryIds = models\entries::getActiveEntryIds();
+			  $this->_view->writeBrowseTable($entryIds);
 			  break;
 		  case "view":
-			  $entry = models\entries::getEntry($_GET["headword"], $_GET["wordclass"]);   //this is just for testing
+			  $entry = models\entries::getEntryById($_GET["id"]);
 			  $this->_view->writeEntry($entry);
 			  break;
 	  }

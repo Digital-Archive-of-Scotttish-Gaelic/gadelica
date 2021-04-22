@@ -60,5 +60,14 @@ class entry
 		return $this->_updated;
 	}
 
+	public function getSlipIds() {
+		$slipIds = entries::getAllSlipIdsForEntry($this->getId());
+		return $slipIds;
+	}
 
+	private function
+
+	public function getUniqueForms() {
+
+	}
 }
