@@ -32,8 +32,25 @@ HTML;
   }
 
   private function _getFormsHtml($entry) {
-  	return "";
 	  $html = "<ul>";
+
+	  foreach ($entry->getWordforms() as $wordform => $row) {
+	  	$html .= <<<HTML
+				<li>{$wordform} : 
+HTML;
+	  	foreach ($row as $slipId => $data) {
+	  		$html .= <<<HTML
+					{$slipId} – {$data}
+HTML;
+
+		  }
+	  	$html .= "</li>";
+	  }
+	  $html .= "</ul>";
+	  return $html;
+
+
+
 	  $i=0;
 	  foreach ($entry->getUniqueForms() as $slipId => $formString) {
 		  $i++;

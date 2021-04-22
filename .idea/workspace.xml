@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/controllers/entries.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/controllers/entries.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/models/collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/collection.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/models/entries.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/entries.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/models/entry.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/entry.php" afterDir="false" />
@@ -124,14 +123,7 @@
       <workItem from="1618580302270" duration="645000" />
       <workItem from="1618818815767" duration="609000" />
       <workItem from="1618821957091" duration="33548000" />
-      <workItem from="1619075456087" duration="6130000" />
-    </task>
-    <task id="LOCAL-00047" summary="Created addLexeme.php, addPart.php, deletePart.php. Some edits in viewMhw.php to handle foreign keys and make links work.">
-      <created>1613573850838</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1613573850838</updated>
+      <workItem from="1619075456087" duration="9173000" />
     </task>
     <task id="LOCAL-00048" summary="Added search restrictions for preceding and following context">
       <created>1613651942542</created>
@@ -469,7 +461,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619079519934</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="Fixed issue with collection browse not working with new entry structure. Added check code to models\collection getAllSlipInfo to ensure workspace integrity.">
+      <created>1619096692621</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1619096692621</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -488,7 +487,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Finally (!!) completed a working version of slow search by text, including iteratively searching subtexts.&#10;Added text ID restrict field to slow search form just for testing just now" />
     <MESSAGE value="Created models\sense class to work with new sense database model&#10;Reworked models\slip class to work with new senses&#10;Initial work on views\slip to accommodate new code" />
     <MESSAGE value="Completed refactor of views\slip to use new sense model" />
     <MESSAGE value="Completed refactor of slip links in results to use new sense model" />
@@ -513,6 +511,7 @@
     <MESSAGE value="Working system" />
     <MESSAGE value="Recoded getUnusedSenses method in models\slips to use entry ID in place of headword and wordclass combination" />
     <MESSAGE value="Coded English translation to auto hide on slip edit load and toggle as per issue #17" />
-    <option name="LAST_COMMIT_MESSAGE" value="Coded English translation to auto hide on slip edit load and toggle as per issue #17" />
+    <MESSAGE value="Fixed issue with collection browse not working with new entry structure. Added check code to models\collection getAllSlipInfo to ensure workspace integrity." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed issue with collection browse not working with new entry structure. Added check code to models\collection getAllSlipInfo to ensure workspace integrity." />
   </component>
 </project>

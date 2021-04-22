@@ -60,12 +60,15 @@ class entry
 		return $this->_updated;
 	}
 
+	public function getWordforms() {
+		$wordforms = entries::getWordformsForEntry($this->getId());
+		return $wordforms;
+	}
+
 	public function getSlipIds() {
 		$slipIds = entries::getAllSlipIdsForEntry($this->getId());
 		return $slipIds;
 	}
-
-	private function
 
 	public function getUniqueForms() {
 

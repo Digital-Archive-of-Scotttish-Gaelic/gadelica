@@ -146,12 +146,34 @@ SQL;
   	$slipIds = array();
   	$db = new database();
   	$sql = <<<SQL
-			SELECT auto_id as id from slips WHERE entry_id = :entryId
+			SELECT auto_id AS id FROM slips WHERE entry_id = :entryId
 SQL;
 		$results = $db->fetch($sql, array(":entryId"=>$entryId));
 		foreach ($results as $row) {
 			$slipIds[] = $row["id"];
 		}
 		return $slipIds;
+  }
+
+  public static function getWordformsForEntry($entryId) {
+  	$wordforms = array();
+  	$db = new database();
+  	$sql = <<<SQL
+			SELECT l.wordform AS wordform, auto_id AS slipId
+				FROM lemmas l 
+				JOIN slips s ON s.id = l.id AND s.filename = l.filename
+				JOIN entry e ON e.id = s.entry_id
+				WHERE e.id = :entryId
+SQL;
+  	$results = $db->fetch($sql, array(":entryId"=>$entryId));
+  	foreach ($results as $row) {
+  		$wordform = mb_strtolower($row["wordform"], "UTF-8");
+  		$slipId = $row["slipId"];
+
+		  $slipMorphResults = collection::getSlipMorphBySlipId($slipId);
+
+  		$wordforms[$wordform][$slipId] = implode(' ', $slipMorphResults);
+	  }
+  	return $wordforms;
   }
 }

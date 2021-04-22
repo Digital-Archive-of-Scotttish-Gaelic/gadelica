@@ -143,6 +143,7 @@ SQL;
         SELECT s.filename as filename, s.id as id, auto_id, pos, lemma, preContextScope, postContextScope,
                 translation, date_of_lang, l.title AS title, page, starred, t.id AS tid
             FROM slips s
+            JOIN entry e ON e.id = s.entry_id
             JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
             JOIN text t ON s.filename = t.filepath
             WHERE group_id = {$_SESSION["groupId"]} AND s.auto_id = :slipId
@@ -159,9 +160,17 @@ SQL;
 		}
 	}
 
-	public static function getWordformBYSlipId($slipId) {
-
+	public static function getWordformBySlipId($slipId) {
+		$db = new database();
+		$sql = <<<SQL
+			SELECT wordform FROM lemmas l
+				JOIN slips s ON s.filename = l.filename AND s.id = l.id
+				WHERE s.auto_id = :slipId
+SQL;
+		$results = $db->fetch($sql, array(":slipId"=>$slipId));
+		return $results[0]["wordform"];
 	}
+
 
 	/**
 	 * Gets morph info from the DB to populate an Entry with data required for citations
