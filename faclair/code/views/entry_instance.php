@@ -30,7 +30,7 @@ class entry_instance {
 	private function _writeInfo() {
 		echo '<h1>' . models\sources::getEmoji($this->_model->getSource()) . ' ' . $this->_model->getHw() . '</h1>';
 		echo '<div class="list-group list-group-flush">';
-		echo '<div class="list-group-item"><em class="text-muted">' . models\entries::getLongGd($this->_model->getPos()) . '</em></div>';
+		echo '<div class="list-group-item"><em class="text-muted">' . models\search::getLongGd($this->_model->getPos()) . '</em></div>';
 		foreach ($this->_model->getForms() as $nextForm) {
 			echo '<div class="list-group-item"><strong>' . $nextForm[0] . '</strong> <em>' . $nextForm[1] . '</em></div>';
 		}
@@ -44,7 +44,7 @@ class entry_instance {
 		if (SUPERUSER) {
 			echo '<div class="list-group-item"><small><a href="?m=entry_instance&a=edit&id=' . $this->_model->getId() . '">[edit]</a></small></div>';
 		}
-		echo '<div class="list-group-item">⚓️&nbsp;&nbsp;<a href="?m=entry&mhw=' . $this->_model->getMhw() . '&mpos=' . $this->_model->getMpos() . '&msub=' . $this->_model->getMsub() . '">' . $this->_model->getMhw() . ' <em>' . models\entries::getShortGd($this->_model->getMpos()) . '</em></a></div>';
+		echo '<div class="list-group-item">⚓️&nbsp;&nbsp;<a href="?m=entry&mhw=' . $this->_model->getMhw() . '&mpos=' . $this->_model->getMpos() . '&msub=' . $this->_model->getMsub() . '">' . $this->_model->getMhw() . ' <em>' . models\search::getShortGd($this->_model->getMpos()) . '</em></a></div>';
 		echo '</div>';
 	}
 
