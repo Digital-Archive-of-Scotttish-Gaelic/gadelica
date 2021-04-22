@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/views/slip.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/slip.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/models/slip.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/slip.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,14 +119,8 @@
       <workItem from="1618566676516" duration="3045000" />
       <workItem from="1618580302270" duration="645000" />
       <workItem from="1618818815767" duration="609000" />
-      <workItem from="1618821957091" duration="32915000" />
-    </task>
-    <task id="LOCAL-00044" summary="Working code for saving lexeme data including forms, translations, notes.&#10;TODO: correct window close behaviour; create addlexeme.php; add/delete parts">
-      <created>1613487743403</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1613487743403</updated>
+      <workItem from="1618821957091" duration="33548000" />
+      <workItem from="1619075456087" duration="272000" />
     </task>
     <task id="LOCAL-00045" summary="Added code to add/delete forms, translations, and notes">
       <created>1613562197552</created>
@@ -464,7 +458,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619009582447</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="Working system">
+      <created>1619013173679</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1619013173679</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -483,7 +484,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Refactored slow search to work entirely asynchronously. &#10;Added check for end of results and added message for user&#10;Simplified XPath in search box and added necessary prefix and suffix in the model's search function" />
     <MESSAGE value="Added REGEX functionality to preceding and following word search options" />
     <MESSAGE value="Trimmed user facing XPath query in slow search box and added necessary back end code to model" />
     <MESSAGE value="Finally (!!) completed a working version of slow search by text, including iteratively searching subtexts.&#10;Added text ID restrict field to slow search form just for testing just now" />
@@ -508,6 +508,7 @@
     <MESSAGE value="Fixed major bug where senses were not being added properly due to the new entry model" />
     <MESSAGE value="Fixed a bug whereby senses were not being listed correctly in edit slip dropdown" />
     <MESSAGE value="Bug fixes for sense dropdown adding empty sense, slip morph data not updating on wordclass change, sense list updating with senses not belonging to wordclass/headword combination." />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug fixes for sense dropdown adding empty sense, slip morph data not updating on wordclass change, sense list updating with senses not belonging to wordclass/headword combination." />
+    <MESSAGE value="Working system" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working system" />
   </component>
 </project>

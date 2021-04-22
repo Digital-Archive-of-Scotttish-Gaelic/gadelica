@@ -226,10 +226,9 @@ SQL;
 		$sql = <<<SQL
 			SELECT se.id AS id FROM sense se
 				JOIN entry e ON e.id = se.entry_id
-			  WHERE e.group_id = {$_SESSION["groupId"]} AND e.headword = :headword AND e.wordclass = :wordclass
+			  WHERE e.id = :entryId
 SQL;
-		$results = $this->_db->fetch($sql, array(":headword" => $this->getHeadword(),
-			":wordclass" => $this->getWordClass()));
+		$results = $this->_db->fetch($sql, array(":entryId"=>$this->getEntryId()));
 		foreach ($results as $result) {
 			$id = $result["id"];
 			if (array_key_exists($id, $this->getSenses())) {  //skip exisiting senses for this slip
