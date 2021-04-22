@@ -48,7 +48,8 @@ HTML;
 
 	  $this->_writeSenseCategories();
     echo <<<HTML
-        <div class="form-group">
+				<small><p><a href="#" id="toggleTranslation" data-action="show"><span id="containerAction">show</span> translation</a></p></small>
+        <div id="translationContainer" class="form-group hide">
           <label for="slipTranslation">English translation:</label>
           <textarea class="form-control" name="slipTranslation" id="slipTranslation" rows="3">{$this->_slip->getTranslation()}</textarea>
           <script>
@@ -467,7 +468,20 @@ HTML;
 
   private function _writeJavascript() {
     echo <<<HTML
-        <script>            
+        <script>           
+            $('#toggleTranslation').on('click', function() {
+                let action = $(this).attr('data-action');
+                if (action == 'show') {
+                  $('#containerAction').html('hide');
+                  $(this).attr('data-action', 'hide');
+                  $('#translationContainer').show();
+                } else {
+                  $('#containerAction').html('show');
+                  $(this).attr('data-action', 'show');
+                  $('#translationContainer').hide();
+                }
+            })
+             
 		        //update the slip context on click of token
 		        $(document).on('click', '.contextLink',  function () {
 		          $(this).tooltip('hide')

@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/slip.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/slip.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/views/slip.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/slip.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,14 +120,7 @@
       <workItem from="1618580302270" duration="645000" />
       <workItem from="1618818815767" duration="609000" />
       <workItem from="1618821957091" duration="33548000" />
-      <workItem from="1619075456087" duration="272000" />
-    </task>
-    <task id="LOCAL-00045" summary="Added code to add/delete forms, translations, and notes">
-      <created>1613562197552</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1613562197552</updated>
+      <workItem from="1619075456087" duration="2138000" />
     </task>
     <task id="LOCAL-00046" summary="Recoded viewMhw.php to use new foreign key &quot;lexeme_id&quot;">
       <created>1613569279492</created>
@@ -465,7 +458,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619013173679</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="Recoded getUnusedSenses method in models\slips to use entry ID in place of headword and wordclass combination">
+      <created>1619076010660</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1619076010661</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -484,7 +484,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added REGEX functionality to preceding and following word search options" />
     <MESSAGE value="Trimmed user facing XPath query in slow search box and added necessary back end code to model" />
     <MESSAGE value="Finally (!!) completed a working version of slow search by text, including iteratively searching subtexts.&#10;Added text ID restrict field to slow search form just for testing just now" />
     <MESSAGE value="Created models\sense class to work with new sense database model&#10;Reworked models\slip class to work with new senses&#10;Initial work on views\slip to accommodate new code" />
@@ -509,6 +508,7 @@
     <MESSAGE value="Fixed a bug whereby senses were not being listed correctly in edit slip dropdown" />
     <MESSAGE value="Bug fixes for sense dropdown adding empty sense, slip morph data not updating on wordclass change, sense list updating with senses not belonging to wordclass/headword combination." />
     <MESSAGE value="Working system" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working system" />
+    <MESSAGE value="Recoded getUnusedSenses method in models\slips to use entry ID in place of headword and wordclass combination" />
+    <option name="LAST_COMMIT_MESSAGE" value="Recoded getUnusedSenses method in models\slips to use entry ID in place of headword and wordclass combination" />
   </component>
 </project>
