@@ -100,32 +100,4 @@ SQL;
     return $this->_compounds;
   }
 
-  public static function getPosInfo($pos) {
-    switch ($pos) {
-      case "m":
-        return ['fir.', 'ainmear fireann', 'masculine noun'];
-        break;
-      case "f":
-        return ['boir.', 'ainmear boireann', 'feminine noun'];
-        break;
-      case "F":
-        return ['boir.', 'ainm boireann', 'feminine proper noun'];
-        break;
-      case "n":
-        return ['ainm.', 'ainmear (fireann/boireann)', 'noun (masculine/feminine)'];
-        break;
-      case "v":
-        return ['gn.', 'gnìomhair', 'verb'];
-        break;
-      case "a":
-        return ['bua.', 'buadhair', 'adjective'];
-        break;
-      case "x":
-        return ['', '', ''];
-        break;
-      default:
-        return [$pos, $pos, $pos];
-    }
-  }
-
 }

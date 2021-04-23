@@ -5,8 +5,7 @@ namespace models;
 class search {
 
   private $_search = ""; // the search term
-  private $_entries_en = array(); // an array of hw-pos-sub(-en)(-althw)(-form) 4-tuples
-  private $_entries_gd = array(); // an array of hw-pos-sub(-en)(-althw)(-form) 4-tuples
+  private $_entries = array(); // an array of hw-pos-sub triples
   private $_db;   // an instance of models\database
 
   public function __construct() {
@@ -20,38 +19,28 @@ class search {
   private function _load() {
     $results = [];
     $results = $this->_englishExactSearch();
-    $results1 = array_merge($results,$this->_englishPrefixSpaceSearch());
-    $results2 = array_merge($results1,$this->_englishSuffixSpaceSearch());
-    $results3 = array_merge($results2,$this->_englishInfixSpaceBothSearch());
-    $results4 = array_merge($results3,$this->_englishPrefixNoSpaceSearch());
-    $results5 = array_merge($results4,$this->_englishSuffixNoSpaceSearch());
-    $results6 = array_merge($results5,$this->_englishInfixSpaceLeftSearch());
-    $results7 = array_merge($results6,$this->_englishInfixSpaceRightSearch());
+    $results2 = array_merge($results,$this->_gaelicExactHwSearch());
+    $results3 = array_merge($results2,$this->_gaelicExactFormSearch());
+    $results4 = array_merge($results3,$this->_englishPrefixSpaceSearch());
+    $results5 = array_merge($results4,$this->_gaelicPrefixHwSpaceSearch());
+    $results6 = array_merge($results5,$this->_englishSuffixSpaceSearch());
+    $results7 = array_merge($results6,$this->_gaelicSuffixHwSpaceSearch());
+    $results8 = array_merge($results7,$this->_englishInfixSpaceBothSearch());
+    $results9 = array_merge($results8,$this->_gaelicInfixHwSpaceBothSearch());
+    $results10 = array_merge($results9,$this->_englishPrefixNoSpaceSearch());
+    $results11 = array_merge($results10,$this->_gaelicPrefixHwNoSpaceSearch());
+    $results12 = array_merge($results11,$this->_englishSuffixNoSpaceSearch());
+    $results13 = array_merge($results12,$this->_gaelicSuffixHwNoSpaceSearch());
+    $results14 = array_merge($results13,$this->_englishInfixSpaceLeftSearch());
+    $results15 = array_merge($results14,$this->_gaelicInfixHwSpaceLeftSearch());
+    $results16 = array_merge($results15,$this->_englishInfixSpaceRightSearch());
+    $results17 = array_merge($results16,$this->_gaelicInfixHwSpaceRightSearch());
     // GD forms as infixes etc??
     // GD lenition on suffixes and infixes??
-    $results = $results7;
+    $results = $results17;
 		foreach ($results as $nextResult) {
-			$this->_entries_en[] = explode('|',$nextResult);
+			$this->_entries[] = explode('|',$nextResult);
 		}
-    $results = [];
-    $results = $this->_gaelicExactHwSearch();
-    $results1 = array_merge($results,$this->_gaelicExactFormSearch());
-    $results2 = array_merge($results1,$this->_gaelicPrefixHwSpaceSearch());
-    $results3 = array_merge($results2,$this->_gaelicSuffixHwSpaceSearch());
-    $results4 = array_merge($results3,$this->_gaelicInfixHwSpaceBothSearch());
-    $results5 = array_merge($results4,$this->_gaelicPrefixHwNoSpaceSearch());
-    $results6 = array_merge($results5,$this->_gaelicSuffixHwNoSpaceSearch());
-    $results7 = array_merge($results6,$this->_gaelicInfixHwSpaceLeftSearch());
-    $results8 = array_merge($results7,$this->_gaelicInfixHwSpaceRightSearch());
-    // GD forms as infixes etc??
-    // GD lenition on suffixes and infixes??
-    $results = $results8;
-    foreach ($results as $nextResult) {
-      $this->_entries_gd[] = explode('|',$nextResult);
-    }
-
-
-
 	}
 
   private function _englishExactSearch() {
@@ -338,12 +327,92 @@ SQL;
     return $this->_search;
   }
 
-  public function getEntriesEn() {
-    return $this->_entries_en;
+  public function getEntries() {
+    return $this->_entries;
 	}
 
-  public function getEntriesGd() {
-    return $this->_entries_gd;
-	}
+  public static function getShortGd($pos) {
+    switch ($pos) {
+      case "m":
+        return 'fir.';
+        break;
+      case "f":
+        return 'boir.';
+        break;
+      case "F":
+        return 'boir.';
+        break;
+      case "n":
+        return 'ainm.';
+        break;
+      case "v":
+        return 'gn.';
+        break;
+      case "a":
+        return 'bua.';
+        break;
+      case "x":
+        return '';
+        break;
+      default:
+        return $pos;
+    }
+  }
+
+  public static function getLongGd($pos) {
+    switch ($pos) {
+      case "m":
+        return 'ainmear fireann';
+        break;
+      case "f":
+        return 'ainmear boireann';
+        break;
+      case "F":
+        return 'ainm boireann';
+        break;
+      case "n":
+        return 'ainmear (fireann/boireann)';
+        break;
+      case "v":
+        return 'gnìomhair';
+        break;
+      case "a":
+        return 'buadhair';
+        break;
+      case "x":
+        return '';
+        break;
+      default:
+        return $pos;
+    }
+  }
+
+  public static function getLongEn($pos) {
+    switch ($pos) {
+      case "m":
+        return 'masculine noun';
+        break;
+      case "f":
+        return 'feminine noun';
+        break;
+      case "F":
+        return 'feminine proper noun';
+        break;
+      case "n":
+        return 'noun (masculine/feminine)';
+        break;
+      case "v":
+        return 'verb';
+        break;
+      case "a":
+        return 'adjective';
+        break;
+      case "x":
+        return '';
+        break;
+      default:
+        return $pos;
+    }
+  }
 
 }

@@ -17,27 +17,50 @@ class search {
 			$search = "super";
 		}
     echo <<<HTML
-		<form action="#" method="get" autocomplete="off" id="searchForm"> <!-- Search box -->
-			<div class="form-group">
-				<div class="input-group">
+		<nav class="navbar fixed-top" style="width:100%;">
+		  <form class="form-inline" action="#" method="get" autocomplete="off" id="searchForm" style="width:100%;"> <!-- Search box -->
+				<div class="input-group" style="width:100%;">
 	        <input id="searchBox" type="text" class="form-control active" name="search" data-toggle="tooltip" title="" autofocus="autofocus" value="{$search}"/>
 					<div class="input-group-append">
 						<button id="searchButton" class="btn btn-primary" type="submit" data-toggle="tooltip" title="">Siuthad</button>
 					</div>
 				</div>
-			</div>
-		</form>
+		  </form>
+	  </nav>
 HTML;
-    $entries = $this->_model->getEntries();
-    if ($entries) {
-			echo '<div class="list-group list-group-flush">';
-			foreach ($entries as $nextEntry) {
-				$url = '?m=entry&mhw=' . $nextEntry[0] . '&mpos=' . $nextEntry[1] . '&msub=' . $nextEntry[2];
-	    	echo '<a href="' . $url . '" class="list-group-item list-group-item-action"><strong>';
-				echo search::_hi($nextEntry[0],$search) . '</strong> <em>' . models\search::getShortGd($nextEntry[1]) . '</em>';
-				echo ' ' . search::_hi($nextEntry[3],$search) . '</a>';
-			}
-			echo '</div>';
+    $entries_en = $this->_model->getEntriesEn();
+		$entries_gd = $this->_model->getEntriesGd();
+    if ($entries_en || $entries_gd) {
+      echo <<<HTML
+			<div class="container-fluid" style="padding-top: 50px; height: 100%;">
+        <div class="row" style="height: 100%;">
+          <div class="col-sm" style="height: 100%; overflow: auto;">
+            <div class="list-group list-group-flush">
+HTML;
+      foreach ($entries_en as $nextEntry) {
+	      $url = '?m=entry&mhw=' . $nextEntry[0] . '&mpos=' . $nextEntry[1] . '&msub=' . $nextEntry[2];
+	      echo '<a href="' . $url . '" class="list-group-item list-group-item-action"><strong>';
+	      echo search::_hi($nextEntry[0],$search) . '</strong> <em>' . models\entry::getPosInfo($nextEntry[1])[0] . '</em>';
+	      echo ' ' . search::_hi($nextEntry[3],$search) . '</a>'; // an english term, alt hw or form
+      }
+      echo <<<HTML
+						</div>
+          </div>
+          <div class="col-sm" style="height: 100%; overflow: auto;">
+						<div class="list-group list-group-flush">
+HTML;
+      foreach ($entries_gd as $nextEntry) {
+	      $url = '?m=entry&mhw=' . $nextEntry[0] . '&mpos=' . $nextEntry[1] . '&msub=' . $nextEntry[2];
+	      echo '<a href="' . $url . '" class="list-group-item list-group-item-action"><strong>';
+	      echo search::_hi($nextEntry[0],$search) . '</strong> <em>' . models\entry::getPosInfo($nextEntry[1])[0] . '</em>';
+	      echo ' ' . search::_hi($nextEntry[3],$search) . '</a>'; // an english term, alt hw or form
+      }
+      echo <<<HTML
+		        </div>
+          </div>
+        </div>
+      </div>
+HTML;
 		}
 		else if (isset($_GET["search"])) {
 			echo "???";
