@@ -34,7 +34,7 @@ HTML;
       echo <<<HTML
 			<div class="container-fluid" style="padding-top: 50px; height: 100%;">
         <div class="row" style="height: 100%;">
-          <div class="col-5" style="height: 100%; overflow: auto;">
+          <div class="col-5" style="height: 100%; overflow-y: auto;">
             <div class="list-group list-group-flush">
 HTML;
       foreach ($entries_en as $nextEntry) {
@@ -46,7 +46,7 @@ HTML;
       echo <<<HTML
 						</div>
           </div>
-          <div class="col-5 offset-1" style="height: 100%; overflow: auto;">
+          <div class="col-5 offset-1" style="height: 100%; overflow-y: auto;">
 						<div class="list-group list-group-flush">
 HTML;
       foreach ($entries_gd as $nextEntry) {
