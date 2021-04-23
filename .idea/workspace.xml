@@ -7,6 +7,8 @@
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/models/entries.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/entries.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/models/entry.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/entry.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/models/sensecategories.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/sensecategories.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/views/entries.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/entries.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,14 +123,7 @@
       <workItem from="1618580302270" duration="645000" />
       <workItem from="1618818815767" duration="609000" />
       <workItem from="1618821957091" duration="33548000" />
-      <workItem from="1619075456087" duration="16780000" />
-    </task>
-    <task id="LOCAL-00049" summary="Added option to order search results by reverse preceding word.">
-      <created>1613654621759</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1613654621759</updated>
+      <workItem from="1619075456087" duration="21753000" />
     </task>
     <task id="LOCAL-00050" summary="Basic form with some jQuery for multi-word (preceding and following) search inputs">
       <created>1613657317954</created>
@@ -466,7 +461,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619100275823</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="Back end work to facilitate pulling distinct wordforms grouped by morphological data in the new entry model">
+      <created>1619169630999</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1619169630999</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -485,8 +487,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Completed refactor of views\slip to use new sense model" />
-    <MESSAGE value="Completed refactor of slip links in results to use new sense model" />
     <MESSAGE value="Collections recoded to work with new sense model.&#10;Initial work on recoding entries to work with new sense model. Still requires a fair bit of refactoring, mostly in sorting unique senses and grouping. Renaming of senses in entry page not yet functional." />
     <MESSAGE value="Working code for grouped senses in entry" />
     <MESSAGE value="Individual and orphaned senses now operational in entry.&#10;Bug fixes and code tidy." />
@@ -510,6 +510,8 @@
     <MESSAGE value="Coded English translation to auto hide on slip edit load and toggle as per issue #17" />
     <MESSAGE value="Fixed issue with collection browse not working with new entry structure. Added check code to models\collection getAllSlipInfo to ensure workspace integrity." />
     <MESSAGE value="Fixed the entry browse page to work with new model.&#10;Initial progress on reworking the entry view page." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed the entry browse page to work with new model.&#10;Initial progress on reworking the entry view page." />
+    <MESSAGE value="Some back end work to facilitate pulling distinct wordforms grouped by morphological data in the new entry model" />
+    <MESSAGE value="Back end work to facilitate pulling distinct wordforms grouped by morphological data in the new entry model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Back end work to facilitate pulling distinct wordforms grouped by morphological data in the new entry model" />
   </component>
 </project>

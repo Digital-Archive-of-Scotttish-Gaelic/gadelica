@@ -72,53 +72,23 @@ SQL;
 		$db->exec($sql, array(":id" => $id, ":name" => $name, ":description" => $description));
 	}
 
-
-
 	/**
-	 * Fetches all the categories used for a given lemma/wordclass combination
-	 * @param $slipId
-	 * @return array
-	 */
-/*	public static function getAllUsedCategories($lemma, $wordclass) {
-		$categories = array();
-		$db = new database();
-		$dbh = $db->getDatabaseHandle();
-		try {
-			$sql = <<<SQL
-        SELECT DISTINCT category FROM senseCategory sc
-        	JOIN slips s ON s.auto_id = sc.slip_id 
-        	JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
-        	WHERE s.group_id = {$_SESSION["groupId"]} AND lemma = :lemma AND wordclass = :wordclass
-            ORDER BY category ASC
-SQL;
-			$sth = $dbh->prepare($sql);
-			$sth->execute(array(":lemma"=>$lemma, ":wordclass"=>$wordclass));
-			while ($row = $sth->fetch()) {
-				$categories[] = $row["category"];
-			}
-			return $categories;
-		} catch (PDOException $e) {
-			echo $e->getMessage();
-		}
-	}*/
-
-	/**
-	 * Fetches all the slipIds without a sense for a given lemma/wordclass combination
-	 * @param $lemma
-	 * @param $wordclass
+	 * Fetches all the slipIds without a sense for a given entry
+	 * @param $entryId
 	 * @return array of slipIds
 	 */
-	public static function getNonCategorisedSlipIds($lemma, $wordclass) {
+	public static function getNonCategorisedSlipIds($entryId) {
 		$slipIds = array();
 		$db = new database();
 		$sql = <<<SQL
         SELECT auto_id FROM slips s 
-        	JOIN lemmas l ON s.filename = l.filename AND s.id = l.id 
-        	WHERE auto_id NOT IN (SELECT slip_id FROM slip_sense) AND lemma = :lemma AND wordclass= :wordclass 
+        	JOIN entry e ON e.id = s.entry_id
+        	WHERE auto_id NOT IN (SELECT slip_id FROM slip_sense) AND s.entry_id = :entryId 
         	AND group_id = {$_SESSION["groupId"]}
         	ORDER by auto_id ASC
 SQL;
-		while ($row = $db->fetch($sql, array(":lemma"=>$lemma, ":wordclass"=>$wordclass))) {
+		$results = $db->fetch($sql, array(":entryId"=>$entryId));
+		foreach ($results as $row) {
 			$slipIds[] = $row["auto_id"];
 		}
 		return $slipIds;
