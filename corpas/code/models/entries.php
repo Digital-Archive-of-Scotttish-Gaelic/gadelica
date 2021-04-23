@@ -172,7 +172,9 @@ SQL;
 
 		  $slipMorphResults = collection::getSlipMorphBySlipId($slipId);
 
-  		$wordforms[$wordform][$slipId] = implode(' ', $slipMorphResults);
+		  $morphString = implode('|', $slipMorphResults);
+
+  		$wordforms[$wordform][$morphString][] = $slipId;
 	  }
   	return $wordforms;
   }

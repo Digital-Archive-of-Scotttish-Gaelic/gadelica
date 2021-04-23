@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/collection.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/models/entries.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/entries.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/entry.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/entry.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/views/entries.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/entries.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -123,14 +121,7 @@
       <workItem from="1618580302270" duration="645000" />
       <workItem from="1618818815767" duration="609000" />
       <workItem from="1618821957091" duration="33548000" />
-      <workItem from="1619075456087" duration="9173000" />
-    </task>
-    <task id="LOCAL-00048" summary="Added search restrictions for preceding and following context">
-      <created>1613651942542</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1613651942542</updated>
+      <workItem from="1619075456087" duration="16780000" />
     </task>
     <task id="LOCAL-00049" summary="Added option to order search results by reverse preceding word.">
       <created>1613654621759</created>
@@ -468,7 +459,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619096692621</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="Fixed the entry browse page to work with new model.&#10;Initial progress on reworking the entry view page.">
+      <created>1619100275823</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1619100275823</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -487,7 +485,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Created models\sense class to work with new sense database model&#10;Reworked models\slip class to work with new senses&#10;Initial work on views\slip to accommodate new code" />
     <MESSAGE value="Completed refactor of views\slip to use new sense model" />
     <MESSAGE value="Completed refactor of slip links in results to use new sense model" />
     <MESSAGE value="Collections recoded to work with new sense model.&#10;Initial work on recoding entries to work with new sense model. Still requires a fair bit of refactoring, mostly in sorting unique senses and grouping. Renaming of senses in entry page not yet functional." />
@@ -512,6 +509,7 @@
     <MESSAGE value="Recoded getUnusedSenses method in models\slips to use entry ID in place of headword and wordclass combination" />
     <MESSAGE value="Coded English translation to auto hide on slip edit load and toggle as per issue #17" />
     <MESSAGE value="Fixed issue with collection browse not working with new entry structure. Added check code to models\collection getAllSlipInfo to ensure workspace integrity." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed issue with collection browse not working with new entry structure. Added check code to models\collection getAllSlipInfo to ensure workspace integrity." />
+    <MESSAGE value="Fixed the entry browse page to work with new model.&#10;Initial progress on reworking the entry view page." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed the entry browse page to work with new model.&#10;Initial progress on reworking the entry view page." />
   </component>
 </project>
