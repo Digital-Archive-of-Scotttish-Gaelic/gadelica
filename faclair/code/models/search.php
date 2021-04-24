@@ -27,8 +27,7 @@ class search {
     $results5 = array_merge($results4,$this->_englishSuffixNoSpaceSearch());
     $results6 = array_merge($results5,$this->_englishInfixSpaceLeftSearch());
     $results7 = array_merge($results6,$this->_englishInfixSpaceRightSearch());
-    // GD forms as infixes etc??
-    // GD lenition on suffixes and infixes??
+    // infix no space?
     $results = $results7;
 		foreach ($results as $nextResult) {
 			$this->_entries_en[] = explode('|',$nextResult);
@@ -37,20 +36,20 @@ class search {
     $results = $this->_gaelicExactHwSearch();
     $results1 = array_merge($results,$this->_gaelicExactFormSearch());
     $results2 = array_merge($results1,$this->_gaelicPrefixHwSpaceSearch());
+    /*
     $results3 = array_merge($results2,$this->_gaelicSuffixHwSpaceSearch());
     $results4 = array_merge($results3,$this->_gaelicInfixHwSpaceBothSearch());
     $results5 = array_merge($results4,$this->_gaelicPrefixHwNoSpaceSearch());
     $results6 = array_merge($results5,$this->_gaelicSuffixHwNoSpaceSearch());
     $results7 = array_merge($results6,$this->_gaelicInfixHwSpaceLeftSearch());
     $results8 = array_merge($results7,$this->_gaelicInfixHwSpaceRightSearch());
+    */
     // GD forms as infixes etc??
     // GD lenition on suffixes and infixes??
-    $results = $results8;
+    $results = $results2;
     foreach ($results as $nextResult) {
       $this->_entries_gd[] = explode('|',$nextResult);
     }
-
-
 
 	}
 
@@ -63,6 +62,118 @@ class search {
       ORDER BY `m-hw`
 SQL;
     $results = $this->_db->fetch($sql, array(":en" => $this->_search));
+    $oot = [];
+    foreach ($results as $nextResult) {
+      $oot[] = $nextResult["m-hw"] . '|' . $nextResult["m-pos"] . '|'. $nextResult["m-sub"] . '|' . $nextResult["en"];
+    }
+    return $oot;
+  }
+
+  private function _englishPrefixSpaceSearch() {
+    $sql = <<<SQL
+    SELECT DISTINCT `m-hw`, `m-pos`, `m-sub`, e.`en`
+      FROM `lexemes` l
+      JOIN `english` e ON l.`id` = e.`lexeme_id`
+      WHERE e.`en` REGEXP :en
+      ORDER BY LENGTH(`m-hw`), `m-hw`
+SQL;
+    $results = $this->_db->fetch($sql, array(":en" => '^' . $this->_search . '[ -].*'));
+    $oot = [];
+    foreach ($results as $nextResult) {
+      $oot[] = $nextResult["m-hw"] . '|' . $nextResult["m-pos"] . '|'. $nextResult["m-sub"] . '|' . $nextResult["en"];
+    }
+    return $oot;
+  }
+
+  private function _englishSuffixSpaceSearch() {
+    $sql = <<<SQL
+    SELECT DISTINCT `m-hw`, `m-pos`, `m-sub`, e.`en`
+      FROM `lexemes` l
+      JOIN `english` e ON l.`id` = e.`lexeme_id`
+      WHERE e.`en` REGEXP :en
+      ORDER BY LENGTH(`m-hw`), `m-hw`
+SQL;
+    $results = $this->_db->fetch($sql, array(":en" => '.*[ -]' . $this->_search . '$'));
+    $oot = [];
+    foreach ($results as $nextResult) {
+      $oot[] = $nextResult["m-hw"] . '|' . $nextResult["m-pos"] . '|'. $nextResult["m-sub"] . '|' . $nextResult["en"];
+    }
+    return $oot;
+  }
+
+  private function _englishInfixSpaceBothSearch() {
+    $sql = <<<SQL
+    SELECT DISTINCT `m-hw`, `m-pos`, `m-sub`, e.`en`
+      FROM `lexemes` l
+      JOIN `english` e ON l.`id` = e.`lexeme_id`
+      WHERE e.`en` REGEXP :en
+      ORDER BY LENGTH(`m-hw`), `m-hw`
+SQL;
+    $results = $this->_db->fetch($sql, array(":en" => '.*[ -]' . $this->_search . '[ -].*'));
+    $oot = [];
+    foreach ($results as $nextResult) {
+      $oot[] = $nextResult["m-hw"] . '|' . $nextResult["m-pos"] . '|'. $nextResult["m-sub"] . '|' . $nextResult["en"];
+    }
+    return $oot;
+  }
+
+  private function _englishPrefixNoSpaceSearch() {
+    $sql = <<<SQL
+    SELECT DISTINCT `m-hw`, `m-pos`, `m-sub`, e.`en`
+      FROM `lexemes` l
+      JOIN `english` e ON l.`id` = e.`lexeme_id`
+      WHERE e.`en` REGEXP :en
+      ORDER BY LENGTH(`m-hw`), `m-hw`
+SQL;
+    $results = $this->_db->fetch($sql, array(":en" => '^' . $this->_search . '[^ -].*'));
+    $oot = [];
+    foreach ($results as $nextResult) {
+      $oot[] = $nextResult["m-hw"] . '|' . $nextResult["m-pos"] . '|'. $nextResult["m-sub"] . '|' . $nextResult["en"];
+    }
+    return $oot;
+  }
+
+  private function _englishSuffixNoSpaceSearch() {
+    $sql = <<<SQL
+    SELECT DISTINCT `m-hw`, `m-pos`, `m-sub`, e.`en`
+      FROM `lexemes` l
+      JOIN `english` e ON l.`id` = e.`lexeme_id`
+      WHERE e.`en` REGEXP :en
+      ORDER BY LENGTH(`m-hw`), `m-hw`
+SQL;
+    $results = $this->_db->fetch($sql, array(":en" => '.*[^ -]' . $this->_search . '$'));
+    $oot = [];
+    foreach ($results as $nextResult) {
+      $oot[] = $nextResult["m-hw"] . '|' . $nextResult["m-pos"] . '|'. $nextResult["m-sub"] . '|' . $nextResult["en"];
+    }
+    return $oot;
+  }
+
+  private function _englishInfixSpaceLeftSearch() {
+    $sql = <<<SQL
+    SELECT DISTINCT `m-hw`, `m-pos`, `m-sub`, e.`en`
+      FROM `lexemes` l
+      JOIN `english` e ON l.`id` = e.`lexeme_id`
+      WHERE e.`en` REGEXP :en
+      ORDER BY LENGTH(`m-hw`), `m-hw`
+SQL;
+    $results = $this->_db->fetch($sql, array(":en" => '.*[ -]' . $this->_search . '[^ -].*'));
+    $oot = [];
+    foreach ($results as $nextResult) {
+      $oot[] = $nextResult["m-hw"] . '|' . $nextResult["m-pos"] . '|'. $nextResult["m-sub"] . '|' . $nextResult["en"];
+    }
+    return $oot;
+  }
+
+  private function _englishInfixSpaceRightSearch() {
+    $sql = <<<SQL
+    SELECT DISTINCT `m-hw`, `m-pos`, `m-sub`, e.`en`
+      FROM `lexemes` l
+      JOIN `english` e ON l.`id` = e.`lexeme_id`
+      WHERE e.`en` REGEXP :en
+      ORDER BY LENGTH(`m-hw`), `m-hw`
+SQL;
+    $results = $this->_db->fetch($sql, array(":en" => '.*[^ -]' . $this->_search . '[ -].*'));
     $oot = [];
     foreach ($results as $nextResult) {
       $oot[] = $nextResult["m-hw"] . '|' . $nextResult["m-pos"] . '|'. $nextResult["m-sub"] . '|' . $nextResult["en"];
@@ -103,30 +214,14 @@ SQL;
     return $oot;
   }
 
-  private function _englishPrefixSpaceSearch() {
-    $sql = <<<SQL
-    SELECT DISTINCT `m-hw`, `m-pos`, `m-sub`, e.`en`
-      FROM `lexemes` l
-      JOIN `english` e ON l.`id` = e.`lexeme_id`
-      WHERE e.`en` REGEXP :en
-      ORDER BY LENGTH(`m-hw`), `m-hw`
-SQL;
-    $results = $this->_db->fetch($sql, array(":en" => '^' . $this->_search . '[ -].*'));
-    $oot = [];
-    foreach ($results as $nextResult) {
-      $oot[] = $nextResult["m-hw"] . '|' . $nextResult["m-pos"] . '|'. $nextResult["m-sub"] . '|' . $nextResult["en"];
-    }
-    return $oot;
-  }
-
   private function _gaelicPrefixHwSpaceSearch() {
     $sql = <<<SQL
     SELECT DISTINCT `m-hw`, `m-pos`, `m-sub`, `hw`
       FROM `lexemes`
-      WHERE `hw` REGEXP :gd
+      WHERE `hw` LIKE :gd1 OR `hw` LIKE :gd2
       ORDER BY LENGTH(`m-hw`), `m-hw`
 SQL;
-    $results = $this->_db->fetch($sql, array(":gd" => '^' . $this->_search . '[ -].*'));
+    $results = $this->_db->fetch($sql, array(":gd1" => $this->_search . ' %', ":gd2" => $this->_search . '-%'));
     $oot = [];
     foreach ($results as $nextResult) {
       $str = $nextResult["m-hw"] . '|' . $nextResult["m-pos"] . '|'. $nextResult["m-sub"] . '|';
@@ -136,21 +231,10 @@ SQL;
     return $oot;
   }
 
-  private function _englishPrefixNoSpaceSearch() {
-    $sql = <<<SQL
-    SELECT DISTINCT `m-hw`, `m-pos`, `m-sub`, e.`en`
-      FROM `lexemes` l
-      JOIN `english` e ON l.`id` = e.`lexeme_id`
-      WHERE e.`en` REGEXP :en
-      ORDER BY LENGTH(`m-hw`), `m-hw`
-SQL;
-    $results = $this->_db->fetch($sql, array(":en" => '^' . $this->_search . '[^ -].*'));
-    $oot = [];
-    foreach ($results as $nextResult) {
-      $oot[] = $nextResult["m-hw"] . '|' . $nextResult["m-pos"] . '|'. $nextResult["m-sub"] . '|' . $nextResult["en"];
-    }
-    return $oot;
-  }
+
+
+
+
 
   private function _gaelicPrefixHwNoSpaceSearch() {
     $sql = <<<SQL
@@ -169,21 +253,7 @@ SQL;
     return $oot;
   }
 
-  private function _englishSuffixSpaceSearch() {
-    $sql = <<<SQL
-    SELECT DISTINCT `m-hw`, `m-pos`, `m-sub`, e.`en`
-      FROM `lexemes` l
-      JOIN `english` e ON l.`id` = e.`lexeme_id`
-      WHERE e.`en` REGEXP :en
-      ORDER BY LENGTH(`m-hw`), `m-hw`
-SQL;
-    $results = $this->_db->fetch($sql, array(":en" => '.*[ -]' . $this->_search . '$'));
-    $oot = [];
-    foreach ($results as $nextResult) {
-      $oot[] = $nextResult["m-hw"] . '|' . $nextResult["m-pos"] . '|'. $nextResult["m-sub"] . '|' . $nextResult["en"];
-    }
-    return $oot;
-  }
+
 
   private function _gaelicSuffixHwSpaceSearch() {
     $sql = <<<SQL
@@ -202,21 +272,7 @@ SQL;
     return $oot;
   }
 
-  private function _englishSuffixNoSpaceSearch() {
-    $sql = <<<SQL
-    SELECT DISTINCT `m-hw`, `m-pos`, `m-sub`, e.`en`
-      FROM `lexemes` l
-      JOIN `english` e ON l.`id` = e.`lexeme_id`
-      WHERE e.`en` REGEXP :en
-      ORDER BY LENGTH(`m-hw`), `m-hw`
-SQL;
-    $results = $this->_db->fetch($sql, array(":en" => '.*[^ -]' . $this->_search . '$'));
-    $oot = [];
-    foreach ($results as $nextResult) {
-      $oot[] = $nextResult["m-hw"] . '|' . $nextResult["m-pos"] . '|'. $nextResult["m-sub"] . '|' . $nextResult["en"];
-    }
-    return $oot;
-  }
+
 
   private function _gaelicSuffixHwNoSpaceSearch() {
     $sql = <<<SQL
@@ -235,21 +291,7 @@ SQL;
     return $oot;
   }
 
-  private function _englishInfixSpaceBothSearch() {
-    $sql = <<<SQL
-    SELECT DISTINCT `m-hw`, `m-pos`, `m-sub`, e.`en`
-      FROM `lexemes` l
-      JOIN `english` e ON l.`id` = e.`lexeme_id`
-      WHERE e.`en` REGEXP :en
-      ORDER BY LENGTH(`m-hw`), `m-hw`
-SQL;
-    $results = $this->_db->fetch($sql, array(":en" => '.*[ -]' . $this->_search . '[ -].*'));
-    $oot = [];
-    foreach ($results as $nextResult) {
-      $oot[] = $nextResult["m-hw"] . '|' . $nextResult["m-pos"] . '|'. $nextResult["m-sub"] . '|' . $nextResult["en"];
-    }
-    return $oot;
-  }
+
 
   private function _gaelicInfixHwSpaceBothSearch() {
     $sql = <<<SQL
@@ -268,21 +310,7 @@ SQL;
     return $oot;
   }
 
-  private function _englishInfixSpaceLeftSearch() {
-    $sql = <<<SQL
-    SELECT DISTINCT `m-hw`, `m-pos`, `m-sub`, e.`en`
-      FROM `lexemes` l
-      JOIN `english` e ON l.`id` = e.`lexeme_id`
-      WHERE e.`en` REGEXP :en
-      ORDER BY LENGTH(`m-hw`), `m-hw`
-SQL;
-    $results = $this->_db->fetch($sql, array(":en" => '.*[ -]' . $this->_search . '[^ -].*'));
-    $oot = [];
-    foreach ($results as $nextResult) {
-      $oot[] = $nextResult["m-hw"] . '|' . $nextResult["m-pos"] . '|'. $nextResult["m-sub"] . '|' . $nextResult["en"];
-    }
-    return $oot;
-  }
+
 
   private function _gaelicInfixHwSpaceLeftSearch() {
     $sql = <<<SQL
@@ -301,21 +329,7 @@ SQL;
     return $oot;
   }
 
-  private function _englishInfixSpaceRightSearch() {
-    $sql = <<<SQL
-    SELECT DISTINCT `m-hw`, `m-pos`, `m-sub`, e.`en`
-      FROM `lexemes` l
-      JOIN `english` e ON l.`id` = e.`lexeme_id`
-      WHERE e.`en` REGEXP :en
-      ORDER BY LENGTH(`m-hw`), `m-hw`
-SQL;
-    $results = $this->_db->fetch($sql, array(":en" => '.*[^ -]' . $this->_search . '[ -].*'));
-    $oot = [];
-    foreach ($results as $nextResult) {
-      $oot[] = $nextResult["m-hw"] . '|' . $nextResult["m-pos"] . '|'. $nextResult["m-sub"] . '|' . $nextResult["en"];
-    }
-    return $oot;
-  }
+
 
   private function _gaelicInfixHwSpaceRightSearch() {
     $sql = <<<SQL

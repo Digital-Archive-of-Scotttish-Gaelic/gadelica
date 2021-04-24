@@ -28,43 +28,60 @@ class search {
 		  </form>
 	  </nav>
 HTML;
+    if ($this->_model->getSearch()=='') {
+	    return;
+    }
+    echo <<<HTML
+		<div class="container-fluid" style="padding-top: 50px;">
+HTML;
     $entries_en = $this->_model->getEntriesEn();
 		$entries_gd = $this->_model->getEntriesGd();
     if ($entries_en || $entries_gd) {
+			if ($entries_en && $entries_gd) {
+			echo <<<HTML
+			  <small><a data-toggle="collapse" href=".langs">[càch]</a></small>
+HTML;
+      }
       echo <<<HTML
-			<div class="container-fluid" style="padding-top: 50px; height: 100%;">
-        <div class="row" style="height: 100%;">
-          <div class="col-5" style="height: 100%; overflow: auto;">
-            <div class="list-group list-group-flush">
+			  <div class="list-group list-group-flush collapse
+HTML;
+      if (count($entries_en)>=count($entries_gd)) {
+				echo " show ";
+			}
+      echo <<<HTML
+				 langs">
 HTML;
       foreach ($entries_en as $nextEntry) {
 	      $url = '?m=entry&mhw=' . $nextEntry[0] . '&mpos=' . $nextEntry[1] . '&msub=' . $nextEntry[2];
 	      echo '<a href="' . $url . '" class="list-group-item list-group-item-action"><strong>';
-	      echo search::_hi($nextEntry[0],$search) . '</strong> <em>' . models\entry::getPosInfo($nextEntry[1])[0] . '</em>';
-	      echo ' ' . search::_hi($nextEntry[3],$search) . '</a>'; // an english term, alt hw or form
+	      echo $nextEntry[0] . '</strong> <em>' . models\entry::getPosInfo($nextEntry[1])[0] . '</em>';
+	      echo ' ' . search::_hi($nextEntry[3],$search) . '</a>'; // an english term
       }
       echo <<<HTML
-						</div>
-          </div>
-          <div class="col-5 offset-1" style="height: 100%; overflow: auto;">
-						<div class="list-group list-group-flush">
+			  </div>
+				<div class="list-group list-group-flush collapse
+HTML;
+      if (count($entries_gd)>count($entries_en)) {
+				echo " show ";
+			}
+      echo <<<HTML
+				 langs">
 HTML;
       foreach ($entries_gd as $nextEntry) {
 	      $url = '?m=entry&mhw=' . $nextEntry[0] . '&mpos=' . $nextEntry[1] . '&msub=' . $nextEntry[2];
 	      echo '<a href="' . $url . '" class="list-group-item list-group-item-action"><strong>';
 	      echo search::_hi($nextEntry[0],$search) . '</strong> <em>' . models\entry::getPosInfo($nextEntry[1])[0] . '</em>';
-	      echo ' ' . search::_hi($nextEntry[3],$search) . '</a>'; // an english term, alt hw or form
+	      echo ' ' . search::_hi($nextEntry[3],$search) . '</a>'; // an alt hw or form
       }
       echo <<<HTML
-		        </div>
-          </div>
-        </div>
-      </div>
+	      </div>
+	      <div class="list-group list-group-flush collapse langs">
 HTML;
 		}
-		else if (isset($_GET["search"])) {
-			echo "???";
+    else {
+			echo "No results!";
 		}
+    echo "</div>";
 	}
 
 	private static function _hi($string,$search) {

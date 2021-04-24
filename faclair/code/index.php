@@ -16,7 +16,7 @@ $action = isset($_GET["a"]) ? $_GET["a"] : "";
 
 echo <<<HTML
 <!doctype html>
-<html lang="en" style="height: 100%;">
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -41,8 +41,8 @@ echo <<<HTML
       td { width: 50%; }
 	</style>
 </head>
-<body style="padding-top: 20px; height: 100%;">
-  <div class="container-fluid" style="height: 100%;">
+<body style="padding-top: 20px;">
+  <div class="container-fluid">
 HTML;
 
 switch ($module) {

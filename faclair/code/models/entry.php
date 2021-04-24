@@ -108,7 +108,7 @@ SQL;
       case "f":
         return ['boir.', 'ainmear boireann', 'feminine noun'];
         break;
-      case "F":
+      case "ff":
         return ['boir.', 'ainm boireann', 'feminine proper noun'];
         break;
       case "n":
