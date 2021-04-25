@@ -36,21 +36,18 @@ class search {
     $results = $this->_gaelicExactHwSearch();
     $results1 = array_merge($results,$this->_gaelicExactFormSearch());
     $results2 = array_merge($results1,$this->_gaelicPrefixHwSpaceSearch());
-    /*
     $results3 = array_merge($results2,$this->_gaelicSuffixHwSpaceSearch());
     $results4 = array_merge($results3,$this->_gaelicInfixHwSpaceBothSearch());
     $results5 = array_merge($results4,$this->_gaelicPrefixHwNoSpaceSearch());
     $results6 = array_merge($results5,$this->_gaelicSuffixHwNoSpaceSearch());
     $results7 = array_merge($results6,$this->_gaelicInfixHwSpaceLeftSearch());
     $results8 = array_merge($results7,$this->_gaelicInfixHwSpaceRightSearch());
-    */
     // GD forms as infixes etc??
     // GD lenition on suffixes and infixes??
-    $results = $results2;
+    $results = $results8;
     foreach ($results as $nextResult) {
       $this->_entries_gd[] = explode('|',$nextResult);
     }
-
 	}
 
   private function _englishExactSearch() {
@@ -231,38 +228,14 @@ SQL;
     return $oot;
   }
 
-
-
-
-
-
-  private function _gaelicPrefixHwNoSpaceSearch() {
-    $sql = <<<SQL
-    SELECT DISTINCT `m-hw`, `m-pos`, `m-sub`, `hw`
-      FROM `lexemes`
-      WHERE `hw` REGEXP :gd
-      ORDER BY LENGTH(`m-hw`), `m-hw`
-SQL;
-    $results = $this->_db->fetch($sql, array(":gd" => '^' . $this->_search . '[^ -].*'));
-    $oot = [];
-    foreach ($results as $nextResult) {
-      $str = $nextResult["m-hw"] . '|' . $nextResult["m-pos"] . '|'. $nextResult["m-sub"] . '|';
-      if ($nextResult["hw"]!=$nextResult["m-hw"]) { $str .= $nextResult["hw"]; }
-      $oot[] = $str;
-    }
-    return $oot;
-  }
-
-
-
   private function _gaelicSuffixHwSpaceSearch() {
     $sql = <<<SQL
     SELECT DISTINCT `m-hw`, `m-pos`, `m-sub`, `hw`
       FROM `lexemes`
-      WHERE `hw` REGEXP :gd
+      WHERE `hw` LIKE :gd1 OR `hw` LIKE :gd2
       ORDER BY LENGTH(`m-hw`), `m-hw`
 SQL;
-    $results = $this->_db->fetch($sql, array(":gd" => '.*[ -]' . $this->_search . '$'));
+    $results = $this->_db->fetch($sql, array(":gd1" => '% ' . $this->_search, ":gd2" => '%-' . $this->_search));
     $oot = [];
     foreach ($results as $nextResult) {
       $str = $nextResult["m-hw"] . '|' . $nextResult["m-pos"] . '|'. $nextResult["m-sub"] . '|';
@@ -271,36 +244,20 @@ SQL;
     }
     return $oot;
   }
-
-
-
-  private function _gaelicSuffixHwNoSpaceSearch() {
-    $sql = <<<SQL
-    SELECT DISTINCT `m-hw`, `m-pos`, `m-sub`, `hw`
-      FROM `lexemes`
-      WHERE `hw` REGEXP :gd
-      ORDER BY LENGTH(`m-hw`), `m-hw`
-SQL;
-    $results = $this->_db->fetch($sql, array(":gd" => '.*[^ -]' . $this->_search . '$'));
-    $oot = [];
-    foreach ($results as $nextResult) {
-      $str = $nextResult["m-hw"] . '|' . $nextResult["m-pos"] . '|'. $nextResult["m-sub"] . '|';
-      if ($nextResult["hw"]!=$nextResult["m-hw"]) { $str .= $nextResult["hw"]; }
-      $oot[] = $str;
-    }
-    return $oot;
-  }
-
-
 
   private function _gaelicInfixHwSpaceBothSearch() {
     $sql = <<<SQL
     SELECT DISTINCT `m-hw`, `m-pos`, `m-sub`, `hw`
       FROM `lexemes`
-      WHERE `hw` REGEXP :gd
+      WHERE `hw` LIKE :gd1 OR `hw` LIKE :gd2 OR `hw` LIKE :gd3 OR `hw` LIKE :gd4
       ORDER BY LENGTH(`m-hw`), `m-hw`
 SQL;
-    $results = $this->_db->fetch($sql, array(":gd" => '.*[ -]' . $this->_search . '[ -].*'));
+    $results = $this->_db->fetch($sql,
+      array(":gd1" => '% ' . $this->_search . ' %',
+            ":gd2" => '%-' . $this->_search . ' %',
+            ":gd3" => '% ' . $this->_search . '-%',
+            ":gd4" => '%-' . $this->_search . '-%'
+          ));
     $oot = [];
     foreach ($results as $nextResult) {
       $str = $nextResult["m-hw"] . '|' . $nextResult["m-pos"] . '|'. $nextResult["m-sub"] . '|';
@@ -310,16 +267,61 @@ SQL;
     return $oot;
   }
 
+  private function _gaelicPrefixHwNoSpaceSearch() {
+    $sql = <<<SQL
+    SELECT DISTINCT `m-hw`, `m-pos`, `m-sub`, `hw`
+      FROM `lexemes`
+      WHERE `hw` LIKE :gd1 AND `hw` NOT LIKE :gd2 AND `hw` NOT LIKE :gd3 AND `hw` != :gd4
+      ORDER BY LENGTH(`m-hw`), `m-hw`
+SQL;
+    $results = $this->_db->fetch($sql, array(":gd1" => $this->_search . '%',
+                                             ":gd2" => $this->_search . ' %',
+                                             ":gd3" => $this->_search . '-%',
+                                             ":gd4" => $this->_search));
+    $oot = [];
+    foreach ($results as $nextResult) {
+      $str = $nextResult["m-hw"] . '|' . $nextResult["m-pos"] . '|'. $nextResult["m-sub"] . '|';
+      if ($nextResult["hw"]!=$nextResult["m-hw"]) { $str .= $nextResult["hw"]; }
+      $oot[] = $str;
+    }
+    return $oot;
+  }
 
+  private function _gaelicSuffixHwNoSpaceSearch() {
+    $sql = <<<SQL
+    SELECT DISTINCT `m-hw`, `m-pos`, `m-sub`, `hw`
+      FROM `lexemes`
+      WHERE `hw` LIKE :gd1 AND `hw` NOT LIKE :gd2 AND `hw` NOT LIKE :gd3 AND `hw` != :gd4
+      ORDER BY LENGTH(`m-hw`), `m-hw`
+SQL;
+    $results = $this->_db->fetch($sql, array(":gd1" => '%' . $this->_search,
+                                             ":gd2" => '% ' . $this->_search,
+                                             ":gd3" => '%-' . $this->_search,
+                                             ":gd4" => $this->_search));
+    $oot = [];
+    foreach ($results as $nextResult) {
+      $str = $nextResult["m-hw"] . '|' . $nextResult["m-pos"] . '|'. $nextResult["m-sub"] . '|';
+      if ($nextResult["hw"]!=$nextResult["m-hw"]) { $str .= $nextResult["hw"]; }
+      $oot[] = $str;
+    }
+    return $oot;
+  }
 
   private function _gaelicInfixHwSpaceLeftSearch() {
     $sql = <<<SQL
     SELECT DISTINCT `m-hw`, `m-pos`, `m-sub`, `hw`
       FROM `lexemes`
-      WHERE `hw` REGEXP :gd
+      WHERE (`hw` LIKE :gd1 OR `hw` LIKE :gd2) AND `hw` NOT LIKE :gd3 AND `hw` NOT LIKE :gd4 AND `hw` NOT LIKE :gd5 AND `hw` NOT LIKE :gd6 AND `hw` NOT LIKE :gd7
       ORDER BY LENGTH(`m-hw`), `m-hw`
 SQL;
-    $results = $this->_db->fetch($sql, array(":gd" => '.*[ -]' . $this->_search . '[^ -].*'));
+    $results = $this->_db->fetch($sql, array(":gd1" => '% ' . $this->_search . '%',
+                                             ":gd2" => '%-' . $this->_search . '%',
+                                             ":gd3" => '% ' . $this->_search . ' %',
+                                             ":gd4" => '% ' . $this->_search . '-%',
+                                             ":gd5" => '%-' . $this->_search . ' %',
+                                             ":gd6" => '%-' . $this->_search . '-%',
+                                             ":gd7" => '%' . $this->_search
+                                           ));
     $oot = [];
     foreach ($results as $nextResult) {
       $str = $nextResult["m-hw"] . '|' . $nextResult["m-pos"] . '|'. $nextResult["m-sub"] . '|';
@@ -329,16 +331,21 @@ SQL;
     return $oot;
   }
 
-
-
   private function _gaelicInfixHwSpaceRightSearch() {
     $sql = <<<SQL
     SELECT DISTINCT `m-hw`, `m-pos`, `m-sub`, `hw`
       FROM `lexemes`
-      WHERE `hw` REGEXP :gd
+      WHERE (`hw` LIKE :gd1 OR `hw` LIKE :gd2) AND `hw` NOT LIKE :gd3 AND `hw` NOT LIKE :gd4 AND `hw` NOT LIKE :gd5 AND `hw` NOT LIKE :gd6 AND `hw` NOT LIKE :gd7
       ORDER BY LENGTH(`m-hw`), `m-hw`
 SQL;
-    $results = $this->_db->fetch($sql, array(":gd" => '.*[^ -]' . $this->_search . '[ -].*'));
+    $results = $this->_db->fetch($sql, array(":gd1" => '%' . $this->_search . ' %',
+                                             ":gd2" => '%' . $this->_search . '-%',
+                                             ":gd3" => '% ' . $this->_search . ' %',
+                                             ":gd4" => '% ' . $this->_search . '-%',
+                                             ":gd5" => '%-' . $this->_search . ' %',
+                                             ":gd6" => '%-' . $this->_search . '-%',
+                                             ":gd7" => $this->_search . '%'
+                                           ));
     $oot = [];
     foreach ($results as $nextResult) {
       $str = $nextResult["m-hw"] . '|' . $nextResult["m-pos"] . '|'. $nextResult["m-sub"] . '|';
