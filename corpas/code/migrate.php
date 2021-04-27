@@ -4,7 +4,7 @@ require_once 'includes/include.php';
 
 $db = new \models\database();
 
-//get the current slip data for group 2
+//get the current slip data (for group 2)
 $sql =  <<<SQL
 	SELECT auto_id, group_id, lemma AS headword, wordClass AS wordclass FROM slips s 
 		JOIN lemmas l ON s.id = l.id AND s.filename = l.filename 
@@ -33,4 +33,6 @@ SQL;
 SQL;
 	$sql->exec($sql, array(":entryId"=>$entryId, ":slipId"=>$slip["auto_id"]));
 }
+
+//delete any legacy data ... (or do this first?)
 

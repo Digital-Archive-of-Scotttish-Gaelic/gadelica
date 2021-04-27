@@ -8,7 +8,7 @@ class issue
 {
 	private $_id;
 	private $_description, $_userEmail, $_status, $_updated;
-	private $_db; //an instance of \models\database
+	private $_db; //an instance of models\database
 
 	public function __construct($id = null) {
 		$this->_id = $id;

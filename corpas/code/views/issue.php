@@ -7,7 +7,7 @@ use models;
 
 class issue
 {
-	private $_issue;  //an optional instance of \models\issue
+	private $_issue;  //an (optional) instance of \models\issue
 
 	public function __construct($issue = null) {
 		if (isset($issue)) {
