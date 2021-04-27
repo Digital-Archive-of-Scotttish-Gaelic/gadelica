@@ -17,11 +17,11 @@ foreach ($slips as $slip) {
 	$sql = <<<SQL
 		SELECT id FROM entry WHERE headword = :headword AND wordclass = :wordlcass
 SQL;
-	$results = $db->fetch($sql, array(":headword"=>$slip["headword"], ":wordclass"=>$slip["headword"]));
+	$results = $db->fetch($sql, array(":headword"=>$slip["headword"], ":wordclass"=>$slip["wordclass"]));
 	$entryId = null;
 	if (empty($results[0])) {
 		$sql = <<<SQL
-		INSERT INTO entry (group_id, headword, wordclass) VALUES (:groupId, :headword, :wordclass)
+			INSERT INTO entry (group_id, headword, wordclass) VALUES (:groupId, :headword, :wordclass)
 SQL;
 		$db->exec($sql, array(":groupId" => $slip["group_id"], ":headword" => $slip["headword"], ":wordclass" => $slip["wordclass"]));
 		$entryId = $db->getLastInsertId();

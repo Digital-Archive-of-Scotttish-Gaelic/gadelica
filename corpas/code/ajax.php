@@ -153,6 +153,16 @@ switch ($_REQUEST["action"]) {
 		$results = $slowSearch->search($xpath, $_GET["chunkSize"], $_GET["offsetFilename"], $_GET["offsetId"], $_GET["index"]);
 		echo json_encode($results);
 		break;
+	case "raiseIssue":
+		$issue = new issue();
+		$issue->init($_GET);
+		if ($issue->save()) {
+			$message = "Issue successfully recorded";
+		} else {
+			$message = "Error! Issue was not saved";
+		}
+		echo json_encode(array("message" => $message));
+		break;
 	default:
 		echo json_encode(array("error"=>"undefined action"));
 }

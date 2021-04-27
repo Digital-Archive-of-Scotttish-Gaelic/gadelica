@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/corpas/code/migrate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corpas/code/controllers/issue.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corpas/code/models/issue.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corpas/code/models/issues.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corpas/code/views/issue.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/ajax.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/migrate.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/migrate.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,14 +126,7 @@
       <workItem from="1618580302270" duration="645000" />
       <workItem from="1618818815767" duration="609000" />
       <workItem from="1618821957091" duration="33548000" />
-      <workItem from="1619075456087" duration="24995000" />
-    </task>
-    <task id="LOCAL-00051" summary="First pass at code to enable searching by preceding and following word.&#10;TODO; break up Wordform code in corpus_search.php to allow it to work with new code. Add pagination code for results.">
-      <created>1613661108500</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1613661108500</updated>
+      <workItem from="1619075456087" duration="33610000" />
     </task>
     <task id="LOCAL-00052" summary="Some bug fixes">
       <created>1614080631350</created>
@@ -465,7 +464,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619185190576</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="First pass at script to migrate group 2 slip data to new entry &amp; sense models">
+      <created>1619510410377</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1619510410378</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -484,7 +490,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Working code for grouped senses in entry" />
     <MESSAGE value="Individual and orphaned senses now operational in entry.&#10;Bug fixes and code tidy." />
     <MESSAGE value="Bug fix for entry - grouped senses generating extra blank sense" />
     <MESSAGE value="reworked text edit form to make display clearer and more in-line with writer form" />
@@ -509,6 +514,7 @@
     <MESSAGE value="Some back end work to facilitate pulling distinct wordforms grouped by morphological data in the new entry model" />
     <MESSAGE value="Back end work to facilitate pulling distinct wordforms grouped by morphological data in the new entry model" />
     <MESSAGE value="Fully working entry system" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fully working entry system" />
+    <MESSAGE value="First pass at script to migrate group 2 slip data to new entry &amp; sense models" />
+    <option name="LAST_COMMIT_MESSAGE" value="First pass at script to migrate group 2 slip data to new entry &amp; sense models" />
   </component>
 </project>
