@@ -5,13 +5,14 @@ namespace models;
 class search {
 
   private $_search = ""; // the search term
-  private $_entries_en = array(); // an array of hw-pos-sub(-en)(-althw)(-form) 4-tuples
-  private $_entries_gd = array(); // an array of hw-pos-sub(-en)(-althw)(-form) 4-tuples
+  private $_gd = False; // search language
+  private $_entries = array(); // an array of hw-pos-sub(-en)(-althw)(-form) 4-tuples
   private $_db;   // an instance of models\database
 
   public function __construct() {
     if (isset($_GET["search"])) {
       $this->_search = $_GET["search"];
+      $this->_gd = $_GET["gd"]=='yes';
       $this->_db = isset($this->_db) ? $this->_db : new database();
       $this->_load();
     }
@@ -19,34 +20,38 @@ class search {
 
   private function _load() {
     $results = [];
-    $results = $this->_englishExactSearch();
-    $results1 = array_merge($results,$this->_englishPrefixSpaceSearch());
-    $results2 = array_merge($results1,$this->_englishSuffixSpaceSearch());
-    $results3 = array_merge($results2,$this->_englishInfixSpaceBothSearch());
-    $results4 = array_merge($results3,$this->_englishPrefixNoSpaceSearch());
-    $results5 = array_merge($results4,$this->_englishSuffixNoSpaceSearch());
-    $results6 = array_merge($results5,$this->_englishInfixSpaceLeftSearch());
-    $results7 = array_merge($results6,$this->_englishInfixSpaceRightSearch());
-    // infix no space?
-    $results = $results7;
-		foreach ($results as $nextResult) {
-			$this->_entries_en[] = explode('|',$nextResult);
-		}
-    $results = [];
-    $results = $this->_gaelicExactHwSearch();
-    $results1 = array_merge($results,$this->_gaelicExactFormSearch());
-    $results2 = array_merge($results1,$this->_gaelicPrefixHwSpaceSearch());
-    $results3 = array_merge($results2,$this->_gaelicSuffixHwSpaceSearch());
-    $results4 = array_merge($results3,$this->_gaelicInfixHwSpaceBothSearch());
-    $results5 = array_merge($results4,$this->_gaelicPrefixHwNoSpaceSearch());
-    $results6 = array_merge($results5,$this->_gaelicSuffixHwNoSpaceSearch());
-    $results7 = array_merge($results6,$this->_gaelicInfixHwSpaceLeftSearch());
-    $results8 = array_merge($results7,$this->_gaelicInfixHwSpaceRightSearch());
-    // GD forms as infixes etc??
-    // GD lenition on suffixes and infixes??
-    $results = $results8;
-    foreach ($results as $nextResult) {
-      $this->_entries_gd[] = explode('|',$nextResult);
+    if (!$this->_gd) {
+      $results = $this->_englishExactSearch();
+      $results1 = array_merge($results,$this->_englishPrefixSpaceSearch());
+      $results2 = array_merge($results1,$this->_englishSuffixSpaceSearch());
+      $results3 = array_merge($results2,$this->_englishInfixSpaceBothSearch());
+      $results4 = array_merge($results3,$this->_englishPrefixNoSpaceSearch());
+      $results5 = array_merge($results4,$this->_englishSuffixNoSpaceSearch());
+      $results6 = array_merge($results5,$this->_englishInfixSpaceLeftSearch());
+      $results7 = array_merge($results6,$this->_englishInfixSpaceRightSearch());
+      // infix no space?
+      $results = $results7;
+  		foreach ($results as $nextResult) {
+  			$this->_entries[] = explode('|',$nextResult);
+  		}
+    }
+    else {
+      $results = [];
+      $results = $this->_gaelicExactHwSearch();
+      $results1 = array_merge($results,$this->_gaelicExactFormSearch());
+      $results2 = array_merge($results1,$this->_gaelicPrefixHwSpaceSearch());
+      $results3 = array_merge($results2,$this->_gaelicSuffixHwSpaceSearch());
+      $results4 = array_merge($results3,$this->_gaelicInfixHwSpaceBothSearch());
+      $results5 = array_merge($results4,$this->_gaelicPrefixHwNoSpaceSearch());
+      $results6 = array_merge($results5,$this->_gaelicSuffixHwNoSpaceSearch());
+      $results7 = array_merge($results6,$this->_gaelicInfixHwSpaceLeftSearch());
+      $results8 = array_merge($results7,$this->_gaelicInfixHwSpaceRightSearch());
+      // GD forms as infixes etc??
+      // GD lenition on suffixes and infixes??
+      $results = $results8;
+      foreach ($results as $nextResult) {
+        $this->_entries[] = explode('|',$nextResult);
+      }
     }
 	}
 
@@ -359,12 +364,12 @@ SQL;
     return $this->_search;
   }
 
-  public function getEntriesEn() {
-    return $this->_entries_en;
-	}
+  public function getGd() {
+    return $this->_gd;
+  }
 
-  public function getEntriesGd() {
-    return $this->_entries_gd;
+  public function getEntries() {
+    return $this->_entries;
 	}
 
 }

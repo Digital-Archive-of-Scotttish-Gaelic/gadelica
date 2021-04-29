@@ -12,19 +12,15 @@ class entry_instance {
 	}
 
 	public function show() {
-		$this->_writeEmbedded();
-	}
-
-  private function _writeEmbedded() {
 		echo '<div class="list-group-item">';
 		echo models\sources::getEmoji($this->_model->getSource());
 		echo '&nbsp;&nbsp;<strong>' . $this->_model->getHw() . '</strong> ';
-		echo '<em>' . $this->_model->getPos() . '</em> ';
+		echo '<em class="text-muted" data-toggle="tooltip" title="' . models\entry::getPosInfo($this->_model->getPos())[2] . '">' . models\entry::getPosInfo($this->_model->getPos())[0] . '</em> ';
 		echo '<ul style="list-style-type:none;">';
 		if ($this->_model->getForms()) {
 			echo '<li>';
 			foreach ($this->_model->getForms() as $nextForm) {
-				echo ' ' . $nextForm[0] . ' <em>' . $nextForm[1] . '</em> ';
+				echo ' ' . $nextForm[0] . ' <em class="text-muted" data-toggle="tooltip" title="' . models\entry::getPosInfo($nextForm[1])[2] . '">' . models\entry::getPosInfo($nextForm[1])[0] . '</em> ';
 			}
 			echo '</li>';
 		}
@@ -38,13 +34,13 @@ class entry_instance {
 			echo '</li>';
 		}
 		if ($this->_model->getNotes()) {
-			echo '<li>Notes:<ul>';
+			echo '<li><small class="text-muted">[';
 			foreach ($this->_model->getNotes() as $nextNote) {
-				echo '<li>' . $nextNote[0] . '</li>';
+				echo '' . $nextNote[0] . '';
 			}
-			echo '</ul></li>';
+			echo ']</small></li>';
 		}
-		echo '<li><small>' . models\sources::getShortRef($this->_model->getSource()) . '</small></li>';
+		echo '<li><small data-toggle="tooltip" data-html="true" data-placement="bottom" title="' . models\sources::getRef($this->_model->getSource()) . '">' . models\sources::getShortRef($this->_model->getSource()) . '</small></li>';
 		echo '</ul>';
 		echo '</div>';
 	}

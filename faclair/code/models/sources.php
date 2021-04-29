@@ -7,22 +7,22 @@ class sources {
   public static function getShortRef($id) {
     switch ($id) {
     	case "1":
-    		return 'Eaglais na h-Alba';
+    		return 'Eaglais &amp; Bìoball';
     		break;
       case "2":
-      	return 'Faclair Rianachd Phoblaich';
+      	return 'Rianachd Phoblach';
       	break;
       case "3":
-      	return 'An Seotal';
+      	return 'Foghlam Sgoile';
       	break;
       case "4":
-      	return 'Dualchas Nàdair na h-Alba';
+      	return 'Glèidteachas nàdair';
       	break;
     	case "22":
     		return 'Dwelly';
     		break;
     	case "23":
-    		return 'LEACAN supplement';
+    		return 'LXCP';
     		break;
     	default:
     		return '[unknown]';
@@ -32,22 +32,22 @@ class sources {
   public static function getRef($id) {
     switch ($id) {
     	case "1":
-    		return 'Eaglais na h-Alba – <em>Handbook of Biblical and Ecclesiastical Gaelic</em>';
+    		return 'Briathran eaglaiseil (Eaglais na h-Alba, <em>Am Bìoball</em>)';
     		break;
       case "2":
-      	return 'Faclair Rianachd Phoblaich';
+      	return 'Briathran airson rianachd poblaich (<em>Faclair na Pàrlamaid</em>, <em>Faclair Rianachd Phoblaich</em>)';
       	break;
       case "3":
-      	return 'An Seotal';
+      	return 'Briathran airson sgoiltean (Stòrlann, Foghlam Alba)';
       	break;
       case "4":
-      	return 'Dualchas Nàdair na h-Alba – <em>Faclan Nàdair</em>';
+      	return 'Briathran à Buidhinn Nàdair na h-Alba';
       	break;
     	case "22":
-    		return 'Dwelly – <em>Faclair Gàidhlig gu Beurla le Dealbhan</em>';
+    		return 'Briathran à Dwelly – <em>Faclair Gàidhlig gu Beurla le Dealbhan</em>';
     		break;
     	case "23":
-    		return 'LEACAN supplement to Dwelly';
+    		return 'Briathran à stòr <em>Lexicopia</em>';
     		break;
     	default:
     		return '[unknown]';
@@ -60,16 +60,16 @@ class sources {
         return '⛪️';
         break;
       case "2":
-        return '📎';
+        return '🗳';
         break;
       case "3":
         return '🎒';
         break;
       case "4":
-        return '🦆';
+        return '🌿';
         break;
       case "22":
-        return '🧩';
+        return '🗝';
         break;
       case "23":
         return '♒️';

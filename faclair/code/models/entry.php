@@ -45,14 +45,14 @@ SQL;
     		WHERE `m-hw` = :mhw
     		AND `m-pos` = :mpos
     		AND `m-sub` = :msub
-        ORDER BY LENGTH(`hw`), `hw`, `source`
+        ORDER BY LENGTH(`hw`), `hw`, `source` DESC
 SQL;
     $results = $this->_db->fetch($sql, array(":mhw" => $this->_mhw, ":mpos" => $this->_mpos, ":msub" => $this->_msub));
     foreach ($results as $nextResult) {
       $this->_instances[] = new entry_instance($nextResult["id"]);
     }
     $sql = <<<SQL
-    	SELECT `m-p-hw`, `m-p-pos`, `m-p-sub`, `id`
+    	SELECT `m-p-hw`, `m-p-pos`, `m-p-sub`
     		FROM `parts`
     		WHERE `m-hw` = :mhw
     		AND `m-pos` =  :mpos
@@ -60,7 +60,7 @@ SQL;
 SQL;
     $results = $this->_db->fetch($sql, array(":mhw" => $this->_mhw, ":mpos" => $this->_mpos, ":msub" => $this->_msub));
     foreach ($results as $nextResult) {
-      $this->_parts[] = [$nextResult["m-p-hw"], $nextResult["m-p-pos"], $nextResult["m-p-sub"], $nextResult["id"]];
+      $this->_parts[] = [$nextResult["m-p-hw"], $nextResult["m-p-pos"], $nextResult["m-p-sub"]];
     }
     $sql = <<<SQL
     	SELECT `m-hw`, `m-pos`, `m-sub`
@@ -112,13 +112,28 @@ SQL;
         return ['boir.', 'ainm boireann', 'feminine proper noun'];
         break;
       case "n":
-        return ['ainm.', 'ainmear (fireann/boireann)', 'noun (masculine/feminine)'];
+        return ['boir./fir.', 'ainmear (fireann/boireann)', 'noun (masculine/feminine)'];
         break;
       case "v":
         return ['gn.', 'gnìomhair', 'verb'];
         break;
       case "a":
         return ['bua.', 'buadhair', 'adjective'];
+        break;
+      case "p":
+        return ['roi.', 'roimhear', 'preposition'];
+        break;
+      case "pl":
+        return ['iol.', 'iolra', 'plural'];
+        break;
+      case "gen":
+        return ['gin.', 'ginideach', 'genitive'];
+        break;
+      case "comp":
+        return ['coim.', 'coimeasach', 'comparative'];
+        break;
+      case "vn":
+        return ['ainm.', 'ainmear gnìomaireach', 'verbal noun'];
         break;
       case "x":
         return ['', '', ''];
