@@ -45,6 +45,7 @@ SQL;
 		$this->_db->exec($sql, array(":id"=>$this->getId(), ":desc"=>$this->getDescription(),
 			":userEmail"=>$this->getUserEmail(), ":status"=>$this->getStatus()));
 		$this->_setId($this->_db->getLastInsertId());
+		return true;  //required for confirmation message
 	}
 
 	// GETTERS

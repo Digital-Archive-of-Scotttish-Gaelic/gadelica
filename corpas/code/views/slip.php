@@ -659,7 +659,15 @@ HTML;
                     html += ' data-sense-name="' + sense.name + '" value="' + index + '">' + sense.name + '</option>';
                     $('#senseCategorySelect').append(html);
                   });
-              });
+              })
+              .done(function () {   //raise and save an issue with the slip and wordclass information
+                    var params = {
+                      description: 'The wordclass for §{$this->_slip->getAutoId()} has been changed to <strong>' + wordclass + '</strong>',
+                      userEmail: '{$_SESSION["user"]}', status: 'new', updated: ''}; 
+                    $.getJSON('ajax.php?action=raiseIssue', params, function(response) {
+                      console.log(response.message);
+                  });
+               });
             });
 
             $('#posMode').on('change', function() {
