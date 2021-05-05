@@ -163,6 +163,16 @@ switch ($_REQUEST["action"]) {
 		}
 		echo json_encode(array("message" => $message));
 		break;
+	case "updateIssue":
+		$issue = new issue($_GET["id"]);
+		$issue->init($_GET);
+		if ($issue->save()) {
+			$message = "Issue successfully updated";
+		} else {
+			$message = "Error! Issue was not updated";
+		}
+		echo json_encode(array("message" => $message));
+		break;
 	default:
 		echo json_encode(array("error"=>"undefined action"));
 }

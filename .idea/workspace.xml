@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/issue.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/issue.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/views/slip.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/slip.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/ajax.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/views/issue.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/issue.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,14 +124,9 @@
       <workItem from="1619075456087" duration="34413000" />
       <workItem from="1619674071975" duration="14000" />
       <workItem from="1620118902496" duration="502000" />
-      <workItem from="1620124917269" duration="1687000" />
-    </task>
-    <task id="LOCAL-00054" summary="New approach to chunked dictionary search results using pagination.min.js.&#10;Basic structure working returning dates.">
-      <created>1614347389584</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1614347389584</updated>
+      <workItem from="1620124917269" duration="1865000" />
+      <workItem from="1620195384095" duration="6000" />
+      <workItem from="1620218531952" duration="2461000" />
     </task>
     <task id="LOCAL-00055" summary="Added loading image for dictionary view results&#10;Sorted out showing/hiding behaviour for dictionary view results&#10;Tidied up some bits and pieces in dictionary view results">
       <created>1615886550349</created>
@@ -469,7 +464,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619532163763</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="Changing wordclass in slip edit now saves an issue to the database with user info and description. TODO: get edit issue form working.">
+      <created>1620136469733</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1620136469733</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -488,7 +490,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="reworked text edit form to make display clearer and more in-line with writer form" />
     <MESSAGE value="Rewrote the slow (xpath) search to appear in the same way as corpus search (with sub nav). Used new \views\search.php class to make this possible without code duplication&#10;Renamed previous views\search.php to searchOld.php as it appears to be deprecated.&#10;Fixed issue where updating a slip in entry or collection view did not update results on parent page" />
     <MESSAGE value="Added facility to add description to senses in slip edit page. Gradually extending functionality out to other pages.&#10;Description now shown on hover on some sense badges." />
     <MESSAGE value="Adding and removing senses working in slip edit page" />
@@ -513,6 +514,7 @@
     <MESSAGE value="First pass at script to migrate group 2 slip data to new entry &amp; sense models" />
     <MESSAGE value="New issue classes to track and resolve reported issues" />
     <MESSAGE value="Some tweaks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some tweaks" />
+    <MESSAGE value="Changing wordclass in slip edit now saves an issue to the database with user info and description. TODO: get edit issue form working." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changing wordclass in slip edit now saves an issue to the database with user info and description. TODO: get edit issue form working." />
   </component>
 </project>

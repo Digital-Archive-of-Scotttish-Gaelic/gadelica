@@ -55,7 +55,7 @@ HTML;
 						<td>{$userHtml}</td>
 						<td><span class="badge badge-{$statusBadge}">{$issue->getStatus()}</span></td>
 						<td>{$issue->getUpdated()}</td>
-						<td><small><a target="_blank" href="?m=issues&a=edit&id={$issue->getId()}" title="edit issue #{$issue->getId()}">edit</a></small></td>
+						<td><small><a onclick="window.open('index.php?m=issues&a=edit&id={$issue->getId()}');" href="#" title="edit issue #{$issue->getId()}">edit</a></small></td>
 					</tr>
 HTML;
 		}
@@ -74,16 +74,16 @@ HTML;
 			<form name="issue">
 				<div class="form-group row">
 					<label class="col-sm-2" for="id">ID</label>
-					<input class="col-sm-1" id="id" name="id" type="text" disabled value="{$issue->getId()}">
+					<input class="col-sm-1" id="id" name="id" id="id" type="text" disabled value="{$issue->getId()}">
 				</div>
 				<div class="form-group row">
 					<label class="col-sm-2" for="description">Description</label>
-					<textarea class="col-sm-6" rows="4" cols="40">{$issue->getDescription()}</textarea>
+					<textarea id="description" class="col-sm-6" rows="4" cols="40">{$issue->getDescription()}</textarea>
 				</div>
 				<div class="form-group row">
 					<label class="col-sm-2" for="userName">Reported by</label>
 					<label class="col-sm-4" id="userName"><a href="mailto:{$user->getEmail()}" title="email {$user->getEmail()}">{$user->getFirstName()} {$user->getLastName()}</a>
-					<input type="hidden" name="userEmail" value="{$user->getEmail()}">
+					<input type="hidden" name="userEmail" id="userEmail" value="{$user->getEmail()}">
 				</div>
 				<div class="form-group row">
 					<label class="col-sm-2" for="status">Status</label>
@@ -96,7 +96,7 @@ HTML;
 					<label class="col-sm-2" for="updated">Updated</label>
 					<input class="col-sm-2" id="updated" name="updated" type="text" value="{$issue->getUpdated()}" disabled>
 				</div>
-				<button type="submit" name="update" class="btn btn-primary">save</button>
+				<button type="button" name="update" id="update" class="btn btn-primary">save</button>
 				<button type="cancel" id="cancel" class="btn btn-secondary">close</button>
 			</form>
 HTML;
@@ -110,6 +110,18 @@ HTML;
 				$(function() {
 				  $('#cancel').on('click', function () {
 				    window.close();
+				  });
+				  
+				  $('#update').on('click', function() {
+				    var params = {id: $('#id').val(), description: $('#description').val(), userEmail: $('#userEmail').val(),
+				      status: $('#status').val(), updated: $('#updated').val()};
+				    $.getJSON('ajax.php?action=updateIssue', params, function(response) {
+				      console.log(response.message);
+				    })
+				    .done(function() {
+				      window.opener.document.location.reload(true);
+				      window.close();
+				    });
 				  });
 				});	
 			</script>
