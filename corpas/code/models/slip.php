@@ -288,7 +288,7 @@ SQL;
 		  sensecategories::deleteSensesForSlip($this->getAutoId());
 		  //hack to workaround POS issues - TODO: discuss with MM
 		  $tempPOS = array("noun" => "n", "verb" => "v", "preposition" => "p", "verbal noun" => "vn", "adjective" => "a",
-			  "adverb" => "A");
+			  "adverb" => "A", "other" => "x"); //TODO check with MM if "x" for other is an OK hack
 		  $this->_pos = $tempPOS[$wordclass];
 		  $this->_slipMorph = new slipmorphfeature($this->_pos);  //attach the morph data for the new POS
 		  $this->_clearSlipMorphEntries();

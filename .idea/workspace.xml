@@ -6,7 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/ajax.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/controllers/issue.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/controllers/issue.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/models/issue.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/issue.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/models/slip.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/slip.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/models/slipmorphfeature.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/slipmorphfeature.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/models/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/views/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/home.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/views/issue.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/issue.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -126,14 +131,7 @@
       <workItem from="1620118902496" duration="502000" />
       <workItem from="1620124917269" duration="1865000" />
       <workItem from="1620195384095" duration="6000" />
-      <workItem from="1620218531952" duration="2461000" />
-    </task>
-    <task id="LOCAL-00055" summary="Added loading image for dictionary view results&#10;Sorted out showing/hiding behaviour for dictionary view results&#10;Tidied up some bits and pieces in dictionary view results">
-      <created>1615886550349</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1615886550350</updated>
+      <workItem from="1620218531952" duration="4822000" />
     </task>
     <task id="LOCAL-00056" summary="Refactored wordform search into the main search function and added REGEXP support for all searches&#10;Tidied up loading of dictionary view results&#10;Bug fix in switching between corpus and dictionary views">
       <created>1615890560163</created>
@@ -471,7 +469,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620136469733</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="Form updates now working and refreshing main list">
+      <created>1620223298562</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1620223298562</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -490,7 +495,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Rewrote the slow (xpath) search to appear in the same way as corpus search (with sub nav). Used new \views\search.php class to make this possible without code duplication&#10;Renamed previous views\search.php to searchOld.php as it appears to be deprecated.&#10;Fixed issue where updating a slip in entry or collection view did not update results on parent page" />
     <MESSAGE value="Added facility to add description to senses in slip edit page. Gradually extending functionality out to other pages.&#10;Description now shown on hover on some sense badges." />
     <MESSAGE value="Adding and removing senses working in slip edit page" />
     <MESSAGE value="New sense code with editing (and removing) modal and new tooltips working in collection, entry, and search results." />
@@ -515,6 +519,7 @@
     <MESSAGE value="New issue classes to track and resolve reported issues" />
     <MESSAGE value="Some tweaks" />
     <MESSAGE value="Changing wordclass in slip edit now saves an issue to the database with user info and description. TODO: get edit issue form working." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changing wordclass in slip edit now saves an issue to the database with user info and description. TODO: get edit issue form working." />
+    <MESSAGE value="Form updates now working and refreshing main list" />
+    <option name="LAST_COMMIT_MESSAGE" value="Form updates now working and refreshing main list" />
   </component>
 </project>

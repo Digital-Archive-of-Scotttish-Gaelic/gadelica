@@ -112,6 +112,7 @@ HTML;
 				    window.close();
 				  });
 				  
+				  //save the form data for an issue
 				  $('#update').on('click', function() {
 				    var params = {id: $('#id').val(), description: $('#description').val(), userEmail: $('#userEmail').val(),
 				      status: $('#status').val(), updated: $('#updated').val()};

@@ -40,7 +40,7 @@ class users
 	  $sql = <<<SQL
 			SELECT id, name, theme, lastUsed
 				FROM userGroup ug
-				LEFT JOIN userGroupMembers ugm ON ugm.groupId = ug.id  
+				JOIN userGroupMembers ugm ON ugm.groupId = ug.id  
 				 WHERE ugm.userEmail = :email
 				 ORDER BY lastUsed DESC
 SQL;
@@ -124,5 +124,10 @@ SQL;
 	  } catch (PDOException $e) {
 		  echo $e->getMessage();
 	  }
+  }
+
+  public static function checkSuperuserAuth() {
+  	$user = self::getUser($_SESSION["email"]);
+  	return $user->getSuperuser();
   }
 }

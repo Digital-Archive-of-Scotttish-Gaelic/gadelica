@@ -10,7 +10,11 @@ class slipmorphfeature
   	  "noun"=>array("numgen", "case"),
 	    "verb"=>array("mode", "status", "imp_number", "fin_number",
 		    "imp_person", "fin_person", "tense", "mood"),
-		  "preposition"=>array("prep_mode", "prep_person", "prep_number", "prep_gender"));
+		  "preposition"=>array("prep_mode", "prep_person", "prep_number", "prep_gender"),
+	    "adjective"=>array(),
+	    "adverb"=>array(),
+	    "other"=>array()
+  );
 
   public function __construct($abbr) {
     $this->_abbr = $abbr;
@@ -54,6 +58,7 @@ class slipmorphfeature
         $this->_props["mood"] = "active";
         break;
 	    case "p":
+	    	$this->_type = "preposition";
 	    	$this->_props["prep_mode"] = "basic";
 	    	break;
 	    case "P":
@@ -62,6 +67,15 @@ class slipmorphfeature
 		    $this->_props["prep_number"] = "singular";
 		    $this->_props["prep_gender"] = "masculine";
 		    break;
+	    case 'a':
+	    	$this->_type = "adjective";
+	    	break;
+	    case 'A':
+	    	$this->_type = "adverb";
+	    	break;
+	    case 'x':
+	    	$this->_type = "other"; //TODO check with MM on this and the above
+	      break;
     }
   }
 
@@ -87,10 +101,12 @@ class slipmorphfeature
 
   public function populateClass($params) {
     $this->resetProps();
-    foreach ($this->_propTitles[$this->_type] as $relation) {
-      if (!empty($params[$relation])) {
-        $this->setProp($relation, $params[$relation]);
-      }
+    if ($this->_propTitles[$this->_type]) {
+	    foreach ($this->_propTitles[$this->_type] as $relation) {
+		    if (!empty($params[$relation])) {
+			    $this->setProp($relation, $params[$relation]);
+		    }
+	    }
     }
   }
 }
