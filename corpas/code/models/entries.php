@@ -77,9 +77,11 @@ SQL;
   public static function getActiveEntryIds() {
     $entryIds = array();
     $db = new database();
+    //only get IDs for this group
     $sql = <<<SQL
         SELECT DISTINCT e.id as id FROM entry e    
         	JOIN slips s ON e.id = s.entry_id 
+        	WHERE group_id = {$_SESSION["groupId"]}
             ORDER BY id ASC
 SQL;
     $results = $db->fetch($sql);
