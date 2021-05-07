@@ -24,7 +24,6 @@ class collection
 					AND (auto_id LIKE @search	
             	OR lemma LIKE @search
             	OR wordform LIKE @search
-            	OR wordclass LIKE @search
             	OR lemma LIKE @search
             	OR firstname LIKE @search
             	OR lastname LIKE @search)
@@ -34,9 +33,10 @@ SQL;
 	    $sql = <<<SQL
         SELECT SQL_CALC_FOUND_ROWS s.filename as filename, s.id as id, auto_id, pos, lemma, wordform, firstname, lastname,
                 date_of_lang, title, page, CONCAT(firstname, ' ', lastname) as fullname, locked,
-                s.wordclass as wordclass, l.pos as pos, s.lastUpdated as lastUpdated, updatedBy
+             		l.pos as pos, s.lastUpdated as lastUpdated, updatedBy
             FROM slips s
             JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
+            JOIN entry e ON e.id = s.entry_id
             LEFT JOIN user u ON u.email = s.ownedBy
             {$whereClause}
             ORDER BY {$sort} {$order}
@@ -112,7 +112,9 @@ HTML;
 	  $dbh = $db->getDatabaseHandle();
 	  try {
 		  $sql = <<<SQL
-        SELECT auto_id FROM slips WHERE group_id = :groupId AND filename = :filename AND id = :id
+        SELECT auto_id FROM slips s
+        	JOIN entry e ON s.entry_id = e.id
+        	WHERE e.group_id = :groupId AND s.filename = :filename AND s.id = :id
 SQL;
 		  $sth = $dbh->prepare($sql);
 		  $sth->execute(array(":groupId"=>$groupId, ":filename"=>$filename, ":id"=>$id));
@@ -141,6 +143,7 @@ SQL;
         SELECT s.filename as filename, s.id as id, auto_id, pos, lemma, preContextScope, postContextScope,
                 translation, date_of_lang, l.title AS title, page, starred, t.id AS tid
             FROM slips s
+            JOIN entry e ON e.id = s.entry_id
             JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
             JOIN text t ON s.filename = t.filepath
             WHERE group_id = {$_SESSION["groupId"]} AND s.auto_id = :slipId
@@ -156,6 +159,18 @@ SQL;
 			echo $e->getMessage();
 		}
 	}
+
+	public static function getWordformBySlipId($slipId) {
+		$db = new database();
+		$sql = <<<SQL
+			SELECT wordform FROM lemmas l
+				JOIN slips s ON s.filename = l.filename AND s.id = l.id
+				WHERE s.auto_id = :slipId
+SQL;
+		$results = $db->fetch($sql, array(":slipId"=>$slipId));
+		return $results[0]["wordform"];
+	}
+
 
 	/**
 	 * Gets morph info from the DB to populate an Entry with data required for citations

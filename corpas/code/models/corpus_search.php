@@ -219,16 +219,17 @@ SQL;
 
 		$query["sql"] = <<<SQL
 			SELECT SQL_CALC_FOUND_ROWS l.filename AS filename, l.id AS id, wordform, pos, lemma, date_of_lang, l.title,
-                page, medium, s.auto_id as auto_id, s.wordClass as wordClass, t.id AS tid, t.level as level, district_id,
+                page, medium, s.auto_id as auto_id, t.id AS tid, t.level as level, district_id,
                	preceding_word, following_word
 SQL;
 		if (!$fullSearch) {
-			//we need only these fields for auto slip creation
+			//we need only the following fields for auto slip creation
 			$query["sql"] = "SELECT s.auto_id AS auto_id, l.filename AS filename, l.id AS id, pos";
 		}
 		$query["sql"] .= <<<SQL
             FROM lemmas AS l
-            LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id AND group_id = {$_SESSION["groupId"]}
+            LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id
+						LEFT JOIN entry e ON s.entry_id = e.id AND e.group_id = {$_SESSION["groupId"]}
             JOIN text t ON t.filepath = l.filename {$textJoinSql}
         		{$writerJoinSql}
             WHERE {$whereClause}

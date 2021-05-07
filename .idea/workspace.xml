@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/ajax.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/corpus_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/corpus_search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/includes/include.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/includes/include.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/migrate.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/migrate.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +63,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -119,147 +120,13 @@
       <workItem from="1618566676516" duration="3045000" />
       <workItem from="1618580302270" duration="645000" />
       <workItem from="1618818815767" duration="609000" />
-      <workItem from="1618821957091" duration="3952000" />
-    </task>
-    <task id="LOCAL-00037" summary="Some changes to the lock slip functionality for superusers.">
-      <created>1612191635429</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1612191635429</updated>
-    </task>
-    <task id="LOCAL-00038" summary="fixed bug where citation context was editable within entries&#10;added English tranlsation beneath each entry citation">
-      <created>1612362762465</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1612362762465</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Added a prototype PDF viewer for directories - much work needed">
-      <created>1612430427663</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1612430427663</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Fixed a minor issue with the constant definitions that was generating some warnings.">
-      <created>1612797712438</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1612797712438</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Added directories for input and output files in CorpasXMLParser">
-      <created>1612946124036</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1612946124036</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Working code for saving lexeme data&#10;TODO: forms, translations, notes; and correct window close behaviour">
-      <created>1613484702096</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1613484702096</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Initial refactoring for MVC">
-      <created>1613134707553</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1613134707553</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Working code for saving lexeme data including forms, translations, notes.&#10;TODO: correct window close behaviour; create addlexeme.php; add/delete parts">
-      <created>1613487743403</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1613487743403</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Added code to add/delete forms, translations, and notes">
-      <created>1613562197552</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1613562197552</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Recoded viewMhw.php to use new foreign key &quot;lexeme_id&quot;">
-      <created>1613569279492</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1613569279492</updated>
-    </task>
-    <task id="LOCAL-00047" summary="Created addLexeme.php, addPart.php, deletePart.php. Some edits in viewMhw.php to handle foreign keys and make links work.">
-      <created>1613573850838</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1613573850838</updated>
-    </task>
-    <task id="LOCAL-00048" summary="Added search restrictions for preceding and following context">
-      <created>1613651942542</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1613651942542</updated>
-    </task>
-    <task id="LOCAL-00049" summary="Added option to order search results by reverse preceding word.">
-      <created>1613654621759</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1613654621759</updated>
-    </task>
-    <task id="LOCAL-00050" summary="Basic form with some jQuery for multi-word (preceding and following) search inputs">
-      <created>1613657317954</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1613657317955</updated>
-    </task>
-    <task id="LOCAL-00051" summary="First pass at code to enable searching by preceding and following word.&#10;TODO; break up Wordform code in corpus_search.php to allow it to work with new code. Add pagination code for results.">
-      <created>1613661108500</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1613661108500</updated>
-    </task>
-    <task id="LOCAL-00052" summary="Some bug fixes">
-      <created>1614080631350</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1614080631350</updated>
-    </task>
-    <task id="LOCAL-00053" summary="Some basic introductory pagination code for slow_search">
-      <created>1614175157587</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1614175157587</updated>
-    </task>
-    <task id="LOCAL-00054" summary="New approach to chunked dictionary search results using pagination.min.js.&#10;Basic structure working returning dates.">
-      <created>1614347389584</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1614347389584</updated>
-    </task>
-    <task id="LOCAL-00055" summary="Added loading image for dictionary view results&#10;Sorted out showing/hiding behaviour for dictionary view results&#10;Tidied up some bits and pieces in dictionary view results">
-      <created>1615886550349</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1615886550350</updated>
-    </task>
-    <task id="LOCAL-00056" summary="Refactored wordform search into the main search function and added REGEXP support for all searches&#10;Tidied up loading of dictionary view results&#10;Bug fix in switching between corpus and dictionary views">
-      <created>1615890560163</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1615890560163</updated>
+      <workItem from="1618821957091" duration="33548000" />
+      <workItem from="1619075456087" duration="34413000" />
+      <workItem from="1619674071975" duration="14000" />
+      <workItem from="1620118902496" duration="502000" />
+      <workItem from="1620124917269" duration="1865000" />
+      <workItem from="1620195384095" duration="6000" />
+      <workItem from="1620218531952" duration="6904000" />
     </task>
     <task id="LOCAL-00057" summary="Initial work on fleshing out the slow search to display database information in results.&#10;Some initial basic refactoring of slow search in line with MVC">
       <created>1615907529402</created>
@@ -464,7 +331,147 @@
       <option name="project" value="LOCAL" />
       <updated>1618580565134</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="Reworking of DB results query to speed up auto slip creation.">
+      <created>1618827096898</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1618827096899</updated>
+    </task>
+    <task id="LOCAL-00087" summary="Initial code for new edit slip in entry refactor">
+      <created>1618927085562</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1618927085562</updated>
+    </task>
+    <task id="LOCAL-00088" summary="Working code for creation of slip and related entry">
+      <created>1618992326374</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1618992326374</updated>
+    </task>
+    <task id="LOCAL-00089" summary="Bug fix for 2nd slip not connecting with existing entry">
+      <created>1618993085434</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1618993085434</updated>
+    </task>
+    <task id="LOCAL-00090" summary="Fixed major bug where senses were not being added properly due to the new entry model">
+      <created>1618997919054</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1618997919054</updated>
+    </task>
+    <task id="LOCAL-00091" summary="Fixed a bug whereby senses were not being listed correctly in edit slip dropdown">
+      <created>1619000125830</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1619000125830</updated>
+    </task>
+    <task id="LOCAL-00092" summary="Bug fixes for sense dropdown adding empty sense, slip morph data not updating on wordclass change, sense list updating with senses not belonging to wordclass/headword combination.">
+      <created>1619009582447</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1619009582447</updated>
+    </task>
+    <task id="LOCAL-00093" summary="Working system">
+      <created>1619013173679</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1619013173679</updated>
+    </task>
+    <task id="LOCAL-00094" summary="Recoded getUnusedSenses method in models\slips to use entry ID in place of headword and wordclass combination">
+      <created>1619076010660</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1619076010661</updated>
+    </task>
+    <task id="LOCAL-00095" summary="Coded English translation to auto hide on slip edit load and toggle as per issue #17">
+      <created>1619079519933</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1619079519934</updated>
+    </task>
+    <task id="LOCAL-00096" summary="Fixed issue with collection browse not working with new entry structure. Added check code to models\collection getAllSlipInfo to ensure workspace integrity.">
+      <created>1619096692621</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1619096692621</updated>
+    </task>
+    <task id="LOCAL-00097" summary="Fixed the entry browse page to work with new model.&#10;Initial progress on reworking the entry view page.">
+      <created>1619100275823</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1619100275823</updated>
+    </task>
+    <task id="LOCAL-00098" summary="Back end work to facilitate pulling distinct wordforms grouped by morphological data in the new entry model">
+      <created>1619169630999</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1619169630999</updated>
+    </task>
+    <task id="LOCAL-00099" summary="Fully working entry system">
+      <created>1619185190576</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1619185190576</updated>
+    </task>
+    <task id="LOCAL-00100" summary="First pass at script to migrate group 2 slip data to new entry &amp; sense models">
+      <created>1619510410377</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1619510410378</updated>
+    </task>
+    <task id="LOCAL-00101" summary="New issue classes to track and resolve reported issues">
+      <created>1619528517748</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1619528517749</updated>
+    </task>
+    <task id="LOCAL-00102" summary="Some tweaks">
+      <created>1619532163762</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1619532163763</updated>
+    </task>
+    <task id="LOCAL-00103" summary="Changing wordclass in slip edit now saves an issue to the database with user info and description. TODO: get edit issue form working.">
+      <created>1620136469733</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1620136469733</updated>
+    </task>
+    <task id="LOCAL-00104" summary="Form updates now working and refreshing main list">
+      <created>1620223298562</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1620223298562</updated>
+    </task>
+    <task id="LOCAL-00105" summary="Some progress with fixing issue whereby changing wordclass to non-noun or noun-verb causes a bug preventing recording of issues.&#10;Added a new method to models\users to check for superuser. Locked down issues code to be only viewable by superusers.">
+      <created>1620308448685</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1620308448685</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -483,31 +490,31 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Additional AJAX work on slow search to handle slip links" />
-    <MESSAGE value="Added index IDs to slip links in slow search to facilitate correct updating of slip links in results after slip creation" />
-    <MESSAGE value="Added option on search form to choose between searching for all results and chunking results. Added option to choose chunk size.&#10;Fixed issues with full results not paginating." />
-    <MESSAGE value="Added option on search form to choose between searching for all results and chunking results. Added option to choose chunk size.&#10;Fixed issues with full results not paginating.&#10;Fixed issue where chunked results weren't working correctly due to conflict with &quot;all results&quot; functionality.&#10;TODO: fix &quot;all results&quot; functionality" />
-    <MESSAGE value="Bug fix for all results and chunked results not playing nicely together.&#10;Many UI improvements" />
-    <MESSAGE value="Reworked regular expression searching for headword (lemma) to ensure word boundary is respected" />
-    <MESSAGE value="Ensured all word links in results open in new tab" />
-    <MESSAGE value="Refactored slow search to work entirely asynchronously. &#10;Added check for end of results and added message for user&#10;Simplified XPath in search box and added necessary prefix and suffix in the model's search function" />
-    <MESSAGE value="Added REGEX functionality to preceding and following word search options" />
-    <MESSAGE value="Trimmed user facing XPath query in slow search box and added necessary back end code to model" />
-    <MESSAGE value="Finally (!!) completed a working version of slow search by text, including iteratively searching subtexts.&#10;Added text ID restrict field to slow search form just for testing just now" />
-    <MESSAGE value="Created models\sense class to work with new sense database model&#10;Reworked models\slip class to work with new senses&#10;Initial work on views\slip to accommodate new code" />
-    <MESSAGE value="Completed refactor of views\slip to use new sense model" />
-    <MESSAGE value="Completed refactor of slip links in results to use new sense model" />
-    <MESSAGE value="Collections recoded to work with new sense model.&#10;Initial work on recoding entries to work with new sense model. Still requires a fair bit of refactoring, mostly in sorting unique senses and grouping. Renaming of senses in entry page not yet functional." />
-    <MESSAGE value="Working code for grouped senses in entry" />
-    <MESSAGE value="Individual and orphaned senses now operational in entry.&#10;Bug fixes and code tidy." />
-    <MESSAGE value="Bug fix for entry - grouped senses generating extra blank sense" />
-    <MESSAGE value="reworked text edit form to make display clearer and more in-line with writer form" />
-    <MESSAGE value="Rewrote the slow (xpath) search to appear in the same way as corpus search (with sub nav). Used new \views\search.php class to make this possible without code duplication&#10;Renamed previous views\search.php to searchOld.php as it appears to be deprecated.&#10;Fixed issue where updating a slip in entry or collection view did not update results on parent page" />
-    <MESSAGE value="Added facility to add description to senses in slip edit page. Gradually extending functionality out to other pages.&#10;Description now shown on hover on some sense badges." />
     <MESSAGE value="Adding and removing senses working in slip edit page" />
     <MESSAGE value="New sense code with editing (and removing) modal and new tooltips working in collection, entry, and search results." />
     <MESSAGE value="Progress towards automatically generating slips from all search results" />
     <MESSAGE value="Bug fix for cancelling out of &quot;Create slips for all records&quot; dialog not behaving correctly" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug fix for cancelling out of &quot;Create slips for all records&quot; dialog not behaving correctly" />
+    <MESSAGE value="Reworking of DB results query to speed up auto slip creation." />
+    <MESSAGE value="Initial code for new edit slip in entry refactor" />
+    <MESSAGE value="Working code for creation of slip and related entry" />
+    <MESSAGE value="Bug fix for 2nd slip not connecting with existing entry" />
+    <MESSAGE value="Fixed major bug where senses were not being added properly due to the new entry model" />
+    <MESSAGE value="Fixed a bug whereby senses were not being listed correctly in edit slip dropdown" />
+    <MESSAGE value="Bug fixes for sense dropdown adding empty sense, slip morph data not updating on wordclass change, sense list updating with senses not belonging to wordclass/headword combination." />
+    <MESSAGE value="Working system" />
+    <MESSAGE value="Recoded getUnusedSenses method in models\slips to use entry ID in place of headword and wordclass combination" />
+    <MESSAGE value="Coded English translation to auto hide on slip edit load and toggle as per issue #17" />
+    <MESSAGE value="Fixed issue with collection browse not working with new entry structure. Added check code to models\collection getAllSlipInfo to ensure workspace integrity." />
+    <MESSAGE value="Fixed the entry browse page to work with new model.&#10;Initial progress on reworking the entry view page." />
+    <MESSAGE value="Some back end work to facilitate pulling distinct wordforms grouped by morphological data in the new entry model" />
+    <MESSAGE value="Back end work to facilitate pulling distinct wordforms grouped by morphological data in the new entry model" />
+    <MESSAGE value="Fully working entry system" />
+    <MESSAGE value="First pass at script to migrate group 2 slip data to new entry &amp; sense models" />
+    <MESSAGE value="New issue classes to track and resolve reported issues" />
+    <MESSAGE value="Some tweaks" />
+    <MESSAGE value="Changing wordclass in slip edit now saves an issue to the database with user info and description. TODO: get edit issue form working." />
+    <MESSAGE value="Form updates now working and refreshing main list" />
+    <MESSAGE value="Some progress with fixing issue whereby changing wordclass to non-noun or noun-verb causes a bug preventing recording of issues.&#10;Added a new method to models\users to check for superuser. Locked down issues code to be only viewable by superusers." />
+    <option name="LAST_COMMIT_MESSAGE" value="Some progress with fixing issue whereby changing wordclass to non-noun or noun-verb causes a bug preventing recording of issues.&#10;Added a new method to models\users to check for superuser. Locked down issues code to be only viewable by superusers." />
   </component>
 </project>

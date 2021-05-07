@@ -48,7 +48,8 @@ HTML;
 
 	  $this->_writeSenseCategories();
     echo <<<HTML
-        <div class="form-group">
+				<small><p><a href="#" id="toggleTranslation" data-action="show"><span id="containerAction">show</span> translation</a></p></small>
+        <div id="translationContainer" class="form-group hide">
           <label for="slipTranslation">English translation:</label>
           <textarea class="form-control" name="slipTranslation" id="slipTranslation" rows="3">{$this->_slip->getTranslation()}</textarea>
           <script>
@@ -467,7 +468,20 @@ HTML;
 
   private function _writeJavascript() {
     echo <<<HTML
-        <script>            
+        <script>           
+            $('#toggleTranslation').on('click', function() {
+                let action = $(this).attr('data-action');
+                if (action == 'show') {
+                  $('#containerAction').html('hide');
+                  $(this).attr('data-action', 'hide');
+                  $('#translationContainer').show();
+                } else {
+                  $('#containerAction').html('show');
+                  $(this).attr('data-action', 'show');
+                  $('#translationContainer').hide();
+                }
+            })
+             
 		        //update the slip context on click of token
 		        $(document).on('click', '.contextLink',  function () {
 		          $(this).tooltip('hide')
@@ -557,10 +571,13 @@ HTML;
               });
             });
 
+            /**
+            * Senses
+						*/  
             $("#chooseSenseCategory").on('click', function () {
               var elem = $( "#senseCategorySelect option:selected" );
               var sense = elem.text();
-              if (elem.attr('data-sense') == "") {
+              if (!elem.attr('data-sense')) {
                 return false;
               }
               var senseId = elem.attr('data-sense');
@@ -587,8 +604,7 @@ HTML;
               $('#newSenseName').val('');
               $('#newSenseDefinition').val('');
               var data = {action: 'addSense', slipId: '{$this->_slip->getAutoId()}',
-                name: newSenseName, description: newSenseDefinition, headword: '{$this->_slip->getLemma()}', 
-                wordclass: '{$this->_slip->getWordclass()}'
+                name: newSenseName, description: newSenseDefinition, entryId: '{$this->_slip->getEntryId()}'
               }
               $.getJSON("ajax.php", data, function (response) {
                 var html = '<li class="badge badge-success senseBadge" data-sense="' + response.senseId + '"';
@@ -600,21 +616,13 @@ HTML;
                 $('#senseCategories').append(html);
               });
             });
-/*
-            $(document).on('click', '.removeSense', function () {
-              var senseId = $(this).parent().attr('data-sense');
-              var senseName = $(this).parent().attr('data-sensename');
-              $(this).parent().remove();
-              var html = '<option data-sense="' + senseId + '">' + senseName + '</option>';
-              $('#senseCategorySelect').append(html);
-              var data = {action: 'removeSense', slipId: '{$this->_slip->getAutoId()}',
-                senseId: senseId}
-              $.post("ajax.php", data, function (response) {
-                console.log(response);        //TODO: add some response code on successful save
-              });
-            });
-*/
+
             $('#wordClass').on('change', function() {
+              let check = confirm('Changing the wordclass will remove any senses. Are you sure you want to proceed?');
+              if (!check) {
+                $('#wordClass').val('{$this->_slip->getWordClass()}');
+                return;
+              }
               var wordclass = $(this).val();
               switch (wordclass) {
                 case "verb":
@@ -638,16 +646,28 @@ HTML;
                   $('#verbSelects').hide();
                   $('#prepSelects').hide();
               }
-              //update the sense categories
+              //update the sense categories 
+              $('.senseBadge').remove();
               $('#senseCategorySelect').empty();
               $('#senseCategorySelect').append('<option data-category="">-- select a category --</option>');
-              var url = 'ajax.php?action=getSenseCategories';
-              url += '&slipId={$_GET["id"]}&headword={$_GET["headword"]}&wordclass=' + wordclass;
+              var url = 'ajax.php?action=getSenseCategoriesForNewWordclass';
+              url += '&filename={$this->_slip->getFilename()}&id={$this->_slip->getId()}&auto_id={$this->_slip->getAutoId()}';
+              url += '&pos={$this->_slip->getPOS()}&headword={$this->_slip->getHeadword()}&wordclass='+wordclass;
               $.getJSON(url, function (data) {
-                  $.each(data, function (index, value) {
-                    $('#senseCategorySelect').append('<option data-category="' + value + '" value="' + value + '">' + value + '</option>');
+                  $.each(data, function (index, sense) {
+                    var html = '<option data-sense="' + index + '" data-sense-description="' + sense.description + '"';
+                    html += ' data-sense-name="' + sense.name + '" value="' + index + '">' + sense.name + '</option>';
+                    $('#senseCategorySelect').append(html);
                   });
-              });
+              })
+              .done(function () {   //raise and save an issue with the slip and wordclass information
+                    var params = {
+                      description: 'The wordclass for §{$this->_slip->getAutoId()} has been changed to <strong>' + wordclass + '</strong>',
+                      userEmail: '{$_SESSION["user"]}', status: 'new', updated: ''}; 
+                    $.getJSON('ajax.php?action=raiseIssue', params, function(response) {
+                      console.log(response.message);
+                  });
+               });
             });
 
             $('#posMode').on('change', function() {

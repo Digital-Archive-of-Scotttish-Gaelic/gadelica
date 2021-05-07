@@ -6,8 +6,7 @@ namespace models;
 
 class sense
 {
-	private $_id, $_name, $_description, $_headword, $_wordclass;
-	private $_groupId;  //the ID associated with the workspace
+	private $_id, $_name, $_description, $_entryId;
 	private $_db;  //database connection
 
 	public function __construct($id) {
@@ -18,7 +17,7 @@ class sense
 
 	private function _load() {
 		$sql = <<<SQL
-			SELECT name, description, headword, wordclass FROM sense WHERE id = :id
+			SELECT name, description, entry_id FROM sense WHERE id = :id
 SQL;
 		$results = $this->_db->fetch($sql, array(":id" => $this->getId()));
 		$this->_init($results[0]);
@@ -27,8 +26,7 @@ SQL;
 	private function _init($params) {
 		$this->_setName($params["name"]);
 		$this->_setDescription($params["description"]);
-		$this->_setHeadword($params["headword"]);
-		$this->_setWordclass($params["wordclass"]);
+		$this->_setEntryId($params["entry_id"]);
 	}
 
 	//SETTERS
@@ -41,23 +39,8 @@ SQL;
 		$this->_description = $description;
 	}
 
-	private function _setHeadword($headword) {
-		$this->_headword = $headword;
-	}
-
-	private function _setWordclass($wordclass) {
-		$this->_wordclass = $wordclass;
-	}
-
-	/**
-	 * Checks which group ("workspace") is associated with this sense and sets the class property
-	 */
-	private function _setGroupId() {
-		$sql = <<<SQL
-			SELECT DISTINCT group_id FROM slips s JOIN slip_sense ss ON s.auto_id = ss.slip_id WHERE ss.sense_id = :id
-SQL;
-		$results = $this->_db->fetch($sql, array(":id" => $this->getId()));
-		$this->_groupId = $results[0]["group_id"];
+	private function _setEntryId($entryId) {
+		$this->_entryId = $entryId;
 	}
 
 	//GETTERS
@@ -74,15 +57,9 @@ SQL;
 		return $this->_description;
 	}
 
-	public function getHeadword() {
-		return $this->_headword;
+	public function getEntryId() {
+		return $this->_entryId;
 	}
 
-	public function getWordclass() {
-		return $this->_wordclass;
-	}
 
-	public function getGroupId() {
-		return $this->_groupId;
-	}
 }

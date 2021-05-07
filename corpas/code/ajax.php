@@ -61,10 +61,16 @@ switch ($_REQUEST["action"]) {
 		$slipInfo["context"] = $context;
 		echo json_encode($slipInfo);
 		break;
-	case "getSenseCategories":
-		$slip = new slip($_GET["id"]);
+	case "getSenseCategoriesForNewWordclass":
+		$slip = new slip($_GET["filename"], $_GET["id"], $_GET["auto_id"], $_GET["pos"]);
+		$slip->updateEntry($_GET["headword"], $_GET["wordclass"]);  //update entry with new wordclass
+		$slip->saveSlip($_GET);
 		$senses = $slip->getUnusedSenses();
-		echo json_encode($senses);
+		$unusedSenseInfo = array();
+		foreach ($senses as $sense) {
+			$unusedSenseInfo[$sense->getId()] = array("name" => $sense->getName(), "description" => $sense->getDescription());
+		}
+		echo json_encode($unusedSenseInfo);
 		break;
   case "saveSlip":
     $slip = new slip($_POST["filename"], $_POST["id"], $_POST["auto_id"], $_POST["pos"],
@@ -89,7 +95,7 @@ switch ($_REQUEST["action"]) {
     echo "success";
     break;
 	case "addSense":
-		$senseId = sensecategories::addSense($_GET["name"], $_GET["description"], $_GET["headword"], $_GET["wordclass"]);
+		$senseId = sensecategories::addSense($_GET["name"], $_GET["description"], $_GET["entryId"]);
 		sensecategories::saveSlipSense($_GET["slipId"], $senseId);
 		echo json_encode(array("senseId" => $senseId, "senseDescription" => $_GET["description"]));
 		break;
@@ -146,6 +152,26 @@ switch ($_REQUEST["action"]) {
 		$xpath = urldecode($_GET["xpath"]);
 		$results = $slowSearch->search($xpath, $_GET["chunkSize"], $_GET["offsetFilename"], $_GET["offsetId"], $_GET["index"]);
 		echo json_encode($results);
+		break;
+	case "raiseIssue":
+		$issue = new issue();
+		$issue->init($_GET);
+		if ($issue->save()) {
+			$message = "Issue successfully recorded";
+		} else {
+			$message = "Error! Issue was not saved";
+		}
+		echo json_encode(array("message" => $message));
+		break;
+	case "updateIssue":
+		$issue = new issue($_GET["id"]);
+		$issue->init($_GET);
+		if ($issue->save()) {
+			$message = "Issue successfully updated";
+		} else {
+			$message = "Error! Issue was not updated";
+		}
+		echo json_encode(array("message" => $message));
 		break;
 	default:
 		echo json_encode(array("error"=>"undefined action"));

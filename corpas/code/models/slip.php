@@ -7,7 +7,7 @@ class slip
 	const SCOPE_DEFAULT = 80;
 
   private $_auto_id, $_filename, $_id, $_pos, $_db;
-  private $_starred, $_translation, $_notes, $_locked, $_ownedBy;
+  private $_starred, $_translation, $_notes, $_locked, $_ownedBy, $_entryId, $_headword;
   private $_preContextScope, $_postContextScope, $_wordClass, $_lastUpdatedBy, $_lastUpdated;
   private $_isNew;
   private $_wordClasses = array(
@@ -17,14 +17,15 @@ class slip
     "preposition" => array("p", "P"),
     "adverb" => array("A"),
     "other" => array("d", "c", "z", "o", "D", "Dx", "ax", "px", "q"));
-  private $_slipMorph;  //an instance of SlipMorphFeature
+  private $_entry;  //an instance of models\entry
+  private $_slipMorph;  //an instance of models\slipmorphfeature
   private $_senses = array();
   private $_sensesInfo = array();   //used to store sense info (in place of object data) for AJAX use
-  private $_lemma;
 
   public function __construct($filename, $id, $auto_id = null, $pos, $preScope = self::SCOPE_DEFAULT, $postScope = self::SCOPE_DEFAULT) {
     $this->_filename = $filename;
     $this->_id = $id;
+    $this->_headword = lemmas::getLemma($this->_id, $this->_filename)[0];
     //test if a slip already exists (if there is a slip with the same groupId, filename, id combination)
     $this->_auto_id = $auto_id ? $auto_id : collection::slipExists($_SESSION["groupId"], $filename, $id);
     $this->_pos = $pos;
@@ -39,10 +40,12 @@ class slip
     if (!$this->getAutoId()) {  //create a new slip entry
       $this->_isNew = true;
       $this->_extractWordClass($this->_pos);
+      //get the entry
+	    $this->_entry = entries::getEntryByHeadwordAndWordclass($this->getHeadword(), $this->getWordClass());
       $sql = <<<SQL
-        INSERT INTO slips (filename, id, group_id, preContextScope, postContextScope, wordClass, ownedBy) VALUES (?, ?, ?, ?, ?, ?, ?);
+        INSERT INTO slips (filename, id, entry_id, preContextScope, postContextScope, ownedBy) VALUES (?, ?, ?, ?, ?, ?);
 SQL;
-      $this->_db->exec($sql, array($this->_filename, $this->_id, $_SESSION["groupId"], $preScope, $postScope, $this->getWordClass(),
+      $this->_db->exec($sql, array($this->_filename, $this->_id, $this->_entry->getId(), $preScope, $postScope,
 	      $_SESSION["user"]));
       $this->_auto_id = $this->_db->getLastInsertId();
       $this->_saveSlipMorph();    //save the defaults to the DB
@@ -53,6 +56,7 @@ SQL;
 SQL;
     $result = $this->_db->fetch($sql, array(":auto_id" => $this->_auto_id));
     $slipData = $result[0];
+	  $this->_entry = entries::getEntryById($slipData["entry_id"]);
     $this->_populateClass($slipData);
     $this->_loadSlipMorph();  //load the slipMorph data from the DB
     $this->_loadSenses(); //load the sense objects
@@ -137,12 +141,12 @@ SQL;
     return $this->_filename;
   }
 
-  public function getId() {
-    return $this->_id;
+  public function getPOS() {
+  	return $this->_pos;
   }
 
-  public function getLemma() {
-  	return $this->_lemma;
+  public function getId() {
+    return $this->_id;
   }
 
   public function getIsNew() {
@@ -169,8 +173,20 @@ SQL;
     return $this->_postContextScope;
   }
 
+  public function getEntryId() {
+  	return $this->_entry->getId();
+  }
+
+  public function getEntry() {
+  	return $this->_entry;
+  }
+
   public function getWordClass() {
     return $this->_wordClass;
+  }
+
+  public function getHeadword() {
+  	return $this->_headword;
   }
 
   public function getSenses() {
@@ -208,15 +224,14 @@ SQL;
   public function getUnusedSenses() {
   	$senses = array();
 		$sql = <<<SQL
-			SELECT DISTINCT se.id AS id FROM sense se
-				JOIN slip_sense ss ON ss.sense_id = se.id 
-				JOIN slips s ON ss.slip_id = s.auto_id
-				WHERE se.headword = :lemma AND se.wordclass = :wordclass AND group_id = '{$_SESSION["groupId"]}'
+			SELECT se.id AS id FROM sense se
+				JOIN entry e ON e.id = se.entry_id
+			  WHERE e.id = :entryId
 SQL;
-		$results = $this->_db->fetch($sql, array(":lemma"=>$this->getLemma(), ":wordclass"=>$this->getWordClass()));
+		$results = $this->_db->fetch($sql, array(":entryId"=>$this->getEntryId()));
 		foreach ($results as $result) {
 			$id = $result["id"];
-			if (array_key_exists($id, $this->getSenses())) {
+			if (array_key_exists($id, $this->getSenses())) {  //skip exisiting senses for this slip
 				continue;
 			}
 			$senses[$id] = new sense($id);
@@ -224,16 +239,7 @@ SQL;
 		return $senses;
   }
 
-	private function _setLemma() {
-		$sql = <<<SQL
-			SELECT lemma FROM lemmas WHERE filename = :filename AND id = :id
-SQL;
-		$results = $this->_db->fetch($sql, array(":filename"=>$this->getFilename(), ":id"=>$this->getId()));
-		$this->_lemma = $results[0]["lemma"];
-	}
-
   private function _populateClass($params) {
-  	$this->_setLemma();
     $this->_auto_id = $this->getAutoId() ? $this->getAutoId() : $params["auto_id"];
     $this->_isNew = false;
     $this->_starred = $params["starred"] ? 1 : 0;
@@ -241,7 +247,8 @@ SQL;
     $this->_notes = $params["notes"];
     $this->_preContextScope = $params["preContextScope"];
     $this->_postContextScope = $params["postContextScope"];
-    $this->_wordClass = $params["wordClass"];
+    $this->_wordClass = $this->_entry->getWordclass();
+    $this->_entryId = $params["entryId"];
     $this->_locked = $params["locked"];
     $this->_ownedBy = $params["ownedBy"];
     $this->_lastUpdatedBy = $params["updatedBy"];
@@ -258,15 +265,36 @@ SQL;
     $this->_saveSlipMorph();
     $sql = <<<SQL
         UPDATE slips 
-            SET group_id = {$_SESSION["groupId"]}, locked = ?, starred = ?, translation = ?, notes = ?, preContextScope = ?, postContextScope = ?,
-                wordClass = ?, updatedBy = ?, lastUpdated = now()
+            SET locked = ?, starred = ?, translation = ?, notes = ?, 
+                entry_id = ?, preContextScope = ?, postContextScope = ?,
+             		updatedBy = ?, lastUpdated = now()
             WHERE auto_id = ?
 SQL;
     $this->_db->exec($sql, array($this->getLocked(), $this->getStarred(), $this->getTranslation(),
-	    $this->getNotes(), $this->getPreContextScope(), $this->getPostContextScope(), $this->getWordClass(),
-      $this->getLastUpdatedBy(),
-      $this->getAutoId()));
+	    $this->getNotes(), $this->getEntryId(), $this->getPreContextScope(), $this->getPostContextScope(),
+	    $this->getLastUpdatedBy(), $this->getAutoId()));
     return $this;
+  }
+
+  /*
+   * Changes the entry for this slip when the headword or wordclass is changed
+   * @param $headword
+   * @param $wordclass
+   */
+  public function updateEntry($headword, $wordclass) {
+  	if ($wordclass != $this->getWordClass()) {
+		  $this->_wordClass = $wordclass;
+		  //remove all the senses
+		  sensecategories::deleteSensesForSlip($this->getAutoId());
+		  //hack to workaround POS issues - TODO: discuss with MM
+		  $tempPOS = array("noun" => "n", "verb" => "v", "preposition" => "p", "verbal noun" => "vn", "adjective" => "a",
+			  "adverb" => "A", "other" => "x"); //TODO check with MM if "x" for other is an OK hack
+		  $this->_pos = $tempPOS[$wordclass];
+		  $this->_slipMorph = new slipmorphfeature($this->_pos);  //attach the morph data for the new POS
+		  $this->_clearSlipMorphEntries();
+	  }
+	  $this->_headword = $headword;
+	  $this->_entry = entries::getEntryByHeadwordAndWordclass($headword, $wordclass);
   }
 
   /**

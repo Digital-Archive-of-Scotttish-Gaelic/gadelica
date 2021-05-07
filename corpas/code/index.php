@@ -37,6 +37,9 @@ switch ($module) {
 	case "entries":
 		$controller = new entries();
 		break;
+	case "issues":
+		$controller = new issue();
+		break;
 	/**
 	**/
 	default:

@@ -54,7 +54,6 @@ class database {
    * @param array $values    : The params for the query (defaults to empty)
    */
   public function exec($sql, array $values = array()) {
-    $results = array();
     try {
       $this->_sth = $this->_dbh->prepare($sql);
       $this->_sth->execute($values);

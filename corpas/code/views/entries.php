@@ -6,14 +6,14 @@ use models;
 class entries
 {
   public function writeEntry($entry) {
-  	$lemma = $entry->getLemma();
+  	$headword = $entry->getHeadword();
   	$wordclass = $entry->getWordclass();
   	$abbr = models\functions::getWordclassAbbrev($wordclass);
     echo <<<HTML
       <div id="#entryContainer">
         <div>
-          <h4>{$lemma} <em>{$abbr}</em></h4>
-          <input type="hidden" id="lemma" value="{$lemma}">
+          <h4>{$headword} <em>{$abbr}</em></h4>
+          <input type="hidden" id="lemma" value="{$headword}">
           <input type="hidden" id="wordclass" value="{$wordclass}">
         </div>
         <div>
@@ -32,80 +32,81 @@ HTML;
   }
 
   private function _getFormsHtml($entry) {
+  	$i=0;
+	  $hideText = array("unmarked person", "unmarked number");
 	  $html = "<ul>";
-	  $i=0;
-	  foreach ($entry->getUniqueForms() as $slipId => $formString) {
-		  $i++;
-			$formElems = explode('|', $formString);
-			$form = $formElems[0];
-			$morph = $formElems[1];
-			$hideText = array("unmarked person", "unmarked number");
-			$morph = str_replace($hideText, "", $morph);
-		  $morphHtml = "(" . $morph . ")";
-		  $slipData = array();
-	  	$formSlipIds = $entry->getFormSlipIds($slipId);
-			foreach ($formSlipIds as $id) {
-				$slipData[] = models\collection::getSlipInfoBySlipId($id);
-			}
-			$slipList = '<table class="table"><tbody>';
-			foreach($slipData as $data) {
-				foreach ($data as $row) {
-					$translation = $this->_formatTranslation($row["translation"]);
-					$slipLinkData = array(
-						"auto_id" => $row["auto_id"],
-						"lemma" => $row["lemma"],
-						"pos" => $row["pos"],
-						"id" => $row["id"],
-						"filename" => $row["filename"],
-						"uri" => "",
-						"date_of_lang" => $row["date_of_lang"],
-						"title" => $row["title"],
-						"page" => $row["page"]
-					);
-					$filenameElems = explode('_', $row["filename"]);
-					$slipList .= <<<HTML
-					<tr id="#slip_{$row["auto_id"]}" data-slipid="{$row["auto_id"]}"
-							data-filename="{$row["filename"]}"
-							data-id="{$row["id"]}"
-							data-tid="{$row["tid"]}"
-							data-precontextscope="{$row["preContextScope"]}"
-							data-postcontextscope="{$row["postContextScope"]}"
-							data-translation="{$translation}"
-							data-date="{$row["date_of_lang"]}">
-						<!--td data-toggle="tooltip"
-							title="#{$filenameElems[0]} p.{$row["page"]}: {$row["date_of_lang"]} : {$translation}"
-							class="entryCitationContext"></td-->
-						<td class="entryCitationContext"></td>
-						<td class="entryCitationSlipLink">{$this->_getSlipLink($slipLinkData)}</td>
-						<td><a target="_blank" href="#" class="entryCitationTextLink"><small>view in text</small></td>
-					</tr>
+	  foreach ($entry->getWordforms() as $wordform => $morphGroup) {
+	  	foreach ($morphGroup as $morphString => $slipIds) {
+	  		$i++;
+			  $morphHtml = str_replace('|', ' ', $morphString);
+			  $morphHtml = str_replace($hideText, '', $morphHtml);
+			  $slipList = $this->_getSlipListForForms($slipIds);
+			  $citationHtml = <<<HTML
+						<small><a href="#" class="citationsLink" data-type="form" data-index="{$i}">
+								citations
+						</a></small>
+						<div id="form_citations{$i}" class="citation">
+							<div class="spinner">
+				        <div class="spinner-border" role="status">
+				          <span class="sr-only">Loading...</span>
+				        </div>
+							</div>
+							{$slipList}
+						</div>
 HTML;
-				}
-			}
-	  	$slipList .= "</tbody></table>";
-	  	$citationsHtml = <<<HTML
-				<small><a href="#" class="citationsLink" data-type="form" data-index="{$i}">
-						citations
-				</a></small>
-				<div id="form_citations{$i}" class="citation">
-					<div class="spinner">
-		        <div class="spinner-border" role="status">
-		          <span class="sr-only">Loading...</span>
-		        </div>
-					</div>
-					{$slipList}
-				</div>
-HTML;
-
-		  $html .= <<<HTML
-				<li>{$form} {$morphHtml} {$citationsHtml}</li>
-HTML;
+			  $html .= "<li>{$wordform} ({$morphHtml}) {$citationHtml}</li>";
+		  }
 	  }
 	  $html .= "</ul>";
 	  return $html;
   }
 
+  private function _getSlipListForForms($slipIds) {
+  	$slipData = array();
+	  foreach ($slipIds as $id) {
+		  $slipData[] = models\collection::getSlipInfoBySlipId($id);
+	  }
+		$slipList = '<table class="table"><tbody>';
+		foreach ($slipData as $data) {
+			foreach ($data as $row) {
+				$translation = $this->_formatTranslation($row["translation"]);
+				$slipLinkData = array(
+					"auto_id" => $row["auto_id"],
+					"lemma" => $row["lemma"],
+					"pos" => $row["pos"],
+					"id" => $row["id"],
+					"filename" => $row["filename"],
+					"uri" => "",
+					"date_of_lang" => $row["date_of_lang"],
+					"title" => $row["title"],
+					"page" => $row["page"]
+				);
+				$filenameElems = explode('_', $row["filename"]);
+				$slipList .= <<<HTML
+					<tr id="#slip_{$row["auto_id"]}" data-slipid="{$row["auto_id"]}"
+						data-filename="{$row["filename"]}"
+						data-id="{$row["id"]}"
+						data-tid="{$row["tid"]}"
+						data-precontextscope="{$row["preContextScope"]}"
+						data-postcontextscope="{$row["postContextScope"]}"
+						data-translation="{$translation}"
+						data-date="{$row["date_of_lang"]}">
+					<!--td data-toggle="tooltip"
+						title="#{$filenameElems[0]} p.{$row["page"]}: {$row["date_of_lang"]} : {$translation}"
+						class="entryCitationContext"></td-->
+					<td class="entryCitationContext"></td>
+					<td class="entryCitationSlipLink">{$this->_getSlipLink($slipLinkData)}</td>
+					<td><a target="_blank" href="#" class="entryCitationTextLink"><small>view in text</small></td>
+				</tr>
+HTML;
+			}
+		}
+		$slipList .= "</tbody></table>";
+		return $slipList;
+  }
+
 	private function _getSensesHtml($entry) {
+  	//orphaned (uncategorised) senses
   	$orphanedSensesHtml = $this->_getOrphanSensesHtml($entry);
   	if ($orphanedSensesHtml != "") {
 		  $html = "<ul>" . $orphanedSensesHtml . "</ul>";
@@ -115,9 +116,10 @@ HTML;
 				<h6>Grouped Senses <a id="showIndividual" href="#" title="show individual senses"><small>show individual</small></a></h6> 
 				<ul>
 HTML;
+  	//grouped senses
 		$html .= $this->_getGroupedSensesHtml($entry);
 		$html .= '</ul></div>';
-
+		//individual senses
 		$html .= <<<HTML
 			<div id="individualSenses" class="hide">
 				<h6>Indivdual Senses <a id="showGrouped" href="#" title="show grouped senses"><small>show grouped</small></a></h6> 
@@ -131,7 +133,7 @@ HTML;
 	private function _getOrphanSensesHtml($entry) {
 		/* Get any citations without senses */
 		$html = "";
-		$nonSenseSlipIds = models\sensecategories::getNonCategorisedSlipIds($entry->getLemma(), $entry->getWordclass());
+		$nonSenseSlipIds = models\sensecategories::getNonCategorisedSlipIds($entry->getId());
 		if (count($nonSenseSlipIds)) {
 			$slipData = array();
 			$index = 0;
@@ -252,15 +254,16 @@ HTML;
   	return $text;
 	}
 
-  public function writeBrowseTable($entriesData) {
+  public function writeBrowseTable($entryIds) {
     $tableBodyHtml = "<tbody>";
-    foreach ($entriesData as $entry) {
-      $entryUrl = "?m=entries&a=view&headword={$entry["lemma"]}&wordclass={$entry["wordclass"]}";
+    foreach ($entryIds as $id) {
+    	$entry = models\entries::getEntryById($id);
+      $entryUrl = "?m=entries&a=view&id={$id}";
       $tableBodyHtml .= <<<HTML
         <tr>
-          <td>{$entry["lemma"]}</td>
-          <td>{$entry["wordclass"]}</td>
-          <td><a href="{$entryUrl}" title="view entry for {$entry["lemma"]}">
+          <td>{$entry->getHeadword()}</td>
+          <td>{$entry->getWordclass()}</td>
+          <td><a href="{$entryUrl}" title="view entry for {$entry->getHeadword()}">
             view entry
           </td>
         </tr>
