@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -126,14 +125,7 @@
       <workItem from="1620124917269" duration="1865000" />
       <workItem from="1620195384095" duration="6000" />
       <workItem from="1620218531952" duration="6904000" />
-      <workItem from="1620630130524" duration="5818000" />
-    </task>
-    <task id="LOCAL-00059" summary="Additional AJAX work on slow search to handle slip links">
-      <created>1615984514518</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1615984514519</updated>
+      <workItem from="1620630130524" duration="5923000" />
     </task>
     <task id="LOCAL-00060" summary="Added index IDs to slip links in slow search to facilitate correct updating of slip links in results after slip creation">
       <created>1615989262349</created>
@@ -471,7 +463,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620649973953</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="Debug code">
+      <created>1620650875052</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1620650875052</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -490,7 +489,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Progress towards automatically generating slips from all search results" />
     <MESSAGE value="Bug fix for cancelling out of &quot;Create slips for all records&quot; dialog not behaving correctly" />
     <MESSAGE value="Reworking of DB results query to speed up auto slip creation." />
     <MESSAGE value="Initial code for new edit slip in entry refactor" />
@@ -515,6 +513,7 @@
     <MESSAGE value="Some progress with fixing issue whereby changing wordclass to non-noun or noun-verb causes a bug preventing recording of issues.&#10;Added a new method to models\users to check for superuser. Locked down issues code to be only viewable by superusers." />
     <MESSAGE value="Major bug fix of slip links showing in all groups&#10;Fixed bug whereby using accented search term prevented auto creation of slips&#10;Fixed issue where entries were not group dependent" />
     <MESSAGE value="Added change headword functionality to slip edit. Added code to track this via issues system.&#10;Reworked slip edit page to hide sections by default and control display with Bootstrap toggle" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added change headword functionality to slip edit. Added code to track this via issues system.&#10;Reworked slip edit page to hide sections by default and control display with Bootstrap toggle" />
+    <MESSAGE value="Debug code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Debug code" />
   </component>
 </project>

@@ -287,7 +287,7 @@ $(function () {
     }
     $.post("ajax.php", data, function (response) {
       //refresh the parent page to show updated slip info
-      window.opener.document.location.reload(true);
+//      window.opener.document.location.reload(true);
     });
   }
 });
