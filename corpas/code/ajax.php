@@ -101,8 +101,6 @@ switch ($_REQUEST["action"]) {
 		break;
 	case "editSense":
 		sensecategories::updateSense($_GET["id"], $_GET["name"], $_GET["description"]);
-
-		echo json_encode($_GET);
 		//remove association with slip
 		if ($_GET["slipId"]) {
 			sensecategories::deleteSlipSense($_GET["slipId"], $_GET["id"]);

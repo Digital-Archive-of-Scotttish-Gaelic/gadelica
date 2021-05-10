@@ -76,10 +76,8 @@ $(function () {
     $.ajax({url: url}, function () {
     })
       .done(function(response) {
-        console.log(response);
+        location.reload();  //refresh the page
       });
-
-    //location.reload();  //refresh the page
   });
 
   /**
