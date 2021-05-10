@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/ajax.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/collection.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,14 +127,7 @@
       <workItem from="1620124917269" duration="1865000" />
       <workItem from="1620195384095" duration="6000" />
       <workItem from="1620218531952" duration="6904000" />
-      <workItem from="1620630130524" duration="8153000" />
-    </task>
-    <task id="LOCAL-00064" summary="Reworked regular expression searching for headword (lemma) to ensure word boundary is respected">
-      <created>1616407084484</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1616407084484</updated>
+      <workItem from="1620630130524" duration="8503000" />
     </task>
     <task id="LOCAL-00065" summary="Ensured all word links in results open in new tab">
       <created>1616408093518</created>
@@ -472,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620652924108</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="Attempt at bug fix for senses not being removed from slips">
+      <created>1620653486700</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1620653486700</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -491,7 +491,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Bug fix for 2nd slip not connecting with existing entry" />
     <MESSAGE value="Fixed major bug where senses were not being added properly due to the new entry model" />
     <MESSAGE value="Fixed a bug whereby senses were not being listed correctly in edit slip dropdown" />
     <MESSAGE value="Bug fixes for sense dropdown adding empty sense, slip morph data not updating on wordclass change, sense list updating with senses not belonging to wordclass/headword combination." />
@@ -516,6 +515,7 @@
     <MESSAGE value="More debug code" />
     <MESSAGE value="Removed debug code" />
     <MESSAGE value="Even more debug code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Even more debug code" />
+    <MESSAGE value="Attempt at bug fix for senses not being removed from slips" />
+    <option name="LAST_COMMIT_MESSAGE" value="Attempt at bug fix for senses not being removed from slips" />
   </component>
 </project>
