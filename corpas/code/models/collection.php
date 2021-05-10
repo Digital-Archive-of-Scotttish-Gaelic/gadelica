@@ -261,16 +261,10 @@ HTML;
    */
   public static function touchSlip($slipId) {
     $db = new database();
-    $dbh = $db->getDatabaseHandle();
-    try {
-      $sql = <<<SQL
-          UPDATE slips SET updatedBy = :user, lastUpdated = now() WHERE group_id = {$_SESSION["groupId"]} AND auto_id = :slipId
+    $sql = <<<SQL
+    	UPDATE slips SET updatedBy = :user WHERE auto_id = :slipId
 SQL;
-      $sth = $dbh->prepare($sql);
-      $sth->execute(array(":user"=>$_SESSION["user"], ":slipId"=>$slipId));
-    } catch (\PDOException $e) {
-      echo $e->getMessage();
-    }
+    $db->exec($sql, array(":user"=>$_SESSION["user"], ":slipId"=>$slipId));
   }
 
   public static function writeSlipDiv() {

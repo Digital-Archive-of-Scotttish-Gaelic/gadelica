@@ -73,7 +73,6 @@ $(function () {
       url += '&slipId=' + $('#modalSlipId').val();
     }
     $('#senseModal').modal('hide');
-    console.log(url); return;
     $.ajax({url: url});
     location.reload();  //refresh the page
   });
