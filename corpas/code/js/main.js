@@ -74,7 +74,7 @@ $(function () {
     }
     $('#senseModal').modal('hide');
     $.ajax({url: url});
-    //location.reload();  //refresh the page
+    location.reload();  //refresh the page
   });
 
   /**

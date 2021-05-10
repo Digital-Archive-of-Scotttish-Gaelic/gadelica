@@ -7,7 +7,6 @@
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/views/slip.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/slip.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,14 +126,7 @@
       <workItem from="1620124917269" duration="1865000" />
       <workItem from="1620195384095" duration="6000" />
       <workItem from="1620218531952" duration="6904000" />
-      <workItem from="1620630130524" duration="6294000" />
-    </task>
-    <task id="LOCAL-00061" summary="Added option on search form to choose between searching for all results and chunking results. Added option to choose chunk size.&#10;Fixed issues with full results not paginating.">
-      <created>1615993562251</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1615993562251</updated>
+      <workItem from="1620630130524" duration="6677000" />
     </task>
     <task id="LOCAL-00062" summary="Added option on search form to choose between searching for all results and chunking results. Added option to choose chunk size.&#10;Fixed issues with full results not paginating.&#10;Fixed issue where chunked results weren't working correctly due to conflict with &quot;all results&quot; functionality.&#10;TODO: fix &quot;all results&quot; functionality">
       <created>1615994006551</created>
@@ -472,7 +464,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620650978779</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="More debug code">
+      <created>1620651378013</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1620651378013</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -491,7 +490,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Reworking of DB results query to speed up auto slip creation." />
     <MESSAGE value="Initial code for new edit slip in entry refactor" />
     <MESSAGE value="Working code for creation of slip and related entry" />
     <MESSAGE value="Bug fix for 2nd slip not connecting with existing entry" />
@@ -516,6 +514,7 @@
     <MESSAGE value="Added change headword functionality to slip edit. Added code to track this via issues system.&#10;Reworked slip edit page to hide sections by default and control display with Bootstrap toggle" />
     <MESSAGE value="Debug code" />
     <MESSAGE value="More Debug code" />
-    <option name="LAST_COMMIT_MESSAGE" value="More Debug code" />
+    <MESSAGE value="More debug code" />
+    <option name="LAST_COMMIT_MESSAGE" value="More debug code" />
   </component>
 </project>
