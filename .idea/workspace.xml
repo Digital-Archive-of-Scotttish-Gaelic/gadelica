@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="Some progress with fixing issue whereby changing wordclass to non-noun or noun-verb causes a bug preventing recording of issues.&#10;Added a new method to models\users to check for superuser. Locked down issues code to be only viewable by superusers.">
+    <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/collection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/corpus_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/corpus_search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/entries.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/entries.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/includes/include.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/includes/include.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/views/slip.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/slip.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,13 +127,7 @@
       <workItem from="1620124917269" duration="1865000" />
       <workItem from="1620195384095" duration="6000" />
       <workItem from="1620218531952" duration="6904000" />
-    </task>
-    <task id="LOCAL-00057" summary="Initial work on fleshing out the slow search to display database information in results.&#10;Some initial basic refactoring of slow search in line with MVC">
-      <created>1615907529402</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1615907529402</updated>
+      <workItem from="1620630130524" duration="4975000" />
     </task>
     <task id="LOCAL-00058" summary="Added AJAX support to slow search. &#10;Many fixes for slow search.">
       <created>1615980166468</created>
@@ -472,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620308448685</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="Major bug fix of slip links showing in all groups&#10;Fixed bug whereby using accented search term prevented auto creation of slips&#10;Fixed issue where entries were not group dependent">
+      <created>1620395931021</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1620395931022</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -491,7 +491,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Adding and removing senses working in slip edit page" />
     <MESSAGE value="New sense code with editing (and removing) modal and new tooltips working in collection, entry, and search results." />
     <MESSAGE value="Progress towards automatically generating slips from all search results" />
     <MESSAGE value="Bug fix for cancelling out of &quot;Create slips for all records&quot; dialog not behaving correctly" />
@@ -516,6 +515,7 @@
     <MESSAGE value="Changing wordclass in slip edit now saves an issue to the database with user info and description. TODO: get edit issue form working." />
     <MESSAGE value="Form updates now working and refreshing main list" />
     <MESSAGE value="Some progress with fixing issue whereby changing wordclass to non-noun or noun-verb causes a bug preventing recording of issues.&#10;Added a new method to models\users to check for superuser. Locked down issues code to be only viewable by superusers." />
-    <option name="LAST_COMMIT_MESSAGE" value="Some progress with fixing issue whereby changing wordclass to non-noun or noun-verb causes a bug preventing recording of issues.&#10;Added a new method to models\users to check for superuser. Locked down issues code to be only viewable by superusers." />
+    <MESSAGE value="Major bug fix of slip links showing in all groups&#10;Fixed bug whereby using accented search term prevented auto creation of slips&#10;Fixed issue where entries were not group dependent" />
+    <option name="LAST_COMMIT_MESSAGE" value="Major bug fix of slip links showing in all groups&#10;Fixed bug whereby using accented search term prevented auto creation of slips&#10;Fixed issue where entries were not group dependent" />
   </component>
 </project>
