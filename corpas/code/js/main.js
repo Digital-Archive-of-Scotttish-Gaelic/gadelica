@@ -74,7 +74,7 @@ $(function () {
     }
     $('#senseModal').modal('hide');
     $.ajax({url: url});
-    location.reload();  //refresh the page
+    //location.reload();  //refresh the page
   });
 
   /**
@@ -229,9 +229,9 @@ $(function () {
   $('#savedClose').on('click', function () {
     saveSlip();
     $('#slipSavedModal').modal();
-  /*  setTimeout(function() {
+    setTimeout(function() {
       window.close();
-    }, 2000);*/
+    }, 2000);
   });
 
   function resetSlip() {
@@ -287,7 +287,7 @@ $(function () {
     }
     $.post("ajax.php", data, function (response) {
       //refresh the parent page to show updated slip info
-//      window.opener.document.location.reload(true);
+      window.opener.document.location.reload(true);
     });
   }
 });

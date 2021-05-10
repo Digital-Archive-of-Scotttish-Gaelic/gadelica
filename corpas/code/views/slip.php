@@ -485,20 +485,7 @@ HTML;
 
   private function _writeJavascript() {
     echo <<<HTML
-        <script>           
-    /*        $('#toggleTranslation').on('click', function() {
-                let action = $(this).attr('data-action');
-                if (action == 'show') {
-                  $('#containerAction').html('hide');
-                  $(this).attr('data-action', 'hide');
-                  $('#translationContainer').show();
-                } else {
-                  $('#containerAction').html('show');
-                  $(this).attr('data-action', 'show');
-                  $('#translationContainer').hide();
-                }
-            })*/
-             
+        <script>                        
 		        //update the slip context on click of token
 		        $(document).on('click', '.contextLink',  function () {
 		          $(this).tooltip('hide')
