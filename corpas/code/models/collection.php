@@ -261,16 +261,10 @@ HTML;
    */
   public static function touchSlip($slipId) {
     $db = new database();
-    $dbh = $db->getDatabaseHandle();
-    try {
-      $sql = <<<SQL
-          UPDATE slips SET updatedBy = :user, lastUpdated = now() WHERE group_id = {$_SESSION["groupId"]} AND auto_id = :slipId
+    $sql = <<<SQL
+    	UPDATE slips SET updatedBy = :user WHERE auto_id = :slipId
 SQL;
-      $sth = $dbh->prepare($sql);
-      $sth->execute(array(":user"=>$_SESSION["user"], ":slipId"=>$slipId));
-    } catch (\PDOException $e) {
-      echo $e->getMessage();
-    }
+    $db->exec($sql, array(":user"=>$_SESSION["user"], ":slipId"=>$slipId));
   }
 
   public static function writeSlipDiv() {
@@ -354,11 +348,10 @@ HTML;
   }
 
   public static function getSlipLinkHtml($data, $index = null) {
-	  //check if there is an existing slip for this entry
 	  $slipUrl = "#";
 	  $slipClass = "slipLink2";
 	  $modalCode = "";
-	  if ($data["auto_id"] != null) {
+	  if ($data["auto_id"] && ($data["group_id"] == $_SESSION["groupId"])) {  //check if there is a slip for THIS group
 		  $slipLinkText = "view";
 		  $createSlipStyle = "";
 		  $modalCode = 'data-toggle="modal" data-target="#slipModal"';

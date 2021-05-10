@@ -20,10 +20,10 @@ class corpus_search
 	public function __construct($params, $fullSearch=true) {
 		$this->_db = $this->_db ? $this->_db : new database();
 		$this->_params = $params;
-		if (!empty($params["term"])) {  //only run the search if there is a search term
+		$this->_init();
+		if (!empty($this->getTerm())) {  //only run the search if there is a search term
 			$this->_dbResults = $this->_getDBSearchResults($fullSearch);
 		}
-		$this->_init();
 	}
 
 	/**
@@ -132,6 +132,7 @@ class corpus_search
 			$fileResults[$i]["title"] = $result["title"];
 			$fileResults[$i]["page"] = $result["page"];
 			$fileResults[$i]["level"] = $result["level"];
+			$fileResults[$i]["group_id"] = $result["group_id"];
 			$i++;
 		}
 		return $fileResults;
@@ -151,6 +152,8 @@ class corpus_search
 			$perpage = $params["pp"];
 			$pagenum = $params["page"];
 			$offset = $pagenum == 1 ? 0 : ($perpage * $pagenum) - $perpage;
+		} else {
+			$params["term"] = urldecode($params["term"]); //need to decode if passed via JS encodeURI (auto create slips)
 		}
 		$searchPrefix = "[[:<:]]";  //default to word boundary at start for REGEXP
 		$whereClause = "";
@@ -220,7 +223,7 @@ SQL;
 		$query["sql"] = <<<SQL
 			SELECT SQL_CALC_FOUND_ROWS l.filename AS filename, l.id AS id, wordform, pos, lemma, date_of_lang, l.title,
                 page, medium, s.auto_id as auto_id, t.id AS tid, t.level as level, district_id,
-               	preceding_word, following_word
+               	preceding_word, following_word, e.group_id AS group_id
 SQL;
 		if (!$fullSearch) {
 			//we need only the following fields for auto slip creation
@@ -229,7 +232,7 @@ SQL;
 		$query["sql"] .= <<<SQL
             FROM lemmas AS l
             LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id
-						LEFT JOIN entry e ON s.entry_id = e.id AND e.group_id = {$_SESSION["groupId"]}
+						LEFT JOIN entry e ON e.id = s.entry_id 
             JOIN text t ON t.filepath = l.filename {$textJoinSql}
         		{$writerJoinSql}
             WHERE {$whereClause}
@@ -381,9 +384,10 @@ SQL;
 		$db = new database();
 		$sql = <<<SQL
 			SELECT l.id as id, l.filename as filename, wordform, pos, lemma, date_of_lang, l.title, page, medium, s.auto_id as auto_id, 
-			       s.wordClass as wordClass, t.id AS tid, t.level as level, district_id
+			       e.wordclass as wordClass, t.id AS tid, t.level as level, district_id
             FROM lemmas AS l
-            LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id AND group_id = {$_SESSION["groupId"]}
+            LEFT JOIN slips s ON l.filename = s.filename AND l.id = s.id
+            LEFT JOIN entry e ON e.id = s.entry_id AND group_id = {$_SESSION["groupId"]}
             JOIN text t ON t.filepath = l.filename
             WHERE l.filename = :filename AND l.id = :id
 SQL;

@@ -33,12 +33,15 @@ class slip
             <label class="form-check-label" for="slipStarred">checked</label>
           </div>
         </div>
-        <a href="#morphoSyntactic" id="toggleMorphoSyntactic" data-toggle="collapse" aria-expanded="true" aria-controls="morphoSyntactic">
-          show/hide morphosyntax
-        </a>
-        <div id="morphoSyntactic" class="collapse show editSlipSectionContainer">
-          <div>
-            headword: <span id="slipHeadword">{$_REQUEST["headword"]}</span>
+        <div>
+          <small><a href="#morphoSyntactic" id="toggleMorphoSyntactic" data-toggle="collapse" aria-expanded="false" aria-controls="morphoSyntactic">
+            show/hide morphosyntax
+          </a></small>
+        </div>
+        <div id="morphoSyntactic" class="collapse editSlipSectionContainer">
+          <div class="form-group row">
+            <label class="col-form-label col-sm-1" for="slipeadword">headword:</label>
+            <input class="col-sm-3 form-control" type="text" id="slipHeadword" name="slipHeadword" value="{$this->_slip->getHeadword()}"> 
           </div>
 HTML;
     $this->_writePartOfSpeechSelects();
@@ -48,8 +51,12 @@ HTML;
 
 	  $this->_writeSenseCategories();
     echo <<<HTML
-				<small><p><a href="#" id="toggleTranslation" data-action="show"><span id="containerAction">show</span> translation</a></p></small>
-        <div id="translationContainer" class="form-group hide">
+				<div style="margin-left: 10px;">
+					<small><a href="#translationContainer" id="toggleTranslation" data-toggle="collapse" aria-expanded="false" aria-controls="translationContainer">
+            show/hide translation
+          </a></small>
+        </div>
+        <div id="translationContainer" class="collapse form-group">
           <label for="slipTranslation">English translation:</label>
           <textarea class="form-control" name="slipTranslation" id="slipTranslation" rows="3">{$this->_slip->getTranslation()}</textarea>
           <script>
@@ -59,7 +66,12 @@ HTML;
             });
           </script>
         </div>
-        <div class="form-group">
+        <div style="margin: 0 0 10px 10px;">
+          <small><a href="#notesSection" id="toggleNotes" data-toggle="collapse" aria-expanded="false" aria-controls="notesSection">
+            show/hide notes
+          </a></small>
+        </div>
+        <div id="notesSection" class="form-group collapse">
           <label for="slipNotes">Notes:</label>
           <textarea class="form-control" name="slipNotes" id="slipNotes" rows="3">{$this->_slip->getNotes()}</textarea>
           <script>
@@ -352,7 +364,12 @@ HTML;
 HTML;
     }
     echo <<<HTML
-        <div class="editSlipSectionContainer">
+				<div style="margin-left: 10px;">
+					<small><a href="#senses" id="toggleSenses" data-toggle="collapse" aria-expanded="false" aria-controls="senses">
+            show/hide senses
+          </a></small>
+        </div>
+        <div id="senses" class="editSlipSectionContainer collapse">
           <h5>Sense Categories</h5>
           <div class="form-group row">
             <div class="col-md-3">
@@ -468,20 +485,7 @@ HTML;
 
   private function _writeJavascript() {
     echo <<<HTML
-        <script>           
-            $('#toggleTranslation').on('click', function() {
-                let action = $(this).attr('data-action');
-                if (action == 'show') {
-                  $('#containerAction').html('hide');
-                  $(this).attr('data-action', 'hide');
-                  $('#translationContainer').show();
-                } else {
-                  $('#containerAction').html('show');
-                  $(this).attr('data-action', 'show');
-                  $('#translationContainer').hide();
-                }
-            })
-             
+        <script>                        
 		        //update the slip context on click of token
 		        $(document).on('click', '.contextLink',  function () {
 		          $(this).tooltip('hide')
@@ -617,13 +621,23 @@ HTML;
               });
             });
 
-            $('#wordClass').on('change', function() {
-              let check = confirm('Changing the wordclass will remove any senses. Are you sure you want to proceed?');
+            $('#wordClass,#slipHeadword').on('change', function() {
+              let check = confirm('Changing the headword and/or wordclass will remove any senses. Are you sure you want to proceed?');
+              let previousHeadword = '{$this->_slip->getHeadword()}';
+              let previousWordclass = '{$this->_slip->getWordClass()}';        
               if (!check) {
-                $('#wordClass').val('{$this->_slip->getWordClass()}');
+                $('#slipHeadword').val(previousHeadword)
+                $('#wordClass').val(previousWordclass);
                 return;
               }
-              var wordclass = $(this).val();
+              let wordclass = $('#wordClass').val();
+              let headword = $('#slipHeadword').val();
+              var changedField = 'wordclass';   //just a default, used for message in issues
+              var changedValue = wordclass;
+              if (headword != previousHeadword) {
+                changedField = 'headword';
+                changedValue = headword;
+              }
               switch (wordclass) {
                 case "verb":
                   $('#verbSelects').show();
@@ -652,7 +666,7 @@ HTML;
               $('#senseCategorySelect').append('<option data-category="">-- select a category --</option>');
               var url = 'ajax.php?action=getSenseCategoriesForNewWordclass';
               url += '&filename={$this->_slip->getFilename()}&id={$this->_slip->getId()}&auto_id={$this->_slip->getAutoId()}';
-              url += '&pos={$this->_slip->getPOS()}&headword={$this->_slip->getHeadword()}&wordclass='+wordclass;
+              url += '&pos={$this->_slip->getPOS()}&headword=' + headword + '</head>&wordclass=' + wordclass;
               $.getJSON(url, function (data) {
                   $.each(data, function (index, sense) {
                     var html = '<option data-sense="' + index + '" data-sense-description="' + sense.description + '"';
@@ -662,7 +676,7 @@ HTML;
               })
               .done(function () {   //raise and save an issue with the slip and wordclass information
                     var params = {
-                      description: 'The wordclass for §{$this->_slip->getAutoId()} has been changed to <strong>' + wordclass + '</strong>',
+                      description: 'The ' + changedField + ' for §{$this->_slip->getAutoId()} has been changed to <strong>' + changedValue + '</strong>',
                       userEmail: '{$_SESSION["user"]}', status: 'new', updated: ''}; 
                     $.getJSON('ajax.php?action=raiseIssue', params, function(response) {
                       console.log(response.message);
