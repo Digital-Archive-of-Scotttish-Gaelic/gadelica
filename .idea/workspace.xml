@@ -8,8 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/includes/include.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/includes/include.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/slip.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/slip.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/views/slip.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/slip.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/models/collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/collection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/views/entries.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/entries.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,14 +129,7 @@
       <workItem from="1620124917269" duration="1865000" />
       <workItem from="1620195384095" duration="6000" />
       <workItem from="1620218531952" duration="6904000" />
-      <workItem from="1620630130524" duration="10669000" />
-    </task>
-    <task id="LOCAL-00067" summary="Added REGEX functionality to preceding and following word search options">
-      <created>1616512183578</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1616512183578</updated>
+      <workItem from="1620630130524" duration="14312000" />
     </task>
     <task id="LOCAL-00068" summary="Trimmed user facing XPath query in slow search box and added necessary back end code to model">
       <created>1616665990694</created>
@@ -474,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620654112075</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="Initial coding for slip status">
+      <created>1620720783884</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1620720783885</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -493,7 +493,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Bug fixes for sense dropdown adding empty sense, slip morph data not updating on wordclass change, sense list updating with senses not belonging to wordclass/headword combination." />
     <MESSAGE value="Working system" />
     <MESSAGE value="Recoded getUnusedSenses method in models\slips to use entry ID in place of headword and wordclass combination" />
     <MESSAGE value="Coded English translation to auto hide on slip edit load and toggle as per issue #17" />
@@ -518,6 +517,7 @@
     <MESSAGE value="Attempt at bug fix for senses not being removed from slips" />
     <MESSAGE value="Further debug test" />
     <MESSAGE value="Maybe a bug fix for senses not deleting" />
-    <option name="LAST_COMMIT_MESSAGE" value="Maybe a bug fix for senses not deleting" />
+    <MESSAGE value="Initial coding for slip status" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial coding for slip status" />
   </component>
 </project>
