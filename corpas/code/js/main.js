@@ -252,9 +252,10 @@ $(function () {
     var locked = $('#locked').val();
     var translation = CKEDITOR.instances['slipTranslation'].getData();
     var notes = CKEDITOR.instances['slipNotes'].getData();
+    var status = $('#status').val();
     var data = {action: "saveSlip", filename: $('#slipFilename').text(), id: $('#wordId').text(),
       auto_id: $('#auto_id').text(), pos: $('#pos').val(), starred: starred, translation: translation,
-      notes: notes, preContextScope: $('#slipContext').attr('data-precontextscope'),
+      notes: notes, status: status, preContextScope: $('#slipContext').attr('data-precontextscope'),
       postContextScope: $('#slipContext').attr('data-postcontextscope'), wordClass: wordclass,
       locked: locked};
     console.log(data);

@@ -24,6 +24,13 @@ class slip
 	  $locked = $this->_slip->getLocked();
 		$lockedHtml = $user->getSuperuser() ? $this->_getLockedDiv($locked) : '';
   	$checked = $this->_slip->getStarred() ? "checked" : "";
+  	$statusOptionHtml = "";
+  	for ($i=1; $i<11; $i++) {
+  		$selected = $i == $this->_slip->getStatus() ? "selected" : "";
+  		$statusOptionHtml .= <<<HTML
+				<option value="{$i}" {$selected}>{$i}</option>
+HTML;
+	  }
     echo <<<HTML
 				{$this->_writeContext()}
 				{$this->_writeCollocatesView()}
@@ -33,6 +40,12 @@ class slip
             <label class="form-check-label" for="slipStarred">checked</label>
           </div>
         </div>
+        <div class="form-group row">
+					<label for="status" class="col-form-label col-sm-1">Status:</label>
+					<select id="status">
+						{$statusOptionHtml}
+					</select>
+				</div>
         <div>
           <small><a href="#morphoSyntactic" id="toggleMorphoSyntactic" data-toggle="collapse" aria-expanded="false" aria-controls="morphoSyntactic">
             show/hide morphosyntax
@@ -40,7 +53,7 @@ class slip
         </div>
         <div id="morphoSyntactic" class="collapse editSlipSectionContainer">
           <div class="form-group row">
-            <label class="col-form-label col-sm-1" for="slipeadword">headword:</label>
+            <label class="col-form-label col-sm-1" for="slipeadword">Headword:</label>
             <input class="col-sm-3 form-control" type="text" id="slipHeadword" name="slipHeadword" value="{$this->_slip->getHeadword()}"> 
           </div>
 HTML;
