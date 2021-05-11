@@ -133,7 +133,9 @@ $(function () {
       var context = data.context.pre["output"] + ' <mark>' + data.context.word + '</mark> ' + data.context.post["output"];
       body += '<p>' + context + '</p>';
       if (data.translation) {
-        body += '<p><small class="text-muted">' + data.translation + '</small></p>';
+        body += '<div><small><a href="#translation" data-toggle="collapse" aria-expanded="false" aria-controls="translation">';
+        body += 'show/hide translation</a></small></div>';
+        body += '<div id="translation" class="collapse"><small class="text-muted">' + data.translation + '</small></div>';
       }
       //body += '<p class="small">[#' + textId + ': <em>' + title + '</em> p.' + page + ']</p>';
       body += '<p class="text-muted"><span data-toggle="tooltip" data-html="true" title="' + '<em>' + title + '</em> p.' + page + '">#' + textId + ': ' + date + '</span></p>';
@@ -252,9 +254,10 @@ $(function () {
     var locked = $('#locked').val();
     var translation = CKEDITOR.instances['slipTranslation'].getData();
     var notes = CKEDITOR.instances['slipNotes'].getData();
+    var status = $('#status').val();
     var data = {action: "saveSlip", filename: $('#slipFilename').text(), id: $('#wordId').text(),
       auto_id: $('#auto_id').text(), pos: $('#pos').val(), starred: starred, translation: translation,
-      notes: notes, preContextScope: $('#slipContext').attr('data-precontextscope'),
+      notes: notes, status: status, preContextScope: $('#slipContext').attr('data-precontextscope'),
       postContextScope: $('#slipContext').attr('data-postcontextscope'), wordClass: wordclass,
       locked: locked};
     console.log(data);

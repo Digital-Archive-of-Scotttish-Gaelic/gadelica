@@ -13,7 +13,7 @@ if (!$_SESSION["printSlips"]) {
 define("INPUT_FILEPATH", "../xml/");
 
 define("DB", "corpas");       //the live database
-//define("DB", "corpas_dev");   //used for development only
+//define("DB", "corpas_dev");       //the live database
 define("DB_HOST", "130.209.99.241");
 define("DB_USER", "corpas");
 define("DB_PASSWORD", "XmlCraobh2020");

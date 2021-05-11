@@ -332,7 +332,9 @@ HTML;
 			      $(this).removeClass('hideCitations');
 			      return;
 			    }
+			    var citationIndex = 0;
 			    $(citationsContainerId + "> table > tbody > tr").each(function() {
+			      citationIndex++;
 			      var date = $(this).attr('data-date');
 			      var html = '<span class="text-muted">' + date + '.</span> ';
 			      var filename = $(this).attr('data-filename');
@@ -361,7 +363,12 @@ HTML;
 			          html += ' ';
 			        }
 			        html += postOutput;
-			        html += '<br><small class="text-muted">'+translation+'</small>';
+			        if (translation) {
+			          html += '<div><small><a href="#translation'+citationIndex+'" '; 
+			          html += 'data-toggle="collapse" aria-expanded="false" aria-controls="#translation'+citationIndex+'">';
+			          html += 'show/hide translation</a></small></div>';
+			          html += '<div id="translation' + citationIndex + '" class="collapse"><small class="text-muted">'+translation+'</small></div>';
+			        }
 			        tr.find('.entryCitationContext').html(html);
 			      })
 			        .then(function () {

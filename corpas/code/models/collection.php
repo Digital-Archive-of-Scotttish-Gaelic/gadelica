@@ -33,7 +33,7 @@ SQL;
 	    $sql = <<<SQL
         SELECT SQL_CALC_FOUND_ROWS s.filename as filename, s.id as id, auto_id, pos, lemma, wordform, firstname, lastname,
                 date_of_lang, title, page, CONCAT(firstname, ' ', lastname) as fullname, locked,
-             		l.pos as pos, s.lastUpdated as lastUpdated, updatedBy
+             		l.pos as pos, s.lastUpdated as lastUpdated, updatedBy, wordclass
             FROM slips s
             JOIN lemmas l ON s.filename = l.filename AND s.id = l.id
             JOIN entry e ON e.id = s.entry_id
@@ -269,60 +269,6 @@ SQL;
 
   public static function writeSlipDiv() {
     echo <<<HTML
-        <div id="slip">
-            <div id="slipHeader">
-              <div id="slipTopRight">
-                  <div id="slipChecked">
-                  <!--label for="slipStarred">Starred: </label>
-                  <input type="checkbox" name="slipStarred" id="slipStarred"-->
-                  </div>
-                  <div id="slipNumber"></div>
-              </div>
-              <div id="slipHeadwordContainer">
-                <span id="slipHeadword"></span>
-                <span id="slipWordClass"></span>
-              </div>
-              <div id="slipTextNum"></div>
-            </div>  <!-- end slipHeader -->
-
-            <div id="slipBody">
-              <!--div>
-                <span><a href="#" class="updateContext btn-link" id="decrementPre">-</a></span>
-                <span><a href="#" class="updateContext" id="incrementPre">+</a></span>
-              </div-->
-
-              <span data-precontextscope="20" data-postcontextscope="20" id="slipContext"></span>
-
-              <!--div>
-                <span><a href="#" class="updateContext btn-link" id="decrementPost">-</a></span>
-                <span><a href="#" class="updateContext" id="incrementPost">+</a></span>
-              </div-->
-              <div id="slipTranslation"></div>
-            </div>
-            <div id="slipFooter">
-                <div id="slipTextRefContainer">
-                    <div id="slipTextRef"></div>
-                </div>
-                <div id="slipDate"></div>
-            </div>
-            <input type="hidden" id="slipFilename">
-            <input type="hidden" id="slipId">
-            <input type="hidden" id="auto_id">
-            <input type="hidden" id="slipPOS">
-
-        <!--
-            <div>
-                <label for="slipNotes">Notes:</label><br>
-                <div id="slipNotes"></div>
-            </div>
-        -->
-            <div style="text-align: right">
-                <button type="button" id="editSlip" class="btn btn-primary">edit</button>
-                <a id="closeSlipLink" href="#">close</a>
-            </div>
-        </div>
-
-       <!-- added by MM -->
         <div class="modal fade" id="slipModal" tabindex="-1" role="dialog">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -339,6 +285,10 @@ SQL;
                   <i class="fa fa-unlock" aria-hidden="true"></i></a>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
                 <button type="button" id="editSlip" class="btn btn-primary">edit</button>
+                <input type="hidden" id="slipFilename">
+                <input type="hidden" id="slipId">
+                <input type="hidden" id="auto_id">
+                <input type="hidden" id="slipPOS">
               </div>
             </div>
           </div>
