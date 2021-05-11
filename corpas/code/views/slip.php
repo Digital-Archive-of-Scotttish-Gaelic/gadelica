@@ -679,7 +679,7 @@ HTML;
               $('#senseCategorySelect').append('<option data-category="">-- select a category --</option>');
               var url = 'ajax.php?action=getSenseCategoriesForNewWordclass';
               url += '&filename={$this->_slip->getFilename()}&id={$this->_slip->getId()}&auto_id={$this->_slip->getAutoId()}';
-              url += '&pos={$this->_slip->getPOS()}&headword=' + headword + '</head>&wordclass=' + wordclass;
+              url += '&pos={$this->_slip->getPOS()}&headword=' + headword + '&wordclass=' + wordclass;
               $.getJSON(url, function (data) {
                   $.each(data, function (index, sense) {
                     var html = '<option data-sense="' + index + '" data-sense-description="' + sense.description + '"';
