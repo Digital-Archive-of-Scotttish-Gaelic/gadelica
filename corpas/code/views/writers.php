@@ -62,11 +62,17 @@ HTML;
       }
       echo <<<HTML
 			  </ul>
-				<table class="table">
-					<tbody>
-						{$html}
-					</tbody>
-				</table>
+			  <table id="browseWritersTable" data-toggle="table" data-pagination="true" data-search="true">
+          <thead>
+            <tr>
+              <th data-sortable="true">ID</th>
+              <th data-sortable="true">Name</th>
+              <th data-sortable="true">Dates</th>
+              <th data-sortable="true">Location</th>
+            </tr>
+          </thead>
+          {$html}
+        </table>
 HTML;
 	}
 
