@@ -145,13 +145,20 @@ SQL;
   }
 
   public function getTransformedText() {
-    $this->_transformedText = $this->_applyXSLT();
+    $this->_transformedText = @$this->_applyXSLT();
     return $this->_transformedText;
   }
 
   private function _applyXSLT() {
     if ($this->getFilepath() != '') {
-      $text = new \SimpleXMLElement("../xml/" . $this->getFilepath(), 0, true);
+    	try {
+        if (!$text = new \SimpleXMLElement("../xml/" . $this->getFilepath(), 0, true)) {
+        	throw new \Exception("Text contents not found");
+        }
+	    } catch (\Exception $e) {
+    		echo $e->getMessage();
+		    return;
+	    }
       $xsl = new \DOMDocument;
       $xsl->load('corpus.xsl');
       $proc = new \XSLTProcessor;

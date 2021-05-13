@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/includes/include.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/includes/include.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/models/collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/collection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/views/slip.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/slip.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/models/corpus_browse.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/corpus_browse.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,14 +126,10 @@
       <workItem from="1620124917269" duration="1865000" />
       <workItem from="1620195384095" duration="6000" />
       <workItem from="1620218531952" duration="6904000" />
-      <workItem from="1620630130524" duration="15530000" />
-    </task>
-    <task id="LOCAL-00069" summary="Finally (!!) completed a working version of slow search by text, including iteratively searching subtexts.&#10;Added text ID restrict field to slow search form just for testing just now">
-      <created>1616681055337</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1616681055337</updated>
+      <workItem from="1620630130524" duration="16014000" />
+      <workItem from="1620737863193" duration="119000" />
+      <workItem from="1620737998779" duration="3730000" />
+      <workItem from="1620890459214" duration="1072000" />
     </task>
     <task id="LOCAL-00070" summary="Created models\sense class to work with new sense database model&#10;Reworked models\slip class to work with new senses&#10;Initial work on views\slip to accommodate new code">
       <created>1617018441994</created>
@@ -473,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620734524850</updated>
     </task>
-    <option name="localTasksCounter" value="118" />
+    <task id="LOCAL-00118" summary="Fixed bug where change of headword added rogue tag&#10;Fixed bug where POS (wordclass) not displaying in collection table">
+      <created>1620736954204</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1620736954204</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,7 +493,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Recoded getUnusedSenses method in models\slips to use entry ID in place of headword and wordclass combination" />
     <MESSAGE value="Coded English translation to auto hide on slip edit load and toggle as per issue #17" />
     <MESSAGE value="Fixed issue with collection browse not working with new entry structure. Added check code to models\collection getAllSlipInfo to ensure workspace integrity." />
     <MESSAGE value="Fixed the entry browse page to work with new model.&#10;Initial progress on reworking the entry view page." />
@@ -517,6 +517,7 @@
     <MESSAGE value="Maybe a bug fix for senses not deleting" />
     <MESSAGE value="Initial coding for slip status" />
     <MESSAGE value="Added default hide for all translations plus link to toggle&#10;Completed code for status change in slips" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added default hide for all translations plus link to toggle&#10;Completed code for status change in slips" />
+    <MESSAGE value="Fixed bug where change of headword added rogue tag&#10;Fixed bug where POS (wordclass) not displaying in collection table" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug where change of headword added rogue tag&#10;Fixed bug where POS (wordclass) not displaying in collection table" />
   </component>
 </project>
