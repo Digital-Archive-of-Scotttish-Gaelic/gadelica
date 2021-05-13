@@ -10,7 +10,7 @@ class login
     switch ($type) {
       case "login":
         $dropdownHtml = $this->_getUserSelectHtml();
-        $title = "Login to Aidhleags";
+        $title = "Login to MEANMA";
         $emailHide = "";
         $passwordHide = "hide";
         $loginButton = "loginButton";

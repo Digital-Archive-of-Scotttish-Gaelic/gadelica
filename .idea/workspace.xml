@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/views/corpus_browse.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/corpus_browse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/views/writer.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/writer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/views/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/login.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,14 +128,7 @@
       <workItem from="1620630130524" duration="16014000" />
       <workItem from="1620737863193" duration="119000" />
       <workItem from="1620737998779" duration="3730000" />
-      <workItem from="1620890459214" duration="2107000" />
-    </task>
-    <task id="LOCAL-00072" summary="Completed refactor of slip links in results to use new sense model">
-      <created>1617105067843</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1617105067843</updated>
+      <workItem from="1620890459214" duration="2205000" />
     </task>
     <task id="LOCAL-00073" summary="Collections recoded to work with new sense model.&#10;Initial work on recoding entries to work with new sense model. Still requires a fair bit of refactoring, mostly in sorting unique senses and grouping. Renaming of senses in entry page not yet functional.">
       <created>1617109279881</created>
@@ -475,7 +466,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620893333881</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <task id="LOCAL-00121" summary="Added cancel functionality to edit forms for both writers and texts">
+      <created>1620893728222</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1620893728222</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,7 +492,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed the entry browse page to work with new model.&#10;Initial progress on reworking the entry view page." />
     <MESSAGE value="Some back end work to facilitate pulling distinct wordforms grouped by morphological data in the new entry model" />
     <MESSAGE value="Back end work to facilitate pulling distinct wordforms grouped by morphological data in the new entry model" />
     <MESSAGE value="Fully working entry system" />
@@ -519,6 +516,7 @@
     <MESSAGE value="Fixed bug where change of headword added rogue tag&#10;Fixed bug where POS (wordclass) not displaying in collection table" />
     <MESSAGE value="Added error handling to corpus_browse to catch file not found errors for XML input" />
     <MESSAGE value="Reworked writers into Bootstrap table with pagination and search and sort options" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reworked writers into Bootstrap table with pagination and search and sort options" />
+    <MESSAGE value="Added cancel functionality to edit forms for both writers and texts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added cancel functionality to edit forms for both writers and texts" />
   </component>
 </project>
