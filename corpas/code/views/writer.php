@@ -138,6 +138,7 @@ HTML;
 				</div>
 				<input type="hidden" name="id" value="{$writer->getId()}">
 				<button type="submit" class="btn btn-primary">save</button>
+				<a href="?m=writers&a=browse&id={$_GET["id"]}"><button type="button" class="btn btn-secondary">cancel</button></a>
 			</form>
 			<p>&nbsp;</p>
 HTML;

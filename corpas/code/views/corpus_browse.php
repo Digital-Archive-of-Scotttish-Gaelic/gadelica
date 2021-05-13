@@ -104,6 +104,8 @@ HTML;
 			<form id="corpusEdit" action="index.php?m=corpus&a=save&id={$this->_model->getID()}" method="post">
 				{$formHtml}
 				<button type="submit" class="btn btn-primary">save</button>
+				<a href="?m=corpus&a=browse&id={$_GET["id"]}"><button type="button" class="btn btn-secondary">cancel</button></a>
+
 			</form>
 
 		<!-- check to see if a user tries to leave the page without saving changes -->
