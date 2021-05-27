@@ -7,12 +7,16 @@ use models;
 class corpus_browse
 {
 	private $_model;   // an instance of models\corpus_browse
+	private $_ms;   // an instance of models\manuscript
 
 	public function __construct($model) {
 		$this->_model = $model;
 	}
 
 	public function show($action = null) {
+		if ($this->_model->getType() == "ms") {
+			$this->_ms = models\manuscripts::getMSById($this->_model->getId());
+		}
 		if ($action == "edit") {
 			$this->_writeEditForm();
 			return;
@@ -59,6 +63,10 @@ HTML;
       $this->_showText();
 		}
 		$this->_writeJavascript();
+		if ($this->_ms) {   //a manuscript so generate the required code
+			$this->_writeMSModal();
+			$this->_writeMSJavascript();
+		}
 	}
 
 	private function _writeEditForm() {
@@ -293,6 +301,10 @@ HTML;
 	}
 
   private function _showText() {
+		$textOutput = $this->_model->getTransformedText();
+		if ($this->_ms) {
+			$textOutput = $this->_formatMS($textOutput);
+		}
 		echo <<<HTML
 			<table class="table" id="meta" data-hi="{$_GET["id"]}">
 				<tbody>
@@ -306,8 +318,28 @@ HTML;
 					{$this->_getChildTextsHtml()}
 				</tbody>
 			</table>
-			{$this->_model->getTransformedText()}
+			{$textOutput}
 HTML;
+	}
+
+	private function _formatMS($input) {
+		$output = <<<HTML
+			<div class="row flex-fill" style="min-height: 0;">
+				<div id="lhs" class="col-6 mh-100" style="overflow-y: scroll;">
+					<div>
+	          <small><a href="#" onclick="$('.numbers').toggle();">[toggle numbers]</a></small>
+	          <small><a class="link" id="compareEditions" data-id="{$this->_ms->getId()}" data-mode="diplo">[compare editions]</a></small>
+	          <br>
+					</div>
+					{$input}
+				</div>  <!-- end LHS -->
+				<div id="rhs" class="col-6 mh-100" style="display: none; overflow-y: scroll;"> <!-- RHS panel -->				
+				</div>  <!-- end RHS -->
+			</div>  <!-- end row -->
+HTML;
+
+
+		return $output;
 	}
 
 	private function _getLevelHtml() {
@@ -398,6 +430,27 @@ HTML;
 		return $html;
 	}
 
+	private function _writeMSModal() {
+		echo <<<HTML
+        <div class="modal fade" id="chunkModal" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title"></h5>
+              </div>
+              <div class="modal-body">
+              </div>
+              <div class="modal-footer">
+                <button type="button" id="panelView" class="viewSwitch btn btn-success" data-dismiss="modal">panel view</button>
+                <button type="button" id="toggleXmlView" class="btn btn-primary" data-action="xml">xml view</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+HTML;
+	}
+
 	private function _writeJavascript() {
 		echo <<<HTML
     <script>
@@ -409,6 +462,209 @@ HTML;
         }
       });
     </script>
+HTML;
+	}
+
+	private function _writeMSJavascript() {
+		echo <<<HTML
+			<input type="hidden" id="modalOrPanelView" value="{$_SESSION["view"]}">   <!-- used to store the view preference : panel or modal -->
+			<script>
+					
+				$(function() {
+				  
+				   $('#compareEditions').on('click', function () {
+				     let id = $(this).attr('data-id');
+				     let mode = $(this).attr('data-mode');
+				     $.ajax({url: 'ajax.php?action=msGetEditionHtml&id='+id+'&mode='+mode,
+				      action: "get", dataType: "html"
+				     })
+				     .done(function(html) {
+				        $('#rhs').html(html);
+				        $('#rhs').show();
+				      });
+				   });
+				   
+				   $(document).on('click', '.viewSwitch', function() {
+				     $.getJSON("ajax.php?action=msViewSwitch", function (data) {
+				       let view = data.view;
+				       $('#modalOrPanelView').val(view);
+				       if (view == "panel") {
+				         $('#rhs').show();
+				       } else {
+				         $('#rhs').hide();
+				         $('#chunkModal').modal();
+				       }
+				     });
+				   });
+				   
+				   $('.chunk').on('click', function () {
+				     let view = $('#modalOrPanelView').val(); //modal or panel
+				     $('.hi').removeClass('hi');
+				     $(this).addClass("hi");
+				     let chunkId = $(this).attr('id');
+				     let modal = $('#chunkModal');
+				     var html = '<h1>text</h1>';
+				     $.ajax({
+				      url: 'ajax.php?action=msPopulateModal&chunkId='+chunkId+'&id={$this->_ms->getId()}',
+				      dataType: "json"
+				     })
+				     .done(function(data) {						       
+				       html = '<div id="xmlView" style="display:none;"><pre>'+data.xml+'</pre></div>';
+				       html += '<div id="textView">';
+				       html += getModalHtmlChunk(data, true);				       
+				       html += '<ul>';
+				       if (data.child) {
+				         html += getChildChunkHtml(data.child, '');
+				       }
+				       html += '</ul></div>';
+				       modal.find('.modal-body').html(html);  //add the html to the modal
+				       html += '<button type="button" id="modalView" class="viewSwitch btn btn-success">modal view</button>';
+				       $('#rhs').html(html);  //add the html to the rhs panel
+				       if (view == "panel") {
+				         $('#rhs').show();
+				       } else {
+				         $('#rhs').hide();
+				         modal.modal();
+				       }
+				     })
+				   });
+				   
+				   $(document).on('click', '#toggleXmlView', function () {
+				     if ($(this).attr('data-action') == "xml") {
+				       $(this).attr('data-action', 'text');
+				       $(this).text('text view');
+				       $('#textView').hide();
+				       $('#xmlView').show();
+				     } else {
+				       $(this).attr('data-action', 'xml');
+				       $(this).text('xml view');
+				       $('#xmlView').hide();
+				       $('#textView').show();
+				     }
+				   });
+				   
+				   //highlight abbreviations and ligatures
+				   $(document).on('mouseover', '.mouseover', function() {
+				     let id = $(this).attr('id');
+				     $('.'+id).css('background-color', 'yellow');
+				     $('#'+id).css('text-decoration','underline');
+				   });
+				  
+				   //remove highlight from abbreviations and ligatures
+				   $(document).on('mouseout', '.mouseover', function() {
+				     let id = $(this).attr('id');
+				     $('.'+id).css('background-color', 'inherit');
+				     $('#'+id).css('text-decoration','inherit');
+				   });
+				});
+				
+				function getChildChunkHtml(child, html) {
+				  $.each(child, function(i, elem) {
+				    html += getModalHtmlChunk(elem);
+				    if (elem.child) {
+				      html = getChildChunkHtml(elem.child, html);
+				    }    
+				  });
+				  return html;
+				}
+				
+				function getModalHtmlChunk(chunk, isTopLevel = false) {
+				  var html;
+				  if (isTopLevel) {
+				    html = '<h1>' + chunk.headword + '</h1>';
+				    html += '<ul>';
+				  } else {
+				    html = '<li><strong>' + chunk.headword + '</strong></li>';
+				    html += '<ul>';
+				  }			  
+				  if (chunk.pos) {
+				    html += '<li>' + chunk.pos[0] + '</li>';
+				  }
+				  if (chunk.hand != undefined) {
+				    html += '<li>scribe – <a href="#" title="Hand Information">' + chunk.hand.surname[0] + '</a></li>';
+				  }
+				  if (chunk.abbrevs.length) { //ligatures and abbreviations
+				    html += '<li>scribal abbreviations and ligatures –</li><ul>'
+				    $.each(chunk.abbrevs, function(i, abbr) {
+				      let corresp = abbr.corresp.length ? abbr.corresp[0] : '';
+				      html += '<li><a target="_blank" id="' + abbr.id[0] + '" class="mouseover" href="' + corresp + '">' + abbr.name[0] + '</a>: ';
+				      html += abbr.note[0] + ' (' + abbr.cert[0] + ' certainty)</li>';
+				    });
+				    html += '</ul>';
+				  }
+				  if (chunk.partOfInsertion != undefined) {
+				    html += '<li>part of insertion –</li><ul>';
+				    html += '<li>[' + chunk.partOfInsertion.fullWord + '] (' + chunk.partOfInsertion.place[0] + ')</li></ul>';
+				  }
+				  if (chunk.supplied != undefined && chunk.supplied.length) {
+				    html += '<li>text supplied by editor –</li><ul>';
+				    $.each(chunk.supplied, function(i, supp) {
+				      html += '<li>[' + supp[0] + '] (' + supp["@attributes"]["resp"] + ')</li>';
+				    });
+				    html += '</ul>';
+				  }
+				  if (chunk.insertions != undefined && chunk.insertions.length) {
+				    html += '<li>insertions –</li><ul>';
+				    $.each(chunk.insertions, function(i, insertion) {
+				      html += '<li>[' + insertion[0] + '] (' + insertion["@attributes"]["hand"] + ', ';
+				      html += insertion["@attributes"]["place"] + ') ';
+				    });
+				    html += '</ul>';
+				  }
+				  if (chunk.deletions != undefined && chunk.deletions.length) {
+				    html += '<li>deletions –</li><ul>';
+				    $.each(chunk.deletions, function(i, deletion) {
+				      html += '<li>[' + deletion[0] + '] (' + deletion["@attributes"]["hand"] + ')';
+				    });
+				    html += '</ul>';
+				  }
+				  if (chunk.damaged != undefined && chunk.damaged.length) {
+				    html += '<li>text supplied for lost writing surface –</li><ul>';
+				    $.each(chunk.damaged, function(i, damage) {
+				      html += '<li>[' + damage[0] + '] (' + damage["@attributes"]["resp"] + ', ';
+				      html += damage["@attributes"]["cert"] + ' certainty)';
+				    });
+				    html += '</ul>';
+				  }
+				  if (chunk.obscure != undefined && chunk.obscure.length) {
+				    html += '<li>obscured sections –</li><ul>';
+				    $.each(chunk.obscure, function(i, obscure) {
+				      html += '<li>[' + obscure[0] + '] (' + obscure["@attributes"]["resp"] + ', ';
+				      html += obscure["@attributes"]["cert"] + ' certainty)';
+				    });
+				    html += '</ul>';
+				  }
+				  if (chunk.emendation) {
+				    html += '<li>editorial emendation – \'' + chunk.emendation.sic + '\' to \'';
+				    html += chunk.emendation.corr + '\' (' + chunk.emendation.resp[0] + ')</li>';
+				  }
+				  if (chunk.interpObscureSection) {
+				    html += '<li>part of a section whose interpretation is obscure</li>'
+				  }
+				  if (chunk.obscureSection) {
+				    let section = chunk.obscureSection;
+				    html += '<li>part of an obscured section ('+ section.resp[0] + ', ' + section.cert[0] + ' certainty)</li>';
+				  }
+				  if (chunk.edil) {
+				    html += '<li>eDil: <a target="_blank" href="' + chunk.edil[0] + '">' + chunk.lemma[0] + '</a></li>';
+				  }
+				  if (chunk.onomastics) {
+				    html += '<li>' + chunk.onomastics.type; 
+				    if (url = chunk.onomastics.url) {
+				      html += ' (<a target="_blank" href="' + url[0] + '">info</a>)';
+				    }
+				    html += '</li>';
+				  }
+				  var complexText = chunk.complexFlag ? 'syntactically complex –' : 'syntactically simple';
+				  html += '<li>' + complexText + '</li>';
+				  if (chunk.complexFlag) {
+				    html += '<ul>';
+				  }
+				  html += '</ul>';
+				  return html;		    
+				}
+				
+			</script>
 HTML;
 	}
 }

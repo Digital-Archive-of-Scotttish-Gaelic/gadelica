@@ -11,6 +11,7 @@ if (!$_SESSION["printSlips"]) {
 
 //constants
 define("INPUT_FILEPATH", "../xml/");
+define("TRANSCRIPTION_PATH", "../xml_ms_tmp/");
 
 define("DB", "corpas");       //the live database
 //define("DB", "corpas_dev");       //the live database
