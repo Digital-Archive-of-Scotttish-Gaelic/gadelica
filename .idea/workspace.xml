@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/corpas/code/views/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/login.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/corpas/code/xsl/semiDiplomatic.xsl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/corpus.xsl" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/xsl/corpus.xsl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/models/corpus_browse.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/corpus_browse.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +55,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/corpas/code/models" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/corpas/code/xsl" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -66,10 +69,12 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/corpas/code/xsl" />
       <recent name="$PROJECT_DIR$/corpas/code/models" />
       <recent name="$PROJECT_DIR$/corpas/code/CorpasXMLParser/inputFiles" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/corpas/code/xsl" />
       <recent name="$PROJECT_DIR$/corpas/code/tmp" />
     </key>
   </component>
@@ -128,14 +133,9 @@
       <workItem from="1620630130524" duration="16014000" />
       <workItem from="1620737863193" duration="119000" />
       <workItem from="1620737998779" duration="3730000" />
-      <workItem from="1620890459214" duration="2205000" />
-    </task>
-    <task id="LOCAL-00073" summary="Collections recoded to work with new sense model.&#10;Initial work on recoding entries to work with new sense model. Still requires a fair bit of refactoring, mostly in sorting unique senses and grouping. Renaming of senses in entry page not yet functional.">
-      <created>1617109279881</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1617109279881</updated>
+      <workItem from="1620890459214" duration="6475000" />
+      <workItem from="1621584947520" duration="594000" />
+      <workItem from="1622100061906" duration="3288000" />
     </task>
     <task id="LOCAL-00074" summary="Working code for grouped senses in entry">
       <created>1617187658018</created>
@@ -473,7 +473,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620893728222</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="Changed references to &quot;Aidhleags&quot; to &quot;MEANMA&quot;">
+      <created>1620893819266</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1620893819266</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,7 +499,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Some back end work to facilitate pulling distinct wordforms grouped by morphological data in the new entry model" />
     <MESSAGE value="Back end work to facilitate pulling distinct wordforms grouped by morphological data in the new entry model" />
     <MESSAGE value="Fully working entry system" />
     <MESSAGE value="First pass at script to migrate group 2 slip data to new entry &amp; sense models" />
@@ -517,6 +523,7 @@
     <MESSAGE value="Added error handling to corpus_browse to catch file not found errors for XML input" />
     <MESSAGE value="Reworked writers into Bootstrap table with pagination and search and sort options" />
     <MESSAGE value="Added cancel functionality to edit forms for both writers and texts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added cancel functionality to edit forms for both writers and texts" />
+    <MESSAGE value="Changed references to &quot;Aidhleags&quot; to &quot;MEANMA&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed references to &quot;Aidhleags&quot; to &quot;MEANMA&quot;" />
   </component>
 </project>
