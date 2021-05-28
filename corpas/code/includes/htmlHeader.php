@@ -73,7 +73,7 @@ echo <<<HTML
 	</script>
 </head>
 <body style="padding-top: 80px;">
-  <div class="container-fluid">
+  <div class="container-fluid container-fluid h-100 d-flex flex-column">
     <nav class="navbar navbar-dark fixed-top navbar-expand-lg" style="background-color: #{$groupTheme};">
       <a class="navbar-brand" href="index.php" style="font-size:x-large;">MEANⓂ️A</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

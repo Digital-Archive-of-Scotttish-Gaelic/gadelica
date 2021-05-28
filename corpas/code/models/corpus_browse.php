@@ -9,6 +9,7 @@ class corpus_browse // models a corpus text or subtext
 	private $_parentText; // the parent text of this text (optional) – an instance of models\corpus_browse
   private $_title; // the title of the text (optional)
   private $_date, $_level, $_notes;
+  private $_type; //used to flag manuscripts ("ms")
   private $_filepath; // the path to the text XML (simple texts only)
   private $_transformedText; // simple texts only
   private $_writers = array();  //array of models\writer objects
@@ -29,7 +30,7 @@ class corpus_browse // models a corpus text or subtext
 	 */
 	private function _load() {
 		$sql = <<<SQL
-			SELECT title, partOf, filepath, date, level, notes
+			SELECT title, partOf, filepath, date, level, notes, type
 				FROM text
 				WHERE id = :id
 SQL;
@@ -53,6 +54,9 @@ SQL;
 		}
 		if ($notes = $textData["notes"]) {
 			$this->_setNotes($notes);
+		}
+		if ($type = $textData["type"]) {
+			$this->_setType($type);
 		}
 		$this->_setWriters();
 	}
@@ -85,6 +89,10 @@ SQL;
 
 	private function _setNotes($notes) {
 		$this->_notes = $notes;
+	}
+
+	private function _setType($type) {
+		$this->_type = $type;
 	}
 
 	/**
@@ -125,6 +133,10 @@ SQL;
 		return $this->_notes;
 	}
 
+	public function getType() {
+		return $this->_type;
+	}
+
 	/**
 	 * @return models\text object
 	 */
@@ -150,9 +162,11 @@ SQL;
   }
 
   private function _applyXSLT() {
+		$xslFilepath = $this->getType() == "ms" ? "xsl/semiDiplomatic.xsl" : "xsl/corpus.xsl";
+		$xmlFilepath = $this->getType() == "ms" ? TRANSCRIPTION_PATH . $this->getFilepath() : INPUT_FILEPATH . $this->getFilepath();
     if ($this->getFilepath() != '') {
     	try {
-        if (!$text = new \SimpleXMLElement("../xml/" . $this->getFilepath(), 0, true)) {
+        if (!$text = new \SimpleXMLElement($xmlFilepath, 0, true)) {
         	throw new \Exception("Text contents not found");
         }
 	    } catch (\Exception $e) {
@@ -160,7 +174,7 @@ SQL;
 		    return;
 	    }
       $xsl = new \DOMDocument;
-      $xsl->load('corpus.xsl');
+      $xsl->load($xslFilepath);
       $proc = new \XSLTProcessor;
       $proc->importStyleSheet($xsl);
       return $proc->transformToXML($text);

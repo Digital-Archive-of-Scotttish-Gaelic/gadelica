@@ -5,6 +5,25 @@ namespace models;
 require_once 'includes/include.php';
 
 switch ($_REQUEST["action"]) {
+	case "msPopulateModal":
+		$ms = manuscripts::getMSById($_GET["id"]);
+		$data = $ms->getModalData($_GET["chunkId"]);
+		echo json_encode($data);
+		break;
+	case "msViewSwitch":
+		$_SESSION["view"] = ($_SESSION["view"] == "panel") ? "modal" : "panel";
+		echo json_encode(array("view" => $_SESSION["view"]));
+		break;
+	case "msGetEditionHtml":
+		$ms = manuscripts::getMSById($_GET["id"]);
+		$xml = $ms->getXml();
+		$xsl = new \DOMDocument;
+		$filename = $_GET["mode"] == "diplo" ? "diplomatic.xsl" : "semiDiplomatic.xsl";
+		$xsl->load('xsl/' . $filename);
+		$proc = new \XSLTProcessor;
+		$proc->importStyleSheet($xsl);
+		echo $proc->transformToXML($xml);
+		break;
 	case "getUsername":
 		$user = users::getUser($_GET["email"]);
 		if ($user) {
