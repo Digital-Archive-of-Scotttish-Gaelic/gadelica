@@ -302,8 +302,22 @@ HTML;
 
 	private function _showText() {
 		$textOutput = $this->_model->getTransformedText();
+		$rightPanelHtml = "";
 		if ($this->_ms) {
 			$textOutput = $this->_formatMS($textOutput);
+			$rightPanelHtml = <<<HTML
+				<ul class="nav nav-pills nav-justified" style="padding-bottom: 20px;">			
+						<li class="nav-item"><a id="wordPanelSelect" class="link nav-link panel-link">word</a></li>
+					  <li class="nav-item"><a id="scribePanelSelect" class="link nav-link panel-link">scribe</a></li>			    
+					  <li class="nav-item"><a id="diploPanelSelect" class="link nav-link panel-link">diplo</a></li>			
+					  <li class="nav-item"><a id="imagePanelSelect" class="link nav-link panel-link">image</a></li>		  
+					 </ul>
+					 
+					 <div id="wordPanel" class="panel"><< please select a word</div>
+					 <div id="scribePanel" class="panel"><< please select a word</div>
+					 <div id="diploPanel" class="panel"></div>
+					 <div id="imagePanel" class="panel"><< please select a page</div>
+HTML;
 		}
 		echo <<<HTML
 			<table class="table" id="meta" data-hi="{$_GET["id"]}">
@@ -323,11 +337,7 @@ HTML;
 					{$textOutput}
 				</div>  <!-- end LHS -->
 				<div id="rhs" class="col-6 mh-100" overflow-y: scroll;"> <!-- RHS panel -->
-					<a class="link" id="closeImagePanel" style="display: none;"><span style="color:red;"><i class="fas fa-times fa-2x"></i></span></a>			
-					<div id="imagePanel"></div>  <!-- placeholder for MS image -->
-					<a class="link" id="closeMSPanel" style="display: none;"><span style="color:red;"><i class="fas fa-times fa-2x"></i></span></a>	
-					<div id="msPanel"></div>
-					<div id="chunkPanel"></div>
+					{$rightPanelHtml}
 				</div>  <!-- end RHS -->
 			</div>  <!-- end row -->
 HTML;
@@ -340,7 +350,6 @@ HTML;
 	 */
 	private function _formatMS($input) {
 		$output = <<<HTML
-			
 					<div>
 	          <small><a href="#" onclick="$('.numbers').toggle();">[toggle numbers]</a></small>
 	          <small><a class="link" id="compareEditions" data-id="{$this->_ms->getId()}" data-mode="diplo">[compare editions]</a></small>
@@ -500,17 +509,39 @@ HTML;
 					
 				$(function() {
 				   
-				   $('#compareEditions').on('click', function () {
-				     let id = $(this).attr('data-id');
-				     let mode = $(this).attr('data-mode');
-				     $.ajax({url: 'ajax.php?action=msGetEditionHtml&id='+id+'&mode='+mode,
+				   $('#diploPanelSelect').on('click', function () {
+				     $('.panel').hide();
+				     $('#wordPanelSelect, #scribePanelSelect, #imagePanelSelect').removeClass('active');
+				     $(this).addClass('active');				     
+				     let id = '{$this->_ms->getId()}';
+				     $.ajax({url: 'ajax.php?action=msGetEditionHtml&id='+id+'&mode=diplo',
 				      action: "get", dataType: "html"
 				     })
 				     .done(function(html) {
-				        $('#closeMSPanel').show();
-				        $('#msPanel').html(html);
-				        $('#msPanel').show();
+				        $('#diploPanel').html(html);
+				        $('#diploPanel').show();
 				      });
+				   });
+				   
+				   $('#wordPanelSelect').on('click', function() {
+				     $('.panel').hide();
+				     $('#diploPanelSelect, #scribePanelSelect, #imagePanelSelect').removeClass('active');
+				     $(this).addClass('active');	
+				     $('#wordPanel').show();
+				   });
+				   
+				   $('#scribePanelSelect').on('click', function() {
+				     $('.panel').hide();
+				     $('#diploPanelSelect, #wordPanelSelect, #imagePanelSelect').removeClass('active');
+				     $(this).addClass('active');	
+				     $('#scribePanel').show();
+				   });
+				   
+				   $('#imagePanelSelect').on('click', function() {
+				     $('.panel').hide();
+				     $('#diploPanelSelect, #scribePanelSelect, #wordPanelSelect').removeClass('active');
+				     $(this).addClass('active');	
+				     $('#imagePanel').show();
 				   });
 				   
 				   $(document).on('click', '.viewSwitch', function() {
@@ -518,9 +549,10 @@ HTML;
 				       let view = data.view;
 				       $('#modalOrPanelView').val(view);
 				       if (view == "panel") {
-				         $('#chunkPanel').show();
+				         $('#wordPanel').show();
+				         $('#wordPanelSelect').addClass('active');
 				       } else {
-				         $('#chunkPanel').hide();
+				     //    $('#wordPanel').html('<< please select a word');
 				         $('#chunkModal').modal();
 				       }
 				     });
@@ -547,11 +579,14 @@ HTML;
 				       html += '</ul>';
 				       modal.find('#textView').html(html);  //add the html to the modal
 				       html += '<button type="button" id="modalView" class="viewSwitch btn btn-success">modal view</button>';
-				       $('#chunkPanel').html(html);  //add the html to the rhs panel
 				       if (view == "panel") {
-				         $('#chunkPanel').show();
+				         $('#wordPanel').html(html);  //add the html to the rhs panel
+				         $('#diploPanelSelect, #scribePanelSelect, #imagePanelSelect').removeClass('active');
+								 $('#wordPanelSelect').addClass('active');
+								 $('.panel').hide();
+				         $('#wordPanel').show();
 				       } else {
-				         $('#chunkPanel').hide();
+				         $('#wordPanel').hide();
 				         modal.modal();
 				       }
 				     })
@@ -569,16 +604,6 @@ HTML;
 				       $('#xmlView').hide();
 				       $('#textView').show();
 				     }
-				   });
-				   
-				   $('#closeImagePanel').on('click', function () {
-				     $(this).hide();
-				     $('#imagePanel').hide();
-				   });
-				   
-				   $('#closeMSPanel').on('click', function () {
-				     $(this).hide();
-				     $('#msPanel').hide();
 				   });
 				   
 				   //highlight abbreviations and ligatures
@@ -642,11 +667,33 @@ HTML;
 				    html = '<li><strong>' + chunk.headword + '</strong></li>';
 				    html += '<ul>';
 				  }			  
+				  //get the hand info
+				  if (chunk.hand != undefined) {
+				    let hand = chunk.handShift == undefined ? chunk.hand : chunk.handShift;
+				    var handHtml = '<p>';
+				    if (hand.forename[0] != undefined) {
+				      handHtml += hand.forename[0] + ' ';
+				    }
+				    if (hand.surname) {
+				      handHtml += hand.surname[0] == undefined ? 'Anonymous (' + hand.id[0] + ')' : hand.surname[0];
+				    }
+				    handHtml += '</p>';
+				    if (hand.century) {
+				      handHtml += '<p>Century: ' + hand.century[0] + '</p>';
+				    }
+				    if (hand.region) {
+				      handHtml += '<p>' + hand.region[0] + '</p>';
+				    }
+				    /*if (hand.affiliation) {
+				      handHtml += '<p>' + hand.affiliation[0] + '</p>';
+				    }*/
+				    if (hand.note) {
+				      handHtml += '<p>' + hand.note.p + '</p>';
+				    } 
+				    $('#scribePanel').html(handHtml);
+				  }
 				  if (chunk.pos) {
 				    html += '<li>' + chunk.pos[0] + '</li>';
-				  }
-				  if (chunk.hand != undefined) {
-				    html += '<li>scribe – <a href="#" title="Hand Information">' + chunk.hand.surname[0] + '</a></li>';
 				  }
 				  if (chunk.abbrevs.length) { //ligatures and abbreviations
 				    html += '<li>scribal abbreviations and ligatures –</li><ul>'

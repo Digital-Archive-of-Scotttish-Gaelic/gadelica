@@ -115,7 +115,8 @@ class manuscript
 		$modalData["emendation"] = $this->_getEmendation($xml);
 		$modalData["interpObscureSection"] = $this->_isPartOfInterpObscureSection($xml);
 		$modalData["obscureSection"] = $this->_isPartOfObscureSection($xml);
-		$modalData["hand"] = $this->_getHandInfo($xml);
+	//	$modalData["hand"] = $this->_getStartingHandInfo($xml);
+		$modalData["handShift"] = $this->_getHandShiftInfo($xml);
 
 		return $modalData;
 	}
@@ -134,13 +135,30 @@ class manuscript
 		return $modalData;
 	}
 
-	private function _getHandInfo($element) {
+	private function _getStartingHandInfo($element) {
 		$handInfo = null;
-		$result = $this->getXml()->xpath('.//ancestor::tei:lg/preceding-sibling::tei:lg/tei:l/tei:handShift');
+		$result = $this->getXml()->xpath('//tei:div[@hand]');
+		if ($result) {
+			$handId = $result[0]->attributes()->hand;
+			$hand = new hand($handId);
+			$handInfo = array("id" => $handId, "forename" => $hand->getForename(), "surname" => $hand->getSurname(),
+				"century" => $hand->getCentury(), "affiliation" => $hand->getAffiliation(), "region" => $hand->getRegion(),
+				"note" => $hand->getNote()
+			);
+		}
+		return $handInfo;
+	}
+
+	private function _getHandShiftInfo($element) {
+		$handInfo = null;
+		$result = $this->getXml()->xpath('.//preceding::tei:handShift');
 		if ($result) {
 			$handId = $result[0]->attributes()->new;
 			$hand = new hand($handId);
-			$handInfo = array("id" => $handId, "surname" => $hand->getSurname());
+			$handInfo = array("id" => $handId, "forename" => $hand->getForename(), "surname" => $hand->getSurname(),
+				"century" => $hand->getCentury(), "affiliation" => $hand->getAffiliation(), "region" => $hand->getRegion(),
+				"note" => $hand->getNote()
+			);
 		}
 		return $handInfo;
 	}
