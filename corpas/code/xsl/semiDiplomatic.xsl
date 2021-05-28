@@ -45,7 +45,16 @@
     <small class="numbers">
       <mark>
         <xsl:text>[p.</xsl:text>
-        <xsl:value-of select="@n"/>
+        <xsl:choose>
+          <xsl:when test="@facs">
+            <a href="#" class="page" data-facs="{@facs}">
+              <xsl:value-of select="@n"/>
+            </a>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="@n"/>
+          </xsl:otherwise>
+        </xsl:choose>
         <xsl:text>]</xsl:text>
       </mark>
     </small>

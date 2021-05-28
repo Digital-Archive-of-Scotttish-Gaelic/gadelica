@@ -22,19 +22,19 @@ class corpus_browse
 			return;
 		}
 		$user = models\users::getUser($_SESSION["user"]);
-    echo <<<HTML
+		echo <<<HTML
 		<ul class="nav nav-pills nav-justified" style="padding-bottom: 20px;">
 HTML;
-    if ($this->_model->getId()=="0") {
+		if ($this->_model->getId()=="0") {
 			echo <<<HTML
 			  <li class="nav-item"><div class="nav-link active">viewing corpus</div></li>
 		    <li class="nav-item"><a class="nav-link" href="?m=corpus&a=search&id=0">search corpus</a></li>
 HTML;
-      if ($user->getSuperuser()) {
+			if ($user->getSuperuser()) {
 				echo <<<HTML
 			    <li class="nav-item"><a class="nav-link" href="?m=corpus&a=edit&id=0">add text</a></li>
 HTML;
-      }
+			}
 			echo <<<HTML
 				<li class="nav-item"><a class="nav-link" href="?m=corpus&a=generate&id=0">corpus wordlist</a></li>
 HTML;
@@ -44,23 +44,23 @@ HTML;
 			<li class="nav-item"><div class="nav-link active">viewing text #{$this->_model->getId()}</div></li>
 		  <li class="nav-item"><a class="nav-link" href="?m=corpus&a=search&id={$this->_model->getId()}">search text #{$this->_model->getId()}</a></li>
 HTML;
-      if ($user->getSuperuser()) {
+			if ($user->getSuperuser()) {
 				echo <<<HTML
 			    <li class="nav-item"><a class="nav-link" href="?m=corpus&a=edit&id={$this->_model->getId()}">edit text #{$this->_model->getId()}</a></li>
 HTML;
-      }
-      echo <<<HTML
+			}
+			echo <<<HTML
 			<li class="nav-item"><a class="nav-link" href="?m=corpus&a=generate&id={$this->_model->getId()}">text #{$this->_model->getId()} wordlist</a></li>
 HTML;
 		}
 		echo <<<HTML
 		  </ul>
 HTML;
-    if ($this->_model->getId() == "0") {
+		if ($this->_model->getId() == "0") {
 			$this->_showCorpus();
 		}
 		else {
-      $this->_showText();
+			$this->_showText();
 		}
 		$this->_writeJavascript();
 		if ($this->_ms) {   //a manuscript so generate the required code
@@ -106,7 +106,7 @@ HTML;
 		} else if ($this->_model->getFilepath()) { //text has a filepath
 			$formHtml = $this->_getFormMetadataSectionHtml() . $this->_getFormFilepathSectionHtml();
 		} else {
-		  $formHtml = $this->_getFormMetadataSectionHtml() . $this->_getFormSubTextSectionHtml() . $this->_getFormFilepathSectionHtml();
+			$formHtml = $this->_getFormMetadataSectionHtml() . $this->_getFormSubTextSectionHtml() . $this->_getFormFilepathSectionHtml();
 		}
 		echo <<<HTML
 			<form id="corpusEdit" action="index.php?m=corpus&a=save&id={$this->_model->getID()}" method="post">
@@ -219,12 +219,12 @@ HTML;
 		return $html;
 	}
 
-  private function _showCorpus() {
+	private function _showCorpus() {
 		echo <<<HTML
 			<table class="table">
 				<tbody>
 HTML;
-    $texts = $this->_model->getTextList();
+		$texts = $this->_model->getTextList();
 		foreach ($texts as $text) {
 			$this->_writeRow($text);
 		}
@@ -232,7 +232,7 @@ HTML;
 				</tbody>
 			</table>
 HTML;
-  }
+	}
 
 	private function _writeRow($text) {
 		$writerHtml = $this->_formatWriters($text);
@@ -300,7 +300,7 @@ HTML;
 		return $html;
 	}
 
-  private function _showText() {
+	private function _showText() {
 		$textOutput = $this->_model->getTransformedText();
 		if ($this->_ms) {
 			$textOutput = $this->_formatMS($textOutput);
@@ -322,6 +322,11 @@ HTML;
 HTML;
 	}
 
+	/**
+	 * Adds the scrollable panels (as well as some links) required for the Manuscript view.
+	 * @param $input the MS HTML
+	 * @return string the formatted HTML
+	 */
 	private function _formatMS($input) {
 		$output = <<<HTML
 			<div class="row flex-fill" style="min-height: 0;">
@@ -333,12 +338,15 @@ HTML;
 					</div>
 					{$input}
 				</div>  <!-- end LHS -->
-				<div id="rhs" class="col-6 mh-100" style="display: none; overflow-y: scroll;"> <!-- RHS panel -->				
+				<div id="rhs" class="col-6 mh-100" overflow-y: scroll;"> <!-- RHS panel -->
+					<a class="link" id="closeImagePanel" style="display: none;"><span style="color:red;"><i class="fas fa-times fa-2x"></i></span></a>			
+					<div id="imagePanel"></div>  <!-- placeholder for MS image -->
+					<a class="link" id="closeMSPanel" style="display: none;"><span style="color:red;"><i class="fas fa-times fa-2x"></i></span></a>	
+					<div id="msPanel"></div>
+					<div id="chunkPanel"></div>
 				</div>  <!-- end RHS -->
 			</div>  <!-- end row -->
 HTML;
-
-
 		return $output;
 	}
 
@@ -439,6 +447,8 @@ HTML;
                 <h5 class="modal-title"></h5>
               </div>
               <div class="modal-body">
+                <div id="xmlView" style="display:none;"></div>
+                <div id="textView"></div>
               </div>
               <div class="modal-footer">
                 <button type="button" id="panelView" class="viewSwitch btn btn-success" data-dismiss="modal">panel view</button>
@@ -468,10 +478,11 @@ HTML;
 	private function _writeMSJavascript() {
 		echo <<<HTML
 			<input type="hidden" id="modalOrPanelView" value="{$_SESSION["view"]}">   <!-- used to store the view preference : panel or modal -->
+			<script src="https://cdn.jsdelivr.net/npm/zoomio@2.0.2/zoomio.min.js"></script>
 			<script>
 					
 				$(function() {
-				  
+				   
 				   $('#compareEditions').on('click', function () {
 				     let id = $(this).attr('data-id');
 				     let mode = $(this).attr('data-mode');
@@ -479,8 +490,9 @@ HTML;
 				      action: "get", dataType: "html"
 				     })
 				     .done(function(html) {
-				        $('#rhs').html(html);
-				        $('#rhs').show();
+				        $('#closeMSPanel').show();
+				        $('#msPanel').html(html);
+				        $('#msPanel').show();
 				      });
 				   });
 				   
@@ -489,9 +501,9 @@ HTML;
 				       let view = data.view;
 				       $('#modalOrPanelView').val(view);
 				       if (view == "panel") {
-				         $('#rhs').show();
+				         $('#chunkPanel').show();
 				       } else {
-				         $('#rhs').hide();
+				         $('#chunkPanel').hide();
 				         $('#chunkModal').modal();
 				       }
 				     });
@@ -503,27 +515,26 @@ HTML;
 				     $(this).addClass("hi");
 				     let chunkId = $(this).attr('id');
 				     let modal = $('#chunkModal');
-				     var html = '<h1>text</h1>';
 				     $.ajax({
 				      url: 'ajax.php?action=msPopulateModal&chunkId='+chunkId+'&id={$this->_ms->getId()}',
 				      dataType: "json"
 				     })
 				     .done(function(data) {						       
-				       html = '<div id="xmlView" style="display:none;"><pre>'+data.xml+'</pre></div>';
-				       html += '<div id="textView">';
-				       html += getModalHtmlChunk(data, true);				       
+				       let xml = '<pre>'+data.xml+'</pre>';
+				       modal.find('#xmlView').html(xml);  //add the xml to the modal
+				       var html = getModalHtmlChunk(data, true);				       
 				       html += '<ul>';
 				       if (data.child) {
 				         html += getChildChunkHtml(data.child, '');
 				       }
-				       html += '</ul></div>';
-				       modal.find('.modal-body').html(html);  //add the html to the modal
+				       html += '</ul>';
+				       modal.find('#textView').html(html);  //add the html to the modal
 				       html += '<button type="button" id="modalView" class="viewSwitch btn btn-success">modal view</button>';
-				       $('#rhs').html(html);  //add the html to the rhs panel
+				       $('#chunkPanel').html(html);  //add the html to the rhs panel
 				       if (view == "panel") {
-				         $('#rhs').show();
+				         $('#chunkPanel').show();
 				       } else {
-				         $('#rhs').hide();
+				         $('#chunkPanel').hide();
 				         modal.modal();
 				       }
 				     })
@@ -543,6 +554,16 @@ HTML;
 				     }
 				   });
 				   
+				   $('#closeImagePanel').on('click', function () {
+				     $(this).hide();
+				     $('#imagePanel').hide();
+				   });
+				   
+				   $('#closeMSPanel').on('click', function () {
+				     $(this).hide();
+				     $('#msPanel').hide();
+				   });
+				   
 				   //highlight abbreviations and ligatures
 				   $(document).on('mouseover', '.mouseover', function() {
 				     let id = $(this).attr('id');
@@ -556,6 +577,33 @@ HTML;
 				     $('.'+id).css('background-color', 'inherit');
 				     $('#'+id).css('text-decoration','inherit');
 				   });
+				   
+				   $('.page').click(function(e){
+					    e.stopImmediatePropagation();   //prevents outer link (e.g. word across pages) from overriding this one
+					    var html = '';
+					    var url = $(this).attr('data-facs');
+					    var regex = /^((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?$/
+					    var urlElems = regex.exec(url);
+					    if (urlElems[3] == 'cudl.lib.cam.ac.uk') {  //complex case: write the viewer code
+					      var paramElems = urlElems[6].split('/');
+					      var mssNo = paramElems[0];
+					      var pageNo = paramElems[1];
+					      html = "<div style='position: relative; width: 100%; padding-bottom: 80%;'>";
+					      html += "<iframe type='text/html' width='600' height='410' style='position: absolute; width: 100%; height: 100%;'";
+					      html += " src='https://cudl.lib.cam.ac.uk/embed/#item="+mssNo+"&page="+pageNo+"&hide-info=true'";
+					      html += " frameborder='0' allowfullscreen='' onmousewheel=''></iframe></div>";
+					      $('#imagePanel').html(html);
+					    }
+					    else {    //simple case: just stick the url in an image tag for image viewer */
+					      html = '<img id="msImage" src="' + url + '">';
+								$('#imagePanel').html(html);
+								$('#msImage').zoomio({
+                  fadeduration: 500
+                });
+					    }
+					    $('#closeImagePanel').show();
+					    $('#imagePanel').show();
+            });
 				});
 				
 				function getChildChunkHtml(child, html) {
