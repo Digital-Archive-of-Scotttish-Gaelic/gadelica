@@ -318,7 +318,18 @@ HTML;
 					{$this->_getChildTextsHtml()}
 				</tbody>
 			</table>
-			{$textOutput}
+			<div class="row flex-fill" style="min-height: 0;">
+				<div id="lhs" class="col-6 mh-100" style="overflow-y: scroll;">
+					{$textOutput}
+				</div>  <!-- end LHS -->
+				<div id="rhs" class="col-6 mh-100" overflow-y: scroll;"> <!-- RHS panel -->
+					<a class="link" id="closeImagePanel" style="display: none;"><span style="color:red;"><i class="fas fa-times fa-2x"></i></span></a>			
+					<div id="imagePanel"></div>  <!-- placeholder for MS image -->
+					<a class="link" id="closeMSPanel" style="display: none;"><span style="color:red;"><i class="fas fa-times fa-2x"></i></span></a>	
+					<div id="msPanel"></div>
+					<div id="chunkPanel"></div>
+				</div>  <!-- end RHS -->
+			</div>  <!-- end row -->
 HTML;
 	}
 
@@ -329,23 +340,14 @@ HTML;
 	 */
 	private function _formatMS($input) {
 		$output = <<<HTML
-			<div class="row flex-fill" style="min-height: 0;">
-				<div id="lhs" class="col-6 mh-100" style="overflow-y: scroll;">
+			
 					<div>
 	          <small><a href="#" onclick="$('.numbers').toggle();">[toggle numbers]</a></small>
 	          <small><a class="link" id="compareEditions" data-id="{$this->_ms->getId()}" data-mode="diplo">[compare editions]</a></small>
 	          <br>
 					</div>
 					{$input}
-				</div>  <!-- end LHS -->
-				<div id="rhs" class="col-6 mh-100" overflow-y: scroll;"> <!-- RHS panel -->
-					<a class="link" id="closeImagePanel" style="display: none;"><span style="color:red;"><i class="fas fa-times fa-2x"></i></span></a>			
-					<div id="imagePanel"></div>  <!-- placeholder for MS image -->
-					<a class="link" id="closeMSPanel" style="display: none;"><span style="color:red;"><i class="fas fa-times fa-2x"></i></span></a>	
-					<div id="msPanel"></div>
-					<div id="chunkPanel"></div>
-				</div>  <!-- end RHS -->
-			</div>  <!-- end row -->
+				
 HTML;
 		return $output;
 	}
@@ -462,6 +464,7 @@ HTML;
 	}
 
 	private function _writeJavascript() {
+		$scansFilepath = SCANS_FILEPATH;
 		echo <<<HTML
     <script>
       $(function () {
@@ -470,6 +473,21 @@ HTML;
           $('#'+hi).addClass('mark');
           document.getElementById(hi).scrollIntoView({behavior: 'smooth', block: 'center'})
         }
+        
+        $('.scanLink').on('click', function () {
+          let src = '{$scansFilepath}' + $(this).attr('data-pdf');
+          var html = '<embed width="100%" height="100%" src="' + src + '">';
+          $('#rhs').html(html);
+        });
+        
+        $('.externalLink').on('click', function () {
+          let src = $(this).attr('data-url');
+          var html = '<img id="pageImage" height="100%" src="' + src + '">';
+          $('#rhs').html(html);
+          $('#pageImage').zoomio({
+            fadeduration: 500
+          });
+        });
       });
     </script>
 HTML;
@@ -478,7 +496,6 @@ HTML;
 	private function _writeMSJavascript() {
 		echo <<<HTML
 			<input type="hidden" id="modalOrPanelView" value="{$_SESSION["view"]}">   <!-- used to store the view preference : panel or modal -->
-			<script src="https://cdn.jsdelivr.net/npm/zoomio@2.0.2/zoomio.min.js"></script>
 			<script>
 					
 				$(function() {

@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/includes/htmlHeader.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/includes/htmlHeader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/includes/include.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/includes/include.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/views/corpus_browse.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/corpus_browse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/corpas/code/xsl/semiDiplomatic.xsl" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/xsl/semiDiplomatic.xsl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/xsl/corpus.xsl" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/xsl/corpus.xsl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,13 +137,6 @@
       <workItem from="1620890459214" duration="6475000" />
       <workItem from="1621584947520" duration="594000" />
       <workItem from="1622100061906" duration="8765000" />
-    </task>
-    <task id="LOCAL-00075" summary="Individual and orphaned senses now operational in entry.&#10;Bug fixes and code tidy.">
-      <created>1617200740399</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1617200740399</updated>
     </task>
     <task id="LOCAL-00076" summary="Bug fix for entry - grouped senses generating extra blank sense">
       <created>1617261242932</created>
@@ -479,7 +474,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622120648658</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="Fixed issue where 2 files were a commit behind working version">
+      <created>1622207014000</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1622207014000</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -498,7 +500,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fully working entry system" />
     <MESSAGE value="First pass at script to migrate group 2 slip data to new entry &amp; sense models" />
     <MESSAGE value="New issue classes to track and resolve reported issues" />
     <MESSAGE value="Some tweaks" />
@@ -523,6 +524,7 @@
     <MESSAGE value="Added cancel functionality to edit forms for both writers and texts" />
     <MESSAGE value="Changed references to &quot;Aidhleags&quot; to &quot;MEANMA&quot;" />
     <MESSAGE value="Basic restructuring to display MS in rudimentary form" />
-    <option name="LAST_COMMIT_MESSAGE" value="Basic restructuring to display MS in rudimentary form" />
+    <MESSAGE value="Fixed issue where 2 files were a commit behind working version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed issue where 2 files were a commit behind working version" />
   </component>
 </project>

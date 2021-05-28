@@ -170,11 +170,11 @@
     </xsl:if>
     <xsl:choose>
       <xsl:when test="@img and starts-with(@img,'http')">
-        <a href="{@img}" target="_new">[<xsl:value-of select="@n"/>]</a>
+        <a class="link externalLink" data-url="{@img}">[<xsl:value-of select="@n"/>]</a>
         <xsl:text>&#32;</xsl:text>
       </xsl:when>
       <xsl:when test="@img">
-        <a href="{concat('https://dasg.ac.uk/gadelica/corpas/scans/',@img)}" target="_new">[<xsl:value-of select="@n"/>]</a>
+        <a class="link scanLink" data-pdf="{@img}">[<xsl:value-of select="@n"/>]</a>
         <xsl:text>&#32;</xsl:text>
       </xsl:when>
       <xsl:otherwise>
