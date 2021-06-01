@@ -7,6 +7,8 @@
     <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/models/manuscript.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/models/manuscript.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/views/corpus_browse.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/corpus_browse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/xsl/corpus.xsl" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/xsl/corpus.xsl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,13 +136,6 @@
       <workItem from="1620890459214" duration="6475000" />
       <workItem from="1621584947520" duration="594000" />
       <workItem from="1622100061906" duration="8765000" />
-    </task>
-    <task id="LOCAL-00078" summary="Fixed issue with invalid text ID in slow_search. Added error handling and display.">
-      <created>1617285566541</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1617285566542</updated>
     </task>
     <task id="LOCAL-00079" summary="Rewrote the slow (xpath) search to appear in the same way as corpus search (with sub nav). Used new \views\search.php class to make this possible without code duplication&#10;Renamed previous views\search.php to searchOld.php as it appears to be deprecated.&#10;Fixed issue where updating a slip in entry or collection view did not update results on parent page">
       <created>1618235845740</created>
@@ -478,7 +473,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622217004141</updated>
     </task>
-    <option name="localTasksCounter" value="127" />
+    <task id="LOCAL-00127" summary="Minor tweak to hand shift code">
+      <created>1622217176429</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1622217176429</updated>
+    </task>
+    <option name="localTasksCounter" value="128" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -497,7 +499,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Some tweaks" />
     <MESSAGE value="Changing wordclass in slip edit now saves an issue to the database with user info and description. TODO: get edit issue form working." />
     <MESSAGE value="Form updates now working and refreshing main list" />
     <MESSAGE value="Some progress with fixing issue whereby changing wordclass to non-noun or noun-verb causes a bug preventing recording of issues.&#10;Added a new method to models\users to check for superuser. Locked down issues code to be only viewable by superusers." />
@@ -522,6 +523,7 @@
     <MESSAGE value="Fixed issue where 2 files were a commit behind working version" />
     <MESSAGE value="Text pages now appear in new RHS col instead of new browser tab" />
     <MESSAGE value="Some work on Hands - needs further work on Handshift XPath" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some work on Hands - needs further work on Handshift XPath" />
+    <MESSAGE value="Minor tweak to hand shift code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor tweak to hand shift code" />
   </component>
 </project>

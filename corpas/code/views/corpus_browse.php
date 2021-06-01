@@ -328,7 +328,7 @@ HTML;
 					{$this->_getLevelHtml()}
 					{$this->_getNotesHtml()}
 					{$this->_getParentTextHtml()}
-					{$this->_getMetadataLinkHtml()}
+					<!-- $this->_getMetadataLinkHtml()} -->
 					{$this->_getChildTextsHtml()}
 				</tbody>
 			</table>
@@ -669,7 +669,10 @@ HTML;
 				  }			  
 				  //get the hand info
 				  if (chunk.hand != undefined) {
-				    let hand = chunk.handShift == undefined ? chunk.hand : chunk.handShift;
+				    var hand = chunk.hand;
+				    if (chunk.handShift != undefined) {
+				      hand = chunk.handShift;
+				    }
 				    var handHtml = '<p>';
 				    if (hand.forename[0] != undefined) {
 				      handHtml += hand.forename[0] + ' ';

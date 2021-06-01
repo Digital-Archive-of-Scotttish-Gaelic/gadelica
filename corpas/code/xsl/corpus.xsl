@@ -9,7 +9,7 @@
   <xsl:output encoding="UTF-8" method="html"/>
   
   <xsl:template match="/">
-    <div style="width: 800px;">
+    <div>
       <xsl:apply-templates/>
     </div>
   </xsl:template>
