@@ -336,7 +336,7 @@ HTML;
 				<div id="lhs" class="col-6 mh-100" style="overflow-y: scroll;">
 					{$textOutput}
 				</div>  <!-- end LHS -->
-				<div id="rhs" class="col-6 mh-100" overflow-y: scroll;"> <!-- RHS panel -->
+				<div id="rhs" class="col-6 mh-100" style="overflow-y: scroll;"> <!-- RHS panel -->
 					{$rightPanelHtml}
 				</div>  <!-- end RHS -->
 			</div>  <!-- end row -->
@@ -352,7 +352,6 @@ HTML;
 		$output = <<<HTML
 					<div>
 	          <small><a href="#" onclick="$('.numbers').toggle();">[toggle numbers]</a></small>
-	          <small><a class="link" id="compareEditions" data-id="{$this->_ms->getId()}" data-mode="diplo">[compare editions]</a></small>
 	          <br>
 					</div>
 					{$input}
