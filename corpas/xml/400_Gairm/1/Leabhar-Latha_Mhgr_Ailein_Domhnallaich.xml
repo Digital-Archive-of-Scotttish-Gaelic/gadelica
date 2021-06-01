@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../texts.rnc" schematypens="https://relaxng.org/ns/structure/1.0?>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../../texts.rnc" schematypens="https://relaxng.org/ns/structure/1.0?>
 <text xmlns="https://dasg.ac.uk/corpus/" ref="https://dasg.ac.uk/corpus/_400-1-8" status="raw">
   <pb n="53" img="400_Gairm/1/TD53.pdf"/>
   <h>
@@ -64,33 +63,35 @@
     <w id="d1e4213" pos="a" lemma="fìor">fìor</w>
     <w id="d1e4216" pos="d" lemma="the">an</w>
     <w id="d1e4219" pos="n" lemma="seanfhacal">seanfhacal</w>
-    <pc join="right">(</pc>
-    <note>Footnote</note>
-    <pc join="both">’</pc>
-    <w id="d1e4232" pos="V" lemma="is">S</w>
-    <w id="d1e4235" pos="D" lemma="e">e</w>
-    <pc join="right">’</pc>
-    <w id="d1e4241" pos="n" lemma="n">n</w>
-    <w id="d1e4245" pos="n" lemma="seanfhacal">seanfhacal</w>
-    <w id="d1e4248" pos="" lemma="rx">a</w>
-    <w id="d1e4251" pos="V" lemma="bi">bha</w>
-    <pc join="right">’</pc>
-    <w id="d1e4257" pos="d" lemma="the">na</w>
-    <w id="d1e4260" pos="n" lemma="beachd">bheachd</w>
-    <pc join="left">,</pc>
-    <pc join="right">“</pc>
-    <w id="d1e4270" pos="" lemma="gob">Gob</w>
-    <w id="d1e4273" pos="n" lemma="nathrach">nathrach</w>
-    <pc join="left">,</pc>
-    <w id="d1e4279" pos="n" lemma="earball">earball</w>
-    <w id="d1e4283" pos="n" lemma="peucaig">peucaig</w>
-    <w id="d1e4286" pos="p" lemma="air">air</w>
-    <w id="d1e4289" pos="" lemma="rx">a</w>
-    <pc join="left">’</pc>
-    <w id="d1e4295" pos="n" lemma="Mhàrt">Mhàrt</w>
-    <pc join="both">.</pc>
-    <pc join="left">”</pc>
-    <pc join="left">)</pc>
+    <footnote n="*">
+      <p>
+        <s>
+          <w id="d1e4232" pos="V" lemma="is">’S</w>
+          <w id="d1e4235" pos="D" lemma="e">e</w>
+          <pc join="right">’</pc>
+          <w id="d1e4241" pos="n" lemma="n">n</w>
+          <w id="d1e4245" pos="n" lemma="seanfhacal">seanfhacal</w>
+          <w id="d1e4248" pos="" lemma="rx">a</w>
+          <w id="d1e4251" pos="V" lemma="bi">bha</w>
+          <pc join="right">’</pc>
+          <w id="d1e4257" pos="d" lemma="the">na</w>
+          <w id="d1e4260" pos="n" lemma="beachd">bheachd</w>
+          <pc join="left">,</pc>
+          <pc join="right">“</pc>
+          <w id="d1e4270" pos="" lemma="gob">Gob</w>
+          <w id="d1e4273" pos="n" lemma="nathrach">nathrach</w>
+          <pc join="left">,</pc>
+          <w id="d1e4279" pos="n" lemma="earball">earball</w>
+          <w id="d1e4283" pos="n" lemma="peucaig">peucaig</w>
+          <w id="d1e4286" pos="p" lemma="air">air</w>
+          <w id="d1e4289" pos="" lemma="rx">a</w>
+          <pc join="left">’</pc>
+          <w id="d1e4295" pos="n" lemma="Mhàrt">Mhàrt</w>
+          <pc join="both">.</pc>
+          <pc join="left">”</pc>
+        </s>
+      </p>
+    </footnote>
     <pc join="left">,</pc>
     <w id="d1e4311" pos="V" lemma="bi">bithidh</w>
     <w id="d1e4314" pos="n" lemma="deireadh">deireadh</w>
@@ -1597,13 +1598,11 @@
     <w id="d1e9052" pos="p" lemma="an">sa</w>
     <pc join="left">.</pc>
   </p>
-  <p>
+  <h>
     <pc join="right">(</pc>
-    <w id="d1e9064" pos="n" lemma="ri">R</w>
-    <pc join="both">’</pc>
-    <w id="d1e9070" pos="" lemma="rx">a</w>
-    <w id="d1e9073" pos="n" lemma="leantuinn">leantuinn</w>
+    <w id="d1e9064" pos="p" lemma="ri">R’a</w>
+    <w id="d1e9073" pos="vn" lemma="lean">leantuinn</w>
     <pc join="left">)</pc>
-  </p>
+  </h>
   <pb n="56" img="400_Gairm/1/TD56.pdf"/>
 </text>
