@@ -14,7 +14,7 @@ Heading = element h { Token+ }
 Verse = element lg { (element l { Token+ } | Page)+ }
 List = element list { (element label { Token* }, element item { Token+ })+ }
 Utterance = element u { attribute ref { xsd:anyURI }?, Token+ }
-Page = element pb {attribute n { text }, attribute img { text }? }
+Page = ( element pb {attribute n { text }, attribute img { text }? } | element lb { attribute n { text } } )
 Sentence = element s { (Token | Page | element i { Token+ } )+ }
 Note = element note { text }
 
