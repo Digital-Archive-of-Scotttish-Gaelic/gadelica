@@ -188,7 +188,7 @@ SQL;
 	public function getChildTextsInfo() {
 		$childTextsInfo = array();
 		$sql = <<<SQL
-			SELECT id, title, level FROM text WHERE partOf = :id ORDER BY id ASC
+			SELECT id, title, level FROM text WHERE partOf = :id ORDER BY CAST(id AS UNSIGNED) ASC
 SQL;
 		$results = $this->_db->fetch($sql, array(":id" => $this->getId()));
 		foreach ($results as $result) {
