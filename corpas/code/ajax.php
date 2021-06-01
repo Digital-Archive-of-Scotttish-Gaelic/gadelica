@@ -10,10 +10,6 @@ switch ($_REQUEST["action"]) {
 		$data = $ms->getModalData($_GET["chunkId"]);
 		echo json_encode($data);
 		break;
-	case "msViewSwitch":
-		$_SESSION["view"] = ($_SESSION["view"] == "panel") ? "modal" : "panel";
-		echo json_encode(array("view" => $_SESSION["view"]));
-		break;
 	case "msGetEditionHtml":
 		$ms = manuscripts::getMSById($_GET["id"]);
 		$xml = $ms->getXml();

@@ -303,23 +303,50 @@ HTML;
 	private function _showText() {
 		$textOutput = $this->_model->getTransformedText();
 		$rightPanelHtml = "";
-		if ($this->_ms) {
+		if ($this->_ms) {     // manuscript specific panels
 			$textOutput = $this->_formatMS($textOutput);
 			$rightPanelHtml = <<<HTML
 				<ul class="nav nav-pills nav-justified" style="padding-bottom: 20px;">			
-						<li class="nav-item"><a id="wordPanelSelect" class="link nav-link panel-link">word</a></li>
-					  <li class="nav-item"><a id="scribePanelSelect" class="link nav-link panel-link">scribe</a></li>			    
-					  <li class="nav-item"><a id="diploPanelSelect" class="link nav-link panel-link">diplo</a></li>			
-					  <li class="nav-item"><a id="imagePanelSelect" class="link nav-link panel-link">image</a></li>		  
-					 </ul>
-					 
-					 <div id="wordPanel" class="panel"><< please select a word</div>
-					 <div id="scribePanel" class="panel"><< please select a word</div>
-					 <div id="diploPanel" class="panel"></div>
-					 <div id="imagePanel" class="panel"><< please select a page</div>
+					<li class="nav-item"><a id="metaPanelSelect" class="link nav-link panel-link active">metadata</a></li>
+					<li class="nav-item"><a id="wordPanelSelect" class="link nav-link panel-link">word</a></li>			    
+				  <li class="nav-item"><a id="diploPanelSelect" class="link nav-link panel-link">diplo</a></li>			
+				  <li class="nav-item"><a id="imagePanelSelect" class="link nav-link panel-link">image</a></li>		  
+				 </ul>
+				 
+				 <div id="metaPanel" class="panel">
+				  {$this->_getMetaTableHtml()}
+				 </div>
+				 <div id="wordPanel" class="panel"><< please select a word</div>
+				 <div id="diploPanel" class="panel"></div>
+				 <div id="imagePanel" class="panel"><< please select a page</div>
+HTML;
+		} else {  // panels for non-manuscript texts
+			$rightPanelHtml = <<<HTML
+				<ul class="nav nav-pills nav-justified" style="padding-bottom: 20px;">			
+					<li class="nav-item"><a id="metaPanelSelect" class="link nav-link panel-link active">metadata</a></li>	
+				  <li class="nav-item"><a id="imagePanelSelect" class="link nav-link panel-link">image</a></li>		  
+				 </ul>
+				 
+				 <div id="metaPanel" class="panel">
+					{$this->_getMetaTableHtml()}
+				 </div>
+				 <div id="imagePanel" class="panel"><< please select a page</div>	
 HTML;
 		}
 		echo <<<HTML
+			<div class="row flex-fill" style="min-height: 0;">
+				<div id="lhs" class="col-6 mh-100" style="overflow-y: scroll;">
+					{$textOutput}
+				</div>  <!-- end LHS -->
+				<div id="rhs" class="col-6 mh-100" style="overflow-y: scroll;"> <!-- RHS panel -->
+					{$rightPanelHtml}
+				</div>  <!-- end RHS -->
+			</div>  <!-- end row -->
+HTML;
+	}
+
+	private function _getMetaTableHtml() {
+		$html = <<<HTML
 			<table class="table" id="meta" data-hi="{$_GET["id"]}">
 				<tbody>
 					<tr><td>title</td><td>{$this->_model->getTitle()}</td></tr>
@@ -332,19 +359,12 @@ HTML;
 					{$this->_getChildTextsHtml()}
 				</tbody>
 			</table>
-			<div class="row flex-fill" style="min-height: 0;">
-				<div id="lhs" class="col-6 mh-100" style="overflow-y: scroll;">
-					{$textOutput}
-				</div>  <!-- end LHS -->
-				<div id="rhs" class="col-6 mh-100" style="overflow-y: scroll;"> <!-- RHS panel -->
-					{$rightPanelHtml}
-				</div>  <!-- end RHS -->
-			</div>  <!-- end row -->
 HTML;
+		return $html;
 	}
 
 	/**
-	 * Adds the scrollable panels (as well as some links) required for the Manuscript view.
+	 * Adds extra code required for the Manuscript view.
 	 * @param $input the MS HTML
 	 * @return string the formatted HTML
 	 */
@@ -482,10 +502,29 @@ HTML;
           document.getElementById(hi).scrollIntoView({behavior: 'smooth', block: 'center'})
         }
         
+        $('#imagePanelSelect').on('click', function() {
+			     $('.panel').hide();
+			     $('#metaPanelSelect').removeClass('active');
+			     $(this).addClass('active');	
+			     $('#imagePanel').show();
+				});
+        
+        $('#metaPanelSelect').on('click', function() {
+			     $('.panel').hide();
+			     $('#imagePanelSelect').removeClass('active');
+			     $(this).addClass('active');	
+			     $('#metaPanel').show();
+				});
+        
         $('.scanLink').on('click', function () {
           let src = '{$scansFilepath}' + $(this).attr('data-pdf');
           var html = '<embed width="100%" height="100%" src="' + src + '">';
-          $('#rhs').html(html);
+          $('#imagePanel').html(html)
+          $('.panel').hide();  
+          $('#metaPanelSelect').removeClass('active');
+					$('#imagePanelSelect').addClass('active');
+					$('#imagePanel').show();
+					
         });
         
         $('.externalLink').on('click', function () {
@@ -503,14 +542,13 @@ HTML;
 
 	private function _writeMSJavascript() {
 		echo <<<HTML
-			<input type="hidden" id="modalOrPanelView" value="{$_SESSION["view"]}">   <!-- used to store the view preference : panel or modal -->
 			<script>
 					
 				$(function() {
 				   
 				   $('#diploPanelSelect').on('click', function () {
 				     $('.panel').hide();
-				     $('#wordPanelSelect, #scribePanelSelect, #imagePanelSelect').removeClass('active');
+				     $('#wordPanelSelect, #metaPanelSelect, #imagePanelSelect').removeClass('active');
 				     $(this).addClass('active');				     
 				     let id = '{$this->_ms->getId()}';
 				     $.ajax({url: 'ajax.php?action=msGetEditionHtml&id='+id+'&mode=diplo',
@@ -524,41 +562,26 @@ HTML;
 				   
 				   $('#wordPanelSelect').on('click', function() {
 				     $('.panel').hide();
-				     $('#diploPanelSelect, #scribePanelSelect, #imagePanelSelect').removeClass('active');
+				     $('#diploPanelSelect, #metaPanelSelect, #imagePanelSelect').removeClass('active');
 				     $(this).addClass('active');	
 				     $('#wordPanel').show();
 				   });
 				   
-				   $('#scribePanelSelect').on('click', function() {
+				   $('#metaPanelSelect').on('click', function() {
 				     $('.panel').hide();
 				     $('#diploPanelSelect, #wordPanelSelect, #imagePanelSelect').removeClass('active');
 				     $(this).addClass('active');	
-				     $('#scribePanel').show();
+				     $('#metaPanel').show();
 				   });
 				   
 				   $('#imagePanelSelect').on('click', function() {
 				     $('.panel').hide();
-				     $('#diploPanelSelect, #scribePanelSelect, #wordPanelSelect').removeClass('active');
+				     $('#diploPanelSelect, #metaPanelSelect, #wordPanelSelect').removeClass('active');
 				     $(this).addClass('active');	
 				     $('#imagePanel').show();
 				   });
 				   
-				   $(document).on('click', '.viewSwitch', function() {
-				     $.getJSON("ajax.php?action=msViewSwitch", function (data) {
-				       let view = data.view;
-				       $('#modalOrPanelView').val(view);
-				       if (view == "panel") {
-				         $('#wordPanel').show();
-				         $('#wordPanelSelect').addClass('active');
-				       } else {
-				     //    $('#wordPanel').html('<< please select a word');
-				         $('#chunkModal').modal();
-				       }
-				     });
-				   });
-				   
 				   $('.chunk').on('click', function () {
-				     let view = $('#modalOrPanelView').val(); //modal or panel
 				     $('.hi').removeClass('hi');
 				     $(this).addClass("hi");
 				     let chunkId = $(this).attr('id');
@@ -569,25 +592,17 @@ HTML;
 				     })
 				     .done(function(data) {						       
 				       let xml = '<pre>'+data.xml+'</pre>';
-				       modal.find('#xmlView').html(xml);  //add the xml to the modal
 				       var html = getModalHtmlChunk(data, true);				       
 				       html += '<ul>';
 				       if (data.child) {
 				         html += getChildChunkHtml(data.child, '');
 				       }
 				       html += '</ul>';
-				       modal.find('#textView').html(html);  //add the html to the modal
-				       html += '<button type="button" id="modalView" class="viewSwitch btn btn-success">modal view</button>';
-				       if (view == "panel") {
-				         $('#wordPanel').html(html);  //add the html to the rhs panel
-				         $('#diploPanelSelect, #scribePanelSelect, #imagePanelSelect').removeClass('active');
-								 $('#wordPanelSelect').addClass('active');
-								 $('.panel').hide();
-				         $('#wordPanel').show();
-				       } else {
-				         $('#wordPanel').hide();
-				         modal.modal();
-				       }
+			         $('#wordPanel').html(html);  //add the html to the rhs panel
+			         $('#diploPanelSelect, #metaPanelSelect, #imagePanelSelect').removeClass('active');
+							 $('#wordPanelSelect').addClass('active');
+							 $('.panel').hide();
+			         $('#wordPanel').show();
 				     })
 				   });
 				   
@@ -642,7 +657,9 @@ HTML;
                   fadeduration: 500
                 });
 					    }
-					    $('#closeImagePanel').show();
+					    $('.panel').hide();
+					    $('#diploPanelSelect, #metaPanelSelect, #wordPanelSelect').removeClass('active');
+							$('#imagePanelSelect').addClass('active');
 					    $('#imagePanel').show();
             });
 				});
@@ -672,27 +689,29 @@ HTML;
 				    if (chunk.handShift != undefined) {
 				      hand = chunk.handShift;
 				    }
-				    var handHtml = '<p>';
+				    var handHtml = '<li>';
 				    if (hand.forename[0] != undefined) {
 				      handHtml += hand.forename[0] + ' ';
 				    }
 				    if (hand.surname) {
 				      handHtml += hand.surname[0] == undefined ? 'Anonymous (' + hand.id[0] + ')' : hand.surname[0];
 				    }
-				    handHtml += '</p>';
+				    html += 'scribe: ' + handHtml 
+				    html += '</li>';
+				    /*
 				    if (hand.century) {
 				      handHtml += '<p>Century: ' + hand.century[0] + '</p>';
 				    }
 				    if (hand.region) {
 				      handHtml += '<p>' + hand.region[0] + '</p>';
 				    }
-				    /*if (hand.affiliation) {
+				    if (hand.affiliation) {
 				      handHtml += '<p>' + hand.affiliation[0] + '</p>';
-				    }*/
+				    }
 				    if (hand.note) {
 				      handHtml += '<p>' + hand.note.p + '</p>';
 				    } 
-				    $('#scribePanel').html(handHtml);
+				    */
 				  }
 				  if (chunk.pos) {
 				    html += '<li>' + chunk.pos[0] + '</li>';

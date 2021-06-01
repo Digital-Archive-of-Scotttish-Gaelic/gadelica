@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="">
+    <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="Fixed issue where RHS column was not scrolling independently">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/ajax.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/ajax.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/corpas/code/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/corpas/code/views/corpus_browse.php" beforeDir="false" afterPath="$PROJECT_DIR$/corpas/code/views/corpus_browse.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -134,13 +136,7 @@
       <workItem from="1620890459214" duration="6475000" />
       <workItem from="1621584947520" duration="594000" />
       <workItem from="1622100061906" duration="8765000" />
-    </task>
-    <task id="LOCAL-00081" summary="Adding and removing senses working in slip edit page">
-      <created>1618403455702</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1618403455703</updated>
+      <workItem from="1622552567702" duration="2096000" />
     </task>
     <task id="LOCAL-00082" summary="New sense code with editing (and removing) modal and new tooltips working in collection, entry, and search results.">
       <created>1618410240138</created>
@@ -478,7 +474,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622550768957</updated>
     </task>
-    <option name="localTasksCounter" value="130" />
+    <task id="LOCAL-00130" summary="Fixed issue where RHS column was not scrolling independently">
+      <created>1622550932909</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1622550932909</updated>
+    </task>
+    <option name="localTasksCounter" value="131" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -497,7 +500,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Some progress with fixing issue whereby changing wordclass to non-noun or noun-verb causes a bug preventing recording of issues.&#10;Added a new method to models\users to check for superuser. Locked down issues code to be only viewable by superusers." />
     <MESSAGE value="Major bug fix of slip links showing in all groups&#10;Fixed bug whereby using accented search term prevented auto creation of slips&#10;Fixed issue where entries were not group dependent" />
     <MESSAGE value="Added change headword functionality to slip edit. Added code to track this via issues system.&#10;Reworked slip edit page to hide sections by default and control display with Bootstrap toggle" />
     <MESSAGE value="Debug code" />
@@ -522,6 +524,7 @@
     <MESSAGE value="Minor tweak to hand shift code" />
     <MESSAGE value="Hands and handshifts now working" />
     <MESSAGE value="Fixed issue where texts were not being listed in correct order in browse view" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed issue where texts were not being listed in correct order in browse view" />
+    <MESSAGE value="Fixed issue where RHS column was not scrolling independently" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed issue where RHS column was not scrolling independently" />
   </component>
 </project>
