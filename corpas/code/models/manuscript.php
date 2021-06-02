@@ -132,6 +132,7 @@ class manuscript
 		$modalData["obscure"] = $this->_getObscured($xml);
 		$modalData["supplied"] = $this->_getSupplied($xml);
 		$modalData["handShift"] = $this->_getHandShiftInfo($xml);
+		$modalData["language"] = $this->_getLanguage($xml);
 		return $modalData;
 	}
 
@@ -142,9 +143,7 @@ class manuscript
 			$handId = $result[0]->attributes()->hand;
 			$hand = new hand($handId);
 			$handInfo = array("id" => $handId, "forename" => $hand->getForename(), "surname" => $hand->getSurname(),
-				"century" => $hand->getCentury(), "affiliation" => $hand->getAffiliation(), "region" => $hand->getRegion(),
-				"note" => $hand->getNote()
-			);
+				"writerId" => $hand->getWriterId());
 		}
 		return $handInfo;
 	}
@@ -158,11 +157,19 @@ class manuscript
 			$handId = $r->attributes()->new;
 			$hand = new hand($handId);
 			$handInfo = array("id" => $handId, "forename" => $hand->getForename(), "surname" => $hand->getSurname(),
-				"century" => $hand->getCentury(), "affiliation" => $hand->getAffiliation(), "region" => $hand->getRegion(),
-				"note" => $hand->getNote(), "count" => count($result)
-			);
+				"writerId" => $hand->getWriterId());
 		}
 		return $handInfo;
+	}
+
+	private function _getLanguage($element) {
+		$language = null;
+	//	$id = $element->attributes()->id;
+		$result = $element->xpath('.//@xml:lang');
+		if ($result) {
+			$language = $result[0];
+		}
+		return $language;
 	}
 
 	private function _getEmendation($element) {
@@ -242,7 +249,7 @@ XPATH;
 		foreach ($abbrevs as $abbr) {
 			if ($abbr->g) {
 				$glyg = new glygature($abbr->g->attributes()->ref);
-				$results[] = array("g" => $abbr->g, "cert" => $abbr["cert"] ? $abbr["cert"] : null,
+				$results[] = array("g" => $abbr->g, "cert" => $abbr["cert"] ? $abbr["cert"] : ['undefined'],
 					"name" => $glyg->getName(), "note" => $glyg->getNote(), "corresp" => $glyg->getCorresp(), "id" => $abbr->g["id"]);
 			}
 		}

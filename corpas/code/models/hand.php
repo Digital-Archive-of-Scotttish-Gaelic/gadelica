@@ -609,16 +609,21 @@ class hand
         </handNote>
       </handNotes>
 XML;
-	private $_element;
+	private $_id, $_element;
 
 	/**
 	 * hand constructor.
 	 * @param $id
 	 */
 	public function __construct($id) {
+		$this->_id = $id;
 		$xml = new \SimpleXMLElement($this->_handNotes);
 		$results = $xml->xpath("/handNotes/handNote[@xml:id='{$id}']");
 		$this->_element = $results[0];
+	}
+
+	public function getId() {
+		return $this->_id;
 	}
 
 	public function getSurname() {
@@ -643,5 +648,11 @@ XML;
 
 	public function getNote() {
 		return $this->_element->note;
+	}
+
+	public function getWriterId() {
+		$db = new database();
+		$result = $db->fetch("SELECT id FROM writer WHERE surname_en = :handId", array(":handId" => $this->getId()));
+		return $result[0];
 	}
 }
