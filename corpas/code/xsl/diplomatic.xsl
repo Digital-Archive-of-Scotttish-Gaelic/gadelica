@@ -53,9 +53,7 @@
   </xsl:template>
 
   <xsl:template match="tei:pc[not(ancestor::tei:w)]">
-    <span class="chunk">
       <xsl:apply-templates/>
-    </span>
   </xsl:template>
 
   <xsl:template match="tei:c | tei:date | tei:num | tei:seg[@type = 'fragment'] | tei:seg[@type = 'cfe']">
@@ -66,9 +64,7 @@
   </xsl:template>
 
   <xsl:template match="tei:name[not(ancestor::tei:name) and not(ancestor::tei:w)] | tei:w[not(ancestor::tei:name) and not(ancestor::tei:w)]">
-    <span class="chunk" id="{@id}">
       <xsl:apply-templates/>
-    </span>
   </xsl:template>
 
   <xsl:template match="tei:name[ancestor::tei:name or ancestor::tei:w] | tei:w[ancestor::tei:name or ancestor::tei:w]">

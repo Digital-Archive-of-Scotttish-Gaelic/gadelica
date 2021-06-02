@@ -308,8 +308,8 @@ HTML;
 			$rightPanelHtml = <<<HTML
 				<ul class="nav nav-pills nav-justified" style="padding-bottom: 20px;">			
 					<li class="nav-item"><a id="metaPanelSelect" class="link nav-link panel-link active">metadata</a></li>
-					<li class="nav-item"><a id="wordPanelSelect" class="link nav-link panel-link">word</a></li>			    
-				  <li class="nav-item"><a id="diploPanelSelect" class="link nav-link panel-link">diplo</a></li>			
+					<li class="nav-item"><a id="wordPanelSelect" class="link nav-link panel-link">word info</a></li>			    
+				  <li class="nav-item"><a id="diploPanelSelect" class="link nav-link panel-link">diplomatic</a></li>			
 				  <li class="nav-item"><a id="imagePanelSelect" class="link nav-link panel-link">image</a></li>		  
 				 </ul>
 				 
@@ -321,7 +321,13 @@ HTML;
 				 <div id="imagePanel" class="panel"><< please select a page</div>
 HTML;
 		} else {  // panels for non-manuscript texts
-			$rightPanelHtml = <<<HTML
+
+			if ($this->_model->getChildTextsInfo()) { // supertext so don't use metadata panel
+				echo <<<HTML
+					{$this->_getMetaTableHtml()}
+HTML;
+			} else {  // child text so populate metadata panel and write image panel
+				$rightPanelHtml = <<<HTML
 				<ul class="nav nav-pills nav-justified" style="padding-bottom: 20px;">			
 					<li class="nav-item"><a id="metaPanelSelect" class="link nav-link panel-link active">metadata</a></li>	
 				  <li class="nav-item"><a id="imagePanelSelect" class="link nav-link panel-link">image</a></li>		  
@@ -332,6 +338,7 @@ HTML;
 				 </div>
 				 <div id="imagePanel" class="panel"><< please select a page</div>	
 HTML;
+			}
 		}
 		echo <<<HTML
 			<div class="row flex-fill" style="min-height: 0;">
@@ -498,7 +505,7 @@ HTML;
       $(function () {
         $('[data-toggle="tooltip"]').tooltip();
         if (hi = '{$_GET["wid"]}') {
-          $('#'+hi).addClass('mark');
+          $('#'+hi).addClass('hi');
           document.getElementById(hi).scrollIntoView({behavior: 'smooth', block: 'center'})
         }
         
@@ -545,6 +552,11 @@ HTML;
 			<script>
 					
 				$(function() {
+				   
+				   $('.chunk').hover(
+            function(){ $(this).css('text-decoration', 'underline'); },
+            function(){ $(this).css('text-decoration', 'inherit'); }
+           );
 				   
 				   $('#diploPanelSelect').on('click', function () {
 				     $('.panel').hide();
@@ -682,36 +694,27 @@ HTML;
 				  } else {
 				    html = '<li><strong>' + chunk.headword + '</strong></li>';
 				    html += '<ul>';
-				  }			  
+				  }			 	  
+				  if (chunk.language != undefined) {
+				    var langs = {la: "Latin", grk: "Greek", sco: "Scots", hbo: "Ancient Hebrew", jpa: "Aramaic", 
+				      en: "English", und: "Unknown"};
+				    let langCode = chunk.language["@attributes"]["lang"];
+				    html += '<li>language: ' + langs[langCode] + '</li>';    
+				  }		  
 				  //get the hand info
 				  if (chunk.hand != undefined) {
 				    var hand = chunk.hand;
+				    var handHtml = '';
 				    if (chunk.handShift != undefined) {
 				      hand = chunk.handShift;
 				    }
-				    var handHtml = '<li>';
 				    if (hand.forename[0] != undefined) {
 				      handHtml += hand.forename[0] + ' ';
 				    }
 				    if (hand.surname) {
 				      handHtml += hand.surname[0] == undefined ? 'Anonymous (' + hand.id[0] + ')' : hand.surname[0];
 				    }
-				    html += 'scribe: ' + handHtml 
-				    html += '</li>';
-				    /*
-				    if (hand.century) {
-				      handHtml += '<p>Century: ' + hand.century[0] + '</p>';
-				    }
-				    if (hand.region) {
-				      handHtml += '<p>' + hand.region[0] + '</p>';
-				    }
-				    if (hand.affiliation) {
-				      handHtml += '<p>' + hand.affiliation[0] + '</p>';
-				    }
-				    if (hand.note) {
-				      handHtml += '<p>' + hand.note.p + '</p>';
-				    } 
-				    */
+				    html += '<li>scribe: <a href="?m=writers&a=browse&id=' + hand.writerId[0] + '" target="_blank">' + handHtml + '</a></li>'; 
 				  }
 				  if (chunk.pos) {
 				    html += '<li>' + chunk.pos[0] + '</li>';
@@ -719,7 +722,7 @@ HTML;
 				  if (chunk.abbrevs.length) { //ligatures and abbreviations
 				    html += '<li>scribal abbreviations and ligatures –</li><ul>'
 				    $.each(chunk.abbrevs, function(i, abbr) {
-				      let corresp = abbr.corresp.length ? abbr.corresp[0] : '';
+				      let corresp = abbr.corresp ? abbr.corresp[0] : '';
 				      html += '<li><a target="_blank" id="' + abbr.id[0] + '" class="mouseover" href="' + corresp + '">' + abbr.name[0] + '</a>: ';
 				      html += abbr.note[0] + ' (' + abbr.cert[0] + ' certainty)</li>';
 				    });
