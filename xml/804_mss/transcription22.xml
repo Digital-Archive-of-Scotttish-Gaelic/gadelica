@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="../../Coding/Stylesheets/basic-info.xsl"?><?xml-model href="../Schemas/fnag_mss.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="https://dasg.ac.uk/corpus/" xml:id="T22">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Transcription 22: NAS GD328/11 (Stanza to Neil MacNeil of Ugadale)</title>
+        <respStmt corresp="MMA">
+          <name id="d1e16">Martina Maher</name>
+          <resp>Transcriber</resp>
+        </respStmt>
+        <respStmt corresp="WGI">
+          <name id="d1e25">William Gillies</name>
+          <resp>Overseer</resp>
+        </respStmt>
+      </titleStmt>
+      <extent>32 words</extent>
+      <publicationStmt>
+        <authority sameAs="authority"/>
+        <availability status="restricted">
+          <p>For internal use by the Faclair na Gàidhlig/DASG projects</p>
+        </availability>
+        <idno>T22</idno>
+      </publicationStmt>
+      <notesStmt>
+        <note>
+          <p/>
+        </note>
+      </notesStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier sameAs="MS22">
+            <settlement>Edinburgh</settlement>
+            <repository>NAS</repository>
+            <idno type="shelfmark">GD328/11</idno>
+          </msIdentifier>
+          <msContents>
+            <summary>
+              <p>Stanza to Neil MacNeil of Ugadale.</p>
+            </summary>
+            <msItem n="1" xml:id="MS22.1">
+              <locus/>
+              <title>Stanza to Neil MacNeil of Ugadale</title>
+              <incipit>Deghmhic Neill a bhláth na feile</incipit>
+              <explicit>lean do chanmhuin féin ga cíol</explicit>
+              <author role="scribe" corresp="Hand41"/>
+              <textLang mainLang="ghc" otherLangs="gd"/>
+              <note><p/></note>
+              <biblFull>
+                <fileDesc>
+                  <titleStmt>
+                    <title>Stanza to Neil MacNeil of Ugadale</title>
+                  </titleStmt>
+                  <publicationStmt><p>Draft transcription</p></publicationStmt>
+                  <sourceDesc><p>Transcribed from manuscript</p></sourceDesc>
+                </fileDesc>
+                <profileDesc>
+                  <textClass>
+                    <keywords>
+                      <term>bardic</term>
+                      <term>poetry</term>
+                    </keywords>
+                  </textClass>
+                </profileDesc>
+              </biblFull>
+            </msItem>
+          </msContents>
+          <physDesc>
+            <p/>
+            <objectDesc>
+              <supportDesc>
+                <support>The writing surface is intact and in good condition.</support>
+                <foliation>The individual items in the collection have been numbered in pencil, 1-26. The left-side of the item is bears a pencil number 26 on the reverse and on the top left corner of the front of that fragment is the shelf mark GD328/11, also in pencil. The right half of the items bears the number 5, in pencil, on the reverse. </foliation>
+                <condition>The quatrain transcribed here is on a slip of paper which is in two pieces at present. This appears to have occurred from wear along one of the fold lines. The two slips of paper appear to have been cut from a larger page as a single entity.</condition>
+              </supportDesc>
+              <layoutDesc>
+                <p>This item contains the Gaelic alphabet on the first two lines. The lowercase alphabet appears on line 1 and the uppercase on line 2. These do not strictly correspond to minuscule and majuscule letters as used in older manuscripts, e.g. the <hi rend="italics">a</hi> employed in both alphabets is the minuscule <hi rend="italics">a</hi>. The quatrain to Neil mac Neil appears underneath on ll.3-6.</p>
+              </layoutDesc>
+            </objectDesc>
+          </physDesc>
+          <history>
+            <summary/>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc><p/></encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <p/>
+      </langUsage>
+      <handNotes>
+        <handNote corresp="Hand41"/>
+      </handNotes>
+      <textClass>
+        <keywords>
+          <term>bardic</term>
+          <term>poetry</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2019-08-05" who="MMA">Began initial transcription</change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div n="1" type="verse" corresp="MS22.1">
+        <lg n="1" type="stanza" xml:id="MS22.1.1">
+          <l n="a" xml:id="MS22.1.1a">
+            <pb n="26" xml:id="MS22.p26"/>
+            <lb n="3" xml:id="MS22.p26.3"/>
+            <handShift new="Hand41"/>
+            <add place="above" type="insertion" hand="Hand41"><w id="d1e232" lemma="a" lemmaRef="http://www.dil.ie/2" pos="particle">a</w></add>
+            <w id="d1e235" pos="adjective-noun">
+              <w id="d1e237" lemma="dag" lemmaRef="http://www.dil.ie/14139" pos="adjective">de<abbr cert="high">g<g id="d1e241" ref="g4">h</g></abbr></w>
+              <w id="d1e244" lemma="mac" lemmaRef="http://www.dil.ie/31166" pos="noun">mhic</w>
+            </w>
+            <space type="scribal"/>
+            <name id="d1e251" type="personal"><w id="d1e252" lemma="Níall" lemmaRef="http://www.dil.ie/33163" pos="noun">Neill</w></name>
+            <space type="scribal"/>
+            <w id="d1e257" lemma="a" lemmaRef="http://www.dil.ie/2" pos="particle">a</w>
+            <space type="scribal"/>
+            <w id="d1e262" lemma="bláth" lemmaRef="http://www.dil.ie/6086" pos="noun">bhlát<lb n="3" xml:id="MS22.p5.3"/>h</w>
+            <space type="scribal"/>
+            <w id="d1e270" lemma="in" lemmaRef="http://www.dil.ie/28194" pos="article">na</w>
+            <space type="scribal"/>
+            <w id="d1e275" lemma="féil" lemmaRef="http://www.dil.ie/21476" pos="noun">feile</w>
+          </l>
+          <l n="b" xml:id="MS22.1.1b">
+            <lb n="4" xml:id="MS22.p26.4"/>
+            <w id="d1e283" lemma="is" lemmaRef="http://www.dil.ie/29104" pos="verb">s</w>
+            <w id="d1e286" lemma="óc" lemmaRef="http://www.dil.ie/33398" pos="adjective">og</w>
+            <space type="scribal"/>
+            <w id="d1e291" lemma="do" lemmaRef="http://www.dil.ie/17098" pos="particle">do</w>
+            <space type="scribal"/>
+            <w id="d1e297" lemma="cuirid" lemmaRef="http://www.dil.ie/13660" pos="verb"><abbr cert="high">c<g id="d1e300" ref="g4">h</g></abbr>uir</w>
+            <space type="scribal"/>
+            <w id="d1e306" lemma="tú" lemmaRef="http://www.dil.ie/42137" pos="pronoun">tu</w>
+            <space type="scribal"/>
+            <supplied resp="MMA"><w id="d1e312" lemma="i" lemmaRef="http://www.dil.ie/26891" pos="preposition">i</w></supplied>
+            <space type="scribal"/>
+            <w id="d1e318" lemma="Goídelc" lemmaRef="http://www.dil.ie/26311" pos="noun">ngaoi<lb n="4" xml:id="MS22.p5.4"/>dheilg</w>
+            <space type="scribal"/>
+            <w id="d1e325" lemma="dúil" lemmaRef="http://www.dil.ie/19090" pos="noun">dúil</w>
+          </l>
+          <l n="c" xml:id="MS22.1.1c">
+            <lb n="5" xml:id="MS22.p26.5"/>
+            <w id="d1e333" pos="preposition-possessive_pronoun">
+              <w id="d1e335" lemma="de" lemmaRef="http://www.dil.ie/14787" pos="preposition">e</w>
+              <w id="d1e338" lemma="a" lemmaRef="http://www.dil.ie/3" pos="possessive_pronoun">a</w>
+            </w>
+            <space type="scribal"/>
+            <w id="d1e344" lemma="méit" lemmaRef="http://www.dil.ie/31852" pos="noun">mhead</w>
+            <space type="scribal"/>
+            <w id="d1e350" lemma="ocus" lemmaRef="http://www.dil.ie/33484" pos="conjunction">s</w>
+            <w id="d1e353" lemma="do" lemmaRef="http://www.dil.ie/17098" pos="particle">a</w>
+            <space type="scribal"/>
+            <w id="d1e358" lemma="fo-gaib" lemmaRef="http://www.dil.ie/22696" pos="verb"><abbr cert="high">d<g id="d1e361" ref="g4">h</g></abbr>ei<abbr cert="high">b<g id="d1e366" ref="g4">h</g></abbr></w>
+            <!-- WG: Is it dh’ibh ‘have drunk’ or gheibh (ScG) ‘will get’? -->
+            <space type="scribal"/>
+            <w id="d1e374" lemma="tú" lemmaRef="http://www.dil.ie/42137" pos="pronoun">tu</w>
+            <space type="scribal"/>
+            <lb n="5" xml:id="MS22.p5.5"/>
+            <supplied resp="MMA"><w id="d1e382" lemma="de" lemmaRef="http://www.dil.ie/14787" pos="preposition">a</w></supplied>
+            <w id="d1e385" lemma="gréc" lemmaRef="http://www.dil.ie/26552" pos="noun"><abbr cert="high">g<g id="d1e388" ref="g4">h</g></abbr>reig</w>
+            <space type="scribal"/>
+            <w id="d1e395" lemma="ocus" lemmaRef="http://www.dil.ie/33484" pos="conjunction">s</w>
+            <w id="d1e398" lemma="de" lemmaRef="http://www.dil.ie/14787" pos="preposition">a</w>
+            <space type="scribal"/>
+            <w id="d1e403" lemma="Laiten" lemmaRef="http://www.dil.ie/29468" pos="noun">laidi<abbr cert="high">n<g id="d1e407" ref="g5">n</g></abbr></w>
+          </l>
+          <l n="d" xml:id="MS22.1.1d">
+            <lb n="6" xml:id="MS22.p26.6"/>
+            <w id="d1e415" lemma="lenaid" lemmaRef="http://www.dil.ie/29895" pos="verb">lean</w>
+            <!-- WG: Is the final phrase an imperative ‘follow!’, or a past tense (ScG) with canmhain as subjecte? -->
+            <space type="scribal"/>
+            <w id="d1e422" lemma="do" lemmaRef="http://www.dil.ie/17097" pos="possessive_pronoun">do</w>
+            <space type="scribal"/>
+            <w id="d1e428" lemma="canamain" lemmaRef="http://www.dil.ie/8130" pos="noun"><abbr cert="high">c<g id="d1e431" ref="g4">h</g></abbr>an<abbr cert="high">m<g id="d1e436" ref="g4">h</g></abbr>uin</w>
+            <w id="d1e440" lemma="fadéin" lemmaRef="http://www.dil.ie/20990" pos="pronoun">féin</w>
+            <lb n="6" xml:id="MS22.p5.6"/>
+            <unclear reason="interp_obscure" cert="medium" resp="MMA">
+              <w id="d1e447" lemma="co" lemmaRef="http://www.dil.ie/9787" pos="preposition">ga</w>
+              <space type="scribal"/>
+              <del hand="Hand41"><c id="d1e453">cliar</c></del>
+              <space type="scribal"/>
+              <w id="d1e458" lemma="cíall" lemmaRef="http://www.dil.ie/8983" pos="noun">cíol</w>
+            </unclear>
+            <!-- WG: Should the last word be clú, or dlúth, or cúl, or ciúin or what? -->
+          </l>
+        </lg>
+      </div>
+    </body>
+  </text>
+</TEI>

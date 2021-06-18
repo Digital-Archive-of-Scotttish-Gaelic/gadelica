@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="../../Coding/Stylesheets/basic-info.xsl"?><?xml-model href="../Schemas/fnag_mss.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="https://dasg.ac.uk/corpus/" xml:id="T37">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Transcription 37: Biblioteca Apostolica Vaticana, Codex Palatino-Vaticanus
+                    No. 830</title>
+                <respStmt corresp="EPT">
+                    <name id="d1e16">Eystein P. Thanisch</name>
+                    <resp>Transcriber</resp>
+                </respStmt>
+                <respStmt corresp="WGI">
+                    <name id="d1e25">William Gillies</name>
+                    <resp>Overseer</resp>
+                </respStmt>
+            </titleStmt>
+            <extent>108 words</extent>
+            <publicationStmt>
+                <authority sameAs="authority"/>
+                <availability status="restricted">
+                    <p>For internal use by the Faclair na Gàidhlig/DASG projects</p>
+                </availability>
+                <idno>T35</idno>
+            </publicationStmt>
+            <notesStmt>
+                <note>
+                    <p>Codex Palatino-Vaticanus No. 830 contains an authorial version of the Latin
+                        world chronicle known as the <hi rend="italics">Chronica Clara</hi>, which
+                        Marianus Socttus (d. 1082) compiled at Mainz. The bulk of this version of
+                        the chronicle was written out by an anonymous amanuensis working with
+                        Marianus. This amanuensis also adds two marginal notes that are partially in
+                        Gaelic, one of which implies that he studied in Scotland.</p>
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier sameAs="MS37">
+                        <settlement>Vatican City</settlement>
+                        <repository>Biblioteca Apostolica Vaticana</repository>
+                        <idno type="shelfmark">Codex Palatino-Vaticanus No 830</idno>
+                    </msIdentifier>
+                    <msContents>
+                        <summary>
+                            <p>The marginal notes that are partially in Gaelic have been included in
+                                the corpus on account of the scribe mentioning that they had spent
+                                time in Scotland. Their Gaelic may therefore have been influenced by
+                                the language in use in Scotland at the time. Both notes are
+                                addressed to Máel Brigte (= Marianus). In the first note, the
+                                amanuensis describes their own origins as an Irishman who has
+                                travelled to the continent via Scotland and provides some
+                                synchronistic dating information for the year in which they are
+                                writing (1071-1072). In the second note, the amanuensis details a
+                                cruel prank that was played on him while he was on the toilet by
+                                monks from the neighbouring monastery. Both notes begin in Gaelic
+                                but then switch to Latin approximately halfway through.</p>
+                            <p>While of interest due to their early date and their possible
+                                connection to Gaelic-speaking learned circles in Scotland, the two
+                                notes are in a language and orthography that is generally comparable
+                                to other Middle Irish manuscripts, which is perhaps to be expected
+                                from someone who seems to be an educated and well-travelled
+                                scholar.</p>
+                            <p>The notes, along with marginalia by other scribes in the manuscript,
+                                have been edited and translated by Ó Cuív (<ref target="https://www.vanhamel.nl/codecs/Ó_Cuív_1990a">1990</ref>).</p>
+                        </summary>
+                        <msItem xml:id="MS37.1">
+                            <locus>fol. 33r.marg.1-2</locus>
+                            <title>Note 1</title>
+                            <author role="scribe" corresp="Hand65"/>
+                            <incipit>Is oemenn dún ...</incipit>
+                            <explicit>... Hibernensis.</explicit>
+                            <textLang mainLang="mga"/>
+                            <biblFull>
+                                <fileDesc>
+                                    <titleStmt>
+                                        <title>Note 1</title>
+                                    </titleStmt>
+                                    <publicationStmt>
+                                        <p>Draft transcription</p>
+                                    </publicationStmt>
+                                    <sourceDesc>
+                                        <p>Transcribed from manuscript</p>
+                                    </sourceDesc>
+                                </fileDesc>
+                                <profileDesc>
+                                    <textClass>
+                                        <keywords>
+                                            <term>misc</term>
+                                            <term>prose</term>
+                                        </keywords>
+                                    </textClass>
+                                </profileDesc>
+                            </biblFull>
+                        </msItem>
+                        <msItem xml:id="MS37.2">
+                            <locus>fol. 67v.marg.1-2</locus>
+                            <title>Note 2</title>
+                            <author role="scribe" corresp="Hand65"/>
+                            <incipit>Is obenn dún ...</incipit>
+                            <explicit>... maledictionem illis.</explicit>
+                            <textLang mainLang="mga"/>
+                            <note><p/></note>
+                            <biblFull>
+                                <fileDesc>
+                                    <titleStmt>
+                                        <title>Note 2</title>
+                                    </titleStmt>
+                                    <publicationStmt>
+                                        <p>Draft transcription</p>
+                                    </publicationStmt>
+                                    <sourceDesc>
+                                        <p>Transcribed from manuscript</p>
+                                    </sourceDesc>
+                                </fileDesc>
+                                <profileDesc>
+                                    <textClass>
+                                        <keywords>
+                                            <term>misc</term>
+                                            <term>prose</term>
+                                        </keywords>
+                                    </textClass>
+                                </profileDesc>
+                            </biblFull>
+                        </msItem>
+                    </msContents>
+                    <physDesc>
+                        <p/>
+                        <objectDesc>
+                            <supportDesc>
+                                <support>Vellum.</support>
+                                <foliation>Foliation appears to be post-scribal.</foliation>
+                                <condition>The manuscript is in excellent condition, with no
+                                    problems with legibility even for the marginal
+                                    notes.</condition>
+                            </supportDesc>
+                            <layoutDesc>
+                                <p>The notes are written across the upper margin of their respective
+                                    pages, each occupying two lines. They are introduced by
+                                    capitals.</p>
+                            </layoutDesc>
+                        </objectDesc>
+                    </physDesc>
+                    <history>
+                        <summary>
+                            <p>The manuscript was written under Marianus Scottus's supervision at
+                                Mainz, with direct scribal contributions from him within the main
+                                text. This means that it must have been written sometime between
+                                1059, when Marianus arrived in Mainz, and 1082, the year of his
+                                death. The first note included in the corpus must have been writted
+                                after 1071-1072. Indeed, being a marginal note, it implies that that
+                                section of the chronicle had been completed by that date. The second
+                                note must have been written before 1082, as it addresses
+                                Marianus.</p>
+                            <p>For details of early editions and studies of the manuscript, its
+                                text, and its marginalia, see Ó Cuív (<ref target="https://www.vanhamel.nl/codecs/Ó_Cuív_1990a">1990</ref>).</p>
+                        </summary>
+                    </history>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <p/>
+        </encodingDesc>
+        <profileDesc>
+            <langUsage>
+                <p>While the scribe makes some deviations from the expected orthography of the
+                    period that may turn out to be of interest, there is generally nothing in these
+                    texts that would not be expected from a Middle Irish manuscript and composition.
+                    No plausible Scotticisms are apparent, for all the potential this scribe has to
+                    provide an early insight into Gaelic literacy in Scotland.</p>
+            </langUsage>
+            <handNotes>
+                <handNote corresp="Hand65"/>
+            </handNotes>
+            <textClass>
+                <keywords>
+                    <term>misc</term>
+                    <term>prose</term>
+                </keywords>
+            </textClass>
+        </profileDesc>
+        <revisionDesc>
+            <change when="2020-12-14" who="EPT">Transcription completed</change>
+            <change when="2020-12-14" who="EPT">File created</change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div n="1" type="prose" hand="Hand65" corresp="MS37.1">
+                <p>
+                    <handShift new="Hand65"/>
+                    <pb n="33r" xml:id="MS37.33r"/>
+                    <lb n="1" xml:id="MS37.33r.tmarg1.1"/>
+                    <w id="d1e316" lemma="is" lemmaRef="http://www.dil.ie/29104" pos="verb">IS</w>
+                    <space type="scribal"/>
+                    <w id="d1e322" lemma="oíbind" lemmaRef="http://www.dil.ie/33596" pos="adjective">oe<abbr cert="high">m<g id="d1e326" ref="g3">enn</g></abbr></w>
+                    <space type="scribal"/>
+                    <w id="d1e331" lemma="do" lemmaRef="http://www.dil.ie/17096" pos="prepositional_pronoun">dún</w>
+                    <space type="scribal"/>
+                    <w id="d1e336" lemma="indiu" lemmaRef="http://www.dil.ie/28446" pos="adverb"><abbr cert="high">i<g id="d1e339" ref="g5">n</g></abbr>diu</w>
+                    <space type="scribal"/>
+                    <w id="d1e346" lemma="a" lemmaRef="http://www.dil.ie/2" pos="particle">a</w>
+                    <name id="d1e349" type="personal">
+                        <w id="d1e351" lemma="Mael" lemmaRef="http://www.dil.ie/31244" pos="noun">m<abbr cert="medium"><g id="d1e354" ref="l16">éa</g></abbr>l</w>
+                        <name id="d1e358" type="personal"><w id="d1e359" lemma="Brigit" lemmaRef="http://www.dil.ie/6818" pos="noun">brigte</w></name>
+                    </name>
+                    <space type="scribal"/>
+                    <w id="d1e365" lemma="clúsenáir" lemmaRef="http://www.dil.ie/9695" pos="noun">clúsenáir</w>
+                    <space type="scribal"/>
+                    <w id="d1e370" pos="preposition-article"><w id="d1e371" lemma="i" lemmaRef="http://www.dil.ie/26891" pos="preposition">is</w>
+                        <w id="d1e374" lemma="in" lemmaRef="http://www.dil.ie/28194" pos="article"><abbr cert="high">i<g id="d1e377" ref="g5">n</g></abbr></w></w>
+                    <space type="scribal"/>
+                    <w id="d1e383" lemma="clúsal" lemmaRef="http://www.dil.ie/9693" pos="noun">clusail</w>
+                    <space type="scribal"/>
+                    <w id="d1e388" xml:lang="la"><abbr cert="high">i<g id="d1e391" ref="g5">n</g></abbr></w>
+                    <name id="d1e394" type="place"><w id="d1e395" pos="noun">magantia</w></name>
+                    <space type="scribal"/>
+                    <w id="d1e401" pos="preposition-article"><w id="d1e402" lemma="i" lemmaRef="http://www.dil.ie/26891" pos="preposition">is</w>
+                        <w id="d1e405" lemma="in" lemmaRef="http://www.dil.ie/28194" pos="article"><abbr cert="high">i<g id="d1e408" ref="g5">n</g></abbr></w></w>
+                    <w id="d1e411" lemma="dardóin" lemmaRef="http://www.dil.ie/14665" pos="noun">dardóen</w>
+                    <space type="scribal"/>
+                    <w id="d1e416" lemma="ré" lemmaRef="http://www.dil.ie/34869" pos="preposition">ria</w>
+                    <w id="d1e419" lemma="féil" lemmaRef="http://www.dil.ie/21476" pos="noun">fél</w>
+                    <space type="scribal"/>
+                    <name id="d1e425" type="personal"><w id="d1e426" pos="noun">petair</w></name>
+                    <space type="scribal"/>
+                    <w id="d1e431" pos="preposition-article"><w id="d1e432" lemma="i" lemmaRef="http://www.dil.ie/26891" pos="preposition">is</w>
+                        <w id="d1e435" lemma="in" lemmaRef="http://www.dil.ie/28194" pos="article"><abbr cert="high">i<g id="d1e438" ref="g5">n</g></abbr></w></w>
+                    <space type="scribal"/>
+                    <w id="d1e443" pos="number-noun"><w id="d1e444" lemma="cét-" lemmaRef="http://www.dil.ie/8866" pos="number">cet</w>
+                        <w id="d1e447" lemma="bliadain" lemmaRef="http://www.dil.ie/6133" pos="noun">bl<abbr cert="high">ia<g id="d1e451" ref="g3">dain</g></abbr></w></w>
+                    <space type="scribal"/>
+                    <w id="d1e457" pos="preposition-article"><w id="d1e458" lemma="de" lemmaRef="http://www.dil.ie/14787" pos="preposition">de</w>
+                        <w id="d1e461" lemma="in" lemmaRef="http://www.dil.ie/28194" pos="article">nd</w></w>
+                    <w id="d1e464" lemma="legáit" lemmaRef="http://www.dil.ie/29743" pos="noun">legáid</w>
+                    <w id="d1e467" lemma=".i." lemmaRef="http://www.dil.ie/26892" pos="abbreviation">.i.</w>
+                    <space type="scribal"/>
+                    <w id="d1e472" pos="preposition-article"><w id="d1e473" lemma="i" lemmaRef="http://www.dil.ie/26891" pos="preposition">is</w>
+                        <w id="d1e476" lemma="in" lemmaRef="http://www.dil.ie/28194" pos="article"><abbr cert="high">i<g id="d1e479" ref="g5">n</g></abbr></w></w>
+                    <space type="scribal"/>
+                    <w id="d1e485" lemma="bliadain" lemmaRef="http://www.dil.ie/6133" pos="noun">bl<abbr cert="high">ia<g id="d1e489" ref="g3">dain</g></abbr></w>
+                    <space type="scribal"/>
+                    <w id="d1e494" lemma="i" lemmaRef="http://www.dil.ie/26891" pos="preposition">i</w>
+                    <w id="d1e497" lemma="ro" lemmaRef="http://www.dil.ie/35364" pos="particle">rro</w>
+                    <w id="d1e500" lemma="marbaid" lemmaRef="http://www.dil.ie/31573" pos="verb">m<abbr cert="high"><g id="d1e503" ref="g8">ar</g></abbr>bat</w>
+                    <space type="scribal"/>
+                    <name id="d1e510" type="personal">
+                        <w id="d1e512" lemma="Díarmait" lemmaRef="http://www.dil.ie/15977" pos="noun">di<abbr cert="high"><g id="d1e515" ref="g8">ar</g></abbr>mait</w>
+                    </name>
+                    <lb n="2" sameAs="MS37.33r.tmarg1.2"/>
+                    <w id="d1e522" lemma="rí" lemmaRef="http://www.dil.ie/35181" pos="noun">rí</w>
+                    <space type="scribal"/>
+                    <name id="d1e527" type="population"><w id="d1e528" lemma="láigen" lemmaRef="http://www.dil.ie/29385" pos="noun">lagen</w></name>
+                    <space type="scribal"/>
+                    <pc id="d1e534">.</pc>
+                    <space type="scribal"/>
+                    <w id="d1e539" lemma="ocus" lemmaRef="http://www.dil.ie/33484" pos="conjunction"><abbr cert="high"><g id="d1e541" ref="g2">ocus</g></abbr></w>
+                    <w id="d1e544" lemma="is" lemmaRef="http://www.dil.ie/29104" pos="verb">is</w>
+                    <w id="d1e547" lemma="í" lemmaRef="http://www.dil.ie/26895" pos="pronoun">i</w>
+                    <w id="d1e550" lemma="side" lemmaRef="http://www.dil.ie/37463" pos="pronoun">side</w>
+                    <lb n="2" xml:id="MS37.33r.tmarg1.2"/>
+                    <w id="d1e556" lemma="cétnae" lemmaRef="http://www.dil.ie/8944" pos="adjective">cetna</w>
+                    <w id="d1e559" lemma="bliadain" lemmaRef="http://www.dil.ie/6133" pos="noun">bl<abbr cert="high">ia<g id="d1e563" ref="g3">dain</g></abbr></w>
+                    <space type="scribal"/>
+                    <w id="d1e568" pos="verb-emphatic"><w id="d1e569" lemma="do-icc" lemmaRef="http://www.dil.ie/17788" pos="verb">tanac</w>
+                        <w id="d1e572" lemma="sa" lemmaRef="https://www.faclair.com/ViewDictionaryEntry.aspx?ID=7E145C01680F4B96EC0D6B602D966228" pos="emphatic">sa</w></w>
+                    <space type="scribal"/>
+                    <w id="d1e578" lemma="a" lemmaRef="http://www.dil.ie/8" pos="preposition">a</w>
+                    <name id="d1e581" type="place"><w id="d1e582" lemma="Albu" lemmaRef="http://www.dil.ie/2890" pos="noun">albain</w></name>
+                    <space type="scribal"/>
+                    <w id="d1e587" xml:lang="la"><abbr cert="high">i<g id="d1e590" ref="g1">m</g></abbr></w>
+                    <space type="scribal"/>
+                    <w id="d1e595" xml:lang="la"><abbr cert="high">p<g id="d1e598" ref="g21">er</g></abbr>i<abbr cert="high">g<g id="d1e603" ref="g25">ri</g></abbr>nitate</w>
+                    <space type="scribal"/>
+                    <w id="d1e610" xml:lang="la">mea</w>
+                    <pc id="d1e613">.</pc>
+                    <w id="d1e616" xml:lang="la"><abbr cert="high"><g id="d1e618" ref="g2">et</g></abbr></w>
+                    <w id="d1e621" xml:lang="la">scripsi</w>
+                    <space type="scribal"/>
+                    <w id="d1e627" xml:lang="la">h<abbr cert="high"><g id="d1e630" ref="g3">o</g>c</abbr></w>
+                    <space type="scribal"/>
+                    <w id="d1e636" xml:lang="la">libr<abbr cert="high">u<g id="d1e640" ref="g1">m</g></abbr></w>
+                    <space type="scribal"/>
+                    <w id="d1e645" xml:lang="la"><abbr cert="high">p<g id="d1e648" ref="g36">er</g></abbr></w>
+                    <w id="d1e651" xml:lang="la">caritate</w>
+                    <space type="scribal"/>
+                    <pc id="d1e657">.</pc>
+                    <w id="d1e660" xml:lang="la">tibi</w>
+                    <space type="scribal"/>
+                    <w id="d1e665" xml:lang="la"><abbr cert="high"><g id="d1e667" ref="g2">et</g></abbr></w>
+                    <w id="d1e670" xml:lang="la">scotis</w>
+                    <space type="scribal"/>
+                    <w id="d1e676" xml:lang="la"><abbr cert="high">o<g id="d1e679" ref="g3">mn</g></abbr>ib<abbr cert="high"><g id="d1e683" ref="g7">us</g></abbr></w>
+                    <space type="scribal"/>
+                    <w id="d1e688" xml:lang="la"><abbr cert="high"><g id="d1e690" ref="g2">id</g></abbr></w>
+                    <w id="d1e693" xml:lang="la"><abbr cert="high"><g id="d1e695" ref="g18">est</g></abbr></w>
+                    <space type="scribal"/>
+                    <w id="d1e701" xml:lang="la">hi<abbr cert="high">b<g id="d1e705" ref="g3">er</g></abbr>nensib<abbr cert="high"><g id="d1e709" ref="g7">us</g></abbr></w>
+                    <pc id="d1e712">.</pc>
+                    <w id="d1e715" xml:lang="la"><abbr cert="high"><g id="d1e717" ref="g8">quia</g></abbr></w>
+                    <space type="scribal"/>
+                    <w id="d1e722" xml:lang="la"><abbr cert="high">s<g id="d1e725" ref="g1">um</g></abbr></w>
+                    <space type="scribal"/>
+                    <w id="d1e731" xml:lang="la">ipse</w>
+                    <space type="scribal"/>
+                    <w id="d1e736" xml:lang="la">hi<abbr cert="high">b<g id="d1e740" ref="g3">er</g></abbr>nensis</w>
+                    <pc id="d1e744">.</pc>
+                </p>
+            </div>
+            <div n="2" type="prose" hand="Hand65" corresp="MS37.2">
+                <p>
+                    <pb n="67v" xml:id="MS37.67v"/>
+                    <lb n="1" xml:id="MS37.67v.tmarg1.1"/>
+                    <w id="d1e757" lemma="is" lemmaRef="http://www.dil.ie/29104" pos="verb">IS</w>
+                    <space type="scribal"/>
+                    <w id="d1e762" lemma="oíbind" lemmaRef="http://www.dil.ie/33596" pos="noun">obenn</w>
+                    <space type="scribal"/>
+                    <w id="d1e768" lemma="do" lemmaRef="http://www.dil.ie/17096" pos="prepositional_pronoun">dún</w>
+                    <space type="scribal"/>
+                    <w id="d1e773" lemma="indiu" lemmaRef="http://www.dil.ie/28446" pos="adverb"><abbr cert="high">i<g id="d1e776" ref="g5">n</g></abbr>diu</w>
+                    <space type="scribal"/>
+                    <w id="d1e782" lemma="a" lemmaRef="http://www.dil.ie/2" pos="particle">á</w>
+                    <name id="d1e786" type="personal">
+                        <w id="d1e788" lemma="Mael" lemmaRef="http://www.dil.ie/31244" pos="noun">mél</w>
+                        <name id="d1e791" type="personal"><w id="d1e792" lemma="Brigit" lemmaRef="http://www.dil.ie/6818" pos="noun">brigte</w></name>
+                    </name>
+                    <space type="scribal"/>
+                    <w id="d1e798" lemma="clúsenáir" lemmaRef="http://www.dil.ie/9695" pos="noun">clusenáir</w>
+                    <space type="scribal"/>
+                    <w id="d1e803" lemma="día" lemmaRef="http://www.dil.ie/15848" pos="noun">dia</w>
+                    <w id="d1e806" lemma="Máirt" lemmaRef="http://www.dil.ie/31417" pos="noun">mairt</w>
+                    <space type="scribal"/>
+                    <w id="d1e812" lemma="dara" lemmaRef="http://www.dil.ie/14634" pos="adjective">.ii.</w>
+                    <space type="scribal"/>
+                    <w id="d1e817" lemma="callann" lemmaRef="http://www.dil.ie/8064" pos="noun">k<abbr cert="medium" corresp="be8c5df0"><g id="d1e820" ref="g3" corresp="be8c5df0">a</g>l<g id="d1e823" ref="g3" corresp="be8c5df0">land</g></abbr></w>
+                    <space type="scribal"/>
+                    <w id="d1e828" lemma="Auguist" lemmaRef="http://www.dil.ie/4994" pos="noun">a<abbr cert="high">ug<g id="d1e832" ref="g3">uist</g></abbr></w>
+                    <space type="scribal"/>
+                    <pc id="d1e838">.</pc>
+                    <space type="scribal"/>
+                    <w id="d1e843" pos="conjunction-particle"><w id="d1e844" lemma="má" lemmaRef="http://www.dil.ie/31164" pos="conjunction">Ma</w>
+                        <w id="d1e847" lemma="ní" lemmaRef="http://www.dil.ie/33147" pos="particle">ni</w></w>
+                    <w id="d1e850" lemma="do-gní" lemmaRef="http://www.dil.ie/17752" pos="verb">derntais</w>
+                    <space type="scribal"/>
+                    <w id="d1e856" lemma="scolóc" lemmaRef="http://www.dil.ie/36566" pos="noun">scoloca</w>
+                    <space type="scribal"/>
+                    <w id="d1e861" lemma="mainister" lemmaRef="http://www.dil.ie/31375" pos="noun">manestrech</w>
+                    <space type="scribal"/>
+                    <name id="d1e866" type="personal"><w id="d1e867" xml:lang="la">maurittii</w></name>
+                    <space type="scribal"/>
+                    <w id="d1e873" lemma="brathlang" lemmaRef="http://www.dil.ie/6594" pos="noun">braflacc</w>
+                    <space type="scribal"/>
+                    <w id="d1e878" pos="prepositional_pronoun-emphatic"><w id="d1e879" lemma="do" lemmaRef="http://www.dil.ie/17096" pos="prepositional_pronoun">d<abbr cert="high">a<g id="d1e883" ref="g1">m</g></abbr></w>
+                        <w id="d1e886" lemma="sa" lemmaRef="https://www.faclair.com/ViewDictionaryEntry.aspx?ID=7E145C01680F4B96EC0D6B602D966228" pos="emphatic">sa</w></w>
+                    <space type="scribal"/>
+                    <w id="d1e891" lemma="for" lemmaRef="http://www.dil.ie/23272" pos="preposition"><abbr cert="high">f<g id="d1e894" ref="g3">or</g></abbr></w>
+                    <w id="d1e897" lemma="léibenn" lemmaRef="http://www.dil.ie/29760" pos="noun">lebeun<add type="insertion" place="above" hand="Hand67">n</add></w>
+                    <space type="scribal"/>
+                    <w id="d1e905" lemma="in" lemmaRef="http://www.dil.ie/28194" pos="article"><abbr cert="high">i<g id="d1e908" ref="g5">n</g></abbr></w>
+                    <w id="d1e911" lemma="tech" lemmaRef="http://www.dil.ie/40265" pos="noun">tige</w>
+                    <lb n="2" xml:id="MS37.67v.tmarg1.2"/>
+                    <w id="d1e916" lemma="coitchenn" lemmaRef="http://www.dil.ie/10455" pos="adjective">coittcenn</w>
+                    <pc id="d1e919">.</pc>
+                    <w id="d1e923" xml:lang="la"><abbr cert="high">u<g id="d1e926" ref="g29">t</g></abbr></w>
+                    <space type="scribal"/>
+                    <w id="d1e931" xml:lang="la">cecidi</w>
+                    <space type="scribal"/>
+                    <w id="d1e936" xml:lang="la"><abbr cert="high">c<g id="d1e939" ref="g1">um</g></abbr></w>
+                    <space type="scribal"/>
+                    <w id="d1e945" xml:lang="la">tabulis</w>
+                    <space type="scribal"/>
+                    <w id="d1e950" xml:lang="la"><abbr cert="high">i<g id="d1e953" ref="g5">n</g></abbr></w>
+                    <w id="d1e956" xml:lang="la">fundo</w>
+                    <space type="scribal"/>
+                    <w id="d1e961" xml:lang="la">s<abbr cert="high">t<g id="d1e965" ref="g3">er</g></abbr>coris</w>
+                    <space type="scribal"/>
+                    <pc id="d1e972">.</pc>
+                    <w id="d1e975" xml:lang="la"><abbr cert="high"><g id="d1e977" ref="g10">sed</g></abbr></w>
+                    <space type="scribal"/>
+                    <w id="d1e982" xml:lang="la"><abbr cert="high">g<g id="d1e985" ref="g17">ra</g></abbr>tias</w>
+                    <space type="scribal"/>
+                    <w id="d1e992" xml:lang="la">ago</w>
+                    <space type="scribal"/>
+                    <w id="d1e997" xml:lang="la">nec</w>
+                    <space type="scribal"/>
+                    <w id="d1e1002" xml:lang="la">mers<abbr cert="high"><g id="d1e1005" ref="g7">us</g></abbr></w>
+                    <space type="scribal"/>
+                    <w id="d1e1011" xml:lang="la"><abbr cert="high">s<g id="d1e1014" ref="g1">um</g></abbr></w>
+                    <space type="scribal"/>
+                    <w id="d1e1019" xml:lang="la"><abbr cert="high">i<g id="d1e1022" ref="g5">n</g></abbr></w>
+                    <w id="d1e1025" xml:lang="la">s<abbr cert="high">t<g id="d1e1029" ref="g3">er</g></abbr>core</w>
+                    <space type="scribal"/>
+                    <name id="d1e1035" type="population"><w id="d1e1036" xml:lang="la">fra<add type="insertion" place="above" hand="Hand67">n</add>co<abbr cert="high">r<g id="d1e1043" ref="g1">um</g></abbr></w></name>
+                    <space type="scribal"/>
+                    <w id="d1e1049" xml:lang="la"><abbr cert="high"><g id="d1e1051" ref="g10">sed</g></abbr></w>
+                    <space type="scribal"/>
+                    <w id="d1e1056" xml:lang="la"><abbr cert="high">t<g id="d1e1059" ref="g3">ame</g>n</abbr></w>
+                    <space type="scribal"/>
+                    <w id="d1e1065" xml:lang="la">oro</w>
+                    <space type="scribal"/>
+                    <w id="d1e1071" xml:lang="la">discentes</w>
+                    <space type="scribal"/>
+                    <w id="d1e1076" xml:lang="la"><abbr cert="high">u<g id="d1e1079" ref="g29">t</g></abbr></w>
+                    <space type="scribal"/>
+                    <w id="d1e1084" xml:lang="la">dent</w>
+                    <space type="scribal"/>
+                    <w id="d1e1090" xml:lang="la">maledictio<abbr cert="high">n<g id="d1e1094" ref="g3">em</g></abbr></w>
+                    <space type="scribal"/>
+                    <w id="d1e1099" xml:lang="la">illis</w>
+                    <pc id="d1e1102">.</pc>
+                </p>
+            </div>
+        </body>
+    </text>
+</TEI>
