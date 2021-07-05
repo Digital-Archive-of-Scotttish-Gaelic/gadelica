@@ -25,7 +25,7 @@ Token = (
           | element t { attribute resp {text}?, text }
           | element pause { text }
           | element footnote { attribute n { text }, Paragraph }
-          | element n { attribute type { "m"|"f"|"txt"|"org"|"top"|"time"|"event"|"object"|"lang" }, Token+ }
+          | element x { attribute type { "name"|"time-adverbial" }, Token+ }
         )
 
 
