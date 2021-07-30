@@ -10,15 +10,13 @@ Text = element text {
 }
 
 #Block = ( Paragraph | Heading | Verse | List | Utterance | Text | Page | Note )
-Block = ( Verse | Heading | PageBreak )
+Block = ( Verse | Paragraph | Heading | PageBreak )
 Heading = element h { Token+ }
 Verse = element lg { Token+ }
 
 PageBreak = element pb {attribute n { text }, attribute img { text }? }
 
-
-
-Paragraph = element p { (Token | PageBreak | Sentence | Note)+ }
+Paragraph = element p { (Token | Note)+ }
 
 List = element list { (element label { Token* }, element item { Token+ })+ }
 Utterance = element u { attribute ref { xsd:anyURI }?, Token+ }
@@ -27,13 +25,12 @@ Sentence = element s { (Token | PageBreak | element i { Token+ } )+ }
 Note = element note { text }
 
 Token = ( 
-            element w { attribute id {text}, attribute pos {text}?, attribute lemma {text}?, attribute en {text}?, text } 
+            element w { attribute id {text}, attribute pos {text}?, attribute lemma {text}?, text } 
           | element pc {attribute join {"no"|"left"|"right"|"both"}, text} 
           | element o { text } 
           | element lb {attribute n { text }? }
           | PageBreak
-          
-          | element t { attribute resp {text}?, text }
+          | element sb { empty }
           | element pause { text }
           | element footnote { attribute n { text }, Paragraph }
           | element x { attribute type { "name"|"time-adverbial" }, Token+ }
