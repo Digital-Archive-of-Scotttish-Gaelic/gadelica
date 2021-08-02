@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="../texts.rnc" schematypens="https://relaxng.org/ns/structure/1.0?>
 <text xmlns="https://dasg.ac.uk/corpus/" ref="https://dasg.ac.uk/corpus/_171-29" status="raw">
   <pb n="170" img="https://deriv.nls.uk/dcn3/7728/77284526.3.jpg"/>
-  <p>
+  <h>
     <w id="d1e98757" pos="n" lemma="Oran">Oran</w>
     <w id="d1e98760" pos="n" lemma="air">air</w>
     <w id="d1e98763" pos="n" lemma="aisling">aisling</w>
@@ -30,7 +30,11 @@
     <w id="d1e98836" pos="n" lemma="dh">dh</w>
     <pc join="left">’</pc>
     <w id="d1e98842" pos="n" lemma="éiridh">éiridh</w>
-    <pc join="left">,</pc> &amp;c <pc join="left">.</pc>
+    <pc join="left">,</pc>
+    <o>&amp;c</o>
+    <pc join="left">.</pc>
+  </h>
+  <p>
     <w id="d1e98852" pos="n" lemma="Agus">Agus</w>
     <pc join="right">’</pc>
     <w id="d1e98858" pos="n" lemma="s">s</w>
@@ -46,6 +50,8 @@
     <w id="d1e98890" pos="n" lemma="an">an</w>
     <w id="d1e98893" pos="n" lemma="Airce">Airce</w>
     <pc join="left">.</pc>
+  </p>
+  <h>
     <w id="d1e98899" pos="n" lemma="Air">Air</w>
     <w id="d1e98902" pos="n" lemma="fonn">fonn</w>
     <pc join="left">,</pc>
@@ -58,9 +64,11 @@
     <pc join="right">’</pc>
     <w id="d1e98931" pos="n" lemma="n">n</w>
     <w id="d1e98934" pos="n" lemma="fhear">fhear</w>
-    <pc join="left">,</pc> &amp;c <pc join="left">.</pc>
-  </p>
-  <p>
+    <pc join="left">,</pc>
+    <o>&amp;c</o>
+    <pc join="left">.</pc>
+  </h>
+  <lg>
     <w id="d1e98947" pos="n" lemma="DIaidh">DIaidh</w>
     <w id="d1e98950" pos="n" lemma="dhombh">dhombh</w>
     <w id="d1e98953" pos="n" lemma="tuitim">tuitim</w>
@@ -95,8 +103,8 @@
     <w id="d1e99042" pos="n" lemma="nuair">nuair</w>
     <w id="d1e99045" pos="n" lemma="dhúisginn">dhúisginn</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <pc join="right">’</pc>
     <w id="d1e99057" pos="n" lemma="S">S</w>
     <w id="d1e99060" pos="n" lemma="go">go</w>
@@ -146,8 +154,8 @@
     <pc join="left">’</pc>
     <w id="d1e99200" pos="n" lemma="fhiocla">fhiocla</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e99209" pos="n" lemma="Gur">Gur</w>
     <w id="d1e99212" pos="n" lemma="he">he</w>
     <w id="d1e99215" pos="n" lemma="e">e</w>
@@ -184,8 +192,8 @@
     <pc join="left">’</pc>
     <w id="d1e99313" pos="n" lemma="eirinn">eirinn</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e99323" pos="n" lemma="Dh">Dh</w>
     <pc join="left">’</pc>
     <w id="d1e99329" pos="n" lemma="earb">earb</w>
@@ -224,9 +232,9 @@
     <w id="d1e99431" pos="n" lemma="na">na</w>
     <w id="d1e99434" pos="n" lemma="córach">córach</w>
     <pc join="left">.</pc>
-  </p>
+  </lg>
   <pb n="171" img="https://deriv.nls.uk/dcn3/7728/77284537.3.jpg"/>
-  <p>
+  <lg>
     <w id="d1e99445" pos="n" lemma="Fear">Fear</w>
     <w id="d1e99448" pos="n" lemma="Airdsliginis">Airdsliginis</w>
     <w id="d1e99451" pos="n" lemma="an">an</w>
@@ -273,8 +281,8 @@
     <w id="d1e99578" pos="n" lemma="ceil">ceil</w>
     <w id="d1e99581" pos="n" lemma="e">e</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e99591" pos="n" lemma="Dh">Dh</w>
     <pc join="left">’</pc>
     <w id="d1e99597" pos="n" lemma="earail">earail</w>
@@ -311,8 +319,8 @@
     <w id="d1e99692" pos="n" lemma="go">go</w>
     <w id="d1e99695" pos="n" lemma="taosgadh">taosgadh</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <pc join="right">’</pc>
     <w id="d1e99708" pos="n" lemma="S">S</w>
     <w id="d1e99711" pos="n" lemma="amhuil">amhuil</w>
@@ -352,10 +360,8 @@
     <w id="d1e99816" pos="n" lemma="ri">ri</w>
     <w id="d1e99819" pos="n" lemma="luaitheir">luaitheir</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
-
-    <lb/>
+  </lg>
+  <lg>
     <w id="d1e99830" pos="n" lemma="Agus">Agus</w>
     <pc join="left">,</pc>
     <pc join="right">’</pc>
@@ -367,8 +373,8 @@
     <w id="d1e99855" pos="n" lemma="an">an</w>
     <w id="d1e99858" pos="n" lemma="guth">guth</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e99868" pos="n" lemma="A">A</w>
     <w id="d1e99871" pos="n" lemma="Naoi">Naoi</w>
     <w id="d1e99874" pos="n" lemma="Chaimbeulaich">Chaimbeulaich</w>
@@ -405,8 +411,8 @@
     <w id="d1e99969" pos="n" lemma="air">air</w>
     <w id="d1e99972" pos="n" lemma="nais">nais</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e99982" pos="n" lemma="Cha">Cha</w>
     <w id="d1e99985" pos="n" lemma="ruig">ruig</w>
     <w id="d1e99988" pos="n" lemma="i">i</w>
@@ -443,9 +449,9 @@
     <w id="d1e100083" pos="n" lemma="ri">ri</w>
     <w id="d1e100086" pos="n" lemma="creig">creig</w>
     <pc join="left">.</pc>
-  </p>
+  </lg>
   <pb n="172" img="https://deriv.nls.uk/dcn3/7728/77284548.3.jpg"/>
-  <p>
+  <lg>
     <w id="d1e100099" pos="n" lemma="Saor">Saor</w>
     <w id="d1e100102" pos="n" lemma="o">o</w>
     <w id="d1e100105" pos="n" lemma="theughlach">theughlach</w>
@@ -491,8 +497,8 @@
     <pc join="both">—</pc>
     <w id="d1e100232" pos="n" lemma="sa">sa</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e100241" pos="n" lemma="Póir">Póir</w>
     <w id="d1e100244" pos="n" lemma="do">do</w>
     <w id="d1e100247" pos="n" lemma="gach">gach</w>
@@ -527,8 +533,8 @@
     <w id="d1e100336" pos="n" lemma="teachd">teachd</w>
     <w id="d1e100339" pos="n" lemma="ort">ort</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e100348" pos="n" lemma="Na">Na</w>
     <w id="d1e100351" pos="n" lemma="gaidheil">gaidheil</w>
     <w id="d1e100354" pos="n" lemma="le">le</w>
@@ -576,8 +582,8 @@
     <w id="d1e100484" pos="n" lemma="ar">ar</w>
     <w id="d1e100487" pos="n" lemma="bruthadh">bruthadh</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e100496" pos="n" lemma="Tog">Tog</w>
     <w id="d1e100499" pos="n" lemma="do">do</w>
     <w id="d1e100502" pos="n" lemma="d">d</w>
@@ -615,8 +621,8 @@
     <w id="d1e100600" pos="n" lemma="faoilleach">faoilleach</w>
     <w id="d1e100604" pos="n" lemma="fuar">fuar</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e100613" pos="n" lemma="Tha">Tha</w>
     <w id="d1e100616" pos="n" lemma="diudhultas">diudhultas</w>
     <w id="d1e100619" pos="n" lemma="le">le</w>
@@ -654,9 +660,9 @@
     <w id="d1e100717" pos="n" lemma="gach">gach</w>
     <w id="d1e100721" pos="n" lemma="cré">cré</w>
     <pc join="left">:</pc>
-  </p>
+  </lg>
   <pb n="173" img="https://deriv.nls.uk/dcn3/7728/77284559.3.jpg"/>
-  <p>
+  <lg>
     <w id="d1e100733" pos="n" lemma="Air">Air</w>
     <w id="d1e100736" pos="n" lemma="gach">gach</w>
     <w id="d1e100739" pos="n" lemma="cre">cre</w>
@@ -699,8 +705,8 @@
     <w id="d1e100853" pos="n" lemma="ach">ach</w>
     <w id="d1e100856" pos="n" lemma="murt">murt</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e100866" pos="n" lemma="Thig">Thig</w>
     <w id="d1e100869" pos="n" lemma="so">so</w>
     <w id="d1e100872" pos="n" lemma="chomhcas">chomhcas</w>
@@ -732,8 +738,8 @@
     <w id="d1e100951" pos="n" lemma="na">na</w>
     <w id="d1e100955" pos="n" lemma="clachamh">clachamh</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e100964" pos="n" lemma="Bárcaidh">Bárcaidh</w>
     <w id="d1e100967" pos="n" lemma="an">an</w>
     <w id="d1e100970" pos="n" lemma="tuil">tuil</w>
@@ -775,8 +781,8 @@
     <w id="d1e101081" pos="n" lemma="fag">fag</w>
     <w id="d1e101084" pos="n" lemma="amuidh">amuidh</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e101093" pos="n" lemma="Na">Na</w>
     <w id="d1e101096" pos="n" lemma="tugadh">tugadh</w>
     <w id="d1e101099" pos="n" lemma="dio">dio</w>
@@ -814,8 +820,8 @@
     <w id="d1e101197" pos="n" lemma="e">e</w>
     <w id="d1e101201" pos="n" lemma="tearmad">tearmad</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e101210" pos="n" lemma="Thoir">Thoir</w>
     <w id="d1e101213" pos="n" lemma="dhachaidh">dhachaidh</w>
     <w id="d1e101216" pos="n" lemma="Dubhul">Dubhul</w>
@@ -850,9 +856,9 @@
     <w id="d1e101305" pos="n" lemma="fhagail">fhagail</w>
     <w id="d1e101308" pos="n" lemma="beittir">beittir</w>
     <pc join="left">.</pc>
-  </p>
+  </lg>
   <pb n="174" img="https://deriv.nls.uk/dcn3/7728/77284570.3.jpg"/>
-  <p>
+  <lg>
     <w id="d1e101320" pos="n" lemma="Na">Na</w>
     <w id="d1e101323" pos="n" lemma="toir">toir</w>
     <w id="d1e101326" pos="n" lemma="neach">neach</w>
@@ -888,8 +894,8 @@
     <w id="d1e101418" pos="n" lemma="do">do</w>
     <w id="d1e101421" pos="n" lemma="Chaluman">Chaluman</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e101430" pos="n" lemma="Ceangail">Ceangail</w>
     <w id="d1e101433" pos="n" lemma="cu">cu</w>
     <pc join="left">,</pc>
@@ -926,8 +932,8 @@
     <w id="d1e101531" pos="n" lemma="na">na</w>
     <w id="d1e101534" pos="n" lemma="dilionn">dilionn</w>
     <pc join="left">;</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e101544" pos="n" lemma="Air">Air</w>
     <w id="d1e101547" pos="n" lemma="neo">neo</w>
     <pc join="left">,</pc>
@@ -968,8 +974,8 @@
     <w id="d1e101658" pos="n" lemma="nan">nan</w>
     <w id="d1e101661" pos="n" lemma="diais">diais</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e101670" pos="n" lemma="Cum">Cum</w>
     <w id="d1e101673" pos="n" lemma="ri">ri</w>
     <w id="d1e101676" pos="n" lemma="Sir">Sir</w>
@@ -1008,8 +1014,8 @@
     <w id="d1e101778" pos="n" lemma="am">am</w>
     <w id="d1e101781" pos="n" lemma="paghaidh">paghaidh</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e101790" pos="n" lemma="Ma">Ma</w>
     <w id="d1e101793" pos="n" lemma="tharras">tharras</w>
     <w id="d1e101796" pos="n" lemma="tu">tu</w>
@@ -1048,9 +1054,9 @@
     <w id="d1e101898" pos="n" lemma="urramach">urramach</w>
     <w id="d1e101901" pos="n" lemma="neamhlompais">neamhlompais</w>
     <pc join="left">.</pc>
-  </p>
+  </lg>
   <pb n="175" img="https://deriv.nls.uk/dcn3/7728/77284581.3.jpg"/>
-  <p>
+  <lg>
     <w id="d1e101913" pos="n" lemma="Ma">Ma</w>
     <w id="d1e101916" pos="n" lemma="dh">dh</w>
     <pc join="left">’</pc>
@@ -1096,8 +1102,8 @@
     <w id="d1e102043" pos="n" lemma="chri">chri</w>
     <w id="d1e102046" pos="n" lemma="e">e</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e102055" pos="n" lemma="Gach">Gach</w>
     <w id="d1e102058" pos="n" lemma="aon">aon</w>
     <w id="d1e102061" pos="n" lemma="duin">duin</w>
@@ -1139,8 +1145,8 @@
     <w id="d1e102172" pos="n" lemma="moran">moran</w>
     <w id="d1e102175" pos="n" lemma="biaigh">biaigh</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e102184" pos="n" lemma="Tha">Tha</w>
     <w id="d1e102187" pos="n" lemma="soigh">soigh</w>
     <pc join="both">’</pc>
@@ -1181,8 +1187,8 @@
     <w id="d1e102298" pos="n" lemma="a">a</w>
     <w id="d1e102301" pos="n" lemma="thappadh">thappadh</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e102310" pos="n" lemma="Tha">Tha</w>
     <w id="d1e102313" pos="n" lemma="e">e</w>
     <w id="d1e102316" pos="n" lemma="cho">cho</w>
@@ -1222,8 +1228,8 @@
     <w id="d1e102421" pos="n" lemma="a">a</w>
     <w id="d1e102424" pos="n" lemma="ghaisgidh">ghaisgidh</w>
     <pc join="left">:</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e102433" pos="n" lemma="Tha">Tha</w>
     <w id="d1e102436" pos="n" lemma="e">e</w>
     <w id="d1e102439" pos="n" lemma="díreach">díreach</w>
@@ -1258,9 +1264,9 @@
     <w id="d1e102528" pos="n" lemma="ghne">ghne</w>
     <w id="d1e102531" pos="n" lemma="mhórchuis">mhórchuis</w>
     <pc join="left">:</pc>
-  </p>
+  </lg>
   <pb n="176" img="https://deriv.nls.uk/dcn3/7728/77284592.3.jpg"/>
-  <p>
+  <lg>
     <w id="d1e102543" pos="n" lemma="Tha">Tha</w>
     <w id="d1e102546" pos="n" lemma="e">e</w>
     <w id="d1e102549" pos="n" lemma="meinich">meinich</w>
@@ -1295,8 +1301,8 @@
     <w id="d1e102638" pos="n" lemma="smachd">smachd</w>
     <w id="d1e102641" pos="n" lemma="iad">iad</w>
     <pc join="left">;</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e102650" pos="n" lemma="A">A</w>
     <w id="d1e102653" pos="n" lemma="sin">sin</w>
     <pc join="left">,</pc>
@@ -1337,8 +1343,8 @@
     <w id="d1e102764" pos="n" lemma="na">na</w>
     <w id="d1e102767" pos="n" lemma="phatent">phatent</w>
     <pc join="left">:</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e102776" pos="n" lemma="Beannachd">Beannachd</w>
     <w id="d1e102779" pos="n" lemma="nochd">nochd</w>
     <pc join="both">’</pc>
@@ -1379,8 +1385,8 @@
     <w id="d1e102890" pos="n" lemma="h">h</w>
     <w id="d1e102893" pos="n" lemma="uiddil">uiddil</w>
     <pc join="left">:</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e102902" pos="n" lemma="Uime">Uime</w>
     <w id="d1e102905" pos="n" lemma="sin">sin</w>
     <pc join="left">,</pc>
@@ -1416,8 +1422,8 @@
     <w id="d1e103000" pos="n" lemma="is">is</w>
     <w id="d1e103003" pos="n" lemma="cáirdeas">cáirdeas</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e103012" pos="n" lemma="An">An</w>
     <w id="d1e103015" pos="n" lemma="t">t</w>
     <w id="d1e103018" pos="n" lemma="eittionn">eittionn</w>
@@ -1459,9 +1465,9 @@
     <pc join="both">—</pc>
     <pc join="right">—</pc>
     <pc join="left">.</pc>
-  </p>
+  </lg>
   <pb n="177" img="https://deriv.nls.uk/dcn3/7728/77284603.3.jpg"/>
-  <p>
+  <lg>
     <w id="d1e103144" pos="n" lemma="Cha">Cha</w>
     <pc join="right">’</pc>
     <w id="d1e103150" pos="n" lemma="n">n</w>
@@ -1513,8 +1519,8 @@
     <w id="d1e103293" pos="n" lemma="mathair">mathair</w>
     <pc join="both">’</pc>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e103305" pos="n" lemma="Tighearna">Tighearna</w>
     <pc join="both">-</pc>
     <w id="d1e103311" pos="n" lemma="nan">nan</w>
@@ -1556,8 +1562,8 @@
     <w id="d1e103422" pos="n" lemma="teughlach">teughlach</w>
     <w id="d1e103425" pos="n" lemma="ríoghoil">ríoghoil</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e103434" pos="n" lemma="Thoir">Thoir</w>
     <w id="d1e103437" pos="n" lemma="dhasan">dhasan</w>
     <w id="d1e103440" pos="n" lemma="ionad">ionad</w>
@@ -1594,8 +1600,8 @@
     <w id="d1e103535" pos="n" lemma="do">do</w>
     <w id="d1e103538" pos="n" lemma="chairde">chairde</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e103548" pos="n" lemma="Sgibinis">Sgibinis</w>
     <w id="d1e103551" pos="n" lemma="go">go</w>
     <w id="d1e103554" pos="n" lemma="d">d</w>
@@ -1645,8 +1651,8 @@
     <w id="d1e103690" pos="n" lemma="a">a</w>
     <w id="d1e103694" pos="n" lemma="salunn">salunn</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e103703" pos="n" lemma="Ceangail">Ceangail</w>
     <w id="d1e103706" pos="n" lemma="bolla">bolla</w>
     <w id="d1e103709" pos="n" lemma="lín">lín</w>
@@ -1692,9 +1698,9 @@
     <w id="d1e103833" pos="n" lemma="tigh">tigh</w>
     <w id="d1e103836" pos="n" lemma="e">e</w>
     <pc join="left">.</pc>
-  </p>
+  </lg>
   <pb n="178" img="https://deriv.nls.uk/dcn3/7728/77284614.3.jpg"/>
-  <p>
+  <lg>
     <w id="d1e103848" pos="n" lemma="Cum">Cum</w>
     <w id="d1e103851" pos="n" lemma="amach">amach</w>
     <w id="d1e103854" pos="n" lemma="fear">fear</w>
@@ -1715,12 +1721,10 @@
     <w id="d1e103900" pos="n" lemma="go">go</w>
     <w id="d1e103903" pos="n" lemma="daingiunn">daingiunn</w>
     <w id="d1e103906" pos="n" lemma="ris">ris</w>
-    <eng/>
-    <pc join="both">(</pc>
-    <w id="d1e103914" pos="n" lemma="buoy">buoy</w>
-    <pc join="both">)</pc>
-    <pc join="right">,</pc>
-    <gai/>
+    <pc join="both">right</pc>
+    <o>buoy</o>
+    <pc join="both">left</pc>
+    <pc join="left">,</pc>
     <lb/>
     <w id="d1e103928" pos="n" lemma="Bheir">Bheir</w>
     <w id="d1e103931" pos="n" lemma="snamh">snamh</w>
@@ -1733,8 +1737,8 @@
     <w id="d1e103954" pos="n" lemma="a">a</w>
     <w id="d1e103957" pos="n" lemma="chraigheoidh">chraigheoidh</w>
     <pc join="left">:</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <pc join="right">’</pc>
     <w id="d1e103969" pos="n" lemma="S">S</w>
     <pc join="right">’</pc>
@@ -1779,12 +1783,10 @@
     <w id="d1e104094" pos="n" lemma="dh">dh</w>
     <pc join="both">’</pc>
     <w id="d1e104100" pos="n" lemma="a">a</w>
-    <eng/>
-    <pc join="both">(</pc>
-    <w id="d1e104108" pos="n" lemma="cordial">cordial</w>
-    <pc join="both">)</pc>
-    <pc join="right">,</pc>
-    <gai/>
+    <pc join="right">(</pc>
+    <o>cordial</o>
+    <pc join="left">)</pc>
+    <pc join="left">,</pc>
     <lb/>
     <w id="d1e104122" pos="n" lemma="A">A</w>
     <w id="d1e104125" pos="n" lemma="bheir">bheir</w>
@@ -1794,8 +1796,8 @@
     <w id="d1e104138" pos="n" lemma="a">a</w>
     <w id="d1e104141" pos="n" lemma="shliobraich">shliobraich</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e104150" pos="n" lemma="Bi">Bi</w>
     <pc join="both">’</pc>
     <w id="d1e104156" pos="n" lemma="dh">dh</w>
@@ -1838,8 +1840,8 @@
     <w id="d1e104270" pos="n" lemma="ach">ach</w>
     <w id="d1e104273" pos="n" lemma="Seumas">Seumas</w>
     <pc join="left">:</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e104283" pos="n" lemma="Ach">Ach</w>
     <w id="d1e104286" pos="n" lemma="coinseonaichim">coinseonaichim</w>
     <w id="d1e104289" pos="n" lemma="u">u</w>
@@ -1880,8 +1882,8 @@
     <w id="d1e104397" pos="n" lemma="sgéith">sgéith</w>
     <pc join="both">’</pc>
     <pc join="left">:</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e104409" pos="n" lemma="Biodh">Biodh</w>
     <w id="d1e104412" pos="n" lemma="sin">sin</w>
     <w id="d1e104415" pos="n" lemma="mar">mar</w>
@@ -1929,9 +1931,9 @@
     <w id="d1e104545" pos="n" lemma="bórd">bórd</w>
     <w id="d1e104548" pos="n" lemma="iad">iad</w>
     <pc join="left">.</pc>
-  </p>
+  </lg>
   <pb n="179" img="https://deriv.nls.uk/dcn3/7728/77284625.3.jpg"/>
-  <p>
+  <lg>
     <w id="d1e104560" pos="n" lemma="S">S</w>
     <pc join="both">—</pc>
     <w id="d1e104566" pos="n" lemma="th">th</w>
@@ -1978,8 +1980,8 @@
     <w id="d1e104693" pos="n" lemma="s">s</w>
     <w id="d1e104696" pos="n" lemma="dhoibheirt">dhoibheirt</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e104705" pos="n" lemma="An">An</w>
     <w id="d1e104708" pos="n" lemma="Donullach">Donullach</w>
     <w id="d1e104711" pos="n" lemma="Ileach">Ileach</w>
@@ -2012,8 +2014,8 @@
     <w id="d1e104794" pos="n" lemma="n">n</w>
     <w id="d1e104797" pos="n" lemma="sórnan">sórnan</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e104806" pos="n" lemma="Mac">Mac</w>
     <pc join="both">-</pc>
     <w id="d1e104812" pos="n" lemma="Dheors">Dheors</w>
@@ -2065,8 +2067,8 @@
     <w id="d1e104955" pos="n" lemma="róp">róp</w>
     <w id="d1e104958" pos="n" lemma="e">e</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e104967" pos="n" lemma="Spárr">Spárr</w>
     <w id="d1e104970" pos="n" lemma="Aisginnis">Aisginnis</w>
     <w id="d1e104973" pos="n" lemma="ann">ann</w>
@@ -2106,8 +2108,8 @@
     <w id="d1e105078" pos="n" lemma="n">n</w>
     <w id="d1e105081" pos="n" lemma="aintheas">aintheas</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e105090" pos="n" lemma="Glac">Glac</w>
     <w id="d1e105093" pos="n" lemma="air">air</w>
     <w id="d1e105096" pos="n" lemma="laimh">laimh</w>
@@ -2147,9 +2149,9 @@
     <w id="d1e105201" pos="n" lemma="a">a</w>
     <w id="d1e105204" pos="n" lemma="cháibin">cháibin</w>
     <pc join="left">.</pc>
-  </p>
+  </lg>
   <pb n="180" img="https://deriv.nls.uk/dcn3/7728/77284636.3.jpg"/>
-  <p>
+  <lg>
     <w id="d1e105216" pos="n" lemma="Richardson">Richardson</w>
     <pc join="left">,</pc>
     <w id="d1e105222" pos="n" lemma="grad">grad</w>
@@ -2190,8 +2192,8 @@
     <w id="d1e105330" pos="n" lemma="a">a</w>
     <w id="d1e105333" pos="n" lemma="mheirleach">mheirleach</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e105342" pos="n" lemma="Ma">Ma</w>
     <w id="d1e105345" pos="n" lemma="thig">thig</w>
     <w id="d1e105348" pos="n" lemma="a">a</w>
@@ -2231,8 +2233,8 @@
     <w id="d1e105453" pos="n" lemma="a">a</w>
     <w id="d1e105456" pos="n" lemma="rónamh">rónamh</w>
     <pc join="left">:</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e105465" pos="n" lemma="Ach">Ach</w>
     <w id="d1e105468" pos="n" lemma="ma">ma</w>
     <w id="d1e105471" pos="n" lemma="chinnis">chinnis</w>
@@ -2267,8 +2269,8 @@
     <w id="d1e105560" pos="n" lemma="córsa">córsa</w>
     <w id="d1e105563" pos="n" lemma="Chana">Chana</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e105572" pos="n" lemma="Cuir">Cuir</w>
     <w id="d1e105575" pos="n" lemma="adhastar">adhastar</w>
     <w id="d1e105578" pos="n" lemma="ri">ri</w>
@@ -2303,8 +2305,8 @@
     <w id="d1e105667" pos="n" lemma="truaghain">truaghain</w>
     <w id="d1e105670" pos="n" lemma="pheacaich">pheacaich</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e105679" pos="n" lemma="Go">Go</w>
     <w id="d1e105682" pos="n" lemma="toil">toil</w>
     <w id="d1e105685" pos="n" lemma="lium">lium</w>
@@ -2351,9 +2353,9 @@
     <w id="d1e105812" pos="n" lemma="thoirt">thoirt</w>
     <w id="d1e105815" pos="n" lemma="dhásan">dhásan</w>
     <pc join="left">:</pc>
-  </p>
+  </lg>
   <pb n="181" img="https://deriv.nls.uk/dcn3/7728/77284647.3.jpg"/>
-  <p>
+  <lg>
     <w id="d1e105827" pos="n" lemma="Cuir">Cuir</w>
     <w id="d1e105830" pos="n" lemma="boiseid">boiseid</w>
     <w id="d1e105833" pos="n" lemma="do">do</w>
@@ -2400,8 +2402,8 @@
     <pc join="left">—</pc>
     <w id="d1e105963" pos="n" lemma="dliaghach">dliaghach</w>
     <pc join="left">;</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e105972" pos="n" lemma="Ach">Ach</w>
     <w id="d1e105975" pos="n" lemma="ma">ma</w>
     <w id="d1e105978" pos="n" lemma="dh">dh</w>
@@ -2452,8 +2454,8 @@
     <w id="d1e106118" pos="n" lemma="tsúigh">tsúigh</w>
     <w id="d1e106121" pos="n" lemma="e">e</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e106130" pos="n" lemma="Inbhereasragain">Inbhereasragain</w>
     <pc join="left">,</pc>
     <w id="d1e106136" pos="n" lemma="am">am</w>
@@ -2486,8 +2488,8 @@
     <w id="d1e106219" pos="n" lemma="a">a</w>
     <w id="d1e106222" pos="n" lemma="riobadh">riobadh</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e106231" pos="n" lemma="Eidirghlinn">Eidirghlinn</w>
     <w id="d1e106234" pos="n" lemma="na">na</w>
     <w id="d1e106237" pos="n" lemma="cum">cum</w>
@@ -2525,8 +2527,8 @@
     <w id="d1e106335" pos="n" lemma="bathadh">bathadh</w>
     <w id="d1e106339" pos="n" lemma="righin">righin</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e106348" pos="n" lemma="Ach">Ach</w>
     <w id="d1e106351" pos="n" lemma="ma">ma</w>
     <w id="d1e106354" pos="n" lemma="leaghas">leaghas</w>
@@ -2564,9 +2566,9 @@
     <w id="d1e106452" pos="n" lemma="thoill">thoill</w>
     <w id="d1e106456" pos="n" lemma="e">e</w>
     <pc join="left">.</pc>
-  </p>
+  </lg>
   <pb n="182" img="https://deriv.nls.uk/dcn3/7728/77284658.3.jpg"/>
-  <p>
+  <lg>
     <w id="d1e106468" pos="n" lemma="Mac">Mac</w>
     <w id="d1e106471" pos="n" lemma="phrobhaist">phrobhaist</w>
     <w id="d1e106474" pos="n" lemma="Donnchadh">Donnchadh</w>
@@ -2605,8 +2607,8 @@
     <w id="d1e106576" pos="n" lemma="fhear">fhear</w>
     <w id="d1e106579" pos="n" lemma="anam">anam</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e106588" pos="n" lemma="Breib">Breib</w>
     <w id="d1e106591" pos="n" lemma="amach">amach</w>
     <w id="d1e106594" pos="n" lemma="an">an</w>
@@ -2646,8 +2648,8 @@
     <w id="d1e106699" pos="n" lemma="no">no</w>
     <w id="d1e106702" pos="n" lemma="sgittig">sgittig</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e106711" pos="n" lemma="Lachann">Lachann</w>
     <pc join="both">-</pc>
     <w id="d1e106717" pos="n" lemma="dubh">dubh</w>
@@ -2690,8 +2692,8 @@
     <w id="d1e106831" pos="n" lemma="le">le</w>
     <w id="d1e106834" pos="n" lemma="tuinnseadh">tuinnseadh</w>
     <pc join="left">:</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e106844" pos="n" lemma="O">O</w>
     <w id="d1e106847" pos="n" lemma="chaill">chaill</w>
     <w id="d1e106850" pos="n" lemma="e">e</w>
@@ -2725,8 +2727,8 @@
     <w id="d1e106936" pos="n" lemma="na">na</w>
     <w id="d1e106939" pos="n" lemma="mara">mara</w>
     <pc join="left">:</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e106948" pos="n" lemma="Go">Go</w>
     <w id="d1e106951" pos="n" lemma="ma">ma</w>
     <w id="d1e106954" pos="n" lemma="luai">luai</w>
@@ -2766,9 +2768,9 @@
     <w id="d1e107059" pos="n" lemma="póit">póit</w>
     <w id="d1e107062" pos="n" lemma="ris">ris</w>
     <pc join="left">:</pc>
-  </p>
+  </lg>
   <pb n="183" img="https://deriv.nls.uk/dcn3/7728/77284669.3.jpg"/>
-  <p>
+  <lg>
     <w id="d1e107074" pos="n" lemma="Clann">Clann</w>
     <pc join="both">-</pc>
     <w id="d1e107080" pos="n" lemma="chamshrón">chamshrón</w>
@@ -2811,8 +2813,8 @@
     <pc join="both">-</pc>
     <w id="d1e107197" pos="n" lemma="chath">chath</w>
     <pc join="left">:</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <pc join="right">’</pc>
     <w id="d1e107210" pos="n" lemma="S">S</w>
     <w id="d1e107213" pos="n" lemma="cinnteach">cinnteach</w>
@@ -2852,8 +2854,8 @@
     <w id="d1e107318" pos="n" lemma="sábhailt">sábhailt</w>
     <pc join="both">’</pc>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e107330" pos="n" lemma="Tighearna">Tighearna</w>
     <w id="d1e107333" pos="n" lemma="na">na</w>
     <w id="d1e107336" pos="n" lemma="h">h</w>
@@ -2901,8 +2903,8 @@
     <w id="d1e107466" pos="n" lemma="luing">luing</w>
     <w id="d1e107469" pos="n" lemma="e">e</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e107478" pos="n" lemma="Donnchadh">Donnchadh</w>
     <pc join="both">-</pc>
     <w id="d1e107484" pos="n" lemma="bui">bui</w>
@@ -2943,8 +2945,8 @@
     <w id="d1e107592" pos="n" lemma="a">a</w>
     <w id="d1e107595" pos="n" lemma="bháthagh">bháthagh</w>
     <pc join="left">:</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e107604" pos="n" lemma="Ach">Ach</w>
     <w id="d1e107607" pos="n" lemma="do">do</w>
     <w id="d1e107610" pos="n" lemma="thoradh">thoradh</w>
@@ -3002,9 +3004,9 @@
     <pc join="left">’</pc>
     <w id="d1e107775" pos="n" lemma="e">e</w>
     <pc join="left">.</pc>
-  </p>
+  </lg>
   <pb n="184" img="https://deriv.nls.uk/dcn3/7728/77284680.3.jpg"/>
-  <p>
+  <lg>
     <w id="d1e107787" pos="n" lemma="Achachrossain">Achachrossain</w>
     <w id="d1e107790" pos="n" lemma="chiunn">chiunn</w>
     <w id="d1e107793" pos="n" lemma="a">a</w>
@@ -3047,8 +3049,8 @@
     <w id="d1e107907" pos="n" lemma="poca">poca</w>
     <w id="d1e107910" pos="n" lemma="puinnseoin">puinnseoin</w>
     <pc join="left">:</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e107920" pos="n" lemma="Ach">Ach</w>
     <w id="d1e107923" pos="n" lemma="mar">mar</w>
     <w id="d1e107926" pos="n" lemma="sguir">sguir</w>
@@ -3089,8 +3091,8 @@
     <w id="d1e108034" pos="n" lemma="am">am</w>
     <w id="d1e108037" pos="n" lemma="meirleach">meirleach</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e108046" pos="n" lemma="Caiptin">Caiptin</w>
     <w id="d1e108049" pos="n" lemma="Dhonnchadh">Dhonnchadh</w>
     <w id="d1e108052" pos="n" lemma="Mac">Mac</w>
@@ -3137,8 +3139,8 @@
     <w id="d1e108179" pos="n" lemma="sgroig">sgroig</w>
     <w id="d1e108182" pos="n" lemma="e">e</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e108191" pos="n" lemma="Achamhuillinn">Achamhuillinn</w>
     <w id="d1e108194" pos="n" lemma="tilg">tilg</w>
     <pc join="right">’</pc>
@@ -3170,14 +3172,12 @@
     <w id="d1e108276" pos="n" lemma="ris">ris</w>
     <w id="d1e108280" pos="n" lemma="an">an</w>
     <w id="d1e108283" pos="n" lemma="dáifhear">dáifhear</w>
-    <eng/>
-    <pc join="both">(</pc>
-    <w id="d1e108291" pos="n" lemma="kelty">kelty</w>
-    <pc join="both">)</pc>
-    <pc join="right">.</pc>
-    <gai/>
-  </p>
-  <p>
+    <pc join="right">(</pc>
+    <o>kelty</o>
+    <pc join="left">)</pc>
+    <pc join="left">.</pc>
+  </lg>
+  <lg>
     <w id="d1e108306" pos="n" lemma="Mar">Mar</w>
     <w id="d1e108309" pos="n" lemma="sin">sin</w>
     <pc join="left">,</pc>
@@ -3219,9 +3219,9 @@
     <pc join="both">-</pc>
     <w id="d1e108426" pos="n" lemma="sgiúrsadh">sgiúrsadh</w>
     <pc join="left">.</pc>
-  </p>
+  </lg>
   <pb n="185" img="https://deriv.nls.uk/dcn3/7728/77284691.3.jpg"/>
-  <p>
+  <lg>
     <w id="d1e108438" pos="n" lemma="Ma">Ma</w>
     <w id="d1e108441" pos="n" lemma="chi">chi</w>
     <w id="d1e108444" pos="n" lemma="u">u</w>
@@ -3270,8 +3270,8 @@
     <w id="d1e108577" pos="n" lemma="ghruaig">ghruaig</w>
     <w id="d1e108580" pos="n" lemma="e">e</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e108590" pos="n" lemma="Leigim">Leigim</w>
     <w id="d1e108593" pos="n" lemma="fa">fa</w>
     <w id="d1e108596" pos="n" lemma="bhienne">bhienne</w>
@@ -3305,8 +3305,8 @@
     <w id="d1e108682" pos="n" lemma="nach">nach</w>
     <w id="d1e108685" pos="n" lemma="tiunntaidh">tiunntaidh</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e108694" pos="n" lemma="Gabhsa">Gabhsa</w>
     <w id="d1e108697" pos="n" lemma="ma">ma</w>
     <w id="d1e108700" pos="n" lemma="thimchiull">thimchiull</w>
@@ -3350,8 +3350,8 @@
     <w id="d1e108817" pos="n" lemma="dean">dean</w>
     <w id="d1e108821" pos="n" lemma="Airce">Airce</w>
     <pc join="left">.</pc>
-  </p>
-  <p>
+  </lg>
+  <lg>
     <w id="d1e108830" pos="n" lemma="Gheibh">Gheibh</w>
     <w id="d1e108833" pos="n" lemma="u">u</w>
     <w id="d1e108836" pos="n" lemma="cúirt">cúirt</w>
@@ -3396,5 +3396,5 @@
     <pc join="both">-</pc>
     <w id="d1e108960" pos="n" lemma="seile">seile</w>
     <pc join="left">.</pc>
-  </p>
+  </lg>
 </text>
