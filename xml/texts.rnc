@@ -25,7 +25,7 @@ Sentence = element s { (Token | PageBreak | element i { Token+ } )+ }
 Note = element note { text }
 
 Token = ( 
-            element w { attribute id {text}, attribute pos {text}?, attribute lemma {text}?, text } 
+            element w { attribute id {text}, attribute pos {text}?, attribute lemma {text}?, attribute join { "left" }?, text } 
           | element pc {attribute join {"no"|"left"|"right"|"both"}, text} 
           | element o { text } 
           | element lb {attribute n { text }? }
