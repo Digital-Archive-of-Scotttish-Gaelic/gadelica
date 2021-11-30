@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../../texts.rnc" schematypens="https://relaxng.org/ns/structure/1.0?>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../texts.rnc" schematypens="https://relaxng.org/ns/structure/1.0?>
 <text xmlns="https://dasg.ac.uk/corpus/" ref="https://dasg.ac.uk/corpus/_400-1-4" status="raw">
   <pb n="23" img="400_Gairm/1/TD23.pdf"/>
   <h>
@@ -11,7 +12,7 @@
   <h>
     <w id="d1e24" pos="p" lemma="le">Le</w>
     <w id="d1e27" pos="n" lemma="Seumas">SEUMAS</w>
-    <w id="d1e30" pos="n" lemma="MacThòmais">MACTHOMAIS</w>
+    <w id="d1e30" pos="N" lemma="MacThòmais">MACTHOMAIS</w>
   </h>
   <p>
     <pc join="right">’</pc>
@@ -62,13 +63,13 @@
     <w id="d1e178" pos="a" lemma="eile">eile</w>
     <w id="d1e181" pos="p" lemma="de">de</w>
     <pc join="both">’</pc>
-    <w id="d1e188" pos="n" lemma="n">n</w>
-    <w id="d1e191" pos="n" lemma="chunntas">chunntas</w>
+    <w id="d1e188" pos="" lemma="n">n</w>
+    <w id="d1e191" pos="n" lemma="cunntas">chunntas</w>
     <w id="d1e194" pos="Dx" lemma="seo">so</w>
     <w id="d1e197" pos="V" lemma="faigh">gheibh</w>
     <w id="d1e200" pos="D" lemma="sinn">sinn</w>
     <w id="d1e204" pos="A" lemma="cuideachd">cuideachd</w>
-    <w id="d1e207" pos="" lemma="sealladh">sealladh</w>
+    <w id="d1e207" pos="n" lemma="sealladh">sealladh</w>
     <w id="d1e210" pos="p" lemma="air">air</w>
     <w id="d1e213" pos="vn" lemma="caith">caitheamh</w>
     <pc join="both">-</pc>
@@ -85,7 +86,7 @@
   </p>
   <h>
     <w id="d1e257" pos="d" lemma="the">An</w>
-    <w id="d1e260" pos="n" lemma="t">t</w>
+    <w id="d1e260" pos="" lemma="t">t</w>
     <pc join="both">-</pc>
     <w id="d1e266" pos="px" lemma="sean">seann</w>
     <pc join="right">“</pc>
@@ -102,7 +103,7 @@
     <w id="d1e304" pos="" lemma="rx">a</w>
     <w id="d1e308" pos="V" lemma="bi">bha</w>
     <pc join="both">’</pc>
-    <w id="d1e314" pos="n" lemma="n">n</w>
+    <w id="d1e314" pos="" lemma="n">n</w>
     <w id="d1e317" pos="N" lemma="Leòdhas">Leódhas</w>
     <w id="d1e320" pos="A" lemma="a-riamh">riamh</w>
     <pc join="left">.</pc>
@@ -127,7 +128,7 @@
     <w id="d1e379" pos="p" lemma="ro">roimh</w>
     <w id="d1e383" pos="n" lemma="toiseach">thoiseach</w>
     <w id="d1e386" pos="d" lemma="the">an</w>
-    <w id="d1e389" pos="n" lemma="t">t</w>
+    <w id="d1e389" pos="" lemma="t">t</w>
     <pc join="both">-</pc>
     <w id="d1e395" pos="n" lemma="siathamh">siathamh</w>
     <w id="d1e398" pos="n" lemma="linne">linne</w>
@@ -220,7 +221,7 @@
     <w id="d1e671" pos="a" lemma="fìor">fìor</w>
     <w id="d1e674" pos="n" lemma="toiseach">thoiseach</w>
     <w id="d1e678" pos="d" lemma="the">an</w>
-    <w id="d1e681" pos="n" lemma="t">t</w>
+    <w id="d1e681" pos="" lemma="t">t</w>
     <pc join="both">-</pc>
     <w id="d1e687" pos="n" lemma="seachdamh">seachdamh</w>
     <w id="d1e690" pos="n" lemma="linne">linne</w>
@@ -253,7 +254,7 @@
     <pc join="left">.</pc>
     <w id="d1e779" pos="V" lemma="bi">Bha</w>
     <w id="d1e782" pos="d" lemma="the">an</w>
-    <w id="d1e785" pos="n" lemma="t">t</w>
+    <w id="d1e785" pos="" lemma="t">t</w>
     <pc join="both">-</pc>
     <w id="d1e792" pos="n" lemma="uachdaran">uachdaran</w>
     <w id="d1e795" pos="" lemma="rx">a</w>
@@ -316,7 +317,7 @@
   </p>
   <pb n="24" img="400_Gairm/1/TD24.pdf"/>
   <p>
-    <w id="d1e980" pos="V" lemma="shoirbhich">Shoirbhich</w>
+    <w id="d1e980" pos="V" lemma="soirbhich">Shoirbhich</w>
     <w id="d1e983" pos="P" lemma="le">leotha</w>
     <w id="d1e986" pos="p" lemma="gu">gu</w>
     <w id="d1e989" pos="ax" lemma="ro">ro</w>
@@ -327,7 +328,7 @@
     <w id="d1e1005" pos="ns" lemma="bliadhna">bhliadhnachan</w>
     <w id="d1e1008" pos="V" lemma="bi">bha</w>
     <w id="d1e1011" pos="n" lemma="mòran">móran</w>
-    <w id="d1e1015" pos="n" lemma="éisg">éisg</w>
+    <w id="d1e1015" pos="nx" lemma="iasg">éisg</w>
     <w id="d1e1018" pos="" lemma="rx">a</w>
     <pc join="left">’</pc>
     <w id="d1e1024" pos="vn" lemma="rach">dol</w>
@@ -459,7 +460,7 @@
     <w id="d1e1416" pos="c" lemma="ceithir">ceithir</w>
     <w id="d1e1419" pos="n" lemma="thimchioll">thimchioll</w>
     <w id="d1e1422" pos="d" lemma="the">nan</w>
-    <w id="d1e1425" pos="n" lemma="cladaichean">cladaichean</w>
+    <w id="d1e1425" pos="ns" lemma="cladach">cladaichean</w>
     <w id="d1e1428" pos="p" lemma="an">anns</w>
     <w id="d1e1431" pos="z" lemma="nach">nach</w>
     <w id="d1e1435" pos="n" lemma="fhaighte">fhaighte</w>
@@ -498,7 +499,7 @@
     <w id="d1e1539" pos="v" lemma="innis">innseadh</w>
     <w id="d1e1542" pos="p" lemma="gu">gu</w>
     <w id="d1e1545" pos="v" lemma="bi">robh</w>
-    <w id="d1e1549" pos="n" lemma="féill">féill</w>
+    <w id="d1e1549" pos="n" lemma="fèill">féill</w>
     <w id="d1e1552" pos="a" lemma="mòr">mhór</w>
     <w id="d1e1555" pos="p" lemma="air">air</w>
     <w id="d1e1558" pos="n" lemma="ola">ola</w>
@@ -543,7 +544,7 @@
     <w id="d1e1682" pos="p" lemma="airson">airson</w>
     <w id="d1e1685" pos="n" lemma="biadh">biadh</w>
     <w id="d1e1688" pos="d" lemma="the">an</w>
-    <w id="d1e1691" pos="n" lemma="teaghlaich">teaghlaich</w>
+    <w id="d1e1691" pos="nx" lemma="teaghlach">teaghlaich</w>
     <pc join="left">,</pc>
     <w id="d1e1697" pos="" lemma="ach">ach</w>
     <w id="d1e1701" pos="V" lemma="bi">bha</w>
@@ -702,7 +703,7 @@
     <w id="d1e2178" pos="a" lemma="mòr">mór</w>
     <w id="d1e2181" pos="" lemma="agus">agus</w>
     <w id="d1e2185" pos="p" lemma="gu">gu</w>
-    <w id="d1e2188" pos="n" lemma="dùthchannan">dùthchannan</w>
+    <w id="d1e2188" pos="ns" lemma="dùthaich">dùthchannan</w>
     <w id="d1e2191" pos="d" lemma="the">na</w>
     <w id="d1e2194" pos="n" lemma="Roinn">Roinn</w>
     <w id="d1e2197" pos="n" lemma="Eorpa">Eorpa</w>
@@ -733,7 +734,7 @@
     <w id="d1e2272" pos="a" lemma="feumail">fheumail</w>
     <w id="d1e2275" pos="n" lemma="fad">fhads</w>
     <w id="d1e2279" pos="" lemma="rx">a</w>
-    <w id="d1e2282" pos="n" lemma="mhair">mhair</w>
+    <w id="d1e2282" pos="v" lemma="mair">mhair</w>
     <w id="d1e2285" pos="D" lemma="i">i</w>
     <pc join="both">)</pc>
     <pc join="left">,</pc>
@@ -811,7 +812,7 @@
     <pc join="left">.</pc>
     <w id="d1e2519" pos="p" lemma="bho">O</w>
     <pc join="both">’</pc>
-    <w id="d1e2525" pos="n" lemma="n">n</w>
+    <w id="d1e2525" pos="" lemma="n">n</w>
     <w id="d1e2529" pos="n" lemma="àm">ám</w>
     <w id="d1e2532" pos="Dx" lemma="seo">so</w>
     <w id="d1e2535" pos="p" lemma="gu">gu</w>
@@ -845,9 +846,9 @@
     <w id="d1e2624" pos="ns" lemma="fear">fir</w>
     <w id="d1e2627" pos="" lemma="rx">a</w>
     <pc join="left">’</pc>
-    <w id="d1e2633" pos="n" lemma="glacadh">glacadh</w>
+    <w id="d1e2633" pos="vn" lemma="glac">glacadh</w>
     <w id="d1e2636" pos="d" lemma="the">an</w>
-    <w id="d1e2639" pos="n" lemma="éisg">éisg</w>
+    <w id="d1e2639" pos="nx" lemma="iasg">éisg</w>
     <w id="d1e2643" pos="" lemma="agus">agus</w>
     <w id="d1e2646" pos="d" lemma="the">na</w>
     <w id="d1e2649" pos="ns" lemma="caileag">caileagan</w>
@@ -863,7 +864,7 @@
     <w id="d1e2681" pos="n" lemma="deireadh">dheireadh</w>
     <w id="d1e2684" pos="p" lemma="de">de</w>
     <pc join="both">’</pc>
-    <w id="d1e2690" pos="n" lemma="n">n</w>
+    <w id="d1e2690" pos="" lemma="n">n</w>
     <w id="d1e2693" pos="n" lemma="naoidheamh">naoidheamh</w>
     <w id="d1e2696" pos="n" lemma="linne">linne</w>
     <w id="d1e2700" pos="a" lemma="deug">deug</w>
@@ -937,7 +938,7 @@
     <w id="d1e2915" pos="V" lemma="is">Bu</w>
     <w id="d1e2918" pos="a" lemma="bòidheach">bhòidheach</w>
     <w id="d1e2921" pos="d" lemma="the">an</w>
-    <w id="d1e2924" pos="" lemma="sealladh">sealladh</w>
+    <w id="d1e2924" pos="n" lemma="sealladh">sealladh</w>
     <w id="d1e2928" pos="D" lemma="iad">iad</w>
     <w id="d1e2931" pos="p" lemma="fo">fo</w>
     <w id="d1e2934" pos="a" lemma="làn">làn</w>
@@ -982,7 +983,7 @@
   <p>
     <w id="d1e3056" pos="p" lemma="bho">O</w>
     <pc join="both">’</pc>
-    <w id="d1e3062" pos="n" lemma="n">n</w>
+    <w id="d1e3062" pos="" lemma="n">n</w>
     <w id="d1e3065" pos="n" lemma="bliadhna">bhliadhna</w>
     <o>1900</o>
     <w id="d1e3072" pos="V" lemma="bi">bha</w>
@@ -1007,7 +1008,7 @@
     <w id="d1e3132" pos="D" lemma="sinn">sinn</w>
     <w id="d1e3135" pos="A" lemma="fhathast">fhathast</w>
     <w id="d1e3138" pos="d" lemma="the">an</w>
-    <w id="d1e3141" pos="n" lemma="t">t</w>
+    <w id="d1e3141" pos="" lemma="t">t</w>
     <pc join="both">-</pc>
     <w id="d1e3148" pos="n" lemma="aobhar">aobhar</w>
     <pc join="left">.</pc>
@@ -1017,7 +1018,7 @@
     <pc join="left">’</pc>
     <w id="d1e3163" pos="D" lemma="e">e</w>
     <w id="d1e3166" pos="d" lemma="the">an</w>
-    <w id="d1e3169" pos="n" lemma="t">t</w>
+    <w id="d1e3169" pos="" lemma="t">t</w>
     <pc join="both">-</pc>
     <w id="d1e3176" pos="n" lemma="iasgach">iasgach</w>
     <w id="d1e3179" pos="d" lemma="the">am</w>
@@ -1026,7 +1027,7 @@
     <w id="d1e3188" pos="n" lemma="cosnaidh">cosnaidh</w>
     <w id="d1e3192" pos="p" lemma="aig">aig</w>
     <w id="d1e3195" pos="d" lemma="the">an</w>
-    <w id="d1e3198" pos="n" lemma="t">t</w>
+    <w id="d1e3198" pos="" lemma="t">t</w>
     <pc join="both">-</pc>
     <w id="d1e3204" pos="n" lemma="sluagh">sluagh</w>
     <w id="d1e3207" pos="n" lemma="fad">fad</w>
@@ -1035,7 +1036,7 @@
     <w id="d1e3217" pos="" lemma="mur">Mur</w>
     <w id="d1e3220" pos="v" lemma="cuir">cuireadh</w>
     <w id="d1e3223" pos="d" lemma="the">an</w>
-    <w id="d1e3226" pos="n" lemma="t">t</w>
+    <w id="d1e3226" pos="" lemma="t">t</w>
     <pc join="both">-</pc>
     <w id="d1e3233" pos="n" lemma="iasgach">iasgach</w>
     <w id="d1e3236" pos="n" lemma="airgead">airgead</w>
@@ -1116,7 +1117,7 @@
     <w id="d1e3470" pos="n" lemma="fad">fad</w>
     <w id="d1e3473" pos="ns" lemma="mìos">mìosan</w>
     <w id="d1e3476" pos="d" lemma="the">an</w>
-    <w id="d1e3479" pos="n" lemma="t">t</w>
+    <w id="d1e3479" pos="" lemma="t">t</w>
     <pc join="both">-</pc>
     <w id="d1e3486" pos="nx" lemma="samhradh">samhraidh</w>
     <w id="d1e3489" pos="d" lemma="the">an</w>
@@ -1151,7 +1152,7 @@
     <w id="d1e3578" pos="n" lemma="bliadhna">bliadhna</w>
     <w id="d1e3581" pos="p" lemma="bho">o</w>
     <pc join="both">’</pc>
-    <w id="d1e3588" pos="n" lemma="n">n</w>
+    <w id="d1e3588" pos="" lemma="n">n</w>
     <w id="d1e3591" pos="n" lemma="bliadhna">bhliadhna</w>
     <o>1854</o>
     <w id="d1e3597" pos="z" lemma="gus">gus</w>
@@ -1276,7 +1277,7 @@
     <pc join="left">.</pc>
     <w id="d1e3974" pos="p" lemma="bho">O</w>
     <pc join="both">’</pc>
-    <w id="d1e3980" pos="n" lemma="n">n</w>
+    <w id="d1e3980" pos="" lemma="n">n</w>
     <w id="d1e3983" pos="n" lemma="bliadhna">bhliadhna</w>
     <o>1930</o>
     <w id="d1e3989" pos="z" lemma="gus">gus</w>
@@ -1314,7 +1315,7 @@
     <w id="d1e4087" pos="V" lemma="tòisich">thòisicheadh</w>
     <w id="d1e4090" pos="p" lemma="air">air</w>
     <w id="d1e4093" pos="n" lemma="iasgach">iasgach</w>
-    <w id="d1e4097" pos="n" lemma="geamhraidh">geamhraidh</w>
+    <w id="d1e4097" pos="nx" lemma="geamhradh">geamhraidh</w>
     <w id="d1e4100" pos="d" lemma="the">an</w>
     <w id="d1e4103" pos="n" lemma="toiseach">toiseach</w>
     <pc join="left">,</pc>
@@ -1328,7 +1329,7 @@
     <w id="d1e4131" pos="p" lemma="an">anns</w>
     <w id="d1e4135" pos="" lemma="rx">a</w>
     <pc join="left">’</pc>
-    <w id="d1e4141" pos="n" lemma="chumantas">chumantas</w>
+    <w id="d1e4141" pos="n" lemma="cumantas">chumantas</w>
     <w id="d1e4144" pos="d" lemma="gach">gach</w>
     <w id="d1e4147" pos="n" lemma="bliadhna">bliadhna</w>
     <w id="d1e4150" pos="d" lemma="the">na</w>
@@ -1340,7 +1341,7 @@
     <pc join="left">.</pc>
   </p>
   <p>
-    <w id="d1e4175" pos="n" lemma="Chithear">Chithear</w>
+    <w id="d1e4175" pos="V" lemma="faic">Chithear</w>
     <w id="d1e4178" pos="p" lemma="bho">o</w>
     <w id="d1e4181" pos="d" lemma="the">na</w>
     <w id="d1e4184" pos="V" lemma="rach">chaidh</w>
@@ -1418,7 +1419,7 @@
     <w id="d1e4408" pos="z" lemma="cha">chan</w>
     <w id="d1e4411" pos="v" lemma="faigh">fhaighear</w>
     <w id="d1e4414" pos="d" lemma="the">na</w>
-    <w id="d1e4418" pos="n" lemma="ficheadan">ficheadan</w>
+    <w id="d1e4418" pos="ns" lemma="fichead">ficheadan</w>
     <w id="d1e4421" pos="p" lemma="ri">ris</w>
     <w id="d1e4424" pos="d" lemma="the">an</w>
     <w id="d1e4427" pos="n" lemma="obair">obair</w>
@@ -1473,7 +1474,7 @@
     <w id="d1e4578" pos="" lemma="rx">a</w>
     <w id="d1e4582" pos="vn" lemma="cuir">chur</w>
     <w id="d1e4585" pos="p" lemma="gu">gu</w>
-    <w id="d1e4588" pos="n" lemma="bailtean">bailtean</w>
+    <w id="d1e4588" pos="ns" lemma="baile">bailtean</w>
     <w id="d1e4591" pos="d" lemma="the">an</w>
     <w id="d1e4594" pos="n" lemma="taobh">taobh</w>
     <w id="d1e4597" pos="n" lemma="deas">deas</w>
@@ -1500,8 +1501,8 @@
     <w id="d1e4664" pos="a" lemma="feumail">feumail</w>
     <w id="d1e4667" pos="V" lemma="cùm">chum</w>
     <w id="d1e4670" pos="" lemma="rx">a</w>
-    <w id="d1e4673" pos="n" lemma="ghiùlain">ghiùlain</w>
-    <w id="d1e4677" pos="n" lemma="thuca">thuca</w>
+    <w id="d1e4673" pos="V" lemma="giùlain">ghiùlain</w>
+    <w id="d1e4677" pos="p+D" lemma="gu">thuca</w>
     <pc join="both">-</pc>
     <w id="d1e4683" pos="p" lemma="an">san</w>
     <w id="d1e4686" pos="" lemma="rx">a</w>
@@ -1546,7 +1547,7 @@
     <w id="d1e4810" pos="v" lemma="bi">bheil</w>
     <w id="d1e4813" pos="n" lemma="sluagh">sluagh</w>
     <w id="d1e4816" pos="p" lemma="an">nam</w>
-    <w id="d1e4819" pos="n" lemma="bailtean">bailtean</w>
+    <w id="d1e4819" pos="ns" lemma="baile">bailtean</w>
     <w id="d1e4822" pos="a" lemma="mòr">móra</w>
     <w id="d1e4825" pos="d" lemma="the">na</w>
     <w id="d1e4829" pos="n" lemma="sgadan">sgadan</w>
@@ -1585,11 +1586,11 @@
   <pb n="26" img="400_Gairm/1/TD26.pdf"/>
   <h>
     <w id="d1e4939" pos="n" lemma="boireannach">Boirionnaich</w>
-    <w id="d1e4942" pos="" lemma="rx">a’</w>
+    <w id="d1e4942" pos="" lemma="ag">a’</w>
     <w id="d1e4948" pos="n" lemma="cutadh">cutadh</w>
     <w id="d1e4952" pos="d" lemma="the">an</w>
     <w id="d1e4955" pos="nx" lemma="sgadan">sgadain</w>
-    <w id="d1e4958" pos="P" lemma="an">ann an</w>
+    <w id="d1e4958" pos="p" lemma="an">ann an</w>
     <w id="d1e4964" pos="N" lemma="Steòrnabhagh">Steòrnabhagh</w>
     <pc join="left">.</pc>
   </h>
@@ -1618,7 +1619,7 @@
     <w id="d1e5039" pos="n" lemma="taobh">thaobh</w>
     <w id="d1e5042" pos="d" lemma="the">an</w>
     <w id="d1e5046" pos="n" lemma="sgadan">sgadan</w>
-    <w id="d1e5049" pos="n" lemma="geamhraidh">geamhraidh</w>
+    <w id="d1e5049" pos="nx" lemma="geamhradh">geamhraidh</w>
     <w id="d1e5052" pos="p" lemma="mar">mar</w>
     <w id="d1e5055" pos="d" lemma="the">an</w>
     <w id="d1e5058" pos="n" lemma="ceudna">ceudna</w>
@@ -1629,7 +1630,7 @@
     <w id="d1e5074" pos="n" lemma="rìoghachdan">rìoghachdan</w>
     <w id="d1e5077" pos="d" lemma="the">na</w>
     <w id="d1e5080" pos="n" lemma="Roinn">Roinn</w>
-    <w id="d1e5084" pos="N" lemma="Eòrpa">Eòrpa</w>
+    <w id="d1e5084" pos="n" lemma="Eòrpa">Eòrpa</w>
     <pc join="left">,</pc>
     <w id="d1e5090" pos="p" lemma="gu">gu</w>
     <w id="d1e5093" pos="a" lemma="sònraichte">sònraichte</w>
@@ -1678,7 +1679,7 @@
     <w id="d1e5229" pos="n" lemma="ceannachd">ceannachd</w>
     <w id="d1e5232" pos="d" lemma="the">an</w>
     <w id="d1e5236" pos="n" lemma="sgadan">sgadan</w>
-    <w id="d1e5239" pos="n" lemma="geamhraidh">geamhraidh</w>
+    <w id="d1e5239" pos="nx" lemma="geamhradh">geamhraidh</w>
     <w id="d1e5242" pos="P" lemma="aig">againne</w>
     <w id="d1e5245" pos="p" lemma="gu">gu</w>
     <w id="d1e5248" pos="" lemma="rx">a</w>
@@ -1704,7 +1705,7 @@
     <w id="d1e5312" pos="d" lemma="the">an</w>
     <w id="d1e5315" pos="N" lemma="Steòrnabhagh">Steòrnabhagh</w>
     <w id="d1e5318" pos="p" lemma="airson">airson</w>
-    <w id="d1e5321" pos="n" lemma="dùthchannan">dùthchannan</w>
+    <w id="d1e5321" pos="ns" lemma="dùthaich">dùthchannan</w>
     <w id="d1e5324" pos="a" lemma="eile">eile</w>
     <pc join="left">.</pc>
     <w id="d1e5331" pos="d" lemma="the">An</w>
@@ -1774,7 +1775,7 @@
     <w id="d1e5529" pos="" lemma="rx">a</w>
     <pc join="left">’</pc>
     <w id="d1e5535" pos="vn" lemma="cuir">cur</w>
-    <w id="d1e5539" pos="n" lemma="thuca">thuca</w>
+    <w id="d1e5539" pos="p+D" lemma="gu">thuca</w>
     <w id="d1e5542" pos="p" lemma="mar">mar</w>
     <w id="d1e5545" pos="d" lemma="the">an</w>
     <w id="d1e5548" pos="n" lemma="ceudna">ceudna</w>
@@ -1791,11 +1792,11 @@
     <w id="d1e5579" pos="n" lemma="oidhirp">oidhirp</w>
     <w id="d1e5582" pos="p" lemma="airson">airson</w>
     <w id="d1e5585" pos="n" lemma="margadh">margadh</w>
-    <w id="d1e5588" pos="n" lemma="faigh">fhaotainn</w>
+    <w id="d1e5588" pos="vn" lemma="faigh">fhaotainn</w>
     <w id="d1e5592" pos="d" lemma="the">an</w>
     <w id="d1e5595" pos="n" lemma="taobh">taobh</w>
     <w id="d1e5598" pos="" lemma="rx">a</w>
-    <w id="d1e5601" pos="n" lemma="stigh">stigh</w>
+    <w id="d1e5601" pos="A" lemma="a-staigh">stigh</w>
     <w id="d1e5604" pos="p" lemma="de">de</w>
     <w id="d1e5607" pos="ns" lemma="crìoch">chrìochan</w>
     <w id="d1e5611" pos="d" lemma="the">na</w>
@@ -1860,7 +1861,7 @@
     <w id="d1e5793" pos="ns" lemma="bliadhna">bliadhnachan</w>
     <w id="d1e5796" pos="a" lemma="eile">eile</w>
     <w id="d1e5800" pos="p" lemma="le">le</w>
-    <w id="d1e5803" pos="n" lemma="lughaid">lughaid</w>
+    <w id="d1e5803" pos="nx" lemma="lughad">lughaid</w>
     <w id="d1e5806" pos="d" lemma="the">na</w>
     <w id="d1e5809" pos="n" lemma="prìse">prìse</w>
     <pc join="left">.</pc>
@@ -1876,9 +1877,9 @@
     <w id="d1e5844" pos="V" lemma="bi">bha</w>
     <w id="d1e5847" pos="" lemma="rx">a</w>
     <pc join="left">’</pc>
-    <w id="d1e5853" pos="n" lemma="prìs">phris</w>
+    <w id="d1e5853" pos="nx" lemma="preas">phris</w>
     <w id="d1e5857" pos="p" lemma="gu">gu</w>
-    <w id="d1e5860" pos="n" lemma="bitheanta">bitheanta</w>
+    <w id="d1e5860" pos="a" lemma="bitheanta">bitheanta</w>
     <w id="d1e5863" pos="vn" lemma="tuit">tuiteam</w>
     <w id="d1e5866" pos="ax" lemma="cho">cho</w>
     <w id="d1e5869" pos="a" lemma="ìosal">ìosal</w>
@@ -1909,7 +1910,7 @@
     <w id="d1e5948" pos="vn" lemma="rach">dol</w>
     <w id="d1e5952" pos="z" lemma="do">do</w>
     <w id="d1e5955" pos="d" lemma="the">na</w>
-    <w id="d1e5958" pos="n" lemma="bailtean">bailtean</w>
+    <w id="d1e5958" pos="ns" lemma="baile">bailtean</w>
     <w id="d1e5961" pos="" lemma="rx">a</w>
     <w id="d1e5964" pos="n" lemma="deas">Deas</w>
     <w id="d1e5967" pos="" lemma="no">no</w>
@@ -1936,7 +1937,7 @@
     <w id="d1e6030" pos="d" lemma="the">na</w>
     <w id="d1e6033" pos="n" lemma="Roinn">Roinn</w>
     <pc join="both">-</pc>
-    <w id="d1e6039" pos="N" lemma="Eòrpa">Eòrpa</w>
+    <w id="d1e6039" pos="n" lemma="Eòrpa">Eòrpa</w>
     <w id="d1e6042" pos="p" lemma="airson">airson</w>
     <w id="d1e6045" pos="d" lemma="the">an</w>
     <w id="d1e6049" pos="nx" lemma="sgadan">sgadain</w>
@@ -1989,7 +1990,7 @@
     <w id="d1e6194" pos="vn" lemma="thoir">thoirt</w>
     <w id="d1e6197" pos="z" lemma="do">do</w>
     <pc join="both">’</pc>
-    <w id="d1e6203" pos="n" lemma="n">n</w>
+    <w id="d1e6203" pos="" lemma="n">n</w>
     <w id="d1e6206" pos="n" lemma="ceist">cheist</w>
     <w id="d1e6209" pos="D" lemma="sin">sin</w>
     <w id="d1e6213" pos="p" lemma="aig">aig</w>
@@ -2018,7 +2019,7 @@
     <w id="d1e6285" pos="D" lemma="e">e</w>
     <w id="d1e6289" pos="n" lemma="doirbh">doirbh</w>
     <w id="d1e6292" pos="n" lemma="òigridh">òigridh</w>
-    <w id="d1e6295" pos="n" lemma="faigh">fhaotainn</w>
+    <w id="d1e6295" pos="vn" lemma="faigh">fhaotainn</w>
     <pc join="right">’</pc>
     <w id="d1e6301" pos="V" lemma="is">s</w>
     <w id="d1e6304" pos="d" lemma="the">an</w>
@@ -2116,7 +2117,7 @@
     <w id="d1e6588" pos="n" lemma="oibrichean">oibrichean</w>
     <w id="d1e6591" pos="a" lemma="eile">eile</w>
     <w id="d1e6594" pos="" lemma="rx">nas</w>
-    <w id="d1e6598" pos="ar" lemma="furasta">fhasa</w>
+    <w id="d1e6598" pos="a" lemma="furasta">fhasa</w>
     <w id="d1e6601" pos="vn" lemma="lorg">lorg</w>
     <w id="d1e6604" pos="" lemma="agus">agus</w>
     <w id="d1e6607" pos="d" lemma="the">an</w>
@@ -2150,7 +2151,7 @@
     <w id="d1e6692" pos="z" lemma="cha">chan</w>
     <w id="d1e6695" pos="v" lemma="faigh">fhaigh</w>
     <w id="d1e6699" pos="d" lemma="the">an</w>
-    <w id="d1e6702" pos="n" lemma="t">t</w>
+    <w id="d1e6702" pos="" lemma="t">t</w>
     <pc join="both">-</pc>
     <w id="d1e6708" pos="n" lemma="iasgair">iasgair</w>
     <w id="d1e6711" pos="n" lemma="cuideachadh">cuideachadh</w>
@@ -2159,7 +2160,7 @@
     <w id="d1e6721" pos="n" lemma="feum">fheum</w>
     <w id="d1e6724" pos="p" lemma="bho">o</w>
     <pc join="both">’</pc>
-    <w id="d1e6730" pos="n" lemma="n">n</w>
+    <w id="d1e6730" pos="" lemma="n">n</w>
     <w id="d1e6733" pos="n" lemma="riaghaltas">riaghaltas</w>
     <w id="d1e6737" pos="p" lemma="mar">mar</w>
     <w id="d1e6740" pos="" lemma="rx">a</w>
@@ -2230,7 +2231,7 @@
     <w id="d1e6943" pos="" lemma="mur">Mur</w>
     <w id="d1e6946" pos="v" lemma="bi">bi</w>
     <w id="d1e6949" pos="d" lemma="the">an</w>
-    <w id="d1e6952" pos="n" lemma="t">t</w>
+    <w id="d1e6952" pos="" lemma="t">t</w>
     <pc join="both">-</pc>
     <w id="d1e6959" pos="n" lemma="iasgair">iasgair</w>
     <w id="d1e6962" pos="a" lemma="cinnteach">cinnteach</w>
@@ -2311,7 +2312,7 @@
     <w id="d1e7196" pos="n" lemma="fiach">fhiach</w>
     <w id="d1e7199" pos="D" lemma="i">i</w>
     <w id="d1e7202" pos="d" lemma="the">an</w>
-    <w id="d1e7205" pos="n" lemma="t">t</w>
+    <w id="d1e7205" pos="" lemma="t">t</w>
     <pc join="both">-</pc>
     <w id="d1e7211" pos="n" lemma="saothair">saothair</w>
     <pc join="left">:</pc>
@@ -2450,7 +2451,7 @@
     <w id="d1e7628" pos="n" lemma="réisd">réisd</w>
     <w id="d1e7631" pos="z" lemma="do">do</w>
     <pc join="both">’</pc>
-    <w id="d1e7637" pos="n" lemma="n">n</w>
+    <w id="d1e7637" pos="" lemma="n">n</w>
     <w id="d1e7641" pos="n" lemma="luchd">luchd</w>
     <w id="d1e7644" pos="nx" lemma="riaghladh">riaghlaidh</w>
     <w id="d1e7647" pos="n" lemma="cnuasachadh">cnuasachadh</w>
@@ -2458,7 +2459,7 @@
     <w id="d1e7653" pos="a" lemma="cùramach">cùramach</w>
     <w id="d1e7656" pos="p" lemma="mu">mu</w>
     <pc join="both">’</pc>
-    <w id="d1e7663" pos="n" lemma="n">n</w>
+    <w id="d1e7663" pos="" lemma="n">n</w>
     <w id="d1e7666" pos="n" lemma="ghnothuch">ghnothuch</w>
     <w id="d1e7669" pos="" lemma="agus">agus</w>
     <w id="d1e7672" pos="d" lemma="gach">gach</w>
@@ -2491,7 +2492,7 @@
     <w id="d1e7754" pos="d" lemma="the">an</w>
     <w id="d1e7757" pos="n" lemma="urra">urra</w>
     <w id="d1e7761" pos="p" lemma="ri">ri</w>
-    <w id="d1e7764" pos="n" lemma="dùthchannan">dùthchannan</w>
+    <w id="d1e7764" pos="ns" lemma="dùthaich">dùthchannan</w>
     <w id="d1e7767" pos="n" lemma="céine">céine</w>
     <w id="d1e7770" pos="p" lemma="air">air</w>
     <w id="d1e7773" pos="n" lemma="son">son</w>
@@ -2537,9 +2538,9 @@
     <w id="d1e7900" pos="n" lemma="dìcheall">dìcheall</w>
     <w id="d1e7903" pos="p" lemma="gu">gu</w>
     <w id="d1e7906" pos="vn" lemma="bi">bhith</w>
-    <w id="d1e7909" pos="n" lemma="glacadh">glacadh</w>
+    <w id="d1e7909" pos="vn" lemma="glac">glacadh</w>
     <w id="d1e7913" pos="d" lemma="the">an</w>
-    <w id="d1e7916" pos="n" lemma="éisg">éisg</w>
+    <w id="d1e7916" pos="nx" lemma="iasg">éisg</w>
     <w id="d1e7919" pos="" lemma="rx">a</w>
     <w id="d1e7922" pos="V" lemma="bi">tha</w>
     <w id="d1e7925" pos="d" lemma="the">am</w>
@@ -2552,7 +2553,7 @@
     <pc join="left">’</pc>
     <w id="d1e7951" pos="n" lemma="ionnsaigh">ionnsaigh</w>
     <w id="d1e7954" pos="d" lemma="the">nan</w>
-    <w id="d1e7957" pos="n" lemma="cladaichean">cladaichean</w>
+    <w id="d1e7957" pos="ns" lemma="cladach">cladaichean</w>
     <w id="d1e7960" pos="P" lemma="aig">againn</w>
     <pc join="left">?</pc>
   </p>
