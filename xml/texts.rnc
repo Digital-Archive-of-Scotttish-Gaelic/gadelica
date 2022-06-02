@@ -10,7 +10,7 @@ Text = element text {
 }
 
 #Block = ( Paragraph | Heading | Verse | List | Utterance | Text | Page | Note )
-Block = ( Verse | Paragraph | Heading | PageBreak | Rule )
+Block = ( Verse | Paragraph | Heading | PageBreak | Rule | Turn)
 Heading = element h { Token+ }
 Verse = element lg { Token+ }
 
@@ -20,7 +20,7 @@ Paragraph = element p { (Token | Note)+ }
 Rule = element hr { empty }
 
 List = element list { (element label { Token* }, element item { Token+ })+ }
-Utterance = element u { attribute ref { xsd:anyURI }?, Token+ }
+Turn = element t { attribute ref { xsd:anyURI }?, Token+ }
 
 Sentence = element s { (Token | PageBreak | element i { Token+ } )+ }
 Note = element note { text }
