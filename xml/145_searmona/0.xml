@@ -1,31 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../texts.rnc" schematypens="https://relaxng.org/ns/structure/1.0?>
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../texts.rnc" schematypens="https://relaxng.org/ns/structure/1.0?>
 <text xmlns="https://dasg.ac.uk/corpus/" ref="https://dasg.ac.uk/corpus/_145-0" status="raw">
-    <p> ﻿[DA 1] </p>
+    <pb n="i" img="https://deriv.nls.uk/dcn3/8196/81967633.3.jpg"/>
     <h>
-        <w id="d2e9" pos="n" lemma="SEARMONA">SEARMONA</w>
-        <lb/>
+        <w id="d2e9" pos="ns" lemma="searmon">SEARMONA</w>
         <w id="d2e14" pos="p" lemma="le">LE</w>
-        <lb/>
-        <w id="d2e19" pos="n" lemma="MR">MR</w>
-        <w id="d2e23" pos="n" lemma="EOBHANN">EOBHANN</w>
+        <o>MR</o>
+        <w id="d2e23" pos="N" lemma="Eoghann">EOBHANN</w>
         <w id="d2e26" pos="n" lemma="mac">MAC</w>
-        <w id="d2e29" pos="n" lemma="DIARMAID">DIARMAID</w>
+        <w id="d2e29" pos="Nx" lemma="Diarmad">DIARMAID</w>
         <pc join="left">,</pc>
-        <lb/>
-        <w id="d2e37" pos="nx" lemma="ministear">MINISTEIR</w>
-        <w id="d2e41" pos="P" lemma="an">ANN</w>
-        <w id="d2e44" pos="d" lemma="the">AN</w>
-        <w id="d2e47" pos="n" lemma="GLASCHO">GLASCHO</w>
+    </h>
+    <h>
+        <w id="d2e37" pos="n" lemma="ministear">MINISTEIR</w>
+        <w id="d2e41" pos="p" lemma="an">ANN AN</w>
+        <w id="d2e47" pos="N" lemma="Glaschu">GLASCHO</w>
         <pc join="left">,</pc>
-        <w id="d2e53" pos="" lemma="agus">AGUS</w>
-        <w id="d2e56" pos="d" lemma="the">NA</w>
-        <w id="d2e60" pos="n" lemma="DHEIGH">DHEIGH</w>
-        <w id="d2e63" pos="D" lemma="sin">SIN</w>
+        <w id="d2e53" lemma="agus">AGUS</w>
+        <w id="d2e56" pos="p" lemma="an">NA</w>
+        <w id="d2e60" pos="n" lemma="dèidh">DHEIGH</w>
+        <w id="d2e63" pos="Dx" lemma="sin">SIN</w>
         <pc join="left">,</pc>
-        <lb/>
-        <w id="d2e71" pos="d" lemma="the">AN</w>
-        <w id="d2e74" pos="n" lemma="COMRIE">COMRIE</w>
+        <w id="d2e71" pos="p" lemma="an">AN</w>
+        <o>COMRIE</o>
         <pc join="left">.</pc>
     </h>
     <p>
@@ -117,41 +113,30 @@
         <w id="d2e349" pos="z" lemma="do">do</w>
         <w id="d2e352" pos="n" lemma="dhaoinibh">dhaoinibh</w>
         <pc join="left">.</pc>
-        <lb/>
-        <w id="d2e361" pos="n" lemma="TIT">TIT</w>
-        <pc join="left">.</pc>
-        <w id="d2e367" pos="n" lemma="iii">iii</w>
-        <pc join="left">.</pc>
-        <w id="d2e373" pos="n" lemma="8">8</w>
-        <pc join="left">.</pc>
     </p>
-    <p>
+    <h>
+        <o>TIT. iii. 8.</o>
+    </h>
+    <h>
         <w id="d2e383" pos="n" lemma="Duneidin">Duneidin</w>
         <pc join="left">:</pc>
-        <lb/>
         <w id="d2e391" pos="n" lemma="clò">CLO</w>
         <pc join="both">-</pc>
         <w id="d2e398" pos="n" lemma="BHUAILTE">BHUAILTE</w>
         <w id="d2e401" pos="p" lemma="le">LE</w>
-        <w id="d2e404" pos="" lemma="t">T</w>
-        <pc join="left">.</pc>
+        <o>T.</o>
         <w id="d2e410" pos="n" lemma="STEUART">STEUART</w>
         <pc join="left">.</pc>
-    </p>
-    <p>
-        <w id="d2e420" pos="n" lemma="1804">1804</w>
-        <pc join="left">.</pc>
-    </p>
-    <p> [DA 2] </p>
-    <p> [Blank] </p>
-    <p> [DA 3] </p>
-    <p>
-        <w id="d2e435" pos="z" lemma="do">DO</w>
-        <pc join="both">’</pc>
-        <w id="d2e441" pos="d" lemma="the">N</w>
+    </h>
+    <h>
+        <o>1804.</o>
+    </h>
+    <pb n="iii" img="https://deriv.nls.uk/dcn3/8196/81967657.3.jpg"/>
+    <h>
+        <w id="d2e435" pos="z" lemma="do">DO’N</w>
         <w id="d2e444" pos="n" lemma="leughadair">LEUGHADAIR</w>
         <pc join="left">.</pc>
-    </p>
+    </h>
     <p>
         <w id="d2e456" pos="z" lemma="nuair">’NUAIR</w>
         <w id="d2e459" pos="n" lemma="ata">ata</w>
@@ -287,9 +272,7 @@
         <w id="d2e868" pos="" lemma="rx">a</w>
         <w id="d2e871" pos="V" lemma="cleachd">chleachd</w>
         <w id="d2e874" pos="" lemma="rx">a</w>
-    </p>
-    <p> [DA 4] </p>
-    <p>
+        <pb n="iv" img="https://deriv.nls.uk/dcn3/8196/81967669.3.jpg"/>
         <w id="d2e882" pos="v" lemma="bi">bhi</w>
         <w id="d2e885" pos="n" lemma="g">g</w>
         <pc join="both">’</pc>
@@ -452,20 +435,12 @@
         <w id="d2e1381" pos="n" lemma="eisimpleir">Eiseimpleir</w>
         <pc join="left">.</pc>
     </p>
-    <p> [DA 5] </p>
-
-    <p> [DA 6] </p>
-
-    <p> [DA 7] </p>
-
-    <p> [DA 8] </p>
-
-    <p> [DA 9] </p>
-
-    <p> [DA 10] </p>
-
-    <p> [DA 11] </p>
-
-    <p> [DA 12] </p>
-
+    <pb n="v" img="https://deriv.nls.uk/dcn3/8196/81967681.3.jpg"/>
+    <pb n="vi" img="https://deriv.nls.uk/dcn3/8196/81967693.3.jpg"/>
+    <pb n="vii" img="https://deriv.nls.uk/dcn3/8196/81967705.3.jpg"/>
+    <pb n="viii" img="https://deriv.nls.uk/dcn3/8196/81967717.3.jpg"/>
+    <pb n="ix" img="https://deriv.nls.uk/dcn3/8196/81967729.3.jpg"/>
+    <pb n="x" img="https://deriv.nls.uk/dcn3/8196/81967741.3.jpg"/>
+    <pb n="xi" img="https://deriv.nls.uk/dcn3/8196/81967753.3.jpg"/>
+    <pb n="xii" img="https://deriv.nls.uk/dcn3/8196/81967765.3.jpg"/>
 </text>
