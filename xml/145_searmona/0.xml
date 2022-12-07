@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-model href="../texts.rnc" schematypens="https://relaxng.org/ns/structure/1.0?>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../texts.rnc" schematypens="https://relaxng.org/ns/structure/1.0?>
 <text xmlns="https://dasg.ac.uk/corpus/" ref="https://dasg.ac.uk/corpus/_145-0" status="raw">
     <pb n="i" img="https://deriv.nls.uk/dcn3/8196/81967633.3.jpg"/>
     <h>
@@ -11,16 +12,16 @@
         <pc join="left">,</pc>
     </h>
     <h>
-        <w id="d2e37" pos="n" lemma="ministear">MINISTEIR</w>
+        <w id="d2e37" pos="nx" lemma="ministear">MINISTEIR</w>
         <w id="d2e41" pos="p" lemma="an">ANN AN</w>
         <w id="d2e47" pos="N" lemma="Glaschu">GLASCHO</w>
         <pc join="left">,</pc>
-        <w id="d2e53" lemma="agus">AGUS</w>
-        <w id="d2e56" pos="p" lemma="an">NA</w>
+        <w id="d2e53" lemma="agus" pos="">AGUS</w>
+        <w id="d2e56" pos="d" lemma="the">NA</w>
         <w id="d2e60" pos="n" lemma="dèidh">DHEIGH</w>
-        <w id="d2e63" pos="Dx" lemma="sin">SIN</w>
+        <w id="d2e63" pos="D" lemma="sin">SIN</w>
         <pc join="left">,</pc>
-        <w id="d2e71" pos="p" lemma="an">AN</w>
+        <w id="d2e71" pos="d" lemma="the">AN</w>
         <o>COMRIE</o>
         <pc join="left">.</pc>
     </h>
@@ -133,7 +134,7 @@
     </h>
     <pb n="iii" img="https://deriv.nls.uk/dcn3/8196/81967657.3.jpg"/>
     <h>
-        <w id="d2e435" pos="z" lemma="do">DO’N</w>
+        <w id="d2e435" pos="p" lemma="do">DO’N</w>
         <w id="d2e444" pos="n" lemma="leughadair">LEUGHADAIR</w>
         <pc join="left">.</pc>
     </h>
