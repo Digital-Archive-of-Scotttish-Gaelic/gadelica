@@ -33,7 +33,7 @@ Token = (
           | PageBreak
           | element sb { empty }
           | element pause { text }
-          | element footnote { attribute n { text }, Paragraph+ }
+          | element footnote { attribute n { text }, Block+ }
           | element x { attribute type { "name"|"time-adverbial" }, Token+ }
         )
 
