@@ -48,7 +48,7 @@
     </xsl:template>
     
     <xsl:template match="dasg:o">
-        <xsl:value-of select="."/>
+        <xsl:value-of select="normalize-space(.)"/>
         <xsl:text>&#10;</xsl:text>
     </xsl:template>
 
