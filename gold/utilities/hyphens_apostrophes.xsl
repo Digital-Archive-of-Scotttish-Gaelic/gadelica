@@ -97,11 +97,4 @@
     <xsl:template
         match="dasg:w[text() = 'bith' and preceding-sibling::*[1][self::dasg:w and text() = 'sam']]"/>
 
-
-    <!-- <w wid="_200_d2e979" pos="n" lemma="sam">sam</w>
-    <w wid="_200_d2e983" pos="n" lemma="bith">bith</w>
--->
-
-
-
 </xsl:stylesheet>
