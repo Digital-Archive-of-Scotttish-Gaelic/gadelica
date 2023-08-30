@@ -13,7 +13,7 @@
         <xsl:value-of select="translate(.,' ','~')"/>
         <xsl:text>&#9;</xsl:text>
         <xsl:choose>
-            <xsl:when test="@pos">
+            <xsl:when test="not(@pos='')">
                 <xsl:value-of select="@pos"/>
             </xsl:when>
             <xsl:otherwise>
