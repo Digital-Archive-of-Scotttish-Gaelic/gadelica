@@ -3,6 +3,8 @@
     xmlns:dasg="https://dasg.ac.uk/corpus/">
     <xsl:output method="text" encoding="UTF-8"/>
     
+    <!-- this script is deprecated -->
+    
     <xsl:template match="/">
         <xsl:apply-templates select="child::dasg:text"/>
     </xsl:template>
