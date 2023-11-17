@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="../../Coding/Stylesheets/basic-info.xsl"?><?xml-model href="../Schemas/fnag_mss.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="https://dasg.ac.uk/corpus/" xml:id="T8">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Transcription 8: A Gaelic Fragment in The Kingis Quair Manuscript (Oxford, Bodleian
+          Library MS. Arch. Selden B.24)</title>
+        <respStmt corresp="EPT">
+          <name id="d1e16">Eystein P. Thanisch</name>
+          <resp>Transcriber</resp>
+        </respStmt>
+        <respStmt corresp="WGI">
+          <name id="d1e25">William Gillies</name>
+          <resp>Overseer</resp>
+        </respStmt>
+      </titleStmt>
+      <extent>24 words</extent>
+      <publicationStmt>
+        <authority sameAs="authority"/>
+        <availability status="restricted">
+          <p>For internal use by the Faclair na Gàidhlig/DASG projects</p>
+        </availability>
+        <idno>T8</idno>
+      </publicationStmt>
+      <notesStmt>
+        <note>
+          <p>The sole manuscript of <hi rend="italics">The Kingis Quare</hi> and <hi rend="italics"
+              >The Quare of Jealous</hi>, Oxford, Bodleian Library MS. Arch. Selden B.24, which was
+            produced sometime during the reign of James IV (1488–1513; Boffey &amp; Edwards 1997:
+            22) and which is also an important early witness to the works of Geoffrey Chaucer (d.
+            1400) and John Lydate (c. 1370–1451), contains a fragment of a Gaelic <hi rend="italics"
+              >dán díreach</hi> quatrain. This has been inscribed by Domhnall Gorm, presumably a
+            MacDonald of Sleat, and may be celebrating his relationship with a member of the
+            Lothian-based Sinclair family, who commissioned and owned the manuscript, by lamenting
+            his parting from the. Its fragmentary condition inhibits confident interpretation,
+            however.</p>
+        </note>
+      </notesStmt>
+      <sourceDesc>
+        <msDesc>
+          <msIdentifier sameAs="MS8">
+            <settlement>Oxford</settlement>
+            <repository>Bodleian Library</repository>
+            <idno type="shelfmark">Arch. Selden B.24</idno>
+          </msIdentifier>
+          <msContents>
+            <summary>
+              <p>The only Gaelic material in the manuscript is Domhnall Gorm's quatrain, now
+                lacunose.</p>
+            </summary>
+            <msItem n="1" xml:id="MS8.1">
+              <locus>fol.231v4–6</locus>
+              <title>Gaelic Verse Fragment</title>
+              <author role="scribe" corresp="Hand21"/>
+              <incipit>[...] air cioth na coinne ...</incipit>
+              <explicit>... air clar na cruinne</explicit>
+              <textLang mainLang="ghc"/>
+              <note>
+                <p>This single quatrain in <hi rend="italics">rannaigecht beag</hi> is not only
+                  lacking in context but is also missing two syllables each from lines a and c. As a
+                  result, its interpretation is difficult. The best attempt is a text and
+                  translation by William MacKenzie, with the assistance of William Watson (MacKenzie
+                  1939: 137). There are no other known manuscript versions of this quatrain, nor any
+                  known context from which it might have come </p>
+              </note>
+              <biblFull>
+                <fileDesc>
+                  <titleStmt>
+                    <title>Gaelic Verse Fragment</title>
+                  </titleStmt>
+                  <publicationStmt>
+                    <p>Draft transcription</p>
+                  </publicationStmt>
+                  <sourceDesc>
+                    <p>Transcribed from manuscript</p>
+                  </sourceDesc>
+                </fileDesc>
+                <profileDesc>
+                  <textClass>
+                    <keywords>
+                      <term>misc</term>
+                      <term>bardic</term>
+                      <term>poetry</term>
+                      <term>personal</term>
+                    </keywords>
+                  </textClass>
+                </profileDesc>
+              </biblFull>
+            </msItem>
+          </msContents>
+          <physDesc>
+            <objectDesc>
+              <supportDesc>
+                <support>Paper; 27 × 18.42cm (Hunt <ref target="Hunt1895" type="bib">1895</ref>:
+                  vol. 2:1, 614)</support>
+                <foliation>Foliation is modern</foliation>
+                <condition>Fol. 231v is badly eroded in places, leading to the loss of the first two
+                  syllables of lines a and c in the quatrain under discussion, as well as some text
+                  immediately above that may have offered context. The facsimile by Boffey et al.
+                  (1997) includes photographs taken under UV light, which unfortunately do not offer
+                  much improvement. However, the parts of the quatrain that have escaped erosion are
+                  very clear and present no problems. </condition>
+              </supportDesc>
+              <layoutDesc>
+                <p>The quatrain is one of a number of notes, including several Scots verses, written
+                  in a single broad column in the centre of fol. 231v. The quatrain itself is set
+                  out one couplet to a manuscript line.</p>
+              </layoutDesc>
+            </objectDesc>
+          </physDesc>
+          <history>
+            <summary>
+              <p>A note in the main body of Arch. Seld. B.24 refers to James IV as king, meaning
+                production of the manuscript must have been begun sometime after 1488 (Boffey et al.
+                1997: 4). The appearance of the date 1592 on fol. 231v, among the spare leaves
+                towards the end of the manuscript, implies that it was complete by this date,
+                although this is uncertain.</p>
+              <p>It is thought that it was produced for the Sinclair family in either Edinburgh or
+                Roslin (Boffey et al. 1997: 11).</p>
+              <p>The manuscript was bequethed to the Bodleian Library as part of the collection of
+                John Selden (1584–1654) (Brown 1899: 93). How it came to be in his collection is not
+                known but the window between his collecting activities and the window in which the
+                manuscript was composed is sufficiently narrow for there not to have been a
+                significant intervening history.</p>
+            </summary>
+          </history>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <p/>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <p/>
+      </langUsage>
+      <handNotes>
+        <handNote corresp="Hand21"/>
+      </handNotes>
+      <textClass>
+        <keywords>
+          <term>Bardic poetry</term>
+          <term>Elegy</term>
+          <term>Fragment</term>
+          <term>Scottish scribe</term>
+          <term>Scottish manuscript</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+    <revisionDesc>
+      <change when="2018-05-28" who="EPT">Initial draft of text transcribed and marked up from
+        manuscript; draft introduction written.</change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div n="1" type="verse" hand="Hand21" corresp="MS8.1">
+        <lg n="1" type="stanza" xml:id="MS8.1.1">
+          <l n="a" xml:id="MS8.1.1a">
+            <handShift new="Hand21"/>
+            <pb n="231v" xml:id="MS8.231v"/>
+            <lb n="4" xml:id="MS8.231v.4"/>
+            <gap id="d1e267" reason="damage" quantity="2" unit="syllables" resp="EPT"/>
+            <seg id="d1e269" type="fragment">air</seg>
+            <note type="fn" resp="EPT">
+              <p>The visibility of text drops to zero to the immediate left of the "a-" of "air",
+                meaning that this might be the ending of a longer word (three syllables maximum)
+                rather than the preposition <hi rend="italics">air</hi>. In fact, lines ab, as now
+                visible, are missing one of the two required perfect internal rhymes, and a word
+                ending in "-uair" (: "buain") would supply such a rhyme. Nothing more can be said
+                about this hypothesised word, unfortunately.</p>
+            </note>
+            <space type="scribal"/>
+            <w id="d1e284" lemma="cith" lemmaRef="http://www.dil.ie/9259" pos="noun">ciot</w>
+            <space type="scribal"/>
+            <w id="d1e290" pos="preposition-possessive_pronoun"><w id="d1e292" lemma="i"
+                lemmaRef="http://www.dil.ie/26891" pos="preposition">n</w>
+              <w id="d1e294" lemma="a" lemmaRef="http://www.dil.ie/3" pos="possessive_pronoun"
+              >a</w></w>
+            <space type="scribal"/>
+            <w id="d1e301" lemma="coinne" lemmaRef="http://www.dil.ie/10358" pos="noun">coinne</w>
+            <pc id="d1e304">.</pc>
+            <space type="scribal"/>
+            <note type="fn" resp="EPT">
+              <p>Some pen strokes are visible just above this line, before the page becomes too
+                damaged for anything to be made out. It is possible that they are abbreviation
+                strokes relating to this line (e.g. "na coinne" (against he/she/it/them) could be
+                  "na<hi rend="italics">m</hi> coinne" (against me)). However, this doesn't produce
+                any significantly more satisfying readings and letter forms, of which these marks
+                could be the lower portions, can just about be made out above.</p>
+            </note>
+          </l>
+          <l n="b" xml:id="MS8.1.1b">
+            <w id="d1e321" pos="preposition-article">
+              <w id="d1e323" lemma="do" lemmaRef="http://www.dil.ie/17096" pos="preposition">do</w>
+              <w id="d1e326" lemma="in" lemmaRef="http://www.dil.ie/28194" pos="article">n</w>
+            </w>
+            <space type="scribal"/>
+            <w id="d1e332" lemma="bith" lemmaRef="http://www.dil.ie/5971" pos="noun">
+              <abbr cert="high">b<g id="d1e336" ref="g4">h</g>
+              </abbr>io<abbr cert="high">t<g id="d1e342" ref="g4">h</g>
+              </abbr>
+            </w>
+            <space type="scribal"/>
+            <w id="d1e349" lemma="íar" lemmaRef="http://www.dil.ie/26931" pos="preposition">
+              <abbr cert="high">
+                <g id="d1e353" ref="g11">air</g>
+              </abbr>
+            </w>
+            <space type="scribal"/>
+            <w id="d1e361" lemma="búain" lemmaRef="http://www.dil.ie/7248" pos="verbal_noun"
+              >buain</w>
+            <space type="scribal"/>
+            <w id="d1e366" lemma="a" lemmaRef="http://www.dil.ie/3" pos="possessive_pronoun">a</w>
+            <w id="d1e369" lemma="duille" lemmaRef="http://www.dil.ie/19115" pos="noun">duille</w>
+          </l>
+          <l n="c" xml:id="MS8.1.1c">
+            <lb n="5" xml:id="MS8.231v.5"/>
+            <gap id="d1e377" reason="damage" unit="syllables" resp="EPT" quantity="2"/>
+            <w id="d1e383" lemma="bruach" lemmaRef="http://www.dil.ie/7041" pos="noun">
+              <unclear reason="damage" cert="low" resp="EPT">b</unclear><unclear
+                reason="text_obscure" cert="medium" resp="EPT">r</unclear>uai<abbr cert="high">c<g
+                  id="d1e390" ref="g4">h</g>
+              </abbr>
+            </w>
+            <note type="fn" resp="EPT">
+              <p>The slenderisation suggests that this is a prepositional form, hence the tentative
+                interpretation "{on the} bank".</p>
+            </note>
+            <space type="scribal"/>
+            <w id="d1e421" lemma="lám" lemmaRef="http://www.dil.ie/29507" pos="noun">laim</w>
+            <space type="scribal"/>
+            <w id="d1e426" lemma="fri" lemmaRef="http://www.dil.ie/24329" pos="preposition">re</w>
+            <space type="scribal"/>
+            <w id="d1e431" lemma="linn" lemmaRef="http://www.dil.ie/30274" pos="noun">li<abbr
+                cert="high">n<g id="d1e435" ref="g5">n</g>
+              </abbr>e</w>
+            <space type="scribal"/>
+            <pc id="d1e443">.</pc>
+            <space type="scribal"/>
+          </l>
+          <l n="d" xml:id="MS8.1.1d">
+            <w id="d1e451" lemma="fo-gaib" lemmaRef="http://www.dil.ie/22696" pos="verb">fu<abbr
+                cert="high">
+                <g id="d1e455" ref="g11">air</g>
+              </abbr>
+            </w>
+            <space type="scribal"/>
+            <w id="d1e462" pos="pronoun-emphatic"><w id="d1e463" lemma="sinn"
+                lemmaRef="http://www.dil.ie/37607" pos="pronoun">si<abbr cert="high"
+                  corresp="69950a10">n</abbr></w>
+              <w id="d1e468" lemma="ni"
+                lemmaRef="https://www.faclair.com/ViewDictionaryEntry.aspx?ID=7E145C01680F4B96EC0D6B602D966228"
+                pos="emphatic"><g id="d1e469" ref="g5" corresp="69950a10">n</g>e</w></w>
+            <space type="scribal"/>
+            <w id="d1e475" lemma="for" lemmaRef="http://www.dil.ie/23272" pos="preposition">
+              <abbr cert="high">
+                <g id="d1e479" ref="g11">air</g>
+              </abbr>
+            </w>
+            <w id="d1e485" lemma="clár" lemmaRef="http://www.dil.ie/9377" pos="noun">clar</w>
+            <space type="scribal"/>
+            <w id="d1e490" lemma="in" lemmaRef="http://www.dil.ie/28194" pos="article">na</w>
+            <space type="scribal"/>
+            <w id="d1e495" lemma="cruinne" lemmaRef="http://www.dil.ie/13227" pos="noun">crui<abbr
+                cert="high">n<g id="d1e499" ref="g5">n</g>
+              </abbr>e</w>
+          </l>
+        </lg>
+        <lg type="sig" xml:id="MS8.1.2">
+          <l xml:id="MS8.1.2a">
+            <lb n="6" xml:id="MS8.231v.6"/>
+            <w id="d1e512" lemma="mise" lemmaRef="http://www.dil.ie/32365" pos="pronoun"><w
+                id="d1e514" lemma="mé" lemmaRef="http://www.dil.ie/31705" pos="pronoun">mi</w><w
+                id="d1e515" lemma="sa"
+                lemmaRef="https://www.faclair.com/ViewDictionaryEntry.aspx?ID=7E145C01680F4B96EC0D6B602D966228"
+                pos="emphatic">si</w></w>
+            <space type="scribal"/>
+            <name id="d1e517" type="personal">
+              <w id="d1e519" lemma="Domnall" lemmaRef="http://www.dil.ie/18133" pos="noun"
+                >domnall</w>
+              <space type="scribal"/>
+              <w id="d1e524" lemma="gorm" lemmaRef="http://www.dil.ie/26408" pos="adjective"
+                >gorm</w>
+              <pc id="d1e527">.</pc>
+            </name>
+          </l>
+        </lg>
+      </div>
+    </body>
+  </text>
+</TEI>
