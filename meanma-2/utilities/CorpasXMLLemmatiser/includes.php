@@ -1,8 +1,8 @@
 <?php
 
 //constants
-define("INPUT_FILEPATH", "../../gadelica/xml");   //for local testing only
-//define("INPUT_FILEPATH", "inputFiles");
+//define("INPUT_FILEPATH", "../../gadelica/xml");   //for local testing only
+define("INPUT_FILEPATH", "../../meanma-2");
 
 //DB
 /*define(DB_HOST, "localhost");

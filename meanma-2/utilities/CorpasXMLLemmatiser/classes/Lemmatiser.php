@@ -52,6 +52,7 @@ class Lemmatiser
 				$this->_lexicon[$bits[0]] = $bits[1] . '|' . $bits[2] . '|' . $nextCount;
 			}
 		}
+
 		return $this->_lexicon;
 	}
 
