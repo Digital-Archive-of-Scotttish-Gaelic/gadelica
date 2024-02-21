@@ -4,29 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="Updated the status of some meanma-2 texts to &quot;raw&quot; for lemmatisiation">
+    <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="Ran the lemmatiser over texts 190, 192, and all volumes of 102">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/10.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meanma-2/102-1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/102-1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meanma-2/102-2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/102-2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meanma-2/102-3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/102-3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meanma-2/102-4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/102-4.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meanma-2/102-5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/102-5.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meanma-2/102-6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/102-6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/11.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/12.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/13.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meanma-2/190.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/190.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meanma-2/192.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/192.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/20.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/20.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/22.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/22.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/8.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLLemmatiser/includes.php" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLLemmatiser/includes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/outputFiles/126_Leabhar_Cheistean.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/outputFiles/126_Leabhar_Cheistean.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +160,7 @@
       <workItem from="1706527139681" duration="7682000" />
       <workItem from="1707469579605" duration="581000" />
       <workItem from="1708428754545" duration="3489000" />
-      <workItem from="1708520897000" duration="2059000" />
+      <workItem from="1708520897000" duration="2197000" />
     </task>
     <task id="LOCAL-00087" summary="Initial code for new edit slip in entry refactor">
       <created>1618927085562</created>
@@ -518,7 +505,7 @@
       <option name="project" value="LOCAL" />
       <updated>1700233733974</updated>
     </task>
-    <option name="localTasksCounter" value="143" />
+    <option name="localTasksCounter" value="144" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -539,7 +526,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fixed bug where change of headword added rogue tag&#10;Fixed bug where POS (wordclass) not displaying in collection table" />
     <MESSAGE value="Added error handling to corpus_browse to catch file not found errors for XML input" />
     <MESSAGE value="Reworked writers into Bootstrap table with pagination and search and sort options" />
     <MESSAGE value="Added cancel functionality to edit forms for both writers and texts" />
@@ -564,6 +550,7 @@
     <MESSAGE value="Fixed error in meanma-1/126.xml" />
     <MESSAGE value="Fixed XML tag error in meanma-2/126.xml" />
     <MESSAGE value="Updated the status of some meanma-2 texts to &quot;raw&quot; for lemmatisiation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated the status of some meanma-2 texts to &quot;raw&quot; for lemmatisiation" />
+    <MESSAGE value="Ran the lemmatiser over texts 190, 192, and all volumes of 102" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ran the lemmatiser over texts 190, 192, and all volumes of 102" />
   </component>
 </project>
