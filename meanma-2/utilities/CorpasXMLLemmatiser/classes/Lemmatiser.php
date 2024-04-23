@@ -64,6 +64,20 @@ class Lemmatiser
 				$status = $xml->xpath("/dasg:text/@status")[0];
 				if ($status == 'raw') {
 					foreach ($xml->xpath("//dasg:w") as $nextWord) {
+
+                        //check the DB for a lemma
+                        $db = DB::getDatabaseHandle();
+                        $sql = "SELECT l.word AS lemma FROM lemma l JOIN form f ON f.lemma_id = l.id WHERE f.word = '" . (string)$nextWord . "'";
+                        $stmt = $db->prepare($sql);
+                        $stmt->execute();
+                        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                        if ($result) {
+                            echo "\nnextWord : " . (string)$nextWord . " - lemma : " . $result['lemma'] . "\n";
+                        }
+
+
+                        //$nextWord["lemma"] = $result['lemma'];
+                    /*
 						if ($this->_lexicon[(string)$nextWord]) {
 							$bits = explode('|',$this->_lexicon[(string)$nextWord]);
 							$nextWord['lemma'] = $bits[0];
@@ -97,10 +111,55 @@ class Lemmatiser
 								}
 							}
 						}
+                        */
 					}
 					$xml->asXML($nextFile);
 				}
 			}
 		}
 	}
+}
+
+
+define("DB_NAME", "faclair_beag");
+define("DB_USER", "uuhdeyw8qpwj5");
+define("DB_PASSWORD", "phlykzvny39l");
+
+class DB
+{
+    private static $databaseHandle;
+    const ERROR_REPORTING = true;
+
+    private static function connect($dbName, $user = DB_USER, $pass= DB_PASSWORD)
+    {
+        try {
+            self::$databaseHandle = new PDO(
+                "mysql:host=localhost;dbname=" . $dbName . ";charset=utf8;", $user, $pass
+            );
+        } catch (PDOException $e){
+            echo $e->getMessage();
+        }
+    }
+
+    public static function getDatabaseHandle($dbName = DB_NAME, $user = DB_USER, $pass = DB_PASSWORD)
+    {
+        self::connect($dbName, $user, $pass);
+
+        if (self::ERROR_REPORTING)
+            self::$databaseHandle->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        self::$databaseHandle->query("SET NAMES utf8");
+
+        return self::$databaseHandle;
+    }
+
+    public static function getLastId($dbName, $tableName)
+    {
+        $dbh = self::getDatabaseHandle($dbName);
+        $stmt = $dbh->prepare("SELECT `AUTO_INCREMENT` FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = '{$dbName}' AND TABLE_NAME   = '{$tableName}'");
+        $stmt->execute();
+        $lastId = $stmt->fetch(PDO::FETCH_NUM);
+        $lastId = $lastId[0];
+        return $lastId;
+    }
 }

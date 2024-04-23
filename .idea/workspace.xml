@@ -4,19 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="Changed status of 102-1.xml to 'raw'">
-      <change beforePath="$PROJECT_DIR$/meanma-2/10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/10.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/102-1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/102-1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/11.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/13.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/20.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/20.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/22.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/22.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/8.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/outputFiles/126_Leabhar_Cheistean.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/outputFiles/126_Leabhar_Cheistean.xml" afterDir="false" />
+    <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="Changed status of 102-1.xml to empty">
+      <change afterPath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/inputFiles/bbc_test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/outputFiles/bbc_test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLLemmatiser/classes/Lemmatiser.php" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLLemmatiser/classes/Lemmatiser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLLemmatiser/includes.php" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLLemmatiser/includes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/inputFiles/126 Leabhar Cheistean_teacsa.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/outputFiles/126_Leabhar_Cheistean.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +89,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-php-predefined-ba97393d7c68-b4dcf6bb9de9-com.jetbrains.php.sharedIndexes-PS-233.13135.108" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-PS-241.14494.237" />
+        <option value="bundled-php-predefined-ba97393d7c68-8f0632a2a215-com.jetbrains.php.sharedIndexes-PS-241.14494.237" />
       </set>
     </attachedChunks>
   </component>
@@ -164,7 +160,11 @@
       <workItem from="1707469579605" duration="581000" />
       <workItem from="1708428754545" duration="3489000" />
       <workItem from="1708520897000" duration="2841000" />
-      <workItem from="1709646242994" duration="270000" />
+      <workItem from="1709646242994" duration="883000" />
+      <workItem from="1711030003420" duration="641000" />
+      <workItem from="1711116596912" duration="597000" />
+      <workItem from="1711354202778" duration="597000" />
+      <workItem from="1713873093948" duration="2399000" />
     </task>
     <task id="LOCAL-00087" summary="Initial code for new edit slip in entry refactor">
       <created>1618927085562</created>
@@ -509,7 +509,7 @@
       <option name="project" value="LOCAL" />
       <updated>1700233733974</updated>
     </task>
-    <option name="localTasksCounter" value="146" />
+    <option name="localTasksCounter" value="147" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -530,7 +530,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added cancel functionality to edit forms for both writers and texts" />
     <MESSAGE value="Changed references to &quot;Aidhleags&quot; to &quot;MEANMA&quot;" />
     <MESSAGE value="Basic restructuring to display MS in rudimentary form" />
     <MESSAGE value="Fixed issue where 2 files were a commit behind working version" />
@@ -555,6 +554,7 @@
     <MESSAGE value="Ran the lemmatiser over texts 190, 192, and all volumes of 102" />
     <MESSAGE value="Removed the raw status from newly lemmatised files: 190.xml, 192.xml, and all vols of 102." />
     <MESSAGE value="Changed status of 102-1.xml to 'raw'" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed status of 102-1.xml to 'raw'" />
+    <MESSAGE value="Changed status of 102-1.xml to empty" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed status of 102-1.xml to empty" />
   </component>
 </project>
