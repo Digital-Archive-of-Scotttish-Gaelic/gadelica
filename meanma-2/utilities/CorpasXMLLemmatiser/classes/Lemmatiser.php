@@ -10,13 +10,20 @@ class Lemmatiser
 		$this->_iterator = new RecursiveDirectoryIterator(INPUT_FILEPATH);
 	}
 
-	public function createLexicon() {
+    private $filesToSkip = array('126.xml', '127.xml', '128-1.xml', '192.xml');     //currently invalid XML files to be fixed
+
+
+    public function createLexicon() {
 		$words = [];
 		foreach (new RecursiveIteratorIterator($this->_iterator) as $nextFile) {
+            if (in_array($nextFile->getFilename(), $this->filesToSkip)) {
+                continue;
+            }
 			if ($nextFile->getExtension()=='xml') {
 				$xml = simplexml_load_file($nextFile);
 
-        echo "\n\n\n----- " . $nextFile . " -------\n\n\n";
+        echo "\n\n\n----- " . $nextFile->getFilename() . " -------\n\n\n";
+
             if ($xml != false) {
                 $xml->registerXPathNamespace('dasg', 'https://dasg.ac.uk/corpus/');
                 $status = isset($xml->xpath("/dasg:text/@status")[0]) ? $xml->xpath("/dasg:text/@status")[0] : '';
@@ -69,6 +76,11 @@ class Lemmatiser
 	public function tagFiles() {
 		foreach (new RecursiveIteratorIterator($this->_iterator) as $nextFile) {
 			if ($nextFile->getExtension()=='xml') {
+                echo "\n\n\n--TAG--- " . $nextFile->getFilename() . " -------\n\n\n";
+
+                if (in_array($nextFile->getFilename(), $this->filesToSkip)) {
+                    continue;
+                }
 				$xml = simplexml_load_file($nextFile);
 				$xml->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/');
 				$status = $xml->xpath("/dasg:text/@status")[0];
