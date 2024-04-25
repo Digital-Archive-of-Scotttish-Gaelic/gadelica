@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="Some XML fixes">
+    <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="190.xml lemmatised&#10;Some XML fixes&#10;Added skipFiles array to lemmatiser to avoid invalid XML files.">
+      <change afterPath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/inputFiles/192 Foirm na n-urrnuidheadh_teacsa.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/outputFiles/192_Foirm_na_n-urrnuidheadh.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/190.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/190.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meanma-2/192.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/192.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLLemmatiser/classes/Lemmatiser.php" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLLemmatiser/classes/Lemmatiser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLLemmatiser/includes.php" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLLemmatiser/includes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/outputFiles/bbc_test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/outputFiles/bbc_test.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +164,7 @@
       <workItem from="1711116596912" duration="597000" />
       <workItem from="1711354202778" duration="597000" />
       <workItem from="1713873093948" duration="9069000" />
-      <workItem from="1714032365044" duration="5483000" />
+      <workItem from="1714032365044" duration="8496000" />
     </task>
     <task id="LOCAL-00087" summary="Initial code for new edit slip in entry refactor">
       <created>1618927085562</created>
@@ -511,7 +509,7 @@
       <option name="project" value="LOCAL" />
       <updated>1700233733974</updated>
     </task>
-    <option name="localTasksCounter" value="149" />
+    <option name="localTasksCounter" value="150" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -532,7 +530,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fixed issue where 2 files were a commit behind working version" />
     <MESSAGE value="Text pages now appear in new RHS col instead of new browser tab" />
     <MESSAGE value="Some work on Hands - needs further work on Handshift XPath" />
     <MESSAGE value="Minor tweak to hand shift code" />
@@ -557,6 +554,7 @@
     <MESSAGE value="Changed status of 102-1.xml to empty" />
     <MESSAGE value="Work on the lemmatiser to use a database lexicon" />
     <MESSAGE value="Some XML fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some XML fixes" />
+    <MESSAGE value="190.xml lemmatised&#10;Some XML fixes&#10;Added skipFiles array to lemmatiser to avoid invalid XML files." />
+    <option name="LAST_COMMIT_MESSAGE" value="190.xml lemmatised&#10;Some XML fixes&#10;Added skipFiles array to lemmatiser to avoid invalid XML files." />
   </component>
 </project>
