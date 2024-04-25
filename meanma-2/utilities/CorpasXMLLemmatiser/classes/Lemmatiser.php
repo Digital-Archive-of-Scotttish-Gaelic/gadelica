@@ -15,18 +15,28 @@ class Lemmatiser
 		foreach (new RecursiveIteratorIterator($this->_iterator) as $nextFile) {
 			if ($nextFile->getExtension()=='xml') {
 				$xml = simplexml_load_file($nextFile);
-				$xml->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/');
-				$status = $xml->xpath("/dasg:text/@status")[0];
-				if ($status == 'tagged') {
-					foreach ($xml->xpath("//dasg:w") as $nextWord) {
-						$form = $nextWord;
-						$lemma = (string)$nextWord['lemma'];
-						if ($lemma=='') { $lemma = $form; }
-						if (strtolower($lemma[0]) == $lemma[0]) { $form = strtolower($form); }
-						$pos = (string)$nextWord['pos'];
-						$words[] = $form . '|' . $lemma . '|' . $pos;
-					}
-				}
+
+        echo "\n\n\n----- " . $nextFile . " -------\n\n\n";
+            if ($xml != false) {
+                $xml->registerXPathNamespace('dasg', 'https://dasg.ac.uk/corpus/');
+                $status = isset($xml->xpath("/dasg:text/@status")[0]) ? $xml->xpath("/dasg:text/@status")[0] : '';
+                if ($status == 'tagged') {
+                    foreach ($xml->xpath("//dasg:w") as $nextWord) {
+                        $form = $nextWord;
+                        $lemma = (string)$nextWord['lemma'];
+                        if ($lemma == '') {
+                            $lemma = $form;
+                        }
+                        if (strtolower($lemma[0]) == $lemma[0]) {
+                            $form = strtolower($form);
+                        }
+                        $pos = (string)$nextWord['pos'];
+                        $words[] = $form . '|' . $lemma . '|' . $pos;
+                    }
+                }
+            }
+
+
 			}
 		}
 		usort($words,'gdSort');
@@ -66,18 +76,20 @@ class Lemmatiser
 					foreach ($xml->xpath("//dasg:w") as $nextWord) {
 
                         //check the DB for a lemma
-                        $db = DB::getDatabaseHandle();
-                        $sql = "SELECT l.word AS lemma FROM lemma l JOIN form f ON f.lemma_id = l.id WHERE f.word = '" . (string)$nextWord . "'";
+/*                        $db = DB::getDatabaseHandle();
+                        $sql = "SELECT l.word AS lemma FROM lemma l JOIN form_modern f ON f.lemma_id = l.id WHERE f.word = '" . (string)$nextWord . "'";
                         $stmt = $db->prepare($sql);
                         $stmt->execute();
                         $result = $stmt->fetch(PDO::FETCH_ASSOC);
                         if ($result) {
-                            echo "\nnextWord : " . (string)$nextWord . " - lemma : " . $result['lemma'] . "\n";
+                            echo "\nnextWord : " . (string)$nextWord . " - lemma : " . $result['lemma'];
+                        } else {
+                            echo "\nnextWord : " . (string)$nextWord . " - NOCHANGE : ";
                         }
 
 
                         //$nextWord["lemma"] = $result['lemma'];
-                    /*
+*/
 						if ($this->_lexicon[(string)$nextWord]) {
 							$bits = explode('|',$this->_lexicon[(string)$nextWord]);
 							$nextWord['lemma'] = $bits[0];
@@ -111,7 +123,7 @@ class Lemmatiser
 								}
 							}
 						}
-                        */
+
 					}
 					$xml->asXML($nextFile);
 				}

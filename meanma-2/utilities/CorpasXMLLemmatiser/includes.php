@@ -1,11 +1,8 @@
 <?php
 
 //constants
-//define("INPUT_FILEPATH", "../../gadelica/xml");   //for local testing only
-define("INPUT_FILEPATH", "../../../meanma-2/utilities/CorpasXMLParser/outputFiles");
-
-
-//define("INPUT_FILEPATH", "../../../meanma-2");
+//define("INPUT_FILEPATH", "../CorpasXMLParser/outputFiles");   //DB lemmatise test
+define("INPUT_FILEPATH", "../../../meanma-2");
 
 //DB
 /*define(DB_HOST, "localhost");
