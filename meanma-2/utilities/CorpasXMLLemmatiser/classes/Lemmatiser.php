@@ -88,20 +88,29 @@ class Lemmatiser
 					foreach ($xml->xpath("//dasg:w") as $nextWord) {
 
                         //check the DB for a lemma
-/*                        $db = DB::getDatabaseHandle();
-                        $sql = "SELECT l.word AS lemma FROM lemma l JOIN form_modern f ON f.lemma_id = l.id WHERE f.word = '" . (string)$nextWord . "'";
+                        $db = DB::getDatabaseHandle();
+                        $word = (string)$nextWord;
+                        $sql = <<<SQL
+                            SELECT l.word AS lemma FROM lemma l 
+                                JOIN form_tagged f ON f.lemma_id = l.id 
+                                                   WHERE f.word = '{$word}' 
+SQL;
+
+
+                        //name COLLATE utf8_bin = 'your_search_term' COLLATE utf8_bin;
                         $stmt = $db->prepare($sql);
                         $stmt->execute();
                         $result = $stmt->fetch(PDO::FETCH_ASSOC);
                         if ($result) {
                             echo "\nnextWord : " . (string)$nextWord . " - lemma : " . $result['lemma'];
                         } else {
-                            echo "\nnextWord : " . (string)$nextWord . " - NOCHANGE : ";
+                            echo "\nnextWord : " . (string)$nextWord . " - NO MATCH : ";
                         }
+                        continue;
 
 
                         //$nextWord["lemma"] = $result['lemma'];
-*/
+
 						if ($this->_lexicon[(string)$nextWord]) {
 							$bits = explode('|',$this->_lexicon[(string)$nextWord]);
 							$nextWord['lemma'] = $bits[0];

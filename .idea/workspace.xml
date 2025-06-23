@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="190.xml lemmatised&#10;Some XML fixes&#10;Added skipFiles array to lemmatiser to avoid invalid XML files.">
-      <change afterPath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/inputFiles/192 Foirm na n-urrnuidheadh_teacsa.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/outputFiles/192_Foirm_na_n-urrnuidheadh.xml" afterDir="false" />
+    <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="Fixes to order of 192.xml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meanma-2/192.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/192.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLLemmatiser/includes.php" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLLemmatiser/includes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/outputFiles/bbc_test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/outputFiles/bbc_test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meanma-2/gold.rnc" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/gold.rnc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLLemmatiser/classes/Lemmatiser.php" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLLemmatiser/classes/Lemmatiser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/inputFiles/192 Foirm na n-urrnuidheadh_teacsa.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/outputFiles/192_Foirm_na_n-urrnuidheadh.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +35,12 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "steviebarrett"
+  }
+}]]></component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
       <filtered-out-file-type name="LOCAL_BRANCH" />
@@ -43,6 +49,12 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:Digital-Archive-of-Scotttish-Gaelic/gadelica.git",
+    "accountId": "a9ed45fd-1a43-4d71-ace4-a1beb8edc142"
+  }
+}]]></component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/opt/homebrew/Cellar/php/8.2.8/bin/php" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -55,22 +67,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/stephen.barrett/Sites/gadelica/meanma-1&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/Users/stephen.barrett/Sites/gadelica/meanma-1",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/meanma-1" />
@@ -88,8 +102,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-PS-241.14494.237" />
-        <option value="bundled-php-predefined-ba97393d7c68-8f0632a2a215-com.jetbrains.php.sharedIndexes-PS-241.14494.237" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-PS-251.23774.466" />
+        <option value="bundled-php-predefined-a98d8de5180a-aaeaa8632555-com.jetbrains.php.sharedIndexes-PS-251.23774.466" />
       </set>
     </attachedChunks>
   </component>
@@ -164,7 +178,22 @@
       <workItem from="1711116596912" duration="597000" />
       <workItem from="1711354202778" duration="597000" />
       <workItem from="1713873093948" duration="9069000" />
-      <workItem from="1714032365044" duration="8496000" />
+      <workItem from="1714032365044" duration="12589000" />
+      <workItem from="1714477850452" duration="793000" />
+      <workItem from="1714478741134" duration="597000" />
+      <workItem from="1714549851449" duration="2934000" />
+      <workItem from="1715157766712" duration="1196000" />
+      <workItem from="1715250771828" duration="1246000" />
+      <workItem from="1715679459238" duration="1139000" />
+      <workItem from="1715769309783" duration="2760000" />
+      <workItem from="1717505368939" duration="623000" />
+      <workItem from="1718011471773" duration="643000" />
+      <workItem from="1719315556066" duration="1204000" />
+      <workItem from="1721116204227" duration="598000" />
+      <workItem from="1721895867467" duration="587000" />
+      <workItem from="1722410558506" duration="555000" />
+      <workItem from="1723217737580" duration="576000" />
+      <workItem from="1748517756489" duration="10749000" />
     </task>
     <task id="LOCAL-00087" summary="Initial code for new edit slip in entry refactor">
       <created>1618927085562</created>
@@ -509,7 +538,7 @@
       <option name="project" value="LOCAL" />
       <updated>1700233733974</updated>
     </task>
-    <option name="localTasksCounter" value="150" />
+    <option name="localTasksCounter" value="151" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -530,7 +559,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Text pages now appear in new RHS col instead of new browser tab" />
     <MESSAGE value="Some work on Hands - needs further work on Handshift XPath" />
     <MESSAGE value="Minor tweak to hand shift code" />
     <MESSAGE value="Hands and handshifts now working" />
@@ -555,6 +583,7 @@
     <MESSAGE value="Work on the lemmatiser to use a database lexicon" />
     <MESSAGE value="Some XML fixes" />
     <MESSAGE value="190.xml lemmatised&#10;Some XML fixes&#10;Added skipFiles array to lemmatiser to avoid invalid XML files." />
-    <option name="LAST_COMMIT_MESSAGE" value="190.xml lemmatised&#10;Some XML fixes&#10;Added skipFiles array to lemmatiser to avoid invalid XML files." />
+    <MESSAGE value="Fixes to order of 192.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixes to order of 192.xml" />
   </component>
 </project>

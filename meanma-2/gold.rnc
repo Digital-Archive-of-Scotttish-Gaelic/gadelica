@@ -1,3 +1,4 @@
+
 datatypes xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
 default namespace = "https://dasg.ac.uk/corpus/"
 
@@ -10,9 +11,11 @@ Text = element text {
 }
 
 #Block = ( Paragraph | Heading | Verse | List | Utterance | Text | Page | Note )
-Block = ( Verse | Paragraph | Heading | PageBreak | Rule | Turn | Text)
+Block = ( Verse | Paragraph | Heading | PageBreak | Rule | Turn | Text | Note)
 Heading = element h { Token+ }
-Verse = element lg { Token+ }
+
+Verse = element lg { (Line | Note | PageBreak | Verse)* }
+Line = element l { Token+ }
 
 PageBreak = element pb {attribute n { text }, attribute img { text }? }
 
@@ -26,7 +29,15 @@ Sentence = element s { (Token | PageBreak | element i { Token+ } )+ }
 Note = element note { text }
 
 Token = ( 
-            element w { attribute wid {xsd:ID}, attribute id {text}?, attribute pos {text}?, attribute lemma {text}?, attribute join { "left" }?, text } 
+            element w {
+              attribute wid {xsd:ID},
+              attribute id {text}?,
+              attribute pos {text}?,
+              attribute lemma {text}?,
+              attribute join { "left" }?,
+              attribute xml:lang { text }?,
+              text
+            } 
           | element pc {attribute join {"no"|"left"|"right"|"both"}, text} 
           | element o { text } 
           | element lb {attribute n { text }? }
@@ -36,5 +47,3 @@ Token = (
           | element footnote { attribute n { text }, Block+ }
           | element x { attribute type { "name"|"time-adverbial" }, Token+ }
         )
-
-
