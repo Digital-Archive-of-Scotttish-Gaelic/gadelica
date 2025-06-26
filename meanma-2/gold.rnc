@@ -11,10 +11,10 @@ Text = element text {
 }
 
 Block = ( Verse | Paragraph | Heading | PageBreak | Rule | Turn | Text | Note)
-Heading = element h { Token+ }
+Heading = element h { (Token | Note)+ }
 
 Verse = element lg { (Line | Note | PageBreak | Verse)* }
-Line = element l { Token+ }
+Line = element l { (Token | Note | text)+ }
 
 PageBreak = element pb {attribute n { text }, attribute img { text }? }
 
@@ -25,7 +25,12 @@ List = element list { (element label { Token* }, element item { Token+ })+ }
 Turn = element t { attribute ref { xsd:anyURI }?, Token+ }
 
 Sentence = element s { (Token | PageBreak | element i { Token+ } )+ }
-Note = element note { text }
+Note = element note {
+  attribute type { text }?,
+  attribute xml:lang { text }?,
+  attribute resp { text }?,
+  text
+}
 
 Form = element form {
   attribute type { text },
