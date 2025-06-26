@@ -10,7 +10,6 @@ Text = element text {
   Block+
 }
 
-#Block = ( Paragraph | Heading | Verse | List | Utterance | Text | Page | Note )
 Block = ( Verse | Paragraph | Heading | PageBreak | Rule | Turn | Text | Note)
 Heading = element h { Token+ }
 
@@ -28,7 +27,13 @@ Turn = element t { attribute ref { xsd:anyURI }?, Token+ }
 Sentence = element s { (Token | PageBreak | element i { Token+ } )+ }
 Note = element note { text }
 
-Token = ( 
+Form = element form {
+  attribute type { text },
+  attribute lemma { text },
+  text
+}
+
+Token = (
             element w {
               attribute wid {xsd:ID},
               attribute id {text}?,
@@ -36,10 +41,10 @@ Token = (
               attribute lemma {text}?,
               attribute join { "left" }?,
               attribute xml:lang { text }?,
-              text
-            } 
-          | element pc {attribute join {"no"|"left"|"right"|"both"}, text} 
-          | element o { text } 
+              (text | Form)*
+            }
+          | element pc {attribute join {"no"|"left"|"right"|"both"}, text}
+          | element o { text }
           | element lb {attribute n { text }? }
           | PageBreak
           | element sb { empty }
