@@ -19,7 +19,7 @@ Line = element l { Token+ }
 
 PageBreak = element pb {attribute n { text }, attribute img { text }? }
 
-Paragraph = element p { (Token | Note)+ }
+Paragraph = element p { (Token | Note | text)+ }
 Rule = element hr { empty }
 
 List = element list { (element label { Token* }, element item { Token+ })+ }
