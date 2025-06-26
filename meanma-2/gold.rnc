@@ -13,7 +13,7 @@ Text = element text {
 Block = ( Verse | Paragraph | Heading | PageBreak | Rule | Turn | Text | Note)
 Heading = element h { (Token | Note)+ }
 
-Verse = element lg { (Line | Note | PageBreak | Verse)* }
+Verse = element lg { (Line | Note | PageBreak | Verse | element lb { attribute n { text }? })* }
 Line = element l { (Token | Note | text)+ }
 
 PageBreak = element pb {attribute n { text }, attribute img { text }? }
