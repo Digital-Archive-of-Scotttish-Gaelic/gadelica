@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="Fixes to order of 192.xml">
+    <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="updates to schema to allow translation notes &#10;fixes to 102-2.xml">
+      <change afterPath="$PROJECT_DIR$/meanma-2/190_with_wrapped_words.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/192.xml" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/192.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/gold.rnc" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/gold.rnc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLLemmatiser/classes/Lemmatiser.php" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLLemmatiser/classes/Lemmatiser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/inputFiles/192 Foirm na n-urrnuidheadh_teacsa.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/outputFiles/192_Foirm_na_n-urrnuidheadh.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +189,7 @@
       <workItem from="1721895867467" duration="587000" />
       <workItem from="1722410558506" duration="555000" />
       <workItem from="1723217737580" duration="576000" />
-      <workItem from="1748517756489" duration="10749000" />
+      <workItem from="1748517756489" duration="13486000" />
     </task>
     <task id="LOCAL-00087" summary="Initial code for new edit slip in entry refactor">
       <created>1618927085562</created>
@@ -538,7 +534,7 @@
       <option name="project" value="LOCAL" />
       <updated>1700233733974</updated>
     </task>
-    <option name="localTasksCounter" value="151" />
+    <option name="localTasksCounter" value="155" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -559,10 +555,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Some work on Hands - needs further work on Handshift XPath" />
-    <MESSAGE value="Minor tweak to hand shift code" />
-    <MESSAGE value="Hands and handshifts now working" />
-    <MESSAGE value="Fixed issue where texts were not being listed in correct order in browse view" />
     <MESSAGE value="Fixed issue where RHS column was not scrolling independently" />
     <MESSAGE value="Moved hand info to word panel&#10;Replaced scribe panel with metadata panel &#10;Removed word modal" />
     <MESSAGE value="Number of tweaks and bug fixes" />
@@ -584,6 +576,10 @@
     <MESSAGE value="Some XML fixes" />
     <MESSAGE value="190.xml lemmatised&#10;Some XML fixes&#10;Added skipFiles array to lemmatiser to avoid invalid XML files." />
     <MESSAGE value="Fixes to order of 192.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixes to order of 192.xml" />
+    <MESSAGE value="Fixes to XML in 192.xml&#10;Updated schema to allow for &lt;l&gt; tags in &lt;lg&gt;" />
+    <MESSAGE value="Update to schema to allow free text in &lt;p&gt; tags.&#10;fixes to 190.xml" />
+    <MESSAGE value="&#10;fixes to 102-1.xml" />
+    <MESSAGE value="updates to schema to allow translation notes &#10;fixes to 102-2.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="updates to schema to allow translation notes &#10;fixes to 102-2.xml" />
   </component>
 </project>
