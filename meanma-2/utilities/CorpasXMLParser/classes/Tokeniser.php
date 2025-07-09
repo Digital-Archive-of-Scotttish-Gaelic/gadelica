@@ -3,7 +3,7 @@
 class Tokeniser
 {
   private $_elems = array(
-    "/&(?!amp;)/u"                      => "&amp;",
+
     "/([.,;:?!’‘”“'\"\)\(\-–—\/])/u"    => "<pc>$1</pc>",
     "/\s<pc>(.)<\/pc>\s/u"              => " <pc join=\"no\">$1</pc> ",
     "/(\S)<pc>(.)<\/pc>(\S)/u"          => "$1 <pc join=\"both\">$2</pc> $3",
@@ -27,15 +27,29 @@ class Tokeniser
     "/(\S) </u"                         => "$1\n<",
     "/ </u"                             => "<",
     "/<w>(\w+)/u"                       => "<w pos=\"n\" lemma=\"$1\">$1",
-    "/<([a-z]{3})>/u"                   => "<$1/>"
+    "/<([a-z]{3})>/u"                   => "<$1/>",
+      "/&(?!amp;)/u"                      => "&amp;"
   );
 
-  public function run($text)
+  public function run($text, $textId)
   {
+    $text = str_replace(["<eng>", "<gai>"], "", $text); //delete all <eng> and <gai> 'tags'
     $text = "<p>" . $text;
     foreach ($this->_elems as $pattern => $tag) {
       $text = preg_replace($pattern, $tag, $text);
     }
+
+      // Now add wid attributes to all <w ...>
+      $wid = 1;
+      $text = preg_replace_callback(
+          '/<w([^>]*)>/u',
+          function($matches) use ($textId, &$wid) {
+              // Rebuild the <w> tag with wid
+              return "<w{$matches[1]} wid=\"_{$textId}_d" . $wid++ . "\">";
+          },
+          $text
+      );
+
     return $text;
   }
 

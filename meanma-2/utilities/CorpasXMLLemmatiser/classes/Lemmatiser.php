@@ -10,11 +10,21 @@ class Lemmatiser
 		$this->_iterator = new RecursiveDirectoryIterator(INPUT_FILEPATH);
 	}
 
-    private $filesToSkip = array('126.xml', '127.xml', '128-1.xml', '192.xml');     //currently invalid XML files to be fixed
+    private $filesToSkip = array();     //currently invalid XML files to be fixed
 
 
     public function createLexicon() {
-		$words = [];
+	//	$words = [];
+
+
+        $db = DB::getDatabaseHandle();
+        $sql = <<<SQL
+                            SELECT l.word AS lemma, l.id FROM lemma l 
+                                JOIN form_tagged f ON f.lemma_id = l.id 
+                                                   WHERE f.word = ? ORDER BY id DESC LIMIT 1
+SQL;
+        $stmt1 = $db->prepare($sql);
+
 		foreach (new RecursiveIteratorIterator($this->_iterator) as $nextFile) {
             if (in_array($nextFile->getFilename(), $this->filesToSkip)) {
                 continue;
@@ -29,7 +39,70 @@ class Lemmatiser
                 $status = isset($xml->xpath("/dasg:text/@status")[0]) ? $xml->xpath("/dasg:text/@status")[0] : '';
                 if ($status == 'tagged') {
                     foreach ($xml->xpath("//dasg:w") as $nextWord) {
-                        $form = $nextWord;
+
+                        //check for non-alphabetic characters
+                        if (!preg_match('/^\p{L}+$/u', $nextWord)) {
+                            // $string contains only letters, including accents (Unicode)
+                            echo "\n\n----- IGNORING " . $nextWord . " -------\n\n";
+                            continue;
+                        }
+
+                        $wordform = strtolower($nextWord);
+                        $lemma = (string)$nextWord['lemma'];
+
+                        //check the DB for a lemma
+                        $stmt1->execute(array($wordform));
+
+                        $result = $stmt1->fetch(PDO::FETCH_ASSOC);
+                        if ($result) {
+                            echo "\nnextWord : " . (string)$nextWord . " - DBlemma : " . $result['lemma'] . " - xmlLemma : " . $lemma;
+                        } else {
+                            $db->beginTransaction();
+
+                            try {
+                                // Step 1: Check if the lemma already exists
+                                $stmt = $db->prepare("SELECT id FROM lemma_xml WHERE word = :lemma_word");
+                                $stmt->execute([':lemma_word' => $lemma]);
+                                $lemma_id = $stmt->fetchColumn();
+
+                                // Step 2: Insert the lemma if it doesn't exist
+                                if (!$lemma_id) {
+                                    $stmt = $db->prepare("INSERT INTO lemma_xml (word) VALUES (:lemma_word)");
+                                    $stmt->execute([':lemma_word' => $lemma]);
+                                    $lemma_id = $db->lastInsertId();
+                                }
+
+                                // Step 3: Check if the word + lemma_id already exists in form_tagged_xml
+                                $stmt = $db->prepare("
+        SELECT COUNT(*) FROM form_tagged_xml
+        WHERE word = :form_word AND lemma_id = :lemma_id
+    ");
+                                $stmt->execute([
+                                    ':form_word' => $wordform,
+                                    ':lemma_id' => $lemma_id
+                                ]);
+                                $exists = $stmt->fetchColumn();
+
+                                // Step 4: Insert only if it doesn't already exist
+                                if (!$exists) {
+                                    $stmt = $db->prepare("
+            INSERT INTO form_tagged_xml (word, lemma_id)
+            VALUES (:form_word, :lemma_id)
+        ");
+                                    $stmt->execute([
+                                        ':form_word' => $wordform,
+                                        ':lemma_id' => $lemma_id
+                                    ]);
+                                }
+
+                                $db->commit();
+                            } catch (Exception $e) {
+                                $db->rollBack();
+                                throw $e;
+                            }
+                        }
+
+                        /*
                         $lemma = (string)$nextWord['lemma'];
                         if ($lemma == '') {
                             $lemma = $form;
@@ -39,6 +112,7 @@ class Lemmatiser
                         }
                         $pos = (string)$nextWord['pos'];
                         $words[] = $form . '|' . $lemma . '|' . $pos;
+                        */
                     }
                 }
             }
@@ -74,6 +148,25 @@ class Lemmatiser
 	}
 
 	public function tagFiles() {
+        $db = DB::getDatabaseHandle();
+
+        //query the Faclair Beag lemmas
+        $sql = <<<SQL
+                            SELECT l.word AS lemma FROM lemma l 
+                                JOIN form_tagged f ON f.lemma_id = l.id 
+                                                   WHERE f.word = ?
+SQL;
+
+        $stmt1 = $db->prepare($sql);
+
+        //query the 'XML lemmas'
+        $sql2 = <<<SQL
+                            SELECT l.word AS lemma FROM lemma_xml l 
+                                JOIN form_tagged_xml f ON f.lemma_id = l.id 
+                                                   WHERE f.word = ?
+SQL;
+        $stmt2 = $db->prepare($sql2);
+
 		foreach (new RecursiveIteratorIterator($this->_iterator) as $nextFile) {
 			if ($nextFile->getExtension()=='xml') {
                 echo "\n\n\n--TAG--- " . $nextFile->getFilename() . " -------\n\n\n";
@@ -87,30 +180,25 @@ class Lemmatiser
 				if ($status == 'raw') {
 					foreach ($xml->xpath("//dasg:w") as $nextWord) {
 
+                        $lemma = $nextWord->lemma;
+
                         //check the DB for a lemma
-                        $db = DB::getDatabaseHandle();
-                        $word = (string)$nextWord;
-                        $sql = <<<SQL
-                            SELECT l.word AS lemma FROM lemma l 
-                                JOIN form_tagged f ON f.lemma_id = l.id 
-                                                   WHERE f.word = '{$word}' 
-SQL;
-
-
-                        //name COLLATE utf8_bin = 'your_search_term' COLLATE utf8_bin;
-                        $stmt = $db->prepare($sql);
-                        $stmt->execute();
-                        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                        $stmt1->execute(array($nextWord));
+                        $result = $stmt1->fetch(PDO::FETCH_ASSOC);
                         if ($result) {
-                            echo "\nnextWord : " . (string)$nextWord . " - lemma : " . $result['lemma'];
+                            $lemma = $result['lemma'];
+                            echo "\nnextWord : " . (string)$nextWord . " - lemma : " . $lemma;
                         } else {
-                            echo "\nnextWord : " . (string)$nextWord . " - NO MATCH : ";
+                            $stmt2->execute(array($nextWord));
+
+                            if ($result2 = $stmt2->fetch(PDO::FETCH_ASSOC)) {
+                                $lemma = $result2['lemma'];
+                                echo "\nnextWord : " . $nextWord . " - XML MATCH : " . $lemma;
+                            } else { echo "\n NO MATCH in either DB for {$nextWord}\n}"; }
                         }
-                        continue;
 
-
-                        //$nextWord["lemma"] = $result['lemma'];
-
+                        $nextWord["lemma"] = $lemma;
+/*
 						if ($this->_lexicon[(string)$nextWord]) {
 							$bits = explode('|',$this->_lexicon[(string)$nextWord]);
 							$nextWord['lemma'] = $bits[0];
@@ -144,6 +232,7 @@ SQL;
 								}
 							}
 						}
+*/
 
 					}
 					$xml->asXML($nextFile);

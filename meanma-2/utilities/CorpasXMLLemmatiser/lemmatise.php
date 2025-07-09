@@ -6,7 +6,9 @@ require_once 'includes.php';
 $startTime = new DateTime();
 
 $lemmatiser = new Lemmatiser();
-$lemmatiser->createLexicon();
+
+echo "Lexicon has been created\n\n";
+//$lemmatiser->createLexicon();
 $lemmatiser->tagFiles();
 
 $elapsedTime = $startTime->diff(new DateTime());
