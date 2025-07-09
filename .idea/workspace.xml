@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="Removed Mark's XML files and added some rules to ignore inputFiles and outputFiles">
+    <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="Fixed bug where inputFile in format 600001.txt would use that entire filename as text ref in XML">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/classes/XMLOutput.php" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/classes/XMLOutput.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLLemmatiser/classes/Lemmatiser.php" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLLemmatiser/classes/Lemmatiser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLLemmatiser/lemmatise.php" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLLemmatiser/lemmatise.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/classes/Tokeniser.php" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/classes/Tokeniser.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +193,7 @@
       <workItem from="1722410558506" duration="555000" />
       <workItem from="1723217737580" duration="576000" />
       <workItem from="1748517756489" duration="27501000" />
-      <workItem from="1752049822267" duration="10323000" />
+      <workItem from="1752049822267" duration="15518000" />
     </task>
     <task id="LOCAL-00087" summary="Initial code for new edit slip in entry refactor">
       <created>1618927085562</created>
@@ -536,7 +538,7 @@
       <option name="project" value="LOCAL" />
       <updated>1700233733974</updated>
     </task>
-    <option name="localTasksCounter" value="164" />
+    <option name="localTasksCounter" value="165" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -557,7 +559,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fixed error in meanma-1/126.xml" />
     <MESSAGE value="Fixed XML tag error in meanma-2/126.xml" />
     <MESSAGE value="Updated the status of some meanma-2 texts to &quot;raw&quot; for lemmatisiation" />
     <MESSAGE value="Ran the lemmatiser over texts 190, 192, and all volumes of 102" />
@@ -582,6 +583,7 @@
     <MESSAGE value="Reworked tokeniser to ensure generation of Word IDs (wid); correct text ref (using text ID only); application of hyphens-apostrophe.xsl; and numerous bug fixes." />
     <MESSAGE value="Added corpus folder and hid Mark's XML corpus in the mmconv folder" />
     <MESSAGE value="Removed Mark's XML files and added some rules to ignore inputFiles and outputFiles" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed Mark's XML files and added some rules to ignore inputFiles and outputFiles" />
+    <MESSAGE value="Fixed bug where inputFile in format 600001.txt would use that entire filename as text ref in XML" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug where inputFile in format 600001.txt would use that entire filename as text ref in XML" />
   </component>
 </project>

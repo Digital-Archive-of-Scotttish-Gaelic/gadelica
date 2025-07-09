@@ -169,7 +169,7 @@ SQL;
 
 		foreach (new RecursiveIteratorIterator($this->_iterator) as $nextFile) {
 			if ($nextFile->getExtension()=='xml') {
-                echo "\n\n\n--TAG--- " . $nextFile->getFilename() . " -------\n\n\n";
+
 
                 if (in_array($nextFile->getFilename(), $this->filesToSkip)) {
                     continue;
@@ -178,6 +178,9 @@ SQL;
 				$xml->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/');
 				$status = $xml->xpath("/dasg:text/@status")[0];
 				if ($status == 'raw') {
+
+                    echo "\n\n\n--TAGGING--- " . $nextFile->getFilename() . " -------\n\n\n";
+
 					foreach ($xml->xpath("//dasg:w") as $nextWord) {
 
                         $lemma = $nextWord->lemma;
@@ -187,13 +190,13 @@ SQL;
                         $result = $stmt1->fetch(PDO::FETCH_ASSOC);
                         if ($result) {
                             $lemma = $result['lemma'];
-                            echo "\nnextWord : " . (string)$nextWord . " - lemma : " . $lemma;
+          //                  echo "\nnextWord : " . (string)$nextWord . " - lemma : " . $lemma;
                         } else {
                             $stmt2->execute(array($nextWord));
 
                             if ($result2 = $stmt2->fetch(PDO::FETCH_ASSOC)) {
                                 $lemma = $result2['lemma'];
-                                echo "\nnextWord : " . $nextWord . " - XML MATCH : " . $lemma;
+          //                      echo "\nnextWord : " . $nextWord . " - XML MATCH : " . $lemma;
                             } else { echo "\n NO MATCH in either DB for {$nextWord}\n}"; }
                         }
 
@@ -235,6 +238,11 @@ SQL;
 */
 
 					}
+                    $nodes = $xml->xpath('/dasg:text');
+                    if ($nodes && count($nodes)) {
+                        $textNode = $nodes[0];
+                        $textNode['status'] = 'tagged';
+                    }
 					$xml->asXML($nextFile);
 				}
 			}

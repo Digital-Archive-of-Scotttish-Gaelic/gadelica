@@ -28,7 +28,9 @@ class Tokeniser
     "/ </u"                             => "<",
     "/<w>(\w+)/u"                       => "<w pos=\"n\" lemma=\"$1\">$1",
     "/<([a-z]{3})>/u"                   => "<$1/>",
-      "/&(?!amp;)/u"                      => "&amp;"
+      "/&(?!amp;)/u"                    => "&amp;",
+      "/< /u"                           => "&lt; "
+
   );
 
   public function run($text, $textId)
