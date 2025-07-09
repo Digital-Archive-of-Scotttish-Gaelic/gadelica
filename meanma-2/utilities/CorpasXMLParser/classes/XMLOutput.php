@@ -4,6 +4,7 @@
 class XMLOutput
 {
   public function getHeader($textId) {
+    $textId = str_replace(".txt", "", $textId);
     $output = <<<XML
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="gold.rnc" schematypens="https://relaxng.org/ns/structure/1.0?>
