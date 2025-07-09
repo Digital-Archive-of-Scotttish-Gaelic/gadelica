@@ -1,0 +1,59 @@
+
+datatypes xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
+default namespace = "https://dasg.ac.uk/corpus/"
+
+start = Text
+
+Text = element text {
+  attribute ref { xsd:anyURI } ,
+  attribute status { "tagged"|"raw" }? ,
+  Block+
+}
+
+Block = ( Verse | Paragraph | Heading | PageBreak | Rule | Turn | Text | Note)
+Heading = element h { (Token | Note)+ }
+
+Verse = element lg { (Line | Note | PageBreak | Verse | element lb { attribute n { text }? })* }
+Line = element l { (Token | Note | text)+ }
+
+PageBreak = element pb {attribute n { text }, attribute img { text }? }
+
+Paragraph = element p { (Token | Note | text)+ }
+Rule = element hr { empty }
+
+List = element list { (element label { Token* }, element item { Token+ })+ }
+Turn = element t { attribute ref { xsd:anyURI }?, Token+ }
+
+Sentence = element s { (Token | PageBreak | element i { Token+ } )+ }
+Note = element note {
+  attribute type { text }?,
+  attribute xml:lang { text }?,
+  attribute resp { text }?,
+  text
+}
+
+Form = element form {
+  attribute type { text },
+  attribute lemma { text },
+  text
+}
+
+Token = (
+            element w {
+              attribute wid {xsd:ID},
+              attribute id {text}?,
+              attribute pos {text}?,
+              attribute lemma {text}?,
+              attribute join { "left" }?,
+              attribute xml:lang { text }?,
+              (text | Form)*
+            }
+          | element pc {attribute join {"no"|"left"|"right"|"both"}, text}
+          | element o { text }
+          | element lb {attribute n { text }? }
+          | PageBreak
+          | element sb { empty }
+          | element pause { text }
+          | element footnote { attribute n { text }, Block+ }
+          | element x { attribute type { "name"|"time-adverbial" }, Token+ }
+        )
