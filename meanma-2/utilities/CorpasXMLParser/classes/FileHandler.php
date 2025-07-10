@@ -27,7 +27,7 @@ class FileHandler
     $fileContents .= $xml->getFooter();
 
     //run the transformation(s)
-  //  $fileContents = $this->applyXSLT($fileContents);
+    $fileContents = $this->applyXSLT($fileContents);
     file_put_contents(OUTPUT_FILEPATH . $id . ".xml", $fileContents);
   }
 

@@ -174,8 +174,18 @@ SQL;
                 if (in_array($nextFile->getFilename(), $this->filesToSkip)) {
                     continue;
                 }
-				$xml = simplexml_load_file($nextFile);
-				$xml->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/');
+                try {
+                    $xml = @simplexml_load_file($nextFile);
+                    if ($xml === false) {
+                        throw new Exception("Failed to load XML file: $nextFile");
+                    }
+                    $xml->registerXPathNamespace('dasg','https://dasg.ac.uk/corpus/');
+                }
+                catch (Exception $e) {
+                    echo "Error processing file: $nextFile\n";
+                    echo "Details: " . $e->getMessage();
+                    die();
+                }
 				$status = $xml->xpath("/dasg:text/@status")[0];
 				if ($status == 'raw') {
 
