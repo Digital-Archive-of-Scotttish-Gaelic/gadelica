@@ -7,7 +7,7 @@ class Lemmatiser
 	private $_iterator;
 
 	public function __construct() {
-		$this->_iterator = new RecursiveDirectoryIterator(INPUT_FILEPATH);
+		$this->_iterator = new RecursiveDirectoryIterator(XML_FILEPATH);
 	}
 
     private $filesToSkip = array();     //currently invalid XML files to be fixed

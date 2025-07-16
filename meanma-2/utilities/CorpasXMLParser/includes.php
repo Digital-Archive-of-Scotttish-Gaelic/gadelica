@@ -3,8 +3,8 @@
 //constants
 
 //test dirs
-define('INPUT_FILEPATH', "inputFiles/");
-define('OUTPUT_FILEPATH', "outputFiles/");
+define('TXT_FILEPATH', "txtFiles/");
+define('XML_FILEPATH', "xmlFiles/");
 
 //define('INPUT_FILEPATH', "../../editableTXT/");
 //define('OUTPUT_FILEPATH', "../../outXML/");

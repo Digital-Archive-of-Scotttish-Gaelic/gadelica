@@ -1,7 +1,8 @@
 <?php
 
 //constants
-define("INPUT_FILEPATH", "../CorpasXMLParser/outputFiles");
+define("TXT_FILEPATH", "../CorpasXMLParser/txtFiles");
+define("XML_FILEPATH", "../CorpasXMLParser/xmlFiles");
 //define("INPUT_FILEPATH", "../../../meanma-2");    //lemmatise ALL XML files
 
 //DB

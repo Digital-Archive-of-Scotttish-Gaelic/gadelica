@@ -21,14 +21,14 @@ class FileHandler
 
     //$fileContents = htmlspecialchars($header->get($textId), ENT_HTML5, ENT_NOQUOTES, 'UTF-8') ;
     $fileContents .= $xml->getHeader($this->_textId);
-    $text = file_get_contents(INPUT_FILEPATH . $this->_filename);
+    $text = file_get_contents(TXT_FILEPATH . $this->_filename);
     $tokeniser = new Tokeniser();
     $fileContents .= $tokeniser->run($text, $id);
     $fileContents .= $xml->getFooter();
 
     //run the transformation(s)
     $fileContents = $this->applyXSLT($fileContents);
-    file_put_contents(OUTPUT_FILEPATH . $id . ".xml", $fileContents);
+    file_put_contents(XML_FILEPATH . $id . ".xml", $fileContents);
   }
 
   private function applyXSLT($text) {
