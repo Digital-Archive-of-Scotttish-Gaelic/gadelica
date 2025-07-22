@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="Added error handling for non-valid XML files being lemmatised">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="ea41f34d-bc76-4528-b3de-0f41c4648579" name="Default Changelist" comment="Updated filepaths to XML_FILEPATH and TXT_FILEPATH and renamed folders to xmlFiles and txtFiles">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLLemmatiser/classes/FileHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLLemmatiser/classes/FileHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLLemmatiser/classes/Lemmatiser.php" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLLemmatiser/classes/Lemmatiser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLLemmatiser/includes.php" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLLemmatiser/includes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/classes/FileHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/classes/FileHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/includes.php" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/includes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/outputFiles/gold.rnc" beforeDir="false" afterPath="$PROJECT_DIR$/meanma-2/utilities/CorpasXMLParser/xmlFiles/gold.rnc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +192,8 @@
       <workItem from="1748517756489" duration="27501000" />
       <workItem from="1752049822267" duration="26927000" />
       <workItem from="1752136392759" duration="8796000" />
-      <workItem from="1752506059404" duration="7447000" />
+      <workItem from="1752506059404" duration="9506000" />
+      <workItem from="1752849354197" duration="1130000" />
     </task>
     <task id="LOCAL-00087" summary="Initial code for new edit slip in entry refactor">
       <created>1618927085562</created>
@@ -545,7 +538,7 @@
       <option name="project" value="LOCAL" />
       <updated>1700233733974</updated>
     </task>
-    <option name="localTasksCounter" value="167" />
+    <option name="localTasksCounter" value="168" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -566,7 +559,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Ran the lemmatiser over texts 190, 192, and all volumes of 102" />
     <MESSAGE value="Removed the raw status from newly lemmatised files: 190.xml, 192.xml, and all vols of 102." />
     <MESSAGE value="Changed status of 102-1.xml to 'raw'" />
     <MESSAGE value="Changed status of 102-1.xml to empty" />
@@ -591,6 +583,7 @@
     <MESSAGE value="Fixed bug where inputFile in format 600001.txt would use that entire filename as text ref in XML" />
     <MESSAGE value="Some tweaks and bug fixes" />
     <MESSAGE value="Added error handling for non-valid XML files being lemmatised" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added error handling for non-valid XML files being lemmatised" />
+    <MESSAGE value="Updated filepaths to XML_FILEPATH and TXT_FILEPATH and renamed folders to xmlFiles and txtFiles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated filepaths to XML_FILEPATH and TXT_FILEPATH and renamed folders to xmlFiles and txtFiles" />
   </component>
 </project>
